@@ -81940,5 +81940,181 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>yes, not published yet</source>
         <translation>jo, nach net publizéiert</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Eng GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>E Workflow vum Depot publizéiert en. De Build schreift de Workflow-Fichier; loosst den Dossier eidel.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Nodeems en Zil mat engem GitHub-Depot an engem Token oder enger GitHub App gespäichert ass, kann dëse Schrëtt den Depot uleeën a GitHub Pages uschalten. Soss leet den Depot fir d'éischt op GitHub un; en eidelen ass an der Rei.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Zweig oder GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS iwwerpréiwen</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Den Depot uleeën, wann en net existéiert</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Leet den Depot op GitHub un a schalt GitHub Pages a sengen Astellungen un (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Leet den Depot %repo un, wann e feelt (wann et gefrot gëtt), schalt GitHub Pages vum Zweig oder vu GitHub Actions un, esou wéi gespäichert, a setzt déi eegen Domän an HTTPS. Et benotzt déi gespäichert Astellungen: späichert d'Ännerungen fir d'éischt.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detailer op GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Gitt fir d'éischt déi eegen Domän an.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>All Push gëtt fir d'éischt géint dës Limitte gepréift.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Fir eng https://-Adress op GitHub. D'App, déi fir dës Installatioun ageriicht ass, mellt sech un; si brauch d'Installatiouns-ID.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages servéiert e private Depot nëmme mat engem bezuelten Abonnement.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: eng Subdomän (www.example.com) brauch e CNAME-Record op &lt;owner&gt;.github.io; eng Apex-Domän (example.com) d'A-Records %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Installatiouns-ID vun der GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Leschte Pages-Build</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limitten a Konditiounen</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Néideg fir GitHub Pages mat engem gratis Abonnement.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Op GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Nëmme mat enger GitHub App: d'Zuel um Enn vun der Adress vun der Installatioun vun der App op GitHub. D'App selwer gëtt an staticcache.ini agestallt (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ëffentlech</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Späichert d'Zil fir d'éischt mat engem GitHub-Depot an engem Token oder enger GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Setzt dës Records beim Provider vun der Domän:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Op GitHub ariichten</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Den DNS vun %domain weist nach net op GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Den DNS vun %domain weist op GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>D'GitHub-Integratioun ass hei net disponibel: %problem. Publizéieren op den Zweig funktionéiert trotzdeem; schalt GitHub Pages an den Astellunge vum Depot un.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>D'GitHub-Schrëtt sinn net disponibel fir dëst Zil: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>De Status vu GitHub Pages gëtt mat engem Token oder enger GitHub App als Umeldedaten ugewisen.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Är eegen Domän benotzen</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Wat wielen: Token, Deploy-Key oder GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Mat engem GitHub-Depot an engem Token oder enger GitHub App kann den Assistent fir Iech den Depot uleeën, GitHub Pages uschalten an d'Domän setzen (Schrëtt 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>gëtt gebaut</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>gebaut</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>vu GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>vum Zweig %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nach keen</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>net fonnt</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ëffentlech</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>an der Waardeschlaang</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekannt</translation>
+    </message>
 </context>
 </TS>

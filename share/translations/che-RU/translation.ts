@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>хӀаъ, хӀинца а арахецна дац</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Цхьа GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Репозиторин workflow-с иза арахоьцу. Гулдаро workflow-н файл язйо; папка еса юьтуш йита.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub-репозиторица а, токенца я GitHub App-ца а Ӏалашо Ӏалашйинчул тӀаьхьа, кху гӀулчано репозиторий кхолла а, GitHub Pages лато а мега. Иштта дацахь, хьалха GitHub-хь репозиторий кхолла; еса а мега.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Га я GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS талла</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Репозиторий яцахь, иза кхолла</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub-хь репозиторий кхолла, цуьнан нисдаршкахь GitHub Pages лато (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo репозиторий яцахь (дийхча) кхуллу, Ӏалашйинчу кепара гаьнгара я GitHub Actions-ера GitHub Pages латайо, шен домен а, HTTPS а дӀахӀоттайо. Ӏалашдина нисдарш лелайо: хьалха хийцамаш Ӏалашбе.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub-хь мадарра</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Хьалха шен домен язъе.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ХӀора push хьалха хӀокху дозанашца таллало.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-хь https:// адресана. Кху дӀахӀотторна нисйина App чугӀо; цунна дӀахӀотторан id оьшу.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages-о къайлаха репозиторий мах болчу планехь бен ца гойту.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: субдоменна (www.example.com) &lt;owner&gt;.github.io-на CNAME-йоза оьшу; коьрта доменна (example.com) A-йозанаш %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-ан дӀахӀотторан id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>ТӀаьххьара Pages гулдар</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Дозанаш а, бехкамаш а</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Мах боцу планехь GitHub Pages-на оьшу.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-хь</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App-ца бен: GitHub-хь App-ан дӀахӀотторан адресан чаккхенгахь долу терахь. App ша staticcache.ini-хь дӀахӀоттайо (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Къайлаха</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Массарна</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Хьалха GitHub-репозиторица а, токенца я GitHub App-ца а Ӏалашо Ӏалашйе.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ХӀара йозанаш доменан провайдерехь дӀахӀиттае:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub-хь дӀахӀотто</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain-ан DNS хӀинца а GitHub Pages-е хьажийна яц.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain-ан DNS GitHub Pages-е хьажийна ю.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-ца интеграци кхузахь яц: %problem. Гаьнга арахецар делахь а болх беш ду; репозиторин нисдаршкахь GitHub Pages лато.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Кху Ӏалашонна GitHub-ан гӀулчаш яц: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages-ан хьал гойту чуваларан хаамаш токен я GitHub App елахь.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Шайн домен лелае</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ХӀун харжа: токен, деплойн догӀа я GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub-репозиторица а, токенца я GitHub App-ца а мастеро шуна репозиторий кхолла а, GitHub Pages лато а, домен дӀахӀотто а мега (4-гӀа гӀулч).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>гулйеш</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>гулйина</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-ера</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch гаьнгара</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>хӀинца а яц</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ца карийна</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>дӀайайина</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>къайлаха</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>массарна</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>рогӀехь</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ца хаьа</translation>
+    </message>
 </context>
 </TS>

@@ -81970,5 +81970,181 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>yes, not published yet</source>
         <translation>igen, még nincs közzétéve</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Egy GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>A tároló egy munkafolyamata teszi közzé. Az összeállítás megírja a munkafolyamat-fájlt; hagyja üresen a mappát.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Ha a célt GitHub-tárolóval és tokennel vagy GitHub App-pal mentette, ez a lépés létre tudja hozni a tárolót és be tudja kapcsolni a GitHub Pages szolgáltatást. Ellenkező esetben előbb hozza létre a tárolót a GitHubon; egy üres is megfelel.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Ág vagy GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS ellenőrzése</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>A tároló létrehozása, ha nem létezik</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Hozza létre a tárolót a GitHubon, és kapcsolja be a GitHub Pages szolgáltatást a beállításaiban (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Létrehozza a(z) %repo tárolót, ha hiányzik (kérésre), a mentett beállítás szerint bekapcsolja a GitHub Pages szolgáltatást az ágból vagy a GitHub Actionsből, és beállítja az egyéni domaint és a HTTPS-t. A mentett beállításokat használja: előbb mentse a módosításokat.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Részletek a GitHubon</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Előbb adja meg az egyéni domaint.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Minden push először ezekkel a korlátokkal lesz összevetve.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHubon lévő https:// címhez. Az ehhez a telepítéshez beállított App jelentkezik be; ehhez kell a telepítés azonosítója.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>A GitHub Pages privát tárolót csak fizetős csomagban szolgál ki.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: egy aldomainhez (www.example.com) CNAME-rekord kell a(z) &lt;owner&gt;.github.io címre; egy fődomainhez (example.com) a(z) %ips A-rekordok.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>A GitHub App telepítési azonosítója</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Utolsó Pages-összeállítás</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Korlátok és feltételek</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ingyenes csomagban szükséges a GitHub Pages használatához.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>A GitHubon</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Csak GitHub App esetén: az App GitHubon lévő telepítése címének végén álló szám. Magát az Appot a staticcache.ini állítja be (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privát</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Nyilvános</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Előbb mentse a célt GitHub-tárolóval és tokennel vagy GitHub App-pal.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Állítsa be ezeket a rekordokat a domain szolgáltatójánál:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Beállítás a GitHubon</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>A(z) %domain DNS-e még nem mutat a GitHub Pagesre.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>A(z) %domain DNS-e a GitHub Pagesre mutat.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>A GitHub-integráció itt nem érhető el: %problem. Az ágba való közzététel ettől még működik; kapcsolja be a GitHub Pages szolgáltatást a tároló beállításaiban.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>A GitHub-lépések nem érhetők el ehhez a célhoz: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>A GitHub Pages állapota akkor látható, ha a hitelesítés token vagy GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Saját domain használata</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Melyiket válassza: token, telepítési kulcs vagy GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub-tárolóval és tokennel vagy GitHub App-pal a varázsló létre tudja hozni a tárolót, be tudja kapcsolni a GitHub Pages szolgáltatást, és be tudja állítani a domaint Ön helyett (4. lépés).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>összeállítás alatt</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>összeállítva</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actionsből</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>a(z) %branch ágból</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>még nincs</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nem található</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kikapcsolva</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privát</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>nyilvános</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>sorban áll</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ismeretlen</translation>
+    </message>
 </context>
 </TS>

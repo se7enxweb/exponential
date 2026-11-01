@@ -81938,5 +81938,181 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>yes, not published yet</source>
         <translation>haa, weli lama daabicin</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Barnaamij GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Hab-shaqo (workflow) kaydka koodhka ayaa daabaca. Dhismuhu wuxuu qoraa faylka hab-shaqada; gal-ka madhan u daa.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Kadib markaad keydiso bartilmaameed leh kayd koodh GitHub iyo token ama GitHub App, tallaabadani waxay samayn kartaa kaydka koodhka oo shidi kartaa GitHub Pages. Haddii kale marka hore kaydka koodhka ka samee GitHub; mid madhan waa caadi.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Laan mise GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Hubi DNS-ka</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Samee kaydka koodhka haddii uusan jirin</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Ka samee kaydka koodhka GitHub oo ka shid GitHub Pages dejimahiisa (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Wuxuu sameeyaa kaydka koodhka %repo marka uu maqan yahay (haddii la codsado), wuxuu shidaa GitHub Pages laanta ama GitHub Actions sida loo keydiyay, wuxuuna dejiyaa domain-ka gaarka ah iyo HTTPS. Wuxuu adeegsadaa dejimaha la keydiyay: marka hore keydi isbeddellada.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Faahfaahin ku taal GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Marka hore geli domain-ka gaarka ah.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Push kasta marka hore waxaa lagu hubiyaa xadadkan.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Cinwaan https:// ah oo GitHub ku yaal. App-ka loo dejiyay rakibaaddan ayaa soo gala; wuxuu u baahan yahay id-ga rakibaadda.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages wuxuu adeegsiiyaa kayd koodh gaar ah oo keliya qorshe lacag leh.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) wuxuu u baahan yahay diiwaan CNAME oo loo jiheeyo &lt;owner&gt;.github.io; apex domain (example.com) diiwaannada A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id-ga rakibaadda GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Dhismihii Pages ee ugu dambeeyay</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Xadadka iyo shuruudaha</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Waxaa loo baahan yahay GitHub Pages ee qorshe bilaash ah.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub dushiisa</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Kaliya GitHub App: lambarka dhammaadka cinwaanka rakibaadda App-ka ee GitHub. App-ka laftiisa waxaa lagu dejiyaa staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Gaar ah</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Dadweyne</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Marka hore keydi bartilmaameedka adoo leh kayd koodh GitHub iyo token ama GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Dhig diiwaannadan bixiyaha domain-ka:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Ku dejin GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS-ka %domain weli uma jiheysna GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS-ka %domain wuxuu u jiheysan yahay GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Isku-xidhka GitHub halkan lagama heli karo: %problem. Ku daabacidda laanta si caadi ah ayay u shaqeysaa; ka shid GitHub Pages dejimaha kaydka koodhka.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Tallaabooyinka GitHub looma heli karo bartilmaameedkan: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Xaaladda GitHub Pages waxaa la muujiyaa marka aqoonsiga galitaanku yahay token ama GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Isticmaal domain-kaaga</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Midkee la doortaa: token, furaha dejinta ama GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Kayd koodh GitHub iyo token ama GitHub App, saaxirku wuxuu kuu samayn karaa kaydka koodhka, shidi karaa GitHub Pages oo dejin karaa domain-ka (tallaabada 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>la dhisayaa</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>la dhisay</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions laga keenay</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>laanta %branch laga keenay</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>weli midna</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>lama helin</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>dansan</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>gaar ah</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>dadweyne</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>safka ku jira</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>aan la aqoon</translation>
+    </message>
 </context>
 </TS>

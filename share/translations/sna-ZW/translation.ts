@@ -81940,5 +81940,181 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>yes, not published yet</source>
         <translation>hongu, hazvisati zvaburitswa</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App imwe</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow yedura ndiyo inoiburitsa. Chivakwa chinonyora faira re workflow; siya foldha isina chinhu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Mushure mekuchengeta chinangwa nedura reGitHub uye tokeni kana GitHub App, danho iri rinogona kugadzira dura uye kubatidza GitHub Pages. Kana zvisina kudaro, tanga wagadzira dura paGitHub; risina chinhu rinoshanda.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Bazi here kana GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Tarisa DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Gadzira dura kana risipo</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Gadzira dura paGitHub uye batidza GitHub Pages mumagadzirirwo aro (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Inogadzira dura %repo kana risipo (kana zvakumbirwa), inobatidza GitHub Pages kubva pabazi kana kubva kuGitHub Actions sezvakachengetwa, uye inoisa domeni yenyu neHTTPS. Inoshandisa magadzirirwo akachengetwa: tanga wachengeta shanduko.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Ruzivo paGitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Tanga waisa domeni yenyu.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Push yega yega inotanga yaongororwa maererano nemiganhu iyi.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Kune kero ye https:// paGitHub. App yakagadzirirwa kuisirwa uku ndiyo inopinda; inoda id yekuisirwa.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages inopa dura rakavanzika chete pachirongwa chinobhadharwa.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) inoda CNAME record kuenda ku &lt;owner&gt;.github.io; apex domain (example.com) inoda A records %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id yekuisirwa kweGitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Chivakwa chePages chekupedzisira</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Miganhu nemitemo</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Zvinodiwa kuGitHub Pages pachirongwa chemahara.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>PaGitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>NeGitHub App chete: nhamba iri kumagumo ekero yekuisirwa kweApp paGitHub. App pachayo inoiswa mu staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Yakavanzika</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Yeruzhinji</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Tanga wachengeta chinangwa nedura reGitHub uye tokeni kana GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Isa marekodhi aya kumupi wedomeni:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Gadzirira paGitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ye %domain haisati yanongedza kuGitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ye %domain inonongedza kuGitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Kubatana neGitHub hakuwanikwi pano: %problem. Kuburitsa kubazi kunoshanda zvakadaro; batidza GitHub Pages mumagadzirirwo edura.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Matanho eGitHub haawanikwi kuchinangwa ichi: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Mamiriro eGitHub Pages anoratidzwa kana tokeni kana GitHub App iri humbowo hwekupinda.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Shandisa domeni yako</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Chii chekusarudza: tokeni, kiyi yekuendesa kana GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Nedura reGitHub uye tokeni kana GitHub App, wizadi inogona kukugadzirira dura, kubatidza GitHub Pages uye kuisa domeni (danho 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>kuri kuvakwa</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>zvavakwa</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>kubva kuGitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>kubva pabazi %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hapana parizvino</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>hazvina kuwanikwa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>zvakadzimwa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>yakavanzika</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>yeruzhinji</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>zvakamirira</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hazvizivikanwe</translation>
+    </message>
 </context>
 </TS>

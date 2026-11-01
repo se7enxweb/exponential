@@ -81970,5 +81970,181 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>yes, not published yet</source>
         <translation>jā, vēl nav publicēts</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>To publicē repozitorija darbplūsma. Būvējums ieraksta darbplūsmas failu; atstājiet mapi tukšu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Pēc mērķa saglabāšanas ar GitHub repozitoriju un marķieri vai GitHub App šis solis var izveidot repozitoriju un ieslēgt GitHub Pages. Citādi vispirms izveidojiet repozitoriju GitHub; der arī tukšs.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Zars vai GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Pārbaudīt DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Izveidot repozitoriju, ja tā nav</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Izveidojiet repozitoriju GitHub un ieslēdziet GitHub Pages tā iestatījumos (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Izveido repozitoriju %repo, ja tā trūkst (ja tas prasīts), ieslēdz GitHub Pages no zara vai no GitHub Actions, kā saglabāts, un iestata pielāgoto domēnu un HTTPS. Izmanto saglabātos iestatījumus: vispirms saglabājiet izmaiņas.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Sīkāk GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Vispirms ievadiet pielāgoto domēnu.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Katra nosūtīšana vispirms tiek pārbaudīta pret šiem ierobežojumiem.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Adresei https:// GitHub. Pierakstās šai instalācijai iestatītā App; tai vajadzīgs instalācijas id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages privātu repozitoriju pasniedz tikai maksas plānā.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: apakšdomēnam (www.example.com) vajadzīgs CNAME ieraksts uz &lt;owner&gt;.github.io; saknes domēnam (example.com) A ieraksti %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App instalācijas id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pēdējais Pages būvējums</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Ierobežojumi un noteikumi</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Vajadzīgs GitHub Pages bezmaksas plānā.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Tikai ar GitHub App: skaitlis App instalācijas adreses beigās GitHub. Pati App tiek iestatīta staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privāts</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Publisks</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Vispirms saglabājiet mērķi ar GitHub repozitoriju un marķieri vai GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Iestatiet šos ierakstus pie domēna nodrošinātāja:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Iestatīt GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain DNS vēl nenorāda uz GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain DNS norāda uz GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub integrācija šeit nav pieejama: %problem. Publicēšana zarā darbojas tāpat; ieslēdziet GitHub Pages repozitorija iestatījumos.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub soļi šim mērķim nav pieejami: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages stāvoklis tiek rādīts, ja akreditācijas dati ir marķieris vai GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Izmantot savu domēnu</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ko izvēlēties: marķieri, izvietošanas atslēgu vai GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Ar GitHub repozitoriju un marķieri vai GitHub App vednis var jūsu vietā izveidot repozitoriju, ieslēgt GitHub Pages un iestatīt domēnu (4. solis).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>tiek būvēts</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>uzbūvēts</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>no GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>no zara %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>vēl nav</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nav atrasts</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>izslēgts</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privāts</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>publisks</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>rindā</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nezināms</translation>
+    </message>
 </context>
 </TS>

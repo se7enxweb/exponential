@@ -81970,5 +81970,181 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>yes, not published yet</source>
         <translation>tá, níl sé foilsithe fós</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Feidhmchlár GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Foilsíonn sreabhadh oibre den stórlann é. Scríobhann an tógáil comhad an tsreafa oibre; fág an fillteán folamh.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Tar éis sprioc a shábháil le stórlann GitHub agus comhartha nó GitHub App, is féidir leis an gcéim seo an stórlann a chruthú agus GitHub Pages a chur ar siúl. Murach sin, cruthaigh an stórlann ar GitHub ar dtús; is leor ceann folamh.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Craobh nó GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Seiceáil an DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Cruthaigh an stórlann mura bhfuil sí ann</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Cruthaigh an stórlann ar GitHub agus cuir GitHub Pages ar siúl ina socruithe (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Cruthaíonn sé an stórlann %repo nuair atá sí ar iarraidh (má iarrtar), cuireann sé GitHub Pages ar siúl ón gcraobh nó ó GitHub Actions mar a sábháladh, agus socraíonn sé an fearann saincheaptha agus HTTPS. Úsáideann sé na socruithe sábháilte: sábháil na hathruithe ar dtús.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Sonraí ar GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Cuir isteach an fearann saincheaptha ar dtús.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Seiceáiltear gach push i gcoinne na dteorainneacha seo ar dtús.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Do sheoladh https:// ar GitHub. Síníonn an App a socraíodh don suiteáil seo isteach; teastaíonn aitheantas na suiteála uaidh.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Ní fhreastalaíonn GitHub Pages ar stórlann phríobháideach ach ar phlean íoctha.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: teastaíonn taifead CNAME chuig &lt;owner&gt;.github.io ó fhofhearann (www.example.com); teastaíonn na taifid A %ips ó fhearann apex (example.com).</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Aitheantas suiteála an GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>An tógáil Pages is déanaí</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Teorainneacha agus téarmaí</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Riachtanach do GitHub Pages ar phlean saor in aisce.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ar GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Le GitHub App amháin: an uimhir ag deireadh sheoladh shuiteáil an App ar GitHub. Socraítear an App féin in staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Príobháideach</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Poiblí</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Sábháil an sprioc le stórlann GitHub agus comhartha nó GitHub App ar dtús.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Socraigh na taifid seo ag soláthraí an fhearainn:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Socraigh ar GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Níl DNS %domain dírithe ar GitHub Pages fós.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Tá DNS %domain dírithe ar GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Níl an comhtháthú GitHub ar fáil anseo: %problem. Oibríonn foilsiú chuig an gcraobh mar sin féin; cuir GitHub Pages ar siúl i socruithe na stórlainne.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Níl na céimeanna GitHub ar fáil don sprioc seo: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Taispeántar staid GitHub Pages nuair is comhartha nó GitHub App an dintiúr.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Úsáid do fhearann féin</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Cé acu le roghnú: comhartha, eochair imscartha nó GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Le stórlann GitHub agus comhartha nó GitHub App, is féidir leis an draoi an stórlann a chruthú, GitHub Pages a chur ar siúl agus an fearann a shocrú duit (céim 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>á thógáil</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>tógtha</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ó GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ón gcraobh %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dada fós</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>gan aimsiú</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>múchta</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>príobháideach</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>poiblí</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>i scuaine</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anaithnid</translation>
+    </message>
 </context>
 </TS>

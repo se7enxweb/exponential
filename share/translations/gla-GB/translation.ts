@@ -81940,5 +81940,181 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>yes, not published yet</source>
         <translation>tha, gun fhoillseachadh fhathast</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Foillsichidh sruth-obrach an ionaid-tasgaidh e. Sgrìobhaidh an togail faidhle an t-sruth-obrach; fàg am pasgan falamh.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Às dèidh amas a shàbhaladh le ionad-tasgaidh GitHub agus tòcan no GitHub App, is urrainn dhan cheum seo an t-ionad-tasgaidh a chruthachadh agus GitHub Pages a chur air. Air neo cruthaich an t-ionad-tasgaidh air GitHub an toiseach; nì fear falamh a' chùis.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Meur no GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Thoir sùil air an DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Cruthaich an t-ionad-tasgaidh mura h-eil e ann</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Cruthaich an t-ionad-tasgaidh air GitHub agus cuir GitHub Pages air sna roghainnean aige (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Cruthaichidh e an t-ionad-tasgaidh %repo nuair a bhios e a dhìth (ma chaidh iarraidh), cuiridh e GitHub Pages air on mheur no o GitHub Actions mar a chaidh a shàbhaladh, agus suidhichidh e an àrainn ghnàthaichte agus HTTPS. Cleachdaidh e na roghainnean a chaidh a shàbhaladh: sàbhail na h-atharraichean an toiseach.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Mion-fhiosrachadh air GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Cuir a-steach an àrainn ghnàthaichte an toiseach.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Thèid gach push a sgrùdadh an aghaidh nan crìochan seo an toiseach.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Airson seòladh https:// air GitHub. Clàraidh an App a chaidh a shuidheachadh airson an stàlaidh seo a-steach; feumaidh e id an stàlaidh.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Cha fhrithealaich GitHub Pages ionad-tasgaidh prìobhaideach ach air plana pàighte.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: feumaidh fo-àrainn (www.example.com) clàr CNAME gu &lt;owner&gt;.github.io; feumaidh àrainn apex (example.com) na clàran A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>ID stàlaidh an GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>An togail Pages mu dheireadh</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Crìochan is teirmichean</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Riatanach airson GitHub Pages air plana saor 'n-asgaidh.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Air GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Le GitHub App a-mhàin: an àireamh aig deireadh seòladh stàladh an App air GitHub. Tha an App fhèin air a shuidheachadh ann an staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Prìobhaideach</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Poblach</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Sàbhail an t-amas le ionad-tasgaidh GitHub agus tòcan no GitHub App an toiseach.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Suidhich na clàran seo aig solaraiche na h-àrainne:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Suidhich air GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Chan eil DNS %domain a' comharrachadh GitHub Pages fhathast.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Tha DNS %domain a' comharrachadh GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Chan eil an amalachadh GitHub ri fhaighinn an-seo: %problem. Obraichidh foillseachadh dhan mheur co-dhiù; cuir GitHub Pages air ann an roghainnean an ionaid-tasgaidh.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Chan eil ceuman GitHub ri fhaighinn airson an amais seo: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Thèid staid GitHub Pages a shealltainn le tòcan no GitHub App mar an teisteas.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Cleachd an àrainn agad fhèin</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Dè a thaghas tu: tòcan, iuchair cur-an-sàs no GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Le ionad-tasgaidh GitHub agus tòcan no GitHub App, is urrainn dhan draoidh an t-ionad-tasgaidh a chruthachadh, GitHub Pages a chur air agus an àrainn a shuidheachadh dhut (ceum 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ga thogail</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>air a thogail</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>o GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>on mheur %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>chan eil gin fhathast</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>cha deach a lorg</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>dheth</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>prìobhaideach</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>poblach</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>sa chiutha</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neo-aithnichte</translation>
+    </message>
 </context>
 </TS>

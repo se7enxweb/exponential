@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>అవును, ఇంకా ప్రచురించబడలేదు</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>ఒక GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>రిపోజిటరీలోని ఒక వర్క్‌ఫ్లో దీన్ని ప్రచురిస్తుంది. బిల్డ్ వర్క్‌ఫ్లో ఫైల్‌ను రాస్తుంది; ఫోల్డర్‌ను ఖాళీగా వదిలేయండి.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub రిపోజిటరీ మరియు టోకెన్ లేదా GitHub App తో లక్ష్యాన్ని సేవ్ చేసిన తర్వాత, ఈ దశ రిపోజిటరీని సృష్టించి GitHub Pages ను ఆన్ చేయగలదు. లేకపోతే ముందుగా GitHub లో రిపోజిటరీని సృష్టించండి; ఖాళీది అయినా సరే.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>బ్రాంచ్ లేదా GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS ను తనిఖీ చేయండి</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>రిపోజిటరీ లేకపోతే సృష్టించండి</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub లో రిపోజిటరీని సృష్టించి దాని సెట్టింగ్‌లలో GitHub Pages ను ఆన్ చేయండి (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>రిపోజిటరీ %repo లేనప్పుడు దాన్ని సృష్టిస్తుంది (అడిగితే), సేవ్ చేసిన విధంగా బ్రాంచ్ నుండి లేదా GitHub Actions నుండి GitHub Pages ను ఆన్ చేస్తుంది, మరియు కస్టమ్ డొమైన్, HTTPS ను సెట్ చేస్తుంది. ఇది సేవ్ చేసిన సెట్టింగ్‌లను ఉపయోగిస్తుంది: ముందుగా మార్పులను సేవ్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub లో వివరాలు</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ముందుగా కస్టమ్ డొమైన్‌ను నమోదు చేయండి.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ప్రతి పుష్ ముందుగా ఈ పరిమితులతో తనిఖీ చేయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub లో https:// చిరునామా కోసం. ఈ ఇన్‌స్టాలేషన్ కోసం సెటప్ చేసిన App సైన్ ఇన్ చేస్తుంది; దానికి ఇన్‌స్టాలేషన్ id అవసరం.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ప్రైవేట్ రిపోజిటరీని చెల్లింపు ప్లాన్‌లో మాత్రమే అందిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: సబ్‌డొమైన్ (www.example.com) కు &lt;owner&gt;.github.io కు CNAME రికార్డ్ అవసరం; ఏపెక్స్ డొమైన్ (example.com) కు A రికార్డ్‌లు %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App యొక్క ఇన్‌స్టాలేషన్ id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>చివరి Pages బిల్డ్</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>పరిమితులు మరియు నిబంధనలు</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>ఉచిత ప్లాన్‌లో GitHub Pages కోసం అవసరం.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub లో</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App తో మాత్రమే: GitHub లో App ఇన్‌స్టాలేషన్ చిరునామా చివరిలోని సంఖ్య. App స్వయంగా staticcache.ini లో సెట్ చేయబడుతుంది (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>ప్రైవేట్</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>పబ్లిక్</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>ముందుగా లక్ష్యాన్ని GitHub రిపోజిటరీ మరియు టోకెన్ లేదా GitHub App తో సేవ్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>డొమైన్ ప్రొవైడర్ వద్ద ఈ రికార్డ్‌లను సెట్ చేయండి:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub లో సెటప్ చేయండి</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain యొక్క DNS ఇంకా GitHub Pages వైపు సూచించడం లేదు.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain యొక్క DNS GitHub Pages వైపు సూచిస్తోంది.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub ఇంటిగ్రేషన్ ఇక్కడ అందుబాటులో లేదు: %problem. బ్రాంచ్‌కు ప్రచురించడం అయినా పని చేస్తుంది; రిపోజిటరీ సెట్టింగ్‌లలో GitHub Pages ను ఆన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ఈ లక్ష్యానికి GitHub దశలు అందుబాటులో లేవు: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>ఆధారాలుగా టోకెన్ లేదా GitHub App ఉన్నప్పుడు GitHub Pages స్థితి చూపబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>మీ స్వంత డొమైన్‌ను ఉపయోగించండి</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ఏది ఎంచుకోవాలి: టోకెన్, డిప్లాయ్ కీ లేదా GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub రిపోజిటరీ మరియు టోకెన్ లేదా GitHub App తో, విజర్డ్ మీ కోసం రిపోజిటరీని సృష్టించి, GitHub Pages ను ఆన్ చేసి, డొమైన్‌ను సెట్ చేయగలదు (దశ 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>బిల్డ్ అవుతోంది</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>బిల్డ్ అయింది</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions నుండి</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>బ్రాంచ్ %branch నుండి</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ఇంకా ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>కనుగొనబడలేదు</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ఆఫ్</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ప్రైవేట్</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>పబ్లిక్</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>క్యూలో ఉంది</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>తెలియదు</translation>
+    </message>
 </context>
 </TS>

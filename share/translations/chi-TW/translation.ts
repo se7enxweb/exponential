@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>是，尚未發佈</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>一個 GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>由儲存庫的工作流程發佈。建置會寫入工作流程檔案；請將資料夾留空。</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>以 GitHub 儲存庫及權杖或 GitHub App 儲存目標後，此步驟可以建立儲存庫並開啟 GitHub Pages。否則請先在 GitHub 上建立儲存庫；空的也可以。</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>分支還是 GitHub Actions？</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>檢查 DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>若儲存庫不存在則建立</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>在 GitHub 上建立儲存庫，並在其設定中開啟 GitHub Pages（Settings &gt; Pages）。</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>在儲存庫 %repo 不存在時建立它（若有要求），依儲存的設定從分支或從 GitHub Actions 開啟 GitHub Pages，並設定自訂網域與 HTTPS。它使用已儲存的設定：請先儲存變更。</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub 上的詳細資料</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>請先輸入自訂網域。</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>每次 push 都會先依這些限制檢查。</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>用於 GitHub 上的 https:// 位址。由為此安裝設定的 App 登入；需要安裝 ID。</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages 僅在付費方案中提供私人儲存庫的網站。</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages：子網域（www.example.com）需要指向 &lt;owner&gt;.github.io 的 CNAME 記錄；頂層網域（example.com）需要 A 記錄 %ips。</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App 的安裝 ID</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>最近一次 Pages 建置</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>限制與條款</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>在免費方案中使用 GitHub Pages 時必須如此。</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>在 GitHub 上</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>僅限 GitHub App：GitHub 上該 App 安裝位址結尾的數字。App 本身在 staticcache.ini 中設定（GitHubAppId、GitHubAppKey）。</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>私人</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>公開</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>請先以 GitHub 儲存庫及權杖或 GitHub App 儲存目標。</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>在網域供應商處設定以下記錄：</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>在 GitHub 上設定</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain 的 DNS 尚未指向 GitHub Pages。</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain 的 DNS 已指向 GitHub Pages。</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>此處無法使用 GitHub 整合：%problem。發佈到分支仍然可行；請在儲存庫的設定中開啟 GitHub Pages。</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>此目標無法使用 GitHub 步驟：%problem。</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>以權杖或 GitHub App 作為憑證時，會顯示 GitHub Pages 的狀態。</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>使用自己的網域</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>如何選擇：權杖、部署金鑰或 GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>有了 GitHub 儲存庫及權杖或 GitHub App，精靈可以為您建立儲存庫、開啟 GitHub Pages 並設定網域（步驟 4）。</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>建置中</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>已建置</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>來自 GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>來自分支 %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>尚無</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>找不到</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>私人</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>公開</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>排隊中</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>未知</translation>
+    </message>
 </context>
 </TS>

@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ແມ່ນ, ຍັງບໍ່ໄດ້ເຜີຍແຜ່</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App ໜຶ່ງ</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow ຂອງຄັງເກັບເປັນຜູ້ເຜີຍແຜ່ມັນ. ການສ້າງຈະຂຽນໄຟລ໌ workflow; ປ່ອຍໂຟນເດີໃຫ້ຫວ່າງ.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>ຫຼັງຈາກບັນທຶກເປົ້າໝາຍທີ່ມີຄັງເກັບ GitHub ແລະໂທເຄັນ ຫຼື GitHub App, ຂັ້ນຕອນນີ້ສາມາດສ້າງຄັງເກັບ ແລະເປີດ GitHub Pages ໄດ້. ບໍ່ດັ່ງນັ້ນ ໃຫ້ສ້າງຄັງເກັບໃນ GitHub ກ່ອນ; ຄັງເກັບຫວ່າງກໍໄດ້.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ສາຂາ ຫຼື GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>ກວດ DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ສ້າງຄັງເກັບຖ້າມັນຍັງບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>ສ້າງຄັງເກັບໃນ GitHub ແລະເປີດ GitHub Pages ໃນການຕັ້ງຄ່າຂອງມັນ (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ສ້າງຄັງເກັບ %repo ເມື່ອມັນບໍ່ມີ (ຖ້າຖືກຮ້ອງຂໍ), ເປີດ GitHub Pages ຈາກສາຂາ ຫຼືຈາກ GitHub Actions ຕາມທີ່ບັນທຶກໄວ້, ແລະຕັ້ງໂດເມນຂອງທ່ານເອງ ແລະ HTTPS. ມັນໃຊ້ການຕັ້ງຄ່າທີ່ບັນທຶກໄວ້: ບັນທຶກການປ່ຽນແປງກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>ລາຍລະອຽດໃນ GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ປ້ອນໂດເມນຂອງທ່ານເອງກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ທຸກ push ຈະຖືກກວດກັບຂີດຈຳກັດເຫຼົ່ານີ້ກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>ສຳລັບທີ່ຢູ່ https:// ໃນ GitHub. App ທີ່ຕັ້ງໄວ້ສຳລັບການຕິດຕັ້ງນີ້ຈະເຂົ້າສູ່ລະບົບ; ມັນຕ້ອງການ id ຂອງການຕິດຕັ້ງ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ໃຫ້ບໍລິການຄັງເກັບສ່ວນຕົວສະເພາະແຜນທີ່ຈ່າຍເງິນເທົ່ານັ້ນ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ໂດເມນຍ່ອຍ (www.example.com) ຕ້ອງມີບັນທຶກ CNAME ໄປຫາ &lt;owner&gt;.github.io; ໂດເມນຫຼັກ (example.com) ຕ້ອງມີບັນທຶກ A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>id ການຕິດຕັ້ງຂອງ GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>ການສ້າງ Pages ຄັ້ງລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ຂີດຈຳກັດ ແລະເງື່ອນໄຂ</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>ຈຳເປັນສຳລັບ GitHub Pages ໃນແຜນຟຣີ.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>ໃນ GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>ສະເພາະກັບ GitHub App: ຕົວເລກທີ່ທ້າຍທີ່ຢູ່ຂອງການຕິດຕັ້ງ App ໃນ GitHub. ຕົວ App ເອງຕັ້ງໃນ staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>ສ່ວນຕົວ</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>ສາທາລະນະ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>ບັນທຶກເປົ້າໝາຍທີ່ມີຄັງເກັບ GitHub ແລະໂທເຄັນ ຫຼື GitHub App ກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ຕັ້ງບັນທຶກເຫຼົ່ານີ້ຢູ່ຜູ້ໃຫ້ບໍລິການໂດເມນ:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>ຕັ້ງຄ່າໃນ GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ຂອງ %domain ຍັງບໍ່ຊີ້ໄປຫາ GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ຂອງ %domain ຊີ້ໄປຫາ GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>ການເຊື່ອມໂຍງ GitHub ບໍ່ມີຢູ່ທີ່ນີ້: %problem. ການເຜີຍແຜ່ໄປຫາສາຂາຍັງໃຊ້ໄດ້; ເປີດ GitHub Pages ໃນການຕັ້ງຄ່າຂອງຄັງເກັບ.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ຂັ້ນຕອນ GitHub ບໍ່ມີສຳລັບເປົ້າໝາຍນີ້: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>ສະຖານະຂອງ GitHub Pages ຈະສະແດງເມື່ອໃຊ້ໂທເຄັນ ຫຼື GitHub App ເປັນຂໍ້ມູນເຂົ້າສູ່ລະບົບ.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ໃຊ້ໂດເມນຂອງທ່ານເອງ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ຈະເລືອກອັນໃດ: ໂທເຄັນ, ກະແຈນຳໃຊ້ ຫຼື GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>ດ້ວຍຄັງເກັບ GitHub ແລະໂທເຄັນ ຫຼື GitHub App, ຕົວຊ່ວຍສາມາດສ້າງຄັງເກັບ, ເປີດ GitHub Pages ແລະຕັ້ງໂດເມນໃຫ້ທ່ານ (ຂັ້ນຕອນ 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ກຳລັງສ້າງ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ສ້າງແລ້ວ</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ຈາກ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ຈາກສາຂາ %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ຍັງບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ບໍ່ພົບ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ປິດ</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ສ່ວນຕົວ</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ສາທາລະນະ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ຢູ່ໃນຄິວ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ບໍ່ຮູ້ຈັກ</translation>
+    </message>
 </context>
 </TS>

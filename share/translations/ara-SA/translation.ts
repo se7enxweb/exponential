@@ -81970,5 +81970,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>نعم، لم يُنشر بعد</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>تطبيق GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>يتولى سير عمل في المستودع نشره. يكتب البناء ملف سير العمل؛ اترك المجلد فارغًا.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>بعد حفظ هدف بمستودع GitHub ورمز مميز أو GitHub App، يمكن لهذه الخطوة إنشاء المستودع وتشغيل GitHub Pages. وإلا فأنشئ المستودع على GitHub أولًا؛ لا بأس بمستودع فارغ.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>الفرع أم GitHub Actions؟</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>افحص DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>أنشئ المستودع إن لم يكن موجودًا</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>أنشئ المستودع على GitHub وشغّل GitHub Pages في إعداداته (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ينشئ المستودع %repo إن كان غير موجود (عند الطلب)، ويشغّل GitHub Pages من الفرع أو من GitHub Actions حسب المحفوظ، ويضبط النطاق المخصص وHTTPS. يستخدم الإعدادات المحفوظة: احفظ التغييرات أولًا.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>التفاصيل على GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>أدخل النطاق المخصص أولًا.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>يُفحص كل دفع مقابل هذه الحدود أولًا.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>لعنوان https:// على GitHub. يسجّل الدخولَ التطبيقُ المُعدّ لهذا التثبيت؛ ويحتاج إلى معرّف التثبيت.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>لا يقدّم GitHub Pages مستودعًا خاصًا إلا في خطة مدفوعة.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: يحتاج النطاق الفرعي (www.example.com) إلى سجل CNAME يشير إلى &lt;owner&gt;.github.io؛ ويحتاج النطاق الجذري (example.com) إلى سجلات A التالية %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>معرّف تثبيت GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>آخر بناء لـ Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>الحدود والشروط</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>مطلوب لـ GitHub Pages في الخطة المجانية.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>على GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>مع GitHub App فقط: الرقم في نهاية عنوان تثبيت التطبيق على GitHub. يُضبط التطبيق نفسه في staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>خاص</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>عام</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>احفظ الهدف بمستودع GitHub ورمز مميز أو GitHub App أولًا.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>اضبط هذه السجلات لدى مزوّد النطاق:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>الإعداد على GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>لا يشير DNS الخاص بـ %domain إلى GitHub Pages بعد.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>يشير DNS الخاص بـ %domain إلى GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>تكامل GitHub غير متاح هنا: %problem. يعمل النشر إلى الفرع مع ذلك؛ شغّل GitHub Pages في إعدادات المستودع.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>خطوات GitHub غير متاحة لهذا الهدف: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>تُعرض حالة GitHub Pages عند استخدام رمز مميز أو GitHub App كبيانات اعتماد.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>استخدم نطاقك الخاص</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>أيّها تختار: رمز مميز أم مفتاح نشر أم GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>مع مستودع GitHub ورمز مميز أو GitHub App، يستطيع المعالج إنشاء المستودع وتشغيل GitHub Pages وضبط النطاق نيابةً عنك (الخطوة 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>قيد البناء</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>تم البناء</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>من GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>من الفرع %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>لا شيء بعد</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>غير موجود</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>متوقف</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>خاص</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>عام</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>في الانتظار</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>غير معروف</translation>
+    </message>
 </context>
 </TS>

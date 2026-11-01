@@ -81970,5 +81970,181 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>yes, not published yet</source>
         <translation>sí, encara no publicat</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Una GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>El publica un workflow del repositori. La compilació escriu el fitxer del workflow; deixa la carpeta buida.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Després de desar una destinació amb un repositori de GitHub i un testimoni o una GitHub App, aquest pas pot crear el repositori i activar GitHub Pages. Si no, crea primer el repositori a GitHub; pot ser buit.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Branca o GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Comprova el DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Crea el repositori si no existeix</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Crea el repositori a GitHub i activa GitHub Pages a la seva configuració (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Crea el repositori %repo si no existeix (si es demana), activa GitHub Pages des de la branca o des de GitHub Actions segons el que s'ha desat, i configura el domini propi i HTTPS. Fa servir la configuració desada: desa primer els canvis.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detalls a GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Introdueix primer el domini propi.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Cada push es comprova primer amb aquests límits.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Per a una adreça https:// a GitHub. Inicia la sessió l'App configurada per a aquesta instal·lació; necessita l'id d'instal·lació.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages només serveix un repositori privat amb un pla de pagament.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: un subdomini (www.example.com) necessita un registre CNAME cap a &lt;owner&gt;.github.io; un domini arrel (example.com), els registres A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id d'instal·lació de la GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Última compilació de Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Límits i condicions</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Necessari per a GitHub Pages amb un pla gratuït.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>A GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Només amb una GitHub App: el número al final de l'adreça de la instal·lació de l'App a GitHub. L'App mateixa es defineix a staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Públic</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Desa primer la destinació amb un repositori de GitHub i un testimoni o una GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Defineix aquests registres al proveïdor del domini:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Configura a GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>El DNS de %domain encara no apunta a GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>El DNS de %domain apunta a GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>La integració amb GitHub no està disponible aquí: %problem. La publicació a la branca funciona igualment; activa GitHub Pages a la configuració del repositori.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Els passos de GitHub no estan disponibles per a aquesta destinació: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>L'estat de GitHub Pages es mostra amb un testimoni o una GitHub App com a credencial.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Utilitza el teu propi domini</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Què triar: testimoni, clau de desplegament o GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Amb un repositori de GitHub i un testimoni o una GitHub App, l'assistent pot crear el repositori, activar GitHub Pages i configurar el domini per tu (pas 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>compilant</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>compilat</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>des de GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>des de la branca %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>encara cap</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>no trobat</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desactivat</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>públic</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>a la cua</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconegut</translation>
+    </message>
 </context>
 </TS>

@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ඔව්, තවම ප්‍රකාශනය කර නැත</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App එකක්</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>ගබඩාවේ workflow එකක් එය ප්‍රකාශනය කරයි. ගොඩනැගීම workflow ගොනුව ලියයි; ෆෝල්ඩරය හිස්ව තබන්න.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub ගබඩාවක් සහ ටෝකනයක් හෝ GitHub App එකක් සමඟ ඉලක්කයක් සුරැකීමෙන් පසු, මෙම පියවරට ගබඩාව සාදා GitHub Pages සක්‍රිය කළ හැක. නැතහොත් පළමුව GitHub මත ගබඩාව සාදන්න; හිස් එකක් වුවද කමක් නැත.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ශාඛාව ද GitHub Actions ද?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS පරීක්ෂා කරන්න</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ගබඩාව නොමැති නම් සාදන්න</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub මත ගබඩාව සාදා එහි සැකසීම් තුළ GitHub Pages සක්‍රිය කරන්න (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo ගබඩාව නොමැති නම් (ඉල්ලා ඇත්නම්) එය සාදයි, සුරැකි පරිදි ශාඛාවෙන් හෝ GitHub Actions වෙතින් GitHub Pages සක්‍රිය කරයි, සහ අභිරුචි වසම සහ HTTPS සකසයි. එය සුරැකි සැකසීම් භාවිත කරයි: පළමුව වෙනස්කම් සුරකින්න.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub මත විස්තර</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>පළමුව අභිරුචි වසම ඇතුළත් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>සෑම push එකක්ම පළමුව මෙම සීමාවන්ට එරෙහිව පරීක්ෂා කෙරේ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub මත https:// ලිපිනයක් සඳහා. මෙම ස්ථාපනය සඳහා සැකසූ App පුරනය වේ; එයට ස්ථාපන id අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages පුද්ගලික ගබඩාවක් සපයන්නේ ගෙවන සැලසුමක පමණි.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: උප වසමකට (www.example.com) &lt;owner&gt;.github.io වෙත CNAME වාර්තාවක් අවශ්‍යයි; මූල වසමකට (example.com) A වාර්තා %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App හි ස්ථාපන id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>අවසන් Pages ගොඩනැගීම</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>සීමා සහ කොන්දේසි</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>නොමිලේ සැලසුමක GitHub Pages සඳහා අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub මත</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App සමඟ පමණි: GitHub මත App හි ස්ථාපනයේ ලිපිනය අවසානයේ ඇති අංකය. App එක staticcache.ini තුළ සකසා ඇත (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>පුද්ගලික</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>පොදු</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>පළමුව GitHub ගබඩාවක් සහ ටෝකනයක් හෝ GitHub App එකක් සමඟ ඉලක්කය සුරකින්න.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>වසමේ සැපයුම්කරු වෙත මෙම වාර්තා සකසන්න:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub මත පිහිටුවන්න</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain හි DNS තවම GitHub Pages වෙත යොමු නොවේ.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain හි DNS GitHub Pages වෙත යොමු වේ.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub ඒකාබද්ධතාව මෙහි ලබා ගත නොහැක: %problem. ශාඛාවට ප්‍රකාශනය කිරීම එසේ වුවද ක්‍රියා කරයි; ගබඩාවේ සැකසීම් තුළ GitHub Pages සක්‍රිය කරන්න.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>මෙම ඉලක්කය සඳහා GitHub පියවර ලබා ගත නොහැක: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>අක්තපත්‍රය ලෙස ටෝකනයක් හෝ GitHub App එකක් ඇති විට GitHub Pages හි තත්ත්වය පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ඔබේම වසම භාවිත කරන්න</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>තෝරා ගත යුත්තේ කුමක්ද: ටෝකනය, යෙදවුම් යතුර හෝ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub ගබඩාවක් සහ ටෝකනයක් හෝ GitHub App එකක් සමඟ, විශාරදයට ඔබ වෙනුවෙන් ගබඩාව සාදා, GitHub Pages සක්‍රිය කර වසම සැකසිය හැක (පියවර 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ගොඩනැගෙමින්</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ගොඩනගා ඇත</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions වෙතින්</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch ශාඛාවෙන්</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>තවම නැත</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>හමු නොවීය</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>අක්‍රියයි</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>පුද්ගලික</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>පොදු</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>පෝලිමේ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>නොදනී</translation>
+    </message>
 </context>
 </TS>

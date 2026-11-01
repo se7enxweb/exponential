@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ใช่ ยังไม่ได้เผยแพร่</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App หนึ่งตัว</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>เวิร์กโฟลว์ของคลังโค้ดจะเผยแพร่ บิลด์จะเขียนไฟล์เวิร์กโฟลว์ให้ ปล่อยโฟลเดอร์ว่างไว้</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>หลังบันทึกเป้าหมายที่มีคลังโค้ด GitHub และโทเค็นหรือ GitHub App แล้ว ขั้นตอนนี้จะสร้างคลังโค้ดและเปิด GitHub Pages ได้ มิฉะนั้นให้สร้างคลังโค้ดบน GitHub ก่อน คลังโค้ดว่างก็ได้</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>แบรนช์หรือ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>ตรวจสอบ DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>สร้างคลังโค้ดหากยังไม่มี</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>สร้างคลังโค้ดบน GitHub แล้วเปิด GitHub Pages ในการตั้งค่าของคลังโค้ด (Settings &gt; Pages)</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>สร้างคลังโค้ด %repo เมื่อยังไม่มี (หากเลือกไว้) เปิด GitHub Pages จากแบรนช์หรือจาก GitHub Actions ตามที่บันทึกไว้ และตั้งค่าโดเมนของคุณเองกับ HTTPS โดยใช้การตั้งค่าที่บันทึกไว้ จึงควรบันทึกการเปลี่ยนแปลงก่อน</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>รายละเอียดบน GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ป้อนโดเมนของคุณเองก่อน</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ทุก push จะถูกตรวจกับขีดจำกัดเหล่านี้ก่อน</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>สำหรับที่อยู่ https:// บน GitHub โดย App ที่ตั้งค่าไว้สำหรับการติดตั้งนี้จะลงชื่อเข้าใช้ และต้องใช้ id ของการติดตั้ง</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ให้บริการคลังโค้ดส่วนตัวเฉพาะในแผนแบบชำระเงินเท่านั้น</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: โดเมนย่อย (www.example.com) ต้องมีระเบียน CNAME ไปยัง &lt;owner&gt;.github.io ส่วนโดเมนหลัก (example.com) ต้องมีระเบียน A %ips</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>id การติดตั้งของ GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>บิลด์ Pages ล่าสุด</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ขีดจำกัดและเงื่อนไข</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>จำเป็นสำหรับ GitHub Pages ในแผนฟรี</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>บน GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>ใช้กับ GitHub App เท่านั้น: ตัวเลขท้ายที่อยู่ของการติดตั้ง App บน GitHub ส่วนตัว App เองตั้งค่าใน staticcache.ini (GitHubAppId, GitHubAppKey)</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>ส่วนตัว</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>สาธารณะ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>บันทึกเป้าหมายที่มีคลังโค้ด GitHub และโทเค็นหรือ GitHub App ก่อน</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ตั้งค่าระเบียนเหล่านี้ที่ผู้ให้บริการโดเมน:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>ตั้งค่าบน GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ของ %domain ยังไม่ชี้ไปที่ GitHub Pages</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ของ %domain ชี้ไปที่ GitHub Pages แล้ว</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>การเชื่อมต่อกับ GitHub ใช้ที่นี่ไม่ได้: %problem การเผยแพร่ไปยังแบรนช์ยังใช้ได้ตามปกติ ให้เปิด GitHub Pages ในการตั้งค่าของคลังโค้ด</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ขั้นตอนของ GitHub ใช้กับเป้าหมายนี้ไม่ได้: %problem</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>สถานะของ GitHub Pages จะแสดงเมื่อใช้โทเค็นหรือ GitHub App เป็นข้อมูลรับรอง</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ใช้โดเมนของคุณเอง</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ควรเลือกอะไร: โทเค็น คีย์ดีพลอย หรือ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>เมื่อมีคลังโค้ด GitHub และโทเค็นหรือ GitHub App ตัวช่วยสร้างจะสร้างคลังโค้ด เปิด GitHub Pages และตั้งค่าโดเมนให้คุณได้ (ขั้นตอนที่ 4)</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>กำลังบิลด์</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>บิลด์แล้ว</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>จาก GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>จากแบรนช์ %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ยังไม่มี</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ไม่พบ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ปิด</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ส่วนตัว</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>สาธารณะ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>อยู่ในคิว</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ไม่ทราบ</translation>
+    </message>
 </context>
 </TS>

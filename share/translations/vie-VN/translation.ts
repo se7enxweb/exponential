@@ -81940,5 +81940,181 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>yes, not published yet</source>
         <translation>có, chưa xuất bản</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Một GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Một workflow của kho mã xuất bản nó. Bản dựng ghi tệp workflow; hãy để trống thư mục.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Sau khi lưu một đích với kho mã GitHub và một token hoặc GitHub App, bước này có thể tạo kho mã và bật GitHub Pages. Nếu không, hãy tạo kho mã trên GitHub trước; kho trống cũng được.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Nhánh hay GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kiểm tra DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Tạo kho mã nếu chưa có</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Hãy tạo kho mã trên GitHub và bật GitHub Pages trong phần cài đặt của nó (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Tạo kho mã %repo khi chưa có (nếu được yêu cầu), bật GitHub Pages từ nhánh hoặc từ GitHub Actions như đã lưu, và đặt tên miền riêng cùng HTTPS. Dùng các cài đặt đã lưu: hãy lưu thay đổi trước.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Chi tiết trên GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Hãy nhập tên miền riêng trước.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Mỗi lần push đều được kiểm tra theo các giới hạn này trước.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Cho địa chỉ https:// trên GitHub. App được thiết lập cho bản cài đặt này sẽ đăng nhập; nó cần id cài đặt.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages chỉ phục vụ kho mã riêng tư với gói trả phí.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: tên miền con (www.example.com) cần bản ghi CNAME trỏ đến &lt;owner&gt;.github.io; tên miền gốc (example.com) cần các bản ghi A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id cài đặt của GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Bản dựng Pages gần nhất</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Giới hạn và điều khoản</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Bắt buộc cho GitHub Pages với gói miễn phí.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Trên GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Chỉ với GitHub App: con số ở cuối địa chỉ bản cài đặt của App trên GitHub. Bản thân App được đặt trong staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Riêng tư</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Công khai</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Hãy lưu đích với kho mã GitHub và một token hoặc GitHub App trước.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Đặt các bản ghi này tại nhà cung cấp tên miền:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Thiết lập trên GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS của %domain chưa trỏ đến GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS của %domain đã trỏ đến GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Tích hợp GitHub không khả dụng ở đây: %problem. Xuất bản lên nhánh vẫn hoạt động; hãy bật GitHub Pages trong cài đặt của kho mã.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Các bước GitHub không khả dụng cho đích này: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Trạng thái GitHub Pages được hiển thị khi thông tin xác thực là token hoặc GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Dùng tên miền riêng của bạn</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Chọn gì: token, khóa triển khai hay GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Với kho mã GitHub và một token hoặc GitHub App, trình hướng dẫn có thể tạo kho mã, bật GitHub Pages và đặt tên miền cho bạn (bước 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>đang dựng</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>đã dựng</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>từ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>từ nhánh %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>chưa có</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>không tìm thấy</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>tắt</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>riêng tư</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>công khai</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>đang chờ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>không rõ</translation>
+    </message>
 </context>
 </TS>

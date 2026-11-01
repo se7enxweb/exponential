@@ -81970,5 +81970,181 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>yes, not published yet</source>
         <translation>kyllä, ei vielä julkaistu</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App -sovellus</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Sen julkaisee tietovaraston työnkulku. Koonti kirjoittaa työnkulkutiedoston; jätä kansio tyhjäksi.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Kun kohde on tallennettu GitHub-tietovaraston ja pääsytunnuksen tai GitHub Appin kanssa, tämä vaihe voi luoda tietovaraston ja ottaa GitHub Pagesin käyttöön. Muuten luo tietovarasto ensin GitHubiin; tyhjä kelpaa.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Haara vai GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Tarkista DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Luo tietovarasto, jos sitä ei ole</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Luo tietovarasto GitHubiin ja ota GitHub Pages käyttöön sen asetuksissa (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Luo tietovaraston %repo, jos sitä ei ole (pyydettäessä), ottaa GitHub Pagesin käyttöön haarasta tai GitHub Actionsista tallennetun mukaan ja asettaa oman verkkotunnuksen ja HTTPS:n. Käyttää tallennettuja asetuksia: tallenna muutokset ensin.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Tiedot GitHubissa</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Anna ensin oma verkkotunnus.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Jokainen push tarkistetaan ensin näitä rajoja vasten.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>https://-osoitteelle GitHubissa. Kirjautuu sisään tälle asennukselle määritetty App; se tarvitsee asennustunnuksen.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages julkaisee yksityisen tietovaraston vain maksullisella tilauksella.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: aliverkkotunnus (www.example.com) tarvitsee CNAME-tietueen kohteeseen &lt;owner&gt;.github.io; juuriverkkotunnus (example.com) A-tietueet %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub Appin asennustunnus</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Viimeisin Pages-koonti</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Rajat ja ehdot</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Vaaditaan GitHub Pagesille ilmaisella tilauksella.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHubissa</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Vain GitHub Appin kanssa: numero Appin asennuksen osoitteen lopussa GitHubissa. Itse App määritetään tiedostossa staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Yksityinen</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Julkinen</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Tallenna kohde ensin GitHub-tietovaraston ja pääsytunnuksen tai GitHub Appin kanssa.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Aseta nämä tietueet verkkotunnuksen palveluntarjoajalle:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Määritä GitHubissa</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Verkkotunnuksen %domain DNS ei vielä osoita GitHub Pagesiin.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Verkkotunnuksen %domain DNS osoittaa GitHub Pagesiin.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-integraatio ei ole käytettävissä täällä: %problem. Julkaisu haaraan toimii silti; ota GitHub Pages käyttöön tietovaraston asetuksissa.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub-vaiheet eivät ole käytettävissä tälle kohteelle: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pagesin tila näytetään, kun tunnistautumisena on pääsytunnus tai GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Käytä omaa verkkotunnusta</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Mikä valita: pääsytunnus, käyttöönottoavain vai GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub-tietovaraston ja pääsytunnuksen tai GitHub Appin avulla ohjattu toiminto voi luoda tietovaraston, ottaa GitHub Pagesin käyttöön ja asettaa verkkotunnuksen puolestasi (vaihe 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>koostetaan</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>koostettu</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actionsista</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>haarasta %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ei vielä yhtään</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ei löytynyt</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pois päältä</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>yksityinen</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>julkinen</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>jonossa</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tuntematon</translation>
+    </message>
 </context>
 </TS>

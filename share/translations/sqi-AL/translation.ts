@@ -81970,5 +81970,181 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>yes, not published yet</source>
         <translation>po, ende i papublikuar</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Një GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>E publikon një rrjedhë pune e depos. Ndërtimi shkruan skedarin e rrjedhës së punës; lëreni dosjen bosh.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Pasi të ruani një destinacion me një depo GitHub dhe një token ose GitHub App, ky hap mund ta krijojë depon dhe të aktivizojë GitHub Pages. Përndryshe krijoni fillimisht depon në GitHub; mjafton një bosh.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Degë apo GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kontrollo DNS-në</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Krijo depon nëse nuk ekziston</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Krijoni depon në GitHub dhe aktivizoni GitHub Pages te cilësimet e saj (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Krijon depon %repo kur mungon (kur kërkohet), aktivizon GitHub Pages nga dega ose nga GitHub Actions siç është ruajtur dhe cakton domenin e personalizuar dhe HTTPS. Përdor cilësimet e ruajtura: ruani fillimisht ndryshimet.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Hollësi në GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Jepni fillimisht domenin e personalizuar.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Çdo dërgim kontrollohet fillimisht kundrejt këtyre kufijve.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Për një adresë https:// në GitHub. Hyn App-i i konfiguruar për këtë instalim; i nevojitet id-ja e instalimit.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages shërben një depo private vetëm me një plan me pagesë.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: një nëndomen (www.example.com) ka nevojë për një regjistrim CNAME drejt &lt;owner&gt;.github.io; një domen rrënjë (example.com) për regjistrimet A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id-ja e instalimit të GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ndërtimi i fundit i Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Kufij dhe kushte</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>E nevojshme për GitHub Pages me një plan falas.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Në GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Vetëm me një GitHub App: numri në fund të adresës së instalimit të App-it në GitHub. Vetë App-i caktohet në staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Private</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Publike</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Ruani fillimisht destinacionin me një depo GitHub dhe një token ose GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Caktoni këto regjistrime te ofruesi i domenit:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Konfiguro në GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS-ja e %domain nuk drejton ende te GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS-ja e %domain drejton te GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Integrimi i GitHub nuk është i disponueshëm këtu: %problem. Publikimi në degë funksionon njësoj; aktivizoni GitHub Pages te cilësimet e depos.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Hapat e GitHub nuk janë të disponueshëm për këtë destinacion: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Gjendja e GitHub Pages shfaqet me një token ose GitHub App si kredencial.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Përdorni domenin tuaj</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Çfarë të zgjidhni: token, çelës vendosjeje apo GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Me një depo GitHub dhe një token ose GitHub App, magjistari mund ta krijojë depon, të aktivizojë GitHub Pages dhe të caktojë domenin për ju (hapi 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>po ndërtohet</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>u ndërtua</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>nga GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>nga dega %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ende asnjë</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nuk u gjet</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>joaktive</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>private</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>publike</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>në radhë</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>e panjohur</translation>
+    </message>
 </context>
 </TS>

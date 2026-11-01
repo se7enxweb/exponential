@@ -81940,5 +81940,181 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>yes, not published yet</source>
         <translation>hawa, entek neşir edilmedi</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Ony ammaryň iş akymy neşir edýär. Gurnama iş akymynyň faýlyny ýazýar; bukjany boş goýuň.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Maksat GitHub ammary we token ýa-da GitHub App bilen ýatda saklanandan soň, bu ädim ammary döredip, GitHub Pages-i açyp biler. Bolmasa, ilki GitHub-da ammary dörediň; boş ammar hem bolýar.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Şaha ýa-da GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS-i barla</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ammar ýok bolsa, ony döret</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub-da ammary dörediň we onuň sazlamalarynda GitHub Pages-i açyň (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo ammary ýok bolsa, ony döredýär (soralan bolsa), GitHub Pages-i ýatda saklanyşy ýaly şahadan ýa-da GitHub Actions-dan açýar, hususy domeni we HTTPS-i sazlaýar. Ýatda saklanan sazlamalary ulanýar: ilki üýtgeşmeleri ýatda saklaň.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub-daky jikme-jiklikler</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ilki hususy domeni giriziň.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Her push ilki bu çäklere görä barlanýar.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-daky https:// salgy üçin. Bu gurnama üçin sazlanan App girýär; oňa gurnamanyň id-si gerek.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages hususy ammary diňe tölegli meýilnamada hödürleýär.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomen (www.example.com) üçin &lt;owner&gt;.github.io-a CNAME ýazgysy gerek; esasy domen (example.com) üçin A ýazgylary %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-yň gurnama id-si</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Soňky Pages gurnamasy</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Çäkler we şertler</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Mugt meýilnamada GitHub Pages üçin gerek.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-da</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Diňe GitHub App bilen: GitHub-da App gurnamasynyň salgysynyň ahyryndaky san. App-yň özi staticcache.ini-de sazlanýar (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Hususy</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Açyk</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Ilki maksady GitHub ammary we token ýa-da GitHub App bilen ýatda saklaň.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Bu ýazgylary domeniň üpjünçisinde sazlaň:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub-da sazla</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain domeniniň DNS-i entek GitHub Pages-e görkezmeýär.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain domeniniň DNS-i GitHub Pages-e görkezýär.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub integrasiýasy bu ýerde elýeterli däl: %problem. Şaha neşir etmek şonda-da işleýär; ammaryň sazlamalarynda GitHub Pages-i açyň.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub ädimleri bu maksat üçin elýeterli däl: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages-iň ýagdaýy giriş maglumaty hökmünde token ýa-da GitHub App bolanda görkezilýär.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Öz domeniňizi ulanyň</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Haýsyny saýlamaly: token, ýerleşdiriş açary ýa-da GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub ammary we token ýa-da GitHub App bilen ussat siziň üçin ammary döredip, GitHub Pages-i açyp we domeni sazlap biler (4-nji ädim).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>gurnalýar</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>gurnaldy</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-dan</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch şahasyndan</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>entek ýok</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tapylmady</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>öçük</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>hususy</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>açyk</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>nobatda</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>näbelli</translation>
+    </message>
 </context>
 </TS>

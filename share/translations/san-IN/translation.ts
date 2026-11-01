@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>आम्, अद्यापि न प्रकाशितम्</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>एकं GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>भण्डारस्य कार्यप्रवाहः (workflow) तत् प्रकाशयति। निर्माणं कार्यप्रवाहसञ्चिकां लिखति; स्यूतं रिक्तं त्यजतु।</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub-भण्डारेण टोकन्-अथवा-GitHub App-सहितं लक्ष्यं रक्षितं चेत्, अयं चरणः भण्डारं रचयितुं GitHub Pages सक्रियं कर्तुं च शक्नोति। अन्यथा प्रथमं GitHub इत्यत्र भण्डारं रचयतु; रिक्तः भण्डारः अपि पर्याप्तः।</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>शाखा वा GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS परीक्षताम्</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>भण्डारः नास्ति चेत् तं रचयतु</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub इत्यत्र भण्डारं रचयित्वा तस्य विन्यासेषु GitHub Pages सक्रियं करोतु (Settings &gt; Pages)।</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>भण्डारः %repo नास्ति चेत् तं रचयति (याचिते सति), रक्षितानुसारं शाखातः अथवा GitHub Actions-तः GitHub Pages सक्रियं करोति, स्वकीयं डोमेन् HTTPS च स्थापयति। रक्षितान् विन्यासान् उपयुङ्क्ते: प्रथमं परिवर्तनानि रक्षतु।</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub इत्यत्र विवरणानि</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>प्रथमं स्वकीयं डोमेन् लिखतु।</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>प्रत्येकं push प्रथमम् एतासां सीमानां विरुद्धं परीक्ष्यते।</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub इत्यत्र https:// सङ्केताय। अस्याः स्थापनायाः कृते सज्जीकृतं App प्रविशति; तस्य स्थापना-id आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages निजभण्डारं केवलं सशुल्कयोजनायाम् एव प्रददाति।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: उपडोमेन् (www.example.com) इत्यस्य &lt;owner&gt;.github.io प्रति CNAME अभिलेखः आवश्यकः; मूलडोमेन् (example.com) इत्यस्य A अभिलेखाः %ips।</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App इत्यस्य स्थापना-id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>अन्तिमं Pages निर्माणम्</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>सीमाः नियमाः च</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>निःशुल्कयोजनायां GitHub Pages कृते आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub इत्यत्र</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>केवलं GitHub App सह: GitHub इत्यत्र App-स्थापनायाः सङ्केतस्य अन्ते स्थिता सङ्ख्या। App स्वयं staticcache.ini इत्यत्र स्थाप्यते (GitHubAppId, GitHubAppKey)।</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>निजम्</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>सार्वजनिकम्</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>प्रथमं GitHub-भण्डारेण टोकन्-अथवा-GitHub App-सहितं लक्ष्यं रक्षतु।</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>डोमेन्-प्रदातुः समीपे एतान् अभिलेखान् स्थापयतु:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub इत्यत्र सज्जीकरोतु</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain इत्यस्य DNS अद्यापि GitHub Pages प्रति न निर्दिशति।</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain इत्यस्य DNS GitHub Pages प्रति निर्दिशति।</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-संयोजनम् अत्र उपलब्धं नास्ति: %problem। शाखायां प्रकाशनं तथापि कार्यं करोति; भण्डारस्य विन्यासेषु GitHub Pages सक्रियं करोतु।</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>अस्य लक्ष्यस्य कृते GitHub-चरणाः उपलब्धाः न सन्ति: %problem।</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>प्रमाणपत्रत्वेन टोकन् अथवा GitHub App अस्ति चेत् GitHub Pages इत्यस्य स्थितिः दर्श्यते।</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>स्वकीयं डोमेन् उपयुङ्क्ताम्</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>किं वरणीयम्: टोकन्, नियोजनकुञ्जिका अथवा GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub-भण्डारेण टोकन्-अथवा-GitHub App-सहितं मार्गदर्शकः भवतः कृते भण्डारं रचयितुं, GitHub Pages सक्रियं कर्तुं, डोमेन् स्थापयितुं च शक्नोति (चरणः 4)।</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>निर्मीयते</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>निर्मितम्</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-तः</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>शाखातः %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अद्यापि किमपि न</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>न लब्धम्</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>निष्क्रियम्</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>निजम्</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>सार्वजनिकम्</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>पङ्क्तौ प्रतीक्षते</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञातम्</translation>
+    </message>
 </context>
 </TS>

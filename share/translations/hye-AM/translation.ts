@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>այո, դեռ չհրապարակված</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App հավելված</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Այն հրապարակում է պահոցի workflow-ը։ Կառուցումը գրում է workflow ֆայլը. թողեք պանակը դատարկ։</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub պահոցով և թոքենով կամ GitHub App-ով թիրախը պահելուց հետո այս քայլը կարող է ստեղծել պահոցը և միացնել GitHub Pages-ը։ Հակառակ դեպքում նախ ստեղծեք պահոցը GitHub-ում. դատարկն էլ է հարմար։</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Ճյո՞ւղ, թե GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Ստուգել DNS-ը</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ստեղծել պահոցը, եթե այն գոյություն չունի</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Ստեղծեք պահոցը GitHub-ում և միացրեք GitHub Pages-ը դրա կարգավորումներում (Settings &gt; Pages)։</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ստեղծում է %repo պահոցը, եթե այն չկա (եթե պահանջված է), միացնում է GitHub Pages-ը ճյուղից կամ GitHub Actions-ից՝ ըստ պահվածի, և սահմանում է սեփական դոմենը և HTTPS-ը։ Օգտագործում է պահված կարգավորումները. նախ պահեք փոփոխությունները։</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Մանրամասներ GitHub-ում</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Նախ մուտքագրեք սեփական դոմենը։</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Յուրաքանչյուր push նախ ստուգվում է այս սահմանափակումներով։</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-ում https:// հասցեի համար։ Մուտք է գործում այս տեղադրման համար կարգավորված App-ը. նրան անհրաժեշտ է տեղադրման id-ն։</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages-ը մասնավոր պահոց սպասարկում է միայն վճարովի պլանով։</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages. ենթադոմենին (www.example.com) անհրաժեշտ է CNAME գրառում դեպի &lt;owner&gt;.github.io, իսկ հիմնական դոմենին (example.com)՝ A գրառումներ %ips։</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-ի տեղադրման id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages-ի վերջին կառուցումը</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Սահմանափակումներ և պայմաններ</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Անհրաժեշտ է GitHub Pages-ի համար անվճար պլանով։</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-ում</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Միայն GitHub App-ով. GitHub-ում App-ի տեղադրման հասցեի վերջում գտնվող թիվը։ App-ն ինքը սահմանվում է staticcache.ini-ում (GitHubAppId, GitHubAppKey)։</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Մասնավոր</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Հանրային</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Նախ պահեք թիրախը GitHub պահոցով և թոքենով կամ GitHub App-ով։</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Սահմանեք այս գրառումները դոմենի մատակարարի մոտ.</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Կարգավորել GitHub-ում</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain-ի DNS-ը դեռ չի ուղղված GitHub Pages-ին։</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain-ի DNS-ն ուղղված է GitHub Pages-ին։</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-ի ինտեգրումն այստեղ հասանելի չէ. %problem։ Ճյուղում հրապարակումը, միևնույն է, աշխատում է. միացրեք GitHub Pages-ը պահոցի կարգավորումներում։</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub-ի քայլերը հասանելի չեն այս թիրախի համար. %problem։</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages-ի վիճակը ցուցադրվում է, երբ մուտքի տվյալները թոքեն կամ GitHub App են։</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Օգտագործել սեփական դոմենը</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ինչն ընտրել. թոքեն, տեղակայման բանալի, թե GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub պահոցով և թոքենով կամ GitHub App-ով վիզարդը կարող է ձեր փոխարեն ստեղծել պահոցը, միացնել GitHub Pages-ը և սահմանել դոմենը (քայլ 4)։</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>կառուցվում է</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>կառուցված է</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-ից</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch ճյուղից</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>դեռ չկա</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>չի գտնվել</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>անջատված</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>մասնավոր</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>հանրային</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>հերթում</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>անհայտ</translation>
+    </message>
 </context>
 </TS>

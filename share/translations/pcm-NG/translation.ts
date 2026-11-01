@@ -81948,5 +81948,181 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>yes, not published yet</source>
         <translation>yes, e never publish</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>One GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>One workflow of di repository dey publish am. Di build dey write di workflow file; leave di folder empty.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>After you save target wey get GitHub repository and token or GitHub App, dis step fit create di repository and on GitHub Pages. If no be so, first create di repository for GitHub; empty one dey fine.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Di branch or GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Check di DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Create di repository if e no dey</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Create di repository for GitHub and on GitHub Pages for im settings (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>E go create di repository %repo if e no dey (if you ask), on GitHub Pages from di branch or from GitHub Actions as you save am, and set di domain wey be your own plus HTTPS. E dey use di settings wey you don save: first save di changes.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Details for GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>First put di domain wey be your own.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>We dey first check every push against dis limit dem.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>For https:// address for GitHub. Di App wey dem set up for dis installation na im dey sign in; e need di installation id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages dey serve private repository only if you dey pay for plan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) need CNAME record go &lt;owner&gt;.github.io; apex domain (example.com) need di A records %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Di installation id of di GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Di last Pages build</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Di limit dem and di terms</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>E dey needed for GitHub Pages for free plan.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>For GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Only with GitHub App: di number for di end of di address of di App installation for GitHub. Di App itself dey set for staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>No be for everybody</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>For everybody</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>First save di target with GitHub repository and token or GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Set dis records for di company wey give you di domain:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Set am up for GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Di DNS of %domain never point to GitHub Pages yet.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Di DNS of %domain dey point to GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Di GitHub integration no dey here: %problem. To publish to di branch still dey work; on GitHub Pages for di repository settings.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Di GitHub steps no dey for dis target: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Di state of GitHub Pages dey show when token or GitHub App na how e dey sign in.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Make you use your own domain</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Which one you go choose: token, deploy key or GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>With GitHub repository and token or GitHub App, di wizard fit create di repository, on GitHub Pages and set di domain for you (step 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>e dey build</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>e don build</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>na from GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>from di branch %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nothing yet</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>we no see am</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>e don off</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>no be for everybody</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>for everybody</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>e dey wait for line</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nobody know</translation>
+    </message>
 </context>
 </TS>

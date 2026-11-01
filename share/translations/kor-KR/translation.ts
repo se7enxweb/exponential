@@ -81970,5 +81970,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>예, 아직 게시되지 않음</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>저장소의 워크플로가 게시합니다. 빌드가 워크플로 파일을 작성하므로 폴더는 비워 두세요.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub 저장소와 토큰 또는 GitHub App으로 대상을 저장한 후에는 이 단계에서 저장소를 만들고 GitHub Pages를 켤 수 있습니다. 그렇지 않으면 먼저 GitHub에서 저장소를 만드세요. 빈 저장소도 괜찮습니다.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>브랜치 또는 GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS 확인</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>저장소가 없으면 만들기</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub에서 저장소를 만들고 저장소 설정에서 GitHub Pages를 켜세요(Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>저장소 %repo가 없으면 만들고(요청한 경우), 저장된 대로 브랜치 또는 GitHub Actions에서 GitHub Pages를 켜며, 사용자 지정 도메인과 HTTPS를 설정합니다. 저장된 설정을 사용하므로 먼저 변경 사항을 저장하세요.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub의 세부 정보</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>먼저 사용자 지정 도메인을 입력하세요.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>모든 푸시는 먼저 이 제한에 따라 확인됩니다.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub의 https:// 주소용입니다. 이 설치용으로 설정된 App이 로그인하며, 설치 ID가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages는 유료 플랜에서만 비공개 저장소를 제공합니다.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: 하위 도메인(www.example.com)에는 &lt;owner&gt;.github.io를 가리키는 CNAME 레코드가, 루트 도메인(example.com)에는 A 레코드 %ips가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App의 설치 ID</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>마지막 Pages 빌드</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>제한 및 약관</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>무료 플랜에서 GitHub Pages를 사용하려면 필요합니다.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub에서</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App에서만: GitHub에 있는 App 설치 주소 끝의 숫자입니다. App 자체는 staticcache.ini에서 설정합니다(GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>비공개</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>공개</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>먼저 GitHub 저장소와 토큰 또는 GitHub App으로 대상을 저장하세요.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>도메인 제공업체에서 다음 레코드를 설정하세요:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub에서 설정</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain의 DNS가 아직 GitHub Pages를 가리키지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain의 DNS가 GitHub Pages를 가리킵니다.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>여기에서는 GitHub 통합을 사용할 수 없습니다: %problem. 브랜치로 게시하는 것은 그대로 작동하니 저장소 설정에서 GitHub Pages를 켜세요.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>이 대상에는 GitHub 단계를 사용할 수 없습니다: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>자격 증명이 토큰 또는 GitHub App이면 GitHub Pages 상태가 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>자체 도메인 사용</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>선택 방법: 토큰, 배포 키 또는 GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub 저장소와 토큰 또는 GitHub App이 있으면 마법사가 저장소를 만들고 GitHub Pages를 켜고 도메인을 설정해 줍니다(4단계).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>빌드 중</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>빌드됨</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions에서</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>브랜치 %branch에서</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>아직 없음</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>찾을 수 없음</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>꺼짐</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>비공개</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>공개</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>대기 중</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>알 수 없음</translation>
+    </message>
 </context>
 </TS>

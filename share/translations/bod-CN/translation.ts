@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ཡིན། ད་དུང་འགྲེམས་སྤེལ་མ་བྱས།</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App ཞིག</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>མཛོད་ཁང་གི་ལས་རིམ་ཞིག་གིས་དེ་འགྲེམས་སྤེལ་བྱེད། བཟོ་སྐྲུན་གྱིས་ལས་རིམ་ཡིག་ཆ་འབྲི། ཡིག་ཁུག་སྟོང་པར་ཞོག</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>དམིགས་ཡུལ་ཞིག་ GitHub མཛོད་ཁང་དང་ལག་ཁྱེར་རམ་ GitHub App དང་མཉམ་དུ་ཉར་ཚགས་བྱས་རྗེས། གོམ་རིམ་འདིས་མཛོད་ཁང་གསར་བཟོ་དང་ GitHub Pages ཁ་ཕྱེ་ཐུབ། དེ་མིན་ GitHub ཐོག་སྔོན་ལ་མཛོད་ཁང་གསར་བཟོ་བྱོས། སྟོང་པ་ཡིན་ཡང་ཆོག</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ཡན་ལག་གམ་ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS ཞིབ་བཤེར་བྱོས།</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>མཛོད་ཁང་མེད་ན་གསར་བཟོ་བྱོས།</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub ཐོག་མཛོད་ཁང་གསར་བཟོ་བྱས་ནས་དེའི་སྒྲིག་འགོད་ནང་ GitHub Pages ཁ་ཕྱེ། (Settings &gt; Pages)</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>མཛོད་ཁང་ %repo མེད་ཚེ་གསར་བཟོ་བྱེད། (རེ་བ་ཞུས་ཚེ) ཉར་ཚགས་ལྟར་ཡན་ལག་གམ་ GitHub Actions ནས་ GitHub Pages ཁ་ཕྱེ་བ་དང་། རང་གི་ཁྱབ་ཁོངས་དང་ HTTPS སྒྲིག་འགོད་བྱེད། ཉར་ཚགས་བྱས་པའི་སྒྲིག་འགོད་བེད་སྤྱོད་བྱེད། བཟོ་བཅོས་སྔོན་ལ་ཉར་ཚགས་བྱོས།</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub ཐོག་གི་ཞིབ་ཕྲ།</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>སྔོན་ལ་རང་གི་ཁྱབ་ཁོངས་ནང་འཇུག་བྱོས།</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>སྐྱེལ་བ་རེ་རེ་སྔོན་ལ་ཚད་བཀག་འདི་དག་ལ་གཞིགས་ནས་ཞིབ་བཤེར་བྱེད།</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub ཐོག་གི་ https:// ཁ་བྱང་ཞིག་ཆེད། སྒྲིག་འཇུག་འདིའི་ཆེད་དུ་སྒྲིག་པའི་ App ཡིས་ནང་འཛུལ་བྱེད། དེར་སྒྲིག་འཇུག་གི་ཨང་རྟགས་དགོས།</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ཡིས་སྒེར་གྱི་མཛོད་ཁང་ལ་རིན་འཇལ་འཆར་གཞི་ཁོ་ནའི་ཐོག་མཁོ་སྤྲོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ཡན་ཁོངས (www.example.com) ལ་ &lt;owner&gt;.github.io ལ་ CNAME ཟིན་ཐོ་དགོས། རྩ་བའི་ཁྱབ་ཁོངས (example.com) ལ་ A ཟིན་ཐོ་ %ips དགོས།</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App ཡི་སྒྲིག་འཇུག་ཨང་རྟགས།</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages ཡི་བཟོ་སྐྲུན་མཐའ་མ།</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ཚད་བཀག་དང་ཆ་རྐྱེན།</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>རིན་མེད་འཆར་གཞིའི་ཐོག་ GitHub Pages ལ་དགོས།</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub ཐོག</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App ཁོ་ནས། GitHub ཐོག་ App ཡི་སྒྲིག་འཇུག་གི་ཁ་བྱང་མཇུག་གི་ཨང་གྲངས། App རང་ཉིད་ staticcache.ini ནང་སྒྲིག་འགོད་བྱེད། (GitHubAppId, GitHubAppKey)</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>སྒེར།</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>སྤྱི།</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>སྔོན་ལ་དམིགས་ཡུལ་དེ་ GitHub མཛོད་ཁང་དང་ལག་ཁྱེར་རམ་ GitHub App དང་མཉམ་དུ་ཉར་ཚགས་བྱོས།</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ཁྱབ་ཁོངས་མཁོ་སྤྲོད་པའི་སར་ཟིན་ཐོ་འདི་དག་སྒྲིག་འགོད་བྱོས།:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub ཐོག་སྒྲིག་འགོད།</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain ཡི་ DNS ད་དུང་ GitHub Pages ལ་ཁ་ཕྱོགས་མེད།</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain ཡི་ DNS GitHub Pages ལ་ཁ་ཕྱོགས་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub མཉམ་འབྲེལ་འདིར་མེད། %problem. ཡན་ལག་ལ་འགྲེམས་སྤེལ་ད་དུང་ལས་ཀ་བྱེད། མཛོད་ཁང་གི་སྒྲིག་འགོད་ནང་ GitHub Pages ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>དམིགས་ཡུལ་འདིའི་ཆེད་དུ་ GitHub གོམ་རིམ་མེད། %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages ཡི་གནས་སྟངས་ནི་ལག་ཁྱེར་རམ་ GitHub App ངོ་སྤྲོད་ལག་ཁྱེར་དུ་ཡོད་ཚེ་མངོན།</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>རང་གི་ཁྱབ་ཁོངས་བེད་སྤྱོད།</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>གང་འདེམས་དགོས། ལག་ཁྱེར། སྤེལ་འཇུག་ལྡེ་མིག་གམ་ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub མཛོད་ཁང་དང་ལག་ཁྱེར་རམ་ GitHub App ཡོད་ན། ལམ་སྟོན་ཆས་ཀྱིས་མཛོད་ཁང་གསར་བཟོ་དང་ GitHub Pages ཁ་ཕྱེ་བ། ཁྱབ་ཁོངས་སྒྲིག་འགོད་བཅས་ཁྱེད་ཆེད་བྱེད་ཐུབ། (གོམ་རིམ 4)</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>བཟོ་སྐྲུན་བྱེད་བཞིན།</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>བཟོ་སྐྲུན་ཟིན།</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions ནས།</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ཡན་ལག %branch ནས།</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ད་དུང་མེད།</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>རྙེད་མ་བྱུང་།</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>སྒོ་བརྒྱབ།</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>སྒེར།</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>སྤྱི།</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>སྒུག་ཐོའི་ནང་།</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>མི་ཤེས།</translation>
+    </message>
 </context>
 </TS>

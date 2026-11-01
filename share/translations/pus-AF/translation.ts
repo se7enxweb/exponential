@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>هو، لا نه دی خپور شوی</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>یو GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>د زېرمتون یو کاري بهیر یې خپروي. جوړونه د کاري بهیر فایل لیکي؛ فولډر تش پرېږدئ.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>د GitHub زېرمتون او ټوکن یا GitHub App سره د موخې له ساتلو وروسته، دا ګام کولی شي زېرمتون جوړ کړي او GitHub Pages چالان کړي. که نه، لومړی په GitHub کې زېرمتون جوړ کړئ؛ تش هم سم دی.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>څانګه که GitHub Actions؟</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS وڅېړئ</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>که زېرمتون نه وي، جوړ یې کړئ</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>په GitHub کې زېرمتون جوړ کړئ او د هغه په امستنو کې GitHub Pages چالان کړئ (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>زېرمتون %repo جوړوي کله چې نه وي (کله چې وغوښتل شي)، GitHub Pages له څانګې یا له GitHub Actions څخه لکه څنګه چې ساتل شوی چالانوي، او ځانګړی ډومېن او HTTPS ټاکي. ساتلې امستنې کاروي: لومړی بدلونونه وساتئ.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>په GitHub کې جزییات</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>لومړی ځانګړی ډومېن ولیکئ.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>هر پش لومړی د دې حدونو پر وړاندې څېړل کېږي.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>په GitHub کې د https:// پتې لپاره. د دې نصب لپاره جوړ شوی App ننوځي؛ هغه د نصب id ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages شخصي زېرمتون یوازې په تادیه شوي پلان کې وړاندې کوي.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: فرعي ډومېن (www.example.com) ته د &lt;owner&gt;.github.io په لور CNAME ریکارډ اړین دی؛ اصلي ډومېن (example.com) ته A ریکارډونه %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>د GitHub App د نصب id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>د Pages وروستۍ جوړونه</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>حدونه او شرطونه</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>په وړیا پلان کې د GitHub Pages لپاره اړین.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>په GitHub کې</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>یوازې د GitHub App سره: په GitHub کې د App د نصب د پتې په پای کې شمېره. App پخپله په staticcache.ini کې ټاکل کېږي (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>شخصي</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>عامه</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>لومړی موخه د GitHub زېرمتون او ټوکن یا GitHub App سره وساتئ.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>دا ریکارډونه د ډومېن له برابرونکي سره وټاکئ:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>په GitHub کې جوړول</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>د %domain DNS لا تر اوسه GitHub Pages ته اشاره نه کوي.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>د %domain DNS GitHub Pages ته اشاره کوي.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>د GitHub یوځای کېدل دلته شتون نه لري: %problem. څانګې ته خپرول بیا هم کار کوي؛ د زېرمتون په امستنو کې GitHub Pages چالان کړئ.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>د دې موخې لپاره د GitHub ګامونه شتون نه لري: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>د GitHub Pages حالت هغه وخت ښودل کېږي چې ټوکن یا GitHub App د ننوتلو اسناد وي.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>خپل ډومېن وکاروئ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>کوم یو وټاکئ: ټوکن، ډیپلای کیلي یا GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>د GitHub زېرمتون او ټوکن یا GitHub App سره، ویزارډ کولی شي ستاسو لپاره زېرمتون جوړ کړي، GitHub Pages چالان کړي او ډومېن وټاکي (ګام 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>جوړېږي</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>جوړ شو</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>له GitHub Actions څخه</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>له څانګې %branch څخه</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>تر اوسه هېڅ</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ونه موندل شو</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>شخصي</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>عامه</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>په کتار کې</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
 </context>
 </TS>

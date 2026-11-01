@@ -81940,5 +81940,181 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>yes, not published yet</source>
         <translation>arí, manaraq lluqsichisqa</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Huk GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Waqaychanapa huk workflow-nin lluqsichin. Hatarichisqa workflow willañiqita qillqan; carpetata ch'usaqta saqiy.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Chayanata GitHub waqaychanawan, tokenwan utaq GitHub App-wan waqaychaspa, kay ruray waqaychanata ruranman GitHub Pages-ta kichanmanpas. Mana chayqa, ñawpaqta GitHub-pi waqaychanata ruray; ch'usaq kaptinpas allinmi.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>¿K'allmachu utaq GitHub Actions-chu?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS-ta qhaway</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Waqaychanata ruray mana kaptinqa</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub-pi waqaychanata ruray, hinaspa churakuyninkunapi GitHub Pages-ta kichay (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo waqaychanata ruran mana kaptinqa (mañakuptinqa), GitHub Pages-ta kichan k'allmamanta utaq GitHub Actions-manta waqaychasqa hina, kikin dominiotawan HTTPS-tawan churan. Waqaychasqa churakuykunata llamk'achin: ñawpaqta tikraykunata waqaychay.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Aswan willakuykuna GitHub-pi</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ñawpaqta kikin dominiota qillqay.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Sapa push ñawpaqta kay saywakunawan qhawasqa kan.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-pi huk https:// tiyanapaq. Kay churasqapaq allichasqa App yaykun; churasqa id-ta munan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages pakasqa waqaychanata qullqi paganapaq planpi chayllam qun.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: huk subdominio (www.example.com) &lt;owner&gt;.github.io-man CNAME qillqasqata munan; huk apex dominio (example.com) A qillqasqakunata %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-pa churasqa id-nin</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Qhipa Pages hatarichisqa</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Saywakuna kamachikunapas</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>GitHub Pages-paq mana qullqiyuq planpi necesitakun.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-pi</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App-wan chayllam: GitHub-pi App-pa churasqan tiyanapa tukukuyninpi yupay. App kikinqa staticcache.ini-pi churakun (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Pakasqa</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Llapanpaq</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Ñawpaqta chayanata GitHub waqaychanawan, tokenwan utaq GitHub App-wan waqaychay.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Kay qillqasqakunata dominio quqpa kaqninpi churay:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub-pi allichay</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain-pa DNS-nin manaraq GitHub Pages-man rikuchinchu.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain-pa DNS-nin GitHub Pages-man rikuchin.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub tinkuy kaypi mana kanchu: %problem. K'allmaman lluqsichiyqa llamk'allantaq; waqaychanapa churakuyninkunapi GitHub Pages-ta kichay.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub rurakunaqa kay chayanapaq mana kanchu: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages-pa kayninqa rikuchikun token utaq GitHub App yaykunapaq willakuy kaptin.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Kikin dominioykita llamk'achiy</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Imata akllana: token, churanapaq llave utaq GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub waqaychanawan, tokenwan utaq GitHub App-wan, pusaqqa qampaq waqaychanata ruranman, GitHub Pages-ta kichanman dominiotapas churanman (ruray 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>hatarichikushan</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>hatarichisqa</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-manta</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch k'allmamanta</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>manaraq kanchu</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>mana tarisqachu</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wañusqa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>pakasqa</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>llapanpaq</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>suyashan</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>mana yachasqa</translation>
+    </message>
 </context>
 </TS>

@@ -81940,5 +81940,181 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>yes, not published yet</source>
         <translation>bai, oraindik argitaratu gabea</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App bat</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Biltegiko lan-fluxu batek argitaratzen du. Konpilazioak lan-fluxuaren fitxategia idazten du; utzi karpeta hutsik.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Helburu bat GitHub biltegi batekin eta token edo GitHub App batekin gorde ondoren, urrats honek biltegia sor dezake eta GitHub Pages aktiba dezake. Bestela, sortu lehenik biltegia GitHub-en; hutsik egon daiteke.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Adarra ala GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Egiaztatu DNSa</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Sortu biltegia ez badago</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Sortu biltegia GitHub-en eta aktibatu GitHub Pages haren ezarpenetan (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo biltegia sortzen du falta bada (eskatzen bada), GitHub Pages aktibatzen du adarretik edo GitHub Actions-etik gordetakoaren arabera, eta domeinu propioa eta HTTPS ezartzen ditu. Gordetako ezarpenak erabiltzen ditu: gorde lehenik aldaketak.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Xehetasunak GitHub-en</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Idatzi lehenik domeinu propioa.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Push bakoitza muga hauen aurka egiaztatzen da lehenik.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-eko https:// helbide baterako. Instalazio honetarako konfiguratutako App-ak hasten du saioa; instalazioaren IDa behar du.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages-ek biltegi pribatua ordainpeko plan batean bakarrik zerbitzatzen du.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: azpidomeinu batek (www.example.com) &lt;owner&gt;.github.io-rako CNAME erregistro bat behar du; domeinu nagusi batek (example.com) A erregistro hauek: %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-aren instalazio IDa</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages-en azken konpilazioa</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Mugak eta baldintzak</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Beharrezkoa GitHub Pages doako plan batean erabiltzeko.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-en</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App batekin bakarrik: App-aren GitHub-eko instalazioaren helbidearen amaierako zenbakia. App bera staticcache.ini fitxategian ezartzen da (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Pribatua</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Publikoa</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Gorde lehenik helburua GitHub biltegi batekin eta token edo GitHub App batekin.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Ezarri erregistro hauek domeinuaren hornitzailean:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Konfiguratu GitHub-en</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain domeinuaren DNSak ez du oraindik GitHub Pages-era seinalatzen.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain domeinuaren DNSak GitHub Pages-era seinalatzen du.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub integrazioa ez dago erabilgarri hemen: %problem. Adarrean argitaratzeak berdin funtzionatzen du; aktibatu GitHub Pages biltegiaren ezarpenetan.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub urratsak ez daude erabilgarri helburu honetarako: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages-en egoera token edo GitHub App bat kredentzial gisa dagoenean erakusten da.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Erabili zure domeinu propioa</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Zein aukeratu: tokena, hedapen-gakoa ala GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub biltegi batekin eta token edo GitHub App batekin, morroiak biltegia sor dezake, GitHub Pages aktiba dezake eta domeinua ezar dezake zuretzat (4. urratsa).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>konpilatzen</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>konpilatuta</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-etik</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch adarretik</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>oraindik bat ere ez</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ez da aurkitu</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desaktibatuta</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>pribatua</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>publikoa</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ilaran</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ezezaguna</translation>
+    </message>
 </context>
 </TS>

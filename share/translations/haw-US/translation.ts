@@ -81940,5 +81940,181 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>yes, not published yet</source>
         <translation>ʻae, ʻaʻole naʻe i hoʻopuka ʻia</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>He GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Hoʻopuka kekahi kaʻina hana o ka waihona iā ia. Kākau ke kūkulu ʻana i ka faila kaʻina hana; e waiho hakahaka i ka pūʻulu faila.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Ma hope o ka mālama ʻana i kekahi pahuhopu me kekahi waihona GitHub a me kekahi hōʻailona komo a i ʻole GitHub App, hiki i kēia pae ke hana i ka waihona a hoʻā i GitHub Pages. Inā ʻaʻole, e hana mua i ka waihona ma GitHub; maikaʻi ka waihona hakahaka.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Lālā a i ʻole GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>E nānā i ka DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>E hana i ka waihona inā ʻaʻohe</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>E hana i ka waihona ma GitHub a e hoʻā i GitHub Pages ma kona mau hoʻonohonoho (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Hana i ka waihona %repo inā nalo (ke noi ʻia), hoʻā i GitHub Pages mai ka lālā a i ʻole mai GitHub Actions e like me ka mea i mālama ʻia, a hoʻonoho i ke kāʻei ponoʻī a me HTTPS. Hoʻohana ia i nā hoʻonohonoho i mālama ʻia: e mālama mua i nā loli.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Nā kikoʻī ma GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>E hoʻokomo mua i ke kāʻei ponoʻī.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Nānā mua ʻia kēlā me kēia push me kēia mau palena.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>No ka helu wahi https:// ma GitHub. Komo ka App i hoʻonohonoho ʻia no kēia hoʻokomo ʻana; pono iā ia ka id hoʻokomo.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Hoʻolako ʻo GitHub Pages i ka waihona pilikino ma ka papahana uku wale nō.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: pono i kahi kāʻei lalo (www.example.com) he moʻolelo CNAME i &lt;owner&gt;.github.io; pono i kahi kāʻei kumu (example.com) nā moʻolelo A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id hoʻokomo o ka GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ke kūkulu Pages hope loa</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Nā palena a me nā kuleana</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Pono no GitHub Pages ma ka papahana manuahi.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ma GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Me ka GitHub App wale nō: ka helu ma ka hopena o ka helu wahi o ka hoʻokomo ʻana o ka App ma GitHub. Hoʻonoho ʻia ka App ponoʻī ma staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Pilikino</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ākea</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>E mālama mua i ka pahuhopu me kekahi waihona GitHub a me kekahi hōʻailona komo a i ʻole GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>E hoʻonoho i kēia mau moʻolelo ma ka mea hoʻolako o ke kāʻei:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Hoʻonohonoho ma GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>ʻAʻole i kuhikuhi ka DNS o %domain iā GitHub Pages i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Kuhikuhi ka DNS o %domain iā GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>ʻAʻole loaʻa ka hoʻohui GitHub ma ʻaneʻi: %problem. Hana nō ka hoʻopuka ʻana i ka lālā; e hoʻā i GitHub Pages ma nā hoʻonohonoho o ka waihona.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ʻAʻole loaʻa nā pae GitHub no kēia pahuhopu: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Hōʻike ʻia ke kūlana o GitHub Pages me kekahi hōʻailona komo a i ʻole GitHub App i palapala komo.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>E hoʻohana i kou kāʻei ponoʻī</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ʻO ka mea e koho ai: hōʻailona komo, kī hoʻolaha a i ʻole GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Me kekahi waihona GitHub a me kekahi hōʻailona komo a i ʻole GitHub App, hiki i ke alakaʻi ke hana i ka waihona, hoʻā i GitHub Pages a hoʻonoho i ke kāʻei nou (pae 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ke kūkulu ʻia nei</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ua kūkulu ʻia</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>mai GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>mai ka lālā %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ʻaʻohe i kēia manawa</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ʻaʻole i loaʻa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pio</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>pilikino</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ākea</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ma ka laina</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ʻike ʻole ʻia</translation>
+    </message>
 </context>
 </TS>

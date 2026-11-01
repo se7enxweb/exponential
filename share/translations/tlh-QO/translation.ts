@@ -81973,5 +81973,181 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>yes, not published yet</source>
         <translation>HISlaH, &apos;anglu&apos;be&apos; &apos;ach</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>wa' GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>'aplo' qach Qu' mIw 'oH ngaSbogh 'ang. chenmoHghach Qu' mIw De'wI' ghItlh ghItlh; pa' chIm yIpol.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub 'aplo' qach token pagh GitHub App je ghajbogh ghoch Dapolpu'DI', 'aplo' qach chenmoHlaH mIw 'ay'vam 'ej GitHub Pages chu'laH. pagh, wa'DIch GitHubDaq 'aplo' qach yIchenmoH; chImchugh 'aplo' qach, maj.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Sor 'ay' pagh GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS yInuD</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>'aplo' qach tu'lu'be'chugh yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHubDaq 'aplo' qach yIchenmoH 'ej DuHmeyDaq GitHub Pages yIchu' (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>'aplo' qach %repo chenmoH tu'lu'be'chugh (tlhoblu'chugh), Sor 'ay' pagh GitHub Actions vo' GitHub Pages chu' polbogh rur, Hoch'e' Daq HTTPS je cher. DuHmey polpu'bogh lo': wa'DIch choHmey yIpol.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHubDaq De' naQ</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>wa'DIch Hoch'e' Daq yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>wa'DIch veHmeyvam Daj lablu'bogh Hoch.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHubDaq https:// SoQvaD. jom Qu'vamvaD App cherlu'pu'bogh 'el; jom mI' poQ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>DIl Hutlhbogh nab ghajchugh neH pegh 'aplo' qach jab GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: Daq mach (www.example.com) &lt;owner&gt;.github.ioDaq CNAME ta' poQ; Daq wa'DIch (example.com) A ta'mey %ips poQ.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App jom mI'</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages chenmoHghach Qav</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>veHmey chutmey je</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Dun'a'chugh nab, GitHub PagesvaD poQlu'.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHubDaq</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App neH: GitHubDaq App jom SoQ bertlham mI'. staticcache.iniDaq App'e' cherlu' (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>pegh</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>wa'DIch GitHub 'aplo' qach token pagh GitHub App je ghajbogh ghoch yIpol.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Daq jabwI'Daq ta'meyvam yIcher:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHubDaq yIcher</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>GitHub Pages DIch %domain DNS wej.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>GitHub Pages DIch %domain DNS.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>naDev GitHub muvghach tu'lu'be': %problem. Sor 'ay'Daq ngaSghach Qap Hoch; 'aplo' qach DuHmeyDaq GitHub Pages yIchu'.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ghochvamvaD GitHub mIw 'ay'mey tu'lu'be': %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>'elmeH De' token pagh GitHub App 'oHchugh, GitHub Pages Dotlh 'aghlu'.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Hoch'e' Daq yIlo'</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>nuq Dawuq: token, lab ngoQ pagh GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub 'aplo' qach token pagh GitHub App je tu'lu'chugh, 'aplo' qach chenmoHlaH QaHwI' mIw, GitHub Pages chu'laH 'ej SoHvaD Daq cherlaH (mIw 'ay' loS).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>chenmoHlu'taH</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>chenmoHlu'pu'</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions vo'</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>Sor 'ay' %branch vo'</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>pagh wej</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tu'lu'be'</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>chu'Ha'lu'</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>pegh</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>loSwI' tetlhDaq</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>Sovlu'be'</translation>
+    </message>
 </context>
 </TS>

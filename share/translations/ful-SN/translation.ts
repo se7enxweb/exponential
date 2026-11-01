@@ -81940,5 +81940,181 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>yes, not published yet</source>
         <translation>eey, yaltinaaka tawo</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Golle mooftirde ndee ina yaltina ɗum. Mahngo ngoo ina winnda fiilde golle ndee; accu dosiyee oo meho.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Caggal danndude jahaynde e mooftirde GitHub e token walla GitHub App, ngol daawal ina waawi sosde mooftirde ndee e udditde GitHub Pages. Si wonaa ɗum, sos mooftirde ndee e GitHub adan; ndee meho ina moƴƴi.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Caljal walla GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Ƴeewto DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Sos mooftirde ndee si tawii ndee alaa</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Sos mooftirde ndee e GitHub te uddit GitHub Pages e teelte mayre (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ina sosa mooftirde %repo si tawii ndee alaa (si ɗum naamnaama), ina uddita GitHub Pages immorde e caljal ngal walla e GitHub Actions no danndiraa, te ina teelta domain maa e HTTPS. Ina huutoro teelte danndaaɗe: dannd waylooji ɗii adan.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Cifooji e GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Naatnu domain maa adan.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Neldugol kala ina ƴeewtee e ɗee keeri adan.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ngam ñiiɓirde https:// e GitHub. App teeltaaɗo ngam ɗee aafanɗe ina seŋoo; ina sokli id aafannde ndee.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages rokkata mooftirde suuɗaande si wonaa e parmaa njoɓetee.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: domain lesdi (www.example.com) ina sokli winndannde CNAME faade &lt;owner&gt;.github.io; domain mawɗo (example.com) ina sokli winndanɗe A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id aafannde GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Mahngo Pages sakkitiingo</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Keeri e sarɗiiji</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ina sokli ngam GitHub Pages e parmaa alaa njoɓdi.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>E GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Tan e GitHub App: limoore ndee wonnde e gasirde ñiiɓirde aafannde App e GitHub. App kanko e hoore mum ina teeltee e staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Suuɗaaɗo</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Kala neɗɗo</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Dannd jahaynde ndee e mooftirde GitHub e token walla GitHub App adan.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Teelto ɗee winndanɗe to rokkoowo domain oo:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Teelto e GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS %domain fewndaaki GitHub Pages tawo.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS %domain ina fewndii GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Jokkondiral GitHub heɓotaako ɗoo: %problem. Yaltingol e caljal ngal ina gollira no feewi; uddit GitHub Pages e teelte mooftirde ndee.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Daawe GitHub heɓotaake ngam ndee jahaynde: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Ngonka GitHub Pages ina hollee so token walla GitHub App woni ko seŋorta.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Huutoro domain maa</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ko suɓotoɗaa: token, coktirgal deploy walla GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>E mooftirde GitHub e token walla GitHub App, jaŋde ndee ina waawi sosde mooftirde ndee, udditde GitHub Pages e teeltude domain oo ngam maa (daawal 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ina mahee</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>mahaama</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>immorde e GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>immorde e caljal %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>alaa tawo</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tawaaka</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>uddaama</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>suuɗaaɗo</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>kala neɗɗo</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ina reeni daaɗe</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anndaaka</translation>
+    </message>
 </context>
 </TS>

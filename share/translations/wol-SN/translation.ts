@@ -81940,5 +81940,181 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>yes, not published yet</source>
         <translation>waaw, siiwaluñu ko ba léegi</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Benn GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Benn workflow bu dénkukaay bi moo koy siiwal. Tabax bi dina bind fichier workflow bi; bàyyil dossier bi mu des neen.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Su nga dencee benn jëmuwaay ak benn dénkukaay GitHub ak benn token walla GitHub App, ndëgërte bii mën na sos dénkukaay bi te taal GitHub Pages. Su dul loolu, nga njëkk sos dénkukaay bi ci GitHub; bu neen baax na.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Car walla GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Saytul DNS bi</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Sos dénkukaay bi bu amul</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Sosal dénkukaay bi ci GitHub te taal GitHub Pages ci tànneefam yi (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Dina sos dénkukaay bi %repo bu amul (bu ñu ko laajee), taal GitHub Pages ci car bi walla ci GitHub Actions ni ko ñu dencee, te taxawal domen bu sa bopp bi ak HTTPS. Dafay jëfandikoo tànneef yi ñu denc: njëkkal denc coppite yi.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Leeral yi ci GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Njëkkal bind domen bu sa bopp bi.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Push bu nekk ñu ngi koy njëkk saytu ci dig yii.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ngir benn adrees https:// ci GitHub. App bi ñu taxawal ngir istalaasioŋ bii moo koy dugg; dafa soxla id bu istalaasioŋ bi.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages du jox dénkukaay bu sutura ndax ci benn plan bu ñuy fey rekk.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: benn sous-domen (www.example.com) dafa soxla benn bind CNAME bu jëm &lt;owner&gt;.github.io; benn domen bu njëkk (example.com), bind A yi %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id bu istalaasioŋ bu GitHub App bi</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Tabax bu mujj bu Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Dig yi ak sàrt yi</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Laaj nañu ko ngir GitHub Pages ci benn plan bu ñu dul fey.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ci GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Ak benn GitHub App rekk: nimero bi nekk ci mujjug adrees bu istalaasioŋ bu App bi ci GitHub. App bi ci boppam ñu ngi koy taxawal ci staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Sutura</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Siiwu</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Njëkkal denc jëmuwaay bi ak benn dénkukaay GitHub ak benn token walla GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Taxawalal bind yii ci ki jox domen bi:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Taxawal ci GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS bu %domain jëmagul ci GitHub Pages ba léegi.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS bu %domain jëm na ci GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Ëmbaale GitHub amul fii: %problem. Siiwal ci car bi dafay dox rekk; taalal GitHub Pages ci tànneef yu dénkukaay bi.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Ndëgërte yu GitHub amuñu ngir jëmuwaay bii: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Nekinu GitHub Pages dañu koy wone bu firndeelu duggu bi di benn token walla GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Jëfandikool sa domen bu sa bopp</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Lan lañuy tànn: token, caabi yónnee walla GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Ak benn dénkukaay GitHub ak benn token walla GitHub App, ndëgërte yi mën nañu la sos dénkukaay bi, taal GitHub Pages te taxawal domen bi (ndëgërte 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>mungiy tabax</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>tabax nañu ko</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ci GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ci car bi %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dara ba léegi</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>gisuñu ko</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>fey na</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>sutura</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>siiwu</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ci rëdd bi</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>xamuñu ko</translation>
+    </message>
 </context>
 </TS>

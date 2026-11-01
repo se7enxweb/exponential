@@ -81970,5 +81970,181 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>yes, not published yet</source>
         <translation>taip, dar nepublikuota</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Ją publikuoja saugyklos darbo eiga (workflow). Rinkinys įrašo darbo eigos failą; palikite aplanką tuščią.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Įrašius paskirtį su GitHub saugykla ir žetonu arba GitHub App, šis žingsnis gali sukurti saugyklą ir įjungti GitHub Pages. Kitu atveju pirma sukurkite saugyklą GitHub; tinka ir tuščia.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Šaka ar GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Tikrinti DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Sukurti saugyklą, jei jos nėra</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Sukurkite saugyklą GitHub ir įjunkite GitHub Pages jos nustatymuose (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Sukuria saugyklą %repo, kai jos trūksta (jei prašoma), įjungia GitHub Pages iš šakos arba iš GitHub Actions, kaip įrašyta, ir nustato savą domeną bei HTTPS. Naudoja įrašytus nustatymus: pirma įrašykite pakeitimus.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Išsami informacija GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Pirma įveskite savą domeną.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Kiekvienas push pirmiausia tikrinamas pagal šiuos limitus.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>https:// adresui GitHub. Prisijungia šiam diegimui nustatyta App; jai reikia diegimo id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages privačią saugyklą teikia tik su mokamu planu.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomenui (www.example.com) reikia CNAME įrašo į &lt;owner&gt;.github.io; viršūniniam domenui (example.com) A įrašų %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App diegimo id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Paskutinis Pages rinkinys</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limitai ir sąlygos</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Reikia GitHub Pages su nemokamu planu.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Sistemoje GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Tik su GitHub App: skaičius App diegimo GitHub adreso pabaigoje. Pati App nustatoma staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privati</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Vieša</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Pirma įrašykite paskirtį su GitHub saugykla ir žetonu arba GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Nustatykite šiuos įrašus domeno teikėjo sistemoje:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Nustatyti GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain DNS dar nenukreiptas į GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain DNS nukreiptas į GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub integracija čia neprieinama: %problem. Publikavimas į šaką vis tiek veikia; įjunkite GitHub Pages saugyklos nustatymuose.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub žingsniai šiai paskirčiai neprieinami: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages būsena rodoma, kai prisijungimo duomenys yra žetonas arba GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Naudoti savo domeną</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ką pasirinkti: žetoną, diegimo raktą ar GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Turėdamas GitHub saugyklą ir žetoną arba GitHub App, vedlys gali už jus sukurti saugyklą, įjungti GitHub Pages ir nustatyti domeną (4 žingsnis).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>renkama</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>surinkta</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>iš GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>iš šakos %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dar nėra</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nerasta</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>išjungta</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privati</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>vieša</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>eilėje</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nežinoma</translation>
+    </message>
 </context>
 </TS>

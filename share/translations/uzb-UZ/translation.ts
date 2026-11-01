@@ -81940,5 +81940,181 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>yes, not published yet</source>
         <translation>ha, hali nashr qilinmagan</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Uni repozitoriyning ish oqimi nashr qiladi. Yig‘ish ish oqimi faylini yozadi; jildni bo‘sh qoldiring.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Maqsadni GitHub repozitoriyi va token yoki GitHub App bilan saqlagandan so‘ng, bu qadam repozitoriyni yaratib, GitHub Pages’ni yoqishi mumkin. Aks holda avval GitHub’da repozitoriy yarating; bo‘sh bo‘lsa ham bo‘ladi.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Tarmoqmi yoki GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS’ni tekshirish</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Repozitoriy mavjud bo‘lmasa, yaratish</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub’da repozitoriy yarating va uning sozlamalarida GitHub Pages’ni yoqing (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Repozitoriy %repo yo‘q bo‘lsa, uni yaratadi (so‘ralganda), saqlanganidek tarmoqdan yoki GitHub Actions’dan GitHub Pages’ni yoqadi hamda maxsus domen va HTTPS’ni o‘rnatadi. Saqlangan sozlamalardan foydalanadi: avval o‘zgarishlarni saqlang.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub’dagi tafsilotlar</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Avval maxsus domenni kiriting.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Har bir yuborish avval shu cheklovlar bo‘yicha tekshiriladi.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub’dagi https:// manzil uchun. Shu o‘rnatma uchun sozlangan App kiradi; unga o‘rnatma id’si kerak.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages yopiq repozitoriyni faqat pullik rejada xizmat qiladi.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomenga (www.example.com) &lt;owner&gt;.github.io ga CNAME yozuvi, asosiy domenga (example.com) A yozuvlari %ips kerak.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App o‘rnatma id’si</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Oxirgi Pages yig‘ilishi</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Cheklovlar va shartlar</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Bepul rejada GitHub Pages uchun kerak.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub’da</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Faqat GitHub App bilan: GitHub’dagi App o‘rnatmasi manzilining oxiridagi raqam. App’ning o‘zi staticcache.ini’da belgilanadi (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Yopiq</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ochiq</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Avval maqsadni GitHub repozitoriyi va token yoki GitHub App bilan saqlang.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Ushbu yozuvlarni domen provayderida o‘rnating:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub’da sozlash</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain DNS’i hali GitHub Pages’ga yo‘naltirilmagan.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain DNS’i GitHub Pages’ga yo‘naltirilgan.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub integratsiyasi bu yerda mavjud emas: %problem. Tarmoqqa nashr qilish baribir ishlaydi; repozitoriy sozlamalarida GitHub Pages’ni yoqing.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Bu maqsad uchun GitHub qadamlari mavjud emas: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Kirish ma’lumotlari token yoki GitHub App bo‘lganda GitHub Pages holati ko‘rsatiladi.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>O‘z domeningizdan foydalaning</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Qaysi birini tanlash: token, joylashtirish kaliti yoki GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub repozitoriyi va token yoki GitHub App bilan sozlash ustasi siz uchun repozitoriyni yaratishi, GitHub Pages’ni yoqishi va domenni o‘rnatishi mumkin (4-qadam).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>yig‘ilmoqda</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>yig‘ildi</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions’dan</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch tarmog‘idan</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hozircha yo‘q</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>topilmadi</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>o‘chiq</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>yopiq</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ochiq</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>navbatda</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>noma’lum</translation>
+    </message>
 </context>
 </TS>

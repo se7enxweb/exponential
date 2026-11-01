@@ -81940,5 +81940,181 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>yes, not published yet</source>
         <translation>ih, mazal ur yettwasiẓreg ara</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Yiwet n GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Yettɛemmim-it yiwen n usuddem n ukufi. Asefsu yettaru afaylu n usuddem; eǧǧ akaram d ilem.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Mi ara teskelseḍ iswi s ukufi GitHub d ujetwan neɣ GitHub App, asurif-a yezmer ad d-yesnulfu akufi yerna ad yessermed GitHub Pages. Ma ulac, snulfu-d akufi deg GitHub uqbel; akufi ilem yelha.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Taseṭṭa neɣ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Senqed DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Snulfu-d akufi ma ulac-it</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Snulfu-d akufi deg GitHub sakin rmed GitHub Pages deg iɣewwaren-is (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Yesnulfuy-d akufi %repo ma ulac-it (ma yettwasuter), yessermad GitHub Pages seg teseṭṭa neɣ seg GitHub Actions akken yettwasekles, yerna yesbadu taɣult tudmawant d HTTPS. Yesseqdac iɣewwaren yettwaskelsen: sekles ibeddilen uqbel.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Talqayt deg GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Sekcem taɣult tudmawant uqbel.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Yal tuzzna tettwasenqad uqbel ɣer tilisa-a.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>I tansa https:// deg GitHub. App yettwasbadun i usebded-a ad yekcem; yesra asulay n usebded.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages yettak-d akufi uslig deg uɣawas s lexlaṣ kan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: taɣult tamecṭuḥt (www.example.com) tesra asekles CNAME ɣer &lt;owner&gt;.github.io; taɣult tagejdant (example.com) tesra iseklasen A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Asulay n usebded n GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Asefsu aneggaru n Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Tilisa d tewtilin</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Yettwasra i GitHub Pages deg uɣawas baṭel.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Deg GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>S GitHub App kan: amḍan deg taggara n tansa n usebded n App deg GitHub. App s yiman-is yettwasbadu deg staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Uslig</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Azayez</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Sekles iswi s ukufi GitHub d ujetwan neɣ GitHub App uqbel.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Sbadu iseklasen-a ɣer usaǧǧaw n taɣult:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Sbadu deg GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS n %domain ur yettwehhi ara ɣer GitHub Pages yakan.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS n %domain yettwehhi ɣer GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Amsidef n GitHub ulac-it da: %problem. Asiẓreg ɣer teseṭṭa yeddu akken yebɣu yili; rmed GitHub Pages deg iɣewwaren n ukufi.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Isurifen n GitHub ulac-iten i yiswi-a: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Addad n GitHub Pages yettwaskan s ujetwan neɣ GitHub App d inekcam.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Seqdec taɣult-ik</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Acu ara tferneḍ: ajetwan, tasarut n usebded neɣ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>S ukufi GitHub d ujetwan neɣ GitHub App, amarag yezmer ad d-yesnulfu akufi, ad yessermed GitHub Pages yerna ad yesbadu taɣult i kečč (asurif 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>yettwasefsay</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>yettwasefsa</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>seg GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>seg teseṭṭa %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ulac yakan</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ur yettwafa ara</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>yensa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>uslig</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>azayez</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>yettraǧu deg ubrid</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>arussin</translation>
+    </message>
 </context>
 </TS>

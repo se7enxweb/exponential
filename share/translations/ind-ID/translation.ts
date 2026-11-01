@@ -81940,5 +81940,181 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>yes, not published yet</source>
         <translation>ya, belum diterbitkan</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Sebuah GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Alur kerja repositori yang menerbitkannya. Build menulis berkas alur kerja; biarkan folder kosong.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Setelah menyimpan tujuan dengan repositori GitHub dan token atau GitHub App, langkah ini dapat membuat repositori dan mengaktifkan GitHub Pages. Jika tidak, buat repositori di GitHub terlebih dahulu; repositori kosong tidak masalah.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Cabang atau GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Periksa DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Buat repositori jika belum ada</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Buat repositori di GitHub dan aktifkan GitHub Pages di pengaturannya (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Membuat repositori %repo jika belum ada (bila diminta), mengaktifkan GitHub Pages dari cabang atau dari GitHub Actions sesuai yang disimpan, dan mengatur domain khusus serta HTTPS. Langkah ini memakai pengaturan yang tersimpan: simpan perubahan terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detail di GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Masukkan domain khusus terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Setiap push diperiksa terhadap batas ini terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Untuk alamat https:// di GitHub. App yang disiapkan untuk instalasi ini yang masuk; App memerlukan id instalasi.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages hanya menyajikan repositori privat pada paket berbayar.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) memerlukan record CNAME ke &lt;owner&gt;.github.io; domain apex (example.com) memerlukan record A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id instalasi GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Build Pages terakhir</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Batas dan ketentuan</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Diperlukan untuk GitHub Pages pada paket gratis.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Di GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Hanya dengan GitHub App: angka di akhir alamat instalasi App di GitHub. App itu sendiri diatur di staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Publik</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Simpan tujuan dengan repositori GitHub dan token atau GitHub App terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Atur record berikut di penyedia domain:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Siapkan di GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS %domain belum mengarah ke GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS %domain mengarah ke GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Integrasi GitHub tidak tersedia di sini: %problem. Penerbitan ke cabang tetap berfungsi; aktifkan GitHub Pages di pengaturan repositori.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Langkah GitHub tidak tersedia untuk tujuan ini: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Status GitHub Pages ditampilkan jika kredensialnya token atau GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Gunakan domain Anda sendiri</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Mana yang dipilih: token, kunci deploy, atau GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Dengan repositori GitHub dan token atau GitHub App, wizard dapat membuat repositori, mengaktifkan GitHub Pages, dan mengatur domain untuk Anda (langkah 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>sedang di-build</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>selesai di-build</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>dari GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>dari cabang %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>belum ada</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tidak ditemukan</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>nonaktif</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>publik</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>dalam antrean</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tidak diketahui</translation>
+    </message>
 </context>
 </TS>

@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>bẹ́ẹ̀ ni, a kò tíì tẹ̀ ẹ́ jáde</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App kan</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow kan ti ibi ìpamọ́ ni ó ń tẹ̀ ẹ́ jáde. Ìkọ́ ń kọ fáìlì workflow; fi fódà náà sílẹ̀ ní òfo.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Lẹ́yìn tí o bá fi ibi àfojúsùn pamọ́ pẹ̀lú ibi ìpamọ́ GitHub àti tókìnì tàbí GitHub App, ìgbésẹ̀ yìí lè ṣẹ̀dá ibi ìpamọ́ náà kí ó sì tan GitHub Pages. Bí bẹ́ẹ̀ kọ́, kọ́kọ́ ṣẹ̀dá ibi ìpamọ́ náà lórí GitHub; èyí tó ṣófo dára.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Ẹ̀ka tàbí GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Ṣàyẹ̀wò DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ṣẹ̀dá ibi ìpamọ́ bí kò bá sí</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Ṣẹ̀dá ibi ìpamọ́ lórí GitHub kí o sì tan GitHub Pages nínú ètò rẹ̀ (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ó ń ṣẹ̀dá ibi ìpamọ́ %repo bí kò bá sí (bí a bá béèrè), ó ń tan GitHub Pages láti inú ẹ̀ka tàbí láti GitHub Actions bí a ṣe fi pamọ́, ó sì ń ṣètò dómèènì àdáni àti HTTPS. Ó ń lo ètò tí a fi pamọ́: kọ́kọ́ fi àwọn àyípadà pamọ́.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Àlàyé lórí GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Kọ́kọ́ tẹ dómèènì àdáni sí i.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>A máa ń kọ́kọ́ ṣàyẹ̀wò push kọ̀ọ̀kan sí àwọn ààlà wọ̀nyí.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Fún àdírẹ́sì https:// lórí GitHub. App tí a ṣètò fún ìfisílẹ̀ yìí ni ó ń wọlé; ó nílò id ìfisílẹ̀.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ń pèsè ibi ìpamọ́ àdáni lórí ètò ìsanwó nìkan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) nílò àkọsílẹ̀ CNAME sí &lt;owner&gt;.github.io; apex domain (example.com) nílò àwọn àkọsílẹ̀ A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id ìfisílẹ̀ GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ìkọ́ Pages tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Àwọn ààlà àti àdéhùn</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ó pọndandan fún GitHub Pages lórí ètò ọ̀fẹ́.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Lórí GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Pẹ̀lú GitHub App nìkan: nọ́mbà tó wà ní òpin àdírẹ́sì ìfisílẹ̀ App lórí GitHub. App fúnra rẹ̀ ni a ṣètò nínú staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Àdáni</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Gbangba</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Kọ́kọ́ fi ibi àfojúsùn pamọ́ pẹ̀lú ibi ìpamọ́ GitHub àti tókìnì tàbí GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Ṣètò àwọn àkọsílẹ̀ wọ̀nyí lọ́dọ̀ olùpèsè dómèènì náà:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Ṣètò lórí GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ti %domain kò tíì tọ́ka sí GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ti %domain ń tọ́ka sí GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Ìsopọ̀ GitHub kò sí níbí: %problem. Títẹ̀jáde sí ẹ̀ka ṣì ń ṣiṣẹ́; tan GitHub Pages nínú ètò ibi ìpamọ́ náà.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Àwọn ìgbésẹ̀ GitHub kò sí fún ibi àfojúsùn yìí: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>A ń fi ipò GitHub Pages hàn nígbà tí tókìnì tàbí GitHub App bá jẹ́ ìwé ẹ̀rí ìwọlé.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Lo dómèènì tìrẹ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Èwo ni kí o yàn: tókìnì, kọ́kọ́rọ́ ìfiránṣẹ́ tàbí GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Pẹ̀lú ibi ìpamọ́ GitHub àti tókìnì tàbí GitHub App, alámọ̀ràn ìgbékalẹ̀ lè ṣẹ̀dá ibi ìpamọ́, tan GitHub Pages kí ó sì ṣètò dómèènì fún ọ (ìgbésẹ̀ 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ó ń kọ́</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ó ti kọ́</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>láti GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>láti ẹ̀ka %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>kò tíì sí</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>a kò rí i</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ó ti pa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>àdáni</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>gbangba</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ó wà nínú ìlà</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>a kò mọ̀</translation>
+    </message>
 </context>
 </TS>

@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ஆம், இன்னும் வெளியிடப்படவில்லை</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>ஒரு GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>களஞ்சியத்தின் ஒரு பணிப்பாய்வு அதை வெளியிடுகிறது. உருவாக்கம் பணிப்பாய்வுக் கோப்பை எழுதுகிறது; கோப்புறையை வெறுமையாக விடவும்.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub களஞ்சியம் மற்றும் டோக்கன் அல்லது GitHub App உடன் இலக்கைச் சேமித்த பிறகு, இந்தப் படி களஞ்சியத்தை உருவாக்கி GitHub Pages ஐ இயக்க முடியும். இல்லையெனில் முதலில் GitHub இல் களஞ்சியத்தை உருவாக்கவும்; வெற்றுக் களஞ்சியமும் போதும்.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>கிளையா அல்லது GitHub Actions ஆ?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS ஐச் சரிபார்</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>களஞ்சியம் இல்லையெனில் அதை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub இல் களஞ்சியத்தை உருவாக்கி அதன் அமைப்புகளில் GitHub Pages ஐ இயக்கவும் (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>களஞ்சியம் %repo இல்லாதபோது அதை உருவாக்குகிறது (கேட்கப்பட்டால்), சேமித்தபடி கிளையிலிருந்து அல்லது GitHub Actions இலிருந்து GitHub Pages ஐ இயக்குகிறது, மேலும் சொந்த டொமைன் மற்றும் HTTPS ஐ அமைக்கிறது. சேமித்த அமைப்புகளைப் பயன்படுத்துகிறது: முதலில் மாற்றங்களைச் சேமிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub இல் விவரங்கள்</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>முதலில் சொந்த டொமைனை உள்ளிடவும்.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ஒவ்வொரு push உம் முதலில் இந்த வரம்புகளுடன் சரிபார்க்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub இல் உள்ள https:// முகவரிக்கு. இந்த நிறுவலுக்காக அமைக்கப்பட்ட App உள்நுழைகிறது; அதற்கு நிறுவல் id தேவை.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages தனிப்பட்ட களஞ்சியத்தைக் கட்டணத் திட்டத்தில் மட்டுமே வழங்குகிறது.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: துணை டொமைனுக்கு (www.example.com) &lt;owner&gt;.github.io க்கு ஒரு CNAME பதிவு தேவை; மூல டொமைனுக்கு (example.com) A பதிவுகள் %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App இன் நிறுவல் id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>கடைசி Pages உருவாக்கம்</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>வரம்புகளும் விதிமுறைகளும்</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>இலவசத் திட்டத்தில் GitHub Pages க்குத் தேவை.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub இல்</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App உடன் மட்டும்: GitHub இல் App நிறுவலின் முகவரியின் இறுதியில் உள்ள எண். App தானே staticcache.ini இல் அமைக்கப்படுகிறது (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>தனிப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>பொது</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>முதலில் GitHub களஞ்சியம் மற்றும் டோக்கன் அல்லது GitHub App உடன் இலக்கைச் சேமிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>டொமைன் வழங்குநரிடம் இந்தப் பதிவுகளை அமைக்கவும்:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub இல் அமை</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain இன் DNS இன்னும் GitHub Pages ஐச் சுட்டவில்லை.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain இன் DNS GitHub Pages ஐச் சுட்டுகிறது.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub ஒருங்கிணைப்பு இங்கே கிடைக்கவில்லை: %problem. கிளைக்கு வெளியிடுவது அப்படியும் வேலை செய்யும்; களஞ்சியத்தின் அமைப்புகளில் GitHub Pages ஐ இயக்கவும்.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>இந்த இலக்குக்கு GitHub படிகள் கிடைக்கவில்லை: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>நற்சான்றாக டோக்கன் அல்லது GitHub App இருக்கும்போது GitHub Pages இன் நிலை காட்டப்படும்.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>உங்கள் சொந்த டொமைனைப் பயன்படுத்து</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>எதைத் தேர்வு செய்வது: டோக்கன், வரிசைப்படுத்தல் விசை அல்லது GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub களஞ்சியம் மற்றும் டோக்கன் அல்லது GitHub App இருந்தால், வழிகாட்டி உங்களுக்காகக் களஞ்சியத்தை உருவாக்கி, GitHub Pages ஐ இயக்கி, டொமைனை அமைக்க முடியும் (படி 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>உருவாக்கப்படுகிறது</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>உருவாக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions இலிருந்து</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>கிளை %branch இலிருந்து</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>இன்னும் இல்லை</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>கிடைக்கவில்லை</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>முடக்கம்</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>தனிப்பட்டது</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>பொது</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>வரிசையில்</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>தெரியாது</translation>
+    </message>
 </context>
 </TS>

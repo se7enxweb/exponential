@@ -81948,5 +81948,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>हो, अहिलेसम्म प्रकाशित भएको छैन</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>एउटा GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>रिपोजिटरीको एउटा वर्कफ्लोले यसलाई प्रकाशित गर्छ। बिल्डले वर्कफ्लो फाइल लेख्छ; फोल्डर खाली छाड्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub रिपोजिटरी र टोकन वा GitHub App सहित लक्ष्य सेभ गरेपछि, यो चरणले रिपोजिटरी बनाउन र GitHub Pages सक्रिय गर्न सक्छ। अन्यथा पहिले GitHub मा रिपोजिटरी बनाउनुहोस्; खाली भए पनि हुन्छ।</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ब्रान्च कि GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS जाँच गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>रिपोजिटरी छैन भने बनाउनुहोस्</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub मा रिपोजिटरी बनाउनुहोस् र यसको सेटिङमा GitHub Pages सक्रिय गर्नुहोस् (Settings &gt; Pages)।</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>रिपोजिटरी %repo नभएमा बनाउँछ (भनिएमा), सेभ गरिएअनुसार ब्रान्च वा GitHub Actions बाट GitHub Pages सक्रिय गर्छ, र आफ्नै डोमेन तथा HTTPS सेट गर्छ। यसले सेभ गरिएका सेटिङ प्रयोग गर्छ: पहिले परिवर्तनहरू सेभ गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub मा विवरण</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>पहिले आफ्नै डोमेन प्रविष्ट गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>हरेक पुस पहिले यी सीमाहरूसँग जाँचिन्छ।</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub मा https:// ठेगानाका लागि। यो स्थापनाका लागि सेट गरिएको App ले साइन इन गर्छ; यसलाई स्थापना id चाहिन्छ।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ले निजी रिपोजिटरी सशुल्क योजनामा मात्र दिन्छ।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: सबडोमेन (www.example.com) लाई &lt;owner&gt;.github.io तर्फ CNAME रेकर्ड चाहिन्छ; मूल डोमेन (example.com) लाई A रेकर्डहरू %ips।</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App को स्थापना id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>अन्तिम Pages बिल्ड</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>सीमा र सर्तहरू</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>निःशुल्क योजनामा GitHub Pages का लागि आवश्यक।</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub मा</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App सँग मात्र: GitHub मा App को स्थापनाको ठेगानाको अन्त्यमा रहेको नम्बर। App आफैं staticcache.ini मा सेट हुन्छ (GitHubAppId, GitHubAppKey)।</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>निजी</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>सार्वजनिक</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>पहिले लक्ष्यलाई GitHub रिपोजिटरी र टोकन वा GitHub App सहित सेभ गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>डोमेनको प्रदायकमा यी रेकर्डहरू सेट गर्नुहोस्:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub मा सेटअप गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain को DNS ले अझै GitHub Pages तर्फ संकेत गर्दैन।</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain को DNS ले GitHub Pages तर्फ संकेत गर्छ।</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub एकीकरण यहाँ उपलब्ध छैन: %problem। ब्रान्चमा प्रकाशन जसरी पनि काम गर्छ; रिपोजिटरीको सेटिङमा GitHub Pages सक्रिय गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>यो लक्ष्यका लागि GitHub चरणहरू उपलब्ध छैनन्: %problem।</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>प्रमाणपत्रको रूपमा टोकन वा GitHub App हुँदा GitHub Pages को अवस्था देखाइन्छ।</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>आफ्नै डोमेन प्रयोग गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>कुन रोज्ने: टोकन, डिप्लोय कुञ्जी वा GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub रिपोजिटरी र टोकन वा GitHub App भएमा, विजार्डले तपाईंका लागि रिपोजिटरी बनाउन, GitHub Pages सक्रिय गर्न र डोमेन सेट गर्न सक्छ (चरण 4)।</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>बिल्ड हुँदै</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>बिल्ड भयो</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions बाट</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ब्रान्च %branch बाट</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अहिलेसम्म कुनै छैन</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>फेला परेन</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बन्द</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>निजी</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>सार्वजनिक</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>लाइनमा</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञात</translation>
+    </message>
 </context>
 </TS>

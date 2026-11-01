@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>അതെ, ഇതുവരെ പ്രസിദ്ധീകരിച്ചിട്ടില്ല</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>ഒരു GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>റിപ്പോസിറ്ററിയുടെ ഒരു വർക്ക്ഫ്ലോ അത് പ്രസിദ്ധീകരിക്കുന്നു. ബിൽഡ് വർക്ക്ഫ്ലോ ഫയൽ എഴുതുന്നു; ഫോൾഡർ ശൂന്യമായി വിടുക.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>ഒരു GitHub റിപ്പോസിറ്ററിയും ഒരു ടോക്കൺ അല്ലെങ്കിൽ GitHub App-ഉം ഉള്ള ലക്ഷ്യം സേവ് ചെയ്ത ശേഷം, ഈ ഘട്ടത്തിന് റിപ്പോസിറ്ററി സൃഷ്ടിക്കാനും GitHub Pages ഓണാക്കാനും കഴിയും. അല്ലെങ്കിൽ ആദ്യം GitHub-ൽ റിപ്പോസിറ്ററി സൃഷ്ടിക്കുക; ശൂന്യമായ ഒന്ന് മതി.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ബ്രാഞ്ച് അല്ലെങ്കിൽ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS പരിശോധിക്കുക</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>റിപ്പോസിറ്ററി ഇല്ലെങ്കിൽ സൃഷ്ടിക്കുക</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub-ൽ റിപ്പോസിറ്ററി സൃഷ്ടിച്ച് അതിന്റെ ക്രമീകരണങ്ങളിൽ GitHub Pages ഓണാക്കുക (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>റിപ്പോസിറ്ററി %repo ഇല്ലെങ്കിൽ അത് സൃഷ്ടിക്കുന്നു (ആവശ്യപ്പെട്ടാൽ), സേവ് ചെയ്തതുപോലെ ബ്രാഞ്ചിൽ നിന്നോ GitHub Actions-ൽ നിന്നോ GitHub Pages ഓണാക്കുന്നു, കസ്റ്റം ഡൊമെയ്നും HTTPS-ഉം സജ്ജമാക്കുന്നു. സേവ് ചെയ്ത ക്രമീകരണങ്ങൾ ഉപയോഗിക്കുന്നു: ആദ്യം മാറ്റങ്ങൾ സേവ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub-ലെ വിശദാംശങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ആദ്യം കസ്റ്റം ഡൊമെയ്ൻ നൽകുക.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ഓരോ push-ഉം ആദ്യം ഈ പരിധികളുമായി പരിശോധിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-ലെ ഒരു https:// വിലാസത്തിന്. ഈ ഇൻസ്റ്റലേഷനായി സജ്ജമാക്കിയ App സൈൻ ഇൻ ചെയ്യുന്നു; അതിന് ഇൻസ്റ്റലേഷൻ id ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ഒരു സ്വകാര്യ റിപ്പോസിറ്ററി പണമടച്ചുള്ള പ്ലാനിൽ മാത്രമേ നൽകൂ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ഒരു സബ്ഡൊമെയ്നിന് (www.example.com) &lt;owner&gt;.github.io-ലേക്ക് ഒരു CNAME റെക്കോർഡ് വേണം; ഒരു അപെക്സ് ഡൊമെയ്നിന് (example.com) A റെക്കോർഡുകൾ %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-ന്റെ ഇൻസ്റ്റലേഷൻ id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>അവസാന Pages ബിൽഡ്</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>പരിധികളും നിബന്ധനകളും</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>സൗജന്യ പ്ലാനിൽ GitHub Pages-ന് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-ൽ</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App-നൊപ്പം മാത്രം: GitHub-ലെ App ഇൻസ്റ്റലേഷന്റെ വിലാസത്തിന്റെ അവസാനത്തെ നമ്പർ. App തന്നെ staticcache.ini-ൽ സജ്ജമാക്കുന്നു (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>സ്വകാര്യം</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>പൊതു</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>ആദ്യം ഒരു GitHub റിപ്പോസിറ്ററിയും ഒരു ടോക്കൺ അല്ലെങ്കിൽ GitHub App-ഉം ഉപയോഗിച്ച് ലക്ഷ്യം സേവ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ഡൊമെയ്നിന്റെ ദാതാവിൽ ഈ റെക്കോർഡുകൾ സജ്ജമാക്കുക:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub-ൽ സജ്ജീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain-ന്റെ DNS ഇതുവരെ GitHub Pages-ലേക്ക് ചൂണ്ടുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain-ന്റെ DNS GitHub Pages-ലേക്ക് ചൂണ്ടുന്നു.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub സംയോജനം ഇവിടെ ലഭ്യമല്ല: %problem. ബ്രാഞ്ചിലേക്ക് പ്രസിദ്ധീകരിക്കുന്നത് എന്നിട്ടും പ്രവർത്തിക്കും; റിപ്പോസിറ്ററിയുടെ ക്രമീകരണങ്ങളിൽ GitHub Pages ഓണാക്കുക.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ഈ ലക്ഷ്യത്തിന് GitHub ഘട്ടങ്ങൾ ലഭ്യമല്ല: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>ക്രെഡൻഷ്യൽ ആയി ഒരു ടോക്കൺ അല്ലെങ്കിൽ GitHub App ഉള്ളപ്പോൾ GitHub Pages-ന്റെ അവസ്ഥ കാണിക്കും.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>നിങ്ങളുടെ സ്വന്തം ഡൊമെയ്ൻ ഉപയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ഏതാണ് തിരഞ്ഞെടുക്കേണ്ടത്: ടോക്കൺ, ഡിപ്ലോയ് കീ അല്ലെങ്കിൽ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>ഒരു GitHub റിപ്പോസിറ്ററിയും ഒരു ടോക്കൺ അല്ലെങ്കിൽ GitHub App-ഉം ഉണ്ടെങ്കിൽ, വിസാർഡിന് നിങ്ങൾക്കായി റിപ്പോസിറ്ററി സൃഷ്ടിക്കാനും GitHub Pages ഓണാക്കാനും ഡൊമെയ്ൻ സജ്ജമാക്കാനും കഴിയും (ഘട്ടം 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ബിൽഡ് ചെയ്യുന്നു</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ബിൽഡ് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-ൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ബ്രാഞ്ച് %branch-ൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ഇതുവരെ ഇല്ല</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>കണ്ടെത്തിയില്ല</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ഓഫ്</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>സ്വകാര്യം</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>പൊതു</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ക്യൂവിൽ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>അജ്ഞാതം</translation>
+    </message>
 </context>
 </TS>

@@ -81945,5 +81945,181 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>yes, not published yet</source>
         <translation>evet, henüz yayımlanmadı</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Bir GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Deponun bir iş akışı onu yayımlar. İş akışı dosyasını derleme yazar; klasörü boş bırakın.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Bir hedefi GitHub deposu ve bir belirteç ya da GitHub App ile kaydettikten sonra bu adım depoyu oluşturabilir ve GitHub Pages'i açabilir. Aksi halde önce depoyu GitHub'da oluşturun; boş bir depo yeterlidir.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Dal mı, GitHub Actions mı?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS'i denetle</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Depo yoksa oluştur</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Depoyu GitHub'da oluşturun ve ayarlarında GitHub Pages'i açın (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo deposunu yoksa (istenirse) oluşturur, GitHub Pages'i kaydedildiği gibi daldan ya da GitHub Actions'tan açar ve özel alan adını ve HTTPS'i ayarlar. Kayıtlı ayarları kullanır: önce değişiklikleri kaydedin.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub'da ayrıntılar</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Önce özel alan adını girin.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Her push önce bu sınırlara göre denetlenir.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub'daki bir https:// adresi için. Bu kurulum için ayarlanan App oturum açar; kurulum kimliğine ihtiyaç duyar.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages özel bir depoyu yalnızca ücretli planda sunar.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: bir alt alan adı (www.example.com) &lt;owner&gt;.github.io adresine bir CNAME kaydı gerektirir; bir kök alan adı (example.com) ise %ips A kayıtlarını.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App kurulum kimliği</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Son Pages derlemesi</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Sınırlar ve koşullar</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ücretsiz planda GitHub Pages için gereklidir.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub'da</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Yalnızca GitHub App ile: App'in GitHub'daki kurulumunun adresinin sonundaki numara. App'in kendisi staticcache.ini içinde ayarlanır (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Özel</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Herkese açık</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Önce hedefi bir GitHub deposu ve bir belirteç ya da GitHub App ile kaydedin.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Bu kayıtları alan adının sağlayıcısında ayarlayın:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub'da kur</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain alan adının DNS'i henüz GitHub Pages'i göstermiyor.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain alan adının DNS'i GitHub Pages'i gösteriyor.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub entegrasyonu burada kullanılamıyor: %problem. Dala yayımlama yine de çalışır; GitHub Pages'i deponun ayarlarında açın.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub adımları bu hedef için kullanılamıyor: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages'in durumu, kimlik bilgisi bir belirteç ya da GitHub App olduğunda gösterilir.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Kendi alan adınızı kullanın</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Hangisini seçmeli: belirteç, dağıtım anahtarı ya da GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Bir GitHub deposu ve bir belirteç ya da GitHub App ile sihirbaz sizin için depoyu oluşturabilir, GitHub Pages'i açabilir ve alan adını ayarlayabilir (4. adım).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>derleniyor</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>derlendi</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions'tan</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch dalından</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>henüz yok</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>bulunamadı</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kapalı</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>özel</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>herkese açık</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>kuyrukta</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>bilinmiyor</translation>
+    </message>
 </context>
 </TS>

@@ -83380,5 +83380,181 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>yes, not published yet</source>
         <translation>oui, pas encore publiée</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Une GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Un workflow du dépôt la publie. La génération écrit le fichier du workflow ; laissez le dossier vide.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Après l’enregistrement d’une cible avec un dépôt GitHub et un jeton ou une GitHub App, cette étape peut créer le dépôt et activer GitHub Pages. Sinon, créez d’abord le dépôt sur GitHub ; un dépôt vide suffit.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Branche ou GitHub Actions ?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Vérifier le DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Créer le dépôt s’il n’existe pas</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Créez le dépôt sur GitHub et activez GitHub Pages dans ses paramètres (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Crée le dépôt %repo s’il manque (si demandé), active GitHub Pages depuis la branche ou depuis GitHub Actions selon l’enregistrement, et définit le domaine personnalisé et HTTPS. Utilise les paramètres enregistrés : enregistrez d’abord les modifications.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Détails sur GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Saisissez d’abord le domaine personnalisé.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Chaque push est d’abord vérifié par rapport à ces limites.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Pour une adresse https:// sur GitHub. L’App configurée pour cette installation se connecte ; elle a besoin de l’id de l’installation.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ne sert un dépôt privé qu’avec une offre payante.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages : un sous-domaine (www.example.com) nécessite un enregistrement CNAME vers &lt;owner&gt;.github.io ; un domaine apex (example.com), les enregistrements A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id de l’installation de la GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Dernière génération Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limites et conditions</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Requis pour GitHub Pages avec une offre gratuite.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Sur GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Uniquement avec une GitHub App : le nombre à la fin de l’adresse de l’installation de l’App sur GitHub. L’App elle-même est définie dans staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privé</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Public</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Enregistrez d’abord la cible avec un dépôt GitHub et un jeton ou une GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Définissez ces enregistrements chez le fournisseur du domaine :</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Configurer sur GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Le DNS de %domain ne pointe pas encore vers GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Le DNS de %domain pointe vers GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>L’intégration GitHub n’est pas disponible ici : %problem. La publication sur la branche fonctionne quand même ; activez GitHub Pages dans les paramètres du dépôt.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Les étapes GitHub ne sont pas disponibles pour cette cible : %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>L’état de GitHub Pages est affiché avec un jeton ou une GitHub App comme identifiants de connexion.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Utiliser votre propre domaine</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Que choisir : jeton, clé de déploiement ou GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Avec un dépôt GitHub et un jeton ou une GitHub App, l’assistant peut créer le dépôt, activer GitHub Pages et définir le domaine pour vous (étape 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>génération en cours</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>généré</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>depuis GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>depuis la branche %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>aucune pour l’instant</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>introuvable</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>désactivé</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privé</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>public</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>en file d’attente</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>inconnu</translation>
+    </message>
 </context>
 </TS>

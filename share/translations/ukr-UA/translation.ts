@@ -81970,5 +81970,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>так, ще не опубліковано</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Застосунок GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Його публікує workflow репозиторію. Збірка записує файл workflow; залиште теку порожньою.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Після збереження цілі з репозиторієм GitHub і токеном або GitHub App цей крок може створити репозиторій і ввімкнути GitHub Pages. Інакше спочатку створіть репозиторій на GitHub; підійде й порожній.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Гілка чи GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Перевірити DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Створити репозиторій, якщо його немає</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Створіть репозиторій на GitHub і ввімкніть GitHub Pages у його налаштуваннях (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Створює репозиторій %repo, якщо його немає (якщо це запитано), вмикає GitHub Pages з гілки або з GitHub Actions, як збережено, і задає власний домен і HTTPS. Використовує збережені налаштування: спочатку збережіть зміни.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Подробиці на GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Спочатку введіть власний домен.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Кожен push спершу перевіряється на відповідність цим обмеженням.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Для адреси https:// на GitHub. Вхід виконує App, налаштований для цього встановлення; йому потрібен ідентифікатор встановлення.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages обслуговує приватний репозиторій лише на платному тарифі.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: піддомену (www.example.com) потрібен запис CNAME на &lt;owner&gt;.github.io; кореневому домену (example.com) — записи A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Ідентифікатор встановлення GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Остання збірка Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Обмеження та умови</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Потрібно для GitHub Pages на безкоштовному тарифі.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>На GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Лише з GitHub App: число в кінці адреси встановлення App на GitHub. Сам App задається в staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Приватний</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Публічний</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Спочатку збережіть ціль з репозиторієм GitHub і токеном або GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Задайте ці записи в постачальника домену:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Налаштувати на GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS домену %domain ще не вказує на GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS домену %domain вказує на GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Інтеграція з GitHub тут недоступна: %problem. Публікація в гілку однаково працює; увімкніть GitHub Pages у налаштуваннях репозиторію.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Кроки GitHub недоступні для цієї цілі: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Стан GitHub Pages показується, якщо облікові дані — токен або GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Використовувати власний домен</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Що вибрати: токен, ключ розгортання чи GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>З репозиторієм GitHub і токеном або GitHub App майстер може сам створити репозиторій, увімкнути GitHub Pages і задати домен (крок 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>збирається</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>зібрано</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>з GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>з гілки %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>поки немає</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>не знайдено</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>вимкнено</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>приватний</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>публічний</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>у черзі</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>невідомо</translation>
+    </message>
 </context>
 </TS>

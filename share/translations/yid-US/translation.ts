@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>יאָ, נאָך ניט פֿאַרעפֿנטלעכט</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>אַ GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>אַ וואָרקפֿלאָו פֿון דער רעפּאָזיטאָריע פֿאַרעפֿנטלעכט עס. דער בוי שרייבט דעם וואָרקפֿלאָו־טעקע; לאָזט דעם אָרדנער ליידיק.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>נאָכן אָפּהיטן אַ ציל מיט אַ GitHub־רעפּאָזיטאָריע און אַ טאָקען אָדער GitHub App, קען דער שריט שאַפֿן די רעפּאָזיטאָריע און אָנצינדן GitHub Pages. אַניט, שאַפֿט קודם די רעפּאָזיטאָריע אויף GitHub; אַ ליידיקע איז גוט.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>צווײַג אָדער GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>קאָנטראָלירט דעם DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>שאַפֿט די רעפּאָזיטאָריע אויב זי עקזיסטירט ניט</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>שאַפֿט די רעפּאָזיטאָריע אויף GitHub און צינדט אָן GitHub Pages אין אירע אײַנשטעלונגען (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>שאַפֿט די רעפּאָזיטאָריע %repo ווען זי פֿעלט (ווען מען בעט), צינדט אָן GitHub Pages פֿון דער צווײַג אָדער פֿון GitHub Actions ווי אָפּגעהיט, און שטעלט אײַן דעם אייגענעם דאָמען און HTTPS. ניצט די אָפּגעהיטע אײַנשטעלונגען: היט קודם אָפּ די ענדערונגען.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>פּרטים אויף GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>גיט קודם אַרײַן דעם אייגענעם דאָמען.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>יעדער אַרויפֿשטופּ ווערט קודם קאָנטראָלירט קעגן די גרענעצן.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>פֿאַר אַ https:// אַדרעס אויף GitHub. דער App וואָס איז אײַנגעשטעלט פֿאַר דער אינסטאַלאַציע לאָגירט זיך אַרײַן; ער דאַרף דעם אינסטאַלאַציע־id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages באַדינט אַ פּריוואַטע רעפּאָזיטאָריע נאָר מיט אַ באַצאָלטן פּלאַן.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: אַ סובדאָמען (www.example.com) דאַרף אַ CNAME־רעקאָרד צו &lt;owner&gt;.github.io; אַ הויפּט־דאָמען (example.com) די A־רעקאָרדן %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>אינסטאַלאַציע־id פֿון דעם GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>לעצטער Pages־בוי</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>גרענעצן און באַדינגונגען</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>נייטיק פֿאַר GitHub Pages מיט אַן אומזיסטן פּלאַן.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>אויף GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>נאָר מיט אַ GitHub App: די נומער אינעם סוף פֿונעם אַדרעס פֿון דעם App׳ס אינסטאַלאַציע אויף GitHub. דער App אַליין ווערט באַשטימט אין staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>פּריוואַט</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>עפֿנטלעך</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>היט קודם אָפּ דעם ציל מיט אַ GitHub־רעפּאָזיטאָריע און אַ טאָקען אָדער GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>שטעלט אײַן די רעקאָרדן בײַם צושטעלער פֿונעם דאָמען:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>אײַנשטעלן אויף GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>דער DNS פֿון %domain ווײַזט נאָך ניט אויף GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>דער DNS פֿון %domain ווײַזט אויף GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>די GitHub־אינטעגראַציע איז ניט פֿאַראַן דאָ: %problem. פֿאַרעפֿנטלעכן אין דער צווײַג אַרבעט סײַ ווי; צינדט אָן GitHub Pages אין די אײַנשטעלונגען פֿון דער רעפּאָזיטאָריע.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>די GitHub־שריט זענען ניט פֿאַראַן פֿאַר דעם ציל: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>דער מצב פֿון GitHub Pages ווערט געוויזן מיט אַ טאָקען אָדער GitHub App ווי דער צוטריט־באַווײַז.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ניצט אײַער אייגענעם דאָמען</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>וואָס צו קלײַבן: טאָקען, דיפּלוי־שליסל אָדער GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>מיט אַ GitHub־רעפּאָזיטאָריע און אַ טאָקען אָדער GitHub App קען דער וויזאַרד פֿאַר אײַך שאַפֿן די רעפּאָזיטאָריע, אָנצינדן GitHub Pages און אײַנשטעלן דעם דאָמען (שריט 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ווערט געבויט</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>געבויט</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>פֿון GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>פֿון דער צווײַג %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>נאָך קיינער ניט</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ניט געפֿונען</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>אויסגעלאָשן</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>פּריוואַט</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>עפֿנטלעך</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>אין ריי</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>אומבאַקאַנט</translation>
+    </message>
 </context>
 </TS>

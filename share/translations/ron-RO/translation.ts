@@ -81970,5 +81970,181 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>yes, not published yet</source>
         <translation>da, încă nepublicat</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>O GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Un flux de lucru al depozitului îl publică. Build-ul scrie fișierul fluxului de lucru; lăsați dosarul gol.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>După salvarea unei ținte cu un depozit GitHub și un token sau o GitHub App, acest pas poate crea depozitul și activa GitHub Pages. Altfel, creați mai întâi depozitul pe GitHub; unul gol este în regulă.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Ramură sau GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Verificați DNS-ul</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Creează depozitul dacă nu există</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Creați depozitul pe GitHub și activați GitHub Pages în setările lui (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Creează depozitul %repo când lipsește (dacă se cere), activează GitHub Pages din ramură sau din GitHub Actions, așa cum a fost salvat, și setează domeniul propriu și HTTPS. Folosește setările salvate: salvați mai întâi modificările.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detalii pe GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Introduceți mai întâi domeniul propriu.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Fiecare push este verificat mai întâi față de aceste limite.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Pentru o adresă https:// pe GitHub. Se autentifică App-ul configurat pentru această instalare; are nevoie de id-ul instalării.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages servește un depozit privat doar cu un plan plătit.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: un subdomeniu (www.example.com) are nevoie de o înregistrare CNAME către &lt;owner&gt;.github.io; un domeniu apex (example.com) de înregistrările A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id-ul instalării GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ultimul build Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limite și condiții</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Necesar pentru GitHub Pages cu un plan gratuit.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Pe GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Doar cu o GitHub App: numărul de la sfârșitul adresei instalării App-ului pe GitHub. App-ul însuși se setează în staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Public</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Salvați mai întâi ținta cu un depozit GitHub și un token sau o GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Setați aceste înregistrări la furnizorul domeniului:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Configurare pe GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS-ul pentru %domain nu indică încă spre GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS-ul pentru %domain indică spre GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Integrarea GitHub nu este disponibilă aici: %problem. Publicarea în ramură funcționează oricum; activați GitHub Pages în setările depozitului.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Pașii GitHub nu sunt disponibili pentru această țintă: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Starea GitHub Pages este afișată cu un token sau o GitHub App drept credențiale.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Folosiți propriul domeniu</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ce să alegeți: token, cheie de implementare sau GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Cu un depozit GitHub și un token sau o GitHub App, asistentul poate crea depozitul, activa GitHub Pages și seta domeniul pentru dvs. (pasul 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>în construire</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>construit</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>din GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>din ramura %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>niciunul încă</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>negăsit</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>dezactivat</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>public</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>în coadă</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>necunoscut</translation>
+    </message>
 </context>
 </TS>

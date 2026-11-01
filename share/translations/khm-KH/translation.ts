@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>បាទ/ចាស មិនទាន់បោះពុម្ពផ្សាយ</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App មួយ</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>លំហូរការងារ (workflow) នៃឃ្លាំងកូដបោះពុម្ពផ្សាយវា។ ការស្ថាបនាសរសេរឯកសារលំហូរការងារ ទុកថតឱ្យទទេ។</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>បន្ទាប់ពីរក្សាទុកគោលដៅជាមួយឃ្លាំងកូដ GitHub និងថូខឹន ឬ GitHub App ជំហាននេះអាចបង្កើតឃ្លាំងកូដ និងបើក GitHub Pages។ បើមិនដូច្នោះទេ សូមបង្កើតឃ្លាំងកូដនៅលើ GitHub ជាមុនសិន ឃ្លាំងទទេក៏បាន។</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>សាខា ឬ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>ពិនិត្យ DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>បង្កើតឃ្លាំងកូដ ប្រសិនបើវាមិនទាន់មាន</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>បង្កើតឃ្លាំងកូដនៅលើ GitHub ហើយបើក GitHub Pages នៅក្នុងការកំណត់របស់វា (Settings &gt; Pages)។</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>បង្កើតឃ្លាំងកូដ %repo នៅពេលវាខ្វះ (ប្រសិនបើបានស្នើ) បើក GitHub Pages ពីសាខា ឬពី GitHub Actions តាមដែលបានរក្សាទុក ហើយកំណត់ដែនផ្ទាល់ខ្លួន និង HTTPS។ វាប្រើការកំណត់ដែលបានរក្សាទុក៖ សូមរក្សាទុកការផ្លាស់ប្ដូរជាមុនសិន។</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>ព័ត៌មានលម្អិតនៅលើ GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>សូមបញ្ចូលដែនផ្ទាល់ខ្លួនជាមុនសិន។</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>push នីមួយៗត្រូវបានពិនិត្យជាមួយដែនកំណត់ទាំងនេះជាមុន។</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>សម្រាប់អាសយដ្ឋាន https:// នៅលើ GitHub។ App ដែលបានរៀបចំសម្រាប់ការដំឡើងនេះចូលគណនី វាត្រូវការ id នៃការដំឡើង។</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages បម្រើឃ្លាំងកូដឯកជនតែលើគម្រោងបង់ប្រាក់ប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages៖ ដែនរង (www.example.com) ត្រូវការកំណត់ត្រា CNAME ទៅ &lt;owner&gt;.github.io ដែនមេ (example.com) ត្រូវការកំណត់ត្រា A %ips។</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>id នៃការដំឡើង GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>ការស្ថាបនា Pages ចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ដែនកំណត់ និងលក្ខខណ្ឌ</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>ត្រូវការសម្រាប់ GitHub Pages លើគម្រោងឥតគិតថ្លៃ។</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>នៅលើ GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>តែជាមួយ GitHub App ប៉ុណ្ណោះ៖ លេខនៅចុងអាសយដ្ឋាននៃការដំឡើង App នៅលើ GitHub។ App ខ្លួនឯងត្រូវបានកំណត់ក្នុង staticcache.ini (GitHubAppId, GitHubAppKey)។</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>ឯកជន</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>សាធារណៈ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>សូមរក្សាទុកគោលដៅជាមួយឃ្លាំងកូដ GitHub និងថូខឹន ឬ GitHub App ជាមុនសិន។</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>កំណត់កំណត់ត្រាទាំងនេះនៅអ្នកផ្ដល់ដែន៖</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>រៀបចំនៅលើ GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS របស់ %domain មិនទាន់ចង្អុលទៅ GitHub Pages នៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS របស់ %domain ចង្អុលទៅ GitHub Pages។</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>ការរួមបញ្ចូល GitHub មិនមាននៅទីនេះទេ៖ %problem។ ការបោះពុម្ពផ្សាយទៅសាខានៅតែដំណើរការ សូមបើក GitHub Pages នៅក្នុងការកំណត់របស់ឃ្លាំងកូដ។</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ជំហាន GitHub មិនមានសម្រាប់គោលដៅនេះទេ៖ %problem។</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>ស្ថានភាពរបស់ GitHub Pages ត្រូវបានបង្ហាញ នៅពេលព័ត៌មានសម្គាល់ការចូលជាថូខឹន ឬ GitHub App។</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ប្រើដែនផ្ទាល់ខ្លួនរបស់អ្នក</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>គួរជ្រើសមួយណា៖ ថូខឹន សោដាក់ពង្រាយ ឬ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>ជាមួយឃ្លាំងកូដ GitHub និងថូខឹន ឬ GitHub App អ្នកជំនួយការអាចបង្កើតឃ្លាំងកូដ បើក GitHub Pages និងកំណត់ដែនជូនអ្នក (ជំហានទី 4)។</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>កំពុងស្ថាបនា</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>បានស្ថាបនា</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ពី GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ពីសាខា %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>មិនទាន់មាន</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>រកមិនឃើញ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>បិទ</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ឯកជន</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>សាធារណៈ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>កំពុងរង់ចាំក្នុងជួរ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>មិនស្គាល់</translation>
+    </message>
 </context>
 </TS>

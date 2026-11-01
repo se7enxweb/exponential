@@ -81938,5 +81938,181 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>yes, not published yet</source>
         <translation>ndiyo, bado haijachapishwa</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App moja</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Mtiririko wa kazi (workflow) wa hazina unaichapisha. Muundo huandika faili ya mtiririko wa kazi; acha folda tupu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Baada ya kuhifadhi lengo lenye hazina ya GitHub na tokeni au GitHub App, hatua hii inaweza kuunda hazina na kuwasha GitHub Pages. Vinginevyo unda hazina kwenye GitHub kwanza; tupu ni sawa.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Tawi au GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kagua DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Unda hazina ikiwa haipo</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Unda hazina kwenye GitHub na uwashe GitHub Pages katika mipangilio yake (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Huunda hazina %repo ikiwa haipo (ukiomba), huwasha GitHub Pages kutoka tawi au kutoka GitHub Actions kama ilivyohifadhiwa, na huweka kikoa maalum na HTTPS. Hutumia mipangilio iliyohifadhiwa: hifadhi mabadiliko kwanza.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Maelezo kwenye GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Weka kikoa maalum kwanza.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Kila push hukaguliwa kwanza dhidi ya vikomo hivi.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Kwa anwani ya https:// kwenye GitHub. App iliyowekwa kwa usakinishaji huu ndiyo huingia; inahitaji id ya usakinishaji.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages hutoa hazina ya faragha kwenye mpango wa kulipia tu.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: kikoa kidogo (www.example.com) kinahitaji rekodi ya CNAME kwenda &lt;owner&gt;.github.io; kikoa kikuu (example.com) rekodi za A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id ya usakinishaji wa GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Muundo wa mwisho wa Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Vikomo na masharti</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Inahitajika kwa GitHub Pages kwenye mpango wa bure.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Kwenye GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Kwa GitHub App tu: nambari iliyo mwishoni mwa anwani ya usakinishaji wa App kwenye GitHub. App yenyewe huwekwa katika staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Faragha</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Umma</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Hifadhi lengo lenye hazina ya GitHub na tokeni au GitHub App kwanza.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Weka rekodi hizi kwa mtoa huduma wa kikoa:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Sanidi kwenye GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ya %domain bado haielekezi kwa GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ya %domain inaelekeza kwa GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Muunganisho wa GitHub haupatikani hapa: %problem. Kuchapisha kwenye tawi bado kunafanya kazi; washa GitHub Pages katika mipangilio ya hazina.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Hatua za GitHub hazipatikani kwa lengo hili: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Hali ya GitHub Pages huonyeshwa kitambulisho cha kuingia kikiwa tokeni au GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Tumia kikoa chako mwenyewe</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Uchague nini: tokeni, ufunguo wa kusambaza au GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Ukiwa na hazina ya GitHub na tokeni au GitHub App, mchawi anaweza kuunda hazina, kuwasha GitHub Pages na kuweka kikoa kwa ajili yako (hatua ya 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>inaundwa</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>imeundwa</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>kutoka GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>kutoka tawi %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>bado hakuna</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>haikupatikana</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>imezimwa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>faragha</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>umma</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>kwenye foleni</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>haijulikani</translation>
+    </message>
 </context>
 </TS>

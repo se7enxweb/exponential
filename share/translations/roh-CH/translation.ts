@@ -81940,5 +81940,181 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>yes, not published yet</source>
         <translation>gea, anc betg publitgà</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Ina GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>In decurs da lavur dal deposit la publitgescha. La construcziun scriva la datoteca dal decurs da lavur; laschai il ordinatur vid.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Suenter avair memorisà ina destinaziun cun in deposit GitHub ed in token u ina GitHub App, po quest pass crear il deposit ed activar GitHub Pages. Uschiglio creai l'emprim il deposit sin GitHub; in deposit vid basta.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Rom u GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Controllar il DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Crear il deposit, sch'el n'exista betg</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Creai il deposit sin GitHub ed activai GitHub Pages en ses parameters (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Creescha il deposit %repo, sch'el manca (sin dumonda), activescha GitHub Pages dal rom u da GitHub Actions sco memorisà e definescha l'atgna domena e HTTPS. Utilisescha ils parameters memorisads: memorisai l'emprim las midadas.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detagls sin GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Endatai l'emprim l'atgna domena.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Mintga push vegn l'emprim controllà tenor quests limits.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Per ina adressa https:// sin GitHub. L'App configurada per questa installaziun s'annunzia; ella dovra l'id da l'installaziun.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages porscha in deposit privat mo cun in plan da pajament.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ina subdomena (www.example.com) dovra ina endataziun CNAME vers &lt;owner&gt;.github.io; ina domena apex (example.com) las endataziuns A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id da l'installaziun da la GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ultima construcziun da Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limits e cundiziuns</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Necessari per GitHub Pages cun in plan gratuit.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Sin GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Mo cun ina GitHub App: il dumber a la fin da l'adressa da l'installaziun da l'App sin GitHub. L'App sezza vegn definida en staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Public</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Memorisai l'emprim la destinaziun cun in deposit GitHub ed in token u ina GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Definai questas endataziuns tar il purschider da la domena:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Configurar sin GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Il DNS da %domain na mussa anc betg sin GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Il DNS da %domain mussa sin GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>L'integraziun da GitHub n'è betg disponibla qua: %problem. La publicaziun en il rom funcziuna tuttina; activai GitHub Pages en ils parameters dal deposit.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Ils pass da GitHub n'èn betg disponibels per questa destinaziun: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Il stadi da GitHub Pages vegn mussà cun in token u ina GitHub App sco datas d'annunzia.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Utilisar Vossa atgna domena</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Tge tscherner: token, clav da distribuziun u GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Cun in deposit GitHub ed in token u ina GitHub App po l'assistent crear il deposit, activar GitHub Pages e definir la domena per Vus (pass 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>vegn construì</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>construì</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>da GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>dal rom %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>anc nagin</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>betg chattà</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>deactivà</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>public</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>en la colonna d'spetga</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nunenconuschent</translation>
+    </message>
 </context>
 </TS>

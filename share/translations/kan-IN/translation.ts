@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ಹೌದು, ಇನ್ನೂ ಪ್ರಕಟಿಸಿಲ್ಲ</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>ಒಂದು GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>ರೆಪೊಸಿಟರಿಯ ಒಂದು ವರ್ಕ್‌ಫ್ಲೋ ಅದನ್ನು ಪ್ರಕಟಿಸುತ್ತದೆ. ಬಿಲ್ಡ್ ವರ್ಕ್‌ಫ್ಲೋ ಫೈಲ್ ಅನ್ನು ಬರೆಯುತ್ತದೆ; ಫೋಲ್ಡರ್ ಖಾಲಿ ಬಿಡಿ.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub ರೆಪೊಸಿಟರಿ ಮತ್ತು ಟೋಕನ್ ಅಥವಾ GitHub App ಜೊತೆಗೆ ಗುರಿಯನ್ನು ಉಳಿಸಿದ ನಂತರ, ಈ ಹಂತವು ರೆಪೊಸಿಟರಿಯನ್ನು ರಚಿಸಿ GitHub Pages ಅನ್ನು ಆನ್ ಮಾಡಬಹುದು. ಇಲ್ಲದಿದ್ದರೆ ಮೊದಲು GitHub ನಲ್ಲಿ ರೆಪೊಸಿಟರಿ ರಚಿಸಿ; ಖಾಲಿ ರೆಪೊಸಿಟರಿ ಸಾಕು.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ಬ್ರಾಂಚ್ ಅಥವಾ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS ಪರಿಶೀಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ರೆಪೊಸಿಟರಿ ಇಲ್ಲದಿದ್ದರೆ ರಚಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub ನಲ್ಲಿ ರೆಪೊಸಿಟರಿ ರಚಿಸಿ ಮತ್ತು ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ GitHub Pages ಆನ್ ಮಾಡಿ (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ರೆಪೊಸಿಟರಿ %repo ಇಲ್ಲದಿದ್ದಾಗ ಅದನ್ನು ರಚಿಸುತ್ತದೆ (ಕೇಳಿದರೆ), ಉಳಿಸಿದಂತೆ ಬ್ರಾಂಚ್‌ನಿಂದ ಅಥವಾ GitHub Actions ನಿಂದ GitHub Pages ಆನ್ ಮಾಡುತ್ತದೆ, ಮತ್ತು ಕಸ್ಟಮ್ ಡೊಮೇನ್ ಹಾಗೂ HTTPS ಹೊಂದಿಸುತ್ತದೆ. ಇದು ಉಳಿಸಿದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬಳಸುತ್ತದೆ: ಮೊದಲು ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub ನಲ್ಲಿ ವಿವರಗಳು</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ಮೊದಲು ಕಸ್ಟಮ್ ಡೊಮೇನ್ ನಮೂದಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ಪ್ರತಿ push ಅನ್ನು ಮೊದಲು ಈ ಮಿತಿಗಳ ವಿರುದ್ಧ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub ನಲ್ಲಿನ https:// ವಿಳಾಸಕ್ಕಾಗಿ. ಈ ಸ್ಥಾಪನೆಗಾಗಿ ಹೊಂದಿಸಲಾದ App ಸೈನ್ ಇನ್ ಮಾಡುತ್ತದೆ; ಅದಕ್ಕೆ ಸ್ಥಾಪನೆಯ id ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ಖಾಸಗಿ ರೆಪೊಸಿಟರಿಯನ್ನು ಪಾವತಿಸಿದ ಯೋಜನೆಯಲ್ಲಿ ಮಾತ್ರ ಒದಗಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ಉಪಡೊಮೇನ್‌ಗೆ (www.example.com) &lt;owner&gt;.github.io ಗೆ CNAME ದಾಖಲೆ ಬೇಕು; ಮೂಲ ಡೊಮೇನ್‌ಗೆ (example.com) A ದಾಖಲೆಗಳು %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App ನ ಸ್ಥಾಪನೆ id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>ಕೊನೆಯ Pages ಬಿಲ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ಮಿತಿಗಳು ಮತ್ತು ನಿಯಮಗಳು</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>ಉಚಿತ ಯೋಜನೆಯಲ್ಲಿ GitHub Pages ಗೆ ಅಗತ್ಯ.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub ನಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App ಜೊತೆ ಮಾತ್ರ: GitHub ನಲ್ಲಿ App ನ ಸ್ಥಾಪನೆಯ ವಿಳಾಸದ ಕೊನೆಯಲ್ಲಿರುವ ಸಂಖ್ಯೆ. App ಅನ್ನು staticcache.ini ನಲ್ಲಿ ಹೊಂದಿಸಲಾಗುತ್ತದೆ (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>ಖಾಸಗಿ</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>ಸಾರ್ವಜನಿಕ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>ಮೊದಲು GitHub ರೆಪೊಸಿಟರಿ ಮತ್ತು ಟೋಕನ್ ಅಥವಾ GitHub App ಜೊತೆಗೆ ಗುರಿಯನ್ನು ಉಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ಡೊಮೇನ್ ಒದಗಿಸುವವರಲ್ಲಿ ಈ ದಾಖಲೆಗಳನ್ನು ಹೊಂದಿಸಿ:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub ನಲ್ಲಿ ಹೊಂದಿಸಿ</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain ನ DNS ಇನ್ನೂ GitHub Pages ಕಡೆಗೆ ಸೂಚಿಸುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain ನ DNS GitHub Pages ಕಡೆಗೆ ಸೂಚಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub ಏಕೀಕರಣ ಇಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ: %problem. ಬ್ರಾಂಚ್‌ಗೆ ಪ್ರಕಟಿಸುವುದು ಹಾಗೆಯೇ ಕೆಲಸ ಮಾಡುತ್ತದೆ; ರೆಪೊಸಿಟರಿಯ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ GitHub Pages ಆನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ಈ ಗುರಿಗೆ GitHub ಹಂತಗಳು ಲಭ್ಯವಿಲ್ಲ: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>ರುಜುವಾತಾಗಿ ಟೋಕನ್ ಅಥವಾ GitHub App ಇದ್ದಾಗ GitHub Pages ನ ಸ್ಥಿತಿ ತೋರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ನಿಮ್ಮ ಸ್ವಂತ ಡೊಮೇನ್ ಬಳಸಿ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ಯಾವುದನ್ನು ಆರಿಸಬೇಕು: ಟೋಕನ್, ಡಿಪ್ಲಾಯ್ ಕೀ ಅಥವಾ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub ರೆಪೊಸಿಟರಿ ಮತ್ತು ಟೋಕನ್ ಅಥವಾ GitHub App ಇದ್ದರೆ, ವಿಝಾರ್ಡ್ ನಿಮಗಾಗಿ ರೆಪೊಸಿಟರಿ ರಚಿಸಬಹುದು, GitHub Pages ಆನ್ ಮಾಡಬಹುದು ಮತ್ತು ಡೊಮೇನ್ ಹೊಂದಿಸಬಹುದು (ಹಂತ 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ಬಿಲ್ಡ್ ಆಗುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ಬಿಲ್ಡ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions ನಿಂದ</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ಬ್ರಾಂಚ್ %branch ನಿಂದ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ಇನ್ನೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ಕಂಡುಬಂದಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ಆಫ್</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ಖಾಸಗಿ</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ಸಾರ್ವಜನಿಕ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ಸರದಿಯಲ್ಲಿದೆ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ಅಜ್ಞಾತ</translation>
+    </message>
 </context>
 </TS>

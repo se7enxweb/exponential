@@ -81970,5 +81970,181 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>yes, not published yet</source>
         <translation>aap, suli saqqummiunneqanngilaq</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App atuagassiaq</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Toqqorsivimmi workflow-ip saqqummiussivaa. Sanaaq workflow-ip fililiaanik allappoq; mappi imaqanngitsoq qimallugu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Saqqummiuffik GitHub-imi toqqorsivimmik aamma token-imik imaluunniit GitHub App-imik toqqorneqareerpat, alloriarneq una toqqorsivimmik pilersitsisinnaavoq GitHub Pages-illu ikitsisinnaallugu. Taamaanngippat siullermik toqqorsivik GitHub-imi pilersiguk; imaqanngitsoq naammappoq.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Avalequt imaluunniit GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS misissoruk</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Toqqorsivik pilersiguk peqanngippat</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Toqqorsivik GitHub-imi pilersiguk GitHub Pages-ilu aaqqissuussinerani ikillugu (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Toqqorsivik %repo pilersittarpaa amigaataappat (piumasaqarfigineqarpat), GitHub Pages ikittarpaa avalequtimit imaluunniit GitHub Actions-imit toqqorneqarnera malillugu, domænet nammineq pigisat HTTPS-ilu aalajangersarlugit. Aaqqissuussinerit toqqorneqarsimasut atorpai: siullermik allannguutit toqqorkit.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Paasissutissat GitHub-imi</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Siullermik domænet nammineq pigisat allaguk.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Push tamarmi siullermik killilersuutinut uku misissorneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>https:// najugaqarfimmut GitHub-imi. App ikkussinermut uunga aaqqissugaq iserpoq; ikkussinerup id-ia pisariaqartippaa.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages-ip toqqorsivik namminermut atugassaq akiliuteqartumi aatsaat sullissinnaavaa.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomæne (www.example.com) CNAME-imik &lt;owner&gt;.github.io-mut pisariaqartitsivoq; apex-domæne (example.com) A-records-inik %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App-ip ikkussinerata id-ia</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages-imi sanaaq kingulleq</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Killilersuutit piumasaqaatillu</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>GitHub Pages-imut akeqanngitsumi atugassaq pisariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-imi</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App-imik kisimi: kisitsit GitHub-imi App-ip ikkussinerata najugaata naanerani. App nammineq staticcache.ini-imi aalajangersarneqartarpoq (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Namminermut</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Tamanut ammasoq</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Siullermik saqqummiuffik GitHub-imi toqqorsivimmik aamma token-imik imaluunniit GitHub App-imik toqqoruk.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Uku records domænip pilersuisuaniittut aalajangersakkit:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub-imi aaqqissuuguk</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain-ip DNS-ia suli GitHub Pages-imut tikkuussinngilaq.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain-ip DNS-ia GitHub Pages-imut tikkuussivoq.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-imut atassuteqarneq maani atorneqarsinnaanngilaq: %problem. Avalequtimut saqqummiineq taamaattoq sulisinnaavoq; GitHub Pages toqqorsivimmi aaqqissuussinermi ikiguk.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub-imi alloriarnerit saqqummiuffimmut uunga atorneqarsinnaanngillat: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages-ip qanoq innera takutinneqartarpoq token imaluunniit GitHub App iserfissatut atorneqarpat.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Domænet nammineq pigisat atoruk</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Suna qinissavit: token, ikkussinermut matuersaat imaluunniit GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub-imi toqqorsivimmik aamma token-imik imaluunniit GitHub App-imik, ilitsersuut toqqorsivimmik pilersitsisinnaavoq, GitHub Pages ikillugu domænilu aalajangersarlugu illit sinnerlutit (alloriarneq 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>sanaartorneqarpoq</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>sanaajuvoq</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-imit</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>avalequtimit %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>suli peqanngilaq</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nassaarineqanngilaq</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ikitsinngilaq</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>namminermut</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>tamanut ammasoq</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>utaqqivoq</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ilisimaneqanngilaq</translation>
+    </message>
 </context>
 </TS>

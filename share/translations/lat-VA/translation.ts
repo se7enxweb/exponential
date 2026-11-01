@@ -81973,5 +81973,181 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>yes, not published yet</source>
         <translation>ita, nondum publicatum</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Applicatio GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Cursus operis repositorii id publicat. Constructio fasciculum cursus operis scribit; capsam vacuam relinque.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Postquam scopus cum repositorio GitHub et signo vel GitHub App servatus est, hic gradus repositorium creare et GitHub Pages accendere potest. Aliter primum repositorium in GitHub crea; vacuum quoque sufficit.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Ramus an GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS inspicere</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Repositorium creare, si non exstat</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Repositorium in GitHub crea et GitHub Pages in eius configurationibus accende (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Repositorium %repo creat, si deest (si petitur), GitHub Pages ex ramo vel ex GitHub Actions ut servatum est accendit, et dominium proprium atque HTTPS constituit. Configurationibus servatis utitur: primum mutationes serva.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Singula in GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Primum dominium proprium inscribe.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Quodque push primum ad hos fines examinatur.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Pro inscriptione https:// in GitHub. Applicatio huic installationi constituta se inscribit; numerum installationis requirit.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages repositorium privatum solum in consilio pretioso praebet.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdominium (www.example.com) inscriptionem CNAME ad &lt;owner&gt;.github.io requirit; dominium summum (example.com) inscriptiones A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Numerus installationis GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ultima constructio Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Fines et condiciones</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Necessarium pro GitHub Pages in consilio gratuito.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>In GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Solum cum GitHub App: numerus in fine inscriptionis installationis applicationis in GitHub. Applicatio ipsa in staticcache.ini constituitur (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privatum</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Publicum</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Primum scopum cum repositorio GitHub et signo vel GitHub App serva.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Has inscriptiones apud praebitorem dominii constitue:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>In GitHub constituere</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS dominii %domain nondum ad GitHub Pages spectat.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS dominii %domain ad GitHub Pages spectat.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Integratio GitHub hic praesto non est: %problem. Publicatio in ramum nihilominus operatur; GitHub Pages in configurationibus repositorii accende.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Gradus GitHub huic scopo praesto non sunt: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Status GitHub Pages ostenditur cum signum vel GitHub App testimonium aditus est.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Dominio proprio uti</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Quid eligendum: signum, clavis deponendi an GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Cum repositorio GitHub et signo vel GitHub App, magus repositorium creare, GitHub Pages accendere et dominium tibi constituere potest (gradus 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>construitur</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>constructum</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ex GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ex ramo %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nullum adhuc</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>non inventum</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>exstinctum</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privatum</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>publicum</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>in ordine exspectat</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ignotum</translation>
+    </message>
 </context>
 </TS>

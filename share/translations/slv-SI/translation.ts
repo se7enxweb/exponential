@@ -81970,5 +81970,181 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>yes, not published yet</source>
         <translation>da, še ni objavljeno</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Aplikacija GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Objavi ga potek dela (workflow) repozitorija. Gradnja zapiše datoteko poteka dela; mapo pustite prazno.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Ko shranite cilj z repozitorijem GitHub in žetonom ali GitHub App, lahko ta korak ustvari repozitorij in vklopi GitHub Pages. Sicer najprej ustvarite repozitorij na GitHubu; prazen zadošča.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Veja ali GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Preveri DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ustvari repozitorij, če ne obstaja</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Ustvarite repozitorij na GitHubu in v njegovih nastavitvah vklopite GitHub Pages (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ustvari repozitorij %repo, če manjka (na zahtevo), vklopi GitHub Pages iz veje ali iz GitHub Actions, kot je shranjeno, ter nastavi lastno domeno in HTTPS. Uporablja shranjene nastavitve: najprej shranite spremembe.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Podrobnosti na GitHubu</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Najprej vnesite lastno domeno.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Vsak push se najprej preveri glede na te omejitve.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Za naslov https:// na GitHubu. Prijavi se aplikacija, nastavljena za to namestitev; potrebuje id namestitve.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages streže zasebni repozitorij le s plačljivim paketom.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: poddomena (www.example.com) potrebuje zapis CNAME na &lt;owner&gt;.github.io; glavna domena (example.com) zapise A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id namestitve GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Zadnja gradnja Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Omejitve in pogoji</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Potrebno za GitHub Pages z brezplačnim paketom.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Na GitHubu</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Samo z GitHub App: številka na koncu naslova namestitve aplikacije na GitHubu. Sama aplikacija je nastavljena v staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Zasebno</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Javno</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Najprej shranite cilj z repozitorijem GitHub in žetonom ali GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Te zapise nastavite pri ponudniku domene:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Nastavi na GitHubu</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS domene %domain še ne kaže na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS domene %domain kaže na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Integracija z GitHubom tukaj ni na voljo: %problem. Objava v vejo vseeno deluje; vklopite GitHub Pages v nastavitvah repozitorija.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Koraki GitHub za ta cilj niso na voljo: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Stanje GitHub Pages je prikazano, če je poverilnica žeton ali GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Uporabite lastno domeno</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Kaj izbrati: žeton, ključ za uvajanje ali GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Z repozitorijem GitHub in žetonom ali GitHub App lahko čarovnik namesto vas ustvari repozitorij, vklopi GitHub Pages in nastavi domeno (korak 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>v gradnji</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>zgrajeno</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>iz GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>iz veje %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>še nič</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ni najdeno</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>izklopljeno</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>zasebno</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>javno</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>v čakalni vrsti</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznano</translation>
+    </message>
 </context>
 </TS>

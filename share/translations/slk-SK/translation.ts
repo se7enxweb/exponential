@@ -81970,5 +81970,181 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>yes, not published yet</source>
         <translation>áno, zatiaľ nepublikované</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Publikuje ho pracovný postup (workflow) repozitára. Zostavenie zapíše súbor pracovného postupu; priečinok nechajte prázdny.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Po uložení cieľa s repozitárom GitHub a tokenom alebo GitHub App môže tento krok vytvoriť repozitár a zapnúť GitHub Pages. Inak najprv vytvorte repozitár na GitHube; stačí aj prázdny.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Vetva alebo GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Skontrolovať DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Vytvoriť repozitár, ak neexistuje</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Vytvorte repozitár na GitHube a zapnite GitHub Pages v jeho nastaveniach (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Vytvorí repozitár %repo, ak chýba (ak je to požadované), zapne GitHub Pages z vetvy alebo z GitHub Actions podľa uloženého nastavenia a nastaví vlastnú doménu a HTTPS. Používa uložené nastavenia: najprv uložte zmeny.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Podrobnosti na GitHube</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Najprv zadajte vlastnú doménu.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Každý push sa najprv skontroluje voči týmto limitom.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Pre adresu https:// na GitHube. Prihlási sa App nastavená pre túto inštaláciu; potrebuje ID inštalácie.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages poskytuje súkromný repozitár iba v platenom pláne.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdoména (www.example.com) potrebuje záznam CNAME na &lt;owner&gt;.github.io; vrcholová doména (example.com) záznamy A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>ID inštalácie GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Posledné zostavenie Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limity a podmienky</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Potrebné pre GitHub Pages v bezplatnom pláne.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Na GitHube</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Iba s GitHub App: číslo na konci adresy inštalácie App na GitHube. Samotná App sa nastavuje v staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Súkromný</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Verejný</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Najprv uložte cieľ s repozitárom GitHub a tokenom alebo GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Nastavte tieto záznamy u poskytovateľa domény:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Nastaviť na GitHube</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS domény %domain zatiaľ nesmeruje na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS domény %domain smeruje na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Integrácia s GitHubom tu nie je dostupná: %problem. Publikovanie do vetvy aj tak funguje; zapnite GitHub Pages v nastaveniach repozitára.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Kroky GitHubu nie sú pre tento cieľ dostupné: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Stav GitHub Pages sa zobrazuje s tokenom alebo GitHub App ako prihlasovacími údajmi.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Použiť vlastnú doménu</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Čo zvoliť: token, kľúč nasadenia alebo GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>S repozitárom GitHub a tokenom alebo GitHub App môže sprievodca za vás vytvoriť repozitár, zapnúť GitHub Pages a nastaviť doménu (krok 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>zostavuje sa</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>zostavené</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>z GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>z vetvy %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>zatiaľ žiadne</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>nenájdené</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vypnuté</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>súkromný</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>verejný</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>v poradí</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznáme</translation>
+    </message>
 </context>
 </TS>

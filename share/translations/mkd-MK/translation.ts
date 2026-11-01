@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>да, сè уште не е објавено</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Го објавува работен тек на складиштето. Изградбата ја запишува датотеката на работниот тек; оставете ја папката празна.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Откако ќе зачувате цел со GitHub-складиште и токен или GitHub App, овој чекор може да го создаде складиштето и да го вклучи GitHub Pages. Инаку, прво создадете го складиштето на GitHub; празно е во ред.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Гранка или GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Провери го DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Создај го складиштето ако не постои</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Создадете го складиштето на GitHub и вклучете го GitHub Pages во неговите поставки (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Го создава складиштето %repo кога недостасува (ако е побарано), го вклучува GitHub Pages од гранката или од GitHub Actions како што е зачувано и ги поставува сопствениот домен и HTTPS. Ги користи зачуваните поставки: прво зачувајте ги промените.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Детали на GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Прво внесете го сопствениот домен.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Секое испраќање прво се проверува според овие ограничувања.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>За https:// адреса на GitHub. Се најавува апликацијата поставена за оваа инсталација; ѝ треба id на инсталацијата.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages служи приватно складиште само со платен план.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: на поддомен (www.example.com) му треба CNAME запис кон &lt;owner&gt;.github.io; на основен домен (example.com) A записите %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id на инсталацијата на GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Последна изградба на Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Ограничувања и услови</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Потребно за GitHub Pages со бесплатен план.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>На GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Само со GitHub App: бројот на крајот од адресата на инсталацијата на апликацијата на GitHub. Самата апликација се поставува во staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Приватно</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Јавно</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Прво зачувајте ја целта со GitHub-складиште и токен или GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Поставете ги овие записи кај давателот на доменот:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Постави на GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS на %domain сè уште не покажува кон GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS на %domain покажува кон GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Интеграцијата со GitHub не е достапна тука: %problem. Објавувањето во гранката работи и така; вклучете го GitHub Pages во поставките на складиштето.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Чекорите на GitHub не се достапни за оваа цел: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Состојбата на GitHub Pages се прикажува со токен или GitHub App како акредитив.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Користете сопствен домен</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Што да изберете: токен, клуч за распоредување или GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Со GitHub-складиште и токен или GitHub App, волшебникот може наместо вас да го создаде складиштето, да го вклучи GitHub Pages и да го постави доменот (чекор 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>се гради</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>изградено</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>од GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>од гранката %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>сè уште нема</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>не е пронајдено</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>исклучено</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>приватно</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>јавно</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>во ред</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>непознато</translation>
+    </message>
 </context>
 </TS>

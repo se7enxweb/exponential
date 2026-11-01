@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ہاں، ابھی شائع نہیں ہوا</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>ایک GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>ریپوزیٹری کا ایک ورک فلو اسے شائع کرتا ہے۔ ورک فلو فائل بلڈ لکھتا ہے؛ فولڈر خالی چھوڑ دیں۔</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub ریپوزیٹری اور ٹوکن یا GitHub App کے ساتھ ہدف محفوظ کرنے کے بعد، یہ مرحلہ ریپوزیٹری بنا سکتا ہے اور GitHub Pages آن کر سکتا ہے۔ ورنہ پہلے GitHub پر ریپوزیٹری بنائیں؛ خالی ریپوزیٹری بھی ٹھیک ہے۔</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>برانچ یا GitHub Actions؟</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS چیک کریں</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ریپوزیٹری موجود نہ ہو تو بنائیں</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub پر ریپوزیٹری بنائیں اور اس کی سیٹنگز میں GitHub Pages آن کریں (Settings &gt; Pages)۔</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ریپوزیٹری %repo نہ ہو تو (کہنے پر) بناتا ہے، محفوظ کردہ ترتیب کے مطابق برانچ سے یا GitHub Actions سے GitHub Pages آن کرتا ہے، اور کسٹم ڈومین اور HTTPS سیٹ کرتا ہے۔ یہ محفوظ کردہ سیٹنگز استعمال کرتا ہے: پہلے تبدیلیاں محفوظ کریں۔</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub پر تفصیلات</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>پہلے کسٹم ڈومین درج کریں۔</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ہر push پہلے ان حدود کے مطابق جانچا جاتا ہے۔</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub پر https:// ایڈریس کے لیے۔ اس انسٹالیشن کے لیے سیٹ کی گئی App سائن ان کرتی ہے؛ اسے انسٹالیشن id درکار ہے۔</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages نجی ریپوزیٹری صرف ادائیگی والے پلان پر پیش کرتا ہے۔</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: سب ڈومین (www.example.com) کو &lt;owner&gt;.github.io کی طرف CNAME ریکارڈ درکار ہے؛ apex ڈومین (example.com) کو A ریکارڈز %ips۔</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App کی انسٹالیشن id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>آخری Pages بلڈ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>حدود اور شرائط</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>مفت پلان پر GitHub Pages کے لیے ضروری۔</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub پر</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>صرف GitHub App کے ساتھ: GitHub پر App کی انسٹالیشن کے ایڈریس کے آخر میں موجود نمبر۔ App خود staticcache.ini میں سیٹ ہوتی ہے (GitHubAppId, GitHubAppKey)۔</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>نجی</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>عوامی</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>پہلے ہدف کو GitHub ریپوزیٹری اور ٹوکن یا GitHub App کے ساتھ محفوظ کریں۔</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>یہ ریکارڈز ڈومین فراہم کنندہ کے پاس سیٹ کریں:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub پر سیٹ اپ کریں</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain کا DNS ابھی GitHub Pages کی طرف اشارہ نہیں کرتا۔</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain کا DNS GitHub Pages کی طرف اشارہ کرتا ہے۔</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub انٹیگریشن یہاں دستیاب نہیں: %problem۔ برانچ پر شائع کرنا پھر بھی کام کرتا ہے؛ ریپوزیٹری کی سیٹنگز میں GitHub Pages آن کریں۔</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>اس ہدف کے لیے GitHub مراحل دستیاب نہیں: %problem۔</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages کی حالت تب دکھائی جاتی ہے جب اسناد ٹوکن یا GitHub App ہوں۔</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>اپنا ڈومین استعمال کریں</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>کیا منتخب کریں: ٹوکن، ڈیپلائے کی یا GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub ریپوزیٹری اور ٹوکن یا GitHub App کے ساتھ، وزرڈ آپ کے لیے ریپوزیٹری بنا سکتا ہے، GitHub Pages آن کر سکتا ہے اور ڈومین سیٹ کر سکتا ہے (مرحلہ 4)۔</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>بلڈ ہو رہا ہے</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>بلڈ ہو گیا</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions سے</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>برانچ %branch سے</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ابھی کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>نہیں ملا</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>نجی</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>عوامی</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>قطار میں</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
 </context>
 </TS>

@@ -81940,5 +81940,181 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>yes, not published yet</source>
         <translation>ya, n&apos;eo ket embannet c&apos;hoazh</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Un GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Ul labour-red (workflow) eus ar c'havlec'h a embann anezhañ. Ar savadur a skriv restr al labour-red; lezit an teuliad goullo.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Goude enrollañ ur pal gant ur c'havlec'h GitHub hag ur jedouer pe ur GitHub App, ar bazenn-mañ a c'hall krouiñ ar c'havlec'h hag enaouiñ GitHub Pages. A-hend-all krouit ar c'havlec'h war GitHub da gentañ; mat eo ur c'havlec'h goullo.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Skourr pe GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Gwiriañ an DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Krouiñ ar c'havlec'h ma n'eus ket anezhañ</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Krouit ar c'havlec'h war GitHub hag enaouit GitHub Pages en e arventennoù (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Krouiñ a ra ar c'havlec'h %repo pa vank (mar goulennet), enaouiñ a ra GitHub Pages eus ar skourr pe eus GitHub Actions evel m'eo bet enrollet, ha lakaat a ra an domani personel hag HTTPS. Implijout a ra an arventennoù enrollet: enrollit ar c'hemmoù da gentañ.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Munudoù war GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Roit an domani personel da gentañ.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Pep push a vez gwiriet ouzh ar bevennoù-mañ da gentañ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Evit ur chomlec'h https:// war GitHub. An App kefluniet evit ar staliadur-mañ a gevrea; ezhomm en deus eus id ar staliadur.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ne servij ur c'havlec'h prevez nemet gant ur steuñv paeüs.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: un isdomani (www.example.com) en deus ezhomm eus ur c'herzh CNAME war-du &lt;owner&gt;.github.io; un domani pennañ (example.com), eus ar c'herzhoù A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id staliadur ar GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Savadur Pages diwezhañ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Bevennoù ha divizoù</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ret evit GitHub Pages gant ur steuñv digoust.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>War GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Gant ur GitHub App hepken: an niverenn e dibenn chomlec'h staliadur an App war GitHub. An App e-unan a vez lakaet e staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Prevez</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Foran</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Enrollit ar pal gant ur c'havlec'h GitHub hag ur jedouer pe ur GitHub App da gentañ.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Lakait ar c'herzhoù-mañ e-ti pourchaser an domani:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Kefluniañ war GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS %domain ne ziskouez ket war-du GitHub Pages c'hoazh.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS %domain a ziskouez war-du GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>N'haller ket implijout an enframmañ GitHub amañ: %problem. Embann er skourr a ya en-dro memes tra; enaouit GitHub Pages en arventennoù ar c'havlec'h.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>N'haller ket implijout ar pazennoù GitHub evit ar pal-mañ: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Stad GitHub Pages a vez diskouezet gant ur jedouer pe ur GitHub App evel titour kennaskañ.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Implijout ho tomani deoc'h</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Petra dibab: jedouer, alc'hwez deploy pe GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Gant ur c'havlec'h GitHub hag ur jedouer pe ur GitHub App, ar skoazeller a c'hall krouiñ ar c'havlec'h, enaouiñ GitHub Pages ha lakaat an domani evidoc'h (pazenn 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>o sevel</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>savet</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>eus GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>eus ar skourr %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hini ebet c'hoazh</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>n'eo ket bet kavet</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>lazhet</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>prevez</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>foran</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>el lostennad</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>dianav</translation>
+    </message>
 </context>
 </TS>

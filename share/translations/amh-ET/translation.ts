@@ -81938,5 +81938,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>አዎ፣ ገና አልታተመም</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>የ GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>የማከማቻው የሥራ ፍሰት ያትመዋል። ግንባታው የሥራ ፍሰት ፋይሉን ይጽፋል፤ አቃፊውን ባዶ ይተዉት።</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>ዒላማን ከ GitHub ማከማቻ እና ከቶከን ወይም GitHub App ጋር ካስቀመጡ በኋላ ይህ ደረጃ ማከማቻውን መፍጠር እና GitHub Pagesን ማብራት ይችላል። ያለበለዚያ መጀመሪያ ማከማቻውን በ GitHub ላይ ይፍጠሩ፤ ባዶ ማከማቻ ይበቃል።</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ቅርንጫፍ ወይስ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNSን ያረጋግጡ</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ማከማቻው ከሌለ ይፍጠሩት</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>ማከማቻውን በ GitHub ላይ ይፍጠሩ እና በቅንብሮቹ ውስጥ GitHub Pagesን ያብሩ (Settings &gt; Pages)።</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ማከማቻውን %repo ከሌለ ይፈጥራል (ከተጠየቀ)፣ GitHub Pagesን እንደተቀመጠው ከቅርንጫፉ ወይም ከ GitHub Actions ያበራል፣ እንዲሁም የራስ ጎራውን እና HTTPSን ያዘጋጃል። የተቀመጡትን ቅንብሮች ይጠቀማል፤ መጀመሪያ ለውጦቹን ያስቀምጡ።</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>ዝርዝሮች በ GitHub ላይ</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>መጀመሪያ የራስ ጎራውን ያስገቡ።</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>እያንዳንዱ push መጀመሪያ ከእነዚህ ገደቦች ጋር ይፈተሻል።</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>በ GitHub ላይ ላለ https:// አድራሻ። ለዚህ ጭነት የተዘጋጀው App ይገባል፤ የጭነቱን መለያ ቁጥር ይፈልጋል።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages የግል ማከማቻን የሚያገለግለው በሚከፈልበት ዕቅድ ብቻ ነው።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ንዑስ ጎራ (www.example.com) ወደ &lt;owner&gt;.github.io የሚያመለክት CNAME መዝገብ ይፈልጋል፤ ዋና ጎራ (example.com) ደግሞ የ A መዝገቦቹን %ips።</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>የ GitHub App ጭነት መለያ ቁጥር</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>የመጨረሻው የ Pages ግንባታ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ገደቦች እና ውሎች</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>በነጻ ዕቅድ ላይ ለ GitHub Pages ያስፈልጋል።</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>በ GitHub ላይ</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>በ GitHub App ብቻ: በ GitHub ላይ ያለው የ App ጭነት አድራሻ መጨረሻ ላይ ያለው ቁጥር። App ራሱ በ staticcache.ini ውስጥ ይዘጋጃል (GitHubAppId, GitHubAppKey)።</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>የግል</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>የሕዝብ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>መጀመሪያ ዒላማውን ከ GitHub ማከማቻ እና ከቶከን ወይም GitHub App ጋር ያስቀምጡ።</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>እነዚህን መዝገቦች በጎራው አቅራቢ ላይ ያዘጋጁ፦</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>በ GitHub ላይ አዘጋጅ</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>የ %domain DNS ገና ወደ GitHub Pages አያመለክትም።</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>የ %domain DNS ወደ GitHub Pages ያመለክታል።</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>የ GitHub ውህደት እዚህ አይገኝም: %problem። ወደ ቅርንጫፉ ማተም ግን ይሠራል፤ GitHub Pagesን በማከማቻው ቅንብሮች ውስጥ ያብሩ።</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>የ GitHub ደረጃዎች ለዚህ ዒላማ አይገኙም: %problem።</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>የ GitHub Pages ሁኔታ የሚታየው ቶከን ወይም GitHub App የመግቢያ ማስረጃ ሲሆን ነው።</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>የራስዎን ጎራ ይጠቀሙ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>የትኛውን መምረጥ: ቶከን፣ የማሰማሪያ ቁልፍ ወይስ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>በ GitHub ማከማቻ እና በቶከን ወይም GitHub App አዋቂው ማከማቻውን መፍጠር፣ GitHub Pagesን ማብራት እና ጎራውን ሊያዘጋጅልዎ ይችላል (ደረጃ 4)።</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>በመገንባት ላይ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ተገንብቷል</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ከ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ከቅርንጫፉ %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>እስካሁን የለም</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>አልተገኘም</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>የግል</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>የሕዝብ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>በወረፋ ላይ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ያልታወቀ</translation>
+    </message>
 </context>
 </TS>

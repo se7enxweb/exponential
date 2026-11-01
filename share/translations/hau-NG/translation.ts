@@ -81938,5 +81938,181 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>yes, not published yet</source>
         <translation>ee, ba a wallafa ba tukuna</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Wani tsarin aiki na ma'ajiyar yana wallafa shi. Ginin yana rubuta fayil ɗin tsarin aikin; bar fayil ɗin a fanko.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Bayan an adana maƙasudi tare da ma'ajiyar GitHub da token ko GitHub App, wannan mataki zai iya ƙirƙirar ma'ajiyar kuma ya kunna GitHub Pages. In ba haka ba, ka fara ƙirƙirar ma'ajiyar a GitHub; ma'ajiya mara komai ma ta isa.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Reshe ko GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Duba DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Ƙirƙiri ma'ajiyar idan ba ta wanzu ba</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Ƙirƙiri ma'ajiyar a GitHub kuma ka kunna GitHub Pages a cikin saitunanta (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Yana ƙirƙirar ma'ajiyar %repo idan ba ta nan (idan an nema), yana kunna GitHub Pages daga reshen ko daga GitHub Actions kamar yadda aka adana, kuma yana saita yankin na musamman da HTTPS. Yana amfani da saitunan da aka adana: ka fara adana canje-canje.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Cikakkun bayanai a GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ka fara shigar da yankin na musamman.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Ana fara duba kowane push da waɗannan iyakoki.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Don adireshin https:// a GitHub. App ɗin da aka saita don wannan shigarwa yana shiga; yana buƙatar id na shigarwar.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages yana ba da ma'ajiya ta sirri ne kawai a tsarin biya.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ƙaramin yanki (www.example.com) yana buƙatar rikodin CNAME zuwa &lt;owner&gt;.github.io; babban yanki (example.com) kuma rikodin A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id na shigarwar GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ginin Pages na ƙarshe</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Iyakoki da sharuɗɗa</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ana buƙata don GitHub Pages a tsarin kyauta.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>A GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Sai da GitHub App kawai: lambar da ke ƙarshen adireshin shigarwar App ɗin a GitHub. Ana saita App ɗin kansa a staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Na sirri</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Na jama'a</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Ka fara adana maƙasudin tare da ma'ajiyar GitHub da token ko GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Saita waɗannan rikodin a wurin mai samar da yankin:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Saita a GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS na %domain bai nuna zuwa GitHub Pages ba tukuna.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS na %domain yana nuna zuwa GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Haɗin GitHub ba ya samuwa a nan: %problem. Wallafawa zuwa reshen tana aiki duk da haka; kunna GitHub Pages a cikin saitunan ma'ajiyar.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Matakan GitHub ba sa samuwa don wannan maƙasudi: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Ana nuna halin GitHub Pages idan token ko GitHub App ne shaidar shiga.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Yi amfani da yankinka na kanka</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Wanne za a zaɓa: token, maɓallin turawa ko GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Da ma'ajiyar GitHub da token ko GitHub App, mayen zai iya ƙirƙirar ma'ajiyar, kunna GitHub Pages kuma ya saita maka yankin (mataki na 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ana ginawa</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>an gina</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>daga GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>daga reshen %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>babu tukuna</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ba a samu ba</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>a kashe</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>na sirri</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>na jama'a</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>a layi</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ba a sani ba</translation>
+    </message>
 </context>
 </TS>

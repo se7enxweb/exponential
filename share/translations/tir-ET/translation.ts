@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>እወ፡ ገና ኣይተሓተመን</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>ሓደ GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>ዎርክፍሎው ናይቲ ማህደር የሕትሞ። ነቲ ፋይል ዎርክፍሎው ምህናጽ ይጽሕፎ፤ ነቲ ፎልደር ባዶ ግደፍዎ።</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>ዕላማ ምስ ማህደር GitHub ከምኡ'ውን ቶከን ወይ GitHub App ምስ ዓቀብኩም፣ እዚ ስጉምቲ ነቲ ማህደር ክፈጥሮን GitHub Pages ከንቅሖን ይኽእል። እንተዘይኮይኑ ቅድም ኣብ GitHub ነቲ ማህደር ፍጠሩዎ፤ ባዶ ማህደር ይኣክል።</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ጨንፈር ወይ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS ኣረጋግጹ</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ማህደር እንተዘየሎ ፍጠሮ</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>ኣብ GitHub ነቲ ማህደር ፍጠሩዎ እሞ ኣብ ቅጥዕታቱ GitHub Pages ኣንቅሕዎ (Settings &gt; Pages)።</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ማህደር %repo እንተዘየሎ (እንተተሓቲቱ) ይፈጥሮ፣ ከምቲ ዝተዓቀበ ካብቲ ጨንፈር ወይ ካብ GitHub Actions GitHub Pages የንቅሕ፣ ናይ ገዛእ ርእስኹም ዶሜንን HTTPSን ይቕይድ። ዝተዓቀበ ቅጥዕታት ይጥቀም፤ ቅድም ለውጥታት ዕቀቡ።</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>ዝርዝር ኣብ GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ቅድም ናይ ገዛእ ርእስኹም ዶሜን ኣእትዉ።</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ነፍሲ ወከፍ push ቅድም ምስዞም ደረታት ይረጋገጽ።</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>ን https:// ኣድራሻ ኣብ GitHub። እቲ ነዚ ምትካል ዝተቐረጸ App ይኣቱ፤ id ምትካል የድልዮ።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ብሕታዊ ማህደር ኣብ ብኽፍሊት ዝኸውን ትልሚ ጥራይ የገልግል።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ንኡስ ዶሜን (www.example.com) ናብ &lt;owner&gt;.github.io ዝኸይድ CNAME መዝገብ የድልዮ፤ ቀንዲ ዶሜን (example.com) ድማ A መዝገባት %ips።</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>id ምትካል ናይ GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>ናይ መወዳእታ Pages ምህናጽ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ደረታትን ውዕላትን</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>ኣብ ናጻ ትልሚ ን GitHub Pages የድሊ።</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>ኣብ GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>ምስ GitHub App ጥራይ: ኣብ መወዳእታ ኣድራሻ ምትካል ናይቲ App ኣብ GitHub ዘሎ ቁጽሪ። እቲ App ባዕሉ ኣብ staticcache.ini ይቕየድ (GitHubAppId, GitHubAppKey)።</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>ብሕታዊ</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>ህዝባዊ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>ቅድም ነቲ ዕላማ ምስ ማህደር GitHub ከምኡ'ውን ቶከን ወይ GitHub App ዕቀብዎ።</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ነዞም መዝገባት ኣብ ኣቕራቢ ናይቲ ዶሜን ቕረጽዎም:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>ኣብ GitHub ኣዳልው</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ናይ %domain ገና ናብ GitHub Pages ኣየመልክትን።</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ናይ %domain ናብ GitHub Pages የመልክት።</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>ምትእስሳር GitHub ኣብዚ የለን: %problem። ናብቲ ጨንፈር ምሕታም ግን ይሰርሕ፤ ኣብ ቅጥዕታት ማህደር GitHub Pages ኣንቅሕዎ።</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ስጉምትታት GitHub ነዚ ዕላማ የለዉን: %problem።</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>ኩነታት GitHub Pages ዝርአ መረጋገጺ ቶከን ወይ GitHub App ክኸውን ከሎ እዩ።</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ናይ ገዛእ ርእስኹም ዶሜን ተጠቐሙ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ኣየናይ ክትመርጹ: ቶከን፣ መፍትሕ ምዝርጋሕ ወይ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>ምስ ማህደር GitHub ከምኡ'ውን ቶከን ወይ GitHub App፣ እቲ ዊዛርድ ማህደር ክፈጥር፣ GitHub Pages ከንቅሕን ዶሜን ክቕይድን ይኽእል (ስጉምቲ 4)።</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ይህነጽ ኣሎ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ተሃኒጹ</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ካብ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ካብ ጨንፈር %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ገና የለን</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ኣይተረኽበን</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፊኡ</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ብሕታዊ</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ህዝባዊ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ኣብ መስርዕ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ዘይፍለጥ</translation>
+    </message>
 </context>
 </TS>

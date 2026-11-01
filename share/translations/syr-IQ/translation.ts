@@ -81948,5 +81948,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ܐܝܢ، ܠܐ ܐܬܦܪܣ ܥܕܡܐ ܠܗܫܐ</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App ܚܕ</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>workflow ܕܓܙܐ ܦܪܣ ܠܗ. ܒܢܝܢܐ ܟܬܒ ܠܦܘܠܐ ܕ workflow؛ ܫܒܘܩ ܠܡܐܢܐ ܣܦܝܩܐ.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>ܒܬܪ ܕܢܛܪܬ ܢܝܫܐ ܥܡ ܓܙܐ ܕ GitHub ܘܬܘܟܢܐ ܐܘ GitHub App، ܗܢܐ ܦܣܘܥܐ ܡܨܐ ܕܢܥܒܕ ܠܓܙܐ ܘܢܦܬܚ GitHub Pages. ܐܢ ܠܐ، ܩܕܡ ܥܒܕ ܠܓܙܐ ܥܠ GitHub؛ ܐܦ ܣܦܝܩܐ ܫܦܝܪ.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ܣܘܟܐ ܐܘ GitHub Actions؟</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>ܒܨܝ ܠ DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ܥܒܕ ܠܓܙܐ ܐܢ ܠܝܬܘܗܝ</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>ܥܒܕ ܠܓܙܐ ܥܠ GitHub ܘܦܬܚ GitHub Pages ܒܛܘܝܒ̈ܐ ܕܝܠܗ (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ܥܒܕ ܠܓܙܐ %repo ܐܢ ܠܝܬܘܗܝ (ܐܢ ܐܬܒܥܝ)، ܦܬܚ GitHub Pages ܡܢ ܣܘܟܐ ܐܘ ܡܢ GitHub Actions ܐܝܟ ܕܢܛܝܪ، ܘܣܐܡ ܚܘܕܪܐ ܕܝܠܟܘܢ ܘ HTTPS. ܡܦܠܚ ܠܛܘܝܒ̈ܐ ܢܛܝܪ̈ܐ: ܩܕܡ ܢܛܘܪ ܠܫܘܚܠܦ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>ܦܘܪ̈ܫܐ ܥܠ GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ܩܕܡ ܥܠܠ ܚܘܕܪܐ ܕܝܠܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ܟܠ push ܩܕܡ ܡܬܒܨܐ ܠܘܩܒܠ ܬܚܘ̈ܡܐ ܗܠܝܢ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>ܠܡܘܢܥܐ https:// ܥܠ GitHub. App ܕܛܘܝܒ ܠܗܢܐ ܫܪܪܐ ܥܐܠ؛ ܣܢܝܩ ܠ id ܕܫܪܪܐ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ܡܫܡܫ ܓܙܐ ܦܪܨܘܦܝܐ ܒܠܚܘܕ ܥܠ ܬܘܟܣܐ ܕܦܘܪܥܢܐ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ܚܘܕܪܐ ܬܚܬܝܐ (www.example.com) ܣܢܝܩ ܠܪܫܡܐ CNAME ܠܘܬ &lt;owner&gt;.github.io؛ ܚܘܕܪܐ ܪܫܝܐ (example.com) ܠܪ̈ܫܡܐ A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>id ܕܫܪܪܐ ܕ GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>ܒܢܝܢܐ ܐܚܪܝܐ ܕ Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>ܬܚܘ̈ܡܐ ܘܫܪ̈ܛܐ</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>ܣܢܝܩ ܠ GitHub Pages ܥܠ ܬܘܟܣܐ ܡܓܢ.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>ܥܠ GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>ܒܠܚܘܕ ܥܡ GitHub App: ܡܢܝܢܐ ܒܚܪܬܐ ܕܡܘܢܥܐ ܕܫܪܪܐ ܕ App ܥܠ GitHub. App ܗܘ ܡܬܛܘܝܒ ܒ staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>ܦܪܨܘܦܝܐ</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>ܓܠܝܐ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>ܩܕܡ ܢܛܘܪ ܠܢܝܫܐ ܥܡ ܓܙܐ ܕ GitHub ܘܬܘܟܢܐ ܐܘ GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ܣܝܡ ܪ̈ܫܡܐ ܗܠܝܢ ܠܘܬ ܡܛܝܒܢܐ ܕܚܘܕܪܐ:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>ܛܝܒ ܥܠ GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ܕ %domain ܥܕܟܝܠ ܠܐ ܡܚܘܐ ܠ GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ܕ %domain ܡܚܘܐ ܠ GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>ܚܘܝܕܐ ܕ GitHub ܠܐ ܐܝܬܘܗܝ ܬܢܐ: %problem. ܦܪܣܐ ܠܣܘܟܐ ܦܠܚ ܐܦ ܗܟܢ؛ ܦܬܚ GitHub Pages ܒܛܘܝܒ̈ܐ ܕܓܙܐ.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>ܦܣܘ̈ܥܐ ܕ GitHub ܠܐ ܐܝܬܝܗܘܢ ܠܗܢܐ ܢܝܫܐ: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>ܐܝܟܢܘܬܐ ܕ GitHub Pages ܡܬܚܘܝܐ ܥܡ ܬܘܟܢܐ ܐܘ GitHub App ܐܝܟ ܫܘܕܥܐ ܕܡܥܠܢܐ.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ܦܠܘܚ ܚܘܕܪܐ ܕܝܠܟ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>ܡܢܐ ܠܡܓܒܐ: ܬܘܟܢܐ، ܩܠܝܕܐ ܕܫܘܕܪܐ ܐܘ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>ܥܡ ܓܙܐ ܕ GitHub ܘܬܘܟܢܐ ܐܘ GitHub App، ܡܕܒܪܢܐ ܡܨܐ ܕܢܥܒܕ ܠܓܙܐ، ܢܦܬܚ GitHub Pages ܘܢܣܝܡ ܚܘܕܪܐ ܡܛܠܬܟ (ܦܣܘܥܐ 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ܡܬܒܢܐ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ܒܢܝܐ</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>ܡܢ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ܡܢ ܣܘܟܐ %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ܥܕܟܝܠ ܠܝܬ</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ܠܐ ܐܫܬܟܚ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ܛܦܝܐ</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ܦܪܨܘܦܝܐ</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ܓܠܝܐ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ܒܣܕܪܐ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ܠܐ ܝܕܝܥܐ</translation>
+    </message>
 </context>
 </TS>

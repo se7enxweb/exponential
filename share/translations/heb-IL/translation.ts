@@ -81972,5 +81972,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>כן, עדיין לא פורסם</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>תהליך עבודה של המאגר מפרסם אותו. הבנייה כותבת את קובץ תהליך העבודה; השאירו את התיקייה ריקה.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>לאחר שמירת יעד עם מאגר GitHub וטוקן או GitHub App, שלב זה יכול ליצור את המאגר ולהפעיל את GitHub Pages. אחרת, צרו קודם את המאגר ב-GitHub; מאגר ריק מספיק.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ענף או GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>בדיקת ה-DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>יצירת המאגר אם הוא לא קיים</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>צרו את המאגר ב-GitHub והפעילו את GitHub Pages בהגדרות שלו (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>יוצר את המאגר %repo כשהוא חסר (כשמתבקש), מפעיל את GitHub Pages מהענף או מ-GitHub Actions כפי שנשמר, ומגדיר את הדומיין המותאם אישית ואת HTTPS. משתמש בהגדרות השמורות: שמרו קודם את השינויים.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>פרטים ב-GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>הזינו קודם את הדומיין המותאם אישית.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>כל דחיפה נבדקת קודם מול המגבלות האלה.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>לכתובת https:// ב-GitHub. ה-App שהוגדר להתקנה זו מתחבר; הוא צריך את מזהה ההתקנה.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages מגיש מאגר פרטי רק בתוכנית בתשלום.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: תת-דומיין (www.example.com) צריך רשומת CNAME אל &lt;owner&gt;.github.io; דומיין ראשי (example.com) את רשומות A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>מזהה ההתקנה של ה-GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>בניית Pages אחרונה</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>מגבלות ותנאים</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>נדרש עבור GitHub Pages בתוכנית חינמית.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>ב-GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>רק עם GitHub App: המספר בסוף הכתובת של ההתקנה של ה-App ב-GitHub. ה-App עצמו מוגדר ב-staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>פרטי</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>ציבורי</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>שמרו קודם את היעד עם מאגר GitHub וטוקן או GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>הגדירו את הרשומות האלה אצל ספק הדומיין:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>הגדרה ב-GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>ה-DNS של %domain עדיין לא מצביע אל GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>ה-DNS של %domain מצביע אל GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>השילוב של GitHub לא זמין כאן: %problem. פרסום לענף עובד בכל זאת; הפעילו את GitHub Pages בהגדרות המאגר.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>שלבי GitHub לא זמינים ליעד זה: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>המצב של GitHub Pages מוצג כשאישור הגישה הוא טוקן או GitHub App.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>שימוש בדומיין משלכם</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>מה לבחור: טוקן, מפתח פריסה או GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>עם מאגר GitHub וטוקן או GitHub App, האשף יכול ליצור את המאגר, להפעיל את GitHub Pages ולהגדיר את הדומיין בשבילכם (שלב 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>בבנייה</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>נבנה</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>מ-GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>מהענף %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>עדיין אין</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>לא נמצא</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>כבוי</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>פרטי</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ציבורי</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>בתור</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>לא ידוע</translation>
+    </message>
 </context>
 </TS>

@@ -81940,5 +81940,181 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>yes, not published yet</source>
         <translation>eny, mbola tsy navoaka</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App iray</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow iray ao amin'ny tahiry no mamoaka azy. Ny fanorenana no manoratra ny rakitra workflow; avelao ho foana ny lahatahiry.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Rehefa voatahiry miaraka amin'ny tahiry GitHub sy token na GitHub App ny tanjona, afaka mamorona ny tahiry sy mampandeha GitHub Pages ity dingana ity. Raha tsy izany, mamorona aloha ny tahiry ao amin'ny GitHub; azo ekena na dia foana aza.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Sampana sa GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Hamarino ny DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Mamorona ny tahiry raha tsy misy</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Mamorona ny tahiry ao amin'ny GitHub ary ampandehano GitHub Pages ao amin'ny fikirakirana azy (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Mamorona ny tahiry %repo raha tsy misy (raha angatahina), mampandeha GitHub Pages avy amin'ny sampana na avy amin'ny GitHub Actions araka ny voatahiry, ary mametraka ny sehatra manokana sy HTTPS. Mampiasa ny fikirakirana voatahiry: tahirizo aloha ny fanovana.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Antsipiriany ao amin'ny GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ampidiro aloha ny sehatra manokana.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Ny push tsirairay dia hamarinina aloha mifanaraka amin'ireo fetra ireo.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ho an'ny adiresy https:// ao amin'ny GitHub. Ny App voakirakira ho an'ity fametrahana ity no miditra; mila ny id an'ny fametrahana izy.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages dia tsy manolotra tahiry miafina afa-tsy amin'ny drafitra mandoa vola.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ny zana-tsehatra (www.example.com) dia mila rakitsoratra CNAME mankany amin'ny &lt;owner&gt;.github.io; ny sehatra fototra (example.com) dia mila ireo rakitsoratra A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id an'ny fametrahana GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Fanorenana Pages farany</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Fetra sy fepetra</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ilaina ho an'ny GitHub Pages amin'ny drafitra maimaim-poana.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ao amin'ny GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Amin'ny GitHub App ihany: ny isa eo amin'ny faran'ny adiresin'ny fametrahana ny App ao amin'ny GitHub. Ny App mihitsy dia apetraka ao amin'ny staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Miafina</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ho an'ny besinimaro</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Tahirizo aloha ny tanjona miaraka amin'ny tahiry GitHub sy token na GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Apetraho eo amin'ny mpamatsy ny sehatra ireto rakitsoratra ireto:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Kirakirao ao amin'ny GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Mbola tsy manondro an'i GitHub Pages ny DNS an'i %domain.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Manondro an'i GitHub Pages ny DNS an'i %domain.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Tsy misy eto ny fampifandraisana amin'ny GitHub: %problem. Mandeha ihany ny famoahana ao amin'ny sampana; ampandehano GitHub Pages ao amin'ny fikirakirana ny tahiry.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Tsy misy ho an'ity tanjona ity ireo dingana GitHub: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Aseho ny toetry ny GitHub Pages raha token na GitHub App no fahazoan-dalana hiditra.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Ampiasao ny sehatrao manokana</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Inona no hofidiana: token, lakilen'ny fandefasana sa GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Miaraka amin'ny tahiry GitHub sy token na GitHub App, ny mpanampy dia afaka mamorona ny tahiry, mampandeha GitHub Pages ary mametraka ny sehatra ho anao (dingana 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>eo am-panorenana</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>vita ny fanorenana</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>avy amin'ny GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>avy amin'ny sampana %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>mbola tsy misy</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tsy hita</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>maty</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>miafina</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ho an'ny besinimaro</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>miandry anjara</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tsy fantatra</translation>
+    </message>
 </context>
 </TS>

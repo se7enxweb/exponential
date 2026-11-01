@@ -81940,5 +81940,181 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>yes, not published yet</source>
         <translation>yee, tekinnafulumizibwa</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App emu</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Enkola y'emirimu ey'etterekero y'egifulumya. Okuzimba kuwandiika fayiro y'enkola; leka ekifo ky'amafayiro nga kikalu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Bw'omala okutereka ekigendererwa ne tterekero lya GitHub ne tokeni oba GitHub App, omutendera guno guyinza okukola etterekero n'okukoleeza GitHub Pages. Bwe kitaba kityo, sooka okole etterekero ku GitHub; eryereere nalyo lirungi.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Ettabi oba GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kebera DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Kola etterekero bwe liba teririiwo</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Kola etterekero ku GitHub era okoleeze GitHub Pages mu nteekateeka zaalyo (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ekola etterekero %repo bwe liba teririiwo (bwe kisabibwa), ekoleeza GitHub Pages okuva ku ttabi oba ku GitHub Actions nga bwe kyaterekebwa, era eteekawo domeeni yo ne HTTPS. Ekozesa enteekateeka ezaaterekebwa: sooka otereke enkyukakyuka.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Ebisingawo ku GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Sooka oyingize domeeni yo.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Buli kusindika kusooka kukeberwa okusinziira ku kkomo lino.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ku ndagiriro ya https:// ku GitHub. App eyateekebwawo ku kuteekebwawo kuno y'eyingira; yeetaaga id y'okuteekebwawo.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages eweereza etterekero ery'ekyama ku nteekateeka esasulirwa yokka.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: domeeni entono (www.example.com) yeetaaga ekiwandiiko kya CNAME okudda ku &lt;owner&gt;.github.io; domeeni enkulu (example.com) yeetaaga ebiwandiiko bya A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id y'okuteekebwawo kwa GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Okuzimba kwa Pages okusembayo</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Ekkomo n'amateeka</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Kyetaagisa ku GitHub Pages ku nteekateeka ey'obwereere.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ku GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Ne GitHub App yokka: ennamba ku nkomerero y'endagiriro y'okuteekebwawo kwa App ku GitHub. App yennyini eteekebwa mu staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Ekyama</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Lwa bonna</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Sooka otereke ekigendererwa ne tterekero lya GitHub ne tokeni oba GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Teeka ebiwandiiko bino ewa omugabi wa domeeni:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Teekateeka ku GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ya %domain tennaba kulaga ku GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ya %domain eraga ku GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Okugatta GitHub tekuliiwo wano: %problem. Okufulumya ku ttabi kukola bulungi; koleeza GitHub Pages mu nteekateeka z'etterekero.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Emitendera gya GitHub tegiriiwo ku kigendererwa kino: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Embeera ya GitHub Pages eragibwa nga tokeni oba GitHub App bye bukakafu bw'okuyingira.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Kozesa domeeni yo</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ky'olina okulonda: tokeni, ekisumuluzo kya deploy oba GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Ng'olina etterekero lya GitHub ne tokeni oba GitHub App, wizard esobola okukukolera etterekero, okukoleeza GitHub Pages n'okuteekawo domeeni (omutendera 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>kizimbibwa</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>kyazimbiddwa</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>okuva ku GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>okuva ku ttabi %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>tewali kyali</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>tekizuuliddwa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kizikiddwa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>kyama</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>lwa bonna</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>kiri ku lunyiriri</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tekimanyiddwa</translation>
+    </message>
 </context>
 </TS>

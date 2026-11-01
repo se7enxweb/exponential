@@ -81940,5 +81940,181 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>yes, not published yet</source>
         <translation>jes, ankoraŭ ne publikigita</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Aplikaĵo GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Laborfluo de la deponejo publikigas ĝin. La kompilaĵo skribas la laborfluan dosieron; lasu la dosierujon malplena.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Post konservo de celo kun GitHub-deponejo kaj ĵetono aŭ GitHub App, ĉi tiu paŝo povas krei la deponejon kaj ŝalti GitHub Pages. Alie unue kreu la deponejon ĉe GitHub; malplena taŭgas.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Branĉo aŭ GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kontroli la DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Krei la deponejon, se ĝi ne ekzistas</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Kreu la deponejon ĉe GitHub kaj ŝaltu GitHub Pages en ĝiaj agordoj (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Kreas la deponejon %repo, se ĝi mankas (laŭpete), ŝaltas GitHub Pages el la branĉo aŭ el GitHub Actions laŭ la konservitaĵo, kaj agordas la propran domajnon kaj HTTPS. Ĝi uzas la konservitajn agordojn: unue konservu la ŝanĝojn.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Detaloj ĉe GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Unue enigu la propran domajnon.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Ĉiu push unue estas kontrolata kontraŭ ĉi tiuj limoj.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Por https://-adreso ĉe GitHub. La aplikaĵo agordita por ĉi tiu instalaĵo ensalutas; ĝi bezonas la instalaĵan identigilon.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages servas privatan deponejon nur kun pagata plano.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomajno (www.example.com) bezonas CNAME-registron al &lt;owner&gt;.github.io; ĉefa domajno (example.com) la A-registrojn %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Instalaĵa identigilo de la GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Lasta kompilaĵo de Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limoj kaj kondiĉoj</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Necesa por GitHub Pages kun senpaga plano.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ĉe GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Nur kun GitHub App: la numero ĉe la fino de la adreso de la instalaĵo de la aplikaĵo ĉe GitHub. La aplikaĵo mem estas agordita en staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privata</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Publika</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Unue konservu la celon kun GitHub-deponejo kaj ĵetono aŭ GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Agordu ĉi tiujn registrojn ĉe la provizanto de la domajno:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Agordi ĉe GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>La DNS de %domain ankoraŭ ne montras al GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>La DNS de %domain montras al GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>La GitHub-integriĝo ne estas disponebla ĉi tie: %problem. Publikigo al la branĉo tamen funkcias; ŝaltu GitHub Pages en la agordoj de la deponejo.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>La GitHub-paŝoj ne estas disponeblaj por ĉi tiu celo: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>La stato de GitHub Pages estas montrata kun ĵetono aŭ GitHub App kiel akreditaĵo.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Uzi vian propran domajnon</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Kion elekti: ĵetono, deploja ŝlosilo aŭ GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Kun GitHub-deponejo kaj ĵetono aŭ GitHub App, la asistanto povas krei la deponejon, ŝalti GitHub Pages kaj agordi la domajnon por vi (paŝo 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>kompilata</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>kompilita</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>el GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>el la branĉo %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ankoraŭ neniu</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ne trovita</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>malŝaltita</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privata</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>publika</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>envicigita</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nekonata</translation>
+    </message>
 </context>
 </TS>

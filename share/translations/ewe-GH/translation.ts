@@ -81940,5 +81940,181 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>yes, not published yet</source>
         <translation>ɛ̃, womeɖee ɖe dutoƒo haɖe o</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App aɖe</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Dzraɖoƒea ƒe dɔwɔɖoɖo aɖe ɖenɛ ɖe dutoƒo. Tutuɖoa ŋlɔa dɔwɔɖoɖo ƒe faɛl la; gble agbalẽdzraɖoƒea ƒuƒlu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Ne èdzra taɖodzinu aɖe ɖo kple GitHub dzraɖoƒe kple token alo GitHub App vɔ la, afɔɖeɖe sia ate ŋu awɔ dzraɖoƒea ahaʋu GitHub Pages. Ne menye nenema o la, wɔ dzraɖoƒea le GitHub dzi gbã; ƒuƒlu hã nyo.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Alɔ alo GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kpɔ DNS la ɖa</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Wɔ dzraɖoƒea ne meli o</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Wɔ dzraɖoƒea le GitHub dzi eye nàʋu GitHub Pages le eƒe ɖoɖowo me (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ewɔa dzraɖoƒe %repo ne mele eme o (ne wobia), eʋua GitHub Pages tso alɔa me alo tso GitHub Actions me abe ale si wodzrae ɖo ene, eye wòɖoa wò ŋutɔ wò dɔmen kple HTTPS. Ezãa ɖoɖo siwo wodzra ɖo: dzra tɔtrɔwo ɖo gbã.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Nyatakaka vovovo le GitHub dzi</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ŋlɔ wò ŋutɔ wò dɔmen gbã.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Wodzrana ɖoɖo ɖa ɖe sia ɖe ɖe seɖoƒe siawo ŋu gbã.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Na https:// adrɛs le GitHub dzi. App si woɖo na ɖoɖo sia gena ɖe eme; ehiã ɖoɖo ƒe id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages naa dzraɖoƒe ɣaɣla le ɖoɖo si wòxea fe ɖo ko dzi.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdɔmen (www.example.com) hiã CNAME ŋɔŋlɔ ɖe &lt;owner&gt;.github.io ŋu; dɔmen gã (example.com) hiã A ŋɔŋlɔwo %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App ƒe ɖoɖo ƒe id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages ƒe tutuɖo mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Seɖoƒewo kple nubabla</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ehiã na GitHub Pages le ɖoɖo femaxee dzi.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Le GitHub dzi</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Le GitHub App gbɔ ko: xexlẽdzesi si le App ƒe ɖoɖo ƒe adrɛs nuwuwu le GitHub dzi. Woɖoa App la ŋutɔ ɖe staticcache.ini me (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Ɣaɣla</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Dutoƒo</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Dzra taɖodzinua ɖo kple GitHub dzraɖoƒe kple token alo GitHub App gbã.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Ɖo ŋɔŋlɔ siawo le dɔmen la ƒe nunala gbɔ:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Ɖoe ɖo le GitHub dzi</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain ƒe DNS mefia GitHub Pages haɖe o.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain ƒe DNS fia GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub kpekpeɖeŋu meli le afi sia o: %problem. Ɖeɖe ɖe dutoƒo le alɔa me gakpɔtɔ wɔa dɔ; ʋu GitHub Pages le dzraɖoƒea ƒe ɖoɖowo me.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub ƒe afɔɖeɖewo meli na taɖodzinu sia o: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Woɖea GitHub Pages ƒe nɔnɔme fiana ne token alo GitHub App nye gedeeme ƒe kpeɖodzinu.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Zã wò ŋutɔ wò dɔmen</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Nu si nàtia: token, ɖoɖo ɖa ƒe safui alo GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Kple GitHub dzraɖoƒe kple token alo GitHub App la, mɔfiala ate ŋu awɔ dzraɖoƒea, aʋu GitHub Pages eye wòaɖo dɔmen la na wò (afɔɖeɖe 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>wole etu ɖom</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>wotui</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>tso GitHub Actions me</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>tso alɔ %branch me</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>naneke haɖe o</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>womekpɔe o</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>etsi</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ɣaɣla</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>dutoƒo</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>le fli me</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>menya o</translation>
+    </message>
 </context>
 </TS>

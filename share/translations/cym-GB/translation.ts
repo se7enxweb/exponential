@@ -81940,5 +81940,181 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>yes, not published yet</source>
         <translation>ie, heb ei gyhoeddi eto</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Mae llif gwaith yr ystorfa yn ei gyhoeddi. Mae'r adeiladu'n ysgrifennu ffeil y llif gwaith; gadewch y ffolder yn wag.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Ar ôl cadw targed gydag ystorfa GitHub a thocyn neu GitHub App, gall y cam hwn greu'r ystorfa a throi GitHub Pages ymlaen. Fel arall, crëwch yr ystorfa ar GitHub yn gyntaf; mae un wag yn iawn.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Cangen neu GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Gwirio'r DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Creu'r ystorfa os nad yw'n bodoli</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Crëwch yr ystorfa ar GitHub a throwch GitHub Pages ymlaen yn ei gosodiadau (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Yn creu'r ystorfa %repo pan fydd ar goll (os gofynnir), yn troi GitHub Pages ymlaen o'r gangen neu o GitHub Actions fel y'i cadwyd, ac yn gosod y parth personol a HTTPS. Mae'n defnyddio'r gosodiadau a gadwyd: cadwch newidiadau yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Manylion ar GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Rhowch y parth personol yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Mae pob gwthiad yn cael ei wirio yn erbyn y terfynau hyn yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ar gyfer cyfeiriad https:// ar GitHub. Mae'r App a osodwyd ar gyfer y gosodiad hwn yn mewngofnodi; mae angen id y gosodiad arno.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Dim ond ar gynllun taledig y mae GitHub Pages yn gweini ystorfa breifat.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: mae is-barth (www.example.com) angen cofnod CNAME i &lt;owner&gt;.github.io; parth apig (example.com) y cofnodion A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id gosodiad y GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Adeiladu Pages diwethaf</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Terfynau ac amodau</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Angen ar gyfer GitHub Pages ar gynllun am ddim.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Ar GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Dim ond gyda GitHub App: y rhif ar ddiwedd cyfeiriad gosodiad yr App ar GitHub. Mae'r App ei hun yn cael ei osod yn staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Preifat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Cyhoeddus</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Cadwch y targed gydag ystorfa GitHub a thocyn neu GitHub App yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Gosodwch y cofnodion hyn gyda darparwr y parth:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Gosod ar GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Nid yw DNS %domain yn pwyntio at GitHub Pages eto.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Mae DNS %domain yn pwyntio at GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Nid yw'r integreiddio GitHub ar gael yma: %problem. Mae cyhoeddi i'r gangen yn gweithio'r un fath; trowch GitHub Pages ymlaen yng ngosodiadau'r ystorfa.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Nid yw'r camau GitHub ar gael ar gyfer y targed hwn: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Dangosir cyflwr GitHub Pages gyda thocyn neu GitHub App fel y manylion mewngofnodi.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Defnyddio eich parth eich hun</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Pa un i'w ddewis: tocyn, allwedd defnyddio neu GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Gydag ystorfa GitHub a thocyn neu GitHub App, gall y dewin greu'r ystorfa, troi GitHub Pages ymlaen a gosod y parth i chi (cam 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>yn adeiladu</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>wedi'i adeiladu</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>o GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>o'r gangen %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dim eto</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>heb ei ganfod</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>i ffwrdd</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>preifat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>cyhoeddus</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>mewn ciw</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anhysbys</translation>
+    </message>
 </context>
 </TS>

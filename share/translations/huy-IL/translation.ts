@@ -81949,5 +81949,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>אין, עד כען לא אתפרס</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>חד GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>עבדא דגזא מפרס לה. בניינא כתיב פנקיתא דעבדא; שבוק תיקא ריקנא.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>בתר דנטרת נישא עם גזא דGitHub וטוקנא או GitHub App, דרגא הדא יכיל לבנויי גזא ולמשרא GitHub Pages. ואי לא, בני קמאית גזא בGitHub; ריקנא טבא.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>סוכא או GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>בדוק DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>בני גזא אי ליתיה</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>בני גזא בGitHub ושרי GitHub Pages בטויבא דידה (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>בני גזא %repo כד חסיר (כד מתבעא), שרי GitHub Pages מן סוכא או מן GitHub Actions היכדין דנטיר, ומתקן תחומא דילך וHTTPS. משמש בטויבא נטירא: נטור שוחלפא קמאית.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>פרישותא בGitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>כתוב תחומא דילך קמאית.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>כל שדרא מתבדק קמאית לקבל תחומין הלין.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>למונעא דhttps:// בGitHub. App דמתקנא לתקנתא הדא עייל; סניק למנינא דתקנתא.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages משמש גזא כסיא בלחוד בתכנית באגרא.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: תחומא זעורא (www.example.com) סניק לרשמא CNAME ל&lt;owner&gt;.github.io; תחומא רישיא (example.com) לרשמי A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>מנינא דתקנתא דGitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>בניינא בתראה דPages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>תחומין ותנאין</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>סניק לGitHub Pages בתכנית במגן.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>בGitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>בלחוד עם GitHub App: מנינא בסוף מונעא דתקנתא דApp בGitHub. App גופיה מתקן בstaticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>כסיא</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>גליא</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>נטור קמאית נישא עם גזא דGitHub וטוקנא או GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>תקן רשמין הלין לות מספקנא דתחומא:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>תקן בGitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ד%domain עד השא לא מכוון לGitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ד%domain מכוון לGitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>חבורא דGitHub ליתיה הכא: %problem. פרסא לסוכא עביד היכדין דהוא; שרי GitHub Pages בטויבא דגזא.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>דרגי GitHub ליתיהון לנישא הדא: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>מצבא דGitHub Pages מתחזיא עם טוקנא או GitHub App כסהדותא דמעלנא.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>שמש בתחומא דילך</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>מא למגבא: טוקנא, קלידא דשדרא או GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>עם גזא דGitHub וטוקנא או GitHub App, אשוליא יכיל לבנויי גזא, למשרא GitHub Pages ולמתקן תחומא עבורך (דרגא 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>מתבני</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>בניא</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>מן GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>מן סוכא %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ליכא עד השא</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>לא אשתכח</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>שביתא</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>כסיא</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>גליא</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>בסדרא</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>לא ידיעא</translation>
+    </message>
 </context>
 </TS>

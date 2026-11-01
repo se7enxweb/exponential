@@ -81940,5 +81940,181 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>yes, not published yet</source>
         <translation>ja, ikki útgivið enn</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Ein GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Eitt workflow í goymsluni útgevur tað. Byggingin skrivar workflow-fíluna; lat mappuna vera tóma.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Tá ið eitt mál er goymt við eini GitHub-goymslu og einum token ella GitHub App, kann hetta stigið stovna goymsluna og tendra GitHub Pages. Annars stovna fyrst goymsluna á GitHub; ein tóm er í lagi.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Grein ella GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Kanna DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Stovna goymsluna, um hon ikki er til</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Stovna goymsluna á GitHub og tendra GitHub Pages í stillingunum hjá henni (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Stovnar goymsluna %repo, um hon manglar (um biðið verður um tað), tendrar GitHub Pages frá greinini ella frá GitHub Actions sum goymt, og setur egið navnaøki og HTTPS. Brúkar goymdu stillingarnar: goym broytingarnar fyrst.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Smálutir á GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Skriva egið navnaøki fyrst.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Hvørt push verður fyrst kannað móti hesum mørkum.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Fyri eina https:// adressu á GitHub. Appin, sum er sett upp til hesa innleggingina, ritar inn; hon tørvar innleggingar-id.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages veitir eina privata goymslu bara við einum gjaldsplani.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: eitt undirnavnaøki (www.example.com) tørvar eina CNAME-skráseting til &lt;owner&gt;.github.io; eitt grundnavnaøki (example.com) A-skrásetingarnar %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Innleggingar-id hjá GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Seinasta Pages-bygging</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Mørk og treytir</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Neyðugt fyri GitHub Pages við ókeypis plani.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Á GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Bara við GitHub App: talið aftast í adressuni á innleggingini av Appini á GitHub. Appin sjálv verður sett í staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Alment</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Goym fyrst málið við eini GitHub-goymslu og einum token ella GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Set hesar skrásetingar hjá veitaranum av navnaøkinum:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Set upp á GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS hjá %domain peikar ikki á GitHub Pages enn.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS hjá %domain peikar á GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub-samtvinningin er ikki tøk her: %problem. Útgáva til greinina virkar kortini; tendra GitHub Pages í stillingunum hjá goymsluni.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub-stigini eru ikki tøk fyri hetta málið: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Støðan hjá GitHub Pages verður víst við einum token ella GitHub App sum atgongdarprógv.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Brúka títt egna navnaøki</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Hvat skalt tú velja: token, deploy-lykil ella GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Við eini GitHub-goymslu og einum token ella GitHub App kann vegleiðarin stovna goymsluna, tendra GitHub Pages og seta navnaøkið fyri teg (stig 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>verður bygt</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>bygt</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>frá GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>frá greinini %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>einki enn</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ikki funnið</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>sløkt</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>alment</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>í bíðirøð</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ókent</translation>
+    </message>
 </context>
 </TS>

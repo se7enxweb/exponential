@@ -81970,5 +81970,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>はい、まだ未公開</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>リポジトリのワークフローが公開します。ワークフローファイルはビルドが書き込みます。フォルダーは空のままにしてください。</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>GitHub リポジトリとトークンまたは GitHub App を指定して公開先を保存すると、このステップでリポジトリを作成し、GitHub Pages をオンにできます。それ以外の場合は、先に GitHub でリポジトリを作成してください。空のリポジトリでもかまいません。</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>ブランチと GitHub Actions のどちら？</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS を確認</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>リポジトリがなければ作成する</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub でリポジトリを作成し、その設定で GitHub Pages をオンにしてください (Settings &gt; Pages)。</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>リポジトリ %repo がない場合は (指定があれば) 作成し、保存した設定どおりブランチまたは GitHub Actions から GitHub Pages をオンにして、独自ドメインと HTTPS を設定します。保存済みの設定を使うため、先に変更を保存してください。</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub で詳細を見る</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>先に独自ドメインを入力してください。</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>すべての push は、まずこれらの制限に照らして確認されます。</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub 上の https:// アドレス用。このインストール用に設定された App がサインインします。インストール ID が必要です。</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages がプライベートリポジトリを公開するのは有料プランの場合のみです。</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: サブドメイン (www.example.com) には &lt;owner&gt;.github.io への CNAME レコード、apex ドメイン (example.com) には A レコード %ips が必要です。</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App のインストール ID</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>最新の Pages ビルド</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>制限と規約</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>無料プランで GitHub Pages を使うには必須です。</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub 上</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App の場合のみ: GitHub 上の App のインストールのアドレス末尾にある番号。App 自体は staticcache.ini で設定します (GitHubAppId, GitHubAppKey)。</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>非公開</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>公開</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>先に GitHub リポジトリとトークンまたは GitHub App を指定して公開先を保存してください。</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>ドメインのプロバイダーで次のレコードを設定してください:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub で設定</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain の DNS はまだ GitHub Pages を指していません。</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain の DNS は GitHub Pages を指しています。</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>ここでは GitHub 連携を利用できません: %problem。ブランチへの公開はそのまま使えます。リポジトリの設定で GitHub Pages をオンにしてください。</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>この公開先では GitHub のステップを利用できません: %problem。</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages の状態は、認証情報がトークンまたは GitHub App の場合に表示されます。</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>独自ドメインを使う</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>どれを選ぶか: トークン、デプロイキー、GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub リポジトリとトークンまたは GitHub App があれば、ウィザードがリポジトリの作成、GitHub Pages のオン、ドメインの設定を代わりに行えます (ステップ 4)。</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ビルド中</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ビルド済み</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions から</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>ブランチ %branch から</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>まだなし</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>見つかりません</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>オフ</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>非公開</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>公開</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>待機中</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>不明</translation>
+    </message>
 </context>
 </TS>

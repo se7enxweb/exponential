@@ -1476,6 +1476,8 @@
         "WebDAV": "protocol name"
     },
     "fre-FR": {
+        "Public": "French adjective public is spelled the same as English",
+        "public": "French adjective public is spelled the same as English",
         "Webhook": "French uses the English term Webhook",
         "page": "page is the French word too",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -4790,6 +4792,8 @@
         "Webhooks": "the same loanword in Maltese"
     },
     "ron-RO": {
+        "Public": "Romanian adjective is spelled Public",
+        "public": "Romanian adjective is spelled public",
         "Build": "Romanian software usage keeps the English term build",
         "Webhook": "Romanian uses the English technical term webhook",
         "#level1 - #level2": "format placeholders only",
@@ -4971,6 +4975,8 @@
         "Font": "the Romanian word for a typeface, spelled the same"
     },
     "sqi-AL": {
+        "Private": "Albanian feminine adjective (depo private) is spelled the same as the English word",
+        "private": "Albanian feminine adjective (depo private) is spelled the same as the English word",
         "Webhook": "Albanian uses the English technical term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -21986,6 +21992,8 @@
         "Webhooks": "the same loanword in Breton"
     },
     "oci-FR": {
+        "Public": "Occitan adjective for a public repository (masculine) is spelled Public",
+        "public": "Occitan adjective is spelled public",
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "Rectangle": "Occitan word spelled the same",
         "Contrast": "Occitan word spelled the same",
@@ -22594,6 +22602,8 @@
         "Div": "HTML element name (div), code"
     },
     "roh-CH": {
+        "Public": "Romansh adjective public (masculine, for the repository) is spelled the same as English",
+        "public": "Romansh adjective public (masculine, for the repository) is spelled the same as English",
         "Webhook": "Romansh uses the English technical term webhook",
         "%1 × %2 pixels": "Romansh plural spelled the same",
         "%1 objects": "Romansh plural spelled the same",

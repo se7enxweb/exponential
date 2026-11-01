@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ҳа, ҳоло нашр нашудааст</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Барномаи GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Онро workflow-и анбор нашр мекунад. Сохт файли workflow-ро менависад; ҷузвдонро холӣ гузоред.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Пас аз нигоҳ доштани ҳадаф бо анбори GitHub ва токен ё GitHub App ин қадам метавонад анборро эҷод карда, GitHub Pages-ро фаъол кунад. Вагарна аввал анборро дар GitHub эҷод кунед; холӣ ҳам мешавад.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Шоха ё GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Санҷидани DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Эҷоди анбор, агар вуҷуд надошта бошад</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Анборро дар GitHub эҷод кунед ва дар танзимоти он GitHub Pages-ро фаъол кунед (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Анбори %repo-ро, агар набошад (агар дархост шуда бошад), эҷод мекунад, GitHub Pages-ро аз шоха ё аз GitHub Actions мувофиқи нигоҳдошта фаъол мекунад ва домени худ ва HTTPS-ро танзим мекунад. Танзимоти нигоҳдоштаро истифода мебарад: аввал тағйиротро нигоҳ доред.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Тафсилот дар GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Аввал домени худро ворид кунед.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Ҳар push аввал бо ин маҳдудиятҳо санҷида мешавад.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Барои суроғаи https:// дар GitHub. App-е, ки барои ин насб танзим шудааст, ворид мешавад; ба он id-и насб лозим аст.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages анбори хусусиро танҳо дар нақшаи пулакӣ хизмат мерасонад.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: зердомен (www.example.com) сабти CNAME ба &lt;owner&gt;.github.io лозим дорад; домени асосӣ (example.com) сабтҳои A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id-и насби GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Охирин сохти Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Маҳдудиятҳо ва шартҳо</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Барои GitHub Pages дар нақшаи ройгон зарур аст.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Дар GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Танҳо бо GitHub App: рақам дар охири суроғаи насби App дар GitHub. Худи App дар staticcache.ini танзим мешавад (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Хусусӣ</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Оммавӣ</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Аввал ҳадафро бо анбори GitHub ва токен ё GitHub App нигоҳ доред.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Ин сабтҳоро дар провайдери домен танзим кунед:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Танзим дар GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS-и %domain ҳанӯз ба GitHub Pages ишора намекунад.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS-и %domain ба GitHub Pages ишора мекунад.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Ҳамгироии GitHub дар ин ҷо дастрас нест: %problem. Нашр ба шоха баҳарҳол кор мекунад; GitHub Pages-ро дар танзимоти анбор фаъол кунед.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Қадамҳои GitHub барои ин ҳадаф дастрас нестанд: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Ҳолати GitHub Pages ҳангоме нишон дода мешавад, ки маълумоти воридшавӣ токен ё GitHub App бошад.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Истифодаи домени худ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Чиро интихоб кардан: токен, калиди ҷойгиркунӣ ё GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Бо анбори GitHub ва токен ё GitHub App устод метавонад барои шумо анборро эҷод кунад, GitHub Pages-ро фаъол кунад ва доменро танзим кунад (қадами 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>сохта мешавад</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>сохта шуд</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>аз GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>аз шохаи %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ҳанӯз нест</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ёфт нашуд</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>хомӯш</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>хусусӣ</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>оммавӣ</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>дар навбат</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>номаълум</translation>
+    </message>
 </context>
 </TS>

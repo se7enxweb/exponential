@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>иә, әлі жарияланбаған</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App қолданбасы</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Оны репозиторийдің workflow-ы жариялайды. Құрастыру workflow файлын жазады; қалтаны бос қалдырыңыз.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Мақсатты GitHub репозиторийімен және токенмен немесе GitHub App-пен сақтағаннан кейін бұл қадам репозиторийді жасап, GitHub Pages-ті қоса алады. Әйтпесе алдымен GitHub-та репозиторий жасаңыз; бос репозиторий де жарайды.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Тармақ па, әлде GitHub Actions па?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS-ті тексеру</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Репозиторий жоқ болса, жасау</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub-та репозиторий жасап, оның баптауларында GitHub Pages-ті қосыңыз (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>%repo репозиторийі жоқ болса (сұралса), оны жасайды, сақталғандай тармақтан немесе GitHub Actions-тан GitHub Pages-ті қосады, және жеке доменді мен HTTPS-ті орнатады. Сақталған баптауларды пайдаланады: алдымен өзгерістерді сақтаңыз.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub-тағы мәліметтер</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Алдымен жеке доменді енгізіңіз.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Әр push алдымен осы шектеулерге сәйкестігі тексеріледі.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub-тағы https:// мекенжайы үшін. Осы орнату үшін бапталған App кіреді; оған орнату id-і керек.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages жеке репозиторийді тек ақылы жоспарда ғана ұсынады.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: қосалқы доменге (www.example.com) &lt;owner&gt;.github.io-ға CNAME жазбасы керек; негізгі доменге (example.com) A жазбалары %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App орнатуының id-і</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages-тің соңғы құрастыруы</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Шектеулер мен шарттар</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Тегін жоспардағы GitHub Pages үшін қажет.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-та</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Тек GitHub App-пен: GitHub-тағы App орнатуы мекенжайының соңындағы сан. App-тің өзі staticcache.ini ішінде орнатылады (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Жеке</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ашық</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Алдымен мақсатты GitHub репозиторийімен және токенмен немесе GitHub App-пен сақтаңыз.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Бұл жазбаларды домен провайдерінде орнатыңыз:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub-та баптау</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain DNS-і әлі GitHub Pages-ке бағытталмаған.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain DNS-і GitHub Pages-ке бағытталған.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub интеграциясы мұнда қолжетімсіз: %problem. Тармаққа жариялау бәрібір жұмыс істейді; репозиторий баптауларында GitHub Pages-ті қосыңыз.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub қадамдары бұл мақсат үшін қолжетімсіз: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>GitHub Pages күйі кіру деректері ретінде токен немесе GitHub App болғанда көрсетіледі.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Өз доменіңізді пайдалану</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Нені таңдау керек: токен, орналастыру кілті немесе GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub репозиторийі және токен немесе GitHub App болса, шебер сіз үшін репозиторийді жасап, GitHub Pages-ті қосып, доменді орната алады (4-қадам).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>құрастырылуда</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>құрастырылды</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions-тан</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>%branch тармағынан</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>әзірге жоқ</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>табылмады</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>өшірулі</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>жеке</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ашық</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>кезекте</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>белгісіз</translation>
+    </message>
 </context>
 </TS>

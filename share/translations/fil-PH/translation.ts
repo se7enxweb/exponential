@@ -81940,5 +81940,181 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>yes, not published yet</source>
         <translation>oo, hindi pa na-publish</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Isang GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Inilalathala ito ng isang workflow ng repositoryo. Isinusulat ng build ang workflow file; iwanang walang laman ang folder.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Pagkatapos i-save ang isang destinasyon na may GitHub repositoryo at token o GitHub App, magagawa ng hakbang na ito ang repositoryo at mabubuksan ang GitHub Pages. Kung hindi, gawin muna ang repositoryo sa GitHub; ayos lang ang walang laman.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Sangay o GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Suriin ang DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Gawin ang repositoryo kung wala pa ito</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Gawin ang repositoryo sa GitHub at buksan ang GitHub Pages sa mga setting nito (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ginagawa ang repositoryong %repo kapag wala ito (kapag hiniling), binubuksan ang GitHub Pages mula sa sangay o mula sa GitHub Actions ayon sa naka-save, at itinatakda ang sariling domain at HTTPS. Ginagamit nito ang mga naka-save na setting: i-save muna ang mga pagbabago.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Mga detalye sa GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ilagay muna ang sariling domain.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Sinusuri muna ang bawat push batay sa mga limitasyong ito.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Para sa isang https:// na address sa GitHub. Ang App na naka-set up para sa installation na ito ang nagsa-sign in; kailangan nito ang id ng installation.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Naghahatid lang ang GitHub Pages ng pribadong repositoryo sa isang bayad na plan.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: kailangan ng subdomain (www.example.com) ang isang CNAME record papunta sa &lt;owner&gt;.github.io; ng apex domain (example.com) ang mga A record na %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id ng installation ng GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Huling build ng Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Mga limitasyon at tuntunin</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Kailangan para sa GitHub Pages sa libreng plan.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Sa GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Sa GitHub App lang: ang numero sa dulo ng address ng installation ng App sa GitHub. Ang App mismo ay itinatakda sa staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Pribado</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Pampubliko</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>I-save muna ang destinasyon na may GitHub repositoryo at token o GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Itakda ang mga record na ito sa provider ng domain:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>I-set up sa GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Hindi pa nakaturo sa GitHub Pages ang DNS ng %domain.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Nakaturo sa GitHub Pages ang DNS ng %domain.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Hindi available dito ang GitHub integration: %problem. Gumagana pa rin ang pag-publish sa sangay; buksan ang GitHub Pages sa mga setting ng repositoryo.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Hindi available ang mga hakbang sa GitHub para sa destinasyong ito: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Ipinapakita ang estado ng GitHub Pages kapag token o GitHub App ang kredensyal.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Gamitin ang sarili mong domain</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Alin ang pipiliin: token, deploy key o GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Kapag may GitHub repositoryo at token o GitHub App, magagawa ng wizard ang repositoryo, mabubuksan ang GitHub Pages at maitatakda ang domain para sa iyo (hakbang 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>binubuo</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>nabuo na</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>mula sa GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>mula sa sangay na %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>wala pa</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>hindi nahanap</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>nakasara</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>pribado</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>pampubliko</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>nakapila</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hindi alam</translation>
+    </message>
 </context>
 </TS>

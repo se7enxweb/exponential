@@ -81940,5 +81940,181 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>yes, not published yet</source>
         <translation>eeyyee, ammallee hin maxxanfamne</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App tokko</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow kuusaa koodii tokkotu isa maxxansa. Ijaarsi faayilii workflow ni barreessa; kuusaa faayilii duwwaa dhiisi.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Erga kaayyoon kuusaa koodii GitHub fi tookenii ykn GitHub App waliin olkaa'amee booda, tarkaanfiin kun kuusaa koodii uumee GitHub Pages banuu danda'a. Yoo kun hin taane, dursa kuusaa koodii GitHub irratti uumi; duwwaanis ni ta'a.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Damee moo GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS mirkaneessi</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Yoo hin jirre kuusaa koodii uumi</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Kuusaa koodii GitHub irratti uumiitii qindaa'ina isaa keessatti GitHub Pages bani (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Kuusaa koodii %repo yoo hin jirre (yoo gaafatame) ni uuma, akka olkaa'ametti damee irraa ykn GitHub Actions irraa GitHub Pages ni bana, domeenii dhuunfaa fi HTTPS ni qindeessa. Qindaa'ina olkaa'ame fayyadama: dursa jijjiirama olkaa'i.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Bal'ina GitHub irratti</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Dursa domeenii dhuunfaa galchi.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Push hundi dursa daangaawwan kanaan ni mirkanaa'a.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Teessoo https:// GitHub irraa tokkoof. App dhaabbii kanaaf qophaa'e ni seena; id dhaabbii barbaada.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages kuusaa koodii dhuunfaa karoora kaffaltii qofaan tajaajila.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: sab-domeeniin (www.example.com) galmee CNAME gara &lt;owner&gt;.github.io barbaada; domeeniin apex (example.com) galmeewwan A %ips barbaada.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id dhaabbii GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Ijaarsa Pages isa dhumaa</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Daangaawwanii fi haalawwan</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>GitHub Pages karoora bilisaa irratti ni barbaachisa.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub irratti</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App qofaan: lakkoofsa dhuma teessoo dhaabbii App GitHub irratti jiru. App ofii isaa staticcache.ini keessatti qindaa'a (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Dhuunfaa</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ummataa</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Dursa kaayyoo kuusaa koodii GitHub fi tookenii ykn GitHub App waliin olkaa'i.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Galmeewwan kana dhiyeessaa domeenii biratti qindeessi:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub irratti qindeessi</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS %domain ammallee gara GitHub Pages hin agarsiisu.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS %domain gara GitHub Pages agarsiisa.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Walitti hidhamiinsi GitHub asitti hin jiru: %problem. Damee irratti maxxansuun garuu ni hojjeta; qindaa'ina kuusaa koodii keessatti GitHub Pages bani.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Tarkaanfiiwwan GitHub kaayyoo kanaaf hin jiran: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Haalli GitHub Pages yeroo tookeniin ykn GitHub App ragaa seensaa ta'u ni agarsiifama.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Domeenii kee fayyadami</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Maal filachuu: tookenii, furtuu bobbaasaa moo GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Kuusaa koodii GitHub fi tookenii ykn GitHub App waliin, qajeelchaan kuusaa koodii uumuu, GitHub Pages banuu fi domeenii siif qindeessuu danda'a (tarkaanfii 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ijaaramaa jira</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>ijaarame</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions irraa</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>damee %branch irraa</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ammallee hin jiru</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>hin argamne</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>cufaa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>dhuunfaa</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ummataa</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>tarree keessa</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hin beekamu</translation>
+    </message>
 </context>
 </TS>

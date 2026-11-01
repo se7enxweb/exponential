@@ -81970,5 +81970,181 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>yes, not published yet</source>
         <translation>iva, għadu mhux ippubblikat</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow tar-repożitorju jippubblikah. Il-bini jikteb il-fajl tal-workflow; ħalli l-folder vojt.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Wara li tissejvja mira b'repożitorju fuq GitHub u token jew GitHub App, dan il-pass jista' joħloq ir-repożitorju u jixgħel GitHub Pages. Inkella oħloq ir-repożitorju fuq GitHub l-ewwel; wieħed vojt huwa tajjeb.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Fergħa jew GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Iċċekkja d-DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Oħloq ir-repożitorju jekk ma jeżistix</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Oħloq ir-repożitorju fuq GitHub u ixgħel GitHub Pages fis-settings tiegħu (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Joħloq ir-repożitorju %repo meta jkun nieqes (jekk mitlub), jixgħel GitHub Pages mill-fergħa jew minn GitHub Actions kif issejvjat, u jissettja d-dominju proprju u HTTPS. Juża s-settings issejvjati: issejvja l-bidliet l-ewwel.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Dettalji fuq GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Daħħal id-dominju proprju l-ewwel.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Kull push jiġi ċċekkjat l-ewwel kontra dawn il-limiti.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Għal indirizz https:// fuq GitHub. L-App issettjata għal din l-installazzjoni tidħol; għandha bżonn l-id tal-installazzjoni.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages iservi repożitorju privat biss fuq pjan bi ħlas.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: sottodominju (www.example.com) jeħtieġ rekord CNAME lejn &lt;owner&gt;.github.io; dominju apex (example.com) ir-rekords A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id tal-installazzjoni tal-GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>L-aħħar bini ta' Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Limiti u termini</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Meħtieġ għal GitHub Pages fuq pjan b'xejn.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Fuq GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Biss b'GitHub App: in-numru fl-aħħar tal-indirizz tal-installazzjoni tal-App fuq GitHub. L-App innifisha tiġi ssettjata f'staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Privat</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Pubbliku</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Issejvja l-mira b'repożitorju fuq GitHub u token jew GitHub App l-ewwel.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Issettja dawn ir-rekords għand il-fornitur tad-dominju:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Issettja fuq GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Id-DNS ta' %domain għadu ma jippuntax lejn GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Id-DNS ta' %domain jippunta lejn GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>L-integrazzjoni ma' GitHub mhix disponibbli hawn: %problem. Il-pubblikazzjoni fil-fergħa taħdem xorta waħda; ixgħel GitHub Pages fis-settings tar-repożitorju.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Il-passi ta' GitHub mhumiex disponibbli għal din il-mira: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>L-istat ta' GitHub Pages jintwera b'token jew GitHub App bħala kredenzjali.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Uża d-dominju tiegħek</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>X'għandek tagħżel: token, ċavetta tal-iskjerament jew GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>B'repożitorju fuq GitHub u token jew GitHub App, il-wizard jista' joħloq ir-repożitorju, jixgħel GitHub Pages u jissettja d-dominju għalik (pass 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>qed jinbena</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>mibni</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>minn GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>mill-fergħa %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>għad xejn</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ma nstabx</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mitfi</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>privat</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>pubbliku</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>fil-kju</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>mhux magħruf</translation>
+    </message>
 </context>
 </TS>

@@ -81970,5 +81970,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ναι, δεν έχει δημοσιευτεί ακόμη</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>Μια GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Τη δημοσιεύει μια ροή εργασιών του αποθετηρίου. Η δόμηση γράφει το αρχείο της ροής εργασιών· αφήστε τον φάκελο κενό.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Αφού αποθηκεύσετε έναν προορισμό με αποθετήριο GitHub και διακριτικό ή GitHub App, αυτό το βήμα μπορεί να δημιουργήσει το αποθετήριο και να ενεργοποιήσει το GitHub Pages. Διαφορετικά, δημιουργήστε πρώτα το αποθετήριο στο GitHub· ένα κενό αρκεί.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Κλάδος ή GitHub Actions;</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Έλεγχος του DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Δημιουργία του αποθετηρίου αν δεν υπάρχει</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Δημιουργήστε το αποθετήριο στο GitHub και ενεργοποιήστε το GitHub Pages στις ρυθμίσεις του (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Δημιουργεί το αποθετήριο %repo όταν λείπει (αν ζητηθεί), ενεργοποιεί το GitHub Pages από τον κλάδο ή από το GitHub Actions όπως αποθηκεύτηκε και ορίζει τον δικό σας τομέα και το HTTPS. Χρησιμοποιεί τις αποθηκευμένες ρυθμίσεις: αποθηκεύστε πρώτα τις αλλαγές.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Λεπτομέρειες στο GitHub</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Εισαγάγετε πρώτα τον δικό σας τομέα.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Κάθε προώθηση ελέγχεται πρώτα με βάση αυτά τα όρια.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Για διεύθυνση https:// στο GitHub. Συνδέεται η App που ρυθμίστηκε για αυτή την εγκατάσταση· χρειάζεται το αναγνωριστικό της εγκατάστασης.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>Το GitHub Pages εξυπηρετεί ιδιωτικό αποθετήριο μόνο σε πληρωμένο πρόγραμμα.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: ένας υποτομέας (www.example.com) χρειάζεται εγγραφή CNAME προς &lt;owner&gt;.github.io· ένας κύριος τομέας (example.com) τις εγγραφές A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Αναγνωριστικό εγκατάστασης της GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Τελευταία δόμηση Pages</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Όρια και όροι</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Απαιτείται για το GitHub Pages σε δωρεάν πρόγραμμα.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Στο GitHub</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>Μόνο με GitHub App: ο αριθμός στο τέλος της διεύθυνσης της εγκατάστασης της App στο GitHub. Η ίδια η App ορίζεται στο staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Ιδιωτικό</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Δημόσιο</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Αποθηκεύστε πρώτα τον προορισμό με αποθετήριο GitHub και διακριτικό ή GitHub App.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Ορίστε αυτές τις εγγραφές στον πάροχο του τομέα:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Ρύθμιση στο GitHub</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>Το DNS του %domain δεν δείχνει ακόμη στο GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>Το DNS του %domain δείχνει στο GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Η ενσωμάτωση του GitHub δεν είναι διαθέσιμη εδώ: %problem. Η δημοσίευση στον κλάδο λειτουργεί κανονικά· ενεργοποιήστε το GitHub Pages στις ρυθμίσεις του αποθετηρίου.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Τα βήματα του GitHub δεν είναι διαθέσιμα για αυτόν τον προορισμό: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Η κατάσταση του GitHub Pages εμφανίζεται με διακριτικό ή GitHub App ως διαπιστευτήρια.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Χρήση δικού σας τομέα</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Τι να επιλέξετε: διακριτικό, κλειδί ανάπτυξης ή GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Με αποθετήριο GitHub και διακριτικό ή GitHub App, ο οδηγός μπορεί να δημιουργήσει το αποθετήριο, να ενεργοποιήσει το GitHub Pages και να ορίσει τον τομέα για εσάς (βήμα 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>σε δόμηση</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>δομήθηκε</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>από το GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>από τον κλάδο %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>κανένα ακόμη</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>δεν βρέθηκε</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ανενεργό</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>ιδιωτικό</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>δημόσιο</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>σε αναμονή</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>άγνωστο</translation>
+    </message>
 </context>
 </TS>

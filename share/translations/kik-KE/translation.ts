@@ -81940,5 +81940,181 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>yes, not published yet</source>
         <translation>ĩĩ, ndĩrĩ ĩcabithio rĩu</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App ĩmwe</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Workflow ya kĩigĩro kĩa code nĩyo ĩkĩcabithagia. Mwako nĩguo wandĩkaga faili ya workflow; tiga folda ĩtarĩ kĩndũ.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Thuutha wa kũiga kĩrorirwo na kĩigĩro kĩa code kĩa GitHub na token kana GitHub App, kĩgerero gĩkĩ no gĩthondeke kĩigĩro kĩa code na kĩhingũre GitHub Pages. Angĩkorwo tiguo, thondeka kĩigĩro kĩa code GitHub mbere; kĩigĩro gĩtarĩ kĩndũ nĩ kĩega.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Rũhonge kana GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Thuthuria DNS</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Thondeka kĩigĩro kĩa code angĩkorwo gĩtirĩ ho</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Thondeka kĩigĩro kĩa code GitHub na ũhingũre GitHub Pages mĩtaratara-inĩ yakĩo (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Nĩgĩthondekaga kĩigĩro kĩa code %repo kĩngĩkorwo gĩtirĩ ho (rĩrĩa gĩkũũrio), kĩhingũre GitHub Pages kuuma rũhonge kana kuuma GitHub Actions ta ũrĩa kwaigirũo, na kĩige domain yaku na HTTPS. Kĩhũthagĩra mĩtaratara ĩrĩa ĩigĩtwo: iga mũgarũrũko mbere.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Ũhoro wothe GitHub-inĩ</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Ingĩra domain yaku mbere.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>O push o yothe nĩĩthuthagĩrio na mĩhaka ĩno mbere.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Nĩ ũndũ wa address ya https:// GitHub-inĩ. App ĩrĩa yathondekeirwo ũhandi ũyũ nĩyo ĩtoonyaga; nĩĩbataraga id ya ũhandi.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages ĩheanaga kĩigĩro kĩa code kĩa hithũ o mũbango-inĩ wa kũrĩha tu.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) nĩĩbataraga rekodi ya CNAME ya &lt;owner&gt;.github.io; apex domain (example.com) rekodi cia A %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>Id ya ũhandi wa GitHub App</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Mwako wa Pages wa kũrigĩrĩria</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Mĩhaka na mawatho</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Nĩ kĩbataro nĩ ũndũ wa GitHub Pages mũbango-inĩ wa tũhũ.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub-inĩ</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>O na GitHub App tu: namba ĩrĩa ĩrĩ mũthia wa address ya ũhandi wa App GitHub-inĩ. App ĩyo yene ĩigagwo thĩinĩ wa staticcache.ini (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Hithũ</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ya andũ othe</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Iga kĩrorirwo na kĩigĩro kĩa code kĩa GitHub na token kana GitHub App mbere.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Iga rekodi ici kũrĩ mũheani wa domain:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Thondeka GitHub-inĩ</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>DNS ya %domain ndĩrĩ ĩrorithagia GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>DNS ya %domain nĩĩrorithagia GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>Ũnyitanĩrio wa GitHub ndũrĩ haha: %problem. Gũcabithia rũhonge-inĩ nĩkũrutaga wĩra o ũguo; hingũra GitHub Pages mĩtaratara-inĩ ya kĩigĩro kĩa code.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>Ciĩgerero cia GitHub itirĩ nĩ ũndũ wa kĩrorirwo gĩkĩ: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Ũrĩa GitHub Pages ĩhaana nĩkuonanagio na token kana GitHub App ta ũira wa gũtoonya.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Hũthĩra domain yaku</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Ũgũthuura kĩĩ: token, kĩhingũro kĩa gũtũma kana GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Na kĩigĩro kĩa code kĩa GitHub na token kana GitHub App, wizard no ĩgũthondekere kĩigĩro kĩa code, ĩhingũre GitHub Pages na ĩige domain (kĩgerero 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>nĩ kũrakwo</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>nĩ gwakwo</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>kuuma GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>kuuma rũhonge %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>gũtirĩ o na rĩu</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>ndĩonekire</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>hingĩtwo</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>hithũ</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ya andũ othe</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>mũhari-inĩ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ndĩĩũĩkaine</translation>
+    </message>
 </context>
 </TS>

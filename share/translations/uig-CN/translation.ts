@@ -81940,5 +81940,181 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes, not published yet</source>
         <translation>ھەئە، تېخى ئېلان قىلىنمىدى</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>بىر GitHub App</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>ئامبارنىڭ بىر خىزمەت ئېقىمى ئۇنى ئېلان قىلىدۇ. قۇرۇش خىزمەت ئېقىمى ھۆججىتىنى يازىدۇ؛ قىسقۇچنى بوش قالدۇرۇڭ.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>نىشاننى GitHub ئامبىرى ۋە توكېن ياكى GitHub App بىلەن ساقلىغاندىن كېيىن، بۇ قەدەم ئامبارنى قۇرۇپ GitHub Pages نى ئاچالايدۇ. بولمىسا ئالدى بىلەن GitHub دا ئامبار قۇرۇڭ؛ بوش بولسىمۇ بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>تارماقمۇ ياكى GitHub Actions مۇ؟</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>DNS نى تەكشۈرۈش</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>ئامبار مەۋجۇت بولمىسا قۇرۇش</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>GitHub دا ئامبار قۇرۇپ، ئۇنىڭ تەڭشەكلىرىدە GitHub Pages نى ئېچىڭ (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>ئامبار %repo بولمىسا ئۇنى قۇرىدۇ (تەلەپ قىلىنسا)، ساقلانغان بويىچە تارماق ياكى GitHub Actions دىن GitHub Pages نى ئاچىدۇ ھەمدە خاس دائىرە ۋە HTTPS نى تەڭشەيدۇ. ساقلانغان تەڭشەكلەرنى ئىشلىتىدۇ: ئالدى بىلەن ئۆزگەرتىشلەرنى ساقلاڭ.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>GitHub دىكى تەپسىلاتلار</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>ئالدى بىلەن خاس دائىرىنى كىرگۈزۈڭ.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>ھەر بىر ئىتتىرىش ئالدى بىلەن بۇ چەكلىمىلەر بويىچە تەكشۈرۈلىدۇ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>GitHub دىكى https:// ئادرېسى ئۈچۈن. بۇ ئورنىتىش ئۈچۈن تەڭشەلگەن App كىرىدۇ؛ ئۇنىڭغا ئورنىتىش id سى كېرەك.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages شەخسىي ئامبارنى پەقەت ھەقلىق پىلاندىلا تەمىنلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: تارماق دائىرە (www.example.com) غا &lt;owner&gt;.github.io غا قارىتىلغان CNAME خاتىرىسى، ئاساسىي دائىرە (example.com) غا A خاتىرىلىرى %ips كېرەك.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App نىڭ ئورنىتىش id سى</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>ئاخىرقى Pages قۇرۇلۇشى</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>چەكلىمىلەر ۋە شەرتلەر</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>ھەقسىز پىلاندا GitHub Pages ئۈچۈن زۆرۈر.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>GitHub دا</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>پەقەت GitHub App بىلەن: GitHub دىكى App ئورنىتىشى ئادرېسىنىڭ ئاخىرىدىكى سان. App ئۆزى staticcache.ini دا تەڭشىلىدۇ (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>شەخسىي</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>ئاممىۋى</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>ئالدى بىلەن نىشاننى GitHub ئامبىرى ۋە توكېن ياكى GitHub App بىلەن ساقلاڭ.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>بۇ خاتىرىلەرنى دائىرە تەمىنلىگۈچىسىدە تەڭشەڭ:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>GitHub دا تەڭشەش</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain نىڭ DNS ى تېخى GitHub Pages نى كۆرسەتمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain نىڭ DNS ى GitHub Pages نى كۆرسىتىدۇ.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub بىرىكتۈرۈلمىسى بۇ يەردە ئىشلەتكىلى بولمايدۇ: %problem. تارماققا ئېلان قىلىش يەنىلا ئىشلەيدۇ؛ ئامبار تەڭشەكلىرىدە GitHub Pages نى ئېچىڭ.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>بۇ نىشان ئۈچۈن GitHub قەدەملىرى يوق: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>كىرىش ئۇچۇرى توكېن ياكى GitHub App بولغاندا GitHub Pages نىڭ ھالىتى كۆرسىتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>ئۆزىڭىزنىڭ دائىرىسىنى ئىشلىتىڭ</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>قايسىنى تاللاش: توكېن، ئورۇنلاشتۇرۇش ئاچقۇچى ياكى GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>GitHub ئامبىرى ۋە توكېن ياكى GitHub App بولسا، يېتەكچى سىز ئۈچۈن ئامبار قۇرۇپ، GitHub Pages نى ئېچىپ، دائىرىنى تەڭشىيەلەيدۇ (4-قەدەم).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>قۇرۇلۇۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>قۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>GitHub Actions دىن</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>تارماق %branch دىن</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>تېخى يوق</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>تېپىلمىدى</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>تاقاق</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>شەخسىي</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ئاممىۋى</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ئۆچىرەتتە</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامەلۇم</translation>
+    </message>
 </context>
 </TS>

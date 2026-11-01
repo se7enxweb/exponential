@@ -81940,5 +81940,181 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>yes, not published yet</source>
         <translation>aane, wɔntintimii da</translation>
     </message>
+    <message>
+        <source>A GitHub App</source>
+        <translation>GitHub App bi</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.</source>
+        <translation>Akoraeɛ no mu workflow bi na ɛtintim no. Nkyekyeɛ no kyerɛw workflow fael no; gyae fɔlda no hunu.</translation>
+    </message>
+    <message>
+        <source>After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.</source>
+        <translation>Sɛ wode GitHub akoraeɛ ne token anaa GitHub App sie botaeɛ bi wie a, anammɔn yi betumi abɔ akoraeɛ no na asɔ GitHub Pages. Anyɛ saa a, di kan bɔ akoraeɛ no wɔ GitHub so; nea ɛda hɔ hunu mpo yɛ.</translation>
+    </message>
+    <message>
+        <source>Branch or GitHub Actions?</source>
+        <translation>Dubaa anaa GitHub Actions?</translation>
+    </message>
+    <message>
+        <source>Check the DNS</source>
+        <translation>Hwɛ DNS no</translation>
+    </message>
+    <message>
+        <source>Create the repository if it does not exist</source>
+        <translation>Bɔ akoraeɛ no sɛ ɛnni hɔ a</translation>
+    </message>
+    <message>
+        <source>Create the repository on GitHub and switch GitHub Pages on in its settings (Settings &gt; Pages).</source>
+        <translation>Bɔ akoraeɛ no wɔ GitHub so na sɔ GitHub Pages wɔ ne nhyehyɛeɛ mu (Settings &gt; Pages).</translation>
+    </message>
+    <message>
+        <source>Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.</source>
+        <translation>Ɛbɔ akoraeɛ %repo sɛ ɛnni hɔ a (sɛ wobisa a), ɛsɔ GitHub Pages firi dubaa no anaa GitHub Actions mu sɛnea wosiee no, na ɛhyɛ wo ankasa dɔmen ne HTTPS. Ɛde nhyehyɛeɛ a wosiee no di dwuma: di kan sie nsakraeɛ no.</translation>
+    </message>
+    <message>
+        <source>Details on GitHub</source>
+        <translation>Nkyerɛkyerɛmu wɔ GitHub so</translation>
+    </message>
+    <message>
+        <source>Enter the custom domain first.</source>
+        <translation>Di kan hyɛ wo ankasa dɔmen no.</translation>
+    </message>
+    <message>
+        <source>Every push is checked against these limits first.</source>
+        <translation>Wɔde push biara toto anohyeto yi ho kane.</translation>
+    </message>
+    <message>
+        <source>For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.</source>
+        <translation>Ma https:// adrɛse wɔ GitHub so. App a wɔahyehyɛ ama nhyehyɛeɛ yi na ɛkɔ mu; ɛhia installation id no.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages serves a private repository only on a paid plan.</source>
+        <translation>GitHub Pages som akoraeɛ a ɛyɛ kokoam wɔ nhyehyɛeɛ a wotua ho ka nko ara so.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages: a subdomain (www.example.com) needs a CNAME record to &lt;owner&gt;.github.io; an apex domain (example.com) the A records %ips.</source>
+        <translation>GitHub Pages: subdomain (www.example.com) hia CNAME record a ɛkɔ &lt;owner&gt;.github.io; apex domain (example.com) hia A records %ips.</translation>
+    </message>
+    <message>
+        <source>Installation id of the GitHub App</source>
+        <translation>GitHub App no installation id</translation>
+    </message>
+    <message>
+        <source>Last Pages build</source>
+        <translation>Pages nkyekyeɛ a ɛtwa toɔ</translation>
+    </message>
+    <message>
+        <source>Limits and terms</source>
+        <translation>Anohyeto ne nhyehyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Needed for GitHub Pages on a free plan.</source>
+        <translation>Ɛho hia ma GitHub Pages wɔ nhyehyɛeɛ a ɛyɛ kwa so.</translation>
+    </message>
+    <message>
+        <source>On GitHub</source>
+        <translation>Wɔ GitHub so</translation>
+    </message>
+    <message>
+        <source>Only with a GitHub App: the number at the end of the address of the App's installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).</source>
+        <translation>GitHub App nko ara: nɔma a ɛwɔ App no installation adrɛse awieeɛ wɔ GitHub so. Wɔhyɛ App no ankasa wɔ staticcache.ini mu (GitHubAppId, GitHubAppKey).</translation>
+    </message>
+    <message>
+        <source>Private</source>
+        <translation>Kokoam</translation>
+    </message>
+    <message>
+        <source>Public</source>
+        <translation>Ɛda adi</translation>
+    </message>
+    <message>
+        <source>Save the target with a GitHub repository and a token or GitHub App first.</source>
+        <translation>Di kan fa GitHub akoraeɛ ne token anaa GitHub App sie botaeɛ no.</translation>
+    </message>
+    <message>
+        <source>Set these records at the provider of the domain:</source>
+        <translation>Hyɛ records yi wɔ dɔmen no mamfoɔ hɔ:</translation>
+    </message>
+    <message>
+        <source>Set up on GitHub</source>
+        <translation>Hyehyɛ wɔ GitHub so</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain does not point at GitHub Pages yet.</source>
+        <translation>%domain DNS nkyerɛ GitHub Pages so ɛmmaeɛ.</translation>
+    </message>
+    <message>
+        <source>The DNS of %domain points at GitHub Pages.</source>
+        <translation>%domain DNS kyerɛ GitHub Pages so.</translation>
+    </message>
+    <message>
+        <source>The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository's settings.</source>
+        <translation>GitHub nkabom nni ha: %problem. Tintim kɔ dubaa no so da so yɛ adwuma; sɔ GitHub Pages wɔ akoraeɛ no nhyehyɛeɛ mu.</translation>
+    </message>
+    <message>
+        <source>The GitHub steps are not available for this target: %problem.</source>
+        <translation>GitHub anammɔn no nni hɔ mma botaeɛ yi: %problem.</translation>
+    </message>
+    <message>
+        <source>The state of GitHub Pages is shown with a token or GitHub App as the credential.</source>
+        <translation>Wɔkyerɛ GitHub Pages tebea bere a token anaa GitHub App yɛ ahyɛmu adanseɛ no.</translation>
+    </message>
+    <message>
+        <source>Use your own domain</source>
+        <translation>Fa wo ankasa dɔmen di dwuma</translation>
+    </message>
+    <message>
+        <source>Which to choose: token, deploy key or GitHub App</source>
+        <translation>Deɛn na wobɛpaw: token, deploy safoa anaa GitHub App</translation>
+    </message>
+    <message>
+        <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
+        <translation>Sɛ GitHub akoraeɛ ne token anaa GitHub App wɔ hɔ a, akwankyerɛfoɔ no betumi abɔ akoraeɛ no, asɔ GitHub Pages na ahyɛ dɔmen no ama wo (anammɔn 4).</translation>
+    </message>
+    <message>
+        <source>building</source>
+        <translation>ɛrenkyekyɛ</translation>
+    </message>
+    <message>
+        <source>built</source>
+        <translation>wɔakyekyɛ</translation>
+    </message>
+    <message>
+        <source>from GitHub Actions</source>
+        <translation>firi GitHub Actions</translation>
+    </message>
+    <message>
+        <source>from the branch %branch</source>
+        <translation>firi dubaa %branch</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>biribiara nni hɔ ɛmmaeɛ</translation>
+    </message>
+    <message>
+        <source>not found</source>
+        <translation>wɔanhunu</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>adum</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <translation>kokoam</translation>
+    </message>
+    <message>
+        <source>public</source>
+        <translation>ɛda adi</translation>
+    </message>
+    <message>
+        <source>queued</source>
+        <translation>ɛretwɛn</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>wɔnnim</translation>
+    </message>
 </context>
 </TS>
