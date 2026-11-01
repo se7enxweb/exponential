@@ -965,6 +965,23 @@ class eZImageType extends eZDataType
 
         $node->setAttribute( 'alternative-text', $original['alternative_text'] );
 
+        // The focal point and crop rectangle, only when set (a package without them reads as before)
+        if ( $content && $original['url'] )
+        {
+            $focal = $content->focalPoint();
+            if ( $focal !== null )
+            {
+                $node->setAttribute( 'focal-x', $focal['x'] );
+                $node->setAttribute( 'focal-y', $focal['y'] );
+            }
+            $crop = $content->cropRectangle();
+            if ( $crop !== null )
+            {
+                foreach ( $crop as $key => $value )
+                    $node->setAttribute( 'crop-' . $key, $value );
+            }
+        }
+
         return $node;
     }
 
@@ -983,6 +1000,15 @@ class eZImageType extends eZDataType
         if ( $imageFileKey )
         {
             $content->initializeFromFile( $package->simpleFilePath( $imageFileKey ), $alternativeText );
+            $focal = $attributeNode->hasAttribute( 'focal-x' ) ?
+                array( 'x' => $attributeNode->getAttribute( 'focal-x' ), 'y' => $attributeNode->getAttribute( 'focal-y' ) ) : null;
+            $crop = $attributeNode->hasAttribute( 'crop-width' ) ?
+                array( 'x' => $attributeNode->getAttribute( 'crop-x' ), 'y' => $attributeNode->getAttribute( 'crop-y' ),
+                       'width' => $attributeNode->getAttribute( 'crop-width' ), 'height' => $attributeNode->getAttribute( 'crop-height' ) ) : null;
+            if ( $focal !== null || $crop !== null )
+            {
+                $content->setFocalPoint( $focal, $crop );
+            }
         }
         else
         {

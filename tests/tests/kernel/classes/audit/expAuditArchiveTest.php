@@ -96,8 +96,115 @@ class expAuditArchiveTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $r['notices'] );
     }
 
+    /**
+     * Ends a test that runs longer than $seconds with a failure instead of hanging the suite (Redmine #16709: a zstd
+     * stream that never reported its end kept testEachFormat at 100 % CPU). Needs pcntl; without it nothing is
+     * guarded. Returns a function that lifts the guard.
+     *
+     * @param int $seconds
+     * @return callable
+     */
+    protected function timeLimit( $seconds )
+    {
+        if ( !function_exists( 'pcntl_alarm' ) || !function_exists( 'pcntl_signal' ) || !function_exists( 'pcntl_async_signals' ) )
+            return function () {};
+        $async = pcntl_async_signals( true );
+        pcntl_signal( SIGALRM, function () use ( $seconds ) {
+            throw new RuntimeException( "still running after $seconds s: a stream read that never ends?" );
+        } );
+        pcntl_alarm( $seconds );
+        return function () use ( $async ) {
+            pcntl_alarm( 0 );
+            pcntl_signal( SIGALRM, SIG_DFL );
+            pcntl_async_signals( $async );
+        };
+    }
+
     /** AR-02 */
     public function testEachFormat()
+    {
+        $lift = $this->timeLimit( 120 );
+        try
+        {
+            $this->eachFormat();
+        }
+        finally
+        {
+            $lift();
+        }
+    }
+
+    /**
+     * AR-02a: digestStream() ends on a stream that never reports its end (feof() false, fread() '' for ever), as
+     * the compress.zstd:// stream of zstd 0.18.0 did (Redmine #16709): the bytes read so far, no endless loop.
+     */
+    public function testDigestStreamEndsOnAStreamThatNeverReportsItsEnd()
+    {
+        if ( !in_array( 'expauditneverendingtest', stream_get_wrappers(), true ) )
+            stream_wrapper_register( 'expauditneverendingtest', 'expAuditNeverEndingTestStream' );
+        $lift = $this->timeLimit( 30 );
+        try
+        {
+            $s = fopen( 'expauditneverendingtest://x', 'rb' );
+            $this->assertIsResource( $s );
+            $d = expAuditFormatBase::digestStream( $s );
+            fclose( $s );
+        }
+        finally
+        {
+            $lift();
+        }
+        $this->assertSame( strlen( expAuditNeverEndingTestStream::DATA ), $d['bytes'] );
+        $this->assertSame( hash( 'sha256', expAuditNeverEndingTestStream::DATA ), $d['sha256'] );
+    }
+
+    /**
+     * AR-02b: the zstd handler's open() returns a stream that ends, read with fgets(), stream_copy_to_stream() and
+     * digestStream(), whichever way it decompresses here (the PHP extension, else the zstd binary).
+     */
+    public function testZstdStreamEnds()
+    {
+        $handler = expAuditFormatRegistry::get( 'zstd' );
+        if ( !$handler || $handler->problem() !== '' )
+            $this->markTestSkipped( 'neither the PHP extension zstd nor the zstd binary is present' );
+        $plain = $this->dir . 'plain.jsonl';
+        $text = '';
+        for ( $i = 0; $i < 5000; $i++ )
+            $text .= json_encode( array( 'i' => $i, 'text' => str_repeat( 'x', $i % 97 ) ) ) . "\n";
+        file_put_contents( $plain, $text );
+        $archive = $this->dir . 'plain.jsonl.zst';
+        $this->assertTrue( $handler->compress( $plain, $archive, 3 ) );
+        $lift = $this->timeLimit( 30 );
+        try
+        {
+            $s = $handler->open( $archive );
+            $this->assertIsResource( $s );
+            $lines = 0;
+            while ( ( $line = fgets( $s ) ) !== false )
+                $lines++;
+            expAuditFormatBase::close( $s );
+            $s = $handler->open( $archive );
+            $d = expAuditFormatBase::digestStream( $s );
+            expAuditFormatBase::close( $s );
+            $s = $handler->open( $archive );
+            $copy = fopen( 'php://memory', 'w+b' );
+            stream_copy_to_stream( $s, $copy );
+            expAuditFormatBase::close( $s );
+            rewind( $copy );
+            $copied = stream_get_contents( $copy );
+            fclose( $copy );
+        }
+        finally
+        {
+            $lift();
+        }
+        $this->assertSame( 5000, $lines );
+        $this->assertSame( hash( 'sha256', $text ), $d['sha256'] );
+        $this->assertSame( strlen( $text ), $d['bytes'] );
+        $this->assertSame( $text, $copied );
+    }
+
+    protected function eachFormat()
     {
         $base = $this->dir;
         foreach ( array( 'gzip', 'bzip2', 'xz', 'zstd', 'zip' ) as $format )
@@ -294,5 +401,46 @@ class expAuditArchiveTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'intact', $r['daily']['verified']['content'] );
         $this->assertSame( array( '2026-10-02', '2026-10-03', '2026-10-04', '2026-10-05' ), array_keys( $r['daily']['archived']['content'] ), 'older than LiveDays (2) on 2026-10-08' );
         $this->assertFalse( $m->dailyDue(), 'once a day' );
+    }
+}
+
+/**
+ * A read stream that returns DATA and then '' for ever without reporting its end (stream_eof() false), as the
+ * compress.zstd:// stream of zstd 0.18.0 did.
+ */
+class expAuditNeverEndingTestStream
+{
+    const DATA = "line one\nline two\n";
+
+    /** @var resource|null */
+    public $context;
+
+    protected $sent = false;
+
+    public function stream_open( $path, $mode, $options, &$opened )
+    {
+        return true;
+    }
+
+    public function stream_read( $count )
+    {
+        if ( $this->sent )
+            return '';
+        $this->sent = true;
+        return self::DATA;
+    }
+
+    public function stream_eof()
+    {
+        return false;
+    }
+
+    public function stream_stat()
+    {
+        return array();
+    }
+
+    public function stream_close()
+    {
     }
 }

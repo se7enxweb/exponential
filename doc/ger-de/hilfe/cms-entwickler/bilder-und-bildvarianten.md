@@ -21,8 +21,9 @@ Website sie zeigt. Exponential speichert das Original einmal und erzeugt jede Gr
 4. [Eine Variante für Ihr Design festlegen](#eine-variante-für-ihr-design-festlegen)
 5. [Bilder in Templates](#bilder-in-templates)
 6. [Alternativtext](#alternativtext)
-7. [Konverter: GD und ImageMagick](#konverter-gd-und-imagemagick)
-8. [Nach einer Änderung](#nach-einer-änderung)
+7. [Fokuspunkt und Zuschnitt](#fokuspunkt-und-zuschnitt)
+8. [Konverter: GD und ImageMagick](#konverter-gd-und-imagemagick)
+9. [Nach einer Änderung](#nach-einer-änderung)
 
 ## Bildattribut oder Bildobjekt
 
@@ -120,6 +121,16 @@ Sie im Klasseneditor beim Bildattribut das Häkchen bei **Alternativtext ist erf
 kein Bild ohne ihn speichern. Importe und Massen-Uploads fragen nicht danach; füllen Sie ihn also nachträglich
 ([Alternativtext ist erforderlich](../../anleitungen/inhaltsmodell-und-bearbeitung.md#alternativtext-ist-erforderlich-bildfelder)).
 Ein dekoratives Bild erhält im Template absichtlich ein leeres `alt`.
+
+## Fokuspunkt und Zuschnitt
+
+Ein Bild kann je Attributversion einen Fokuspunkt und ein Zuschnittsrechteck tragen (Anteile am Original, im XML des
+Attributs gespeichert). Das Zuschnittsrechteck wird vor den Filtern einer Variante ausgeschnitten, und jeder Filter
+`geometry/crop` legt sein Fenster um den Fokuspunkt statt an sein eigenes `x;y`; eine Variante, die skaliert und
+zuschneidet, behält so das Wesentliche im Bild. Bilder ohne sie werden genau wie bisher umgerechnet. Templates lesen
+`focal_point` (mit `position`, fertig für CSS `object-position`) und `crop_rectangle`. Code setzt sie mit
+`setFocalPoint()` in einem Entwurf, wodurch die bisher erzeugten Varianten entfallen. Einzelheiten:
+[Fokuspunkt und Zuschnitt von Bildern](../../bc/6.0/bild-fokuspunkt.md).
 
 ## Konverter: GD und ImageMagick
 

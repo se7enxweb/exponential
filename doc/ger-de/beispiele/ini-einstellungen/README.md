@@ -33,8 +33,8 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | Kernel | 1 |
 | [country.ini](country/README.md) | Kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | Kernel | 1 |
-| [cronjob.ini](cronjob/README.md) | Kernel | 25 |
-| [dashboard.ini](dashboard/README.md) | Kernel | 8 |
+| [cronjob.ini](cronjob/README.md) | Kernel | 26 |
+| [dashboard.ini](dashboard/README.md) | Kernel | 9 |
 | [datatable.ini](datatable/README.md) | Kernel | 3 |
 | [datatype.ini](datatype/README.md) | Kernel | 5 |
 | [datetime.ini](datetime/README.md) | Kernel | 1 |
@@ -63,6 +63,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [mailpreferences.ini](mailpreferences/README.md) | Kernel | 19 |
 | [membermanagement.ini](membermanagement/README.md) | Kernel | 4 |
 | [menu.ini](menu/README.md) | Kernel | 28 |
+| [migration.ini](migration/README.md) | Kernel | 5 |
 | [mime.ini](mime/README.md) | Kernel | 192 |
 | [module.ini](module/README.md) | Kernel | 2 |
 | [notification.ini](notification/README.md) | Kernel | 6 |
@@ -79,7 +80,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [setup.ini](setup/README.md) | Kernel | 24 |
 | [shop.ini](shop/README.md) | Kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | Kernel | 3 |
-| [site.ini](site/README.md) | Kernel | 63 |
+| [site.ini](site/README.md) | Kernel | 65 |
 | [smarty.ini](smarty/README.md) | Kernel | 1 |
 | [soap.ini](soap/README.md) | Kernel | 2 |
 | [solr.ini](solr/README.md) | Kernel | 1 |

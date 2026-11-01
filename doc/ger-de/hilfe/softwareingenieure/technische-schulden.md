@@ -53,7 +53,8 @@ Aus den Seiten der Standards:
 - `ezpEvent` ist als private API dokumentiert, dennoch verlassen sich Erweiterungen darauf.
 - Views, Cronjob-Teile und Befehle als einfache Dateien laufen noch neben der klassenbasierten Form.
 - INI-Schalter mischen `enabled`/`disabled` und `true`/`false`.
-- Datenbankaktualisierungen werden von Hand angewendet; es gibt keinen Migrations-Runner.
+- Installationen, die von Hand mit den SQL-Updatedateien aktualisiert wurden, haben keine Aufzeichnung dessen, was
+  gelaufen ist; `exp:upgrade` und die Migrationen (6.0.15) halten es fest.
 - Einige Testdateien gehören zu keiner Suite und laufen nie.
 - Aus der alten Codebasis geerbte `@deprecated`-APIs haben kein Entfernungsdatum.
 

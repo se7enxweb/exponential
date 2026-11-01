@@ -97,7 +97,8 @@ Caching-Proxy; einem, der Seiten speichert, muss gesagt werden, was er wie lange
 ## Grenzen
 
 - Kein eingebauter Purge für externe Proxys.
-- Kein Migrations-Runner; eine Schemaänderung wird einmal angewendet, von einem Knoten aus.
+- Eine Schemaänderung (`exp:upgrade`, `exp:migration:migrate`) wird einmal angewendet, von einem Knoten aus; die
+  Installationssperre hält einen zweiten Lauf nur auf diesem Knoten vom gleichzeitigen Schreiben ab.
 - Caches je Knoten können nach einer Änderung kurz uneins sein; planen Sie die Reihenfolge einer Bereitstellung.
 
 ## Verwandte Seiten

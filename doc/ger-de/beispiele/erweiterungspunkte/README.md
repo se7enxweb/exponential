@@ -40,6 +40,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [ldap.ini](ldap.md) | Kernel | 2 | LDAPSearchFilters, LDAPGroupClass |
 | [mailpreferences.ini](mailpreferences.md) | Kernel | 11 | HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass ... |
 | [membermanagement.ini](membermanagement.md) | Kernel | 1 | GuardedClasses |
+| [migration.ini](migration.md) | Kernel | 1 | ExtensionDirectory |
 | [module.ini](module.md) | Kernel | 2 | ModuleRepositories, ExtensionRepositories |
 | [notification.ini](notification.md) | Kernel | 5 | IncludeClasses, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, DefaultTransport |
 | [package.ini](package.md) | Kernel | 3 | ExtensionDirectories, HandlerList, HandlerList |
@@ -49,7 +50,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [setup.ini](setup.md) | Kernel | 1 | TestClass |
 | [shop.ini](shop.md) | Kernel | 7 | MathHandler, ExchangeRatesUpdateHandler, ExtensionDirectories, ExtensionDirectories, Handler, ExtensionDirectories ... |
 | [shopaccount.ini](shopaccount.md) | Kernel | 4 | Repositories, ExtensionRepositories, Handler, Handler |
-| [site.ini](site.md) | Kernel | 30 | purgeClass, purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners ... |
+| [site.ini](site.md) | Kernel | 31 | purgeClass, purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners ... |
 | [smarty.ini](smarty.md) | Kernel | 2 | CompileCheck, SecurityStaticClassList |
 | [subitemscolumns.ini](subitemscolumns.md) | Kernel | 112 | Class, Class, Class, Class, Class, Class ... |
 | [syscard.ini](syscard.md) | Kernel | 1 | ProviderClasses |

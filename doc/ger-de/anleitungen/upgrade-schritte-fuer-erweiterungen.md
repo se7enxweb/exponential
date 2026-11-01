@@ -6,7 +6,15 @@ Schritt registriert, sieht ein Administrator ihn beim Upgrade in `exp:upgrade:st
 `exp:upgrade --apply` und hat ihn aufgezeichnet, genauso wie die Schritte des Kernels.
 
 [Anleitungen](README.md) · Siehe auch: [Upgrade mit der Konsole](aktualisieren-mit-der-konsole.md),
-[Erweiterungen](extensions.md)
+[Erweiterungen](extensions.md), [Migrationen](migrationen.md)
+
+Ein Upgrade-Schritt oder eine Migration? Ein **Upgrade-Schritt** ist für das, was jede Installation der Erweiterung
+beim Upgrade braucht: Er kann die Installation befragen (`detect()`) und wird von `exp:upgrade` mit den Schritten des
+Kernels ausgeführt. Eine **Migration** in `extension/<name>/migrations/` ist eine Änderung, die einmal geschrieben und
+der Reihe nach mit den eigenen Migrationen einer Site angewendet wird (`exp:migration:migrate`), mit einem
+Sicherungspunkt davor und einer Aufzeichnung des Laufs; nehmen Sie sie für Änderungen, auf denen eine Site aufbaut und
+die ihre eigenen Migrationen in `requires:` nennen können. Beide werden in derselben Tabelle `exp_migration`
+aufgezeichnet und laufen unter derselben Sperre ([PHP-Migrationen](migrationen-php.md#migrationen-in-einer-erweiterung)).
 
 ## Der Schritt
 

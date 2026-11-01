@@ -15,6 +15,7 @@ default, scope) and ends with "Related pages".
 | [Commands, cronjob parts and module views as classes](runnable-commands-cronjobs-views.md) | The runnable classes, entry points, events, re-implementation and listeners |
 | [INI override directories and placements](ini-override-placements.md) | How `eZINI` orders settings files; per-siteaccess settings inside extensions |
 | [Audit event model](audit-event-model.md) | Event names, records, channels, hash chains, `audit.ini`, extension points |
+| [The migration file format](migration-file-format.md) | File names, the header, the PHP class, the checksum, order, states, the record tables, the status file, the run log, `exp-migration/1` |
 | [Extension metadata](extension-metadata.md) | `ezinfo.php`, `extension.xml`, `expInfo`, the release rule |
 | [Installer logs and seed data](installer-logs-and-seed-data.md) | Seed files, the content tree of a new installation, installer logs |
 | [Notifications](notifications.md) | Events, handlers, rules, digest, the service, lock and run record, views, templates |

@@ -1,0 +1,198 @@
+# Migrations: changes to an installation, written once and applied everywhere
+
+This guide explains the migrations of the Exponential 6.0.15 kernel: a change to an installation (a table, content,
+a role, a setting) written once in a file under version control and applied to every installation of the site, in
+the same order, with a record of what ran where. It is the overview; the pages linked at the end teach each part.
+
+It is for developers who change a site's database or content in code, and for administrators who apply those
+changes on staging and production. The commands below were run on SQLite on 31 October 2026.
+
+[Guides](README.md) · Related: [Migrations: a first PHP migration, step by step](migrations-tutorial.md),
+[PHP migrations](migrations-php.md), [Rollback and captions](migrations-rollback-and-captions.md),
+[The migrations repository](migrations-repositories.md), [Troubleshooting](migrations-troubleshooting.md),
+[The feature](../features/6.0/migrations.md), [The file format](../specifications/6.0/migration-file-format.md)
+
+## In short
+
+```bash
+./console exp:migration:generate --skeleton add_news_class --apply   # a new PHP migration in migrations/
+./console exp:migration:check                                         # the lint: names, headers, order, PHP
+./console exp:migration:status                                        # what is done, what is pending
+./console exp:migration:migrate                                       # dry run: what would change
+./console exp:migration:migrate --apply                               # caption, run, re-caption, commit, tag, push
+./console exp:migration:rollback <run-id> --apply                     # back to the caption taken before the run
+```
+
+Run the commands from the installation root as the user the web server runs as (as root, add
+`--allow-root-user`). Every command that writes is a dry run until it is given `--apply`.
+
+## What a migration is, and when to use one
+
+A migration is a file named `YYYYMMDDHHMMSS_name.<type>`, for example `20261031120000_add_news_class.php`. Its id is
+the file name without the type. It holds one change and, where it can, the way back. Once it has run on an
+installation, the record says so and it never runs there again.
+
+| You want to ... | Use |
+|---|---|
+| bring the database and settings of an installation up to a new **kernel release** | [`exp:upgrade`](upgrading-with-the-console.md) (the kernel's upgrade steps) |
+| ship a table, column or default row with an **extension**, applied on every upgrade | [an upgrade step of the extension](upgrade-steps-for-extensions.md), or a migration in `extension/<name>/migrations/` |
+| change **one site**: a class, content, a role, a setting, a table of the site, on development, staging and production in turn | a migration in the site's `migrations/` |
+| copy a whole site with its content to another installation | a [site package](packages.md) |
+
+Migrations and `exp:upgrade` share the record table `exp_migration`, the installation lock and the captions, so an
+upgrade and a migration run never write at the same time and `exp:upgrade:captions` lists the captions of both.
+
+## The life cycle
+
+1. **Write**: `exp:migration:generate --skeleton <name> --apply` writes an empty PHP migration with its header,
+   `plan()`, `up()` and `down()`; fill them in ([PHP migrations](migrations-php.md)).
+2. **Check**: `exp:migration:check` checks the files without a database: the names, the headers, the order, the PHP
+   syntax and the class. It is the lint for CI.
+3. **Dry run**: `exp:migration:migrate` (or `exp:migration:dry-run`) lists every pending migration with what its
+   `plan()` says it would change. `exp:migration:dry-run --simulate --diff` runs them in a transaction that is rolled
+   back and shows what changed in the database, on PostgreSQL and SQLite.
+4. **Run**: `exp:migration:migrate --apply`. Under the installation lock, as the run's user:
+   - the code trees (`settings/`, `extension/`, `design/`) are checked for changes that are not committed;
+   - a **caption** of kind `migration-pre` is taken (or the newest one reused while nothing has changed since);
+   - the pending migrations run in order, each in a transaction where the database has one;
+   - the run stops at the first failure and the pre caption is restored;
+   - after a run that passed, a caption of kind `migration-post` is taken (the re-caption);
+   - the status file and the run log are **committed**, the commit is **tagged** and **pushed** in the migrations
+     repository.
+5. **Look at it**: `exp:migration:status` shows every migration with its state, the latest runs and what waits.
+6. **Go back** if needed: `exp:migration:rollback <run-id>` restores the caption taken before a run,
+   `exp:migration:rollback <migration-id>` runs one migration's `down()`.
+
+## Where migration files live
+
+| Source | Folder | Setting |
+|---|---|---|
+| `site` | `migrations/` of the installation | `migration.ini [MigrationSettings] DirectoryList[]` |
+| `extension:<name>` | `extension/<name>/migrations/` of every **active** extension | `ExtensionDirectory` |
+| `package:<name>` | `migrations/` of every installed package below `var/<storage>/packages/` | `ExtensionDirectory` |
+
+Only the files directly in a folder are migrations; subfolders (the status files and run logs) are not searched. A
+file whose name does not start with `YYYYMMDDHHMMSS_` (a README, a `.gitkeep`) is skipped.
+`[MigrationSettings] Enabled=disabled` finds none at all. Every setting is listed in
+[the migration.ini reference](../examples/ini-settings/migration/README.md).
+
+## Types
+
+The type is the file's extension: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
+`mongodb`) and `ini`. In 6.0.15 a migration is written in **PHP**: the engine finds, orders and checks the other
+types, and the runner refuses them with an error until their steps arrive. `exp:migration:check` reports a `.yml`,
+`.sql` or `.ini` migration as an error for the same reason.
+
+## Order
+
+Migrations run in the order of their ids, which is the timestamp first and then the name. A migration that names
+others in its header line `requires:` runs after them, wherever their timestamps put them. A requirement
+`extension:<name>` needs that extension to be active. An id found twice (the first found counts: site before
+extensions before packages), a requirement that names no migration, and a cycle are errors that `exp:migration:check`
+and every run report; nothing runs while one is there.
+
+## The header
+
+The comment lines at the top of the file are its header, one `key: value` per line:
+
+```php
+<?php
+// description: The folder News below the content root
+// requires: 20261031120000_news_note_table
+// environments: staging, production
+// maintenance: no
+// author: Site team
+```
+
+Keys: `id`, `description`, `requires`, `environments`, `engines`, `maintenance`, `author`. An unknown key is an
+error, so a misspelled one does not pass silently. [The file format](../specifications/6.0/migration-file-format.md)
+gives every rule.
+
+## Environments
+
+An installation's environment is `site.ini [AdminEnvironment] Level` (with `Level=auto`, the environment variable
+`EXP_ENV`). A migration whose header names `environments: staging, production` runs only there;
+`environments: !development` runs everywhere but on development. `--environment=<name>` takes another one for one
+command. A migration that is not for the environment, or not for the database engine (`engines:`), has the state
+`not-needed`.
+
+## The record
+
+| Where | What |
+|---|---|
+| table `exp_migration` | one row per migration (source + id): state, run, checksum of the file, duration, the caption before it, the commit after it; also the record of `exp:upgrade` (source `kernel`) |
+| table `exp_migration_run` | one row per run: state, user, environment, the captions before and after, commit, tag, push state |
+| `migrations/status/<environment>.json` | the record mirrored into the migrations repository (no users, no messages) |
+| `migrations/runs/<run-id>.log` | one line per event of a run, cleaned of secrets and e-mail addresses |
+
+The upgrade step `6.0.15-migration-tables` creates both tables and copies the rows of the older `expupgrade_step`;
+`./console exp:upgrade --apply` runs it. Until then nothing is read or written and the status says so.
+
+States: `done`, `pending`, `not-needed`, `failed`, `unknown`. A migration recorded as done whose file has changed
+since is refused, and the run with it, unless the run is given `--force --reason=<text>`: the new checksum is then
+recorded, the change audited, and the migration is not run again.
+
+## Transactions and engines
+
+| Database | A failed migration is undone | Simulation (`--simulate`) |
+|---|---|---|
+| PostgreSQL, SQLite | completely (`transactions: full`) | yes |
+| MySQL/MariaDB, Oracle | its data only; a schema change is committed at once (`transactions: data`) | no: the plan is listed with a warning |
+| MongoDB | not at all (`transactions: none`) | no |
+
+The caption restored after a failure covers what a transaction cannot.
+
+## The run lock and the user
+
+A run that writes holds the installation lock `var/<site>/upgrade.lock` (shared with `exp:upgrade`), with a holder
+file next to it that says who holds it. A second run stops at once; `exp:migration:status` names the holder. A dry
+run takes no lock. A run runs as the signed-in user, or, on the console, as `[RunSettings] RunAsUser` (`admin`), by
+login; `--login=<login>` takes another.
+
+## Defaults and every switch
+
+| Default | Switched off for one run | Switched off in `migration.ini` |
+|---|---|---|
+| caption before the run | `--no-caption` | `[CaptionSettings] Before=disabled` |
+| caption after a run that passed | `--no-caption` | `After=disabled` |
+| reuse an unchanged caption | | `ReuseUnchanged=disabled` |
+| restore the pre caption after a failure | `--no-restore` | `RestoreOnFailure=disabled` |
+| refuse uncommitted changes in the code trees | `--include-uncommitted` (kept in the caption) | `CodeTreeList[]` |
+| commit the status file and run log | `--no-commit` (no tag and no push either) | `[RepositorySettings] Commit=disabled` |
+| tag the commit | `--no-tag` | `Tag=disabled` |
+| push commit and tag | `--no-push` | `Push=disabled` |
+| stop at the first failure | | `[RunSettings] StopOnFailure=disabled` |
+
+## Every command
+
+| Command | What it does |
+|---|---|
+| [`exp:migration:status`](../examples/commands/expmigrationstatus.md) | every migration with its state, the orphans, the latest runs, the pushes that wait, the lock |
+| [`exp:migration:migrate`](../examples/commands/expmigrationmigrate.md) | the dry run, and the run with `--apply` |
+| [`exp:migration:dry-run`](../examples/commands/expmigrationdryrun.md) | the plan; `--simulate --diff` runs in a transaction that is rolled back |
+| [`exp:migration:rollback`](../examples/commands/expmigrationrollback.md) | a run, one migration, or (expert) any caption |
+| [`exp:migration:resume`](../examples/commands/expmigrationresume.md) | a new run of what a failed or interrupted run left pending |
+| [`exp:migration:caption`](../examples/commands/expmigrationcaption.md) | a caption now, or the list |
+| [`exp:migration:push`](../examples/commands/expmigrationpush.md) | the runs whose push failed, pushed again |
+| [`exp:migration:check`](../examples/commands/expmigrationcheck.md) | the lint for CI |
+| [`exp:migration:generate`](../examples/commands/expmigrationgenerate.md) | a new PHP migration from the skeleton |
+
+All of them take `--format=json` (the machine output `exp-migration/1`) and end with the exit codes of
+`exp:upgrade`: 0 fine, 1 failed (or pending with `exp:migration:status --fail-on-pending`), 2 usage error, 3 the
+database is not reachable, 4 internal error.
+
+## Not in 6.0.15 yet
+
+The administration's Setup > Migrations, YAML, SQL and INI migrations, generators other than the skeleton,
+recording, and `exp:velocity deploy --migrate` are planned and not part of this release. Everything this guide shows
+works from the console today.
+
+## Read on
+
+- [Migrations: a first PHP migration, step by step](migrations-tutorial.md)
+- [PHP migrations](migrations-php.md)
+- [Rollback and captions](migrations-rollback-and-captions.md)
+- [The migrations repository: commit, tag and push](migrations-repositories.md)
+- [Troubleshooting migrations](migrations-troubleshooting.md)
+- [The migration file format](../specifications/6.0/migration-file-format.md)
+- [migration.ini](../examples/ini-settings/migration/README.md), [the cronjob part migrationpush](../examples/cronjobs/migrationpush.md)

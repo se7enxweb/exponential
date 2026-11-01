@@ -37,7 +37,8 @@ Roots[]=doc
 ## ActiveExtensionDocs
 
 > enabled: the documentation of every active extension is shown too, found when the help looks (an extension  
-> switched on or off is added or left out at once): the files of extension/<name>/doc tracked by the extension's own  
+> switched on or off is added or left out at once). Active means ActiveExtensions\[\] or the ActiveAccessExtensions\[\]  
+> of any siteaccess of AvailableSiteAccessList\[\], so every siteaccess and the console build the same index: the files of extension/<name>/doc tracked by the extension's own  
 > repository (or listed in its share/filelist.md5), and its README, CHANGELOG, LICENSE ... (ExtensionTopFiles\[\]).  
 > Their pages have the id ext/<name>/<path below doc> (ext/<name>/README.md for a top file), in the folder and  
 > category "Extensions" and on exphelp/extensions. disabled: only the extensions of ExtensionDocDirs\[\].  

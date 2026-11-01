@@ -112,7 +112,8 @@ require ' . var_export( $vendor, true ) . ';
 $l = new expLogFileLocator( expLogViewerConfig::fromArray( array(), ' . var_export( $this->root, true ) . ' ), "var/log" );
 expLogActions::download( $l->resolve( "var/log/error.log" ), ' . $from . ', ' . $to . ', new expLogRedactor() );
 ' );
-        $out = shell_exec( escapeshellarg( PHP_BINARY ) . ' ' . escapeshellarg( $script ) . ' 2>/dev/null' );
+        // display_errors=stderr: a deprecation of a library on a newer PHP must not land in the gzip data on stdout
+        $out = shell_exec( escapeshellarg( PHP_BINARY ) . ' -d display_errors=stderr ' . escapeshellarg( $script ) . ' 2>/dev/null' );
         $this->assertIsString( $out );
         $plain = gzdecode( $out );
         $this->assertSame( "mail j***@***.com from 192.0.x.x\n", $plain );

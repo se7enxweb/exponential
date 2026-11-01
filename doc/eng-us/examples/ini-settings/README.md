@@ -33,8 +33,8 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | kernel | 1 |
 | [country.ini](country/README.md) | kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | kernel | 1 |
-| [cronjob.ini](cronjob/README.md) | kernel | 25 |
-| [dashboard.ini](dashboard/README.md) | kernel | 8 |
+| [cronjob.ini](cronjob/README.md) | kernel | 26 |
+| [dashboard.ini](dashboard/README.md) | kernel | 9 |
 | [datatable.ini](datatable/README.md) | kernel | 3 |
 | [datatype.ini](datatype/README.md) | kernel | 5 |
 | [datetime.ini](datetime/README.md) | kernel | 1 |
@@ -63,6 +63,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [mailpreferences.ini](mailpreferences/README.md) | kernel | 19 |
 | [membermanagement.ini](membermanagement/README.md) | kernel | 4 |
 | [menu.ini](menu/README.md) | kernel | 28 |
+| [migration.ini](migration/README.md) | kernel | 5 |
 | [mime.ini](mime/README.md) | kernel | 192 |
 | [module.ini](module/README.md) | kernel | 2 |
 | [notification.ini](notification/README.md) | kernel | 6 |
@@ -79,7 +80,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [setup.ini](setup/README.md) | kernel | 24 |
 | [shop.ini](shop/README.md) | kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | kernel | 3 |
-| [site.ini](site/README.md) | kernel | 63 |
+| [site.ini](site/README.md) | kernel | 65 |
 | [smarty.ini](smarty/README.md) | kernel | 1 |
 | [soap.ini](soap/README.md) | kernel | 2 |
 | [solr.ini](solr/README.md) | kernel | 1 |
