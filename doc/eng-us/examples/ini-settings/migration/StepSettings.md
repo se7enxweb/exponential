@@ -22,7 +22,7 @@ Never edit `settings/migration.ini` itself: an update replaces it. Put the setti
 > The step types of YAML migrations: StepTypeList\[<name>\]=<class>, where <name> is what "type:" of a step names and  
 > the class implements expMigrationStepType. An extension registers its own in its migration.ini.append.php.  
 
-Default: a hash of 2: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`.
+Default: a hash of 5: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`, `content=expMigrationStepContent`, `location=expMigrationStepLocation`, `content_version=expMigrationStepContentVersion`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -32,6 +32,9 @@ Default: a hash of 2: `reference=expMigrationStepReference`, `assert=expMigratio
 StepTypeList[]
 StepTypeList[reference]=expMigrationStepReference
 StepTypeList[assert]=expMigrationStepAssert
+StepTypeList[content]=expMigrationStepContent
+StepTypeList[location]=expMigrationStepLocation
+StepTypeList[content_version]=expMigrationStepContentVersion
 */ ?>
 ```
 

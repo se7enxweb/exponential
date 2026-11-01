@@ -702,7 +702,7 @@ class expMigrationYaml implements expMigration
 
     /**
      * Whether down() can undo the migration: it has "down:", or every step is of a type that can revert it and none is
-     * a loop.
+     * a loop (a type that can revert only some of its steps, expMigrationPartlyRevertibleStepType, is asked for each).
      *
      * @return bool
      */
@@ -714,7 +714,11 @@ class expMigrationYaml implements expMigration
         {
             if ( !is_array( $step ) || array_key_exists( 'foreach', $step ) || array_key_exists( 'while', $step ) )
                 return false;
-            if ( !$this->registry->get( isset( $step['type'] ) ? $step['type'] : null ) instanceof expMigrationRevertibleStepType )
+            $type = $this->registry->get( isset( $step['type'] ) ? $step['type'] : null );
+            if ( !$type instanceof expMigrationRevertibleStepType )
+                return false;
+            if ( $type instanceof expMigrationPartlyRevertibleStepType
+                 && !$type->revertible( expMigrationStepSchema::withDefaults( $type->schema(), self::ownKeys( $step ) ) ) )
                 return false;
         }
         return true;

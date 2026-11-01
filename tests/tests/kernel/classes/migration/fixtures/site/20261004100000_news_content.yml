@@ -4,3 +4,13 @@
 -
     type: content
     mode: create
+    class: article
+    parent: remote:news-folder
+    remote_id: news-first-article
+    fields:
+        title: The first article
+-
+    type: content
+    mode: create
+    fields:
+        title: An article without class and parent

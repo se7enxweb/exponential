@@ -8,13 +8,18 @@
  */
 
 /**
- * How a YAML migration names a node or a content object, so the same file works on installations whose ids differ:
+ * How a YAML migration names a node, a content object, a class or another part of an installation, so the same file
+ * works on installations whose ids differ:
  *
  *   1234                       the id itself (a number, or a text of digits)
- *   remote:<remote id>         the remote id (of the node for a node, of the object for an object)
+ *   remote:<remote id>         the remote id (of the node for a node, of the object for an object, of the class for
+ *                              a class)
  *   object-remote:<remote id>  a node: the main node of the object with that remote id
  *   path:<url path>            the node at that path (path_identification_string, e.g. path:media/images), or its
  *                              object
+ *   <name>                     the kinds that have a name of their own: a class by its identifier (folder), a
+ *                              section by its identifier (standard), a language by its locale (ger-DE), a user by
+ *                              the login, a role by its name, an object state as <group>/<state> (ez_lock/locked)
  *
  * A placeholder is replaced first, so ${idmap.node.news} (the id map of the environment, expMigrationIdMap) and
  * ${ref.folder} work wherever an identifier does. Step types call resolve() for the keys their schema declares as
@@ -26,19 +31,28 @@
 class expMigrationIdentifier
 {
     /** The kinds resolve() knows. */
-    const KINDS = array( 'node', 'object' );
+    const KINDS = array( 'node', 'object', 'class', 'section', 'language', 'user', 'role', 'state' );
 
     /** The prefixes of an identifier text. */
     const FORMS = array( 'remote', 'object-remote', 'path' );
+
+    /** The kinds named by a name of their own, and what the name is. */
+    const NAMES = array( 'class' => 'identifier', 'section' => 'identifier', 'language' => 'locale', 'user' => 'login',
+                         'role' => 'name', 'state' => '<group>/<state>' );
+
+    /** The prefixed forms each kind takes (besides the id and, for the kinds of NAMES, the name). */
+    const KIND_FORMS = array( 'node' => array( 'remote', 'object-remote', 'path' ), 'object' => array( 'remote', 'path' ),
+                              'class' => array( 'remote' ), 'user' => array( 'remote' ) );
 
     /**
      * The form and value of an identifier. Pure.
      *
      * @param mixed $value
      * @param string|null $error set to the problem when it is not one
-     * @return array|null array( 'form' => id|remote|object-remote|path, 'value' => int|string )
+     * @param string|null $kind the kind: a kind of NAMES also takes its name (form "name"); null: node or object
+     * @return array|null array( 'form' => id|remote|object-remote|path|name, 'value' => int|string )
      */
-    public static function parse( $value, &$error = null )
+    public static function parse( $value, &$error = null, $kind = null )
     {
         $error = null;
         if ( is_int( $value ) )
@@ -48,19 +62,23 @@ class expMigrationIdentifier
             $error = 'an id is a number above 0';
             return null;
         }
+        $named = $kind !== null && isset( self::NAMES[$kind] );
+        $forms = $kind !== null && isset( self::KIND_FORMS[$kind] ) ? self::KIND_FORMS[$kind] : ( $kind === null ? self::FORMS : array() );
         if ( !is_string( $value ) || trim( $value ) === '' )
         {
-            $error = 'an identifier is a number, remote:<remote id>, object-remote:<remote id> or path:<url path>';
+            $error = 'an identifier is ' . self::formsText( $kind );
             return null;
         }
         $value = trim( $value );
         if ( ctype_digit( $value ) )
-            return self::parse( (int)$value, $error );
+            return self::parse( (int)$value, $error, $kind );
         $colon = strpos( $value, ':' );
         $form = $colon === false ? '' : substr( $value, 0, $colon );
-        if ( !in_array( $form, self::FORMS, true ) )
+        if ( !in_array( $form, $forms, true ) )
         {
-            $error = "\"$value\" is no identifier: a number, remote:<remote id>, object-remote:<remote id> or path:<url path>";
+            if ( $named && self::validName( $kind, $value ) )
+                return array( 'form' => 'name', 'value' => $value );
+            $error = "\"$value\" is no identifier" . ( $kind !== null ? " of a $kind" : '' ) . ': ' . self::formsText( $kind );
             return null;
         }
         $rest = trim( (string)substr( $value, $colon + 1 ) );
@@ -75,9 +93,51 @@ class expMigrationIdentifier
     }
 
     /**
+     * Whether a text can be the name of a kind of NAMES. Pure.
+     *
+     * @param string $kind
+     * @param string $value
+     * @return bool
+     */
+    protected static function validName( $kind, $value )
+    {
+        switch ( $kind )
+        {
+            case 'class':
+            case 'section':
+                return (bool)preg_match( '/^[A-Za-z_][A-Za-z0-9_\-]*$/', $value );
+            case 'language':
+                return (bool)preg_match( '/^[a-z]{2,3}-[A-Za-z]{2,4}(@[a-z]+)?$/', $value );
+            case 'state':
+                return (bool)preg_match( '#^[A-Za-z0-9_\-]+/[A-Za-z0-9_\-]+$#', $value );
+            case 'user':
+            case 'role':
+                return strpos( $value, ':' ) === false;
+        }
+        return false;
+    }
+
+    /**
+     * What an identifier of a kind can be, for messages. Pure.
+     *
+     * @param string|null $kind
+     * @return string
+     */
+    protected static function formsText( $kind )
+    {
+        $forms = $kind !== null && isset( self::KIND_FORMS[$kind] ) ? self::KIND_FORMS[$kind] : ( $kind === null ? self::FORMS : array() );
+        $texts = array( 'a number' );
+        foreach ( $forms as $form )
+            $texts[] = $form === 'path' ? 'path:<url path>' : "$form:<remote id>";
+        if ( $kind !== null && isset( self::NAMES[$kind] ) )
+            $texts[] = 'the ' . self::NAMES[$kind];
+        return implode( ', ', $texts );
+    }
+
+    /**
      * The problem of an identifier for a kind, or null; a text with a placeholder is not checked. Pure.
      *
-     * @param string $kind node or object
+     * @param string $kind one of KINDS
      * @param mixed $value
      * @return string|null
      */
@@ -85,19 +145,17 @@ class expMigrationIdentifier
     {
         if ( expMigrationReferences::contains( $value ) )
             return null;
-        $error = null;
-        $parsed = self::parse( $value, $error );
-        if ( $parsed === null )
-            return $error;
-        if ( $kind === 'object' && $parsed['form'] === 'object-remote' )
+        if ( $kind === 'object' && is_string( $value ) && strpos( trim( $value ), 'object-remote:' ) === 0 )
             return 'object-remote: names a node; an object is named by remote:';
-        return null;
+        $error = null;
+        $parsed = self::parse( $value, $error, in_array( $kind, self::KINDS, true ) ? $kind : null );
+        return $parsed === null ? $error : null;
     }
 
     /**
      * The id an identifier names on this installation.
      *
-     * @param string $kind node or object
+     * @param string $kind one of KINDS
      * @param mixed $value
      * @return int
      * @throws RuntimeException when it is no identifier or names nothing here
@@ -109,9 +167,41 @@ class expMigrationIdentifier
         $problem = self::problem( $kind, $value );
         if ( $problem !== null )
             throw new RuntimeException( $problem );
-        $parsed = self::parse( $value );
+        $parsed = self::parse( $value, $problem, $kind );
         if ( $parsed === null )
             throw new RuntimeException( 'not an identifier: ' . json_encode( $value ) );
+        $id = in_array( $kind, array( 'node', 'object' ), true ) ? self::resolveContent( $kind, $parsed ) : self::resolveNamed( $kind, $parsed );
+        if ( $id !== null && $id > 0 )
+            return $id;
+        throw new RuntimeException( "no $kind " . ( $parsed['form'] === 'id' || $parsed['form'] === 'name' ? $parsed['value'] : $parsed['form'] . ':' . $parsed['value'] ) . ' on this installation' );
+    }
+
+    /**
+     * Whether an identifier names something on this installation (resolve() without the exception).
+     *
+     * @param string $kind
+     * @param mixed $value
+     * @return int|null the id, or null
+     */
+    public static function find( $kind, $value )
+    {
+        try
+        {
+            return self::resolve( $kind, $value );
+        }
+        catch ( RuntimeException $e )
+        {
+            return null;
+        }
+    }
+
+    /**
+     * @param string $kind node or object
+     * @param array $parsed
+     * @return int|null
+     */
+    protected static function resolveContent( $kind, array $parsed )
+    {
         $node = null;
         $object = null;
         switch ( $parsed['form'] )
@@ -145,6 +235,62 @@ class expMigrationIdentifier
         // a node row of eZContentObjectTreeNode::fetch() carries its object's id as id (contentobject_id elsewhere)
         if ( $kind === 'object' && is_array( $node ) && ( isset( $node['contentobject_id'] ) || isset( $node['id'] ) ) )
             return (int)( isset( $node['contentobject_id'] ) ? $node['contentobject_id'] : $node['id'] );
-        throw new RuntimeException( "no $kind " . ( $parsed['form'] === 'id' ? $parsed['value'] : $parsed['form'] . ':' . $parsed['value'] ) . ' on this installation' );
+        return null;
+    }
+
+    /**
+     * @param string $kind a kind of NAMES
+     * @param array $parsed
+     * @return int|null
+     */
+    protected static function resolveNamed( $kind, array $parsed )
+    {
+        $form = $parsed['form'];
+        $value = $parsed['value'];
+        $found = null;
+        switch ( $kind )
+        {
+            case 'class':
+                if ( $form === 'id' )
+                    $found = eZContentClass::fetch( $value, false );
+                else if ( $form === 'remote' )
+                    $found = eZContentClass::fetchByRemoteID( $value, false );
+                else
+                    $found = eZContentClass::fetchByIdentifier( $value, false );
+                return is_array( $found ) && isset( $found['id'] ) ? (int)$found['id'] : null;
+            case 'section':
+                $found = $form === 'id' ? eZSection::fetch( $value, false ) : eZSection::fetchByIdentifier( $value, false );
+                return is_array( $found ) && isset( $found['id'] ) ? (int)$found['id'] : null;
+            case 'language':
+                $found = $form === 'id' ? eZContentLanguage::fetch( $value ) : eZContentLanguage::fetchByLocale( $value );
+                return $found instanceof eZContentLanguage ? (int)$found->attribute( 'id' ) : null;
+            case 'user':
+                if ( $form === 'remote' )
+                {
+                    $object = eZContentObject::fetchByRemoteID( $value, false );
+                    $found = is_array( $object ) && isset( $object['id'] ) ? eZUser::fetch( (int)$object['id'] ) : null;
+                }
+                else
+                {
+                    $found = $form === 'id' ? eZUser::fetch( $value ) : eZUser::fetchByName( $value );
+                }
+                return $found instanceof eZUser ? (int)$found->attribute( 'contentobject_id' ) : null;
+            case 'role':
+                $found = $form === 'id' ? eZRole::fetch( $value ) : eZRole::fetchByName( $value );
+                return $found instanceof eZRole ? (int)$found->attribute( 'id' ) : null;
+            case 'state':
+                if ( $form === 'id' )
+                {
+                    $found = eZContentObjectState::fetchById( $value );
+                }
+                else
+                {
+                    list( $groupName, $stateName ) = explode( '/', $value, 2 );
+                    $group = eZContentObjectStateGroup::fetchByIdentifier( $groupName );
+                    $found = $group instanceof eZContentObjectStateGroup ? eZContentObjectState::fetchByIdentifier( $stateName, $group->attribute( 'id' ) ) : null;
+                }
+                return $found instanceof eZContentObjectState ? (int)$found->attribute( 'id' ) : null;
+        }
+        return null;
     }
 }

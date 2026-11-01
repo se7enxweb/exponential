@@ -219,10 +219,19 @@ class expMigrationCommandToolsTest extends PHPUnit\Framework\TestCase
         $site = expMigrationCheck::run( array( 'paths' => array( "$fixtures/site" ), 'root' => self::$root ) );
         $this->assertSame( 1, $site['exit'] );
         $byId = array_column( $site['migrations'], null, 'id' );
-        // a YAML migration whose step type no extension registers (the content steps come later)
+        // a YAML migration whose second content step names neither class nor parent: the step type's own check
         $this->assertFalse( $byId['20261004100000_news_content']['ok'] );
-        $this->assertStringContainsString( expMigrationYamlParser::available() ? 'the unknown step type content' : 'symfony/yaml is not installed',
-                                           implode( "\n", $byId['20261004100000_news_content']['errors'] ) );
+        $contentErrors = implode( "\n", $byId['20261004100000_news_content']['errors'] );
+        if ( expMigrationYamlParser::available() )
+        {
+            $this->assertStringContainsString( 'steps[1] (content): class is missing (mode create)', $contentErrors );
+            $this->assertStringContainsString( 'steps[1] (content): parent is missing (mode create)', $contentErrors );
+            $this->assertStringNotContainsString( 'steps[0]', $contentErrors );
+        }
+        else
+        {
+            $this->assertStringContainsString( 'symfony/yaml is not installed', $contentErrors );
+        }
         $this->assertContains( 'migrations of type .ini cannot be run yet', $byId['20261003100000_news_settings']['errors'] );
 
         $runnerBroken = expMigrationCheck::run( array( 'paths' => array( "$fixtures/runner-broken" ), 'root' => self::$root ) );

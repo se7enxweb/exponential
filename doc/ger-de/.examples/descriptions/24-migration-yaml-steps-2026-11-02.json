@@ -1,0 +1,238 @@
+{
+    "step:assert": {
+        "en": "Fails the migration when a condition is false",
+        "de": "Lässt die Migration scheitern, wenn eine Bedingung falsch ist"
+    },
+    "step:assert message": {
+        "en": "the message of the failure (default: the condition)",
+        "de": "die Meldung des Fehlschlags (Standard: die Bedingung)"
+    },
+    "step:assert that": {
+        "en": "the condition that must be true (as an \"if:\")",
+        "de": "die Bedingung, die wahr sein muss (wie ein \"if:\")"
+    },
+    "step:content": {
+        "en": "Creates, updates, ensures or deletes a content object, with its fields in one or more languages",
+        "de": "Legt ein Inhaltsobjekt an, ändert, sichert oder löscht es, mit seinen Feldern in einer oder mehreren Sprachen"
+    },
+    "step:content always_available": {
+        "en": "whether a new object is shown in a language it does not have (default: the class's setting)",
+        "de": "ob ein neues Objekt in einer Sprache gezeigt wird, die es nicht hat (Standard: die Einstellung der Klasse)"
+    },
+    "step:content class": {
+        "en": "the class of a new object: its identifier, id or remote:<remote id> (create, ensure)",
+        "de": "die Klasse eines neuen Objekts: ihr Bezeichner, ihre ID oder remote:<Remote-ID> (create, ensure)"
+    },
+    "step:content fields": {
+        "en": "attribute identifier => value, in the language of language:; each value goes through the datatype's fromString()",
+        "de": "Attributbezeichner => Wert, in der Sprache von language:; jeder Wert geht durch fromString() des Datentyps"
+    },
+    "step:content in_place": {
+        "en": "true: the published version is changed in place, without a new version",
+        "de": "true: die veröffentlichte Version wird an Ort und Stelle geändert, ohne neue Version"
+    },
+    "step:content language": {
+        "en": "the language of fields: (default: the default language of content, ContentObjectLocale)",
+        "de": "die Sprache von fields: (Standard: die Standardsprache für Inhalte, ContentObjectLocale)"
+    },
+    "step:content missing": {
+        "en": "what happens when the object is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn das Objekt nicht da ist: fail (Standard, scheitern) oder skip (überspringen)"
+    },
+    "step:content node": {
+        "en": "a node of the object to update or delete (or object:)",
+        "de": "ein Knoten des Objekts, das geändert oder gelöscht wird (oder object:)"
+    },
+    "step:content notify": {
+        "en": "true: the publish makes a notification event (default: published without notification)",
+        "de": "true: das Veröffentlichen erzeugt ein Benachrichtigungsereignis (Standard: ohne Benachrichtigung veröffentlicht)"
+    },
+    "step:content object": {
+        "en": "the object to update or delete (or node:)",
+        "de": "das Objekt, das geändert oder gelöscht wird (oder node:)"
+    },
+    "step:content parent": {
+        "en": "the parent node of a new object (create, ensure)",
+        "de": "der Elternknoten eines neuen Objekts (create, ensure)"
+    },
+    "step:content remote_id": {
+        "en": "the remote id of a new object; ensure finds the object by it",
+        "de": "die Remote-ID eines neuen Objekts; ensure findet das Objekt über sie"
+    },
+    "step:content section": {
+        "en": "the section of a new object: its identifier or id (default: the parent's)",
+        "de": "die Sektion eines neuen Objekts: ihr Bezeichner oder ihre ID (Standard: die des Elternknotens)"
+    },
+    "step:content translations": {
+        "en": "language => a map of fields: one block per further language, each published as a version of its own",
+        "de": "Sprache => eine Zuordnung von Feldern: ein Block je weiterer Sprache, jeder als eigene Version veröffentlicht"
+    },
+    "step:content trash": {
+        "en": "true: the object goes to the trash; false (the default): it is removed for good",
+        "de": "true: das Objekt kommt in den Papierkorb; false (Standard): es wird endgültig entfernt"
+    },
+    "step:content value changed": {
+        "en": "true when the step changed it (created, updated or deleted)",
+        "de": "true, wenn der Schritt es geändert hat (angelegt, geändert oder gelöscht)"
+    },
+    "step:content value created": {
+        "en": "true when the step created the object",
+        "de": "true, wenn der Schritt das Objekt angelegt hat"
+    },
+    "step:content value name": {
+        "en": "its name",
+        "de": "sein Name"
+    },
+    "step:content value node_id": {
+        "en": "the id of its main node",
+        "de": "die ID seines Hauptknotens"
+    },
+    "step:content value object_id": {
+        "en": "the id of the object",
+        "de": "die ID des Objekts"
+    },
+    "step:content value path": {
+        "en": "the url path of its main node (path_identification_string)",
+        "de": "der URL-Pfad seines Hauptknotens (path_identification_string)"
+    },
+    "step:content value remote_id": {
+        "en": "its remote id",
+        "de": "seine Remote-ID"
+    },
+    "step:content value version": {
+        "en": "its current version",
+        "de": "seine aktuelle Version"
+    },
+    "step:content workflows": {
+        "en": "true: the workflows of the operation's triggers run, as in the administration (default: they do not)",
+        "de": "true: die Workflows der Auslöser der Operation laufen, wie in der Administration (Standard: sie laufen nicht)"
+    },
+    "step:content_version": {
+        "en": "Restores an earlier version of a content object or removes its old versions",
+        "de": "Stellt eine frühere Version eines Inhaltsobjekts wieder her oder entfernt seine alten Versionen"
+    },
+    "step:content_version drafts": {
+        "en": "true: the drafts of the object are removed too (cleanup)",
+        "de": "true: auch die Entwürfe des Objekts werden entfernt (cleanup)"
+    },
+    "step:content_version keep": {
+        "en": "how many archived versions are kept, the newest (cleanup)",
+        "de": "wie viele archivierte Versionen bleiben, die neuesten (cleanup)"
+    },
+    "step:content_version language": {
+        "en": "restore only this language of the version (default: every language it has)",
+        "de": "nur diese Sprache der Version wiederherstellen (Standard: jede Sprache, die sie hat)"
+    },
+    "step:content_version node": {
+        "en": "a node of the object (or object:)",
+        "de": "ein Knoten des Objekts (oder object:)"
+    },
+    "step:content_version notify": {
+        "en": "true: the publish makes a notification event (default: published without notification)",
+        "de": "true: das Veröffentlichen erzeugt ein Benachrichtigungsereignis (Standard: ohne Benachrichtigung veröffentlicht)"
+    },
+    "step:content_version object": {
+        "en": "the object (or node:)",
+        "de": "das Objekt (oder node:)"
+    },
+    "step:content_version value object_id": {
+        "en": "the id of the object",
+        "de": "die ID des Objekts"
+    },
+    "step:content_version value removed": {
+        "en": "how many versions cleanup removed",
+        "de": "wie viele Versionen cleanup entfernt hat"
+    },
+    "step:content_version value version": {
+        "en": "its current version after the step",
+        "de": "seine aktuelle Version nach dem Schritt"
+    },
+    "step:content_version version": {
+        "en": "the number of the version to restore (restore)",
+        "de": "die Nummer der Version, die wiederhergestellt wird (restore)"
+    },
+    "step:content_version workflows": {
+        "en": "true: the workflows of the operation's triggers run, as in the administration (default: they do not)",
+        "de": "true: die Workflows der Auslöser der Operation laufen, wie in der Administration (Standard: sie laufen nicht)"
+    },
+    "step:location": {
+        "en": "Adds, changes, removes, moves, copies, hides or shows a location (node) of a content object",
+        "de": "Fügt einen Ort (Knoten) eines Inhaltsobjekts hinzu, ändert, entfernt, verschiebt, kopiert, verbirgt oder zeigt ihn"
+    },
+    "step:location main": {
+        "en": "true: the node becomes the main location of its object",
+        "de": "true: der Knoten wird der Hauptort seines Objekts"
+    },
+    "step:location missing": {
+        "en": "what happens when the node is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn der Knoten nicht da ist: fail (Standard, scheitern) oder skip (überspringen)"
+    },
+    "step:location node": {
+        "en": "the node the step acts on",
+        "de": "der Knoten, auf den der Schritt wirkt"
+    },
+    "step:location object": {
+        "en": "create: the object that gets a new location; delete: with parent:, its location below that parent",
+        "de": "create: das Objekt, das einen neuen Ort bekommt; delete: mit parent: sein Ort unter diesem Elternknoten"
+    },
+    "step:location parent": {
+        "en": "the parent node: of the new location (create), of the location to remove (delete with object:), where the node goes (move, copy)",
+        "de": "der Elternknoten: des neuen Orts (create), des zu entfernenden Orts (delete mit object:), wohin der Knoten kommt (move, copy)"
+    },
+    "step:location priority": {
+        "en": "the priority of the node among its siblings",
+        "de": "die Priorität des Knotens unter seinen Geschwistern"
+    },
+    "step:location sort_field": {
+        "en": "how the children of the node are sorted",
+        "de": "wie die Kinder des Knotens sortiert werden"
+    },
+    "step:location sort_order": {
+        "en": "the direction of sort_field",
+        "de": "die Richtung von sort_field"
+    },
+    "step:location trash": {
+        "en": "when the node is the object's last location, the object is deleted with it: true puts it in the trash",
+        "de": "ist der Knoten der letzte Ort des Objekts, wird das Objekt mit ihm gelöscht: true legt es in den Papierkorb"
+    },
+    "step:location value hidden": {
+        "en": "whether it is hidden",
+        "de": "ob er verborgen ist"
+    },
+    "step:location value node_id": {
+        "en": "the id of the node (the new one for create and copy)",
+        "de": "die ID des Knotens (des neuen bei create und copy)"
+    },
+    "step:location value object_id": {
+        "en": "the id of its object (the new one for copy)",
+        "de": "die ID seines Objekts (des neuen bei copy)"
+    },
+    "step:location value parent_node_id": {
+        "en": "the id of its parent node",
+        "de": "die ID seines Elternknotens"
+    },
+    "step:location value path": {
+        "en": "its url path (path_identification_string)",
+        "de": "sein URL-Pfad (path_identification_string)"
+    },
+    "step:location value remote_id": {
+        "en": "the remote id of the node",
+        "de": "die Remote-ID des Knotens"
+    },
+    "step:location workflows": {
+        "en": "true: the workflows of the operation's triggers run, as in the administration (default: they do not)",
+        "de": "true: die Workflows der Auslöser der Operation laufen, wie in der Administration (Standard: sie laufen nicht)"
+    },
+    "step:reference": {
+        "en": "Sets references (${ref.<name>}) for the steps and migrations after it in the run",
+        "de": "Setzt Referenzen (${ref.<name>}) für die Schritte und Migrationen nach ihm im Lauf"
+    },
+    "step:reference set": {
+        "en": "name => value: the references to set",
+        "de": "Name => Wert: die zu setzenden Referenzen"
+    },
+    "step:reference value *": {
+        "en": "every name the step sets, with its value",
+        "de": "jeder Name, den der Schritt setzt, mit seinem Wert"
+    }
+}
