@@ -74468,6 +74468,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Цю тему не випущено; читачі її не бачать.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Міграції</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Зміни інсталяції, збережені як файли: їхній стан, запуски, виконання та відкат.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

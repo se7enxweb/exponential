@@ -76198,6 +76198,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>ប្រធានបទនេះមិនត្រូវបានចេញផ្សាយទេ; អ្នកអានមើលមិនឃើញវាទេ។</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ការផ្លាស់ប្ដូរលើការដំឡើងដែលរក្សាទុកជាឯកសារ៖ ស្ថានភាពរបស់វា ការដំណើរការ ដំណើរការ និងត្រឡប់វិញ។</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

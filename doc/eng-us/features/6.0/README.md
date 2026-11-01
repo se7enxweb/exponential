@@ -63,7 +63,7 @@ nginx with PHP-FPM keep working as before.
 - [The system card: exp:expfetch, exp:info and exp:about](system-card.md)
 - [Benchmark: `exp:benchmark`](benchmark.md)
 - [Maintenance mode](maintenance-mode.md)
-- [Migrations in the kernel](migrations.md)
+- [Migrations in the kernel](migrations.md) (recipes, audience pages and FAQ: [Migrations](../../help/migrations/README.md))
 - [Repair a broken installation from the browser](repair-from-the-browser.md)
 - [File consistency check and the release file list](file-consistency-check.md)
 - [Quality checks: git hooks, file manifest, code style and PHPStan](quality-checks.md)
@@ -217,6 +217,7 @@ nginx with PHP-FPM keep working as before.
 - [The secret store: passwords and keys of the tools, encrypted, by name](secret-store.md)
 - [Preview links: a draft for a reviewer without an account, signed, expiring and revocable](preview-links.md)
 - [Content Security Policy](content-security-policy.md)
+- [Review hold: no editing or publishing of a page until a reviewer releases it](review-hold.md)
 - [Safe redirects and "back to where you came from"](safe-redirects.md)
 - [Fixes from the Opencontent and Mugo Web forks: limits, one-line logs and safer defaults](legacy-fork-fixes.md):
   `MaxPathDepth`, one-line `eZLog` entries, REST listeners, the upload blacklist, the subtree `HardLimit`

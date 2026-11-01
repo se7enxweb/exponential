@@ -5,7 +5,7 @@ Ein Migrationslauf lässt eine Installation nie ohne Weg zurück. Bevor er schre
 die Installation von selbst darauf zurück. Diese Seite erklärt die Sicherungspunkte von Migrationsläufen, die
 automatische Wiederherstellung und die drei Wege, Migrationen von Hand zurückzunehmen.
 
-[Anleitungen](README.md) · [Migrationen](migrationen.md) · Siehe auch: [Upgrade mit der Konsole: Sicherungspunkte](aktualisieren-mit-der-konsole.md#sicherungspunkte),
+[Anleitungen](README.md) · [Migrationen: der Einstieg](../hilfe/migrationen/README.md) · [Migrationen](migrationen.md) · Siehe auch: [Upgrade mit der Konsole: Sicherungspunkte](aktualisieren-mit-der-konsole.md#sicherungspunkte),
 [Das Migrations-Repository](migrationen-repositories.md), [Fehlerbehebung](migrationen-fehlerbehebung.md)
 
 ## Kurz
@@ -191,9 +191,18 @@ Jedes Zurücknehmen wird im Audit festgehalten: `system.migration.rollback` mit 
 | MongoDB | `mongodump` | über das Zurückrollen von `exp:upgrade` |
 | Oracle | keiner eingebaut (Export mit `expdp`) | von Hand: der Lauf zeigt die Schritte |
 
-## Weiterlesen
+## Verwandte Seiten
 
-- [Das Migrations-Repository: Commit, Tag und Push](migrationen-repositories.md)
-- [Fehlerbehebung bei Migrationen](migrationen-fehlerbehebung.md)
+- [Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Alle Rezepte](../hilfe/migrationen/rezepte/README.md),
+  [Häufige Fragen](../hilfe/migrationen/faq.md)
+- [Die Anleitung](migrationen.md), [das Tutorial](migrationen-tutorial.md), [PHP-Migrationen](migrationen-php.md),
+  [Das Migrations-Repository](migrationen-repositories.md)
+- [In der Administration](../hilfe/migrationen/in-der-administration.md), [Befehle](../hilfe/migrationen/befehle.md),
+  [Einstellungen](../hilfe/migrationen/einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](../hilfe/migrationen/richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md), [Die Funktion](../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](../hilfe/migrationen/wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md)
 - [`exp:migration:rollback`](../beispiele/befehle/expmigrationrollback.md), [`exp:migration:caption`](../beispiele/befehle/expmigrationcaption.md)
 - [migration.ini \[CaptionSettings\]](../beispiele/ini-einstellungen/migration/CaptionSettings.md)

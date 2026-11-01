@@ -76198,6 +76198,14 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Kāore anō tēnei kaupapa kia Tukuna; kāore ngā kaipānui e kite.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ngā hekenga</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ngā panonitanga ki te tāutanga e puritia ana hei kōnae: tō rātou tūnga, ngā whakahaerenga, whakahaere me te whakahoki.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

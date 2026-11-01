@@ -109,6 +109,7 @@ afterwards `ext:ezoracle:recompile` recompiles invalid objects
 - [Upgrades and the SQL update files](upgrades-and-sql-update-files.md)
 - [The .dba schema format](the-dba-schema-format.md)
 - [Upgrade check](../../guides/upgrade-check.md)
+- [Migrations](../migrations/README.md), [Coming from SQL update files](../migrations/recipes/coming-from-sql-update-files.md), [Engine notes for migrations](../migrations/recipes/engine-notes.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

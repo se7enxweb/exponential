@@ -76198,6 +76198,14 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ĉi tiu temo ne estas Eldonita; legantoj ne vidas ĝin.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migradoj</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ŝanĝoj al la instalaĵo konservataj kiel dosieroj: ilia stato, la ruloj, ruli kaj malfari.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

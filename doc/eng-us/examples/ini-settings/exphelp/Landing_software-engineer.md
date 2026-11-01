@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_software-engineer]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_software-engineer] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_software-engineer, INI, setting, StartPage, Related
+summary: "The settings of [Landing_software-engineer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_software-engineer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_software-engineer]
 
-The block `[Landing_software-engineer]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_software-engineer]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,25 @@ Default: `help/software-engineers/software-engineers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_software-engineer]
 StartPage=help/software-engineers/software-engineers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 6: `help/software-engineers/migrations-for-software-engineers.md`, `help/migrations/README.md`, `help/software-engineers/schema-changes-and-migrations.md`, `help/migrations/recipes/testing-migrations.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/reviewing-a-migration.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_software-engineer]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/software-engineers/migrations-for-software-engineers.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=help/software-engineers/schema-changes-and-migrations.md
+InfoPages[]=help/migrations/recipes/testing-migrations.md
+InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
+InfoPages[]=help/migrations/recipes/reviewing-a-migration.md
 */ ?>
 ```
 

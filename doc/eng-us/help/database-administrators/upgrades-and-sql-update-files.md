@@ -123,6 +123,7 @@ one line per problem: `!` for a missing file, `?` for a stray one. No output mea
 - [Applying the 6.0.15 database update](applying-the-6-0-15-database-update.md)
 - [Checking the schema after an upgrade](checking-the-schema-after-an-upgrade.md)
 - [Upgrading customer sites](../hosting/operations/upgrading-customer-sites.md) (for hosting companies)
+- [Migrations](../migrations/README.md), [Coming from SQL update files](../migrations/recipes/coming-from-sql-update-files.md), [Engine notes for migrations](../migrations/recipes/engine-notes.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

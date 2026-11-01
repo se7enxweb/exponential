@@ -9,7 +9,14 @@ Sie richtet sich an Entwickler, die die Datenbank oder die Inhalte einer Site im
 die diese Änderungen auf Staging und Produktion anwenden. Die Befehle unten wurden am 31. Oktober 2026 auf SQLite
 ausgeführt.
 
-[Anleitungen](README.md) · Siehe auch: [Migrationen: eine erste PHP-Migration, Schritt für Schritt](migrationen-tutorial.md),
+Der Bereich [Migrationen](../hilfe/migrationen/README.md) des Hilfezentrums beginnt hier: 25
+[Rezepte](../hilfe/migrationen/rezepte/README.md) (eine Tabelle, eine Klasse, Inhalte in großen Mengen, Rollen,
+Einstellungen, CI und Auslieferung), Seiten für jede Zielgruppe, [häufige Fragen](../hilfe/migrationen/faq.md) und
+[Fehlerbehebung nach Symptom](../hilfe/migrationen/wenn-eine-migration-scheitert.md). Eine Site auf einen anderen
+Server oder ein anderes Release umzuziehen ist eine andere Aufgabe:
+[Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md).
+
+[Anleitungen](README.md) · [Migrationen: der Einstieg](../hilfe/migrationen/README.md) · Siehe auch: [Migrationen: eine erste PHP-Migration, Schritt für Schritt](migrationen-tutorial.md),
 [PHP-Migrationen](migrationen-php.md), [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
 [Das Migrations-Repository](migrationen-repositories.md), [Fehlerbehebung](migrationen-fehlerbehebung.md),
 [Die Funktion](../funktionen/6.0/migrationen.md), [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md)
@@ -267,7 +274,7 @@ viele Läufe ihre Dateien behalten (`JobHistory`, 50) und wie viel eines Laufpro
 256 KB). Immer nur ein Lauf: Solange einer im Gang ist oder ein anderer Lauf oder ein Upgrade die Sperre hält, lehnt
 die Seite einen neuen ab.
 
-Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/README.md),
+Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/in-der-administration.md),
 [Stand und Verlauf](../hilfe/migrationen/status-und-verlauf.md),
 [Ausführen, Probelauf und Rücknahme](../hilfe/migrationen/ausfuehren-probelauf-und-rueckgaengig.md).
 
@@ -277,13 +284,18 @@ Die YAML-Schritttypen, die Inhalte, Klassen, Rollen und Einstellungen ändern, S
 die Generatoren in der Administration (Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy
 --migrate` sind geplant und nicht Teil dieses Releases.
 
-## Weiterlesen
+## Verwandte Seiten
 
-- [Migrationen: eine erste PHP-Migration, Schritt für Schritt](migrationen-tutorial.md)
-- [PHP-Migrationen](migrationen-php.md)
-- [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)
-- [Das Migrations-Repository: Commit, Tag und Push](migrationen-repositories.md)
-- [Fehlerbehebung bei Migrationen](migrationen-fehlerbehebung.md)
-- [Migrationen in der Administration](../hilfe/migrationen/README.md)
-- [Das Migrationsdateiformat](../spezifikationen/6.0/migrationsdateiformat.md)
+- [Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Alle Rezepte](../hilfe/migrationen/rezepte/README.md),
+  [Häufige Fragen](../hilfe/migrationen/faq.md)
+- [Das Tutorial](migrationen-tutorial.md), [PHP-Migrationen](migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](migrationen-repositories.md)
+- [In der Administration](../hilfe/migrationen/in-der-administration.md), [Befehle](../hilfe/migrationen/befehle.md),
+  [Einstellungen](../hilfe/migrationen/einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](../hilfe/migrationen/richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md), [Die Funktion](../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](../hilfe/migrationen/wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md)
 - [migration.ini](../beispiele/ini-einstellungen/migration/README.md), [der Cronjob-Teil migrationpush](../beispiele/cronjobs/migrationpush.md)

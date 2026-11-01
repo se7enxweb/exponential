@@ -27,7 +27,7 @@ include the hands-on exercises but not breaks.
 | [Hosting and operations](hosting-operations/README.md) | System administrators and hosting staff | Intermediate to advanced | 28 lessons, about 20 hours (3 to 4 days) | Site administration, Linux |
 | [Search](search/README.md) | Administrators and developers | Intermediate | 20 lessons, about 10 hours (1.5 to 2 days) | Site administration |
 | [Multisite and site packages](multisite-and-packages/README.md) | Administrators and developers | Intermediate to advanced | 26 lessons, about 22 hours (about 4 days) | Site administration |
-| [Developers](developers/README.md) | PHP developers who build on Exponential | Intermediate to advanced | 52 lessons, about 44 hours (about 7 days) | PHP, Git |
+| [Developers](developers/README.md) | PHP developers who build on Exponential | Intermediate to advanced | 53 lessons, about 45 hours (about 7 days) | PHP, Git |
 | [Theme design](theme-designers/README.md) | Designers and front-end developers | Beginner to advanced | 30 lessons, about 24 hours (about 4 days) | HTML, CSS |
 | [Newsletters](newsletter/README.md) | Editors and administrators who send newsletters | Beginner to advanced | 20 lessons, about 16 hours (about 2.5 days; 1.5 days for the editors' path) | Editors 101 |
 | [Migrating to Exponential](migration/README.md) | Teams moving a site to Exponential | Intermediate to advanced | 25 lessons, about 22.5 hours (about 4 days) | Site administration or Developers |

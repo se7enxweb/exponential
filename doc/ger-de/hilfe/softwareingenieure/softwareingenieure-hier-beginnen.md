@@ -191,6 +191,7 @@ Foundation betreibt und finanziert das Projekt ([Wer ist 7x?](../wer-ist-7x.md),
 - [Exponential für Softwareingenieure](exponential-fuer-softwareingenieure.md)
 - [Architekturüberblick](architekturueberblick.md)
 - [Lesepfad für Softwareingenieure](lesepfad-fuer-softwareingenieure.md)
+- [Migrationen für Softwareingenieure](migrationen-fuer-softwareingenieure.md), [Migrationen](../migrationen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -76198,6 +76198,14 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Omutwe guno tegufulumiziddwa; abasomi tebagulaba.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Enkyukakyuka</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Enkyukakyuka mu nteekateeka ezikuumibwa nga fayiro: embeera yaazo, okuddukanya okwaliwo, okuddukanya n&apos;okuzzaayo.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

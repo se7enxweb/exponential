@@ -121,6 +121,10 @@ Free help depends on the time people give, so nobody promises an answer time. Wh
 Exponential ([se7enx.com/services](https://se7enx.com/services)). Both kinds of support are explained on
 [Getting support](project/getting-support.md).
 
+## Related pages
+
+- [When a migration fails](migrations/when-a-migration-fails.md)
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

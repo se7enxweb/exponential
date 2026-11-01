@@ -125,6 +125,10 @@ kostenpflichtigen Support von 7x, dem Unternehmen, das Exponential pflegt
 ([se7enx.com/services](https://se7enx.com/services)). Beide Arten von Support erklärt
 [Unterstützung erhalten](projekt/unterstuetzung-erhalten.md).
 
+## Verwandte Seiten
+
+- [Wenn eine Migration scheitert](migrationen/wenn-eine-migration-scheitert.md)
+
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
 und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte

@@ -7,7 +7,13 @@ the same order, with a record of what ran where. It is the overview; the pages l
 It is for developers who change a site's database or content in code, and for administrators who apply those
 changes on staging and production. The commands below were run on SQLite on 31 October 2026.
 
-[Guides](README.md) · Related: [Migrations: a first PHP migration, step by step](migrations-tutorial.md),
+The help center's [Migrations](../help/migrations/README.md) section starts from here: 25
+[recipes](../help/migrations/recipes/README.md) (a table, a class, content in bulk, roles, settings, CI and deploy),
+pages for each audience, [frequently asked questions](../help/migrations/faq.md) and
+[troubleshooting by symptom](../help/migrations/when-a-migration-fails.md). Moving a site to another server or
+release is a different job: [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md).
+
+[Guides](README.md) · [Migrations: the hub](../help/migrations/README.md) · Related: [Migrations: a first PHP migration, step by step](migrations-tutorial.md),
 [PHP migrations](migrations-php.md), [Rollback and captions](migrations-rollback-and-captions.md),
 [The migrations repository](migrations-repositories.md), [Troubleshooting](migrations-troubleshooting.md),
 [The feature](../features/6.0/migrations.md), [The file format](../specifications/6.0/migration-file-format.md)
@@ -257,7 +263,7 @@ names the PHP command line binary (`PhpCliPath`), how many runs keep their files
 a run log a page shows (`LogBytes`, 256 KB). One run at a time: while one is going on, or another run or an upgrade
 holds the lock, the page refuses a new one.
 
-The pages: [Migrations in the administration](../help/migrations/README.md),
+The pages: [Migrations in the administration](../help/migrations/in-the-administration.md),
 [The status and the history](../help/migrations/status-and-history.md),
 [Run, dry run and rollback](../help/migrations/run-dry-run-and-rollback.md).
 
@@ -267,13 +273,18 @@ The YAML step types that change content, classes, roles and settings, SQL and IN
 generators in the administration (generators other than the skeleton), recording, and `exp:velocity deploy --migrate`
 are planned and not part of this release.
 
-## Read on
+## Related pages
 
-- [Migrations: a first PHP migration, step by step](migrations-tutorial.md)
-- [PHP migrations](migrations-php.md)
-- [Rollback and captions](migrations-rollback-and-captions.md)
-- [The migrations repository: commit, tag and push](migrations-repositories.md)
-- [Troubleshooting migrations](migrations-troubleshooting.md)
-- [Migrations in the administration](../help/migrations/README.md)
-- [The migration file format](../specifications/6.0/migration-file-format.md)
+- [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
+  [Frequently asked questions](../help/migrations/faq.md)
+- [The tutorial](migrations-tutorial.md), [PHP migrations](migrations-php.md),
+  [Rollback and captions](migrations-rollback-and-captions.md),
+  [The migrations repository](migrations-repositories.md)
+- [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),
+  [Settings](../help/migrations/settings.md),
+  [Policies, views and events](../help/migrations/policies-views-and-events.md)
+- [The file format](../specifications/6.0/migration-file-format.md), [The feature](../features/6.0/migrations.md)
+- [When a migration fails](../help/migrations/when-a-migration-fails.md),
+  [Troubleshooting messages](migrations-troubleshooting.md)
+- [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md)
 - [migration.ini](../examples/ini-settings/migration/README.md), [the cronjob part migrationpush](../examples/cronjobs/migrationpush.md)

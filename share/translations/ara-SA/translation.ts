@@ -74468,6 +74468,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>هذا الموضوع غير مُصدَر؛ لا يراه القرّاء.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>تغييرات على التثبيت محفوظة كملفات: حالتها، وعمليات التشغيل، والتشغيل والتراجع.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

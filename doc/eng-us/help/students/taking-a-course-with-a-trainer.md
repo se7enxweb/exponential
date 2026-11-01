@@ -33,7 +33,7 @@ A selection from the [Course catalogue](../trainers/course-catalogue.md#the-cour
 | [Editors 201](../trainers/editors-201/README.md) | Editors who publish every week | 23 lessons, about 16 hours | Editors 101 |
 | [Exponential Layouts](../trainers/layouts/README.md) | Editors and site builders | 23 lessons, about 17.5 hours | Editors 101 |
 | [Site administration](../trainers/site-administrators/README.md) | People who run a site | 48 lessons, about 30 hours | Editors 101, basic command line |
-| [Developers](../trainers/developers/README.md) | PHP developers | 52 lessons, about 44 hours | PHP, Git |
+| [Developers](../trainers/developers/README.md) | PHP developers | 53 lessons, about 45 hours | PHP, Git |
 | [Theme design](../trainers/theme-designers/README.md) | Designers and front-end developers | 30 lessons, about 24 hours | HTML, CSS |
 | [Workshops and bootcamps](../trainers/workshops/README.md) | Groups that need a compact program | Half-day to 5-day programs | Depends on the agenda |
 

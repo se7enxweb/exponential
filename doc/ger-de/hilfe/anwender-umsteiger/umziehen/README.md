@@ -9,6 +9,10 @@ type: help
 ---
 # Zu Exponential umziehen
 
+> **Sie suchen Migrationen einer Site?** Läuft Ihre Site auf Exponential, werden ihre Schema- und Inhaltsänderungen
+> als Dateien geschrieben und mit `./console exp:migration:migrate` angewendet, eine andere Aufgabe als der Umzug:
+> [Migrationen oder Umzug einer Site](../../migrationen/migrationen-oder-umzug-einer-site.md).
+
 ## Inhalt
 
 1. [Welcher Weg Ihrer ist](#welcher-weg-ihrer-ist)

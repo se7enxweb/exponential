@@ -115,6 +115,7 @@ Quelle der Liste: [10.9 Backups und Wiederherstellung](../../../installation/10-
 - [Aus einem Backup wiederherstellen (Runbook)](../runbooks/aus-einem-backup-wiederherstellen.md)
 - [Was gesichert werden muss](../betrieb/backups-was-gesichert-werden-muss.md)
 - [Checkliste für den Start einer Kunden-Website](../checklisten/checkliste-fuer-den-start-einer-kunden-website.md)
+- [Migrationen oder Umzug einer Site](../../migrationen/migrationen-oder-umzug-einer-site.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

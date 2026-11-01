@@ -1,8 +1,8 @@
 ---
 title: "Migrationen in der Website-Seitenleiste"
 audience: admin, developer
-category: administration
-order: 4
+category: migrations
+order: 13
 summary: Das schreibgeschützte Panel Migrationen der Website-Seitenleiste (expwt) auf den Seiten der Site - der laufende Lauf, die fehlgeschlagenen und ausstehenden Migrationen, die verwaisten und der letzte Lauf - und wie es zu Setup > Migrationen führt.
 keywords: Migrationen, Website-Seitenleiste, expwt, Panel Migrationen, ausstehende Migrationen, fehlgeschlagene Migrationen, letzter Lauf, schreibgeschützt, website sidebar, migrations panel, migration/read, expwt/use
 type: help
@@ -35,7 +35,17 @@ Panels und wird höchstens einmal pro Minute ermittelt.
 
 ## Verwandte Seiten
 
-- [Migrationen in der Administration](README.md)
+- [Migrationen: der Einstieg](README.md), [Alle Rezepte](rezepte/README.md), [Häufige Fragen](faq.md)
+- [Die Anleitung](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
+  [PHP-Migrationen](../../anleitungen/migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md)
+- [In der Administration](in-der-administration.md), [Befehle](befehle.md), [Einstellungen](einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../../spezifikationen/6.0/migrationsdateiformat.md),
+  [Die Funktion](../../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](../../anleitungen/migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](migrationen-oder-umzug-einer-site.md)
 - [Stand und Verlauf](status-und-verlauf.md)
 - [Die Website-Seitenleiste](../../funktionen/6.0/website-seitenleiste.md)
-- [Migrationen: die Anleitung](../../anleitungen/migrationen.md)

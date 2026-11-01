@@ -76198,6 +76198,14 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dit ûnderwerp is net frijjûn; lêzers sjogge it net.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraasjes</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Wizigingen oan de ynstallaasje bewarre as triemmen: harren steat, de útfieringen, útfiere en weromdraaie.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

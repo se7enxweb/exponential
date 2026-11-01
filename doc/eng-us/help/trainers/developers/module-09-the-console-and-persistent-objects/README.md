@@ -3,23 +3,24 @@ title: "Module 9: The console and persistent objects"
 audience: trainer, developer
 category: training
 order: 90
-summary: The ninth module of the Developers course. Learners find and run commands with the console, write a command of their own, keep their extension's data in a table through eZPersistentObject, and write the SQL that remains safely with eZDB. 3 hours 20 minutes.
-keywords: developers course, module 9, console, bin/php/console, ext: commands, eZScript, eZPersistentObject, definition, fetchObjectList, eZDB, escapeString, transactions
+summary: The ninth module of the Developers course. Learners find and run commands with the console, write a command of their own, keep their extension's data in a table through eZPersistentObject, write the SQL that remains safely with eZDB, and ship a table as a migration. 4 hours 20 minutes.
+keywords: developers course, module 9, console, bin/php/console, ext: commands, eZScript, eZPersistentObject, definition, fetchObjectList, eZDB, escapeString, transactions, migrations, exp:migration:migrate
 type: help
 ---
 # Module 9: The console and persistent objects
 
 Real extensions run jobs on the command line and keep data of their own. This module teaches the console that runs
 every command, a command of the learners' own with options and exit codes, a table mapped to a class with
-`eZPersistentObject`, and the rules for the SQL that persistent objects cannot express.
+`eZPersistentObject`, the rules for the SQL that persistent objects cannot express, and a migration that brings a
+table to every installation of a site.
 
 ## At a glance
 
 | | |
 |---|---|
 | Course | [Developers](../README.md) |
-| Duration | 3 hours 20 minutes (with one 10-minute break) |
-| Lessons | 4 |
+| Duration | 4 hours 20 minutes (with two 10-minute breaks) |
+| Lessons | 5 |
 | Level | Beginner to advanced |
 
 ## Lessons
@@ -30,6 +31,7 @@ every command, a command of the learners' own with options and exit codes, a tab
 | [Lesson 9.2: A command of your own](a-command-of-your-own.md) | 50 minutes | `ext:mysite_hello:latest` with options, help and exit codes |
 | [Lesson 9.3: Persistent objects](persistent-objects.md) | 60 minutes | A table and the class `mysiteGreeting`: store, fetch, count, remove |
 | [Lesson 9.4: SQL safely with eZDB](sql-safely-with-ezdb.md) | 45 minutes | A report, escaping, a transaction with rollback, dialects |
+| [Lesson 9.5: Migrations](migrations.md) | 50 minutes | A table shipped as a migration: generate, check, dry run, simulate, run, roll back |
 
 ## Preparing this module
 
@@ -47,7 +49,9 @@ every command, a command of the learners' own with options and exit codes, a tab
 | Break | 10 |
 | Lesson 9.3 | 60 |
 | Lesson 9.4 | 45 |
-| **Total** | **200** |
+| Break | 10 |
+| Lesson 9.5 | 50 |
+| **Total** | **260** |
 
 ## Related pages
 

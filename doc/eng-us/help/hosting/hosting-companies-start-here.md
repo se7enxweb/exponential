@@ -162,6 +162,7 @@ A plan for a team that is about to add Exponential to its offer.
 - [Operating system support](../os-support.md)
 - [Security hardening](../security-hardening.md)
 - [The installation book](../../install/README.md)
+- [Migrations on hosted sites](operations/migrations-on-hosted-sites.md), [Migrations](../migrations/README.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-see-also-645 -->

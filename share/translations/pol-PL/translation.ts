@@ -75960,6 +75960,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ten temat nie jest wydany; czytelnicy go nie widzą.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracje</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Zmiany instalacji przechowywane jako pliki: ich stan, przebiegi, uruchamianie i wycofywanie.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

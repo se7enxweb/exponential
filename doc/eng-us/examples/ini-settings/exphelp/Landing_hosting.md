@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_hosting]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_hosting] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_hosting, INI, setting, StartPage, Related
+summary: "The settings of [Landing_hosting] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_hosting, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_hosting]
 
-The block `[Landing_hosting]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_hosting]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,25 @@ Default: `help/hosting/hosting-companies-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_hosting]
 StartPage=help/hosting/hosting-companies-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 6: `help/hosting/operations/migrations-on-hosted-sites.md`, `help/migrations/README.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/engine-notes.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_hosting]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/hosting/operations/migrations-on-hosted-sites.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=help/migrations/migrations-versus-migrating-a-site.md
+InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
+InfoPages[]=help/migrations/recipes/engine-notes.md
+InfoPages[]=help/migrations/recipes/captions-and-rollback-in-practice.md
 */ ?>
 ```
 

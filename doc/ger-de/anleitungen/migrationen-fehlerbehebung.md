@@ -5,7 +5,11 @@ Meldungen sind Englisch. Meldungen, die mit `FAIL:` beginnen, sind Fehler (der E
 `WARN` sind Warnungen, der Befehl ist trotzdem bestanden. Jeder Befehl kann seinen Bericht auch als JSON ausgeben
 (`--format=json`), mit denselben Texten in `errors` und `warnings`.
 
-[Anleitungen](README.md) · [Migrationen](migrationen.md) · Siehe auch: [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
+Sie suchen nach dem, was Sie sehen, statt nach der Meldung (ein gescheiterter Lauf, eine Migration, die nicht läuft,
+ein Push, der wartet, ein Lauf in der Administration, der nicht startet)?
+[Wenn eine Migration scheitert: Fehlerbehebung nach Symptom](../hilfe/migrationen/wenn-eine-migration-scheitert.md).
+
+[Anleitungen](README.md) · [Migrationen: der Einstieg](../hilfe/migrationen/README.md) · [Migrationen](migrationen.md) · Siehe auch: [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
 [Das Migrations-Repository](migrationen-repositories.md), [PHP-Migrationen](migrationen-php.md)
 
 ## Exit-Codes
@@ -180,3 +184,17 @@ gelaufene Migration sollte nicht umbenannt werden. Die Zeile bleibt in der Aufze
 **Ein Lauf, dessen Zeile noch `running` sagt**
 Der Prozess wurde beendet. `./console exp:migration:resume` findet ihn (kein Prozess hält die Sperre mehr) und schließt
 ihn mit `--apply` als gescheitert ab und führt aus, was noch aussteht, in einem neuen Lauf.
+
+## Verwandte Seiten
+
+- [Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Alle Rezepte](../hilfe/migrationen/rezepte/README.md),
+  [Häufige Fragen](../hilfe/migrationen/faq.md)
+- [Die Anleitung](migrationen.md), [das Tutorial](migrationen-tutorial.md), [PHP-Migrationen](migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](migrationen-repositories.md)
+- [In der Administration](../hilfe/migrationen/in-der-administration.md), [Befehle](../hilfe/migrationen/befehle.md),
+  [Einstellungen](../hilfe/migrationen/einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](../hilfe/migrationen/richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md), [Die Funktion](../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](../hilfe/migrationen/wenn-eine-migration-scheitert.md)
+- [Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md)

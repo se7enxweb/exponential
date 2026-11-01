@@ -72,6 +72,8 @@ Back up the database before, run migrations before the new code serves traffic, 
 - [Updating](updating-dxp.md)
 - [Deploying](deploying-dxp.md)
 - [Databases](databases-mysql-postgresql-sqlite.md)
+- [Migrations in Exponential 6 (the hub)](../migrations/README.md), [Coming from Doctrine Migrations](../migrations/recipes/coming-from-doctrine-migrations.md)
+- [Exponential migrations for Doctrine users](exponential-migrations-for-doctrine-users.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

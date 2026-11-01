@@ -76198,6 +76198,14 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dëst Thema ass net verëffentlecht; d'Lieser gesinn et net.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratiounen</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ännerunge vun der Installatioun, als Dateien gehalen: hiren Zoustand, d&apos;Leef, lafe loossen an zréckrollen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
