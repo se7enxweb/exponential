@@ -216,6 +216,11 @@ class expAuditTaxonomy
         'system.migration.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration rolled back' ),
         'system.migration.caption' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration caption taken' ),
         'system.migration.push' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migrations pushed' ),
+        // static publishing (doc/eng-us/guides/static-publishing-targets-and-credentials.md): a publish or a push
+        // retried, a rollback, a deploy key made or replaced (never a credential's value)
+        'system.staticpublish.publish' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site published' ),
+        'system.staticpublish.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site rolled back' ),
+        'system.staticpublish.credential' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static publishing credential changed' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         // the Velocity watchdog (doc/eng-us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)

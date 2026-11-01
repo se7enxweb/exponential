@@ -923,6 +923,35 @@ CREATE TABLE `exp_migration` (
 ,  `version` varchar(30) NOT NULL DEFAULT ''
 ,  PRIMARY KEY (`source`,`migration_id`)
 );
+CREATE TABLE `exp_static_page` (
+  `built_at` integer NOT NULL DEFAULT '0'
+,  `hash` varchar(64) NOT NULL DEFAULT ''
+,  `node_id` integer NOT NULL DEFAULT '0'
+,  `page_bytes` integer NOT NULL DEFAULT '0'
+,  `path` varchar(255) NOT NULL DEFAULT ''
+,  `stale` integer NOT NULL DEFAULT '0'
+,  `target` varchar(50) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`target`,`path`)
+);
+CREATE TABLE `exp_static_run` (
+  `added` integer NOT NULL DEFAULT '0'
+,  `bytes` integer NOT NULL DEFAULT '0'
+,  `changed` integer NOT NULL DEFAULT '0'
+,  `commit_id` varchar(64) NOT NULL DEFAULT ''
+,  `files` integer NOT NULL DEFAULT '0'
+,  `finished_at` integer NOT NULL DEFAULT '0'
+,  `kind` varchar(20) NOT NULL DEFAULT ''
+,  `message` varchar(1000) NOT NULL DEFAULT ''
+,  `pages` integer NOT NULL DEFAULT '0'
+,  `push_state` varchar(20) NOT NULL DEFAULT ''
+,  `removed` integer NOT NULL DEFAULT '0'
+,  `run_by` varchar(150) NOT NULL DEFAULT ''
+,  `run_id` varchar(64) NOT NULL DEFAULT '' PRIMARY KEY
+,  `started_at` integer NOT NULL DEFAULT '0'
+,  `state` varchar(20) NOT NULL DEFAULT ''
+,  `tag_name` varchar(150) NOT NULL DEFAULT ''
+,  `target` varchar(50) NOT NULL DEFAULT ''
+);
 CREATE TABLE `exp_migration_run` (
   `caption_post` varchar(150) NOT NULL DEFAULT ''
 ,  `caption_pre` varchar(150) NOT NULL DEFAULT ''
@@ -1491,6 +1520,8 @@ CREATE INDEX exphelp_help_id_object ON exphelp_help_id ( object_id );
 CREATE INDEX exphelp_feedback_object ON exphelp_feedback ( object_id, created );
 CREATE INDEX exphelp_feedback_created ON exphelp_feedback ( created );
 CREATE INDEX exp_migration_run_id ON exp_migration ( run_id );
+CREATE INDEX exp_static_page_node ON exp_static_page ( node_id );
+CREATE INDEX exp_static_run_target ON exp_static_run ( target, started_at );
 CREATE INDEX exp_migration_run_started ON exp_migration_run ( started_at );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);

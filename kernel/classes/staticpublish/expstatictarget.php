@@ -249,8 +249,8 @@ class expStaticTarget
     }
 
     /**
-     * The folder of the target's export: <var>/<WorkDir>/<id>, WorkDir of [StaticPublishSettings] (relative to the
-     * var directory unless absolute).
+     * The folder of the target's export and its git repository: <var>/<WorkDir>/<id>, WorkDir of
+     * [StaticPublishSettings] (relative to the var directory unless absolute).
      *
      * @param string $varDir the var directory (eZSys::varDirectory())
      * @param string $workDir [StaticPublishSettings] WorkDir
@@ -259,6 +259,25 @@ class expStaticTarget
     public function directory( $varDir, $workDir = 'static-publish' )
     {
         return self::workDirectory( $varDir, $workDir ) . '/' . $this->id;
+    }
+
+    /** @return string '' or the folder of the branch the site is in (Folder, e.g. docs), without slashes */
+    public function folder()
+    {
+        return trim( str_replace( '\\', '/', $this->settings['Folder'] ), '/' );
+    }
+
+    /**
+     * The folder the build is written to: directory(), or its Folder in it (docs).
+     *
+     * @param string $varDir
+     * @param string $workDir
+     * @return string
+     */
+    public function outputDirectory( $varDir, $workDir = 'static-publish' )
+    {
+        $folder = $this->folder();
+        return $this->directory( $varDir, $workDir ) . ( $folder !== '' ? '/' . $folder : '' );
     }
 
     /**

@@ -73,7 +73,12 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:exprepair](exprepair.md) |  | Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run |
 | [exp:expstaticbuild](expstaticbuild.md) | exp:static:build | Build a static copy of a target's siteaccess into its folder (static publishing): crawled as the anonymous user, links rewritten, files collected, extras and manifest written |
 | [exp:expstaticdiff](expstaticdiff.md) | exp:static:diff | What the last static build of a target changed, whether its folder still matches the manifest, and whether every link of it works when served below a path |
+| [exp:expstatickeys](expstatickeys.md) | exp:static:keys | Make or show the SSH deploy key of a static publishing target: ed25519, the private half in the secret store, the public half to add to the repository |
+| [exp:expstaticpublish](expstaticpublish.md) | exp:static:publish | Publish a target's static build (static publishing): commit it in the target's git repository, tag it static/<target>/<n> and push it, never forced |
+| [exp:expstaticpush](expstaticpush.md) | exp:static:push | Push the static publishing targets whose push failed again (runs with push state pending), never forced |
+| [exp:expstaticrollback](expstaticrollback.md) | exp:static:rollback | Roll a static publishing target back to an earlier publish: a new commit with the files of that tag, tagged and pushed; the history stays |
 | [exp:expstaticserve](expstaticserve.md) | exp:static:serve | Preview the static build of a target locally: PHP's built-in web server serves its folder below the target's base path, as GitHub Pages serves a project site |
+| [exp:expstaticstatus](expstaticstatus.md) | exp:static:status | The state of a static publishing target: its git repository, the credential (never its value), the last runs, waiting pushes and stale pages |
 | [exp:expstatictargets](expstatictargets.md) | exp:static:targets | List the targets of static publishing (staticcache.ini [Target_<id>]) with their siteaccess, links and folder, and check each one |
 | [exp:exptemplatecheck](exptemplatecheck.md) | exp:template:check, exp:template:lint, exp:template:convert:check | Check templates of every engine (.tpl, .stpl, .twig, .html.twig) for valid syntax: files, directories, designs, extensions, siteaccesses; levels syntax/compile/strict; text, json, jsonl, junit, checkstyle, github and sarif output |
 | [exp:exptemplateconvert](exptemplateconvert.md) | exp:template:convert | Convert the templates of a design from one template engine to another (--from-engine, --to-engine: tpl, stpl, twig); --dry-run, --file, --force, --override-ini, --twig-suffix |
@@ -188,6 +193,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | `shell:common` | `bin/shell/common.sh` |  |
 | `shell:creatediff` | `bin/shell/creatediff.sh` | Create a patch/diff archive between two Exponential release versions |
 | `shell:distcommon` | `bin/shell/distcommon.sh` | Shared functions library sourced by distribution build scripts (not executable) |
+| `shell:expstaticaskpass` | `bin/shell/expstaticaskpass.sh` | Static publishing: git's password helper (GIT_ASKPASS) for a target with a token credential |
 | `shell:extensionscommon` | `bin/shell/extensionscommon.sh` | Shared functions library sourced by extension packaging scripts (not executable) |
 | `shell:fixlicense` | `bin/shell/fixlicense.sh` | Update legacy eZ Systems license URLs in PHP source files |
 | `shell:generatefilelist` | `bin/shell/generatefilelist.sh` | Generate share/filelist.md5 file integrity checksums for the current release |

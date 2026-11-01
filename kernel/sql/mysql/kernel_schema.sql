@@ -1533,6 +1533,48 @@ CREATE TABLE exp_migration (
 
 
 
+CREATE TABLE exp_static_page (
+  built_at int(11) NOT NULL default '0',
+  hash varchar(64) NOT NULL default '',
+  node_id int(11) NOT NULL default '0',
+  page_bytes int(11) NOT NULL default '0',
+  path varchar(255) NOT NULL default '',
+  stale int(11) NOT NULL default '0',
+  target varchar(50) NOT NULL default '',
+  PRIMARY KEY  (target,path),
+  KEY exp_static_page_node (node_id)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_static_run (
+  added int(11) NOT NULL default '0',
+  bytes int(11) NOT NULL default '0',
+  changed int(11) NOT NULL default '0',
+  commit_id varchar(64) NOT NULL default '',
+  files int(11) NOT NULL default '0',
+  finished_at int(11) NOT NULL default '0',
+  kind varchar(20) NOT NULL default '',
+  message varchar(1000) NOT NULL default '',
+  pages int(11) NOT NULL default '0',
+  push_state varchar(20) NOT NULL default '',
+  removed int(11) NOT NULL default '0',
+  run_by varchar(150) NOT NULL default '',
+  run_id varchar(64) NOT NULL default '',
+  started_at int(11) NOT NULL default '0',
+  state varchar(20) NOT NULL default '',
+  tag_name varchar(150) NOT NULL default '',
+  target varchar(50) NOT NULL default '',
+  PRIMARY KEY  (run_id),
+  KEY exp_static_run_target (target,started_at)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE exp_migration_run (
   caption_post varchar(150) NOT NULL default '',
   caption_pre varchar(150) NOT NULL default '',

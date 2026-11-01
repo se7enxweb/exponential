@@ -57,7 +57,7 @@ class Expstaticserve extends ExpstaticBase
         $mount = \expStaticLinkRewriter::normaliseBasePath( $basePath !== null ? $basePath : $target->basePath() );
         $ini = \eZINI::instance( 'staticcache.ini' );
         $workDir = $ini->hasVariable( 'StaticPublishSettings', 'WorkDir' ) ? (string)$ini->variable( 'StaticPublishSettings', 'WorkDir' ) : 'static-publish';
-        $directory = $target->directory( \eZSys::varDirectory(), $workDir );
+        $directory = $target->outputDirectory( \eZSys::varDirectory(), $workDir );
         $root = realpath( $directory );
         if ( $root === false || !is_file( $root . '/index.html' ) )
             $this->finish( array( 'mode' => 'serve', 'target' => $target->id(), 'warnings' => array(),
