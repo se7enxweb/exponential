@@ -42,7 +42,8 @@ class Run extends \Exponential\Runnable\ModuleView
         $changed = array();
         foreach ( $report['migrations'] as $m )
         {
-            if ( in_array( $m['state'], array( \expMigration::PENDING, \expMigration::FAILED ), true ) )
+            // a kernel upgrade step of the stages code, libraries or finish is run by exp:upgrade, not here (deferred)
+            if ( in_array( $m['state'], array( \expMigration::PENDING, \expMigration::FAILED ), true ) && $m['action'] !== 'deferred' )
                 $pending[] = $m;
             if ( !empty( $m['changed'] ) )
                 $changed[] = $m;

@@ -56,8 +56,9 @@ class Status extends \Exponential\Runnable\ModuleView
     public static function count( array $report, array $states )
     {
         $n = 0;
+        // a kernel upgrade step of the stages code, libraries or finish is run by exp:upgrade (deferred), not here
         foreach ( isset( $report['migrations'] ) ? $report['migrations'] : array() as $m )
-            if ( in_array( $m['state'], $states, true ) )
+            if ( in_array( $m['state'], $states, true ) && ( !isset( $m['action'] ) || $m['action'] !== 'deferred' ) )
                 $n++;
         return $n;
     }

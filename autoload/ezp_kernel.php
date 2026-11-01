@@ -1472,6 +1472,8 @@ return array(
       'expMigrationAdmin'                                            => 'kernel/classes/migration/expmigrationadmin.php',
       'expMigrationJob'                                              => 'kernel/classes/migration/expmigrationjob.php',
       'expMigrationProgress'                                         => 'kernel/classes/migration/expmigrationprogress.php',
+      'expMigrationUpgradeSource'                                    => 'kernel/classes/migration/expmigrationupgradesource.php',
+      'expMigrationUpgradeStep'                                      => 'kernel/classes/migration/expmigrationupgradestep.php',
       'expModuleExtensionWizard'                                     => 'kernel/setup/expmoduleextensionwizard.php',
       'expModuleTableCode'                                           => 'kernel/setup/expmoduletablecode.php',
       'expModuleTableWizard'                                         => 'kernel/setup/expmoduletablewizard.php',

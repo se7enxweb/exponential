@@ -23,6 +23,7 @@ Quick start:
 
 | Part | What it is |
 |---|---|
+| The kernel's upgrade steps | every step of `exp:upgrade` (the kernel's and the extensions') is a migration of the source `kernel`: listed first by the status and the administration, applied first by a run (stages `database` and `scripts`), and nameable in `requires` |
 | Migration files | `YYYYMMDDHHMMSS_name.php` in the site's `migrations/`, in `extension/<name>/migrations/` of active extensions and in installed packages; a header of `key: value` comment lines (description, requires, environments, engines, maintenance, author); ordered by id and by `requires` |
 | PHP migrations | a namespaced class that extends `expMigrationPhp` with `plan()`, `up()`, optionally `down()` and `detect()` |
 | The record | tables `exp_migration` (one row per migration; also the record of `exp:upgrade` since 6.0.15) and `exp_migration_run` (one row per run), made by the upgrade step `6.0.15-migration-tables` |
@@ -53,6 +54,7 @@ Quick start:
 | `expMigrationLock` | the installation lock with a holder file (also the lock of `exp:upgrade`) |
 | `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | the status, the lint, the simulation, the skeleton |
 | `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | the forms and the dashboard summary of Setup > Migrations, the runs started there in the background, their progress file |
+| `expMigrationUpgradeSource`, `expMigrationUpgradeStep` | the kernel's upgrade steps (`exp:upgrade`) as migrations of the source `kernel` |
 
 The commands are `bin/php/expmigration<name>.php` (alias `exp:migration:<name>`), their code in
 `kernel/private/classes/commands/`. Their machine output is `exp-migration/1` (`--format=json`); the exit codes are
@@ -76,8 +78,8 @@ those of `exp:upgrade` (0, 1 failed, 2 usage, 3 database unreachable, 4 internal
   is reserved for that) and the settings of the migrations repository are done in files and on the console.
 - A run started in the administration needs `proc_open` and a PHP command line binary
   (`migration.ini [AdminSettings] PhpCliPath`); without them the page says so and the console runs it.
-- `exp:upgrade` keeps its own commands; its kernel steps are recorded in `exp_migration` (source `kernel`) but are
-  not listed by `exp:migration:status` yet.
+- A migration run applies the kernel's upgrade steps of the stages `database` and `scripts` only; the stages `code`,
+  `libraries` and `finish` stay with `exp:upgrade` (they are listed as `deferred`).
 - Commits, tags and pushes need git_manager; without it a run says so and commits nothing.
 
 ## Settings
