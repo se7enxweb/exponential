@@ -661,7 +661,7 @@ e6a3c2f8012b44d7d40ee02614debd4b  design/admin/templates/navigator/alphabetical.
 b9de9cc67bede1896335b38e94a945eb  design/admin/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin/templates/node/view/browse_thumbnail.tpl
-bdc22a0589e72b14776e1f34e696823b  design/admin/templates/node/view/full.tpl
+9be54fcdb7479f3fa5088602e3194acd  design/admin/templates/node/view/full.tpl
 948ab4eee3ecaaf06dd334a3cd87b8c5  design/admin/templates/node/view/import_export_button.tpl
 360ecea108215ea0196f6bedc2147c43  design/admin/templates/node/view/line.tpl
 fc189d030b4c7e2d923cd6754e470609  design/admin/templates/node/view/search.tpl
@@ -1458,7 +1458,7 @@ c6caf8a9fa0db2771a975b122bcb5226  design/admin4/templates/navigator/google.tpl
 c49f6538ab403d0457921734f2327d39  design/admin4/templates/node/removenode.tpl
 cc3560235bfe3988d0e9b1cfe0b55ea5  design/admin4/templates/node/removeobject.tpl
 2f5bd72b8c887844a74775e01433d813  design/admin4/templates/node/top_node_full.tpl
-76a173a2822e2d34b34556bee8e80622  design/admin4/templates/node/view/a4_full_body.tpl
+9280846ae5986c2f759a7cac5ba0f9b4  design/admin4/templates/node/view/a4_full_body.tpl
 b9de9cc67bede1896335b38e94a945eb  design/admin4/templates/node/view/admin_preview.tpl
 dc142438409e90d072cf19d700673a82  design/admin4/templates/node/view/ajaxuploader_preview.tpl
 b9a3fa9fe69402b67871fc1aac68fcad  design/admin4/templates/node/view/browse_thumbnail.tpl
