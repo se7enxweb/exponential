@@ -26669,9 +26669,9 @@ d03c1a747553b8951ecfdda1c6a71938  share/translations/cze-CZ/GUIDE.md
 8d769290938810faef758356c145dacf  share/translations/dan-DK/GUIDE.md
 3793dc808fc23958dcad35836656dbd9  share/translations/dan-DK/translation.ts
 f366cb3379694f2ce1ab7e8ea6f267dc  share/translations/div-MV/GUIDE.md
-ca72babc0ea66905b6ece0452f2053d1  share/translations/div-MV/translation.ts
+d9915042c5731ab0bb5ad9917ed74da4  share/translations/div-MV/translation.ts
 45d6032cd0601b163b57408f60bc06d4  share/translations/doi-IN/GUIDE.md
-10c2f0f2bc2528e5094f793d13de6885  share/translations/doi-IN/translation.ts
+fe591384a941be0e6bc49e626586c23e  share/translations/doi-IN/translation.ts
 947c7909dad43a6ad2ce13d9ed4248f3  share/translations/dsb-DE/GUIDE.md
 5e48b14dfb0c101d704a21fa1cec78a1  share/translations/dsb-DE/translation.ts
 d1edfc6fda691f10cf3306642f0eb98f  share/translations/dut-NL/GUIDE.md
@@ -26848,13 +26848,13 @@ ff4a26ecf915efdf566108027780781f  share/translations/que-PE/translation.ts
 7cfa2ed107c1c33eb84781631fd83059  share/translations/ron-RO/GUIDE.md
 7750f68ccbb40d071fe856f9999edd56  share/translations/ron-RO/translation.ts
 dacb83bc60af17fef0228c538f1bdac0  share/translations/run-BI/GUIDE.md
-93e8a1ef466594397bfee4e30f90cdfa  share/translations/run-BI/translation.ts
+abf6f66459d428b07eb60619dbc23ba3  share/translations/run-BI/translation.ts
 ec558e32e749d11d86467c759721b899  share/translations/rus-RU/GUIDE.md
 4e44969a7ef2017cd4cbb304cde881a0  share/translations/rus-RU/translation.ts
 80d24a72106bacb6d523b86e96d5513f  share/translations/san-IN/GUIDE.md
 b7c4410b937d38d3e2c241f4f15c7ff5  share/translations/san-IN/translation.ts
 f799ebec8c138fefb6c0a0ec3fbd777d  share/translations/sat-IN/GUIDE.md
-c16f28d75c4f5f5ecd0aca7f562bf4f1  share/translations/sat-IN/translation.ts
+7db42192007437eabd6c19c4a7ea4341  share/translations/sat-IN/translation.ts
 1b00a8309995795455e48b8935340961  share/translations/ser-SR/GUIDE.md
 eabc38c5c6542b99674eeb6f7a747f2e  share/translations/ser-SR/translation.ts
 6165d44d92b13e528b3ffd82a15a9cc4  share/translations/sin-LK/GUIDE.md
@@ -26882,7 +26882,7 @@ efccf26713a02fb6c67174b4af1a46c9  share/translations/swa-KE/GUIDE.md
 74bbff05bb742fb0964c57bd631b33ef  share/translations/swe-SE/GUIDE.md
 af040bc3955dab32518b2fa2ecbe4b21  share/translations/swe-SE/translation.ts
 d8485f26504807ba94ee08d5c63ab47a  share/translations/syr-IQ/GUIDE.md
-9393f6f4ce0126d631f2550b391e985b  share/translations/syr-IQ/translation.ts
+f4fca843d39892d0abb5de01b2b09832  share/translations/syr-IQ/translation.ts
 3be48b8fb17435a20d54e4b0693e9e24  share/translations/tam-IN/GUIDE.md
 8b957b9daaba9a5e766ef3a3ca87d9d6  share/translations/tam-IN/translation.ts
 ecd374375e40bf926f79308a085311bb  share/translations/tat-RU/GUIDE.md

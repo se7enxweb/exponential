@@ -79705,7 +79705,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Last run</source>
-        <translation>पिछला रन</translation>
+        <translation>पिछली बारी चलेआ</translation>
     </message>
     <message>
         <source>none yet</source>
@@ -79724,7 +79724,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Dry run</source>
-        <translation>परख रन</translation>
+        <translation>ड्राई रन</translation>
     </message>
     <message>
         <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
@@ -79744,7 +79744,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The dry run failed: %problem</source>
-        <translation>परख रन नेईं होई सकेआ: %problem</translation>
+        <translation>ड्राई रन नेईं होई सकेआ: %problem</translation>
     </message>
     <message>
         <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
@@ -79768,7 +79768,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Simulation: %result in %ms ms</source>
-        <translation>नकल: %result, %ms मि.से. च</translation>
+        <translation>नकल: %result, %ms ms च</translation>
     </message>
     <message>
         <source>No migration yet.</source>
@@ -79808,7 +79808,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
-        <translation>हर रन, उसदे बरतूनी, माहौल, स्नैपशॉटें ते जो कमिट, टैग ते पुश कीता गेआ, उंदे कन्नै। नेईं होई सकेआ जां रुकी गेदा रन फ्ही शुरू कीता जाई सकदा ऐ; जिस रन शा पैह्लें स्नैपशॉट लैता गेआ, ओह् वापस लैता जाई सकदा ऐ।</translation>
+        <translation>हर रन, उसदे प्रयोक्ता, माहौल, स्नैपशॉटें ते जो कमिट, टैग ते पुश कीता गेआ, उंदे कन्नै। नेईं होई सकेआ जां रुकी गेदा रन फिरी शुरू कीता जाई सकदा ऐ; जिस रन शा पैह्लें स्नैपशॉट लैता गेआ, ओह् वापस लैता जाई सकदा ऐ।</translation>
     </message>
     <message>
         <source>The runs could not be read: %problem</source>
@@ -79836,7 +79836,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>By</source>
-        <translation>कुसने</translation>
+        <translation>करने आह्ला</translation>
     </message>
     <message>
         <source>Captions</source>
@@ -79864,7 +79864,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Resume</source>
-        <translation>फ्ही शुरू करो</translation>
+        <translation>फिरी शुरू करो</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -79880,7 +79880,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
-        <translation>इनें सफें पर शुरू कीते गेदे रन, फ्ही शुरू कीते गेदे रन ते वापसियां, हर इक दी रिपोर्ट कन्नै।</translation>
+        <translation>इनें सफें पर शुरू कीते गेदे रन, फिरी शुरू कीते गेदे रन ते वापसियां, हर इक दी रिपोर्ट कन्नै।</translation>
     </message>
     <message>
         <source>What</source>
@@ -79904,11 +79904,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation>रन ने केह् कीता, उसदा रिकार्ड ते उसदा लॉग। इत्थै शुरू होआ रन एह् सफा बंद करने पर बी पिच्छें चलदा रौंह्दा ऐ; उसी दिक्खने आस्तै सफा फ्ही खोह्लो।</translation>
+        <translation>रन ने केह् कीता, उसदा रिकार्ड ते उसदा लॉग। इत्थै शुरू होआ रन एह् सफा बंद करने पर बी पिछोकड़ च चलदा रौंह्दा ऐ; उसी दिक्खने आस्तै सफा फिरी खोह्लो।</translation>
     </message>
     <message>
         <source>Resume this run</source>
-        <translation>इस रन गी फ्ही शुरू करो</translation>
+        <translation>इस रन गी फिरी शुरू करो</translation>
     </message>
     <message>
         <source>Roll back this run</source>
@@ -79936,7 +79936,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%done of %total done</source>
-        <translation>%total चा %done होई गेदे</translation>
+        <translation>%total चा %done पूरे होई गे</translation>
     </message>
     <message>
         <source>The migrations have run; restoring the caption if one failed</source>
@@ -79956,7 +79956,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
-        <translation>प्रगति नेईं दिक्खी जाई सकी। रन कि&apos;यां चलै करदा ऐ, दिक्खने आस्तै सफा फ्ही लोड करो।</translation>
+        <translation>प्रगति नेईं दिक्खी जाई सकी। रन कि&apos;यां चलै करदा ऐ, दिक्खने आस्तै सफा फिरी लोड करो।</translation>
     </message>
     <message>
         <source>This page follows the run as it goes.</source>
@@ -79964,7 +79964,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Reload</source>
-        <translation>फ्ही लोड करो</translation>
+        <translation>फिरी लोड करो</translation>
     </message>
     <message>
         <source>Report</source>
@@ -79976,7 +79976,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%ms ms</source>
-        <translation>%ms मि.से.</translation>
+        <translation>%ms ms</translation>
     </message>
     <message>
         <source>What the run printed as errors</source>
@@ -80032,7 +80032,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>running</source>
-        <translation>चलै करदा</translation>
+        <translation>चली रेहा ऐ</translation>
     </message>
     <message>
         <source>ended without a report</source>
@@ -80048,7 +80048,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>refused</source>
-        <translation>नकारेआ गेआ</translation>
+        <translation>नामंजूर</translation>
     </message>
     <message>
         <source>the database was not reachable</source>
@@ -80068,7 +80068,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Follow it</source>
-        <translation>दिक्खदे रौह्</translation>
+        <translation>दिक्खो</translation>
     </message>
     <message>
         <source>The installation is locked</source>
@@ -80108,11 +80108,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>taken back</source>
-        <translation>पिच्छें लैता गेआ</translation>
+        <translation>वापस लैता गेआ</translation>
     </message>
     <message>
         <source>would be taken back</source>
-        <translation>पिच्छें लैता जाग</translation>
+        <translation>वापस लैता जाग</translation>
     </message>
     <message>
         <source>not run</source>
@@ -80148,15 +80148,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Take back %target</source>
-        <translation>%target पिच्छें लैओ</translation>
+        <translation>%target वापस लैओ</translation>
     </message>
     <message>
         <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
-        <translation>इक रन उस शा पैह्लें लैते गेदे स्नैपशॉट तगर पिच्छें लैता जंदा ऐ, इक माइग्रेशन अपने down() कन्नै। पैह्लें दा स्नैपशॉट वापस लाना माहिरें आस्तै ऐ। हर इक तुंदे नां कन्नै पिच्छें चलदा ऐ, मौजूदा स्थिति दा स्नैपशॉट लैने दे बाद।</translation>
+        <translation>इक रन उस शा पैह्लें लैते गेदे स्नैपशॉट तगर वापस लैता जंदा ऐ, इक माइग्रेशन अपने down() कन्नै। पैह्लें दा स्नैपशॉट वापस लाना माहिरें आस्तै ऐ। हर इक तुंदे नां कन्नै पिछोकड़ च चलदा ऐ, मौजूदा स्थिति दा स्नैपशॉट लैने दे बाद।</translation>
     </message>
     <message>
         <source>What can be taken back could not be read: %problem</source>
-        <translation>केह् पिच्छें लैता जाई सकदा ऐ, एह् नेईं पढ़ेआ जाई सकेआ: %problem</translation>
+        <translation>केह् वापस लैता जाई सकदा ऐ, एह् नेईं पढ़ेआ जाई सकेआ: %problem</translation>
     </message>
     <message>
         <source>A run</source>
@@ -80216,11 +80216,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The settings (settings/override)</source>
-        <translation>सेटिंग्स (settings/override)</translation>
+        <translation>सेटिंग (settings/override)</translation>
     </message>
     <message>
         <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
-        <translation>डेटाबेस वापस लाने कन्नै ओह् सेशनें समेत स्नैपशॉट दे समें पर परतोई जंदा ऐ: बाद च तुसेंगी फ्ही साइन इन करना पेई सकदा ऐ। उसदे बाद बदलेआ सब किश गुआची जंदा ऐ; पैह्लें मौजूदा स्थिति दा स्नैपशॉट लैता जंदा ऐ।</translation>
+        <translation>डेटाबेस वापस लाने कन्नै ओह् सेशनें समेत स्नैपशॉट दे समें पर परतोई जंदा ऐ: बाद च तुसेंगी फिरी साइन इन करना पेई सकदा ऐ। उसदे बाद बदलेआ सब किश गुआची जंदा ऐ; पैह्लें मौजूदा स्थिति दा स्नैपशॉट लैता जंदा ऐ।</translation>
     </message>
     <message>
         <source>I know what this restores</source>
@@ -80228,11 +80228,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Type the id of the caption again</source>
-        <translation>स्नैपशॉट दी आईडी फ्ही टाइप करो</translation>
+        <translation>स्नैपशॉट दी ID फिरी टाइप करो</translation>
     </message>
     <message>
         <source>Yes, take it back</source>
-        <translation>हां, पिच्छें लैओ</translation>
+        <translation>हां, वापस लैओ</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -80252,7 +80252,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The applied migrations that can take themselves back (they have a down()).</source>
-        <translation>लागू कीते गेदे ओह् माइग्रेशन जेह्ड़े अपने आप गी पिच्छें लेई सकदे न (उंदे च down() ऐ)।</translation>
+        <translation>लागू कीते गेदे ओह् माइग्रेशन जेह्ड़े अपने आप गी वापस लेई सकदे न (उंदे च down() ऐ)।</translation>
     </message>
     <message>
         <source>No applied migration has a down().</source>
@@ -80272,11 +80272,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
-        <translation>रन %user दे रूप च पिच्छें चलदा ऐ, ते उसदा सफा उसी चलदे-चलदे दसदा ऐ। पैह्ले माइग्रेशन शा पैह्लें इंस्टालेशन दा स्नैपशॉट लैता जंदा ऐ; जेकर कोई माइग्रेशन नेईं होई सकै तां रन रुकी जंदा ऐ ते स्नैपशॉट वापस लाया जंदा ऐ।</translation>
+        <translation>रन %user दे रूप च पिछोकड़ च चलदा ऐ, ते उसदा सफा उसी चलदे-चलदे दसदा ऐ। पैह्ले माइग्रेशन शा पैह्लें इंस्टालेशन दा स्नैपशॉट लैता जंदा ऐ; जेकर कोई माइग्रेशन नेईं होई सकै तां रन रुकी जंदा ऐ ते स्नैपशॉट वापस लाया जंदा ऐ।</translation>
     </message>
     <message>
         <source>Dry run first</source>
-        <translation>पैह्लें परख रन</translation>
+        <translation>पैह्लें ड्राई रन</translation>
     </message>
     <message>
         <source>The status could not be read: %problem</source>
@@ -80304,7 +80304,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
-        <translation>एह् ओह् फाइलां नेईं न जेह्ड़ियां लागू कीतियां गेइयां हियां। रन इनेंगी नकारदा ऐ जिन्ना चिर बदलाव कारण कन्नै मन्नेआ नेईं जंदा; एह् फ्ही नेईं चलदियां, नमां चेकसम दर्ज कीता जंदा ऐ ते कारण ऑडिट लॉग च रक्खेआ जंदा ऐ।</translation>
+        <translation>एह् ओह् फाइलां नेईं न जेह्ड़ियां लागू कीतियां गेइयां हियां। रन इनेंगी नकारदा ऐ जिन्ना चिर बदलाव कारण कन्नै मन्नेआ नेईं जंदा; एह् फिरी नेईं चलदियां, नमां चेकसम दर्ज कीता जंदा ऐ ते कारण ऑडिट लॉग च रक्खेआ जंदा ऐ।</translation>
     </message>
     <message>
         <source>Accept the changes</source>
@@ -80312,7 +80312,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Why</source>
-        <translation>कीऽ</translation>
+        <translation>कारण</translation>
     </message>
     <message>
         <source>The defaults are the safe ones. Each box leaves a step out.</source>
@@ -80340,7 +80340,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
-        <translation>चलाओ भाएं सेटिंग्स, एक्सटेंशनें जां डिज़ाइनें च बिना कमिट दे बदलाव होन; ओह् स्नैपशॉट च जंदे न।</translation>
+        <translation>चलाओ भाएं सेटिंग, एक्सटेंशनें जां डिज़ाइनें च बिना कमिट दे बदलाव होन; ओह् स्नैपशॉट च जंदे न।</translation>
     </message>
     <message>
         <source>No commit</source>
@@ -80380,7 +80380,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
-        <translation>इस इंस्टालेशन दे बदलाव इक बारी फाइलें दे रूप च लिखे गेदे (सामग्री, क्लासां, भूमिकां, सेटिंग्स, स्कीमा) ते साइट दे हर इंस्टालेशन पर इक्कै क्रम च लागू कीते गेदे। रन पैह्लें स्नैपशॉट लैंदा ऐ, माइग्रेशन नेईं होने पर उसी वापस लांदा ऐ, ते जो कीता उसी दर्ज, कमिट ते पुश करदा ऐ।</translation>
+        <translation>इस इंस्टालेशन दे बदलाव इक बारी फाइलें दे रूप च लिखे गेदे (सामग्री, क्लासां, भूमकां, सेटिंग, स्कीमा) ते साइट दे हर इंस्टालेशन पर इक्कै क्रम च लागू कीते गेदे। रन पैह्लें स्नैपशॉट लैंदा ऐ, माइग्रेशन नेईं होने पर उसी वापस लांदा ऐ, ते जो कीता उसी दर्ज, कमिट ते पुश करदा ऐ।</translation>
     </message>
     <message>
         <source>Run %count pending</source>
@@ -80420,7 +80420,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Last run</source>
-        <translation>पिछला रन</translation>
+        <translation>पिछली बारी चलेआ</translation>
     </message>
     <message>
         <source>The file changed after it was applied.</source>
@@ -80460,15 +80460,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Tick &quot;Yes, take it back&quot; first.</source>
-        <translation>पैह्लें “हां, पिच्छें लैओ” पर निशान लाओ।</translation>
+        <translation>पैह्लें &quot;हां, वापस लैओ&quot; पर निशान लाओ।</translation>
     </message>
     <message>
         <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
-        <translation>पैह्लें दा स्नैपशॉट वापस लाना माहिरें आस्तै ऐ: “मिगी पता ऐ जे एह् केह् वापस लांदा ऐ” पर निशान लाओ।</translation>
+        <translation>पैह्लें दा स्नैपशॉट वापस लाना माहिरें आस्तै ऐ: &quot;मिगी पता ऐ जे एह् केह् वापस लांदा ऐ&quot; पर निशान लाओ।</translation>
     </message>
     <message>
         <source>Type the id of the caption again: %target</source>
-        <translation>स्नैपशॉट दी आईडी फ्ही टाइप करो: %target</translation>
+        <translation>स्नैपशॉट दी ID फिरी टाइप करो: %target</translation>
     </message>
     <message>
         <source>Choose at least one part to restore.</source>
@@ -80476,11 +80476,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
-        <translation>इस रन शा पैह्लें कोई स्नैपशॉट नेईं लैता गेआ: इसदे माइग्रेशन इक-इक करियै पिच्छें लैओ, जां पैह्लें दा स्नैपशॉट वापस लाओ।</translation>
+        <translation>इस रन शा पैह्लें कोई स्नैपशॉट नेईं लैता गेआ: इसदे माइग्रेशन इक-इक करियै वापस लैओ, जां पैह्लें दा स्नैपशॉट वापस लाओ।</translation>
     </message>
     <message>
         <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
-        <translation>एह् माइग्रेशन अपने आप पिच्छें नेईं लैता जाई सकदा: एह् लागू नेईं ऐ, जां इस च down() नेईं ऐ।</translation>
+        <translation>एह् माइग्रेशन अपने आप वापस नेईं लैता जाई सकदा: एह् लागू नेईं ऐ, जां इस च down() नेईं ऐ।</translation>
     </message>
     <message>
         <source>The form could not be read.</source>
@@ -80488,11 +80488,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose the run to resume.</source>
-        <translation>फ्ही शुरू करने आस्तै रन चुनो।</translation>
+        <translation>फिरी शुरू करने आस्तै रन चुनो।</translation>
     </message>
     <message>
         <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
-        <translation>पैह्लें “हां, इनें माइग्रेशनें गी हून चलाओ” पर निशान लाओ।</translation>
+        <translation>पैह्लें &quot;हां, इनें माइग्रेशनें गी हून चलाओ&quot; पर निशान लाओ।</translation>
     </message>
     <message>
         <source>Choose at least one migration.</source>
@@ -80504,7 +80504,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Give the reason why the changed migrations are accepted.</source>
-        <translation>दस्सो जे बदले गेदे माइग्रेशन कीऽ मन्ने जा करदे न।</translation>
+        <translation>बदले गेदे माइग्रेशन मन्नने दा कारण दस्सो।</translation>
     </message>
     <message>
         <source>The reason is at most 500 characters.</source>
@@ -80520,7 +80520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run needs a signed-in user that exists.</source>
-        <translation>रन आस्तै साइन इन कीते दा इक मौजूद बरतूनी चाहिदा ऐ।</translation>
+        <translation>रन आस्तै साइन इन कीते दा इक मौजूद प्रयोक्ता चाहिदा ऐ।</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
@@ -80536,11 +80536,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run was started but did not report its process id. Check %detail.</source>
-        <translation>रन शुरू होआ पर उसने अपनी प्रोसेस आईडी नेईं दस्सी। %detail जांचो।</translation>
+        <translation>रन शुरू होआ पर उसने अपनी प्रोसेस ID नेईं दस्सी। %detail जांचो।</translation>
     </message>
     <message>
         <source>Name what to take back.</source>
-        <translation>दस्सो जे केह् पिच्छें लैना ऐ।</translation>
+        <translation>दस्सो जे केह् वापस लैना ऐ।</translation>
     </message>
     <message>
         <source>The run could not be started.</source>
