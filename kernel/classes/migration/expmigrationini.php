@@ -102,6 +102,7 @@ class expMigrationIni
     public static function steps( $text, array &$errors = array() )
     {
         $steps = array();
+        $changes = array();
         $target = null;
         $block = null;
         $resets = array();
@@ -129,6 +130,7 @@ class expMigrationIni
                     $steps[$target] = array( 'type' => 'settings', 'file' => $m[3] . '.ini' );
                     if ( $siteAccess !== '' )
                         $steps[$target]['siteaccess'] = $siteAccess;
+                    $changes[$target] = self::noChanges();
                 }
                 continue;
             }
@@ -138,7 +140,7 @@ class expMigrationIni
                     $errors[] = "$at: a setting before the first block";
                 continue;
             }
-            $step = &$steps[$target];
+            $step = &$changes[$target];
             if ( $line[0] === '-' )
             {
                 $item = trim( substr( $line, 1 ) );
@@ -181,6 +183,20 @@ class expMigrationIni
             }
             unset( $step );
         }
+        foreach ( $changes as $target => $change )
+            foreach ( $change as $key => $blocks )
+                if ( $blocks )
+                    $steps[$target][$key] = $blocks;
         return array_values( $steps );
+    }
+
+    /**
+     * The changes of one file before any line is read: set, add and remove, each block => what changes. Pure.
+     *
+     * @return array<string, array<string, array<int|string, mixed>>>
+     */
+    protected static function noChanges()
+    {
+        return array( 'set' => array(), 'add' => array(), 'remove' => array() );
     }
 }
