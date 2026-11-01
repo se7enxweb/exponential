@@ -2581,6 +2581,12 @@
     ],
     "kernel/classes/ezurlaliasml.php": [
       "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "settings/file.ini": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "lib/ezutils/classes/ezfileextensionblacklistvalidator.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ]
   },
   "generated": {

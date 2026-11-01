@@ -204,6 +204,32 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    public function testShippedFileExtensionBlackListRefusesWhatAWebServerMayRun()
+    {
+        $ini = file_get_contents( self::root() . '/settings/file.ini' );
+        preg_match_all( '/^FileExtensionBlackList\[\]=(.+)$/m', $ini, $match );
+        $shipped = array_map( 'trim', $match[1] );
+        foreach ( array( 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'phps', 'phar', 'phpt', 'pht', 'phtml', 'pgif',
+                         'shtml', 'cgi', 'pl', 'asp', 'aspx', 'jsp', 'htaccess' ) as $extension )
+        {
+            $this->assertContains( $extension, $shipped );
+        }
+        foreach ( $shipped as $extension )
+        {
+            $this->assertSame( strtolower( $extension ), $extension, 'the validator compares in lower case' );
+        }
+
+        $validator = new eZFileExtensionBlackListValidator();
+        foreach ( array( 'shell.php5', 'shell.PHP7', 'page.shtml', '.htaccess', 'run.cgi' ) as $name )
+        {
+            $this->assertSame( eZInputValidator::STATE_INVALID, $validator->validate( $name ), $name );
+        }
+        foreach ( array( 'report.pdf', 'photo.jpg', 'notes.txt' ) as $name )
+        {
+            $this->assertSame( eZInputValidator::STATE_ACCEPTED, $validator->validate( $name ), $name );
+        }
+    }
+
     public function testRestKernelRegistersTheEventListeners()
     {
         $kernel = file_get_contents( self::root() . '/kernel/private/rest/classes/ezpkernelrest.php' );

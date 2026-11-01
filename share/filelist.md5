@@ -25448,7 +25448,7 @@ ba1d8b44bc7cddc6b3c54f8e3ee09720  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
-cb0b16d6478138ba8429920d17189ded  settings/file.ini
+8a08f49a06fb10c51b72ec58628b9aba  settings/file.ini
 cd1dd3724d551ca1880d7e172ea97d07  settings/graphql.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
@@ -26822,7 +26822,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-280b8ffd50a54780017df05e647aaece  tests/test-map.json
+7be25aef3ee9c5ea71d19b2e468e5a3d  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -27395,7 +27395,7 @@ bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultEx
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
 d32b95c53aa6c4d7db1e92129156c0fa  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
-695ec6942a66dbc5e844470001acfc71  tests/tests/kernel/classes/expLegacyForkFixesTest.php
+51619fa3abf53a4a6de692e16d109798  tests/tests/kernel/classes/expLegacyForkFixesTest.php
 448f58b85fd061fe10776ed7828bb7f0  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
 be0d9664a26c04457647f96100bb1fa9  tests/tests/kernel/classes/expLoveStackFixture.php
