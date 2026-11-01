@@ -31,8 +31,11 @@ Schnellstart:
 | Sicherungspunkte | ein Sicherungspunkt vor jedem Lauf (wiederverwendet, solange sich nichts geändert hat), einer nach einem erfolgreichen Lauf, einer des gescheiterten Zustands und die Wiederherstellung des Sicherungspunkts von vorher nach einem Fehler; die Sicherungspunkte sind die von `exp:upgrade` |
 | Zurücknehmen | ein Lauf (sein Sicherungspunkt von vorher), eine Migration (ihr `down()`) oder, für Fachleute, ein beliebiger Sicherungspunkt |
 | Das Migrations-Repository | die Statusdatei `status/<umgebung>.json` und das Laufprotokoll `runs/<run-id>.log`, nach jedem Lauf committet, getaggt und gepusht; gescheiterte Pushes wiederholt der Cronjob-Teil `migrationpush` |
-| Befehle | `exp:migration:status`, `:migrate`, `:dry-run` (mit `--simulate --diff`), `:rollback`, `:resume`, `:caption`, `:push`, `:check`, `:generate` |
-| Einstellungen | `settings/migration.ini`: `[MigrationSettings]`, `[RunSettings]`, `[CaptionSettings]`, `[RepositorySettings]` |
+| Befehle | `exp:migration:status`, `:migrate`, `:dry-run` (mit `--simulate --diff`), `:rollback`, `:resume`, `:caption`, `:push`, `:check`, `:generate`; `:migrate` und `:resume` nehmen `--run-id` (die Kennung des zu startenden Laufs) und `--progress` (eine Datei, an die der Lauf seinen Fortschritt anhängt, eine JSON-Zeile je Ereignis), `:rollback` nimmt `--progress` |
+| Setup > Migrationen | das Modul `migration` mit den Ansichten `status`, `history`, `log/<run-id>`, `stream/<run-id>` (der Live-Fortschritt), `dryrun`, `run` und `rollback/<target>`; die Richtlinien `migration/read`, `run`, `rollback` und `edit` (in einer neuen Installation nur Administrator); „Identität bestätigen“ vor einem Lauf, einer Fortsetzung, einer Simulation und einer Rücknahme |
+| Läufe im Hintergrund | ein in der Administration gestarteter Lauf, eine Fortsetzung oder Rücknahme läuft als eigener Konsolenprozess unter dem angemeldeten Benutzer (`expMigrationJob`), geht weiter, wenn die Seite geschlossen wird, und wird über seine Fortschrittsdatei live verfolgt; seine Dateien liegen in `var/<site>/migration/jobs/` |
+| Dashboard-Block | `migrations`: ausstehend, fehlgeschlagen, verwaist, der laufende und der letzte Lauf (Fetch-Funktion `migration/summary`) |
+| Einstellungen | `settings/migration.ini`: `[MigrationSettings]`, `[RunSettings]`, `[CaptionSettings]`, `[RepositorySettings]`, `[AdminSettings]` (`PhpCliPath`, `JobHistory`, `LogBytes`) |
 
 ## Die Bausteine
 
@@ -50,6 +53,7 @@ Schnellstart:
 | `expMigrationRecord`, `expMigrationStatusMirror`, `expMigrationRepository` | die Tabellen, die Dateien in Git, Git |
 | `expMigrationLock` | die Sperre der Installation mit Halter-Datei (auch die Sperre von `exp:upgrade`) |
 | `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | der Status, die Prüfung, die Simulation, das Gerüst |
+| `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | die Formulare und die Dashboard-Zusammenfassung von Setup > Migrationen, die dort im Hintergrund gestarteten Läufe, ihre Fortschrittsdatei |
 
 Die Befehle sind `bin/php/expmigration<name>.php` (Alias `exp:migration:<name>`), ihr Code liegt in
 `kernel/private/classes/commands/`. Ihre Maschinenausgabe ist `exp-migration/1` (`--format=json`); die Exit-Codes sind
@@ -69,7 +73,11 @@ die von `exp:upgrade` (0, 1 gescheitert, 2 Bedienung, 3 Datenbank nicht erreichb
 
 - Migrationen werden in PHP geschrieben. Dateien der Typen `yml`, `sql`, `<engine>.sql` und `ini` werden gefunden,
   geordnet und geprüft und vom Runner abgelehnt, bis ihre Schritte kommen.
-- Die Administration hat noch keine Ansicht für Migrationen; alles läuft auf der Konsole.
+- Setup > Migrationen zeigt Migrationen an, führt sie aus und nimmt sie zurück; das Schreiben und Erzeugen (dafür ist
+  die Richtlinie `migration/edit` vorgesehen) und die Einstellungen des Migrations-Repositorys geschehen in Dateien
+  und auf der Konsole.
+- Ein in der Administration gestarteter Lauf braucht `proc_open` und ein PHP-Kommandozeilenprogramm
+  (`migration.ini [AdminSettings] PhpCliPath`); fehlen sie, sagt die Seite das, und die Konsole führt ihn aus.
 - `exp:upgrade` behält seine eigenen Befehle; seine Kernel-Schritte werden in `exp_migration` aufgezeichnet (Quelle
   `kernel`), aber von `exp:migration:status` noch nicht gezeigt.
 - Commits, Tags und Pushes brauchen git_manager; ohne ihn sagt ein Lauf das und committet nichts.
@@ -88,4 +96,7 @@ Cronjob-Teil: [migrationpush](../../beispiele/cronjobs/migrationpush.md). Audit-
   [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md),
   [Fehlerbehebung](../../anleitungen/migrationen-fehlerbehebung.md)
 - [Das Migrationsdateiformat](../../spezifikationen/6.0/migrationsdateiformat.md)
+- [Migrationen in der Administration](../../hilfe/migrationen/README.md),
+  [die Ansichten des Moduls migration](../../beispiele/modulansichten/migration/README.md),
+  [seine Richtlinien](../../beispiele/richtlinien/migration.md)
 - [Upgrade mit der Konsole](../../anleitungen/aktualisieren-mit-der-konsole.md)

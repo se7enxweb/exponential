@@ -154,6 +154,20 @@ Jeder Sicherungspunkt der Liste lässt sich wiederherstellen, auch ein manueller
 `--expert` und der in `--confirm` erneut eingegebenen ID des Sicherungspunkts. Derselbe Sicherungspunkt `safety` und
 dieselben Teile wie oben gelten.
 
+### In der Administration
+
+**Setup > Migrationen > Rücknahme** (`/migration/rollback`, Richtlinie `migration/rollback`) bietet dieselben drei
+Wege: die Läufe mit einem Sicherungspunkt davor, die angewendeten Migrationen mit `down()` und die früheren
+Sicherungspunkte (für Fachleute: das Kästchen **Ich weiß, was das wiederherstellt** und die erneut eingegebene ID des
+Sicherungspunkts, wie `--expert --confirm`). Für einen Lauf oder einen Sicherungspunkt stellt sie die Teile Datenbank,
+gespeicherte Dateien und Einstellungen wieder her, vorab angehakt wie in `[CaptionSettings] RestoreParts[]`;
+Bibliotheken und Code stellt nur die Konsole wieder her. **Zurücknehmen** fragt nach „Identität bestätigen“ und
+startet `exp:migration:rollback --apply` im Hintergrund unter dem angemeldeten Benutzer, mit dem Sicherungspunkt
+`safety` zuerst; seine Seite zeigt Fortschritt und Bericht. Auch **Zurücknehmen** im Verlauf und **Diesen Lauf
+zurücknehmen** auf der Seite eines Laufs führen dorthin.
+[Ausführen, Probelauf und Rücknahme](../hilfe/migrationen/ausfuehren-probelauf-und-rueckgaengig.md#zurücknehmen)
+zeigt die Seite.
+
 ### Was ein Zurücknehmen berührt
 
 | Bereich | Wiederherstellung eines Sicherungspunkts | `down()` |

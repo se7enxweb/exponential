@@ -3381,7 +3381,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7eb9e8c28a5ca4f683cdd8122c1e5a60  doc/changelogs/6.0/6.0.15.md
+63ed6bfe1dddb1236c09b5503b07521b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6670,7 +6670,7 @@ ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-remova
 fb41e999d70ad1fbeef83693d1ee6c77  doc/eng-us/features/6.0/mail-preferences.md
 70689845801571a8ad48a92751b21397  doc/eng-us/features/6.0/maintenance-mode.md
 a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.md
-c360591e05ef5ff1c306682b3c80445c  doc/eng-us/features/6.0/migrations.md
+c4ad4ce09711170f4127ac132c1743b2  doc/eng-us/features/6.0/migrations.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 df9251aeb6fb79ab9f17590b0bbbb3fb  doc/eng-us/features/6.0/mongodb-database-support.md
 ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrides.md
@@ -6835,10 +6835,10 @@ d11111815c1efec3a438ecccd836072e  doc/eng-us/guides/mail-preferences-developer.m
 9090ac1bfc0b083e83885f6eb1f344b0  doc/eng-us/guides/maintenance-mode.md
 4ccf5993e2ea0552706a553160df253b  doc/eng-us/guides/migrations-php.md
 b1ce11a50c0108934aa655898d1ff1f1  doc/eng-us/guides/migrations-repositories.md
-f759ee8194266665bb23e16328357365  doc/eng-us/guides/migrations-rollback-and-captions.md
+b169d33c12b9f7e55a8e2afd7254058a  doc/eng-us/guides/migrations-rollback-and-captions.md
 ca1f62fc7cab76f6d12393625f273b76  doc/eng-us/guides/migrations-troubleshooting.md
 edbe5e5358cc714439e09489af22dbdb  doc/eng-us/guides/migrations-tutorial.md
-5efd262b2e536aa2bab490331bf91334  doc/eng-us/guides/migrations.md
+1ee7775184bef831e3bc024d59263e53  doc/eng-us/guides/migrations.md
 e565fb4c364a70e397ad6e26fb0e18c3  doc/eng-us/guides/missing-files.md
 c16f7bb9ba5be0218ef063840c48580c  doc/eng-us/guides/notifications-administrator.md
 c1af1e57aab428c892c4e04cfe7c6cb4  doc/eng-us/guides/notifications-developer.md
@@ -6906,7 +6906,7 @@ ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
 75bc777dc9eecf7f174f9a1a4fcc4a39  doc/eng-us/help/README.md
 f3a6eb643757b14f92dc0cede99d6396  doc/eng-us/help/accounts-and-sign-in.md
-a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
+5540af2244bb1c93e74e3fa053fd4ae6  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
 343049d14d1e2c4513fc60df674ab3c5  doc/eng-us/help/adopters/adopters-faq.md
 04ff20877f980fe17316137d932f3e7e  doc/eng-us/help/adopters/adopters-glossary.md
@@ -13044,9 +13044,9 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 6ae23882e297de7698974b9590ff224a  doc/ger-de/anleitungen/migrationen-fehlerbehebung.md
 ebcf18a7d612001f327c9d0135edca23  doc/ger-de/anleitungen/migrationen-php.md
 d2bd1d77a45baa737a330d931f2d5670  doc/ger-de/anleitungen/migrationen-repositories.md
-87990e586d142f2084b075951821990d  doc/ger-de/anleitungen/migrationen-rueckgaengig-und-captions.md
+75ac67092d4c9b86d768d39c158f7ea5  doc/ger-de/anleitungen/migrationen-rueckgaengig-und-captions.md
 883015ea2328663c4f25e734f5501428  doc/ger-de/anleitungen/migrationen-tutorial.md
-7cf0f4faca427af00ce856cdd0ea414f  doc/ger-de/anleitungen/migrationen.md
+d759c3aac65f9924ee32ae329fd8a2d1  doc/ger-de/anleitungen/migrationen.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 a0976fe58065ceb997a8d1fac6b00996  doc/ger-de/anleitungen/objektzustaende.md
 c88a68ff0b56f324e4301df5540cfdd1  doc/ger-de/anleitungen/pakete.md
@@ -16032,7 +16032,7 @@ da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
 d1adeb16d48df541b3a2c073b9495150  doc/ger-de/funktionen/6.0/log-rotation.md
 2d9e73a5bdc1de02051bb8e74ea9d2b7  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
-e4a86123b198e0b947b462972c7aa7c0  doc/ger-de/funktionen/6.0/migrationen.md
+4484271d63440506c7fd53fbf9aa6c0b  doc/ger-de/funktionen/6.0/migrationen.md
 ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaenderung.md
 298bb86f3a6c50d18a8fd5252f6d84ec  doc/ger-de/funktionen/6.0/modulueberschreibung-durch-extensions.md
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
@@ -19439,7 +19439,7 @@ d67a690066e82331b7f0914d1936f604  doc/ger-de/hilfe/projekt/mit-exponential-bauen
 48bef02fd241141dcc9f29ce1754f132  doc/ger-de/hilfe/projekt/verhaltenskodex.md
 0e387802fda4fe2400fa5dbcf1de93e8  doc/ger-de/hilfe/projekt/zum-projekt-beitragen.md
 844c2dea4b786d018b10b819da645dad  doc/ger-de/hilfe/projektdateien.md
-fbf0dc532a642a78e5ea2fbe53cb0bf6  doc/ger-de/hilfe/rundgang-durch-die-administration.md
+ca12b9d5dc6b1a6e6f0504250c99f426  doc/ger-de/hilfe/rundgang-durch-die-administration.md
 a85b1e0a5ca224ed96b8cd423e8c85e9  doc/ger-de/hilfe/seitenpakete/README.md
 190b8e1722736fb69d61f2812ed0caff  doc/ger-de/hilfe/seitenpakete/admin-oberflaeche/README.md
 91015dd306ccadb70896ea561af932a5  doc/ger-de/hilfe/seitenpakete/admin-oberflaeche/berechtigungen-fuer-pakete.md
