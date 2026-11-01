@@ -2,8 +2,10 @@
    every help page on the left, the page in the middle (title, meta, the rendered document, previous/next) and its
    table of contents on the right, which stays in view. Narrower windows drop the side contents for a folded one above
    the page, and on phones the tree moves below the page (it comes after the page in the source, so the page is read
-   first). The tree lists every page the help serves (expHelpNavigation, cached per index signature), the folders on
-   the way to this page open; its filter box (exphelp.js) narrows it as you type. Works without JavaScript; exphelp.js
+   first). The tree opens only the way to this page (expHelpNavigation::pathHtml(), cached per index signature): the
+   top folders, the folders above the page with their pages; every other folder loads its list when it is opened
+   (exphelp/navigation, exphelp.js), and without JavaScript links to its own listing. Its filter box loads the whole
+   tree once (data-exphelp-nav-tree) and narrows it as you type. Works without JavaScript; exphelp.js
    (w612/F hooks) adds the instant search, the scrollspy of the contents, the copy buttons of code blocks, collapsible
    sections and the keys / j k [ ].
    The article carries the language of the page (help_page_lang, help_page_dir: en-US and ltr for the English
@@ -91,7 +93,7 @@
             {include uri='design:exphelp/parts/license_notice.tpl' license_page_id=$help_page.id}
         </div>
 
-        <nav class="a4-help-nav" id="exphelp-nav" aria-labelledby="exphelp-nav-title" tabindex="-1" data-exphelp-nav>
+        <nav class="a4-help-nav" id="exphelp-nav" aria-labelledby="exphelp-nav-title" tabindex="-1" data-exphelp-nav data-exphelp-nav-tree={'exphelp/navigation/(format)/tree'|ezurl}>
             <p class="a4-help-nav-head" id="exphelp-nav-title"><span class="a4-icon a4-bi-list-ul" aria-hidden="true"></span> {'All help pages'|i18n( 'kernel/exphelp' )}</p>
             <div class="a4-help-nav-tools">
                 <label class="a4-sr-only" for="exphelp-nav-filter">{'Filter the help pages'|i18n( 'kernel/exphelp' )}</label>
