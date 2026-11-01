@@ -294,6 +294,31 @@ Die Sicherungspunkte von `exp:upgrade` und die der Migrationsläufe (Arten `migr
 `migration-failure`) sind eine Liste: `exp:upgrade:captions` zeigt beide, und jedes der beiden Zurückrollen kann jeden
 wiederherstellen ([Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)).
 
+### Die Schritte unter den Migrationen
+
+Jeder Upgrade-Schritt ist auch eine Migration der Quelle `kernel`, mit der Schritt-ID als Migrations-ID. Die
+[Migrationsbefehle](migrationen.md) und Setup > Migrationen zeigen und führen daher auch die Schritte des Kernels aus:
+
+| Wo | Was es mit den Schritten tut |
+|---|---|
+| `./console exp:migration:status`, Setup > Migrationen, der Dashboard-Block | listet jeden Schritt zuerst, vor den Migrationen der Site und der Erweiterungen, mit dem Zustand, den `exp:upgrade:status` ihm gibt |
+| `./console exp:migration:migrate --apply`, Ausführen in Setup > Migrationen | führt zuerst die ausstehenden Schritte der Stufen `database` und `scripts` aus, dann die Migrationen, in einem Lauf unter einer Sperre und einem Sicherungspunkt |
+| eine Migrationsdatei | darf einen Schritt in `requires` nennen (`requires: 6.0.15-migration-tables`); sie läuft dann nach ihm |
+
+Ein Migrationslauf überlässt die Stufen `code`, `libraries` und `finish` dem Befehl `exp:upgrade`: ein ausstehender
+Schritt dieser Stufen (oder ein optionaler Schritt) wird als `deferred` (zurückgestellt) gelistet, eine Warnung nennt
+den Befehl, der ihn ausführt (`./console exp:upgrade:code --apply` ...), und eine Migration, die ihn verlangt, wartet.
+Nach einem Migrationslauf, der Schritte ausgeführt hat, macht `./console exp:upgrade:finish --apply` sie wirksam
+(Deploy, Caches, Smoke-Test). Ein Schritt behält, was ihn zum Schritt macht: sein Zustand kommt aus `detect()`, es
+gibt keinen Prüfsummenschutz auf seine Klassendatei, keine Transaktion um ihn, und er hat kein `down()` (ein
+Sicherungspunkt stellt ihn wieder her).
+
+Beide Befehle schreiben dieselbe Aufzeichnung: ein Schritt, den ein Migrationslauf ausgeführt hat, ist in
+`exp:upgrade:status` `done`, und umgekehrt. Jeder Befehl behält seine eigene Regel für Sicherungspunkte: `exp:upgrade`
+hält an, wenn kein Sicherungspunkt angelegt werden kann, und lehnt `--no-caption` auf Produktion ab, ein
+Migrationslauf warnt und macht weiter; `exp:upgrade` stellt nur mit `--rollback-on-fail` wieder her, ein
+Migrationslauf von sich aus.
+
 `./console exp:upgrade:verify` sieht für jeden Schritt erneut nach und meldet Abweichungen: einen Schritt, den die
 Aufzeichnung als erledigt führt, dessen Wirkung aber jetzt fehlt (eine Tabelle gelöscht, eine Richtlinie von Hand
 entfernt). Findet er welche, endet er mit Exit-Code 1. Führen Sie ihn nach einer Wiederherstellung oder aus der

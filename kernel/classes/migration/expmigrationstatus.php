@@ -9,7 +9,8 @@
 
 /**
  * The state of the installation's migrations, as exp:migration:status and the administration show it: every
- * migration found for the environment with its state (done, pending, not-needed, failed, unknown) and its record,
+ * migration found for the environment, the kernel's upgrade steps first (source "kernel", expMigrationUpgradeSource),
+ * with its state (done, pending, not-needed, failed, unknown) and its record,
  * the records whose migration file is gone (orphans), the latest runs, the runs whose push waits, and who holds the
  * installation lock. Changes nothing and takes no lock.
  *
@@ -29,14 +30,17 @@ class expMigrationStatus
     /**
      * @param array $options db, environment, only (migration ids), runs (how many runs, default 10), the options of
      *                       expMigrationContext (lock-file, repository, root, login ...); migrations (expMigration[])
-     *                       instead of the installation's, with errors (string[]) their problems
+     *                       instead of the installation's, with errors (string[]) their problems; upgrade-source and
+     *                       locator for expMigrationRunner::installation()
      * @return array the report
      */
     public static function report( array $options = array() )
     {
         $context = new expMigrationContext( isset( $options['db'] ) ? $options['db'] : null, false, $options + array( 'no-mirror' => true ) );
         $errors = isset( $options['errors'] ) ? (array)$options['errors'] : array();
-        $migrations = isset( $options['migrations'] ) ? (array)$options['migrations'] : expMigrationRunner::migrations( $context->environment(), $errors );
+        $warnings = array();
+        $migrations = isset( $options['migrations'] ) ? (array)$options['migrations']
+                                                     : expMigrationRunner::installation( $context->environment(), $errors, $warnings, $options );
         $only = isset( $options['only'] ) ? expUpgrade::listOption( $options['only'] ) : array();
         $all = $migrations;
         if ( $only )
@@ -48,6 +52,7 @@ class expMigrationStatus
         $report = $runner->run( $migrations );
         $report['mode'] = 'status';
         $report['errors'] = array_merge( $errors, $report['errors'] );
+        $report['warnings'] = array_merge( $warnings, $report['warnings'] );
         $report['table'] = $ready;
         if ( !$ready )
             $report['warnings'][] = 'the tables ' . expMigrationRecord::TABLE . ' and ' . expMigrationRecord::RUN_TABLE
