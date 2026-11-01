@@ -28,7 +28,7 @@ Never edit `settings/upgrade.ini` itself: an update replaces it. Put the setting
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Default: a list of 37: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders`, `expUpgradeStepBookmarkViewTable` ....
+Default: a list of 40: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationTables`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -40,6 +40,7 @@ StepList[]=expUpgradeStepCodeUpdate
 StepList[]=expUpgradeStepLibrariesUpdate
 StepList[]=expUpgradeStepLibrariesInstall
 StepList[]=expUpgradeStepRecordTable
+StepList[]=expUpgradeStepMigrationTables
 StepList[]=expUpgradeStepPasswordHashWidth
 StepList[]=expUpgradeStepTrashColumns
 StepList[]=expUpgradeStepPdfExportFooter
@@ -55,8 +56,7 @@ StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
 StepList[]=expUpgradeStepUserSessionTable
 StepList[]=expUpgradeStepOAuthPkceColumns
-StepList[]=expUpgradeStepPasskeyTable
-# ... 17 more in the shipped file
+# ... 20 more in the shipped file
 */ ?>
 ```
 

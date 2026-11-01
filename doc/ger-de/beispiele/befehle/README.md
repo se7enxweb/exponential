@@ -81,7 +81,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:exptemplateconverttwigtostpl](exptemplateconverttwigtostpl.md) | exp:template:convert:twig-to-stpl | Konvertiert die Twig-Templates (.twig) eines Designs in Smarty-Templates (.stpl); --dry-run, --file, --force, --override-ini |
 | [exp:exptemplateconverttwigtotpl](exptemplateconverttwigtotpl.md) | exp:template:convert:twig-to-tpl | Konvertiert die Twig-Templates (.twig) eines Designs in Exponential-Templates (.tpl); --dry-run, --file, --force, --override-ini |
 | [exp:exptemplateengines](exptemplateengines.md) | exp:template:engines | Listet die Template-Engines: Bibliothek gefunden oder nicht, Version, Dateiendungen, Einstellungen, Sicherheitsrichtlinie, Cache der kompilierten Templates |
-| [exp:expwtmigratefromezwt](expwtmigratefromezwt.md) | exp:wt:migrate-from-ezwt | Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation, schedule (dry run unless --apply) |
+| [exp:expwtmigratefromezwt](expwtmigratefromezwt.md) | exp:wt:migrate-from-ezwt | Ersetzt ezwt (die Website-Werkzeugleiste) durch expwt (die Website-Seitenleiste): Einstellungen, Richtlinien, Aktivierung, Zeitplan (Probelauf ohne --apply) |
 | [exp:ezapplytemplate](ezapplytemplate.md) |  | Wendet die in Dateien gefundenen Template-Blöcke an und schreibt die Dateien zurück (Exit-Code 0, 1 oder 2) |
 | [exp:ezasynchronouspublisher](ezasynchronouspublisher.md) |  |  |
 | [exp:ezcache](ezcache.md) |  | Leert die Caches von Exponential nach Tag oder ID (--clear-tag, --clear-id, --clear-all, --list-tags) |
