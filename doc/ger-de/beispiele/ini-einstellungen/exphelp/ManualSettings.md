@@ -31,7 +31,7 @@ Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. 
 >           "Adopters"), sonst der Name des Ordners  
 > Den Umfang zu ändern heißt, diese Liste zu bearbeiten. Eine entfernte Zeile entfernt ihr Handbuch, ihre Kapitel und Themen beim nächsten Lauf.  
 
-Standard: eine Liste mit 53: `getting-started;help/*.md;Getting started`, `manual;help/manual`, `book-learning;help/book-learning`, `book-building-a-site;help/book-building-a-site`, `extension-development;help/extension-development`, `adopters;help/adopters`, `advocates;help/advocates`, `ai-agents;help/ai-agents`, `build-two-ways;help/build-two-ways`, `bundlers;help/bundlers`, `business;help/business`, `businesses;help/businesses` ....
+Standard: eine Liste mit 54: `getting-started;help/*.md;Getting started`, `manual;help/manual`, `book-learning;help/book-learning`, `book-building-a-site;help/book-building-a-site`, `extension-development;help/extension-development`, `adopters;help/adopters`, `advocates;help/advocates`, `ai-agents;help/ai-agents`, `build-two-ways;help/build-two-ways`, `bundlers;help/bundlers`, `business;help/business`, `businesses;help/businesses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -59,7 +59,7 @@ Manuals[]=database-administrators;help/database-administrators
 Manuals[]=designers;help/designers
 Manuals[]=dxp-developers;help/dxp-developers
 Manuals[]=e-commerce;help/e-commerce
-# ... 33 weitere in der ausgelieferten Datei
+# ... 34 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
