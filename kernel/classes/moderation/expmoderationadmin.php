@@ -55,6 +55,105 @@ class expModerationAdmin
         return array( 'result' => $summary );
     }
 
+    /**
+     * The rows of the list as HTML (the tbody of moderation/recent.tpl). Drawn here, not in the template: a page of
+     * 1000 rows with a dozen template operators each took seconds to render (more with the debug output on), this
+     * takes milliseconds. The markup is the template's (shared components only, no CSS of its own); every text is
+     * translated once per page, every value escaped.
+     *
+     * @param array $rows expModerationList::decorate()
+     * @param bool $canAct a checkbox per row (moderation/act)
+     * @param bool $personal the "Submitted from" column (moderation/personaldata)
+     * @param callable|null $tr function( text, args ): string; default ezpI18n in design/admin/moderation
+     * @param callable|null $url function( path ): string, the address of a path; default eZURI::transformURI
+     * @param callable|null $date function( timestamp ): string; default the locale's short date and time
+     * @return string
+     */
+    public static function rowsHtml( array $rows, $canAct, $personal, $tr = null, $url = null, $date = null )
+    {
+        $cache = array();
+        $tr = $tr ?: function ( $text, array $args = array() ) use ( &$cache ) {
+            if ( !$args )
+                return isset( $cache[$text] ) ? $cache[$text] : ( $cache[$text] = ezpI18n::tr( 'design/admin/moderation', $text ) );
+            return ezpI18n::tr( 'design/admin/moderation', $text, null, $args );
+        };
+        $url = $url ?: function ( $path ) { eZURI::transformURI( $path ); return $path; };
+        $locale = $date ? null : eZLocale::instance();
+        $date = $date ?: function ( $ts ) use ( $locale ) { return $locale->formatShortDateTime( (int)$ts ); };
+        $e = function ( $s ) { return htmlspecialchars( (string)$s, ENT_QUOTES, 'UTF-8' ); };
+        $muted = function ( $s ) use ( $e ) { return '<span class="a4-muted">' . $e( $s ) . '</span>'; };
+        $out = array();
+        foreach ( $rows as $row )
+        {
+            $h = '<tr>';
+            if ( $canAct )
+                $h .= '<td><input type="checkbox" name="ObjectIDList[]" value="' . (int)$row['id'] . '" aria-label="' . $e( $tr( 'Select %name', array( '%name' => $row['name'] ) ) ) . '" /></td>';
+            $h .= '<td class="a4-nowrap">' . ( $row['modified'] ? $e( $date( $row['modified'] ) ) : $muted( '-' ) ) . '</td>';
+            $h .= '<td class="a4-nowrap">' . ( $row['published'] ? $e( $date( $row['published'] ) ) : $muted( $tr( 'not yet' ) ) ) . '</td>';
+            $name = $row['name'] !== '' ? $e( $row['name'] ) : $muted( $tr( '(no name)' ) );
+            $h .= '<td>' . ( $row['node_id'] ? '<a href="' . $e( $url( '/content/view/full/' . (int)$row['node_id'] ) ) . '">' . $name . '</a>' : $name )
+                . '<br /><span class="a4-meta">' . $e( $tr( 'ID %id', array( '%id' => $row['id'] ) ) ) . '</span></td>';
+            $h .= '<td>' . $e( $row['class_name'] ) . '</td>';
+            $badges = array();
+            if ( $row['status'] === 'published' )
+                $badges[] = array( 'is-ok', $tr( 'Published' ) );
+            elseif ( $row['status'] === 'archived' )
+                $badges[] = array( 'is-bad', $tr( 'In the trash' ) );
+            else
+                $badges[] = array( 'is-info', $tr( 'Draft' ) );
+            if ( $row['pending'] )
+                $badges[] = array( 'is-warn', $tr( 'Pending' ) );
+            if ( $row['hidden'] )
+                $badges[] = array( '', $tr( 'Hidden' ) );
+            elseif ( $row['invisible'] )
+                $badges[] = array( '', $tr( 'Hidden by its parent' ) );
+            if ( $row['held'] )
+                $badges[] = array( 'is-warn', $row['auto'] ? $tr( 'Held: new submission' ) : $tr( 'Held for review' ), $row['hold_reason'] );
+            $h .= '<td><ul class="a4-badges">';
+            foreach ( $badges as $b )
+                $h .= '<li class="a4-badge' . ( $b[0] !== '' ? ' ' . $b[0] : '' ) . '"' . ( !empty( $b[2] ) ? ' title="' . $e( $b[2] ) . '"' : '' ) . '>' . $e( $b[1] ) . '</li>';
+            $h .= '</ul>';
+            if ( $row['held'] && $row['hold_reason'] !== '' )
+            {
+                $reason = function_exists( 'mb_strlen' ) && mb_strlen( $row['hold_reason'], 'UTF-8' ) > 80 ? mb_substr( $row['hold_reason'], 0, 77, 'UTF-8' ) . '...' : $row['hold_reason'];
+                $h .= '<span class="a4-meta">' . $e( $reason ) . ( $row['hold_by'] !== '' ? ' (' . $e( $row['hold_by'] ) . ')' : '' ) . '</span>';
+            }
+            $h .= '</td><td>';
+            if ( $row['version_status'] === 'pending' )
+                $h .= $e( $tr( 'Version %version pending', array( '%version' => $row['version'] ) ) );
+            elseif ( $row['version_status'] === 'draft' )
+                $h .= $e( $row['status'] === 'published' ? $tr( 'Version %version in progress', array( '%version' => $row['version'] ) )
+                                                         : $tr( 'Draft, version %version', array( '%version' => $row['version'] ) ) );
+            else
+                $h .= $e( $tr( 'Version %version published', array( '%version' => $row['current_version'] ) ) );
+            if ( $row['scheduled'] )
+                $h .= '<br /><span class="a4-meta">' . $e( $tr( 'Scheduled for %date', array( '%date' => $date( $row['scheduled'] ) ) ) ) . '</span>';
+            $h .= '</td><td>' . $e( $row['section_name'] ) . '</td><td>';
+            if ( $row['owner_node_id'] )
+                $h .= '<a href="' . $e( $url( '/content/view/full/' . (int)$row['owner_node_id'] ) ) . '">' . $e( $row['owner_name'] ) . '</a>';
+            else
+                $h .= $row['owner_name'] !== '' ? $e( $row['owner_name'] ) : $muted( $row['owner_id'] );
+            $h .= '</td>';
+            if ( $personal )
+            {
+                $h .= '<td>';
+                if ( $row['recorded'] )
+                {
+                    $h .= $row['ip'] !== '' ? '<code class="a4-code">' . $e( $row['ip'] ) . '</code>' : $muted( $tr( 'no address' ) );
+                    if ( $row['ua'] !== '' )
+                        $h .= '<br /><span class="a4-meta" title="' . $e( $row['ua'] ) . '">' . $e( function_exists( 'mb_substr' ) && mb_strlen( $row['ua'], 'UTF-8' ) > 60 ? mb_substr( $row['ua'], 0, 57, 'UTF-8' ) . '...' : $row['ua'] ) . '</span>';
+                    if ( $row['siteaccess'] !== '' )
+                        $h .= '<br /><span class="a4-meta">' . $e( $row['siteaccess'] ) . '</span>';
+                }
+                else
+                    $h .= $muted( $tr( 'not recorded' ) );
+                $h .= '</td>';
+            }
+            $out[] = $h . '</tr>';
+        }
+        return implode( "\n", $out );
+    }
+
     /** @return array the classes for the filter: list of array( identifier, name ) */
     public static function classChoices()
     {

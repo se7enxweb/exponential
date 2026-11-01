@@ -66,4 +66,4 @@ today; each number opens the list filtered on them.
 - *moderation/personaldata*: the **Submitted from** column.
 
 Editors and administrators have the first two in a new installation. Details for administrators:
-[Recent content](../../features/6.0/moderation.md) and [the auto-hold](../../features/6.0/review-hold.md#auto-hold).
+[Recent content](../features/6.0/moderation.md) and [the auto-hold](../features/6.0/review-hold.md#auto-hold).

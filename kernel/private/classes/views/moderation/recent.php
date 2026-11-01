@@ -87,6 +87,7 @@ class Recent extends \Exponential\Runnable\ModuleView
 
         $tpl = \eZTemplate::factory();
         $tpl->setVariable( 'rows', $page['rows'] );
+        $tpl->setVariable( 'rows_html', \expModerationAdmin::rowsHtml( $page['rows'], \expModerationAdmin::canDo( 'act' ), $personal ) );
         $tpl->setVariable( 'total', $page['total'] );
         $tpl->setVariable( 'filters', $f );
         $tpl->setVariable( 'filter_suffix', \expModerationList::viewParameters( $f ) );

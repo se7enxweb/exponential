@@ -57,7 +57,7 @@ The left column changes with the tab:
   [Migrations for administrators](migrations/migrations-for-administrators.md); everything else:
   [Migrations](migrations/README.md)). Another is **Recent content** in the group **Content model**: the newest
   content of the whole site, what is held for review, who submitted it, and actions on a selection
-  ([Recent content](moderation/README.md)).
+  ([Recent content](recent-content.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
 

@@ -34,8 +34,8 @@ events): about ten queries whatever the page size, never one per row. Every quer
 the same on MySQL/MariaDB, PostgreSQL, SQLite, Oracle and MongoDB. Measured: 1000 rows in well under a second on
 SQLite with 1,500 objects; the engine tests check a page of 1000 rows under two seconds on every engine.
 
-The upgrade step `6.0.15-contentobject-modified-index` adds the index to an existing database (also in the
-`dbupdate-6.0.0-6.0.15.sql` files).
+The upgrade step `6.0.15-contentobject-modified-index` adds the index to an existing database (`./console exp:upgrade`;
+not in the SQL update files, which also run on databases without the content tables).
 
 ### Where the address and the browser come from
 

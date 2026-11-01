@@ -768,7 +768,3 @@ INSERT INTO exp_migration ( source, migration_id, stage, version, state, started
     FROM expupgrade_step s
    WHERE NOT EXISTS ( SELECT 1 FROM exp_migration m WHERE m.source = 'kernel' AND m.migration_id = s.step_id );
 DROP TABLE IF EXISTS expupgrade_step;
--- Setup > Recent content (moderation/recent) lists the objects by their modification date, a page at a time: the
--- index ezcontentobject_modified keeps that one indexed read on a large database. The upgrade step
--- 6.0.15-contentobject-modified-index adds it as well.
-CREATE INDEX IF NOT EXISTS "idx_ezcontentobject_ezcontentobject_modified" ON "ezcontentobject" ( `modified` );

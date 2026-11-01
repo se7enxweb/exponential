@@ -263,7 +263,35 @@ class expModerationTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( '<style', $recent );
         $this->assertStringNotContainsString( 'style="', $recent );
         $this->assertStringContainsString( "user/preferences/set/admin_moderation_limit/", $recent );
-        $this->assertStringContainsString( 'name="ObjectIDList[]"', $recent );
+        $this->assertStringContainsString( '{$rows_html}', $recent );
         $this->assertMatchesRegularExpression( '/\{if \$personal\}<th/', $recent, 'the personal data column only with moderation/personaldata' );
+    }
+
+    /** MO-10 the rows drawn in PHP: escaped, the checkbox and the personal column only when allowed */
+    public function testRowsHtml()
+    {
+        $row = array( 'id' => 7, 'name' => '<b>Spam</b> & co', 'modified' => 100, 'published' => 0, 'node_id' => 9, 'class_name' => 'Comment',
+                      'status' => 'published', 'pending' => true, 'hidden' => true, 'invisible' => true, 'held' => true, 'auto' => true,
+                      'hold_reason' => 'Link "x"', 'hold_by' => '', 'version_status' => 'pending', 'version' => 2, 'current_version' => 1,
+                      'scheduled' => 200, 'section_name' => 'Standard', 'owner_node_id' => 0, 'owner_name' => 'Anonymous User', 'owner_id' => 10,
+                      'recorded' => true, 'ip' => '198.51.100.0/24', 'ua' => 'Firefox 132 / Windows', 'siteaccess' => 'site' );
+        $tr = function ( $t, array $a = array() ) { return strtr( $t, $a ); };
+        $url = function ( $p ) { return '/admin' . $p; };
+        $date = function ( $ts ) { return 'T' . $ts; };
+        $html = expModerationAdmin::rowsHtml( array( $row ), true, true, $tr, $url, $date );
+        $this->assertStringContainsString( '<input type="checkbox" name="ObjectIDList[]" value="7"', $html );
+        $this->assertStringContainsString( '&lt;b&gt;Spam&lt;/b&gt; &amp; co', $html );
+        $this->assertStringNotContainsString( '<b>Spam', $html );
+        $this->assertStringContainsString( 'href="/admin/content/view/full/9"', $html );
+        $this->assertStringContainsString( 'Held: new submission', $html );
+        $this->assertStringContainsString( 'title="Link &quot;x&quot;"', $html );
+        $this->assertStringContainsString( 'Version 2 pending', $html );
+        $this->assertStringContainsString( 'Scheduled for T200', $html );
+        $this->assertStringContainsString( '198.51.100.0/24', $html );
+        $this->assertStringContainsString( 'not yet', $html );
+        $plain = expModerationAdmin::rowsHtml( array( $row ), false, false, $tr, $url, $date );
+        $this->assertStringNotContainsString( 'ObjectIDList', $plain );
+        $this->assertStringNotContainsString( '198.51.100', $plain, 'no personal data without moderation/personaldata' );
+        $this->assertSame( 1, substr_count( $plain, '<tr>' ) );
     }
 }

@@ -4,7 +4,7 @@
    (posted to moderation/action). The address and the browser come from the audit and are shown with
    moderation/personaldata only.
 
-   Variables: rows (expModerationList::decorate()), total, filters (expModerationList::filters()), filter_suffix,
+   Variables: rows (expModerationList::decorate()), rows_html (the rows drawn, expModerationAdmin::rowsHtml()), total, filters (expModerationList::filters()), filter_suffix,
    page_uri, view_parameters, limit, sizes (size, position), sort_links, creator_name, classes, sections, siteaccesses,
    states, can_act, personal, audit, hold_ready, job_threshold, elapsed (ms), queries, problem, return_url.
 
@@ -182,40 +182,8 @@
             {if $personal}<th scope="col">{'Submitted from'|i18n( 'design/admin/moderation' )}</th>{/if}
         </tr></thead>
         <tbody>
-        {foreach $rows as $row}
-        <tr>
-            {if $can_act}<td><input type="checkbox" name="ObjectIDList[]" value="{$row.id}" aria-label="{'Select %name'|i18n( 'design/admin/moderation',, hash( '%name', $row.name ) )|wash}" /></td>{/if}
-            <td class="a4-nowrap">{if $row.modified}{$row.modified|l10n( 'shortdatetime' )}{else}<span class="a4-muted">-</span>{/if}</td>
-            <td class="a4-nowrap">{if $row.published}{$row.published|l10n( 'shortdatetime' )}{else}<span class="a4-muted">{'not yet'|i18n( 'design/admin/moderation' )}</span>{/if}</td>
-            <td>{if $row.node_id}<a href={concat( '/content/view/full/', $row.node_id )|ezurl}>{$row.name|wash}</a>{elseif $row.name}{$row.name|wash}{else}<span class="a4-muted">{'(no name)'|i18n( 'design/admin/moderation' )}</span>{/if}
-                <br /><span class="a4-meta">{'ID %id'|i18n( 'design/admin/moderation',, hash( '%id', $row.id ) )}</span></td>
-            <td>{$row.class_name|wash}</td>
-            <td><ul class="a4-badges">
-                {switch match=$row.status}
-                {case match='published'}<li class="a4-badge is-ok">{'Published'|i18n( 'design/admin/moderation' )}</li>{/case}
-                {case match='archived'}<li class="a4-badge is-bad">{'In the trash'|i18n( 'design/admin/moderation' )}</li>{/case}
-                {case}<li class="a4-badge is-info">{'Draft'|i18n( 'design/admin/moderation' )}</li>{/case}
-                {/switch}
-                {if $row.pending}<li class="a4-badge is-warn">{'Pending'|i18n( 'design/admin/moderation' )}</li>{/if}
-                {if $row.hidden}<li class="a4-badge">{'Hidden'|i18n( 'design/admin/moderation' )}</li>{elseif $row.invisible}<li class="a4-badge">{'Hidden by its parent'|i18n( 'design/admin/moderation' )}</li>{/if}
-                {if $row.held}<li class="a4-badge is-warn" {if $row.hold_reason}title="{$row.hold_reason|wash}"{/if}>{if $row.auto}{'Held: new submission'|i18n( 'design/admin/moderation' )}{else}{'Held for review'|i18n( 'design/admin/moderation' )}{/if}</li>{/if}
-            </ul>
-            {if and( $row.held, $row.hold_reason )}<span class="a4-meta">{$row.hold_reason|shorten( 80 )|wash}{if $row.hold_by} ({$row.hold_by|wash}){/if}</span>{/if}</td>
-            <td>{switch match=$row.version_status}
-                {case match='pending'}{'Version %version pending'|i18n( 'design/admin/moderation',, hash( '%version', $row.version ) )}{/case}
-                {case match='draft'}{if eq( $row.status, 'published' )}{'Version %version in progress'|i18n( 'design/admin/moderation',, hash( '%version', $row.version ) )}{else}{'Draft, version %version'|i18n( 'design/admin/moderation',, hash( '%version', $row.version ) )}{/if}{/case}
-                {case}{'Version %version published'|i18n( 'design/admin/moderation',, hash( '%version', $row.current_version ) )}{/case}
-                {/switch}
-                {if $row.scheduled}<br /><span class="a4-meta">{'Scheduled for %date'|i18n( 'design/admin/moderation',, hash( '%date', $row.scheduled|l10n( 'shortdatetime' ) ) )}</span>{/if}</td>
-            <td>{$row.section_name|wash}</td>
-            <td>{if $row.owner_node_id}<a href={concat( '/content/view/full/', $row.owner_node_id )|ezurl}>{$row.owner_name|wash}</a>{elseif $row.owner_name}{$row.owner_name|wash}{else}<span class="a4-muted">{$row.owner_id}</span>{/if}</td>
-            {if $personal}<td>{if $row.recorded}
-                {if $row.ip}<code class="a4-code">{$row.ip|wash}</code>{else}<span class="a4-muted">{'no address'|i18n( 'design/admin/moderation' )}</span>{/if}
-                {if $row.ua}<br /><span class="a4-meta" title="{$row.ua|wash}">{$row.ua|shorten( 60 )|wash}</span>{/if}
-                {if $row.siteaccess}<br /><span class="a4-meta">{$row.siteaccess|wash}</span>{/if}
-                {else}<span class="a4-muted">{'not recorded'|i18n( 'design/admin/moderation' )}</span>{/if}</td>{/if}
-        </tr>
-        {/foreach}
+        {* the rows are drawn by expModerationAdmin::rowsHtml(): 1000 rows of template operators took seconds *}
+        {$rows_html}
         </tbody>
     </table>
     </div>

@@ -73,5 +73,5 @@ erstellt wurden; jede Zahl öffnet die entsprechend gefilterte Liste.
 - *moderation/personaldata*: die Spalte **Eingereicht von**.
 
 Redakteure und Administratoren haben die ersten beiden in einer neuen Installation. Einzelheiten für Administratoren
-(englisch): [Recent content](../../../eng-us/features/6.0/moderation.md) und
-[das automatische Zurückhalten](../../../eng-us/features/6.0/review-hold.md#auto-hold).
+(englisch): [Recent content](../../eng-us/features/6.0/moderation.md) und
+[das automatische Zurückhalten](../../eng-us/features/6.0/review-hold.md#auto-hold).
