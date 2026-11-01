@@ -731,7 +731,8 @@
       "tests/tests/design/AdminSubitemsTranslationsTest.php"
     ],
     "kernel/content/ezcontentoperationcollection.php": [
-      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ],
     "kernel/content/operation_definition.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
@@ -2572,6 +2573,9 @@
     "update/database/*/6.0/dbupdate-6.0.0-6.0.15.sql": [
       "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
       "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "kernel/search/plugins/ezsearchengine/ezsearchengine.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ]
   },
   "generated": {

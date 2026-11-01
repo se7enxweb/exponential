@@ -121,6 +121,57 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * "if ( $x );" ends the if at the semicolon, so the block after it always runs. publishNode() had one: the node
+     * found by the assignment's remote ID was always replaced by findNode()'s.
+     */
+    public function testNoIfEndsInAnEmptyStatement()
+    {
+        $skip = array( T_WHITESPACE, T_COMMENT, T_DOC_COMMENT );
+        $found = array();
+        foreach ( array( 'kernel', 'lib' ) as $dir )
+        {
+            $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . '/' . $dir, FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $it as $f )
+            {
+                if ( substr( $f->getFilename(), -4 ) !== '.php' )
+                    continue;
+                $tokens = @token_get_all( file_get_contents( $f->getPathname() ) );
+                $n = count( $tokens );
+                for ( $i = 0; $i < $n; ++$i )
+                {
+                    if ( !is_array( $tokens[$i] ) || ( $tokens[$i][0] !== T_IF && $tokens[$i][0] !== T_ELSEIF ) )
+                        continue;
+                    $j = $i + 1;
+                    while ( $j < $n && is_array( $tokens[$j] ) && in_array( $tokens[$j][0], $skip, true ) )
+                        ++$j;
+                    if ( $j >= $n || $tokens[$j] !== '(' )
+                        continue;
+                    for ( $depth = 0; $j < $n; ++$j )
+                    {
+                        if ( $tokens[$j] === '(' )
+                            ++$depth;
+                        elseif ( $tokens[$j] === ')' && --$depth === 0 )
+                            break;
+                    }
+                    ++$j;
+                    while ( $j < $n && is_array( $tokens[$j] ) && in_array( $tokens[$j][0], $skip, true ) )
+                        ++$j;
+                    if ( $j < $n && $tokens[$j] === ';' )
+                        $found[] = substr( $f->getPathname(), strlen( self::root() ) + 1 ) . ':' . $tokens[$i][2];
+                }
+            }
+        }
+        $this->assertSame( array(), $found, 'an if or elseif whose body is an empty statement' );
+    }
+
+    public function testPublishNodeTakesTheRemoteIdNodeOnlyWhenItIsThisObjectsNodeBelowTheParent()
+    {
+        $code = file_get_contents( self::root() . '/kernel/content/ezcontentoperationcollection.php' );
+        $this->assertStringContainsString( "(int)\$existingNode->attribute( 'contentobject_id' ) !== (int)\$object->attribute( 'id' )", $code );
+        $this->assertStringContainsString( "(int)\$existingNode->attribute( 'parent_node_id' ) !== (int)\$nodeID", $code );
+    }
+
     public function testRestKernelRegistersTheEventListeners()
     {
         $kernel = file_get_contents( self::root() . '/kernel/private/rest/classes/ezpkernelrest.php' );
