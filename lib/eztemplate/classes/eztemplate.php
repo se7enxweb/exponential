@@ -521,7 +521,7 @@ class eZTemplate
 
         // the debug bar's template tree; lib/ does not need the kernel
         $treeIndex = false;
-        if ( !empty( $GLOBALS['eZDebugEnabled'] ) && $resourceData && class_exists( 'expRenderStats' ) )
+        if ( ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && $resourceData && class_exists( 'expRenderStats' ) )
             $treeIndex = expRenderStats::templateEnter( $template, $resourceData['template-filename'] ?? null, $resourceData['template-name'] ?? null,
                                                         !empty( $resourceData['compiled-template'] ) );
 
@@ -902,7 +902,7 @@ class eZTemplate
 
         // the debug bar's template tree; lib/ does not need the kernel
         $treeIndex = false;
-        if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+        if ( ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' ) )
             $treeIndex = expRenderStats::templateEnter( $uri, $resourceData['template-filename'] ?? null, $resourceData['template-name'] ?? null,
                                                         !empty( $resourceData['compiled-template'] ) );
 

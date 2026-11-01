@@ -287,7 +287,7 @@ class eZTemplateCacheFunction
                        "functionChildren" => $functionChildren,
                        "rootNamespace" => $rootNamespace,
                        "currentNamespace" => $currentNamespace );
-        $noted = !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' );
+        $noted = ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' );
         $start = microtime( true );
         $this->generateMs = null;
         $result = $cacheFile->processCache( array( 'eZTemplateCacheBlock', 'retrieveContent' ),
@@ -309,7 +309,7 @@ class eZTemplateCacheFunction
     function generateProcessedContent( $fname, $args )
     {
         extract( $args );
-        $noted = !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' );
+        $noted = ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' );
         if ( $noted )
             expRenderStats::cacheBlockGenerationStarted();
         $start = microtime( true );
