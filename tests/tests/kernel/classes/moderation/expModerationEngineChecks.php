@@ -274,7 +274,8 @@ trait expModerationEngineChecks
         foreach ( $list->page( self::filters( array( 'held' => 'yes' ) ), true )['rows'] as $row )
             $rows[$row['id']] = $row;
         $auto = $rows[self::$first];                                  // i = 0: held automatically, hidden, recorded
-        $this->assertTrue( $auto['held'] && $auto['auto'] && $auto['hidden'] && $auto['recorded'] );
+        foreach ( array( 'held', 'auto', 'hidden', 'recorded' ) as $flag )
+            $this->assertTrue( $auto[$flag], "i = 0 is $flag: " . json_encode( $auto ) );
         $this->assertSame( 'published', $auto['status'] );
         $this->assertSame( '198.51.100.0/24', $auto['ip'], 'the earliest event' );
         $this->assertSame( 'Mozilla/5.0 (first)', $auto['ua'] );
