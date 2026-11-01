@@ -13,6 +13,9 @@
  *  SC-06 the text output of a build report names the counts, the diff and the link check (buildLines())
  *  SC-07 the shipped settings: [StaticPublishSettings] and the [Target_example] template hold every setting of a
  *        target, with the defaults of expStaticTarget::DEFAULTS
+ *  SC-08 the publish report keys, push and run states, tag names, tables, the shipped Push and Commit* settings, the
+ *        cronjob part staticpublish, the upgrade step and the audit events
+ *  SC-09 the text output of a publish report (gitLines())
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -28,6 +31,11 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging]',
         'exp:static:diff' => '[format:][verify][check-links][mount:*]',
         'exp:static:serve' => '[port:][host:][base-path:][format:]',
+        'exp:static:publish' => '[build][message:][no-push][format:]',
+        'exp:static:rollback' => '[apply][message:][no-push][format:]',
+        'exp:static:push' => '[format:]',
+        'exp:static:keys' => '[generate][replace][format:]',
+        'exp:static:status' => '[limit:][format:]',
     );
 
     /** The arguments. Add, never change or remove. */
@@ -35,6 +43,11 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:build' => '[target]',
         'exp:static:diff' => '[target]',
         'exp:static:serve' => '[target]',
+        'exp:static:publish' => '[target]',
+        'exp:static:rollback' => '[target][to]',
+        'exp:static:push' => '[target]',
+        'exp:static:keys' => '[target]',
+        'exp:static:status' => '[target]',
     );
 
     /** command => entry point in bin/php */
@@ -43,7 +56,16 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:build' => 'expstaticbuild',
         'exp:static:diff' => 'expstaticdiff',
         'exp:static:serve' => 'expstaticserve',
+        'exp:static:publish' => 'expstaticpublish',
+        'exp:static:rollback' => 'expstaticrollback',
+        'exp:static:push' => 'expstaticpush',
+        'exp:static:keys' => 'expstatickeys',
+        'exp:static:status' => 'expstaticstatus',
     );
+
+    /** The keys of a publish, rollback or push report (expStaticPublisher), the push states and run states. Add only. */
+    const PUBLISH_KEYS = array( 'mode', 'target', 'run_id', 'directory', 'branch', 'remote', 'credential', 'build', 'state', 'commit_id', 'tag_name',
+                                'tag_number', 'push_state', 'counts', 'messages', 'errors', 'warnings', 'exit' );
 
     public static function setUpBeforeClass(): void
     {
@@ -201,5 +223,44 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
             else if ( $name !== 'Name' && $name !== 'SiteAccess' )
                 $this->assertStringContainsString( "\n$name=$default\n", $block, "$name=$default" );
         }
+    }
+
+    /** SC-08 */
+    public function testPublishContract()
+    {
+        $source = file_get_contents( self::$root . '/kernel/classes/staticpublish/expstaticpublisher.php' );
+        foreach ( self::PUBLISH_KEYS as $key )
+            $this->assertStringContainsString( "'$key' =>", $source, "publish report key $key" );
+        $this->assertSame( array( 'pushed', 'pending', 'disabled', 'no-remote', 'none' ), array( expStaticRepository::PUSHED, expStaticRepository::PENDING,
+                                                                                               expStaticRepository::DISABLED, expStaticRepository::NO_REMOTE,
+                                                                                               expStaticRepository::NONE ) );
+        $this->assertSame( array( 'done', 'unchanged', 'failed', 'publish', 'rollback' ), array( expStaticStatus::DONE, expStaticStatus::UNCHANGED,
+                                                                                                expStaticStatus::FAILED, expStaticStatus::PUBLISH,
+                                                                                                expStaticStatus::ROLLBACK ) );
+        $this->assertSame( 'static/github-public/3', expStaticRepository::tagName( 'github-public', 3 ) );
+        $this->assertSame( array( 'exp_static_run', 'exp_static_page' ), array( expStaticStatus::RUN_TABLE, expStaticStatus::PAGE_TABLE ) );
+        $ini = file_get_contents( self::$root . '/settings/staticcache.ini' );
+        foreach ( array( 'Push=enabled', 'CommitName=Exponential static publishing', 'CommitEmail=' ) as $line )
+            $this->assertStringContainsString( "\n$line\n", $ini, $line );
+        $this->assertStringContainsString( "\n[CronjobPart-staticpublish]\nScripts[]=staticpublish.php\n", file_get_contents( self::$root . '/settings/cronjob.ini' ) );
+        $this->assertFileExists( self::$root . '/cronjobs/staticpublish.php' );
+        $upgrade = file_get_contents( self::$root . '/settings/upgrade.ini' );
+        $this->assertStringContainsString( "\nStepList[]=expUpgradeStepStaticPublishTables\n", $upgrade );
+        $audit = file_get_contents( self::$root . '/settings/audit.ini' );
+        foreach ( array( 'publish', 'rollback', 'credential' ) as $event )
+            $this->assertStringContainsString( "\nEnabled[]=system.staticpublish.$event\n", $audit );
+    }
+
+    /** SC-09 */
+    public function testGitLines()
+    {
+        $report = array( 'mode' => 'publish', 'target' => 'github-public', 'branch' => 'gh-pages', 'directory' => 'var/site/static-publish/github-public',
+                         'messages' => array( 'committed 0123456789 on gh-pages: 3 added, 1 changed, 0 removed', 'tagged static/github-public/2' ),
+                         'commit_id' => str_repeat( 'a', 40 ), 'tag_name' => 'static/github-public/2', 'push_state' => 'pending',
+                         'remote' => 'https://github.com/owner/site.git', 'credential' => 'token:pages_token' );
+        $text = implode( "\n", \Exponential\Command\Kernel\ExpstaticBase::gitLines( $report ) );
+        $this->assertStringContainsString( 'Static publishing: publish of github-public, branch gh-pages in var/site/static-publish/github-public', $text );
+        $this->assertStringContainsString( 'Commit: aaaaaaaaaaaa, tag static/github-public/2', $text );
+        $this->assertStringContainsString( 'Push:   pending (https://github.com/owner/site.git, credential token:pages_token)', $text );
     }
 }

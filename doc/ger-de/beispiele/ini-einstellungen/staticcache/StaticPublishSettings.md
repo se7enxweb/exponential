@@ -2,14 +2,14 @@
 title: staticcache.ini [StaticPublishSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes"
-keywords: Einstellung, staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes
+summary: "Die Einstellungen von [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail"
+keywords: Einstellung, staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [StaticPublishSettings]
 
-Der Block `[StaticPublishSettings]` von `settings/staticcache.ini`, mit 5 Einstellung(en).
+Der Block `[StaticPublishSettings]` von `settings/staticcache.ini`, mit 8 Einstellung(en).
 
 Bearbeiten Sie `settings/staticcache.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -96,6 +96,50 @@ Standard: `100000000`.
 # settings/override/staticcache.ini.append.php
 [StaticPublishSettings]
 MaxFileBytes=100000000
+*/ ?>
+```
+
+## Push
+
+> Ob exp:static:publish und exp:static:rollback zum Remote des Ziels pushen:  
+> enabled, oder disabled, um nur im Ordner des Ziels zu committen und zu taggen  
+> (exp:static:push pusht später). Ein Push wird nie erzwungen.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+Push=enabled
+*/ ?>
+```
+
+## CommitName
+
+> Der Committer einer Veröffentlichung, wenn das Repository des Ziels keinen nennt.  
+
+Standard: `Exponential static publishing`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+CommitName=Exponential static publishing
+*/ ?>
+```
+
+## CommitEmail
+
+> Seine E-Mail-Adresse; leer: static-publish@<Hostname>.  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+CommitEmail=
 */ ?>
 ```
 

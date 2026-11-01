@@ -28,6 +28,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 | `notification` | [notification.php](notification.md) | `php runcronjobs.php notification` |
 | `mailpreferences` | [mailpreferences.php](mailpreferences.md) | `php runcronjobs.php mailpreferences` |
 | `migrationpush` | [migrationpush.php](migrationpush.md) | `php runcronjobs.php migrationpush` |
+| `staticpublish` | [staticpublish.php](staticpublish.md) | `php runcronjobs.php staticpublish` |
 | `mailbounces` | [mailbounces.php](mailbounces.md) | `php runcronjobs.php mailbounces` |
 | `usersessions` | [usersessions.php](usersessions.md) | `php runcronjobs.php usersessions` |
 | `useraudit` | [useraudit.php](useraudit.md) | `php runcronjobs.php useraudit` |
@@ -66,6 +67,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 | [rssimport.php](rssimport.md) | Fetch and import configured RSS feeds into the content tree | (default) |
 | [session_gc.php](session_gc.md) | Garbage-collect expired user sessions from the session store |  |
 | [staticcache_cleanup.php](staticcache_cleanup.md) | Remove expired and stale entries from the static page cache |  |
+| [staticpublish.php](staticpublish.md) | Static publishing: push the targets whose publish could not be pushed again (runs with push state pending) | staticpublish |
 | [subtreeexpirycleanup.php](subtreeexpirycleanup.md) | Clean up subtree expiry entries from the URL cache tables |  |
 | [trashpurge.php](trashpurge.md) | Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says) |  |
 | [unlock.php](unlock.md) | Release content objects stuck in a locked editing state | unlock |

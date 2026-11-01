@@ -6,10 +6,8 @@ turns a front siteaccess into a folder of HTML pages and files, with every link 
 own, at the root of a domain or below a path such as `/my-site/`. Editors keep working in Exponential; the public
 site is a copy.
 
-It is new in Exponential 6.0.15. This page describes the build engine and its commands, the first part to ship. Pushing builds
-to a git repository, the screens under Setup > Static publishing and the GitHub setup are added to it as they
-arrive; until then you publish a build with git yourself
-([Host static sites on GitHub Pages](../../guides/host-static-sites-on-github-pages.md) shows how).
+It is new in Exponential 6.0.15. This page describes the build engine, publishing to git and their commands. The
+screens under Setup > Static publishing and the GitHub setup are added to it as they arrive.
 
 [Features of 6.0](README.md) · Related: [Static cache generator](static-cache-generator.md),
 [Host static sites on GitHub Pages with Exponential 6.0.15+](../../guides/host-static-sites-on-github-pages.md),
@@ -26,6 +24,10 @@ arrive; until then you publish a build with git yourself
 - **`exp:static:diff <target>`**: what the last build changed, whether the folder still matches it, and a link check
   of every page and file.
 - **`exp:static:targets`**: every target with its settings checked.
+- **`exp:static:publish <target>`**: commits the build in the target's own git repository, tags it
+  `static/<target>/<n>` and pushes it, never forced, signed in with a token or an SSH deploy key that never reaches a
+  command line or a log. `exp:static:rollback`, `exp:static:push`, `exp:static:keys` and `exp:static:status` go with
+  it.
 
 ## How a build works
 
@@ -112,7 +114,9 @@ All settings are in `staticcache.ini`, next to the static cache's `[CacheSetting
 | `PostProcess[]` | `strip` | `strip` always runs |
 | `ExcludePaths[]` | empty | Pages left out by path (`/members/*`); links to them go to the live site |
 | `ExcludeSections[]` | empty | Pages left out by the section of their content |
-| `Kind`, `Remote`, `Branch`, `Folder`, `Delivery`, `Credential` | `github-pages`, empty, `gh-pages`, empty, `branch`, `none` | Where the build is published; read and checked now, used when publishing to git arrives |
+| `Remote`, `Branch`, `Folder` | empty, `gh-pages`, empty | The git address the build is pushed to, its branch, and `docs` when the site is in `/docs` of the branch (the build is then written to `<folder>/docs`) |
+| `Credential` | `none` | How the push signs in: `token:<secret>`, `token:env:<VARIABLE>`, `sshkey:<secret>`, `app:<installation>` (with the GitHub integration) or `none` |
+| `Kind`, `Delivery` | `github-pages`, `branch` | Read and checked now, used by the GitHub setup |
 | `Search`, `Forms`, `Triggers[]`, `Schedule`, `Notify[]`, `Webhook` | `disabled`, `hide`, `manual` and `cli`, empty, `failure`, empty | Read and checked now, used by later parts of static publishing |
 
 The generated reference lists every setting with its comment:
@@ -132,11 +136,41 @@ a sitemap without `PublicURL`) are warnings.
 | `exp:static:build <target>` | Builds; `--dry-run` reports what would change without touching the folder, `--paths=/a,/b` or `--nodes=12,34` builds only those pages and keeps the rest, `--report=<file>` also writes the report, `--crawl-url` and `--max-pages` override the target |
 | `exp:static:diff <target>` | What the last build changed; `--verify` compares the folder with its manifest; `--check-links --mount=/ --mount=/my-site/` checks every link and file as a browser would |
 | `exp:static:serve <target>` | Serves the folder on `http://127.0.0.1:8090/<base path>` with PHP's built-in web server; `--base-path=/` serves it at the root |
+| `exp:static:publish <target>` | Commits the build, tags it `static/<target>/<n>` and pushes it; `--build` builds first, `--message` sets the commit message, `--no-push` commits and tags only |
+| `exp:static:rollback <target> <n>` | Lists what going back to publish `n` (or the tag `static/<target>/<n>`) would change; `--apply` makes it a new commit with the next tag and pushes it |
+| `exp:static:push [<target>]` | Pushes the targets whose push failed again (also the cronjob part `staticpublish`) |
+| `exp:static:keys <target>` | `--generate` makes the target's SSH deploy key and prints its public half; without it, shows the public half and fingerprint |
+| `exp:static:status <target>` | The target's repository, credential (readable or not, never the value), the last runs and the pages; `--limit` |
 
 Every command takes `--format=json` and then prints one JSON document, schema `exp-static/1`. The exit codes are
 those of `exp:upgrade`: 0 done, 1 failed, 2 usage, 3 the database unreachable, 4 internal error. The generated pages:
 [exp:static:build](../../examples/commands/expstaticbuild.md), [exp:static:diff](../../examples/commands/expstaticdiff.md),
-[exp:static:serve](../../examples/commands/expstaticserve.md), [exp:static:targets](../../examples/commands/expstatictargets.md).
+[exp:static:serve](../../examples/commands/expstaticserve.md), [exp:static:targets](../../examples/commands/expstatictargets.md),
+[exp:static:publish](../../examples/commands/expstaticpublish.md), [exp:static:rollback](../../examples/commands/expstaticrollback.md),
+[exp:static:push](../../examples/commands/expstaticpush.md), [exp:static:keys](../../examples/commands/expstatickeys.md),
+[exp:static:status](../../examples/commands/expstaticstatus.md).
+
+## Publishing to git
+
+The target's folder `var/<site>/static-publish/<target>/` is a git repository of its own (never inside the site's
+repository). `exp:static:publish` commits only the build's files in it, as one commit per publish with the annotated
+tag `static/<target>/<n>`, and pushes the branch and the tags to the target's `Remote`. A push is never forced and a
+tag is never moved; a push that fails keeps the commit local with the push state `pending`, and `exp:static:push` or
+the cronjob part `staticpublish` sends it again. A rollback is a new commit holding the files of an earlier tag, so
+the history only grows. One build, publish, rollback or push of a target runs at a time (a lock per target).
+
+Credentials are names: a token in Setup > Secrets or an environment variable reaches git through `GIT_ASKPASS` and
+the environment of the one git process; an SSH deploy key, made per target by `exp:static:keys`, through a file only
+the process can read for the time of the push and `GIT_SSH_COMMAND`. Neither is ever on a command line, in the remote
+address or in a log.
+
+Every publish and rollback is a row of `exp_static_run` (state, counts, bytes, commit, tag, push state, who, when),
+and the pages of the last publish are in `exp_static_page`; the upgrade step `6.0.15-static-publish-tables` makes both
+tables on every database. The audit records `system.staticpublish.publish`, `.rollback` and `.credential`.
+
+Guides: [Repositories and credentials](../../guides/static-publishing-targets-and-credentials.md),
+[History and rollback](../../guides/static-publishing-history-and-rollback.md),
+[SSH deploy keys](../../guides/static-publishing-deploy-keys.md).
 
 ## Privacy
 

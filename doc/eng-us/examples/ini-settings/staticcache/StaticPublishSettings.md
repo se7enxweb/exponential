@@ -2,14 +2,14 @@
 title: staticcache.ini [StaticPublishSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes"
-keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes
+summary: "The settings of [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail"
+keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [StaticPublishSettings]
 
-The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 5 setting(s).
+The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 8 setting(s).
 
 Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -96,6 +96,50 @@ Default: `100000000`.
 # settings/override/staticcache.ini.append.php
 [StaticPublishSettings]
 MaxFileBytes=100000000
+*/ ?>
+```
+
+## Push
+
+> Whether exp:static:publish and exp:static:rollback push to the target's  
+> Remote: enabled, or disabled to commit and tag in the target's folder only  
+> (exp:static:push pushes later). A push is never forced.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+Push=enabled
+*/ ?>
+```
+
+## CommitName
+
+> The committer of a publish when the target's repository names none.  
+
+Default: `Exponential static publishing`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+CommitName=Exponential static publishing
+*/ ?>
+```
+
+## CommitEmail
+
+> Its e-mail address; empty: static-publish@<host name>.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+CommitEmail=
 */ ?>
 ```
 
