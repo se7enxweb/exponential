@@ -76137,6 +76137,14 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Níl an topaic seo “Eisithe”; ní fheiceann léitheoirí í.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Imirceanna</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Athruithe ar an tsuiteáil a choinnítear mar chomhaid: a stádas, na rití, rith agus cealú.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

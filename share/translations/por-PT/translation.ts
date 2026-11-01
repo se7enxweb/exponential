@@ -76137,6 +76137,14 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Este tópico não está Publicado; os leitores não o veem.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrações</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Alterações à instalação guardadas como ficheiros: o seu estado, as execuções, executar e reverter.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

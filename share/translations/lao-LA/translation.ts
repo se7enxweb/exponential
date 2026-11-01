@@ -76198,6 +76198,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>ຫົວຂໍ້ນີ້ຍັງບໍ່ຖືກອອກ; ຜູ້ອ່ານບໍ່ເຫັນມັນ.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ການຍ້າຍຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ການປ່ຽນແປງການຕິດຕັ້ງທີ່ເກັບເປັນໄຟລ໌: ສະຖານະ, ການດຳເນີນການ, ດຳເນີນການ ແລະ ຍ້ອນກັບ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76137,6 +76137,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Šī tēma nav izlaista; lasītāji to neredz.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrācijas</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Instalācijas izmaiņas, kas glabātas kā faili: to stāvoklis, izpildes, izpilde un atsaukšana.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

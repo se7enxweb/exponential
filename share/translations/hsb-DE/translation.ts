@@ -76198,6 +76198,14 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Tuta tema njeje wudata; čitarjo ju njewidźa.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Změny instalacije jako dataje: jich staw, běhi, wuwjesć a wróćo wzać.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

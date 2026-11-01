@@ -76744,6 +76744,14 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Este tópico não está liberado; os leitores não o veem.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrações</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Alterações da instalação mantidas como arquivos: sua situação, as execuções, executar e reverter.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

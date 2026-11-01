@@ -76196,6 +76196,14 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Esi sihloko asiKhutshwanga; abafundi abasiboni.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Iifuduko</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Utshintsho kufakelo olugcinwe njengeefayile: imeko yalo, imiqhubo, ukuqhuba nokubuyisela umva.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

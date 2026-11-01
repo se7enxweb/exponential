@@ -76198,6 +76198,14 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Iyi nsanganyamatsiko ntiyatangajwe; abasomyi ntibayibona.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Iyimurwa</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Impinduka ku iyinjizwa zibitswe nka dosiye: uko zihagaze, ibikorwa, gukoresha no gusubiza inyuma.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

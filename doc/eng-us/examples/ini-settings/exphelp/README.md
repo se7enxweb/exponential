@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # exphelp.ini
 
-The shipped settings of `settings/exphelp.ini`: 69 blocks, 270 settings.
+The shipped settings of `settings/exphelp.ini`: 69 blocks, 279 settings.
 
 > The help system of the administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset and  
 > exphelp/report (doc/eng-us/features/6.0/help-system.md). It shows the git-tracked text and Markdown files under doc/,  
@@ -34,40 +34,40 @@ The shipped settings of `settings/exphelp.ini`: 69 blocks, 270 settings.
 | [DashboardSettings](DashboardSettings.md) | 3 |
 | [LandingSettings](LandingSettings.md) | 7 |
 | [Landing_editor](Landing_editor.md) | 2 |
-| [Landing_admin](Landing_admin.md) | 2 |
-| [Landing_developer](Landing_developer.md) | 3 |
+| [Landing_admin](Landing_admin.md) | 3 |
+| [Landing_developer](Landing_developer.md) | 4 |
 | [Landing_user](Landing_user.md) | 2 |
 | [Landing_project-manager](Landing_project-manager.md) | 3 |
 | [Landing_sales-marketing](Landing_sales-marketing.md) | 2 |
 | [Landing_partner](Landing_partner.md) | 2 |
 | [Landing_advocate](Landing_advocate.md) | 2 |
 | [Landing_designer](Landing_designer.md) | 2 |
-| [Landing_hosting](Landing_hosting.md) | 2 |
+| [Landing_hosting](Landing_hosting.md) | 3 |
 | [Landing_app-creator](Landing_app-creator.md) | 2 |
 | [Landing_website-creator](Landing_website-creator.md) | 2 |
 | [Landing_supporter](Landing_supporter.md) | 3 |
 | [Landing_sponsor](Landing_sponsor.md) | 3 |
-| [Landing_trainer](Landing_trainer.md) | 2 |
+| [Landing_trainer](Landing_trainer.md) | 3 |
 | [Landing_press](Landing_press.md) | 2 |
 | [Landing_businesses](Landing_businesses.md) | 2 |
 | [Landing_government](Landing_government.md) | 2 |
 | [Landing_customer](Landing_customer.md) | 2 |
 | [Landing_community](Landing_community.md) | 2 |
 | [Landing_ecosystem](Landing_ecosystem.md) | 2 |
-| [Landing_php-developer](Landing_php-developer.md) | 2 |
+| [Landing_php-developer](Landing_php-developer.md) | 3 |
 | [Landing_theme-designer](Landing_theme-designer.md) | 2 |
 | [Landing_reseller](Landing_reseller.md) | 2 |
 | [Landing_bundler](Landing_bundler.md) | 2 |
 | [Landing_ai-agents](Landing_ai-agents.md) | 2 |
-| [Landing_software-engineer](Landing_software-engineer.md) | 2 |
+| [Landing_software-engineer](Landing_software-engineer.md) | 3 |
 | [Landing_adopter](Landing_adopter.md) | 2 |
 | [Landing_mobile-app-developer](Landing_mobile-app-developer.md) | 2 |
 | [Landing_web-framework-developer](Landing_web-framework-developer.md) | 2 |
 | [Landing_cms-developer](Landing_cms-developer.md) | 2 |
-| [Landing_dxp-developer](Landing_dxp-developer.md) | 2 |
+| [Landing_dxp-developer](Landing_dxp-developer.md) | 3 |
 | [Landing_ecommerce](Landing_ecommerce.md) | 2 |
-| [Landing_integrator](Landing_integrator.md) | 2 |
-| [Landing_dba](Landing_dba.md) | 2 |
+| [Landing_integrator](Landing_integrator.md) | 3 |
+| [Landing_dba](Landing_dba.md) | 3 |
 | [Landing_podcaster](Landing_podcaster.md) | 2 |
 | [Landing_non-profit](Landing_non-profit.md) | 2 |
 | [Landing_local-business](Landing_local-business.md) | 2 |
