@@ -74753,6 +74753,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Bu konu yayımlanmadı; okuyucular onu görmüyor.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Geçişler</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Kurulumda dosya olarak tutulan değişiklikler: durumları, çalıştırmalar, çalıştırma ve geri alma.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

@@ -118,6 +118,7 @@ and reload PHP-FPM. A forgotten `DatabaseImplementation` is the usual reason no 
 - [Changing the database engine](../hosting/migrations/changing-the-database-engine.md) (for hosting companies)
 - [Choosing an engine](choosing-an-engine.md)
 - [Moving a site between hosts](../hosting/migrations/moving-a-site-between-hosts.md)
+- [Migrations versus migrating a site](../migrations/migrations-versus-migrating-a-site.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

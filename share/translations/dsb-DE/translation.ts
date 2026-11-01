@@ -76137,6 +76137,14 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Toś ta tema njejo wudana; cytarje ju njewiźe.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Změny na instalaciji ako dataje: jich staw, běgi, wuwjasć a slědk wześ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -53,7 +53,9 @@ The left column changes with the tab:
 - In **Setup** it lists the pages of the setup in groups, each shown only to roles that may open it. One of them is
   **Migrations** in the group **System**: the migrations of the installation, their runs, a run or a rollback
   started in the background, and the log of each run
-  ([Migrations in the administration](migrations/README.md)).
+  ([Migrations in the administration](migrations/in-the-administration.md); what migrations are, for administrators:
+  [Migrations for administrators](migrations/migrations-for-administrators.md); everything else:
+  [Migrations](migrations/README.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
 

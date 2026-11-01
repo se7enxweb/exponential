@@ -13,6 +13,11 @@ Dieser Bereich ist für Hosting-Anbieter, die Kunden-Websites auf ihre Plattform
 laufende Exponential-Website zu sich holen, was sich ändert, wenn die Website auf einer älteren Version oder einer anderen
 Plattform läuft, und wie Sie unterwegs die Datenbank-Engine wechseln.
 
+> **Sie suchen Migrationen einer Site?** Schema- und Inhaltsänderungen, die die Entwickler eines Kunden als Dateien
+> ausliefern und mit `./console exp:migration:migrate` ausführen, sind eine andere Aufgabe:
+> [Migrationen oder Umzug einer Site](../../migrationen/migrationen-oder-umzug-einer-site.md),
+> [Migrationen auf gehosteten Sites](../betrieb/migrationen-auf-gehosteten-sites.md).
+
 Die tiefe technische Arbeit ist im Installationsbuch, Kapitel 14 bis 17, beschrieben. Diese Seiten ordnen sie für einen
 Hoster: die Bewertung, der Plan, der Umzug, die Prüfungen und die Zuständigkeiten zwischen Ihnen und dem Kunden.
 
@@ -52,6 +57,7 @@ Hoster: die Bewertung, der Plan, der Umzug, die Prüfungen und die Zuständigkei
 - [Hosting-Anbieter: hier beginnen](../hosting-anbieter-hier-beginnen.md)
 - [Wiederherstellung und Wiederherstellungstests](../betrieb/wiederherstellung-und-wiederherstellungstests.md)
 - [Checkliste für den Start einer Kunden-Website](../checklisten/checkliste-fuer-den-start-einer-kunden-website.md)
+- [Migrationen](../../migrationen/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

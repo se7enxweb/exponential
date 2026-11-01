@@ -10,7 +10,8 @@ It is for administrators who upgrade an installation, and for anyone who runs up
 Everything below was run on SQLite, MariaDB and PostgreSQL databases on 29 October 2026.
 
 [Guides](README.md) · Related: [Upgrading](upgrading.md), [The upgrade check](upgrade-check.md),
-[Upgrade steps for extensions](upgrade-steps-for-extensions.md), [Migrations](migrations.md), [Deploying](deploying.md),
+[Upgrade steps for extensions](upgrade-steps-for-extensions.md), [Migrations](migrations.md),
+[Migrations: the hub](../help/migrations/README.md), [Deploying](deploying.md),
 [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 
 ## In short
@@ -325,6 +326,11 @@ Both commands write the same record, so a step applied by a migration run is `do
 the other way round. Each command keeps its own rule for captions: `exp:upgrade` stops when no caption can be taken
 and refuses `--no-caption` on production, a migration run warns and goes on; `exp:upgrade` restores only with
 `--rollback-on-fail`, a migration run restores by default.
+
+Which to write for a change of your own, an upgrade step or a migration:
+[Upgrade step or migration?](../help/migrations/recipes/upgrade-step-or-migration.md). Everything about migrations,
+with recipes and help for each audience: [Migrations](../help/migrations/README.md). Not to be confused with moving
+a site: [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md).
 
 `./console exp:upgrade:verify` looks at every step again and reports drift: a step the record calls done whose
 effect is missing now (a table dropped, a policy removed by hand). It exits 1 when it finds any. Run it after a

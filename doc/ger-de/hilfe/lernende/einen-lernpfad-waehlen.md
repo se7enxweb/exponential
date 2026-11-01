@@ -74,7 +74,7 @@ Kurse.
 |---|---|---|---|
 | Redakteur | Ein Browser | 2 bis 3 Wochen, einige Stunden pro Woche | Redakteure 101: etwa 19,5 Stunden |
 | Administrator | Redakteurpfad; ein Terminal | 4 bis 6 Wochen | Website-Administration: etwa 30 Stunden |
-| Entwickler | Redakteurpfad; Grundlagen in PHP und Git | 6 bis 10 Wochen | Entwickler: etwa 44 Stunden |
+| Entwickler | Redakteurpfad; Grundlagen in PHP und Git | 6 bis 10 Wochen | Entwickler: etwa 45 Stunden |
 | Designer | Redakteurpfad; HTML und CSS | 4 bis 6 Wochen | Theme-Design: etwa 24 Stunden |
 
 Die Zeiten für das Selbststudium sind Vorschläge für Lernende mit einigen Stunden pro Woche; die Kursdauern sind die

@@ -76137,6 +76137,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ez a témakör nincs kiadva; az olvasók nem látják.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrációk</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>A telepítés fájlokban tárolt módosításai: állapotuk, a futtatások, futtatás és visszavonás.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

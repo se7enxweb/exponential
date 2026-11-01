@@ -13,7 +13,7 @@ PostgreSQL-Datenbanken ausgeführt.
 
 [Anleitungen](README.md) · Siehe auch: [Upgrade](aktualisieren.md), [Die Upgrade-Prüfung](upgrade-pruefung.md),
 [Upgrade-Schritte für Erweiterungen](upgrade-schritte-fuer-erweiterungen.md), [Migrationen](migrationen.md),
-[Bereitstellung](bereitstellung.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+[Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Bereitstellung](bereitstellung.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 
 ## Kurz
 
@@ -347,6 +347,11 @@ Beide Befehle schreiben dieselbe Aufzeichnung: ein Schritt, den ein Migrationsla
 hält an, wenn kein Sicherungspunkt angelegt werden kann, und lehnt `--no-caption` auf Produktion ab, ein
 Migrationslauf warnt und macht weiter; `exp:upgrade` stellt nur mit `--rollback-on-fail` wieder her, ein
 Migrationslauf von sich aus.
+
+Was Sie für eine eigene Änderung schreiben, einen Upgrade-Schritt oder eine Migration:
+[Upgrade-Schritt oder Migration?](../hilfe/migrationen/rezepte/upgrade-schritt-oder-migration.md). Alles über
+Migrationen, mit Rezepten und Hilfe für jede Zielgruppe: [Migrationen](../hilfe/migrationen/README.md). Nicht zu
+verwechseln mit dem Umzug einer Site: [Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md).
 
 `./console exp:upgrade:verify` sieht für jeden Schritt erneut nach und meldet Abweichungen: einen Schritt, den die
 Aufzeichnung als erledigt führt, dessen Wirkung aber jetzt fehlt (eine Tabelle gelöscht, eine Richtlinie von Hand

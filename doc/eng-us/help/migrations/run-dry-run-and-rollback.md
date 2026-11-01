@@ -1,8 +1,8 @@
 ---
 title: "Migrations: run, dry run and rollback"
 audience: admin, developer
-category: administration
-order: 3
+category: migrations
+order: 12
 summary: Running the pending migrations from Setup > Migrations, the dry run and the simulated run, resuming a failed run, and taking a run, one migration or an earlier caption back. Each runs in the background as you and asks "Verify it's you".
 keywords: migrations, run migrations, dry run, simulate, resume, rollback, roll back, caption, restore, background run, verify it's you, migration/run, migration/rollback, migration/dryrun, PhpCliPath
 context: migration/dryrun, migration/run, migration/rollback
@@ -149,10 +149,19 @@ More on errors of the runner: [Troubleshooting migrations](../../guides/migratio
 
 ## Related pages
 
-- [Migrations in the administration](README.md)
+- [Migrations: the hub](README.md), [All recipes](recipes/README.md), [Frequently asked questions](faq.md)
+- [The guide](../../guides/migrations.md), [the tutorial](../../guides/migrations-tutorial.md),
+  [PHP migrations](../../guides/migrations-php.md),
+  [Rollback and captions](../../guides/migrations-rollback-and-captions.md),
+  [The migrations repository](../../guides/migrations-repositories.md)
+- [In the administration](in-the-administration.md), [Commands](commands.md), [Settings](settings.md),
+  [Policies, views and events](policies-views-and-events.md)
+- [The file format](../../specifications/6.0/migration-file-format.md),
+  [The feature](../../features/6.0/migrations.md)
+- [When a migration fails](when-a-migration-fails.md),
+  [Troubleshooting messages](../../guides/migrations-troubleshooting.md)
+- [Migrations versus migrating a site](migrations-versus-migrating-a-site.md)
 - [The status and the history](status-and-history.md)
-- [Rollback and captions](../../guides/migrations-rollback-and-captions.md)
-- [Migrations: the guide](../../guides/migrations.md)
 - [migration.ini [AdminSettings]](../../examples/ini-settings/migration/AdminSettings.md)
 - [The views of the module migration](../../examples/module-views/migration/README.md) and
   [its policies](../../examples/policies/migration.md)

@@ -76198,6 +76198,14 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Chan eil an cuspair seo air a Sgaoileadh; chan fhaic luchd-leughaidh e.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Imrichean</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Atharraichean air an stàladh air an cumail mar fhaidhlichean: an staid, na ruithean, ruith is cuir air ais.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

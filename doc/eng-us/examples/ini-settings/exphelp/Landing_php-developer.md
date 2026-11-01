@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_php-developer]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_php-developer] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_php-developer, INI, setting, StartPage, Related
+summary: "The settings of [Landing_php-developer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_php-developer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_php-developer]
 
-The block `[Landing_php-developer]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_php-developer]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,25 @@ Default: `help/php-developers/php-developers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_php-developer]
 StartPage=help/php-developers/php-developers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 6: `help/php-developers/writing-migrations-in-php.md`, `help/migrations/README.md`, `guides/migrations-tutorial.md`, `guides/migrations-php.md`, `help/migrations/recipes/add-a-database-table.md`, `help/migrations/recipes/create-or-change-a-content-class.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_php-developer]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/php-developers/writing-migrations-in-php.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=guides/migrations-tutorial.md
+InfoPages[]=guides/migrations-php.md
+InfoPages[]=help/migrations/recipes/add-a-database-table.md
+InfoPages[]=help/migrations/recipes/create-or-change-a-content-class.md
 */ ?>
 ```
 

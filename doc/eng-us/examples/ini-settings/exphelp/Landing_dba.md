@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_dba]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_dba] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_dba, INI, setting, StartPage, Related
+summary: "The settings of [Landing_dba] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_dba, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_dba]
 
-The block `[Landing_dba]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_dba]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,25 @@ Default: `help/database-administrators/database-administrators-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_dba]
 StartPage=help/database-administrators/database-administrators-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 6: `help/hosting/operations/migrations-on-hosted-sites.md`, `help/migrations/README.md`, `help/migrations/recipes/engine-notes.md`, `help/migrations/recipes/coming-from-sql-update-files.md`, `help/migrations/recipes/captions-and-rollback-in-practice.md`, `help/migrations/when-a-migration-fails.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_dba]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/hosting/operations/migrations-on-hosted-sites.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=help/migrations/recipes/engine-notes.md
+InfoPages[]=help/migrations/recipes/coming-from-sql-update-files.md
+InfoPages[]=help/migrations/recipes/captions-and-rollback-in-practice.md
+InfoPages[]=help/migrations/when-a-migration-fails.md
 */ ?>
 ```
 

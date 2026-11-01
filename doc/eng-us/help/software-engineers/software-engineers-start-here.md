@@ -188,6 +188,7 @@ operates and funds the project ([Who is 7x?](../who-is-7x.md), [Who is the Expon
 - [Exponential for software engineers](exponential-for-software-engineers.md)
 - [Architecture overview](architecture-overview.md)
 - [Reading path for software engineers](software-engineers-reading-path.md)
+- [Migrations for software engineers](migrations-for-software-engineers.md), [Migrations](../migrations/README.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

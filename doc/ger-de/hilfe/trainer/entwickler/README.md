@@ -3,7 +3,7 @@ title: "Entwickler: Kursüberblick"
 audience: trainer, developer
 category: training
 order: 1
-summary: Der Kurs für PHP-Entwickler, die auf Exponential aufbauen, von einer Entwicklungsinstallation aus Git-Klonen über die Template-Sprache, Designs und Overrides, das Inhaltsmodell, Fetch-Funktionen, Module und Views, Erweiterungen, Einstellungen, die Konsole, Workflows, REST, Tests, die RAD-Werkzeuge und Velocity bis zu einem Pull Request. Dreizehn Module, 52 Lektionen, etwa 44 Stunden Unterricht.
+summary: Der Kurs für PHP-Entwickler, die auf Exponential aufbauen, von einer Entwicklungsinstallation aus Git-Klonen über die Template-Sprache, Designs und Overrides, das Inhaltsmodell, Fetch-Funktionen, Module und Views, Erweiterungen, Einstellungen, die Konsole, Workflows, REST, Tests, die RAD-Werkzeuge und Velocity bis zu einem Pull Request. Dreizehn Module, 53 Lektionen, etwa 45 Stunden Unterricht.
 keywords: entwickler, kursüberblick, lesepfad, PHP, templates, overrides, inhaltsklassen, datentypen, fetch, module, views, erweiterungen, INI, konsole, persistente objekte, workflows, cronjobs, REST, tests, RAD-werkzeuge, Velocity, pull request, developers, course overview, reading path, content classes, datatypes, extensions, console, persistent objects, tests, RAD tools
 type: help
 ---
@@ -30,7 +30,7 @@ eigenen Erweiterungen bauen, sie testen, unter Velocity deployen und Änderungen
 
 | | |
 |---|---|
-| Dauer | 52 Lektionen, etwa 44 Stunden Unterricht (mit Pausen etwa sieben Tage) |
+| Dauer | 53 Lektionen, etwa 45 Stunden Unterricht (mit Pausen etwa sieben Tage) |
 | Format | Praxisorientiert; im Schulungsraum oder online; eine Entwicklungsinstallation pro Person |
 | Niveau | Fortgeschrittene bis Experten |
 | Voraussetzungen | PHP und objektorientierte Programmierung, Git, Composer, ein Terminal; ein GitHub-Konto für Modul 13 |
@@ -48,7 +48,7 @@ eigenen Erweiterungen bauen, sie testen, unter Velocity deployen und Änderungen
 | [6. Module und Views](modul-06-module-und-views/README.md) | 4 | 3 Std. 35 Min. |
 | [7. Erweiterungen](modul-07-erweiterungen/README.md) | 5 | 3 Std. 55 Min. |
 | [8. Einstellungen und Siteaccesses](modul-08-einstellungen-und-siteaccesses/README.md) | 4 | 3 Std. 15 Min. |
-| [9. Die Konsole und persistente Objekte](modul-09-die-konsole-und-persistente-objekte/README.md) | 4 | 3 Std. 20 Min. |
+| [9. Die Konsole und persistente Objekte](modul-09-die-konsole-und-persistente-objekte/README.md) | 5 | 4 Std. 20 Min. |
 | [10. Workflows, Ereignisse und Cronjobs](modul-10-workflows-ereignisse-und-cronjobs/README.md) | 3 | 2 Std. 40 Min. |
 | [11. Die REST-API](modul-11-die-rest-api/README.md) | 3 | 2 Std. 45 Min. |
 | [12. Tests und Qualität](modul-12-tests-und-qualitaet/README.md) | 3 | 2 Std. 25 Min. |

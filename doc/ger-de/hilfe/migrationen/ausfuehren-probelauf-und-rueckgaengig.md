@@ -1,8 +1,8 @@
 ---
 title: "Migrationen: Ausführen, Probelauf und Rücknahme"
 audience: admin, developer
-category: administration
-order: 3
+category: migrations
+order: 12
 summary: Die ausstehenden Migrationen aus Setup > Migrationen ausführen, der Probelauf und der simulierte Lauf, einen fehlgeschlagenen Lauf fortsetzen und einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen. Jedes läuft im Hintergrund unter Ihrem Benutzer und fragt nach „Identität bestätigen“.
 keywords: Migrationen, Migrationen ausführen, Probelauf, simulieren, fortsetzen, Rücknahme, zurücknehmen, Sicherungspunkt, wiederherstellen, Lauf im Hintergrund, Identität bestätigen, run migrations, dry run, simulate, resume, rollback, migration/run, migration/rollback, migration/dryrun, PhpCliPath
 context: migration/dryrun, migration/run, migration/rollback
@@ -158,10 +158,19 @@ Mehr zu Fehlern des Runners: [Fehlerbehebung bei Migrationen](../../anleitungen/
 
 ## Verwandte Seiten
 
-- [Migrationen in der Administration](README.md)
+- [Migrationen: der Einstieg](README.md), [Alle Rezepte](rezepte/README.md), [Häufige Fragen](faq.md)
+- [Die Anleitung](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
+  [PHP-Migrationen](../../anleitungen/migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md)
+- [In der Administration](in-der-administration.md), [Befehle](befehle.md), [Einstellungen](einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../../spezifikationen/6.0/migrationsdateiformat.md),
+  [Die Funktion](../../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](../../anleitungen/migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](migrationen-oder-umzug-einer-site.md)
 - [Stand und Verlauf](status-und-verlauf.md)
-- [Rücknahme und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md)
-- [Migrationen: die Anleitung](../../anleitungen/migrationen.md)
 - [migration.ini [AdminSettings]](../../beispiele/ini-einstellungen/migration/AdminSettings.md)
 - [Die Ansichten des Moduls migration](../../beispiele/modulansichten/migration/README.md) und
   [seine Richtlinien](../../beispiele/richtlinien/migration.md)

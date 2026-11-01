@@ -121,6 +121,7 @@ Kunden fest.
 - [Datenbanken in der offiziellen Reihenfolge](../grundlagen/datenbanken-in-der-offiziellen-reihenfolge.md)
 - [Eine Website zwischen Hostern umziehen](eine-website-zwischen-hostern-umziehen.md)
 - [Kapitel 9: Datenbanken](../../../installation/09-datenbanken.md)
+- [Migrationen oder Umzug einer Site](../../migrationen/migrationen-oder-umzug-einer-site.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

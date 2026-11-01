@@ -76137,6 +76137,14 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Tätä aihetta ei ole julkaistu; lukijat eivät näe sitä.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraatiot</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Tiedostoina säilytetyt asennuksen muutokset: niiden tila, ajot, ajaminen ja peruminen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

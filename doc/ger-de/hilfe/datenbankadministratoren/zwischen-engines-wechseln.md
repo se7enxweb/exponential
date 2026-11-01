@@ -124,6 +124,7 @@ lädt.
 - [Die Datenbank-Engine wechseln](../hosting/migrationen/die-datenbank-engine-einer-kunden-website-wechseln.md) (für Hosting-Unternehmen)
 - [Eine Engine wählen](eine-engine-waehlen.md)
 - [Eine Website zwischen Hosts umziehen](../hosting/migrationen/eine-website-zwischen-hostern-umziehen.md)
+- [Migrationen oder Umzug einer Site](../migrationen/migrationen-oder-umzug-einer-site.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

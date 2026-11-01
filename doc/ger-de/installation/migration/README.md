@@ -18,6 +18,11 @@ exportieren können, wie es sich auf das Inhaltsmodell von Exponential abbilden 
 Sie ein eigenes Skript brauchen, URLs und Weiterleitungen, Metadaten für Suchmaschinen, Tests, Umstellung,
 Rückfallplan und eine Checkliste.
 
+> **Sie suchen Migrationen einer Site?** Schema- und Inhaltsänderungen, als Dateien unter Versionskontrolle
+> geschrieben und mit `./console exp:migration:migrate` auf jede Installation angewendet, sind eine andere Aufgabe:
+> [Migrationen oder Umzug einer Site](../../hilfe/migrationen/migrationen-oder-umzug-einer-site.md),
+> [Migrationen](../../hilfe/migrationen/README.md).
+
 [Inhalt des Installationshandbuchs](../README.md) · Beginnen Sie mit: [Der allgemeinen Migrations-Checkliste](checkliste.md)
 
 ## Inhalt

@@ -76198,6 +76198,14 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Mbir bii siiwaleesul; jàngkat yi gisuñu ko.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Tukkiteef yi</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Coppite yu samp gi yu ñu denc ni dosiye: seen sitiwaasiyoŋ, doxal yi, doxal ak dellu ginnaaw.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

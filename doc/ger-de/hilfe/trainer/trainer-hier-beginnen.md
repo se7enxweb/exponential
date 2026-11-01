@@ -133,6 +133,7 @@ indem er das Passwort ändert; installieren Sie sie zwischen den Kursen neu. [De
 - [Kurskatalog](kurskatalog.md)
 - [Train the Trainer: Kursüberblick](train-the-trainer/README.md)
 - [Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
+- [Lektion 9.5: Migrationen](entwickler/modul-09-die-konsole-und-persistente-objekte/migrationen.md), [Migrationen](../migrationen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-see-also-645 -->
