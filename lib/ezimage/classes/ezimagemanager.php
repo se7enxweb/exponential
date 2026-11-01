@@ -1031,6 +1031,42 @@ class eZImageManager
         return false;
     }
 
+    /**
+     * The filters of the alias $aliasName with the image's crop rectangle cut out first (an alias made from
+     * the original) and its crop filters centered on the focal point, see expImageFocalPoint.
+     *
+     * @param string $aliasName
+     * @param array $filters the alias's filters
+     * @param array $sourceMimeData the image the alias is made from
+     * @param array $focalData focal => array|null, crop => array|null, width/height => size of the original
+     * @return array
+     */
+    protected function focalFilters( $aliasName, array $filters, $sourceMimeData, array $focalData )
+    {
+        $focal = isset( $focalData['focal'] ) ? expImageFocalPoint::normalizePoint( $focalData['focal']['x'] ?? null, $focalData['focal']['y'] ?? null ) : null;
+        $crop = isset( $focalData['crop'] ) ? expImageFocalPoint::normalizeCrop( $focalData['crop'] ) : null;
+        if ( $focal === null && $crop === null )
+            return $filters;
+        $size = isset( $sourceMimeData['url'] ) && is_file( $sourceMimeData['url'] ) ? @getimagesize( $sourceMimeData['url'] ) : false;
+        if ( !$size || $size[0] <= 0 || $size[1] <= 0 )
+            return $filters;
+
+        $aliasList = $this->aliasList();
+        if ( !expImageFocalPoint::referenceChain( $aliasList, $aliasName ) )
+        {
+            $plan = expImageFocalPoint::plan( $filters, $size[0], $size[1], $focal, $crop );
+            return $plan['filters'];
+        }
+        // Made from another alias: that one is cut already, the focal point is followed through its filters
+        $sourceFocal = expImageFocalPoint::focalInSource( $aliasList, $aliasName, $focal, $crop,
+                                                          isset( $focalData['width'] ) ? (int)$focalData['width'] : 0,
+                                                          isset( $focalData['height'] ) ? (int)$focalData['height'] : 0 );
+        if ( !is_array( $sourceFocal ) )
+            return $filters;
+        $plan = expImageFocalPoint::plan( $filters, $size[0], $size[1], $sourceFocal, null );
+        return $plan['filters'];
+    }
+
     /*!
      \static
      Analyzes the image in the MIME structure \a $mimeData and fills in extra information if found.
@@ -1135,6 +1171,12 @@ class eZImageManager
         if ( isset( $parameters['filters'] ) )
         {
             $filters = array_merge( $filters, $parameters['filters'] );
+        }
+
+        // The focal point and crop rectangle of the image attribute (expImageFocalPoint)
+        if ( $alias && $aliasName !== 'original' && isset( $parameters['focal'] ) && is_array( $parameters['focal'] ) )
+        {
+            $filters = $this->focalFilters( $aliasName, $filters, $sourceMimeData, $parameters['focal'] );
         }
 
         $wantedFilters = $filters;

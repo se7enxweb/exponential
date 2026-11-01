@@ -173,14 +173,24 @@
     ],
     "kernel/classes/datatypes/ezimage/ezimagetype.php": [
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
-      "tests/tests/kernel/classes/expImageUploadValidatorTest.php"
+      "tests/tests/kernel/classes/expImageUploadValidatorTest.php",
+      "tests/tests/lib/ezimage/expImageFocalPointTest.php"
     ],
     "kernel/classes/datatypes/ezimage/ezimagealiashandler.php": [
       "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
-      "tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php"
+      "tests/tests/kernel/datatypes/ezimage/eZImageAliasHandlerGuardsTest.php",
+      "tests/tests/lib/ezimage/expImageFocalPointTest.php"
     ],
     "lib/ezimage/classes/ezimagemanager.php": [
-      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php"
+      "tests/tests/kernel/datatypes/ezimage/expImageSvgTest.php",
+      "tests/tests/lib/ezimage/expImageFocalPointTest.php"
+    ],
+    "settings/image.ini": [
+      "tests/tests/lib/ezimage/expImageFocalPointTest.php",
+      "tests/tests/lib/ezimage/eZImageShellHandlerTest.php"
+    ],
+    "lib/ezimage/classes/expimagefocalpoint.php": [
+      "tests/tests/lib/ezimage/expImageFocalPointTest.php"
     ],
     "kernel/classes/expimageuploadvalidator.php": [
       "tests/tests/kernel/classes/expImageUploadValidatorTest.php",

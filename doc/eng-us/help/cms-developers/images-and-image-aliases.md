@@ -21,8 +21,9 @@ redesign changes settings, not uploads.
 4. [Defining an alias for your design](#defining-an-alias-for-your-design)
 5. [Images in templates](#images-in-templates)
 6. [Alternative text](#alternative-text)
-7. [Converters: GD and ImageMagick](#converters-gd-and-imagemagick)
-8. [After a change](#after-a-change)
+7. [Focal point and crop](#focal-point-and-crop)
+8. [Converters: GD and ImageMagick](#converters-gd-and-imagemagick)
+9. [After a change](#after-a-change)
 
 ## Image attribute or image object
 
@@ -116,6 +117,15 @@ text is required** on the image attribute in the class editor; editors then cann
 and bulk uploads do not ask for it, so fill it afterwards
 ([Alternative text is required](../../guides/content-model-and-editing.md#alternative-text-is-required-image-fields)).
 A decorative image gets an empty `alt`, deliberately, in the template.
+
+## Focal point and crop
+
+An image can carry a focal point and a crop rectangle, per attribute version (fractions of the original, stored in
+the attribute's XML). The crop rectangle is cut out before an alias's filters, and every `geometry/crop` filter puts
+its window around the focal point instead of at its own `x;y`, so a scale-and-crop alias keeps what matters in the
+picture. Images without them are converted exactly as before. Templates read `focal_point` (with `position`, ready for
+CSS `object-position`) and `crop_rectangle`. Code sets them with `setFocalPoint()` on a draft, which drops the
+aliases made so far. Details: [Image focal point and crop](../../bc/6.0/image-focal-point.md).
 
 ## Converters: GD and ImageMagick
 

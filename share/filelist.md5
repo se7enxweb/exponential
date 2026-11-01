@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-b6c31bec7697eb38ac82d8cd8e75c426  autoload/ezp_kernel.php
+52edf42dd8802599b7372bdb8921174d  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3506,6 +3506,7 @@ e2a516f7c4bc0c989a595f527c163d15  doc/eng-us/bc/6.0/frankenphp.md
 574676e730c70304294db7266381f8b6  doc/eng-us/bc/6.0/http-caching.md
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/eng-us/bc/6.0/http2-and-cache-warming.md
 4daa97aa9e1afa3dccfca44847b5a274  doc/eng-us/bc/6.0/httpcache.md
+2b3cb1c9f14801037ef6f761686abd69  doc/eng-us/bc/6.0/image-focal-point.md
 ca5c128dd8208e512e824d14b875859f  doc/eng-us/bc/6.0/ini-save-file-permissions.md
 24d7e5caa496255e38881fcd63bbee64  doc/eng-us/bc/6.0/installer-crontab.md
 3660f38720e7641629091aba0a56e2b5  doc/eng-us/bc/6.0/kernel-services.md
@@ -7634,7 +7635,7 @@ f4af86a602be231434694be5c9e232e4  doc/eng-us/help/cms-developers/fixed-ids-and-n
 a4f9c2304c01d14a765e99f9ee236d4c  doc/eng-us/help/cms-developers/forms-and-information-collection.md
 164e580175700601e261e067c77e6752  doc/eng-us/help/cms-developers/glossary-for-cms-developers.md
 adfc88868b1c47e846877f98efdfb464  doc/eng-us/help/cms-developers/headless-delivery.md
-35f960bf1561a5f597cefda225bab69f  doc/eng-us/help/cms-developers/images-and-image-aliases.md
+f3ce65aa39596459443bb7753cba926a  doc/eng-us/help/cms-developers/images-and-image-aliases.md
 26d381442980b054e737db51c37cdb32  doc/eng-us/help/cms-developers/importing-content.md
 d5c92174a0ea85d2c2c1322c2157b32a  doc/eng-us/help/cms-developers/layouts-for-cms-developers.md
 3b9b2dfa1f7c4da97c2eddc25db2a1cf  doc/eng-us/help/cms-developers/objects-nodes-and-locations.md
@@ -12996,6 +12997,7 @@ d7111a34bd865f6c97f446c3bbbc94b7  doc/ger-de/bc/6.0/audit.md
 0b96cc7ba2b41e430e4d0d1b5e5426f1  doc/ger-de/bc/6.0/backend-dienste-ueber-ezjscore.md
 43f9ce151bcebf6673bf6d7de63ad9ae  doc/ger-de/bc/6.0/benachrichtigungen-oberflaeche-und-befehle.md
 562c6fd94209969fdefa16a00e413b4c  doc/ger-de/bc/6.0/benutzerpasswort-aendern.md
+26c33e7293e7256f3b06589ba63892ff  doc/ger-de/bc/6.0/bild-fokuspunkt.md
 db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
 9084b7b48207a2078a49ff00725cbaab  doc/ger-de/bc/6.0/ci.md
 849862b5a277d882cd0d73fb2f762cca  doc/ger-de/bc/6.0/cleanuprss.md
@@ -16958,7 +16960,7 @@ ac3bd3be03ada013070962693d042e7a  doc/ger-de/hilfe/buendler/webserver-und-engine
 2e226c43277a85c8ac53c9e5bce73628  doc/ger-de/hilfe/cms-entwickler/ansichtsmodi.md
 643e6130f443075373e4c9fbbff49b84  doc/ger-de/hilfe/cms-entwickler/barrierefreiheit.md
 5e2b527b03725cb7268b8a02c8dfb9cd  doc/ger-de/hilfe/cms-entwickler/benutzer-und-registrierung.md
-2f50a5c7a25bbebceb751c0ccded53c5  doc/ger-de/hilfe/cms-entwickler/bilder-und-bildvarianten.md
+0d8b1cf31f8ba96f4cbaee7f698a025a  doc/ger-de/hilfe/cms-entwickler/bilder-und-bildvarianten.md
 b8b073619fc2ba32c4eb64fc519f134f  doc/ger-de/hilfe/cms-entwickler/caching-fuer-cms-entwickler.md
 bfe6911b4851391fc8ca70ed665f2e7f  doc/ger-de/hilfe/cms-entwickler/checkliste-fuer-den-projektstart.md
 db8d5654f22de9969cff53e764bc66d0  doc/ger-de/hilfe/cms-entwickler/checkliste-zur-pruefung-des-inhaltsmodells.md
@@ -23250,9 +23252,9 @@ f8c9e00707ca69eae9098f53c56d6b33  kernel/classes/datatypes/ezenum/ezenum.php
 cd8b46f8a1585cbd62aa291775b6aa3d  kernel/classes/datatypes/ezenum/ezenumvalue.php
 4060478d48e261a932fc22ddebf49ecf  kernel/classes/datatypes/ezfloat/ezfloattype.php
 29162a3500299e046151e6fd7b935e77  kernel/classes/datatypes/ezidentifier/ezidentifiertype.php
-30853772761df65dee0787b49b82f5d2  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
+e115d3cc03c25f48d1bf756fa472f8b9  kernel/classes/datatypes/ezimage/ezimagealiashandler.php
 49cc04d9f926d0bb5c36e6d265b2e4ec  kernel/classes/datatypes/ezimage/ezimagefile.php
-cc602d952db1d5392565b5be1156c4f2  kernel/classes/datatypes/ezimage/ezimagetype.php
+36c2fcb512b934f90dfa579ca4a1131a  kernel/classes/datatypes/ezimage/ezimagetype.php
 907752076eecc18a2caad49a1bc9857a  kernel/classes/datatypes/ezinisetting/ezinisettingtype.php
 db4f5fd16dda6a4994ad5134c4af0445  kernel/classes/datatypes/ezinteger/ezintegertype.php
 f92b272bbaa7935058597c89390d8ed0  kernel/classes/datatypes/ezisbn/ezisbn10to13converter.php
@@ -25192,6 +25194,7 @@ e10e04e1ef27b7c9cdcc355bbf3bc81d  lib/ezi18n/classes/eztextcodec.php
 9ef0b558f9e01d716a561e0f0b664e48  lib/ezi18n/classes/eztranslatormanager.php
 da8d263c5154ea00c70fcd3fc73e4a53  lib/ezi18n/classes/eztstranslator.php
 2fa3bdd2b425b9762ea7c3505cca2112  lib/ezi18n/classes/ezutf8codec.php
+8221c88da8c0beddf763b149c9b72f61  lib/ezimage/classes/expimagefocalpoint.php
 4f38ac221c25fe2f9194e274c1da789b  lib/ezimage/classes/expsvgsanitizer.php
 f7c94bfa8064d4523b04b8e0a9aaa538  lib/ezimage/classes/ezexifimageanalyzer.php
 ead393ae19eba7a1f689b9881b03d7de  lib/ezimage/classes/ezgifimageanalyzer.php
@@ -25203,7 +25206,7 @@ fa723125c794a0537c4d744d4a708b9a  lib/ezimage/classes/ezimagegdhandler.php
 1ae7e4cd6b82ad58b865bfe82bc1dab1  lib/ezimage/classes/ezimagehandler.php
 8bfa1bcfbd51375a548d464d48f4bba0  lib/ezimage/classes/ezimageinterface.php
 334b4701aa392ea17dbec5eadfd7f8b2  lib/ezimage/classes/ezimagelayer.php
-2a5b4b5ffd5b74b2c2072e6e94c6defe  lib/ezimage/classes/ezimagemanager.php
+9a72eabdf4328368a5cdc357d1ee0dd5  lib/ezimage/classes/ezimagemanager.php
 c02678db42d238b62de066cce7df5451  lib/ezimage/classes/ezimageobject.php
 44e1bd8733c6e2aeae45f08fe854d40a  lib/ezimage/classes/ezimageshellfactory.php
 b9483045d75e89f5a54fa9e90cf3f254  lib/ezimage/classes/ezimageshellhandler.php
@@ -25453,7 +25456,7 @@ cd1dd3724d551ca1880d7e172ea97d07  settings/graphql.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
-e326aed79745d89221b015223d699b99  settings/image.ini
+4e341853704b497c401a0359964c59ac  settings/image.ini
 4a4a4433b13da984646838763e782bad  settings/ini.ini
 84963915c9c37378e037c332dc8f57f3  settings/kernelservices.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
@@ -26822,7 +26825,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-023497ee28c689f93e8b8930386c8d1a  tests/test-map.json
+7ee61cb2d7f0fd64281b7e9b4d41e2a5  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -28357,6 +28360,7 @@ e9086b6ec3b4d0523a25a94ef7d2fac9  tests/tests/lib/ezimage/data/svg/wordmark.svg
 e4c0f66964677a565f85840786ccd1b2  tests/tests/lib/ezimage/eZImageAnalyzerTest.php
 75c5dbb4ccf0994e2ef210b0f171f57a  tests/tests/lib/ezimage/eZImageManagerTest.php
 4e7de3ec4aa1518a13c79eb005afacce  tests/tests/lib/ezimage/eZImageShellHandlerTest.php
+2c7f2bc7854e416387f3e84eb607dec6  tests/tests/lib/ezimage/expImageFocalPointTest.php
 11525f46ca9064bb5218c19b0ff7bfea  tests/tests/lib/ezimage/expSvgSanitizerTest.php
 31371d0534d6dce6bd41254a3302bf34  tests/tests/lib/ezimage/ezimagemanager_test.php
 4125507090fdf662918405f4f1cdbc44  tests/tests/lib/ezimage/ezimageshellhandler_test.php
