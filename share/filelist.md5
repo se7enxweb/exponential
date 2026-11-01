@@ -3381,7 +3381,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-d30c71c5156f6241a38c47583b2148bc  doc/changelogs/6.0/6.0.15.md
+c7b4184420177a9b8886917e29baff48  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6843,7 +6843,7 @@ a101a3bb9c015da9204c6718c2598563  doc/eng-us/guides/images/maintenance/installat
 5aabf1ae3d90cc32431398e0289c5d12  doc/eng-us/guides/mail-preferences-administrator.md
 d11111815c1efec3a438ecccd836072e  doc/eng-us/guides/mail-preferences-developer.md
 9090ac1bfc0b083e83885f6eb1f344b0  doc/eng-us/guides/maintenance-mode.md
-4ccf5993e2ea0552706a553160df253b  doc/eng-us/guides/migrations-php.md
+638923918f631b4fea160e8da4cb7d3f  doc/eng-us/guides/migrations-php.md
 b1ce11a50c0108934aa655898d1ff1f1  doc/eng-us/guides/migrations-repositories.md
 b169d33c12b9f7e55a8e2afd7254058a  doc/eng-us/guides/migrations-rollback-and-captions.md
 ca1f62fc7cab76f6d12393625f273b76  doc/eng-us/guides/migrations-troubleshooting.md
@@ -13056,7 +13056,7 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 19ad3fdd043c1d4d4d203bb6dd95c158  doc/ger-de/anleitungen/mail-einstellungen-administrator.md
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
 6ae23882e297de7698974b9590ff224a  doc/ger-de/anleitungen/migrationen-fehlerbehebung.md
-ebcf18a7d612001f327c9d0135edca23  doc/ger-de/anleitungen/migrationen-php.md
+a8ec4e804519fda9f7a5c702f32d57f9  doc/ger-de/anleitungen/migrationen-php.md
 d2bd1d77a45baa737a330d931f2d5670  doc/ger-de/anleitungen/migrationen-repositories.md
 75ac67092d4c9b86d768d39c158f7ea5  doc/ger-de/anleitungen/migrationen-rueckgaengig-und-captions.md
 93dcb2296fe33584f98acb63b8aec0da  doc/ger-de/anleitungen/migrationen-tutorial.md
@@ -23898,7 +23898,7 @@ f20938c87615cc6479d8be4712905e80  kernel/classes/mailpreferences/expmailsuppress
 68be86c3f7bf3b6d229600cb1e2f2885  kernel/classes/migration/expmigration.php
 4038f92dbe48220b19a8a36e21a19919  kernel/classes/migration/expmigrationadmin.php
 9c896b276554e092921e61f1a4e19978  kernel/classes/migration/expmigrationcaption.php
-ee3f06bfdbfaef2960180e5ed42aac9a  kernel/classes/migration/expmigrationcheck.php
+300667c057d6f529cd37ee1e4e5746bc  kernel/classes/migration/expmigrationcheck.php
 daf7dacd3b9cdac96cbc963c9ba20fc0  kernel/classes/migration/expmigrationcondition.php
 8fa1aaf8f531e8e9e95808f9c397ea5b  kernel/classes/migration/expmigrationcontext.php
 ba6a8f25637a51e3013f4c7a42569714  kernel/classes/migration/expmigrationdefinition.php
@@ -23910,7 +23910,7 @@ bdb495268d4f32f99f83a7ad2b100013  kernel/classes/migration/expmigrationgenerator
 0efa5a76a0952ff389b9a4ddc11317e2  kernel/classes/migration/expmigrationlocator.php
 37f5e6848363c86b1cd2a35f323d0d16  kernel/classes/migration/expmigrationlock.php
 7a78c32853d6bd97c7b773ca78477d70  kernel/classes/migration/expmigrationpartlyrevertiblesteptype.php
-78f98c02b7e3fae81095b63d15930535  kernel/classes/migration/expmigrationphp.php
+2d59d4eb9b7bf4c43e59debdafd5f62e  kernel/classes/migration/expmigrationphp.php
 cc46f34506e36bd67888f7460d411455  kernel/classes/migration/expmigrationprogress.php
 958e400123b8cb15b51a1a6141f18cee  kernel/classes/migration/expmigrationrecord.php
 b4adc420dec40e85ae208c62db1eb3f6  kernel/classes/migration/expmigrationreferences.php
@@ -27849,7 +27849,7 @@ f617f2f7957aa9bc8dc7d9e73bc47f02  tests/tests/kernel/classes/migration/expMigrat
 f317c6c5599454cb669cdb72f76edb25  tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php
 af7cfd6fdaccf80222488af9083577ec  tests/tests/kernel/classes/migration/expMigrationCommandEngineChecks.php
 af3623e16b241e1b9bcf3e52b085f013  tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php
-54ad0b349dea5b34c239a54de8b4050b  tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php
+a04f92610a1d92e799e906fa282448af  tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php
 3216e4de46ae81223134f18fc881f3c3  tests/tests/kernel/classes/migration/expMigrationContentStepsDatabaseTest.php
 c0e3bb09e4a95fc56f1e43466dc91528  tests/tests/kernel/classes/migration/expMigrationContentStepsEngineChecks.php
 ddc36a1d2b6a8564e354c233db2dfddf  tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php

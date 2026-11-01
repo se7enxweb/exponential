@@ -62,6 +62,14 @@ Das Gerüst für eine neue erzeugen:
 | `detect( $context )` | jeder Abfrage des Zustands | `DONE`, `PENDING` oder `NOT_NEEDED` zurückgeben, wenn die Installation es sagen kann, sonst `null` | `null` (die Aufzeichnung entscheidet) |
 | `transactional()` | dem Runner | `false` für eine Migration, die selbst committet (ein langer Stapel) | `true` |
 
+Deklarieren Sie diese Methoden so, wie die Tabelle sie zeigt: öffentlich, nicht statisch, mit ihrem einen Parameter
+`$context` ohne Typ (weitere Parameter nur mit Standardwert). Die übrigen Methoden von `expMigrationPhp`
+(`definition()`, `file()`, `id()`, `source()`, `checksum()`, `state()`, `requires()`, `engines()` ...) gehören ihr und
+sind final; eine Hilfsmethode darf keinen ihrer Namen tragen. PHP würde eine solche Klasse beim Laden der Datei mit
+einem fatalen Fehler ablehnen; `exp:migration:check` und jeder Lauf lesen die Klasse vorher und melden die Methode mit
+Namen (zum Beispiel „...::definition() has the name of a method of expMigrationPhp that a migration cannot declare:
+give it another name“), ohne die Datei zu laden.
+
 `plan()` läuft bei jedem Probelauf, muss also billig sein und darf nicht schreiben. Bauen Sie es, wo es geht, aus reinen
 Funktionen, damit es sich ohne Datenbank testen lässt.
 
