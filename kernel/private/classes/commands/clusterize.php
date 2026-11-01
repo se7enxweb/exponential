@@ -43,6 +43,9 @@ function copyBinaryfilesToDB( $remove )
 
     foreach( $rows as $row )
     {
+        // an attribute without a file has an empty name: its path would be the directory
+        if ( (string)$row['filename'] === '' )
+            continue;
         $filePath = filePathForBinaryFile( $row['filename'] , $row['mime_type'] );
         $cli->output( "- " . $filePath);
         $fileHandler->fileStore( $filePath, 'binaryfile', $remove );
@@ -61,6 +64,8 @@ function copyMediafilesToDB( $remove )
     $rows = $db->arrayQuery('select filename, mime_type from ezmedia' );
     foreach( $rows as $row )
     {
+        if ( (string)$row['filename'] === '' )
+            continue;
         $filePath = filePathForBinaryFile( $row['filename'] , $row['mime_type'] );
         $cli->output( "- " . $filePath);
         $fileHandler->fileStore( $filePath, 'mediafile', $remove );
@@ -80,6 +85,8 @@ function copyImagesToDB( $remove )
     foreach( $rows as $row )
     {
         $filePath = $row['filepath'];
+        if ( (string)$filePath === '' )
+            continue;
         $cli->output( "- " . $filePath);
 
         $mimeData = eZMimeType::findByFileContents( $filePath );

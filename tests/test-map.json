@@ -3598,6 +3598,21 @@
     ],
     "lib/ezdb/classes/ezsqlite3db.php": [
       "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
+    ],
+    "index_cluster.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "kernel/private/rest/classes/ezpkernelrest.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "benchmarks/classes/ezbenchmarkrunner.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "benchmarks/classes/ezbenchmarkclirunner.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "design/standard/templates/content/datatype/pdf/ezxmltags/object_denied.tpl": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ]
   }
 }

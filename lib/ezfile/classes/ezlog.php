@@ -61,7 +61,8 @@ class eZLog
             $logMessage = "[ " . $time . " ]";
             $logMessage .= "[ " . self::siteAccessName() . " ]";
             $logMessage .= '[ ' . self::requestContext() . ' ]';
-            $logMessage .= " $message\n";
+            // One entry, one line: a line break in the message (a user name, a URL) would forge further entries
+            $logMessage .= ' ' . str_replace( array( "\r\n", "\r", "\n" ), ' ', (string)$message ) . "\n";
             @fwrite( $logFile, $logMessage );
             @fclose( $logFile );
             if ( !$fileExisted )
