@@ -11,6 +11,7 @@
  *   exphelp/viewer/<page id>       one page; <page id> is its path below doc/ (features/6.0/help-system.md);
  *                                  (lang)/<key> shows it in another language (the English original)
  *   exphelp/contents               every help page as one tree (all folders open), with a filter box
+ *   exphelp/navigation/<folder>    one folder of the tree; (format)/fragment its list items for the viewer's tree
  *   exphelp/extensions[/<name>]    the documentation of the active extensions: the list, or one extension's pages
  *   exphelp/search/(q)/<words>/(category)/<id>/...  search, or browse without (q); (format)/json: the client's JSON
  *   exphelp/asset/<path>           an image below doc/, with its content type (only git-tracked files)
@@ -70,6 +71,14 @@ $ViewList['contents'] = array(
     'functions' => array( 'read' ),
     'params' => array() );
 
+// One folder of the tree, the rest of the address (exphelp/navigation/guides): its listing; (format)/fragment its list
+// items alone (the viewer loads them when the folder is opened), (format)/tree the whole tree (its filter box)
+$ViewList['navigation'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'navigation.php',
+    'functions' => array( 'read' ),
+    'params' => array(),
+    'unordered_params' => array( 'format' => 'Format' ) );
 // View parameters (q)/(category)/(audience)/(type)/(extension)/(offset)/(limit)/(format), canonical order:
 // expHelp::searchUrl(). (extension)/<name> limits it to the documentation of one extension.
 // Without (q) it browses the pages the filters allow. The search form without scripts is a POST, redirected to the

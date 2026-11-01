@@ -306,6 +306,7 @@ return array(
       'Exponential\\View\\Kernel\\Exphelp\\Feedback'                 => 'kernel/private/classes/views/exphelp/feedback.php',
       'Exponential\\View\\Kernel\\Exphelp\\Image'                    => 'kernel/private/classes/views/exphelp/image.php',
       'Exponential\\View\\Kernel\\Exphelp\\Manual'                   => 'kernel/private/classes/views/exphelp/manual.php',
+      'Exponential\\View\\Kernel\\Exphelp\\Navigation'               => 'kernel/private/classes/views/exphelp/navigation.php',
       'Exponential\\View\\Kernel\\Exphelp\\Pdf'                      => 'kernel/private/classes/views/exphelp/pdf.php',
       'Exponential\\View\\Kernel\\Exphelp\\Report'                   => 'kernel/private/classes/views/exphelp/report.php',
       'Exponential\\View\\Kernel\\Exphelp\\Search'                   => 'kernel/private/classes/views/exphelp/search.php',

@@ -62,12 +62,25 @@ class expUISwitchLanguageProvider extends expUISwitchProvider
     }
 
     /**
+     * Seconds one request may spend building the translation masks for the percentages of the choice (the toolbar
+     * is on every administration page): what is not built in that time follows in the next requests, and the
+     * choice shows those languages without a percentage meanwhile (Redmine #16709).
+     */
+    const COVERAGE_TIME_BUDGET = 2.0;
+
+    /**
+     * The catalogue; one this provider builds itself is limited to COVERAGE_TIME_BUDGET per request
+     * (expUISwitchLanguageCatalogue::setTimeBudget()).
+     *
      * @return expUISwitchLanguageCatalogue
      */
     public function catalogue()
     {
         if ( $this->catalogue === null )
+        {
             $this->catalogue = new expUISwitchLanguageCatalogue( $this->root );
+            $this->catalogue->setTimeBudget( self::COVERAGE_TIME_BUDGET );
+        }
         return $this->catalogue;
     }
 
@@ -269,6 +282,12 @@ class expUISwitchLanguageProvider extends expUISwitchProvider
                 if ( $counts[self::lower( $name )] > 1 )
                     $name .= ' [' . $allowed . ']';
                 $entry = $this->catalogue()->entry( $allowed );
+                // a coverage still pending (the catalogue's time budget ran out) is left out until it is known
+                if ( $entry !== null && !empty( $entry['pending'] ) )
+                {
+                    $labels[$allowed] = $name;
+                    continue;
+                }
                 $coverage = $entry !== null ? $entry['coverage'] : null;
                 $note = $coverage === null ? $untranslated : (int)$coverage . '%';
                 $labels[$allowed] = $name . ' (' . $note . ')';
