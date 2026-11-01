@@ -1461,6 +1461,8 @@ label.a4-package-option-label {
 .a4-setup-recording-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-2) var(--a4-space-4); }
 .a4-setup-recording-bar > p { margin: 0; }
 .a4-setup-recording-bar > p + p { margin-top: 0; }
+/* the dot and "Recording..." in a row: the dot has its size only in a flex parent */
+.a4-setup-recording-bar > p:first-child { display: inline-flex; align-items: center; gap: var(--a4-space-2); }
 .a4-setup-recording-bar form { display: flex; flex-wrap: wrap; gap: var(--a4-space-2); margin: 0; margin-inline-start: auto; }
 .a4-setup-recording-bar .a4-dot { background-color: var(--a4-bad); box-shadow: 0 0 0 4px var(--a4-bad-bg); animation: a4-pulse 1.4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {

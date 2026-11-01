@@ -446,13 +446,13 @@ class expMigrationRecording
             return true;
         }
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0775, true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0775 ), true ) && !is_dir( $dir ) )
             return false;
         $temp = $file . '.' . getmypid() . '.tmp';
         $json = json_encode( array( 'schema' => 'exp-migration-recording-active/1', 'recordings' => array_values( $list ) ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES );
         if ( @file_put_contents( $temp, $json . "\n" ) === false )
             return false;
-        @chmod( $temp, 0664 );
+        @chmod( $temp, eZFile::fileMode( 0664 ) );
         return @rename( $temp, $file );
     }
 

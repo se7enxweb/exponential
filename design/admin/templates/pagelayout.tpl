@@ -102,8 +102,6 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
 
 {* Demo mode (EXP_DEMO_MODE=1): outside the cache-blocks, so it follows the environment of each request *}
 {include uri='design:parts/exp_demo_mode_banner.tpl'}
-{* A recording of changes for a migration that records this user (Setup > Migrations > Recording) *}
-{include uri='design:parts/exp_migration_recording_bar.tpl'}
 
 {* The user name in the header: written by this script (the header is cached for every user of the same roles) right
    after the header, before the page is first drawn; at the end of the page it widened the user menu after the first paint *}
@@ -196,6 +194,9 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
 {* Main area START *}
 {if $hide_left_menu}
     <div id="mainarea" role="main" tabindex="-1">
+    {* A recording of changes for a migration that records this user (Setup > Migrations > Recording); in the main
+       column, outside the cache-blocks *}
+    {include uri='design:parts/exp_migration_recording_bar.tpl'}
     {include uri='design:page_mainarea.tpl'}
     </div>
 {else}
@@ -211,6 +212,7 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
     </div>
 
     <!-- Maincontent START -->
+    {include uri='design:parts/exp_migration_recording_bar.tpl'}
     {include uri='design:page_mainarea.tpl'}
     <!-- Maincontent END -->
     </div>
