@@ -644,6 +644,8 @@ aa6bc9ada63f8f9c7ac29461011f8939  design/admin/templates/migration/parts/running
 eb19484ae5d261df390be98800cefd91  design/admin/templates/migration/parts/state.tpl
 9f9f9cb282ecdf2947064ca15d2c70cc  design/admin/templates/migration/parts/state_text.tpl
 bd8c7b0b37fd16458340692f551b7de8  design/admin/templates/migration/parts/tabs.tpl
+9558556e88b1aa5c1a673870c80c65e4  design/admin/templates/migration/recording.tpl
+9d2325022c89aa612bb6ba32cb64ee41  design/admin/templates/migration/recording_view.tpl
 ec2ff5c144d0214b01f433e39eb24120  design/admin/templates/migration/rollback.tpl
 485232701642d41e8692446265c7ec80  design/admin/templates/migration/run.tpl
 7b016dfc783fda51fcdcc6595aeaac98  design/admin/templates/migration/status.tpl
@@ -731,6 +733,7 @@ d564d5fc7b2813943d89860e434c0634  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 806405f8a2d30391496982a5c36334cb  design/admin/templates/parts/content/menu.tpl
 440d25498d1044ac8599fc479c458323  design/admin/templates/parts/exp_demo_mode_banner.tpl
+be6235aaa80cfc22cade128cc3a3aefb  design/admin/templates/parts/exp_migration_recording_bar.tpl
 d7600cfd918e52be3b4f25b90a040ba7  design/admin/templates/parts/ini_menu.tpl
 e36329025b09f023b15222452941ff02  design/admin/templates/parts/ini_menu_tiles.tpl
 377177c4ae5a5b55ebaad3add2df9f24  design/admin/templates/parts/language_badge.tpl
@@ -1444,6 +1447,8 @@ aa6bc9ada63f8f9c7ac29461011f8939  design/admin4/templates/migration/parts/runnin
 eb19484ae5d261df390be98800cefd91  design/admin4/templates/migration/parts/state.tpl
 9f9f9cb282ecdf2947064ca15d2c70cc  design/admin4/templates/migration/parts/state_text.tpl
 bd8c7b0b37fd16458340692f551b7de8  design/admin4/templates/migration/parts/tabs.tpl
+9558556e88b1aa5c1a673870c80c65e4  design/admin4/templates/migration/recording.tpl
+9d2325022c89aa612bb6ba32cb64ee41  design/admin4/templates/migration/recording_view.tpl
 ec2ff5c144d0214b01f433e39eb24120  design/admin4/templates/migration/rollback.tpl
 485232701642d41e8692446265c7ec80  design/admin4/templates/migration/run.tpl
 7b016dfc783fda51fcdcc6595aeaac98  design/admin4/templates/migration/status.tpl
@@ -1550,6 +1555,7 @@ e7cbcc8548bbdec86d4686f2b042bb78  design/admin4/templates/parts/a4_topmenu_items
 e6fe56c836e1e8315b4d7aa9e9fb4b74  design/admin4/templates/parts/audit_timeline.tpl
 98b5d02f7a30659b0132afed6d238bf1  design/admin4/templates/parts/content/menu.tpl
 71164a00de34020162cef18d2f918a17  design/admin4/templates/parts/exp_demo_mode_banner.tpl
+be6235aaa80cfc22cade128cc3a3aefb  design/admin4/templates/parts/exp_migration_recording_bar.tpl
 c435b69af5a0062db6a3991e4e7f3d81  design/admin4/templates/parts/ini_menu.tpl
 3dff8ecf3c880bf2261cc89a9b39d8bd  design/admin4/templates/parts/ini_menu_items.tpl
 e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.tpl

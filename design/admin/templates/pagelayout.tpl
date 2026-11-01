@@ -102,6 +102,8 @@ div#maincolumn {ldelim} padding-inline-end: 20px; padding-inline-start: 50px; {r
 
 {* Demo mode (EXP_DEMO_MODE=1): outside the cache-blocks, so it follows the environment of each request *}
 {include uri='design:parts/exp_demo_mode_banner.tpl'}
+{* A recording of changes for a migration that records this user (Setup > Migrations > Recording) *}
+{include uri='design:parts/exp_migration_recording_bar.tpl'}
 
 {* The user name in the header: written by this script (the header is cached for every user of the same roles) right
    after the header, before the page is first drawn; at the end of the page it widened the user menu after the first paint *}
