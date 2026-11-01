@@ -15350,6 +15350,14 @@ Navigeringsdel</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL-API'et: dets endepunkt, skemaet og en legeplads til at afprøve forespørgsler.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringer</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ændringer af installationen gemt som filer: deres tilstand, kørslerne, kør og rul tilbage.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80335,6 +80343,888 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Send mutationer til /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringer</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Tilstanden kunne ikke læses: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migreringernes tabeller findes endnu ikke: ./console exp:upgrade --apply opretter dem.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migreringer mislykkedes</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>En kørsel er i gang, startet af %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Installationen er låst: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Afventer</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislykket</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Forældreløse</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Seneste kørsel</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ingen endnu</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Alle migreringer</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simuleret kørsel</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Prøvekørsel</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>De afventende migreringer kørte i en transaktion, der bagefter blev rullet tilbage: intet blev bevaret. Nedenfor står, hvad hver enkelt ændrede i databasen.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Hvad en kørsel ville gøre nu. Intet ændres: hver afventende migrering viser de ændringer, den ville foretage, og kørslen, hvad den ville gøre før og efter.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simuler</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Kør</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Prøvekørslen mislykkedes: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>En simulering kræver PostgreSQL eller SQLite, hvis skemaændringer kan rulles tilbage; på denne database viser planen nedenfor, hvad en kørsel ville gøre.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migreringerne</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrering</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Hvad den ville gøre</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulering: %result på %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Ingen migrering endnu.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Før og efter kørslen</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Øjebliksbillede før</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>tages og gendannes, hvis en migrering mislykkes</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>fra</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Øjebliksbillede efter</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>tages, når kørslen er lykkedes</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migreringer: %pending afventer, %done udført, %failed mislykket.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Migreringshistorik</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Hver kørsel med bruger, miljø, øjebliksbilleder og hvad der blev indsendt, mærket og skubbet. En mislykket eller afbrudt kørsel kan genoptages; en kørsel med et øjebliksbillede taget før den kan tages tilbage.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Kørslerne kunne ikke læses: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migreringernes tabeller findes endnu ikke: ./console exp:upgrade --apply opretter dem.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Kørsler</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startet</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Af</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Øjebliksbilleder</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depot</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>før</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>efter</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>skub: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Genoptag</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Rul tilbage</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Ingen kørsel i denne tilstand.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Startet her</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Kørsler, genoptagelser og tilbagerulninger startet på disse sider, med rapporten for hver.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Hvad</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Tilbagerulning</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Tilbagerulning af %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Kørsel %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Hvad kørslen gjorde, dens post og dens log. En kørsel startet her fortsætter i baggrunden, når siden lukkes; åbn siden igen for at følge den.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Genoptag denne kørsel</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Rul denne kørsel tilbage</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Posten kunne ikke læses: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fremskridt</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Startet af %user kl. %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kontrollerer koden og tager et øjebliksbillede før kørslen</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Kører %id (%index af %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done af %total udført</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migreringerne er kørt; gendanner øjebliksbilledet, hvis en mislykkedes</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Tager et øjebliksbillede efter kørslen, indsender, mærker og skubber</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Gendanner øjebliksbilledet</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Kørslen er afsluttet. Indlæser dens rapport.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Fremskridtet kunne ikke følges. Genindlæs siden for at se, hvordan kørslen går.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Denne side følger kørslen, mens den kører.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Genindlæs</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Varighed</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisekunder</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Hvad kørslen udskrev som fejl</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Miljø</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ingen</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Afsluttet</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Indsendelse</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Mærke</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Skub</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Meddelelse</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migreringer i denne kørsel</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Kilde</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Kørselslog</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Kun slutningen af loggen vises.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>kører</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>afsluttet uden rapport</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>lykkedes</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mislykkedes</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>afvist</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>databasen kunne ikke nås</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>intern fejl</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>En kørsel er i gang</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind startet af %user kl. %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Følg den</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Installationen er låst</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>En anden kørsel holder låsen (en opgradering eller en kørsel i konsollen): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>udført</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>afventer</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ikke nødvendig</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukendt</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>rullet tilbage</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>anvendt</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ville blive anvendt</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>taget tilbage</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ville blive taget tilbage</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ikke kørt</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>venter på en anden</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ændring accepteret</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ændring ville blive accepteret</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simuleret</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringer</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historik</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Tag %target tilbage</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>En kørsel tages tilbage til øjebliksbilledet taget før den, en enkelt migrering med dens down(). At gendanne et tidligere øjebliksbillede er for eksperter. Hver tilbagetagning kører i baggrunden som dig, efter et øjebliksbillede af den nuværende tilstand.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Det kunne ikke læses, hvad der kan tages tilbage: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>En kørsel</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Én migrering</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Et tidligere øjebliksbillede</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivelse</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Øjebliksbillede</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Taget</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Dele der skal gendannes</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Databasen</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>De lagrede filer (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Indstillingerne (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Gendannelse fører databasen tilbage til tidspunktet for øjebliksbilledet, sessioner inklusive: du skal måske logge ind igen bagefter. Alt ændret siden da går tabt; først tages et øjebliksbillede af den nuværende tilstand.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Jeg ved, hvad dette gendanner</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Skriv øjebliksbilledets id igen</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ja, tag det tilbage</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuller</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Kørslerne med et øjebliksbillede taget før dem.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Vælg</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Ingen kørsel med øjebliksbillede endnu.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>De anvendte migreringer, der kan tage sig selv tilbage (de har en down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Ingen anvendt migrering har en down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Tidligere øjebliksbilleder (eksperter)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Intet øjebliksbillede endnu.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Kør migreringerne</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Kørslen foregår i baggrunden som %user, og dens side viser den undervejs. Før den første migrering tages et øjebliksbillede af installationen; mislykkes en migrering, stopper kørslen, og øjebliksbilledet gendannes.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Prøvekørsel først</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Tilstanden kunne ikke læses: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Afventende migreringer</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>De kører i denne rækkefølge. Fjern fluebenet ved en for at gemme den, og dem der kræver den, til en senere kørsel.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Kør den</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Slår vedligeholdelsestilstand til, mens den kører.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Ændret efter de blev anvendt</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Disse filer er ikke dem, der blev anvendt. En kørsel afviser dem, medmindre ændringen accepteres med en begrundelse; de køres ikke igen, den nye kontrolsum registreres, og begrundelsen gemmes i revisionsloggen.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Accepter ændringerne</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Hvorfor</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Standardvalgene er de sikre. Hvert felt udelader et trin.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Intet øjebliksbillede</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Intet øjebliksbillede før og efter kørslen: en fejl kan ikke gendannes automatisk.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Ingen gendannelse</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Efter en fejl efterlades installationen, som fejlen efterlod den.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Behold ændringer, der ikke er indsendt</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Kør, selvom indstillinger, udvidelser eller designs har ændringer, der ikke er indsendt; de kommer med i øjebliksbilledet.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Ingen indsendelse</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Indsend ikke statusfilen og kørselsloggen (heller ikke mærke eller skub).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Intet skub</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Indsend og mærk, men skub ikke.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Intet mærke</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Indsend og skub, men mærk ikke kørslen.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ja, kør disse migreringer nu</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Ingen migrering afventer.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Tilbage til tilstanden</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Ændringer af denne installation skrevet én gang som filer (indhold, klasser, roller, indstillinger, skema) og anvendt på hver installation af sitet i samme rækkefølge. En kørsel tager først et øjebliksbillede, gendanner det, hvis en migrering mislykkes, og registrerer, indsender og skubber, hvad den gjorde.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Kør %count afventende</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Oversigt</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Afventer</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Udført</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislykket</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ikke nødvendig</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databasesystem</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaktioner: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Sitets migreringer ligger i migrations/, en udvidelses i extension/&lt;name&gt;/migrations/. De kører i rækkefølge efter deres navne og det, de kræver.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Seneste kørsel</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Filen blev ændret, efter den blev anvendt.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Ingen migrering endnu. ./console exp:migration:generate --skeleton &lt;name&gt; --apply skriver den første.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>De seneste kørsler</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Alle kørsler</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Ingen kørsel endnu.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Simulering af en kørsel kræver politikken migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>En kørsel er i gang: simuler, når den er afsluttet.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Opsætning</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target er hverken en kørsel, en migrering eller et øjebliksbillede af denne installation.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Sæt først flueben ved »Ja, tag det tilbage«.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>At gendanne et tidligere øjebliksbillede er for eksperter: sæt flueben ved »Jeg ved, hvad dette gendanner«.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Skriv øjebliksbilledets id igen: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Vælg mindst én del, der skal gendannes.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Denne kørsel har intet øjebliksbillede taget før den: tag dens migreringer tilbage én ad gangen, eller gendan et tidligere øjebliksbillede.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Denne migrering kan ikke tage sig selv tilbage: den er ikke anvendt, eller den har ingen down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formularen kunne ikke læses.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Vælg den kørsel, der skal genoptages.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Sæt først flueben ved »Ja, kør disse migreringer nu«.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Vælg mindst én migrering.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>En migrering blev ændret, efter den blev anvendt: accepter ændringen med en begrundelse, eller læg filen tilbage.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Angiv begrundelsen for, at de ændrede migreringer accepteres.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Begrundelsen må højst være på 500 tegn.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>En kørsel startet her er stadig i gang (%detail). Vent, til den er afsluttet.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>En anden kørsel holder installationens lås: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Kørslen kræver en indlogget bruger, der findes.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Der blev ikke fundet noget php-kommandolinjeprogram. Sæt migration.ini [AdminSettings] PhpCliPath til dets fulde sti.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open er deaktiveret, så en kørsel kan ikke startes her. Kør ./console exp:migration:migrate --apply på serveren.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Der kan ikke skrives til kørslernes mappe: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Kørslen blev startet, men rapporterede ikke sit proces-id. Kontroller %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Angiv, hvad der skal tages tilbage.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Kørslen kunne ikke startes.</translation>
     </message>
 </context>
 </TS>

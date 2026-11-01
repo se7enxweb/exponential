@@ -15081,6 +15081,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>واجهة GraphQL البرمجية: نقطة النهاية والمخطط وساحة لتجربة الاستعلامات.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>تغييرات على التثبيت محفوظة كملفات: حالتها، وعمليات التشغيل، والتشغيل والتراجع.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>أرسل التعديلات (mutations) إلى /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>تعذّرت قراءة الحالة: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>جداول عمليات الترحيل غير موجودة بعد: الأمر ./console exp:upgrade --apply ينشئها.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>فشلت %count من عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>يجري تشغيل حاليًا، بدأه %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>التثبيت مقفل: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>معلّق</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>يتيمة</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخر تشغيل</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>لا شيء بعد</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>كل عمليات الترحيل</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>تشغيل محاكى</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>تشغيل تجريبي</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>جرت عمليات الترحيل المعلّقة داخل معاملة تم التراجع عنها بعد ذلك: لم يُحفظ شيء. فيما يلي ما غيّرته كل واحدة منها في قاعدة البيانات.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ما سيفعله التشغيل الآن. لا يتغيّر شيء: كل عملية ترحيل معلّقة تسرد التغييرات التي ستجريها، والتشغيل ما سيفعله قبلها وبعدها.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>محاكاة</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>تشغيل</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>فشل التشغيل التجريبي: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>تتطلب المحاكاة PostgreSQL أو SQLite، إذ يمكن التراجع عن تغييرات المخطط فيهما؛ على قاعدة البيانات هذه تُظهر الخطة أدناه ما سيفعله التشغيل.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>عملية الترحيل</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ما ستفعله</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>المحاكاة: %result في %ms مللي ثانية</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>لا توجد عملية ترحيل بعد.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>قبل التشغيل وبعده</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>اللقطة السابقة</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>تُلتقط، وتُستعاد عند فشل عملية ترحيل</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>متوقف</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>اللقطة اللاحقة</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>تُلتقط عند نجاح التشغيل</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total من عمليات الترحيل: %pending معلّقة، %done منجزة، %failed فاشلة.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>سجل عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>كل تشغيل مع مستخدمه وبيئته ولقطاته وما تم إيداعه ووسمه ودفعه. يمكن استئناف تشغيل فاشل أو متقطع؛ ويمكن التراجع عن تشغيل التُقطت قبله لقطة.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>تعذّرت قراءة عمليات التشغيل: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>جداول عمليات الترحيل غير موجودة بعد: الأمر ./console exp:upgrade --apply ينشئها.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>عرض</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>عمليات التشغيل</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>بدأ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>بواسطة</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>اللقطات</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>المستودع</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>قبل</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>بعد</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>الدفع: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>استئناف</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>تراجع</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>لا يوجد تشغيل في هذه الحالة.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>بدأ هنا</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>عمليات التشغيل والاستئناف والتراجع التي بدأت من هذه الصفحات، مع تقرير كل منها.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ماذا</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>التراجع</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>التراجع عن %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>التشغيل %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ما فعله التشغيل، وسجله، وملف سجله. يستمر التشغيل الذي بدأ هنا في الخلفية عند إغلاق هذه الصفحة؛ افتح الصفحة مجددًا لمتابعته.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>استئناف هذا التشغيل</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>التراجع عن هذا التشغيل</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>تعذّرت قراءة السجل: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>التقدّم</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>بدأه %user في %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>جارٍ فحص الشيفرة والتقاط لقطة قبل التشغيل</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>جارٍ تشغيل %id (%index من %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>أُنجز %done من %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>اكتملت عمليات الترحيل؛ جارٍ استعادة اللقطة إن فشلت إحداها</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>جارٍ التقاط لقطة بعد التشغيل، والإيداع، والوسم، والدفع</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>جارٍ استعادة اللقطة</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>انتهى التشغيل. جارٍ تحميل تقريره.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>تعذّرت متابعة التقدّم. أعد تحميل الصفحة لترى حال التشغيل.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>تتابع هذه الصفحة التشغيل أثناء سيره.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>إعادة التحميل</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>التقرير</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>المدة</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms مللي ثانية</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ما طبعه التشغيل كأخطاء</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>السجل</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>البيئة</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>انتهى</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>الإيداع</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>الوسم</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>الدفع</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>الرسالة</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>عمليات الترحيل في هذا التشغيل</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>المصدر</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>سجل التشغيل</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>يُعرض نهاية السجل فقط.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>قيد التشغيل</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>انتهى دون تقرير</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>نجح</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>تعذّر الوصول إلى قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>خطأ داخلي</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>يجري تشغيل حاليًا</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind بدأه %user في %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>متابعته</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>التثبيت مقفل</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>تشغيل آخر يمسك القفل (ترقية أو تشغيل من سطر الأوامر): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>منجز</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>معلّق</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>غير مطلوب</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>غير معروف</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>تم التراجع عنه</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>مطبّق</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>سيُطبّق</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>تم استرجاعه</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>سيُسترجع</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>لم يُشغّل</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ينتظر عملية أخرى</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>تم قبول التغيير</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>سيُقبل التغيير</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>محاكى</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>السجل</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>استرجاع %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>يُسترجع التشغيل إلى اللقطة التي التُقطت قبله، وعملية الترحيل الواحدة بدالتها down(). استعادة لقطة أقدم مخصصة للخبراء. يجري كل منها في الخلفية باسمك، بعد التقاط لقطة للحالة الراهنة.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>تعذّرت قراءة ما يمكن استرجاعه: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>تشغيل</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>عملية ترحيل واحدة</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>لقطة أقدم</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>الوصف</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>اللقطة</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>التسمية</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>التُقطت</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>الأجزاء المراد استعادتها</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ملفات التخزين (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>الإعدادات (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>استعادة قاعدة البيانات تعيدها إلى وقت اللقطة، بما في ذلك الجلسات: قد يُطلب منك تسجيل الدخول مجددًا بعد ذلك. يضيع كل ما تغيّر منذ ذلك الحين؛ وتُلتقط أولًا لقطة للحالة الراهنة.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>أعرف ما الذي يستعيده هذا</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>اكتب معرّف اللقطة مرة أخرى</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>نعم، استرجعه</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>عمليات التشغيل التي التُقطت قبلها لقطة.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>اختيار</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>لا يوجد تشغيل بلقطة بعد.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>عمليات الترحيل المطبّقة التي يمكنها استرجاع نفسها (لديها down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>لا توجد عملية ترحيل مطبّقة لديها down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>لقطات أقدم (للخبراء)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>لا توجد لقطة بعد.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>تشغيل عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>يجري التشغيل في الخلفية باسم %user، وتعرضه صفحته أثناء سيره. قبل أول عملية ترحيل تُلتقط لقطة للتثبيت؛ وعند فشل عملية ترحيل يتوقف التشغيل وتُستعاد اللقطة.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>تشغيل تجريبي أولًا</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>تعذّرت قراءة الحالة: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>عمليات الترحيل المعلّقة</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>تجري بهذا الترتيب. ألغِ تحديد إحداها لتركها، مع التي تعتمد عليها، لتشغيل لاحق.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>شغّله</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>يفعّل وضع الصيانة أثناء التشغيل.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>تغيّرت بعد تطبيقها</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>هذه الملفات ليست التي طُبّقت. يرفضها التشغيل ما لم يُقبل التغيير مع سبب؛ ولا تُشغّل مرة أخرى، ويُسجَّل المجموع الاختباري الجديد ويُحفظ السبب في سجل التدقيق.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>قبول التغييرات</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>السبب</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>الإعدادات الافتراضية هي الآمنة. كل مربع يحذف خطوة.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>بلا لقطة</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>لا لقطة قبل التشغيل وبعده: لا يمكن الاستعادة تلقائيًا بعد الفشل.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>بلا استعادة</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>بعد الفشل، اترك التثبيت كما تركه الفشل.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>الاحتفاظ بالتغييرات غير المودعة</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>التشغيل رغم وجود تغييرات غير مودعة في الإعدادات أو الإضافات أو التصاميم؛ تدخل هذه في اللقطة.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>بلا إيداع</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>عدم إيداع ملف الحالة وسجل التشغيل (ولا وسم ولا دفع أيضًا).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>بلا دفع</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>الإيداع والوسم، دون الدفع.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>بلا وسم</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>الإيداع والدفع، دون وسم التشغيل.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>نعم، شغّل عمليات الترحيل هذه الآن</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>لا توجد عملية ترحيل معلّقة.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>العودة إلى الحالة</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>تغييرات على هذا التثبيت تُكتب مرة واحدة كملفات (المحتوى، الفئات، الأدوار، الإعدادات، المخطط) وتُطبَّق على كل تثبيت للموقع بالترتيب نفسه. يلتقط التشغيل لقطة أولًا، ويستعيدها عند فشل عملية ترحيل، ويسجّل ما فعله ويودعه ويدفعه.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>تشغيل %count معلّقة</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نظرة عامة</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>معلّق</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>منجز</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>غير مطلوب</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>المعاملات: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>عمليات ترحيل الموقع في migrations/، وعمليات ترحيل الإضافة في extension/&lt;name&gt;/migrations/. تجري بترتيب أسمائها وما تعتمد عليه.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخر تشغيل</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>تغيّر الملف بعد تطبيقه.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>لا توجد عملية ترحيل بعد. الأمر ./console exp:migration:generate --skeleton &lt;name&gt; --apply يكتب أولاها.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>أحدث عمليات التشغيل</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>كل عمليات التشغيل</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>لا يوجد تشغيل بعد.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>محاكاة التشغيل تتطلب السياسة migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>يجري تشغيل حاليًا: قم بالمحاكاة بعد انتهائه.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ليس تشغيلًا ولا عملية ترحيل ولا لقطة لهذا التثبيت.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>حدّد «نعم، استرجعه» أولًا.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>استعادة لقطة أقدم مخصصة للخبراء: حدّد «أعرف ما الذي يستعيده هذا».</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>اكتب معرّف اللقطة مرة أخرى: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>اختر جزءًا واحدًا على الأقل لاستعادته.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>لم تُلتقط لقطة قبل هذا التشغيل: استرجع عمليات الترحيل الخاصة به واحدة تلو الأخرى، أو استعد لقطة أقدم.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>لا يمكن استرجاع عملية الترحيل هذه بمفردها: فهي غير مطبّقة، أو ليس لديها down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>تعذّرت قراءة النموذج.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>اختر التشغيل المراد استئنافه.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>حدّد «نعم، شغّل عمليات الترحيل هذه الآن» أولًا.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>اختر عملية ترحيل واحدة على الأقل.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>تغيّرت عملية ترحيل بعد تطبيقها: اقبل التغيير مع ذكر السبب، أو أعِد الملف كما كان.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>اذكر سبب قبول عمليات الترحيل المتغيّرة.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>السبب 500 حرف على الأكثر.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>تشغيل بدأ هنا لا يزال جاريًا (%detail). انتظر حتى ينتهي.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>تشغيل آخر يمسك قفل التثبيت: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>يتطلب التشغيل مستخدمًا موجودًا ومسجّل الدخول.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>لم يُعثر على برنامج php لسطر الأوامر. اضبط migration.ini [AdminSettings] PhpCliPath على مساره الكامل.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>الدالة proc_open معطّلة، لذا لا يمكن بدء تشغيل من هنا. نفّذ ./console exp:migration:migrate --apply على الخادم.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>لا يمكن الكتابة في مجلد عمليات التشغيل: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>بدأ التشغيل لكنه لم يُبلغ عن معرّف عمليته. تحقّق من %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>حدّد ما يجب استرجاعه.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>تعذّر بدء التشغيل.</translation>
     </message>
 </context>
 </TS>

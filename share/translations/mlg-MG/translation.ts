@@ -15142,6 +15142,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ny teboka farany, ny rafitra ary toerana hanandramana fangatahana.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Fifindrana</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Fanovana ny fametrahana voatahiry ho rakitra: ny satany, ny fanatanterahana, fanatanterahana sy famerenana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Alefaso any amin'ny /api/graphql ny fanovana.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Fifindrana</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Tsy voavaky ny sata: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Mbola tsy misy ny tabilaon&apos;ny fifindrana: ./console exp:upgrade --apply no mamorona azy ireo.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Fifindrana %count no tsy nahomby</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Misy fanatanterahana mandeha, natombok&apos;i %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Voahidy ny fametrahana: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Miandry</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Kamboty</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Fanatanterahana farany</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>mbola tsy misy</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Ny fifindrana rehetra</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Fanatanterahana sandoka</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Fanatanterahana andrana</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Nandeha tao anaty fifanakalozana naverina taorian&apos;izay ny fifindrana miandry: tsy nisy notehirizina. Eto ambany ny zavatra novain&apos;ny tsirairay tao amin&apos;ny tahiry angona.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Izay hataon&apos;ny fanatanterahana ankehitriny. Tsy misy ovaina: ny fifindrana miandry tsirairay dia mitanisa ny fanovana hataony, ary ny fanatanterahana izay hataony alohan&apos;ny sy aorian&apos;izany.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Sandohy</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Atanteraho</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Tsy nahomby ny fanatanterahana andrana: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Mila PostgreSQL na SQLite ny sandoka, satria azo averina ny fanovana ny drafiny; amin&apos;ity tahiry angona ity dia ny drafitra eto ambany no hataon&apos;ny fanatanterahana.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Ny fifindrana</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Fifindrana</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toetra</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Izay hataony</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Sandoka: %result tao anatin&apos;ny %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Mbola tsy misy fifindrana.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Alohan&apos;ny sy aorian&apos;ny fanatanterahana</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Dika tahiry aloha</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>alaina, ary averina rehefa tsy mahomby ny fifindrana</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>maty</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Dika tahiry aoriana</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>alaina rehefa nahomby ny fanatanterahana</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Fifindrana %total: %pending miandry, %done vita, %failed tsy nahomby.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Tantaran&apos;ny fifindrana</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ny fanatanterahana tsirairay miaraka amin&apos;ny mpampiasa, ny tontolo, ny dika tahiry ary izay nohamafisina, nomena marika ary nalefa. Azo tohizana ny fanatanterahana tsy nahomby na tapaka; azo averina ny fanatanterahana nisy dika tahiry nalaina talohany.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Tsy voavaky ny fanatanterahana: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Mbola tsy misy ny tabilaon&apos;ny fifindrana: ./console exp:upgrade --apply no mamorona azy ireo.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Asehoy</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Rehetra</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Fanatanterahana</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Natomboka</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nataon&apos;i</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Dika tahiry</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Tahiry</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Asa</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>aloha</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>aoriana</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>fandefasana: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Tohizo</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Avereno</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Tsy misy fanatanterahana amin&apos;ity toetra ity.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Natomboka teto</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Fanatanterahana, fanohizana ary famerenana natomboka tamin&apos;ireto pejy ireto, miaraka amin&apos;ny tatitry ny tsirairay.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Inona</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Vokatra</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Famerenana</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Famerenana ny %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Fanatanterahana %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Izay nataon&apos;ny fanatanterahana, ny firaketany ary ny diariny. Mitohy ao ambadika ny fanatanterahana natomboka teto rehefa mihidy ity pejy ity; sokafy indray ny pejy hanarahana azy.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Tohizo ity fanatanterahana ity</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Avereno ity fanatanterahana ity</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Tsy voavaky ny firaketana: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fandrosoana</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Natomboky %user tamin&apos;ny %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Manamarina ny kaody sy maka dika tahiry alohan&apos;ny fanatanterahana</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Atanteraka %id (%index amin&apos;ny %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>Vita %done amin&apos;ny %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Vita ny fifindrana; mamerina ny dika tahiry raha nisy tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Maka dika tahiry aorian&apos;ny fanatanterahana, manamafy, manome marika ary mandefa</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Mamerina ny dika tahiry</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Vita ny fanatanterahana. Ampidirina ny tatitra.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Tsy voaraha ny fandrosoana. Avereno alaina ny pejy mba hahitana ny fandehan&apos;ny fanatanterahana.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Manaraka ny fanatanterahana mandritra ny fandehany ity pejy ity.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Avereno alaina</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Tatitra</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Fotoana</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisegondra</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Izay navoakan&apos;ny fanatanterahana ho hadisoana</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Firaketana</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Tontolo</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tsy misy</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Vita</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Fanamafisana</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Marika</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Fandefasana</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Hafatra</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Fifindrana amin&apos;ity fanatanterahana ity</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Loharano</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Diarin&apos;ny fanatanterahana</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Ny faran&apos;ny diary ihany no aseho.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>mandeha</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>vita tsy nisy tatitra</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>nahomby</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>tsy nahomby</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>nolavina</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>tsy tratra ny tahiry angona</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>hadisoana anatiny</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Misy fanatanterahana mandeha</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind natomboky %user tamin&apos;ny %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Arahina</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Voahidy ny fametrahana</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Fanatanterahana hafa no mitazona ny hidy (fanavaozana na fanatanterahana amin&apos;ny console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>vita</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>miandry</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>tsy ilaina</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tsy fantatra</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>naverina</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>nampiharina</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>hampiharina</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>nesorina</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>hesorina</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>tsy natanteraka</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>miandry iray hafa</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>fanovana nekena</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>hekena ny fanovana</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>nosandohana</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Fifindrana</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sata</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Tantara</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Esory %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Averina amin&apos;ny dika tahiry nalaina talohany ny fanatanterahana, ny fifindrana iray amin&apos;ny down() azy. Ho an&apos;ny manam-pahaizana ny famerenana dika tahiry taloha. Samy mandeha ao ambadika amin&apos;ny anaranao izy ireo, aorian&apos;ny dika tahiry ny toetra ankehitriny.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Tsy voavaky izay azo esorina: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Fanatanterahana iray</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Fifindrana iray</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Dika tahiry taloha</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Famaritana</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eny</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tsia</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Dika tahiry</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Anarana</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Nalaina</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Karazana</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Ampahany haverina</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Ny tahiry angona</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Ny rakitra voatahiry (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Ny fandrindrana (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Ny famerenana dia mamerina ny tahiry angona amin&apos;ny fotoanan&apos;ny dika tahiry, ao anatin&apos;izany ny fivoriana: mety ho angatahina hiditra indray ianao aorian&apos;izay. Very avokoa izay niova hatramin&apos;izay; alaina aloha ny dika tahiry ny toetra ankehitriny.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Fantatro izay averin&apos;ity</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Soraty indray ny famantarana ny dika tahiry</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Eny, esory</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Foano</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ny fanatanterahana nisy dika tahiry nalaina talohany.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Fidio</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Mbola tsy misy fanatanterahana misy dika tahiry.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Ny fifindrana nampiharina afaka manala ny tenany (manana down() izy ireo).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Tsy misy fifindrana nampiharina manana down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Dika tahiry taloha (manam-pahaizana)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Mbola tsy misy dika tahiry.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Atanteraho ny fifindrana</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Mitohy ao ambadika amin&apos;ny maha %user azy ny fanatanterahana, ary asehon&apos;ny pejiny mandritra ny fandehany. Alohan&apos;ny fifindrana voalohany dia alaina ny dika tahiry ny fametrahana; rehefa tsy mahomby ny fifindrana dia mijanona ny fanatanterahana ary averina ny dika tahiry.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Fanatanterahana andrana aloha</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Tsy voavaky ny sata: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Fifindrana miandry</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Mandeha araka ity filaharana ity izy ireo. Esory ny marika amin&apos;ny iray mba hamelana azy, sy ireo mila azy, ho amin&apos;ny fanatanterahana manaraka.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Atanteraho</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Mampandeha ny fomba fikojakojana mandritra ny fandehany.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Niova taorian&apos;ny nampiharana azy</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Tsy ireo rakitra nampiharina ireo. Lavin&apos;ny fanatanterahana izy ireo raha tsy ekena miaraka amin&apos;ny antony ny fanovana; tsy atanteraka indray izy ireo, raketina ny checksum vaovao ary tehirizina ao amin&apos;ny diarin&apos;ny fanaraha-maso ny antony.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Ekeo ny fanovana</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Antony</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Ny sanda mahazatra no azo antoka. Ny boaty tsirairay dia mandingana dingana iray.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Tsy misy dika tahiry</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Tsy misy dika tahiry alohan&apos;ny sy aorian&apos;ny fanatanterahana: tsy azo averina ho azy ny tsy fahombiazana.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Tsy misy famerenana</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Aorian&apos;ny tsy fahombiazana, avelao toy ny nametrahan&apos;ny tsy fahombiazana azy ny fametrahana.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Tazony ny fanovana tsy voahamafy</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Atanteraho na dia misy fanovana tsy voahamafy aza ny fandrindrana, ny fanitarana na ny endrika; ampidirina ao amin&apos;ny dika tahiry izy ireo.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Tsy misy fanamafisana</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Aza hamafisina ny rakitry ny sata sy ny diarin&apos;ny fanatanterahana (tsy misy marika ary tsy misy fandefasana koa).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Tsy misy fandefasana</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Hamafiso ary omeo marika, fa aza alefa.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Tsy misy marika</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Hamafiso ary alefaso, fa aza omena marika ny fanatanterahana.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Eny, atanteraho izao ireo fifindrana ireo</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Tsy misy fifindrana miandry.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Hiverina amin&apos;ny sata</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Fanovana ity fametrahana ity voasoratra indray mandeha ho rakitra (votoaty, kilasy, anjara asa, fandrindrana, drafitra) ary ampiharina amin&apos;ny fametrahana rehetra amin&apos;ny tranonkala araka ny filaharana mitovy. Maka dika tahiry aloha ny fanatanterahana, mamerina azy rehefa tsy mahomby ny fifindrana, ary mirakitra, manamafy ary mandefa izay nataony.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Atanteraho ireo %count miandry</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Topimaso ankapobeny</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Miandry</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Vita</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Tsy ilaina</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Tahiry angona</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>fifanakalozana: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Ao amin&apos;ny migrations/ ny fifindran&apos;ny tranonkala, ny an&apos;ny fanitarana ao amin&apos;ny extension/&lt;name&gt;/migrations/. Mandeha araka ny filaharan&apos;ny anarany sy izay ilainy izy ireo.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Fanatanterahana farany</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Niova ny rakitra taorian&apos;ny nampiharana azy.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Mbola tsy misy fifindrana. ./console exp:migration:generate --skeleton &lt;name&gt; --apply no manoratra ny voalohany.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Ny fanatanterahana farany</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Ny fanatanterahana rehetra</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Mbola tsy misy fanatanterahana.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Mila ny politika migration/run ny fanandohana fanatanterahana.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Misy fanatanterahana mandeha: sandohy rehefa vita izy.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Fametrahana</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target dia tsy fanatanterahana, tsy fifindrana ary tsy dika tahirin&apos;ity fametrahana ity.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Asio marika aloha ny &quot;Eny, esory&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ho an&apos;ny manam-pahaizana ny famerenana dika tahiry taloha: asio marika ny &quot;Fantatro izay averin&apos;ity&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Soraty indray ny famantarana ny dika tahiry: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Mifidiana ampahany iray farafahakeliny haverina.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Tsy nisy dika tahiry nalaina talohan&apos;ity fanatanterahana ity: esory tsirairay ny fifindrany, na avereno ny dika tahiry taloha.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Tsy afaka manala ny tenany ity fifindrana ity: tsy nampiharina izy, na tsy manana down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Tsy voavaky ny taratasy fenoina.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Fidio ny fanatanterahana hotohizana.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Asio marika aloha ny &quot;Eny, atanteraho izao ireo fifindrana ireo&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Mifidiana fifindrana iray farafahakeliny.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Nisy fifindrana niova taorian&apos;ny nampiharana azy: ekeo miaraka amin&apos;ny antony ny fanovana, na avereno ny rakitra.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Omeo ny antony anekena ny fifindrana niova.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Litera 500 farafahabetsany ny antony.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Mbola mandeha ny fanatanterahana natomboka teto (%detail). Andraso ho vita izy.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Fanatanterahana hafa no mitazona ny hidin&apos;ny fametrahana: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Mila mpampiasa misy sady efa niditra ny fanatanterahana.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Tsy hita ny programa php ho an&apos;ny tsipika baiko. Apetraho ao amin&apos;ny migration.ini [AdminSettings] PhpCliPath ny lalana feno mankany aminy.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>Tsy mandeha ny proc_open, ka tsy azo atomboka eto ny fanatanterahana. Atanteraho ao amin&apos;ny mpizara ny ./console exp:migration:migrate --apply.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Tsy azo soratana ny lahatahirin&apos;ny fanatanterahana: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Natomboka ny fanatanterahana nefa tsy nanome ny famantarana ny dingana. Hamarino %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Lazao izay hesorina.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Tsy natomboka ny fanatanterahana.</translation>
     </message>
 </context>
 </TS>

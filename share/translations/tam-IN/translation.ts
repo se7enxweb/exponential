@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: அதன் முனைப்புள்ளி, ஸ்கீமா மற்றும் வினவல்களை முயற்சிக்க ஒரு சோதனைக்களம்.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>நிறுவல் இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>கோப்புகளாக வைக்கப்பட்ட நிறுவல் மாற்றங்கள்: அவற்றின் நிலை, இயக்கங்கள், இயக்குதல் மற்றும் திரும்பப்பெறுதல்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>மாற்றங்களை (mutations) /api/graphql க்கு அனுப்பவும்.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>நிறுவல் இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>நிலையைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>இடம்பெயர்வுகளின் அட்டவணைகள் இன்னும் இல்லை: ./console exp:upgrade --apply அவற்றை உருவாக்கும்.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count இடம்பெயர்வுகள் தோல்வியடைந்தன</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ஓர் இயக்கம் நடைபெறுகிறது, %user தொடங்கியது</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>நிறுவல் பூட்டப்பட்டுள்ளது: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>நிலுவையில்</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>தோல்வியடைந்தவை</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>அனாதைகள்</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>கடைசி இயக்கம்</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>இன்னும் இல்லை</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>அனைத்து இடம்பெயர்வுகள்</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>உருவகப்படுத்தப்பட்ட இயக்கம்</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>சோதனை இயக்கம்</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>நிலுவையிலுள்ள இடம்பெயர்வுகள் பின்னர் திரும்பப்பெறப்பட்ட ஒரு பரிவர்த்தனையில் இயங்கின: எதுவும் வைக்கப்படவில்லை. ஒவ்வொன்றும் தரவுத்தளத்தில் என்ன மாற்றியது என்பது கீழே உள்ளது.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>இப்போது ஓர் இயக்கம் என்ன செய்யும் என்பது. எதுவும் மாற்றப்படாது: ஒவ்வொரு நிலுவை இடம்பெயர்வும் தான் செய்யும் மாற்றங்களைப் பட்டியலிடுகிறது, இயக்கம் முன்னும் பின்னும் என்ன செய்யும் என்பதையும் காட்டுகிறது.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>உருவகப்படுத்து</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>இயக்கு</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>சோதனை இயக்கம் தோல்வியடைந்தது: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>உருவகப்படுத்தலுக்கு PostgreSQL அல்லது SQLite தேவை, அவற்றின் அமைப்புமுறை மாற்றங்களைத் திரும்பப்பெற முடியும்; இந்தத் தரவுத்தளத்தில் கீழே உள்ள திட்டமே ஓர் இயக்கம் செய்வதாகும்.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>இடம்பெயர்வின் பெயர்</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>அது என்ன செய்யும்</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>உருவகப்படுத்தல்: %result, %ms மி.வி.யில்</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>இன்னும் இடம்பெயர்வு இல்லை.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>இயக்கத்திற்கு முன்னும் பின்னும்</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>முன் மீட்புப் புள்ளி</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>எடுக்கப்படும், ஓர் இடம்பெயர்வு தோல்வியடைந்தால் மீட்டமைக்கப்படும்</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>அணைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>பின் மீட்புப் புள்ளி</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>இயக்கம் வெற்றிபெற்றால் எடுக்கப்படும்</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total இடம்பெயர்வுகள்: %pending நிலுவையில், %done முடிந்தவை, %failed தோல்வியடைந்தவை.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>இடம்பெயர்வு வரலாறு</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ஒவ்வொரு இயக்கமும் அதன் பயனர், சூழல், மீட்புப் புள்ளிகள் மற்றும் கமிட், குறிச்சொல், அனுப்புதல் செய்யப்பட்டவற்றுடன். தோல்வியடைந்த அல்லது இடைநின்ற இயக்கத்தைத் தொடரலாம்; முன்பு மீட்புப் புள்ளி எடுக்கப்பட்ட இயக்கத்தைத் திரும்பப்பெறலாம்.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>இயக்கங்களைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>இடம்பெயர்வுகளின் அட்டவணைகள் இன்னும் இல்லை: ./console exp:upgrade --apply அவற்றை உருவாக்கும்.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>காட்டு</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>அனைத்தும்</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>இயக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>தொடங்கியது</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>செய்தவர்</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>மீட்புப் புள்ளிகள்</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>களஞ்சியம்</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>செயல்கள்</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>முன்</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>பின்</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>அனுப்புதல்: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>தொடர்</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>திரும்பப்பெறு</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>இந்த நிலையில் இயக்கம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>இங்கே தொடங்கியவை</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>இந்தப் பக்கங்களில் தொடங்கப்பட்ட இயக்கங்கள், தொடர்தல்கள் மற்றும் திரும்பப்பெறுதல்கள், ஒவ்வொன்றின் அறிக்கையுடன்.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>என்ன</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>முடிவு</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>திரும்பப்பெறுதல்</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ஐத் திரும்பப்பெறுதல்</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>இயக்கம் %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>இயக்கம் என்ன செய்தது, அதன் பதிவு மற்றும் அதன் பதிவேடு. இங்கே தொடங்கிய இயக்கம் இந்தப் பக்கம் மூடப்பட்டாலும் பின்னணியில் தொடரும்; அதைப் பின்தொடர பக்கத்தை மீண்டும் திறக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>இந்த இயக்கத்தைத் தொடர்</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>இந்த இயக்கத்தைத் திரும்பப்பெறு</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>பதிவைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>முன்னேற்றம்</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%time அன்று %user தொடங்கியது.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>குறியீட்டைச் சரிபார்த்து இயக்கத்திற்கு முன் மீட்புப் புள்ளி எடுக்கப்படுகிறது</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id இயங்குகிறது (%total இல் %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total இல் %done முடிந்தன</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>இடம்பெயர்வுகள் இயங்கிவிட்டன; ஒன்று தோல்வியடைந்தால் மீட்புப் புள்ளி மீட்டமைக்கப்படுகிறது</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>இயக்கத்திற்குப் பின் மீட்புப் புள்ளி எடுத்தல், கமிட் செய்தல், குறிச்சொல் இடுதல் மற்றும் அனுப்புதல்</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>மீட்புப் புள்ளி மீட்டமைக்கப்படுகிறது</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>இயக்கம் முடிந்தது. அதன் அறிக்கை ஏற்றப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>முன்னேற்றத்தைப் பின்தொடர முடியவில்லை. இயக்கத்தின் நிலையைக் காண பக்கத்தை மீண்டும் ஏற்றவும்.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>இந்தப் பக்கம் இயக்கத்தை நடக்கும்போதே பின்தொடர்கிறது.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>மீண்டும் ஏற்று</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>அறிக்கை</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>நேரம்</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms மி.வி.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>இயக்கம் பிழைகளாக அச்சிட்டவை</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>பதிவு</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>சூழல்</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>கமிட்</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>குறிச்சொல்</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>அனுப்புதல்</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>செய்தி</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>இந்த இயக்கத்தின் இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>மூலம்</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>இயக்கப் பதிவேடு</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>பதிவேட்டின் இறுதிப் பகுதி மட்டுமே காட்டப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>இயங்குகிறது</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>அறிக்கையின்றி முடிந்தது</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>வெற்றி</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>தோல்வி</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>தரவுத்தளத்தை அணுக முடியவில்லை</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>உள் பிழை</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ஓர் இயக்கம் நடைபெறுகிறது</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %time அன்று %user தொடங்கியது.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>பின்தொடர்</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>நிறுவல் பூட்டப்பட்டுள்ளது</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>மற்றொரு இயக்கம் பூட்டை வைத்துள்ளது (ஒரு மேம்படுத்தல் அல்லது கன்சோலில் ஓர் இயக்கம்): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>நிலுவையில்</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>தேவையில்லை</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>தெரியாதது</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>திரும்பப்பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>பயன்படுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>பயன்படுத்தப்படும்</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>திரும்ப எடுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>திரும்ப எடுக்கப்படும்</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>இயக்கப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>மற்றொன்றுக்காகக் காத்திருக்கிறது</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>மாற்றம் ஏற்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>மாற்றம் ஏற்கப்படும்</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>உருவகப்படுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>நிறுவல் இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>நிலைமை</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>வரலாறு</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ஐத் திரும்ப எடு</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ஓர் இயக்கம் அதற்கு முன் எடுக்கப்பட்ட மீட்புப் புள்ளிக்குத் திரும்பப்பெறப்படுகிறது, ஓர் இடம்பெயர்வு அதன் down() மூலம். முந்தைய மீட்புப் புள்ளியை மீட்டமைப்பது வல்லுநர்களுக்கானது. ஒவ்வொன்றும் தற்போதைய நிலையின் மீட்புப் புள்ளிக்குப் பிறகு, உங்கள் பெயரில் பின்னணியில் இயங்கும்.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>எதைத் திரும்ப எடுக்கலாம் என்பதைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ஓர் இயக்கம்</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ஓர் இடம்பெயர்வு</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>முந்தைய மீட்புப் புள்ளி</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>விவரம்</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>மீட்புப் புள்ளி</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>லேபிள்</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>எடுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>வகை</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>மீட்டமைக்க வேண்டிய பகுதிகள்</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>தரவுத்தளம்</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>சேமிப்புக் கோப்புகள் (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>அமைப்புகள் (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>தரவுத்தளத்தை மீட்டமைப்பது அதை மீட்புப் புள்ளியின் நேரத்திற்குத் திருப்புகிறது, அமர்வுகள் உட்பட: பின்னர் மீண்டும் உள்நுழையக் கேட்கப்படலாம். அதன்பின் மாறிய அனைத்தும் இழக்கப்படும்; முதலில் தற்போதைய நிலையின் மீட்புப் புள்ளி எடுக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>இது எதை மீட்டமைக்கும் என எனக்குத் தெரியும்</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>மீட்புப் புள்ளியின் அடையாளத்தை மீண்டும் தட்டச்சு செய்யவும்</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ஆம், திரும்ப எடு</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>முன்பு மீட்புப் புள்ளி எடுக்கப்பட்ட இயக்கங்கள்.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>மீட்புப் புள்ளியுடன் இன்னும் இயக்கம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>தங்களைத் தாமே திரும்ப எடுக்கக்கூடிய பயன்படுத்தப்பட்ட இடம்பெயர்வுகள் (அவற்றுக்கு down() உள்ளது).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>பயன்படுத்தப்பட்ட எந்த இடம்பெயர்வுக்கும் down() இல்லை.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>முந்தைய மீட்புப் புள்ளிகள் (வல்லுநர்கள்)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>இன்னும் மீட்புப் புள்ளி இல்லை.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>இடம்பெயர்வுகளை இயக்கு</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>இயக்கம் %user ஆகப் பின்னணியில் தொடர்கிறது, அதன் பக்கம் அதை நடக்கும்போதே காட்டுகிறது. முதல் இடம்பெயர்வுக்கு முன் நிறுவலின் மீட்புப் புள்ளி எடுக்கப்படும்; ஓர் இடம்பெயர்வு தோல்வியடைந்தால் இயக்கம் நின்று மீட்புப் புள்ளி மீட்டமைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>முதலில் சோதனை இயக்கம்</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>நிலையைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>நிலுவையிலுள்ள இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>அவை இந்த வரிசையில் இயங்கும். ஒன்றையும் அதைச் சார்ந்தவற்றையும் பிந்தைய இயக்கத்திற்கு விட, அதன் தேர்வை நீக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>அதை இயக்கு</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>இயங்கும்போது பராமரிப்பு பயன்முறையை இயக்குகிறது.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>பயன்படுத்தப்பட்ட பின் மாற்றப்பட்டவை</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>இந்தக் கோப்புகள் பயன்படுத்தப்பட்டவை அல்ல. மாற்றம் ஒரு காரணத்துடன் ஏற்கப்படாவிட்டால் இயக்கம் அவற்றை மறுக்கும்; அவை மீண்டும் இயக்கப்படாது, புதிய சரிபார்ப்புத்தொகை பதிவுசெய்யப்பட்டு காரணம் தணிக்கைப் பதிவேட்டில் வைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>மாற்றங்களை ஏற்றுக்கொள்</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>காரணம்</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>இயல்புநிலைகளே பாதுகாப்பானவை. ஒவ்வொரு பெட்டியும் ஒரு படியை விடுகிறது.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>மீட்புப் புள்ளி இல்லை</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>இயக்கத்திற்கு முன்னும் பின்னும் மீட்புப் புள்ளி இல்லை: தோல்வியைத் தானாக மீட்டமைக்க முடியாது.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>மீட்டமைப்பு இல்லை</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>தோல்விக்குப் பின், நிறுவலைத் தோல்வி விட்ட நிலையிலேயே விடு.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>கமிட் செய்யப்படாத மாற்றங்களை வை</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>அமைப்புகள், நீட்டிப்புகள் அல்லது வடிவமைப்புகளில் கமிட் செய்யப்படாத மாற்றங்கள் இருந்தாலும் இயக்கு; அவை மீட்புப் புள்ளியில் சேரும்.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>கமிட் இல்லை</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>நிலைக் கோப்பையும் இயக்கப் பதிவேட்டையும் கமிட் செய்ய வேண்டாம் (குறிச்சொல்லும் அனுப்புதலும் இல்லை).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>அனுப்புதல் இல்லை</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>கமிட் செய்து குறிச்சொல் இடு, ஆனால் அனுப்ப வேண்டாம்.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>குறிச்சொல் இல்லை</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>கமிட் செய்து அனுப்பு, ஆனால் இயக்கத்திற்குக் குறிச்சொல் இட வேண்டாம்.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ஆம், இந்த இடம்பெயர்வுகளை இப்போது இயக்கு</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>எந்த இடம்பெயர்வும் நிலுவையில் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>நிலைக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>இந்த நிறுவலுக்கான மாற்றங்கள் ஒருமுறை கோப்புகளாக எழுதப்பட்டு (உள்ளடக்கம், வகுப்புகள், பாத்திரங்கள், அமைப்புகள், அமைப்புமுறை) தளத்தின் ஒவ்வொரு நிறுவலிலும் அதே வரிசையில் பயன்படுத்தப்படுகின்றன. ஓர் இயக்கம் முதலில் மீட்புப் புள்ளி எடுக்கிறது, ஓர் இடம்பெயர்வு தோல்வியடைந்தால் அதை மீட்டமைக்கிறது, செய்ததைப் பதிவுசெய்து, கமிட் செய்து அனுப்புகிறது.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>நிலுவையிலுள்ள %count ஐ இயக்கு</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>மேலோட்டம்</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>நிலுவையில்</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>முடிந்தவை</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>தோல்வியடைந்தவை</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>தேவையில்லாதவை</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>தரவுத்தளம்</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>பரிவர்த்தனைகள்: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>தள இடம்பெயர்வுகள் migrations/ இல் உள்ளன, ஒரு நீட்டிப்பின் இடம்பெயர்வுகள் extension/&lt;name&gt;/migrations/ இல். அவை அவற்றின் பெயர்களின் வரிசையிலும் அவற்றுக்குத் தேவையானவற்றின்படியும் இயங்கும்.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>கடைசி இயக்கம்</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>பயன்படுத்தப்பட்ட பின் கோப்பு மாற்றப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>இன்னும் இடம்பெயர்வு இல்லை. ./console exp:migration:generate --skeleton &lt;name&gt; --apply முதலாவதை எழுதும்.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>சமீபத்திய இயக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>அனைத்து இயக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>இன்னும் இயக்கம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>இயக்கத்தை உருவகப்படுத்த migration/run கொள்கை தேவை.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ஓர் இயக்கம் நடைபெறுகிறது: அது முடிந்ததும் உருவகப்படுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>அமைவு</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target இந்த நிறுவலின் இயக்கமோ, இடம்பெயர்வோ, மீட்புப் புள்ளியோ அல்ல.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>முதலில் “ஆம், திரும்ப எடு” என்பதைத் தேர்வுசெய்யவும்.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>முந்தைய மீட்புப் புள்ளியை மீட்டமைப்பது வல்லுநர்களுக்கானது: “இது எதை மீட்டமைக்கும் என எனக்குத் தெரியும்” என்பதைத் தேர்வுசெய்யவும்.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>மீட்புப் புள்ளியின் அடையாளத்தை மீண்டும் தட்டச்சு செய்யவும்: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>மீட்டமைக்கக் குறைந்தது ஒரு பகுதியைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>இந்த இயக்கத்திற்கு முன் மீட்புப் புள்ளி எடுக்கப்படவில்லை: அதன் இடம்பெயர்வுகளை ஒவ்வொன்றாகத் திரும்ப எடுக்கவும், அல்லது முந்தைய மீட்புப் புள்ளியை மீட்டமைக்கவும்.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>இந்த இடம்பெயர்வைத் தனியாகத் திரும்ப எடுக்க முடியாது: அது பயன்படுத்தப்படவில்லை, அல்லது அதற்கு down() இல்லை.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>படிவத்தைப் படிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>தொடர வேண்டிய இயக்கத்தைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>முதலில் “ஆம், இந்த இடம்பெயர்வுகளை இப்போது இயக்கு” என்பதைத் தேர்வுசெய்யவும்.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>குறைந்தது ஓர் இடம்பெயர்வைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ஓர் இடம்பெயர்வு பயன்படுத்தப்பட்ட பின் மாறியது: மாற்றத்தை ஒரு காரணத்துடன் ஏற்கவும், அல்லது கோப்பைப் பழையபடி வைக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>மாற்றப்பட்ட இடம்பெயர்வுகள் ஏன் ஏற்கப்படுகின்றன என்பதற்கான காரணத்தைத் தரவும்.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>காரணம் அதிகபட்சம் 500 எழுத்துகள்.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>இங்கே தொடங்கிய ஓர் இயக்கம் இன்னும் நடைபெறுகிறது (%detail). அது முடியும் வரை காத்திருக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>மற்றொரு இயக்கம் நிறுவலின் பூட்டை வைத்துள்ளது: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>இயக்கத்திற்கு உள்நுழைந்த, இருக்கும் ஒரு பயனர் தேவை.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php கட்டளை வரி நிரல் எதுவும் கிடைக்கவில்லை. migration.ini [AdminSettings] PhpCliPath இல் அதன் முழுப் பாதையை அமைக்கவும்.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open முடக்கப்பட்டுள்ளது, எனவே இங்கே இயக்கத்தைத் தொடங்க முடியாது. சேவையகத்தில் ./console exp:migration:migrate --apply ஐ இயக்கவும்.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>இயக்கங்களின் கோப்புறையில் எழுத முடியாது: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>இயக்கம் தொடங்கப்பட்டது, ஆனால் அதன் செயல்முறை அடையாளத்தைத் தெரிவிக்கவில்லை. %detail ஐச் சரிபார்க்கவும்.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>எதைத் திரும்ப எடுக்க வேண்டும் எனக் குறிப்பிடவும்.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>இயக்கத்தைத் தொடங்க முடியவில்லை.</translation>
     </message>
 </context>
 </TS>

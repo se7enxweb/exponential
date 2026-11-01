@@ -15142,6 +15142,14 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API GraphQL: titik akhirnya, skema dan ruang percubaan untuk mencuba pertanyaan.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Perubahan pada pemasangan yang disimpan sebagai fail: keadaannya, larian, jalankan dan gulung balik.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Hantar mutasi ke /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Keadaan tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Jadual migrasi belum wujud: ./console exp:upgrade --apply akan menciptanya.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migrasi gagal</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Satu larian sedang berjalan, dimulakan oleh %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Pemasangan dikunci: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Belum selesai</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Yatim</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Larian terakhir</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>belum ada</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Semua migrasi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Larian simulasi</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Larian cubaan</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Migrasi yang belum selesai dijalankan dalam satu transaksi yang kemudiannya digulung balik: tiada apa-apa yang disimpan. Di bawah ialah apa yang diubah oleh setiap satu dalam pangkalan data.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Apa yang akan dilakukan oleh larian sekarang. Tiada apa-apa yang diubah: setiap migrasi yang belum selesai menyenaraikan perubahan yang akan dibuatnya, dan larian apa yang akan dilakukannya sebelum dan selepas.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulasi</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Jalankan</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Larian cubaan gagal: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulasi memerlukan PostgreSQL atau SQLite, yang perubahan skemanya boleh digulung balik; pada pangkalan data ini, rancangan di bawah ialah apa yang akan dilakukan oleh larian.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Keadaan</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Apa yang akan dilakukannya</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulasi: %result dalam %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Belum ada migrasi.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Sebelum dan selepas larian</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Syot kilat sebelum</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>diambil, dan dipulihkan apabila migrasi gagal</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mati</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Syot kilat selepas</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>diambil apabila larian berjaya</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migrasi: %pending belum selesai, %done selesai, %failed gagal.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Sejarah migrasi</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Setiap larian dengan pengguna, persekitaran, syot kilat dan apa yang di-commit, ditag dan di-push. Larian yang gagal atau terganggu boleh disambung semula; larian yang mempunyai syot kilat yang diambil sebelumnya boleh ditarik balik.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Larian tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Jadual migrasi belum wujud: ./console exp:upgrade --apply akan menciptanya.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Tunjukkan</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Semua</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Larian</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dimulakan</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Oleh</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Syot kilat</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repositori</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>sebelum</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>selepas</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>tolak: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Sambung semula</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Gulung balik</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Tiada larian dalam keadaan ini.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Dimulakan di sini</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Larian, sambungan semula dan gulung balik yang dimulakan pada halaman ini, dengan laporan setiap satu.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Apa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Keputusan</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Gulung balik</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Gulung balik %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Larian %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Apa yang dilakukan oleh larian, rekod dan lognya. Larian yang dimulakan di sini terus berjalan di latar belakang apabila halaman ini ditutup; buka halaman ini semula untuk mengikutinya.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Sambung semula larian ini</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Gulung balik larian ini</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Rekod tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Kemajuan</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Dimulakan oleh %user pada %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Menyemak kod dan mengambil syot kilat sebelum larian</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Menjalankan %id (%index daripada %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done daripada %total selesai</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migrasi telah dijalankan; memulihkan syot kilat jika ada yang gagal</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Mengambil syot kilat selepas larian, commit, tag dan push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Memulihkan syot kilat</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Larian telah tamat. Memuatkan laporannya.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Kemajuan tidak dapat diikuti. Muat semula halaman untuk melihat perkembangan larian.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Halaman ini mengikuti larian semasa ia berjalan.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Muat semula</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Laporan</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Masa</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisaat</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Apa yang dicetak oleh larian sebagai ralat</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Rekod</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Persekitaran</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tiada</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Tamat</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Komit</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tanda</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Tolak</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mesej</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migrasi larian ini</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sumber</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Log larian</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Hanya bahagian akhir log ditunjukkan.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>sedang berjalan</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>tamat tanpa laporan</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>berjaya</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ditolak</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>pangkalan data tidak dapat dicapai</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ralat dalaman</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Satu larian sedang berjalan</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind dimulakan oleh %user pada %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Ikutinya</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Pemasangan dikunci</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Larian lain memegang kunci (naik taraf atau larian di konsol): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>selesai</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>belum selesai</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>tidak diperlukan</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>tidak diketahui</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>digulung balik</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>dilaksanakan</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>akan dilaksanakan</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ditarik balik</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>akan ditarik balik</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>tidak dijalankan</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>menunggu yang lain</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>perubahan diterima</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>perubahan akan diterima</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>disimulasikan</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Keadaan</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Sejarah</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Tarik balik %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Larian ditarik balik kepada syot kilat yang diambil sebelumnya, satu migrasi dengan down() miliknya. Memulihkan syot kilat yang lebih awal adalah untuk pakar. Setiap satu berjalan di latar belakang sebagai anda, selepas syot kilat keadaan sekarang diambil.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Apa yang boleh ditarik balik tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Satu larian</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Satu migrasi</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Syot kilat yang lebih awal</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Keterangan</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tidak</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Syot kilat</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label nama</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Diambil</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Jenis</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Bahagian untuk dipulihkan</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Pangkalan data</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Fail storan (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Tetapan (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Memulihkan pangkalan data membawanya kembali ke masa syot kilat, termasuk sesi: anda mungkin diminta log masuk semula selepas itu. Semua yang berubah sejak itu akan hilang; syot kilat keadaan sekarang diambil terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Saya tahu apa yang dipulihkan oleh ini</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Taip semula ID syot kilat</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ya, tarik balik</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Larian yang mempunyai syot kilat yang diambil sebelumnya.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Pilih</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Belum ada larian dengan syot kilat.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Migrasi yang telah dilaksanakan yang boleh menarik balik dirinya sendiri (ia mempunyai down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Tiada migrasi yang dilaksanakan mempunyai down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Syot kilat yang lebih awal (pakar)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Belum ada syot kilat.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Jalankan migrasi</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Larian berjalan di latar belakang sebagai %user, dan halamannya menunjukkannya semasa ia berjalan. Sebelum migrasi pertama, syot kilat pemasangan diambil; apabila migrasi gagal, larian berhenti dan syot kilat dipulihkan.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Larian cubaan dahulu</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Keadaan tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migrasi belum selesai</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ia dijalankan mengikut susunan ini. Nyahtanda satu untuk meninggalkannya, bersama yang memerlukannya, untuk larian kemudian.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Jalankannya</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Menghidupkan mod penyelenggaraan semasa ia berjalan.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Diubah selepas dilaksanakan</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Fail ini bukan yang telah dilaksanakan. Larian menolaknya kecuali perubahan diterima dengan alasan; ia tidak dijalankan semula, hasil tambah semak baharu direkodkan dan alasan disimpan dalam log audit.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Terima perubahan</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Mengapa</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Nilai lalai ialah yang selamat. Setiap kotak meninggalkan satu langkah.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Tanpa syot kilat</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Tiada syot kilat sebelum dan selepas larian: kegagalan tidak dapat dipulihkan secara automatik.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Tanpa pemulihan</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Selepas kegagalan, biarkan pemasangan seperti yang ditinggalkan oleh kegagalan itu.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Simpan perubahan yang belum di-commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Jalankan walaupun tetapan, sambungan atau reka bentuk mempunyai perubahan yang belum di-commit; ia dimasukkan ke dalam syot kilat.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Tanpa komit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Jangan commit fail keadaan dan log larian (juga tanpa tag dan tanpa push).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Tanpa tolak</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit dan tag, tetapi jangan push.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Tanpa tanda</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit dan push, tetapi jangan tag larian.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ya, jalankan migrasi ini sekarang</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Tiada migrasi yang belum selesai.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Kembali ke keadaan</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Perubahan pada pemasangan ini yang ditulis sekali sebagai fail (kandungan, kelas, peranan, tetapan, skema) dan dilaksanakan pada setiap pemasangan laman dalam susunan yang sama. Larian mengambil syot kilat dahulu, memulihkannya apabila migrasi gagal, dan merekod, commit serta push apa yang dilakukannya.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Jalankan %count yang belum selesai</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Gambaran keseluruhan</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Belum selesai</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Tidak diperlukan</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Pangkalan data</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaksi: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migrasi laman berada dalam migrations/, migrasi sambungan dalam extension/&lt;name&gt;/migrations/. Ia dijalankan mengikut susunan nama dan keperluannya.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Larian terakhir</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fail berubah selepas dilaksanakan.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Belum ada migrasi. ./console exp:migration:generate --skeleton &lt;name&gt; --apply menulis yang pertama.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Larian terkini</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Setiap larian</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Belum ada larian.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Mensimulasikan larian memerlukan polisi migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Satu larian sedang berjalan: simulasi selepas ia tamat.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Persediaan</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target bukan larian, bukan migrasi dan bukan syot kilat pemasangan ini.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Tandakan &quot;Ya, tarik balik&quot; dahulu.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Memulihkan syot kilat yang lebih awal adalah untuk pakar: tandakan &quot;Saya tahu apa yang dipulihkan oleh ini&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Taip semula ID syot kilat: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Pilih sekurang-kurangnya satu bahagian untuk dipulihkan.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Larian ini tiada syot kilat yang diambil sebelumnya: tarik balik migrasinya satu demi satu, atau pulihkan syot kilat yang lebih awal.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Migrasi ini tidak boleh ditarik balik dengan sendirinya: ia belum dilaksanakan, atau ia tiada down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Borang tidak dapat dibaca.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Pilih larian untuk disambung semula.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Tandakan &quot;Ya, jalankan migrasi ini sekarang&quot; dahulu.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Pilih sekurang-kurangnya satu migrasi.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Satu migrasi berubah selepas dilaksanakan: terima perubahan dengan alasan, atau kembalikan fail itu.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Berikan alasan mengapa migrasi yang diubah diterima.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Alasan paling banyak 500 aksara.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Larian yang dimulakan di sini masih berjalan (%detail). Tunggu sehingga ia tamat.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Larian lain memegang kunci pemasangan: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Larian memerlukan pengguna log masuk yang wujud.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Tiada binari baris arahan php ditemui. Tetapkan migration.ini [AdminSettings] PhpCliPath kepada laluan penuhnya.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open dinyahdayakan, jadi larian tidak boleh dimulakan di sini. Jalankan ./console exp:migration:migrate --apply pada pelayan.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Folder larian tidak boleh ditulis: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Larian telah dimulakan tetapi tidak melaporkan ID prosesnya. Semak %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Namakan apa yang hendak ditarik balik.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Larian tidak dapat dimulakan.</translation>
     </message>
 </context>
 </TS>

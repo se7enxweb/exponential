@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: དེའི་མཇུག་ཚེག་དང་། གཞི་ཁྲམ། འདྲི་རྩད་ཚོད་ལྟ་བྱེད་ས་བཅས།</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>གནས་སྤོ་ཁག</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ཡིག་ཆའི་རྣམ་པར་ཉར་བའི་སྒྲིག་འཇུག་གི་འགྱུར་བ། དེ་དག་གི་གནས་སྟངས། འཁོར་སྐྱོད་ཁག འཁོར་སྐྱོད་དང་ཕྱིར་ལོག</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>བཟོ་བཅོས་ /api/graphql ལ་སྐུར་རོགས།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>གནས་སྤོ་ཁག</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>གནས་སྟངས་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>གནས་སྤོའི་རེའུ་མིག་ད་དུང་མེད། ./console exp:upgrade --apply ཡིས་དེ་དག་བཟོ་གི་རེད།</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>གནས་སྤོ་ %count ཕམ་སོང་།</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>འཁོར་སྐྱོད་ཅིག་བྱེད་བཞིན་ཡོད། %user ཡིས་འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>སྒྲིག་འཇུག་ལ་ཟྭ་རྒྱབ་ཡོད། %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>སྒུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ཕམ་པ།</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ཕ་མ་མེད་པ།</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>འཁོར་སྐྱོད་མཐའ་མ།</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ད་དུང་མེད།</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>གནས་སྤོ་ཚང་མ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>དཔེ་སྟོན་འཁོར་སྐྱོད།</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ཚོད་ལྟའི་འཁོར་སྐྱོད།</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>སྒུག་བཞིན་པའི་གནས་སྤོ་རྣམས་རྗེས་སུ་ཕྱིར་ལོག་བྱས་པའི་ཉོ་འཚོང་ཞིག་གི་ནང་འཁོར་སྐྱོད་བྱས། གང་ཡང་ཉར་མེད། གཤམ་དུ་རེ་རེས་གཞི་གྲངས་མཛོད་ནང་ཅི་ཞིག་བསྒྱུར་བ་སྟོན།</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>འཁོར་སྐྱོད་ཅིག་གིས་ད་ལྟ་ཅི་ཞིག་བྱེད་རྒྱུ། གང་ཡང་མི་འགྱུར། སྒུག་བཞིན་པའི་གནས་སྤོ་རེ་རེས་བྱེད་རྒྱུའི་འགྱུར་བ་དང་། འཁོར་སྐྱོད་ཀྱིས་སྔོན་རྗེས་སུ་བྱེད་རྒྱུ་ཐོ་འགོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>དཔེ་སྟོན་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ཚོད་ལྟའི་འཁོར་སྐྱོད་ཕམ་སོང་། %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>དཔེ་སྟོན་ལ་ PostgreSQL ཡང་ན་ SQLite དགོས། དེ་དག་གི་སྒྲོམ་གཞིའི་འགྱུར་བ་ཕྱིར་ལོག་ཐུབ། གཞི་གྲངས་མཛོད་འདིའི་ཐོག་གཤམ་གྱི་འཆར་གཞི་ནི་འཁོར་སྐྱོད་ཀྱིས་བྱེད་རྒྱུ་ཡིན།</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>གནས་སྤོ་རྣམས།</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>གནས་སྤོ།</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>གནས་བབ།</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>བྱེད་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>དཔེ་སྟོན། %result སྟོང་ཆ་སྐར་ %ms ནང་།</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ད་དུང་གནས་སྤོ་མེད།</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>འཁོར་སྐྱོད་ཀྱི་སྔོན་དང་རྗེས།</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>སྔོན་གྱི་པར་རིས།</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ལེན་གྱི་ཡོད། གནས་སྤོ་ཕམ་ན་སླར་གསོ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>སྒོ་བརྒྱབ།</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>རྗེས་ཀྱི་པར་རིས།</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>འཁོར་སྐྱོད་ལེགས་གྲུབ་ན་ལེན།</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>གནས་སྤོ་ %total ། %pending སྒུག་བཞིན་པ། %done ལེགས་གྲུབ། %failed ཕམ་པ།</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>གནས་སྤོའི་ལོ་རྒྱུས།</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>འཁོར་སྐྱོད་རེ་རེ་དང་དེའི་བེད་སྤྱོད་པ། ཁོར་ཡུག པར་རིས། ཀོམ་མིཊ་དང་རྟགས་བྱང་། སྐྱེལ་བ་བྱས་པ་བཅས། ཕམ་པའམ་བར་ཆད་པའི་འཁོར་སྐྱོད་མུ་མཐུད་ཐུབ། སྔོན་ལ་པར་རིས་བླངས་པའི་འཁོར་སྐྱོད་ཕྱིར་ལེན་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>འཁོར་སྐྱོད་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>གནས་སྤོའི་རེའུ་མིག་ད་དུང་མེད། ./console exp:upgrade --apply ཡིས་དེ་དག་བཟོ་གི་རེད།</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>མངོན།</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ཚང་མ།</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>འཁོར་སྐྱོད་ཁག</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>བྱེད་མཁན།</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>པར་རིས་ཁག</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>མཛོད་ཁང་།</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>བྱ་འགུལ།</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>སྔོན།</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>རྗེས།</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>སྐྱེལ་བ། %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>མུ་མཐུད།</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>གནས་བབ་འདིའི་ནང་འཁོར་སྐྱོད་མེད།</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>འདིར་འགོ་བཙུགས་པ།</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ཤོག་ངོས་འདི་དག་ཐོག་འགོ་བཙུགས་པའི་འཁོར་སྐྱོད་དང་མུ་མཐུད། ཕྱིར་ལོག་རྣམས། རེ་རེའི་སྙན་ཞུ་དང་བཅས།</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ཅི།</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>འབྲས་བུ།</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ཡི་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>འཁོར་སྐྱོད་ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>འཁོར་སྐྱོད་ཀྱིས་བྱས་པ་དང་། དེའི་ཟིན་ཐོ། ཉིན་ཐོ། འདིར་འགོ་བཙུགས་པའི་འཁོར་སྐྱོད་ནི་ཤོག་ངོས་འདི་ཁ་བརྒྱབ་ཀྱང་རྒྱབ་ལྗོངས་སུ་མུ་མཐུད་ཡོང་། དེའི་རྗེས་འདེད་བྱེད་པར་ཤོག་ངོས་ཡང་བསྐྱར་ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>འཁོར་སྐྱོད་འདི་མུ་མཐུད།</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>འཁོར་སྐྱོད་འདི་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ཟིན་ཐོ་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>མཐར་ཕྱིན་རིམ་པ།</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ཡིས་ %time ལ་འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ཨང་རྟགས་ཞིབ་བཤེར་དང་འཁོར་སྐྱོད་སྔོན་ལ་པར་རིས་ལེན་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id འཁོར་སྐྱོད་བཞིན་པ། (%total ནང་གི་ %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total ནང་ནས་ %done ལེགས་གྲུབ།</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>གནས་སྤོ་རྣམས་འཁོར་སྐྱོད་ཟིན། གཅིག་ཕམ་ན་པར་རིས་སླར་གསོ་བྱེད་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>འཁོར་སྐྱོད་རྗེས་སུ་པར་རིས་ལེན་པ། ཀོམ་མིཊ། རྟགས་བྱང་། སྐྱེལ་བ་བྱེད་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>པར་རིས་སླར་གསོ་བྱེད་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>འཁོར་སྐྱོད་མཇུག་རྫོགས། དེའི་སྙན་ཞུ་འཇུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>མཐར་ཕྱིན་རིམ་པའི་རྗེས་འདེད་བྱེད་མ་ཐུབ། འཁོར་སྐྱོད་ཇི་ལྟར་ཡོད་མཐོང་བར་ཤོག་ངོས་བསྐྱར་འཇུག་བྱོས།</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ཤོག་ངོས་འདིས་འཁོར་སྐྱོད་བྱེད་བཞིན་པའི་རྗེས་འདེད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>བསྐྱར་འཇུག</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>སྙན་ཞུ།</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>དུས་ཡུན།</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>སྟོང་ཆ་སྐར་ %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>འཁོར་སྐྱོད་ཀྱིས་ནོར་འཁྲུལ་དུ་བཀོད་པ།</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ཟིན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ཁོར་ཡུག</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>མེད།</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>མཇུག་རྫོགས།</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ཀོམ་མིཊ།</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>རྟགས་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>སྐྱེལ་བ།</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>འཕྲིན་ཡིག</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>འཁོར་སྐྱོད་འདིའི་གནས་སྤོ་རྣམས།</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>འབྱུང་ཁུངས།</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>འཁོར་སྐྱོད་ཀྱི་ཉིན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ཉིན་ཐོའི་མཇུག་ཁོ་ན་སྟོན།</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>འཁོར་སྐྱོད་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>སྙན་ཞུ་མེད་པར་མཇུག་རྫོགས།</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ལེགས་གྲུབ།</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ཕམ་པ།</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ངོས་ལེན་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>གཞི་གྲངས་མཛོད་ལ་འབྲེལ་མ་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ནང་ཁུལ་ནོར་འཁྲུལ།</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>འཁོར་སྐྱོད་ཅིག་བྱེད་བཞིན་ཡོད།</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user ཡིས་ %time ལ་འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>རྗེས་འདེད།</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>སྒྲིག་འཇུག་ལ་ཟྭ་རྒྱབ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>འཁོར་སྐྱོད་གཞན་ཞིག་གིས་ཟྭ་འཛིན་ཡོད། (རིམ་སྤར་རམ་ཚོད་འཛིན་སྡེར་ཐོག་གི་འཁོར་སྐྱོད།) %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ལེགས་གྲུབ།</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>སྒུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>མི་དགོས།</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>མི་ཤེས་པ།</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ཕྱིར་ལོག་བྱས།</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ལག་བསྟར་བྱས།</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ལག་བསྟར་བྱེད་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ཕྱིར་བླངས།</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ཕྱིར་ལེན་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>འཁོར་སྐྱོད་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>གཞན་ཞིག་ལ་སྒུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>འགྱུར་བ་ངོས་ལེན་བྱས།</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>འགྱུར་བ་ངོས་ལེན་བྱེད་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>དཔེ་སྟོན་བྱས།</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>གནས་སྤོ་ཁག</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>གནས་སྟངས།</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ལོ་རྒྱུས།</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ཕྱིར་ལེན།</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>འཁོར་སྐྱོད་ཅིག་དེའི་སྔོན་དུ་བླངས་པའི་པར་རིས་ལ་ཕྱིར་ལོག་བྱེད། གནས་སྤོ་གཅིག་ནི་དེའི་ down() ཡིས་ཕྱིར་ལོག་བྱེད། སྔོན་གྱི་པར་རིས་སླར་གསོ་བྱེད་པ་ནི་མཁས་པའི་ཆེད་ཡིན། རེ་རེ་ད་ལྟའི་གནས་སྟངས་ཀྱི་པར་རིས་བླངས་རྗེས་ཁྱེད་ཀྱི་མིང་ཐོག་རྒྱབ་ལྗོངས་སུ་འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ཕྱིར་ལེན་ཐུབ་པ་ཅི་ཡིན་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>འཁོར་སྐྱོད་ཅིག</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>གནས་སྤོ་གཅིག</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>སྔོན་གྱི་པར་རིས་ཤིག</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>འགྲེལ་བཤད།</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ཡིན།</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>མིན།</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>པར་རིས།</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>བླངས་དུས།</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>རིགས།</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>སླར་གསོ་བྱ་རྒྱུའི་ཆ་ཤས།</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>གཞི་གྲངས་མཛོད།</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ཉར་ཚགས་ཡིག་ཆ། (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>སྒྲིག་འགོད། (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>གཞི་གྲངས་མཛོད་སླར་གསོ་བྱས་ན་དེ་ནི་སྐབས་ཡུན་བཅས་པར་རིས་ཀྱི་དུས་ལ་ཕྱིར་ལོག་ཡོང་། དེ་རྗེས་ཁྱེད་ལ་ཡང་བསྐྱར་ནང་འཛུལ་བྱེད་དགོས་སྲིད། དེ་ནས་བཟུང་འགྱུར་བ་ཚང་མ་བོར་བརླག་ཏུ་འགྲོ། ཐོག་མར་ད་ལྟའི་གནས་སྟངས་ཀྱི་པར་རིས་ལེན།</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>འདིས་ཅི་ཞིག་སླར་གསོ་བྱེད་པ་ང་ལ་ཤེས།</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>པར་རིས་ཀྱི་ཨང་རྟགས་ཡང་བསྐྱར་འབྲི།</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ཡིན། ཕྱིར་ལེན།</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ཕྱིར་འཐེན།</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>སྔོན་ལ་པར་རིས་བླངས་པའི་འཁོར་སྐྱོད་རྣམས།</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>འདེམས།</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ད་དུང་པར་རིས་ཡོད་པའི་འཁོར་སྐྱོད་མེད།</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>རང་ཉིད་ཕྱིར་ལེན་ཐུབ་པའི་ལག་བསྟར་བྱས་པའི་གནས་སྤོ་རྣམས། (དེ་དག་ལ་ down() ཡོད།)</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ལག་བསྟར་བྱས་པའི་གནས་སྤོ་གང་ལའང་ down() མེད།</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>སྔོན་གྱི་པར་རིས་ཁག (མཁས་པ།)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ད་དུང་པར་རིས་མེད།</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>གནས་སྤོ་རྣམས་འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>འཁོར་སྐྱོད་ནི་ %user ཡི་ཐོག་ནས་རྒྱབ་ལྗོངས་སུ་བྱེད། དེའི་ཤོག་ངོས་ཀྱིས་བྱེད་བཞིན་པར་སྟོན། གནས་སྤོ་དང་པོའི་སྔོན་ལ་སྒྲིག་འཇུག་གི་པར་རིས་ལེན། གནས་སྤོ་ཕམ་ན་འཁོར་སྐྱོད་མཚམས་འཇོག་ཅིང་པར་རིས་སླར་གསོ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ཐོག་མར་ཚོད་ལྟའི་འཁོར་སྐྱོད།</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>གནས་སྟངས་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>སྒུག་བཞིན་པའི་གནས་སྤོ།</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>དེ་དག་གོ་རིམ་འདི་ལྟར་འཁོར་སྐྱོད་བྱེད། གཅིག་དང་དེ་ལ་བརྟེན་པ་རྣམས་རྗེས་མའི་འཁོར་སྐྱོད་ཆེད་དུ་བཞག་ན་རྟགས་མེད་པར་བཟོས།</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>འཁོར་སྐྱོད་སྐབས་ཉམས་གསོའི་རྣམ་པ་སྒོ་འབྱེད།</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>ལག་བསྟར་བྱས་རྗེས་བསྒྱུར་བ།</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ཡིག་ཆ་འདི་དག་ནི་ལག་བསྟར་བྱས་པ་དེ་དག་མིན། འགྱུར་བ་རྒྱུ་མཚན་དང་བཅས་ངོས་ལེན་མ་བྱས་ན་འཁོར་སྐྱོད་ཀྱིས་དེ་དག་ངོས་ལེན་མི་བྱེད། དེ་དག་ཡང་བསྐྱར་འཁོར་སྐྱོད་མི་བྱེད། ཞིབ་བཤེར་ཨང་གྲངས་གསར་པ་ཟིན་ཐོར་འགོད་ཅིང་རྒྱུ་མཚན་ཞིབ་བཤེར་ཉིན་ཐོར་ཉར།</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>འགྱུར་བ་ངོས་ལེན།</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ཅིའི་ཕྱིར།</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>སྔོན་སྒྲིག་རྣམས་ནི་ཉེན་མེད་ཡིན། སྒྲོམ་རེ་རེས་གོམ་པ་གཅིག་བཞག</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>པར་རིས་མེད།</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>འཁོར་སྐྱོད་སྔོན་རྗེས་སུ་པར་རིས་མེད། ཕམ་ཉེས་རང་འགུལ་གྱིས་སླར་གསོ་བྱེད་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>སླར་གསོ་མེད།</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ཕམ་ཉེས་རྗེས་སྒྲིག་འཇུག་ཕམ་ཉེས་ཀྱིས་བཞག་པ་ལྟར་བཞག</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>ཀོམ་མིཊ་མ་བྱས་པའི་འགྱུར་བ་ཉར།</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>སྒྲིག་འགོད་དམ་རྒྱ་སྐྱེད། ཇུས་འགོད་ལ་ཀོམ་མིཊ་མ་བྱས་པའི་འགྱུར་བ་ཡོད་ཀྱང་འཁོར་སྐྱོད་བྱེད། དེ་དག་པར་རིས་ནང་འཇུག</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ཀོམ་མིཊ་མེད།</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>གནས་སྟངས་ཡིག་ཆ་དང་འཁོར་སྐྱོད་ཉིན་ཐོ་ཀོམ་མིཊ་མ་བྱེད། (རྟགས་བྱང་དང་སྐྱེལ་བའང་མེད།)</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>སྐྱེལ་བ་མེད།</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ཀོམ་མིཊ་དང་རྟགས་བྱང་བྱེད། འོན་ཀྱང་སྐྱེལ་བ་མ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>རྟགས་བྱང་མེད།</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ཀོམ་མིཊ་དང་སྐྱེལ་བ་བྱེད། འོན་ཀྱང་འཁོར་སྐྱོད་ལ་རྟགས་བྱང་མ་སྦྱོར།</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ཡིན། གནས་སྤོ་འདི་དག་ད་ལྟ་འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>སྒུག་བཞིན་པའི་གནས་སྤོ་མེད།</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>གནས་སྟངས་ལ་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>སྒྲིག་འཇུག་འདིའི་འགྱུར་བ། ཐེངས་གཅིག་ཡིག་ཆའི་རྣམ་པར་བྲིས་པ། (ནང་དོན། རིགས། འགན་ཁུར། སྒྲིག་འགོད། སྒྲོམ་གཞི།) དྲ་ཚིགས་ཀྱི་སྒྲིག་འཇུག་ཚང་མར་གོ་རིམ་གཅིག་མཚུངས་སུ་ལག་བསྟར་བྱེད། འཁོར་སྐྱོད་ཀྱིས་ཐོག་མར་པར་རིས་ལེན། གནས་སྤོ་ཕམ་ན་དེ་སླར་གསོ་བྱེད། བྱས་པ་ཟིན་ཐོར་འགོད་ཅིང་ཀོམ་མིཊ་དང་སྐྱེལ་བ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>སྒུག་བཞིན་པ་ %count འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>སྤྱི་མཐོང་།</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>སྒུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ལེགས་གྲུབ།</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ཕམ་པ།</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>མི་དགོས།</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>གཞི་གྲངས་མཛོད།</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ཉོ་འཚོང་། %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>དྲ་ཚིགས་ཀྱི་གནས་སྤོ་ migrations/ ནང་ཡོད། རྒྱ་སྐྱེད་ཀྱི་གནས་སྤོ་ extension/&lt;name&gt;/migrations/ ནང་ཡོད། དེ་དག་མིང་གི་གོ་རིམ་དང་བརྟེན་སའི་རིམ་པ་ལྟར་འཁོར་སྐྱོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>འཁོར་སྐྱོད་མཐའ་མ།</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ཡིག་ཆ་ལག་བསྟར་བྱས་རྗེས་འགྱུར་སོང་།</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ད་དུང་གནས་སྤོ་མེད། ./console exp:migration:generate --skeleton &lt;name&gt; --apply ཡིས་དང་པོ་དེ་འབྲི།</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ཉེ་ཆར་གྱི་འཁོར་སྐྱོད།</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>འཁོར་སྐྱོད་ཚང་མ།</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ད་དུང་འཁོར་སྐྱོད་མེད།</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>འཁོར་སྐྱོད་དཔེ་སྟོན་ལ་ migration/run སྲིད་ཇུས་དགོས།</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>འཁོར་སྐྱོད་ཅིག་བྱེད་བཞིན་ཡོད། དེ་མཇུག་རྫོགས་རྗེས་དཔེ་སྟོན་བྱོས།</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ནི་སྒྲིག་འཇུག་འདིའི་འཁོར་སྐྱོད་དང་གནས་སྤོ། པར་རིས་གང་ཡང་མིན།</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ཐོག་མར་「ཡིན། ཕྱིར་ལེན།」ལ་རྟགས་རྒྱོབ།</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>སྔོན་གྱི་པར་རིས་སླར་གསོ་བྱེད་པ་ནི་མཁས་པའི་ཆེད་ཡིན། 「འདིས་ཅི་ཞིག་སླར་གསོ་བྱེད་པ་ང་ལ་ཤེས།」ལ་རྟགས་རྒྱོབ།</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>པར་རིས་ཀྱི་ཨང་རྟགས་ཡང་བསྐྱར་འབྲི། %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>སླར་གསོ་བྱ་རྒྱུའི་ཆ་ཤས་མ་མཐར་གཅིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>འཁོར་སྐྱོད་འདིའི་སྔོན་ལ་པར་རིས་བླངས་མེད། དེའི་གནས་སྤོ་རྣམས་རེ་རེ་བཞིན་ཕྱིར་ལེན་ནམ། སྔོན་གྱི་པར་རིས་ཤིག་སླར་གསོ་བྱོས།</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>གནས་སྤོ་འདི་རང་ཉིད་ཀྱིས་ཕྱིར་ལེན་མི་ཐུབ། ལག་བསྟར་བྱས་མེད་དམ། down() མེད།</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>རེའུ་མིག་ཀློག་མ་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>མུ་མཐུད་བྱ་རྒྱུའི་འཁོར་སྐྱོད་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ཐོག་མར་「ཡིན། གནས་སྤོ་འདི་དག་ད་ལྟ་འཁོར་སྐྱོད་བྱེད།」ལ་རྟགས་རྒྱོབ།</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>གནས་སྤོ་མ་མཐར་གཅིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>གནས་སྤོ་ཞིག་ལག་བསྟར་བྱས་རྗེས་འགྱུར་སོང་། འགྱུར་བ་རྒྱུ་མཚན་དང་བཅས་ངོས་ལེན་ནམ། ཡིག་ཆ་སྔར་བཞིན་བཞག</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>བསྒྱུར་བའི་གནས་སྤོ་ངོས་ལེན་བྱེད་པའི་རྒྱུ་མཚན་འགོད།</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>རྒྱུ་མཚན་ནི་ཡིག་འབྲུ་ 500 ལས་མི་མང་།</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>འདིར་འགོ་བཙུགས་པའི་འཁོར་སྐྱོད་ད་དུང་བྱེད་བཞིན་ཡོད། (%detail) དེ་མཇུག་རྫོགས་བར་སྒུག</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>འཁོར་སྐྱོད་གཞན་ཞིག་གིས་སྒྲིག་འཇུག་གི་ཟྭ་འཛིན་ཡོད། %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>འཁོར་སྐྱོད་ལ་ཡོད་པའི་ནང་འཛུལ་བྱས་པའི་བེད་སྤྱོད་པ་ཞིག་དགོས།</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php བཀའ་བརྡའི་ཕྲེང་གི་བྱ་རིམ་རྙེད་མ་བྱུང་། migration.ini [AdminSettings] PhpCliPath དེའི་ལམ་ཕྲན་ཆ་ཚང་དུ་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ནུས་མེད་བཟོས་ཡོད་པས་འདིར་འཁོར་སྐྱོད་འགོ་འཛུགས་མི་ཐུབ། ཞབས་ཞུ་འཕྲུལ་ཆས་ཐོག་ ./console exp:migration:migrate --apply འཁོར་སྐྱོད་བྱོས།</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>འཁོར་སྐྱོད་ཀྱི་ཡིག་སྣོད་ནང་འབྲི་མི་ཐུབ། %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>འཁོར་སྐྱོད་འགོ་བཙུགས་ཀྱང་དེའི་བྱ་རིམ་ཨང་རྟགས་སྙན་སེང་མ་བྱས། %detail ཞིབ་བཤེར་བྱོས།</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ཕྱིར་ལེན་བྱ་རྒྱུ་གསལ་བཤད་བྱོས།</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>འཁོར་སྐྱོད་འགོ་འཛུགས་མ་ཐུབ།</translation>
     </message>
 </context>
 </TS>

@@ -15140,6 +15140,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ebe njedebe ya, schema na ebe egwuregwu iji nwalee ajụjụ.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mbugharị</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mgbanwe na nrụnye echekwara dị ka faịlụ: ọnọdụ ha, ọgbụgba ha, ịgba na ịtụgharị azụ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Ziga mmegharị na /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Mbugharị</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ọnọdụ ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tebụl nke mbugharị adịbeghị: ./console exp:upgrade --apply na-emepụta ha.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Mbugharị %count adaala</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ọgbụgba na-aga n&apos;ihu, nke %user malitere</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Akpọchiri nrụnye ahụ: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Na-eche</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Adaala</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Ụmụ mgbei</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ọgbụgba ikpeazụ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ọ dịbeghị</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Mbugharị niile</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Ọgbụgba e ṅomiri</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ọgbụgba nnwale</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Mbugharị na-eche gbara n&apos;ime azụmahịa e mesịrị tụgharịa azụ: ọ dịghị ihe echekwara. N&apos;okpuru bụ ihe nke ọ bụla gbanwere n&apos;ebe nchekwa data.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ihe ọgbụgba ga-eme ugbu a. Ọ dịghị ihe a gbanwere: mbugharị ọ bụla na-eche na-edepụta mgbanwe ọ ga-eme, ọgbụgba ahụ na-edepụtakwa ihe ọ ga-eme tupu na mgbe e mesịrị.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Ṅomie</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Gbaa</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Ọgbụgba nnwale adaala: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Nṅomi chọrọ PostgreSQL ma ọ bụ SQLite, ndị enwere ike ịtụgharị mgbanwe schema ha azụ; n&apos;ebe nchekwa data a, atụmatụ dị n&apos;okpuru bụ ihe ọgbụgba ga-eme.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Mbugharị ndị ahụ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Mbugharị</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ọnọdụ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ihe ọ ga-eme</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Nṅomi: %result n&apos;ime %ms millisekọnd</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Enwebeghị mbugharị.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Tupu na mgbe ọgbụgba gasịrị</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Onyonyo nchekwa tupu</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>a na-ese ya, a na-eweghachikwa ya mgbe mbugharị dara</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>gbanyụrụ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Onyonyo nchekwa mgbe e mesịrị</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>a na-ese ya mgbe ọgbụgba gara nke ọma</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Mbugharị %total: %pending na-eche, %done emechala, %failed adaala.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Akụkọ ihe mere nke mbugharị</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ọgbụgba ọ bụla ya na onye ọrụ ya, gburugburu ya, onyonyo nchekwa ya na ihe e mere commit, tag na push. Enwere ike ịmaliteghachi ọgbụgba dara ada ma ọ bụ nke kwụsịrị; enwere ike ịtụgharị azụ ọgbụgba nwere onyonyo nchekwa e sere tupu ya.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ọgbụgba ndị ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tebụl nke mbugharị adịbeghị: ./console exp:upgrade --apply na-emepụta ha.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Gosi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ha niile</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ọgbụgba</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Malitere</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Site n&apos;aka</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Onyonyo nchekwa</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ebe nchekwa</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>tupu</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>mgbe e mesịrị</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>nziga: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Maliteghachi</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Tụgharịa azụ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Enweghị ọgbụgba n&apos;ọnọdụ a.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Malitere ebe a</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Ọgbụgba, mmaliteghachi na ntụgharị azụ a malitere na peeji ndị a, ya na akụkọ nke ọ bụla.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Gịnị</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nsonaazụ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Ntụgharị azụ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Ntụgharị azụ nke %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Ọgbụgba %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ihe ọgbụgba ahụ mere, ndekọ ya na akwụkwọ ndekọ ya. Ọgbụgba a malitere ebe a na-aga n&apos;ihu n&apos;azụ mgbe e mechiri peeji a; mepee peeji ahụ ọzọ ka ị soro ya.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Maliteghachi ọgbụgba a</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Tụgharịa ọgbụgba a azụ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ndekọ ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ọganihu</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user malitere ya na %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Na-enyocha koodu ma na-ese onyonyo nchekwa tupu ọgbụgba</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Na-agba %id (%index n&apos;ime %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done n&apos;ime %total emechala</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Mbugharị agbaala; na-eweghachi onyonyo nchekwa ma ọ bụrụ na otu dara</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Na-ese onyonyo nchekwa mgbe ọgbụgba gasịrị, commit, tag na push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Na-eweghachi onyonyo nchekwa</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Ọgbụgba ahụ agwụla. Na-ebunye akụkọ ya.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Enweghị ike iso ọganihu ahụ. Bugharịa peeji ahụ ka ị hụ otú ọgbụgba ahụ si aga.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Peeji a na-eso ọgbụgba ahụ ka ọ na-aga.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Bugharịa</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Akụkọ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oge o were</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisekọnd</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Ihe ọgbụgba ahụ bipụtara dị ka njehie</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Ndekọ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Gburugburu</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ọ dịghị</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Kwụsịrị</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Nkwenye</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Mkpado</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Nziga</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ozi</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Mbugharị nke ọgbụgba a</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Isi mmalite</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Akwụkwọ ndekọ ọgbụgba</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Ọ bụ naanị njedebe nke akwụkwọ ndekọ ka egosiri.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>na-agba</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>kwụsịrị na-enweghị akụkọ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>gara nke ọma</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>dara</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>a jụrụ ya</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>enweghị ike iru ebe nchekwa data</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>njehie ime</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ọgbụgba na-aga n&apos;ihu</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind nke %user malitere na %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Soro ya</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Akpọchiri nrụnye ahụ</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Ọgbụgba ọzọ jidere mkpọchi ahụ (nkwalite ma ọ bụ ọgbụgba na console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>emechala</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>na-eche</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>achọghị ya</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>amaghị</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>a tụgharịrị ya azụ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>etinyela</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>a ga-etinye ya</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>eweghachiri ya</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>a ga-eweghachi ya</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>agbaghị ya</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>na-eche onye ọzọ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>anabatara mgbanwe</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>a ga-anabata mgbanwe</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>e ṅomiri ya</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mbugharị</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ọnọdụ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Akụkọ ihe mere</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Tụgharịa %target azụ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>A na-atụgharị ọgbụgba azụ gaa n&apos;onyonyo nchekwa e sere tupu ya, otu mbugharị site na down() ya. Iweghachi onyonyo nchekwa mbụ bụ maka ndị ọkachamara. Nke ọ bụla na-agba n&apos;azụ dị ka gị, mgbe e sesịrị onyonyo nchekwa nke ọnọdụ ugbu a.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ihe enwere ike ịtụgharị azụ: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Otu ọgbụgba</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Otu mbugharị</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Onyonyo nchekwa mbụ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Nkọwa</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>mba</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Onyonyo nchekwa</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Aha akara</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>E sere ya</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Ụdị</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Akụkụ a ga-eweghachi</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Ebe nchekwa data</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Faịlụ nchekwa (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Ntọala (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Iweghachi ebe nchekwa data na-eweghachi ya n&apos;oge onyonyo nchekwa ahụ, gụnyere nnọkọ: a nwere ike ịgwa gị ka ị banye ọzọ mgbe e mesịrị. Ihe niile gbanwere kemgbe ahụ ga-efu; a na-ebu ụzọ ese onyonyo nchekwa nke ọnọdụ ugbu a.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Amaara m ihe nke a na-eweghachi</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Pịnye NJ nke onyonyo nchekwa ọzọ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ee, tụgharịa ya azụ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kagbuo</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ọgbụgba ndị nwere onyonyo nchekwa e sere tupu ha.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Họrọ</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Enwebeghị ọgbụgba nwere onyonyo nchekwa.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Mbugharị etinyere nwere ike ịtụgharị onwe ha azụ (ha nwere down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Ọ dịghị mbugharị etinyere nwere down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Onyonyo nchekwa mbụ (ndị ọkachamara)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Enwebeghị onyonyo nchekwa.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Gbaa mbugharị ndị ahụ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Ọgbụgba ahụ na-aga n&apos;azụ dị ka %user, peeji ya na-egosikwa ya ka ọ na-aga. Tupu mbugharị mbụ, a na-ese onyonyo nchekwa nke nrụnye; mgbe mbugharị dara, ọgbụgba ahụ na-akwụsị, a na-eweghachikwa onyonyo nchekwa ahụ.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Buru ụzọ mee ọgbụgba nnwale</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ọnọdụ ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Mbugharị na-eche</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ha na-agba n&apos;usoro a. Wepụ akara n&apos;otu iji hapụ ya, ya na ndị chọrọ ya, maka ọgbụgba ọzọ.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Gbaa ya</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Na-agbanye ọnọdụ mmezi mgbe ọ na-agba.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Gbanwere mgbe etinyere ha</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Faịlụ ndị a abụghị ndị etinyere. Ọgbụgba na-ajụ ha ma ọ bụrụ na a nabataghị mgbanwe ahụ site n&apos;ihe kpatara ya; a naghị agba ha ọzọ, a na-edekọ checksum ọhụrụ, a na-edebekwa ihe kpatara ya n&apos;akwụkwọ ndekọ nyocha.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Nabata mgbanwe ndị ahụ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ihe kpatara ya</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Ntọala ndabara bụ ndị dị nchebe. Igbe ọ bụla na-ahapụ otu nzọụkwụ.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Enweghị onyonyo nchekwa</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Enweghị onyonyo nchekwa tupu na mgbe ọgbụgba gasịrị: enweghị ike iweghachi ọdịda na-akpaghị aka.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Enweghị mweghachi</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Mgbe ọdịda gasịrị, hapụ nrụnye ahụ otú ọdịda ahụ hapụrụ ya.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Debe mgbanwe a na-emebeghị commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Gbaa n&apos;agbanyeghị na ntọala, ndọtị ma ọ bụ imewe nwere mgbanwe a na-emebeghị commit; ha na-abanye n&apos;onyonyo nchekwa ahụ.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Enweghị commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Emela commit nke faịlụ ọnọdụ na akwụkwọ ndekọ ọgbụgba (enweghịkwa tag na push).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Enweghị push</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Mee commit na tag, mana emela push.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Enweghị tag</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Mee commit na push, mana etinyela tag n&apos;ọgbụgba ahụ.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ee, gbaa mbugharị ndị a ugbu a</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Ọ dịghị mbugharị na-eche.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Laghachi n&apos;ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Mgbanwe na nrụnye a e dere otu ugboro dị ka faịlụ (ọdịnaya, klas, ọrụ, ntọala, schema) ma tinye ha na nrụnye ọ bụla nke saịtị ahụ n&apos;otu usoro. Ọgbụgba na-ebu ụzọ ese onyonyo nchekwa, na-eweghachi ya mgbe mbugharị dara, ma na-edekọ, na-eme commit ma na-eme push nke ihe o mere.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Gbaa %count na-eche</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nchịkọta</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Na-eche</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Emechala</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Adaala</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Achọghị ya</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Ebe nchekwa data</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>azụmahịa: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Mbugharị saịtị dị na migrations/, nke ndọtị dị na extension/&lt;name&gt;/migrations/. Ha na-agba n&apos;usoro aha ha na ihe ha chọrọ.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ọgbụgba ikpeazụ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Faịlụ ahụ gbanwere mgbe etinyere ya.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Enwebeghị mbugharị. ./console exp:migration:generate --skeleton &lt;name&gt; --apply na-ede nke mbụ.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Ọgbụgba kacha ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Ọgbụgba niile</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Enwebeghị ọgbụgba.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Iṅomi ọgbụgba chọrọ iwu migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ọgbụgba na-aga n&apos;ihu: ṅomie mgbe ọ gwụrụ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nrụnye</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target abụghị ọgbụgba, abụghị mbugharị, abụghịkwa onyonyo nchekwa nke nrụnye a.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Buru ụzọ kaa &quot;Ee, tụgharịa ya azụ&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Iweghachi onyonyo nchekwa mbụ bụ maka ndị ọkachamara: kaa &quot;Amaara m ihe nke a na-eweghachi&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Pịnye NJ nke onyonyo nchekwa ọzọ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Họrọ opekata mpe otu akụkụ a ga-eweghachi.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ọgbụgba a enweghị onyonyo nchekwa e sere tupu ya: tụgharịa mbugharị ya azụ otu otu, ma ọ bụ weghachi onyonyo nchekwa mbụ.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Mbugharị a enweghị ike ịtụgharị onwe ya azụ: etinyebeghị ya, ma ọ bụ o nweghị down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Enweghị ike ịgụ fọm ahụ.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Họrọ ọgbụgba a ga-amaliteghachi.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Buru ụzọ kaa &quot;Ee, gbaa mbugharị ndị a ugbu a&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Họrọ opekata mpe otu mbugharị.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Otu mbugharị gbanwere mgbe etinyere ya: nabata mgbanwe ahụ site n&apos;ihe kpatara ya, ma ọ bụ weghachi faịlụ ahụ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Kọwaa ihe mere e ji nabata mbugharị ndị gbanwere.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Ihe kpatara ya enweghị ike ịkarị mkpụrụedemede 500.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Ọgbụgba a malitere ebe a ka na-aga n&apos;ihu (%detail). Chere ka ọ gwụ.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Ọgbụgba ọzọ jidere mkpọchi nke nrụnye ahụ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Ọgbụgba ahụ chọrọ onye ọrụ dị adị nke banyere.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ahụghị mmemme ahịrị iwu php. Tọọ migration.ini [AdminSettings] PhpCliPath n&apos;ụzọ zuru ezu ya.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>Agbanyụrụ proc_open, ya mere enweghị ike ịmalite ọgbụgba ebe a. Gbaa ./console exp:migration:migrate --apply na sava.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Enweghị ike ide na folda nke ọgbụgba: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>A malitere ọgbụgba ahụ mana o kwughị NJ usoro ya. Lelee %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Kpọọ aha ihe a ga-atụgharị azụ.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Enweghị ike ịmalite ọgbụgba ahụ.</translation>
     </message>
 </context>
 </TS>

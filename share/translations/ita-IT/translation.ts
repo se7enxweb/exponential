@@ -15649,6 +15649,14 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>L'API GraphQL: il suo endpoint, lo schema e un playground per provare le query.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioni</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Modifiche all&apos;installazione conservate come file: il loro stato, le esecuzioni, eseguire e annullare.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -81062,6 +81070,888 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Invia le mutation a /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioni</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Impossibile leggere lo stato: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Le tabelle delle migrazioni non esistono ancora: ./console exp:upgrade --apply le crea.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migrazioni non riuscite</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>È in corso un&apos;esecuzione, avviata da %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>L&apos;installazione è bloccata: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>In attesa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Non riuscite</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Orfane</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ultima esecuzione</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ancora nessuna</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Tutte le migrazioni</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Esecuzione simulata</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Esecuzione di prova</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Le migrazioni in attesa sono state eseguite in una transazione annullata subito dopo: non è stato conservato nulla. Qui sotto è indicato cosa ognuna ha modificato nel database.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Cosa farebbe un&apos;esecuzione adesso. Non viene modificato nulla: ogni migrazione in attesa elenca le modifiche che apporterebbe, e l&apos;esecuzione cosa farebbe prima e dopo.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simula</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Esegui</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>L&apos;esecuzione di prova non è riuscita: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Una simulazione richiede PostgreSQL o SQLite, le cui modifiche allo schema possono essere annullate; su questo database il piano qui sotto mostra cosa farebbe un&apos;esecuzione.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Le migrazioni</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrazione</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Cosa farebbe</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulazione: %result in %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Ancora nessuna migrazione.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Prima e dopo l&apos;esecuzione</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Istantanea prima</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>acquisita, e ripristinata se una migrazione non riesce</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>disattivata</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Istantanea dopo</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>acquisita quando l&apos;esecuzione è riuscita</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migrazioni: %pending in attesa, %done completate, %failed non riuscite.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Storia delle migrazioni</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ogni esecuzione con utente, ambiente, istantanee e ciò che è stato sottoposto a commit, contrassegnato con tag e inviato con push. Un&apos;esecuzione non riuscita o interrotta può essere ripresa; un&apos;esecuzione con un&apos;istantanea acquisita prima può essere annullata.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Impossibile leggere le esecuzioni: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Le tabelle delle migrazioni non esistono ancora: ./console exp:upgrade --apply le crea.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Mostra</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tutte</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Esecuzioni</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Avviata</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Istantanee</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repository Git</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Azioni</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>prima</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>dopo</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>push Git: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Riprendi</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Annulla</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Nessuna esecuzione in questo stato.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Avviate qui</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Esecuzioni, riprese e annullamenti avviati da queste pagine, con il rapporto di ciascuno.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Cosa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Risultato</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Annullamento</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Annullamento di %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Esecuzione %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Cosa ha fatto l&apos;esecuzione, il suo record e il suo registro. Un&apos;esecuzione avviata qui prosegue in background quando questa pagina viene chiusa; riapri la pagina per seguirla.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Riprendi questa esecuzione</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Annulla questa esecuzione</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Impossibile leggere il record: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Avanzamento</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Avviata da %user alle %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Verifica del codice e acquisizione di un&apos;istantanea prima dell&apos;esecuzione</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Esecuzione di %id (%index di %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done di %total completate</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Le migrazioni sono state eseguite; ripristino dell&apos;istantanea se una non è riuscita</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Acquisizione di un&apos;istantanea dopo l&apos;esecuzione, commit, tag e push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Ripristino dell&apos;istantanea</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>L&apos;esecuzione è terminata. Caricamento del rapporto.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Impossibile seguire l&apos;avanzamento. Ricarica la pagina per vedere a che punto è l&apos;esecuzione.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Questa pagina segue l&apos;esecuzione mentre procede.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ricarica</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapporto</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Durata</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisecondi</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Cosa l&apos;esecuzione ha stampato come errori</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Registrazione</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Ambiente</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nessuno</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Terminata</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit Git</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tag Git</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Push Git</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Messaggio</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migrazioni di questa esecuzione</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Origine</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Registro dell&apos;esecuzione</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Viene mostrata solo la fine del registro.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>in esecuzione</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>terminata senza rapporto</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>riuscita</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>non riuscita</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rifiutata</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>il database non era raggiungibile</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>errore interno</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>È in corso un&apos;esecuzione</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind avviata da %user alle %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Seguila</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>L&apos;installazione è bloccata</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Un&apos;altra esecuzione detiene il blocco (un aggiornamento o un&apos;esecuzione dalla console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>completata</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>in attesa</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>non necessaria</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>sconosciuto</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>annullata</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>applicata</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>verrebbe applicata</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ritirata</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>verrebbe ritirata</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>non eseguita</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>attende un&apos;altra</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>modifica accettata</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>la modifica verrebbe accettata</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulata</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioni</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Storia</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Annulla %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Un&apos;esecuzione viene annullata ripristinando l&apos;istantanea acquisita prima di essa, una singola migrazione con il suo down(). Ripristinare un&apos;istantanea precedente è riservato agli esperti. Ogni annullamento viene eseguito in background con il tuo utente, dopo un&apos;istantanea dello stato attuale.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Impossibile leggere cosa può essere annullato: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Un&apos;esecuzione</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Una migrazione</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Un&apos;istantanea precedente</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrizione</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>presente</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>assente</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Istantanea</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etichetta</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Acquisita</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Parti da ripristinare</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Il database</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>I file memorizzati (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Le impostazioni (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Il ripristino riporta il database al momento dell&apos;istantanea, sessioni comprese: in seguito potrebbe esserti chiesto di accedere di nuovo. Tutto ciò che è stato modificato da allora va perso; prima viene acquisita un&apos;istantanea dello stato attuale.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>So cosa viene ripristinato</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Digita di nuovo l&apos;ID dell&apos;istantanea</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Sì, annulla</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annulla operazione</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Le esecuzioni con un&apos;istantanea acquisita prima.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Scegli</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Ancora nessuna esecuzione con istantanea.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Le migrazioni applicate che possono annullarsi da sole (hanno un down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Nessuna migrazione applicata ha un down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Istantanee precedenti (esperti)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Ancora nessuna istantanea.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Esegui le migrazioni</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>L&apos;esecuzione prosegue in background come %user e la sua pagina la mostra mentre procede. Prima della prima migrazione viene acquisita un&apos;istantanea dell&apos;installazione; se una migrazione non riesce, l&apos;esecuzione si ferma e l&apos;istantanea viene ripristinata.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Prima un&apos;esecuzione di prova</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Impossibile leggere lo stato: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migrazioni in attesa</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Vengono eseguite in questo ordine. Togli la spunta da una per lasciarla, insieme a quelle che ne dipendono, a un&apos;esecuzione successiva.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Eseguila</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Attiva la modalità di manutenzione durante l&apos;esecuzione.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Modificate dopo l&apos;applicazione</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Questi file non sono quelli applicati. Un&apos;esecuzione li rifiuta a meno che la modifica non venga accettata con una motivazione; non vengono eseguiti di nuovo, il nuovo checksum viene registrato e la motivazione conservata nel registro di audit.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Accetta le modifiche</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Motivo</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Le impostazioni predefinite sono quelle sicure. Ogni casella omette un passaggio.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Nessuna istantanea</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Nessuna istantanea prima e dopo l&apos;esecuzione: un errore non può essere ripristinato automaticamente.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Nessun ripristino</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Dopo un errore, lascia l&apos;installazione come l&apos;ha lasciata l&apos;errore.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Mantieni le modifiche senza commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Esegui anche se impostazioni, estensioni o design hanno modifiche senza commit; finiscono nell&apos;istantanea.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Nessun commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Non eseguire il commit del file di stato e del registro dell&apos;esecuzione (e quindi nessun tag e nessun push).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Nessun push</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Esegui commit e tag, ma non il push.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Nessun tag</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Esegui commit e push, ma non assegnare un tag all&apos;esecuzione.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Sì, esegui ora queste migrazioni</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Nessuna migrazione in attesa.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Torna allo stato</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Modifiche a questa installazione scritte una volta come file (contenuti, classi, ruoli, impostazioni, schema) e applicate a ogni installazione del sito nello stesso ordine. Un&apos;esecuzione acquisisce prima un&apos;istantanea, la ripristina se una migrazione non riesce, e registra, esegue il commit e il push di ciò che ha fatto.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Esegui %count in attesa</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Panoramica</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>In attesa</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Completate</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Non riuscite</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Non necessarie</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Banca dati</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transazioni: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Le migrazioni del sito si trovano in migrations/, quelle di un&apos;estensione in extension/&lt;name&gt;/migrations/. Vengono eseguite nell&apos;ordine dei loro nomi e delle loro dipendenze.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ultima esecuzione</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Il file è stato modificato dopo l&apos;applicazione.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Ancora nessuna migrazione. ./console exp:migration:generate --skeleton &lt;name&gt; --apply scrive la prima.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Le ultime esecuzioni</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Tutte le esecuzioni</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Ancora nessuna esecuzione.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Simulare un&apos;esecuzione richiede il criterio migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>È in corso un&apos;esecuzione: simula quando è terminata.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Impostazioni</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target non è né un&apos;esecuzione, né una migrazione, né un&apos;istantanea di questa installazione.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Spunta prima «Sì, annulla».</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ripristinare un&apos;istantanea precedente è riservato agli esperti: spunta «So cosa viene ripristinato».</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Digita di nuovo l&apos;ID dell&apos;istantanea: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Scegli almeno una parte da ripristinare.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Questa esecuzione non ha un&apos;istantanea acquisita prima: annulla le sue migrazioni una per una o ripristina un&apos;istantanea precedente.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Questa migrazione non può annullarsi da sola: non è applicata oppure non ha un down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Impossibile leggere il modulo.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Scegli l&apos;esecuzione da riprendere.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Spunta prima «Sì, esegui ora queste migrazioni».</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Scegli almeno una migrazione.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Una migrazione è stata modificata dopo l&apos;applicazione: accetta la modifica con una motivazione oppure ripristina il file.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Indica il motivo per cui le migrazioni modificate vengono accettate.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>La motivazione può avere al massimo 500 caratteri.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Un&apos;esecuzione avviata qui è ancora in corso (%detail). Attendi che termini.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Un&apos;altra esecuzione detiene il blocco dell&apos;installazione: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>L&apos;esecuzione richiede un utente esistente che abbia effettuato l&apos;accesso.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Non è stato trovato alcun eseguibile php da riga di comando. Imposta migration.ini [AdminSettings] PhpCliPath sul suo percorso completo.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open è disattivato, quindi non è possibile avviare un&apos;esecuzione qui. Esegui ./console exp:migration:migrate --apply sul server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Impossibile scrivere nella cartella delle esecuzioni: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>L&apos;esecuzione è stata avviata ma non ha comunicato l&apos;ID del processo. Controlla %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Indica cosa annullare.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Impossibile avviare l&apos;esecuzione.</translation>
     </message>
 </context>
 </TS>

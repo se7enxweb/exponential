@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: მისი საბოლოო წერტილი, სქემა და სატესტო სივრცე მოთხოვნების საცდელად.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>მიგრაციები</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ინსტალაციის ცვლილებები, შენახული ფაილებად: მათი მდგომარეობა, გაშვებები, გაშვება და დაბრუნება.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>მუტაციები გაგზავნეთ /api/graphql-ზე.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>მიგრაციები</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>სტატუსის წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>მიგრაციების ცხრილები ჯერ არ არსებობს: ./console exp:upgrade --apply შექმნის მათ.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count მიგრაცია ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>მიმდინარეობს გაშვება, დაიწყო %user-მა</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ინსტალაცია დაბლოკილია: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>მოლოდინში</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ობოლი</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ბოლო გაშვება</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ჯერ არცერთი</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ყველა მიგრაცია</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>სიმულირებული გაშვება</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>საცდელი გაშვება</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>მოლოდინში მყოფი მიგრაციები შესრულდა ტრანზაქციაში, რომელიც შემდეგ დაბრუნდა: არაფერი შენახულა. ქვემოთ ნაჩვენებია, რა შეცვალა თითოეულმა მონაცემთა ბაზაში.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>რას გააკეთებდა გაშვება ახლა. არაფერი იცვლება: თითოეული მოლოდინში მყოფი მიგრაცია ჩამოთვლის ცვლილებებს, რომლებსაც შეიტანდა, ხოლო გაშვება — რას გააკეთებდა მანამდე და შემდეგ.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>სიმულაცია</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>გაშვება</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>საცდელი გაშვება ვერ შესრულდა: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>სიმულაციას სჭირდება PostgreSQL ან SQLite, რომელთა სქემის ცვლილებების დაბრუნება შესაძლებელია; ამ მონაცემთა ბაზაზე ქვემოთ მოცემული გეგმა აჩვენებს, რას გააკეთებდა გაშვება.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>მიგრაციები</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>მიგრაცია</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>რას გააკეთებდა</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>სიმულაცია: %result, %ms მწმ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>მიგრაცია ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>გაშვებამდე და გაშვების შემდეგ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ანაბეჭდი მანამდე</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>გადაღებულია და აღდგება, თუ მიგრაცია ვერ შესრულდება</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>გამორთული</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ანაბეჭდი შემდეგ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>გადაიღება, როცა გაშვება წარმატებით დასრულდება</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total მიგრაცია: %pending მოლოდინში, %done შესრულებული, %failed ვერ შესრულებული.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>მიგრაციების ისტორია</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ყველა გაშვება თავისი მომხმარებლით, გარემოთი, ანაბეჭდებით და იმით, რაც დაკომიტდა, მოინიშნა თეგით და გაიგზავნა. ვერ შესრულებული ან შეწყვეტილი გაშვების გაგრძელება შეიძლება; გაშვება, რომლის წინაც ანაბეჭდი გადაიღეს, შეიძლება გაუქმდეს.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>გაშვებების წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>მიგრაციების ცხრილები ჯერ არ არსებობს: ./console exp:upgrade --apply შექმნის მათ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ჩვენება</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>გაშვებები</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>დაიწყო</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ვინ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ანაბეჭდები</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>რეპოზიტორი</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>მოქმედებები</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>მანამდე</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>შემდეგ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>გაგზავნა: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>გაგრძელება</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>დაბრუნება</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ამ მდგომარეობაში გაშვება არ არის.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>აქ დაწყებული</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ამ გვერდებზე დაწყებული გაშვებები, გაგრძელებები და დაბრუნებები, თითოეულის ანგარიშით.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>რა</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>შედეგი</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target-ის დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>გაშვება %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>რა გააკეთა გაშვებამ, მისი ჩანაწერი და ჟურნალი. აქ დაწყებული გაშვება ფონურად გრძელდება, როცა ეს გვერდი დაიხურება; თვალყურის სადევნებლად ხელახლა გახსენით გვერდი.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ამ გაშვების გაგრძელება</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ამ გაშვების დაბრუნება</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ჩანაწერის წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>პროგრესი</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>დაიწყო %user-მა, %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>კოდის შემოწმება და ანაბეჭდის გადაღება გაშვებამდე</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>სრულდება %id (%index / %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>შესრულდა %done / %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>მიგრაციები შესრულდა; ანაბეჭდის აღდგენა, თუ რომელიმე ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ანაბეჭდის გადაღება გაშვების შემდეგ, კომიტი, თეგი და გაგზავნა</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ანაბეჭდის აღდგენა</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>გაშვება დასრულდა. იტვირთება ანგარიში.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>პროგრესის თვალყურის დევნება ვერ მოხერხდა. გადატვირთეთ გვერდი, რომ ნახოთ, როგორ მიმდინარეობს გაშვება.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ეს გვერდი თვალყურს ადევნებს გაშვებას მისი მიმდინარეობისას.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>გადატვირთვა</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ანგარიში</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>დრო</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms მწმ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>რა გამოიტანა გაშვებამ შეცდომებად</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ჩანაწერი</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>გარემო</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>არცერთი</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>დასრულდა</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>კომიტი</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>თეგი</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>გაგზავნა</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>შეტყობინება</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ამ გაშვების მიგრაციები</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>წყარო</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>გაშვების ჟურნალი</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ნაჩვენებია მხოლოდ ჟურნალის ბოლო ნაწილი.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>მიმდინარეობს</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>დასრულდა ანგარიშის გარეშე</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>წარმატებული</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>უარყოფილი</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>მონაცემთა ბაზა მიუწვდომელი იყო</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>შიდა შეცდომა</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>მიმდინარეობს გაშვება</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind დაიწყო %user-მა, %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>თვალყურის დევნება</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ინსტალაცია დაბლოკილია</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ბლოკი სხვა გაშვებას უკავია (განახლება ან გაშვება კონსოლში): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>შესრულებული</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>მოლოდინში</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>არ არის საჭირო</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>უცნობი</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>დაბრუნებული</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>გამოყენებული</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>გამოყენებული იქნებოდა</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>გაუქმებული</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>გაუქმდებოდა</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>არ გაშვებულა</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>სხვას ელოდება</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ცვლილება მიღებულია</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ცვლილება მიღებული იქნებოდა</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>სიმულირებული</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>მიგრაციები</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>სტატუსი</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ისტორია</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target-ის გაუქმება</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>გაშვება უქმდება მის წინ გადაღებულ ანაბეჭდამდე, ცალკეული მიგრაცია — მისი down()-ით. ადრინდელი ანაბეჭდის აღდგენა ექსპერტებისთვისაა. თითოეული სრულდება ფონურად თქვენი სახელით, მიმდინარე მდგომარეობის ანაბეჭდის შემდეგ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ვერ მოხერხდა წაკითხვა, რისი გაუქმება შეიძლება: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>გაშვება</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ერთი მიგრაცია</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ადრინდელი ანაბეჭდი</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>აღწერა</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>დიახ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>არა</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ანაბეჭდი</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>იარლიყი</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>გადაღებულია</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>სახეობა</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>აღსადგენი ნაწილები</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>მონაცემთა ბაზა</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>საცავის ფაილები (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>პარამეტრები (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>მონაცემთა ბაზის აღდგენა მას ანაბეჭდის დროს აბრუნებს, სესიების ჩათვლით: შემდეგ შეიძლება ხელახლა შესვლა მოგთხოვონ. ყველაფერი, რაც მას შემდეგ შეიცვალა, დაიკარგება; ჯერ მიმდინარე მდგომარეობის ანაბეჭდი გადაიღება.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ვიცი, რას აღადგენს ეს</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ხელახლა შეიყვანეთ ანაბეჭდის ID</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>დიახ, გააუქმე</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>გაუქმება</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>გაშვებები, რომელთა წინ ანაბეჭდი გადაიღეს.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>არჩევა</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ანაბეჭდიანი გაშვება ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>გამოყენებული მიგრაციები, რომლებსაც საკუთარი თავის გაუქმება შეუძლიათ (აქვთ down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>არცერთ გამოყენებულ მიგრაციას არ აქვს down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ადრინდელი ანაბეჭდები (ექსპერტებისთვის)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ანაბეჭდი ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>მიგრაციების გაშვება</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>გაშვება ფონურად მიმდინარეობს %user-ის სახელით და მისი გვერდი აჩვენებს მიმდინარეობას. პირველი მიგრაციის წინ ინსტალაციის ანაბეჭდი გადაიღება; თუ მიგრაცია ვერ შესრულდება, გაშვება ჩერდება და ანაბეჭდი აღდგება.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ჯერ საცდელი გაშვება</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>სტატუსის წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>მოლოდინში მყოფი მიგრაციები</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ისინი ამ თანმიმდევრობით სრულდება. მოხსენით მონიშვნა, რომ ის და მასზე დამოკიდებული მიგრაციები შემდეგი გაშვებისთვის დატოვოთ.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>გაშვება</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>გაშვებისას რთავს ტექნიკური მომსახურების რეჟიმს.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>შეცვლილია გამოყენების შემდეგ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ეს ფაილები არ ემთხვევა გამოყენებულს. გაშვება მათ უარყოფს, თუ ცვლილება მიზეზით არ იქნება მიღებული; ისინი ხელახლა არ სრულდება, ახალი საკონტროლო ჯამი ჩაიწერება და მიზეზი აუდიტის ჟურნალში ინახება.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ცვლილებების მიღება</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>რატომ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ნაგულისხმევი მნიშვნელობები უსაფრთხოა. თითოეული ველი ერთ ნაბიჯს გამოტოვებს.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ანაბეჭდის გარეშე</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ანაბეჭდი არ გადაიღება გაშვებამდე და შემდეგ: წარუმატებლობის შემთხვევაში ავტომატური აღდგენა შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>აღდგენის გარეშე</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>წარუმატებლობის შემდეგ ინსტალაცია დარჩეს ისე, როგორც წარუმატებლობამ დატოვა.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>დაუკომიტებელი ცვლილებების შენარჩუნება</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>გაშვება მაშინაც, თუ პარამეტრებს, გაფართოებებს ან დიზაინებს დაუკომიტებელი ცვლილებები აქვთ; ისინი ანაბეჭდში მოხვდება.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>კომიტის გარეშე</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>სტატუსის ფაილი და გაშვების ჟურნალი არ დაკომიტდება (არც თეგი და არც გაგზავნა).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>გაგზავნის გარეშე</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>კომიტი და თეგი, მაგრამ გაგზავნის გარეშე.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>თეგის გარეშე</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>კომიტი და გაგზავნა, მაგრამ გაშვება თეგით არ მოინიშნება.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>დიახ, გაუშვი ეს მიგრაციები ახლავე</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>მოლოდინში მიგრაცია არ არის.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>სტატუსზე დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ამ ინსტალაციის ცვლილებები (შიგთავსი, კლასები, როლები, პარამეტრები, სქემა), ერთხელ ჩაწერილი ფაილებად და იმავე თანმიმდევრობით გამოყენებული საიტის ყველა ინსტალაციაზე. გაშვება ჯერ ანაბეჭდს იღებს, აღადგენს მას, თუ მიგრაცია ვერ შესრულდა, და იწერს, აკომიტებს და აგზავნის იმას, რაც გააკეთა.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count მოლოდინში მყოფის გაშვება</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>მიმოხილვა</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>მოლოდინში</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>შესრულებული</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>არ არის საჭირო</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>მონაცემთა ბაზა</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ტრანზაქციები: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>საიტის მიგრაციები არის migrations/-ში, გაფართოებისა — extension/&lt;name&gt;/migrations/-ში. ისინი სრულდება სახელების თანმიმდევრობით და დამოკიდებულებების მიხედვით.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ბოლო გაშვება</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ფაილი შეიცვალა გამოყენების შემდეგ.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>მიგრაცია ჯერ არ არის. ./console exp:migration:generate --skeleton &lt;name&gt; --apply დაწერს პირველს.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ბოლო გაშვებები</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ყველა გაშვება</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>გაშვება ჯერ არ ყოფილა.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>გაშვების სიმულაციას სჭირდება პოლიტიკა migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>მიმდინარეობს გაშვება: სიმულაცია მისი დასრულების შემდეგ ჩაატარეთ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>კონფიგურაცია</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target არ არის ამ ინსტალაციის არც გაშვება, არც მიგრაცია და არც ანაბეჭდი.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ჯერ მონიშნეთ „დიახ, გააუქმე“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ადრინდელი ანაბეჭდის აღდგენა ექსპერტებისთვისაა: მონიშნეთ „ვიცი, რას აღადგენს ეს“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ხელახლა შეიყვანეთ ანაბეჭდის ID: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>აირჩიეთ აღსადგენი ერთი ნაწილი მაინც.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ამ გაშვებას წინასწარ გადაღებული ანაბეჭდი არ აქვს: გააუქმეთ მისი მიგრაციები სათითაოდ ან აღადგინეთ ადრინდელი ანაბეჭდი.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ამ მიგრაციის ცალკე გაუქმება შეუძლებელია: ის არ არის გამოყენებული ან არ აქვს down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ფორმის წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>აირჩიეთ გასაგრძელებელი გაშვება.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ჯერ მონიშნეთ „დიახ, გაუშვი ეს მიგრაციები ახლავე“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>აირჩიეთ ერთი მიგრაცია მაინც.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>მიგრაცია შეიცვალა გამოყენების შემდეგ: მიიღეთ ცვლილება მიზეზის მითითებით ან დააბრუნეთ ფაილი.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>მიუთითეთ, რატომ მიიღება შეცვლილი მიგრაციები.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>მიზეზი არაუმეტეს 500 სიმბოლოა.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>აქ დაწყებული გაშვება ჯერ კიდევ მიმდინარეობს (%detail). დაელოდეთ მის დასრულებას.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ინსტალაციის ბლოკი სხვა გაშვებას უკავია: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>გაშვებას სჭირდება არსებული, სისტემაში შესული მომხმარებელი.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php-ის ბრძანების ხაზის ფაილი ვერ მოიძებნა. მიუთითეთ მისი სრული გზა migration.ini [AdminSettings] PhpCliPath-ში.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open გამორთულია, ამიტომ აქ გაშვების დაწყება შეუძლებელია. გაუშვით ./console exp:migration:migrate --apply სერვერზე.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>გაშვებების საქაღალდეში ჩაწერა შეუძლებელია: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>გაშვება დაიწყო, მაგრამ პროცესის ID არ შეატყობინა. შეამოწმეთ %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>მიუთითეთ, რა უნდა გაუქმდეს.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>გაშვების დაწყება ვერ მოხერხდა.</translation>
     </message>
 </context>
 </TS>

@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ئۇنىڭ ئاخىرقى نۇقتىسى، شېما ۋە سۈرۈشتۈرۈشلەرنى سىناپ بېقىش مەيدانى.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>يۆتكەشلەر</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ئورنىتىلمىغا ھۆججەت شەكلىدە ساقلانغان ئۆزگىرىشلەر: ئۇلارنىڭ ھالىتى، ئىجرالار، ئىجرا قىلىش ۋە قايتۇرۇش.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ئۆزگەرتىشلەرنى (mutation) /api/graphql غا ئەۋەتىڭ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>يۆتكەشلەر</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ھالەتنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>يۆتكەشلەرنىڭ جەدۋەللىرى تېخى يوق: ./console exp:upgrade --apply ئۇلارنى قۇرىدۇ.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count يۆتكەش مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>بىر ئىجرا داۋاملىشىۋاتىدۇ، باشلىغۇچى: %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ئورنىتىلما قۇلۇپلانغان: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>كۈتۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>مەغلۇپ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ئىگىسىزلەر</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ئاخىرقى ئىجرا</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>تېخى يوق</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>بارلىق يۆتكەشلەر</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>تەقلىدىي ئىجرا</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>سىناق ئىجرا</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>كۈتۈۋاتقان يۆتكەشلەر كېيىن قايتۇرۇلغان بىر مۇئامىلە ئىچىدە ئىجرا بولدى: ھېچنېمە ساقلانمىدى. تۆۋەندە ھەر بىرىنىڭ سانداندا نېمىنى ئۆزگەرتكەنلىكى كۆرسىتىلدى.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>بىر ئىجرانىڭ ھازىر نېمە قىلىدىغانلىقى. ھېچنېمە ئۆزگەرتىلمەيدۇ: ھەر بىر كۈتۈۋاتقان يۆتكەش قىلىدىغان ئۆزگىرىشلىرىنى، ئىجرا بولسا ئالدى-كەينىدە نېمە قىلىدىغانلىقىنى تىزىدۇ.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>تەقلىد قىل</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>سىناق ئىجرا مەغلۇپ بولدى: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>تەقلىد ئۈچۈن قېلىپ ئۆزگىرىشلىرىنى قايتۇرغىلى بولىدىغان PostgreSQL ياكى SQLite كېرەك؛ بۇ ساندان ئۈستىدە تۆۋەندىكى پىلان بىر ئىجرانىڭ نېمە قىلىدىغانلىقىنى كۆرسىتىدۇ.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>يۆتكەشلەر</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>يۆتكەش</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>نېمە قىلىدىغانلىقى</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>تەقلىد: %ms ms ئىچىدە %result</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>تېخى يۆتكەش يوق.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ئىجرادىن ئىلگىرى ۋە كېيىن</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ئىلگىرىكى ئەسلىگە كەلتۈرۈش نۇقتىسى</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ئېلىنىدۇ، بىر يۆتكەش مەغلۇپ بولسا ئەسلىگە كەلتۈرۈلىدۇ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>تاقاق</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>كېيىنكى ئەسلىگە كەلتۈرۈش نۇقتىسى</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ئىجرا مۇۋەپپەقىيەتلىك بولسا ئېلىنىدۇ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total يۆتكەش: %pending كۈتۈۋاتىدۇ، %done تاماملاندى، %failed مەغلۇپ.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>يۆتكەش تارىخى</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ھەر بىر ئىجرا ئىشلەتكۈچىسى، مۇھىتى، ئەسلىگە كەلتۈرۈش نۇقتىلىرى ۋە نېمىلەرنىڭ commit قىلىنغانلىقى، بەلگە قويۇلغانلىقى ۋە ئىتتىرىلگەنلىكى بىلەن. مەغلۇپ بولغان ياكى ئۈزۈلۈپ قالغان ئىجرانى داۋاملاشتۇرغىلى بولىدۇ؛ ئالدىدا ئەسلىگە كەلتۈرۈش نۇقتىسى ئېلىنغان ئىجرانى قايتۇرغىلى بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ئىجرالارنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>يۆتكەشلەرنىڭ جەدۋەللىرى تېخى يوق: ./console exp:upgrade --apply ئۇلارنى قۇرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>كۆرسەت</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ھەممىسى</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ئىجرالار</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>باشلانغان</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>باشلىغۇچى</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ئەسلىگە كەلتۈرۈش نۇقتىلىرى</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ئامبار</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>مەشغۇلاتلار</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ئىلگىرى</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>كېيىن</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ئىتتىرىش: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>داۋاملاشتۇر</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>قايتۇر</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>بۇ ھالەتتە ئىجرا يوق.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>بۇ يەردە باشلانغانلار</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>بۇ بەتلەردە باشلانغان ئىجرا، داۋاملاشتۇرۇش ۋە قايتۇرۇشلار، ھەر بىرىنىڭ دوكلاتى بىلەن.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>نېمە</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نەتىجە</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>قايتۇرۇش</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target نى قايتۇرۇش</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ئىجرا %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ئىجرانىڭ نېمە قىلغانلىقى، خاتىرىسى ۋە كۈندىلىكى. بۇ يەردە باشلانغان ئىجرا بۇ بەت تاقالغاندا ئارقا سۇپىدا داۋاملىشىدۇ؛ ئۇنى ئىز قوغلاش ئۈچۈن بەتنى قايتا ئېچىڭ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>بۇ ئىجرانى داۋاملاشتۇر</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>بۇ ئىجرانى قايتۇر</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>خاتىرىنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ئىلگىرىلەش</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user تەرىپىدىن %time دە باشلاندى.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>كود تەكشۈرۈلۈۋاتىدۇ ۋە ئىجرادىن ئىلگىرى ئەسلىگە كەلتۈرۈش نۇقتىسى ئېلىنىۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ئىجرا بولۇۋاتىدۇ (%total دىن %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total دىن %done تاماملاندى</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>يۆتكەشلەر ئىجرا بولدى؛ بىرى مەغلۇپ بولغان بولسا ئەسلىگە كەلتۈرۈش نۇقتىسى ئەسلىگە كەلتۈرۈلۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ئىجرادىن كېيىن ئەسلىگە كەلتۈرۈش نۇقتىسى ئېلىنىۋاتىدۇ، commit قىلىنىۋاتىدۇ، بەلگە قويۇلۇۋاتىدۇ ۋە ئىتتىرىلىۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ئەسلىگە كەلتۈرۈش نۇقتىسى ئەسلىگە كەلتۈرۈلۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ئىجرا ئاخىرلاشتى. دوكلاتى يۈكلىنىۋاتىدۇ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ئىلگىرىلەشنى ئىز قوغلىغىلى بولمىدى. ئىجرانىڭ ئەھۋالىنى كۆرۈش ئۈچۈن بەتنى قايتا يۈكلەڭ.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>بۇ بەت ئىجرانى داۋاملىشىش جەريانىدا ئىز قوغلايدۇ.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>قايتا يۈكلە</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>دوكلات</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ۋاقىت</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms مىللىسېكۇنت</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ئىجرانىڭ خاتالىق سۈپىتىدە چىقارغانلىرى</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>خاتىرە</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>مۇھىت</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>يوق</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ئاخىرلاشقان</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>تاپشۇرۇش</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>بەلگە</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ئىتتىرىش</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ئۇچۇر</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>بۇ ئىجرانىڭ يۆتكەشلىرى</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>مەنبە</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ئىجرا كۈندىلىكى</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>كۈندىلىكنىڭ ئاخىرىلا كۆرسىتىلدى.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ئىجرا بولۇۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>دوكلاتسىز ئاخىرلاشتى</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>مۇۋەپپەقىيەتلىك</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>مەغلۇپ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رەت قىلىندى</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ساندانغا ئۇلانغىلى بولمىدى</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ئىچكى خاتالىق</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>بىر ئىجرا داۋاملىشىۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind نى %user %time دە باشلىدى.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ئىز قوغلا</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ئورنىتىلما قۇلۇپلانغان</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>قۇلۇپنى باشقا بىر ئىجرا تۇتۇۋاتىدۇ (يېڭىلاش ياكى كونسولدىكى ئىجرا): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>تاماملاندى</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>كۈتۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ھاجەتسىز</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامەلۇم</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>قايتۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>قوللىنىلدى</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>قوللىنىلاتتى</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>قايتۇرۇۋېلىندى</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>قايتۇرۇۋېلىناتتى</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ئىجرا بولمىدى</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>باشقا بىرىنى كۈتۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ئۆزگىرىش قوبۇل قىلىندى</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ئۆزگىرىش قوبۇل قىلىناتتى</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>تەقلىد قىلىندى</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>يۆتكەشلەر</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تارىخ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target نى قايتۇرۇۋال</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>بىر ئىجرا ئۇنىڭدىن ئىلگىرى ئېلىنغان ئەسلىگە كەلتۈرۈش نۇقتىسىغا، يەككە يۆتكەش بولسا ئۆزىنىڭ down() ئارقىلىق قايتۇرۇلىدۇ. ئىلگىرىكى ئەسلىگە كەلتۈرۈش نۇقتىسىنى ئەسلىگە كەلتۈرۈش مۇتەخەسسىسلەر ئۈچۈندۇر. ھەر بىرى ھازىرقى ھالەتنىڭ ئەسلىگە كەلتۈرۈش نۇقتىسى ئېلىنغاندىن كېيىن سىزنىڭ نامىڭىزدا ئارقا سۇپىدا ئىجرا بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>نېمىنى قايتۇرغىلى بولىدىغانلىقىنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>بىر ئىجرا</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>بىر يۆتكەش</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ئىلگىرىكى بىر ئەسلىگە كەلتۈرۈش نۇقتىسى</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>چۈشەندۈرۈش</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ھەئە</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ياق</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ئەسلىگە كەلتۈرۈش نۇقتىسى</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ئىسىم</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ئېلىنغان ۋاقىت</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>تۈر</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ئەسلىگە كەلتۈرىدىغان قىسىملار</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ساندان</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ساقلانغان ھۆججەتلەر (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>تەڭشەكلەر (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ساندانى ئەسلىگە كەلتۈرۈش ئۇنى ئەڭگىمەلەرنى ئۆز ئىچىگە ئالغان ھالدا ئەسلىگە كەلتۈرۈش نۇقتىسىنىڭ ۋاقتىغا قايتۇرىدۇ: كېيىن قايتا كىرىشىڭىز تەلەپ قىلىنىشى مۇمكىن. شۇنىڭدىن بۇيان ئۆزگەرگەن ھەممە نەرسە يوقىلىدۇ؛ ئالدى بىلەن ھازىرقى ھالەتنىڭ ئەسلىگە كەلتۈرۈش نۇقتىسى ئېلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>بۇنىڭ نېمىنى ئەسلىگە كەلتۈرىدىغانلىقىنى بىلىمەن</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ئەسلىگە كەلتۈرۈش نۇقتىسىنىڭ كىملىكىنى قايتا كىرگۈزۈڭ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ھەئە، قايتۇرۇۋال</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ۋاز كەچ</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ئالدىدا ئەسلىگە كەلتۈرۈش نۇقتىسى ئېلىنغان ئىجرالار.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>تاللا</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>تېخى ئەسلىگە كەلتۈرۈش نۇقتىسى بار ئىجرا يوق.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ئۆزىنى قايتۇرالايدىغان قوللىنىلغان يۆتكەشلەر (ئۇلاردا down() بار).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ھېچقانداق قوللىنىلغان يۆتكەشتە down() يوق.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ئىلگىرىكى ئەسلىگە كەلتۈرۈش نۇقتىلىرى (مۇتەخەسسىسلەر)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>تېخى ئەسلىگە كەلتۈرۈش نۇقتىسى يوق.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>يۆتكەشلەرنى ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ئىجرا ئارقا سۇپىدا %user سۈپىتىدە داۋاملىشىدۇ، ئۇنىڭ بېتى ئۇنى داۋاملىشىش جەريانىدا كۆرسىتىدۇ. بىرىنچى يۆتكەشتىن ئىلگىرى ئورنىتىلمىنىڭ ئەسلىگە كەلتۈرۈش نۇقتىسى ئېلىنىدۇ؛ بىر يۆتكەش مەغلۇپ بولسا ئىجرا توختايدۇ ۋە ئەسلىگە كەلتۈرۈش نۇقتىسى ئەسلىگە كەلتۈرۈلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ئالدى بىلەن سىناق ئىجرا</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ھالەتنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>كۈتۈۋاتقان يۆتكەشلەر</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ئۇلار بۇ تەرتىپتە ئىجرا بولىدۇ. بىرىنى ۋە ئۇنىڭغا تايىنىدىغانلارنى كېيىنكى ئىجراغا قالدۇرۇش ئۈچۈن ئۇنىڭ بەلگىسىنى ئېلىۋېتىڭ.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>ئىجرا بولۇۋاتقاندا ئاسراش ھالىتىنى ئاچىدۇ.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>قوللىنىلغاندىن كېيىن ئۆزگەرگەنلەر</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>بۇ ھۆججەتلەر قوللىنىلغانلىرى ئەمەس. ئۆزگىرىش سەۋەب بىلەن قوبۇل قىلىنمىسا ئىجرا ئۇلارنى رەت قىلىدۇ؛ ئۇلار قايتا ئىجرا قىلىنمايدۇ، يېڭى تەكشۈرۈش يىغىندىسى خاتىرىلىنىدۇ ۋە سەۋەب تەپتىش كۈندىلىكىدە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ئۆزگىرىشلەرنى قوبۇل قىل</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>نېمە ئۈچۈن</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>كۆڭۈلدىكىلەر بىخەتەر بولغانلىرىدۇر. ھەر بىر رامكا بىر قەدەمنى چىقىرىۋېتىدۇ.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ئەسلىگە كەلتۈرۈش نۇقتىسى يوق</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ئىجرادىن ئىلگىرى ۋە كېيىن ئەسلىگە كەلتۈرۈش نۇقتىسى يوق: مەغلۇبىيەتنى ئاپتوماتىك ئەسلىگە كەلتۈرگىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ئەسلىگە كەلتۈرۈش يوق</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>مەغلۇبىيەتتىن كېيىن ئورنىتىلمىنى مەغلۇبىيەت قالدۇرغان ھالەتتە قالدۇر.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>commit قىلىنمىغان ئۆزگىرىشلەرنى ساقلا</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>تەڭشەك، كېڭەيتمە ياكى لايىھەلەردە commit قىلىنمىغان ئۆزگىرىشلەر بولسىمۇ ئىجرا قىل؛ ئۇلار ئەسلىگە كەلتۈرۈش نۇقتىسىغا كىرىدۇ.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>commit يوق</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ھالەت ھۆججىتى ۋە ئىجرا كۈندىلىكىنى commit قىلما (بەلگە ۋە ئىتتىرىشمۇ يوق).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ئىتتىرىش يوق</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>commit قىل ۋە بەلگە قوي، ئەمما ئىتتىرمە.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>بەلگە يوق</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>commit قىل ۋە ئىتتىر، ئەمما ئىجراغا بەلگە قويما.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ھەئە، بۇ يۆتكەشلەرنى ھازىر ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>كۈتۈۋاتقان يۆتكەش يوق.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ھالەتكە قايت</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>بۇ ئورنىتىلمىغا بىر قېتىم ھۆججەت شەكلىدە يېزىلغان (مەزمۇن، تۈرلەر، روللار، تەڭشەكلەر، قېلىپ) ۋە تور بېكەتنىڭ ھەر بىر ئورنىتىلمىسىغا ئوخشاش تەرتىپتە قوللىنىلىدىغان ئۆزگىرىشلەر. ئىجرا ئالدى بىلەن ئەسلىگە كەلتۈرۈش نۇقتىسى ئالىدۇ، بىر يۆتكەش مەغلۇپ بولسا ئۇنى ئەسلىگە كەلتۈرىدۇ ۋە قىلغانلىرىنى خاتىرىلەيدۇ، commit قىلىدۇ ۋە ئىتتىرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>كۈتۈۋاتقان %count نى ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ئومۇمىي كۆرۈنۈش</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>كۈتۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تاماملاندى</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>مەغلۇپ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ھاجەتسىز</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ساندان</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>مۇئامىلىلەر: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>تور بېكەت يۆتكەشلىرى migrations/ دا، كېڭەيتمىنىڭكى extension/&lt;name&gt;/migrations/ دا. ئۇلار ئىسىملىرى ۋە تەلەپلىرىنىڭ تەرتىپى بويىچە ئىجرا بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ئاخىرقى ئىجرا</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ھۆججەت قوللىنىلغاندىن كېيىن ئۆزگەردى.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>تېخى يۆتكەش يوق. ./console exp:migration:generate --skeleton &lt;name&gt; --apply بىرىنچىسىنى يازىدۇ.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ئەڭ يېڭى ئىجرالار</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>بارلىق ئىجرالار</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>تېخى ئىجرا يوق.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ئىجرانى تەقلىد قىلىش ئۈچۈن migration/run سىياسىتى كېرەك.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>بىر ئىجرا داۋاملىشىۋاتىدۇ: ئۇ ئاخىرلاشقاندا تەقلىد قىلىڭ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ئورنىتىش</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target بۇ ئورنىتىلمىنىڭ ئىجراسىمۇ، يۆتكىشىمۇ، ئەسلىگە كەلتۈرۈش نۇقتىسىمۇ ئەمەس.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ئالدى بىلەن «ھەئە، قايتۇرۇۋال» غا بەلگە قويۇڭ.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ئىلگىرىكى ئەسلىگە كەلتۈرۈش نۇقتىسىنى ئەسلىگە كەلتۈرۈش مۇتەخەسسىسلەر ئۈچۈندۇر: «بۇنىڭ نېمىنى ئەسلىگە كەلتۈرىدىغانلىقىنى بىلىمەن» گە بەلگە قويۇڭ.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ئەسلىگە كەلتۈرۈش نۇقتىسىنىڭ كىملىكىنى قايتا كىرگۈزۈڭ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ئەسلىگە كەلتۈرۈش ئۈچۈن كەم دېگەندە بىر قىسىمنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>بۇ ئىجرانىڭ ئالدىدا ئېلىنغان ئەسلىگە كەلتۈرۈش نۇقتىسى يوق: ئۇنىڭ يۆتكەشلىرىنى بىر-بىرلەپ قايتۇرۇۋېلىڭ ياكى ئىلگىرىكى ئەسلىگە كەلتۈرۈش نۇقتىسىنى ئەسلىگە كەلتۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>بۇ يۆتكەشنى ئۆزى قايتۇرغىلى بولمايدۇ: ئۇ قوللىنىلمىغان ياكى ئۇنىڭدا down() يوق.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>جەدۋەلنى ئوقۇغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>داۋاملاشتۇرىدىغان ئىجرانى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ئالدى بىلەن «ھەئە، بۇ يۆتكەشلەرنى ھازىر ئىجرا قىل» غا بەلگە قويۇڭ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>كەم دېگەندە بىر يۆتكەشنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>بىر يۆتكەش قوللىنىلغاندىن كېيىن ئۆزگەردى: ئۆزگىرىشنى سەۋەب بىلەن قوبۇل قىلىڭ ياكى ھۆججەتنى ئەسلىگە قايتۇرۇڭ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>ئۆزگەرگەن يۆتكەشلەرنىڭ نېمە ئۈچۈن قوبۇل قىلىنغانلىقىنىڭ سەۋەبىنى يېزىڭ.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>سەۋەب كۆپ بولغاندا 500 ھەرپ.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>بۇ يەردە باشلانغان بىر ئىجرا تېخى داۋاملىشىۋاتىدۇ (%detail). ئۇنىڭ ئاخىرلىشىشىنى كۈتۈڭ.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ئورنىتىلمىنىڭ قۇلۇپىنى باشقا بىر ئىجرا تۇتۇۋاتىدۇ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ئىجرا ئۈچۈن مەۋجۇت ۋە كىرگەن ئىشلەتكۈچى كېرەك.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php بۇيرۇق قۇرى پروگراممىسى تېپىلمىدى. migration.ini [AdminSettings] PhpCliPath نى ئۇنىڭ تولۇق يولىغا تەڭشەڭ.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open چەكلەنگەن، شۇڭا بۇ يەردە ئىجرا باشلىغىلى بولمايدۇ. مۇلازىمېتىردا ./console exp:migration:migrate --apply نى ئىجرا قىلىڭ.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ئىجرالار قىسقۇچىغا يازغىلى بولمايدۇ: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ئىجرا باشلاندى، ئەمما جەريان كىملىكىنى مەلۇم قىلمىدى. %detail نى تەكشۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>نېمىنى قايتۇرۇۋېلىشنى كۆرسىتىڭ.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ئىجرانى باشلىغىلى بولمىدى.</translation>
     </message>
 </context>
 </TS>

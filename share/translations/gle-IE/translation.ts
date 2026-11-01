@@ -15081,6 +15081,14 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>An API GraphQL: a chríochphointe, an scéimre agus clós súgartha chun iarratais a thriail.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Imirceanna</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Athruithe ar an tsuiteáil a choinnítear mar chomhaid: a stádas, na rití, rith agus cealú.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Seol sócháin chuig /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Imirceanna</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Níorbh fhéidir an stádas a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Níl táblaí na n-imirceanna ann fós: cruthaíonn ./console exp:upgrade --apply iad.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Theip ar %count imirce</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Tá rith ar siúl, tosaithe ag %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Tá an tsuiteáil faoi ghlas: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ar feitheamh</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Theip</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Dílleachtaí</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>An rith deireanach</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ceann ar bith fós</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Gach imirce</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Rith ionsamhlaithe</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Triail-rith</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Ritheadh na himirceanna ar feitheamh in idirbheart a rolladh siar ina dhiaidh sin: níor coinníodh aon rud. Thíos tá an méid a d&apos;athraigh gach ceann acu sa bhunachar sonraí.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>An méid a dhéanfadh rith anois. Ní athraítear aon rud: liostaíonn gach imirce ar feitheamh na hathruithe a dhéanfadh sí, agus an rith an méid a dhéanfadh sé roimhe agus ina dhiaidh.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Ionsamhlaigh</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Rith</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Theip ar an triail-rith: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Teastaíonn PostgreSQL nó SQLite le haghaidh ionsamhlúcháin, mar is féidir a n-athruithe scéimre a rolladh siar; ar an mbunachar sonraí seo, is é an plean thíos an méid a dhéanfadh rith.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Na himirceanna</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Imirce</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staid</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>An méid a dhéanfadh sí</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Ionsamhlúchán: %result i %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Níl imirce ar bith ann fós.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Roimh an rith agus ina dhiaidh</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Gabháil roimhe</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>glactar í, agus athchóirítear í má theipeann ar imirce</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>múchta</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Gabháil ina dhiaidh</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>glactar í nuair a éiríonn leis an rith</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total imirce: %pending ar feitheamh, %done críochnaithe, %failed theip orthu.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Stair na n-imirceanna</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Gach rith lena úsáideoir, a thimpeallacht, a ghabhálacha agus an méid a tiomnaíodh, a clibeáladh agus a brúdh. Is féidir rith a theip nó a briseadh a atosú; is féidir rith a bhfuil gabháil roimhe a chealú.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Níorbh fhéidir na rití a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Níl táblaí na n-imirceanna ann fós: cruthaíonn ./console exp:upgrade --apply iad.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Taispeáin</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gach ceann</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Rití</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Tosaithe</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ag</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Gabhálacha</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Stórlann</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gníomhartha</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>roimhe</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ina dhiaidh</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>brú: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Atosaigh</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Níl rith ar bith sa staid seo.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Tosaithe anseo</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Rití, atosuithe agus cealuithe a tosaíodh ar na leathanaigh seo, le tuairisc gach ceann acu.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Cad</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Toradh</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Cealú</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Cealú %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Rith %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>An méid a rinne an rith, a thaifead agus a loga. Leanann rith a tosaíodh anseo ar aghaidh sa chúlra nuair a dhúntar an leathanach seo; oscail an leathanach arís chun é a leanúint.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Atosaigh an rith seo</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Cealaigh an rith seo</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Níorbh fhéidir an taifead a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Dul chun cinn</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Tosaithe ag %user ag %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Ag seiceáil an chóid agus ag glacadh gabhála roimh an rith</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Ag rith %id (%index as %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done as %total críochnaithe</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Ritheadh na himirceanna; ag athchóiriú na gabhála má theip ar cheann acu</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ag glacadh gabhála i ndiaidh an rith, ag tiomnú, ag clibeáil agus ag brú</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Ag athchóiriú na gabhála</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Tá an rith críochnaithe. A thuairisc á lódáil.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Níorbh fhéidir an dul chun cinn a leanúint. Athlódáil an leathanach chun féachaint conas atá ag éirí leis an rith.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Leanann an leathanach seo an rith agus é ar siúl.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Athlódáil</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Tuairisc</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Fad</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milleasoicind</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>An méid a phriontáil an rith mar earráidí</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Taifead</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Timpeallacht</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>dada</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Críochnaithe</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Tiomnú</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Clib</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Brú</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Teachtaireacht</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Imirceanna an rith seo</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Foinse</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Loga an rith</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Ní thaispeántar ach deireadh an loga.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ar siúl</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>críochnaithe gan tuairisc</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>d&apos;éirigh leis</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>theip air</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>diúltaithe</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>níorbh fhéidir teacht ar an mbunachar sonraí</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>earráid inmheánach</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Tá rith ar siúl</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind tosaithe ag %user ag %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Lean é</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Tá an tsuiteáil faoi ghlas</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Tá an glas ag rith eile (uasghrádú nó rith ar an gconsól): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>críochnaithe</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ar feitheamh</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ní gá</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anaithnid</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>rollta siar</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>curtha i bhfeidhm</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>chuirfí i bhfeidhm</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>cealaithe</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>chealófaí</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>gan rith</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ag fanacht le ceann eile</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>athrú glactha</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ghlacfaí leis an athrú</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ionsamhlaithe</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Imirceanna</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stádas</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Stair</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Cealaigh %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Cealaítear rith go dtí an ghabháil a glacadh roimhe, imirce aonair lena down(). Is do shaineolaithe é gabháil níos luaithe a athchóiriú. Ritheann gach ceann sa chúlra faoi d&apos;ainm féin, i ndiaidh gabháil den staid reatha.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Níorbh fhéidir a léamh cad is féidir a chealú: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Rith</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Imirce amháin</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Gabháil níos luaithe</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Cur síos</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>tá</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>níl</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Gabháil</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Lipéad</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Glactha</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Cineál</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Codanna le hathchóiriú</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>An bunachar sonraí</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Na comhaid stórála (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Na socruithe (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Tugann athchóiriú an bhunachair sonraí ar ais é go dtí am na gabhála, seisiúin san áireamh: d&apos;fhéadfadh go n-iarrfaí ort síniú isteach arís ina dhiaidh sin. Cailltear gach rud a athraíodh ó shin; glactar gabháil den staid reatha ar dtús.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Tá a fhios agam cad a athchóiríonn sé seo</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Clóscríobh aitheantas na gabhála arís</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Tá, cealaigh é</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Na rití a bhfuil gabháil glactha rompu.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Roghnaigh</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Níl rith ar bith le gabháil fós.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Na himirceanna curtha i bhfeidhm atá in ann iad féin a chealú (tá down() acu).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Níl down() ag aon imirce curtha i bhfeidhm.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Gabhálacha níos luaithe (saineolaithe)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Níl gabháil ar bith ann fós.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Rith na himirceanna</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Leanann an rith ar aghaidh sa chúlra mar %user, agus taispeánann a leathanach é agus é ar siúl. Roimh an gcéad imirce glactar gabháil den tsuiteáil; má theipeann ar imirce stopann an rith agus athchóirítear an ghabháil.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Triail-rith ar dtús</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Níorbh fhéidir an stádas a léamh: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Imirceanna ar feitheamh</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ritheann siad san ord seo. Bain an tic de cheann acu chun é, agus na cinn a bhraitheann air, a fhágáil le haghaidh rith níos déanaí.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Rith í</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Cuireann sé an mód cothabhála ar siúl fad atá sé ag rith.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Athraithe tar éis iad a chur i bhfeidhm</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Ní hiad na comhaid seo na cinn a cuireadh i bhfeidhm. Diúltaíonn rith dóibh mura nglactar leis an athrú le cúis; ní ritear arís iad, taifeadtar an tseiceálsuim nua agus coinnítear an chúis sa loga iniúchta.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Glac leis na hathruithe</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Cén fáth</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Is iad na réamhshocruithe na cinn shábháilte. Fágann gach bosca céim ar lár.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Gan ghabháil</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Gan ghabháil roimh an rith ná ina dhiaidh: ní féidir teip a athchóiriú go huathoibríoch.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Gan athchóiriú</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Tar éis teipe, fág an tsuiteáil mar a d&apos;fhág an teip í.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Coinnigh athruithe nár tiomnaíodh</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Rith fiú má tá athruithe nár tiomnaíodh sna socruithe, sna síntí nó sna dearaí; téann siad isteach sa ghabháil.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Gan tiomnú</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ná tiomnaigh an comhad stádais ná loga an rith (gan clib ná brú ach oiread).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Gan brú</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Tiomnaigh agus clibeáil, ach ná brúigh.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Gan clib</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Tiomnaigh agus brúigh, ach ná clibeáil an rith.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Tá, rith na himirceanna seo anois</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Níl imirce ar bith ar feitheamh.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Ar ais go dtí an stádas</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Athruithe ar an tsuiteáil seo a scríobhtar uair amháin mar chomhaid (ábhar, aicmí, róil, socruithe, scéimre) agus a chuirtear i bhfeidhm ar gach suiteáil den suíomh san ord céanna. Glacann rith gabháil ar dtús, athchóiríonn sé í má theipeann ar imirce, agus taifeadann, tiomnaíonn agus brúnn sé an méid a rinne sé.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Rith %count ar feitheamh</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Forbhreathnú</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ar feitheamh</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Críochnaithe</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Theip</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ní gá</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Bunachar sonraí</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>idirbhearta: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Tá imirceanna an tsuímh i migrations/, imirceanna sínte i extension/&lt;name&gt;/migrations/. Ritheann siad in ord a n-ainmneacha agus an méid a theastaíonn uathu.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>An rith deireanach</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>D&apos;athraigh an comhad tar éis é a chur i bhfeidhm.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Níl imirce ar bith ann fós. Scríobhann ./console exp:migration:generate --skeleton &lt;name&gt; --apply an chéad cheann.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Na rití is déanaí</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Gach rith</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Níl rith ar bith ann fós.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Teastaíonn an polasaí migration/run chun rith a ionsamhlú.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Tá rith ar siúl: ionsamhlaigh nuair a bheidh sé críochnaithe.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Socrú</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>Ní rith, imirce ná gabháil den tsuiteáil seo é %target.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Cuir tic le “Tá, cealaigh é” ar dtús.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Is do shaineolaithe é gabháil níos luaithe a athchóiriú: cuir tic le “Tá a fhios agam cad a athchóiríonn sé seo”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Clóscríobh aitheantas na gabhála arís: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Roghnaigh cuid amháin ar a laghad le hathchóiriú.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Níl gabháil glactha roimh an rith seo: cealaigh a imirceanna ceann ar cheann, nó athchóirigh gabháil níos luaithe.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Ní féidir leis an imirce seo í féin a chealú: níl sí curtha i bhfeidhm, nó níl down() aici.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Níorbh fhéidir an fhoirm a léamh.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Roghnaigh an rith le hatosú.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Cuir tic le “Tá, rith na himirceanna seo anois” ar dtús.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Roghnaigh imirce amháin ar a laghad.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>D&apos;athraigh imirce tar éis í a chur i bhfeidhm: glac leis an athrú le cúis, nó cuir an comhad ar ais.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Tabhair an chúis a nglactar leis na himirceanna athraithe.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Tá 500 carachtar ar a mhéad sa chúis.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Tá rith a tosaíodh anseo fós ar siúl (%detail). Fan go gcríochnóidh sé.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Tá glas na suiteála ag rith eile: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Teastaíonn úsáideoir sínithe isteach atá ann ón rith.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Níor aimsíodh aon chomhad dénártha líne na n-orduithe php. Socraigh migration.ini [AdminSettings] PhpCliPath ar a chonair iomlán.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>Tá proc_open díchumasaithe, mar sin ní féidir rith a thosú anseo. Rith ./console exp:migration:migrate --apply ar an bhfreastalaí.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ní féidir scríobh i bhfillteán na rití: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Tosaíodh an rith ach níor thuairiscigh sé aitheantas a phróisis. Seiceáil %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Ainmnigh cad atá le cealú.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Níorbh fhéidir an rith a thosú.</translation>
     </message>
 </context>
 </TS>

@@ -15143,6 +15143,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API ד GraphQL: נוקזא דסופא דילה, סכמא ודוכתא לנסיונא דשואלא.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>שוניא</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>שנויי תקונא דנטירין בכתבי: מקמהון, רהטי, מרהט ומהדר לאחורא.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79664,6 +79672,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>שדר שחלופא ל /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>שוניא</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>מקמא לא אתקרי: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>לוחי שוניא עד כען ליתנהון: ./console exp:upgrade --apply עביד להון.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count שוניא לא אצלחו</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>רהטא אזיל, שרייה %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>תקונא אחיד: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>מסכיא</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>יתמי</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>רהטא בתרייא</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>עד כען ליכא</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>כולהון שוניא</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>רהטא מדמיא</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>רהטא דנסיונא</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>שוניא מסכיא רהטו בעסקא דאתהדר לאחורא בתר הכי: מידעם לא אתנטר. לתחת כתיב מאי דכל חד שני בבית ידעתא.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>מאי דרהטא הוה עביד השתא. מידעם לא משתני: כל שוניא מסכיא מני שנויין דהוה עביד, ורהטא מאי דהוה עביד קדם ובתר.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>דמי</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>מרהטא</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>רהטא דנסיונא לא אצלח: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>דמותא צריכא PostgreSQL או SQLite, דשנויי צורתהון מתהדרין לאחורא; בהדין בית ידעתא תרעיתא דלתחת היא מאי דרהטא הוה עביד.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>שוניא</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>שוניא</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מקמא</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>מאי דהוה עביד</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>דמותא: %result בגו %ms מ״ש</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>עד כען ליכא שוניא.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>קדם רהטא ובתריה</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>צלמא דקדם</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>מתנסיב, ומתהדר כד שוניא לא מצלח</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>כביש</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>צלמא דבתר</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>מתנסיב כד רהטא אצלח</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total שוניא: %pending מסכיא, %done גמירא, %failed לא אצלחו.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>תשעיתא דשוניא</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>כל רהטא עם משתמשיה, סביבותיה, צלמוהי ומאי דאתחתם, אתסמן ואתדחף. רהטא דלא אצלח או דאתפסק משתרי תוב; רהטא דאתנסיב צלמא קדמוהי מתהדר.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>רהטי לא אתקריו: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>לוחי שוניא עד כען ליתנהון: ./console exp:upgrade --apply עביד להון.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>חוי</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>כולא</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>רהטי</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>שרא</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>על ידי</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>צלמי</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>בית גנזא</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>עובדי</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>קדם</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>בתר</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>דחיפתא: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>משריא תוב</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>אהדר לאחורא</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ליכא רהטא בהדין מקמא.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>שרא הכא</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>רהטי, שריאן תוב והדרתא דשריין בהלין דפי, עם משתעיתא דכל חד.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>מאי</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>פירא</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>הדרתא</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>הדרתא ד%target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>רהטא %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>מאי דרהטא עבד, רשומיה ופנקסיה. רהטא דשרא הכא אזיל לאחורי פרגודא כד הדין דפא מתטריק; פתח דפא תוב למיזל בתריה.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>שרי תוב הדין רהטא</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>אהדר הדין רהטא לאחורא</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>רשומא לא אתקרי: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>מיזל לקדמא</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>שרייה %user ב%time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>בדקין קודא ונסבין צלמא קדם רהטא</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>רהיט %id (%index מן %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done מן %total גמירין</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>שוניא רהטו; מהדרין צלמא אי חד לא אצלח</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>נסבין צלמא בתר רהטא, חתמין, מסמנין ודחפין</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>מהדרין צלמא</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>רהטא סליק. מטענין משתעיתיה.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>לא אפשר למיזל בתר מיזל לקדמא. טעין דפא תוב למחזי היכי רהטא אזיל.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>הדין דפא אזיל בתר רהטא כד אזיל.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>טעין תוב</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>משתעיתא</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>זבנא</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms מ״ש</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>מאי דרהטא כתב כטעוותא</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>רשומא</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>סביבותא</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ליכא</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>סליק</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>חתימתא</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>סימנא</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>דחיפתא</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>שליחותא</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>שוניא דהדין רהטא</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>מבועא</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>פנקסא דרהטא</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>סופא דפנקסא בלחוד מתחזי.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>רהיט</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>סליק בלא משתעיתא</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>אצלח</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>אתסרב</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>בית ידעתא לא הוה מטי</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>טעותא גואיתא</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>רהטא אזיל</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind שרייה %user ב%time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>זיל בתריה</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>תקונא אחיד</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>רהטא אחרינא אחיד קולפא (עלויא או רהטא בלוח פקודי): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>גמירא</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>מסכיא</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>לא צריך</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>לא ידיע</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>אתהדר לאחורא</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>אתעביד</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>הוה מתעביד</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>אתהדר</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>הוה מתהדר</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>לא רהט</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>מסכי לאחרינא</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>שנויא אתקביל</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>שנויא הוה מתקביל</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>מדמיא</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>שוניא</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מקמא</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>תשעיתא</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>אהדר %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>רהטא מתהדר לצלמא דאתנסיב קדמוהי, שוניא חד בdown() דיליה. אהדורי צלמא קדמאה לחכימי הוא. כל חד רהיט לאחורי פרגודא בשמך, בתר צלמא דמקמא דהשתא.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>מאי דמתהדר לא אתקרי: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>רהטא</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>שוניא חד</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>צלמא קדמאה</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>פשרא</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>אין</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>צלמא</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>שמא</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>אתנסיב</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>זנא</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>חולקי לאהדורי</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>בית ידעתא</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>כתבי גנזא (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>טויבא (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>אהדורי בית ידעתא מהדר ליה לזבנא דצלמא, עם מותבי: בתר הכי שמא תתבעי למיעל תוב. כל מאי דאשתני מן הכא ואילך אבד; צלמא דמקמא דהשתא מתנסיב קדמאה.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ידענא מאי דהדין מהדר</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>כתוב סימנא דצלמא תוב</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>אין, אהדריה</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>בוטלא</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>רהטי דאתנסיב צלמא קדמיהון.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>בחר</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>עד כען ליכא רהטא עם צלמא.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>שוניא דאתעבידו דיכלין לאהדורי נפשהון (אית להון down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ליכא שוניא דאתעביד דאית ליה down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>צלמי קדמאי (חכימי)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>עד כען ליכא צלמא.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>רהט שוניא</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>רהטא אזיל לאחורי פרגודא כ%user, ודפיה מחוי ליה כד אזיל. קדם שוניא קדמאה צלמא דתקונא מתנסיב; כד שוניא לא מצלח רהטא קאים וצלמא מתהדר.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>רהטא דנסיונא קדמאה</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>מקמא לא אתקרי: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>שוניא מסכיא</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>רהטין בהדין סדרא. סלק סימנא מן חד למשבקיה, ולאלין דצריכין ליה, לרהטא דבתר.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>רהטיה</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>מדליק אורח תקנתא כד רהיט.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>אשתנו בתר דאתעבידו</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>הלין כתבי לאו אינון דאתעבידו. רהטא מסרב להון אלא אי שנויא מתקביל עם טעמא; לא רהטין תוב, חושבנא חדתא מתרשם וטעמא מתנטר בפנקסא דבדיקתא.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>קביל שנויי</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>אמאי</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>קביעי אינון דנטירין. כל תיבותא שבקא פסיעתא.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>בלא צלמא</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>בלא צלמא קדם רהטא ובתריה: תקלא לא מתהדרא מנפשה.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>בלא אהדורי</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>בתר תקלא, שבוק תקונא כמא דתקלא שבקיה.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>נטור שנויי דלא אתחתמו</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>רהט אף על גב דטויבא, תוספתא או צורתא אית להון שנויי דלא אתחתמו; עאלין לצלמא.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>בלא חתימתא</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>לא תחתום כתבא דמקמא ופנקסא דרהטא (אף לא סימנא ולא דחיפתא).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>בלא דחיפתא</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>חתום וסמן, ברם לא תדחוף.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>בלא סימנא</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>חתום ודחוף, ברם לא תסמן רהטא.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>אין, רהט הלין שוניא השתא</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ליכא שוניא מסכיא.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>הדר למקמא</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>שנויי הדין תקונא דאתכתבו זמנא חדא בכתבי (מליותא, זני, תפקידי, טויבא, צורתא) ואתעבידו בכל תקונא דאתרא בהדין סדרא. רהטא נסיב צלמא קדמאה, מהדר ליה כד שוניא לא מצלח, ורשים, חתים ודחיף מאי דעבד.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>רהט %count מסכיא</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>סקירתא</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>מסכיא</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>גמירא</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>לא צריך</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>בית ידעתא</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>עסקי: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>שוניא דאתרא בגו migrations/, ודתוספתא בגו extension/&lt;name&gt;/migrations/. רהטין בסדרא דשמהתהון ודמאי דצריכין.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>רהטא בתרייא</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>כתבא אשתני בתר דאתעביד.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>עד כען ליכא שוניא. ./console exp:migration:generate --skeleton &lt;name&gt; --apply כתב קדמאה.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>רהטי בתראי</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>כל רהטא</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>עד כען ליכא רהטא.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>דמותא דרהטא צריכא נמוסא migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>רהטא אזיל: דמי כד יסלק.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>טויבא</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target לאו רהטא, לאו שוניא ולאו צלמא דהדין תקונא.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>סמן „אין, אהדריה“ קדמאה.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>אהדורי צלמא קדמאה לחכימי הוא: סמן „ידענא מאי דהדין מהדר“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>כתוב סימנא דצלמא תוב: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>בחר לכל הפחות חולקא חד לאהדורי.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>להדין רהטא ליכא צלמא דאתנסיב קדמוהי: אהדר שוניוהי חד חד, או אהדר צלמא קדמאה.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>הדין שוניא לא מתהדר מנפשיה: לא אתעביד, או לית ליה down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>טופסא לא אתקרי.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>בחר רהטא למשרי תוב.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>סמן „אין, רהט הלין שוניא השתא“ קדמאה.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>בחר לכל הפחות שוניא חד.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>שוניא אשתני בתר דאתעביד: קביל שנויא עם טעמא, או אהדר כתבא.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>הב טעמא אמאי שוניא דאשתנו מתקבלין.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>טעמא לכל היותר 500 אתוון.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>רהטא דשרא הכא עדיין אזיל (%detail). סכי עד דיסלק.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>רהטא אחרינא אחיד קולפא דתקונא: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>רהטא צריך משתמשא דאיתוהי ועאל.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>לא אשתכח מרהטא php דשורת פקודי. קבע migration.ini [AdminSettings] PhpCliPath לאורחיה שלימא.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open כביש, ומשום הכי רהטא לא משתרי הכא. רהט ./console exp:migration:migrate --apply בשמשא.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>לא אפשר למכתב בתיקא דרהטי: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>רהטא שרא ברם לא הודע סימנא דעובדיה. בדוק %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>אמר מאי לאהדורי.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>רהטא לא אפשר למשרי.</translation>
     </message>
 </context>
 </TS>

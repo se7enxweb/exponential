@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API ܕ GraphQL: ܢܘܩܙܐ ܕܣܘܦܐ ܕܝܠܗ، ܣܟܡܐ ܘܕܘܟܬܐ ܠܢܣܝܘܢܐ ܕܫܘ̈ܐܠܐ.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ܫܢܘܝܝ ܬܩܘܢܐ ܕܢܛܝܪܝܢ ܒܟܬܒܝ: ܡܩܡܗܘܢ, ܪܗܛܝ, ܡܪܗܛ ܘܡܗܕܪ ܠܐܚܘܪܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79663,6 +79671,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ܫܕܪ ܫܘ̈ܚܠܦܐ ܠ /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ܡܩܡܐ ܠܐ ܐܬܩܪܝ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ܠܘܚܝ ܫܘܢܝܐ ܥܕܡܐ ܠܗܫܐ ܠܝܬܢܗܘܢ: ./console exp:upgrade --apply ܥܒܝܕ ܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count ܫܘܢܝܐ ܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ܪܗܛܐ ܐܙܝܠ, ܫܪܝܝܗ %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ܬܩܘܢܐ ܐܚܝܕ: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ܡܣܟܝܐ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ܝܬܡܝ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ܪܗܛܐ ܒܬܪܝܝܐ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܝܬ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ܟܠܗܘܢ ܫܘܢܝܐ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>ܪܗܛܐ ܡܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ܪܗܛܐ ܕܢܣܝܘܢܐ</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ܫܘܢܝܐ ܡܣܟܝܐ ܪܗܛܘ ܒܥܣܩܐ ܕܐܬܗܕܪ ܠܐܚܘܪܐ ܒܬܪ ܗܟܢܐ: ܡܕܡ ܠܐ ܐܬܢܛܪ. ܠܬܚܬ ܟܬܝܒ ܡܐ ܕܟܠ ܚܕ ܫܢܝ ܒܒܝܬ ܝܕܥܬܐ.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ܡܐ ܕܪܗܛܐ ܗܘܗ ܥܒܝܕ ܗܫܐ. ܡܕܡ ܠܐ ܡܫܬܢܝ: ܟܠ ܫܘܢܝܐ ܡܣܟܝܐ ܡܢܝ ܫܢܘܝܝܢ ܕܗܘܗ ܥܒܝܕ, ܘܪܗܛܐ ܡܐ ܕܗܘܗ ܥܒܝܕ ܩܕܡ ܘܒܬܪ.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>ܕܡܝ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ܡܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ܪܗܛܐ ܕܢܣܝܘܢܐ ܠܐ ܐܨܠܚ: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ܕܡܘܬܐ ܨܪܝܟܐ PostgreSQL ܐܘ SQLite, ܕܫܢܘܝܝ ܨܘܪܬܗܘܢ ܡܬܗܕܪܝܢ ܠܐܚܘܪܐ; ܒܗܢܐ ܒܝܬ ܝܕܥܬܐ ܬܪܥܝܬܐ ܕܠܬܚܬ ܗܝ ܡܐ ܕܪܗܛܐ ܗܘܗ ܥܒܝܕ.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ܡܩܡܐ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ܡܐ ܕܗܘܗ ܥܒܝܕ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ܕܡܘܬܐ: %result ܒܓܘ %ms ܡܫ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܝܬ ܫܘܢܝܐ.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ܩܕܡ ܪܗܛܐ ܘܒܬܪܝܗ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ܨܠܡܐ ܕܩܕܡ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ܡܬܢܣܝܒ, ܘܡܬܗܕܪ ܟܕ ܫܘܢܝܐ ܠܐ ܡܨܠܚ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ܟܒܝܫ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ܨܠܡܐ ܕܒܬܪ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ܡܬܢܣܝܒ ܟܕ ܪܗܛܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total ܫܘܢܝܐ: %pending ܡܣܟܝܐ, %done ܓܡܝܪܐ, %failed ܠܐ ܐܨܠܚܘ.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ܬܫܥܝܬܐ ܕܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ܟܠ ܪܗܛܐ ܥܡ ܡܫܬܡܫܝܗ, ܣܒܝܒܘܬܝܗ, ܨܠܡܘܗܝ ܘܡܢܐ ܕܐܬܚܬܡ, ܐܬܣܡܢ ܘܐܬܕܚܦ. ܪܗܛܐ ܕܠܐ ܐܨܠܚ ܐܘ ܕܐܬܦܣܩ ܡܫܬܪܝ ܬܘܒ; ܪܗܛܐ ܕܐܬܢܣܝܒ ܨܠܡܐ ܩܕܡܘܗܝ ܡܬܗܕܪ.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ܪܗܛܝ ܠܐ ܐܬܩܪܝܘ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ܠܘܚܝ ܫܘܢܝܐ ܥܕܡܐ ܠܗܫܐ ܠܝܬܢܗܘܢ: ./console exp:upgrade --apply ܥܒܝܕ ܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ܚܘܝ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ܟܠ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ܪܗܛܝ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ܫܪܐ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ܥܠ ܝܕܝ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ܨܠܡܝ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ܒܝܬ ܓܢܙܐ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ܥܘܒܕܝ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ܩܕܡ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ܒܬܪ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ܕܚܝܦܬܐ: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ܡܫܪܝܐ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ܐܗܕܪ ܠܐܚܘܪܐ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ܠܝܬ ܪܗܛܐ ܒܗܢܐ ܡܩܡܐ.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ܫܪܐ ܗܟܐ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ܪܗܛܝ, ܫܪܝܐܢ ܬܘܒ ܘܗܕܪܬܐ ܕܫܪܝܝܢ ܒܗܠܝܢ ܕܦܝ, ܥܡ ܡܫܬܥܝܬܐ ܕܟܠ ܚܕ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ܡܢܐ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ܦܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ܗܕܪܬܐ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>ܗܕܪܬܐ ܕ%target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ܪܗܛܐ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ܡܐ ܕܪܗܛܐ ܥܒܕ, ܪܫܘܡܝܗ ܘܦܢܩܣܝܗ. ܪܗܛܐ ܕܫܪܐ ܗܟܐ ܐܙܝܠ ܠܐܚܘܪܝ ܦܪܓܘܕܐ ܟܕ ܗܢܐ ܕܦܐ ܡܬܛܪܝܩ; ܦܬܚ ܕܦܐ ܬܘܒ ܠܡܝܙܠ ܒܬܪܝܗ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ܫܪܝ ܬܘܒ ܗܢܐ ܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ܐܗܕܪ ܗܢܐ ܪܗܛܐ ܠܐܚܘܪܐ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ܪܫܘܡܐ ܠܐ ܐܬܩܪܝ: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ܡܝܙܠ ܠܩܕܡܐ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>ܫܪܝܝܗ %user ܒ%time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ܒܕܩܝܢ ܩܘܕܐ ܘܢܣܒܝܢ ܨܠܡܐ ܩܕܡ ܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>ܪܗܝܛ %id (%index ܡܢ %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done ܡܢ %total ܓܡܝܪܝܢ</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ܫܘܢܝܐ ܪܗܛܘ; ܡܗܕܪܝܢ ܨܠܡܐ ܐܢ ܚܕ ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ܢܣܒܝܢ ܨܠܡܐ ܒܬܪ ܪܗܛܐ, ܚܬܡܝܢ, ܡܣܡܢܝܢ ܘܕܚܦܝܢ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ܡܗܕܪܝܢ ܨܠܡܐ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ܪܗܛܐ ܣܠܝܩ. ܡܛܥܢܝܢ ܡܫܬܥܝܬܝܗ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ܠܐ ܐܦܫܪ ܠܡܝܙܠ ܒܬܪ ܡܝܙܠ ܠܩܕܡܐ. ܛܥܝܢ ܕܦܐ ܬܘܒ ܠܡܚܙܝ ܗܝܟܝ ܪܗܛܐ ܐܙܝܠ.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ܗܢܐ ܕܦܐ ܐܙܝܠ ܒܬܪ ܪܗܛܐ ܟܕ ܐܙܝܠ.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ܛܥܝܢ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ܡܫܬܥܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ܡܫ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ܡܐ ܕܪܗܛܐ ܟܬܒ ܟܛܥܘܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ܪܫܘܡܐ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ܣܒܝܒܘܬܐ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ܠܝܬ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ܣܠܝܩ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ܚܬܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ܣܝܡܢܐ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ܕܚܝܦܬܐ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ܫܠܝܚܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ܫܘܢܝܐ ܕܗܢܐ ܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ܡܒܘܥܐ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ܦܢܩܣܐ ܕܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ܣܘܦܐ ܕܦܢܩܣܐ ܒܠܚܘܕ ܡܬܚܙܝ.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ܪܗܝܛ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ܣܠܝܩ ܒܠܐ ܡܫܬܥܝܬܐ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ܐܬܣܪܒ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ܒܝܬ ܝܕܥܬܐ ܠܐ ܗܘܗ ܡܛܝ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ܛܥܘܬܐ ܓܘܐܝܬܐ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ܪܗܛܐ ܐܙܝܠ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ܫܪܝܝܗ %user ܒ%time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ܙܝܠ ܒܬܪܝܗ</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ܬܩܘܢܐ ܐܚܝܕ</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ܪܗܛܐ ܐܚܪܝܢܐ ܐܚܝܕ ܩܘܠܦܐ (ܥܠܘܝܐ ܐܘ ܪܗܛܐ ܒܠܘܚ ܦܩܘܕܝ): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ܓܡܝܪܐ</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ܡܣܟܝܐ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ܠܐ ܨܪܝܟ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ܠܐ ܝܕܝܥ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ܐܬܗܕܪ ܠܐܚܘܪܐ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ܐܬܥܒܝܕ</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ܗܘܗ ܡܬܥܒܝܕ</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ܐܬܗܕܪ</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ܗܘܗ ܡܬܗܕܪ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ܠܐ ܪܗܛ</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ܡܣܟܝ ܠܐܚܪܝܢܐ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ܫܢܘܝܐ ܐܬܩܒܝܠ</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ܫܢܘܝܐ ܗܘܗ ܡܬܩܒܝܠ</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ܡܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ܡܩܡܐ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ܬܫܥܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>ܐܗܕܪ %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ܪܗܛܐ ܡܬܗܕܪ ܠܨܠܡܐ ܕܐܬܢܣܝܒ ܩܕܡܘܗܝ, ܫܘܢܝܐ ܚܕ ܒdown() ܕܝܠܝܗ. ܐܗܕܘܪܝ ܨܠܡܐ ܩܕܡܝܐ ܠܚܟܝܡܝ ܗܘܐ. ܟܠ ܚܕ ܪܗܝܛ ܠܐܚܘܪܝ ܦܪܓܘܕܐ ܒܫܡܟ, ܒܬܪ ܨܠܡܐ ܕܡܩܡܐ ܕܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ܡܐ ܕܡܬܗܕܪ ܠܐ ܐܬܩܪܝ: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ܫܘܢܝܐ ܚܕ</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ܨܠܡܐ ܩܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>ܦܫܪܐ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ܐܝܢ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ܠܐ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ܨܠܡܐ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ܐܬܢܣܝܒ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ܙܢܐ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ܚܘܠܩܝ ܠܐܗܕܘܪܝ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ܒܝܬ ܝܕܥܬܐ</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ܟܬܒܝ ܓܢܙܐ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ܛܘܝܒܐ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ܐܗܕܘܪܝ ܒܝܬ ܝܕܥܬܐ ܡܗܕܪ ܠܝܗ ܠܙܒܢܐ ܕܨܠܡܐ, ܥܡ ܡܘܬܒܝ: ܒܬܪ ܗܟܢܐ ܫܡܐ ܬܬܒܥܝ ܠܡܝܥܠ ܬܘܒ. ܟܠ ܡܐ ܕܐܫܬܢܝ ܡܢ ܗܟܐ ܘܐܝܠܟ ܐܒܕ; ܨܠܡܐ ܕܡܩܡܐ ܕܗܫܐ ܡܬܢܣܝܒ ܩܕܡܝܬ.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ܝܕܥܢܐ ܡܐ ܕܗܢܐ ܡܗܕܪ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ܟܬܘܒ ܣܝܡܢܐ ܕܨܠܡܐ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ܐܝܢ, ܐܗܕܪܝܗ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ܒܘܛܠܐ</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ܪܗܛܝ ܕܐܬܢܣܝܒ ܨܠܡܐ ܩܕܡܝܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ܒܚܪ</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܝܬ ܪܗܛܐ ܥܡ ܨܠܡܐ.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ܫܘܢܝܐ ܕܐܬܥܒܝܕܘ ܕܝܟܠܝܢ ܠܐܗܕܘܪܝ ܢܦܫܗܘܢ (ܐܝܬ ܠܗܘܢ down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ܠܝܬ ܫܘܢܝܐ ܕܐܬܥܒܝܕ ܕܐܝܬ ܠܝܗ down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ܨܠܡܝ ܩܕܡܐܝ (ܚܟܝܡܝ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܝܬ ܨܠܡܐ.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ܪܗܛ ܫܘܢܝܐ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ܪܗܛܐ ܐܙܝܠ ܠܐܚܘܪܝ ܦܪܓܘܕܐ ܟ%user, ܘܕܦܝܗ ܡܚܘܝ ܠܝܗ ܟܕ ܐܙܝܠ. ܩܕܡ ܫܘܢܝܐ ܩܕܡܝܐ ܨܠܡܐ ܕܬܩܘܢܐ ܡܬܢܣܝܒ; ܟܕ ܫܘܢܝܐ ܠܐ ܡܨܠܚ ܪܗܛܐ ܩܐܝܡ ܘܨܠܡܐ ܡܬܗܕܪ.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ܪܗܛܐ ܕܢܣܝܘܢܐ ܩܕܡܝܬ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ܡܩܡܐ ܠܐ ܐܬܩܪܝ: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ܫܘܢܝܐ ܡܣܟܝܐ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ܪܗܛܝܢ ܒܗܢܐ ܣܕܪܐ. ܣܠܩ ܣܝܡܢܐ ܡܢ ܚܕ ܠܡܫܒܩܝܗ, ܘܠܐܠܝܢ ܕܨܪܝܟܝܢ ܠܝܗ, ܠܪܗܛܐ ܕܒܬܪ.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ܪܗܛܝܗ</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>ܡܕܠܝܩ ܐܘܪܚ ܬܩܢܬܐ ܟܕ ܪܗܝܛ.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>ܐܫܬܢܘ ܒܬܪ ܕܐܬܥܒܝܕܘ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ܗܠܝܢ ܟܬܒܝ ܠܘ ܐܝܢܘܢ ܕܐܬܥܒܝܕܘ. ܪܗܛܐ ܡܣܪܒ ܠܗܘܢ ܐܠܐ ܐܢ ܫܢܘܝܐ ܡܬܩܒܝܠ ܥܡ ܛܥܡܐ; ܠܐ ܪܗܛܝܢ ܬܘܒ, ܚܘܫܒܢܐ ܚܕܬܐ ܡܬܪܫܡ ܘܛܥܡܐ ܡܬܢܛܪ ܒܦܢܩܣܐ ܕܒܕܝܩܬܐ.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ܩܒܝܠ ܫܢܘܝܝ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ܠܡܢܐ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ܩܒܝܥܝ ܐܝܢܘܢ ܕܢܛܝܪܝܢ. ܟܠ ܬܝܒܘܬܐ ܫܒܩܐ ܦܣܝܥܬܐ.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ܒܠܐ ܨܠܡܐ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ܒܠܐ ܨܠܡܐ ܩܕܡ ܪܗܛܐ ܘܒܬܪܝܗ: ܬܩܠܐ ܠܐ ܡܬܗܕܪܐ ܡܢܦܫܗ.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ܒܠܐ ܐܗܕܘܪܝ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ܒܬܪ ܬܩܠܐ, ܫܒܘܩ ܬܩܘܢܐ ܟܡܐ ܕܬܩܠܐ ܫܒܩܝܗ.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>ܢܛܘܪ ܫܢܘܝܝ ܕܠܐ ܐܬܚܬܡܘ</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ܪܗܛ ܐܦ ܥܠ ܓܒ ܕܛܘܝܒܐ, ܬܘܣܦܬܐ ܐܘ ܨܘܪܬܐ ܐܝܬ ܠܗܘܢ ܫܢܘܝܝ ܕܠܐ ܐܬܚܬܡܘ; ܥܐܠܝܢ ܠܨܠܡܐ.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ܒܠܐ ܚܬܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ܠܐ ܬܚܬܘܡ ܟܬܒܐ ܕܡܩܡܐ ܘܦܢܩܣܐ ܕܪܗܛܐ (ܐܦ ܠܐ ܣܝܡܢܐ ܘܠܐ ܕܚܝܦܬܐ).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ܒܠܐ ܕܚܝܦܬܐ</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ܚܬܘܡ ܘܣܡܢ, ܒܪܡ ܠܐ ܬܕܚܘܦ.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ܒܠܐ ܣܝܡܢܐ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ܚܬܘܡ ܘܕܚܘܦ, ܒܪܡ ܠܐ ܬܣܡܢ ܪܗܛܐ.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ܐܝܢ, ܪܗܛ ܗܠܝܢ ܫܘܢܝܐ ܗܫܐ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ܠܝܬ ܫܘܢܝܐ ܡܣܟܝܐ.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ܗܕܪ ܠܡܩܡܐ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ܫܢܘܝܝ ܗܢܐ ܬܩܘܢܐ ܕܐܬܟܬܒܘ ܙܡܢܐ ܚܕܐ ܒܟܬܒܝ (ܡܠܝܘܬܐ, ܙܢܝ, ܬܦܩܝܕܝ, ܛܘܝܒܐ, ܨܘܪܬܐ) ܘܐܬܥܒܝܕܘ ܒܟܠ ܬܩܘܢܐ ܕܐܬܪܐ ܒܗܢܐ ܣܕܪܐ. ܪܗܛܐ ܢܣܝܒ ܨܠܡܐ ܩܕܡܝܐ, ܡܗܕܪ ܠܝܗ ܟܕ ܫܘܢܝܐ ܠܐ ܡܨܠܚ, ܘܪܫܝܡ, ܚܬܝܡ ܘܕܚܝܦ ܡܐ ܕܥܒܕ.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>ܪܗܛ %count ܡܣܟܝܐ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ܣܩܝܪܬܐ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ܡܣܟܝܐ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ܓܡܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ܠܐ ܨܪܝܟ</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ܒܝܬ ܝܕܥܬܐ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ܥܣܩܝ: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ܫܘܢܝܐ ܕܐܬܪܐ ܒܓܘ migrations/, ܘܕܬܘܣܦܬܐ ܒܓܘ extension/&lt;name&gt;/migrations/. ܪܗܛܝܢ ܒܣܕܪܐ ܕܫܡܗܬܗܘܢ ܘܕܡܐܝ ܕܨܪܝܟܝܢ.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ܪܗܛܐ ܒܬܪܝܝܐ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ܟܬܒܐ ܐܫܬܢܝ ܒܬܪ ܕܐܬܥܒܝܕ.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܝܬ ܫܘܢܝܐ. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ܟܬܒ ܩܕܡܝܬ.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ܪܗܛܝ ܒܬܪܐܝ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ܟܠ ܪܗܛܐ</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܝܬ ܪܗܛܐ.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ܕܡܘܬܐ ܕܪܗܛܐ ܨܪܝܟܐ ܢܡܘܣܐ migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ܪܗܛܐ ܐܙܝܠ: ܕܡܝ ܟܕ ܝܣܠܩ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ܛܘܝܒܐ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ܠܘ ܪܗܛܐ, ܠܘ ܫܘܢܝܐ ܘܠܘ ܨܠܡܐ ܕܗܢܐ ܬܩܘܢܐ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ܣܡܢ „ܐܝܢ, ܐܗܕܪܝܗ“ ܩܕܡܝܬ.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ܐܗܕܘܪܝ ܨܠܡܐ ܩܕܡܝܐ ܠܚܟܝܡܝ ܗܘܐ: ܣܡܢ „ܝܕܥܢܐ ܡܐ ܕܗܢܐ ܡܗܕܪ“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ܟܬܘܒ ܣܝܡܢܐ ܕܨܠܡܐ ܬܘܒ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ܒܚܪ ܠܟܠ ܗܦܚܘܬ ܚܘܠܩܐ ܚܕ ܠܐܗܕܘܪܝ.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ܠܗܢܐ ܪܗܛܐ ܠܝܬ ܨܠܡܐ ܕܐܬܢܣܝܒ ܩܕܡܘܗܝ: ܐܗܕܪ ܫܘܢܝܘܗܝ ܚܕ ܚܕ, ܐܘ ܐܗܕܪ ܨܠܡܐ ܩܕܡܝܐ.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ܗܢܐ ܫܘܢܝܐ ܠܐ ܡܬܗܕܪ ܡܢܦܫܝܗ: ܠܐ ܐܬܥܒܝܕ, ܐܘ ܠܝܬ ܠܝܗ down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ܛܘܦܣܐ ܠܐ ܐܬܩܪܝ.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ܒܚܪ ܪܗܛܐ ܠܡܫܪܝ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ܣܡܢ „ܐܝܢ, ܪܗܛ ܗܠܝܢ ܫܘܢܝܐ ܗܫܐ“ ܩܕܡܝܬ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ܒܚܪ ܠܟܠ ܗܦܚܘܬ ܫܘܢܝܐ ܚܕ.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ܫܘܢܝܐ ܐܫܬܢܝ ܒܬܪ ܕܐܬܥܒܝܕ: ܩܒܝܠ ܫܢܘܝܐ ܥܡ ܛܥܡܐ, ܐܘ ܐܗܕܪ ܟܬܒܐ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>ܗܒ ܛܥܡܐ ܠܡܢܐ ܫܘܢܝܐ ܕܐܫܬܢܘ ܡܬܩܒܠܝܢ.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>ܛܥܡܐ ܠܟܠ ܗܝܘܬܪ 500 ܐܬܘܘܢ.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ܪܗܛܐ ܕܫܪܐ ܗܟܐ ܥܕܝܝܢ ܐܙܝܠ (%detail). ܣܟܝ ܥܕ ܕܝܣܠܩ.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ܪܗܛܐ ܐܚܪܝܢܐ ܐܚܝܕ ܩܘܠܦܐ ܕܬܩܘܢܐ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ܪܗܛܐ ܨܪܝܟ ܡܫܬܡܫܐ ܕܐܝܬܘܗܝ ܘܥܐܠ.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ܠܐ ܐܫܬܟܚ ܡܪܗܛܐ php ܕܫܘܪܬ ܦܩܘܕܝ. ܩܒܥ migration.ini [AdminSettings] PhpCliPath ܠܐܘܪܚܝܗ ܫܠܝܡܐ.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ܟܒܝܫ, ܘܡܫܘܡ ܗܟܢܐ ܪܗܛܐ ܠܐ ܡܫܬܪܝ ܗܟܐ. ܪܗܛ ./console exp:migration:migrate --apply ܒܫܡܫܐ.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ܠܐ ܐܦܫܪ ܠܡܟܬܒ ܒܬܝܩܐ ܕܪܗܛܝ: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ܪܗܛܐ ܫܪܐ ܒܪܡ ܠܐ ܗܘܕܥ ܣܝܡܢܐ ܕܥܘܒܕܝܗ. ܒܕܘܩ %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ܐܡܪ ܡܢܐ ܠܐܗܕܘܪܝ.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ܪܗܛܐ ܠܐ ܐܦܫܪ ܠܡܫܪܝ.</translation>
     </message>
 </context>
 </TS>

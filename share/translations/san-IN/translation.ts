@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: तस्य अन्तबिन्दुः, स्कीमा पृच्छानां परीक्षणाय क्रीडाक्षेत्रं च।</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>स्थानान्तरणानि</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>सञ्चिकारूपेण रक्षिताः संस्थापनस्य परिवर्तनाः: तेषां स्थितिः, निष्पादनानि, निष्पादनं प्रत्यावर्तनं च।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>म्यूटेशन्-क्रियाः /api/graphql प्रति प्रेषयतु।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>स्थानान्तरणानि</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>स्थितिः पठितुं न शक्ता: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>स्थानान्तरणानां सारण्यः अद्यापि न सन्ति: ./console exp:upgrade --apply ताः रचयति।</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count स्थानान्तरणानि विफलानि</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>निष्पादनं प्रचलति, %user द्वारा आरब्धम्</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>संस्थापनम् अवरुद्धम्: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>प्रतीक्षमाणम्</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफलम्</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>अनाथानि</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>अन्तिमं निष्पादनम्</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अद्यापि किमपि न</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>सर्वाणि स्थानान्तरणानि</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>अनुकृतं निष्पादनम्</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>परीक्षणनिष्पादनम्</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>प्रतीक्षमाणानि स्थानान्तरणानि एकस्मिन् व्यवहारे निष्पादितानि, यः पश्चात् प्रत्यावर्तितः: किमपि न रक्षितम्। अधः प्रत्येकेन दत्तांशकोशे यत् परिवर्तितं तत् अस्ति।</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>निष्पादनम् इदानीं यत् कुर्यात्। किमपि न परिवर्त्यते: प्रत्येकं प्रतीक्षमाणं स्थानान्तरणं स्वेन करिष्यमाणान् परिवर्तनान् सूचयति, निष्पादनं च पूर्वं पश्चात् च यत् कुर्यात् तत्।</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>अनुकरोतु</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>निष्पादयतु</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>परीक्षणनिष्पादनं विफलम्: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>अनुकरणाय PostgreSQL अथवा SQLite आवश्यकम्, ययोः संरचनापरिवर्तनानि प्रत्यावर्तयितुं शक्यन्ते; अस्मिन् दत्तांशकोशे अधः स्थिता योजना निष्पादनं यत् कुर्यात् तत् दर्शयति।</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>स्थानान्तरणानि</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>स्थानान्तरणम्</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थितिः</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>यत् कुर्यात्</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>अनुकरणम्: %ms मि.से. मध्ये %result</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>अद्यापि स्थानान्तरणं नास्ति।</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>निष्पादनात् पूर्वं पश्चात् च</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>पूर्वस्थितिचित्रम्</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>गृह्यते, स्थानान्तरणे विफले च पुनःस्थाप्यते</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>निष्क्रियम्</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>पश्चात्स्थितिचित्रम्</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>निष्पादने सफले गृह्यते</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total स्थानान्तरणानि: %pending प्रतीक्षमाणानि, %done पूर्णानि, %failed विफलानि।</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>स्थानान्तरणानाम् इतिहासः</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>प्रत्येकं निष्पादनं तस्य उपयोक्त्रा, परिवेशेन, स्थितिचित्रैः, यत् कमिट्-कृतं टैग्-कृतं प्रेषितं च तेन सह। विफलं बाधितं वा निष्पादनं पुनः आरब्धुं शक्यते; यस्य पूर्वं स्थितिचित्रं गृहीतं तत् निष्पादनं निवर्तयितुं शक्यते।</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>निष्पादनानि पठितुं न शक्तानि: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>स्थानान्तरणानां सारण्यः अद्यापि न सन्ति: ./console exp:upgrade --apply ताः रचयति।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दर्शनम्</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सर्वम्</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>निष्पादनानि</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>आरब्धम्</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>केन</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>स्थितिचित्राणि</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>भण्डारः</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रियाः</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>पूर्वम्</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>पश्चात्</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>प्रेषणम्: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>पुनरारम्भः</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>प्रत्यावर्तयतु</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>अस्यां स्थितौ निष्पादनं नास्ति।</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>अत्र आरब्धानि</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>एतेषु पृष्ठेषु आरब्धानि निष्पादनानि, पुनरारम्भाः प्रत्यावर्तनानि च, प्रत्येकस्य प्रतिवेदनेन सह।</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>किम्</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणामः</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>प्रत्यावर्तनम्</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target इत्यस्य प्रत्यावर्तनम्</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>निष्पादनम् %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>निष्पादनेन यत् कृतम्, तस्य अभिलेखः वृत्तपञ्जी च। अत्र आरब्धं निष्पादनम् अस्मिन् पृष्ठे पिहिते अपि पृष्ठभूमौ प्रचलति; तस्य अनुसरणाय पृष्ठं पुनः उद्घाटयतु।</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>इदं निष्पादनं पुनः आरभताम्</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>इदं निष्पादनं प्रत्यावर्तयतु</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>अभिलेखः पठितुं न शक्तः: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगतिः</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user द्वारा %time समये आरब्धम्।</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>कोड् परीक्ष्यते निष्पादनात् पूर्वं स्थितिचित्रं च गृह्यते</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id निष्पाद्यते (%total मध्ये %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total मध्ये %done पूर्णानि</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>स्थानान्तरणानि निष्पादितानि; यदि किञ्चित् विफलं तर्हि स्थितिचित्रं पुनःस्थाप्यते</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>निष्पादनात् पश्चात् स्थितिचित्रग्रहणम्, कमिट्, टैग्, प्रेषणं च</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>स्थितिचित्रं पुनःस्थाप्यते</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>निष्पादनं समाप्तम्। तस्य प्रतिवेदनम् आनीयते।</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>प्रगतिः अनुसर्तुं न शक्ता। निष्पादनं कथं प्रचलति इति द्रष्टुं पृष्ठं पुनः आनयतु।</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>इदं पृष्ठं निष्पादनं प्रचलत् अनुसरति।</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>पुनः आनयतु</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>प्रतिवेदनम्</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>अवधिः</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms मि.से.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>निष्पादनेन त्रुटिरूपेण यत् मुद्रितम्</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>अभिलेखः</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>परिवेशः</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>किमपि न</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>समाप्तम्</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>कमिट्</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>टैग्</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>प्रेषणम्</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>सन्देशः</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>अस्य निष्पादनस्य स्थानान्तरणानि</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>स्रोतः</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>निष्पादनवृत्तपञ्जी</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>वृत्तपञ्ज्याः केवलम् अन्तः दर्श्यते।</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>प्रचलति</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>प्रतिवेदनं विना समाप्तम्</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>सफलम्</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>विफलम्</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>निराकृतम्</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>दत्तांशकोशः प्राप्तुं न शक्तः</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>आन्तरिकी त्रुटिः</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>निष्पादनं प्रचलति</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user द्वारा %time समये आरब्धम्।</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>अनुसरतु</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>संस्थापनम् अवरुद्धम्</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>अन्यत् निष्पादनम् अवरोधं धारयति (उन्नयनं वा कन्सोल्-निष्पादनं वा): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>पूर्णम्</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>प्रतीक्षमाणम्</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>अनावश्यकम्</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञातम्</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>प्रत्यावर्तितम्</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>प्रयुक्तम्</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>प्रयुज्येत</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>निवर्तितम्</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>निवर्त्येत</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>अनिष्पादितम्</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>अन्यत् प्रतीक्षते</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>परिवर्तनं स्वीकृतम्</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>परिवर्तनं स्वीक्रियेत</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>अनुकृतम्</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>स्थानान्तरणानि</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थितिः</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>इतिहासः</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target निवर्तयतु</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>निष्पादनं तस्मात् पूर्वं गृहीतं स्थितिचित्रं प्रति निवर्त्यते, एकं स्थानान्तरणं स्वेन down() द्वारा। पूर्वतनस्य स्थितिचित्रस्य पुनःस्थापनं विशेषज्ञेभ्यः। प्रत्येकं वर्तमानस्थितेः स्थितिचित्रात् पश्चात् भवतः नाम्ना पृष्ठभूमौ प्रचलति।</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>यत् निवर्तयितुं शक्यते तत् पठितुं न शक्तम्: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>एकं निष्पादनम्</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>एकं स्थानान्तरणम्</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>पूर्वतनं स्थितिचित्रम्</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>वर्णनम्</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>आम्</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>न</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>स्थितिचित्रम्</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>लेबल्</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>गृहीतम्</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>प्रकारः</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>पुनःस्थापनीयाः भागाः</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>दत्तांशकोशः</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>संग्रहसञ्चिकाः (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>विन्यासाः (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>पुनःस्थापनं दत्तांशकोशं स्थितिचित्रस्य समयं प्रति प्रत्यानयति, सत्राणि अपि: पश्चात् भवान् पुनः प्रवेष्टुं याच्येत। ततः परं यत् सर्वं परिवर्तितं तत् नश्यति; प्रथमं वर्तमानस्थितेः स्थितिचित्रं गृह्यते।</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>इदं यत् पुनःस्थापयति तत् अहं जानामि</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>स्थितिचित्रस्य परिचयाङ्कं पुनः लिखतु</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>आम्, निवर्तयतु</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्दीकरणम्</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>येषां पूर्वं स्थितिचित्रं गृहीतं तानि निष्पादनानि।</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>चिनोतु</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>अद्यापि स्थितिचित्रयुक्तं निष्पादनं नास्ति।</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>प्रयुक्तानि स्थानान्तरणानि यानि स्वयं निवर्तितुं शक्नुवन्ति (तेषु down() अस्ति)।</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>कस्मिन्नपि प्रयुक्ते स्थानान्तरणे down() नास्ति।</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>पूर्वतनानि स्थितिचित्राणि (विशेषज्ञाः)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>अद्यापि स्थितिचित्रं नास्ति।</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>स्थानान्तरणानि निष्पादयतु</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>निष्पादनं %user रूपेण पृष्ठभूमौ प्रचलति, तस्य पृष्ठं च तत् प्रचलत् दर्शयति। प्रथमात् स्थानान्तरणात् पूर्वं संस्थापनस्य स्थितिचित्रं गृह्यते; स्थानान्तरणे विफले निष्पादनं स्थगति स्थितिचित्रं च पुनःस्थाप्यते।</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>प्रथमं परीक्षणनिष्पादनम्</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>स्थितिः पठितुं न शक्ता: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>प्रतीक्षमाणानि स्थानान्तरणानि</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>एतानि अनेन क्रमेण निष्पाद्यन्ते। एकं तत्-आश्रितानि च पश्चात्तनाय निष्पादनाय त्यक्तुं तस्य चिह्नं निष्कासयतु।</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>निष्पादयतु</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>प्रचलनकाले अनुरक्षणविधिं सक्रियं करोति।</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>प्रयोगात् पश्चात् परिवर्तितानि</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>एताः सञ्चिकाः प्रयुक्ताः न सन्ति। यावत् परिवर्तनं कारणेन सह न स्वीक्रियते तावत् निष्पादनम् एताः निराकरोति; ताः पुनः न निष्पाद्यन्ते, नूतना परीक्षणसङ्ख्या अभिलिख्यते, कारणं च लेखापरीक्षावृत्तपञ्ज्यां रक्ष्यते।</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>परिवर्तनानि स्वीकरोतु</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>किमर्थम्</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>पूर्वनिर्धारितानि सुरक्षितानि। प्रत्येकं चिह्नपेटिका एकं सोपानं त्यजति।</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>स्थितिचित्रं विना</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>निष्पादनात् पूर्वं पश्चात् च स्थितिचित्रं नास्ति: विफलतायाः स्वयं पुनःस्थापनं न शक्यम्।</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>पुनःस्थापनं विना</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>विफलतायाः पश्चात् संस्थापनं यथा विफलता अत्यजत् तथा एव त्यजतु।</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>अकमिट्-कृतानि परिवर्तनानि रक्षतु</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>विन्यासेषु, विस्तारेषु, अभिकल्पेषु वा अकमिट्-कृतेषु परिवर्तनेषु सत्सु अपि निष्पादयतु; तानि स्थितिचित्रे गच्छन्ति।</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>कमिट् विना</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>स्थितिसञ्चिकां निष्पादनवृत्तपञ्जीं च कमिट् मा करोतु (टैग् प्रेषणं च अपि न)।</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>प्रेषणं विना</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>कमिट् टैग् च करोतु, किन्तु मा प्रेषयतु।</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>टैग् विना</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>कमिट् कृत्वा प्रेषयतु, किन्तु निष्पादनं टैग् मा करोतु।</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>आम्, एतानि स्थानान्तरणानि इदानीं निष्पादयतु</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>किमपि स्थानान्तरणं प्रतीक्षमाणं नास्ति।</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>स्थितिं प्रति प्रत्यागच्छतु</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>अस्य संस्थापनस्य परिवर्तनाः एकवारं सञ्चिकारूपेण लिखिताः (विषयवस्तु, वर्गाः, भूमिकाः, विन्यासाः, संरचना) जालस्थलस्य प्रत्येकस्मिन् संस्थापने समानक्रमेण प्रयुक्ताः च। निष्पादनं प्रथमं स्थितिचित्रं गृह्णाति, स्थानान्तरणे विफले तत् पुनःस्थापयति, स्वेन कृतं च अभिलिखति, कमिट् करोति, प्रेषयति च।</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count प्रतीक्षमाणानि निष्पादयतु</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>अवलोकनम्</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>प्रतीक्षमाणानि</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पूर्णानि</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफलानि</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>अनावश्यकानि</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>दत्तांशकोशः</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>व्यवहाराः: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>जालस्थलस्य स्थानान्तरणानि migrations/ मध्ये सन्ति, विस्तारस्य extension/&lt;name&gt;/migrations/ मध्ये। एतानि नाम्नां क्रमेण आवश्यकतानुसारं च निष्पाद्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>अन्तिमं निष्पादनम्</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>प्रयोगात् पश्चात् सञ्चिका परिवर्तिता।</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>अद्यापि स्थानान्तरणं नास्ति। ./console exp:migration:generate --skeleton &lt;name&gt; --apply प्रथमं लिखति।</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>नूतनतमानि निष्पादनानि</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>सर्वाणि निष्पादनानि</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>अद्यापि निष्पादनं नास्ति।</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>निष्पादनस्य अनुकरणाय migration/run नीतिः आवश्यकी।</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>निष्पादनं प्रचलति: तस्मिन् समाप्ते अनुकरोतु।</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>स्थापना</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target अस्य संस्थापनस्य न निष्पादनं, न स्थानान्तरणं, न स्थितिचित्रम्।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>प्रथमं &quot;आम्, निवर्तयतु&quot; इति चिह्नयतु।</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>पूर्वतनस्य स्थितिचित्रस्य पुनःस्थापनं विशेषज्ञेभ्यः: &quot;इदं यत् पुनःस्थापयति तत् अहं जानामि&quot; इति चिह्नयतु।</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>स्थितिचित्रस्य परिचयाङ्कं पुनः लिखतु: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>पुनःस्थापनाय न्यूनातिन्यूनम् एकं भागं चिनोतु।</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>अस्य निष्पादनस्य पूर्वं स्थितिचित्रं न गृहीतम्: तस्य स्थानान्तरणानि एकैकशः निवर्तयतु, पूर्वतनं स्थितिचित्रं वा पुनःस्थापयतु।</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>इदं स्थानान्तरणं स्वयं निवर्तितुं न शक्नोति: तत् अप्रयुक्तम्, अथवा तस्मिन् down() नास्ति।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>प्रपत्रं पठितुं न शक्तम्।</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>पुनरारम्भाय निष्पादनं चिनोतु।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>प्रथमं &quot;आम्, एतानि स्थानान्तरणानि इदानीं निष्पादयतु&quot; इति चिह्नयतु।</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>न्यूनातिन्यूनम् एकं स्थानान्तरणं चिनोतु।</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>प्रयोगात् पश्चात् एकं स्थानान्तरणं परिवर्तितम्: कारणेन सह परिवर्तनं स्वीकरोतु, सञ्चिकां वा पूर्ववत् स्थापयतु।</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>परिवर्तितानि स्थानान्तरणानि किमर्थं स्वीक्रियन्ते इति कारणं ददातु।</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>कारणम् अधिकतमं 500 वर्णाः।</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>अत्र आरब्धं निष्पादनम् अद्यापि प्रचलति (%detail)। तस्य समाप्तिं प्रतीक्षताम्।</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>अन्यत् निष्पादनं संस्थापनस्य अवरोधं धारयति: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>निष्पादनाय विद्यमानः प्रविष्टः उपयोक्ता आवश्यकः।</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php आदेशपङ्क्तिक्रमादेशः न प्राप्तः। migration.ini [AdminSettings] PhpCliPath तस्य पूर्णमार्गे स्थापयतु।</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open निष्क्रियम्, अतः अत्र निष्पादनम् आरब्धुं न शक्यते। सर्वरे ./console exp:migration:migrate --apply निष्पादयतु।</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>निष्पादनानां पुटे लेखनं न शक्यम्: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>निष्पादनम् आरब्धं किन्तु स्वस्य प्रक्रियापरिचयाङ्कं न न्यवेदयत्। %detail परीक्षताम्।</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>किं निवर्तनीयम् इति वदतु।</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>निष्पादनम् आरब्धुं न शक्तम्।</translation>
     </message>
 </context>
 </TS>

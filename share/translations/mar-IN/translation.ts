@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: त्याचा एंड पॉइंट, स्कीमा आणि क्वेरी करून पाहण्यासाठी एक प्लेग्राउंड.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>मायग्रेशन्स</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>फाइल्स म्हणून ठेवलेले इन्स्टॉलेशनमधील बदल: त्यांची स्थिती, रन्स, चालवणे आणि मागे घेणे.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>म्यूटेशन /api/graphql वर पाठवा.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>मायग्रेशन्स</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>स्थिती वाचता आली नाही: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>मायग्रेशन्सची टेबल्स अजून अस्तित्वात नाहीत: ./console exp:upgrade --apply ती तयार करते.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count मायग्रेशन्स अयशस्वी झाली</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>एक रन सुरू आहे, %user यांनी सुरू केलेला</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>इन्स्टॉलेशन लॉक केलेले आहे: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>प्रलंबित</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>अयशस्वी</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>अनाथ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>शेवटचा रन</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अजून काहीही नाही</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>सर्व मायग्रेशन्स</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>सिम्युलेटेड रन</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>चाचणी रन</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>प्रलंबित मायग्रेशन्स एका ट्रान्झॅक्शनमध्ये चालली जे नंतर मागे घेतले गेले: काहीही ठेवले गेले नाही. खाली प्रत्येकाने डेटाबेसमध्ये काय बदलले ते दिले आहे.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>रन आता काय करेल. काहीही बदलत नाही: प्रत्येक प्रलंबित मायग्रेशन ते करणारे बदल सूचीबद्ध करते, आणि रन आधी व नंतर काय करेल ते.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>सिम्युलेट करा</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>चालवा</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>चाचणी रन अयशस्वी झाला: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>सिम्युलेशनसाठी PostgreSQL किंवा SQLite आवश्यक आहे, ज्यांचे स्कीमा बदल मागे घेता येतात; या डेटाबेसवर खालील योजना रन काय करेल ते दाखवते.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>मायग्रेशन्स</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>मायग्रेशन</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिती</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ते काय करेल</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>सिम्युलेशन: %result, %ms ms मध्ये</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>अजून कोणतेही मायग्रेशन नाही.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>रनच्या आधी आणि नंतर</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>आधीचा स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>घेतला जातो, आणि मायग्रेशन अयशस्वी झाल्यास पुनर्संचयित केला जातो</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बंद</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>नंतरचा स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>रन यशस्वी झाल्यावर घेतला जातो</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total मायग्रेशन्स: %pending प्रलंबित, %done पूर्ण, %failed अयशस्वी.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>मायग्रेशन इतिहास</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>प्रत्येक रन त्याचा वापरकर्ता, वातावरण, स्नॅपशॉट्स आणि काय कमिट, टॅग आणि पुश केले यासह. अयशस्वी किंवा व्यत्यय आलेला रन पुन्हा सुरू करता येतो; ज्या रनच्या आधी स्नॅपशॉट घेतला आहे तो मागे घेता येतो.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>रन्स वाचता आले नाहीत: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>मायग्रेशन्सची टेबल्स अजून अस्तित्वात नाहीत: ./console exp:upgrade --apply ती तयार करते.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दाखवा</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सर्व</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>रन्स</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>सुरू झाले</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>द्वारे</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>स्नॅपशॉट्स</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>रिपॉझिटरी</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रिया</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>आधी</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>नंतर</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>पुश: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>पुन्हा सुरू करा</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>मागे घ्या</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>या स्थितीत कोणताही रन नाही.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>येथे सुरू केलेले</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>या पानांवर सुरू केलेले रन्स, पुनरारंभ आणि रोलबॅक, प्रत्येकाच्या अहवालासह.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>काय</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणाम</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>रोलबॅक</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target चा रोलबॅक</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>रन %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>रनने काय केले, त्याची नोंद आणि लॉग. येथे सुरू केलेला रन हे पान बंद केल्यावर पार्श्वभूमीत सुरू राहतो; त्याचा मागोवा घेण्यासाठी पान पुन्हा उघडा.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>हा रन पुन्हा सुरू करा</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>हा रन मागे घ्या</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>नोंद वाचता आली नाही: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगती</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user यांनी %time ला सुरू केले.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>कोड तपासत आहे आणि रनपूर्वी स्नॅपशॉट घेत आहे</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id चालत आहे (%total पैकी %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total पैकी %done पूर्ण</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>मायग्रेशन्स चालली; एखादे अयशस्वी झाल्यास स्नॅपशॉट पुनर्संचयित करत आहे</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>रननंतर स्नॅपशॉट घेत आहे, कमिट, टॅग आणि पुश करत आहे</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>स्नॅपशॉट पुनर्संचयित करत आहे</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>रन संपला. त्याचा अहवाल लोड करत आहे.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>प्रगतीचा मागोवा घेता आला नाही. रन कसा चालला आहे ते पाहण्यासाठी पान रीलोड करा.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>हे पान रन चालू असताना त्याचा मागोवा घेते.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>रीलोड करा</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>अहवाल</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>वेळ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms मिलीसेकंद</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>रनने त्रुटी म्हणून काय छापले</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>नोंद</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>वातावरण</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>काहीही नाही</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>संपले</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>कमिट</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>टॅग</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>पुश</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>संदेश</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>या रनची मायग्रेशन्स</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>स्रोत</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>रन लॉग</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>फक्त लॉगचा शेवट दाखवला आहे.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>चालू आहे</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>अहवालाशिवाय संपले</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>यशस्वी</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>अयशस्वी</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>नाकारले</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>डेटाबेसपर्यंत पोहोचता आले नाही</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>अंतर्गत त्रुटी</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>एक रन सुरू आहे</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %user यांनी %time ला सुरू केले.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>मागोवा घ्या</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>इन्स्टॉलेशन लॉक केलेले आहे</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>दुसऱ्या रनकडे लॉक आहे (अपग्रेड किंवा कन्सोलवरील रन): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>पूर्ण</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>प्रलंबित</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>आवश्यक नाही</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञात</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>मागे घेतले</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>लागू केले</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>लागू केले जाईल</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>परत घेतले</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>परत घेतले जाईल</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>चालवले नाही</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>दुसऱ्याची वाट पाहत आहे</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>बदल स्वीकारला</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>बदल स्वीकारला जाईल</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>सिम्युलेट केले</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>मायग्रेशन्स</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिती</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>इतिहास</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target परत घ्या</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>रन त्याच्या आधी घेतलेल्या स्नॅपशॉटपर्यंत मागे घेतला जातो, एक मायग्रेशन त्याच्या down() ने. आधीचा स्नॅपशॉट पुनर्संचयित करणे तज्ञांसाठी आहे. प्रत्येक क्रिया सध्याच्या स्थितीचा स्नॅपशॉट घेतल्यानंतर तुमच्या नावाने पार्श्वभूमीत चालते.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>काय परत घेता येईल ते वाचता आले नाही: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>एक रन</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>एक मायग्रेशन</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>आधीचा स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>वर्णन</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>होय</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नाही</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>लेबल</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>घेतला</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>प्रकार</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>पुनर्संचयित करायचे भाग</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>डेटाबेस</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>स्टोरेज फाइल्स (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>सेटिंग्ज (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>पुनर्संचयन डेटाबेसला सत्रांसह स्नॅपशॉटच्या वेळेपर्यंत परत नेते: नंतर तुम्हाला पुन्हा साइन इन करण्यास सांगितले जाऊ शकते. तेव्हापासून बदललेले सर्व काही गमावले जाते; आधी सध्याच्या स्थितीचा स्नॅपशॉट घेतला जातो.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>हे काय पुनर्संचयित करते ते मला माहीत आहे</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>स्नॅपशॉटचा आयडी पुन्हा टाइप करा</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>होय, परत घ्या</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करा</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ज्यांच्या आधी स्नॅपशॉट घेतला आहे असे रन्स.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>निवडा</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>अजून स्नॅपशॉट असलेला कोणताही रन नाही.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>स्वतःला परत घेऊ शकणारी लागू केलेली मायग्रेशन्स (त्यांच्याकडे down() आहे).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>कोणत्याही लागू केलेल्या मायग्रेशनकडे down() नाही.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>आधीचे स्नॅपशॉट्स (तज्ञ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>अजून कोणताही स्नॅपशॉट नाही.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>मायग्रेशन्स चालवा</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>रन %user म्हणून पार्श्वभूमीत चालू राहतो, आणि त्याचे पान तो चालू असताना दाखवते. पहिल्या मायग्रेशनपूर्वी इन्स्टॉलेशनचा स्नॅपशॉट घेतला जातो; मायग्रेशन अयशस्वी झाल्यास रन थांबतो आणि स्नॅपशॉट पुनर्संचयित केला जातो.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>आधी चाचणी रन</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>स्थिती वाचता आली नाही: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>प्रलंबित मायग्रेशन्स</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ती या क्रमाने चालतात. एखादे, आणि त्याची आवश्यकता असलेली, नंतरच्या रनसाठी सोडण्यासाठी त्याची खूण काढा.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ते चालवा</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>चालू असताना देखभाल मोड सुरू करते.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>लागू केल्यानंतर बदललेली</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>या फाइल्स लागू केलेल्या फाइल्स नाहीत. बदल कारणासह स्वीकारल्याशिवाय रन त्यांना नाकारतो; त्या पुन्हा चालवल्या जात नाहीत, नवीन चेकसम नोंदवला जातो आणि कारण ऑडिट लॉगमध्ये ठेवले जाते.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>बदल स्वीकारा</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>कारण</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>डीफॉल्ट मूल्ये सुरक्षित आहेत. प्रत्येक चौकट एक पायरी वगळते.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>स्नॅपशॉट नाही</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>रनच्या आधी आणि नंतर स्नॅपशॉट नाही: अपयश आपोआप पुनर्संचयित करता येत नाही.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>पुनर्संचयन नाही</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>अपयशानंतर, इन्स्टॉलेशन अपयशाने सोडले तसेच ठेवा.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>कमिट न केलेले बदल ठेवा</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>सेटिंग्ज, एक्स्टेंशन्स किंवा डिझाइन्समध्ये कमिट न केलेले बदल असले तरी चालवा; ते स्नॅपशॉटमध्ये जातात.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>कमिट नाही</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>स्थिती फाइल आणि रन लॉग कमिट करू नका (टॅग आणि पुशही नाही).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>पुश नाही</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>कमिट आणि टॅग करा, पण पुश करू नका.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>टॅग नाही</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>कमिट आणि पुश करा, पण रनला टॅग करू नका.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>होय, ही मायग्रेशन्स आता चालवा</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>कोणतेही मायग्रेशन प्रलंबित नाही.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>स्थितीकडे परत</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>या इन्स्टॉलेशनमधील बदल एकदाच फाइल्स म्हणून लिहिलेले (कंटेंट, क्लासेस, भूमिका, सेटिंग्ज, स्कीमा) आणि साइटच्या प्रत्येक इन्स्टॉलेशनवर त्याच क्रमाने लागू केलेले. रन आधी स्नॅपशॉट घेतो, मायग्रेशन अयशस्वी झाल्यास तो पुनर्संचयित करतो, आणि त्याने जे केले ते नोंदवतो, कमिट करतो आणि पुश करतो.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count प्रलंबित चालवा</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>आढावा</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>प्रलंबित</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पूर्ण</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>अयशस्वी</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>आवश्यक नाही</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>डेटाबेस</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ट्रान्झॅक्शन्स: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>साइटची मायग्रेशन्स migrations/ मध्ये आहेत, एक्स्टेंशनची extension/&lt;name&gt;/migrations/ मध्ये. ती त्यांच्या नावांच्या आणि आवश्यकतांच्या क्रमाने चालतात.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>शेवटचा रन</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>लागू केल्यानंतर फाइल बदलली.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>अजून कोणतेही मायग्रेशन नाही. ./console exp:migration:generate --skeleton &lt;name&gt; --apply पहिले लिहिते.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>अलीकडील रन्स</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>सर्व रन्स</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>अजून कोणताही रन नाही.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>रन सिम्युलेट करण्यासाठी migration/run धोरण आवश्यक आहे.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>एक रन सुरू आहे: तो संपल्यावर सिम्युलेट करा.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target हा या इन्स्टॉलेशनचा रन नाही, मायग्रेशन नाही आणि स्नॅपशॉटही नाही.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>आधी &quot;होय, परत घ्या&quot; वर खूण करा.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>आधीचा स्नॅपशॉट पुनर्संचयित करणे तज्ञांसाठी आहे: &quot;हे काय पुनर्संचयित करते ते मला माहीत आहे&quot; वर खूण करा.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>स्नॅपशॉटचा आयडी पुन्हा टाइप करा: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>पुनर्संचयित करण्यासाठी किमान एक भाग निवडा.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>या रनच्या आधी स्नॅपशॉट घेतलेला नाही: त्याची मायग्रेशन्स एक एक करून परत घ्या, किंवा आधीचा स्नॅपशॉट पुनर्संचयित करा.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>हे मायग्रेशन स्वतःहून परत घेता येत नाही: ते लागू केलेले नाही, किंवा त्याच्याकडे down() नाही.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>फॉर्म वाचता आला नाही.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>पुन्हा सुरू करायचा रन निवडा.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>आधी &quot;होय, ही मायग्रेशन्स आता चालवा&quot; वर खूण करा.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>किमान एक मायग्रेशन निवडा.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>लागू केल्यानंतर एक मायग्रेशन बदलले: बदल कारणासह स्वीकारा, किंवा फाइल परत ठेवा.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>बदललेली मायग्रेशन्स का स्वीकारली जात आहेत याचे कारण द्या.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>कारण जास्तीत जास्त 500 अक्षरांचे असते.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>येथे सुरू केलेला रन अजून चालू आहे (%detail). तो संपेपर्यंत थांबा.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>दुसऱ्या रनकडे इन्स्टॉलेशनचे लॉक आहे: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>रनसाठी अस्तित्वात असलेला साइन-इन केलेला वापरकर्ता आवश्यक आहे.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php कमांड लाइन बायनरी सापडली नाही. migration.ini [AdminSettings] PhpCliPath मध्ये तिचा पूर्ण मार्ग सेट करा.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open अक्षम आहे, त्यामुळे येथे रन सुरू करता येत नाही. सर्व्हरवर ./console exp:migration:migrate --apply चालवा.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>रन्सच्या फोल्डरमध्ये लिहिता येत नाही: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>रन सुरू झाला पण त्याने आपला प्रोसेस आयडी कळवला नाही. %detail तपासा.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>काय परत घ्यायचे ते सांगा.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>रन सुरू करता आला नाही.</translation>
     </message>
 </context>
 </TS>

@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API፦ መወዳእታ ነጥቡ፣ ኣወዳድባኡን ሕቶታት ዝፍተነሉ ቦታን።</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ምግዕዓዛት</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ኣብቲ ምትካል ከም ፋይላት ዝተዓቀቡ ለውጥታት: ኩነታቶም፡ ምክያዳት፡ ምክያድን ምምላስን።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ምቕያራት ናብ /api/graphql ስደድ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ምግዕዓዛት</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ኩነታት ክንበብ ኣይከኣለን: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ሰሌዳታት ምግዕዓዛት ገና የለዉን: ./console exp:upgrade --apply ይፈጥሮም።</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count ምግዕዓዛት ፈሺሎም</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ምክያድ ይቕጽል ኣሎ፡ ብ %user ዝጀመረ</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>እቲ ምትካል ተዓጽዩ ኣሎ: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ዝጽበ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ፈሺሉ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ወናኒ ዘይብሎም</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ናይ መወዳእታ ምክያድ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ገና የለን</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ኩሎም ምግዕዓዛት</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>ዝተመሰለ ምክያድ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ፈተነ ምክያድ</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>እቶም ዝጽበዩ ምግዕዓዛት ድሕሪኡ ኣብ ዝተመልሰ ትራንዛክሽን ተኻይዶም: ዋላ ሓንቲ ኣይተዓቀበትን። ኣብ ታሕቲ ነፍሲ ወከፎም ኣብ ዳታቤዝ እንታይ ከም ዝቐየሩ ይርከብ።</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ምክያድ ሕጂ እንታይ ምገበረ። ዋላ ሓንቲ ኣይቕየርን: ነፍሲ ወከፍ ዝጽበ ምግዕዓዝ ዝገብሮ ለውጥታት ይዝርዝር፡ እቲ ምክያድ ድማ ቅድሚኡን ድሕሪኡን እንታይ ከም ዝገብር።</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>ምሰል</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ኣካይድ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>እቲ ፈተነ ምክያድ ፈሺሉ: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ምምሳል ለውጥታት ስኬማኦም ክምለሱ ዝኽእሉ PostgreSQL ወይ SQLite የድልዮ፤ ኣብዚ ዳታቤዝ እቲ ኣብ ታሕቲ ዘሎ መደብ ምክያድ እንታይ ከም ዝገብር የርኢ።</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>እቶም ምግዕዓዛት</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ምግዕዓዝ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ኩነት</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>እንታይ ከም ዝገብር</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ምምሳል: %result ኣብ %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ገና ምግዕዓዝ የለን።</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ቅድሚን ድሕሪን እቲ ምክያድ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ቅድሚኡ ዝተወስደ ነጥቢ ምምላስ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ይውሰድ፡ ምግዕዓዝ እንተ ፈሺሉ ድማ ይምለስ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፊኡ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ድሕሪኡ ዝተወስደ ነጥቢ ምምላስ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>እቲ ምክያድ እንተ ተዓዊቱ ይውሰድ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total ምግዕዓዛት: %pending ዝጽበዩ፡ %done ዝተወድኡ፡ %failed ዝፈሸሉ።</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ታሪኽ ምግዕዓዛት</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ነፍሲ ወከፍ ምክያድ ምስ ተጠቃሚኡ፡ ከባቢኡ፡ ነጥብታት ምምላሱን እንታይ commit ከም ዝተገብረ፡ ታግ ከም ዝተገብረን ከም ዝተሰደደን። ዝፈሸለ ወይ ዝተቛረጸ ምክያድ ክቕጽል ይኽእል፤ ቅድሚኡ ነጥቢ ምምላስ ዝተወስደሉ ምክያድ ክምለስ ይኽእል።</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>እቶም ምክያዳት ክንበቡ ኣይከኣሉን: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ሰሌዳታት ምግዕዓዛት ገና የለዉን: ./console exp:upgrade --apply ይፈጥሮም።</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ኣርኢ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ኩሉ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ምክያዳት</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ዝጀመረሉ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ብ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ነጥብታት ምምላስ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ማህደር</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ተግባራት</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ቅድሚ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ድሕሪ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ምስዳድ: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ቀጽል</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ምለስ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ኣብዚ ኩነት ምክያድ የለን።</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ኣብዚ ዝጀመሩ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ኣብዘን ገጻት ዝጀመሩ ምክያዳት፡ ቀጻልነታትን ምምላሳትን ምስ ጸብጻብ ነፍሲ ወከፎም።</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>እንታይ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጽኢት</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ምምላስ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>ምምላስ %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ምክያድ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>እቲ ምክያድ እንታይ ከም ዝገበረ፡ መዝገቡን ሎጉን። ኣብዚ ዝጀመረ ምክያድ እዚ ገጽ ምስ ተዓጽወ ኣብ ድሕሪት ይቕጽል፤ ንምክትታሉ ነቲ ገጽ ደጊምካ ክፈቶ።</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ነዚ ምክያድ ቀጽሎ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ነዚ ምክያድ መልሶ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>እቲ መዝገብ ክንበብ ኣይከኣለን: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ዕቤት</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>ብ %user ኣብ %time ጀሚሩ።</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>እቲ ኮድ ይምርመርን ቅድሚ ምክያድ ነጥቢ ምምላስ ይውሰድን ኣሎ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ይካየድ ኣሎ (%index ካብ %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done ካብ %total ተወዲኡ</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>እቶም ምግዕዓዛት ተኻይዶም፤ ሓደ እንተ ፈሺሉ እቲ ነጥቢ ምምላስ ይምለስ ኣሎ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ድሕሪ ምክያድ ነጥቢ ምምላስ ይውሰድ፡ commit ይግበር፡ ታግ ይግበርን ይስደድን ኣሎ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>እቲ ነጥቢ ምምላስ ይምለስ ኣሎ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>እቲ ምክያድ ተወዲኡ። ጸብጻቡ ይጽዓን ኣሎ።</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>እቲ ዕቤት ክክታተል ኣይከኣለን። እቲ ምክያድ ከመይ ከም ዘሎ ንምርኣይ ነቲ ገጽ ደጊምካ ጽዓኖ።</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>እዚ ገጽ ነቲ ምክያድ ክቕጽል ከሎ ይከታተሎ።</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ደጊምካ ጽዓን</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ጸብጻብ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ግዜ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ሚሊሰከንድ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>እቲ ምክያድ ከም ጌጋታት ዘውጽኦ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>መዝገብ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ከባቢ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>የለን</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ዝተወደኣሉ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ምርካብ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ታግ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ምስዳድ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>መልእኽቲ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ምግዕዓዛት ናይዚ ምክያድ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ምንጪ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ሎግ ምክያድ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>መወዳእታ እቲ ሎግ ጥራይ እዩ ዝርአ ዘሎ።</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ይካየድ ኣሎ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ብዘይ ጸብጻብ ተወዲኡ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ተዓዊቱ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ፈሺሉ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ተነጺጉ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ዳታቤዝ ክብጻሕ ኣይከኣለን</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ውሽጣዊ ጌጋ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ምክያድ ይቕጽል ኣሎ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ብ %user ኣብ %time ጀሚሩ።</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ተኸታተሎ</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>እቲ ምትካል ተዓጽዩ ኣሎ</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ካልእ ምክያድ ነቲ መዕጸዊ ሒዙዎ ኣሎ (ምምሕያሽ ወይ ኣብ ኮንሶል ዝካየድ ምክያድ): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ተወዲኡ</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ዝጽበ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ኣየድልን</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ዘይፍለጥ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ተመሊሱ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ተተግቢሩ</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ምተተግበረ</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ተመሊሱ ተወሲዱ</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ምተመልሰ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ኣይተኻየደን</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ንኻልእ ይጽበ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ለውጢ ተቐቢሉ</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ለውጢ ምተቐበለ</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ተመሲሉ</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ምግዕዓዛት</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ኩነታት</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ታሪኽ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target መልሶ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ምክያድ ናብቲ ቅድሚኡ ዝተወስደ ነጥቢ ምምላስ ይምለስ፡ ሓደ ምግዕዓዝ ድማ ብ down() ናቱ። ዝቐደመ ነጥቢ ምምላስ ምምላስ ንኽኢላታት እዩ። ነፍሲ ወከፎም ድሕሪ ነጥቢ ምምላስ ናይ ሕጂ ኩነት ብስምካ ኣብ ድሕሪት ይካየዱ።</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>እንታይ ክምለስ ከም ዝኽእል ክንበብ ኣይከኣለን: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ሓደ ምክያድ</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ሓደ ምግዕዓዝ</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ዝቐደመ ነጥቢ ምምላስ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>መግለጺ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>እወ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ኣይፋል</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ነጥቢ ምምላስ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ዝተወስደሉ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ዝምለሱ ክፋላት</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>እቲ ዳታቤዝ</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ፋይላት መኽዘን (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>እቶም ቅጥዕታት (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ዳታቤዝ ምምላስ ምስ ሴሽናት ሓቢሩ ናብ ግዜ እቲ ነጥቢ ምምላስ ይመልሶ: ድሕሪኡ ደጊምካ ክትኣቱ ክሕተት ትኽእል። ካብኡ ጀሚሩ ዝተቐየረ ኩሉ ይጠፍእ፤ ቅድም ናይ ሕጂ ኩነት ነጥቢ ምምላስ ይውሰድ።</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>እዚ እንታይ ከም ዝመልስ እፈልጥ እየ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>መለለዪ እቲ ነጥቢ ምምላስ ደጊምካ ጽሓፍ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>እወ፡ መልሶ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ቅድሚኦም ነጥቢ ምምላስ ዝተወስደሎም ምክያዳት።</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ምረጽ</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ገና ነጥቢ ምምላስ ዘለዎ ምክያድ የለን።</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ንርእሶም ክምለሱ ዝኽእሉ ዝተተግበሩ ምግዕዓዛት (down() ኣለዎም)።</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ዋላ ሓደ ዝተተግበረ ምግዕዓዝ down() የብሉን።</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ዝቐደሙ ነጥብታት ምምላስ (ኪኢላታት)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ገና ነጥቢ ምምላስ የለን።</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ነቶም ምግዕዓዛት ኣካይድ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>እቲ ምክያድ ከም %user ኣብ ድሕሪት ይቕጽል፡ ገጹ ድማ ክቕጽል ከሎ የርእዮ። ቅድሚ እቲ ቀዳማይ ምግዕዓዝ ናይቲ ምትካል ነጥቢ ምምላስ ይውሰድ፤ ምግዕዓዝ እንተ ፈሺሉ እቲ ምክያድ ይጠጠው፡ እቲ ነጥቢ ምምላስ ድማ ይምለስ።</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ቅድም ፈተነ ምክያድ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ኩነታት ክንበብ ኣይከኣለን: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ዝጽበዩ ምግዕዓዛት</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ብዚ ስርዓት ይካየዱ። ንሓደን ነቶም ዘድልይዎን ንዝቕጽል ምክያድ ክትገድፍ ምልክቱ ኣልግሶ።</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ኣካይዶ</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>ክካየድ ከሎ ኩነት ጽገና የበርህ።</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>ድሕሪ ምትግባሮም ዝተቐየሩ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>እዞም ፋይላት እቶም ዝተተግበሩ ኣይኮኑን። ለውጢ ምስ ምኽንያት እንተ ዘይተቐቢሉ ምክያድ ይነጽጎም፤ ደጊሞም ኣይካየዱን፡ እቲ ሓድሽ checksum ይምዝገብ፡ እቲ ምኽንያት ድማ ኣብ ሎግ ኦዲት ይዕቀብ።</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ነቶም ለውጥታት ተቐበል</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ስለምንታይ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>እቶም ነባሪ ምርጫታት እቶም ውሑሳት እዮም። ነፍሲ ወከፍ ሳጹን ሓደ ስጉምቲ ይገድፍ።</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ነጥቢ ምምላስ የለን</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ቅድሚን ድሕሪን ምክያድ ነጥቢ ምምላስ የለን: ፍሽለት ብኣውቶማቲክ ክምለስ ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ምምላስ የለን</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ድሕሪ ፍሽለት ነቲ ምትካል ከምቲ ፍሽለት ዝገደፎ ግደፎ።</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>commit ዘይተገብሩ ለውጥታት ሓዝ</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ቅጥዕታት፡ ተወሰኽቲ ወይ ዲዛይናት commit ዘይተገብሩ ለውጥታት እንተ ሃለውዎም እውን ኣካይድ፤ ናብቲ ነጥቢ ምምላስ ይኣትዉ።</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>commit የለን</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ነቲ ፋይል ኩነታትን ሎግ ምክያድን commit ኣይትግበር (ታግን ምስዳድን እውን የለን)።</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ምስዳድ የለን</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>commit ግበርን ታግ ግበርን፡ ግን ኣይትስደድ።</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ታግ የለን</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>commit ግበርን ስደድን፡ ግን ነቲ ምክያድ ታግ ኣይትግበረሉ።</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>እወ፡ ነዞም ምግዕዓዛት ሕጂ ኣካይዶም</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ዝጽበ ምግዕዓዝ የለን።</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ናብ ኩነታት ተመለስ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ኣብዚ ምትካል ሓንሳብ ከም ፋይላት ዝተጻሕፉ (ትሕዝቶ፡ ክፍልታት፡ ተራታት፡ ቅጥዕታት፡ ስኬማ) ብተመሳሳሊ ስርዓት ድማ ኣብ ነፍሲ ወከፍ ምትካል ናይቲ ሳይት ዝትግበሩ ለውጥታት። ምክያድ ቅድም ነጥቢ ምምላስ ይወስድ፡ ምግዕዓዝ እንተ ፈሺሉ ይመልሶ፡ ዝገበሮ ድማ ይምዝግብ፡ commit ይገብርን ይሰድድን።</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count ዝጽበዩ ኣካይድ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ጠቕላላ ርእይቶ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ዝጽበ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ተወዲኡ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ፈሺሉ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ኣየድልን</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ዳታቤዝ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ትራንዛክሽናት: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ምግዕዓዛት ሳይት ኣብ migrations/ ይርከቡ፡ ናይ ተወሳኺ ድማ ኣብ extension/&lt;name&gt;/migrations/። ብስርዓት ኣስማቶምን ዘድልዮምን ይካየዱ።</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ናይ መወዳእታ ምክያድ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>እቲ ፋይል ድሕሪ ምትግባሩ ተቐይሩ።</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ገና ምግዕዓዝ የለን። ./console exp:migration:generate --skeleton &lt;name&gt; --apply ነቲ ቀዳማይ ይጽሕፎ።</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>እቶም ናይ ቀረባ ምክያዳት</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ኩሎም ምክያዳት</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ገና ምክያድ የለን።</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ምክያድ ምምሳል ፖሊሲ migration/run የድልዮ።</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ምክያድ ይቕጽል ኣሎ: ምስ ተወደአ ምሰል።</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ምድላው</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ናይዚ ምትካል ምክያድ፡ ምግዕዓዝ ወይ ነጥቢ ምምላስ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ቅድም “እወ፡ መልሶ” ምልክት ግበር።</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ዝቐደመ ነጥቢ ምምላስ ምምላስ ንኪኢላታት እዩ: “እዚ እንታይ ከም ዝመልስ እፈልጥ እየ” ምልክት ግበር።</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>መለለዪ እቲ ነጥቢ ምምላስ ደጊምካ ጽሓፍ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ዝምለስ እንተ ወሓደ ሓደ ክፋል ምረጽ።</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>እዚ ምክያድ ቅድሚኡ ዝተወስደ ነጥቢ ምምላስ የብሉን: ምግዕዓዛቱ ሓደ ብሓደ መልሶም ወይ ዝቐደመ ነጥቢ ምምላስ መልሶ።</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>እዚ ምግዕዓዝ ብርእሱ ክምለስ ኣይክእልን: ኣይተተግበረን ወይ down() የብሉን።</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>እቲ ቅጥዒ ክንበብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ዝቕጽል ምክያድ ምረጽ።</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ቅድም “እወ፡ ነዞም ምግዕዓዛት ሕጂ ኣካይዶም” ምልክት ግበር።</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>እንተ ወሓደ ሓደ ምግዕዓዝ ምረጽ።</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ሓደ ምግዕዓዝ ድሕሪ ምትግባሩ ተቐይሩ: ነቲ ለውጢ ምስ ምኽንያት ተቐበሎ ወይ ነቲ ፋይል ናብ ቦትኡ መልሶ።</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>እቶም ዝተቐየሩ ምግዕዓዛት ስለምንታይ ከም ዝተቐበሉ ምኽንያት ሃብ።</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>እቲ ምኽንያት ቢዝሒ 500 ፊደላት እዩ።</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ኣብዚ ዝጀመረ ምክያድ ገና ይቕጽል ኣሎ (%detail)። ክሳዕ ዝውዳእ ተጸበ።</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ካልእ ምክያድ መዕጸዊ እቲ ምትካል ሒዙዎ ኣሎ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>እቲ ምክያድ ዘሎን ዝኣተወን ተጠቃሚ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ናይ php መስመር ትእዛዝ ፕሮግራም ኣይተረኽበን። migration.ini [AdminSettings] PhpCliPath ናብ ምሉእ መገዱ ኣቐምጦ።</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ጠፊኡ ስለ ዘሎ ኣብዚ ምክያድ ክጅመር ኣይክእልን። ኣብ ሰርቨር ./console exp:migration:migrate --apply ኣካይድ።</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ኣብ ማህደር ምክያዳት ክጽሓፍ ኣይክእልን: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>እቲ ምክያድ ጀሚሩ ግን መለለዪ መስርሑ ኣይሓበረን። %detail መርምር።</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>እንታይ ከም ዝምለስ ግለጽ።</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>እቲ ምክያድ ክጅመር ኣይከኣለን።</translation>
     </message>
 </context>
 </TS>

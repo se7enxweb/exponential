@@ -15084,6 +15084,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: API Daq, qach nab, ghel nIDmeH Qorwagh je.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>vIHghachmey</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>jomghach choHmey teywaymey bomlu&apos;: Dotlhchaj, QapmoHghachmey, QapmoH cheghmoH je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79688,6 +79696,888 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>/api/graphql Daq choHmoHghachmey yIngeH.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>vIHghachmey</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Dotlh laDlaHbe&apos;lu&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>vIHghachmey raSmey tu&apos;lu&apos;be&apos; &apos;ach: ./console exp:upgrade --apply chenmoH.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count vIHghach Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>QapmoHghach taH, %user taghmoH</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>jomghach ngaQlu&apos;: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>loStaH</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ghIlab ghewmey</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>QapmoHghach Qav</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>pagh &apos;ach</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Hoch vIHghachmey</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>QapmoHghach ngeb</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>QapmoHghach waH</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>loStaHbogh vIHghachmey Qap tamghachDaq; tamghach cheghmoHlu&apos; ghIq: pagh polta&apos;lu&apos;. bIngDaq De&apos; pa&apos;Daq Hoch vIHghach choHmey tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>DaH QapmoHghach vangbogh. pagh choHlu&apos;: Hoch loStaHbogh vIHghach choHmeyDaj tetlh, QapmoHghach vangbogh nIteb, vangbogh ghIq je.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>yIngeb</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>yIQapmoH</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>QapmoHghach waH Qapbe&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ngeb poQ PostgreSQL SQLite joq, chaH mIw choHmey cheghmoHlaHlu&apos;; De&apos; pa&apos;vamDaq bIngDaq nab QapmoHghach vangbogh &apos;ang.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>vIHghachmey&apos;e&apos;</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>vIHghach</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ghap</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>vangbogh</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ngeb: %result, %ms ms poH</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>vIHghach tu&apos;lu&apos;be&apos; &apos;ach.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>QapmoHghach nIteb, ghIq je</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>cheghmeH Daq nIteb</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>tlhaplu&apos;, vIHghach Qapbe&apos;chugh cheghmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>chu&apos;Ha&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>cheghmeH Daq ghIq</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>QapmoHghach Qapchugh tlhaplu&apos;</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total vIHghach: %pending loStaH, %done rIn, %failed Qapbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>vIHghachmey qun</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Hoch QapmoHghach, lo&apos;wI&apos;Daj, vum DaqDaj, cheghmeH Daqmey je, commit, per, lab je. QapmoHghach Qapbe&apos;bogh ghorlu&apos;bogh joq taHqa&apos;laHlu&apos;; QapmoHghach cheghmeH Daq ghajbogh nIteb cheghmoHlaHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>QapmoHghachmey laDlaHbe&apos;lu&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>vIHghachmey raSmey tu&apos;lu&apos;be&apos; &apos;ach: ./console exp:upgrade --apply chenmoH.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>yI&apos;ang</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>QapmoHghachmey</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>taghlu&apos;</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>taghmoHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>cheghmeH Daqmey</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>&apos;aplo&apos; qach</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>nIteb</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ghIq</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>lab: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>yItaHqa&apos;</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>yIcheghmoH</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ghapvamDaq QapmoHghach tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>naDev taghlu&apos;</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>QapmoHghachmey, taHqa&apos;ghachmey, cheghmoHghachmey je naDev taghlu&apos;pu&apos;bogh, Hoch ja&apos;ghach je.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>nuq</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>chav</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>cheghmoHghach</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target cheghmoHghach</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>QapmoHghach %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>QapmoHghach vangpu&apos;bogh, qonDaj, ghItlhmeyDaj je. naDev taghlu&apos;bogh QapmoHghach tlhopDaq taH, navvam SoQmoHlu&apos;DI&apos;; tlha&apos;meH navvam yIpoSmoHqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>QapmoHghachvam yItaHqa&apos;</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>QapmoHghachvam yIcheghmoH</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>qon laDlaHbe&apos;lu&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ghoSghach</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user taghmoH, %time poH.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ngoq nuDlu&apos; &apos;ej QapmoHghach nIteb cheghmeH Daq tlhaplu&apos;</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id QaptaH (%index, %total vo&apos;)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total vo&apos; %done rIn</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>vIHghachmey Qappu&apos;; wa&apos; Qapbe&apos;chugh cheghmeH Daq cheghmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>QapmoHghach ghIq cheghmeH Daq tlhaplu&apos;, commit, per, lab je</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>cheghmeH Daq cheghmoHlu&apos;taH</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>QapmoHghach rIn. ja&apos;ghachDaj lI&apos;lu&apos;taH.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ghoSghach tlha&apos;laHbe&apos;lu&apos;. QapmoHghach Dotlh Dalegh DaneHchugh navvam yIlI&apos;qa&apos;.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>QaptaHvIS QapmoHghach tlha&apos; navvam.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>yIlI&apos;qa&apos;</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ja&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms poH</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Qaghmey QapmoHghach ghItlhpu&apos;bogh</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>qon</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>vum Daq</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>pagh</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>rInlu&apos;</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>commit ghItlh</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>per</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>lab</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>QIn</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>QapmoHghachvam vIHghachmey</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>QapmoHghach ghItlhmey</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ghItlhmey bertlham neH &apos;anglu&apos;.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>QaptaH</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ja&apos;ghach Hutlh, rIn</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>Qap</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>lajQo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>De&apos; pa&apos; paQlaHbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>qoD Qagh</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>QapmoHghach taH</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind taghmoH %user, %time poH.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>yItlha&apos;</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>jomghach ngaQlu&apos;</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ngaQHa&apos;moHwI&apos; &apos;uch latlh QapmoHghach (DubghachDaq ra&apos;ghomDaq QapmoHghach joq): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>rIn</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>loStaH</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>poQbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>Sovbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>cheghmoHlu&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>lo&apos;lu&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>lo&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>cheghmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>cheghmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>QapmoHbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>latlh loStaH</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>choH laj</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>choH lajlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ngeblu&apos;</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>vIHghachmey</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>qun</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target yIcheghmoH</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>QapmoHghach cheghmoHlu&apos;, cheghmeH Daq nIteb tlhaplu&apos;pu&apos;bogh lo&apos;lu&apos;; wa&apos; vIHghach cheghmoHlu&apos;, down() Daj lo&apos;lu&apos;. cheghmeH Daq ngo&apos; cheghmoHlu&apos;chugh, po&apos;wI&apos;pu&apos; neH vang. Hoch tlhopDaq QaptaH SoH DaDa, DaH Dotlh cheghmeH Daq tlhaplu&apos;DI&apos;.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>cheghmoHlaHlu&apos;bogh laDlaHbe&apos;lu&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>wa&apos; QapmoHghach</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>wa&apos; vIHghach</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>cheghmeH Daq ngo&apos;</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Delghach</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>HIja&apos;</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ghobe&apos;</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>cheghmeH Daq</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>per pong</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>tlhaplu&apos;</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>cheghmoHmeH &apos;ay&apos;mey</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>De&apos; pa&apos;&apos;e&apos;</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>polmeH teywaymey (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>SeHlawmey (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>De&apos; pa&apos; cheghmoHlu&apos;chugh, cheghmeH Daq poH chegh, ghomghachmey je: ghIq bI&apos;elqa&apos;nIS ghotlh. vaj choHlu&apos;pu&apos;bogh Hoch luj; wa&apos;DIch DaH Dotlh cheghmeH Daq tlhaplu&apos;.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>cheghmoHbogh vIyaj</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>cheghmeH Daq ngu&apos;meH mI&apos; yIghItlhqa&apos;</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>HIja&apos;, yIcheghmoH</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>QapmoHghachmey nIteb cheghmeH Daq tlhaplu&apos;pu&apos;bogh.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>yIwIv</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>cheghmeH Daq ghajbogh QapmoHghach tu&apos;lu&apos;be&apos; &apos;ach.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>lo&apos;lu&apos;pu&apos;bogh vIHghachmey &apos;ej cheghchu&apos;laHbogh (down() ghaj).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>lo&apos;lu&apos;pu&apos;bogh vIHghach down() ghajbe&apos; pagh.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>cheghmeH Daqmey ngo&apos; (po&apos;wI&apos;pu&apos;)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>cheghmeH Daq tu&apos;lu&apos;be&apos; &apos;ach.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>vIHghachmey tIQapmoH</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>tlhopDaq QapmoHghach taH %user DaDa, &apos;ej QaptaHvIS &apos;ang navDaj. wa&apos;DIch vIHghach nIteb jomghach cheghmeH Daq tlhaplu&apos;; vIHghach Qapbe&apos;chugh QapmoHghach mev &apos;ej cheghmeH Daq cheghmoHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>wa&apos;DIch QapmoHghach waH</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Dotlh laDlaHbe&apos;lu&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>loStaHbogh vIHghachmey</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>mIwvamDaq Qap. wa&apos; DanoHmeH, poQbogh latlh je, QapmoHghach ghIqvaD, ghItlh yIteq.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>yIQapmoH</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>QaptaHvIS leHmeH Dotlh chu&apos;.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>lo&apos;lu&apos;pu&apos;DI&apos; choHlu&apos;</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>lo&apos;lu&apos;pu&apos;bogh teywaymey chaHbe&apos; teywaymeyvam. choH meq lajlu&apos;be&apos;chugh QapmoHghach lajQo&apos;; QapmoHqa&apos;be&apos;lu&apos;, checksum chu&apos; qonlu&apos; &apos;ej nuDghach ghItlhmeyDaq meq pollu&apos;.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>choHmey tIlaj</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>qatlh</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Hung wIvmey motlh. Hoch ngaSwI&apos; wa&apos; mIw lon.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>cheghmeH Daq Hutlh</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>QapmoHghach nIteb ghIq je cheghmeH Daq Hutlh: Qapbe&apos;ghach cheghmoHlaHbe&apos; De&apos;wI&apos; nIteb.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>cheghmoHghach Hutlh</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Qapbe&apos;DI&apos;, jomghach yIlon Qapbe&apos;ghach lonbogh rur.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>commitbe&apos;lu&apos;bogh choHmey tIpol</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>SeHlawmey, Dochmey chu&apos;, HaSta Hal joq commitbe&apos;lu&apos;bogh choHmey ghajchugh je yIQapmoH; cheghmeH DaqDaq &apos;el.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>commit Hutlh</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Dotlh teyway QapmoHghach ghItlhmey je yIcommitQo&apos; (per Hutlh, lab Hutlh je).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>lab Hutlh</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>yIcommit &apos;ej yIper, &apos;ach yIlabQo&apos;.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>per Hutlh</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>yIcommit &apos;ej yIlab, &apos;ach QapmoHghach yIperQo&apos;.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>HIja&apos;, DaH vIHghachmeyvam tIQapmoH</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>loStaHbogh vIHghach tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Dotlh yIchegh</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>jomghachvam choHmey, wa&apos;logh teywaymey ghItlhlu&apos; (Dochmey, buvmey, Qu&apos;mey, SeHlawmey, mIw) &apos;ej Hoch Daq jomghachDaq rap mIwDaq lo&apos;lu&apos;. wa&apos;DIch cheghmeH Daq tlhap QapmoHghach, vIHghach Qapbe&apos;chugh cheghmoH, &apos;ej vangpu&apos;bogh qon, commit, lab je.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>loStaHbogh %count yIQapmoH</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>naQ leghghach</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>loStaH</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>rIn</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>poQbe&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>De&apos; pa&apos;</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>tamghachmey: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Daq vIHghachmey migrations/ Daq ghaHtaH, Doch chu&apos; vIHghachmey extension/&lt;name&gt;/migrations/ Daq. ponglu&apos; mIw, poQbogh je Qap.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>QapmoHghach Qav</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>lo&apos;lu&apos;pu&apos;DI&apos; choH teyway.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>vIHghach tu&apos;lu&apos;be&apos; &apos;ach. wa&apos;DIch ghItlh ./console exp:migration:generate --skeleton &lt;name&gt; --apply.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>QapmoHghachmey chu&apos;</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Hoch QapmoHghachmey</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>QapmoHghach tu&apos;lu&apos;be&apos; &apos;ach.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>QapmoHghach ngebmeH migration/run chut poQlu&apos;.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>QapmoHghach taH: rInDI&apos; yIngeb.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>jomghachvam QapmoHghach, vIHghach, cheghmeH Daq ghaHbe&apos; %target.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>wa&apos;DIch “HIja&apos;, yIcheghmoH” yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>cheghmeH Daq ngo&apos; cheghmoHlu&apos;chugh, po&apos;wI&apos;pu&apos; neH vang: “cheghmoHbogh vIyaj” yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>cheghmeH Daq ngu&apos;meH mI&apos; yIghItlhqa&apos;: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>cheghmoHmeH wa&apos; &apos;ay&apos; yIwIv, rap pagh law&apos;.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>QapmoHghachvam nIteb cheghmeH Daq tlhaplu&apos;be&apos;pu&apos;: vIHghachmeyDaj tIcheghmoH wa&apos; wa&apos;, pagh cheghmeH Daq ngo&apos; yIcheghmoH.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>vIHghachvam cheghchu&apos;laHbe&apos;: lo&apos;lu&apos;be&apos;pu&apos;, pagh down() ghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>nav laDlaHbe&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>taHqa&apos;meH QapmoHghach yIwIv.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>wa&apos;DIch “HIja&apos;, DaH vIHghachmeyvam tIQapmoH” yIghItlh.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>wa&apos; vIHghach yIwIv, rap pagh law&apos;.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>lo&apos;lu&apos;pu&apos;DI&apos; choH vIHghach: choH yIlaj meq je, pagh teyway yIcheghmoH.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>choHlu&apos;pu&apos;bogh vIHghachmey lajlu&apos;meH meq yIja&apos;.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>500 ngutlh law&apos; meq &apos;e&apos; tuch.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>naDev taghlu&apos;bogh QapmoHghach taHtaH (%detail). rInpa&apos; yIloS.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>jomghach ngaQHa&apos;moHwI&apos; &apos;uch latlh QapmoHghach: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>QapmoHghach poQ lo&apos;wI&apos; tu&apos;lu&apos;bogh &apos;elpu&apos;bogh je.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php ra&apos;meH mu&apos;tlhegh ghun tu&apos;lu&apos;be&apos;. migration.ini [AdminSettings] PhpCliPath yIcher, naQ He lo&apos;.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open chu&apos;Ha&apos;lu&apos;, vaj naDev QapmoHghach taghlaHbe&apos;lu&apos;. jabwI&apos;Daq ./console exp:migration:migrate --apply yIQapmoH.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>QapmoHghachmey ngaSwI&apos;Daq ghItlhlaHbe&apos;lu&apos;: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>QapmoHghach taghlu&apos; &apos;ach mIw ngu&apos;meH mI&apos;Daj ja&apos;be&apos;. %detail yInuD.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>cheghmoHmeH Doch yIpong.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>QapmoHghach taghlaHbe&apos;lu&apos;.</translation>
     </message>
 </context>
 </TS>

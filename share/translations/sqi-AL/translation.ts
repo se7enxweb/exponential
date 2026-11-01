@@ -15081,6 +15081,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: pika fundore, skema dhe një hapësirë për të provuar pyetësorë.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrimet</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ndryshime të instalimit të ruajtura si skedarë: gjendja e tyre, ekzekutimet, ekzekuto dhe kthe mbrapsht.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Dërgoni mutacionet te /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrimet</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Gjendja nuk u lexua dot: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabelat e migrimeve nuk ekzistojnë ende: ./console exp:upgrade --apply i krijon.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migrime dështuan</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Një ekzekutim është në vazhdim, nisur nga %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Instalimi është i kyçur: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Në pritje</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Të dështuara</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Jetime</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ekzekutimi i fundit</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>asnjë ende</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Të gjitha migrimet</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Ekzekutim i simuluar</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Provë pa ndryshime</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Migrimet në pritje u ekzekutuan në një transaksion që u anulua më pas: asgjë nuk u ruajt. Më poshtë është çfarë ndryshoi secili në bazën e të dhënave.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Çfarë do të bënte një ekzekutim tani. Asgjë nuk ndryshohet: çdo migrim në pritje rendit ndryshimet që do të bënte, dhe ekzekutimi çfarë do të bënte para dhe pas.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulo</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ekzekuto</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Prova pa ndryshime dështoi: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Një simulim kërkon PostgreSQL ose SQLite, ndryshimet e skemës së të cilave mund të anulohen; në këtë bazë të dhënash plani më poshtë tregon çfarë do të bënte një ekzekutim.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migrimet</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrimi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Çfarë do të bënte</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulimi: %result në %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Asnjë migrim ende.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Para dhe pas ekzekutimit</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Pamje e gjendjes para</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>merret, dhe rikthehet kur një migrim dështon</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>joaktive</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Pamje e gjendjes pas</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>merret kur ekzekutimi ka sukses</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migrime: %pending në pritje, %done të kryera, %failed të dështuara.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Historiku i migrimeve</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Çdo ekzekutim me përdoruesin, mjedisin, pamjet e gjendjes dhe çfarë u regjistrua, u etiketua dhe u dërgua. Një ekzekutim i dështuar ose i ndërprerë mund të vazhdohet; një ekzekutim me pamje gjendjeje të marrë para tij mund të tërhiqet.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ekzekutimet nuk u lexuan dot: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabelat e migrimeve nuk ekzistojnë ende: ./console exp:upgrade --apply i krijon.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Të gjitha</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ekzekutimet</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Nisur</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Pamjet e gjendjes</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depoja</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veprimet</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>para</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>pas</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>dërgimi: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Vazhdo</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Tërhiq</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Asnjë ekzekutim në këtë gjendje.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Nisur këtu</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Ekzekutime, vazhdime dhe kthime mbrapsht të nisura në këto faqe, me raportin e secilit.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Çfarë</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultati</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Kthim mbrapsht</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Kthim mbrapsht i %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Ekzekutimi %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Çfarë bëri ekzekutimi, regjistrimi dhe ditari i tij. Një ekzekutim i nisur këtu vazhdon në sfond kur kjo faqe mbyllet; hapeni sërish faqen për ta ndjekur.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Vazhdo këtë ekzekutim</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Tërhiq këtë ekzekutim</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Regjistrimi nuk u lexua dot: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ecuria</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Nisur nga %user më %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Po kontrollohet kodi dhe po merret një pamje e gjendjes para ekzekutimit</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Po ekzekutohet %id (%index nga %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done nga %total të kryera</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migrimet u ekzekutuan; po rikthehet pamja e gjendjes nëse njëri dështoi</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Po merret një pamje e gjendjes pas ekzekutimit, po regjistrohet, etiketohet dhe dërgohet</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Po rikthehet pamja e gjendjes</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Ekzekutimi përfundoi. Po ngarkohet raporti.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ecuria nuk u ndoq dot. Ringarkoni faqen për të parë si po shkon ekzekutimi.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Kjo faqe e ndjek ekzekutimin ndërsa zhvillohet.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ringarko</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Raporti</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Koha</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisekonda</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Çfarë shtypi ekzekutimi si gabime</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Regjistrimi</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Mjedisi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>asnjë</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Përfunduar</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Regjistrim (commit)</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Dërgimi</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mesazhi</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migrimet e këtij ekzekutimi</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Burimi</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Ditari i ekzekutimit</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Shfaqet vetëm fundi i ditarit.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>në vazhdim</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>përfundoi pa raport</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>me sukses</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>dështoi</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>u refuzua</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>baza e të dhënave nuk ishte e arritshme</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>gabim i brendshëm</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Një ekzekutim është në vazhdim</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind nisur nga %user më %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Ndiqe</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Instalimi është i kyçur</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Një ekzekutim tjetër mban kyçin (një përditësim ose një ekzekutim në konsolë): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>kryer</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>në pritje</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>nuk nevojitet</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>i panjohur</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>anuluar</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>zbatuar</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>do të zbatohej</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>tërhequr</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>do të tërhiqej</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>pa ekzekutuar</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>pret për një tjetër</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ndryshimi u pranua</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ndryshimi do të pranohej</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simuluar</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrimet</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statusi</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historiku</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Tërhiq %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Një ekzekutim tërhiqet te pamja e gjendjes e marrë para tij, një migrim i vetëm me down() e vet. Rikthimi i një pamjeje më të hershme është për ekspertë. Secili ekzekutohet në sfond si ju, pas një pamjeje të gjendjes aktuale.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Nuk u lexua dot çfarë mund të tërhiqet: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Një ekzekutim</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Një migrim</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Një pamje më e hershme</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Përshkrimi</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Pamje e gjendjes</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketimi</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Marrë më</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Lloji</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Pjesët për t’u rikthyer</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Baza e të dhënave</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Skedarët e ruajtjes (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Parametrat (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Rikthimi i bazës së të dhënave e çon atë në kohën e pamjes së gjendjes, përfshirë seancat: mund t’ju kërkohet të hyni sërish më pas. Gjithçka e ndryshuar që atëherë humbet; fillimisht merret një pamje e gjendjes aktuale.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>E di çfarë rikthen kjo</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Shkruani sërish id-në e pamjes së gjendjes</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Po, tërhiqe</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ekzekutimet me një pamje gjendjeje të marrë para tyre.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Zgjidh</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Asnjë ekzekutim me pamje gjendjeje ende.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Migrimet e zbatuara që mund të tërhiqen vetë (kanë një down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Asnjë migrim i zbatuar nuk ka down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Pamje më të hershme (ekspertë)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Asnjë pamje gjendjeje ende.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Ekzekuto migrimet</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Ekzekutimi vazhdon në sfond si %user, dhe faqja e tij e tregon ndërsa zhvillohet. Para migrimit të parë merret një pamje e gjendjes së instalimit; kur një migrim dështon, ekzekutimi ndalet dhe pamja rikthehet.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Fillimisht provë pa ndryshime</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Gjendja nuk u lexua dot: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migrimet në pritje</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ekzekutohen në këtë rend. Hiqni shenjën nga njëri për ta lënë atë, dhe ata që e kërkojnë, për një ekzekutim të mëvonshëm.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Ekzekutoje</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Aktivizon mënyrën e mirëmbajtjes gjatë ekzekutimit.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Të ndryshuara pasi u zbatuan</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Këta skedarë nuk janë ata që u zbatuan. Një ekzekutim i refuzon, përveç nëse ndryshimi pranohet me një arsye; nuk ekzekutohen sërish, shuma e re e kontrollit regjistrohet dhe arsyeja ruhet në ditarin e auditimit.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Prano ndryshimet</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Arsyeja</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Vlerat e paracaktuara janë të sigurtat. Çdo kuti lë jashtë një hap.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Pa pamje gjendjeje</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Pa pamje gjendjeje para dhe pas ekzekutimit: një dështim nuk mund të rikthehet automatikisht.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Pa rikthim</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Pas një dështimi, lëre instalimin siç e la dështimi.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Mbaj ndryshimet e paregjistruara</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Ekzekuto edhe pse parametrat, zgjerimet ose dizajnet kanë ndryshime të paregjistruara; ato përfshihen në pamjen e gjendjes.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Pa regjistrim</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Mos regjistro skedarin e gjendjes dhe ditarin e ekzekutimit (as etiketë, as dërgim).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Pa dërgim</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Regjistro dhe etiketo, por mos dërgo.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Pa etiketë</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Regjistro dhe dërgo, por mos e etiketo ekzekutimin.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Po, ekzekuto këto migrime tani</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Asnjë migrim në pritje.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Kthehu te gjendja</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Ndryshime të këtij instalimi të shkruara një herë si skedarë (përmbajtje, klasa, role, parametra, skema) dhe të zbatuara në çdo instalim të sajtit në të njëjtin rend. Një ekzekutim merr fillimisht një pamje gjendjeje, e rikthen kur një migrim dështon, dhe regjistron, bën commit dhe dërgon atë që bëri.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Ekzekuto %count në pritje</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Përmbledhje</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Në pritje</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Të kryera</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Të dështuara</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Të panevojshme</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Baza e të dhënave</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaksionet: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migrimet e sajtit janë në migrations/, ato të një zgjerimi në extension/&lt;name&gt;/migrations/. Ekzekutohen sipas rendit të emrave të tyre dhe asaj që kërkojnë.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ekzekutimi i fundit</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Skedari ndryshoi pasi u zbatua.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Asnjë migrim ende. ./console exp:migration:generate --skeleton &lt;name&gt; --apply shkruan të parin.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Ekzekutimet e fundit</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Të gjitha ekzekutimet</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Asnjë ekzekutim ende.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Simulimi i një ekzekutimi kërkon politikën migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Një ekzekutim është në vazhdim: simuloni kur të përfundojë.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurimi</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target nuk është as ekzekutim, as migrim, as pamje gjendjeje e këtij instalimi.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Shënoni fillimisht &quot;Po, tërhiqe&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Rikthimi i një pamjeje më të hershme është për ekspertë: shënoni &quot;E di çfarë rikthen kjo&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Shkruani sërish id-në e pamjes së gjendjes: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Zgjidhni të paktën një pjesë për t’u rikthyer.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ky ekzekutim nuk ka pamje gjendjeje të marrë para tij: tërhiqni migrimet e tij një nga një, ose riktheni një pamje më të hershme.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Ky migrim nuk mund të tërhiqet vetë: nuk është zbatuar, ose nuk ka down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulari nuk u lexua dot.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Zgjidhni ekzekutimin që do të vazhdohet.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Shënoni fillimisht &quot;Po, ekzekuto këto migrime tani&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Zgjidhni të paktën një migrim.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Një migrim ndryshoi pasi u zbatua: pranoni ndryshimin me një arsye, ose riktheni skedarin.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Jepni arsyen pse pranohen migrimet e ndryshuara.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Arsyeja ka të shumtën 500 karaktere.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Një ekzekutim i nisur këtu është ende në vazhdim (%detail). Prisni të përfundojë.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Një ekzekutim tjetër mban kyçin e instalimit: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Ekzekutimi kërkon një përdorues të identifikuar që ekziston.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nuk u gjet asnjë program php për rreshtin e komandave. Vendosni shtegun e plotë të tij te migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open është i çaktivizuar, ndaj një ekzekutim nuk mund të niset këtu. Ekzekutoni ./console exp:migration:migrate --apply në server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Në dosjen e ekzekutimeve nuk mund të shkruhet: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Ekzekutimi u nis, por nuk raportoi id-në e procesit të tij. Kontrolloni %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Tregoni çfarë duhet tërhequr.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ekzekutimi nuk u nis dot.</translation>
     </message>
 </context>
 </TS>

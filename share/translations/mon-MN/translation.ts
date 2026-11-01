@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: түүний төгсгөлийн цэг, схем болон асуулга туршиж үзэх талбар.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Шилжүүлгүүд</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Файл хэлбэрээр хадгалсан суулгацын өөрчлөлтүүд: тэдгээрийн төлөв, ажиллуулалтууд, ажиллуулах ба буцаах.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Мутацийг /api/graphql руу илгээнэ үү.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Шилжүүлгүүд</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Төлөвийг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Шилжүүлгийн хүснэгтүүд хараахан байхгүй байна: ./console exp:upgrade --apply тэдгээрийг үүсгэнэ.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count шилжүүлэг амжилтгүй болсон</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ажиллуулалт явагдаж байна, эхлүүлсэн: %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Суулгац түгжигдсэн байна: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Хүлээгдэж буй</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Амжилтгүй</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Өнчин</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Сүүлийн ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>хараахан алга</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Бүх шилжүүлэг</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Дуурайлган ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Туршилтын ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Хүлээгдэж буй шилжүүлгүүд дараа нь буцаагдсан гүйлгээнд ажилласан: юу ч хадгалагдаагүй. Доор тус бүр өгөгдлийн санд юуг өөрчилснийг харуулав.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ажиллуулалт одоо юу хийхийг харуулна. Юу ч өөрчлөгдөхгүй: хүлээгдэж буй шилжүүлэг бүр хийх өөрчлөлтөө, ажиллуулалт өмнө болон дараа нь юу хийхээ жагсаана.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Дуурайх</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ажиллуулах</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Туршилтын ажиллуулалт амжилтгүй боллоо: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Дуурайлтад схемийн өөрчлөлтийг буцааж болдог PostgreSQL эсвэл SQLite шаардлагатай; энэ өгөгдлийн сан дээр доорх төлөвлөгөө нь ажиллуулалт юу хийхийг харуулна.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Шилжүүлгүүд</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Шилжүүлэг</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Төлөв</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Юу хийх байсан</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Дуурайлт: %result, %ms мс</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Шилжүүлэг хараахан алга.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Ажиллуулалтын өмнө ба дараа</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Өмнөх агшин зураг</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>авсан бөгөөд шилжүүлэг амжилтгүй болбол сэргээнэ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>унтраалттай</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Дараах агшин зураг</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ажиллуулалт амжилттай болоход авсан</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total шилжүүлэг: %pending хүлээгдэж буй, %done хийгдсэн, %failed амжилтгүй.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Шилжүүлгийн түүх</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ажиллуулалт бүр хэрэглэгч, орчин, агшин зургууд болон юуг коммитлож, шошголж, илгээснийхээ хамт. Амжилтгүй эсвэл тасалдсан ажиллуулалтыг үргэлжлүүлж болно; өмнө нь агшин зураг авсан ажиллуулалтыг буцааж болно.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ажиллуулалтуудыг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Шилжүүлгийн хүснэгтүүд хараахан байхгүй байна: ./console exp:upgrade --apply тэдгээрийг үүсгэнэ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Бүгд</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ажиллуулалтууд</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Эхэлсэн</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Хэн</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Агшин зургууд</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Агуулах</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Үйлдлүүд</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>өмнө</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>дараа</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>илгээлт: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Үргэлжлүүлэх</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Буцаах</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Энэ төлөвт ажиллуулалт алга.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Энд эхлүүлсэн</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Эдгээр хуудсаас эхлүүлсэн ажиллуулалт, үргэлжлүүлэлт, буцаалтууд тус бүрийн тайлангийн хамт.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Юу</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Үр дүн</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Буцаалт</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target-ийн буцаалт</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Ажиллуулалт %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ажиллуулалт юу хийсэн, түүний бичлэг ба лог. Энд эхлүүлсэн ажиллуулалт энэ хуудсыг хаахад арын горимд үргэлжилнэ; дагахын тулд хуудсыг дахин нээнэ үү.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Энэ ажиллуулалтыг үргэлжлүүлэх</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Энэ ажиллуулалтыг буцаах</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Бичлэгийг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Явц</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user эхлүүлсэн, %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Кодыг шалгаж, ажиллуулалтын өмнө агшин зураг авч байна</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ажиллаж байна (%total-ээс %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total-ээс %done хийгдсэн</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Шилжүүлгүүд ажилласан; аль нэг нь амжилтгүй бол агшин зургийг сэргээж байна</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ажиллуулалтын дараа агшин зураг авч, коммитлож, шошголж, илгээж байна</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Агшин зургийг сэргээж байна</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Ажиллуулалт дууслаа. Тайланг ачаалж байна.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Явцыг дагаж чадсангүй. Ажиллуулалт хэрхэн явж байгааг харахын тулд хуудсыг дахин ачаална уу.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Энэ хуудас ажиллуулалтыг явцын турш дагана.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Дахин ачаалах</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Тайлан</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Хугацаа</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Ажиллуулалтын алдаа болгон хэвлэсэн зүйл</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Бичлэг</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Орчин</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>байхгүй</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Дууссан</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Шошго</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Илгээлт</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Мессеж</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Энэ ажиллуулалтын шилжүүлгүүд</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Эх сурвалж</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Ажиллуулалтын лог</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Логийн зөвхөн төгсгөлийг харуулж байна.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ажиллаж байна</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>тайлангүй дууссан</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>амжилттай</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>амжилтгүй</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>татгалзсан</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>өгөгдлийн санд хүрэх боломжгүй байсан</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>дотоод алдаа</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ажиллуулалт явагдаж байна</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind-ийг %user эхлүүлсэн, %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Дагах</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Суулгац түгжигдсэн байна</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Өөр ажиллуулалт түгжээг барьж байна (шинэчлэлт эсвэл консол дээрх ажиллуулалт): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>хийгдсэн</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>хүлээгдэж буй</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>шаардлагагүй</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>тодорхойгүй</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>буцаагдсан</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>хэрэгжсэн</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>хэрэгжих байсан</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>буцаагдсан</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>буцаагдах байсан</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ажиллаагүй</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>өөр нэгийг хүлээж байна</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>өөрчлөлтийг зөвшөөрсөн</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>өөрчлөлтийг зөвшөөрөх байсан</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>дуурайсан</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Шилжүүлгүүд</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Түүх</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target-ийг буцаах</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Ажиллуулалтыг түүний өмнө авсан агшин зураг руу буцаана, нэг шилжүүлгийг түүний down()-оор. Өмнөх агшин зургийг сэргээх нь мэргэжилтнүүдэд зориулагдсан. Тус бүр одоогийн төлөвийн агшин зураг авсны дараа таны нэрээр арын горимд ажиллана.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Юуг буцааж болохыг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Нэг шилжүүлэг</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Өмнөх агшин зураг</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Тайлбар</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>тийм</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>үгүй</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Агшин зураг</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Нэр</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Авсан</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Төрөл</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Сэргээх хэсгүүд</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Өгөгдлийн сан</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Хадгалалтын файлууд (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Тохиргоо (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Сэргээлт нь өгөгдлийн санг сессүүдийн хамт агшин зураг авсан цаг руу буцаана: дараа нь дахин нэвтрэх шаардлагатай байж болно. Түүнээс хойш өөрчлөгдсөн бүх зүйл алга болно; эхлээд одоогийн төлөвийн агшин зураг авна.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Энэ юуг сэргээхийг би мэдэж байна</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Агшин зургийн танигчийг дахин бичнэ үү</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Тийм, буцаах</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Цуцлах</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Өмнө нь агшин зураг авсан ажиллуулалтууд.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Сонгох</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Агшин зурагтай ажиллуулалт хараахан алга.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Өөрсдийгөө буцааж чадах хэрэгжсэн шилжүүлгүүд (тэдэнд down() бий).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Хэрэгжсэн ямар ч шилжүүлэгт down() алга.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Өмнөх агшин зургууд (мэргэжилтнүүд)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Агшин зураг хараахан алга.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Шилжүүлгүүдийг ажиллуулах</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Ажиллуулалт %user нэрээр арын горимд үргэлжилж, түүний хуудас явцыг нь харуулна. Эхний шилжүүлгийн өмнө суулгацын агшин зураг авна; шилжүүлэг амжилтгүй болбол ажиллуулалт зогсож, агшин зургийг сэргээнэ.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Эхлээд туршилтын ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Төлөвийг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Хүлээгдэж буй шилжүүлгүүд</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Тэд энэ дарааллаар ажиллана. Аль нэгийг болон түүнийг шаарддаг шилжүүлгүүдийг дараагийн ажиллуулалтад үлдээхийн тулд тэмдгийг арилгана уу.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Ажиллуулах</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Ажиллах үедээ засвар үйлчилгээний горимыг асаана.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Хэрэгжсэнийхээ дараа өөрчлөгдсөн</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Эдгээр файлууд хэрэгжсэн файлууд биш байна. Өөрчлөлтийг шалтгаантайгаар зөвшөөрөөгүй бол ажиллуулалт тэднийг татгалзана; тэд дахин ажиллахгүй, шинэ хяналтын нийлбэрийг бүртгэж, шалтгааныг аудитын логт хадгална.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Өөрчлөлтүүдийг зөвшөөрөх</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Шалтгаан</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Анхдагч утгууд нь аюулгүй. Хайрцаг бүр нэг алхмыг алгасна.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Агшин зураггүй</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Ажиллуулалтын өмнө ба дараа агшин зураг авахгүй: алдааг автоматаар сэргээх боломжгүй.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Сэргээлтгүй</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Алдааны дараа суулгацыг алдаа үлдээсэн байдлаар нь орхих.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Коммитлоогүй өөрчлөлтүүдийг үлдээх</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Тохиргоо, өргөтгөл эсвэл дизайнд коммитлоогүй өөрчлөлт байсан ч ажиллуулах; тэд агшин зурагт орно.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Коммитгүй</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Төлөвийн файл болон ажиллуулалтын логийг коммитлохгүй (шошго ч, илгээлт ч үгүй).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Илгээлтгүй</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Коммитлож шошголох боловч илгээхгүй.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Шошгогүй</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Коммитлож илгээх боловч ажиллуулалтыг шошголохгүй.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Тийм, эдгээр шилжүүлгийг одоо ажиллуулах</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Хүлээгдэж буй шилжүүлэг алга.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Төлөв рүү буцах</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Энэ суулгацын өөрчлөлтүүдийг нэг удаа файл хэлбэрээр бичиж (контент, ангилал, үүрэг, тохиргоо, схем), сайтын суулгац бүрт ижил дарааллаар хэрэгжүүлнэ. Ажиллуулалт эхлээд агшин зураг авч, шилжүүлэг амжилтгүй болбол түүнийг сэргээж, хийсэн зүйлээ бүртгэж, коммитлож, илгээнэ.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Хүлээгдэж буй %count-ийг ажиллуулах</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Тойм</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Хүлээгдэж буй</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Хийгдсэн</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Амжилтгүй</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Шаардлагагүй</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Өгөгдлийн сан</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>гүйлгээ: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Сайтын шилжүүлгүүд migrations/ дотор, өргөтгөлийнх extension/&lt;name&gt;/migrations/ дотор байна. Тэд нэрийнхээ дараалал ба шаардлагынхаа дагуу ажиллана.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Сүүлийн ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Файл хэрэгжсэнийхээ дараа өөрчлөгдсөн.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Шилжүүлэг хараахан алга. ./console exp:migration:generate --skeleton &lt;name&gt; --apply эхнийхийг бичнэ.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Сүүлийн ажиллуулалтууд</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Бүх ажиллуулалт</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Ажиллуулалт хараахан алга.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Ажиллуулалтыг дуурайхад migration/run бодлого шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ажиллуулалт явагдаж байна: дууссаны дараа дуурайна уу.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Тохируулга</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target нь энэ суулгацын ажиллуулалт ч, шилжүүлэг ч, агшин зураг ч биш.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Эхлээд «Тийм, буцаах»-ыг тэмдэглэнэ үү.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Өмнөх агшин зургийг сэргээх нь мэргэжилтнүүдэд зориулагдсан: «Энэ юуг сэргээхийг би мэдэж байна»-ыг тэмдэглэнэ үү.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Агшин зургийн танигчийг дахин бичнэ үү: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Сэргээх дор хаяж нэг хэсгийг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Энэ ажиллуулалтын өмнө агшин зураг аваагүй: шилжүүлгүүдийг нь нэг нэгээр буцаах эсвэл өмнөх агшин зургийг сэргээнэ үү.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Энэ шилжүүлэг өөрөө буцаагдах боломжгүй: хэрэгжээгүй эсвэл down() байхгүй.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Маягтыг уншиж чадсангүй.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Үргэлжлүүлэх ажиллуулалтыг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Эхлээд «Тийм, эдгээр шилжүүлгийг одоо ажиллуулах»-ыг тэмдэглэнэ үү.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Дор хаяж нэг шилжүүлэг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Шилжүүлэг хэрэгжсэнийхээ дараа өөрчлөгдсөн: өөрчлөлтийг шалтгаантайгаар зөвшөөрөх эсвэл файлыг буцааж тавина уу.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Өөрчлөгдсөн шилжүүлгүүдийг яагаад зөвшөөрч байгаа шалтгааныг бичнэ үү.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Шалтгаан хамгийн ихдээ 500 тэмдэгт байна.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Энд эхлүүлсэн ажиллуулалт үргэлжилсээр байна (%detail). Дуусахыг хүлээнэ үү.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Өөр ажиллуулалт суулгацын түгжээг барьж байна: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Ажиллуулалтад нэвтэрсэн, бодитоор байгаа хэрэглэгч шаардлагатай.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php тушаалын мөрийн програм олдсонгүй. migration.ini [AdminSettings] PhpCliPath-д түүний бүтэн замыг тохируулна уу.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open идэвхгүй тул энд ажиллуулалт эхлүүлэх боломжгүй. Сервер дээр ./console exp:migration:migrate --apply-г ажиллуулна уу.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ажиллуулалтын хавтас руу бичих боломжгүй: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Ажиллуулалт эхэлсэн боловч процессын танигчаа мэдээлсэнгүй. %detail-г шалгана уу.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Юуг буцаахыг заана уу.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ажиллуулалтыг эхлүүлж чадсангүй.</translation>
     </message>
 </context>
 </TS>

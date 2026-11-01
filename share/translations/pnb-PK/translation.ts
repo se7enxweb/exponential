@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ایہدا اینڈ پوائنٹ، سکیما تے کوئریاں ازمان لئی اک پلے گراؤنڈ۔</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مائیگریشناں</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>انسٹالیشن وچ تبدیلیاں جو فائلاں دے طور تے رکھیاں گئیاں: اوہناں دی حالت، رن، چلانا تے واپس لینا۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>میوٹیشن /api/graphql تے بھیجو۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>مائیگریشناں</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>سٹیٹس پڑھیا نہیں جا سکیا: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>مائیگریشناں دیاں ٹیبلاں حالے موجود نہیں: ./console exp:upgrade --apply اوہناں نوں بناندا اے۔</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count مائیگریشناں ناکام ہوئیاں</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>اک رن چل رہیا اے، %user نے شروع کیتا</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>انسٹالیشن لاک اے: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>زیر التوا</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>یتیم</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>پچھلا رن</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>حالے کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ساریاں مائیگریشناں</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>نقلی رن</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>آزمائشی رن</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>زیر التوا مائیگریشناں اک ٹرانزیکشن وچ چلیاں جیہڑی بعد وچ واپس لے لئی گئی: کجھ وی نہیں رکھیا گیا۔ تھلے دسیا اے پئی ہر اک نے ڈیٹابیس وچ کیہ بدلیا۔</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>اک رن ہُن کیہ کرے گا۔ کجھ وی نہیں بدلدا: ہر زیر التوا مائیگریشن اوہ تبدیلیاں دسدی اے جو اوہ کرے گی، تے رن دسدا اے پئی اوہ پہلاں تے بعد وچ کیہ کرے گا۔</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>نقل کرو</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>چلاؤ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>آزمائشی رن ناکام ہویا: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>نقل لئی PostgreSQL یا SQLite چاہیدا اے، جنہاں دیاں سکیما تبدیلیاں واپس لئیاں جا سکدیاں نیں؛ ایس ڈیٹابیس تے تھلے والا منصوبہ اوہ اے جو اک رن کرے گا۔</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>مائیگریشناں دی لسٹ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>مائیگریشن</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ایہ کیہ کرے گی</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>نقل: %result، %ms ms وچ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>حالے کوئی مائیگریشن نہیں۔</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>رن توں پہلاں تے بعد</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>پہلاں دا سنیپ شاٹ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>لیا جاندا اے، تے مائیگریشن ناکام ہون تے بحال کیتا جاندا اے</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>بعد دا سنیپ شاٹ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>رن کامیاب ہون تے لیا جاندا اے</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total مائیگریشناں: %pending زیر التوا، %done مکمل، %failed ناکام۔</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>مائیگریشن دی تریخ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ہر رن اپنے یوزر، ماحول، سنیپ شاٹاں تے جو کمٹ، ٹیگ تے پش کیتا گیا اوہدے سمیت۔ ناکام یا رکیا ہویا رن فیر شروع کیتا جا سکدا اے؛ جس رن توں پہلاں سنیپ شاٹ لیا گیا ہووے اوہنوں واپس لیا جا سکدا اے۔</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>رن پڑھے نہیں جا سکے: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>مائیگریشناں دیاں ٹیبلاں حالے موجود نہیں: ./console exp:upgrade --apply اوہناں نوں بناندا اے۔</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وکھاؤ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سارے</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>رن</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>شروع ہویا</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ولوں</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>سنیپ شاٹ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ریپوزٹری</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کارروائیاں</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>پہلاں</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>بعد</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>پش: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>فیر شروع کرو</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>واپس لوو</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ایس حالت وچ کوئی رن نہیں۔</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ایتھے شروع کیتے</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ایہناں صفحیاں تے شروع کیتے رن، فیر شروعاتاں تے واپسیاں، ہر اک دی رپورٹ سمیت۔</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>کیہ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>واپسی</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target دی واپسی</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>رن %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>رن نے کیہ کیتا، اوہدا ریکارڈ تے اوہدا لاگ۔ ایتھے شروع کیتا رن ایہ صفحہ بند ہون تے پچھوکڑ وچ چلدا رہندا اے؛ اوہنوں ویکھن لئی صفحہ فیر کھولو۔</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ایہ رن فیر شروع کرو</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ایہ رن واپس لوو</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ریکارڈ پڑھیا نہیں جا سکیا: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پیش رفت</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user نے %time تے شروع کیتا۔</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>کوڈ دی جانچ تے رن توں پہلاں سنیپ شاٹ لینا</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id چل رہی اے (%total وچوں %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total وچوں %done مکمل</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>مائیگریشناں چل گئیاں نیں؛ جے کوئی ناکام ہوئی تے سنیپ شاٹ بحال ہو رہیا اے</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>رن توں بعد سنیپ شاٹ لینا، کمٹ، ٹیگ تے پش کرنا</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>سنیپ شاٹ بحال ہو رہیا اے</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>رن مک گیا اے۔ اوہدی رپورٹ لوڈ ہو رہی اے۔</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>پیش رفت دا پچھا نہیں کیتا جا سکیا۔ رن دا حال ویکھن لئی صفحہ فیر لوڈ کرو۔</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ایہ صفحہ رن نوں نال نال وکھاندا اے۔</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>فیر لوڈ کرو</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>رپورٹ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ویلا</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ملی سیکنڈ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>رن نے غلطیاں دے طور تے کیہ چھاپیا</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ریکارڈ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ماحول</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>کوئی نہیں</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>مکیا</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>کمٹ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ٹیگ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پش</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>سنیہا</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ایس رن دیاں مائیگریشناں</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ماخذ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>رن لاگ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>لاگ دا صرف اخیر وکھایا گیا اے۔</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>چل رہیا</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>رپورٹ توں بغیر مکیا</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>کامیاب</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>انکار کیتا گیا</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ڈیٹابیس تک اپڑ نہیں ہو سکی</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>اندرونی غلطی</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>اک رن چل رہیا اے</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind، %user نے %time تے شروع کیتا۔</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ایہنوں ویکھو</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>انسٹالیشن لاک اے</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>کسے ہور رن کول لاک اے (اک اپگریڈ یا کنسول تے اک رن): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>مکمل</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>زیر التوا</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>لوڑ نہیں</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>واپس لئی گئی</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>لاگو کیتی</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>لاگو کیتی جاوے گی</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>واپس لئی</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>واپس لئی جاوے گی</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>نہیں چلائی</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>کسے ہور دی اڈیک وچ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>تبدیلی منظور</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>تبدیلی منظور کیتی جاوے گی</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>نقل کیتی</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مائیگریشناں</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>سٹیٹس</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تریخ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target واپس لوو</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>اک رن اوہدے توں پہلاں لئے سنیپ شاٹ تک واپس لیا جاندا اے، اک مائیگریشن اوہدے down() نال۔ پرانا سنیپ شاٹ بحال کرنا ماہراں لئی اے۔ ہر اک موجودہ حالت دے سنیپ شاٹ توں بعد تہاڈے طور تے پچھوکڑ وچ چلدا اے۔</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>کیہ واپس لیا جا سکدا اے ایہ پڑھیا نہیں جا سکیا: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>اک رن</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>اک مائیگریشن</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>اک پرانا سنیپ شاٹ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>تفصیل</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ہاں</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نہیں</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>سنیپ شاٹ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>لیبل</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>لیا گیا</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>بحال کرن والے حصے</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ڈیٹابیس</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>سٹوریج فائلاں (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>سیٹنگاں (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ڈیٹابیس بحال کرن نال اوہ سنیپ شاٹ دے ویلے تے واپس چلا جاندا اے، سیشناں سمیت: بعد وچ تہانوں فیر سائن ان کرن لئی کہیا جا سکدا اے۔ اوس توں بعد بدلیا سب کجھ گواچ جاندا اے؛ پہلاں موجودہ حالت دا سنیپ شاٹ لیا جاندا اے۔</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>مینوں پتہ اے پئی ایہ کیہ بحال کردا اے</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>سنیپ شاٹ دی آئی ڈی فیر لکھو</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ہاں، واپس لوو</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد کرو</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>اوہ رن جنہاں توں پہلاں سنیپ شاٹ لیا گیا۔</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>چنو</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>حالے سنیپ شاٹ والا کوئی رن نہیں۔</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>لاگو کیتیاں مائیگریشناں جو اپنے آپ نوں واپس لے سکدیاں نیں (اوہناں کول down() اے)۔</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>کسے وی لاگو مائیگریشن کول down() نہیں۔</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>پرانے سنیپ شاٹ (ماہر)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>حالے کوئی سنیپ شاٹ نہیں۔</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>مائیگریشناں چلاؤ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>رن %user دے طور تے پچھوکڑ وچ چلدا اے، تے اوہدا صفحہ اوہنوں نال نال وکھاندا اے۔ پہلی مائیگریشن توں پہلاں انسٹالیشن دا سنیپ شاٹ لیا جاندا اے؛ جدوں کوئی مائیگریشن ناکام ہووے تے رن رک جاندا اے تے سنیپ شاٹ بحال کیتا جاندا اے۔</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>پہلاں آزمائشی رن</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>سٹیٹس پڑھیا نہیں جا سکیا: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>زیر التوا مائیگریشناں</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ایہ ایس ترتیب نال چلدیاں نیں۔ کسے نوں، تے اوہناں نوں جنہاں نوں اوہدی لوڑ اے، بعد والے رن لئی چھڈن واسطے اوہدا نشان ہٹاؤ۔</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ایہنوں چلاؤ</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>چلدے ویلے مینٹیننس موڈ چالو کردا اے۔</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>لاگو ہون توں بعد بدلیاں</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ایہ فائلاں اوہ نہیں جو لاگو کیتیاں گئیاں سن۔ رن ایہناں توں انکار کردا اے جدوں تک تبدیلی کسے وجہ نال منظور نہ کیتی جاوے؛ ایہ فیر نہیں چلائیاں جاندیاں، نواں چیک سم درج ہوندا اے تے وجہ آڈٹ لاگ وچ رکھی جاندی اے۔</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>تبدیلیاں منظور کرو</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>وجہ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ڈیفالٹ ای محفوظ نیں۔ ہر خانہ اک قدم چھڈ دیندا اے۔</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>کوئی سنیپ شاٹ نہیں</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>رن توں پہلاں تے بعد کوئی سنیپ شاٹ نہیں: ناکامی آپے بحال نہیں ہو سکدی۔</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>کوئی بحالی نہیں</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ناکامی توں بعد، انسٹالیشن نوں اونج ای چھڈو جیویں ناکامی نے چھڈیا۔</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>بغیر کمٹ تبدیلیاں رکھو</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>چلاؤ بھانویں سیٹنگاں، ایکسٹینشناں یا ڈیزائناں وچ بغیر کمٹ تبدیلیاں ہون؛ اوہ سنیپ شاٹ وچ جاندیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>کوئی کمٹ نہیں</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>سٹیٹس فائل تے رن لاگ کمٹ نہ کرو (نہ ٹیگ تے نہ پش)۔</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>کوئی پش نہیں</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>کمٹ تے ٹیگ کرو، پر پش نہ کرو۔</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>کوئی ٹیگ نہیں</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>کمٹ تے پش کرو، پر رن نوں ٹیگ نہ کرو۔</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ہاں، ایہ مائیگریشناں ہُن چلاؤ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>کوئی مائیگریشن زیر التوا نہیں۔</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>سٹیٹس ول واپس</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ایس انسٹالیشن وچ تبدیلیاں جو اک وار فائلاں دے طور تے لکھیاں جاندیاں نیں (مواد، کلاساں، رولاں، سیٹنگاں، سکیما) تے سائٹ دی ہر انسٹالیشن تے اکو ترتیب نال لاگو کیتیاں جاندیاں نیں۔ رن پہلاں سنیپ شاٹ لیندا اے، مائیگریشن ناکام ہون تے اوہنوں بحال کردا اے، تے جو کیتا اوہنوں درج، کمٹ تے پش کردا اے۔</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count زیر التوا چلاؤ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>خلاصہ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>زیر التوا</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مکمل</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>لوڑ نہیں</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ڈیٹابیس</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ٹرانزیکشناں: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>سائٹ مائیگریشناں migrations/ وچ نیں، کسے ایکسٹینشن دیاں extension/&lt;name&gt;/migrations/ وچ۔ ایہ اپنے ناواں تے لوڑاں دی ترتیب نال چلدیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>پچھلا رن</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>فائل لاگو ہون توں بعد بدل گئی۔</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>حالے کوئی مائیگریشن نہیں۔ ./console exp:migration:generate --skeleton &lt;name&gt; --apply پہلی لکھدا اے۔</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>تازہ ترین رن</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ہر رن</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>حالے کوئی رن نہیں۔</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>رن دی نقل لئی پالیسی migration/run چاہیدی اے۔</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>اک رن چل رہیا اے: اوہدے مکن تے نقل کرو۔</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سیٹ اپ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ایس انسٹالیشن دا نہ کوئی رن، نہ کوئی مائیگریشن تے نہ کوئی سنیپ شاٹ اے۔</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>پہلاں &quot;ہاں، واپس لوو&quot; تے نشان لاؤ۔</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>پرانا سنیپ شاٹ بحال کرنا ماہراں لئی اے: &quot;مینوں پتہ اے پئی ایہ کیہ بحال کردا اے&quot; تے نشان لاؤ۔</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>سنیپ شاٹ دی آئی ڈی فیر لکھو: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>بحال کرن لئی گھٹو گھٹ اک حصہ چنو۔</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ایس رن توں پہلاں کوئی سنیپ شاٹ نہیں لیا گیا: ایہدیاں مائیگریشناں اک اک کر کے واپس لوو، یا کوئی پرانا سنیپ شاٹ بحال کرو۔</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ایہ مائیگریشن آپے واپس نہیں لئی جا سکدی: ایہ لاگو نہیں، یا ایہدے کول down() نہیں۔</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فارم پڑھیا نہیں جا سکیا۔</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>فیر شروع کرن لئی رن چنو۔</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>پہلاں &quot;ہاں، ایہ مائیگریشناں ہُن چلاؤ&quot; تے نشان لاؤ۔</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>گھٹو گھٹ اک مائیگریشن چنو۔</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>اک مائیگریشن لاگو ہون توں بعد بدل گئی: تبدیلی وجہ سمیت منظور کرو، یا فائل واپس رکھو۔</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>دسو پئی بدلیاں مائیگریشناں کیوں منظور کیتیاں جاندیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>وجہ ودھ توں ودھ 500 اکھراں دی اے۔</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ایتھے شروع کیتا اک رن حالے وی چل رہیا اے (%detail)۔ اوہدے مکن دی اڈیک کرو۔</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>کسے ہور رن کول انسٹالیشن دا لاک اے: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>رن لئی اک موجود سائن ان کیتا یوزر چاہیدا اے۔</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>کوئی php کمانڈ لائن بائنری نہیں لبھی۔ migration.ini [AdminSettings] PhpCliPath وچ اوہدا پورا پاتھ لکھو۔</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open بند اے، ایس لئی ایتھے رن شروع نہیں کیتا جا سکدا۔ سرور تے ./console exp:migration:migrate --apply چلاؤ۔</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>رناں دے فولڈر وچ لکھیا نہیں جا سکدا: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>رن شروع ہویا پر اوہنے اپنی پراسیس آئی ڈی نہیں دسی۔ %detail دی جانچ کرو۔</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>دسو پئی کیہ واپس لینا اے۔</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>رن شروع نہیں کیتا جا سکیا۔</translation>
     </message>
 </context>
 </TS>

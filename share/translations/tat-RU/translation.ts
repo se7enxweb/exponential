@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: аның ахыргы ноктасы, схемасы һәм сорауларны сынап карау мәйданчыгы.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграцияләр</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Файллар итеп сакланган урнаштыру үзгәрешләре: аларның торышы, башкарулар, башкару һәм кире кайтару.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Мутацияләрне /api/graphql адресына җибәрегез.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграцияләр</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Торышны укып булмады: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Миграцияләр таблицалары әле юк: ./console exp:upgrade --apply аларны ясый.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count миграция уңышсыз булды</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Башкару бара, аны %user башлады</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Урнаштыру бикләнгән: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Көтелә</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Уңышсыз</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Ятимнәр</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Соңгы башкару</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>әлегә юк</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Барлык миграцияләр</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Сынау башкаруы</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Коры башкару</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Көтелгән миграцияләр соңыннан кире кайтарылган транзакциядә башкарылды: бернәрсә дә сакланмады. Түбәндә һәрберсенең мәгълүмат базасында нәрсә үзгәрткәне.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Башкару хәзер нәрсә эшләр иде. Бернәрсә дә үзгәртелми: һәр көтелгән миграция кертәчәк үзгәрешләрен күрсәтә, ә башкару — алдан һәм соңыннан нәрсә эшләячәген.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Сынап карау</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Башкару</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Коры башкару уңышсыз булды: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Сынау өчен схема үзгәрешләрен кире кайтарып булган PostgreSQL яки SQLite кирәк; бу мәгълүмат базасында түбәндәге план башкаруның нәрсә эшләячәген күрсәтә.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Миграцияләр исемлеге</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Миграция</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Торыш</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Нәрсә эшләр иде</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Сынау: %result, %ms мс эчендә</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Әлегә миграция юк.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Башкарудан алда һәм соң</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Алдагы кисем</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>алына һәм миграция уңышсыз булганда торгызыла</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>сүндерелгән</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Соңгы кисем</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>башкару уңышлы булганда алына</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total миграция: %pending көтелә, %done башкарылды, %failed уңышсыз.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Миграцияләр тарихы</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Һәр башкару үзенең кулланучысы, мохите, кисемнәре һәм нәрсә коммитланганы, тамгаланганы һәм җибәрелгәне белән. Уңышсыз яки өзелгән башкаруны дәвам итеп була; алдан кисем алынган башкаруны кире кайтарып була.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Башкаруларны укып булмады: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Миграцияләр таблицалары әле юк: ./console exp:upgrade --apply аларны ясый.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Күрсәтү</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Башкарулар</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Башланды</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Кем</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Кисемнәр</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Репозиторий</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Гамәлләр</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>алдан</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>соңыннан</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>җибәрү: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Дәвам итү</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Кире кайтару</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Бу торышта башкару юк.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Монда башланганнар</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Бу битләрдә башланган башкарулар, дәвам итүләр һәм кире кайтарулар, һәрберсенең хисабы белән.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Нәрсә</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиҗә</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Кире кайтару</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target кире кайтару</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Башкару %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Башкаруның нәрсә эшләгәне, аның язмасы һәм журналы. Монда башланган башкару бу бит ябылгач та фонда дәвам итә; аны күзәтү өчен битне яңадан ачыгыз.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Бу башкаруны дәвам итү</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Бу башкаруны кире кайтару</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Язманы укып булмады: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Барыш</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user тарафыннан %time вакытта башланды.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Кодны тикшерү һәм башкару алдыннан кисем алу</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id башкарыла (%total эчендә %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total эчендә %done башкарылды</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Миграцияләр башкарылды; берсе уңышсыз булса, кисем торгызыла</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Башкарудан соң кисем алу, коммитлау, тамгалау һәм җибәрү</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Кисемне торгызу</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Башкару тәмамланды. Аның хисабы йөкләнә.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Барышны күзәтеп булмады. Башкаруның ничек баруын күрү өчен битне яңадан йөкләгез.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Бу бит башкаруны бара-бара күзәтә.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Яңадан йөкләү</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Хисап</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вакыт</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Башкару хата итеп чыгарган нәрсәләр</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Язма</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Мохит</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>юк</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Тәмамланды</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Тамга</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Җибәрү</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Хәбәр</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Бу башкаруның миграцияләре</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Чыганак</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Башкару журналы</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Журналның ахыры гына күрсәтелә.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>бара</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>хисапсыз тәмамланды</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>уңышлы</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>уңышсыз</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>кире кагылды</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>мәгълүмат базасына тоташып булмады</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>эчке хата</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Башкару бара</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user тарафыннан %time вакытта башланды.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Күзәтү</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Урнаштыру бикләнгән</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Бикне башка башкару тота (яңарту яки консольдагы башкару): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>башкарылды</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>көтелә</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>кирәкми</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>билгесез</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>кире кайтарылды</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>кулланылды</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>кулланылыр иде</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>кире алынды</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>кире алыныр иде</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>башкарылмады</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>башкасын көтә</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>үзгәреш кабул ителде</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>үзгәреш кабул ителер иде</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>сынап каралды</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграцияләр</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Тарих</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target кире алу</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Башкару аңа кадәр алынган кисемгә кире кайтарыла, аерым миграция — үзенең down() ярдәмендә. Элеккерәк кисемне торгызу — белгечләр өчен. Һәрберсе хәзерге торышның кисеме алынганнан соң фонда сезнең исемнән башкарыла.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Нәрсәне кире алып булганын укып булмады: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Башкару</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Бер миграция</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Элеккерәк кисем</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Тасвирлама</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>әйе</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>юк</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Кисем</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Билге</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Алынды</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Төр</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Торгызыла торган өлешләр</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Мәгълүмат базасы</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Саклагыч файллары (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Көйләүләр (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Мәгълүмат базасын торгызу аны, сессияләр белән бергә, кисем алынган вакытка кайтара: аннан соң сездән яңадан керү соралырга мөмкин. Шуннан бирле үзгәргән бар нәрсә югала; башта хәзерге торышның кисеме алына.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Моның нәрсә торгызганын беләм</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Кисем идентификаторын яңадан языгыз</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Әйе, кире алырга</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Баш тарту</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Алдан кисем алынган башкарулар.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Сайлау</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Әлегә кисемле башкару юк.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Үзләрен кире ала алучы кулланылган миграцияләр (аларда down() бар).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Бер генә кулланылган миграциядә дә down() юк.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Элеккерәк кисемнәр (белгечләр)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Әлегә кисем юк.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Миграцияләрне башкару</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Башкару фонда %user исеменнән бара, һәм аның бите аны бара-бара күрсәтә. Беренче миграция алдыннан урнаштыруның кисеме алына; миграция уңышсыз булса, башкару туктый һәм кисем торгызыла.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Башта коры башкару</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Торышны укып булмады: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Көтелгән миграцияләр</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Алар шушы тәртиптә башкарыла. Берсен һәм аңа бәйлеләрне соңрак башкаруга калдыру өчен билгене алыгыз.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Башкарырга</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Башкару барганда техник хезмәт режимын кабыза.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Кулланылганнан соң үзгәртелгән</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Бу файллар кулланылган файллар түгел. Үзгәреш сәбәп белән кабул ителмәсә, башкару аларны кире кага; алар кабат башкарылмый, яңа контроль сумма язып куела һәм сәбәп аудит журналында саклана.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Үзгәрешләрне кабул итү</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Сәбәп</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Килешү буенча кыйммәтләр — иң куркынычсызлары. Һәр билге бер адымны төшереп калдыра.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Кисемсез</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Башкарудан алда һәм соң кисем юк: уңышсызлыкны автомат рәвештә торгызып булмый.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Торгызусыз</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Уңышсызлыктан соң урнаштыруны уңышсызлык калдырганча калдыру.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Коммитланмаган үзгәрешләрне саклау</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Көйләүләрдә, киңәйтүләрдә яки дизайннарда коммитланмаган үзгәрешләр булса да башкару; алар кисемгә керә.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Коммитсыз</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Торыш файлын һәм башкару журналын коммитламаска (тамга да, җибәрү дә юк).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Җибәрүсез</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Коммитларга һәм тамгаларга, ләкин җибәрмәскә.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Тамгасыз</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Коммитларга һәм җибәрергә, ләкин башкаруны тамгаламаска.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Әйе, бу миграцияләрне хәзер башкарырга</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Көтелгән миграция юк.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Торышка кайту</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Бу урнаштыруның бер тапкыр файллар итеп язылган (эчтәлек, класслар, рольләр, көйләүләр, схема) һәм сайтның һәр урнаштыруында шул ук тәртиптә кулланыла торган үзгәрешләре. Башкару башта кисем ала, миграция уңышсыз булса аны торгыза, һәм эшләгәнен язып куя, коммитлый һәм җибәрә.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Көтелгән %count башкару</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Күзәтү</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Көтелә</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Башкарылды</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Уңышсыз</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Кирәкми</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Мәгълүмат базасы</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>транзакцияләр: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Сайт миграцияләре migrations/ эчендә, киңәйтүнекеләр extension/&lt;name&gt;/migrations/ эчендә. Алар исемнәре һәм бәйлелекләре тәртибендә башкарыла.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Соңгы башкару</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Файл кулланылганнан соң үзгәртелгән.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Әлегә миграция юк. ./console exp:migration:generate --skeleton &lt;name&gt; --apply беренчесен яза.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Соңгы башкарулар</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Барлык башкарулар</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Әлегә башкару юк.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Башкаруны сынап карау өчен migration/run сәясәте кирәк.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Башкару бара: ул тәмамлангач сынап карагыз.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Көйләү</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target бу урнаштыруның башкаруы да, миграциясе дә, кисеме дә түгел.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Башта «Әйе, кире алырга» билгеләгез.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Элеккерәк кисемне торгызу — белгечләр өчен: «Моның нәрсә торгызганын беләм» билгеләгез.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Кисем идентификаторын яңадан языгыз: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Торгызу өчен ким дигәндә бер өлеш сайлагыз.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Бу башкарудан алда кисем алынмаган: аның миграцияләрен берәм-берәм кире алыгыз яки элеккерәк кисемне торгызыгыз.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Бу миграция үзен кире ала алмый: ул кулланылмаган яки аның down() юк.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Форманы укып булмады.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Дәвам итәр өчен башкаруны сайлагыз.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Башта «Әйе, бу миграцияләрне хәзер башкарырга» билгеләгез.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Ким дигәндә бер миграция сайлагыз.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Миграция кулланылганнан соң үзгәртелгән: үзгәрешне сәбәп белән кабул итегез яки файлны кире куегыз.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Үзгәртелгән миграцияләрнең ни өчен кабул ителүен күрсәтегез.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Сәбәп иң күбе 500 символ.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Монда башланган башкару әле бара (%detail). Аның тәмамлануын көтегез.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Урнаштыру бикен башка башкару тота: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Башкару өчен керү ясаган булган кулланучы кирәк.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php боерыклар юлы программасы табылмады. migration.ini [AdminSettings] PhpCliPath эчендә аның тулы юлын күрсәтегез.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open сүндерелгән, шуңа күрә монда башкаруны башлап булмый. Серверда ./console exp:migration:migrate --apply башкарыгыз.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Башкарулар папкасына язып булмый: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Башкару башланды, ләкин үзенең процесс идентификаторын хәбәр итмәде. %detail тикшерегез.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Нәрсәне кире алырга кирәклеген күрсәтегез.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Башкаруны башлап булмады.</translation>
     </message>
 </context>
 </TS>

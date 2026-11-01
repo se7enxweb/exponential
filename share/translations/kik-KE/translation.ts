@@ -15142,6 +15142,14 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: mũthia wayo wa njĩra, skima na handũ ha kũgerageria mahooya.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mĩthamio</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mũgarũrũko wa ũhandi ũigĩtwo ta faĩlo: ũrĩa ũrĩ, mĩtengerio, gũtengeria na gũcookia.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Tũma macenjio kũrĩ /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Mĩthamio</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ũrĩa kĩrĩ ndũngĩathomekire: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Metha cia mĩthamio itirĩ ho rĩu: ./console exp:upgrade --apply nĩĩgũcithondeka.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Mĩthamio %count nĩyoire</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Mũtengerio nĩ ũrathiĩ, wambĩrĩirio nĩ %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Ũhandi nĩ mũhingĩre: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Nĩ ĩretereire</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nĩ ĩoire</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Itarĩ na mwene</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Mũtengerio wa kũrigĩrĩria</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>gũtirĩ o na ũmwe rĩu</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Mĩthamio yothe</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Mũtengerio wa kũhwanania</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ũgerio</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Mĩthamio ĩretereire nĩyatengeririo thĩinĩ wa wĩra wa kĩigĩro ũrĩa wacookirio thuutha: gũtirĩ kĩndũ kĩaigirwo. Na thĩ nĩ harĩ ũrĩa o ũmwe wagarũrire thĩinĩ wa kĩigĩro kĩa data.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ũrĩa mũtengerio ũngĩĩka rĩu. Gũtirĩ kĩndũ kĩgũgarũrwo: o mũthamio ũretereire nĩ ũkuonania mũgarũrũko ũrĩa ũngĩĩka, na mũtengerio ũkoonania ũrĩa ũngĩĩka mbere na thuutha.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Hwanania</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Tengeria</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Ũgerio nĩ woire: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Kũhwanania nĩ gũkũbatara PostgreSQL kana SQLite, iria mũgarũrũko wacio wa mũhaano ũngĩcookio; kĩigĩro-inĩ gĩkĩ kĩa data, mũbango ũrĩa ũrĩ na thĩ nĩguo ũrĩa mũtengerio ũngĩĩka.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Mĩthamio</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Mũthamio</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ũrĩa ũrĩ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ũrĩa ũngĩĩka</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Kũhwanania: %result thĩinĩ wa milisekondi %ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Gũtirĩ mũthamio rĩu.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Mbere na thuutha wa mũtengerio</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Mbica ya mbere</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>nĩĩrĩĩkuuo, na ĩcookio rĩrĩa mũthamio woima</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>nĩ kũhingwo</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Mbica ya thuutha</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ĩrĩĩkuuo rĩrĩa mũtengerio wahota</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Mĩthamio %total: %pending ĩretereire, %done nĩĩrĩkĩtie, %failed nĩyoire.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Rũgano rwa mĩthamio</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>O mũtengerio na mũhũthĩri waguo, mawĩra ma kũhũthĩra, mbica na kĩrĩa kĩarũmirio, gĩkĩheo kĩmenyithia na gĩgĩtũmwo. Mũtengerio woimĩte kana ũtinĩtwo nĩ ũngĩthiĩ na mbere; mũtengerio ũrĩ na mbica yoetwo mbere yaguo nĩ ũngĩcookio.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Mĩtengerio ndĩngĩathomekire: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Metha cia mĩthamio itirĩ ho rĩu: ./console exp:upgrade --apply nĩĩgũcithondeka.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Onania</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ciothe</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Mĩtengerio</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Yambĩrĩirio</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nĩ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Mbica</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Kĩigĩro kĩa code</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Mawĩra</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>mbere</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>thuutha</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>gũtũma: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Thiĩ na mbere</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Cookia</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Gũtirĩ mũtengerio ũrĩ ũguo.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Yambĩrĩirio haha</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Mĩtengerio, kũthiĩ na mbere na gũcookia kwambĩrĩirio karatathi-inĩ gaka, hamwe na ripoti ya o ũmwe.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kĩĩ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Maumĩrĩra</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Gũcookia</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Gũcookia %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Mũtengerio %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ũrĩa mũtengerio wekire, rekodi yaguo na rũandĩko rwaguo. Mũtengerio wambĩrĩirio haha nĩ ũthiĩaga na mbere na thuutha rĩrĩa karatathi gaka kahingwo; hingũra karatathi rĩngĩ nĩguo ũũrũmĩrĩre.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Thiĩ na mbere na mũtengerio ũyũ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Cookia mũtengerio ũyũ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Rekodi ndĩngĩathomekire: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ũrĩa ũrathiĩ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Wambĩrĩirio nĩ %user hĩndĩ ya %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Gũthuthuria code na kuoya mbica mbere ya mũtengerio</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Nĩ kũratengerio %id (%index kuuma %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done kuuma %total nĩĩrĩkĩtie</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Mĩthamio nĩyatengerio; nĩ kũracookio mbica angĩkorwo ũmwe woimĩte</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Kuoya mbica thuutha wa mũtengerio, kũrũmia, kũhe kĩmenyithia na gũtũma</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Nĩ kũracookio mbica</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Mũtengerio nĩ wathira. Ripoti yaguo nĩ ĩrarehwo.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ũrĩa ũrathiĩ ndũngĩarũmĩrĩirwo. Cookia karatathi rĩngĩ wone ũrĩa mũtengerio ũrathiĩ.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Karatathi gaka nĩ karũmagĩrĩra mũtengerio ũrĩa ũrathiĩ.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Cookia rĩngĩ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ripoti</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ihinda</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>milisekondi %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Kĩrĩa mũtengerio wonanirie ta mahĩtia</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Rekodi</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Mawĩra ma kũhũthĩra</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>gũtirĩ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ĩrĩkĩtie</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kũrũmia</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Kĩmenyithia</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Gũtũma</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ndũmĩrĩri</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Mĩthamio ya mũtengerio ũyũ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Kĩhumo</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Rũandĩko rwa mũtengerio</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>No mũthia wa rũandĩko ũronanio.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>nĩ ũratengerio</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>wathirire hatarĩ ripoti</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>nĩ wahotire</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nĩ woimĩte</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>nĩ waregirwo</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>kĩigĩro kĩa data gĩtiakinyĩrĩkire</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ihĩtia rĩa thĩinĩ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Mũtengerio nĩ ũrathiĩ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind wambĩrĩirio nĩ %user hĩndĩ ya %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Ũrũmĩrĩre</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Ũhandi nĩ mũhingĩre</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Mũtengerio ũngĩ nĩ ũnyiitĩte kĩhingo (kwagĩrithia kana mũtengerio wa console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>nĩĩrĩkĩtie</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>nĩ ĩretereire</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ndĩbataranĩtie</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ndĩmenyekaine</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>nĩ ĩcookeirio</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>nĩ ĩhũthĩrĩtwo</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ĩngĩhũthĩrwo</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>nĩ ĩcookeirio</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ĩngĩcookio</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ndĩtengerio</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ĩretereire ĩngĩ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>mũgarũrũko nĩ wetĩkĩrĩtwo</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>mũgarũrũko ũngĩĩtĩkĩrwo</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>nĩ ĩhwananĩtio</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mĩthamio</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ũrĩa kĩrĩ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Rũgano</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Cookia %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Mũtengerio ũcookagio mbica-inĩ ĩrĩa yoetwo mbere yaguo, mũthamio ũmwe ũgacookio na down() yaguo. Gũcookia mbica ya tene nĩ ya ataaĩ. O ũmwe ũtengeragio na thuutha ta wee, thuutha wa mbica ya ũrĩa kĩrĩ rĩu.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Kĩrĩa kĩngĩcookio gĩtingĩathomekire: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Mũtengerio</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Mũthamio ũmwe</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Mbica ya tene</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Ũtaarĩria</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ĩĩ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>aca</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Mbica</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Rĩĩtwa</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Yoetwo</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Mũthemba</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Icunjĩ cia gũcookia</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Kĩigĩro kĩa data</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Faĩlo iria ciigĩtwo (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Mabangĩ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Gũcookia kĩigĩro kĩa data nĩ gũgĩcookagia ihinda-inĩ rĩrĩa mbica yoetwo, hamwe na sesheni: no ũũrio ũtoonye rĩngĩ thuutha. Kĩndũ o gĩothe kĩgarũrĩtwo kuuma hĩndĩ ĩyo nĩ gĩkũũra; mbica ya ũrĩa kĩrĩ rĩu ĩrĩĩkuuo mbere.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Nĩ njũĩ kĩrĩa ũndũ ũyũ ũrĩcookia</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Andĩka namba ya mbica rĩngĩ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ĩĩ, cookia</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Tiga</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Mĩtengerio ĩrĩ na mbica yoetwo mbere yayo.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Thuura</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Gũtirĩ mũtengerio ũrĩ na mbica rĩu.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Mĩthamio ĩhũthĩrĩtwo ĩrĩa ĩngĩĩcookia yo nyene (ĩrĩ na down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Gũtirĩ mũthamio ũhũthĩrĩtwo ũrĩ na down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Mbica cia tene (ataaĩ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Gũtirĩ mbica rĩu.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Tengeria mĩthamio</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Mũtengerio ũthiĩaga na mbere na thuutha ta %user, na karatathi kaguo nĩ kaũwonanagia ũrĩa ũrathiĩ. Mbere ya mũthamio wa mbere, mbica ya ũhandi nĩĩrĩĩkuuo; rĩrĩa mũthamio woima, mũtengerio nĩ ũrũgamaga na mbica ĩgacookio.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Ambĩrĩria na ũgerio</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ũrĩa kĩrĩ ndũngĩathomekire: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Mĩthamio ĩretereire</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ĩtengeragio na mũtaratara ũyũ. Ruta kĩmenyithia harĩ ũmwe nĩguo ũmũtige, hamwe na ĩrĩa ĩmũbataraga, nĩ ũndũ wa mũtengerio ũrĩa ũgooka.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Ũtengerie</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Nĩ ũhingũraga mũtaratara wa kũrũgamĩrĩra rĩrĩa ũratengerio.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Igarũrĩtwo thuutha wa kũhũthĩrwo</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Faĩlo ici ti iria ciahũthĩrirwo. Mũtengerio nĩ ũciregaga tiga mũgarũrũko wetĩkĩrwo na gĩtũmi; ndĩtengeragio rĩngĩ, checksum njerũ ĩĩandĩkagwo na gĩtũmi kĩgaigwo rũandĩko-inĩ rwa ũthuthuria.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Ĩtĩkĩra mũgarũrũko</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Nĩ kĩĩ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Ũrĩa kũrĩ kũndũ gũa mbere nĩguo ũrĩ na ũgitĩri. O kabokithi nĩ katigaga gĩkinya kĩmwe.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Hatarĩ mbica</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Gũtirĩ mbica mbere na thuutha wa mũtengerio: kwaga guthiĩ wega gũtingĩcookio o gwakũ.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Hatarĩ gũcookia</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Thuutha wa kwaga, tiga ũhandi o ta ũrĩa kwaga kwaũtigire.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Iga mũgarũrũko ũtarũmĩtio</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Tengeria o na mabangĩ, wongerereri kana mĩhaano irĩ na mũgarũrũko ũtarũmĩtio; ũthiiaga thĩinĩ wa mbica.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Hatarĩ kũrũmia</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ndũkarũmie faĩlo ya ũrĩa kĩrĩ na rũandĩko rwa mũtengerio (hatarĩ kĩmenyithia na hatarĩ gũtũma).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Hatarĩ gũtũma</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Rũmia na ũhe kĩmenyithia, no ndũgatũme.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Hatarĩ kĩmenyithia</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Rũmia na ũtũme, no ndũkahe mũtengerio kĩmenyithia.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ĩĩ, tengeria mĩthamio ĩno rĩu</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Gũtirĩ mũthamio ũretereire.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Cooka harĩ ũrĩa kĩrĩ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Mũgarũrũko wa ũhandi ũyũ wandĩkĩtwo rĩmwe ta faĩlo (ũhoro, mĩthemba, mawĩra, mabangĩ, mũhaano) na ũkahũthĩrwo harĩ o ũhandi wa website na mũtaratara o ũmwe. Mũtengerio woyaga mbica mbere, ũkamĩcookia rĩrĩa mũthamio woima, na ũkandĩka, ũkarũmia na ũgatũma kĩrĩa wekire.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Tengeria %count ĩretereire</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Mwonere</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Nĩ ĩretereire</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Nĩĩrĩkĩtie</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nĩ ĩoire</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ndĩbataranĩtie</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Kĩigĩro kĩa data</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>mawĩra ma kĩigĩro: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Mĩthamio ya website ĩrĩ thĩinĩ wa migrations/, ĩrĩa ya wongerereri ĩrĩ thĩinĩ wa extension/&lt;name&gt;/migrations/. Ĩtengeragio na mũtaratara wa marĩĩtwa mayo na kĩrĩa ĩbataraga.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Mũtengerio wa kũrigĩrĩria</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Faĩlo nĩ ĩgarũrũkire thuutha wa kũhũthĩrwo.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Gũtirĩ mũthamio rĩu. ./console exp:migration:generate --skeleton &lt;name&gt; --apply nĩ ĩkwandĩka wa mbere.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Mĩtengerio ya kũrigĩrĩria</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Mĩtengerio yothe</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Gũtirĩ mũtengerio rĩu.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Kũhwanania mũtengerio nĩ gũkũbatara rũtha rwa migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Mũtengerio nĩ ũrathiĩ: hwanania rĩrĩa ũgaathira.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Mwambĩrĩria</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ti mũtengerio, ti mũthamio na ti mbica ya ũhandi ũyũ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Ambĩrĩria na kũhũra kĩmenyithia harĩ “Ĩĩ, cookia”.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Gũcookia mbica ya tene nĩ ya ataaĩ: hũra kĩmenyithia harĩ “Nĩ njũĩ kĩrĩa ũndũ ũyũ ũrĩcookia”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Andĩka namba ya mbica rĩngĩ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Thuura kĩcunjĩ kĩmwe kĩa gũcookia o na kĩ.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Mũtengerio ũyũ ndũrĩ na mbica yoetwo mbere yaguo: cookia mĩthamio yaguo ũmwe ũmwe, kana ũcookie mbica ya tene.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Mũthamio ũyũ ndũngĩĩcookia wo mwene: ndũhũthĩrĩtwo, kana ndũrĩ na down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Fomu ndĩngĩathomekire.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Thuura mũtengerio wa gũthiĩ naguo na mbere.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Ambĩrĩria na kũhũra kĩmenyithia harĩ “Ĩĩ, tengeria mĩthamio ĩno rĩu”.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Thuura mũthamio ũmwe o na kĩ.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Mũthamio nĩ wagarũrũkire thuutha wa kũhũthĩrwo: ĩtĩkĩra mũgarũrũko na gĩtũmi, kana ũcookie faĩlo.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Heana gĩtũmi gĩa gwĩtĩkĩrwo kwa mĩthamio ĩgarũrũkĩte.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Gĩtũmi gĩtigĩrĩte ndemwa 500.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Mũtengerio wambĩrĩirio haha o nĩ ũrathiĩ (%detail). Eterera ũthire.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Mũtengerio ũngĩ nĩ ũnyiitĩte kĩhingo kĩa ũhandi: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Mũtengerio nĩ ũbataraga mũhũthĩri ũrĩ ho ũtoonyete.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Gũtirĩ porogramu ya php ya mũhari wa watho yoneka. Ĩkĩra njĩra yayo yothe thĩinĩ wa migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open nĩ ĩhingĩtwo, nĩ ũndũ ũcio mũtengerio ndũngĩambĩrĩrio haha. Tengeria ./console exp:migration:migrate --apply harĩ server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Mbacũ ya mĩtengerio ndĩngĩandĩkwo: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Mũtengerio nĩ wambĩrĩirio no ndũheanire namba ya process yaguo. Thuthuria %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Uga kĩrĩa gĩa gũcookio.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Mũtengerio ndũngĩambĩrĩirio.</translation>
     </message>
 </context>
 </TS>
