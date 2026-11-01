@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # content.ini
 
-Die ausgelieferten Einstellungen von `settings/content.ini`: 53 Blöcke, 143 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/content.ini`: 54 Blöcke, 147 Einstellungen.
 
 > Exponential-Konfigurationsdatei für das Modul content  
 >
@@ -24,6 +24,7 @@ Die ausgelieferten Einstellungen von `settings/content.ini`: 53 Blöcke, 143 Ein
 
 | Block | Einstellungen |
 |---|---|
+| [PreviewLinkSettings](PreviewLinkSettings.md) | 4 |
 | [VersionView](VersionView.md) | 2 |
 | [VersionManagement](VersionManagement.md) | 7 |
 | [EditSettings](EditSettings.md) | 3 |

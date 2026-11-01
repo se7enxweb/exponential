@@ -277,10 +277,9 @@ Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/README.md),
 ## Noch nicht in 6.0.15
 
 Die YAML-Schritttypen für Tags, URL-Aliase, den Papierkorb, Dateien und Bilder, Caches und den Suchindex, Layouts,
-`http`, `mail` und `command`, SQL- und INI-Migrationen, der Editor und
-die Generatoren in der Administration (Generatoren außer dem Gerüst), das Aufzeichnen und
-`exp:velocity deploy --migrate` sind geplant und nicht Teil dieses Releases.
-
+`http`, `mail` und `command`, SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration
+(Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil
+dieses Releases.
 ## Weiterlesen
 
 - [Migrationen: eine erste PHP-Migration, Schritt für Schritt](migrationen-tutorial.md)

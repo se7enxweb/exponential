@@ -2515,17 +2515,6 @@
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationStructureStepsMongoDBTest.php"
     ],
-    "tests/tests/kernel/classes/migration/expMigrationYamlFakes.php": [
-      "tests/tests/kernel/classes/migration/expMigrationYamlTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationYamlSqliteTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationYamlDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php"
-    ],
-    "tests/tests/kernel/classes/migration/expMigrationYamlEngineChecks.php": [
-      "tests/tests/kernel/classes/migration/expMigrationYamlSqliteTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationYamlDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php"
-    ],
     "tests/tests/kernel/classes/migration/fixtures/*": [
       "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
@@ -2720,6 +2709,17 @@
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationStructureStepsMongoDBTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationYamlFakes.php": [
+      "tests/tests/kernel/classes/migration/expMigrationYamlTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationYamlSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationYamlDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationYamlEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationYamlSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationYamlDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php"
     ]
   },
   "generated": {

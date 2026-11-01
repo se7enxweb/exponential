@@ -1,0 +1,447 @@
+---
+title: staticcache.ini [Target_example]
+audience: developer, admin
+category: examples
+summary: "The settings of [Target_example] in staticcache.ini: Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links ..."
+keywords: staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook
+type: generated
+generated: exp:help:examples
+---
+# staticcache.ini [Target_example]
+
+The block `[Target_example]` of `settings/staticcache.ini`, with 27 setting(s).
+
+Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
+
+- `settings/override/staticcache.ini.append.php` for every siteaccess,
+- `settings/siteaccess/<siteaccess>/staticcache.ini.append.php` for one siteaccess,
+- `extension/<extension>/settings/staticcache.ini.append.php` in an extension (read when the extension is active).
+
+## Name
+
+> A target, as a template: copy the block as \[Target\_<id>\] in  
+> settings/override/staticcache.ini.append.php and add <id> to TargetList\[\].  
+> This block is not built (TargetList\[\] does not name it). Settings left out  
+> of a target take the values shown here.  
+>
+> The name shown in lists and the administration.  
+
+Default: `Example target`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Name=Example target
+*/ ?>
+```
+
+## SiteAccess
+
+> The front siteaccess to publish. Administration and editing siteaccesses  
+> (those that require a login or use an administration design) are refused.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+SiteAccess=
+*/ ?>
+```
+
+## Kind
+
+> Where the build goes: github-pages (GitHub Pages) or git (any git host).  
+
+Default: `github-pages`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Kind=github-pages
+*/ ?>
+```
+
+## Remote
+
+> The git address the build is pushed to (no password or token in it).  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Remote=
+*/ ?>
+```
+
+## Branch
+
+> The branch the build is pushed to: gh-pages, or main with Folder=docs.  
+
+Default: `gh-pages`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Branch=gh-pages
+*/ ?>
+```
+
+## Folder
+
+> The folder of the branch the site is in: empty for the root, or docs.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Folder=
+*/ ?>
+```
+
+## Delivery
+
+> How GitHub Pages receives the build: branch (pushed to Branch) or actions  
+> (a GitHub Actions workflow publishes it).  
+
+Default: `branch`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Delivery=branch
+*/ ?>
+```
+
+## Links
+
+> How links are written: relative (../about-us/, works below any path) or  
+> base-path (/my-site/about-us/, below BasePath).  
+
+Default: `relative`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Links=relative
+*/ ?>
+```
+
+## BasePath
+
+> The path the site is served below: /<repository>/ for a GitHub project  
+> site, empty or / for a custom domain or a user site. 404.html links below  
+> it whatever Links says, and exp:static:serve serves the build below it.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+BasePath=
+*/ ?>
+```
+
+## PublicURL
+
+> The public address of the site (https://owner.github.io/my-site/), for the  
+> sitemap, robots.txt and the canonical and social card links. Empty: they  
+> are written like any other link and no sitemap is written.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+PublicURL=
+*/ ?>
+```
+
+## CustomDomain
+
+> A custom domain (www.example.com): written to CNAME; with it the site is  
+> served at the root of the domain.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+CustomDomain=
+*/ ?>
+```
+
+## Credential
+
+> The credential the push uses: token:<secret name>, sshkey:<key id>,  
+> app:<installation> or none. Only a name; the value stays in Setup > Secrets.  
+
+Default: `none`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Credential=none
+*/ ?>
+```
+
+## CrawlURL
+
+> Fetch the pages from this address instead of the siteaccess's SiteURL  
+> (an internal address of the same site, http://127.0.0.1:8080).  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+CrawlURL=
+*/ ?>
+```
+
+## LiveURL
+
+> Where links to what the build does not hold go (the search, the login, a  
+> form, another siteaccess): the live site, https://www.example.com. Empty:  
+> https:// and the host of the siteaccess's SiteURL.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+LiveURL=
+*/ ?>
+```
+
+## MaxPages
+
+> The most pages one build crawls (1 to 20000).  
+
+Default: `10000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+MaxPages=10000
+*/ ?>
+```
+
+## MaxDepth
+
+> How many links away from the front page the crawl goes (0 to 30). Empty:  
+> \[CacheSettings\] MaxCacheDepth.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+MaxDepth=
+*/ ?>
+```
+
+## Assets
+
+> The files copied: referenced (what the pages and style sheets name) or  
+> referenced-and-storage (also every image of var/<site>/storage that belongs  
+> to published content the anonymous user may see).  
+
+Default: `referenced-and-storage`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Assets=referenced-and-storage
+*/ ?>
+```
+
+## Extras
+
+> The files written besides the pages: nojekyll (.nojekyll, so GitHub Pages  
+> publishes the files as they are), 404 (404.html from the site's own 404  
+> page), robots (robots.txt), sitemap (sitemap.xml, needs PublicURL),  
+> manifest (.static-publish/manifest.json; always written). CNAME is written  
+> whenever CustomDomain is set.  
+
+Default: a list of 5: `nojekyll`, `404`, `robots`, `sitemap`, `manifest`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# an empty "Extras[]" first replaces the shipped list; without it the items are added
+Extras[]
+Extras[]=nojekyll
+Extras[]=404
+Extras[]=robots
+Extras[]=sitemap
+Extras[]=manifest
+*/ ?>
+```
+
+## PostProcess
+
+> What is done to every page: strip (always) removes debug output, form  
+> tokens, session ids and Content Security Policy nonces.  
+
+Default: a list of 1: `strip`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# an empty "PostProcess[]" first replaces the shipped list; without it the items are added
+PostProcess[]
+PostProcess[]=strip
+*/ ?>
+```
+
+## Search
+
+> A search page for the static copy: enabled or disabled.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Search=disabled
+*/ ?>
+```
+
+## Forms
+
+> What happens to forms: hide, or endpoint (they post to the live site).  
+
+Default: `hide`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Forms=hide
+*/ ?>
+```
+
+## ExcludePaths
+
+> Pages left out, by their path in the site (/members, /shop/\*); \* matches  
+> any part. Links to them go to the live site.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# an empty "ExcludePaths[]" first replaces the shipped list; without it the items are added
+ExcludePaths[]
+*/ ?>
+```
+
+## ExcludeSections
+
+> Pages left out by the section of their content (section ids).  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# an empty "ExcludeSections[]" first replaces the shipped list; without it the items are added
+ExcludeSections[]
+*/ ?>
+```
+
+## Triggers
+
+> What may start a build: manual, publish, schedule, cli.  
+
+Default: a list of 2: `manual`, `cli`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# an empty "Triggers[]" first replaces the shipped list; without it the items are added
+Triggers[]
+Triggers[]=manual
+Triggers[]=cli
+*/ ?>
+```
+
+## Schedule
+
+> When a scheduled build runs (a cron expression), for Triggers\[\]=schedule.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Schedule=
+*/ ?>
+```
+
+## Notify
+
+> When to send a notice: failure, success.  
+
+Default: a list of 1: `failure`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# an empty "Notify[]" first replaces the shipped list; without it the items are added
+Notify[]
+Notify[]=failure
+*/ ?>
+```
+
+## Webhook
+
+> An address that is sent a notice of every build (POST, JSON).  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+Webhook=
+*/ ?>
+```
+
+## Related
+
+- [All blocks of staticcache.ini](README.md)
+- [All INI files](../README.md)
+- [The settings page](../../../guides/settings-page.md)
+
+---
+
+Generated by `./console exp:help:examples` from `settings/staticcache.ini`. Do not edit this page: change the source and generate again ([how](../../README.md#how-the-generated-pages-are-made)). Free documentation: [GFDL 1.3 or later](../../../help/free-documentation.md).

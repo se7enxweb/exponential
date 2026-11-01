@@ -27,7 +27,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [codetemplate.ini](codetemplate/README.md) | Kernel | 1 |
 | [collaboration.ini](collaboration/README.md) | Kernel | 4 |
 | [collect.ini](collect/README.md) | Kernel | 4 |
-| [content.ini](content/README.md) | Kernel | 53 |
+| [content.ini](content/README.md) | Kernel | 54 |
 | [contentcheck.ini](contentcheck/README.md) | Kernel | 7 |
 | [contentfinder.ini](contentfinder/README.md) | Kernel | 1 |
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | Kernel | 1 |
@@ -84,7 +84,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [smarty.ini](smarty/README.md) | Kernel | 1 |
 | [soap.ini](soap/README.md) | Kernel | 2 |
 | [solr.ini](solr/README.md) | Kernel | 1 |
-| [staticcache.ini](staticcache/README.md) | Kernel | 1 |
+| [staticcache.ini](staticcache/README.md) | Kernel | 3 |
 | [subitems.ini](subitems/README.md) | Kernel | 7 |
 | [subitemscolumns.ini](subitemscolumns/README.md) | Kernel | 129 |
 | [syscard.ini](syscard/README.md) | Kernel | 16 |
