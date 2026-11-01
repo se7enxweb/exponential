@@ -1,11 +1,11 @@
 {
     "command:expmigrationcaption": {
         "en": "Take a caption of the installation now (database, storage, settings, the commits of the code), or list the captions; a dry run unless --apply",
-        "de": "Nimmt jetzt eine Aufnahme (Caption) der Installation auf (Datenbank, Speicher, Einstellungen, die Commits des Codes) oder listet die Aufnahmen; ein Probelauf ohne --apply"
+        "de": "Legt jetzt einen Sicherungspunkt (Caption) der Installation an (Datenbank, Speicher, Einstellungen, die Commits des Codes) oder listet die Sicherungspunkte; ein Probelauf ohne --apply"
     },
     "command:expmigrationcaption --backup-dir": {
         "en": "Where the captions made without git_manager are (default var/backup/upgrade)",
-        "de": "Wo die ohne git_manager gemachten Aufnahmen liegen (Standard var/backup/upgrade)"
+        "de": "Wo die ohne git_manager angelegten Sicherungspunkte liegen (Standard var/backup/upgrade)"
     },
     "command:expmigrationcaption --format": {
         "en": "text (default) or json (the machine output exp-migration/1)",
@@ -13,11 +13,11 @@
     },
     "command:expmigrationcaption --label": {
         "en": "The label of the caption (default: \"manual caption\" with the time)",
-        "de": "Die Bezeichnung der Aufnahme (Standard: \"manual caption\" mit der Uhrzeit)"
+        "de": "Die Bezeichnung des Sicherungspunkts (Standard: \"manual caption\" mit der Uhrzeit)"
     },
     "command:expmigrationcaption --list": {
         "en": "List the captions instead of taking one",
-        "de": "Die Aufnahmen auflisten, statt eine zu nehmen"
+        "de": "Die Sicherungspunkte auflisten, statt einen anzulegen"
     },
     "command:expmigrationcheck": {
         "en": "Check migration files without running them: names, headers, order, PHP syntax and classes (the lint for CI)",
@@ -97,7 +97,7 @@
     },
     "command:expmigrationmigrate": {
         "en": "Run the pending migrations: a dry run unless --apply; captions before and after, restore on failure, commit, tag and push",
-        "de": "Führt die offenen Migrationen aus: ein Probelauf ohne --apply; Aufnahmen davor und danach, Wiederherstellung bei einem Fehler, Commit, Tag und Push"
+        "de": "Führt die offenen Migrationen aus: ein Probelauf ohne --apply; Sicherungspunkte davor und danach, Wiederherstellung bei einem Fehler, Commit, Tag und Push"
     },
     "command:expmigrationmigrate --environment": {
         "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
@@ -113,7 +113,7 @@
     },
     "command:expmigrationmigrate --include-uncommitted": {
         "en": "Run although settings/, extension/ or design/ have changes that are not committed, and keep them in the caption",
-        "de": "Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese in der Aufnahme aufbewahren"
+        "de": "Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese im Sicherungspunkt aufbewahren"
     },
     "command:expmigrationmigrate --login": {
         "en": "Run as this user (default: [RunSettings] RunAsUser of migration.ini)",
@@ -121,7 +121,7 @@
     },
     "command:expmigrationmigrate --no-caption": {
         "en": "No caption before and after the run: a failure cannot be restored automatically",
-        "de": "Keine Aufnahme vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden"
+        "de": "Kein Sicherungspunkt vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden"
     },
     "command:expmigrationmigrate --no-commit": {
         "en": "Do not commit the status file and run log to the migrations repository (no tag and no push either)",
@@ -133,7 +133,7 @@
     },
     "command:expmigrationmigrate --no-restore": {
         "en": "After a failure, leave the installation as the failure left it instead of restoring the caption taken before the run",
-        "de": "Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt die vor dem Lauf genommene Aufnahme wiederherzustellen"
+        "de": "Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt den vor dem Lauf angelegten Sicherungspunkt wiederherzustellen"
     },
     "command:expmigrationmigrate --no-tag": {
         "en": "Commit and push, but do not tag the run",
@@ -147,9 +147,17 @@
         "en": "Migration files or folders, relative to the root or absolute (a comma list or repeated): migrate and dry-run take only the migrations in them, check checks them instead of the migration directories",
         "de": "Migrationsdateien oder -ordner, relativ zur Wurzel oder absolut (als Komma-Liste oder wiederholt): migrate und dry-run nehmen nur die Migrationen darin, check prüft sie statt der Migrationsverzeichnisse"
     },
+    "command:expmigrationmigrate --progress": {
+        "en": "Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)",
+        "de": "Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht)"
+    },
     "command:expmigrationmigrate --reason": {
         "en": "Why a changed migration is accepted (needed with --force; kept in the record and the audit log)",
         "de": "Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten)"
+    },
+    "command:expmigrationmigrate --run-id": {
+        "en": "The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run",
+        "de": "Die Kennung des zu startenden Laufs (Standard eine neue: <Datum>-<Uhrzeit>-<6 Hex-Ziffern>); die Administration vergibt sie, bevor sie den Lauf startet"
     },
     "command:expmigrationpush": {
         "en": "Push the migration runs whose push failed (push state pending) to the remote of the migrations repository; a dry run unless --apply",
@@ -181,7 +189,7 @@
     },
     "command:expmigrationresume --include-uncommitted": {
         "en": "Run although settings/, extension/ or design/ have changes that are not committed, and keep them in the caption",
-        "de": "Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese in der Aufnahme aufbewahren"
+        "de": "Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese im Sicherungspunkt aufbewahren"
     },
     "command:expmigrationresume --login": {
         "en": "Run as this user (default: [RunSettings] RunAsUser of migration.ini)",
@@ -189,7 +197,7 @@
     },
     "command:expmigrationresume --no-caption": {
         "en": "No caption before and after the run: a failure cannot be restored automatically",
-        "de": "Keine Aufnahme vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden"
+        "de": "Kein Sicherungspunkt vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden"
     },
     "command:expmigrationresume --no-commit": {
         "en": "Do not commit the status file and run log to the migrations repository (no tag and no push either)",
@@ -201,27 +209,35 @@
     },
     "command:expmigrationresume --no-restore": {
         "en": "After a failure, leave the installation as the failure left it instead of restoring the caption taken before the run",
-        "de": "Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt die vor dem Lauf genommene Aufnahme wiederherzustellen"
+        "de": "Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt den vor dem Lauf angelegten Sicherungspunkt wiederherzustellen"
     },
     "command:expmigrationresume --no-tag": {
         "en": "Commit and push, but do not tag the run",
         "de": "Committen und pushen, aber den Lauf nicht taggen"
     },
+    "command:expmigrationresume --progress": {
+        "en": "Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)",
+        "de": "Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht)"
+    },
     "command:expmigrationresume --reason": {
         "en": "Why a changed migration is accepted (needed with --force; kept in the record and the audit log)",
         "de": "Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten)"
     },
+    "command:expmigrationresume --run-id": {
+        "en": "The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run",
+        "de": "Die Kennung des zu startenden Laufs (Standard eine neue: <Datum>-<Uhrzeit>-<6 Hex-Ziffern>); die Administration vergibt sie, bevor sie den Lauf startet"
+    },
     "command:expmigrationrollback": {
         "en": "Take migrations back: a run (its caption restored), one migration (its down()) or, for experts, any caption; a dry run unless --apply",
-        "de": "Nimmt Migrationen zurück: einen Lauf (seine Aufnahme wird wiederhergestellt), eine Migration (ihr down()) oder, für Fachleute, jede Aufnahme; ein Probelauf ohne --apply"
+        "de": "Nimmt Migrationen zurück: einen Lauf (sein Sicherungspunkt wird wiederhergestellt), eine Migration (ihr down()) oder, für Fachleute, jeden Sicherungspunkt; ein Probelauf ohne --apply"
     },
     "command:expmigrationrollback --backup-dir": {
         "en": "Where the captions made without git_manager are (default var/backup/upgrade)",
-        "de": "Wo die ohne git_manager gemachten Aufnahmen liegen (Standard var/backup/upgrade)"
+        "de": "Wo die ohne git_manager angelegten Sicherungspunkte liegen (Standard var/backup/upgrade)"
     },
     "command:expmigrationrollback --confirm": {
         "en": "The id of the caption typed again, to restore it with --expert",
-        "de": "Die ID der Aufnahme, noch einmal eingegeben, um sie mit --expert wiederherzustellen"
+        "de": "Die ID des Sicherungspunkts, noch einmal eingegeben, um ihn mit --expert wiederherzustellen"
     },
     "command:expmigrationrollback --environment": {
         "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
@@ -229,11 +245,11 @@
     },
     "command:expmigrationrollback --expert": {
         "en": "Restore a caption that is not the one taken before a run (with --confirm)",
-        "de": "Eine Aufnahme wiederherstellen, die nicht die vor einem Lauf genommene ist (mit --confirm)"
+        "de": "Einen Sicherungspunkt wiederherstellen, der nicht der vor einem Lauf angelegte ist (mit --confirm)"
     },
     "command:expmigrationrollback --force-no-caption": {
         "en": "With --no-safety-caption on a production installation: restore without a caption all the same",
-        "de": "Mit --no-safety-caption auf einer Produktivinstallation: trotzdem ohne Aufnahme wiederherstellen"
+        "de": "Mit --no-safety-caption auf einer Produktivinstallation: trotzdem ohne Sicherungspunkt wiederherstellen"
     },
     "command:expmigrationrollback --format": {
         "en": "text (default) or json (the machine output exp-migration/1)",
@@ -245,7 +261,7 @@
     },
     "command:expmigrationrollback --no-safety-caption": {
         "en": "Restore without taking a caption of the current state first; refused on production without --force-no-caption",
-        "de": "Wiederherstellen, ohne zuerst eine Aufnahme des aktuellen Zustands zu nehmen; auf einer Produktivinstallation ohne --force-no-caption verweigert"
+        "de": "Wiederherstellen, ohne zuerst einen Sicherungspunkt des aktuellen Zustands anzulegen; auf einer Produktivinstallation ohne --force-no-caption verweigert"
     },
     "command:expmigrationrollback --no-verify": {
         "en": "Skip the verification after the restore",
@@ -253,7 +269,11 @@
     },
     "command:expmigrationrollback --parts": {
         "en": "Only these parts of the caption, a comma list of database, storage, settings, libraries, code (default [CaptionSettings] RestoreParts)",
-        "de": "Nur diese Teile der Aufnahme, eine Komma-Liste aus database, storage, settings, libraries, code (Standard [CaptionSettings] RestoreParts)"
+        "de": "Nur diese Teile des Sicherungspunkts, eine Komma-Liste aus database, storage, settings, libraries, code (Standard [CaptionSettings] RestoreParts)"
+    },
+    "command:expmigrationrollback --progress": {
+        "en": "Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)",
+        "de": "Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht)"
     },
     "command:expmigrationrollback --source": {
         "en": "The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)",

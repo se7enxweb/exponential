@@ -41,6 +41,16 @@
  *   migration/step/after   ( string $runId, expMigration $migration, array $entry, expMigrationContext $context )
  *   migration/run/after    ( string $runId, array $report, expMigrationContext $context )
  *
+ * The progress callback (option progress, a callable( string $event, array $data )) follows a run that writes as it
+ * goes, for a page that shows it live (expMigrationProgress writes the events to a file the administration reads):
+ *   run        run_id, mode (apply, rollback), total (the migrations to apply or undo), ids
+ *   phase      name: caption-pre (the code check and the caption before), after-migrations (the restore after a
+ *              failure), caption-post (the caption after, the commit, tag and push)
+ *   step       id, index (from 1), total
+ *   step-done  id, index, total, state, action, duration_ms
+ *   end        exit, summary
+ * A callback that throws is ignored: the run never depends on who watches it.
+ *
  * The report (run(), rollback()) is versioned (exp-migration/1); its exit codes are expUpgrade's (0 done, 1 failed,
  * 2 usage, 3 unreachable, 4 internal).
  *
@@ -63,12 +73,13 @@ class expMigrationRunner
      * @param array $options 'force' => bool, 'reason' => string (both for the checksum guard),
      *                       'stop-on-failure' => bool (default true),
      *                       'flow' => expMigrationRunFlow|null (captions, restore on failure, commit, tag, push),
-     *                       'plan' => bool (default true; false: a dry run lists no plan(), as the status does)
+     *                       'plan' => bool (default true; false: a dry run lists no plan(), as the status does),
+     *                       'progress' => callable|null (see the class)
      */
     public function __construct( expMigrationContext $context, array $options = array() )
     {
         $this->context = $context;
-        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true, 'flow' => null, 'plan' => true );
+        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true, 'flow' => null, 'plan' => true, 'progress' => null );
     }
 
     /** @return expMigrationRunFlow|null */
@@ -100,7 +111,7 @@ class expMigrationRunner
      *                       select()), migrations (expMigration[] in their order instead of the installation's: a
      *                       test's), the options of expMigrationContext and those of
      *                       expMigrationRunFlow::fromSettings() (no-caption, no-restore, no-commit, no-push, no-tag,
-     *                       include-uncommitted)
+     *                       include-uncommitted), progress (a callable, see the class)
      * @return array the report; the problems of finding and loading are its errors
      */
     public static function migrate( array $options = array() )
@@ -131,7 +142,7 @@ class expMigrationRunner
                         $errors[] = "$id requires " . $dep->id() . ", which is $state and not selected: add it to --only or --path";
                 }
         }
-        $runnerOptions = self::settingsOptions( array_intersect_key( $options, array_flip( array( 'force', 'reason', 'stop-on-failure' ) ) ) );
+        $runnerOptions = self::settingsOptions( array_intersect_key( $options, array_flip( array( 'force', 'reason', 'stop-on-failure', 'progress' ) ) ) );
         $runnerOptions['flow'] = expMigrationRunFlow::fromSettings( $context, $options );
         $runner = new self( $context, $runnerOptions );
         if ( $errors )
@@ -431,11 +442,15 @@ class expMigrationRunner
                 $ids[] = $report['migrations'][$i]['id'];
             $flow = $this->flow();
             // the caption flow: the code trees checked, the caption taken (a run without one goes on with a warning)
+            $this->progress( 'run', array( 'run_id' => $context->runId(), 'mode' => 'apply', 'total' => count( $ids ), 'ids' => $ids ) );
+            if ( $flow )
+                $this->progress( 'phase', array( 'name' => 'caption-pre' ) );
             if ( $flow && !$flow->before( $report, $ids ) )
             {
                 if ( $report['exit'] === expUpgrade::EXIT_OK )
                     $report['exit'] = expUpgrade::EXIT_FAILED;
                 $this->summarize( $report );
+                $this->progress( 'end', array( 'exit' => $report['exit'], 'summary' => $report['summary'] ) );
                 if ( !$heldBefore )
                     $lock->release();
                 return $report;
@@ -458,13 +473,17 @@ class expMigrationRunner
 
                 $outcome = array();
                 $stop = false;
+                $total = count( $pending );
+                $index = 0;
                 foreach ( $pending as $i )
                 {
                     $entry =& $report['migrations'][$i];
                     $migration = $byId[$entry['id']];
+                    $index++;
                     if ( $stop )
                     {
                         $entry['action'] = 'not-run';
+                        $this->stepDone( $entry, $index, $total );
                         unset( $entry );
                         continue;
                     }
@@ -478,10 +497,13 @@ class expMigrationRunner
                         $entry['messages'][] = 'waits for ' . implode( ', ', $blockedBy );
                         $outcome[$entry['id']] = 'blocked';
                         $context->log( 'warning', $entry['id'] . ' not run: waits for ' . implode( ', ', $blockedBy ) );
+                        $this->stepDone( $entry, $index, $total );
                         unset( $entry );
                         continue;
                     }
+                    $this->progress( 'step', array( 'id' => $entry['id'], 'index' => $index, 'total' => $total ) );
                     $this->apply( $entry, $migration );
+                    $this->stepDone( $entry, $index, $total );
                     $outcome[$entry['id']] = $entry['state'];
                     if ( $entry['state'] === expMigration::FAILED && !empty( $this->options['stop-on-failure'] ) )
                         $stop = true;
@@ -494,7 +516,10 @@ class expMigrationRunner
             }
             // after a failure: the pre caption restored, before the run's record is written
             if ( $flow )
+            {
+                $this->progress( 'phase', array( 'name' => 'after-migrations' ) );
                 $flow->afterMigrations( $report );
+            }
         }
         catch ( Throwable $e )
         {
@@ -510,6 +535,7 @@ class expMigrationRunner
             $flow = $this->flow();
             if ( $flow )
             {
+                $this->progress( 'phase', array( 'name' => 'caption-post' ) );
                 try
                 {
                     $flow->afterRun( $report );
@@ -519,6 +545,7 @@ class expMigrationRunner
                     $report['warnings'][] = 'after the run: ' . $e->getMessage();
                 }
             }
+            $this->progress( 'end', array( 'exit' => $report['exit'], 'summary' => $report['summary'] ) );
         }
         if ( $lock && !$heldBefore )
             $lock->release();
@@ -581,6 +608,11 @@ class expMigrationRunner
                 return $report;
             }
             $context->becomeUser();
+            $total = count( $report['migrations'] );
+            $ids = array();
+            foreach ( $report['migrations'] as $undo )
+                $ids[] = $undo['id'];
+            $this->progress( 'run', array( 'run_id' => $context->runId(), 'mode' => 'rollback', 'total' => $total, 'ids' => $ids ) );
             try
             {
                 $stop = false;
@@ -590,9 +622,11 @@ class expMigrationRunner
                     if ( $stop )
                     {
                         $entry['action'] = 'not-run';
+                        $this->stepDone( $entry, $i + 1, $total );
                         continue;
                     }
                     $migration = $reversed[$i];
+                    $this->progress( 'step', array( 'id' => $entry['id'], 'index' => $i + 1, 'total' => $total ) );
                     $context->notify( 'migration/step/before', array( $context->runId(), $migration, $context ) );
                     $start = microtime( true );
                     $useTransaction = $this->useTransaction( $migration );
@@ -625,6 +659,7 @@ class expMigrationRunner
                                                                          'x' => array( 'source' => $entry['source'], 'run_id' => $context->runId(), 'engine' => $context->engine(),
                                                                                        'duration_ms' => $entry['duration_ms'] ) ) );
                     $context->notify( 'migration/step/after', array( $context->runId(), $migration, $entry, $context ) );
+                    $this->stepDone( $entry, $i + 1, $total );
                 }
                 unset( $entry );
             }
@@ -639,6 +674,8 @@ class expMigrationRunner
             $report['exit'] = expUpgrade::EXIT_INTERNAL;
         }
         $this->summarize( $report );
+        if ( $apply && $lock )
+            $this->progress( 'end', array( 'exit' => $report['exit'], 'summary' => $report['summary'] ) );
         if ( $apply )
             $context->writeStatus();
         if ( $lock && !$heldBefore )
@@ -805,6 +842,38 @@ class expMigrationRunner
         return array_merge( array( 'run_id' => $context->runId(), 'state' => $state, 'started_at' => $started, 'finished_at' => $finished,
                                    'run_by' => $context->runBy(), 'environment' => $context->environment(), 'log_file' => $context->logFile(),
                                    'message' => $message ), $context->runFields() );
+    }
+
+    /**
+     * Tells the progress callback (option progress) an event; a callback that throws is ignored.
+     *
+     * @param string $event
+     * @param array $data
+     */
+    protected function progress( $event, array $data = array() )
+    {
+        if ( !is_callable( $this->options['progress'] ) )
+            return;
+        try
+        {
+            call_user_func( $this->options['progress'], (string)$event, $data );
+        }
+        catch ( Throwable $e )
+        {
+        }
+    }
+
+    /**
+     * The event step-done of an entry.
+     *
+     * @param array $entry
+     * @param int $index from 1
+     * @param int $total
+     */
+    protected function stepDone( array $entry, $index, $total )
+    {
+        $this->progress( 'step-done', array( 'id' => $entry['id'], 'index' => (int)$index, 'total' => (int)$total, 'state' => $entry['state'],
+                                             'action' => $entry['action'], 'duration_ms' => (int)$entry['duration_ms'] ) );
     }
 
     /**

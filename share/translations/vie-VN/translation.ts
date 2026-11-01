@@ -15142,6 +15142,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API GraphQL: điểm cuối, lược đồ và nơi thử nghiệm truy vấn.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Di chuyển dữ liệu</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Các thay đổi của bản cài đặt được lưu thành tệp: tình trạng, các lượt chạy, chạy và hoàn tác.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Hãy gửi mutation đến /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Di chuyển dữ liệu</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Không đọc được tình trạng: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Các bảng của di chuyển dữ liệu chưa tồn tại: ./console exp:upgrade --apply sẽ tạo chúng.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count bản di chuyển thất bại</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Một lượt chạy đang diễn ra, do %user bắt đầu</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Bản cài đặt đang bị khóa: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Đang chờ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Mồ côi</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Lượt chạy gần nhất</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>chưa có</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Tất cả bản di chuyển</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Lượt chạy mô phỏng</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Chạy thử</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Các bản di chuyển đang chờ đã chạy trong một giao dịch rồi được hoàn tác: không có gì được giữ lại. Bên dưới là những gì mỗi bản đã thay đổi trong cơ sở dữ liệu.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Những gì một lượt chạy sẽ làm lúc này. Không có gì bị thay đổi: mỗi bản di chuyển đang chờ liệt kê các thay đổi nó sẽ thực hiện, còn lượt chạy liệt kê những gì nó sẽ làm trước và sau.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Mô phỏng</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Chạy</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Chạy thử thất bại: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Mô phỏng cần PostgreSQL hoặc SQLite, vốn cho phép hoàn tác thay đổi lược đồ; trên cơ sở dữ liệu này, kế hoạch bên dưới là những gì một lượt chạy sẽ làm.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Các bản di chuyển</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Bản di chuyển</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Nó sẽ làm gì</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Mô phỏng: %result trong %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Chưa có bản di chuyển nào.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Trước và sau lượt chạy</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Điểm khôi phục trước</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>được tạo, và được khôi phục khi một bản di chuyển thất bại</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>tắt</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Điểm khôi phục sau</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>được tạo khi lượt chạy thành công</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total bản di chuyển: %pending đang chờ, %done đã xong, %failed thất bại.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Lịch sử di chuyển dữ liệu</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Mọi lượt chạy cùng người dùng, môi trường, điểm khôi phục và những gì đã được commit, gắn thẻ và đẩy (push). Lượt chạy thất bại hoặc bị gián đoạn có thể được tiếp tục; lượt chạy có điểm khôi phục được tạo trước đó có thể được hủy bỏ.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Không đọc được các lượt chạy: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Các bảng của di chuyển dữ liệu chưa tồn tại: ./console exp:upgrade --apply sẽ tạo chúng.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Lượt chạy</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Bắt đầu</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Bởi</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Điểm khôi phục</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Kho mã</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Thao tác</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>trước</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>sau</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>đẩy: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Tiếp tục</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Hoàn tác</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Không có lượt chạy nào ở trạng thái này.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Bắt đầu tại đây</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Các lượt chạy, tiếp tục và hoàn tác được bắt đầu trên các trang này, kèm báo cáo của từng cái.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Gì</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Kết quả</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Hoàn tác</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Hoàn tác %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Lượt chạy %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Những gì lượt chạy đã làm, bản ghi và nhật ký của nó. Lượt chạy bắt đầu tại đây vẫn tiếp tục ở chế độ nền khi trang này được đóng; mở lại trang để theo dõi.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Tiếp tục lượt chạy này</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Hoàn tác lượt chạy này</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Không đọc được bản ghi: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Tiến độ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Do %user bắt đầu lúc %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Đang kiểm tra mã và tạo điểm khôi phục trước lượt chạy</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Đang chạy %id (%index trên %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>Đã xong %done trên %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Các bản di chuyển đã chạy; đang khôi phục điểm khôi phục nếu có bản thất bại</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Đang tạo điểm khôi phục sau lượt chạy, commit, gắn thẻ và đẩy</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Đang khôi phục điểm khôi phục</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Lượt chạy đã kết thúc. Đang tải báo cáo.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Không theo dõi được tiến độ. Hãy tải lại trang để xem lượt chạy đang thế nào.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Trang này theo dõi lượt chạy trong khi nó diễn ra.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Tải lại</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Báo cáo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Thời lượng</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms mili giây</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Những lỗi mà lượt chạy đã in ra</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Bản ghi</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Môi trường</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>không có</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Kết thúc</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Cam kết (commit)</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Thẻ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Đẩy (push)</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Thông điệp</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Các bản di chuyển của lượt chạy này</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Nguồn</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Nhật ký lượt chạy</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Chỉ hiển thị phần cuối của nhật ký.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>đang chạy</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>kết thúc không có báo cáo</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>thành công</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>thất bại</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>bị từ chối</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>không kết nối được cơ sở dữ liệu</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>lỗi nội bộ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Một lượt chạy đang diễn ra</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind do %user bắt đầu lúc %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Theo dõi</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Bản cài đặt đang bị khóa</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Một lượt chạy khác đang giữ khóa (một lần nâng cấp hoặc lượt chạy trên dòng lệnh): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>đã xong</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>đang chờ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>không cần</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>không rõ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>đã hoàn tác</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>đã áp dụng</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>sẽ được áp dụng</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>đã hủy bỏ</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>sẽ được hủy bỏ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>chưa chạy</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>chờ bản khác</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>đã chấp nhận thay đổi</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>thay đổi sẽ được chấp nhận</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>đã mô phỏng</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Di chuyển dữ liệu</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tình trạng</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Lịch sử</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Hủy bỏ %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Một lượt chạy được đưa về điểm khôi phục tạo trước nó, một bản di chuyển được hủy bỏ bằng down() của nó. Khôi phục một điểm khôi phục cũ hơn là việc dành cho chuyên gia. Mỗi thao tác chạy nền dưới tên bạn, sau khi tạo điểm khôi phục của trạng thái hiện tại.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Không đọc được những gì có thể hủy bỏ: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Một lượt chạy</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Một bản di chuyển</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Một điểm khôi phục cũ hơn</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Mô tả</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>có</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>không</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Điểm khôi phục</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Nhãn</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Đã tạo</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Loại</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Các phần cần khôi phục</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Cơ sở dữ liệu</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Các tệp lưu trữ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Các thiết lập (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Khôi phục đưa cơ sở dữ liệu về thời điểm của điểm khôi phục, kể cả các phiên: sau đó bạn có thể phải đăng nhập lại. Mọi thay đổi kể từ đó sẽ mất; trước tiên một điểm khôi phục của trạng thái hiện tại được tạo.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Tôi biết điều này khôi phục những gì</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Nhập lại mã của điểm khôi phục</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Có, hủy bỏ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hủy</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Các lượt chạy có điểm khôi phục được tạo trước chúng.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Chọn</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Chưa có lượt chạy nào có điểm khôi phục.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Các bản di chuyển đã áp dụng có thể tự hủy bỏ (chúng có down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Không bản di chuyển đã áp dụng nào có down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Các điểm khôi phục cũ hơn (chuyên gia)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Chưa có điểm khôi phục nào.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Chạy các bản di chuyển</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Lượt chạy diễn ra ở chế độ nền dưới tên %user, và trang của nó hiển thị tiến trình. Trước bản di chuyển đầu tiên, một điểm khôi phục của bản cài đặt được tạo; khi một bản di chuyển thất bại, lượt chạy dừng lại và điểm khôi phục được khôi phục.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Chạy thử trước</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Không đọc được tình trạng: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Các bản di chuyển đang chờ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Chúng chạy theo thứ tự này. Bỏ chọn một bản để để nó, cùng các bản phụ thuộc vào nó, cho lượt chạy sau.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Chạy</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Bật chế độ bảo trì trong khi chạy.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Đã thay đổi sau khi áp dụng</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Các tệp này không phải là các tệp đã được áp dụng. Lượt chạy sẽ từ chối chúng trừ khi thay đổi được chấp nhận kèm lý do; chúng không chạy lại, tổng kiểm mới được ghi lại và lý do được lưu trong nhật ký kiểm toán.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Chấp nhận các thay đổi</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Lý do</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Giá trị mặc định là an toàn. Mỗi ô sẽ bỏ qua một bước.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Không điểm khôi phục</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Không có điểm khôi phục trước và sau lượt chạy: lỗi không thể được khôi phục tự động.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Không khôi phục</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Sau khi lỗi, để nguyên bản cài đặt như lỗi đã để lại.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Giữ các thay đổi chưa commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Vẫn chạy dù thiết lập, phần mở rộng hoặc giao diện có thay đổi chưa commit; chúng được đưa vào điểm khôi phục.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Không commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Không commit tệp tình trạng và nhật ký lượt chạy (cũng không gắn thẻ và không đẩy).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Không đẩy</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit và gắn thẻ, nhưng không đẩy.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Không gắn thẻ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit và đẩy, nhưng không gắn thẻ lượt chạy.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Có, chạy các bản di chuyển này ngay</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Không có bản di chuyển nào đang chờ.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Quay lại tình trạng</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Các thay đổi của bản cài đặt này được viết một lần thành tệp (nội dung, lớp, vai trò, thiết lập, lược đồ) và áp dụng cho mọi bản cài đặt của trang theo cùng thứ tự. Một lượt chạy trước tiên tạo điểm khôi phục, khôi phục nó khi một bản di chuyển thất bại, và ghi lại, commit và đẩy những gì nó đã làm.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Chạy %count bản đang chờ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tổng quan</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Đang chờ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Đã xong</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Không cần</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Cơ sở dữ liệu</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>giao dịch: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Bản di chuyển của trang nằm trong migrations/, của một phần mở rộng nằm trong extension/&lt;name&gt;/migrations/. Chúng chạy theo thứ tự tên và các phụ thuộc của chúng.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Lượt chạy gần nhất</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Tệp đã thay đổi sau khi được áp dụng.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Chưa có bản di chuyển nào. ./console exp:migration:generate --skeleton &lt;name&gt; --apply sẽ viết bản đầu tiên.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Các lượt chạy mới nhất</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Mọi lượt chạy</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Chưa có lượt chạy nào.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Mô phỏng một lượt chạy cần chính sách migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Một lượt chạy đang diễn ra: hãy mô phỏng khi nó kết thúc.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Thiết lập</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target không phải là lượt chạy, bản di chuyển hay điểm khôi phục nào của bản cài đặt này.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Trước tiên hãy đánh dấu “Có, hủy bỏ”.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Khôi phục một điểm khôi phục cũ hơn là việc dành cho chuyên gia: hãy đánh dấu “Tôi biết điều này khôi phục những gì”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Nhập lại mã của điểm khôi phục: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Chọn ít nhất một phần để khôi phục.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Lượt chạy này không có điểm khôi phục tạo trước nó: hãy hủy bỏ từng bản di chuyển của nó, hoặc khôi phục một điểm khôi phục cũ hơn.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Bản di chuyển này không thể tự hủy bỏ: nó chưa được áp dụng, hoặc không có down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Không đọc được biểu mẫu.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Chọn lượt chạy cần tiếp tục.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Trước tiên hãy đánh dấu “Có, chạy các bản di chuyển này ngay”.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Chọn ít nhất một bản di chuyển.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Một bản di chuyển đã thay đổi sau khi áp dụng: hãy chấp nhận thay đổi kèm lý do, hoặc đặt lại tệp như cũ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Nêu lý do chấp nhận các bản di chuyển đã thay đổi.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Lý do tối đa 500 ký tự.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Một lượt chạy bắt đầu tại đây vẫn đang diễn ra (%detail). Hãy đợi nó kết thúc.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Một lượt chạy khác đang giữ khóa của bản cài đặt: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Lượt chạy cần một người dùng tồn tại và đã đăng nhập.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Không tìm thấy chương trình dòng lệnh php. Hãy đặt migration.ini [AdminSettings] PhpCliPath thành đường dẫn đầy đủ của nó.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open bị tắt, nên không thể bắt đầu lượt chạy tại đây. Hãy chạy ./console exp:migration:migrate --apply trên máy chủ.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Không ghi được vào thư mục của các lượt chạy: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Lượt chạy đã bắt đầu nhưng không báo mã tiến trình. Hãy kiểm tra %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Cho biết cần hủy bỏ gì.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Không thể bắt đầu lượt chạy.</translation>
     </message>
 </context>
 </TS>

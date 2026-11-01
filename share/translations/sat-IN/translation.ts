@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ᱱᱚᱶᱟ ᱨᱮᱭᱟᱜ ᱮᱱᱰ ᱯᱚᱭᱮᱱᱴ, ᱥᱠᱤᱢᱟ ᱟᱨ ᱠᱣᱮᱨᱤ ᱠᱚ ᱧᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱯᱞᱮᱜᱽᱨᱟᱣᱩᱸᱰ᱾</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ᱯᱷᱟᱭᱤᱞ ᱞᱮᱠᱟ ᱫᱚᱦᱚ ᱟᱠᱟᱱ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱵᱚᱫᱚᱞ ᱠᱚ: ᱚᱱᱟ ᱠᱚᱣᱟᱜ ᱦᱟᱞᱛ, ᱪᱟᱞᱟᱣ ᱠᱚ, ᱪᱟᱞᱟᱣ ᱟᱨ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ᱢᱭᱩᱴᱮᱥᱚᱱ ᱠᱚ /api/graphql ᱛᱮ ᱠᱩᱞ ᱢᱮ᱾</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ᱦᱟᱞᱛ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚᱣᱟᱜ ᱴᱮᱵᱩᱞ ᱠᱚ ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱹᱱᱩᱜᱼᱟ: ./console exp:upgrade --apply ᱛᱮ ᱵᱮᱱᱟᱣᱜᱼᱟ ᱠᱚ.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ᱢᱤᱫ ᱪᱟᱞᱟᱣ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ, %user ᱮᱛᱦᱚᱵ ᱟᱠᱟᱫᱟᱭ</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱞᱚᱠ ᱟᱠᱟᱱᱟ: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ᱴᱩᱣᱟᱹᱨ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱡᱟᱦᱟᱸᱱᱟᱜ ᱵᱟᱹᱱᱩᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ᱡᱚᱛᱚ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>ᱥᱤᱢᱩᱞᱮᱴ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ᱯᱚᱨᱤᱠᱷᱟ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱢᱤᱫ ᱴᱨᱟᱱᱡᱮᱠᱥᱚᱱ ᱨᱮ ᱪᱟᱞᱟᱣ ᱞᱮᱱᱟ, ᱚᱱᱟ ᱛᱟᱭᱚᱢ ᱛᱮ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱠᱟᱱᱟ: ᱡᱟᱦᱟᱸᱱᱟᱜ ᱵᱟᱝ ᱫᱚᱦᱚ ᱞᱮᱱᱟ. ᱞᱟᱛᱟᱨ ᱨᱮ ᱢᱤᱫᱴᱟᱹᱝ ᱢᱤᱫᱴᱟᱹᱝ ᱰᱟᱴᱟᱵᱮᱥ ᱨᱮ ᱪᱮᱫ ᱵᱚᱫᱚᱞ ᱞᱮᱫᱟ ᱚᱱᱟ ᱢᱮᱱᱟᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ᱱᱤᱛᱚᱜ ᱢᱤᱫ ᱪᱟᱞᱟᱣ ᱪᱮᱫ ᱠᱚᱨᱟᱭ. ᱡᱟᱦᱟᱸᱱᱟᱜ ᱵᱟᱝ ᱵᱚᱫᱚᱞᱚᱜᱼᱟ: ᱡᱚᱛᱚ ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱟᱡᱟᱜ ᱵᱚᱫᱚᱞ ᱠᱚ ᱛᱟᱞᱠᱟ ᱮᱢᱚᱜᱼᱟ, ᱟᱨ ᱪᱟᱞᱟᱣ ᱞᱟᱦᱟ ᱟᱨ ᱛᱟᱭᱚᱢ ᱪᱮᱫ ᱠᱚᱨᱟᱭ ᱚᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>ᱥᱤᱢᱩᱞᱮᱴ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ᱯᱚᱨᱤᱠᱷᱟ ᱪᱟᱞᱟᱣ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ᱥᱤᱢᱩᱞᱮᱥᱚᱱ ᱞᱟᱹᱜᱤᱫ PostgreSQL ᱟᱨᱵᱟᱝ SQLite ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ, ᱚᱱᱟ ᱠᱚᱣᱟᱜ ᱥᱠᱤᱢᱟ ᱵᱚᱫᱚᱞ ᱠᱚ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ; ᱱᱚᱶᱟ ᱰᱟᱴᱟᱵᱮᱥ ᱨᱮ ᱞᱟᱛᱟᱨ ᱨᱮᱭᱟᱜ ᱡᱚᱡᱚᱢ ᱫᱚ ᱪᱟᱞᱟᱣ ᱪᱮᱫ ᱠᱚᱨᱟᱭ ᱚᱱᱟ ᱩᱫᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ᱦᱟᱞᱛ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ᱪᱮᱫ ᱠᱚᱨᱟᱭ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ᱥᱤᱢᱩᱞᱮᱥᱚᱱ: %ms ᱢᱤ.ᱥᱮ. ᱨᱮ %result</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱡᱟᱦᱟᱸᱱ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱞᱟᱦᱟ ᱟᱨ ᱛᱟᱭᱚᱢ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ᱞᱟᱦᱟ ᱥᱱᱮᱯᱥᱚᱴ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ᱦᱟᱛᱟᱣᱚᱜᱼᱟ, ᱟᱨ ᱢᱤᱫ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱝ ᱦᱩᱭ ᱠᱷᱟᱱ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ᱵᱚᱸᱫ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱥᱱᱮᱯᱥᱚᱴ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱦᱩᱭ ᱮᱱ ᱠᱷᱟᱱ ᱦᱟᱛᱟᱣᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total ᱢᱟᱭᱜᱨᱮᱥᱚᱱ: %pending ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ, %done ᱪᱟᱵᱟ ᱟᱠᱟᱫ, %failed ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱤᱛᱷᱟᱥ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ᱡᱚᱛᱚ ᱪᱟᱞᱟᱣ ᱟᱡᱟᱜ ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ, ᱯᱚᱨᱚᱵᱮᱥ, ᱥᱱᱮᱯᱥᱚᱴ ᱠᱚ ᱟᱨ ᱪᱮᱫ ᱠᱚᱢᱤᱴ, ᱴᱮᱜ ᱟᱨ ᱯᱩᱥ ᱞᱮᱱᱟ ᱚᱱᱟ ᱥᱟᱶ. ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ ᱟᱨᱵᱟᱝ ᱛᱟᱺᱜᱤ ᱪᱟᱞᱟᱣ ᱟᱨᱦᱚᱸ ᱮᱛᱦᱚᱵ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ; ᱡᱟᱦᱟᱸ ᱪᱟᱞᱟᱣ ᱞᱟᱦᱟ ᱥᱱᱮᱯᱥᱚᱴ ᱦᱟᱛᱟᱣ ᱞᱮᱱᱟ ᱚᱱᱟ ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱠᱚ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚᱣᱟᱜ ᱴᱮᱵᱩᱞ ᱠᱚ ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱹᱱᱩᱜᱼᱟ: ./console exp:upgrade --apply ᱛᱮ ᱵᱮᱱᱟᱣᱜᱼᱟ ᱠᱚ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ᱧᱮᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ᱡᱚᱛᱚ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ᱮᱛᱠᱟᱣ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ᱦᱚᱲ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ᱥᱱᱮᱯᱥᱚᱴ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ᱞᱟᱦᱟ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ᱛᱟᱭᱚᱢ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ᱯᱩᱥ: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱮᱛᱠᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ᱱᱚᱶᱟ ᱦᱟᱞᱛ ᱨᱮ ᱡᱟᱦᱟᱸᱱ ᱪᱟᱞᱟᱣ ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ᱱᱚᱸᱰᱮ ᱮᱛᱦᱚᱵ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱟᱦᱴᱟ ᱠᱚ ᱨᱮ ᱮᱛᱦᱚᱵ ᱟᱠᱟᱱ ᱪᱟᱞᱟᱣ, ᱟᱨᱦᱚᱸ ᱮᱛᱦᱚᱵ ᱟᱨ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱠᱚ, ᱢᱤᱫᱴᱟᱹᱝ ᱢᱤᱫᱴᱟᱹᱝ ᱨᱤᱯᱚᱨᱴ ᱥᱟᱶ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ᱪᱮᱫ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ᱵᱟᱰᱟᱭ ᱯᱷᱚᱞ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ᱨᱮᱭᱟᱜ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ᱪᱟᱞᱟᱣ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱪᱮᱫ ᱞᱮᱫᱟ, ᱟᱡᱟᱜ ᱨᱮᱠᱚᱨᱰ ᱟᱨ ᱟᱡᱟᱜ ᱞᱚᱜ. ᱱᱚᱸᱰᱮ ᱮᱛᱦᱚᱵ ᱟᱠᱟᱱ ᱪᱟᱞᱟᱣ ᱱᱚᱶᱟ ᱥᱟᱦᱴᱟ ᱵᱚᱸᱫ ᱠᱷᱟᱱ ᱵᱮᱠᱜᱨᱟᱣᱩᱱᱰ ᱨᱮ ᱪᱟᱞᱟᱜ ᱛᱟᱦᱮᱸᱱᱟ; ᱧᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱦᱴᱟ ᱫᱚᱦᱲᱟ ᱡᱷᱤᱡᱽ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱟᱞᱟᱣ ᱟᱨᱦᱚᱸ ᱮᱛᱦᱚᱵ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱟᱞᱟᱣ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ᱨᱮᱠᱚᱨᱰ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ᱯᱨᱚᱜᱨᱮᱥ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user %time ᱨᱮ ᱮᱛᱦᱚᱵ ᱞᱮᱫᱟᱭ.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ᱠᱳᱰ ᱧᱮᱞ ᱧᱟᱢᱚᱜ ᱠᱟᱱᱟ ᱟᱨ ᱪᱟᱞᱟᱣ ᱞᱟᱦᱟ ᱥᱱᱮᱯᱥᱚᱴ ᱦᱟᱛᱟᱣᱚᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ (%total ᱨᱮ %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total ᱨᱮ %done ᱪᱟᱵᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱪᱟᱞᱟᱣ ᱮᱱᱟ; ᱢᱤᱫᱴᱟᱹᱝ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ ᱠᱷᱟᱱ ᱥᱱᱮᱯᱥᱚᱴ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣᱚᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱛᱟᱭᱚᱢ ᱥᱱᱮᱯᱥᱚᱴ ᱦᱟᱛᱟᱣ, ᱠᱚᱢᱤᱴ, ᱴᱮᱜ ᱟᱨ ᱯᱩᱥ ᱦᱩᱭᱩᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ᱥᱱᱮᱯᱥᱚᱴ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣᱚᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱪᱟᱵᱟ ᱮᱱᱟ. ᱟᱡᱟᱜ ᱨᱤᱯᱚᱨᱴ ᱞᱚᱰᱚᱜ ᱠᱟᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ᱯᱨᱚᱜᱨᱮᱥ ᱵᱟᱝ ᱯᱟᱧᱡᱟ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ. ᱪᱟᱞᱟᱣ ᱪᱮᱫ ᱞᱮᱠᱟ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ ᱧᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱦᱴᱟ ᱫᱚᱦᱲᱟ ᱞᱚᱰ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱟᱦᱴᱟ ᱪᱟᱞᱟᱣ ᱪᱟᱞᱟᱜ ᱞᱮᱠᱟᱛᱮ ᱯᱟᱧᱡᱟ ᱮᱫᱟᱭ.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ᱫᱚᱦᱲᱟ ᱞᱚᱰ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ᱨᱤᱯᱚᱨᱴ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ᱚᱠᱛᱚ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ᱢᱤ.ᱥᱮ.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱵᱷᱩᱞ ᱞᱮᱠᱟ ᱪᱮᱫ ᱩᱫᱩᱜ ᱞᱮᱫᱟ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ᱨᱮᱠᱚᱨᱰ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ᱯᱚᱨᱚᱵᱮᱥ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ᱡᱟᱦᱟᱸᱱᱟᱜ ᱵᱟᱹᱱᱩᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ᱪᱟᱵᱟ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ᱠᱚᱢᱤᱴ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ᱴᱮᱜ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ᱯᱩᱥ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ᱠᱷᱚᱵᱚᱨ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱟᱞᱟᱣ ᱨᱮᱭᱟᱜ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ᱢᱩᱞ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱞᱚᱜ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ᱞᱚᱜ ᱨᱮᱭᱟᱜ ᱢᱩᱪᱟᱹᱫ ᱦᱟᱹᱴᱤᱧ ᱜᱮ ᱧᱮᱞᱚᱜ ᱠᱟᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ᱨᱤᱯᱚᱨᱴ ᱵᱟᱹᱜᱤ ᱪᱟᱵᱟ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ᱦᱩᱭ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ᱵᱟᱹᱰ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ᱰᱟᱴᱟᱵᱮᱥ ᱫᱷᱟᱹᱵᱤᱡ ᱵᱟᱝ ᱥᱮᱴᱮᱨ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ᱵᱷᱤᱛᱨᱤ ᱵᱷᱩᱞ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ᱢᱤᱫ ᱪᱟᱞᱟᱣ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user %time ᱨᱮ ᱮᱛᱦᱚᱵ ᱞᱮᱫᱟᱭ.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ᱯᱟᱧᱡᱟ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱞᱚᱠ ᱟᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ᱮᱴᱟᱜ ᱪᱟᱞᱟᱣ ᱞᱚᱠ ᱥᱟᱵ ᱟᱠᱟᱫᱟ (ᱢᱤᱫ ᱟᱯᱜᱨᱮᱰ ᱟᱨᱵᱟᱝ ᱠᱚᱱᱥᱚᱞ ᱨᱮ ᱪᱟᱞᱟᱣ): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ᱪᱟᱵᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ᱵᱟᱝ ᱞᱟᱹᱠᱛᱤ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ᱵᱟᱝ ᱪᱤᱱᱦᱟᱹ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ᱞᱟᱜᱟᱣ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ᱞᱟᱜᱟᱣᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ᱵᱟᱝ ᱪᱟᱞᱟᱣ ᱞᱮᱱ</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ᱮᱴᱟᱜ ᱢᱤᱫᱴᱟᱹᱝ ᱡᱟᱜᱟᱣ ᱮᱫᱟ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱦᱟᱛᱟᱣ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱦᱟᱛᱟᱣᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ᱥᱤᱢᱩᱞᱮᱴ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ᱦᱟᱞᱛ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ᱤᱛᱷᱟᱥ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ᱢᱤᱫ ᱪᱟᱞᱟᱣ ᱟᱡᱟᱜ ᱞᱟᱦᱟ ᱦᱟᱛᱟᱣ ᱟᱠᱟᱱ ᱥᱱᱮᱯᱥᱚᱴ ᱫᱷᱟᱹᱵᱤᱡ ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜᱚᱜᱼᱟ, ᱢᱤᱫ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱟᱡᱟᱜ down() ᱥᱟᱶ. ᱢᱤᱫ ᱢᱟᱲᱟᱝ ᱥᱱᱮᱯᱥᱚᱴ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱫᱚ ᱮᱠᱥᱯᱟᱨᱴ ᱠᱚ ᱞᱟᱹᱜᱤᱫ. ᱡᱚᱛᱚ ᱱᱤᱛᱚᱜ ᱦᱟᱞᱛ ᱨᱮᱭᱟᱜ ᱥᱱᱮᱯᱥᱚᱴ ᱛᱟᱭᱚᱢ ᱟᱢᱟᱜ ᱧᱩᱛᱩᱢ ᱛᱮ ᱵᱮᱠᱜᱨᱟᱣᱩᱱᱰ ᱨᱮ ᱪᱟᱞᱟᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ᱪᱮᱫ ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ ᱚᱱᱟ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ᱢᱤᱫ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ᱢᱤᱫ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ᱢᱤᱫ ᱢᱟᱲᱟᱝ ᱥᱱᱮᱯᱥᱚᱴ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>ᱵᱤᱵᱨᱚᱬ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ᱦᱚᱭ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ᱵᱟᱝ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ᱥᱱᱮᱯᱥᱚᱴ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ᱞᱮᱵᱮᱞ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ᱦᱟᱛᱟᱣ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ᱞᱮᱠᱟ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱦᱟᱹᱴᱤᱧ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ᱰᱟᱴᱟᱵᱮᱥ</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ᱥᱴᱚᱨᱮᱡᱽ ᱯᱷᱟᱭᱤᱞ ᱠᱚ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ᱥᱮᱴᱤᱝ ᱠᱚ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱫᱚ ᱰᱟᱴᱟᱵᱮᱥ ᱥᱱᱮᱯᱥᱚᱴ ᱚᱠᱛᱚ ᱫᱷᱟᱹᱵᱤᱡ ᱨᱩᱣᱟᱹᱲ ᱟᱹᱜᱩᱭᱟ, ᱥᱮᱥᱚᱱ ᱠᱚ ᱦᱚᱸ: ᱛᱟᱭᱚᱢ ᱛᱮ ᱫᱚᱦᱲᱟ ᱥᱟᱭᱤᱱ ᱤᱱ ᱞᱟᱹᱜᱤᱫ ᱠᱩᱞᱤᱭᱚᱜ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ. ᱚᱱ ᱠᱷᱚᱱ ᱡᱚᱛᱚ ᱵᱚᱫᱚᱞ ᱟᱫᱚᱜᱼᱟ; ᱯᱩᱭᱞᱩ ᱱᱤᱛᱚᱜ ᱦᱟᱞᱛ ᱨᱮᱭᱟᱜ ᱥᱱᱮᱯᱥᱚᱴ ᱦᱟᱛᱟᱣᱚᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱮᱫ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣᱟ ᱤᱧ ᱵᱟᱰᱟᱭᱟ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ᱥᱱᱮᱯᱥᱚᱴ ᱨᱮᱭᱟᱜ ᱟᱭᱰᱤ ᱫᱚᱦᱲᱟ ᱚᱞ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ᱦᱚᱭ, ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ᱵᱟᱛᱟᱞ</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ᱡᱟᱦᱟᱸ ᱪᱟᱞᱟᱣ ᱠᱚ ᱞᱟᱦᱟ ᱥᱱᱮᱯᱥᱚᱴ ᱦᱟᱛᱟᱣ ᱞᱮᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ᱵᱟᱪᱷᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱥᱱᱮᱯᱥᱚᱴ ᱥᱟᱶ ᱡᱟᱦᱟᱸᱱ ᱪᱟᱞᱟᱣ ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ᱞᱟᱜᱟᱣ ᱟᱠᱟᱱ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱡᱟᱦᱟᱸ ᱟᱡ ᱛᱮᱜᱮ ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ (ᱚᱱᱟ ᱠᱚ ᱴᱷᱮᱱ down() ᱢᱮᱱᱟᱜᱼᱟ).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ᱡᱟᱦᱟᱸᱱ ᱞᱟᱜᱟᱣ ᱟᱠᱟᱱ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱴᱷᱮᱱ down() ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ᱢᱟᱲᱟᱝ ᱥᱱᱮᱯᱥᱚᱴ ᱠᱚ (ᱮᱠᱥᱯᱟᱨᱴ ᱠᱚ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱡᱟᱦᱟᱸᱱ ᱥᱱᱮᱯᱥᱚᱴ ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱪᱟᱞᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ᱪᱟᱞᱟᱣ %user ᱞᱮᱠᱟᱛᱮ ᱵᱮᱠᱜᱨᱟᱣᱩᱱᱰ ᱨᱮ ᱪᱟᱞᱟᱜᱼᱟ, ᱟᱨ ᱟᱡᱟᱜ ᱥᱟᱦᱴᱟ ᱪᱟᱞᱟᱜ ᱞᱮᱠᱟᱛᱮ ᱩᱫᱩᱜ ᱮᱫᱟ. ᱯᱩᱭᱞᱩ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱞᱟᱦᱟ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱥᱱᱮᱯᱥᱚᱴ ᱦᱟᱛᱟᱣᱚᱜᱼᱟ; ᱢᱤᱫ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱝ ᱦᱩᱭ ᱠᱷᱟᱱ ᱪᱟᱞᱟᱣ ᱛᱟᱺᱜᱤᱜᱼᱟ ᱟᱨ ᱥᱱᱮᱯᱥᱚᱴ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣᱚᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ᱯᱩᱭᱞᱩ ᱯᱚᱨᱤᱠᱷᱟ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ᱦᱟᱞᱛ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ᱱᱚᱶᱟ ᱨᱟᱦᱟ ᱨᱮ ᱪᱟᱞᱟᱜᱼᱟ ᱠᱚ. ᱢᱤᱫᱴᱟᱹᱝ ᱟᱨ ᱚᱱᱟ ᱞᱟᱹᱠᱛᱤᱭᱟᱱ ᱠᱚ ᱛᱟᱭᱚᱢ ᱪᱟᱞᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱟᱲᱟᱜ ᱞᱟᱹᱜᱤᱫ ᱴᱤᱠ ᱚᱪᱚᱜ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>ᱪᱟᱞᱟᱜ ᱚᱠᱛᱚ ᱨᱚᱠᱷᱟᱣ ᱠᱟᱹᱢᱤ ᱢᱳᱰ ᱮᱦᱚᱵᱟ.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>ᱞᱟᱜᱟᱣ ᱛᱟᱭᱚᱢ ᱵᱚᱫᱚᱞ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ᱱᱚᱶᱟ ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱫᱚ ᱞᱟᱜᱟᱣ ᱞᱮᱱ ᱠᱚ ᱫᱚ ᱵᱟᱝ ᱠᱟᱱᱟ. ᱵᱚᱫᱚᱞ ᱠᱟᱨᱚᱬ ᱥᱟᱶ ᱵᱟᱝ ᱦᱟᱛᱟᱣ ᱠᱷᱟᱱ ᱪᱟᱞᱟᱣ ᱵᱟᱹᱰ ᱠᱚᱣᱟᱭ; ᱫᱚᱦᱲᱟ ᱵᱟᱝ ᱪᱟᱞᱟᱣᱚᱜᱼᱟ, ᱱᱟᱣᱟ ᱪᱮᱠᱥᱚᱢ ᱚᱞᱚᱜᱼᱟ ᱟᱨ ᱠᱟᱨᱚᱬ ᱚᱰᱤᱴ ᱞᱚᱜ ᱨᱮ ᱫᱚᱦᱚᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱠᱚ ᱦᱟᱛᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ᱪᱮᱫᱟᱜ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ᱰᱤᱯᱷᱚᱞᱴ ᱠᱚ ᱜᱮ ᱨᱩᱠᱷᱤᱭᱟᱹ ᱠᱟᱱᱟ. ᱡᱚᱛᱚ ᱵᱟᱠᱥᱚ ᱢᱤᱫ ᱫᱷᱟᱯ ᱟᱲᱟᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ᱥᱱᱮᱯᱥᱚᱴ ᱵᱟᱹᱜᱤ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱞᱟᱦᱟ ᱟᱨ ᱛᱟᱭᱚᱢ ᱥᱱᱮᱯᱥᱚᱴ ᱵᱟᱹᱱᱩᱜᱼᱟ: ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ ᱟᱡ ᱛᱮᱜᱮ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱵᱟᱝ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱵᱟᱹᱜᱤ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ᱵᱟᱝ ᱦᱩᱭ ᱛᱟᱭᱚᱢ, ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱡᱮᱞᱮᱠᱟ ᱛᱟᱦᱮᱸᱱ ᱟᱠᱟᱱᱟ ᱚᱱᱟ ᱞᱮᱠᱟ ᱜᱮ ᱟᱲᱟᱜ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>ᱵᱟᱝ ᱠᱚᱢᱤᱴ ᱟᱠᱟᱱ ᱵᱚᱫᱚᱞ ᱠᱚ ᱫᱚᱦᱚ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ᱥᱮᱴᱤᱝ, ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱟᱨᱵᱟᱝ ᱰᱤᱡᱟᱭᱤᱱ ᱠᱚ ᱨᱮ ᱵᱟᱝ ᱠᱚᱢᱤᱴ ᱟᱠᱟᱱ ᱵᱚᱫᱚᱞ ᱛᱟᱦᱮᱸᱱ ᱠᱷᱟᱱ ᱦᱚᱸ ᱪᱟᱞᱟᱣ ᱢᱮ; ᱚᱱᱟ ᱠᱚ ᱥᱱᱮᱯᱥᱚᱴ ᱨᱮ ᱛᱟᱦᱮᱸᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ᱠᱚᱢᱤᱴ ᱵᱟᱹᱜᱤ</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ᱦᱟᱞᱛ ᱯᱷᱟᱭᱤᱞ ᱟᱨ ᱪᱟᱞᱟᱣ ᱞᱚᱜ ᱟᱞᱚᱢ ᱠᱚᱢᱤᱴᱟ (ᱴᱮᱜ ᱟᱨ ᱯᱩᱥ ᱦᱚᱸ ᱵᱟᱝ).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ᱯᱩᱥ ᱵᱟᱹᱜᱤ</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ᱠᱚᱢᱤᱴ ᱟᱨ ᱴᱮᱜ ᱢᱮ, ᱢᱮᱱᱠᱷᱟᱱ ᱟᱞᱚᱢ ᱯᱩᱥᱟ.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ᱴᱮᱜ ᱵᱟᱹᱜᱤ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ᱠᱚᱢᱤᱴ ᱟᱨ ᱯᱩᱥ ᱢᱮ, ᱢᱮᱱᱠᱷᱟᱱ ᱪᱟᱞᱟᱣ ᱟᱞᱚᱢ ᱴᱮᱜᱟ.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ᱦᱚᱭ, ᱱᱚᱶᱟ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱱᱤᱛᱚᱜ ᱪᱟᱞᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ᱡᱟᱦᱟᱸᱱ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱡᱟᱜᱟᱣ ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ᱦᱟᱞᱛ ᱛᱮ ᱨᱩᱣᱟᱹᱲ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ᱱᱚᱶᱟ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱵᱚᱫᱚᱞ ᱠᱚ ᱢᱤᱫ ᱫᱷᱟᱣ ᱯᱷᱟᱭᱤᱞ ᱞᱮᱠᱟ ᱚᱞ ᱟᱠᱟᱱ (ᱨᱮᱫ, ᱠᱞᱟᱥ ᱠᱚ, ᱵᱷᱩᱢᱤᱠᱟ ᱠᱚ, ᱥᱮᱴᱤᱝ ᱠᱚ, ᱥᱠᱤᱢᱟ) ᱟᱨ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱡᱚᱛᱚ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮ ᱢᱤᱫ ᱨᱟᱦᱟ ᱨᱮ ᱞᱟᱜᱟᱣ ᱟᱠᱟᱱ. ᱪᱟᱞᱟᱣ ᱯᱩᱭᱞᱩ ᱥᱱᱮᱯᱥᱚᱴ ᱦᱟᱛᱟᱣᱟ, ᱢᱤᱫ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱝ ᱦᱩᱭ ᱠᱷᱟᱱ ᱚᱱᱟ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣᱟ, ᱟᱨ ᱪᱮᱫ ᱞᱮᱫᱟ ᱚᱱᱟ ᱚᱞ, ᱠᱚᱢᱤᱴ ᱟᱨ ᱯᱩᱥᱟ.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ ᱪᱟᱞᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ᱥᱟᱨᱟᱝ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ᱪᱟᱵᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ᱵᱟᱝ ᱞᱟᱹᱠᱛᱤ</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ᱰᱟᱴᱟᱵᱮᱥ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ᱴᱨᱟᱱᱡᱮᱠᱥᱚᱱ ᱠᱚ: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ᱥᱟᱭᱤᱴ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ migrations/ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ, ᱢᱤᱫ ᱮᱠᱥᱴᱮᱱᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱠᱚ extension/&lt;name&gt;/migrations/ ᱨᱮ. ᱚᱱᱟ ᱠᱚᱣᱟᱜ ᱧᱩᱛᱩᱢ ᱟᱨ ᱞᱟᱹᱠᱛᱤ ᱨᱟᱦᱟ ᱞᱮᱠᱟᱛᱮ ᱪᱟᱞᱟᱜᱼᱟ ᱠᱚ.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ᱞᱟᱜᱟᱣ ᱛᱟᱭᱚᱢ ᱯᱷᱟᱭᱤᱞ ᱵᱚᱫᱚᱞ ᱮᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱡᱟᱦᱟᱸᱱ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱹᱱᱩᱜᱼᱟ. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ᱯᱩᱭᱞᱩ ᱢᱤᱫᱴᱟᱹᱝ ᱚᱞᱟᱭ.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ᱱᱟᱣᱟ ᱪᱟᱞᱟᱣ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ᱡᱚᱛᱚ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱡᱟᱦᱟᱸᱱ ᱪᱟᱞᱟᱣ ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱥᱤᱢᱩᱞᱮᱴ ᱞᱟᱹᱜᱤᱫ migration/run ᱱᱤᱛᱤ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ᱢᱤᱫ ᱪᱟᱞᱟᱣ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ: ᱪᱟᱵᱟ ᱠᱷᱟᱱ ᱥᱤᱢᱩᱞᱮᱴ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ᱥᱮᱴᱟᱯ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ᱫᱚ ᱱᱚᱶᱟ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱪᱟᱞᱟᱣ, ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱟᱨᱵᱟᱝ ᱥᱱᱮᱯᱥᱚᱴ ᱡᱟᱦᱟᱸᱱᱟᱜ ᱵᱟᱝ ᱠᱟᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ᱯᱩᱭᱞᱩ &quot;ᱦᱚᱭ, ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱢᱮ&quot; ᱴᱤᱠ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ᱢᱤᱫ ᱢᱟᱲᱟᱝ ᱥᱱᱮᱯᱥᱚᱴ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱫᱚ ᱮᱠᱥᱯᱟᱨᱴ ᱠᱚ ᱞᱟᱹᱜᱤᱫ: &quot;ᱱᱚᱶᱟ ᱪᱮᱫ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣᱟ ᱤᱧ ᱵᱟᱰᱟᱭᱟ&quot; ᱴᱤᱠ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ᱥᱱᱮᱯᱥᱚᱴ ᱨᱮᱭᱟᱜ ᱟᱭᱰᱤ ᱫᱚᱦᱲᱟ ᱚᱞ ᱢᱮ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱠᱚᱢ ᱠᱷᱚᱱ ᱠᱚᱢ ᱢᱤᱫᱴᱟᱹᱝ ᱦᱟᱹᱴᱤᱧ ᱵᱟᱪᱷᱟᱣ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱟᱞᱟᱣ ᱞᱟᱦᱟ ᱡᱟᱦᱟᱸᱱ ᱥᱱᱮᱯᱥᱚᱴ ᱵᱟᱝ ᱦᱟᱛᱟᱣ ᱞᱮᱱᱟ: ᱟᱡᱟᱜ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱢᱤᱫ ᱢᱤᱫ ᱠᱟᱛᱮ ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱢᱮ, ᱟᱨᱵᱟᱝ ᱢᱤᱫ ᱢᱟᱲᱟᱝ ᱥᱱᱮᱯᱥᱚᱴ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ᱱᱚᱶᱟ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱟᱡ ᱛᱮᱜᱮ ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱵᱟᱝ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ: ᱵᱟᱝ ᱞᱟᱜᱟᱣ ᱟᱠᱟᱱᱟ, ᱟᱨᱵᱟᱝ ᱟᱡ ᱴᱷᱮᱱ down() ᱵᱟᱹᱱᱩᱜᱼᱟ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ᱯᱷᱚᱨᱢ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱮᱛᱦᱚᱵ ᱞᱟᱹᱜᱤᱫ ᱪᱟᱞᱟᱣ ᱵᱟᱪᱷᱟᱣ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ᱯᱩᱭᱞᱩ &quot;ᱦᱚᱭ, ᱱᱚᱶᱟ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱱᱤᱛᱚᱜ ᱪᱟᱞᱟᱣ ᱢᱮ&quot; ᱴᱤᱠ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ᱠᱚᱢ ᱠᱷᱚᱱ ᱠᱚᱢ ᱢᱤᱫ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱪᱷᱟᱣ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ᱢᱤᱫ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱞᱟᱜᱟᱣ ᱛᱟᱭᱚᱢ ᱵᱚᱫᱚᱞ ᱮᱱᱟ: ᱠᱟᱨᱚᱬ ᱥᱟᱶ ᱵᱚᱫᱚᱞ ᱦᱟᱛᱟᱣ ᱢᱮ, ᱟᱨᱵᱟᱝ ᱯᱷᱟᱭᱤᱞ ᱨᱩᱣᱟᱹᱲ ᱫᱚᱦᱚ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱟᱠᱟᱱ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱪᱮᱫᱟᱜ ᱦᱟᱛᱟᱣᱚᱜ ᱠᱟᱱᱟ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱠᱟᱨᱚᱬ ᱮᱢ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>ᱠᱟᱨᱚᱬ ᱡᱟᱹᱥᱛᱤ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ 500 ᱡᱤᱱᱤᱥ.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ᱱᱚᱸᱰᱮ ᱮᱛᱦᱚᱵ ᱟᱠᱟᱱ ᱪᱟᱞᱟᱣ ᱱᱤᱛ ᱦᱚᱸ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ (%detail). ᱪᱟᱵᱟ ᱦᱟᱹᱵᱤᱡ ᱛᱟᱺᱜᱤ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ᱮᱴᱟᱜ ᱪᱟᱞᱟᱣ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱞᱚᱠ ᱥᱟᱵ ᱟᱠᱟᱫᱟ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱢᱮᱱᱟᱜ ᱥᱟᱭᱤᱱ ᱤᱱ ᱟᱠᱟᱱ ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ ᱞᱟᱹᱠᱛᱤᱜ ᱠᱟᱱᱟ.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ᱡᱟᱦᱟᱸᱱ php ᱠᱚᱢᱟᱱᱰ ᱞᱟᱭᱤᱱ ᱵᱟᱭᱤᱱᱟᱨᱤ ᱵᱟᱝ ᱧᱟᱢ ᱞᱮᱱᱟ. migration.ini [AdminSettings] PhpCliPath ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱯᱩᱨᱟᱹ ᱦᱚᱨ ᱥᱮᱴ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ᱵᱚᱸᱫ ᱢᱮᱱᱟᱜᱼᱟ, ᱚᱱᱟᱛᱮ ᱱᱚᱸᱰᱮ ᱪᱟᱞᱟᱣ ᱮᱛᱦᱚᱵ ᱵᱟᱝ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ. ᱥᱟᱨᱵᱷᱟᱨ ᱨᱮ ./console exp:migration:migrate --apply ᱪᱟᱞᱟᱣ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱠᱚᱣᱟᱜ ᱯᱷᱚᱞᱰᱟᱨ ᱨᱮ ᱚᱞ ᱵᱟᱝ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱮᱛᱦᱚᱵ ᱮᱱᱟ ᱢᱮᱱᱠᱷᱟᱱ ᱟᱡᱟᱜ ᱯᱨᱚᱥᱮᱥ ᱟᱭᱰᱤ ᱵᱟᱝ ᱞᱟᱹᱭ ᱞᱮᱫᱟ. %detail ᱧᱮᱞ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ᱪᱮᱫ ᱨᱩᱣᱟᱹᱲ ᱚᱪᱚᱜ ᱦᱩᱭᱩᱜᱼᱟ ᱚᱱᱟ ᱞᱟᱹᱭ ᱢᱮ.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ᱪᱟᱞᱟᱣ ᱵᱟᱝ ᱮᱛᱦᱚᱵ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ.</translation>
     </message>
 </context>
 </TS>

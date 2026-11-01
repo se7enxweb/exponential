@@ -15140,6 +15140,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API ya GraphQL: xala wê ya dawî, şema û qadeke ceribandinê ji bo pirsiyaran.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Koçberkirin</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Guhertinên sazkirinê yên wek pel hatine parastin: rewşa wan, xebitandin, xebitandin û paşvekişandin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Guherandinan bişîne /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Koçberkirin</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Rewş nehat xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabloyên koçberkirinan hîn tune ne: ./console exp:upgrade --apply wan çêdike.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count koçberkirin bi ser neketin</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Xebitandinek didome, ji aliyê %user ve hat destpêkirin</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Sazkirin kilîtkirî ye: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Li bendê</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Bi ser neket</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Sêwî</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Xebitandina dawî</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hîn tune</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Hemû koçberkirin</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Xebitandina simulekirî</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ceribandina bê guhertin</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Koçberkirinên li bendê di nav danûstendinekê de xebitîn ku paşê hat paşvekişandin: tiştek nehat parastin. Li jêr tiştê ku her yek di danegehê de guhert heye.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Xebitandinek niha dê çi bike. Tiştek nayê guhertin: her koçberkirina li bendê guhertinên ku dê bike rêz dike, û xebitandin jî tiştê ku dê berê û paşê bike.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simule bike</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Bixebitîne</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Ceribandina bê guhertin bi ser neket: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulasyon PostgreSQL an SQLite hewce dike, ku guhertinên şemayê wan dikarin bên paşvekişandin; li ser vê danegehê plana li jêr tiştê ku xebitandinek dê bike nîşan dide.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Koçberkirin</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Koçberkirin</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Dê çi bike</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulasyon: %result di %ms ms-yan de</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Hîn koçberkirin tune.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Berî û piştî xebitandinê</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Wêneya berê</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>tê girtin, û dema koçberkirinek bi ser nekeve tê vegerandin</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>girtî</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Wêneya piştî</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>dema xebitandin bi ser ket tê girtin</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total koçberkirin: %pending li bendê, %done qediyan, %failed bi ser neketin.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Dîroka koçberkirinan</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Her xebitandin bi bikarhêner, jîngeh, wêne û tiştê ku hat komîtkirin, etîketkirin û şandin. Xebitandineke bi ser neketî an qutbûyî dikare bê domandin; xebitandineke ku berî wê wêne hatibe girtin dikare bê paşvekişandin.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Xebitandin nehatin xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabloyên koçberkirinan hîn tune ne: ./console exp:upgrade --apply wan çêdike.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nîşan bide</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hemû</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Xebitandin</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dest pê kir</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ji aliyê</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Wêne</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Çalakî</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>berê</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>piştî</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>şandin: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Bidomîne</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Paşve bikişîne</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Di vê rewşê de xebitandin tune.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Li vir dest pê kir</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Xebitandin, domandin û paşvekişandinên ku li ser van rûpelan dest pê kirin, bi rapora her yekê.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Çi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Encam</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Paşvekişandin</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Paşvekişandina %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Xebitandina %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Tiştê ku xebitandinê kir, tomara wê û qeyda wê. Xebitandineke ku li vir dest pê kir dema ev rûpel tê girtin li paşxanê didome; ji bo şopandinê rûpelê dîsa veke.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Vê xebitandinê bidomîne</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Vê xebitandinê paşve bikişîne</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Tomar nehat xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Pêşveçûn</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Ji aliyê %user ve di %time de dest pê kir.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kod tê kontrolkirin û berî xebitandinê wêne tê girtin</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id dixebite (%index ji %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done ji %total qediyan</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Koçberkirin xebitîn; heke yek bi ser neketibe wêne tê vegerandin</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Piştî xebitandinê wêne tê girtin, komît, etîket û şandin tên kirin</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Wêne tê vegerandin</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Xebitandin qediya. Rapora wê tê barkirin.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Pêşveçûn nehat şopandin. Rûpelê ji nû ve bar bike da ku bibînî xebitandin çawa diçe.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ev rûpel xebitandinê dema ku didome dişopîne.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ji nû ve bar bike</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapor</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Dem</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms msn</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Tiştê ku xebitandinê wek çewtî nivîsand</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Tomar</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Jîngeh</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>tune</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Qediya</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Komît</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etîket</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Şandin</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Peyam</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Koçberkirinên vê xebitandinê</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Çavkanî</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Qeyda xebitandinê</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Tenê dawiya qeydê tê nîşandan.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>dixebite</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>bê rapor qediya</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>bi ser ket</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>bi ser neket</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>hat redkirin</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>danegeh nedihat gihîştin</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>çewtiya hundirîn</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Xebitandinek didome</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ji aliyê %user ve di %time de dest pê kir.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Bişopîne</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Sazkirin kilîtkirî ye</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Xebitandineke din kilîtê digire (nûkirinek an xebitandinek li ser konsolê): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>qediya</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>li bendê</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ne hewce</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nenas</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>hat paşvekişandin</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>hat sepandin</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>dê bê sepandin</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>hat vegerandin</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>dê bê vegerandin</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>nexebitî</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>li benda yeke din e</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>guhertin hat qebûlkirin</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>guhertin dê bê qebûlkirin</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulekirî</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Koçberkirin</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Dîrok</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target paşve bikişîne</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Xebitandinek vedigere wêneya ku berî wê hatibû girtin, koçberkirinek bi down()-a xwe. Vegerandina wêneyeke berê ji bo pisporan e. Her yek li paşxanê bi navê te dixebite, piştî wêneyeke rewşa niha.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Tiştê ku dikare bê paşvekişandin nehat xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Xebitandinek</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Koçberkirinek</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Wêneyeke berê</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Danasîn</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>erê</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Wêne</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etîket</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Hat girtin</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Cure</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Beşên ku bên vegerandin</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Danegeh</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Pelên embarê (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Mîheng (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Vegerandina danegehê wê vedigerîne dema wêneyê, danişîn jî tê de: dibe ku paşê ji te bê xwestin ku dîsa têkevî. Her tiştê ku ji wê demê ve hatiye guhertin winda dibe; pêşî wêneyeke rewşa niha tê girtin.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ez dizanim ev çi vedigerîne</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Nasnameya wêneyê dîsa binivîse</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Erê, paşve bikişîne</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Betal</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Xebitandinên ku berî wan wêne hatiye girtin.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Hilbijêre</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Hîn xebitandineke bi wêne tune.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Koçberkirinên sepandî yên ku dikarin xwe paşve bikişînin (down()-a wan heye).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Tu koçberkirineke sepandî down()-ek tune.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Wêneyên berê (pispor)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Hîn wêne tune.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Koçberkirinan bixebitîne</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Xebitandin li paşxanê wek %user didome, û rûpela wê wê dema ku didome nîşan dide. Berî koçberkirina yekem wêneyeke sazkirinê tê girtin; dema koçberkirinek bi ser nekeve xebitandin disekine û wêne tê vegerandin.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Pêşî ceribandina bê guhertin</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Rewş nehat xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Koçberkirinên li bendê</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ew bi vê rêzê dixebitin. Nîşana yekê rake da ku wê û yên ku wê hewce dikin ji bo xebitandineke paşê bihêlî.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Bixebitîne</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Dema dixebite moda lênêrînê vedike.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Piştî sepandinê hatin guhertin</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Ev pel ne yên ku hatin sepandin in. Xebitandinek wan red dike heta ku guhertin bi sedemekê neyê qebûlkirin; ew dîsa naxebitin, checksuma nû tê tomarkirin û sedem di qeyda kontrolê de tê parastin.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Guhertinan qebûl bike</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Çima</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Nirxên standard yên ewle ne. Her qutî gavekê derdixe.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Bê wêne</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Berî û piştî xebitandinê wêne nayê girtin: têkçûnek nikare bixweber bê vegerandin.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Bê vegerandin</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Piştî têkçûnê, sazkirinê wek ku têkçûnê hişt bihêle.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Guhertinên nekomîtkirî biparêze</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Bixebitîne her çend mîheng, pêvek an sêwiran guhertinên nekomîtkirî hebin jî; ew dikevin nav wêneyê.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Bê komît</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Pela rewşê û qeyda xebitandinê komît neke (ne etîket û ne jî şandin).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Bê şandin</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Komît û etîket bike, lê neşîne.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Bê etîket</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Komît bike û bişîne, lê xebitandinê etîket neke.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Erê, van koçberkirinan niha bixebitîne</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Tu koçberkirin li bendê nîne.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Vegere rewşê</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Guhertinên vê sazkirinê ku carekê wek pel hatine nivîsandin (naverok, çîn, rol, mîheng, şema) û bi heman rêzê li ser her sazkirina malperê tên sepandin. Xebitandinek pêşî wêneyekê digire, dema koçberkirinek bi ser nekeve wê vedigerîne, û tiştê ku kir tomar, komît û şandin dike.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count yên li bendê bixebitîne</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nêrîna giştî</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Li bendê</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Qediya</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Bi ser neket</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ne hewce</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Danegeh</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>danûstendin: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Koçberkirinên malperê di migrations/ de ne, yên pêvekekê di extension/&lt;name&gt;/migrations/ de. Ew li gorî rêza navên xwe û tiştê ku hewce dikin dixebitin.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Xebitandina dawî</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Pel piştî sepandinê hat guhertin.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Hîn koçberkirin tune. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ya yekem dinivîse.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Xebitandinên dawî</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Hemû xebitandin</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Hîn xebitandin tune.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Simulekirina xebitandinekê polîtîkaya migration/run hewce dike.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Xebitandinek didome: dema ku qediya simule bike.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazkirin</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ne xebitandin, ne koçberkirin û ne jî wêneyeke vê sazkirinê ye.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Pêşî &quot;Erê, paşve bikişîne&quot; nîşan bike.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Vegerandina wêneyeke berê ji bo pisporan e: &quot;Ez dizanim ev çi vedigerîne&quot; nîşan bike.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Nasnameya wêneyê dîsa binivîse: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Herî kêm beşekê ji bo vegerandinê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Berî vê xebitandinê wêne nehatiye girtin: koçberkirinên wê yek bi yek paşve bikişîne, an wêneyeke berê vegerîne.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Ev koçberkirin nikare xwe paşve bikişîne: ew nehatiye sepandin, an down()-a wê tune.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Form nehat xwendin.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Xebitandina ku bê domandin hilbijêre.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Pêşî &quot;Erê, van koçberkirinan niha bixebitîne&quot; nîşan bike.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Herî kêm koçberkirinekê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Koçberkirinek piştî sepandinê hat guhertin: guhertinê bi sedemekê qebûl bike, an pelê vegerîne.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Sedema qebûlkirina koçberkirinên guhertî binivîse.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Sedem herî zêde 500 tîp e.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Xebitandineke ku li vir dest pê kir hîn didome (%detail). Li benda qedandina wê bimîne.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Xebitandineke din kilîta sazkirinê digire: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Xebitandin bikarhênereke têketî yê heyî hewce dike.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Bernameya rêzika fermanê ya php nehat dîtin. migration.ini [AdminSettings] PhpCliPath li ser rêya wê ya tevahî bi cih bike.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open neçalak e, ji ber vê yekê xebitandin li vir nikare dest pê bike. ./console exp:migration:migrate --apply li ser serverê bixebitîne.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Peldanka xebitandinan nayê nivîsandin: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Xebitandin dest pê kir lê nasnameya pêvajoya xwe neragihand. %detail kontrol bike.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Tiştê ku bê paşvekişandin binav bike.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Xebitandin nikarîbû dest pê bike.</translation>
     </message>
 </context>
 </TS>

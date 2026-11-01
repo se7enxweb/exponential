@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API ‏GraphQL: نقطهٔ پایانی آن، طرح‌واره و محیطی برای آزمودن پرس‌وجوها.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مهاجرت‌ها</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>تغییرات نصب که به‌صورت فایل نگهداری می‌شوند: وضعیت آن‌ها، اجراها، اجرا و بازگردانی.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>جهش‌ها را به /api/graphql بفرستید.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>مهاجرت‌ها</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>وضعیت خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>جدول‌های مهاجرت‌ها هنوز وجود ندارند: ./console exp:upgrade --apply آن‌ها را می‌سازد.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count مهاجرت ناموفق بود</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>یک اجرا در جریان است که %user آن را آغاز کرده است</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>نصب قفل شده است: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>در انتظار</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>بی‌صاحب</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخرین اجرا</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>هنوز هیچ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>همه مهاجرت‌ها</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>اجرای شبیه‌سازی‌شده</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>اجرای آزمایشی</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>مهاجرت‌های در انتظار در تراکنشی اجرا شدند که پس از آن بازگردانده شد: هیچ چیز نگه داشته نشد. در زیر آمده است که هر کدام چه چیزی را در پایگاه داده تغییر داد.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>کاری که یک اجرا اکنون انجام می‌داد. هیچ چیز تغییر نمی‌کند: هر مهاجرت در انتظار تغییراتی را که ایجاد می‌کرد فهرست می‌کند، و اجرا کاری را که پیش و پس از آن انجام می‌داد.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>شبیه‌سازی</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>اجرا</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>اجرای آزمایشی ناموفق بود: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>شبیه‌سازی به PostgreSQL یا SQLite نیاز دارد که تغییرات طرح‌واره در آن‌ها قابل بازگردانی است؛ در این پایگاه داده، برنامه زیر نشان می‌دهد یک اجرا چه می‌کرد.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>مهاجرت‌ها</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>مهاجرت</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>کاری که انجام می‌داد</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>شبیه‌سازی: %result در %ms میلی‌ثانیه</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>هنوز هیچ مهاجرتی نیست.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>پیش و پس از اجرا</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>تصویر لحظه‌ای پیش از اجرا</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>گرفته می‌شود و اگر مهاجرتی ناموفق شود بازیابی می‌شود</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>خاموش</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>تصویر لحظه‌ای پس از اجرا</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>وقتی اجرا موفق بود گرفته می‌شود</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total مهاجرت: %pending در انتظار، %done انجام‌شده، %failed ناموفق.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>تاریخچه مهاجرت‌ها</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>هر اجرا با کاربر، محیط، تصاویر لحظه‌ای و آنچه کامیت، برچسب‌گذاری و پوش شد. اجرای ناموفق یا قطع‌شده را می‌توان از سر گرفت؛ اجرایی که پیش از آن تصویر لحظه‌ای گرفته شده را می‌توان بازگرداند.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>اجراها خوانده نشدند: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>جدول‌های مهاجرت‌ها هنوز وجود ندارند: ./console exp:upgrade --apply آن‌ها را می‌سازد.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>نمایش</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>اجراها</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>آغاز</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>توسط</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>تصاویر لحظه‌ای</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>مخزن</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عملیات</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>پیش از اجرا</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>پس از اجرا</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>پوش: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>از سر گرفتن</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>بازگرداندن</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>هیچ اجرایی در این وضعیت نیست.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>آغازشده در اینجا</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>اجراها، ازسرگیری‌ها و بازگردانی‌هایی که در این صفحه‌ها آغاز شده‌اند، همراه با گزارش هر کدام.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>چه</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجه</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>بازگردانی</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>بازگردانی %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>اجرای %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>کاری که اجرا انجام داد، رکورد و گزارش آن. اجرایی که اینجا آغاز شده با بستن این صفحه در پس‌زمینه ادامه می‌یابد؛ برای دنبال کردن آن صفحه را دوباره باز کنید.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>از سر گرفتن این اجرا</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>بازگرداندن این اجرا</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>رکورد خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پیشرفت</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>آغازشده توسط %user در %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>بررسی کد و گرفتن تصویر لحظه‌ای پیش از اجرا</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>در حال اجرای %id (%index از %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done از %total انجام شد</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>مهاجرت‌ها اجرا شدند؛ اگر یکی ناموفق بوده باشد تصویر لحظه‌ای بازیابی می‌شود</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>گرفتن تصویر لحظه‌ای پس از اجرا، کامیت، برچسب‌گذاری و پوش</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>بازیابی تصویر لحظه‌ای</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>اجرا پایان یافت. گزارش آن در حال بارگذاری است.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>پیشرفت قابل دنبال کردن نبود. صفحه را دوباره بارگذاری کنید تا وضعیت اجرا را ببینید.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>این صفحه اجرا را در حین پیشروی دنبال می‌کند.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>بارگذاری دوباره</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>گزارش</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>مدت</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms میلی‌ثانیه</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>آنچه اجرا به‌عنوان خطا چاپ کرد</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>رکورد</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>محیط</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>پایان</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>کامیت</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>برچسب</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پوش</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پیام</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>مهاجرت‌های این اجرا</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>منبع</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>گزارش اجرا</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>فقط پایان گزارش نمایش داده می‌شود.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>در حال اجرا</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>بدون گزارش پایان یافت</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>موفق</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رد شد</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>پایگاه داده در دسترس نبود</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>خطای داخلی</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>یک اجرا در جریان است</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind توسط %user در %time آغاز شد.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>دنبال کردن</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>نصب قفل شده است</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>اجرای دیگری قفل را در اختیار دارد (یک ارتقا یا اجرایی در کنسول): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>انجام‌شده</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>در انتظار</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>لازم نیست</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامشخص</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>بازگردانده شد</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>اعمال شد</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>اعمال می‌شد</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>پس گرفته شد</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>پس گرفته می‌شد</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>اجرا نشد</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>منتظر مهاجرت دیگری است</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>تغییر پذیرفته شد</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>تغییر پذیرفته می‌شد</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>شبیه‌سازی شد</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مهاجرت‌ها</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تاریخچه</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>بازگرداندن %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>یک اجرا به تصویر لحظه‌ای گرفته‌شده پیش از آن بازگردانده می‌شود، یک مهاجرت با down() خودش. بازیابی تصویر لحظه‌ای قدیمی‌تر برای کارشناسان است. هر کدام پس از گرفتن تصویر لحظه‌ای از وضعیت کنونی، در پس‌زمینه با حساب شما اجرا می‌شود.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>آنچه قابل بازگرداندن است خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>یک اجرا</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>یک مهاجرت</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>یک تصویر لحظه‌ای قدیمی‌تر</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>توضیحات</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>تصویر لحظه‌ای</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>برچسب نام</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>زمان گرفتن</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>بخش‌های قابل بازیابی</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>پایگاه داده</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>فایل‌های ذخیره‌شده (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>تنظیمات (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>بازیابی، پایگاه داده را به زمان تصویر لحظه‌ای برمی‌گرداند، از جمله نشست‌ها: ممکن است پس از آن از شما خواسته شود دوباره وارد شوید. هر چه از آن زمان تغییر کرده از دست می‌رود؛ ابتدا از وضعیت کنونی تصویر لحظه‌ای گرفته می‌شود.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>می‌دانم این چه چیزی را بازیابی می‌کند</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>شناسه تصویر لحظه‌ای را دوباره وارد کنید</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>بله، بازگردانده شود</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغو</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>اجراهایی که پیش از آن‌ها تصویر لحظه‌ای گرفته شده است.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>انتخاب</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>هنوز هیچ اجرایی با تصویر لحظه‌ای نیست.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>مهاجرت‌های اعمال‌شده‌ای که می‌توانند خود را بازگردانند (یک down() دارند).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>هیچ مهاجرت اعمال‌شده‌ای down() ندارد.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>تصاویر لحظه‌ای قدیمی‌تر (کارشناسان)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>هنوز هیچ تصویر لحظه‌ای نیست.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>اجرای مهاجرت‌ها</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>اجرا در پس‌زمینه با حساب %user ادامه می‌یابد و صفحه آن روند را نشان می‌دهد. پیش از نخستین مهاجرت، از نصب تصویر لحظه‌ای گرفته می‌شود؛ اگر مهاجرتی ناموفق شود، اجرا متوقف و تصویر لحظه‌ای بازیابی می‌شود.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ابتدا اجرای آزمایشی</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>وضعیت خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>مهاجرت‌های در انتظار</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>آن‌ها به این ترتیب اجرا می‌شوند. تیک یکی را بردارید تا آن و مهاجرت‌های وابسته به آن برای اجرای بعدی بمانند.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>اجرا شود</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>در طول اجرا حالت نگهداری را روشن می‌کند.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>پس از اعمال تغییر کرده‌اند</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>این فایل‌ها همان‌هایی نیستند که اعمال شدند. اجرا آن‌ها را رد می‌کند مگر اینکه تغییر با ذکر دلیل پذیرفته شود؛ آن‌ها دوباره اجرا نمی‌شوند، چک‌سام جدید ثبت می‌شود و دلیل در گزارش ممیزی نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>پذیرفتن تغییرات</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>دلیل</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>پیش‌فرض‌ها گزینه‌های امن هستند. هر جعبه یک گام را حذف می‌کند.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>بدون تصویر لحظه‌ای</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>بدون تصویر لحظه‌ای پیش و پس از اجرا: یک شکست را نمی‌توان به‌طور خودکار بازیابی کرد.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>بدون بازیابی</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>پس از شکست، نصب را همان‌گونه که شکست به جا گذاشته رها کن.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>نگه داشتن تغییرات کامیت‌نشده</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>اجرا حتی اگر تنظیمات، افزونه‌ها یا طراحی‌ها تغییرات کامیت‌نشده داشته باشند؛ این تغییرات در تصویر لحظه‌ای قرار می‌گیرند.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>بدون کامیت</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>فایل وضعیت و گزارش اجرا کامیت نشوند (بدون برچسب و بدون پوش).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>بدون پوش</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>کامیت و برچسب‌گذاری، اما بدون پوش.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>بدون برچسب</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>کامیت و پوش، اما بدون برچسب‌گذاری اجرا.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>بله، این مهاجرت‌ها اکنون اجرا شوند</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>هیچ مهاجرتی در انتظار نیست.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>بازگشت به وضعیت</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>تغییرات این نصب که یک بار به‌صورت فایل نوشته می‌شوند (محتوا، کلاس‌ها، نقش‌ها، تنظیمات، طرح‌واره) و به همان ترتیب بر هر نصب سایت اعمال می‌شوند. یک اجرا ابتدا تصویر لحظه‌ای می‌گیرد، اگر مهاجرتی ناموفق شود آن را بازیابی می‌کند، و کاری را که انجام داده ثبت، کامیت و پوش می‌کند.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>اجرای %count مهاجرت در انتظار</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>نمای کلی</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>در انتظار</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>انجام‌شده</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>لازم نیست</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>پایگاه داده</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>تراکنش‌ها: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>مهاجرت‌های سایت در migrations/ و مهاجرت‌های یک افزونه در extension/&lt;name&gt;/migrations/ قرار دارند. آن‌ها به ترتیب نام‌ها و وابستگی‌هایشان اجرا می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخرین اجرا</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>فایل پس از اعمال تغییر کرده است.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>هنوز هیچ مهاجرتی نیست. ./console exp:migration:generate --skeleton &lt;name&gt; --apply نخستین را می‌نویسد.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>آخرین اجراها</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>همه اجراها</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>هنوز هیچ اجرایی نیست.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>شبیه‌سازی یک اجرا به سیاست migration/run نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>یک اجرا در جریان است: پس از پایان آن شبیه‌سازی کنید.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target نه اجرا، نه مهاجرت و نه تصویر لحظه‌ای این نصب است.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ابتدا «بله، بازگردانده شود» را تیک بزنید.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>بازیابی تصویر لحظه‌ای قدیمی‌تر برای کارشناسان است: «می‌دانم این چه چیزی را بازیابی می‌کند» را تیک بزنید.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>شناسه تصویر لحظه‌ای را دوباره وارد کنید: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>دست‌کم یک بخش را برای بازیابی انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>پیش از این اجرا تصویر لحظه‌ای گرفته نشده است: مهاجرت‌های آن را یکی‌یکی بازگردانید یا یک تصویر لحظه‌ای قدیمی‌تر را بازیابی کنید.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>این مهاجرت نمی‌تواند خود را بازگرداند: اعمال نشده است یا down() ندارد.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فرم خوانده نشد.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>اجرایی را که باید از سر گرفته شود انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ابتدا «بله، این مهاجرت‌ها اکنون اجرا شوند» را تیک بزنید.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>دست‌کم یک مهاجرت انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>یک مهاجرت پس از اعمال تغییر کرده است: تغییر را با ذکر دلیل بپذیرید یا فایل را به حالت قبل برگردانید.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>دلیل پذیرفتن مهاجرت‌های تغییریافته را بنویسید.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>دلیل حداکثر ۵۰۰ نویسه است.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>اجرایی که اینجا آغاز شده هنوز در جریان است (%detail). صبر کنید تا پایان یابد.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>اجرای دیگری قفل نصب را در اختیار دارد: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>اجرا به کاربر واردشده‌ای نیاز دارد که وجود داشته باشد.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>هیچ برنامه خط فرمان php یافت نشد. مسیر کامل آن را در migration.ini [AdminSettings] PhpCliPath تنظیم کنید.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open غیرفعال است، بنابراین اینجا نمی‌توان اجرایی را آغاز کرد. ./console exp:migration:migrate --apply را روی سرور اجرا کنید.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>پوشه اجراها قابل نوشتن نیست: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>اجرا آغاز شد اما شناسه فرایند خود را گزارش نکرد. %detail را بررسی کنید.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>مشخص کنید چه چیزی باید بازگردانده شود.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>اجرا آغاز نشد.</translation>
     </message>
 </context>
 </TS>

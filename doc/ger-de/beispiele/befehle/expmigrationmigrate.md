@@ -2,14 +2,14 @@
 title: exp:expmigrationmigrate
 audience: developer, admin
 category: examples
-summary: "Führt die offenen Migrationen aus: ein Probelauf ohne --apply; Aufnahmen davor und danach, Wiederherstellung bei einem Fehler, Commit, Tag und Push."
+summary: "Führt die offenen Migrationen aus: ein Probelauf ohne --apply; Sicherungspunkte davor und danach, Wiederherstellung bei einem Fehler, Commit, Tag und Push."
 keywords: Konsole, Befehl, exp:expmigrationmigrate, expmigrationmigrate, console, command, CLI, expmigrationmigrate.php, exp:migration:migrate
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationmigrate
 
-Führt die offenen Migrationen aus: ein Probelauf ohne --apply; Aufnahmen davor und danach, Wiederherstellung bei einem Fehler, Commit, Tag und Push.
+Führt die offenen Migrationen aus: ein Probelauf ohne --apply; Sicherungspunkte davor und danach, Wiederherstellung bei einem Fehler, Commit, Tag und Push.
 
 Skript `bin/php/expmigrationmigrate.php`, Code in `kernel/private/classes/commands/expmigrationmigrate.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -50,14 +50,16 @@ it was applied stops the run unless --force --reason=<text> accepts it.
 | `--environment` | erforderlich | Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-migration/1) |
 | `--login` | erforderlich | Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini) |
-| `--no-caption` |  | Keine Aufnahme vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden |
-| `--no-restore` |  | Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt die vor dem Lauf genommene Aufnahme wiederherzustellen |
-| `--include-uncommitted` |  | Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese in der Aufnahme aufbewahren |
+| `--no-caption` |  | Kein Sicherungspunkt vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden |
+| `--no-restore` |  | Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt den vor dem Lauf angelegten Sicherungspunkt wiederherzustellen |
+| `--include-uncommitted` |  | Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese im Sicherungspunkt aufbewahren |
 | `--no-commit` |  | Die Statusdatei und das Laufprotokoll nicht in das Migrations-Repository committen (auch kein Tag und kein Push) |
 | `--no-push` |  | Committen und taggen, aber nicht pushen |
 | `--no-tag` |  | Committen und pushen, aber den Lauf nicht taggen |
 | `--force` |  | Mit --reason: Migrationen annehmen, deren Datei sich nach dem Anwenden geändert hat (sie laufen nicht erneut) |
 | `--reason` | erforderlich | Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten) |
+| `--run-id` | erforderlich | Die Kennung des zu startenden Laufs (Standard eine neue: <Datum>-<Uhrzeit>-<6 Hex-Ziffern>); die Administration vergibt sie, bevor sie den Lauf startet |
+| `--progress` | erforderlich | Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

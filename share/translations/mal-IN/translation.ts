@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: അതിന്റെ എൻഡ് പോയിന്റ്, സ്കീമ, ക്വറികൾ പരീക്ഷിക്കാനുള്ള ഒരു പ്ലേഗ്രൗണ്ട്.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>മൈഗ്രേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ഫയലുകളായി സൂക്ഷിച്ച ഇൻസ്റ്റലേഷനിലെ മാറ്റങ്ങൾ: അവയുടെ നില, റണ്ണുകൾ, പ്രവർത്തിപ്പിക്കുക, തിരികെയാക്കുക.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>മ്യൂട്ടേഷനുകൾ /api/graphql-ലേക്ക് അയയ്ക്കുക.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>മൈഗ്രേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>നില വായിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>മൈഗ്രേഷനുകളുടെ പട്ടികകൾ ഇതുവരെ നിലവിലില്ല: ./console exp:upgrade --apply അവ സൃഷ്ടിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count മൈഗ്രേഷനുകൾ പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ഒരു റൺ നടക്കുന്നു, %user ആരംഭിച്ചത്</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ഇൻസ്റ്റലേഷൻ ലോക്ക് ചെയ്തിരിക്കുന്നു: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>തീർച്ചപ്പെടുത്താത്തത്</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>അനാഥങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>അവസാന റൺ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ഇതുവരെ ഒന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>എല്ലാ മൈഗ്രേഷനുകളും</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>സിമുലേറ്റ് ചെയ്ത റൺ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ഡ്രൈ റൺ</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>തീർച്ചപ്പെടുത്താത്ത മൈഗ്രേഷനുകൾ പിന്നീട് തിരികെയാക്കിയ ഒരു ട്രാൻസാക്ഷനിൽ പ്രവർത്തിച്ചു: ഒന്നും സൂക്ഷിച്ചില്ല. ഓരോന്നും ഡാറ്റാബേസിൽ എന്ത് മാറ്റി എന്ന് താഴെ കാണാം.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ഇപ്പോൾ ഒരു റൺ എന്ത് ചെയ്യും. ഒന്നും മാറ്റുന്നില്ല: ഓരോ തീർച്ചപ്പെടുത്താത്ത മൈഗ്രേഷനും അത് വരുത്തുന്ന മാറ്റങ്ങൾ കാണിക്കുന്നു, റൺ അതിന് മുമ്പും ശേഷവും എന്ത് ചെയ്യുമെന്നും.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>സിമുലേറ്റ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>പ്രവർത്തിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ഡ്രൈ റൺ പരാജയപ്പെട്ടു: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>സിമുലേഷന് PostgreSQL അല്ലെങ്കിൽ SQLite ആവശ്യമാണ്, അവയുടെ സ്കീമ മാറ്റങ്ങൾ തിരികെയാക്കാം; ഈ ഡാറ്റാബേസിൽ താഴെയുള്ള പദ്ധതിയാണ് ഒരു റൺ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>മൈഗ്രേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>മൈഗ്രേഷൻ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>അവസ്ഥ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ഇത് എന്ത് ചെയ്യും</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>സിമുലേഷൻ: %ms ms-ൽ %result</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ഇതുവരെ മൈഗ്രേഷനില്ല.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>റണ്ണിന് മുമ്പും ശേഷവും</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>മുമ്പുള്ള സ്നാപ്ഷോട്ട്</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>എടുത്തു, ഒരു മൈഗ്രേഷൻ പരാജയപ്പെട്ടാൽ പുനഃസ്ഥാപിക്കും</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ഓഫ്</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ശേഷമുള്ള സ്നാപ്ഷോട്ട്</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>റൺ വിജയിച്ചപ്പോൾ എടുത്തത്</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total മൈഗ്രേഷനുകൾ: %pending തീർച്ചപ്പെടുത്താത്തത്, %done പൂർത്തിയായി, %failed പരാജയപ്പെട്ടു.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>മൈഗ്രേഷൻ ചരിത്രം</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ഓരോ റണ്ണും അതിന്റെ ഉപയോക്താവ്, പരിസ്ഥിതി, സ്നാപ്ഷോട്ടുകൾ, കമ്മിറ്റ്, ടാഗ്, പുഷ് ചെയ്തവ എന്നിവയോടൊപ്പം. പരാജയപ്പെട്ടതോ തടസ്സപ്പെട്ടതോ ആയ റൺ പുനരാരംഭിക്കാം; മുമ്പ് സ്നാപ്ഷോട്ട് എടുത്ത റൺ തിരിച്ചെടുക്കാം.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>റണ്ണുകൾ വായിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>മൈഗ്രേഷനുകളുടെ പട്ടികകൾ ഇതുവരെ നിലവിലില്ല: ./console exp:upgrade --apply അവ സൃഷ്ടിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>എല്ലാം</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>റണ്ണുകൾ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ആരംഭിച്ചത്</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ആര്</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>സ്നാപ്ഷോട്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>റിപ്പോസിറ്ററി</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>പ്രവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>മുമ്പ്</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ശേഷം</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>പുഷ്: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>പുനരാരംഭിക്കുക</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>തിരികെയാക്കുക</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ഈ അവസ്ഥയിൽ റണ്ണില്ല.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ഇവിടെ ആരംഭിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ഈ പേജുകളിൽ ആരംഭിച്ച റണ്ണുകൾ, പുനരാരംഭങ്ങൾ, റോൾബാക്കുകൾ, ഓരോന്നിന്റെയും റിപ്പോർട്ടോടെ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>എന്ത്</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ഫലം</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>റോൾബാക്ക്</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target-ന്റെ റോൾബാക്ക്</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>റൺ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>റൺ എന്ത് ചെയ്തു, അതിന്റെ രേഖ, ലോഗ്. ഇവിടെ ആരംഭിച്ച റൺ ഈ പേജ് അടച്ചാലും പശ്ചാത്തലത്തിൽ തുടരും; അത് പിന്തുടരാൻ പേജ് വീണ്ടും തുറക്കുക.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ഈ റൺ പുനരാരംഭിക്കുക</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ഈ റൺ തിരികെയാക്കുക</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>രേഖ വായിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>പുരോഗതി</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%time-ന് %user ആരംഭിച്ചു.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>കോഡ് പരിശോധിക്കുന്നു, റണ്ണിന് മുമ്പ് സ്നാപ്ഷോട്ട് എടുക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id പ്രവർത്തിക്കുന്നു (%total-ൽ %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total-ൽ %done പൂർത്തിയായി</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>മൈഗ്രേഷനുകൾ പ്രവർത്തിച്ചു; ഒന്ന് പരാജയപ്പെട്ടെങ്കിൽ സ്നാപ്ഷോട്ട് പുനഃസ്ഥാപിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>റണ്ണിന് ശേഷം സ്നാപ്ഷോട്ട് എടുക്കുന്നു, കമ്മിറ്റ്, ടാഗ്, പുഷ് ചെയ്യുന്നു</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>സ്നാപ്ഷോട്ട് പുനഃസ്ഥാപിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>റൺ അവസാനിച്ചു. അതിന്റെ റിപ്പോർട്ട് ലോഡ് ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>പുരോഗതി പിന്തുടരാനായില്ല. റൺ എങ്ങനെ പോകുന്നു എന്ന് കാണാൻ പേജ് വീണ്ടും ലോഡ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ഈ പേജ് റൺ നടക്കുന്നതിനനുസരിച്ച് പിന്തുടരുന്നു.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>വീണ്ടും ലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>റിപ്പോർട്ട്</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>സമയം</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms മി.സെ.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>റൺ പിശകുകളായി പ്രിന്റ് ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>രേഖ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>പരിസ്ഥിതി</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ഒന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>അവസാനിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>കമ്മിറ്റ്</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ടാഗ്</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>പുഷ്</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>സന്ദേശം</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ഈ റണ്ണിലെ മൈഗ്രേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ഉറവിടം</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>റൺ ലോഗ്</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ലോഗിന്റെ അവസാന ഭാഗം മാത്രം കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>പ്രവർത്തിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>റിപ്പോർട്ടില്ലാതെ അവസാനിച്ചു</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>വിജയിച്ചു</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ഡാറ്റാബേസിൽ എത്താനായില്ല</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ആന്തരിക പിശക്</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ഒരു റൺ നടക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %time-ന് %user ആരംഭിച്ചു.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>പിന്തുടരുക</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ഇൻസ്റ്റലേഷൻ ലോക്ക് ചെയ്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>മറ്റൊരു റൺ ലോക്ക് കൈവശം വച്ചിരിക്കുന്നു (ഒരു അപ്‌ഗ്രേഡ് അല്ലെങ്കിൽ കൺസോളിലെ റൺ): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>പൂർത്തിയായി</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>തീർച്ചപ്പെടുത്താത്തത്</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ആവശ്യമില്ല</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>അജ്ഞാതം</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>തിരികെയാക്കി</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>പ്രയോഗിച്ചു</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>പ്രയോഗിക്കും</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>തിരിച്ചെടുത്തു</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>തിരിച്ചെടുക്കും</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>പ്രവർത്തിപ്പിച്ചില്ല</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>മറ്റൊന്നിനായി കാത്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>മാറ്റം സ്വീകരിച്ചു</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>മാറ്റം സ്വീകരിക്കും</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>സിമുലേറ്റ് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>മൈഗ്രേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>നില</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ചരിത്രം</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target തിരിച്ചെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ഒരു റൺ അതിന് മുമ്പ് എടുത്ത സ്നാപ്ഷോട്ടിലേക്ക് തിരിച്ചെടുക്കുന്നു, ഒരു മൈഗ്രേഷൻ അതിന്റെ down() ഉപയോഗിച്ച്. മുൻപത്തെ സ്നാപ്ഷോട്ട് പുനഃസ്ഥാപിക്കുന്നത് വിദഗ്ധർക്കുള്ളതാണ്. ഓരോന്നും ഇപ്പോഴത്തെ അവസ്ഥയുടെ സ്നാപ്ഷോട്ടിന് ശേഷം നിങ്ങളായി പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>എന്ത് തിരിച്ചെടുക്കാമെന്ന് വായിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ഒരു റൺ</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ഒരു മൈഗ്രേഷൻ</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>മുൻപത്തെ ഒരു സ്നാപ്ഷോട്ട്</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>വിവരണം</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>സ്നാപ്ഷോട്ട്</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ലേബൽ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>എടുത്തത്</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>തരം</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>പുനഃസ്ഥാപിക്കേണ്ട ഭാഗങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ഡാറ്റാബേസ്</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>സ്റ്റോറേജ് ഫയലുകൾ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ക്രമീകരണങ്ങൾ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ഡാറ്റാബേസ് പുനഃസ്ഥാപിക്കുന്നത് അതിനെ സ്നാപ്ഷോട്ടിന്റെ സമയത്തേക്ക് തിരികെ കൊണ്ടുപോകുന്നു, സെഷനുകൾ ഉൾപ്പെടെ: പിന്നീട് വീണ്ടും സൈൻ ഇൻ ചെയ്യാൻ ആവശ്യപ്പെട്ടേക്കാം. അതിനുശേഷം മാറ്റിയതെല്ലാം നഷ്ടപ്പെടും; ആദ്യം ഇപ്പോഴത്തെ അവസ്ഥയുടെ സ്നാപ്ഷോട്ട് എടുക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ഇത് എന്ത് പുനഃസ്ഥാപിക്കുമെന്ന് എനിക്കറിയാം</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>സ്നാപ്ഷോട്ടിന്റെ ഐഡി വീണ്ടും ടൈപ്പ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>അതെ, തിരിച്ചെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>മുമ്പ് സ്നാപ്ഷോട്ട് എടുത്ത റണ്ണുകൾ.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ഇതുവരെ സ്നാപ്ഷോട്ടുള്ള റണ്ണില്ല.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>സ്വയം തിരിച്ചെടുക്കാൻ കഴിയുന്ന പ്രയോഗിച്ച മൈഗ്രേഷനുകൾ (അവയ്ക്ക് down() ഉണ്ട്).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>പ്രയോഗിച്ച ഒരു മൈഗ്രേഷനും down() ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>മുൻപത്തെ സ്നാപ്ഷോട്ടുകൾ (വിദഗ്ധർ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ഇതുവരെ സ്നാപ്ഷോട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>മൈഗ്രേഷനുകൾ പ്രവർത്തിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>റൺ %user ആയി പശ്ചാത്തലത്തിൽ തുടരുന്നു, അതിന്റെ പേജ് അത് നടക്കുന്നതിനനുസരിച്ച് കാണിക്കുന്നു. ആദ്യ മൈഗ്രേഷന് മുമ്പ് ഇൻസ്റ്റലേഷന്റെ സ്നാപ്ഷോട്ട് എടുക്കുന്നു; ഒരു മൈഗ്രേഷൻ പരാജയപ്പെട്ടാൽ റൺ നിർത്തുകയും സ്നാപ്ഷോട്ട് പുനഃസ്ഥാപിക്കുകയും ചെയ്യും.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ആദ്യം ഡ്രൈ റൺ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>നില വായിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>തീർച്ചപ്പെടുത്താത്ത മൈഗ്രേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>അവ ഈ ക്രമത്തിൽ പ്രവർത്തിക്കുന്നു. ഒന്നിനെയും അതിനെ ആശ്രയിക്കുന്നവയെയും പിന്നീടുള്ള റണ്ണിനായി വിടാൻ അതിന്റെ ടിക്ക് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>പ്രവർത്തിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>പ്രവർത്തിക്കുമ്പോൾ മെയിന്റനൻസ് മോഡ് ഓണാക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>പ്രയോഗിച്ചതിന് ശേഷം മാറ്റി</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ഈ ഫയലുകൾ പ്രയോഗിച്ചവയല്ല. മാറ്റം ഒരു കാരണത്തോടെ സ്വീകരിക്കാത്തപക്ഷം റൺ അവയെ നിരസിക്കും; അവ വീണ്ടും പ്രവർത്തിപ്പിക്കില്ല, പുതിയ ചെക്ക്സം രേഖപ്പെടുത്തുകയും കാരണം ഓഡിറ്റ് ലോഗിൽ സൂക്ഷിക്കുകയും ചെയ്യും.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>മാറ്റങ്ങൾ സ്വീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>എന്തുകൊണ്ട്</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>സ്ഥിരസ്ഥിതികൾ സുരക്ഷിതമാണ്. ഓരോ ബോക്സും ഒരു ഘട്ടം ഒഴിവാക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>സ്നാപ്ഷോട്ട് ഇല്ല</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>റണ്ണിന് മുമ്പും ശേഷവും സ്നാപ്ഷോട്ട് ഇല്ല: പരാജയം യാന്ത്രികമായി പുനഃസ്ഥാപിക്കാനാവില്ല.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>പുനഃസ്ഥാപനം ഇല്ല</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>പരാജയത്തിന് ശേഷം, ഇൻസ്റ്റലേഷൻ പരാജയം വിട്ടതുപോലെ വിടുക.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>കമ്മിറ്റ് ചെയ്യാത്ത മാറ്റങ്ങൾ സൂക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ക്രമീകരണങ്ങളിലോ എക്സ്റ്റൻഷനുകളിലോ ഡിസൈനുകളിലോ കമ്മിറ്റ് ചെയ്യാത്ത മാറ്റങ്ങൾ ഉണ്ടെങ്കിലും പ്രവർത്തിപ്പിക്കുക; അവ സ്നാപ്ഷോട്ടിൽ ഉൾപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>കമ്മിറ്റ് ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>നില ഫയലും റൺ ലോഗും കമ്മിറ്റ് ചെയ്യരുത് (ടാഗും പുഷും ഇല്ല).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>പുഷ് ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>കമ്മിറ്റും ടാഗും ചെയ്യുക, പക്ഷേ പുഷ് ചെയ്യരുത്.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ടാഗ് ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>കമ്മിറ്റും പുഷും ചെയ്യുക, പക്ഷേ റൺ ടാഗ് ചെയ്യരുത്.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>അതെ, ഈ മൈഗ്രേഷനുകൾ ഇപ്പോൾ പ്രവർത്തിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>തീർച്ചപ്പെടുത്താത്ത മൈഗ്രേഷനില്ല.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>നിലയിലേക്ക് മടങ്ങുക</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ഫയലുകളായി ഒരിക്കൽ എഴുതിയ ഈ ഇൻസ്റ്റലേഷനിലെ മാറ്റങ്ങൾ (ഉള്ളടക്കം, ക്ലാസുകൾ, റോളുകൾ, ക്രമീകരണങ്ങൾ, സ്കീമ), സൈറ്റിന്റെ എല്ലാ ഇൻസ്റ്റലേഷനുകളിലും ഒരേ ക്രമത്തിൽ പ്രയോഗിക്കുന്നു. ഒരു റൺ ആദ്യം സ്നാപ്ഷോട്ട് എടുക്കുന്നു, മൈഗ്രേഷൻ പരാജയപ്പെട്ടാൽ അത് പുനഃസ്ഥാപിക്കുന്നു, ചെയ്തത് രേഖപ്പെടുത്തുകയും കമ്മിറ്റ് ചെയ്യുകയും പുഷ് ചെയ്യുകയും ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count തീർച്ചപ്പെടുത്താത്തവ പ്രവർത്തിപ്പിക്കുക</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>അവലോകനം</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>തീർച്ചപ്പെടുത്താത്തത്</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>പൂർത്തിയായി</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ആവശ്യമില്ല</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ഡാറ്റാബേസ്</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ട്രാൻസാക്ഷനുകൾ: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>സൈറ്റ് മൈഗ്രേഷനുകൾ migrations/-ൽ, ഒരു എക്സ്റ്റൻഷന്റേത് extension/&lt;name&gt;/migrations/-ൽ. അവ പേരുകളുടെ ക്രമത്തിലും ആവശ്യമായവയുടെ അടിസ്ഥാനത്തിലും പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>അവസാന റൺ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>പ്രയോഗിച്ചതിന് ശേഷം ഫയൽ മാറി.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ഇതുവരെ മൈഗ്രേഷനില്ല. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ആദ്യത്തേത് എഴുതുന്നു.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ഏറ്റവും പുതിയ റണ്ണുകൾ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>എല്ലാ റണ്ണുകളും</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ഇതുവരെ റണ്ണില്ല.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ഒരു റൺ സിമുലേറ്റ് ചെയ്യാൻ migration/run നയം ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ഒരു റൺ നടക്കുന്നു: അത് അവസാനിച്ച ശേഷം സിമുലേറ്റ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>സജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ഈ ഇൻസ്റ്റലേഷന്റെ റണ്ണോ മൈഗ്രേഷനോ സ്നാപ്ഷോട്ടോ അല്ല.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ആദ്യം &quot;അതെ, തിരിച്ചെടുക്കുക&quot; ടിക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>മുൻപത്തെ സ്നാപ്ഷോട്ട് പുനഃസ്ഥാപിക്കുന്നത് വിദഗ്ധർക്കുള്ളതാണ്: &quot;ഇത് എന്ത് പുനഃസ്ഥാപിക്കുമെന്ന് എനിക്കറിയാം&quot; ടിക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>സ്നാപ്ഷോട്ടിന്റെ ഐഡി വീണ്ടും ടൈപ്പ് ചെയ്യുക: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>പുനഃസ്ഥാപിക്കാൻ കുറഞ്ഞത് ഒരു ഭാഗമെങ്കിലും തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ഈ റണ്ണിന് മുമ്പ് സ്നാപ്ഷോട്ട് എടുത്തിട്ടില്ല: അതിന്റെ മൈഗ്രേഷനുകൾ ഓരോന്നായി തിരിച്ചെടുക്കുക, അല്ലെങ്കിൽ മുൻപത്തെ സ്നാപ്ഷോട്ട് പുനഃസ്ഥാപിക്കുക.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ഈ മൈഗ്രേഷൻ സ്വയം തിരിച്ചെടുക്കാനാവില്ല: ഇത് പ്രയോഗിച്ചിട്ടില്ല, അല്ലെങ്കിൽ ഇതിന് down() ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ഫോം വായിക്കാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>പുനരാരംഭിക്കേണ്ട റൺ തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ആദ്യം &quot;അതെ, ഈ മൈഗ്രേഷനുകൾ ഇപ്പോൾ പ്രവർത്തിപ്പിക്കുക&quot; ടിക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>കുറഞ്ഞത് ഒരു മൈഗ്രേഷനെങ്കിലും തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ഒരു മൈഗ്രേഷൻ പ്രയോഗിച്ചതിന് ശേഷം മാറി: മാറ്റം ഒരു കാരണത്തോടെ സ്വീകരിക്കുക, അല്ലെങ്കിൽ ഫയൽ തിരികെ വയ്ക്കുക.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>മാറിയ മൈഗ്രേഷനുകൾ സ്വീകരിക്കുന്നതിന്റെ കാരണം നൽകുക.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>കാരണം പരമാവധി 500 അക്ഷരങ്ങളാണ്.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ഇവിടെ ആരംഭിച്ച ഒരു റൺ ഇപ്പോഴും നടക്കുന്നു (%detail). അത് അവസാനിക്കുന്നതുവരെ കാത്തിരിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>മറ്റൊരു റൺ ഇൻസ്റ്റലേഷന്റെ ലോക്ക് കൈവശം വച്ചിരിക്കുന്നു: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>റണ്ണിന് നിലവിലുള്ള, സൈൻ ഇൻ ചെയ്ത ഒരു ഉപയോക്താവ് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php കമാൻഡ് ലൈൻ ബൈനറി കണ്ടെത്തിയില്ല. migration.ini [AdminSettings] PhpCliPath അതിന്റെ പൂർണ്ണ പാതയിലേക്ക് സജ്ജമാക്കുക.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open പ്രവർത്തനരഹിതമാണ്, അതിനാൽ ഇവിടെ റൺ ആരംഭിക്കാനാവില്ല. സെർവറിൽ ./console exp:migration:migrate --apply പ്രവർത്തിപ്പിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>റണ്ണുകളുടെ ഫോൾഡറിൽ എഴുതാനാവില്ല: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>റൺ ആരംഭിച്ചു, പക്ഷേ അതിന്റെ പ്രോസസ് ഐഡി അറിയിച്ചില്ല. %detail പരിശോധിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>എന്ത് തിരിച്ചെടുക്കണമെന്ന് പറയുക.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>റൺ ആരംഭിക്കാനായില്ല.</translation>
     </message>
 </context>
 </TS>

@@ -15140,6 +15140,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ƙarshen hanyarsa, tsarin da wurin gwada tambayoyi.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ƙaurace-ƙaurace</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Canje-canje ga shigarwa da aka ajiye a matsayin fayiloli: matsayinsu, ayyukan, gudanarwa da mayarwa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Aika sauye-sauye zuwa /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Ƙaurace-ƙaurace</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ba a iya karanta matsayin ba: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Teburorin ƙaurace-ƙauracen ba su wanzu ba tukuna: ./console exp:upgrade --apply yana ƙirƙirar su.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Ƙaura %count sun kasa</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ana gudanar da aiki, wanda %user ya fara</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>An kulle shigarwar: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ana jira</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ya kasa</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Marayu</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Aiki na ƙarshe</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>babu tukuna</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Duk ƙaurace-ƙaurace</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Aikin kwaikwayo</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Gwajin bushe</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Ƙaurace-ƙauracen da ke jira sun gudana a cikin ma&apos;amala wadda aka mayar daga baya: ba a ajiye komai ba. A ƙasa akwai abin da kowace ta canza a ma&apos;adanar bayanai.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Abin da aiki zai yi yanzu. Ba a canza komai ba: kowace ƙaura da ke jira tana lissafa canje-canjen da za ta yi, kuma aikin abin da zai yi kafin da bayan.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Kwaikwaya</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Gudanar</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Gwajin bushe ya kasa: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Kwaikwayo yana buƙatar PostgreSQL ko SQLite, waɗanda za a iya mayar da canje-canjen tsarinsu; a wannan ma&apos;adanar bayanai shirin da ke ƙasa shi ne abin da aiki zai yi.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Ƙaurace-ƙauracen</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Ƙaura</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Abin da za ta yi</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Kwaikwayo: %result cikin %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Babu ƙaura tukuna.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Kafin da bayan aikin</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Hoto kafin</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ana ɗauka, kuma ana maido shi idan ƙaura ta kasa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>a kashe</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Hoto bayan</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ana ɗauka idan aikin ya yi nasara</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Ƙaura %total: %pending ana jira, %done an gama, %failed sun kasa.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Tarihin ƙaurace-ƙaurace</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Kowane aiki tare da mai amfaninsa, muhalli, hotuna da abin da aka tabbatar, aka sanya alama aka tura. Aikin da ya kasa ko aka katse za a iya ci gaba da shi; aikin da aka ɗauki hoto kafinsa za a iya janye shi.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ba a iya karanta ayyukan ba: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Teburorin ƙaurace-ƙauracen ba su wanzu ba tukuna: ./console exp:upgrade --apply yana ƙirƙirar su.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Nuna</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Duka</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ayyuka</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>An fara</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Hotuna</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ma&apos;ajiya</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Matakai</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>kafin</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>bayan</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>turawa: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Ci gaba</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Janye</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Babu aiki a wannan hali.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>An fara a nan</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Ayyuka, ci gaba da janyewa da aka fara a waɗannan shafuka, tare da rahoton kowanne.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Me</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sakamako</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Janyewa</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Janyewar %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Aiki %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Abin da aikin ya yi, bayanansa da rajistarsa. Aikin da aka fara a nan yana ci gaba a bayan fage idan aka rufe wannan shafi; sake buɗe shafin don bibiyarsa.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Ci gaba da wannan aiki</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Janye wannan aiki</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Ba a iya karanta bayanan ba: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ci gaba</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ya fara a %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Ana duba lambar da ɗaukar hoto kafin aikin</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Ana gudanar da %id (%index cikin %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>An gama %done cikin %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Ƙaurace-ƙauracen sun gudana; ana maido da hoton idan ɗaya ta kasa</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ana ɗaukar hoto bayan aikin, tabbatarwa, sanya alama da turawa</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Ana maido da hoton</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Aikin ya ƙare. Ana loda rahotonsa.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ba a iya bibiyar ci gaban ba. Sake loda shafin don ganin yadda aikin ke tafiya.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Wannan shafi yana bibiyar aikin yayin da yake tafiya.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Sake loda</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rahoto</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tsawon lokaci</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milidaƙiƙa</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Abin da aikin ya buga a matsayin kurakurai</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Bayanai</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Muhalli</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>babu</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ya ƙare</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Tabbatarwa</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Alama</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Turawa</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Saƙo</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Ƙaurace-ƙauracen wannan aiki</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Tushe</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Rajistar aiki</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Ƙarshen rajistar kawai ake nunawa.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ana gudanarwa</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ya ƙare ba tare da rahoto ba</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ya yi nasara</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ya kasa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>an ƙi</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ba a iya isa ga ma&apos;adanar bayanai ba</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>kuskure na ciki</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ana gudanar da aiki</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind da %user ya fara a %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Bibiye shi</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>An kulle shigarwar</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Wani aiki yana riƙe da makullin (haɓakawa ko aiki a na&apos;ura mai kwakwalwa): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>an gama</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ana jira</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ba a buƙata</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ba a sani ba</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>an mayar</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>an aiwatar</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>za a aiwatar</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>an janye</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>za a janye</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ba a gudanar ba</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>tana jiran wata</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>an karɓi canji</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>za a karɓi canji</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>an kwaikwaya</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ƙaurace-ƙaurace</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Tarihi</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Janye %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Ana janye aiki zuwa hoton da aka ɗauka kafinsa, ƙaura ɗaya da down() ɗinta. Maido da hoton da ya gabata na ƙwararru ne. Kowanne yana gudana a bayan fage a matsayin ku, bayan hoton halin yanzu.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Ba a iya karanta abin da za a iya janyewa ba: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Ƙaura ɗaya</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Hoton da ya gabata</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Bayani</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eh</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>a&apos;a</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Hoto</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Lakabi</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>An ɗauka</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Iri</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Sassan da za a maido</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Ma&apos;adanar bayanai</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Fayilolin ajiya (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Saituna (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Maido da ma&apos;adanar bayanai yana mayar da ita zuwa lokacin hoton, har da zaman shiga: ana iya neman ku sake shiga daga baya. Duk abin da aka canza tun lokacin zai ɓace; da farko ana ɗaukar hoton halin yanzu.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Na san abin da wannan ke maidowa</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Sake rubuta lambar shaidar hoton</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Eh, janye shi</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Soke</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ayyukan da aka ɗauki hoto kafinsu.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Zaɓi</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Babu aiki mai hoto tukuna.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Ƙaurace-ƙauracen da aka aiwatar waɗanda za su iya janye kansu (suna da down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Babu ƙaurar da aka aiwatar da ke da down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Hotunan da suka gabata (ƙwararru)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Babu hoto tukuna.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Gudanar da ƙaurace-ƙauracen</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Aikin yana gudana a bayan fage a matsayin %user, kuma shafinsa yana nuna shi yayin da yake tafiya. Kafin ƙaura ta farko ana ɗaukar hoton shigarwar; idan ƙaura ta kasa aikin yana tsayawa kuma ana maido da hoton.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Gwajin bushe tukuna</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ba a iya karanta matsayin ba: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Ƙaurace-ƙauracen da ke jira</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Suna gudana a wannan tsari. Cire alamar ɗaya don barin ta, tare da waɗanda ke buƙatarta, don aiki na gaba.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Gudanar da ita</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Yana kunna yanayin gyara yayin da yake gudana.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>An canza bayan an aiwatar da su</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Waɗannan fayiloli ba su ne waɗanda aka aiwatar ba. Aiki yana ƙin su sai dai idan an karɓi canjin da dalili; ba a sake gudanar da su, ana rubuta sabon checksum kuma ana ajiye dalilin a rajistar bincike.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Karɓi canje-canjen</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Me ya sa</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Tsoffin saituna su ne masu aminci. Kowane akwati yana tsallake mataki ɗaya.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Babu hoto</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Babu hoto kafin da bayan aikin: ba za a iya maido da gazawa ta atomatik ba.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Babu maidowa</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Bayan gazawa, bar shigarwar yadda gazawar ta bar ta.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Ajiye canje-canjen da ba a tabbatar ba</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Gudanar ko da saituna, ƙari ko zane-zane suna da canje-canjen da ba a tabbatar ba; suna shiga cikin hoton.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Babu tabbatarwa</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Kada a tabbatar da fayil ɗin matsayi da rajistar aikin (babu alama kuma babu turawa).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Babu turawa</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Tabbatar kuma sanya alama, amma kada a tura.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Babu alama</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Tabbatar kuma tura, amma kada a sanya wa aikin alama.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Eh, gudanar da waɗannan ƙaurace-ƙaurace yanzu</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Babu ƙaurar da ke jira.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Koma ga matsayi</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Canje-canje ga wannan shigarwa da aka rubuta sau ɗaya a matsayin fayiloli (abun ciki, ajujuwa, matsayai, saituna, tsari) kuma ake aiwatarwa a kowace shigarwar shafin a tsari ɗaya. Aiki yana ɗaukar hoto da farko, yana maido da shi idan ƙaura ta kasa, kuma yana rubutawa, tabbatarwa da tura abin da ya yi.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Gudanar da %count masu jira</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Bayani a taƙaice</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ana jira</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>An gama</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sun kasa</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ba a buƙata</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Ma&apos;adanar bayanai</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ma&apos;amaloli: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Ƙaurace-ƙauracen shafin suna cikin migrations/, na ƙari a cikin extension/&lt;name&gt;/migrations/. Suna gudana bisa tsarin sunayensu da abin da suke buƙata.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Aiki na ƙarshe</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fayil ɗin ya canza bayan an aiwatar da shi.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Babu ƙaura tukuna. ./console exp:migration:generate --skeleton &lt;name&gt; --apply yana rubuta ta farko.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Ayyukan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Duk ayyuka</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Babu aiki tukuna.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Kwaikwayon aiki yana buƙatar manufar migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ana gudanar da aiki: kwaikwaya idan ya ƙare.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Saitin farko</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ba aiki ba ne, ba ƙaura ba ne kuma ba hoton wannan shigarwa ba ne.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Da farko sanya alama a “Eh, janye shi”.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Maido da hoton da ya gabata na ƙwararru ne: sanya alama a “Na san abin da wannan ke maidowa”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Sake rubuta lambar shaidar hoton: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Zaɓi aƙalla sashe ɗaya da za a maido.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ba a ɗauki hoto kafin wannan aiki ba: janye ƙaurace-ƙaurarsa ɗaya bayan ɗaya, ko maido da hoton da ya gabata.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Wannan ƙaura ba za ta iya janye kanta ba: ba a aiwatar da ita ba, ko ba ta da down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ba a iya karanta fom ɗin ba.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Zaɓi aikin da za a ci gaba da shi.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Da farko sanya alama a “Eh, gudanar da waɗannan ƙaurace-ƙaurace yanzu”.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Zaɓi aƙalla ƙaura ɗaya.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Wata ƙaura ta canza bayan an aiwatar da ita: karɓi canjin da dalili, ko mayar da fayil ɗin.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Bayar da dalilin da ya sa ake karɓar ƙaurace-ƙauracen da aka canza.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Dalilin bai wuce haruffa 500 ba.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Aikin da aka fara a nan har yanzu yana gudana (%detail). Jira ya ƙare.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Wani aiki yana riƙe da makullin shigarwar: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Aikin yana buƙatar mai amfani da ya shiga kuma yake wanzuwa.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ba a sami shirin layin umarni na php ba. Saita migration.ini [AdminSettings] PhpCliPath zuwa cikakkiyar hanyarsa.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>An kashe proc_open, don haka ba za a iya fara aiki a nan ba. Gudanar da ./console exp:migration:migrate --apply a kan sabar.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ba za a iya rubutu a babban fayil na ayyukan ba: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>An fara aikin amma bai bayar da lambar shaidar tsarinsa ba. Duba %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Faɗi abin da za a janye.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ba a iya fara aikin ba.</translation>
     </message>
 </context>
 </TS>

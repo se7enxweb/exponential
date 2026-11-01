@@ -15081,6 +15081,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: кінцева точка, схема та пісочниця для випробування запитів.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Міграції</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Зміни інсталяції, збережені як файли: їхній стан, запуски, виконання та відкат.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Надсилайте мутації на /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Міграції</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Не вдалося прочитати стан: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Таблиць міграцій ще немає: ./console exp:upgrade --apply створює їх.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Не вдалося виконати міграцій: %count</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Триває запуск, розпочатий користувачем %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Інсталяцію заблоковано: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Очікує</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Невдалі</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Осиротілі</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Останній запуск</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ще жодного</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Усі міграції</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Імітований запуск</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Пробний запуск</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Очікувані міграції виконано в транзакції, яку потім відкочено: нічого не збережено. Нижче показано, що кожна з них змінила в базі даних.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Що запуск зробив би зараз. Нічого не змінюється: кожна очікувана міграція перелічує зміни, які вона внесла б, а запуск — що він зробив би до і після.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Імітувати</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Виконати</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Пробний запуск не вдався: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Для імітації потрібен PostgreSQL або SQLite, зміни схеми яких можна відкотити; на цій базі даних план нижче показує, що зробив би запуск.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Міграції</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Міграція</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Що вона зробила б</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Імітація: %result за %ms мс</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Міграцій ще немає.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>До і після запуску</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Точка відновлення до</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>створюється і відновлюється, якщо міграція не вдається</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>вимкнено</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Точка відновлення після</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>створюється, якщо запуск успішний</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Міграцій: %total; очікують: %pending, виконано: %done, невдалих: %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Історія міграцій</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Кожен запуск із користувачем, середовищем, точками відновлення та тим, що було закомічено, позначено тегом і надіслано (push). Невдалий або перерваний запуск можна продовжити; запуск із точкою відновлення до нього можна скасувати.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Не вдалося прочитати запуски: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Таблиць міграцій ще немає: ./console exp:upgrade --apply створює їх.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показати</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Усі</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Запуски</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Розпочато</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ким</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Точки відновлення</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Репозиторій</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дії</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>до</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>після</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>надсилання (push): %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Продовжити</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Відкотити</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Немає запусків у цьому стані.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Розпочато тут</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Запуски, продовження та відкати, розпочаті на цих сторінках, зі звітом про кожен.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Що</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Відкат</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Відкат %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Запуск %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Що зробив запуск, його запис і журнал. Запуск, розпочатий тут, триває у фоновому режимі, коли цю сторінку закрито; відкрийте сторінку знову, щоб стежити за ним.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Продовжити цей запуск</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Відкотити цей запуск</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Не вдалося прочитати запис: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Хід виконання</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Розпочав %user о %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Перевірка коду та створення точки відновлення перед запуском</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Виконується %id (%index з %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>Виконано %done з %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Міграції виконано; точка відновлення відновлюється, якщо якась не вдалася</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Створення точки відновлення після запуску, коміт, тег і push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Відновлення точки відновлення</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Запуск завершено. Завантаження звіту.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Не вдалося стежити за ходом виконання. Перезавантажте сторінку, щоб побачити стан запуску.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ця сторінка стежить за запуском під час його виконання.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Перезавантажити</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Звіт</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Тривалість</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Що запуск вивів як помилки</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Запис</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Середовище</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>немає</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Завершено</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коміт</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Тег</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Надсилання (push)</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Повідомлення</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Міграції цього запуску</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Джерело</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Журнал запуску</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Показано лише кінець журналу.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>виконується</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>завершено без звіту</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>успішно</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>не вдалося</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>відхилено</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>база даних була недоступна</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>внутрішня помилка</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Триває запуск</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind розпочав %user о %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Стежити</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Інсталяцію заблоковано</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Інший запуск утримує блокування (оновлення або запуск у консолі): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>виконано</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>очікує</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>не потрібно</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>невідомо</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>відкочено</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>застосовано</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>було б застосовано</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>скасовано</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>було б скасовано</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>не виконано</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>чекає на іншу</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>зміну прийнято</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>зміну було б прийнято</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>імітовано</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Міграції</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Історія</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Скасувати %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Запуск скасовується до точки відновлення, створеної перед ним, окрема міграція — її методом down(). Відновлення ранішої точки відновлення — для фахівців. Кожна дія виконується у фоні від вашого імені після створення точки відновлення поточного стану.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Не вдалося прочитати, що можна скасувати: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Запуск</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Одна міграція</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Раніша точка відновлення</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Опис</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>так</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ні</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Точка відновлення</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Позначка</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Створено</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Вид</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Частини для відновлення</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>База даних</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Файли сховища (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Налаштування (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Відновлення повертає базу даних до моменту точки відновлення, включно із сесіями: після цього, можливо, доведеться увійти знову. Усе, що змінилося відтоді, буде втрачено; спочатку створюється точка відновлення поточного стану.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Я знаю, що це відновлює</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Введіть ідентифікатор точки відновлення ще раз</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Так, скасувати</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Запуски з точкою відновлення, створеною перед ними.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Вибрати</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Ще немає запусків із точкою відновлення.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Застосовані міграції, які можуть скасувати себе самі (мають down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Жодна застосована міграція не має down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Раніші точки відновлення (для фахівців)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Точок відновлення ще немає.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Виконати міграції</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Запуск виконується у фоні від імені %user, а його сторінка показує хід виконання. Перед першою міграцією створюється точка відновлення інсталяції; якщо міграція не вдається, запуск зупиняється і точку відновлення буде відновлено.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Спочатку пробний запуск</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Не вдалося прочитати стан: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Очікувані міграції</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Вони виконуються в цьому порядку. Зніміть позначку з міграції, щоб залишити її та залежні від неї міграції для пізнішого запуску.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Виконати</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Вмикає режим обслуговування на час виконання.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Змінено після застосування</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Ці файли не ті, що були застосовані. Запуск відхиляє їх, якщо зміну не прийнято з обґрунтуванням; вони не виконуються повторно, нова контрольна сума записується, а обґрунтування зберігається в журналі аудиту.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Прийняти зміни</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Чому</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Типові значення — безпечні. Кожен прапорець пропускає один крок.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Без точки відновлення</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Без точки відновлення до і після запуску: збій не можна буде виправити автоматично.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Без відновлення</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Після збою залишити інсталяцію такою, якою її залишив збій.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Зберегти незакомічені зміни</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Виконувати, навіть якщо налаштування, розширення або дизайни мають незакомічені зміни; вони потрапляють у точку відновлення.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Без коміту</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Не комітити файл стану та журнал запуску (також без тегу і без push).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Без push</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Закомітити й позначити тегом, але не надсилати (push).</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Без тегу</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Закомітити й надіслати (push), але не позначати запуск тегом.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Так, виконати ці міграції зараз</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Немає очікуваних міграцій.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Назад до стану</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Зміни цієї інсталяції, один раз записані як файли (вміст, класи, ролі, налаштування, схема) і застосовані до кожної інсталяції сайту в тому самому порядку. Запуск спочатку створює точку відновлення, відновлює її, якщо міграція не вдається, і записує, комітить та надсилає (push) зроблене.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Виконати очікувані (%count)</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Огляд</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Очікує</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Виконано</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Невдалі</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Не потрібно</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>База даних</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>транзакції: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Міграції сайту лежать у migrations/, міграції розширення — у extension/&lt;name&gt;/migrations/. Вони виконуються в порядку їхніх назв і залежностей.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Останній запуск</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Файл змінився після застосування.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Міграцій ще немає. ./console exp:migration:generate --skeleton &lt;name&gt; --apply створює першу.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Останні запуски</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Усі запуски</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Запусків ще немає.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Для імітації запуску потрібна політика migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Триває запуск: імітуйте, коли він завершиться.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target не є ні запуском, ні міграцією, ні точкою відновлення цієї інсталяції.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Спочатку позначте «Так, скасувати».</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Відновлення ранішої точки відновлення — для фахівців: позначте «Я знаю, що це відновлює».</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Введіть ідентифікатор точки відновлення ще раз: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Виберіть принаймні одну частину для відновлення.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Цей запуск не має точки відновлення перед ним: скасуйте його міграції по одній або відновіть ранішу точку відновлення.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Цю міграцію не можна скасувати саму по собі: вона не застосована або не має down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Не вдалося прочитати форму.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Виберіть запуск, який слід продовжити.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Спочатку позначте «Так, виконати ці міграції зараз».</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Виберіть принаймні одну міграцію.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Міграція змінилася після застосування: прийміть зміну з обґрунтуванням або поверніть файл.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Вкажіть, чому змінені міграції приймаються.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Обґрунтування — не більше 500 символів.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Запуск, розпочатий тут, ще триває (%detail). Дочекайтеся його завершення.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Інший запуск утримує блокування інсталяції: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Для запуску потрібен наявний користувач, що увійшов у систему.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Не знайдено програму командного рядка php. Вкажіть у migration.ini [AdminSettings] PhpCliPath повний шлях до неї.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open вимкнено, тому запуск тут розпочати не можна. Виконайте ./console exp:migration:migrate --apply на сервері.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Неможливо записати в теку запусків: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Запуск розпочато, але він не повідомив ідентифікатор свого процесу. Перевірте %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Вкажіть, що слід скасувати.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Не вдалося розпочати запуск.</translation>
     </message>
 </context>
 </TS>

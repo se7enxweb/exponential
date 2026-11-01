@@ -15142,6 +15142,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API GraphQL: titik tungtungna, skéma sareng tempat pikeun nyobian kueri.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Parobahan pamasangan anu disimpen salaku file: kaayaanana, jalananana, ngajalankeun sareng mulangkeun.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79663,6 +79671,888 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Kirimkeun mutasi ka /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Kaayaan teu tiasa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabel migrasi teu acan aya: ./console exp:upgrade --apply ngadamelna.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migrasi gagal</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Aya jalanan nu nuju lumangsung, dimimitian ku %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Pamasangan dikonci: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Nuju ngantosan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Yatim</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Jalanan pamungkas</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>teu acan aya</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Sadaya migrasi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Jalanan simulasi</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Uji coba garing</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Migrasi anu ngantosan dijalankeun dina transaksi anu saterasna dibolaykeun: teu aya anu disimpen. Di handap aya naon anu dirobih ku masing-masing dina database.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Naon anu bakal dilakukeun ku jalanan ayeuna. Teu aya anu dirobih: unggal migrasi anu ngantosan ngadaptarkeun parobahan anu bakal dilakukeunana, sareng jalanan naon anu bakal dilakukeun sateuacan sareng saatosna.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulasikeun</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Jalankeun</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Uji coba garing gagal: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulasi meryogikeun PostgreSQL atanapi SQLite, anu parobahan skémana tiasa dibolaykeun; dina database ieu rencana di handap mangrupikeun naon anu bakal dilakukeun ku jalanan.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migrasi-migrasi</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Ngaran migrasi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kaayaan</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Naon anu bakal dilakukeun</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulasi: %result dina %ms md</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Teu acan aya migrasi.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Sateuacan sareng saatos jalanan</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Potret kaayaan sateuacan</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>dicandak, sareng dipulihkeun upami migrasi gagal</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pareum</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Potret kaayaan saatos</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>dicandak upami jalanan hasil</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migrasi: %pending ngantosan, %done réngsé, %failed gagal.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Riwayat migrasi</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Unggal jalanan sareng pamakéna, lingkunganana, potret kaayaanana sareng naon anu di-commit, di-tag sareng di-push. Jalanan anu gagal atanapi kaganggu tiasa diteruskeun; jalanan anu gaduh potret kaayaan sateuacanna tiasa ditarik deui.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Jalanan teu tiasa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabel migrasi teu acan aya: ./console exp:upgrade --apply ngadamelna.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Témbongkeun</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sadayana</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Jalanan</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dimimitian</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Potret kaayaan</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Répositori</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>sateuacan</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>saatos</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>kiriman: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Teraskeun</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Tarik deui</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Teu aya jalanan dina kaayaan ieu.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Dimimitian di dieu</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Jalanan, neruskeun sareng mulangkeun anu dimimitian dina kaca-kaca ieu, sareng laporan masing-masing.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Naon</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hasil</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Mulangkeun</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Mulangkeun %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Jalanan %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Naon anu dilakukeun ku jalanan, catetanana sareng log-na. Jalanan anu dimimitian di dieu terus lumangsung di latar tukang upami kaca ieu ditutup; buka deui kacana pikeun nuturkeunana.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Teraskeun jalanan ieu</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Tarik deui jalanan ieu</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Catetan teu tiasa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Kamajuan</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Dimimitian ku %user tabuh %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Mariksa kode sareng nyandak potret kaayaan sateuacan jalanan</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Ngajalankeun %id (%index tina %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done tina %total réngsé</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migrasi parantos dijalankeun; mulihkeun potret kaayaan upami aya anu gagal</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Nyandak potret kaayaan saatos jalanan, commit, tag sareng push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Mulihkeun potret kaayaan</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Jalanan parantos réngsé. Ngamuat laporanana.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Kamajuan teu tiasa dituturkeun. Muat deui kacana pikeun ningali kumaha jalanan lumangsung.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Kaca ieu nuturkeun jalanan nalika lumangsung.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Muat deui</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Laporan</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktos</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milidetik</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Naon anu dicitak ku jalanan salaku kasalahan</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Catetan</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Lingkungan</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>teu aya</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Réngsé</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Komit</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tanda</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Kirim (push)</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Pesen</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migrasi jalanan ieu</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sumber</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Log jalanan</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Ngan tungtung log anu ditémbongkeun.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>nuju lumangsung</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>réngsé tanpa laporan</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>hasil</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ditolak</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>database teu tiasa dihontal</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>kasalahan internal</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Aya jalanan nu nuju lumangsung</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind dimimitian ku %user tabuh %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Tuturkeun</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Pamasangan dikonci</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Jalanan séjén nyekel koncina (paningkatan atanapi jalanan dina konsol): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>réngsé</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ngantosan</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>teu diperyogikeun</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>teu dipikanyaho</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>dibolaykeun</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>diterapkeun</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>bakal diterapkeun</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ditarik deui</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>bakal ditarik deui</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>teu dijalankeun</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ngantosan nu séjén</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>parobahan ditampi</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>parobahan bakal ditampi</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>disimulasikeun</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Kaayaan</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Riwayat</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Tarik deui %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Jalanan ditarik deui ka potret kaayaan anu dicandak sateuacanna, hiji migrasi ku down()-na. Mulihkeun potret kaayaan anu langkung tiheula kanggo para ahli. Masing-masing dijalankeun di latar tukang salaku anjeun, saatos potret kaayaan ayeuna.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Naon anu tiasa ditarik deui teu tiasa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Hiji jalanan</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Hiji migrasi</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Potret kaayaan anu langkung tiheula</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Pedaran</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>enya</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>henteu</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Potret kaayaan</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Labél</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Dicandak</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Jinis</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Bagian anu badé dipulihkeun</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Databasena</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>File panyimpenan (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Setélan (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Mulihkeun database ngabalikeun kana waktos potret kaayaan, kalebet sési: anjeun panginten kedah lebet deui saatosna. Sadaya anu robih ti saprak éta leungit; potret kaayaan ayeuna dicandak heula.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Abdi terang naon anu dipulihkeun ku ieu</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Ketik deui id potret kaayaan</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Leres, tarik deui</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Bolaykeun</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Jalanan anu gaduh potret kaayaan sateuacanna.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Pilih</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Teu acan aya jalanan anu gaduh potret kaayaan.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Migrasi anu diterapkeun anu tiasa narik deui nyalira (aranjeunna gaduh down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Teu aya migrasi anu diterapkeun anu gaduh down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Potret kaayaan anu langkung tiheula (ahli)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Teu acan aya potret kaayaan.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Jalankeun migrasi</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Jalanan lumangsung di latar tukang salaku %user, sareng kacana némbongkeun nalika lumangsung. Sateuacan migrasi kahiji, potret kaayaan pamasangan dicandak; upami migrasi gagal, jalanan eureun sareng potret kaayaan dipulihkeun.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Uji coba garing heula</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Kaayaan teu tiasa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migrasi anu ngantosan</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Aranjeunna dijalankeun dina urutan ieu. Pupus centang hiji pikeun ninggalkeunana, sareng anu meryogikeunana, kanggo jalanan engké.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Jalankeun éta</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Ngahurungkeun modeu pangropéa salami lumangsung.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Dirobih saatos diterapkeun</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>File-file ieu sanés anu parantos diterapkeun. Jalanan nolakna kajaba parobahanana ditampi kalayan alesan; aranjeunna henteu dijalankeun deui, checksum énggal dicatet sareng alesanana disimpen dina log audit.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Tampi parobahan</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Alesan</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Nilai standar mangrupikeun anu aman. Unggal kotak ngalangkungan hiji léngkah.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Tanpa potret kaayaan</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Tanpa potret kaayaan sateuacan sareng saatos jalanan: kagagalan teu tiasa dipulihkeun sacara otomatis.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Tanpa mulihkeun</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Saatos gagal, antepkeun pamasangan sapertos anu ditinggalkeun ku kagagalan.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Simpen parobahan anu teu acan di-commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Jalankeun sanaos setélan, ekstensi atanapi desain gaduh parobahan anu teu acan di-commit; aranjeunna lebet kana potret kaayaan.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Tanpa komit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ulah commit file kaayaan sareng log jalanan (oge tanpa tag sareng tanpa push).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Tanpa push</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit sareng tag, tapi ulah push.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Tanpa tanda</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit sareng push, tapi ulah méré tanda kana jalanan.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Leres, jalankeun migrasi ieu ayeuna</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Teu aya migrasi anu ngantosan.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Balik deui ka kaayaan</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Parobahan pamasangan ieu anu ditulis sakali salaku file (eusi, kelas, peran, setélan, skéma) sareng diterapkeun ka unggal pamasangan situs dina urutan anu sami. Jalanan nyandak potret kaayaan heula, mulihkeunana upami migrasi gagal, sareng nyatet, commit sareng push naon anu dilakukeunana.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Jalankeun %count anu ngantosan</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tinjauan</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Nuju ngantosan</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Réngsé</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Teu diperyogikeun</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Basis data</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaksi: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migrasi situs aya dina migrations/, migrasi ekstensi dina extension/&lt;name&gt;/migrations/. Aranjeunna dijalankeun dumasar kana urutan ngaranna sareng naon anu diperyogikeunana.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Jalanan pamungkas</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>File dirobih saatos diterapkeun.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Teu acan aya migrasi. ./console exp:migration:generate --skeleton &lt;name&gt; --apply nyerat anu kahiji.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Jalanan panganyarna</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Sadaya jalanan</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Teu acan aya jalanan.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Nyimulasikeun jalanan meryogikeun kawijakan migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Aya jalanan nu nuju lumangsung: simulasikeun saatos réngsé.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Panyetélan</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target sanés jalanan, sanés migrasi sareng sanés potret kaayaan pamasangan ieu.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Centang heula &quot;Leres, tarik deui&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Mulihkeun potret kaayaan anu langkung tiheula kanggo para ahli: centang &quot;Abdi terang naon anu dipulihkeun ku ieu&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Ketik deui id potret kaayaan: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Pilih sahenteuna hiji bagian anu badé dipulihkeun.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Jalanan ieu teu gaduh potret kaayaan sateuacanna: tarik deui migrasina hiji-hiji, atanapi pulihkeun potret kaayaan anu langkung tiheula.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Migrasi ieu teu tiasa ditarik deui nyalira: teu acan diterapkeun, atanapi teu gaduh down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulir teu tiasa dibaca.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Pilih jalanan anu badé diteraskeun.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Centang heula &quot;Leres, jalankeun migrasi ieu ayeuna&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Pilih sahenteuna hiji migrasi.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migrasi dirobih saatos diterapkeun: tampi parobahanana kalayan alesan, atanapi balikeun deui filena.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Pasihan alesan naha migrasi anu dirobih ditampi.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Alesan paling seueur 500 karakter.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Jalanan anu dimimitian di dieu masih lumangsung (%detail). Antosan dugi ka réngsé.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Jalanan séjén nyekel konci pamasangan: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Jalanan meryogikeun pamaké anu parantos lebet sareng aya.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Teu kapendak program php kanggo baris paréntah. Setel jalur lengkepna dina migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open dinonaktipkeun, janten jalanan teu tiasa dimimitian di dieu. Jalankeun ./console exp:migration:migrate --apply dina server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Polder jalanan teu tiasa diserat: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Jalanan parantos dimimitian tapi henteu ngalaporkeun id prosésna. Pariksa %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Sebutkeun naon anu badé ditarik deui.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Jalanan teu tiasa dimimitian.</translation>
     </message>
 </context>
 </TS>

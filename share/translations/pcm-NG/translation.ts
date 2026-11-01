@@ -15142,6 +15142,14 @@ Note: Dem no go uninstall di packages.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>Di GraphQL API: im end point, di schema and one playground to try queries.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migration dem</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Change dem for di installation wey dey inside file: how dem dey, di run dem, run dem and turn dem back.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79663,6 +79671,888 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Send mutations go /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migration dem</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>We no fit read how e dey: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Di table dem for di migration never dey: ./console exp:upgrade --apply go make dem.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migration don fail</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>One run dey go on, na %user start am</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Di installation don lock: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>E still dey wait</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>E don fail</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Di ones wey no get papa</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Di last run</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nothing yet</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>All di migration dem</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Run wey we just pretend</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Test run</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Di migration dem wey dey wait run inside one transaction wey we turn back after: nothing remain. For down na wetin each one change for di database.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Wetin run go do now. Nothing go change: each migration wey dey wait show di change wey e go make, and di run show wetin e go do before and after.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Pretend run am</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Make e run</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Di test run fail: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>To pretend run need PostgreSQL or SQLite, because dem fit turn schema change back; for dis database, di plan for down na wetin run go do.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Di migration dem</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Di migration</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>How e dey</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Wetin e go do</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Pretend run: %result for %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>No migration dey yet.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Before and after di run</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Snapshot before</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>we take am, and we go bring am back if one migration fail</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>e dey off</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Snapshot after</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>we take am when di run pass</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migration: %pending dey wait, %done don finish, %failed don fail.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Wetin don happen for migration</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Every run with di user, di environment, di snapshot dem and wetin dem commit, tag and push. Run wey fail or wey stop for middle fit continue; run wey get snapshot before am fit turn back.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>We no fit read di run dem: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Di table dem for di migration never dey: ./console exp:upgrade --apply go make dem.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Show am</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All of dem</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Di run dem</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Wen e start</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na who</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Snapshot dem</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Di repository</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Wetin you fit do</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>before e start</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>after e finish</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>di push: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Continue am</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Turn am back</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>No run dey for dis state.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Wey start for here</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Run, continue and turn-back wey start for dis page dem, with di report of each one.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Wetin</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wetin come out</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Turn-back</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Turn-back of %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Di run %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Wetin di run do, di record and di log. Run wey start for here go still dey run for back if you close dis page; open di page again to follow am.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Continue dis run</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Turn dis run back</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>We no fit read di record: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>How far e don go</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Na %user start am for %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>We dey check di code and take snapshot before di run</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id dey run (%index of %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done of %total don finish</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Di migration dem don run; we dey bring di snapshot back if one fail</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>We dey take snapshot after di run, dey commit, dey tag and dey push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>We dey bring di snapshot back</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Di run don end. We dey load di report.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>We no fit follow how far e don go. Load di page again to see how di run dey do.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Dis page dey follow di run as e dey go.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Load am again</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Di report</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>How long e take</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisecond</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Di error dem wey di run print</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Di record</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Di environment</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nothing</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Wen e end</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Di commit</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Di tag</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Di push</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Di message</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Di migration dem for dis run</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Where e from</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Di log of di run</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Na only di end of di log we show.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>e dey run</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>e end without report</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>e pass</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>e fail</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>dem refuse am</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>we no fit reach di database</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>error for inside</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>One run dey go on</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>Na %user start %kind for %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Follow am</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Di installation don lock</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Another run hold di lock (one upgrade or one run for console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>e don finish</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>e still dey wait</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>dem no need am</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>we no know</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>dem don turn am back</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>dem don apply am</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>dem go apply am</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>dem don take am back</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>dem go take am back</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>e never run</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>e dey wait for another one</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>dem accept di change</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>dem go accept di change</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>dem pretend run am</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migration dem</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>How e dey</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Wetin don happen before</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Take %target back</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Run go turn back to di snapshot wey dem take before am, one migration with im down(). To bring back older snapshot na for expert dem. Each one dey run for back as you, after snapshot of how tins dey now.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>We no fit read wetin fit turn back: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>One run</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>One migration only</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>One older snapshot</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Wetin e be</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yes o</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no o</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Snapshot</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Di name</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Wen dem take am</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Which kind</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Di part dem to bring back</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Di database</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Di storage file dem (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Di setting dem (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>To bring di database back go take am back to di time of di snapshot, session dem join: dem fit ask you to sign in again after. Everything wey change since then go loss; we go first take snapshot of how tins dey now.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>I sabi wetin dis one go bring back</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Type di id of di snapshot again</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Yes, take am back</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Comot am</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Di run dem wey get snapshot before dem.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Pick</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>No run with snapshot dey yet.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Di migration dem wey dem don apply wey fit take demself back (dem get down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>No migration wey dem apply get down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Older snapshot dem (for expert)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>No snapshot dey yet.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Run di migration dem</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Di run go dey go for back as %user, and im page go show am as e dey go. Before di first migration, we go take snapshot of di installation; if one migration fail, di run go stop and we go bring di snapshot back.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Do test run first</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>We no fit read how e dey: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migration dem wey dey wait</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Dem dey run for dis order. Remove tick from one to leave am, and di ones wey need am, for later run.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Run am</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>E go on maintenance mode while e dey run.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Dem change after dem apply am</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Dis file dem no be di ones wey dem apply. Run go refuse dem unless dem accept di change with reason; dem no go run again, we go record di new checksum and keep di reason for di audit log.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Accept di change dem</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Why e be so</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Di default dem na di safe ones. Each box dey leave one step out.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>No snapshot</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>No snapshot before and after di run: if e fail, we no fit bring am back by imself.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>No bring-back</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>After e fail, leave di installation as di failure leave am.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Keep di change dem wey never commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Run am even if setting, extension or design get change wey never commit; dem go enter di snapshot.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>No commit am</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>No commit di status file and di run log (no tag and no push too).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>No push am</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit and tag, but no push.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>No tag am</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit and push, but no tag di run.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Yes, run dis migration dem now</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>No migration dey wait.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Go back to how e dey</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Change dem for dis installation wey dem write one time as file (content, class, role, setting, schema) and apply to every installation of di site for di same order. Run go first take snapshot, bring am back if one migration fail, and record, commit and push wetin e do.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Run di %count wey dey wait</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>How everything dey</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>E still dey wait</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Don finish</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>E don fail</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Dem no need am</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Di database</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaction dem: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Di site migration dem dey inside migrations/, di ones of extension dey inside extension/&lt;name&gt;/migrations/. Dem dey run for di order of dia name and wetin dem need.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Di last run</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Di file change after dem apply am.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>No migration dey yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply go write di first one.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Di latest run dem</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Every run wey dey</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>No run dey yet.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>To pretend run need di policy migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>One run dey go on: pretend run when e don end.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Set-am-up</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target no be run, no be migration and no be snapshot of dis installation.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>First tick &quot;Yes, take am back&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>To bring back older snapshot na for expert dem: tick &quot;I sabi wetin dis one go bring back&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Type di id of di snapshot again: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Pick at least one part to bring back.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Dis run no get snapshot before am: take im migration dem back one by one, or bring back older snapshot.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Dis migration no fit take imself back: dem never apply am, or e no get down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>We no fit read di form.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Pick di run wey you wan continue.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>First tick &quot;Yes, run dis migration dem now&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Pick at least one migration.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>One migration change after dem apply am: accept di change with reason, or put di file back.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Give di reason why una accept di migration dem wey change.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Di reason no fit pass 500 character.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>One run wey start for here still dey go on (%detail). Wait make e end.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Another run hold di lock of di installation: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Di run need user wey dey and don sign in.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>We no see any php command line binary. Put im full path for migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open dey off, so run no fit start for here. Run ./console exp:migration:migrate --apply for di server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>We no fit write inside di folder of di run dem: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Di run start but e no talk im process id. Check %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Talk wetin you wan take back.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Di run no fit start.</translation>
     </message>
 </context>
 </TS>

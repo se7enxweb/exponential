@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ان جو اينڊ پوائنٽ، اسڪيما ۽ ڪوئريون آزمائڻ لاءِ هڪ پلي گرائونڊ.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مائيگريشنز</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>انسٽاليشن ۾ تبديليون فائلن طور محفوظ: انهن جي حالت، رنز، هلائڻ ۽ واپس ڪرڻ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ميوٽيشنز /api/graphql ڏانهن موڪليو.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>مائيگريشنز</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>اسٽيٽس پڙهي نه سگهيو: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>مائيگريشنز جا ٽيبل اڃا موجود ناهن: ./console exp:upgrade --apply انهن کي ٺاهي ٿو.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>ناڪام مائيگريشنز: %count</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>هڪ رن هلي رهي آهي، %user شروع ڪئي</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>انسٽاليشن لاڪ ٿيل آهي: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>التوا ۾</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناڪام</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>يتيم</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخري رن</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>اڃا ڪوبه نه</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>سڀ مائيگريشنز</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>نقلي رن</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>آزمائشي رن</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>التوا ۾ مائيگريشنز هڪ ٽرانزيڪشن ۾ هليون جيڪا پوءِ واپس ڪئي وئي: ڪجهه به محفوظ نه رکيو ويو. هيٺ ڏنل آهي ته هر هڪ ڊيٽابيس ۾ ڇا تبديل ڪيو.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>هڪ رن هاڻي ڇا ڪندي. ڪجهه به تبديل نٿو ٿئي: هر التوا واري مائيگريشن اهي تبديليون ڏيکاري ٿي جيڪي هوءَ ڪندي، ۽ رن اهو جيڪو اڳ ۽ پوءِ ڪندي.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>نقل ڪريو</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>هلايو</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>آزمائشي رن ناڪام ٿي: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>نقل لاءِ PostgreSQL يا SQLite گهربل آهي، جن جون اسڪيما تبديليون واپس ٿي سگهن ٿيون؛ هن ڊيٽابيس تي هيٺيون منصوبو اهو آهي جيڪو رن ڪندي.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>مائيگريشنز</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>مائيگريشن</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>اها ڇا ڪندي</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>نقل: %result، %ms ms ۾</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>اڃا ڪا مائيگريشن ناهي.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>رن کان اڳ ۽ پوءِ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>اڳ وارو اسنيپ شاٽ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ورتو ويندو، ۽ مائيگريشن ناڪام ٿيڻ تي بحال ڪيو ويندو</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>پوءِ وارو اسنيپ شاٽ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>رن ڪامياب ٿيڻ تي ورتو ويندو</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>ڪل مائيگريشنز %total: التوا ۾ %pending، مڪمل %done، ناڪام %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>مائيگريشن جي تاريخ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>هر رن پنهنجي يوزر، ماحول، اسنيپ شاٽس ۽ ان سان جيڪو ڪمٽ، ٽيگ ۽ پش ڪيو ويو. ناڪام يا روڪيل رن ٻيهر جاري ڪري سگهجي ٿي؛ جنهن رن کان اڳ اسنيپ شاٽ ورتو ويو هجي اها واپس ڪري سگهجي ٿي.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>رنز پڙهي نه سگهيون: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>مائيگريشنز جا ٽيبل اڃا موجود ناهن: ./console exp:upgrade --apply انهن کي ٺاهي ٿو.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ڏيکاريو</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سڀ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>رنز</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>شروع ٿي</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>طرفان</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>اسنيپ شاٽس</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ريپوزيٽري</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عمل</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>اڳ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>پوءِ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>پش: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ٻيهر جاري ڪريو</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>واپس ڪريو</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>هن حالت ۾ ڪا رن ناهي.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>هتي شروع ٿيل</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>انهن صفحن تي شروع ٿيل رنز، ٻيهر جاري ڪرڻ ۽ واپسيون، هر هڪ جي رپورٽ سان.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ڇا</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتيجو</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>واپسي</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target جي واپسي</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>رن %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>رن ڇا ڪيو، ان جو رڪارڊ ۽ ان جو لاگ. هتي شروع ٿيل رن هي صفحو بند ٿيڻ تي پس منظر ۾ جاري رهي ٿي؛ ان کي ڏسڻ لاءِ صفحو ٻيهر کوليو.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>هي رن ٻيهر جاري ڪريو</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>هي رن واپس ڪريو</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>رڪارڊ پڙهي نه سگهيو: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پيش رفت</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user طرفان %time تي شروع ٿي.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ڪوڊ جي جانچ ۽ رن کان اڳ اسنيپ شاٽ وٺڻ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id هلي رهي آهي (%total مان %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total مان %done مڪمل</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>مائيگريشنز هلي چڪيون؛ جيڪڏهن ڪا ناڪام ٿي ته اسنيپ شاٽ بحال ٿي رهيو آهي</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>رن کان پوءِ اسنيپ شاٽ، ڪمٽ، ٽيگ ۽ پش</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>اسنيپ شاٽ بحال ٿي رهيو آهي</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>رن ختم ٿي وئي. ان جي رپورٽ لوڊ ٿي رهي آهي.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>پيش رفت ڏسي نه سگهي. رن ڪيئن هلي رهي آهي ڏسڻ لاءِ صفحو ٻيهر لوڊ ڪريو.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>هي صفحو رن کي هلندي ڏيکاري ٿو.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ٻيهر لوڊ ڪريو</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>رپورٽ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وقت</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ملي سيڪنڊ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>رن جيڪو غلطين طور ڇاپيو</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>رڪارڊ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ماحول</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ڪوبه نه</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ختم ٿي</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ڪمٽ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ٽيگ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پش</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پيغام</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>هن رن جون مائيگريشنز</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ذريعو</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>رن لاگ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>صرف لاگ جو آخري حصو ڏيکاريو ويو آهي.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>هلي رهي آهي</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>رپورٽ کان سواءِ ختم ٿي</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ڪامياب</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناڪام</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رد ٿيل</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ڊيٽابيس تائين پهچ نه هئي</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>اندروني غلطي</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>هڪ رن هلي رهي آهي</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind، %user طرفان %time تي شروع ٿي.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ان کي ڏسو</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>انسٽاليشن لاڪ ٿيل آهي</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ٻي رن وٽ لاڪ آهي (اپ گريڊ يا ڪنسول تي رن): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>مڪمل</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>التوا ۾</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ضرورت ناهي</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>اڻڄاتل</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>واپس ٿيل</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>لاڳو ٿيل</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>لاڳو ٿيندي</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>واپس ورتل</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>واپس ورتي ويندي</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>نه هلي</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ٻي جو انتظار</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>تبديلي قبول ٿي</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>تبديلي قبول ٿيندي</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>نقل ٿيل</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مائيگريشنز</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>اسٽيٽس</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تاريخ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target واپس وٺو</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>هڪ رن ان کان اڳ ورتل اسنيپ شاٽ ڏانهن واپس ورتي ويندي آهي، هڪ مائيگريشن پنهنجي down() سان. اڳوڻو اسنيپ شاٽ بحال ڪرڻ ماهرن لاءِ آهي. هر هڪ پس منظر ۾ توهان طور هلي ٿي، موجوده حالت جي اسنيپ شاٽ کان پوءِ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>جيڪو واپس وٺي سگهجي ٿو اهو پڙهي نه سگهيو: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>هڪ رن</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>هڪ مائيگريشن</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>اڳوڻو اسنيپ شاٽ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>وضاحت</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ها</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>اسنيپ شاٽ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ليبل</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ورتو ويو</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>بحال ڪرڻ وارا حصا</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ڊيٽابيس</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>اسٽوريج فائلون (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>سيٽنگون (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ڊيٽابيس بحال ڪرڻ ان کي سيشنز سميت اسنيپ شاٽ جي وقت ڏانهن واپس وٺي ٿو: ان کان پوءِ توهان کي ٻيهر سائن ان ڪرڻ لاءِ چيو وڃي سگهي ٿو. ان وقت کان پوءِ تبديل ٿيل سڀ ڪجهه گم ٿي ويندو؛ پهرين موجوده حالت جو اسنيپ شاٽ ورتو ويندو آهي.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>مون کي خبر آهي ته هي ڇا بحال ڪري ٿو</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>اسنيپ شاٽ جي id ٻيهر ٽائيپ ڪريو</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ها، واپس وٺو</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد ڪريو</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>اهي رنز جن کان اڳ اسنيپ شاٽ ورتو ويو.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>چونڊيو</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>اڃا اسنيپ شاٽ سان ڪا رن ناهي.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>لاڳو ٿيل مائيگريشنز جيڪي پاڻ کي واپس وٺي سگهن ٿيون (انهن وٽ down() آهي).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ڪنهن به لاڳو ٿيل مائيگريشن وٽ down() ناهي.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>اڳوڻا اسنيپ شاٽس (ماهر)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>اڃا ڪو اسنيپ شاٽ ناهي.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>مائيگريشنز هلايو</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>رن %user طور پس منظر ۾ هلي ٿي، ۽ ان جو صفحو ان کي هلندي ڏيکاري ٿو. پهرين مائيگريشن کان اڳ انسٽاليشن جو اسنيپ شاٽ ورتو ويندو آهي؛ جڏهن مائيگريشن ناڪام ٿئي ٿي ته رن رڪجي ٿي ۽ اسنيپ شاٽ بحال ٿئي ٿو.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>پهرين آزمائشي رن</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>اسٽيٽس پڙهي نه سگهيو: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>التوا واريون مائيگريشنز</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>اهي هن ترتيب ۾ هلن ٿيون. ڪنهن هڪ کي، ۽ جيڪي ان کي گهرن ٿيون، بعد واري رن لاءِ ڇڏڻ لاءِ ان جو نشان هٽايو.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ان کي هلايو</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>هلڻ دوران مرمت وارو موڊ آن ڪري ٿو.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>لاڳو ٿيڻ کان پوءِ تبديل ٿيل</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>هي فائلون اهي ناهن جيڪي لاڳو ڪيون ويون هيون. رن انهن کي رد ڪري ٿي جيستائين تبديلي ڪنهن سبب سان قبول نه ڪئي وڃي؛ اهي ٻيهر نه هلنديون، نئون چيڪ سم رڪارڊ ٿيندو ۽ سبب آڊٽ لاگ ۾ محفوظ ٿيندو.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>تبديليون قبول ڪريو</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ڇو</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ڊفالٽ محفوظ آهن. هر خانو هڪ قدم ڇڏي ٿو.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>اسنيپ شاٽ نه</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>رن کان اڳ ۽ پوءِ ڪو اسنيپ شاٽ نه: ناڪامي خودڪار طور بحال نٿي ٿي سگهي.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>بحالي نه</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ناڪامي کان پوءِ، انسٽاليشن کي ائين ڇڏيو جيئن ناڪامي ڇڏيو.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>اڻ ڪمٽ ٿيل تبديليون رکو</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>هلايو جيتوڻيڪ سيٽنگن، ايڪسٽينشنز يا ڊزائنن ۾ اڻ ڪمٽ ٿيل تبديليون هجن؛ اهي اسنيپ شاٽ ۾ شامل ٿينديون.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ڪمٽ نه</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>اسٽيٽس فائل ۽ رن لاگ ڪمٽ نه ڪريو (نه ٽيگ ۽ نه پش).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>پش نه</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ڪمٽ ۽ ٽيگ ڪريو، پر پش نه ڪريو.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ٽيگ نه</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ڪمٽ ۽ پش ڪريو، پر رن کي ٽيگ نه ڪريو.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ها، اهي مائيگريشنز هاڻي هلايو</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ڪا مائيگريشن التوا ۾ ناهي.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>اسٽيٽس ڏانهن واپس</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>هن انسٽاليشن ۾ تبديليون هڪ ڀيرو فائلن طور لکيل (مواد، ڪلاسز، ڪردار، سيٽنگون، اسڪيما) ۽ سائيٽ جي هر انسٽاليشن تي ساڳئي ترتيب ۾ لاڳو ٿيل. رن پهرين اسنيپ شاٽ وٺي ٿي، مائيگريشن ناڪام ٿيڻ تي ان کي بحال ڪري ٿي، ۽ جيڪو ڪيو ان کي رڪارڊ، ڪمٽ ۽ پش ڪري ٿي.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>التوا واريون %count هلايو</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>جائزو</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>التوا ۾</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مڪمل</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناڪام</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ضرورت ناهي</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ڊيٽابيس</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ٽرانزيڪشنز: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>سائيٽ جون مائيگريشنز migrations/ ۾ آهن، ايڪسٽينشن جون extension/&lt;name&gt;/migrations/ ۾. اهي پنهنجن نالن ۽ گهرجن جي ترتيب ۾ هلن ٿيون.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخري رن</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>فائل لاڳو ٿيڻ کان پوءِ تبديل ٿي.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>اڃا ڪا مائيگريشن ناهي. ./console exp:migration:generate --skeleton &lt;name&gt; --apply پهرين لکي ٿو.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>تازيون رنز</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>سڀ رنز</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>اڃا ڪا رن ناهي.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>رن جي نقل لاءِ پاليسي migration/run گهربل آهي.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>هڪ رن هلي رهي آهي: ختم ٿيڻ کان پوءِ نقل ڪريو.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سيٽ اپ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target هن انسٽاليشن جي نه رن آهي، نه مائيگريشن ۽ نه اسنيپ شاٽ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>پهرين &quot;ها، واپس وٺو&quot; تي نشان لڳايو.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>اڳوڻو اسنيپ شاٽ بحال ڪرڻ ماهرن لاءِ آهي: &quot;مون کي خبر آهي ته هي ڇا بحال ڪري ٿو&quot; تي نشان لڳايو.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>اسنيپ شاٽ جي id ٻيهر ٽائيپ ڪريو: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>بحال ڪرڻ لاءِ گهٽ ۾ گهٽ هڪ حصو چونڊيو.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>هن رن کان اڳ ڪو اسنيپ شاٽ نه ورتو ويو: ان جون مائيگريشنز هڪ هڪ ڪري واپس وٺو، يا اڳوڻو اسنيپ شاٽ بحال ڪريو.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>هي مائيگريشن پاڻ واپس نٿي وٺي سگهجي: اها لاڳو ناهي، يا ان وٽ down() ناهي.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فارم پڙهي نه سگهيو.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ٻيهر جاري ڪرڻ لاءِ رن چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>پهرين &quot;ها، اهي مائيگريشنز هاڻي هلايو&quot; تي نشان لڳايو.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>گهٽ ۾ گهٽ هڪ مائيگريشن چونڊيو.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>هڪ مائيگريشن لاڳو ٿيڻ کان پوءِ تبديل ٿي: تبديلي سبب سان قبول ڪريو، يا فائل واپس رکو.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>سبب ڏيو ته تبديل ٿيل مائيگريشنز ڇو قبول ڪيون پيون وڃن.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>سبب وڌ ۾ وڌ 500 اکرن جو آهي.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>هتي شروع ٿيل رن اڃا هلي رهي آهي (%detail). ان جي ختم ٿيڻ جو انتظار ڪريو.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ٻي رن وٽ انسٽاليشن جو لاڪ آهي: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>رن لاءِ هڪ موجود سائن ان ٿيل يوزر گهربل آهي.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ڪو php ڪمانڊ لائن پروگرام نه مليو. migration.ini [AdminSettings] PhpCliPath کي ان جي مڪمل رستي تي سيٽ ڪريو.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open بند آهي، تنهنڪري هتي رن شروع نٿي ٿي سگهي. سرور تي ./console exp:migration:migrate --apply هلايو.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>رنز جي فولڊر ۾ لکي نٿو سگهجي: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>رن شروع ٿي پر پنهنجي پروسيس id نه ٻڌائي. %detail چيڪ ڪريو.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ٻڌايو ته ڇا واپس وٺڻو آهي.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>رن شروع نه ٿي سگهي.</translation>
     </message>
 </context>
 </TS>

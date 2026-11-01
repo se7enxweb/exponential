@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API ی GraphQL: خاڵی کۆتایی، سکیما و شوێنێک بۆ تاقیکردنەوەی پرسیارەکان.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>گواستنەوەکان</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>گۆڕانکارییەکانی دامەزراندن کە وەک فایل پارێزراون: بارودۆخیان، جێبەجێکردنەکان، جێبەجێکردن و گەڕاندنەوە.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>گۆڕینەکان بنێرە بۆ /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>گواستنەوەکان</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>بارودۆخەکە نەخوێندرایەوە: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>خشتەکانی گواستنەوەکان هێشتا بوونیان نییە: ./console exp:upgrade --apply دروستیان دەکات.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count گواستنەوە سەرنەکەوتن</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>جێبەجێکردنێک بەردەوامە، لەلایەن %user دەستی پێکرد</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>دامەزراندنەکە قوفڵ کراوە: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>چاوەڕوان</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>بێخاوەنەکان</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>دوایین جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>هێشتا هیچ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>هەموو گواستنەوەکان</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>جێبەجێکردنی لاسایی</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>جێبەجێکردنی تاقیکاری</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>گواستنەوە چاوەڕوانەکان لە مامەڵەیەکدا جێبەجێ کران کە دواتر گەڕێندرایەوە: هیچ شتێک نەپارێزرا. لە خوارەوە ئەوە هەیە کە هەر یەکێکیان لە بنکەدراوەدا گۆڕیویەتی.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ئەوەی جێبەجێکردنێک ئێستا دەیکات. هیچ شتێک ناگۆڕدرێت: هەر گواستنەوەیەکی چاوەڕوان ئەو گۆڕانکارییانە ڕیز دەکات کە دەیکات، و جێبەجێکردنەکە ئەوەی پێش و دوای دەیکات.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>لاسایی بکەرەوە</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>جێبەجێکردنی تاقیکاری سەرنەکەوت: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>لاساییکردنەوە پێویستی بە PostgreSQL یان SQLite هەیە، کە گۆڕانکارییەکانی نەخشەیان دەگەڕێندرێنەوە؛ لەسەر ئەم بنکەدراوەیە پلانەکەی خوارەوە ئەوەیە کە جێبەجێکردنێک دەیکات.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>گواستنەوەکان</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>گواستنەوە</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>دۆخ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ئەوەی دەیکات</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>لاساییکردنەوە: %result لە %ms میلیچرکەدا</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>هێشتا هیچ گواستنەوەیەک نییە.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>پێش و دوای جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>وێنەی دۆخی پێشوو</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>دەگیرێت، و کاتێک گواستنەوەیەک سەرنەکەوێت دەگەڕێندرێتەوە</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>کوژاوە</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>وێنەی دۆخی دواتر</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>کاتێک جێبەجێکردنەکە سەرکەوت دەگیرێت</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total گواستنەوە: %pending چاوەڕوان، %done تەواو، %failed سەرنەکەوتوو.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>مێژووی گواستنەوەکان</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>هەر جێبەجێکردنێک لەگەڵ بەکارهێنەرەکەی، ژینگەکەی، وێنەکانی دۆخ و ئەوەی کۆمیت، تاگ و پوش کرا. جێبەجێکردنێکی سەرنەکەوتوو یان پچڕاو دەتوانرێت بەردەوام بکرێت؛ جێبەجێکردنێک کە وێنەی دۆخی پێش خۆی هەیە دەتوانرێت بگەڕێندرێتەوە.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>جێبەجێکردنەکان نەخوێندرانەوە: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>خشتەکانی گواستنەوەکان هێشتا بوونیان نییە: ./console exp:upgrade --apply دروستیان دەکات.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>پیشاندان</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>هەموو</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>جێبەجێکردنەکان</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>دەستپێکرد</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>لەلایەن</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>وێنەکانی دۆخ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>کۆگا</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کردارەکان</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>پێش</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>دوای</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>پوش: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>بەردەوامبوون</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>هیچ جێبەجێکردنێک لەم دۆخەدا نییە.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>لێرە دەستپێکراو</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>جێبەجێکردن، بەردەوامبوون و گەڕاندنەوەکان کە لەم پەڕانەدا دەستیان پێکرا، لەگەڵ ڕاپۆرتی هەر یەکێکیان.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>چی</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ئەنجام</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>گەڕاندنەوەی %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>جێبەجێکردنی %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ئەوەی جێبەجێکردنەکە کردی، تۆمارەکەی و لۆگەکەی. جێبەجێکردنێک کە لێرە دەستی پێکرا لە پاشبنەمادا بەردەوام دەبێت کاتێک ئەم پەڕەیە دادەخرێت؛ پەڕەکە دووبارە بکەرەوە بۆ بەدواداچوونی.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ئەم جێبەجێکردنە بەردەوام بکە</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ئەم جێبەجێکردنە بگەڕێنەرەوە</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>تۆمارەکە نەخوێندرایەوە: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پێشکەوتن</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>لەلایەن %user لە %time دەستی پێکرد.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>پشکنینی کۆد و گرتنی وێنەی دۆخ پێش جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>جێبەجێکردنی %id (%index لە %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done لە %total تەواو بوو</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>گواستنەوەکان جێبەجێ کران؛ ئەگەر یەکێکیان سەرنەکەوتبێت وێنەی دۆخەکە دەگەڕێندرێتەوە</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>گرتنی وێنەی دۆخ دوای جێبەجێکردن، کۆمیت، تاگ و پوش</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>گەڕاندنەوەی وێنەی دۆخ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>جێبەجێکردنەکە کۆتایی هات. ڕاپۆرتەکەی بار دەکرێت.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>بەدواداچوونی پێشکەوتن نەکرا. پەڕەکە نوێ بکەرەوە بۆ بینینی ڕەوشی جێبەجێکردنەکە.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ئەم پەڕەیە بەدوای جێبەجێکردنەکەدا دەچێت لە کاتی ڕۆیشتنیدا.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>نوێکردنەوە</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ڕاپۆرت</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ماوە</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms میلیچرکە</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ئەوەی جێبەجێکردنەکە وەک هەڵە چاپی کرد</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>تۆمار</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ژینگە</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>کۆتایی هات</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>کۆمیت</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>تاگ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پوش</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پەیام</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>گواستنەوەکانی ئەم جێبەجێکردنە</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>سەرچاوە</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>لۆگی جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>تەنها کۆتایی لۆگەکە پیشان دەدرێت.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>لە جێبەجێکردندایە</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>بەبێ ڕاپۆرت کۆتایی هات</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>سەرکەوتوو</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>سەرنەکەوتوو</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ڕەتکرایەوە</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>بنکەدراوە بەردەست نەبوو</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>هەڵەی ناوخۆیی</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>جێبەجێکردنێک بەردەوامە</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind لەلایەن %user لە %time دەستی پێکرد.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>بەدوایدا بچۆ</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>دامەزراندنەکە قوفڵ کراوە</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>جێبەجێکردنێکی تر قوفڵەکەی گرتووە (نوێکردنەوەیەک یان جێبەجێکردنێک لە کۆنسۆڵ): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>تەواو</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>چاوەڕوان</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>پێویست نییە</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نەناسراو</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>گەڕێندرایەوە</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>جێبەجێ کرا</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>جێبەجێ دەکرێت</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>هەڵوەشێندرایەوە</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>هەڵدەوەشێندرێتەوە</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>جێبەجێ نەکراوە</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>چاوەڕێی یەکێکی تر دەکات</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>گۆڕانکاری پەسەند کرا</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>گۆڕانکاری پەسەند دەکرێت</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>لاسایی کرایەوە</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>گواستنەوەکان</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>بارودۆخ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>مێژوو</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>هەڵوەشاندنەوەی %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>جێبەجێکردنێک بۆ وێنەی دۆخی پێش خۆی دەگەڕێندرێتەوە، گواستنەوەیەکیش بە down()ـەکەی. گەڕاندنەوەی وێنەیەکی دۆخی پێشوو بۆ پسپۆڕانە. هەر یەکێکیان لە پاشبنەمادا بە ناوی تۆوە جێبەجێ دەبێت، دوای گرتنی وێنەی دۆخی ئێستا.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ئەوەی دەتوانرێت هەڵبوەشێندرێتەوە نەخوێندرایەوە: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>جێبەجێکردنێک</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>یەک گواستنەوە</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>وێنەیەکی دۆخی پێشوو</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>وەسف</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بەڵێ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نەخێر</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>وێنەی دۆخ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ناونیشان</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>گیرا</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>جۆر</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>بەشەکان بۆ گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>بنکەدراوەکە</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>فایلە هەڵگیراوەکان (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ڕێکخستنەکان (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>گەڕاندنەوەی بنکەدراوە دەیباتەوە بۆ کاتی وێنەی دۆخەکە، دانیشتنەکانیش لەخۆدەگرێت: لەوانەیە دواتر داوات لێبکرێت دووبارە بچیتە ژوورەوە. هەموو ئەوەی لەو کاتەوە گۆڕاوە لەدەست دەچێت؛ سەرەتا وێنەی دۆخی ئێستا دەگیرێت.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>دەزانم ئەمە چی دەگەڕێنێتەوە</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ناسنامەی وێنەی دۆخەکە دووبارە بنووسە</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>بەڵێ، هەڵیبوەشێنەرەوە</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>هەڵوەشاندنەوە</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ئەو جێبەجێکردنانەی وێنەی دۆخی پێش خۆیان هەیە.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>هەڵبژاردن</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>هێشتا هیچ جێبەجێکردنێک بە وێنەی دۆخەوە نییە.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ئەو گواستنەوە جێبەجێکراوانەی دەتوانن خۆیان هەڵبوەشێننەوە (down()ـیان هەیە).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>هیچ گواستنەوەیەکی جێبەجێکراو down()ـی نییە.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>وێنەکانی دۆخی پێشوو (پسپۆڕان)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>هێشتا هیچ وێنەیەکی دۆخ نییە.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>جێبەجێکردنی گواستنەوەکان</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>جێبەجێکردنەکە لە پاشبنەمادا وەک %user بەردەوام دەبێت، و پەڕەکەی لە کاتی ڕۆیشتنیدا پیشانی دەدات. پێش یەکەم گواستنەوە وێنەی دۆخی دامەزراندنەکە دەگیرێت؛ کاتێک گواستنەوەیەک سەرنەکەوێت جێبەجێکردنەکە دەوەستێت و وێنەی دۆخەکە دەگەڕێندرێتەوە.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>سەرەتا جێبەجێکردنی تاقیکاری</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>بارودۆخەکە نەخوێندرایەوە: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>گواستنەوە چاوەڕوانەکان</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>بەم ڕیزبەندییە جێبەجێ دەکرێن. نیشانەی یەکێکیان لابەرە بۆ ئەوەی ئەو و ئەوانەی پێویستیان پێیەتی بۆ جێبەجێکردنێکی دواتر بمێننەوە.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>جێبەجێی بکە</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>لە کاتی جێبەجێکردندا دۆخی چاککردنەوە دادەگیرسێنێت.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>دوای جێبەجێکردن گۆڕدراون</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ئەم فایلانە ئەوانە نین کە جێبەجێ کران. جێبەجێکردن ڕەتیان دەکاتەوە مەگەر گۆڕانکارییەکە بە هۆکارێکەوە پەسەند بکرێت؛ دووبارە جێبەجێ ناکرێنەوە، پشکنینە کۆییە نوێیەکە تۆمار دەکرێت و هۆکارەکە لە لۆگی چاودێریدا دەپارێزرێت.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>پەسەندکردنی گۆڕانکارییەکان</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>بۆچی</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>بەها بنەڕەتییەکان سەلامەتن. هەر چوارگۆشەیەک هەنگاوێک دەپەڕێنێت.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>بەبێ وێنەی دۆخ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>بەبێ وێنەی دۆخ پێش و دوای جێبەجێکردن: سەرنەکەوتن ناتوانرێت بە شێوەی خۆکار بگەڕێندرێتەوە.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>بەبێ گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>دوای سەرنەکەوتن، دامەزراندنەکە وەک ئەوە بهێڵەرەوە کە سەرنەکەوتنەکە بەجێی هێشت.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>هێشتنەوەی گۆڕانکارییە کۆمیت نەکراوەکان</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>جێبەجێی بکە ئەگەرچی ڕێکخستنەکان، پێوەکراوەکان یان دیزاینەکان گۆڕانکاری کۆمیت نەکراویان هەیە؛ دەچنە ناو وێنەی دۆخەکەوە.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>بەبێ کۆمیت</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>فایلی بارودۆخ و لۆگی جێبەجێکردن کۆمیت مەکە (هەروەها بەبێ تاگ و پوش).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>بەبێ پوش</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>کۆمیت و تاگ بکە، بەڵام پوش مەکە.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>بەبێ تاگ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>کۆمیت و پوش بکە، بەڵام جێبەجێکردنەکە تاگ مەکە.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>بەڵێ، ئێستا ئەم گواستنەوانە جێبەجێ بکە</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>هیچ گواستنەوەیەک چاوەڕوان نییە.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>گەڕانەوە بۆ بارودۆخ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>گۆڕانکارییەکانی ئەم دامەزراندنە کە یەکجار وەک فایل نووسراون (ناوەڕۆک، پۆلەکان، ڕۆڵەکان، ڕێکخستنەکان، نەخشە) و بە هەمان ڕیزبەندی لەسەر هەموو دامەزراندنەکانی ماڵپەڕەکە جێبەجێ دەکرێن. جێبەجێکردن سەرەتا وێنەی دۆخ دەگرێت، کاتێک گواستنەوەیەک سەرنەکەوێت دەیگەڕێنێتەوە، و ئەوەی کردی تۆمار، کۆمیت و پوش دەکات.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>جێبەجێکردنی %count چاوەڕوان</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>پوختە</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>چاوەڕوان</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تەواو بوو</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>پێویست نییە</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>بنکەدراوە</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>مامەڵەکان: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>گواستنەوەکانی ماڵپەڕ لە migrations/ دان، هی پێوەکراوێک لە extension/&lt;name&gt;/migrations/. بە ڕیزبەندی ناوەکانیان و ئەوەی پێویستیانە جێبەجێ دەکرێن.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>دوایین جێبەجێکردن</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>فایلەکە دوای جێبەجێکردن گۆڕدرا.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>هێشتا هیچ گواستنەوەیەک نییە. ./console exp:migration:generate --skeleton &lt;name&gt; --apply یەکەمیان دەنووسێت.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>دوایین جێبەجێکردنەکان</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>هەموو جێبەجێکردنەکان</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>هێشتا هیچ جێبەجێکردنێک نییە.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>لاساییکردنەوەی جێبەجێکردن پێویستی بە سیاسەتی migration/run هەیە.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>جێبەجێکردنێک بەردەوامە: کاتێک کۆتایی هات لاسایی بکەرەوە.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>دامەزراندن</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target نە جێبەجێکردنە، نە گواستنەوە و نە وێنەی دۆخی ئەم دامەزراندنەیە.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>سەرەتا «بەڵێ، هەڵیبوەشێنەرەوە» نیشانە بکە.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>گەڕاندنەوەی وێنەیەکی دۆخی پێشوو بۆ پسپۆڕانە: «دەزانم ئەمە چی دەگەڕێنێتەوە» نیشانە بکە.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ناسنامەی وێنەی دۆخەکە دووبارە بنووسە: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>لانیکەم یەک بەش بۆ گەڕاندنەوە هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ئەم جێبەجێکردنە وێنەی دۆخی پێش خۆی نییە: گواستنەوەکانی یەک بە یەک هەڵبوەشێنەرەوە، یان وێنەیەکی دۆخی پێشوو بگەڕێنەرەوە.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ئەم گواستنەوەیە ناتوانێت خۆی هەڵبوەشێنێتەوە: جێبەجێ نەکراوە، یان down()ـی نییە.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فۆرمەکە نەخوێندرایەوە.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ئەو جێبەجێکردنە هەڵبژێرە کە بەردەوام بکرێت.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>سەرەتا «بەڵێ، ئێستا ئەم گواستنەوانە جێبەجێ بکە» نیشانە بکە.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>لانیکەم یەک گواستنەوە هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>گواستنەوەیەک دوای جێبەجێکردن گۆڕدرا: گۆڕانکارییەکە بە هۆکارێکەوە پەسەند بکە، یان فایلەکە بگەڕێنەرەوە.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>هۆکاری پەسەندکردنی گواستنەوە گۆڕدراوەکان بنووسە.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>هۆکارەکە زۆرترین 500 پیتە.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>جێبەجێکردنێک کە لێرە دەستی پێکرد هێشتا بەردەوامە (%detail). چاوەڕێ بکە تا کۆتایی دێت.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>جێبەجێکردنێکی تر قوفڵی دامەزراندنەکەی گرتووە: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>جێبەجێکردنەکە پێویستی بە بەکارهێنەرێکی هەبوو هەیە کە چووبێتە ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>هیچ بەرنامەی هێڵی فەرمانی php نەدۆزرایەوە. migration.ini [AdminSettings] PhpCliPath بە ڕێڕەوی تەواوی دابنێ.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ناچالاک کراوە، بۆیە لێرە ناتوانرێت جێبەجێکردن دەست پێبکرێت. ./console exp:migration:migrate --apply لەسەر ڕاژەکار جێبەجێ بکە.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ناتوانرێت لە بوخچەی جێبەجێکردنەکاندا بنووسرێت: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>جێبەجێکردنەکە دەستی پێکرد بەڵام ناسنامەی پرۆسەکەی ڕانەگەیاند. %detail بپشکنە.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>دیاری بکە چی هەڵبوەشێندرێتەوە.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>جێبەجێکردنەکە دەستی پێنەکرا.</translation>
     </message>
 </context>
 </TS>

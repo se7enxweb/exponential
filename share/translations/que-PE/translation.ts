@@ -15142,6 +15142,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: tukuna k'itin, siq'in, tapukuykunata pruebanapaq pukllanapas.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Astaykuna</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Churasqapi tikraykuna willañiqi hina waqaychasqa: kayninkuna, purichiykuna, purichiy hinaspa kutichiy.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutacionkunata /api/graphql nisqaman apachiy.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Astaykuna</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Kayninta mana ñawinchayta atikurqanchu: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Astaykunapa tablankuna manaraq kanchu: ./console exp:upgrade --apply ruran.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count astaykuna pantarqan</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Huk purichiy purichkan, %user qallarichirqan</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Churasqa wichqasqa kachkan: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Suyachkan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Pantasqa</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Wakcha</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Qhipa purichiy</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>manaraq mayqinpas</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Tukuy astaykuna</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Yanqa purichiy</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Pruebapaq purichiy</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Suyachkaq astaykuna huk ruraypi purirqan, chaymanta kutichisqa karqan: manam imapas waqaychasqachu. Uraypim sapanka willakuna waqaychanapi ima tikrasqanta qhawanki.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Kunan huk purichiy ima ruranmanchus. Manam imapas tikrakunchu: sapanka suyachkaq astaymi ima tikraykunata ruranmanchus sutinchan, purichiytaq ñawpaqta qhipatapas ima ruranmanchus.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Yanqamanta ruray</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Purichiy</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Pruebapaq purichiy pantarqan: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Yanqamanta rurayqa PostgreSQL utaq SQLite nisqatam munan, chaykunapi esquema tikraykuna kutichiy atikun; kay willakuna waqaychanapiqa uraypi yuyaymi huk purichiy ima ruranmanchus rikuchin.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Astaykuna</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Astay</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kaynin</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ima ruranman</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Yanqamanta ruray: %result %ms ms ukhupi</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Manaraq astay kanchu.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Purichiypa ñawpaqninpi qhipanpipas</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Ñawpaq rikch&apos;ay</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>hurqusqa, astay pantaptinqa kutichisqa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wañuchisqa</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Qhipa rikch&apos;ay</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>hurqusqa purichiy allin lluqsiptin</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total astaykuna: %pending suyachkan, %done tukusqa, %failed pantasqa.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Astaykunapa willakuynin</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Sapanka purichiy runanwan, muyuriqninwan, rikch&apos;ayninkunawan, ima takyachisqa, unanchasqa, apachisqa kasqanwan. Pantasqa utaq kuchusqa purichiyta hukmanta qallariy atikun; ñawpaqninpi rikch&apos;ay hurqusqa purichiytaqa kutichiy atikun.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Purichiykunata mana ñawinchayta atikurqanchu: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Astaykunapa tablankuna manaraq kanchu: ./console exp:upgrade --apply ruran.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rikuchiy</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tukuy</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Purichiykuna</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Qallarisqa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Pi</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Rikch&apos;aykuna</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Waqaychana</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ruraykuna</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ñawpaq</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>qhipa</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>apachiy: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Hukmanta qallariy</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Kutichiy</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Kay kayninpi manam purichiy kanchu.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Kaypi qallarisqa</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Kay p&apos;anqakunapi qallarisqa purichiykuna, hukmanta qallariykuna, kutichiykunapas, sapankapa willakuyninwan.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ima</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Lluqsisqan</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Kutichiy</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target kutichiy</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Purichiy %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Purichiy ima rurasqan, qillqasqan, qillqa willakuynin ima. Kaypi qallarisqa purichiyqa kay p&apos;anqa wichqasqa kaptinpas qhipapi purillanmi; qatipanaykipaq p&apos;anqata hukmanta kichay.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Kay purichiyta hukmanta qallariy</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Kay purichiyta kutichiy</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Qillqasqata mana ñawinchayta atikurqanchu: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ñawpaqman puriy</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user qallarichirqan %time pachapi.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Codigota qhawachkan, purichiypa ñawpaqninpi rikch&apos;ayta hurquchkan</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id purichkan (%index %total ukhumanta)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done %total ukhumanta tukusqa</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Astaykuna purirqanña; huknin pantarqan chayqa rikch&apos;ayta kutichichkan</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Purichiypa qhipanpi rikch&apos;ayta hurquchkan, takyachichkan, unanchachkan, apachichkan</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Rikch&apos;ayta kutichichkan</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Purichiy tukurqanña. Willakuynin cargakuchkan.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ñawpaqman puriyninta mana qatipayta atikurqanchu. P&apos;anqata hukmanta cargay purichiy imayna kachkasqanta qhawanaykipaq.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Kay p&apos;anqaqa purichiyta purichkaptin qatipan.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Hukmanta cargay</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Willakuy</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Unaynin</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Purichiy pantay hina ima qillqasqan</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Qillqasqa</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Muyuriq</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>mana mayqinpas</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Tukusqa</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Takyachiy</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Unanchay</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Apachiy</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Willay</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Kay purichiypa astaykunan</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Pukyu</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Purichiypa qillqa willakuynin</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Qillqa willakuypa tukukuyllanmi rikuchikun.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>purichkan</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>willakuy mana kaspa tukurqan</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>allin lluqsirqan</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>pantasqa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>mana chaskisqa</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>willakuna waqaychanaman mana chayayta atikurqanchu</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ukhu pantay</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Huk purichiy purichkan</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user qallarichirqan %time pachapi.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Qatipay</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Churasqa wichqasqa kachkan</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Huk purichiymi wichqanata hap&apos;ichkan (huk musuqchay utaq consolapi purichiy): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>tukusqa</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>suyachkan</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>mana necesitakunchu</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>mana riqsisqa</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>kutichisqa</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>churasqa</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>churakunman</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>kutichisqa kaq</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>kutichikunman</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>mana purisqa</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>hukta suyachkan</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>tikray chaskisqa</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>tikray chaskikunman</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>yanqamanta rurasqa</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Astaykuna</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Kaynin</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Willakuynin</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target kutichiy</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Huk purichiyqa ñawpaqninpi hurqusqa rikch&apos;aymanmi kutichikun, huk astaytaq down() nisqanwan. Ñawpaq rikch&apos;ayta kutichiyqa yachaqkunapaqmi. Sapankam qampa sutiykipi qhipapi purin, kunan kayninpa rikch&apos;aynin hurqusqa kaptin.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Ima kutichiy atikusqanta mana ñawinchayta atikurqanchu: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Huk purichiy</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Huk astay</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Huk ñawpaq rikch&apos;ay</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Sut&apos;ichay</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>arí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>manam</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Rikch&apos;ay</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Sutichay</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Hurqusqa</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Laya</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Kutichinapaq partekuna</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Willakuna waqaychana</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Waqaychasqa willañiqikuna (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Churanakuna (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Willakuna waqaychanata kutichiyqa rikch&apos;ay hurqusqa pachamanmi kutichin, sesionkunapas: chaymantaqa hukmanta yaykunayki kanman. Chaymanta tikrasqa llapanmi chinkan; ñawpaqtaqa kunan kayninpa rikch&apos;aynin hurqukun.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Kay ima kutichisqanta yachani</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Rikch&apos;aypa riqsichiyninta hukmanta qillqay</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Arí, kutichiy</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Qhisachay</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ñawpaqninkupi rikch&apos;ay hurqusqa purichiykuna.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Akllay</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Manaraq rikch&apos;ayniyuq purichiy kanchu.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Churasqa astaykuna kikinkumanta kutichikuyta atiqkuna (down() nisqayuqmi kanku).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Manam mayqin churasqa astaypas down() nisqayuqchu.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Ñawpaq rikch&apos;aykuna (yachaqkunapaq)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Manaraq rikch&apos;ay kanchu.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Astaykunata purichiy</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Purichiyqa %user hina qhipapi purin, p&apos;anqantaq purichkaptin rikuchin. Ñawpaq kaq astaypa ñawpaqninpi churasqapa rikch&apos;aynin hurqukun; huk astay pantaptinqa purichiy sayan, rikch&apos;aytaq kutichikun.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Ñawpaqta pruebapaq purichiy</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Kayninta mana ñawinchayta atikurqanchu: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Suyachkaq astaykuna</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Kay ordenpi purinku. Hukninta unanchanta qichuy, chayta chaywan necesitaqkunatawan qhipa purichiypaq saqinaykipaq.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Purichiy</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Purichkaptin allichay modota hap&apos;ichin.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Churasqa kasqanku qhipa tikrasqa</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Kay willañiqikunaqa manam churasqa kaqkunachu. Huk purichiyqa mana chaskinchu, tikray imaraykuwan chaskisqa kaptillanmi; manam hukmanta purinkuchu, musuq checksum qillqakun, imaraykutaq auditoria qillqapi waqaychakun.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Tikraykunata chaskiy</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Imarayku</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Ñawpaqmanta churasqakunaqa mana manchakuypaqmi. Sapanka cajam huk puriyta saqin.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Mana rikch&apos;ayniyuq</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Purichiypa ñawpaqninpi qhipanpipas mana rikch&apos;ay: pantayqa manam kikinmanta kutichiy atikunchu.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Mana kutichiyniyuq</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Pantaypa qhipanpi, churasqata pantay saqisqanta hina saqiy.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Mana takyachisqa tikraykunata waqaychay</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Purichiy churanakuna, mast&apos;arikuykuna utaq disenokuna mana takyachisqa tikrayniyuq kaspapas; chaykunaqa rikch&apos;aymanmi yaykun.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Mana takyachiyniyuq</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Kaynin willañiqita purichiypa qillqa willakuynintapas ama takyachiychu (nitaq unanchaytapas nitaq apachiytapas).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Mana apachiyniyuq</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Takyachiy unanchaypas, ichaqa ama apachiychu.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Mana unanchayniyuq</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Takyachiy apachiypas, ichaqa purichiyta ama unanchaychu.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Arí, kay astaykunata kunan purichiy</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Manam mayqin astaypas suyachkanchu.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Kayninman kutiy</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Kay churasqapi tikraykuna huk kutillata willañiqi hina qillqasqa (contenidokuna, clasekuna, rolkuna, churanakuna, esquema) hinaspa sitiopa sapanka churasqanpi kikin ordenllapi churasqa. Huk purichiyqa ñawpaqta rikch&apos;ayta hurqun, huk astay pantaptin kutichin, rurasqantataq qillqan, takyachin, apachin.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count suyachkaqta purichiy</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Tukuy qhaway</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Suyachkan</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tukusqa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Pantasqa</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Mana necesitakunchu</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Willakuna waqaychana</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ruraykuna: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Sitiopa astayninkunaqa migrations/ ukhupim kachkan, huk mast&apos;arikuypa astayninkunataq extension/&lt;name&gt;/migrations/ ukhupi. Sutinkupa ordenninpi necesitasqankuman hina purinku.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Qhipa purichiy</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Willañiqiqa churasqa kasqan qhipa tikrakurqan.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Manaraq astay kanchu. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ñawpaq kaqta qillqan.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Qhipa purichiykuna</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Tukuy purichiykuna</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Manaraq purichiy kanchu.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Purichiyta yanqamanta rurayqa migration/run kamachiytam munan.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Huk purichiy purichkan: tukuptin yanqamanta ruray.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Wakichiy</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target manam kay churasqapa purichiynin, astaynin nitaq rikch&apos;ayninchu.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Ñawpaqta «Arí, kutichiy» unanchay.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ñawpaq rikch&apos;ayta kutichiyqa yachaqkunapaqmi: «Kay ima kutichisqanta yachani» unanchay.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Rikch&apos;aypa riqsichiyninta hukmanta qillqay: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Kutichinapaq aswan pisiqa huk parteta akllay.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Kay purichiyqa manam ñawpaqninpi rikch&apos;ayniyuqchu: astayninkunata hukmanta hukman kutichiy, utaq huk ñawpaq rikch&apos;ayta kutichiy.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Kay astayqa manam kikinmanta kutichikuyta atinchu: mana churasqachu, utaq mana down() nisqayuqchu.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulariota mana ñawinchayta atikurqanchu.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Hukmanta qallarinapaq purichiyta akllay.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Ñawpaqta «Arí, kay astaykunata kunan purichiy» unanchay.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Aswan pisiqa huk astayta akllay.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Huk astay churasqa kasqan qhipa tikrakurqan: tikrayta imaraykuwan chaskiy, utaq willañiqita kutichiy.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Tikrasqa astaykuna imarayku chaskisqa kasqanta niy.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Imaraykuqa aswan achkaqa 500 sananchakunam.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Kaypi qallarisqa purichiyqa purichkanraqmi (%detail). Tukunankama suyay.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Huk purichiymi churasqapa wichqananta hap&apos;ichkan: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Purichiyqa yaykusqa kaq, kaq runatam munan.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Manam php kamachiy siqi programa tarikurqanchu. migration.ini [AdminSettings] PhpCliPath nisqapi llapan ñanninta churay.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open wañuchisqam, chayrayku kaypi purichiyta mana qallariy atikunchu. Servidorpi ./console exp:migration:migrate --apply purichiy.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Purichiykunapa carpetanpi mana qillqay atikunchu: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Purichiyqa qallarirqanmi, ichaqa procesonpa riqsichiynintaqa mana willarqanchu. %detail qhaway.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Ima kutichinatam niy.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Purichiyta mana qallariyta atikurqanchu.</translation>
     </message>
 </context>
 </TS>

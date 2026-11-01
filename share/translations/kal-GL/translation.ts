@@ -15081,6 +15081,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: naggatip sumiiffia, skema aamma apeqqutinik misiliiffik.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Nuussinerit</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ikkussinermi allannguutit fiilitut toqqorsimasut: killiffiat, ingerlatsinerit, ingerlatsineq utertitsinerlu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutationit /api/graphql-mut nassiukkit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Nuussinerit</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Killiffik atuarneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Nuussinerit tabelii suli pigineqanngillat: ./console exp:upgrade --apply-ip pilersissavai.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Nuussinerit %count iluatsinngillat</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ingerlatsineq ingerlavoq, %user-mit aallartinneqarpoq</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Ikkussineq parnaarsimavoq: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Utaqqisoq</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Iluatsinngitsoq</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Ataqatigiinngitsut</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ingerlatsineq kingulleq</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>suli peqanngilaq</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Nuussinerit tamarmik</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Ingerlatsineq assersuutaasoq</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Misiliineq</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Nuussinerit utaqqisut transaktionimi ingerlapput, kingornalu utertinneqarluni: qanoq iliuuseq toqqorneqanngilaq. Ataani takuneqarsinnaavoq nuussineq ataasiakkaarlugu paasissutissaateqarfimmi suna allanngortissimaneraa.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ingerlatsineq massakkut suna iliuuserisinnaaneraa. Allanngortitsisoqanngilaq: nuussineq utaqqisoq tamarmi allannguutissani allattorpai, ingerlatsinerlu siornagut kingornagullu suna iliuuserisinnaaneraa.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Assersuutigiuk</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Aallartiguk</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Misiliineq iluatsinngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Assersuusiorneq PostgreSQL imaluunniit SQLite-mik pisariaqartitsivoq, taakkunani skemami allannguutit utertinneqarsinnaammata; paasissutissaateqarfimmi matumani pilersaarut ataaniittoq ingerlatsinerup iliuuserisinnaasaraa.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Nuussinerit</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Nuussineq</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Qanoq ittuunera</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Suna iliuuserisinnaagaa</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Assersuusiorneq: %result, %ms millisek.</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Suli nuussinermik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Ingerlatsinerup siornagut kingornagullu</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Assilineq siulleq</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>tigusaq, nuussineq iluatsinngippat uterteqqinneqartartoq</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>matusimavoq</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Assilineq kingulleq</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ingerlatsineq iluatsippat tigusaq</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Nuussinerit %total: %pending utaqqisut, %done naammassisut, %failed iluatsinngitsut.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Nuussinerit oqaluttuarisaanerat</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ingerlatsineq tamarmi atuisuminik, avatangiisiminik, assilinerminik, toqqorneqarsimasunillu, nalunaaqutsersorneqarsimasunik nassiunneqarsimasunillu. Ingerlatsineq iluatsinngitsoq imaluunniit unitsinneqarsimasoq ingerlaqqissinnaavoq; ingerlatsineq siornagut assilerneqarsimasoq utertinneqarsinnaavoq.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ingerlatsinerit atuarneqarsinnaanngillat: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Nuussinerit tabelii suli pigineqanngillat: ./console exp:upgrade --apply-ip pilersissavai.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Takutiguk</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tamarmik</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ingerlatsinerit</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Aallartinneqarfia</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kimit</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Assilinerit</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Toqqorsivik</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Iliuusissat</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>siornagut</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>kingornagut</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>nassiussineq: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Ingerlaqqittiguk</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Utertiguk</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Killiffimmi matumani ingerlatsinermik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Maani aallartinneqartut</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Quppernerni uku aallartinneqartut ingerlatsinerit, ingerlaqqinnerit utertitsinerillu, ataasiakkaat nalunaarusiaat ilanngullugit.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Suna</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Inernera</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Utertitsineq</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target-ip utertinnera</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Ingerlatsineq %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ingerlatsinerup suna iliuuserisimagaa, nalunaarsorneqarnera nalunaarsuiffialu. Ingerlatsineq maani aallartinneqartoq quppernerup matuneqarnerani tunuani ingerlaannassaaq; malinnaaffigiumallugu quppernerup ammaqqiguk.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Ingerlatsineq una ingerlaqqittiguk</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Ingerlatsineq una utertiguk</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Nalunaarsuineq atuarneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ingerlaarnera</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user-mit %time aallartinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kode misissorneqarpoq ingerlatsinerullu siornagut assilineqarluni</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ingerlanneqarpoq (%total-init %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total-init %done naammassipput</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Nuussinerit ingerlanneqarput; ataaseq iluatsinngippat assilineq uterteqqinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ingerlatsinerup kingornagut assilineqarpoq, toqqorneqarpoq, nalunaaqutsersorneqarpoq nassiunneqarlunilu</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Assilineq uterteqqinneqarpoq</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Ingerlatsineq naammassivoq. Nalunaarusiaa aaneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ingerlaarnera malinnaaffigineqarsinnaanngilaq. Ingerlatsineq qanoq ingerlanersoq takuniarlugu quppernerup aaqqiguk.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Quppernerup uuma ingerlatsineq ingerlanerani malinnaaffigaa.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Aaqqiguk</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Nalunaarusiaq</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Nalunaaqutaq</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisek.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Ingerlatsinerup kukkunertut saqqummiussai</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Nalunaarsorneqarnera</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Avatangiisit</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>peqanngilaq</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Naammassivoq</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Toqqorneq</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Nalunaaqutaq ilisarnaat</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Nassiussineq</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Allagaq</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Ingerlatsinermi matumani nuussinerit</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Aallaavik</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Ingerlatsinerup nalunaarsuiffia</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Nalunaarsuiffiup naggataa kisiat takutinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ingerlavoq</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>nalunaarusiaqanngitsumik naammassivoq</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>iluatsippoq</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>itigartinneqarpoq</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>paasissutissaateqarfik attavigineqarsinnaanngilaq</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>iluani kukkuneq</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ingerlatsineq ingerlavoq</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user-mit %time aallartinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Malinnaaffigiuk</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Ikkussineq parnaarsimavoq</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Ingerlatsinerup allap parnaarut tigumivaa (nutarterineq imaluunniit konsolimi ingerlatsineq): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>naammassivoq</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>utaqqisoq</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>pisariaqanngilaq</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ilisimaneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>utertinneqarsimavoq</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>atuutilersinneqarsimavoq</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>atuutilersinneqassagaluarpoq</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>utertinneqarpoq</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>utertinneqassagaluarpoq</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ingerlanneqanngilaq</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>allamik utaqqivoq</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>allannguut akuerineqarpoq</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>allannguut akuerineqassagaluarpoq</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>assersuusiorneqarpoq</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Nuussinerit</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Killiffik</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Oqaluttuarisaanera</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target utertiguk</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Ingerlatsineq siornagut assilinermut utertinneqartarpoq, nuussineq ataaseq down()-ni atorlugu. Assilinerup siusinnerusup uterteqqinnera immikkut ilisimasalinnut tunngavoq. Tamarmik tunuani illittut ingerlanneqartarput, massakkut killiffiup assilinerata kingornagut.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Suut utertinneqarsinnaanersut atuarneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Ingerlatsineq</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Nuussineq ataaseq</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Assilineq siusinnerusoq</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Nassuiaat</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aap</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>naamik</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Assilineq</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Allagartaq</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Tigusaq</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Suussuseq</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Ilaat uterteqqinneqartussat</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Paasissutissaateqarfik</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Toqqorsivimmi fiilit (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Aaqqissuussinerit (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Paasissutissaateqarfiup uterteqqinnera assilinerup nalaanut uternissaanik kinguneqarpoq, sessionit ilanngullugit: kingornagut iserteqqinnissat piumasaqaatigineqarsinnaavoq. Taamanimiit allanngortinneqarsimasut tamarmik annaaneqassapput; siullermik massakkut killiffiup assilinera tigusaassaaq.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Una suna uterteqqissaneraa ilisimavara</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Assilinerup ID-a allaqqiguk</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Aap, utertiguk</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ingerlatsinerit siornagut assilerneqarsimasut.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Toqqaruk</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Suli ingerlatsinermik assilinilimmik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Nuussinerit atuutilersinneqarsimasut nammineq utersinnaasut (down()-qarput).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Nuussinerit atuutilersinneqarsimasut down()-qanngillat.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Assilinerit siusinnerusut (immikkut ilisimasallit)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Suli assilinermik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Nuussinerit aallartikkit</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Ingerlatsineq tunuani %user-itut ingerlavoq, quppernerisaalu ingerlanerani takutittarpaa. Nuussinerup siulliup siornagut ikkussinerup assilinera tigusaasarpoq; nuussineq iluatsinngippat ingerlatsineq unittarpoq assilinerlu uterteqqinneqartarluni.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Siullermik misiliiguk</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Killiffik atuarneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Nuussinerit utaqqisut</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Tulleriiaarneq una malillugu ingerlanneqassapput. Ataaseq nalunaaqutaa peeruk, taannalu taassumalu pisariaqartitsisui ingerlatsinissamut kingusinnerusumut qimallugit.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Aallartiguk</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Ingerlanerani aserfallatsaaliuinermut atugassaq ikittarpaa.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Atuutilersinneqareerlutik allanngortinneqarsimasut</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Fiilit uku atuutilersinneqarsimasut assigiinngillat. Ingerlatsinerup itigartittarpai allannguut pissutsimik akuerineqanngippat; ingerlaqqinneqanngillat, checksum nutaaq nalunaarsorneqartarpoq pissutaalu misissuinerup nalunaarsuiffiani toqqorneqartarluni.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Allannguutit akuerikkit</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Sooq</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Aalajangersimasut isumannaannerpaapput. Ammaasaq tamarmi alloriarneq ataaseq qimattarpaa.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Assilinertaqanngitsoq</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Ingerlatsinerup siornagut kingornagullu assilisoqanngilaq: iluatsinngitsoqarpat nammineerluni uterteqqinneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Uterteqqitsinngitsoq</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Iluatsinngitsoqarneratigut ikkussineq iluatsinngitsoqarnerup qimannera malillugu qimaguk.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Allannguutit toqqorneqanngitsut pigiinnarkit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Aaqqissuussinerni, ilassutini imaluunniit ilusilersuinerni allannguutit toqqorneqanngitsut atorlugit aallartiguk; assilinermut ilanngunneqassapput.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Toqqorneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Killiffiup fiilia ingerlatsinerullu nalunaarsuiffia toqqurnagit (nalunaaqutsersuinngitsoq nassiussinngitsorlu).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Nassiussinngitsoq</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Toqqoruk nalunaaqutsersorlugulu, nassiunnagulli.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Nalunaaqutsersuinngitsoq</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Toqqoruk nassiullugulu, ingerlatsinerli nalunaaqutsersornagu.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Aap, nuussinerit uku massakkut aallartikkit</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Nuussinermik utaqqisumik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Killiffimmut uterit</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Ikkussinermi matumani allannguutit (imarisat, klassit, inuttut inissisimanerit, aaqqissuussinerit, skema) ataasiarlutik fiilitut allanneqartut nittartakkallu ikkussinerini tamani tulleriiaarneq assigalugu atuutilersinneqartartut. Ingerlatsinerup siullermik assilissavaa, nuussineq iluatsinngippat uterteqqissavaa, iliuuserisimasanilu nalunaarsorlugit, toqqorlugit nassiullugillu.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Utaqqisut %count aallartikkit</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Takussutissiaq</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Utaqqisoq</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Naammassivoq</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Iluatsinngitsoq</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Pisariaqanngilaq</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Paasissutissaateqarfik</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaktionit: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Nittartakkap nuussinerai migrations/-imiipput, ilassutillu nuussinerai extension/&lt;name&gt;/migrations/-imiillutik. Aqqisa tulleriiaarnerat pisariaqartitaallu malillugit ingerlanneqartarput.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ingerlatsineq kingulleq</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fiili atuutilersinneqareerluni allanngortinneqarsimavoq.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Suli nuussinermik peqanngilaq. ./console exp:migration:generate --skeleton &lt;name&gt; --apply-ip siulleq allassavaa.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Ingerlatsinerit kingulliit</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Ingerlatsinerit tamarmik</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Suli ingerlatsisoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Ingerlatsinerup assersuusiornissaa politikkimik migration/run-imik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ingerlatsineq ingerlavoq: naammassippat assersuusiorit.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ikkussinermi matumani ingerlatsinerunngilaq, nuussinerunngilaq assilinerunngilarlu.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Siullermik »Aap, utertiguk« nalunaaqutsiiguk.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Assilinerup siusinnerusup uterteqqinnera immikkut ilisimasalinnut tunngavoq: »Una suna uterteqqissaneraa ilisimavara« nalunaaqutsiiguk.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Assilinerup ID-a allaqqiguk: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Minnerpaamik ilaa ataaseq uterteqqitassaq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ingerlatsineq una siornagut assilerneqarsimanngilaq: nuussinerai ataasiakkaarlugit utertikkit, imaluunniit assilineq siusinnerusoq uterteqqiguk.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Nuussineq una nammineq utertinneqarsinnaanngilaq: atuutilersinneqarsimanngilaq, imaluunniit down()-qanngilaq.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Immersugassaq atuarneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Ingerlatsineq ingerlaqqittussaq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Siullermik »Aap, nuussinerit uku massakkut aallartikkit« nalunaaqutsiiguk.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Minnerpaamik nuussineq ataaseq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Nuussineq atuutilersinneqareerluni allanngortinneqarsimavoq: allannguut pissutsimik akueriuk, imaluunniit fiili uterteruk.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Nuussinerit allanngortinneqarsimasut sooq akuerineqarnersut pissutaa allaguk.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Pissutaa annerpaamik naqinnerit 500-iusinnaavoq.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Ingerlatsineq maani aallartinneqartoq suli ingerlavoq (%detail). Naammassinissaa utaqqiuk.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Ingerlatsinerup allap ikkussinerup parnaarutaa tigumivaa: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Ingerlatsineq atuisumik pigineqartumik iserlusimasumik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php-ip naqqani programmia nassaarineqanngilaq. migration.ini [AdminSettings] PhpCliPath aqqutaanut tamakkiisumut aaqqissuuguk.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open atorunnaarsinneqarsimavoq, taamaattumik ingerlatsineq maani aallartinneqarsinnaanngilaq. Serverimi ./console exp:migration:migrate --apply aallartiguk.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ingerlatsinerit toqqorsiviannut allanneqarsinnaanngilaq: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Ingerlatsineq aallartinneqarpoq, processilli ID-a nalunaarutigineqanngilaq. %detail misissoruk.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Suna utertinneqassanersoq taaguk.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ingerlatsineq aallartinneqarsinnaanngilaq.</translation>
     </message>
 </context>
 </TS>

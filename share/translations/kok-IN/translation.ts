@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ताचो एंड पॉइंट, स्कीमा आनी क्वेरी परखून पळोवपाक एक प्लेग्राउंड.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>स्थलांतरां</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>फायली रूपान दवरिल्ले इन्स्टॉलेशनांतले बदल: तांची स्थिती, चलोवण्यो, चलोवप आनी फाटीं घेवप.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>म्युटेशन /api/graphql चेर धाडात.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>स्थलांतरां</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>स्थिती वाचूंक मेळूंक ना: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>स्थलांतरांचीं कोष्टकां अजून ना: ./console exp:upgrade --apply तीं तयार करता.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count स्थलांतरां अपेशी जालीं</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>एक चलोवणी चालू आसा, %user हांणी सुरू केल्ली</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>इन्स्टॉलेशन कुलूपबंद आसा: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>प्रलंबीत</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>अपेशी</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>धनी नाशिल्लीं</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>निमाणी चलोवणी</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>अजून एकूय ना</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>सगळीं स्थलांतरां</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>अनुकरण चलोवणी</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>चांचणी चलोवणी</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>प्रलंबीत स्थलांतरां एका व्यवहारांत चलयलीं जो उपरांत फाटीं घेतलो: कांयच दवरूंक ना. सकयल दरेकान डेटाबेसांत कितें बदललें तें दिलां.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>एक चलोवणी आतां कितें करतली. कांयच बदलना: दरेक प्रलंबीत स्थलांतर ताणें करपाचे बदल दाखयता, आनी चलोवणी आदीं आनी उपरांत कितें करतली तें दाखयता.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>अनुकरण करात</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>चलोवात</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>चांचणी चलोवणी अपेशी जाली: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>अनुकरणाक PostgreSQL वा SQLite जाय, जांचे स्कीमा बदल फाटीं घेवंक जातात; ह्या डेटाबेसार सकयलची येवजण चलोवणी कितें करतली तें दाखयता.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>स्थलांतरां</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>स्थलांतर</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिती</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>तें कितें करतलें</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>अनुकरण: %result, %ms मि.से.</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>अजून स्थलांतर ना.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>चलोवणे आदीं आनी उपरांत</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>आदलो स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>घेतात, आनी स्थलांतर अपेशी जालें जाल्यार परत हाडटात</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बंद</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>उपरांतचो स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>चलोवणी येसस्वी जाल्यार घेतात</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total स्थलांतरां: %pending प्रलंबीत, %done पुराय, %failed अपेशी.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>स्थलांतरांचो इतिहास</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>दरेक चलोवणी तिचो वापरपी, वातावरण, स्नॅपशॉट आनी कितें कमिट, टॅग आनी पुश केलें हाचे वांगडा. अपेशी वा आडायिल्ली चलोवणी फुडें चालू करूं येता; जिच्या आदीं स्नॅपशॉट घेतला अशी चलोवणी फाटीं घेवंक जाता.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>चलोवण्यो वाचूंक मेळूंक नात: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>स्थलांतरांचीं कोष्टकां अजून ना: ./console exp:upgrade --apply तीं तयार करता.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>दाखयात</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सगळीं</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>चलोवण्यो</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>सुरू जाली</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>कोणें</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>स्नॅपशॉट्स</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>रिपॉझिटरी</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>कृती</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>आदीं</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>उपरांत</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>पुश: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>फुडें चालू करात</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>फाटीं घेयात</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ह्या स्थितींत चलोवणी ना.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>हांगा सुरू केल्ली</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ह्या पानांचेर सुरू केल्ल्यो चलोवण्यो, फुडें चालू केल्ल्यो आनी फाटीं घेतिल्ल्यो, दरेकाच्या अहवाला वांगडा.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>कितें</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणाम</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>फाटीं घेवप</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target फाटीं घेवप</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>चलोवणी %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>चलोवणेन कितें केलें, तिची नोंद आनी तिचो लॉग. हांगा सुरू केल्ली चलोवणी हें पान बंद केल्यार लेगीत फाटभूंयेर चालू उरता; ती पळोवंक पान परतून उगडात.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ही चलोवणी फुडें चालू करात</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ही चलोवणी फाटीं घेयात</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>नोंद वाचूंक मेळूंक ना: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगती</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user हांणी %time वरां सुरू केल्ली.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>कोड तपासून चलोवणे आदीं स्नॅपशॉट घेतात</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id चालू आसा (%total पयकीं %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total पयकीं %done पुराय</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>स्थलांतरां चललीं; एक अपेशी जालें जाल्यार स्नॅपशॉट परत हाडटात</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>चलोवणे उपरांत स्नॅपशॉट घेवप, कमिट, टॅग आनी पुश करप</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>स्नॅपशॉट परत हाडटात</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>चलोवणी सोंपली. तिचो अहवाल लोड जाता.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>प्रगती पळोवंक मेळूंक ना. चलोवणी कशी चल्ता तें पळोवंक पान परतून लोड करात.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>हें पान चलोवणी चालू आसतना ती पळयता.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>परतून लोड करात</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>अहवाल</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>वेळ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms मि.से.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>चलोवणेन चुको म्हूण कितें छापलें</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>नोंद</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>वातावरण</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>कांयच ना</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>सोंपली</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>कमिट</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>टॅग</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>पुश</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>संदेश</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ह्या चलोवणेचीं स्थलांतरां</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>स्रोत</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>चलोवणेचो लॉग</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>लॉगाचो फकत निमाणो भाग दाखयला.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>चालू आसा</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>अहवाल नासतना सोंपली</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>येसस्वी</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>अपेशी</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>न्हयकारलें</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>डेटाबेसाक पावंक मेळूंक ना</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>भितरली चूक</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>एक चलोवणी चालू आसा</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user हांणी %time वरां सुरू केलें.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>पळयात</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>इन्स्टॉलेशन कुलूपबंद आसा</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>हेर एका चलोवणेन कुलूप धरलां (अपग्रेड वा कन्सोलाचेर चलोवणी): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>पुराय</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>प्रलंबीत</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>गरज ना</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>अज्ञात</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>फाटीं घेतलें</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>लागू केलें</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>लागू जातलें</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>परत घेतलें</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>परत घेतलें वतलें</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>चलोवंक ना</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>हेराची वाट पळयता</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>बदल मान्य केलो</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>बदल मान्य जातलो</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>अनुकरण केलें</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>स्थलांतरां</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिती</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>इतिहास</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target परत घेयात</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>एक चलोवणी तिच्या आदीं घेतिल्ल्या स्नॅपशॉटाक परत व्हरतात, एक स्थलांतर ताच्या down() वरवीं. आदलो स्नॅपशॉट परत हाडप तज्ञां खातीर. दरेक आतांच्या स्थितीचो स्नॅपशॉट घेतल्या उपरांत तुमच्या नांवान फाटभूंयेर चलता.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>कितें परत घेवंक जाता तें वाचूंक मेळूंक ना: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>एक चलोवणी</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>एक स्थलांतर</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>आदलो स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>वर्णन</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>हय</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ना</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>स्नॅपशॉट</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>लेबल</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>घेतलो</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>प्रकार</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>परत हाडपाचे भाग</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>डेटाबेस</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>सांठवणेच्यो फायली (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>सेटिंग्स (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>डेटाबेस परत हाडल्यार तो स्नॅपशॉटाच्या वेळार परत वता, सत्रां धरून: उपरांत तुमकां परत सायन इन करपाक सांगूं येता. तेन्ना सावन बदलिल्लें सगळें वता; पयलीं आतांच्या स्थितीचो स्नॅपशॉट घेतात.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>हें कितें परत हाडटा तें म्हाका खबर आसा</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>स्नॅपशॉटाचो आयडी परत टायप करात</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>हय, परत घेयात</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करात</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>जांच्या आदीं स्नॅपशॉट घेतला अशो चलोवण्यो.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>वेंचात</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>अजून स्नॅपशॉट आशिल्ली चलोवणी ना.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>लागू केल्लीं स्थलांतरां जीं स्वता परत घेवंक शकतात (तांचेकडेन down() आसा).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>खंयच्याच लागू केल्ल्या स्थलांतराकडेन down() ना.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>आदले स्नॅपशॉट्स (तज्ञ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>अजून स्नॅपशॉट ना.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>स्थलांतरां चलोवात</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>चलोवणी %user म्हूण फाटभूंयेर चलता, आनी तिचें पान ती चालू आसतना दाखयता. पयल्या स्थलांतरा आदीं इन्स्टॉलेशनाचो स्नॅपशॉट घेतात; स्थलांतर अपेशी जाल्यार चलोवणी थांबता आनी स्नॅपशॉट परत हाडटात.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>पयलीं चांचणी चलोवणी</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>स्थिती वाचूंक मेळूंक ना: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>प्रलंबीत स्थलांतरां</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>तीं ह्या क्रमान चलतात. एक, आनी ताची गरज आशिल्लीं, फुडल्या चलोवणे खातीर दवरपाक ताची खूण काडात.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>चलोवात</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>चालू आसतना देखभाल मोड सुरू करता.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>लागू केल्या उपरांत बदलल्यात</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ह्यो फायली लागू केल्ल्यो फायली न्हय. बदल कारणा वांगडा मान्य करिनासतना चलोवणी तांकां न्हयकारता; त्यो परत चलयनात, नवो चेकसम नोंद करतात आनी कारण ऑडिट लॉगांत दवरतात.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>बदल मान्य करात</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>कित्याक</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>मूळ मोलां सुरक्षीत आसात. दरेक बॉक्स एक पावल सोडता.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>स्नॅपशॉट ना</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>चलोवणे आदीं आनी उपरांत स्नॅपशॉट ना: अपेश आपसूक परत हाडूंक जायना.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>परत हाडप ना</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>अपेशा उपरांत, इन्स्टॉलेशन अपेशान दवरलें तशेंच दवरात.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>कमिट नाशिल्ले बदल दवरात</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>सेटिंग्स, एक्सटेंशनां वा डिझायनांनी कमिट नाशिल्ले बदल आसले तरी चलोवात; ते स्नॅपशॉटांत वतात.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>कमिट ना</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>स्थितीची फायल आनी चलोवणेचो लॉग कमिट करचे न्हय (टॅग ना आनी पुश लेगीत ना).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>पुश ना</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>कमिट आनी टॅग करात, पूण पुश करचें न्हय.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>टॅग ना</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>कमिट आनी पुश करात, पूण चलोवणेक टॅग करचें न्हय.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>हय, हीं स्थलांतरां आतां चलोवात</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>खंयचेंच स्थलांतर प्रलंबीत ना.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>स्थितीकडेन परत</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ह्या इन्स्टॉलेशनांतले बदल एकदांच फायली रूपान बरयल्ले (आशय, वर्ग, भूमिका, सेटिंग्स, स्कीमा) आनी सायटीच्या दरेक इन्स्टॉलेशनाक त्याच क्रमान लागू केल्ले. चलोवणी पयलीं स्नॅपशॉट घेता, स्थलांतर अपेशी जाल्यार तो परत हाडटा, आनी ताणें कितें केलें तें नोंद, कमिट आनी पुश करता.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count प्रलंबीत चलोवात</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>सारांश</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>प्रलंबीत</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पुराय</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>अपेशी</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>गरज ना</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>डेटाबेस</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>व्यवहार: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>सायटीचीं स्थलांतरां migrations/ हातूंत आसात, एक्सटेंशनाचीं extension/&lt;name&gt;/migrations/ हातूंत. तीं तांच्या नांवांच्या आनी गरजांच्या क्रमान चलतात.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>निमाणी चलोवणी</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>लागू केल्या उपरांत फायल बदलली.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>अजून स्थलांतर ना. ./console exp:migration:generate --skeleton &lt;name&gt; --apply पयलें बरयता.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>नव्यो चलोवण्यो</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>सगळ्यो चलोवण्यो</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>अजून चलोवणी ना.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>चलोवणेच्या अनुकरणाक migration/run धोरण जाय.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>एक चलोवणी चालू आसा: ती सोंपतकच अनुकरण करात.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ह्या इन्स्टॉलेशनाची चलोवणी, स्थलांतर वा स्नॅपशॉट न्हय.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>पयलीं “हय, परत घेयात” हाचेर खूण करात.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>आदलो स्नॅपशॉट परत हाडप तज्ञां खातीर: “हें कितें परत हाडटा तें म्हाका खबर आसा” हाचेर खूण करात.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>स्नॅपशॉटाचो आयडी परत टायप करात: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>परत हाडपाक उणेंत उणो एक भाग वेंचात.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ह्या चलोवणे आदीं स्नॅपशॉट घेवंक ना: तिचीं स्थलांतरां एक एक करून परत घेयात, वा आदलो स्नॅपशॉट परत हाडात.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>हें स्थलांतर स्वता परत घेवंक जायना: तें लागू केल्लें ना, वा ताचेकडेन down() ना.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>फॉर्म वाचूंक मेळूंक ना.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>फुडें चालू करपाची चलोवणी वेंचात.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>पयलीं “हय, हीं स्थलांतरां आतां चलोवात” हाचेर खूण करात.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>उणेंत उणें एक स्थलांतर वेंचात.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>लागू केल्या उपरांत एक स्थलांतर बदललें: बदल कारणा वांगडा मान्य करात, वा फायल परत दवरात.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>बदलिल्लीं स्थलांतरां कित्याक मान्य करतात हाचें कारण दियात.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>कारण चडांत चड 500 अक्षरांचें.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>हांगा सुरू केल्ली चलोवणी अजून चालू आसा (%detail). ती सोंपसर वाट पळयात.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>हेर एका चलोवणेन इन्स्टॉलेशनाचें कुलूप धरलां: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>चलोवणेक सायन इन केल्लो आनी अस्तित्वांत आशिल्लो वापरपी जाय.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php कमांड लायन प्रोग्राम मेळूंक ना. migration.ini [AdminSettings] PhpCliPath हातूंत ताचो पुराय मार्ग घालात.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open बंद आसा, देखून हांगा चलोवणी सुरू करूंक जायना. सर्वराचेर ./console exp:migration:migrate --apply चलोवात.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>चलोवण्यांच्या फोल्डरांत बरोवंक जायना: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>चलोवणी सुरू जाली पूण तिणें आपलो प्रोसेस आयडी कळयलो ना. %detail तपासात.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>कितें परत घेवपाचें तें सांगात.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>चलोवणी सुरू करूंक मेळूंक ना.</translation>
     </message>
 </context>
 </TS>

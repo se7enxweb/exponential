@@ -15081,6 +15081,14 @@ Opomba: namestitev paketov ne bo odstranjena.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: končna točka, shema in peskovnik za preizkušanje poizvedb.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Spremembe namestitve, shranjene kot datoteke: njihovo stanje, zagoni, zagon in razveljavitev.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutacije pošljite na /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Stanja ni bilo mogoče prebrati: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabele migracij še ne obstajajo: ustvari jih ./console exp:upgrade --apply.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Neuspešne migracije: %count</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Poteka zagon, ki ga je začel %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Namestitev je zaklenjena: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>V čakanju</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Osirotele</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Zadnji zagon</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>še nobenega</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Vse migracije</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simuliran zagon</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Poskusni zagon</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Čakajoče migracije so tekle v transakciji, ki je bila nato razveljavljena: nič ni bilo ohranjeno. Spodaj je, kaj je vsaka spremenila v podatkovni bazi.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Kaj bi zagon naredil zdaj. Nič se ne spremeni: vsaka čakajoča migracija navede spremembe, ki bi jih naredila, zagon pa, kaj bi naredil pred in po.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simuliraj</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Zaženi</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Poskusni zagon ni uspel: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulacija potrebuje PostgreSQL ali SQLite, katerih spremembe sheme je mogoče razveljaviti; v tej podatkovni bazi je spodnji načrt tisto, kar bi zagon naredil.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migracija</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Kaj bi naredila</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulacija: %result v %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Še nobene migracije.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Pred zagonom in po njem</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Posnetek pred</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ustvarjen in obnovljen, ko migracija ne uspe</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>izklopljeno</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Posnetek po</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ustvarjen, ko je zagon uspel</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Migracij skupaj: %total; v čakanju: %pending, opravljenih: %done, neuspešnih: %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Zgodovina migracij</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Vsak zagon z uporabnikom, okoljem, posnetki in tem, kar je bilo uveljavljeno, označeno in potisnjeno. Neuspešen ali prekinjen zagon je mogoče nadaljevati; zagon s posnetkom pred njim je mogoče vzeti nazaj.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Zagonov ni bilo mogoče prebrati: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabele migracij še ne obstajajo: ustvari jih ./console exp:upgrade --apply.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Prikaži</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vse</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Zagoni</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Začeto</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kdo</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Posnetki</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitorij</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Dejanja</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>pred</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>potisk: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Nadaljuj</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Razveljavi</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Ni zagona v tem stanju.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Začeto tukaj</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Zagoni, nadaljevanja in razveljavitve, začeti na teh straneh, s poročilom vsakega.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kaj</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Razveljavitev</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Razveljavitev %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Zagon %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Kaj je zagon naredil, njegov zapis in dnevnik. Zagon, začet tukaj, se nadaljuje v ozadju, ko je ta stran zaprta; znova odprite stran, da ga spremljate.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Nadaljuj ta zagon</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Razveljavi ta zagon</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Zapisa ni bilo mogoče prebrati: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Napredek</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Začel %user ob %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Preverjanje kode in ustvarjanje posnetka pred zagonom</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Teče %id (%index od %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>Opravljeno %done od %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migracije so se izvedle; posnetek se obnavlja, če je katera ni uspela</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Posnetek po zagonu, uveljavitev, oznaka in potisk</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Obnavljanje posnetka</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Zagon se je končal. Nalaganje poročila.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Napredka ni bilo mogoče spremljati. Znova naložite stran, da vidite, kako poteka zagon.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ta stran spremlja zagon med izvajanjem.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Znova naloži</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Poročilo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Trajanje</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisekund</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Kaj je zagon izpisal kot napake</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Zapis</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Okolje</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>brez</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Končano</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Uveljavitev</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Oznaka</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Potisk</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Sporočilo</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migracije tega zagona</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Vir</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Dnevnik zagona</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Prikazan je samo konec dnevnika.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>teče</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>končano brez poročila</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>uspelo</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ni uspelo</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>zavrnjeno</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>podatkovna baza ni bila dosegljiva</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>notranja napaka</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Poteka zagon</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind je začel %user ob %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Spremljaj</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Namestitev je zaklenjena</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Zaklep drži drug zagon (nadgradnja ali zagon v konzoli): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>opravljeno</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>v čakanju</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ni potrebno</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznano</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>razveljavljeno</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>uveljavljeno</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>bi bilo uveljavljeno</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>vzeto nazaj</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>bi bilo vzeto nazaj</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ni zagnano</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>čaka na drugo</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>sprememba sprejeta</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>sprememba bi bila sprejeta</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulirano</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Zgodovina</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Vzemi nazaj %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Zagon se vrne na posnetek, ustvarjen pred njim, ena migracija s svojo down(). Obnovitev starejšega posnetka je za strokovnjake. Vsako teče v ozadju kot vi, po posnetku trenutnega stanja.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Ni bilo mogoče prebrati, kaj je mogoče vzeti nazaj: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Zagon</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Ena migracija</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Starejši posnetek</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Opis</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Posnetek</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Oznaka</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Ustvarjeno</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Deli za obnovitev</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Podatkovna baza</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Datoteke shrambe (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Nastavitve (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Obnovitev podatkovne baze jo vrne v čas posnetka, vključno s sejami: pozneje boste morda morali znova vpisati. Vse, kar se je od takrat spremenilo, se izgubi; najprej se ustvari posnetek trenutnega stanja.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Vem, kaj se s tem obnovi</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Znova vnesite id posnetka</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Da, vzemi nazaj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Prekliči</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Zagoni s posnetkom, ustvarjenim pred njimi.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Izberi</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Še noben zagon s posnetkom.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Uveljavljene migracije, ki se lahko same vzamejo nazaj (imajo down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Nobena uveljavljena migracija nima down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Starejši posnetki (strokovnjaki)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Še noben posnetek.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Zaženi migracije</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Zagon teče v ozadju kot %user, njegova stran pa ga prikazuje med izvajanjem. Pred prvo migracijo se ustvari posnetek namestitve; ko migracija ne uspe, se zagon ustavi in posnetek se obnovi.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Najprej poskusni zagon</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Stanja ni bilo mogoče prebrati: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Čakajoče migracije</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Tečejo v tem vrstnem redu. Odkljukajte migracijo, da njo in tiste, ki jo potrebujejo, pustite za poznejši zagon.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Zaženi jo</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Med izvajanjem vklopi način vzdrževanja.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Spremenjene po uveljavitvi</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Te datoteke niso tiste, ki so bile uveljavljene. Zagon jih zavrne, razen če je sprememba sprejeta z razlogom; ne izvedejo se znova, nova kontrolna vsota se zabeleži, razlog pa ohrani v revizijskem dnevniku.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Sprejmi spremembe</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Zakaj</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Privzete vrednosti so varne. Vsako polje izpusti en korak.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Brez posnetka</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Brez posnetka pred zagonom in po njem: napake ni mogoče samodejno obnoviti.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Brez obnovitve</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Po napaki pusti namestitev takšno, kot jo je pustila napaka.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Ohrani neuveljavljene spremembe</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Zaženi, čeprav imajo nastavitve, razširitve ali oblikovanja neuveljavljene spremembe; te gredo v posnetek.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Brez uveljavitve</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ne uveljavi datoteke stanja in dnevnika zagona (tudi brez oznake in potiska).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Brez potiska</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Uveljavi in označi, vendar ne potisni.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Brez oznake</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Uveljavi in potisni, vendar zagona ne označi.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Da, zaženi te migracije zdaj</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Nobena migracija ne čaka.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Nazaj na stanje</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Spremembe te namestitve, enkrat zapisane kot datoteke (vsebina, razredi, vloge, nastavitve, shema) in uveljavljene v vsaki namestitvi spletnega mesta v enakem vrstnem redu. Zagon najprej ustvari posnetek, ga obnovi, ko migracija ne uspe, ter zabeleži, uveljavi in potisne, kar je naredil.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Zaženi čakajoče (%count)</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>V čakanju</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Opravljeno</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ni potrebno</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Podatkovna baza</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transakcije: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migracije spletnega mesta so v migrations/, migracije razširitve v extension/&lt;name&gt;/migrations/. Tečejo v vrstnem redu svojih imen in tega, kar potrebujejo.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Zadnji zagon</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Datoteka se je spremenila po uveljavitvi.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Še nobene migracije. Prvo zapiše ./console exp:migration:generate --skeleton &lt;name&gt; --apply.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Najnovejši zagoni</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Vsi zagoni</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Še noben zagon.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Simulacija zagona potrebuje pravilnik migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Poteka zagon: simulirajte, ko se konča.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavitve</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ni zagon, migracija ali posnetek te namestitve.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Najprej odkljukajte „Da, vzemi nazaj“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Obnovitev starejšega posnetka je za strokovnjake: odkljukajte „Vem, kaj se s tem obnovi“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Znova vnesite id posnetka: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Izberite vsaj en del za obnovitev.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ta zagon nima posnetka pred seboj: vzemite njegove migracije nazaj eno za drugo ali obnovite starejši posnetek.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Te migracije ni mogoče vzeti nazaj same: ni uveljavljena ali nima down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Obrazca ni bilo mogoče prebrati.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Izberite zagon za nadaljevanje.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Najprej odkljukajte „Da, zaženi te migracije zdaj“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Izberite vsaj eno migracijo.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migracija se je spremenila po uveljavitvi: sprejmite spremembo z razlogom ali vrnite datoteko.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Navedite razlog, zakaj se spremenjene migracije sprejmejo.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Razlog ima lahko največ 500 znakov.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Zagon, začet tukaj, še poteka (%detail). Počakajte, da se konča.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Zaklep namestitve drži drug zagon: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Zagon potrebuje vpisanega obstoječega uporabnika.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Programa php za ukazno vrstico ni bilo mogoče najti. Nastavite migration.ini [AdminSettings] PhpCliPath na njegovo polno pot.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open je onemogočen, zato zagona tukaj ni mogoče začeti. Na strežniku zaženite ./console exp:migration:migrate --apply.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>V mapo zagonov ni mogoče pisati: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Zagon se je začel, vendar ni sporočil id svojega procesa. Preverite %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Navedite, kaj naj se vzame nazaj.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Zagona ni bilo mogoče začeti.</translation>
     </message>
 </context>
 </TS>

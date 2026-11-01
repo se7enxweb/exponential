@@ -2,14 +2,14 @@
 title: exp:expmigrationrollback
 audience: developer, admin
 category: examples
-summary: "Nimmt Migrationen zurück: einen Lauf (seine Aufnahme wird wiederhergestellt), eine Migration (ihr down()) oder, für Fachleute, jede Aufnahme; ein Probelauf ohne --apply."
+summary: "Nimmt Migrationen zurück: einen Lauf (sein Sicherungspunkt wird wiederhergestellt), eine Migration (ihr down()) oder, für Fachleute, jeden Sicherungspunkt; ein Probelauf ohne --apply."
 keywords: Konsole, Befehl, exp:expmigrationrollback, expmigrationrollback, console, command, CLI, expmigrationrollback.php, exp:migration:rollback
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationrollback
 
-Nimmt Migrationen zurück: einen Lauf (seine Aufnahme wird wiederhergestellt), eine Migration (ihr down()) oder, für Fachleute, jede Aufnahme; ein Probelauf ohne --apply.
+Nimmt Migrationen zurück: einen Lauf (sein Sicherungspunkt wird wiederhergestellt), eine Migration (ihr down()) oder, für Fachleute, jeden Sicherungspunkt; ein Probelauf ohne --apply.
 
 Skript `bin/php/expmigrationrollback.php`, Code in `kernel/private/classes/commands/expmigrationrollback.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -49,13 +49,14 @@ command prints the steps to restore by hand.
 | `--source` | erforderlich | Die Quelle: site oder extension:<Name> (generate: wohin die Datei kommt; rollback: welche Migration, wenn zwei Quellen ihre ID haben) |
 | `--environment` | erforderlich | Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen |
 | `--login` | erforderlich | Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini) |
-| `--expert` |  | Eine Aufnahme wiederherstellen, die nicht die vor einem Lauf genommene ist (mit --confirm) |
-| `--confirm` | erforderlich | Die ID der Aufnahme, noch einmal eingegeben, um sie mit --expert wiederherzustellen |
-| `--parts` | erforderlich | Nur diese Teile der Aufnahme, eine Komma-Liste aus database, storage, settings, libraries, code (Standard [CaptionSettings] RestoreParts) |
-| `--backup-dir` | erforderlich | Wo die ohne git_manager gemachten Aufnahmen liegen (Standard var/backup/upgrade) |
-| `--no-safety-caption` |  | Wiederherstellen, ohne zuerst eine Aufnahme des aktuellen Zustands zu nehmen; auf einer Produktivinstallation ohne --force-no-caption verweigert |
-| `--force-no-caption` |  | Mit --no-safety-caption auf einer Produktivinstallation: trotzdem ohne Aufnahme wiederherstellen |
+| `--expert` |  | Einen Sicherungspunkt wiederherstellen, der nicht der vor einem Lauf angelegte ist (mit --confirm) |
+| `--confirm` | erforderlich | Die ID des Sicherungspunkts, noch einmal eingegeben, um ihn mit --expert wiederherzustellen |
+| `--parts` | erforderlich | Nur diese Teile des Sicherungspunkts, eine Komma-Liste aus database, storage, settings, libraries, code (Standard [CaptionSettings] RestoreParts) |
+| `--backup-dir` | erforderlich | Wo die ohne git_manager angelegten Sicherungspunkte liegen (Standard var/backup/upgrade) |
+| `--no-safety-caption` |  | Wiederherstellen, ohne zuerst einen Sicherungspunkt des aktuellen Zustands anzulegen; auf einer Produktivinstallation ohne --force-no-caption verweigert |
+| `--force-no-caption` |  | Mit --no-safety-caption auf einer Produktivinstallation: trotzdem ohne Sicherungspunkt wiederherstellen |
 | `--no-verify` |  | Die Prüfung nach der Wiederherstellung auslassen |
+| `--progress` | erforderlich | Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

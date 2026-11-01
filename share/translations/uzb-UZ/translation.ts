@@ -15142,6 +15142,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: uning yakuniy nuqtasi, sxemasi va soʻrovlarni sinab koʻrish uchun maydoncha.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratsiyalar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>O‘rnatmadagi fayl sifatida saqlangan o‘zgarishlar: ularning holati, ishga tushirishlar, bajarish va orqaga qaytarish.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutatsiyalarni /api/graphql manziliga yuboring.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratsiyalar</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Holatni o‘qib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migratsiyalar jadvallari hali mavjud emas: ./console exp:upgrade --apply ularni yaratadi.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count ta migratsiya muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ishga tushirish davom etmoqda, uni %user boshlagan</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>O‘rnatma qulflangan: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Kutilmoqda</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Egasizlar</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Oxirgi ishga tushirish</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hali yo‘q</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Barcha migratsiyalar</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Taqlidiy ishga tushirish</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Sinov ishga tushirishi</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Kutilayotgan migratsiyalar keyin orqaga qaytarilgan tranzaksiyada bajarildi: hech narsa saqlanmadi. Quyida har biri maʼlumotlar bazasida nimani o‘zgartirgani ko‘rsatilgan.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ishga tushirish hozir nima qilishi. Hech narsa o‘zgarmaydi: har bir kutilayotgan migratsiya kiritadigan o‘zgarishlarini, ishga tushirish esa oldin va keyin nima qilishini sanab beradi.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Taqlid qilish</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Bajarish</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Sinov ishga tushirishi muvaffaqiyatsiz tugadi: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Taqlid uchun sxema o‘zgarishlarini orqaga qaytarish mumkin bo‘lgan PostgreSQL yoki SQLite kerak; bu maʼlumotlar bazasida quyidagi reja ishga tushirish nima qilishini ko‘rsatadi.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migratsiyalar</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migratsiya</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Holat</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>U nima qilardi</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Taqlid: %result, %ms ms ichida</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Hali migratsiya yo‘q.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Ishga tushirishdan oldin va keyin</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Oldingi tiklash nuqtasi</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>yaratiladi va migratsiya muvaffaqiyatsiz bo‘lsa tiklanadi</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>o‘chiq</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Keyingi tiklash nuqtasi</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ishga tushirish muvaffaqiyatli bo‘lsa yaratiladi</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total ta migratsiya: %pending ta kutilmoqda, %done ta bajarildi, %failed ta muvaffaqiyatsiz.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Migratsiyalar tarixi</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Har bir ishga tushirish foydalanuvchisi, muhiti, tiklash nuqtalari hamda nima kommit qilingani, teg qo‘yilgani va yuborilgani (push) bilan. Muvaffaqiyatsiz yoki uzilgan ishga tushirishni davom ettirish mumkin; oldidan tiklash nuqtasi yaratilgan ishga tushirishni bekor qilish mumkin.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ishga tushirishlarni o‘qib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migratsiyalar jadvallari hali mavjud emas: ./console exp:upgrade --apply ularni yaratadi.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ko‘rsatish</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hammasi</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ishga tushirishlar</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Boshlangan</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kim tomonidan</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Tiklash nuqtalari</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitoriy</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Amallar</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>oldin</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>keyin</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>yuborish (push): %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Davom ettirish</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Orqaga qaytarish</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Bu holatda ishga tushirish yo‘q.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Shu yerda boshlangan</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Shu sahifalarda boshlangan ishga tushirishlar, davom ettirishlar va orqaga qaytarishlar, har birining hisoboti bilan.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Nima</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natija</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Orqaga qaytarish</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ni orqaga qaytarish</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Ishga tushirish %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ishga tushirish nima qilgani, uning yozuvi va jurnali. Shu yerda boshlangan ishga tushirish sahifa yopilganda fonda davom etadi; uni kuzatish uchun sahifani qayta oching.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Bu ishga tushirishni davom ettirish</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Bu ishga tushirishni orqaga qaytarish</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Yozuvni o‘qib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Jarayon</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user tomonidan %time da boshlangan.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kod tekshirilmoqda va ishga tushirishdan oldin tiklash nuqtasi yaratilmoqda</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id bajarilmoqda (%total dan %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total dan %done tasi bajarildi</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migratsiyalar bajarildi; biri muvaffaqiyatsiz bo‘lsa tiklash nuqtasi tiklanmoqda</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ishga tushirishdan keyin tiklash nuqtasi, kommit, teg va yuborish (push)</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Tiklash nuqtasi tiklanmoqda</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Ishga tushirish tugadi. Hisobot yuklanmoqda.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Jarayonni kuzatib bo‘lmadi. Ishga tushirish qanday ketayotganini ko‘rish uchun sahifani qayta yuklang.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Bu sahifa ishga tushirishni u davom etayotganda kuzatadi.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Qayta yuklash</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Hisobot</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Davomiylik</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisoniya</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Ishga tushirish xato sifatida nima chiqardi</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Yozuv</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Muhit</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>yo‘q</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Tugagan</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kommit</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Teg</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Yuborish (push)</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Xabar</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Bu ishga tushirishning migratsiyalari</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Manba</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Ishga tushirish jurnali</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Faqat jurnalning oxiri ko‘rsatilgan.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>bajarilmoqda</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>hisobotsiz tugadi</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>muvaffaqiyatli</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rad etildi</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>maʼlumotlar bazasiga ulanib bo‘lmadi</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ichki xato</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ishga tushirish davom etmoqda</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user tomonidan %time da boshlangan.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Kuzatish</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>O‘rnatma qulflangan</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Boshqa ishga tushirish qulfni ushlab turibdi (yangilash yoki konsoldagi ishga tushirish): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>bajarildi</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>kutilmoqda</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>kerak emas</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nomaʼlum</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>orqaga qaytarildi</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>qo‘llanildi</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>qo‘llanilardi</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>bekor qilindi</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>bekor qilinardi</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>bajarilmagan</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>boshqasini kutmoqda</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>o‘zgarish qabul qilindi</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>o‘zgarish qabul qilinardi</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>taqlid qilindi</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratsiyalar</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Holat</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Tarix</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ni bekor qilish</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Ishga tushirish undan oldin yaratilgan tiklash nuqtasigacha, bitta migratsiya esa o‘zining down() metodi bilan bekor qilinadi. Oldingi tiklash nuqtasini tiklash mutaxassislar uchun. Har biri joriy holatning tiklash nuqtasi yaratilgach, sizning nomingizdan fonda bajariladi.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Nimani bekor qilish mumkinligini o‘qib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Ishga tushirish</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Bitta migratsiya</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Oldingi tiklash nuqtasi</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Tavsif</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ha</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>yo‘q</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Tiklash nuqtasi</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Yorliq</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Yaratilgan</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Turi</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Tiklanadigan qismlar</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Maʼlumotlar bazasi</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Saqlash fayllari (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Sozlamalar (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Maʼlumotlar bazasini tiklash uni seanslar bilan birga tiklash nuqtasi vaqtiga qaytaradi: keyin qayta kirishingiz so‘ralishi mumkin. O‘shandan beri o‘zgargan hamma narsa yo‘qoladi; avval joriy holatning tiklash nuqtasi yaratiladi.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Bu nimani tiklashini bilaman</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Tiklash nuqtasi identifikatorini qayta kiriting</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ha, bekor qilish</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Bekor qilish</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Oldidan tiklash nuqtasi yaratilgan ishga tushirishlar.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Tanlash</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Hali tiklash nuqtali ishga tushirish yo‘q.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>O‘zini bekor qila oladigan qo‘llanilgan migratsiyalar (ularda down() bor).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Hech bir qo‘llanilgan migratsiyada down() yo‘q.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Oldingi tiklash nuqtalari (mutaxassislar uchun)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Hali tiklash nuqtasi yo‘q.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Migratsiyalarni bajarish</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Ishga tushirish fonda %user nomidan bajariladi va uning sahifasi jarayonni ko‘rsatib boradi. Birinchi migratsiyadan oldin o‘rnatmaning tiklash nuqtasi yaratiladi; migratsiya muvaffaqiyatsiz bo‘lsa, ishga tushirish to‘xtaydi va tiklash nuqtasi tiklanadi.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Avval sinov ishga tushirishi</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Holatni o‘qib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Kutilayotgan migratsiyalar</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ular shu tartibda bajariladi. Birini va unga bog‘liq bo‘lganlarini keyingi ishga tushirishga qoldirish uchun belgisini olib tashlang.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Bajarish</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Bajarilish vaqtida texnik xizmat rejimini yoqadi.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Qo‘llanilgandan keyin o‘zgargan</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Bu fayllar qo‘llanilganlari emas. O‘zgarish sabab bilan qabul qilinmasa, ishga tushirish ularni rad etadi; ular qayta bajarilmaydi, yangi nazorat yig‘indisi yoziladi va sabab audit jurnalida saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>O‘zgarishlarni qabul qilish</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Nega</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Standart qiymatlar xavfsiz. Har bir katakcha bitta qadamni tashlab ketadi.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Tiklash nuqtasisiz</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Ishga tushirishdan oldin va keyin tiklash nuqtasi yo‘q: nosozlikni avtomatik tiklab bo‘lmaydi.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Tiklashsiz</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Nosozlikdan keyin o‘rnatmani nosozlik qoldirgan holatda qoldirish.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Kommit qilinmagan o‘zgarishlarni saqlash</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Sozlamalar, kengaytmalar yoki dizaynlarda kommit qilinmagan o‘zgarishlar bo‘lsa ham bajarish; ular tiklash nuqtasiga kiradi.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Kommitsiz</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Holat fayli va ishga tushirish jurnalini kommit qilmaslik (teg ham, push ham yo‘q).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Yuborishsiz (push)</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Kommit qilish va teg qo‘yish, lekin yubormaslik (push).</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Tegsiz</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Kommit qilish va yuborish (push), lekin ishga tushirishga teg qo‘ymaslik.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ha, bu migratsiyalarni hozir bajarish</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Kutilayotgan migratsiya yo‘q.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Holatga qaytish</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Bu o‘rnatmaga kiritilgan, bir marta fayl sifatida yozilgan (kontent, klasslar, rollar, sozlamalar, sxema) va saytning har bir o‘rnatmasiga bir xil tartibda qo‘llaniladigan o‘zgarishlar. Ishga tushirish avval tiklash nuqtasini yaratadi, migratsiya muvaffaqiyatsiz bo‘lsa uni tiklaydi va qilgan ishini yozib, kommit qiladi va yuboradi (push).</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count ta kutilayotganni bajarish</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Umumiy ko‘rinish</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Kutilmoqda</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Bajarilgan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Kerak emas</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Maʼlumotlar bazasi</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>tranzaksiyalar: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Sayt migratsiyalari migrations/ da, kengaytmaniki esa extension/&lt;name&gt;/migrations/ da joylashgan. Ular nomlari va bog‘liqliklari tartibida bajariladi.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Oxirgi ishga tushirish</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fayl qo‘llanilgandan keyin o‘zgargan.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Hali migratsiya yo‘q. ./console exp:migration:generate --skeleton &lt;name&gt; --apply birinchisini yozadi.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>So‘nggi ishga tushirishlar</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Barcha ishga tushirishlar</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Hali ishga tushirish yo‘q.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Ishga tushirishni taqlid qilish uchun migration/run siyosati kerak.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ishga tushirish davom etmoqda: u tugagach taqlid qiling.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sozlash</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target bu o‘rnatmaning ishga tushirishi ham, migratsiyasi ham, tiklash nuqtasi ham emas.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Avval «Ha, bekor qilish» ni belgilang.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Oldingi tiklash nuqtasini tiklash mutaxassislar uchun: «Bu nimani tiklashini bilaman» ni belgilang.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Tiklash nuqtasi identifikatorini qayta kiriting: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Tiklash uchun kamida bitta qismni tanlang.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Bu ishga tushirishdan oldin tiklash nuqtasi yaratilmagan: uning migratsiyalarini birma-bir bekor qiling yoki oldingi tiklash nuqtasini tiklang.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Bu migratsiyani o‘zicha bekor qilib bo‘lmaydi: u qo‘llanilmagan yoki unda down() yo‘q.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Shaklni o‘qib bo‘lmadi.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Davom ettiriladigan ishga tushirishni tanlang.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Avval «Ha, bu migratsiyalarni hozir bajarish» ni belgilang.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Kamida bitta migratsiyani tanlang.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migratsiya qo‘llanilgandan keyin o‘zgargan: o‘zgarishni sabab bilan qabul qiling yoki faylni qaytaring.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>O‘zgargan migratsiyalar nega qabul qilinayotganini ko‘rsating.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Sabab ko‘pi bilan 500 belgidan iborat bo‘lishi mumkin.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Shu yerda boshlangan ishga tushirish hali davom etmoqda (%detail). Uning tugashini kuting.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Boshqa ishga tushirish o‘rnatma qulfini ushlab turibdi: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Ishga tushirish uchun mavjud va tizimga kirgan foydalanuvchi kerak.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php buyruq satri dasturi topilmadi. migration.ini [AdminSettings] PhpCliPath da uning to‘liq yo‘lini ko‘rsating.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open o‘chirilgan, shuning uchun bu yerda ishga tushirishni boshlab bo‘lmaydi. Serverda ./console exp:migration:migrate --apply ni bajaring.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ishga tushirishlar jildiga yozib bo‘lmaydi: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Ishga tushirish boshlandi, lekin jarayon identifikatorini bildirmadi. %detail ni tekshiring.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Nimani bekor qilish kerakligini ko‘rsating.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ishga tushirishni boshlab bo‘lmadi.</translation>
     </message>
 </context>
 </TS>

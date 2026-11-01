@@ -15081,6 +15081,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: エンドポイント、スキーマ、クエリを試すためのプレイグラウンド。</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>マイグレーション</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ファイルとして保管されたインストールへの変更: その状態、実行履歴、実行とロールバック。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ミューテーションは /api/graphql に送ってください。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>マイグレーション</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ステータスを読み取れませんでした: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>マイグレーションのテーブルがまだ存在しません: ./console exp:upgrade --apply で作成されます。</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count 件のマイグレーションが失敗しました</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>%user が開始した実行が進行中です</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>インストールはロックされています: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>保留中</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>孤立</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>最終実行</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>まだありません</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>すべてのマイグレーション</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>シミュレーション実行</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ドライラン</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>保留中のマイグレーションはトランザクション内で実行され、その後ロールバックされました: 何も保存されていません。以下は各マイグレーションがデータベースで変更した内容です。</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>今実行した場合に行われる内容です。何も変更されません: 保留中の各マイグレーションが行う変更と、実行の前後に行われる処理を示します。</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>シミュレート</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>実行</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ドライランが失敗しました: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>シミュレーションにはスキーマ変更をロールバックできる PostgreSQL または SQLite が必要です。このデータベースでは、以下の計画が実行時に行われる内容です。</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>マイグレーション一覧</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>マイグレーション</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状態</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>行われる内容</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>シミュレーション: %result (%ms ミリ秒)</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>マイグレーションはまだありません。</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>実行の前後</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>実行前のキャプション</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>取得済み。マイグレーションが失敗した場合に復元されます</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>オフ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>実行後のキャプション</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>実行が成功したときに取得</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>マイグレーション %total 件: 保留中 %pending 件、完了 %done 件、失敗 %failed 件。</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>マイグレーション履歴</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>すべての実行と、そのユーザー、環境、キャプション、コミット・タグ付け・プッシュされた内容。失敗または中断した実行は再開できます。実行前にキャプションが取得された実行は取り消せます。</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>実行を読み取れませんでした: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>マイグレーションのテーブルがまだ存在しません: ./console exp:upgrade --apply で作成されます。</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>実行</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>開始</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>実行者</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>キャプション</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>リポジトリ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>前</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>後</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>プッシュ: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>再開</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ロールバック</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>この状態の実行はありません。</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ここで開始</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>これらのページで開始された実行、再開、ロールバックと、それぞれのレポート。</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>内容</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ロールバック</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target のロールバック</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>実行 %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>実行の内容、その記録とログ。ここで開始された実行は、このページを閉じてもバックグラウンドで続行します。経過を確認するにはページを再度開いてください。</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>この実行を再開</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>この実行をロールバック</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>記録を読み取れませんでした: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>進捗</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user が %time に開始しました。</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>コードを確認し、実行前のキャプションを取得しています</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id を実行中 (%total 件中 %index 件目)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total 件中 %done 件完了</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>マイグレーションが実行されました。失敗した場合はキャプションを復元しています</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>実行後のキャプションを取得し、コミット、タグ付け、プッシュしています</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>キャプションを復元しています</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>実行が終了しました。レポートを読み込んでいます。</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>進捗を追跡できませんでした。実行の状況を確認するにはページを再読み込みしてください。</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>このページは実行の進行に合わせて更新されます。</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>再読み込み</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>レポート</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ミリ秒</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>実行がエラーとして出力した内容</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>記録</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>環境</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>終了</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>コミット</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>タグ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>プッシュ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>メッセージ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>この実行のマイグレーション</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ソース</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>実行ログ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ログの末尾のみ表示しています。</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>実行中</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>レポートなしで終了</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>成功</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>拒否</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>データベースに接続できませんでした</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>内部エラー</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>実行が進行中です</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind を %user が %time に開始しました。</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>経過を見る</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>インストールはロックされています</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>別の実行がロックを保持しています (アップグレードまたはコンソールでの実行): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>保留中</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>不要</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>不明</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ロールバック済み</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>適用済み</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>適用予定</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>取り消し済み</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>取り消し予定</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>未実行</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>他を待機中</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>変更を承認済み</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>変更を承認予定</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>シミュレーション済み</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>マイグレーション</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ステータス</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>履歴</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target を取り消す</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>実行は、その前に取得されたキャプションまで取り消されます。単一のマイグレーションはその down() で取り消されます。以前のキャプションの復元は上級者向けです。いずれも現在の状態のキャプションを取得した後、あなたとしてバックグラウンドで実行されます。</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>取り消せる対象を読み取れませんでした: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>実行</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>単一のマイグレーション</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>以前のキャプション</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>説明</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>キャプション</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ラベル</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>取得日時</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>復元する部分</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>データベース</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ストレージファイル (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>設定 (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>データベースを復元すると、セッションを含めキャプション取得時点に戻ります: その後、再度サインインを求められる場合があります。それ以降の変更はすべて失われます。最初に現在の状態のキャプションが取得されます。</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>何が復元されるか理解しています</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>キャプションの ID をもう一度入力してください</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>はい、取り消します</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>実行前にキャプションが取得された実行。</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>選択</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>キャプション付きの実行はまだありません。</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>自身を取り消せる適用済みマイグレーション (down() を持つもの)。</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>down() を持つ適用済みマイグレーションはありません。</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>以前のキャプション (上級者向け)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>キャプションはまだありません。</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>マイグレーションを実行</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>実行は %user としてバックグラウンドで進み、そのページで経過が表示されます。最初のマイグレーションの前にインストールのキャプションが取得されます。マイグレーションが失敗すると実行は停止し、キャプションが復元されます。</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>まずドライラン</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ステータスを読み取れませんでした: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>保留中のマイグレーション</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>この順序で実行されます。チェックを外すと、そのマイグレーションとそれを必要とするものは後の実行に回されます。</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>実行する</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>実行中はメンテナンスモードをオンにします。</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>適用後に変更されたもの</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>これらのファイルは適用されたものと異なります。理由を付けて変更を承認しない限り、実行はこれらを拒否します。再実行はされず、新しいチェックサムが記録され、理由は監査ログに保存されます。</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>変更を承認</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>理由</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>既定値が安全な設定です。各チェックボックスで手順を一つ省略します。</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>キャプションなし</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>実行の前後にキャプションを取得しません: 失敗時に自動で復元できません。</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>復元なし</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>失敗後、インストールを失敗時の状態のままにします。</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>コミットされていない変更を保持</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>設定、エクステンション、デザインにコミットされていない変更があっても実行します。それらはキャプションに含まれます。</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>コミットなし</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ステータスファイルと実行ログをコミットしません (タグ付けとプッシュも行いません)。</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>プッシュなし</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>コミットとタグ付けを行いますが、プッシュしません。</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>タグなし</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>コミットとプッシュを行いますが、実行にタグを付けません。</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>はい、これらのマイグレーションを今すぐ実行します</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>保留中のマイグレーションはありません。</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ステータスに戻る</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>このインストールへの変更 (コンテンツ、クラス、ロール、設定、スキーマ) を一度ファイルとして記述し、サイトのすべてのインストールに同じ順序で適用します。実行は最初にキャプションを取得し、マイグレーションが失敗すると復元し、行った内容を記録、コミット、プッシュします。</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>保留中の %count 件を実行</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>概要</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>保留中</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>不要</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>データベース</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>トランザクション: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>サイトのマイグレーションは migrations/ に、エクステンションのものは extension/&lt;name&gt;/migrations/ にあります。名前の順序と依存関係に従って実行されます。</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>最終実行</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>このファイルは適用後に変更されました。</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>マイグレーションはまだありません。./console exp:migration:generate --skeleton &lt;name&gt; --apply で最初のものが作成されます。</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>最近の実行</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>すべての実行</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>実行はまだありません。</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>実行のシミュレーションにはポリシー migration/run が必要です。</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>実行が進行中です: 終了後にシミュレートしてください。</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>システム設定</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target はこのインストールの実行、マイグレーション、キャプションのいずれでもありません。</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>まず「はい、取り消します」にチェックを入れてください。</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>以前のキャプションの復元は上級者向けです: 「何が復元されるか理解しています」にチェックを入れてください。</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>キャプションの ID をもう一度入力してください: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>復元する部分を少なくとも一つ選択してください。</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>この実行には実行前のキャプションがありません: マイグレーションを一つずつ取り消すか、以前のキャプションを復元してください。</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>このマイグレーションは単独では取り消せません: 適用されていないか、down() がありません。</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>フォームを読み取れませんでした。</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>再開する実行を選択してください。</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>まず「はい、これらのマイグレーションを今すぐ実行します」にチェックを入れてください。</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>マイグレーションを少なくとも一つ選択してください。</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>適用後に変更されたマイグレーションがあります: 理由を付けて変更を承認するか、ファイルを元に戻してください。</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>変更されたマイグレーションを承認する理由を入力してください。</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>理由は最大 500 文字です。</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ここで開始された実行がまだ進行中です (%detail)。終了するまでお待ちください。</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>別の実行がインストールのロックを保持しています: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>実行には存在するサインイン済みユーザーが必要です。</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php のコマンドラインバイナリが見つかりませんでした。migration.ini [AdminSettings] PhpCliPath にそのフルパスを設定してください。</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open が無効なため、ここでは実行を開始できません。サーバー上で ./console exp:migration:migrate --apply を実行してください。</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>実行のフォルダーに書き込めません: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>実行は開始されましたが、プロセス ID が報告されませんでした。%detail を確認してください。</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>取り消す対象を指定してください。</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>実行を開始できませんでした。</translation>
     </message>
 </context>
 </TS>

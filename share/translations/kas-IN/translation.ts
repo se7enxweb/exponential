@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: اَمیُک اینڈ پوائنٹ، اِسکیما تہٕ کوئری آزماونہٕ خٲطرٕ اکھ پلے گراؤنڈ۔</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مایگریشَن</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>انسٹالیشنٕچ تَبدیٖلیہِ یِمہٕ فایلَن ہٕنٛدِس صورتَس منٛز تھٲوِمٕژ چھےٚ: تِہنٛز صورتحال، رَن، چلاوُن تہٕ واپَس پھیرُن.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>میوٹیشنز سوزِو /api/graphql پؠٹھ۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>مایگریشَن</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>صورتحال پٔرِتھ نہٕ ہیوٚک: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>مایگریشنَن ہٕنزٕ ٹیبل چھِنہٕ وُنی موجود: ./console exp:upgrade --apply بناوان یِم.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count مایگریشَن گٔیہِ ناکام</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>اکھ رَن چھُ جٲری، %user ٚن کوٚر شروٗع</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>انسٹالیشَن چھُ لاک: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>زیٖر غور</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>یَتیٖم</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخری رَن</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>وُنی کہِنہٕ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>سٲرِی مایگریشَن</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>نَقلی رَن</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>آزمٲیشی رَن</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>زیٖر غور مایگریشَن چٔلۍ اکِس ٹرانزیکشنَس منٛز یُس پَتہٕ واپَس پھیرنہٕ آو: کہِنہٕ تھوونہٕ آو. بوٚن چھُ ہیٚو کُس مایگریشنَن ڈیٹا بیسَس منٛز کیا بَدلوو.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>اَز رَن کیا کَرِہے. کہِنہٕ چھُ نہٕ بَدلاونہٕ یِوان: پرٛتھ زیٖر غور مایگریشَن ہاوان یِم تَبدیٖلیہِ سُہ کَرِہے، تہٕ رَن ہاوان سُہ برونٛہہ تہٕ پَتہٕ کیا کَرِہے.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>نَقل کٔرِو</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>چلٲوِو</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>آزمٲیشی رَن گوو ناکام: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>نَقلس چھُ PostgreSQL یا SQLite ضروٗری، یِہنٛدۍ اسکیما تَبدیٖلیہِ ہیٚکن واپَس پھیرنہٕ یِتھ؛ یَتھ ڈیٹا بیسَس پیٚٹھ چھُ بوٚنِم مَنصوٗبہٕ سُے یُس رَن کَرِہے.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>مایگریشَن</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>مایگریشَن</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالَت</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>یہِ کیا کَرِہے</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>نَقل: %result، %ms مِلی سیکنڈَن منٛز</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>وُنی چھُ نہٕ کانٛہہ مایگریشَن.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>رَنہٕ برونٛہہ تہٕ پَتہٕ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>برونٛہٕم کیپشَن</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ہیوٚتمُت، تہٕ مایگریشَن ناکام گژھنَس پیٚٹھ بَحال کرنہٕ یِوان</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بَنٛد</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>پَتٕم کیپشَن</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>رَن کامیاب گژھنَس پیٚٹھ ہیوٚتمُت</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total مایگریشَن: %pending زیٖر غور، %done مُکَمَل، %failed ناکام.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>مایگریشنٕچ تٲریٖخ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>پرٛتھ رَن پَنٕنہِ صارِف، ماحول، کیپشنَو تہٕ تَمہِ سٕتۍ یُس کَمِٹ، ٹیگ تہٕ پُش کرنہٕ آو. ناکام یا رُکمُت رَن ہیٚکہِ دوبارٕ شروٗع گژھِتھ؛ یَتھ رَنَس برونٛہہ کیپشَن ہیوٚتمُت آسہِ سُہ ہیٚکہِ واپَس نِنہٕ یِتھ.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>رَن پٔرِتھ نہٕ ہیٚکۍ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>مایگریشنَن ہٕنزٕ ٹیبل چھِنہٕ وُنی موجود: ./console exp:upgrade --apply بناوان یِم.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>وُچھِو</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سٲرِنی</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>رَن</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>شروٗع</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>کٔمۍ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>کیپشَن</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>رِپازِٹری</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عَمَل</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>برونٛہہ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>پَتہٕ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>پُش: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>دوبارٕ شروٗع کٔرِو</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>واپَس پھیٖرِو</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>یَتھ حالتَس منٛز چھُ نہٕ کانٛہہ رَن.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>یٮ۪تہِ شروٗع کٔرمٕژ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>یِمَن صَفَن پیٚٹھ شروٗع کرنہٕ آمٕتۍ رَن، دوبارٕ شروٗعات تہٕ واپسی، پرٛتھ اکِس ہٕنٛز رِپورٹ سٕتۍ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>کیا</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>واپسی</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ہٕنٛز واپسی</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>رَن %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>رَنَن کیا کوٚر، تٔمۍ سُنٛد رِکارڈ تہٕ لاگ. یٮ۪تہِ شروٗع کوٚرمُت رَن چلان پَتہٕ کِنۍ یَلہِ یہِ صَفہٕ بَنٛد گژھہِ؛ تَتھ پَتہٕ لگنہٕ خٲطرٕ کھولِو صَفہٕ دوبارٕ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>یہِ رَن دوبارٕ شروٗع کٔرِو</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>یہِ رَن واپَس پھیٖرِو</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>رِکارڈ پٔرِتھ نہٕ ہیوٚک: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پیش رَفت</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ٚن کوٚر %time پیٚٹھ شروٗع.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>کوڈ ژیکان تہٕ رَنہٕ برونٛہہ کیپشَن ہیوان</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id چلان (%total منٛزہٕ %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total منٛزہٕ %done مُکَمَل</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>مایگریشَن چٔلۍ؛ اگر اکھ ناکام گوو تیٚلہِ کیپشَن بَحال کران</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>رَنہٕ پَتہٕ کیپشَن ہیوان، کَمِٹ، ٹیگ تہٕ پُش کران</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>کیپشَن بَحال کران</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>رَن گوو ختم. تٔمۍ سٕنٛز رِپورٹ لوڈ گژھان.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>پیش رَفتُک پَتہٕ ہیوٚک نہٕ لٔگِتھ. رَن کِتھ کٔنۍ چلان چھُ وُچھنہٕ خٲطرٕ کٔرِو صَفہٕ دوبارٕ لوڈ.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>یہِ صَفہٕ چھُ رَن چلنَس سٕتۍ سٕتۍ ہاوان.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>دوبارٕ لوڈ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>رِپورٹ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وَقت</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms مِلی سیکنڈ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>رَنَن یُس خرٲبی ہٕنٛدِس صورتَس منٛز چھاپ کوٚر</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>رِکارڈ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ماحول</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>کہِنہٕ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ختم</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>کَمِٹ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ٹیگ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پُش</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پَیغام</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>یَتھ رَنُک مایگریشَن</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>مَنبَع</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>رَنُک لاگ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>صِرف لاگُک آخری حِصہٕ چھُ ہاونہٕ آمُت.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>چلان</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>رِپورٹہٕ وَرٲے ختم</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>کامیاب</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>نامنظوٗر</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ڈیٹا بیسَس تام ہیٚچہٕ نہٕ واتِتھ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>اَندرٲنۍ خرٲبی</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>اکھ رَن چھُ جٲری</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind کوٚر %user ٚن %time پیٚٹھ شروٗع.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>پَتہٕ لٔگِو</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>انسٹالیشَن چھُ لاک</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>بیٚیِس رَنَس چھُ لاک (اکھ اَپگریڈ یا کنسولَس پیٚٹھ رَن): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>مُکَمَل</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>زیٖر غور</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ضروٗرت نہٕ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>واپَس پھیرمُت</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>لاگوٗ</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>لاگوٗ گژھِہے</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>واپَس نیوٚمُت</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>واپَس نِنہٕ یِہے</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>نہٕ چلومُت</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>بیٚیِس انتظار</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>تَبدیٖلی منظوٗر</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>تَبدیٖلی منظوٗر گژھِہے</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>نَقل کوٚرمُت</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مایگریشَن</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>صورتحال</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تٲریٖخ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target واپَس نِیو</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>رَن چھُ واپَس نِنہٕ یِوان تَتھ کیپشنَس تام یُس تَمہِ برونٛہہ ہیوٚتمُت آسہِ، اکھ مایگریشَن پَنٕنہِ down() سٕتۍ. برونٛہِم کیپشَن بَحال کرُن چھُ ماہرَن خٲطرٕ. پرٛتھ اکھ چلان پَتہٕ کِنۍ تُہٕنٛدِس ناوَس پیٚٹھ، اَزٕچہِ حالتُک کیپشَن ہیٚنہٕ پَتہٕ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>کیا ہیٚکہِ واپَس نِنہٕ یِتھ، یہِ پٔرِتھ نہٕ ہیوٚک: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>اکھ رَن</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>اکھ مایگریشَن</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>اکھ برونٛہِم کیپشَن</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>تَفصیٖل</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>آ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نہ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>کیپشَن</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>لیبَل</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ہیوٚتمُت</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>قٕسم</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>بَحال کرنہٕ وٲلۍ حِصہٕ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ڈیٹا بیس</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>اِسٹوریج فایلہٕ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ترتیبات (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ڈیٹا بیس بَحال کرنہٕ سٕتۍ گژھہِ یہِ کیپشنٕکِس وَقتَس تام واپَس، سیشنَو سمیت: پَتہٕ ہیٚکِو تُہۍ دوبارٕ سائن اِن کرنہٕ باپت وَننہٕ یِتھ. تَمہِ پَتہٕ بَدلیوٚمُت سورُے گژھہِ ضایع؛ گوڈٕ ہیٚنہٕ یِیہِ اَزٕچہِ حالتُک کیپشَن.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>مےٚ چھُ پَتہٕ یہِ کیا بَحال کَرِ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>کیپشنٕچ آیی ڈی لیٚکھِو دوبارٕ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>آ، واپَس نِیو</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>منسوٗخ کٔرِو</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>تِم رَن یِمَن برونٛہہ کیپشَن ہیوٚتمُت آسہِ.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ژارِو</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>وُنی چھُ نہٕ کیپشنَس سٕتۍ کانٛہہ رَن.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>لاگوٗ مایگریشَن یِم پانَس واپَس نیٚتھ ہیٚکن (یِمَن چھُ down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>کانٛسہِ لاگوٗ مایگریشنَس چھُ نہٕ down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>برونٛہِم کیپشَن (ماہر)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>وُنی چھُ نہٕ کانٛہہ کیپشَن.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>مایگریشَن چلٲوِو</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>رَن چلان پَتہٕ کِنۍ %user سٕنٛدِس ناوَس پیٚٹھ، تہٕ تٔمۍ سُنٛد صَفہٕ ہاوان یہِ چلنَس سٕتۍ سٕتۍ. گوڈنِکِس مایگریشنَس برونٛہہ ہیٚنہٕ یِوان انسٹالیشنُک کیپشَن؛ مایگریشَن ناکام گژھنَس پیٚٹھ رُکان رَن تہٕ کیپشَن گژھان بَحال.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>گوڈٕ آزمٲیشی رَن</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>صورتحال پٔرِتھ نہٕ ہیوٚک: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>زیٖر غور مایگریشَن</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>یِم چلان یَتھ ترتیٖبس منٛز. اکھ تہٕ تِم یِمَن یہِ ضروٗری چھُ، پَتٕکِس رَنَس خٲطرٕ تھاونہٕ باپت ہٹٲوِو نِشان.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>چلٲوِو</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>چلنہٕ وِزِ کران مینٹیننس موڈ آن.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>لاگوٗ گژھنہٕ پَتہٕ بَدلیوٚمٕتۍ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>یِم فایلہٕ چھےٚ نہٕ تِمے یِم لاگوٗ کرنہٕ آیہِ. رَن کران یِم نامنظوٗر یُتام نہٕ تَبدیٖلی وجہہ سٕتۍ منظوٗر گژھہِ؛ یِم چلن نہٕ دوبارٕ، نوٚو چیکسَم گژھہِ درج تہٕ وجہہ تھاونہٕ یِیہِ آڈٹ لاگَس منٛز.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>تَبدیٖلیہِ منظوٗر کٔرِو</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>کیازِ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ڈیفالٹ چھِ محفوٗظ. پرٛتھ خانہٕ ترٛاوان اکھ قَدَم.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>کیپشَن نہٕ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>رَنہٕ برونٛہہ تہٕ پَتہٕ کیپشَن نہٕ: ناکٲمی ہیٚکہِ نہٕ خود بخود بَحال گژھِتھ.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>بَحالی نہٕ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ناکٲمی پَتہٕ ترٛٲوِو انسٹالیشَن تِتھے یِتھ ناکٲمی ترٛوو.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>غٲر کَمِٹ تَبدیٖلیہِ تھٲوِو</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>چلٲوِو اگرچہ ترتیبات، ایکسٹینشَن یا ڈیزائنَن منٛز غٲر کَمِٹ تَبدیٖلیہِ آسن؛ یِم گژھن کیپشنَس منٛز.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>کَمِٹ نہٕ</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>صورتحالٕچ فایل تہٕ رَنُک لاگ کٔرِو نہٕ کَمِٹ (نہٕ ٹیگ تہٕ نہٕ پُش).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>پُش نہٕ</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>کَمِٹ تہٕ ٹیگ کٔرِو، مگر پُش نہٕ.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ٹیگ نہٕ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>کَمِٹ تہٕ پُش کٔرِو، مگر رَنَس ٹیگ نہٕ.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>آ، یِم مایگریشَن چلٲوِو وُنی</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>کانٛہہ مایگریشَن چھُ نہٕ زیٖر غور.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>صورتحالَس کُن واپَس</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>یَتھ انسٹالیشنٕچ تَبدیٖلیہِ (مواد، کلاس، رول، ترتیبات، اسکیما) اکہِ لٹہِ فایلَن منٛز لیٚکھِتھ تہٕ سایٹٕکِس پرٛتھ انسٹالیشنَس پیٚٹھ تِتھے ترتیٖبس منٛز لاگوٗ. رَن ہیوان گوڈٕ کیپشَن، مایگریشَن ناکام گژھنَس پیٚٹھ کران سُہ بَحال، تہٕ یُس کوٚر سُہ کران درج، کَمِٹ تہٕ پُش.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count زیٖر غور چلٲوِو</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>جایزہ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>زیٖر غور</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مُکَمَل</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ضروٗرت نہٕ</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ڈیٹا بیس</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ٹرانزیکشَن: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>سایٹٕچ مایگریشَن چھےٚ migrations/ منٛز، ایکسٹینشنٕچ extension/&lt;name&gt;/migrations/ منٛز. یِم چلان پَنٕنٮ۪ن ناوَن ہٕنٛزِ ترتیٖبہٕ تہٕ ضروٗرتَن مُطٲبِق.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخری رَن</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>فایل بَدلیوٚو لاگوٗ گژھنہٕ پَتہٕ.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>وُنی چھُ نہٕ کانٛہہ مایگریشَن. ./console exp:migration:generate --skeleton &lt;name&gt; --apply لیٚکھِ گوڈنیُک.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>تازٕ رَن</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>پرٛتھ رَن</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>وُنی چھُ نہٕ کانٛہہ رَن.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>رَنُک نَقل کرنہٕ باپت چھےٚ پالیسی migration/run ضروٗری.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>اکھ رَن چھُ جٲری: ختم گژھنہٕ پَتہٕ کٔرِو نَقل.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سیٹ اَپ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target چھُ نہٕ یَتھ انسٹالیشنُک رَن، نہٕ مایگریشَن تہٕ نہٕ کیپشَن.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>گوڈٕ لٲگِو «آ، واپَس نِیو» پیٚٹھ نِشان.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>برونٛہِم کیپشَن بَحال کرُن چھُ ماہرَن خٲطرٕ: لٲگِو «مےٚ چھُ پَتہٕ یہِ کیا بَحال کَرِ» پیٚٹھ نِشان.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>کیپشنٕچ آیی ڈی لیٚکھِو دوبارٕ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>بَحال کرنہٕ خٲطرٕ ژارِو کَم از کَم اکھ حِصہٕ.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>یَتھ رَنَس برونٛہہ چھُ نہٕ کانٛہہ کیپشَن ہیوٚتمُت: تٔمۍ سٕنٛز مایگریشَن نِیو اکھ اکھ کٔرِتھ واپَس، یا کٔرِو برونٛہِم کیپشَن بَحال.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>یہِ مایگریشَن ہیٚکہِ نہٕ کٲژاہ واپَس نِنہٕ یِتھ: یہِ چھُ نہٕ لاگوٗ، یا یَتھ چھُ نہٕ down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فارَم پٔرِتھ نہٕ ہیوٚک.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>دوبارٕ شروٗع کرنہٕ خٲطرٕ ژارِو رَن.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>گوڈٕ لٲگِو «آ، یِم مایگریشَن چلٲوِو وُنی» پیٚٹھ نِشان.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ژارِو کَم از کَم اکھ مایگریشَن.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>اکھ مایگریشَن بَدلیوٚو لاگوٗ گژھنہٕ پَتہٕ: تَبدیٖلی کٔرِو وجہہ سٕتۍ منظوٗر، یا تھٲوِو فایل واپَس.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>وَنِو بَدلیوٚمٕتۍ مایگریشَن کیازِ منظوٗر کرنہٕ یِوان چھِ.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>وجہہ ہیٚکہِ زیادٕ کھوٚتہٕ زیادٕ 500 حَرفَن ہٕنٛز آسِتھ.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>یٮ۪تہِ شروٗع کوٚرمُت رَن چھُ وُنی جٲری (%detail). تٔمۍ سٕنٛدِس ختم گژھنَس کٔرِو انتظار.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>بیٚیِس رَنَس چھُ انسٹالیشنُک لاک: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>رَنَس چھُ اکھ موجود تہٕ سائن اِن صارِف ضروٗری.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php کمانڈ لائن بائنری لَبنہٕ آیہِ نہٕ. migration.ini [AdminSettings] PhpCliPath منٛز لیٚکھِو تٔمۍ سُنٛد پوٗرٕ پاتھ.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open چھُ بَنٛد، امہِ مۄکھہٕ ہیٚکہِ نہٕ رَن یٮ۪تہِ شروٗع گژھِتھ. سَروَرَس پیٚٹھ چلٲوِو ./console exp:migration:migrate --apply.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>رَنَن ہٕنٛدِس فولڈرَس منٛز ہیٚکہِ نہٕ لیٚکھِتھ: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>رَن گوو شروٗع مگر پَنٕنۍ پروسیس آیی ڈی ہوٚوُن نہٕ. %detail ژیکِو.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>وَنِو کیا واپَس نِنُن چھُ.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>رَن ہیوٚک نہٕ شروٗع گژھِتھ.</translation>
     </message>
 </context>
 </TS>

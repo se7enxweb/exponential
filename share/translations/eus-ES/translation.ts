@@ -15142,6 +15142,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL APIa: bere amaiera-puntua, eskema eta kontsultak probatzeko proba-gunea.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioak</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Instalazioaren aldaketak fitxategi gisa gordeta: haien egoera, exekuzioak, exekutatu eta desegin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Bidali mutazioak /api/graphql helbidera.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioak</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ezin izan da egoera irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migrazioen taulak ez daude oraindik: ./console exp:upgrade --apply komandoak sortzen ditu.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migraziok huts egin dute</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Exekuzio bat abian da, %user erabiltzaileak hasia</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Instalazioa blokeatuta dago: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Zain</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Huts egindakoak</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Umezurtzak</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Azken exekuzioa</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>bat ere ez oraindik</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Migrazio guztiak</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Exekuzio simulatua</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Proba-exekuzioa</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Zain zeuden migrazioak gero desegindako transakzio batean exekutatu ziren: ez da ezer gorde. Behean dago bakoitzak datu-basean zer aldatu zuen.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Exekuzio batek orain zer egingo lukeen. Ez da ezer aldatzen: zain dagoen migrazio bakoitzak egingo lituzkeen aldaketak zerrendatzen ditu, eta exekuzioak aurretik eta ondoren zer egingo lukeen.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulatu</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Exekutatu</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Proba-exekuzioak huts egin du: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulazio batek PostgreSQL edo SQLite behar du, haien eskema-aldaketak desegin daitezkeelako; datu-base honetan, beheko planak erakusten du exekuzio batek zer egingo lukeen.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migrazioak</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrazioa</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Zer egingo lukeen</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulazioa: %result, %ms ms-tan</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Ez dago migraziorik oraindik.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Exekuzioaren aurretik eta ondoren</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Aurreko argazkia</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ateratzen da, eta leheneratu egiten da migrazio batek huts egiten badu</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desaktibatuta</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Ondorengo argazkia</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>exekuzioa ondo atera bada ateratzen da</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migrazio: %pending zain, %done eginda, %failed huts eginda.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Migrazioen historia</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Exekuzio bakoitza bere erabiltzaile, ingurune eta argazkiekin, eta baieztatu, etiketatu eta bidali zena. Huts egindako edo etendako exekuzio bati berrekin dakioke; aurretik argazkia duen exekuzio bat desegin daiteke.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ezin izan dira exekuzioak irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migrazioen taulak ez daude oraindik: ./console exp:upgrade --apply komandoak sortzen ditu.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Guztiak</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Exekuzioak</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Hasiera</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nork</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Argazkiak</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Biltegia</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ekintzak</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>aurretik</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ondoren</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>bidalketa: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Berrekin</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Desegin</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Ez dago exekuziorik egoera honetan.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Hemen hasiak</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Orri hauetan hasitako exekuzioak, berrekiteak eta desegiteak, bakoitzaren txostenarekin.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Zer</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Emaitza</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Desegitea</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target desegitea</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>%run exekuzioa</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Exekuzioak zer egin zuen, bere erregistroa eta egunkaria. Hemen hasitako exekuzio batek atzeko planoan jarraitzen du orri hau ixten bada; ireki orria berriro hari jarraitzeko.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Berrekin exekuzio honi</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Desegin exekuzio hau</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Ezin izan da erregistroa irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Aurrerapena</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user erabiltzaileak hasia, %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kodea egiaztatzen eta argazkia ateratzen exekuzioaren aurretik</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id exekutatzen (%index / %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done / %total eginda</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migrazioak exekutatu dira; argazkia leheneratzen, batek huts egin badu</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Exekuzioaren ondorengo argazkia ateratzen, baieztatzen, etiketatzen eta bidaltzen</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Argazkia leheneratzen</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Exekuzioa amaitu da. Bere txostena kargatzen.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ezin izan da aurrerapenari jarraitu. Birkargatu orria exekuzioa nola doan ikusteko.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Orri honek exekuzioari jarraitzen dio aurrera egin ahala.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Birkargatu</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Txostena</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Iraupena</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisegundo</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Exekuzioak errore gisa idatzi zuena</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Erregistroa</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Ingurunea</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>bat ere ez</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Amaiera</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Baieztapena</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Bidalketa</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mezua</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Exekuzio honen migrazioak</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Iturburua</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Exekuzioaren egunkaria</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Egunkariaren amaiera bakarrik erakusten da.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>abian</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>txostenik gabe amaitua</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ondo</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>huts egin du</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ukatua</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>datu-basea ez zegoen eskuragarri</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>barne-errorea</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Exekuzio bat abian da</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %user erabiltzaileak hasia, %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Jarraitu</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Instalazioa blokeatuta dago</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Beste exekuzio batek dauka blokeoa (bertsio-berritze bat edo kontsolako exekuzio bat): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>eginda</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>zain</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ez da behar</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ezezaguna</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>desegina</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>aplikatua</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>aplikatuko litzateke</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>desegina</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>desegingo litzateke</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>exekutatu gabe</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>beste baten zain</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>aldaketa onartua</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>aldaketa onartuko litzateke</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulatua</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioak</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Desegin %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Exekuzio bat aurretik ateratako argazkira itzuliz desegiten da; migrazio bakarra, bere down() bidez. Aurreko argazki bat leheneratzea adituentzat da. Bakoitza atzeko planoan exekutatzen da zure izenean, uneko egoeraren argazki baten ondoren.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Ezin izan da irakurri zer desegin daitekeen: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Exekuzio bat</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Migrazio bat</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Aurreko argazki bat</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Deskribapena</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bai</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ez</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Argazkia</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Noiz aterea</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Mota</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Leheneratu beharreko zatiak</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Datu-basea</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Gordetako fitxategiak (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Ezarpenak (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Datu-basea leheneratzeak argazkiaren unera itzultzen du, saioak barne: baliteke gero berriro saioa hasteko eskatzea. Ordutik aldatutako guztia galtzen da; lehenik uneko egoeraren argazki bat ateratzen da.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Badakit honek zer leheneratzen duen</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Idatzi berriro argazkiaren IDa</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Bai, desegin</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Utzi</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Aurretik argazkia duten exekuzioak.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Aukeratu</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Ez dago argazkidun exekuziorik oraindik.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Beren burua desegin dezaketen migrazio aplikatuak (down() bat dute).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Migrazio aplikatu batek ere ez du down() bat.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Aurreko argazkiak (adituak)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Ez dago argazkirik oraindik.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Exekutatu migrazioak</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Exekuzioak atzeko planoan jarraitzen du %user gisa, eta bere orriak aurrera egin ahala erakusten du. Lehen migrazioaren aurretik instalazioaren argazki bat ateratzen da; migrazio batek huts egiten badu, exekuzioa gelditu eta argazkia leheneratzen da.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Lehenik proba-exekuzioa</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ezin izan da egoera irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Zain dauden migrazioak</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ordena honetan exekutatzen dira. Kendu marka bati, hura eta haren menpe daudenak geroko exekuzio baterako uzteko.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Exekutatu</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Mantentze-modua aktibatzen du exekutatzen den bitartean.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Aplikatu ondoren aldatuak</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Fitxategi hauek ez dira aplikatu zirenak. Exekuzio batek ukatu egiten ditu, aldaketa arrazoi batekin onartzen ez bada; ez dira berriro exekutatzen, kontrol-batura berria erregistratzen da eta arrazoia auditoria-erregistroan gordetzen da.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Onartu aldaketak</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Arrazoia</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Lehenetsitako balioak dira seguruak. Lauki bakoitzak urrats bat saltatzen du.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Argazkirik gabe</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Argazkirik ez exekuzioaren aurretik eta ondoren: huts egite bat ezin da automatikoki leheneratu.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Leheneratu gabe</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Huts egite baten ondoren, utzi instalazioa huts egiteak utzi zuen bezala.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Gorde baieztatu gabeko aldaketak</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Exekutatu ezarpenek, hedapenek edo diseinuek baieztatu gabeko aldaketak badituzte ere; argazkian sartzen dira.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Baieztatu gabe</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ez baieztatu egoera-fitxategia eta exekuzioaren egunkaria (ez etiketarik ez bidalketarik ere).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Bidali gabe</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Baieztatu eta etiketatu, baina ez bidali.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Etiketarik gabe</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Baieztatu eta bidali, baina ez etiketatu exekuzioa.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Bai, exekutatu migrazio hauek orain</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Ez dago migraziorik zain.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Itzuli egoerara</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Instalazio honen aldaketak, behin fitxategi gisa idatziak (edukia, klaseak, rolak, ezarpenak, eskema) eta gunearen instalazio guztietan ordena berean aplikatuak. Exekuzio batek lehenik argazki bat ateratzen du, migrazio batek huts egiten badu leheneratu egiten du, eta egindakoa erregistratu, baieztatu eta bidaltzen du.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Exekutatu zain dauden %count</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ikuspegi orokorra</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Zain</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Eginda</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Huts egindakoak</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ez dira behar</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datu-basea</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transakzioak: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Gunearen migrazioak migrations/ karpetan daude; hedapen batenak, extension/&lt;name&gt;/migrations/ karpetan. Beren izenen eta menpekotasunen ordenan exekutatzen dira.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Azken exekuzioa</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fitxategia aplikatu ondoren aldatu da.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Ez dago migraziorik oraindik. ./console exp:migration:generate --skeleton &lt;name&gt; --apply komandoak idazten du lehena.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Azken exekuzioak</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Exekuzio guztiak</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Ez dago exekuziorik oraindik.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Exekuzio bat simulatzeko migration/run politika behar da.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Exekuzio bat abian da: simulatu amaitzen denean.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazioa</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ez da instalazio honen exekuzio bat, ez migrazio bat, ez argazki bat.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Markatu lehenik «Bai, desegin».</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Aurreko argazki bat leheneratzea adituentzat da: markatu «Badakit honek zer leheneratzen duen».</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Idatzi berriro argazkiaren IDa: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Aukeratu leheneratu beharreko zati bat gutxienez.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Exekuzio honek ez du aurretik argazkirik: desegin bere migrazioak banan-banan, edo leheneratu aurreko argazki bat.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Migrazio hau ezin da bere kabuz desegin: ez dago aplikatuta, edo ez du down() bat.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ezin izan da inprimakia irakurri.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Aukeratu berrekin beharreko exekuzioa.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Markatu lehenik «Bai, exekutatu migrazio hauek orain».</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Aukeratu migrazio bat gutxienez.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migrazio bat aplikatu ondoren aldatu da: onartu aldaketa arrazoi batekin, edo leheneratu fitxategia.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Eman aldatutako migrazioak zergatik onartzen diren.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Arrazoiak gehienez 500 karaktere ditu.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Hemen hasitako exekuzio bat abian da oraindik (%detail). Itxaron amaitu arte.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Beste exekuzio batek dauka instalazioaren blokeoa: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Exekuzioak saioa hasita duen eta existitzen den erabiltzaile bat behar du.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ez da php komando-lerroko exekutagarririk aurkitu. Ezarri haren bide osoa migration.ini [AdminSettings] PhpCliPath ezarpenean.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open desgaituta dago, beraz ezin da hemen exekuziorik hasi. Exekutatu ./console exp:migration:migrate --apply zerbitzarian.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ezin da exekuzioen karpetan idatzi: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Exekuzioa hasi da, baina ez du bere prozesu-IDa jakinarazi. Egiaztatu %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Adierazi zer desegin behar den.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ezin izan da exekuzioa hasi.</translation>
     </message>
 </context>
 </TS>

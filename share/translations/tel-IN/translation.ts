@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: దాని ఎండ్ పాయింట్, స్కీమా మరియు క్వెరీలను ప్రయత్నించడానికి ఒక ప్లేగ్రౌండ్.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ఇన్‌స్టాలేషన్ మైగ్రేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ఫైళ్లుగా ఉంచిన ఇన్‌స్టాలేషన్ మార్పులు: వాటి స్థితి, రన్‌లు, అమలు చేయడం మరియు వెనక్కి తీసుకోవడం.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>మ్యుటేషన్‌లను /api/graphql కు పంపండి.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ఇన్‌స్టాలేషన్ మైగ్రేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>స్థితిని చదవడం సాధ్యం కాలేదు: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>మైగ్రేషన్‌ల పట్టికలు ఇంకా లేవు: ./console exp:upgrade --apply వాటిని సృష్టిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count మైగ్రేషన్‌లు విఫలమయ్యాయి</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ఒక రన్ జరుగుతోంది, %user ప్రారంభించారు</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ఇన్‌స్టాలేషన్ లాక్ చేయబడింది: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>పెండింగ్‌లో ఉన్నవి</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>విఫలమైనవి</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>అనాథలు</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>చివరి రన్</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ఇంకా ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>అన్ని మైగ్రేషన్‌లు</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>అనుకరించిన రన్</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ప్రయోగాత్మక రన్</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>పెండింగ్ మైగ్రేషన్‌లు తర్వాత వెనక్కి తీసుకున్న ఒక లావాదేవీలో నడిచాయి: ఏదీ ఉంచబడలేదు. ప్రతి ఒక్కటి డేటాబేస్‌లో ఏమి మార్చిందో క్రింద ఉంది.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ఇప్పుడు ఒక రన్ ఏమి చేస్తుందో. ఏదీ మార్చబడదు: ప్రతి పెండింగ్ మైగ్రేషన్ తాను చేసే మార్పులను జాబితా చేస్తుంది, మరియు రన్ ముందు, తర్వాత ఏమి చేస్తుందో చూపుతుంది.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>అనుకరించు</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>అమలు చేయి</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ప్రయోగాత్మక రన్ విఫలమైంది: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>అనుకరణకు PostgreSQL లేదా SQLite అవసరం, వాటి స్కీమా మార్పులను వెనక్కి తీసుకోవచ్చు; ఈ డేటాబేస్‌లో క్రింది ప్రణాళికే ఒక రన్ చేసేది.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>మైగ్రేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>మైగ్రేషన్ పేరు</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>అది ఏమి చేస్తుంది</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>అనుకరణ: %result, %ms మి.సె.లో</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ఇంకా మైగ్రేషన్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>రన్‌కు ముందు మరియు తర్వాత</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ముందరి పునరుద్ధరణ బిందువు</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>తీసుకోబడుతుంది, మైగ్రేషన్ విఫలమైతే పునరుద్ధరించబడుతుంది</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ఆఫ్</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>తర్వాతి పునరుద్ధరణ బిందువు</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>రన్ విజయవంతమైతే తీసుకోబడుతుంది</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total మైగ్రేషన్‌లు: %pending పెండింగ్, %done పూర్తయినవి, %failed విఫలమైనవి.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>మైగ్రేషన్ చరిత్ర</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ప్రతి రన్ దాని వినియోగదారు, పర్యావరణం, పునరుద్ధరణ బిందువులు మరియు కమిట్, ట్యాగ్, పుష్ చేసిన వాటితో. విఫలమైన లేదా అంతరాయం కలిగిన రన్‌ను కొనసాగించవచ్చు; ముందు పునరుద్ధరణ బిందువు తీసుకున్న రన్‌ను వెనక్కి తీసుకోవచ్చు.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>రన్‌లను చదవడం సాధ్యం కాలేదు: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>మైగ్రేషన్‌ల పట్టికలు ఇంకా లేవు: ./console exp:upgrade --apply వాటిని సృష్టిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>చూపించు</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>అన్నీ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>రన్‌లు</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ప్రారంభమైంది</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>చేసినవారు</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>పునరుద్ధరణ బిందువులు</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>రిపోజిటరీ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>చర్యలు</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ముందు</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>తర్వాత</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>పుష్: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>కొనసాగించు</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>వెనక్కి తీసుకో</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ఈ స్థితిలో రన్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ఇక్కడ ప్రారంభించినవి</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ఈ పేజీలలో ప్రారంభించిన రన్‌లు, కొనసాగింపులు మరియు వెనక్కి తీసుకోవడాలు, ప్రతిదాని నివేదికతో.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ఏమిటి</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ఫలితం</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>వెనక్కి తీసుకోవడం</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ను వెనక్కి తీసుకోవడం</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>రన్ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>రన్ ఏమి చేసింది, దాని రికార్డు మరియు దాని లాగ్. ఇక్కడ ప్రారంభించిన రన్ ఈ పేజీ మూసినా నేపథ్యంలో కొనసాగుతుంది; దాన్ని అనుసరించడానికి పేజీని మళ్లీ తెరవండి.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ఈ రన్‌ను కొనసాగించు</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ఈ రన్‌ను వెనక్కి తీసుకో</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>రికార్డును చదవడం సాధ్యం కాలేదు: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>పురోగతి</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%time కు %user ప్రారంభించారు.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>కోడ్‌ను తనిఖీ చేసి రన్‌కు ముందు పునరుద్ధరణ బిందువు తీసుకుంటోంది</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id నడుస్తోంది (%total లో %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total లో %done పూర్తయ్యాయి</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>మైగ్రేషన్‌లు నడిచాయి; ఒకటి విఫలమైతే పునరుద్ధరణ బిందువును పునరుద్ధరిస్తోంది</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>రన్ తర్వాత పునరుద్ధరణ బిందువు తీసుకోవడం, కమిట్, ట్యాగ్ మరియు పుష్ చేయడం</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>పునరుద్ధరణ బిందువును పునరుద్ధరిస్తోంది</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>రన్ ముగిసింది. దాని నివేదిక లోడ్ అవుతోంది.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>పురోగతిని అనుసరించలేకపోయాము. రన్ ఎలా జరుగుతోందో చూడటానికి పేజీని మళ్లీ లోడ్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ఈ పేజీ రన్ జరుగుతున్న కొద్దీ దాన్ని అనుసరిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>మళ్లీ లోడ్ చేయి</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>నివేదిక</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>సమయం</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms మి.సె.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>రన్ లోపాలుగా ముద్రించినవి</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>రికార్డు</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>పర్యావరణం</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ముగిసింది</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>కమిట్</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ట్యాగ్</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>పుష్</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>సందేశం</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ఈ రన్ యొక్క మైగ్రేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>మూలం</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>రన్ లాగ్</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>లాగ్ చివరి భాగం మాత్రమే చూపబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>నడుస్తోంది</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>నివేదిక లేకుండా ముగిసింది</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>విజయవంతం</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>విఫలం</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>డేటాబేస్ అందుబాటులో లేదు</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>అంతర్గత లోపం</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ఒక రన్ జరుగుతోంది</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %time కు %user ప్రారంభించారు.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>అనుసరించు</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ఇన్‌స్టాలేషన్ లాక్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>మరొక రన్ లాక్‌ను కలిగి ఉంది (ఒక అప్‌గ్రేడ్ లేదా కన్సోల్‌లో ఒక రన్): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>పూర్తయింది</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>పెండింగ్‌లో ఉంది</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>అవసరం లేదు</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>తెలియదు</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>వెనక్కి తీసుకోబడింది</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>వర్తింపజేయబడింది</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>వర్తింపజేయబడుతుంది</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>తిరిగి తీసివేయబడింది</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>వెనక్కి తీసుకోబడుతుంది</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>అమలు కాలేదు</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>మరొకదాని కోసం వేచి ఉంది</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>మార్పు ఆమోదించబడింది</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>మార్పు ఆమోదించబడుతుంది</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>అనుకరించబడింది</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ఇన్‌స్టాలేషన్ మైగ్రేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>స్థితిగతి</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>చరిత్ర</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ను వెనక్కి తీసుకో</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ఒక రన్ దానికి ముందు తీసుకున్న పునరుద్ధరణ బిందువుకు వెనక్కి తీసుకోబడుతుంది, ఒక మైగ్రేషన్ దాని down() తో. మునుపటి పునరుద్ధరణ బిందువును పునరుద్ధరించడం నిపుణుల కోసం. ప్రతిదీ ప్రస్తుత స్థితి యొక్క పునరుద్ధరణ బిందువు తర్వాత, మీ పేరుతో నేపథ్యంలో నడుస్తుంది.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ఏమి వెనక్కి తీసుకోవచ్చో చదవడం సాధ్యం కాలేదు: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ఒక రన్</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ఒక మైగ్రేషన్</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>మునుపటి పునరుద్ధరణ బిందువు</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>వివరణ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>పునరుద్ధరణ బిందువు</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>లేబుల్</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>తీసుకున్నది</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>రకం</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>పునరుద్ధరించాల్సిన భాగాలు</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>డేటాబేస్</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>నిల్వ ఫైళ్లు (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>సెట్టింగ్‌లు (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>డేటాబేస్‌ను పునరుద్ధరించడం దాన్ని పునరుద్ధరణ బిందువు సమయానికి తీసుకెళ్తుంది, సెషన్‌లతో సహా: తర్వాత మళ్లీ సైన్ ఇన్ చేయమని అడగవచ్చు. అప్పటి నుండి మారినదంతా పోతుంది; ముందుగా ప్రస్తుత స్థితి యొక్క పునరుద్ధరణ బిందువు తీసుకోబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ఇది ఏమి పునరుద్ధరిస్తుందో నాకు తెలుసు</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>పునరుద్ధరణ బిందువు ఐడీని మళ్లీ టైప్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>అవును, వెనక్కి తీసుకో</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ముందు పునరుద్ధరణ బిందువు తీసుకున్న రన్‌లు.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ఎంచుకో</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>పునరుద్ధరణ బిందువుతో ఇంకా రన్ లేదు.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>తమను తాము వెనక్కి తీసుకోగల వర్తింపజేసిన మైగ్రేషన్‌లు (వాటికి down() ఉంది).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>వర్తింపజేసిన ఏ మైగ్రేషన్‌కూ down() లేదు.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>మునుపటి పునరుద్ధరణ బిందువులు (నిపుణులు)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ఇంకా పునరుద్ధరణ బిందువు లేదు.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>మైగ్రేషన్‌లను అమలు చేయి</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>రన్ %user గా నేపథ్యంలో కొనసాగుతుంది, దాని పేజీ అది జరుగుతున్న కొద్దీ చూపిస్తుంది. మొదటి మైగ్రేషన్‌కు ముందు ఇన్‌స్టాలేషన్ యొక్క పునరుద్ధరణ బిందువు తీసుకోబడుతుంది; ఒక మైగ్రేషన్ విఫలమైతే రన్ ఆగి పునరుద్ధరణ బిందువు పునరుద్ధరించబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ముందుగా ప్రయోగాత్మక రన్</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>స్థితిని చదవడం సాధ్యం కాలేదు: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>పెండింగ్ మైగ్రేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>అవి ఈ క్రమంలో నడుస్తాయి. ఒకదాన్ని మరియు దానిపై ఆధారపడినవాటిని తర్వాతి రన్ కోసం వదిలేయడానికి దాని టిక్ తీసివేయండి.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>దాన్ని అమలు చేయి</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>నడుస్తున్నప్పుడు నిర్వహణ మోడ్‌ను ఆన్ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>వర్తింపజేసిన తర్వాత మార్చబడినవి</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ఈ ఫైళ్లు వర్తింపజేసినవి కావు. మార్పు ఒక కారణంతో ఆమోదించబడకపోతే రన్ వాటిని తిరస్కరిస్తుంది; అవి మళ్లీ నడవవు, కొత్త చెక్‌సమ్ నమోదు చేయబడి కారణం ఆడిట్ లాగ్‌లో ఉంచబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>మార్పులను ఆమోదించు</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>కారణం</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>డిఫాల్ట్‌లే సురక్షితమైనవి. ప్రతి పెట్టె ఒక దశను వదిలేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>పునరుద్ధరణ బిందువు వద్దు</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>రన్‌కు ముందు, తర్వాత పునరుద్ధరణ బిందువు లేదు: వైఫల్యాన్ని స్వయంచాలకంగా పునరుద్ధరించలేము.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>పునరుద్ధరణ వద్దు</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>వైఫల్యం తర్వాత, ఇన్‌స్టాలేషన్‌ను వైఫల్యం వదిలిన స్థితిలోనే ఉంచు.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>కమిట్ చేయని మార్పులను ఉంచు</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>సెట్టింగ్‌లు, ఎక్స్‌టెన్షన్‌లు లేదా డిజైన్‌లలో కమిట్ చేయని మార్పులు ఉన్నా అమలు చేయి; అవి పునరుద్ధరణ బిందువులో చేరతాయి.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>కమిట్ వద్దు</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>స్థితి ఫైల్‌ను మరియు రన్ లాగ్‌ను కమిట్ చేయవద్దు (ట్యాగ్ మరియు పుష్ కూడా వద్దు).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>పుష్ వద్దు</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>కమిట్ మరియు ట్యాగ్ చేయి, కానీ పుష్ చేయవద్దు.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ట్యాగ్ వద్దు</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>కమిట్ మరియు పుష్ చేయి, కానీ రన్‌కు ట్యాగ్ చేయవద్దు.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>అవును, ఈ మైగ్రేషన్‌లను ఇప్పుడే అమలు చేయి</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ఏ మైగ్రేషన్ పెండింగ్‌లో లేదు.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>స్థితికి తిరిగి వెళ్లు</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్‌కు మార్పులు ఒకసారి ఫైళ్లుగా వ్రాయబడి (కంటెంట్, క్లాసులు, పాత్రలు, సెట్టింగ్‌లు, స్కీమా) సైట్ యొక్క ప్రతి ఇన్‌స్టాలేషన్‌కు అదే క్రమంలో వర్తింపజేయబడతాయి. ఒక రన్ ముందుగా పునరుద్ధరణ బిందువు తీసుకుంటుంది, మైగ్రేషన్ విఫలమైతే దాన్ని పునరుద్ధరిస్తుంది, మరియు తాను చేసినదాన్ని నమోదు చేసి, కమిట్ చేసి, పుష్ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>పెండింగ్‌లో ఉన్న %count ను అమలు చేయి</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>అవలోకనం</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>పెండింగ్‌లో ఉన్నవి</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>పూర్తయినవి</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>విఫలమైనవి</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>అవసరం లేనివి</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>డేటాబేస్</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>లావాదేవీలు: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>సైట్ మైగ్రేషన్‌లు migrations/ లో ఉంటాయి, ఒక ఎక్స్‌టెన్షన్‌వి extension/&lt;name&gt;/migrations/ లో. అవి వాటి పేర్ల క్రమంలో మరియు వాటికి అవసరమైనవాటి ప్రకారం నడుస్తాయి.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>చివరి రన్</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>వర్తింపజేసిన తర్వాత ఫైల్ మార్చబడింది.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ఇంకా మైగ్రేషన్ లేదు. ./console exp:migration:generate --skeleton &lt;name&gt; --apply మొదటిదాన్ని వ్రాస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>తాజా రన్‌లు</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>అన్ని రన్‌లు</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ఇంకా రన్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>రన్‌ను అనుకరించడానికి migration/run విధానం అవసరం.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ఒక రన్ జరుగుతోంది: అది ముగిసిన తర్వాత అనుకరించండి.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>సెటప్</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ఈ ఇన్‌స్టాలేషన్ యొక్క రన్ కాదు, మైగ్రేషన్ కాదు, పునరుద్ధరణ బిందువు కాదు.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ముందుగా “అవును, వెనక్కి తీసుకో” ను టిక్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>మునుపటి పునరుద్ధరణ బిందువును పునరుద్ధరించడం నిపుణుల కోసం: “ఇది ఏమి పునరుద్ధరిస్తుందో నాకు తెలుసు” ను టిక్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>పునరుద్ధరణ బిందువు ఐడీని మళ్లీ టైప్ చేయండి: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>పునరుద్ధరించడానికి కనీసం ఒక భాగాన్ని ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ఈ రన్‌కు ముందు పునరుద్ధరణ బిందువు తీసుకోబడలేదు: దాని మైగ్రేషన్‌లను ఒక్కొక్కటిగా వెనక్కి తీసుకోండి, లేదా మునుపటి పునరుద్ధరణ బిందువును పునరుద్ధరించండి.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ఈ మైగ్రేషన్‌ను విడిగా వెనక్కి తీసుకోలేము: అది వర్తింపజేయబడలేదు, లేదా దానికి down() లేదు.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ఫారమ్‌ను చదవడం సాధ్యం కాలేదు.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>కొనసాగించాల్సిన రన్‌ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ముందుగా “అవును, ఈ మైగ్రేషన్‌లను ఇప్పుడే అమలు చేయి” ను టిక్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>కనీసం ఒక మైగ్రేషన్‌ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ఒక మైగ్రేషన్ వర్తింపజేసిన తర్వాత మారింది: మార్పును ఒక కారణంతో ఆమోదించండి, లేదా ఫైల్‌ను తిరిగి పెట్టండి.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>మార్చబడిన మైగ్రేషన్‌లు ఎందుకు ఆమోదించబడుతున్నాయో కారణం ఇవ్వండి.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>కారణం గరిష్టంగా 500 అక్షరాలు.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ఇక్కడ ప్రారంభించిన ఒక రన్ ఇంకా జరుగుతోంది (%detail). అది ముగిసే వరకు వేచి ఉండండి.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>మరొక రన్ ఇన్‌స్టాలేషన్ లాక్‌ను కలిగి ఉంది: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>రన్‌కు సైన్ ఇన్ చేసిన, ఉనికిలో ఉన్న వినియోగదారు అవసరం.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php కమాండ్ లైన్ బైనరీ కనుగొనబడలేదు. migration.ini [AdminSettings] PhpCliPath లో దాని పూర్తి మార్గాన్ని సెట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open నిలిపివేయబడింది, కాబట్టి ఇక్కడ రన్ ప్రారంభించలేము. సర్వర్‌లో ./console exp:migration:migrate --apply ను అమలు చేయండి.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>రన్‌ల ఫోల్డర్‌లో వ్రాయలేము: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>రన్ ప్రారంభించబడింది కానీ దాని ప్రాసెస్ ఐడీని తెలియజేయలేదు. %detail ను తనిఖీ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ఏమి వెనక్కి తీసుకోవాలో పేర్కొనండి.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>రన్‌ను ప్రారంభించడం సాధ్యం కాలేదు.</translation>
     </message>
 </context>
 </TS>

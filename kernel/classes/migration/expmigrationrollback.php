@@ -70,8 +70,8 @@ class expMigrationRollback
      * Takes one migration back with its down().
      *
      * @param string $id the migration's id
-     * @param array $options apply, source (when two sources have the id), login, db, and the options of
-     *                       expMigrationContext
+     * @param array $options apply, source (when two sources have the id), login, db, progress (the runner's
+     *                       progress callback), and the options of expMigrationContext
      * @return array the runner's report
      */
     public static function migration( $id, array $options = array() )
@@ -84,7 +84,7 @@ class expMigrationRollback
                 $found[] = $migration;
         if ( count( $found ) !== 1 )
             return self::refused( $found ? "$id is in more than one source: name it with source" : "no migration $id", expUpgrade::EXIT_USAGE );
-        return ( new expMigrationRunner( $context ) )->rollback( $found );
+        return ( new expMigrationRunner( $context, array_intersect_key( $options, array( 'progress' => true ) ) ) )->rollback( $found );
     }
 
     /**

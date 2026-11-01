@@ -15081,6 +15081,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>L-API GraphQL: il-punt tat-tmiem tagħha, l-iskema u spazju tal-provi biex tipprova mistoqsijiet.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Bidliet fl-installazzjoni miżmuma bħala fajls: l-istat tagħhom, it-tħaddimiet, tħaddim u treġġigħ lura.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Ibgħat il-mutazzjonijiet lil /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>L-istat ma setax jinqara: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>It-tabelli tal-migrazzjonijiet għadhom ma jeżistux: ./console exp:upgrade --apply joħloqhom.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migrazzjonijiet fallew</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Għaddej tħaddim, mibdi minn %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>L-installazzjoni hija msakkra: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendenti</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fallew</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Orfni</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>L-aħħar tħaddim</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>għad hemm xejn</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Il-migrazzjonijiet kollha</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Tħaddim simulat</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Tħaddim ta&apos; prova</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Il-migrazzjonijiet pendenti tħaddmu fi tranżazzjoni li wara ġiet imreġġgħa lura: xejn ma nżamm. Hawn taħt hemm x&apos;biddlet kull waħda fil-bażi tad-dejta.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>X&apos;jagħmel tħaddim issa. Xejn ma jinbidel: kull migrazzjoni pendenti telenka l-bidliet li tagħmel, u t-tħaddim x&apos;jagħmel qabel u wara.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Issimula</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ħaddem</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>It-tħaddim ta&apos; prova falla: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulazzjoni teħtieġ PostgreSQL jew SQLite, li l-bidliet fl-iskema tagħhom jistgħu jitreġġgħu lura; f&apos;din il-bażi tad-dejta l-pjan hawn taħt juri x&apos;jagħmel tħaddim.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Il-migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrazzjoni</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>X&apos;tagħmel</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulazzjoni: %result f&apos;%ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Għad m&apos;hemm l-ebda migrazzjoni.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Qabel u wara t-tħaddim</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Ritratt ta&apos; qabel</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>meħud, u restawrat meta migrazzjoni tfalli</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mitfi</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Ritratt ta&apos; wara</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>meħud meta t-tħaddim irnexxa</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migrazzjonijiet: %pending pendenti, %done magħmula, %failed fallew.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Storja tal-migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Kull tħaddim bl-utent, l-ambjent, ir-ritratti tiegħu u x&apos;ġie kommess, ittikkettjat u mibgħut. Tħaddim li falla jew ġie interrott jista&apos; jitkompla; tħaddim b&apos;ritratt meħud qablu jista&apos; jitreġġa&apos; lura.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>It-tħaddimiet ma setgħux jinqraw: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>It-tabelli tal-migrazzjonijiet għadhom ma jeżistux: ./console exp:upgrade --apply joħloqhom.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kollha</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Tħaddimiet</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Mibdi</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Ritratti</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repożitorju</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Azzjonijiet</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>qabel</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>wara</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>bgħit: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Kompli</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Reġġa&apos; lura</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>L-ebda tħaddim f&apos;dan l-istat.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Mibdija hawn</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Tħaddimiet, kontinwazzjonijiet u treġġigħ lura mibdija f&apos;dawn il-paġni, bir-rapport ta&apos; kull wieħed.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>X&apos;inhu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Riżultat</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Treġġigħ lura</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Treġġigħ lura ta&apos; %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Tħaddim %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>X&apos;għamel it-tħaddim, ir-rekord u l-log tiegħu. Tħaddim mibdi hawn ikompli fl-isfond meta din il-paġna tingħalaq; erġa&apos; iftaħ il-paġna biex issegwih.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Kompli dan it-tħaddim</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Reġġa&apos; lura dan it-tħaddim</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Ir-rekord ma setax jinqara: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Avvanz</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Mibdi minn %user fil-%time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Qed jiġi ċċekkjat il-kodiċi u jittieħed ritratt qabel it-tħaddim</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Qed titħaddem %id (%index minn %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done minn %total magħmula</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Il-migrazzjonijiet tħaddmu; qed jiġi restawrat ir-ritratt jekk xi waħda falliet</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Qed jittieħed ritratt wara t-tħaddim, kommissjoni, ittikkettjar u bgħit</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Qed jiġi restawrat ir-ritratt</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>It-tħaddim spiċċa. Qed jitgħabba r-rapport tiegħu.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Il-progress ma setax jiġi segwit. Erġa&apos; għabbi l-paġna biex tara kif sejjer it-tħaddim.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Din il-paġna ssegwi t-tħaddim waqt li jsir.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Erġa&apos; għabbi</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ħin</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisekondi</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>X&apos;stampa t-tħaddim bħala żbalji</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Rekord</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Ambjent</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>xejn</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Spiċċa</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kommissjoni</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tikketta</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Bgħit</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Messaġġ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migrazzjonijiet ta&apos; dan it-tħaddim</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sors</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Log tat-tħaddim</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Jintwera biss it-tmiem tal-log.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>għaddej</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>spiċċa mingħajr rapport</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>irnexxa</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>falla</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>miċħud</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>il-bażi tad-dejta ma kinitx milħuqa</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>żball intern</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Għaddej tħaddim</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind mibdi minn %user fil-%time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Segwih</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>L-installazzjoni hija msakkra</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Tħaddim ieħor qed iżomm is-serratura (aġġornament jew tħaddim fil-console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>magħmula</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>pendenti</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>mhux meħtieġa</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>mhux magħruf</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>imreġġgħa lura</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>applikata</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>tkun applikata</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>irtirata</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>tkun irtirata</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>mhux imħaddma</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>qed tistenna oħra</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>bidla aċċettata</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>il-bidla tkun aċċettata</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulata</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Storja</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Irtira %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Tħaddim jitreġġa&apos; lura għar-ritratt meħud qablu, migrazzjoni waħda bil-down() tagħha. Ir-restawr ta&apos; ritratt preċedenti huwa għall-esperti. Kull wieħed jitħaddem fl-isfond f&apos;ismek, wara ritratt tal-istat attwali.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>X&apos;jista&apos; jiġi rtirat ma setax jinqara: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Tħaddim</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Migrazzjoni waħda</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ritratt preċedenti</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Deskrizzjoni</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>iva</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>le</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Ritratt</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Meħud</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Partijiet li għandhom jiġu restawrati</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Il-bażi tad-dejta</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Il-fajls maħżuna (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Is-settings (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Ir-restawr jieħu l-bażi tad-dejta lura għall-ħin tar-ritratt, inklużi s-sessjonijiet: wara jista&apos; jkollok tidħol mill-ġdid. Kull ma nbidel minn dak iż-żmien jintilef; l-ewwel jittieħed ritratt tal-istat attwali.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Naf x&apos;jirrestawra dan</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Erġa&apos; ikteb l-identifikatur tar-ritratt</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Iva, irtira</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>It-tħaddimiet b&apos;ritratt meħud qabilhom.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Agħżel</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Għad m&apos;hemm l-ebda tħaddim b&apos;ritratt.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Il-migrazzjonijiet applikati li jistgħu jirtiraw lilhom infushom (għandhom down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>L-ebda migrazzjoni applikata m&apos;għandha down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Ritratti preċedenti (esperti)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Għad m&apos;hemm l-ebda ritratt.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Ħaddem il-migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>It-tħaddim ikompli fl-isfond bħala %user, u l-paġna tiegħu turih waqt li jsir. Qabel l-ewwel migrazzjoni jittieħed ritratt tal-installazzjoni; meta migrazzjoni tfalli t-tħaddim jieqaf u r-ritratt jiġi restawrat.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>L-ewwel tħaddim ta&apos; prova</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>L-istat ma setax jinqara: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migrazzjonijiet pendenti</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Jitħaddmu f&apos;din l-ordni. Neħħi l-marka minn waħda biex tħalliha, flimkien ma&apos; dawk li jeħtiġuha, għal tħaddim aktar tard.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Ħaddimha</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Jixgħel il-modalità ta&apos; manutenzjoni waqt li jitħaddem.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Inbidlu wara li ġew applikati</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Dawn il-fajls mhumiex dawk li ġew applikati. Tħaddim jiċħadhom sakemm il-bidla ma tiġix aċċettata b&apos;raġuni; ma jitħaddmux mill-ġdid, iċ-checksum il-ġdid jiġi rreġistrat u r-raġuni tinżamm fil-log tal-verifika.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Aċċetta l-bidliet</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Raġuni</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Il-valuri awtomatiċi huma dawk siguri. Kull kaxxa tħalli pass barra.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Ebda ritratt</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Ebda ritratt qabel u wara t-tħaddim: falliment ma jistax jiġi restawrat awtomatikament.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Ebda restawr</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Wara falliment, ħalli l-installazzjoni kif ħallieha l-falliment.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Żomm il-bidliet mhux kommessi</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Ħaddem anki jekk is-settings, l-estensjonijiet jew id-disinji għandhom bidliet mhux kommessi; dawn jidħlu fir-ritratt.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Ebda kommissjoni</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Tikkommettix il-fajl tal-istat u l-log tat-tħaddim (lanqas tikketta u lanqas bgħit).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Ebda bgħit</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Ikkommetti u ttikkettja, iżda tibgħatx.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Ebda tikketta</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Ikkommetti u ibgħat, iżda tittikkettjax it-tħaddim.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Iva, ħaddem dawn il-migrazzjonijiet issa</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>L-ebda migrazzjoni mhi pendenti.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Lura għall-istat</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Bidliet f&apos;din l-installazzjoni miktuba darba bħala fajls (kontenut, klassijiet, rwoli, settings, skema) u applikati għal kull installazzjoni tas-sit fl-istess ordni. Tħaddim l-ewwel jieħu ritratt, jirrestawrah meta migrazzjoni tfalli, u jirreġistra, jikkommetti u jibgħat dak li għamel.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Ħaddem %count pendenti</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ħarsa ġenerali</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendenti</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Magħmula</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fallew</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Mhux meħtieġa</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Bażi tad-dejta</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>tranżazzjonijiet: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Il-migrazzjonijiet tas-sit jinsabu f&apos;migrations/, dawk ta&apos; estensjoni f&apos;extension/&lt;name&gt;/migrations/. Jitħaddmu skont l-ordni tal-ismijiet tagħhom u ta&apos; dak li jeħtieġu.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>L-aħħar tħaddim</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Il-fajl inbidel wara li ġie applikat.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Għad m&apos;hemm l-ebda migrazzjoni. ./console exp:migration:generate --skeleton &lt;name&gt; --apply jikteb l-ewwel waħda.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>L-aħħar tħaddimiet</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>It-tħaddimiet kollha</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Għad m&apos;hemm l-ebda tħaddim.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Is-simulazzjoni ta&apos; tħaddim teħtieġ il-politika migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Għaddej tħaddim: issimula meta jispiċċa.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazzjoni</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target mhux tħaddim, mhux migrazzjoni u mhux ritratt ta&apos; din l-installazzjoni.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>L-ewwel immarka &quot;Iva, irtira&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ir-restawr ta&apos; ritratt preċedenti huwa għall-esperti: immarka &quot;Naf x&apos;jirrestawra dan&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Erġa&apos; ikteb l-identifikatur tar-ritratt: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Agħżel mill-inqas parti waħda biex tiġi restawrata.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Dan it-tħaddim m&apos;għandux ritratt meħud qablu: irtira l-migrazzjonijiet tiegħu waħda waħda, jew irrestawra ritratt preċedenti.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Din il-migrazzjoni ma tistax tiġi rtirata waħedha: mhix applikata, jew m&apos;għandhiex down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Il-formola ma setgħetx tinqara.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Agħżel it-tħaddim li għandu jitkompla.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>L-ewwel immarka &quot;Iva, ħaddem dawn il-migrazzjonijiet issa&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Agħżel mill-inqas migrazzjoni waħda.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migrazzjoni nbidlet wara li ġiet applikata: aċċetta l-bidla b&apos;raġuni, jew erġa&apos; poġġi l-fajl lura.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Agħti r-raġuni għaliex il-migrazzjonijiet mibdula qed jiġu aċċettati.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Ir-raġuni hija mhux aktar minn 500 karattru.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Tħaddim mibdi hawn għadu għaddej (%detail). Stenna sakemm jispiċċa.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Tħaddim ieħor qed iżomm is-serratura tal-installazzjoni: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>It-tħaddim jeħtieġ utent idħol li jeżisti.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ma nstab l-ebda programm php għal-linja tal-kmand. Issettja l-mogħdija sħiħa tiegħu f&apos;migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open huwa diżattivat, għalhekk tħaddim ma jistax jinbeda hawn. Ħaddem ./console exp:migration:migrate --apply fuq is-server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Il-folder tat-tħaddimiet ma jistax jinkiteb: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>It-tħaddim inbeda iżda ma rrapportax l-identifikatur tal-proċess tiegħu. Iċċekkja %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Semmi x&apos;għandu jiġi rtirat.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>It-tħaddim ma setax jinbeda.</translation>
     </message>
 </context>
 </TS>

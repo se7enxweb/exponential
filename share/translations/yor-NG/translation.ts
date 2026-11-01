@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ojú ìparí rẹ̀, schema náà àti ibi ìṣeré láti dán àwọn ìbéèrè wò.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Àwọn ìṣílọ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Àwọn àyípadà sí ìfisórí tí a pa mọ́ bí fáìlì: ipò wọn, àwọn ìṣiṣẹ́, ṣiṣẹ́ kí o sì yí padà sẹ́yìn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Fi àwọn ìyípadà (mutation) ránṣẹ́ sí /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Àwọn ìṣílọ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>A kò lè ka ipò náà: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Àwọn tábìlì ìṣílọ kò tíì sí: ./console exp:upgrade --apply ni yóò ṣẹ̀dá wọn.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Ìṣílọ %count ti kùnà</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ìṣiṣẹ́ kan ń lọ lọ́wọ́, tí %user bẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Ìfisórí náà ti wà ní títì: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ní ìdúró</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ó kùnà</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Àwọn aláìní-orísun</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ìṣiṣẹ́ tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>kò sí ọ̀kan síbẹ̀</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Gbogbo ìṣílọ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Ìṣiṣẹ́ àfarawé</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ìdánrawò</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Àwọn ìṣílọ tó wà ní ìdúró ṣiṣẹ́ nínú ìdúnàádúrà kan tí a yí padà sẹ́yìn lẹ́yìn náà: kò sí ohun tí a pa mọ́. Ní ìsàlẹ̀ ni ohun tí ọ̀kọ̀ọ̀kan yí padà nínú ibùdó dátà.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ohun tí ìṣiṣẹ́ kan yóò ṣe báyìí. Kò sí ohun tí a yí padà: ìṣílọ kọ̀ọ̀kan tó wà ní ìdúró ń ṣe àkójọ àwọn àyípadà tí yóò ṣe, ìṣiṣẹ́ náà sì ń ṣe àkójọ ohun tí yóò ṣe ṣáájú àti lẹ́yìn.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Ṣe àfarawé</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Ìdánrawò náà kùnà: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Àfarawé nílò PostgreSQL tàbí SQLite, tí a lè yí àwọn àyípadà ètò wọn padà sẹ́yìn; lórí ibùdó dátà yìí, ètò ìsàlẹ̀ ni ohun tí ìṣiṣẹ́ kan yóò ṣe.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Àwọn ìṣílọ náà</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Ìṣílọ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ohun tí yóò ṣe</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Àfarawé: %result ní ìṣẹ́jú-àáyá-kékeré %ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Kò sí ìṣílọ kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Ṣáájú àti lẹ́yìn ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Àwòrán ìpamọ́ ṣáájú</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>a yà á, a sì dá a padà nígbà tí ìṣílọ kan bá kùnà</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pa</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Àwòrán ìpamọ́ lẹ́yìn</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>a yà á nígbà tí ìṣiṣẹ́ bá yọrí</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Ìṣílọ %total: %pending ní ìdúró, %done ti parí, %failed ti kùnà.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Ìtàn ìṣílọ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ìṣiṣẹ́ kọ̀ọ̀kan pẹ̀lú olùmúlò rẹ̀, àyíká rẹ̀, àwọn àwòrán ìpamọ́ àti ohun tí a fi sílẹ̀, tí a fi àmì sí, tí a sì tì sókè. A lè tẹ̀síwájú ìṣiṣẹ́ tó kùnà tàbí tí a dá dúró; a lè gba ìṣiṣẹ́ tí ó ní àwòrán ìpamọ́ tí a yà ṣáájú rẹ̀ padà.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>A kò lè ka àwọn ìṣiṣẹ́ náà: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Àwọn tábìlì ìṣílọ kò tíì sí: ./console exp:upgrade --apply ni yóò ṣẹ̀dá wọn.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Fihàn</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gbogbo</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Àwọn ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ti bẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Láti ọwọ́</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Àwọn àwòrán ìpamọ́</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ibi ìpamọ́</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Àwọn ìṣe</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ṣáájú</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>lẹ́yìn</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ìtìsókè: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Tẹ̀síwájú</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Yí padà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Kò sí ìṣiṣẹ́ kankan ní ipò yìí.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Tí a bẹ̀rẹ̀ níbí</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Àwọn ìṣiṣẹ́, ìtẹ̀síwájú àti ìyípadà sẹ́yìn tí a bẹ̀rẹ̀ lórí àwọn ojú-ewé yìí, pẹ̀lú ìròyìn ọ̀kọ̀ọ̀kan.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kí ni</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Èsì</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Ìyípadà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Ìyípadà sẹ́yìn %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Ìṣiṣẹ́ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ohun tí ìṣiṣẹ́ náà ṣe, àkọsílẹ̀ rẹ̀ àti ìwé ìṣẹ̀lẹ̀ rẹ̀. Ìṣiṣẹ́ tí a bẹ̀rẹ̀ níbí ń bá a lọ lẹ́yìn nígbà tí a bá pa ojú-ewé yìí; ṣí ojú-ewé náà lẹ́ẹ̀kan sí i láti tẹ̀lé e.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Tẹ̀síwájú ìṣiṣẹ́ yìí</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Yí ìṣiṣẹ́ yìí padà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>A kò lè ka àkọsílẹ̀ náà: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ìtẹ̀síwájú</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ló bẹ̀rẹ̀ rẹ̀ ní %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>A ń ṣàyẹ̀wò kóòdù, a sì ń ya àwòrán ìpamọ́ ṣáájú ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>A ń ṣiṣẹ́ %id (%index nínú %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done nínú %total ti parí</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Àwọn ìṣílọ ti ṣiṣẹ́; a ń dá àwòrán ìpamọ́ padà bí ọ̀kan bá kùnà</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>A ń ya àwòrán ìpamọ́ lẹ́yìn ìṣiṣẹ́, a ń fi sílẹ̀, a ń fi àmì sí, a sì ń tì sókè</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>A ń dá àwòrán ìpamọ́ padà</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Ìṣiṣẹ́ náà ti parí. A ń gbé ìròyìn rẹ̀ wọlé.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>A kò lè tẹ̀lé ìtẹ̀síwájú náà. Tún ojú-ewé náà gbé wọlé láti rí bí ìṣiṣẹ́ náà ṣe ń lọ.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ojú-ewé yìí ń tẹ̀lé ìṣiṣẹ́ náà bí ó ti ń lọ.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Tún gbé wọlé</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ìròyìn</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àkókò</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>ìṣẹ́jú-àáyá-kékeré %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Ohun tí ìṣiṣẹ́ náà tẹ̀ jáde bí àṣìṣe</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Àkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Àyíká</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>kò sí</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Ìfisílẹ̀</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Àmì</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ìtìsókè</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ìfiránṣẹ́</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Àwọn ìṣílọ ìṣiṣẹ́ yìí</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Orísun</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Ìwé ìṣẹ̀lẹ̀ ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Òpin ìwé ìṣẹ̀lẹ̀ nìkan ni a fihàn.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>parí láìsí ìròyìn</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>yọrí</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>kùnà</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>a kọ̀ ọ́</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>a kò lè dé ibùdó dátà</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>àṣìṣe inú</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ìṣiṣẹ́ kan ń lọ lọ́wọ́</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind tí %user bẹ̀rẹ̀ ní %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Tẹ̀lé e</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Ìfisórí náà ti wà ní títì</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Ìṣiṣẹ́ mìíràn ló di títì náà mú (àtúnṣe-sókè tàbí ìṣiṣẹ́ lórí console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ti parí</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ní ìdúró</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>kò pọndandan</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>àìmọ̀</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ti yí padà sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>a ti lò ó</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>a ó lò ó</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>a ti gbà á padà</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>a ó gbà á padà</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>kò ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ń dúró de òmíràn</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>a gba àyípadà</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>a ó gba àyípadà</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>àfarawé</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Àwọn ìṣílọ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Ìtàn</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Gba %target padà</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>A ń gba ìṣiṣẹ́ kan padà sí àwòrán ìpamọ́ tí a yà ṣáájú rẹ̀, ìṣílọ kan pẹ̀lú down() rẹ̀. Dídá àwòrán ìpamọ́ àtijọ́ padà wà fún àwọn amòye. Ọ̀kọ̀ọ̀kan ń ṣiṣẹ́ lẹ́yìn bí ìwọ, lẹ́yìn àwòrán ìpamọ́ ipò ti ìsinsìnyí.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>A kò lè ka ohun tí a lè gbà padà: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Ìṣiṣẹ́ kan</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Ìṣílọ kan</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Àwòrán ìpamọ́ àtijọ́ kan</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Àpèjúwe</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bẹ́ẹ̀ ni</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>rárá</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Àwòrán ìpamọ́</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Àmì orúkọ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Ìgbà tí a yà á</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Irú</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Àwọn apá tí a ó dá padà</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Ibùdó dátà</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Àwọn fáìlì ìpamọ́ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Àwọn ètò (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Dídá ibùdó dátà padà ń gbé e padà sí àkókò àwòrán ìpamọ́ náà, pẹ̀lú àwọn sáà ìwọlé: a lè ní kí o wọlé lẹ́ẹ̀kan sí i lẹ́yìn náà. Gbogbo ohun tí a yí padà láti ìgbà náà yóò sọnù; a kọ́kọ́ ya àwòrán ìpamọ́ ipò ti ìsinsìnyí.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Mo mọ ohun tí èyí ń dá padà</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Tẹ id àwòrán ìpamọ́ náà lẹ́ẹ̀kan sí i</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Bẹ́ẹ̀ ni, gbà á padà</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Àwọn ìṣiṣẹ́ tí ó ní àwòrán ìpamọ́ tí a yà ṣáájú wọn.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Yàn</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Kò sí ìṣiṣẹ́ kankan tí ó ní àwòrán ìpamọ́ síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Àwọn ìṣílọ tí a ti lò tí wọ́n lè gba ara wọn padà (wọ́n ní down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Kò sí ìṣílọ tí a ti lò tí ó ní down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Àwọn àwòrán ìpamọ́ àtijọ́ (àwọn amòye)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Kò sí àwòrán ìpamọ́ kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Ṣiṣẹ́ àwọn ìṣílọ náà</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Ìṣiṣẹ́ náà ń bá a lọ lẹ́yìn bí %user, ojú-ewé rẹ̀ sì ń fihàn bí ó ti ń lọ. Ṣáájú ìṣílọ àkọ́kọ́ a ya àwòrán ìpamọ́ ìfisórí náà; nígbà tí ìṣílọ kan bá kùnà, ìṣiṣẹ́ náà dúró, a sì dá àwòrán ìpamọ́ náà padà.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Kọ́kọ́ ṣe ìdánrawò</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>A kò lè ka ipò náà: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Àwọn ìṣílọ tó wà ní ìdúró</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Wọ́n ń ṣiṣẹ́ ní ètò yìí. Yọ àmì kúrò lára ọ̀kan láti fi sílẹ̀, pẹ̀lú àwọn tí ó nílò rẹ̀, fún ìṣiṣẹ́ mìíràn lẹ́yìn náà.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Ṣiṣẹ́ ẹ</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Ó ń tan ipò ìtọ́jú nígbà tí ó ń ṣiṣẹ́.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Wọ́n yí padà lẹ́yìn tí a lò wọ́n</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Àwọn fáìlì yìí kì í ṣe àwọn tí a lò. Ìṣiṣẹ́ kan yóò kọ̀ wọ́n àyàfi tí a bá gba àyípadà náà pẹ̀lú ìdí; a kò ní ṣiṣẹ́ wọn lẹ́ẹ̀kan sí i, a ó kọ àyẹ̀wò ìbáramu tuntun sílẹ̀, a ó sì pa ìdí náà mọ́ nínú ìwé ìṣàyẹ̀wò.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Gba àwọn àyípadà</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kí nìdí</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Àwọn àṣàyàn àkọ́kọ́ ni àwọn tó ní ààbò. Àpótí kọ̀ọ̀kan ń fo ìgbésẹ̀ kan.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Kò sí àwòrán ìpamọ́</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Kò sí àwòrán ìpamọ́ ṣáájú àti lẹ́yìn ìṣiṣẹ́: a kò lè dá ìkùnà padà fúnra rẹ̀.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Kò sí ìdápadà</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Lẹ́yìn ìkùnà, fi ìfisórí sílẹ̀ bí ìkùnà náà ṣe fi í sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Pa àwọn àyípadà tí a kò fi sílẹ̀ mọ́</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Ṣiṣẹ́ bí ó tilẹ̀ jẹ́ pé àwọn ètò, àfikún tàbí àwọn àpẹrẹ ní àwọn àyípadà tí a kò fi sílẹ̀; wọ́n yóò wọ inú àwòrán ìpamọ́.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Kò sí ìfisílẹ̀</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Má ṣe fi fáìlì ipò àti ìwé ìṣẹ̀lẹ̀ ìṣiṣẹ́ sílẹ̀ (kò sí àmì àti ìtìsókè pẹ̀lú).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Kò sí ìtìsókè</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Fi sílẹ̀ kí o sì fi àmì sí, ṣùgbọ́n má ṣe tì sókè.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Kò sí àmì</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Fi sílẹ̀ kí o sì tì sókè, ṣùgbọ́n má ṣe fi àmì sí ìṣiṣẹ́ náà.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Bẹ́ẹ̀ ni, ṣiṣẹ́ àwọn ìṣílọ yìí báyìí</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Kò sí ìṣílọ kankan tó wà ní ìdúró.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Padà sí ipò</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Àwọn àyípadà sí ìfisórí yìí tí a kọ lẹ́ẹ̀kan bí fáìlì (àkóónú, kílásì, ipa, ètò, ìṣètò dátà) tí a sì lò sí gbogbo ìfisórí ojú-òpó náà ní ètò kan náà. Ìṣiṣẹ́ kan kọ́kọ́ ya àwòrán ìpamọ́, ó dá a padà nígbà tí ìṣílọ kan bá kùnà, ó sì kọ ohun tí ó ṣe sílẹ̀, ó fi í sílẹ̀, ó sì tì í sókè.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Ṣiṣẹ́ %count tó wà ní ìdúró</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Àkópọ̀</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ní ìdúró</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ó kùnà</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Kò pọndandan</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Ibùdó dátà</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ìdúnàádúrà: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Àwọn ìṣílọ ojú-òpó wà nínú migrations/, ti àfikún kan wà nínú extension/&lt;name&gt;/migrations/. Wọ́n ń ṣiṣẹ́ ní ètò orúkọ wọn àti ohun tí wọ́n nílò.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ìṣiṣẹ́ tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fáìlì náà yí padà lẹ́yìn tí a lò ó.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Kò sí ìṣílọ kankan síbẹ̀. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ni yóò kọ àkọ́kọ́.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Àwọn ìṣiṣẹ́ tuntun jùlọ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Gbogbo ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Kò sí ìṣiṣẹ́ kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Ṣíṣe àfarawé ìṣiṣẹ́ nílò ìlànà migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ìṣiṣẹ́ kan ń lọ lọ́wọ́: ṣe àfarawé nígbà tí ó bá parí.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target kì í ṣe ìṣiṣẹ́, ìṣílọ tàbí àwòrán ìpamọ́ ìfisórí yìí.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Kọ́kọ́ fi àmì sí &quot;Bẹ́ẹ̀ ni, gbà á padà&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Dídá àwòrán ìpamọ́ àtijọ́ padà wà fún àwọn amòye: fi àmì sí &quot;Mo mọ ohun tí èyí ń dá padà&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Tẹ id àwòrán ìpamọ́ náà lẹ́ẹ̀kan sí i: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Yan ó kéré tán apá kan láti dá padà.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ìṣiṣẹ́ yìí kò ní àwòrán ìpamọ́ tí a yà ṣáájú rẹ̀: gba àwọn ìṣílọ rẹ̀ padà ní ọ̀kọ̀ọ̀kan, tàbí dá àwòrán ìpamọ́ àtijọ́ padà.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>A kò lè gba ìṣílọ yìí padà fúnra rẹ̀: a kò tíì lò ó, tàbí kò ní down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>A kò lè ka fọ́ọ̀mù náà.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Yan ìṣiṣẹ́ tí a ó tẹ̀síwájú.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Kọ́kọ́ fi àmì sí &quot;Bẹ́ẹ̀ ni, ṣiṣẹ́ àwọn ìṣílọ yìí báyìí&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Yan ó kéré tán ìṣílọ kan.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Ìṣílọ kan yí padà lẹ́yìn tí a lò ó: gba àyípadà náà pẹ̀lú ìdí, tàbí dá fáìlì náà padà.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Sọ ìdí tí a fi gba àwọn ìṣílọ tí ó yí padà.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Ìdí náà kò gbọ́dọ̀ ju àmì-ìkọ 500 lọ.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Ìṣiṣẹ́ tí a bẹ̀rẹ̀ níbí ṣì ń lọ lọ́wọ́ (%detail). Dúró títí yóò fi parí.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Ìṣiṣẹ́ mìíràn ló di títì ìfisórí náà mú: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Ìṣiṣẹ́ náà nílò olùmúlò tó wà tí ó ti wọlé.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>A kò rí ètò ìlà àṣẹ php kankan. Ṣètò migration.ini [AdminSettings] PhpCliPath sí ipa ọ̀nà rẹ̀ kíkún.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ti wà ní pípa, nítorí náà a kò lè bẹ̀rẹ̀ ìṣiṣẹ́ níbí. Ṣiṣẹ́ ./console exp:migration:migrate --apply lórí olupin.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>A kò lè kọ sínú fódà àwọn ìṣiṣẹ́: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>A bẹ̀rẹ̀ ìṣiṣẹ́ náà ṣùgbọ́n kò jábọ̀ id ìlànà rẹ̀. Ṣàyẹ̀wò %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Dárúkọ ohun tí a ó gbà padà.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>A kò lè bẹ̀rẹ̀ ìṣiṣẹ́ náà.</translation>
     </message>
 </context>
 </TS>

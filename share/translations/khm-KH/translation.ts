@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API៖ ចំណុចបញ្ចប់របស់វា គ្រោងការណ៍ និងកន្លែងសាកល្បងសំណួរ។</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ការផ្លាស់ប្ដូរលើការដំឡើងដែលរក្សាទុកជាឯកសារ៖ ស្ថានភាពរបស់វា ការដំណើរការ ដំណើរការ និងត្រឡប់វិញ។</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>សូមផ្ញើម្យូតេសិនទៅ /api/graphql។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>មិនអាចអានស្ថានភាពបានទេ៖ %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>តារាងនៃការផ្ទេរមិនទាន់មាននៅឡើយទេ៖ ./console exp:upgrade --apply នឹងបង្កើតពួកវា។</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>ការផ្ទេរ %count បានបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ការដំណើរការមួយកំពុងដំណើរការ ចាប់ផ្ដើមដោយ %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ការដំឡើងត្រូវបានចាក់សោ៖ %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>កំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>គ្មានម្ចាស់</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ការដំណើរការចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>មិនទាន់មាននៅឡើយ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ការផ្ទេរទាំងអស់</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>ការដំណើរការក្លែងធ្វើ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ការដំណើរការសាកល្បង</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ការផ្ទេរដែលកំពុងរង់ចាំបានដំណើរការក្នុងប្រតិបត្តិការមួយដែលត្រូវបានត្រឡប់វិញនៅពេលក្រោយ៖ គ្មានអ្វីត្រូវបានរក្សាទុកទេ។ ខាងក្រោមនេះជាអ្វីដែលនីមួយៗបានផ្លាស់ប្ដូរក្នុងមូលដ្ឋានទិន្នន័យ។</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>អ្វីដែលការដំណើរការនឹងធ្វើឥឡូវនេះ។ គ្មានអ្វីត្រូវបានផ្លាស់ប្ដូរទេ៖ ការផ្ទេរដែលកំពុងរង់ចាំនីមួយៗរាយការផ្លាស់ប្ដូរដែលវានឹងធ្វើ ហើយការដំណើរការរាយអ្វីដែលវានឹងធ្វើមុន និងក្រោយ។</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>ក្លែងធ្វើ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ដំណើរការ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ការដំណើរការសាកល្បងបានបរាជ័យ៖ %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ការក្លែងធ្វើត្រូវការ PostgreSQL ឬ SQLite ដែលការផ្លាស់ប្ដូររចនាសម្ព័ន្ធអាចត្រឡប់វិញបាន។ នៅលើមូលដ្ឋានទិន្នន័យនេះ ផែនការខាងក្រោមគឺជាអ្វីដែលការដំណើរការនឹងធ្វើ។</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>អ្វីដែលវានឹងធ្វើ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ការក្លែងធ្វើ៖ %result ក្នុងរយៈពេល %ms មិល្លីវិនាទី</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>មិនទាន់មានការផ្ទេរនៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>មុន និងក្រោយការដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>រូបថតមុន</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ត្រូវបានថត ហើយស្ដារវិញនៅពេលការផ្ទេរបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>បិទ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>រូបថតក្រោយ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ត្រូវបានថតនៅពេលការដំណើរការបានជោគជ័យ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>ការផ្ទេរ %total៖ %pending កំពុងរង់ចាំ, %done បានធ្វើរួច, %failed បរាជ័យ។</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ប្រវត្តិនៃការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ការដំណើរការនីមួយៗ ជាមួយអ្នកប្រើ បរិស្ថាន រូបថត និងអ្វីដែលត្រូវបាន commit ដាក់ស្លាក និងរុញ។ ការដំណើរការដែលបរាជ័យ ឬត្រូវបានរំខាន អាចបន្តបាន។ ការដំណើរការដែលមានរូបថតថតមុនវា អាចដកវិញបាន។</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>មិនអាចអានការដំណើរការបានទេ៖ %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>តារាងនៃការផ្ទេរមិនទាន់មាននៅឡើយទេ៖ ./console exp:upgrade --apply នឹងបង្កើតពួកវា។</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>បង្ហាញ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ការដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>បានចាប់ផ្ដើម</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ដោយ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>រូបថត</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ឃ្លាំងកូដ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>សកម្មភាព</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>មុន</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ក្រោយ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ការរុញ៖ %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>បន្ត</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ត្រឡប់វិញ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>គ្មានការដំណើរការក្នុងស្ថានភាពនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>បានចាប់ផ្ដើមនៅទីនេះ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ការដំណើរការ ការបន្ត និងការត្រឡប់វិញ ដែលបានចាប់ផ្ដើមនៅលើទំព័រទាំងនេះ ជាមួយរបាយការណ៍នៃនីមួយៗ។</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>អ្វី</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>លទ្ធផល</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ការត្រឡប់វិញ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>ការត្រឡប់វិញនៃ %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ការដំណើរការ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>អ្វីដែលការដំណើរការបានធ្វើ កំណត់ត្រា និងកំណត់ហេតុរបស់វា។ ការដំណើរការដែលចាប់ផ្ដើមនៅទីនេះបន្តនៅផ្ទៃខាងក្រោយ នៅពេលទំព័រនេះត្រូវបានបិទ។ សូមបើកទំព័រម្ដងទៀតដើម្បីតាមដានវា។</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>បន្តការដំណើរការនេះ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ត្រឡប់ការដំណើរការនេះវិញ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>មិនអាចអានកំណត់ត្រាបានទេ៖ %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>វឌ្ឍនភាព</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>ចាប់ផ្ដើមដោយ %user នៅ %time។</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>កំពុងពិនិត្យកូដ និងថតរូបមុនការដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>កំពុងដំណើរការ %id (%index នៃ %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>បានធ្វើរួច %done នៃ %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ការផ្ទេរបានដំណើរការហើយ កំពុងស្ដាររូបថតវិញ ប្រសិនបើមួយបានបរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>កំពុងថតរូបក្រោយការដំណើរការ commit ដាក់ស្លាក និងរុញ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>កំពុងស្ដាររូបថតវិញ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ការដំណើរការបានបញ្ចប់។ កំពុងផ្ទុករបាយការណ៍របស់វា។</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>មិនអាចតាមដានវឌ្ឍនភាពបានទេ។ សូមផ្ទុកទំព័រឡើងវិញ ដើម្បីមើលថាការដំណើរការទៅដល់ណាហើយ។</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ទំព័រនេះតាមដានការដំណើរការនៅពេលវាកំពុងដំណើរការ។</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ផ្ទុកឡើងវិញ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>របាយការណ៍</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>រយៈពេល</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms មិល្លីវិនាទី</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>អ្វីដែលការដំណើរការបានបង្ហាញជាកំហុស</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>កំណត់ត្រា</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>បរិស្ថាន</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>គ្មាន</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>បានបញ្ចប់</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ខមមីត</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ស្លាក</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ការរុញ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>សារ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ការផ្ទេរនៃការដំណើរការនេះ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ប្រភព</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>កំណត់ហេតុនៃការដំណើរការ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>មានតែចុងបញ្ចប់នៃកំណត់ហេតុប៉ុណ្ណោះដែលត្រូវបានបង្ហាញ។</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>កំពុងដំណើរការ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>បានបញ្ចប់ដោយគ្មានរបាយការណ៍</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ជោគជ័យ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ត្រូវបានបដិសេធ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>មិនអាចភ្ជាប់ទៅមូលដ្ឋានទិន្នន័យបានទេ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>កំហុសខាងក្នុង</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ការដំណើរការមួយកំពុងដំណើរការ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ចាប់ផ្ដើមដោយ %user នៅ %time។</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>តាមដាន</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ការដំឡើងត្រូវបានចាក់សោ</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ការដំណើរការមួយផ្សេងទៀតកំពុងកាន់សោ (ការធ្វើឱ្យប្រសើរ ឬការដំណើរការលើកុងសូល)៖ %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>បានធ្វើរួច</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>កំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>មិនចាំបាច់</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>មិនស្គាល់</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>បានត្រឡប់វិញ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>បានអនុវត្ត</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>នឹងត្រូវបានអនុវត្ត</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>បានដកវិញ</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>នឹងត្រូវបានដកវិញ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>មិនបានដំណើរការ</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>រង់ចាំមួយផ្សេងទៀត</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ការផ្លាស់ប្ដូរត្រូវបានទទួលយក</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ការផ្លាស់ប្ដូរនឹងត្រូវបានទទួលយក</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>បានក្លែងធ្វើ</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ប្រវត្តិ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>ដក %target វិញ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ការដំណើរការមួយត្រូវបានដកវិញទៅរូបថតដែលបានថតមុនវា ការផ្ទេរមួយត្រូវបានដកវិញដោយ down() របស់វា។ ការស្ដាររូបថតមុនៗគឺសម្រាប់អ្នកជំនាញ។ នីមួយៗដំណើរការនៅផ្ទៃខាងក្រោយក្នុងនាមអ្នក បន្ទាប់ពីថតរូបស្ថានភាពបច្ចុប្បន្ន។</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>មិនអាចអានអ្វីដែលអាចដកវិញបានទេ៖ %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ការដំណើរការមួយ</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ការផ្ទេរមួយ</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>រូបថតមុនៗ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>ការពិពណ៌នា</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>បាទ/ចាស</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ទេ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>រូបថត</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ស្លាកឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>បានថត</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ប្រភេទ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ផ្នែកដែលត្រូវស្ដារ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>មូលដ្ឋានទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ឯកសារផ្ទុក (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ការកំណត់ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ការស្ដារមូលដ្ឋានទិន្នន័យនាំវាត្រឡប់ទៅពេលវេលានៃរូបថត រួមទាំងវគ្គផងដែរ៖ អ្នកប្រហែលជាត្រូវចូលម្ដងទៀតបន្ទាប់ពីនោះ។ អ្វីៗទាំងអស់ដែលបានផ្លាស់ប្ដូរចាប់តាំងពីពេលនោះនឹងបាត់បង់។ រូបថតនៃស្ថានភាពបច្ចុប្បន្នត្រូវបានថតមុនសិន។</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ខ្ញុំដឹងថាវានឹងស្ដារអ្វីខ្លះ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>វាយលេខសម្គាល់នៃរូបថតម្ដងទៀត</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>បាទ/ចាស ដកវិញ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>បោះបង់</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ការដំណើរការដែលមានរូបថតថតមុនពួកវា។</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ជ្រើសរើស</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>មិនទាន់មានការដំណើរការដែលមានរូបថតនៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ការផ្ទេរដែលបានអនុវត្ត ដែលអាចដកខ្លួនឯងវិញបាន (ពួកវាមាន down())។</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>គ្មានការផ្ទេរដែលបានអនុវត្តណាមួយមាន down() ទេ។</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>រូបថតមុនៗ (អ្នកជំនាញ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>មិនទាន់មានរូបថតនៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ដំណើរការការផ្ទេរ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ការដំណើរការបន្តនៅផ្ទៃខាងក្រោយក្នុងនាម %user ហើយទំព័ររបស់វាបង្ហាញវានៅពេលវាកំពុងដំណើរការ។ មុនការផ្ទេរដំបូង រូបថតនៃការដំឡើងត្រូវបានថត។ នៅពេលការផ្ទេរមួយបរាជ័យ ការដំណើរការឈប់ ហើយរូបថតត្រូវបានស្ដារវិញ។</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ដំណើរការសាកល្បងជាមុន</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>មិនអាចអានស្ថានភាពបានទេ៖ %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ការផ្ទេរដែលកំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ពួកវាដំណើរការតាមលំដាប់នេះ។ ដោះធីកមួយ ដើម្បីទុកវា និងការផ្ទេរដែលត្រូវការវា សម្រាប់ការដំណើរការពេលក្រោយ។</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ដំណើរការវា</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>បើករបៀបថែទាំ ខណៈពេលវាកំពុងដំណើរការ។</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>បានផ្លាស់ប្ដូរបន្ទាប់ពីត្រូវបានអនុវត្ត</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ឯកសារទាំងនេះមិនមែនជាឯកសារដែលត្រូវបានអនុវត្តទេ។ ការដំណើរការបដិសេធពួកវា លុះត្រាតែការផ្លាស់ប្ដូរត្រូវបានទទួលយកជាមួយហេតុផល។ ពួកវាមិនត្រូវបានដំណើរការម្ដងទៀតទេ checksum ថ្មីត្រូវបានកត់ត្រា ហើយហេតុផលត្រូវបានរក្សាទុកក្នុងកំណត់ហេតុសវនកម្ម។</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ទទួលយកការផ្លាស់ប្ដូរ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ហេតុអ្វី</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>តម្លៃលំនាំដើមគឺជាតម្លៃសុវត្ថិភាព។ ប្រអប់នីមួយៗរំលងជំហានមួយ។</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>គ្មានរូបថត</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>គ្មានរូបថតមុន និងក្រោយការដំណើរការ៖ ការបរាជ័យមិនអាចស្ដារវិញដោយស្វ័យប្រវត្តិបានទេ។</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>គ្មានការស្ដារ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>បន្ទាប់ពីការបរាជ័យ ទុកការដំឡើងដូចដែលការបរាជ័យបានទុកវា។</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>រក្សាការផ្លាស់ប្ដូរដែលមិនទាន់ commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ដំណើរការ ទោះបីការកំណត់ ផ្នែកបន្ថែម ឬការរចនាមានការផ្លាស់ប្ដូរដែលមិនទាន់ commit ក៏ដោយ៖ ពួកវានឹងចូលក្នុងរូបថត។</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>គ្មានការ commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>កុំ commit ឯកសារស្ថានភាព និងកំណត់ហេតុនៃការដំណើរការ (គ្មានស្លាក និងគ្មានការរុញផងដែរ)។</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>គ្មានការរុញ</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit និងដាក់ស្លាក ប៉ុន្តែកុំរុញ។</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>គ្មានស្លាក</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit និងរុញ ប៉ុន្តែកុំដាក់ស្លាកលើការដំណើរការ។</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>បាទ/ចាស ដំណើរការការផ្ទេរទាំងនេះឥឡូវនេះ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>គ្មានការផ្ទេរណាកំពុងរង់ចាំទេ។</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ត្រឡប់ទៅស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ការផ្លាស់ប្ដូរលើការដំឡើងនេះ ដែលសរសេរម្ដងជាឯកសារ (មាតិកា ថ្នាក់ តួនាទី ការកំណត់ រចនាសម្ព័ន្ធ) ហើយអនុវត្តលើការដំឡើងនីមួយៗនៃគេហទំព័រតាមលំដាប់ដូចគ្នា។ ការដំណើរការថតរូបមុនសិន ស្ដារវាវិញនៅពេលការផ្ទេរបរាជ័យ ហើយកត់ត្រា commit និងរុញអ្វីដែលវាបានធ្វើ។</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>ដំណើរការ %count ដែលកំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ទិដ្ឋភាពទូទៅ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>កំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>បានធ្វើរួច</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>មិនចាំបាច់</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>មូលដ្ឋានទិន្នន័យ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ប្រតិបត្តិការ៖ %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ការផ្ទេររបស់គេហទំព័រស្ថិតនៅក្នុង migrations/ ហើយរបស់ផ្នែកបន្ថែមស្ថិតនៅក្នុង extension/&lt;name&gt;/migrations/។ ពួកវាដំណើរការតាមលំដាប់ឈ្មោះ និងអ្វីដែលពួកវាត្រូវការ។</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ការដំណើរការចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ឯកសារបានផ្លាស់ប្ដូរបន្ទាប់ពីត្រូវបានអនុវត្ត។</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>មិនទាន់មានការផ្ទេរនៅឡើយទេ។ ./console exp:migration:generate --skeleton &lt;name&gt; --apply សរសេរការផ្ទេរដំបូង។</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ការដំណើរការចុងក្រោយបំផុត</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ការដំណើរការទាំងអស់</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>មិនទាន់មានការដំណើរការនៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ការក្លែងធ្វើការដំណើរការត្រូវការគោលការណ៍ migration/run។</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ការដំណើរការមួយកំពុងដំណើរការ៖ សូមក្លែងធ្វើនៅពេលវាបានបញ្ចប់។</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ការរៀបចំ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target មិនមែនជាការដំណើរការ ការផ្ទេរ ឬរូបថតនៃការដំឡើងនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>សូមធីក “បាទ/ចាស ដកវិញ” ជាមុនសិន។</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ការស្ដាររូបថតមុនៗគឺសម្រាប់អ្នកជំនាញ៖ សូមធីក “ខ្ញុំដឹងថាវានឹងស្ដារអ្វីខ្លះ”។</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>វាយលេខសម្គាល់នៃរូបថតម្ដងទៀត៖ %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ជ្រើសរើសយ៉ាងហោចណាស់ផ្នែកមួយដើម្បីស្ដារ។</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ការដំណើរការនេះគ្មានរូបថតថតមុនវាទេ៖ សូមដកការផ្ទេររបស់វាវិញម្ដងមួយៗ ឬស្ដាររូបថតមុនៗ។</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ការផ្ទេរនេះមិនអាចដកខ្លួនឯងវិញបានទេ៖ វាមិនត្រូវបានអនុវត្ត ឬវាគ្មាន down()។</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>មិនអាចអានទម្រង់បានទេ។</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ជ្រើសរើសការដំណើរការដែលត្រូវបន្ត។</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>សូមធីក “បាទ/ចាស ដំណើរការការផ្ទេរទាំងនេះឥឡូវនេះ” ជាមុនសិន។</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ជ្រើសរើសការផ្ទេរយ៉ាងហោចណាស់មួយ។</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ការផ្ទេរមួយបានផ្លាស់ប្ដូរបន្ទាប់ពីត្រូវបានអនុវត្ត៖ សូមទទួលយកការផ្លាស់ប្ដូរជាមួយហេតុផល ឬដាក់ឯកសារត្រឡប់វិញ។</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>សូមផ្ដល់ហេតុផលដែលការផ្ទេរដែលបានផ្លាស់ប្ដូរត្រូវបានទទួលយក។</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>ហេតុផលមានយ៉ាងច្រើនបំផុត 500 តួអក្សរ។</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ការដំណើរការដែលចាប់ផ្ដើមនៅទីនេះនៅតែកំពុងដំណើរការ (%detail)។ សូមរង់ចាំរហូតដល់វាបញ្ចប់។</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ការដំណើរការមួយផ្សេងទៀតកំពុងកាន់សោនៃការដំឡើង៖ %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ការដំណើរការត្រូវការអ្នកប្រើដែលមានពិត និងបានចូល។</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>រកមិនឃើញកម្មវិធីបន្ទាត់ពាក្យបញ្ជា php ទេ។ សូមកំណត់ migration.ini [AdminSettings] PhpCliPath ទៅផ្លូវពេញរបស់វា។</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ត្រូវបានបិទ ដូច្នេះមិនអាចចាប់ផ្ដើមការដំណើរការនៅទីនេះបានទេ។ សូមដំណើរការ ./console exp:migration:migrate --apply នៅលើម៉ាស៊ីនមេ។</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>មិនអាចសរសេរថតនៃការដំណើរការបានទេ៖ %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ការដំណើរការបានចាប់ផ្ដើម ប៉ុន្តែមិនបានរាយការណ៍លេខសម្គាល់ដំណើរការរបស់វាទេ។ សូមពិនិត្យ %detail។</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>សូមបញ្ជាក់អ្វីដែលត្រូវដកវិញ។</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>មិនអាចចាប់ផ្ដើមការដំណើរការបានទេ។</translation>
     </message>
 </context>
 </TS>

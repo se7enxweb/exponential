@@ -15081,6 +15081,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: jos galinis taškas, schema ir aplinka užklausoms išbandyti.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracijos</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Įdiegimo pakeitimai, saugomi kaip failai: jų būklė, vykdymai, vykdymas ir atšaukimas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutacijas siųskite adresu /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracijos</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti būklės: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migracijų lentelių dar nėra: jas sukuria ./console exp:upgrade --apply.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Nepavykusių migracijų: %count</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Vyksta vykdymas, kurį pradėjo %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Įdiegimas užrakintas: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Laukiama</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nepavyko</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Našlaitės</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Paskutinis vykdymas</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dar nėra</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Visos migracijos</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Imituotas vykdymas</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Bandomasis vykdymas</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Laukiančios migracijos buvo įvykdytos transakcijoje, kuri vėliau buvo atšaukta: niekas neišsaugota. Žemiau parodyta, ką kiekviena pakeitė duomenų bazėje.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ką vykdymas padarytų dabar. Niekas nekeičiama: kiekviena laukianti migracija išvardija pakeitimus, kuriuos atliktų, o vykdymas – ką darytų prieš ir po.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Imituoti</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Paleisti</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Bandomasis vykdymas nepavyko: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Imitacijai reikia PostgreSQL arba SQLite, kurių schemos pakeitimus galima atšaukti; šioje duomenų bazėje žemiau pateiktas planas parodo, ką vykdymas padarytų.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migracijos</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migracija</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ką ji padarytų</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Imitacija: %result per %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Migracijų dar nėra.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Prieš vykdymą ir po jo</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Momentinė kopija prieš</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>padaroma ir atkuriama, kai migracija nepavyksta</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>išjungta</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Momentinė kopija po</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>padaroma, kai vykdymas pavyko</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Migracijų: %total; laukia %pending, atlikta %done, nepavyko %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Migracijų istorija</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Kiekvienas vykdymas su naudotoju, aplinka, momentinėmis kopijomis ir tuo, kas buvo įrašyta (commit), pažymėta žyma ir išsiųsta (push). Nepavykusį ar nutrauktą vykdymą galima pratęsti; vykdymą, prieš kurį padaryta momentinė kopija, galima atšaukti.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti vykdymų: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migracijų lentelių dar nėra: jas sukuria ./console exp:upgrade --apply.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Rodyti</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Vykdymai</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Pradėta</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kas</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Momentinės kopijos</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Saugykla</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veiksmai</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>prieš</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>išsiuntimas: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Pratęsti</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Šios būsenos vykdymų nėra.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Pradėta čia</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Šiuose puslapiuose pradėti vykdymai, pratęsimai ir atšaukimai su kiekvieno ataskaita.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kas</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultatas</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Atšaukimas</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target atšaukimas</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Vykdymas %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ką vykdymas padarė, jo įrašas ir žurnalas. Čia pradėtas vykdymas tęsiasi fone uždarius šį puslapį; atverkite puslapį iš naujo, kad jį stebėtumėte.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Pratęsti šį vykdymą</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Atšaukti šį vykdymą</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti įrašo: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Eiga</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Pradėjo %user, laikas %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Tikrinamas kodas ir daroma momentinė kopija prieš vykdymą</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Vykdoma %id (%index iš %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>Atlikta %done iš %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migracijos įvykdytos; jei kuri nepavyko, atkuriama momentinė kopija</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Daroma momentinė kopija po vykdymo, įrašoma (commit), žymima ir išsiunčiama (push)</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Atkuriama momentinė kopija</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Vykdymas baigtas. Įkeliama jo ataskaita.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Nepavyko stebėti eigos. Įkelkite puslapį iš naujo, kad pamatytumėte, kaip sekasi vykdymui.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Šis puslapis stebi vykdymą jam vykstant.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Įkelti iš naujo</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ataskaita</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laikas</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Ką vykdymas išvedė kaip klaidas</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Įrašas</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Aplinka</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nėra</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Baigta</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Įrašas (commit)</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Žyma</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Išsiuntimas (push)</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Pranešimas</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Šio vykdymo migracijos</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Šaltinis</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Vykdymo žurnalas</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Rodoma tik žurnalo pabaiga.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>vykdoma</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>baigta be ataskaitos</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>pavyko</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>nepavyko</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>atmesta</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>duomenų bazė buvo nepasiekiama</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>vidinė klaida</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Vyksta vykdymas</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind pradėjo %user, laikas %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Stebėti</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Įdiegimas užrakintas</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Užraktą laiko kitas vykdymas (atnaujinimas arba vykdymas konsolėje): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>atlikta</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>laukia</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>nereikia</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nežinoma</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>atšaukta</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>pritaikyta</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>būtų pritaikyta</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>atšaukta atgal</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>būtų atšaukta</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>nevykdyta</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>laukia kitos</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>pakeitimas priimtas</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>pakeitimas būtų priimtas</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>imituota</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracijos</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Būklė</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Istorija</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Atšaukti %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Vykdymas atšaukiamas iki prieš jį padarytos momentinės kopijos, viena migracija – su jos down(). Ankstesnės momentinės kopijos atkūrimas skirtas ekspertams. Kiekvienas veiksmas vyksta fone jūsų vardu, padarius dabartinės būsenos momentinę kopiją.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti, ką galima atšaukti: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Vykdymą</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Vieną migraciją</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ankstesnę momentinę kopiją</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Aprašas</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>taip</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Momentinė kopija</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiketė</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Padaryta</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Rūšis</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Atkuriamos dalys</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Duomenų bazė</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Saugyklos failai (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Nuostatos (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Atkūrus duomenų bazę ji grąžinama į momentinės kopijos laiką kartu su sesijomis: po to gali tekti prisijungti iš naujo. Viskas, kas pakeista nuo to laiko, prarandama; pirmiausia padaroma dabartinės būsenos momentinė kopija.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Žinau, ką tai atkuria</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Dar kartą įveskite momentinės kopijos ID</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Taip, atšaukti</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti veiksmą</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Vykdymai, prieš kuriuos padaryta momentinė kopija.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Pasirinkti</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Vykdymų su momentine kopija dar nėra.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Pritaikytos migracijos, kurios gali save atšaukti (jos turi down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Nė viena pritaikyta migracija neturi down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Ankstesnės momentinės kopijos (ekspertams)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Momentinių kopijų dar nėra.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Vykdyti migracijas</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Vykdymas vyksta fone naudotojo %user vardu, o jo puslapis rodo eigą. Prieš pirmąją migraciją padaroma įdiegimo momentinė kopija; nepavykus migracijai vykdymas sustoja ir momentinė kopija atkuriama.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Pirmiau bandomasis vykdymas</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti būklės: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Laukiančios migracijos</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Jos vykdomos šia tvarka. Atžymėkite migraciją, kad ji ir nuo jos priklausančios liktų vėlesniam vykdymui.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Vykdyti</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Vykdymo metu įjungia priežiūros režimą.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Pakeistos po pritaikymo</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Šie failai nėra tie, kurie buvo pritaikyti. Vykdymas juos atmeta, nebent pakeitimas priimamas nurodant priežastį; jie nevykdomi iš naujo, įrašoma nauja kontrolinė suma, o priežastis išsaugoma audito žurnale.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Priimti pakeitimus</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kodėl</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Numatytosios reikšmės yra saugios. Kiekvienas langelis praleidžia vieną žingsnį.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Be momentinės kopijos</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Jokios momentinės kopijos prieš vykdymą ir po jo: nesėkmės atveju automatiškai atkurti negalima.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Be atkūrimo</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Po nesėkmės palikti įdiegimą tokį, kokį jį paliko nesėkmė.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Išlaikyti neįrašytus (commit) pakeitimus</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Vykdyti, nors nuostatose, plėtiniuose ar dizainuose yra neįrašytų (commit) pakeitimų; jie patenka į momentinę kopiją.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Be įrašymo (commit)</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Neįrašyti (commit) būklės failo ir vykdymo žurnalo (taip pat be žymos ir be išsiuntimo).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Be išsiuntimo (push)</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Įrašyti (commit) ir pažymėti žyma, bet neišsiųsti (push).</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Be žymos</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Įrašyti (commit) ir išsiųsti (push), bet nežymėti vykdymo žyma.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Taip, vykdyti šias migracijas dabar</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Laukiančių migracijų nėra.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Atgal į būklę</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Šio įdiegimo pakeitimai, vieną kartą užrašyti kaip failai (turinys, klasės, vaidmenys, nuostatos, schema) ir ta pačia tvarka pritaikomi kiekvienam svetainės įdiegimui. Vykdymas pirmiausia padaro momentinę kopiją, ją atkuria nepavykus migracijai, o tai, ką padarė, užregistruoja, įrašo (commit) ir išsiunčia (push).</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Vykdyti laukiančias (%count)</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Apžvalga</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Laukiama</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Atlikta</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nepavyko</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Nereikia</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Duomenų bazė</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transakcijos: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Svetainės migracijos yra kataloge migrations/, plėtinio – extension/&lt;name&gt;/migrations/. Jos vykdomos pagal pavadinimų tvarką ir tai, ko jos reikalauja.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Paskutinis vykdymas</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Failas pasikeitė po pritaikymo.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Migracijų dar nėra. Pirmąją sukuria ./console exp:migration:generate --skeleton &lt;name&gt; --apply.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Naujausi vykdymai</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Visi vykdymai</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Vykdymų dar nėra.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Vykdymui imituoti reikia teisės migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Vyksta vykdymas: imituokite jam pasibaigus.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sąranka</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target nėra nei šio įdiegimo vykdymas, nei migracija, nei momentinė kopija.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Pirmiausia pažymėkite „Taip, atšaukti“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ankstesnės momentinės kopijos atkūrimas skirtas ekspertams: pažymėkite „Žinau, ką tai atkuria“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Dar kartą įveskite momentinės kopijos ID: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Pasirinkite bent vieną atkuriamą dalį.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Prieš šį vykdymą momentinė kopija nebuvo padaryta: atšaukite jo migracijas po vieną arba atkurkite ankstesnę momentinę kopiją.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Šios migracijos negalima atšaukti atskirai: ji nepritaikyta arba neturi down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Nepavyko nuskaityti formos.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Pasirinkite vykdymą, kurį norite pratęsti.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Pirmiausia pažymėkite „Taip, vykdyti šias migracijas dabar“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Pasirinkite bent vieną migraciją.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migracija pasikeitė po pritaikymo: priimkite pakeitimą nurodydami priežastį arba grąžinkite failą.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Nurodykite priežastį, kodėl pakeistos migracijos priimamos.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Priežastis gali būti ne ilgesnė nei 500 simbolių.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Čia pradėtas vykdymas dar vyksta (%detail). Palaukite, kol jis pasibaigs.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Įdiegimo užraktą laiko kitas vykdymas: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Vykdymui reikia prisijungusio esamo naudotojo.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nerasta php komandinės eilutės programa. Nustatykite migration.ini [AdminSettings] PhpCliPath į visą jos kelią.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open išjungta, todėl vykdymo čia pradėti negalima. Serveryje paleiskite ./console exp:migration:migrate --apply.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Į vykdymų aplanką negalima rašyti: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Vykdymas pradėtas, bet nepranešė savo proceso ID. Patikrinkite %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Nurodykite, ką atšaukti.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Nepavyko pradėti vykdymo.</translation>
     </message>
 </context>
 </TS>
