@@ -76,8 +76,14 @@ Handlers[gzipshell]=ezgzipshellcompressionhandler
 
 > The file extension blacklist is used to validate uploaded files.  
 > File types on the blacklist are rejected, for security or other reasons.  
+> The list holds the extensions a web server may run as code: every PHP  
+> extension the handlers of PHP-FPM, mod\_php and the panels map (php3 to  
+> php8, phtml, pht, phps, phar, phpt, pgif), server-side includes (shtml),  
+> CGI scripts (cgi, pl) and the other platforms' pages (asp, aspx, jsp),  
+> and .htaccess. Write the values in lower case: a file name's extension is  
+> compared in lower case, so shell.PHP5 is refused as php5.  
 
-Default: a list of 7: `php`, `php3`, `phar`, `phpt`, `pht`, `phtml`, `pgif`.
+Default: a list of 19: `php`, `php3`, `php4`, `php5`, `php7`, `php8`, `phps`, `phar`, `phpt`, `pht`, `phtml`, `pgif` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -87,11 +93,23 @@ Default: a list of 7: `php`, `php3`, `phar`, `phpt`, `pht`, `phtml`, `pgif`.
 FileExtensionBlackList[]
 FileExtensionBlackList[]=php
 FileExtensionBlackList[]=php3
+FileExtensionBlackList[]=php4
+FileExtensionBlackList[]=php5
+FileExtensionBlackList[]=php7
+FileExtensionBlackList[]=php8
+FileExtensionBlackList[]=phps
 FileExtensionBlackList[]=phar
 FileExtensionBlackList[]=phpt
 FileExtensionBlackList[]=pht
 FileExtensionBlackList[]=phtml
 FileExtensionBlackList[]=pgif
+FileExtensionBlackList[]=shtml
+FileExtensionBlackList[]=cgi
+FileExtensionBlackList[]=pl
+FileExtensionBlackList[]=asp
+FileExtensionBlackList[]=aspx
+FileExtensionBlackList[]=jsp
+FileExtensionBlackList[]=htaccess
 */ ?>
 ```
 

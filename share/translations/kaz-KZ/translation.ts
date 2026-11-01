@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: оның соңғы нүктесі, схемасы және сұрауларды сынауға арналған алаң.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграциялар</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Орнатуға енгізілетін, файл ретінде сақталған өзгерістер: олардың күйі, орындаулар, орындау және кері қайтару.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Мутацияларды /api/graphql мекенжайына жіберіңіз.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграциялар</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Күйін оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Миграциялар кестелері әлі жоқ: ./console exp:upgrade --apply оларды жасайды.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count миграция сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Орындау жүріп жатыр, оны %user бастады</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Орнату құлыпталған: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Күтуде</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Сәтсіз</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Иесіздер</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Соңғы орындау</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>әлі жоқ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Барлық миграциялар</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Модельденген орындау</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Сынақ орындау</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Күтудегі миграциялар кейін кері қайтарылған транзакцияда орындалды: ештеңе сақталмады. Төменде әрқайсысы дерекқорда нені өзгерткені көрсетілген.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Орындау қазір не істер еді. Ештеңе өзгертілмейді: әр күтудегі миграция өзі енгізетін өзгерістерді, ал орындау өзінің алдында және кейін не істейтінін көрсетеді.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Модельдеу</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Орындау</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Сынақ орындау сәтсіз аяқталды: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Модельдеуге PostgreSQL немесе SQLite қажет, олардың схема өзгерістерін кері қайтаруға болады; бұл дерекқорда төмендегі жоспар орындаудың не істейтінін көрсетеді.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Миграциялар</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Миграция</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Күйі</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Не істер еді</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Модельдеу: %result, %ms мс ішінде</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Әзірге миграция жоқ.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Орындаудың алдында және кейін</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Алдындағы көшірме</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>алынады және миграция сәтсіз болса қалпына келтіріледі</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>өшірулі</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Кейінгі көшірме</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>орындау сәтті өткенде алынады</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total миграция: %pending күтуде, %done орындалды, %failed сәтсіз.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Миграциялар тарихы</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Әр орындау өз пайдаланушысымен, ортасымен, көшірмелерімен және нені коммиттегені, тегтегені және жібергенімен. Сәтсіз немесе үзілген орындауды жалғастыруға болады; алдында көшірме алынған орындауды кері қайтаруға болады.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Орындауларды оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Миграциялар кестелері әлі жоқ: ./console exp:upgrade --apply оларды жасайды.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Көрсету</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барлығы</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Орындаулар</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Басталды</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Кім</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Көшірмелер</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Репозиторий</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Әрекеттер</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>алдында</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>кейін</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>жіберу: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Жалғастыру</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Кері қайтару</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Бұл күйде орындау жоқ.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Осында басталған</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Осы беттерде басталған орындаулар, жалғастырулар және кері қайтарулар, әрқайсысының есебімен.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиже</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Кері қайтару</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target кері қайтару</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Орындау %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Орындау не істегені, оның жазбасы және журналы. Осында басталған орындау бет жабылса да фонда жалғаса береді; оны бақылау үшін бетті қайта ашыңыз.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Бұл орындауды жалғастыру</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Бұл орындауды кері қайтару</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Жазбаны оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user %time кезінде бастады.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Код тексеріліп, орындау алдында көшірме алынуда</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id орындалуда (%total ішінен %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total ішінен %done орындалды</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Миграциялар орындалды; біреуі сәтсіз болса, көшірме қалпына келтірілуде</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Орындаудан кейін көшірме алынуда, коммит, тег және жіберу</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Көшірме қалпына келтірілуде</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Орындау аяқталды. Оның есебі жүктелуде.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Барысын бақылау мүмкін болмады. Орындаудың қалай жүріп жатқанын көру үшін бетті қайта жүктеңіз.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Бұл бет орындауды жүріп жатқан кезде бақылайды.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Қайта жүктеу</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Есеп</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Уақыт</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Орындау қате ретінде шығарған нәрселер</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Жазба</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Орта</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>жоқ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Аяқталды</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Тег</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Жіберу</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Хабарлама</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Бұл орындаудың миграциялары</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Дереккөз</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Орындау журналы</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Журналдың тек соңы көрсетілген.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>орындалуда</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>есепсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>сәтті</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>сәтсіз</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>қабылданбады</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>дерекқорға қол жеткізу мүмкін болмады</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ішкі қате</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Орындау жүріп жатыр</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind: %user %time кезінде бастады.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Бақылау</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Орнату құлыпталған</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Құлыпты басқа орындау ұстап тұр (жаңарту немесе консольдағы орындау): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>орындалды</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>күтуде</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>қажет емес</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>белгісіз</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>кері қайтарылды</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>қолданылды</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>қолданылар еді</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>қайтарылды</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>қайтарылар еді</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>орындалмады</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>басқасын күтуде</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>өзгеріс қабылданды</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>өзгеріс қабылданар еді</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>модельденді</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграциялар</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Мәртебе</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Тарих</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target қайтару</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Орындау өзінің алдында алынған көшірмеге дейін, жеке миграция өзінің down() арқылы қайтарылады. Ертерек көшірмені қалпына келтіру — мамандарға арналған. Әрқайсысы қазіргі күйдің көшірмесінен кейін сіздің атыңыздан фонда орындалады.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Нені қайтаруға болатынын оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Орындау</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Бір миграция</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ертерек көшірме</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Сипаттама</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>иә</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>жоқ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Көшірме</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Белгі</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Алынды</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Түрі</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Қалпына келтірілетін бөліктер</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Дерекқор</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Сақтау файлдары (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Баптаулар (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Дерекқорды қалпына келтіру оны көшірме алынған уақытқа, сеанстарымен қоса, қайтарады: кейін қайта кіру сұралуы мүмкін. Содан бергі барлық өзгеріс жоғалады; алдымен қазіргі күйдің көшірмесі алынады.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Мұның нені қалпына келтіретінін білемін</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Көшірменің идентификаторын қайта теріңіз</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Иә, қайтару</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бас тарту</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Алдында көшірме алынған орындаулар.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Таңдау</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Әзірге көшірмесі бар орындау жоқ.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Өздерін қайтара алатын қолданылған миграциялар (оларда down() бар).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Қолданылған миграциялардың ешқайсысында down() жоқ.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Ертерек көшірмелер (мамандар)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Әзірге көшірме жоқ.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Миграцияларды орындау</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Орындау %user атынан фонда жүреді, ал оның беті оны жүріп жатқан кезде көрсетеді. Бірінші миграция алдында орнатудың көшірмесі алынады; миграция сәтсіз болса, орындау тоқтайды және көшірме қалпына келтіріледі.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Алдымен сынақ орындау</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Күйін оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Күтудегі миграциялар</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Олар осы ретпен орындалады. Біреуін және оны қажет ететіндерін кейінгі орындауға қалдыру үшін белгіні алып тастаңыз.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Орындау</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Орындалу кезінде техникалық қызмет режимін қосады.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Қолданылғаннан кейін өзгертілген</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Бұл файлдар қолданылған файлдар емес. Өзгеріс себебімен қабылданбаса, орындау оларды қабылдамайды; олар қайта орындалмайды, жаңа бақылау сомасы жазылады және себеп аудит журналында сақталады.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Өзгерістерді қабылдау</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Себебі</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Әдепкі мәндер — қауіпсіз мәндер. Әр құсбелгі бір қадамды өткізіп жібереді.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Көшірмесіз</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Орындау алдында және кейін көшірме жоқ: сәтсіздікті автоматты түрде қалпына келтіру мүмкін емес.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Қалпына келтірусіз</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Сәтсіздіктен кейін орнатуды сәтсіздік қалдырған күйінде қалдыру.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Коммиттелмеген өзгерістерді сақтау</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Баптауларда, кеңейтімдерде немесе дизайндарда коммиттелмеген өзгерістер болса да орындау; олар көшірмеге енеді.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Коммитсіз</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Күй файлы мен орындау журналын коммиттемеу (тег пен жіберу де жоқ).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Жіберусіз</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Коммиттеу және тегтеу, бірақ жібермеу.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Тегсіз</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Коммиттеу және жіберу, бірақ орындауды тегтемеу.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Иә, бұл миграцияларды қазір орындау</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Күтудегі миграция жоқ.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Күйге қайту</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Бұл орнатуға енгізілетін, бір рет файл ретінде жазылған өзгерістер (мазмұн, кластар, рөлдер, баптаулар, схема), сайттың әр орнатуына бірдей ретпен қолданылады. Орындау алдымен көшірме алады, миграция сәтсіз болса оны қалпына келтіреді, ал не істегенін жазады, коммиттейді және жібереді.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count күтудегіні орындау</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Шолу</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Күтуде</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Орындалды</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Сәтсіз</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Қажет емес</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Дерекқор</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>транзакциялар: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Сайт миграциялары migrations/ ішінде, кеңейтім миграциялары extension/&lt;name&gt;/migrations/ ішінде. Олар атауларының және тәуелділіктерінің ретімен орындалады.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Соңғы орындау</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Файл қолданылғаннан кейін өзгерді.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Әзірге миграция жоқ. ./console exp:migration:generate --skeleton &lt;name&gt; --apply біріншісін жазады.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Соңғы орындаулар</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Барлық орындаулар</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Әзірге орындау жоқ.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Орындауды модельдеу үшін migration/run саясаты қажет.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Орындау жүріп жатыр: ол аяқталғанда модельдеңіз.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Баптау</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target бұл орнатудың орындауы да, миграциясы да, көшірмесі де емес.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Алдымен «Иә, қайтару» белгісін қойыңыз.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ертерек көшірмені қалпына келтіру — мамандарға арналған: «Мұның нені қалпына келтіретінін білемін» белгісін қойыңыз.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Көшірменің идентификаторын қайта теріңіз: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Қалпына келтіру үшін кемінде бір бөлікті таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Бұл орындаудың алдында алынған көшірмесі жоқ: оның миграцияларын бір-бірлеп қайтарыңыз немесе ертерек көшірмені қалпына келтіріңіз.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Бұл миграцияны өз бетімен қайтару мүмкін емес: ол қолданылмаған немесе онда down() жоқ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Пішінді оқу мүмкін болмады.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Жалғастырылатын орындауды таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Алдымен «Иә, бұл миграцияларды қазір орындау» белгісін қойыңыз.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Кемінде бір миграцияны таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Миграция қолданылғаннан кейін өзгерді: өзгерісті себебімен қабылдаңыз немесе файлды қайтарыңыз.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Өзгерген миграциялардың неге қабылданатынын көрсетіңіз.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Себеп ең көбі 500 таңба.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Осында басталған орындау әлі жүріп жатыр (%detail). Оның аяқталуын күтіңіз.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Орнатудың құлпын басқа орындау ұстап тұр: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Орындауға жүйеге кірген, бар пайдаланушы қажет.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php пәрмен жолы бағдарламасы табылмады. migration.ini [AdminSettings] PhpCliPath параметріне оның толық жолын орнатыңыз.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open өшірілген, сондықтан мұнда орындауды бастау мүмкін емес. Серверде ./console exp:migration:migrate --apply іске қосыңыз.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Орындаулар қалтасына жазу мүмкін емес: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Орындау басталды, бірақ өз процесінің идентификаторын хабарламады. %detail тексеріңіз.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Нені қайтару керектігін көрсетіңіз.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Орындауды бастау мүмкін болмады.</translation>
     </message>
 </context>
 </TS>

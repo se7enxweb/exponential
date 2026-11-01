@@ -15588,6 +15588,14 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL-API:t: dess slutpunkt, schemat och en lekplats för att prova frågor.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ändringar av installationen sparade som filer: deras läge, körningarna, kör och återställ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80958,6 +80966,888 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Skicka mutationer till /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringar</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Läget kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migreringarnas tabeller finns inte ännu: ./console exp:upgrade --apply skapar dem.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migreringar misslyckades</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>En körning pågår, startad av %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Installationen är låst: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Väntar</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misslyckade</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Föräldralösa</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Senaste körning</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ingen ännu</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Alla migreringar</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simulerad körning</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Torrkörning</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>De väntande migreringarna kördes i en transaktion som rullades tillbaka efteråt: inget behölls. Nedan visas vad var och en ändrade i databasen.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Vad en körning skulle göra nu. Inget ändras: varje väntande migrering listar de ändringar den skulle göra, och körningen vad den skulle göra före och efter.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulera</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Kör</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Torrkörningen misslyckades: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>En simulering kräver PostgreSQL eller SQLite, vars schemaändringar kan rullas tillbaka; i den här databasen visar planen nedan vad en körning skulle göra.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migreringarna</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrering</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Läge</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Vad den skulle göra</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulering: %result på %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Ingen migrering ännu.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Före och efter körningen</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Ögonblicksbild före</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>tas, och återställs om en migrering misslyckas</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Ögonblicksbild efter</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>tas när körningen lyckats</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migreringar: %pending väntar, %done klara, %failed misslyckade.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Migreringshistorik</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Varje körning med användare, miljö, ögonblicksbilder och vad som checkades in, taggades och pushades. En misslyckad eller avbruten körning kan återupptas; en körning med en ögonblicksbild tagen före den kan tas tillbaka.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Körningarna kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Migreringarnas tabeller finns inte ännu: ./console exp:upgrade --apply skapar dem.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Visa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alla</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Körningar</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startad</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Av</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Ögonblicksbilder</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Förråd</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>före</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>efter</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>pushning: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Återuppta</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Ta tillbaka</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Ingen körning i detta läge.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Startade här</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Körningar, återupptaganden och återställningar som startats på dessa sidor, med rapporten för var och en.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Vad</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Återställning</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Återställning av %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Körning %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Vad körningen gjorde, dess post och dess logg. En körning som startats här fortsätter i bakgrunden när sidan stängs; öppna sidan igen för att följa den.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Återuppta denna körning</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Ta tillbaka denna körning</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Posten kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Förlopp</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Startad av %user %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kontrollerar koden och tar en ögonblicksbild före körningen</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Kör %id (%index av %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done av %total klara</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migreringarna har körts; återställer ögonblicksbilden om någon misslyckades</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Tar en ögonblicksbild efter körningen, checkar in, taggar och pushar</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Återställer ögonblicksbilden</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Körningen är slut. Läser in dess rapport.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Förloppet kunde inte följas. Läs in sidan igen för att se hur körningen går.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Den här sidan följer körningen medan den pågår.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Läs in igen</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tid</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisekunder</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Vad körningen skrev ut som fel</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Post</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Miljö</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ingen</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Avslutad</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Incheckning</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tagg</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Pushning</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Meddelande</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migreringar i denna körning</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Källa</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Körningslogg</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Endast slutet av loggen visas.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>pågår</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>avslutad utan rapport</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>lyckades</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>misslyckades</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>nekad</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>databasen gick inte att nå</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>internt fel</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>En körning pågår</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind startad av %user %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Följ den</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Installationen är låst</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>En annan körning håller låset (en uppgradering eller en körning i konsolen): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>klar</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>väntar</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>behövs inte</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>okänd</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>återställd</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>tillämpad</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>skulle tillämpas</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>tagen tillbaka</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>skulle tas tillbaka</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>inte körd</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>väntar på en annan</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ändring godkänd</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ändring skulle godkännas</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulerad</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringar</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Läge</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historik</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Ta tillbaka %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>En körning tas tillbaka till ögonblicksbilden som togs före den, en enskild migrering med sin down(). Att återställa en tidigare ögonblicksbild är för experter. Var och en körs i bakgrunden som du, efter en ögonblicksbild av nuvarande läge.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Vad som kan tas tillbaka kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>En körning</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>En migrering</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>En tidigare ögonblicksbild</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivning</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Ögonblicksbild</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etikett</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Tagen</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Delar att återställa</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Databasen</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Lagringsfilerna (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Inställningarna (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Att återställa databasen för den tillbaka till tidpunkten för ögonblicksbilden, sessioner inräknade: du kan behöva logga in igen efteråt. Allt som ändrats sedan dess går förlorat; först tas en ögonblicksbild av nuvarande läge.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Jag vet vad detta återställer</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Skriv ögonblicksbildens id igen</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ja, ta tillbaka</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Körningarna med en ögonblicksbild tagen före dem.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Välj</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Ingen körning med ögonblicksbild ännu.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>De tillämpade migreringarna som kan ta tillbaka sig själva (de har en down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Ingen tillämpad migrering har en down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Tidigare ögonblicksbilder (experter)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Ingen ögonblicksbild ännu.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Kör migreringarna</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Körningen fortsätter i bakgrunden som %user, och dess sida visar den medan den pågår. Före den första migreringen tas en ögonblicksbild av installationen; om en migrering misslyckas stoppas körningen och ögonblicksbilden återställs.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Torrkör först</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Läget kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Väntande migreringar</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>De körs i denna ordning. Avmarkera en för att lämna den, och de som kräver den, till en senare körning.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Kör den</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Slår på underhållsläget medan den körs.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Ändrade efter att de tillämpats</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Dessa filer är inte de som tillämpades. En körning nekar dem om inte ändringen godkänns med en motivering; de körs inte igen, den nya kontrollsumman registreras och motiveringen sparas i granskningsloggen.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Godkänn ändringarna</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Motivering</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Standardvalen är de säkra. Varje ruta hoppar över ett steg.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Ingen ögonblicksbild</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Ingen ögonblicksbild före och efter körningen: ett fel kan inte återställas automatiskt.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Ingen återställning</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Lämna installationen som felet lämnade den efter ett fel.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Behåll ändringar som inte checkats in</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Kör trots att inställningar, tillägg eller designer har ändringar som inte checkats in; de tas med i ögonblicksbilden.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Ingen incheckning</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Checka inte in lägesfilen och körningsloggen (ingen tagg och ingen pushning heller).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Ingen pushning</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Checka in och tagga, men pusha inte.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Ingen tagg</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Checka in och pusha, men tagga inte körningen.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ja, kör dessa migreringar nu</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Ingen migrering väntar.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Tillbaka till läget</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Ändringar av denna installation som skrivs en gång som filer (innehåll, klasser, roller, inställningar, schema) och tillämpas på varje installation av webbplatsen i samma ordning. En körning tar först en ögonblicksbild, återställer den om en migrering misslyckas, och registrerar, checkar in och pushar vad den gjorde.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Kör %count väntande</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Översikt</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Väntar</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Klara</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misslyckade</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Behövs inte</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databas</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaktioner: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Webbplatsens migreringar finns i migrations/, ett tilläggs i extension/&lt;name&gt;/migrations/. De körs i ordning efter namn och vad de kräver.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Senaste körning</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Filen ändrades efter att den tillämpats.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Ingen migrering ännu. ./console exp:migration:generate --skeleton &lt;name&gt; --apply skriver den första.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>De senaste körningarna</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Alla körningar</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Ingen körning ännu.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Att simulera en körning kräver policyn migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>En körning pågår: simulera när den är slut.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguration</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target är varken en körning, en migrering eller en ögonblicksbild i denna installation.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Markera &quot;Ja, ta tillbaka&quot; först.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Att återställa en tidigare ögonblicksbild är för experter: markera &quot;Jag vet vad detta återställer&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Skriv ögonblicksbildens id igen: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Välj minst en del att återställa.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Denna körning har ingen ögonblicksbild tagen före den: ta tillbaka dess migreringar en i taget, eller återställ en tidigare ögonblicksbild.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Denna migrering kan inte ta tillbaka sig själv: den är inte tillämpad, eller så har den ingen down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formuläret kunde inte läsas.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Välj körningen som ska återupptas.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Markera &quot;Ja, kör dessa migreringar nu&quot; först.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Välj minst en migrering.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>En migrering ändrades efter att den tillämpats: godkänn ändringen med en motivering, eller lägg tillbaka filen.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Ange varför de ändrade migreringarna godkänns.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Motiveringen får vara högst 500 tecken.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>En körning som startats här pågår fortfarande (%detail). Vänta tills den är slut.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>En annan körning håller installationens lås: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Körningen kräver en inloggad användare som finns.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ingen php-binär för kommandoraden hittades. Ange dess fullständiga sökväg i migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open är avstängd, så en körning kan inte startas här. Kör ./console exp:migration:migrate --apply på servern.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Körningarnas mapp går inte att skriva till: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Körningen startades men rapporterade inte sitt process-id. Kontrollera %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Ange vad som ska tas tillbaka.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Körningen kunde inte startas.</translation>
     </message>
 </context>
 </TS>

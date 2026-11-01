@@ -15142,6 +15142,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: a donda yɔrɔ, sigicogo ani ɲɛnajɛyɔrɔ min bɛ ɲininkaliw lajɛ.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Yɔrɔyɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Sigili yɛlɛmali minnu marara ka kɛ dosiyew ye: u hali, waleyaw, ka waleya ani ka segin kɔ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutation ci /api/graphql ma.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Yɔrɔyɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Hali ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Yɔrɔyɛlɛmaw ka tabaliw tɛ yen fɔlɔ: ./console exp:upgrade --apply b&apos;u dilan.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Yɔrɔyɛlɛma %count ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Waleya dɔ bɛ taa, %user de y&apos;a daminɛ</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Sigili datugulen don: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>A bɛ makɔnɔni na</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>A ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Falentɔw</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Waleya laban</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>foyi fɔlɔ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Yɔrɔyɛlɛmaw bɛɛ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Waleya ladegelen</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Kɔrɔbɔli waleya</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Yɔrɔyɛlɛma makɔnɔlenw kɛra jago dɔ kɔnɔ min seginna kɔ o kɔfɛ: foyi ma mara. Duguma, u kelen-kelen bɛɛ ye min yɛlɛma kunnafoniso kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Waleya bɛna min kɛ sisan. Foyi tɛ yɛlɛma: yɔrɔyɛlɛma makɔnɔlen kelen-kelen bɛɛ b&apos;a ka yɛlɛmaliw sɛbɛn, waleya fana b&apos;a sɛbɛn a bɛna min kɛ ka kɔn ani o kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Ladege</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>A waleya</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Kɔrɔbɔli waleya ma ɲɛ: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Ladegeli mago bɛ PostgreSQL walima SQLite la, minnu ka schéma yɛlɛmaliw bɛ se ka segin kɔ; kunnafoniso nin kan, duguma labɛn ye waleya bɛna min kɛ ye.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Yɔrɔyɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Yɔrɔyɛlɛma</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>A bɛna min kɛ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Ladegeli: %result milisekondi %ms kɔnɔ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Yɔrɔyɛlɛma si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Waleya ɲɛ ani a kɔfɛ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Ja fɔlɔ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>a bɛ ta, ka segin a la ni yɔrɔyɛlɛma dɔ ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>a datugulen</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Ja laban</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>a bɛ ta ni waleya ɲɛna</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Yɔrɔyɛlɛma %total: %pending makɔnɔlen, %done banna, %failed ma ɲɛ.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Yɔrɔyɛlɛmaw tariku</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Waleya kelen-kelen bɛɛ n&apos;a baarakɛla, a baarayɔrɔ, a jaw ani min marara, taamasiyɛn donna min na ani min cira. Waleya min ma ɲɛ walima min tigɛra, o bɛ se ka taa a fɛ; waleya min ja tara a ɲɛ, o bɛ se ka segin kɔ.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Waleyaw ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Yɔrɔyɛlɛmaw ka tabaliw tɛ yen fɔlɔ: ./console exp:upgrade --apply b&apos;u dilan.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Bɛɛ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Waleyaw</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Daminɛna</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Min ye</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Jaw</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Marayɔrɔ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Walew</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ka kɔn</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>o kɔfɛ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>cili: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Taa a fɛ</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Segin kɔ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Waleya si tɛ cogoya nin na.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Daminɛna yan</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Waleyaw, tɛmɛliw ani seginliw minnu daminɛna nin ɲɛw kan, u kelen-kelen bɛɛ ka rapɔrɔ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Mun</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Jaabi</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Segin kɔ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target segin kɔ</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Waleya %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Waleya ye min kɛ, a sɛbɛnni ani a jurunali. Waleya min daminɛna yan, o bɛ taa a fɛ kɔfɛ ni ɲɛ nin datugura; ɲɛ in da wuli tugun walasa k&apos;a nɔfɛ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Taa waleya nin fɛ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Waleya nin segin kɔ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Sɛbɛnni ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ɲɛtaa</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user de y&apos;a daminɛ %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kode bɛ sɛgɛsɛgɛ ani ja bɛ ta waleya ɲɛ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id bɛ waleya (%index %total la)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done banna %total la</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Yɔrɔyɛlɛmaw waleyara; ja bɛ segin ni kelen ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ja bɛ ta waleya kɔfɛ, ka mara, ka taamasiyɛn don ani ka ci</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Ja bɛ segin</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Waleya banna. A ka rapɔrɔ bɛ doni.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ɲɛtaa ma se ka nɔfɛ. Ɲɛ in doni tugun walasa ka waleya cogoya ye.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ɲɛ nin bɛ waleya nɔfɛ a taa tuma.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Doni tugun</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapɔrɔ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Mɛnni</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>milisekondi %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Waleya ye min jira fili ye</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Sɛbɛnni</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Baarayɔrɔ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>foyi</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Banna</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Mara</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Taamasiyɛn</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ci</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Cikan</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Waleya nin ka yɔrɔyɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Sorodasi</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Waleya jurunali</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Jurunali laban dɔrɔn de bɛ jira.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>a bɛ waleya</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>a banna rapɔrɔ tɛ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>a ɲɛna</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>a ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>a ma sɔn</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>kunnafoniso tun tɛ se ka sɔrɔ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>kɔnɔ fili</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Waleya dɔ bɛ taa</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind daminɛna %user fɛ %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>A nɔfɛ</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Sigili datugulen don</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Waleya wɛrɛ de bɛ datugulan minɛ (yiriwali walima waleya konsoli kan): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>a banna</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>a bɛ makɔnɔni na</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>a mago tɛ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>a tɛ dɔn</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>a seginna kɔ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>a waleyara</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>a tun bɛna waleya</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>a seginna</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>a tun bɛna segin</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>a ma waleya</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>a bɛ wɛrɛ makɔnɔ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>yɛlɛmali sɔnna</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>yɛlɛmali tun bɛna sɔn</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>a ladegera</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Yɔrɔyɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Tariku</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target segin</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Waleya bɛ segin a ɲɛ ja min tara o la, yɔrɔyɛlɛma kelen bɛ segin n&apos;a ka down() ye. Ja kɔrɔ dɔ seginni ye dɔnnikɛlaw ta ye. U kelen-kelen bɛɛ bɛ waleya kɔfɛ i tɔgɔ la, sisan cogoya ja tali kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Min bɛ se ka segin, o ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Waleya dɔ</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Yɔrɔyɛlɛma kelen</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ja kɔrɔ dɔ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Ɲɛfɔli</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ɔwɔ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ayi</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Tɔgɔ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Tara</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Suguya</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Yɔrɔ minnu ka kan ka segin</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Kunnafoniso</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Dosiye maralenw (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Labɛnw (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Kunnafoniso seginni b&apos;a segin ja waati ma, sesiyɔnw fana: a bɛ se ka kɛ i ka ɲini ka don tugun o kɔfɛ. Fɛn o fɛn yɛlɛmana kabini o waati, o bɛ tunu; sisan cogoya ja bɛ ta fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>N b&apos;a dɔn nin bɛ min segin</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Ja nimɔrɔ sɛbɛn tugun</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ɔwɔ, a segin</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dabila</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Waleya minnu ja tara u ɲɛ.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Sugandi</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Waleya si tɛ yen ja bɛ min fɛ fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Yɔrɔyɛlɛma waleyalen minnu bɛ se k&apos;u yɛrɛ segin (down() b&apos;u fɛ).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Yɔrɔyɛlɛma waleyalen si tɛ down() sɔrɔ.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Ja kɔrɔw (dɔnnikɛlaw)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Ja si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Yɔrɔyɛlɛmaw waleya</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Waleya bɛ taa kɔfɛ i n&apos;a fɔ %user, a ka ɲɛ b&apos;a jira a taa tuma. Yɔrɔyɛlɛma fɔlɔ ɲɛ, sigili ja bɛ ta; ni yɔrɔyɛlɛma dɔ ma ɲɛ, waleya bɛ jɔ ani ja bɛ segin.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Kɔrɔbɔli waleya fɔlɔ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Hali ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Yɔrɔyɛlɛma makɔnɔlenw</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>U bɛ waleya nin bolodacogo la. Kelen taamasiyɛn bɔ walasa k&apos;o ani minnu mago b&apos;a la to waleya nata kama.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>A waleya</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>A bɛ ladonni cogoya daminɛ a waleya tuma.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>U yɛlɛmana u waleyali kɔfɛ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Nin dosiyew tɛ minnu waleyara. Waleya b&apos;u ban ni yɛlɛmali ma sɔn ni sababu ye; u tɛ waleya tugun, checksum kura bɛ sɛbɛn ani sababu bɛ mara sɛgɛsɛgɛli jurunali kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Sɔn yɛlɛmaliw ma</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Mun na</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Labɛn fɔlɔw de lakananen don. Kɛsu kelen-kelen bɛɛ bɛ taabolo kelen to.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Ja tɛ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Ja tɛ waleya ɲɛ ani a kɔfɛ: ni a ma ɲɛ, a tɛ se ka segin a yɛrɛ ma.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Seginni tɛ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Ni a ma ɲɛ, sigili to i n&apos;a fɔ dɛsɛ y&apos;a to cogo min na.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Yɛlɛmali minnu ma mara, olu mara</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>A waleya hali ni labɛnw, jɛnsɛnniw walima desɛnw ka yɛlɛmali dɔw ma mara; u bɛ don ja kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Marali tɛ</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Hali dosiye ani waleya jurunali kana mara (taamasiyɛn ni cili fana tɛ).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Cili tɛ</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>A mara ani taamasiyɛn don a la, nka kana a ci.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Taamasiyɛn tɛ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>A mara ani a ci, nka kana taamasiyɛn don waleya la.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ɔwɔ, nin yɔrɔyɛlɛmaw waleya sisan</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Yɔrɔyɛlɛma si tɛ makɔnɔni na.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Segin hali ma</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Sigili nin yɛlɛmaliw, minnu sɛbɛnna siɲɛ kelen ka kɛ dosiyew ye (kɔnɔkow, kulu, jɔyɔrɔw, labɛnw, schéma) ani minnu bɛ waleya site ka sigili bɛɛ kan bolodacogo kelen na. Waleya bɛ ja ta fɔlɔ, k&apos;a segin ni yɔrɔyɛlɛma dɔ ma ɲɛ, ka a ye min kɛ sɛbɛn, k&apos;a mara ani k&apos;a ci.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Makɔnɔlen %count waleya</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Lajɛ kunba</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>A bɛ makɔnɔni na</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>A banna</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>A ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>A mago tɛ</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Kunnafoniso</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>jagow: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Site ka yɔrɔyɛlɛmaw bɛ migrations/ kɔnɔ, jɛnsɛnni ta bɛ extension/&lt;name&gt;/migrations/ kɔnɔ. U bɛ waleya u tɔgɔw bolodacogo ani u mago bɛ min na o la.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Waleya laban</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Dosiye yɛlɛmana a waleyali kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Yɔrɔyɛlɛma si tɛ yen fɔlɔ. ./console exp:migration:generate --skeleton &lt;name&gt; --apply bɛ fɔlɔ sɛbɛn.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Waleya labanw</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Waleyaw bɛɛ</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Waleya si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Waleya ladegeli mago bɛ migration/run sariya la.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Waleya dɔ bɛ taa: a ladege ni a banna.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Labɛnni</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target tɛ sigili nin ka waleya ye, a tɛ yɔrɔyɛlɛma ye, a tɛ ja ye.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Taamasiyɛn don &quot;Ɔwɔ, a segin&quot; la fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ja kɔrɔ seginni ye dɔnnikɛlaw ta ye: taamasiyɛn don &quot;N b&apos;a dɔn nin bɛ min segin&quot; la.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Ja nimɔrɔ sɛbɛn tugun: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Yɔrɔ kelen walima caman sugandi ka segin.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ja ma ta waleya nin ɲɛ: a ka yɔrɔyɛlɛmaw segin kelen-kelen, walima ja kɔrɔ dɔ segin.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Nin yɔrɔyɛlɛma tɛ se k&apos;a yɛrɛ segin: a ma waleya, walima down() t&apos;a fɛ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formilɛri ma se ka kalan.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Waleya sugandi min ka kan ka taa a fɛ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Taamasiyɛn don &quot;Ɔwɔ, nin yɔrɔyɛlɛmaw waleya sisan&quot; la fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Yɔrɔyɛlɛma kelen walima caman sugandi.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Yɔrɔyɛlɛma dɔ yɛlɛmana a waleyali kɔfɛ: sɔn yɛlɛmali ma ni sababu ye, walima dosiye segin a nɔ na.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Sababu fɔ min na yɔrɔyɛlɛma yɛlɛmalenw sɔnna.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Sababu tɛ se ka tɛmɛ sɛbɛnsun 500 kan.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Waleya min daminɛna yan, o bɛ taa hali bi (%detail). A makɔnɔ fo a ka ban.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Waleya wɛrɛ de bɛ sigili datugulan minɛ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Waleya mago bɛ baarakɛla donnen dɔ la min bɛ yen.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php ci sira porogaramu si ma sɔrɔ. migration.ini [AdminSettings] PhpCliPath labɛn a sira dafalen na.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open datugulen don, o de kosɔn waleya tɛ se ka daminɛ yan. ./console exp:migration:migrate --apply waleya sɛriwɛri kan.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Waleyaw ka kalasɛri tɛ se ka sɛbɛn: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Waleya daminɛna nka a ma a ka porosɛsi nimɔrɔ fɔ. %detail lajɛ.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Min ka kan ka segin, o tɔgɔ fɔ.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Waleya ma se ka daminɛ.</translation>
     </message>
 </context>
 </TS>

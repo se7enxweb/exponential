@@ -15084,6 +15084,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>API GraphQL: punctum finale, schema et area ludi ad quaestiones temptandas.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrationes</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mutationes installationis ut fasciculi servatae: earum status, cursus, exsecutio et revocatio.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79688,6 +79696,888 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mitte mutationes ad /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrationes</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Status rerum legi non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabulae migrationum nondum exstant: ./console exp:upgrade --apply eas creat.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migrationes defecerunt</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Cursus agitur, ab %user incohatus</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Installatio clausa est: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendens</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defecit</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Orbae</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Cursus ultimus</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nullus adhuc</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Omnes migrationes</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Cursus simulatus</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Cursus siccus</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Migrationes pendentes in transactione cucurrerunt quae postea revocata est: nihil servatum est. Infra est quod quaeque in basi datorum mutavit.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Quid cursus nunc faceret. Nihil mutatur: quaeque migratio pendens mutationes quas faceret enumerat, et cursus quid ante et post faceret.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulare</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Exsequi</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Cursus siccus defecit: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulatio PostgreSQL vel SQLite requirit, quorum mutationes schematis revocari possunt; in hac basi datorum consilium infra ostendit quid cursus faceret.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migrationes</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migratio</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Condicio</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Quid faceret</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulatio: %result in %ms msec.</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Nulla migratio adhuc.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Ante et post cursum</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Imago prior</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>capitur, et restituitur si migratio deficit</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>inactiva</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Imago posterior</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>capitur cum cursus successit</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migrationes: %pending pendentes, %done perfectae, %failed defectae.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Historia migrationum</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Omnis cursus cum usore, ambitu, imaginibus et eo quod commissum, signatum et missum est. Cursus defectus vel interruptus resumi potest; cursus cum imagine ante eum capta revocari potest.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Cursus legi non potuerunt: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabulae migrationum nondum exstant: ./console exp:upgrade --apply eas creat.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Monstrare</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnes</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Cursus</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Incohatus</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ab</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Imagines</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repositorium</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ante</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>post</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>missio: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Resumere</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Revocare</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Nullus cursus in hac condicione.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Hic incohati</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Cursus, resumptiones et revocationes in his paginis incohatae, cum relatione cuiusque.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Quid</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Revocatio</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Revocatio %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Cursus %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Quid cursus fecit, eius tabula et acta. Cursus hic incohatus in recessu pergit cum haec pagina clauditur; paginam iterum aperi ut eum sequaris.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Hunc cursum resumere</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Hunc cursum revocare</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Tabula legi non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progressus</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Ab %user incohatus %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Codex inspicitur et imago ante cursum capitur</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id currit (%index ex %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done ex %total perfectae</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migrationes cucurrerunt; imago restituitur si qua defecit</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Imago post cursum capitur, committitur, signatur et mittitur</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Imago restituitur</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Cursus finitus est. Relatio eius oneratur.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Progressus sequi non potuit. Paginam renova ut videas quomodo cursus procedat.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Haec pagina cursum procedentem sequitur.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Renovare</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Relatio</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tempus</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms msec.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Quae cursus ut errores scripsit</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Tabula</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Ambitus</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nulla</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Finitus</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commissio</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Signum</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Missio</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nuntius</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migrationes huius cursus</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Fons</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Acta cursus</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Solus finis actorum monstratur.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>currit</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>sine relatione finitus</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>successit</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>defecit</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>recusatus</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>basis datorum attingi non potuit</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>error internus</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Cursus agitur</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ab %user incohatus %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Sequi</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Installatio clausa est</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Alius cursus clausuram tenet (renovatio vel cursus in consolatorio): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>perfecta</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>pendens</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>non necessaria</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ignota</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>revocata</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>adhibita</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>adhiberetur</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>retracta</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>retraheretur</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>non cucurrit</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>aliam exspectat</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>mutatio accepta</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>mutatio acciperetur</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulata</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrationes</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status rerum</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target retrahere</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Cursus ad imaginem ante eum captam retrahitur, singula migratio per suum down(). Imaginem priorem restituere peritis est. Quodque in recessu tuo nomine currit, post imaginem status praesentis.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Quae retrahi possint legi non potuerunt: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Cursus</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Una migratio</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Imago prior</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descriptio</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ita</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Imago</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Titulus</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Capta</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Genus</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Partes restituendae</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Basis datorum</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Fasciculi repositorii (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Configurationes (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Restitutio basis datorum eam ad tempus imaginis reducit, sessionibus inclusis: fortasse postea iterum inire rogaberis. Omnia ex eo tempore mutata amittuntur; prius imago status praesentis capitur.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Scio quid hoc restituat</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Identificatorem imaginis iterum scribe</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ita, retrahe</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Cursus cum imagine ante eos capta.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Eligere</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Nullus cursus cum imagine adhuc.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Migrationes adhibitae quae se ipsas retrahere possunt (down() habent).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Nulla migratio adhibita down() habet.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Imagines priores (periti)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Nulla imago adhuc.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Migrationes exsequi</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Cursus in recessu ut %user procedit, et pagina eius eum procedentem monstrat. Ante primam migrationem imago installationis capitur; si migratio deficit, cursus consistit et imago restituitur.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Primum cursus siccus</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Status rerum legi non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migrationes pendentes</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Hoc ordine currunt. Notam unius remove ut eam, et quae eam requirunt, in cursum posteriorem relinquas.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Exsequi</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Modum sustentationis dum currit accendit.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Post adhibitionem mutatae</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Hi fasciculi non sunt ii qui adhibiti sunt. Cursus eos recusat nisi mutatio cum causa accipitur; iterum non currunt, nova summa probatoria notatur et causa in actis inspectionis servatur.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Mutationes accipere</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Cur</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Valores praedefiniti tuti sunt. Quaeque capsula gradum omittit.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Sine imagine</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Nulla imago ante et post cursum: defectus sponte restitui non potest.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Sine restitutione</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Post defectum installationem relinque ut defectus eam reliquit.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Mutationes non commissas servare</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Curre quamquam configurationes, extensiones vel designationes mutationes non commissas habent; in imaginem eunt.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Sine commissione</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Fasciculum status et acta cursus noli committere (neque signum neque missionem).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Sine missione</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Committe et signa, sed noli mittere.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Sine signo</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Committe et mitte, sed cursum noli signare.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ita, has migrationes nunc exsequere</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Nulla migratio pendet.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Ad statum rerum redire</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Mutationes huius installationis semel ut fasciculi scriptae (contenta, classes, munera, configurationes, schema) et omni installationi situs eodem ordine adhibitae. Cursus primum imaginem capit, eam restituit si migratio deficit, et quod fecit notat, committit et mittit.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count pendentes exsequi</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Conspectus</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendens</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Perfecta</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defecit</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Non necessaria</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Basis datorum</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transactiones: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migrationes situs in migrations/ sunt, eae extensionis in extension/&lt;name&gt;/migrations/. Ordine nominum suorum et eorum quae requirunt currunt.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Cursus ultimus</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fasciculus post adhibitionem mutatus est.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Nulla migratio adhuc. ./console exp:migration:generate --skeleton &lt;name&gt; --apply primam scribit.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Cursus recentissimi</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Omnes cursus</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Nullus cursus adhuc.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Ad cursum simulandum ratio migration/run requiritur.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Cursus agitur: simula cum finitus erit.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target neque cursus neque migratio neque imago huius installationis est.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Primum nota &quot;Ita, retrahe&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Imaginem priorem restituere peritis est: nota &quot;Scio quid hoc restituat&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Identificatorem imaginis iterum scribe: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Elige saltem unam partem restituendam.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Hic cursus nullam imaginem ante se captam habet: migrationes eius singillatim retrahe, vel imaginem priorem restitue.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Haec migratio se ipsam retrahere non potest: non adhibita est, vel down() non habet.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formula legi non potuit.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Elige cursum resumendum.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Primum nota &quot;Ita, has migrationes nunc exsequere&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Elige saltem unam migrationem.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migratio post adhibitionem mutata est: mutationem cum causa accipe, vel fasciculum restitue.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Da causam cur migrationes mutatae accipiantur.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Causa summum 500 litterarum est.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Cursus hic incohatus adhuc agitur (%detail). Exspecta dum finiatur.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Alius cursus clausuram installationis tenet: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Cursus usorem ingressum qui exstet requirit.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nullum programma php lineae mandatorum inventum est. Pone migration.ini [AdminSettings] PhpCliPath ad viam eius plenam.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open inactivum est, itaque cursus hic incohari non potest. Exsequere ./console exp:migration:migrate --apply in servitore.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>In plicam cursuum scribi non potest: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Cursus incohatus est sed identificatorem processus sui non rettulit. Inspice %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Nomina quid retrahendum sit.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Cursus incohari non potuit.</translation>
     </message>
 </context>
 </TS>

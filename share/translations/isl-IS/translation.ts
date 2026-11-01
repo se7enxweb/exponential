@@ -15081,6 +15081,14 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL-forritaskilin: endapunktur þeirra, skemað og prufusvæði til að prófa fyrirspurnir.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Flutningar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Breytingar á uppsetningunni geymdar sem skrár: staða þeirra, keyrslurnar, keyra og afturkalla.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Sendu breytingaaðgerðir á /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Flutningar</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ekki tókst að lesa stöðuna: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Töflur flutninganna eru ekki til enn: ./console exp:upgrade --apply býr þær til.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count flutningar mistókust</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Keyrsla er í gangi, ræst af %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Uppsetningin er læst: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Í bið</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mistókust</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Munaðarlausir</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Síðasta keyrsla</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>engin enn</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Allir flutningar</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Hermd keyrsla</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Prufukeyrsla</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Flutningarnir í bið keyrðu í færslu sem var afturkölluð á eftir: ekkert var geymt. Hér fyrir neðan er það sem hver þeirra breytti í gagnagrunninum.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Það sem keyrsla myndi gera núna. Engu er breytt: hver flutningur í bið telur upp breytingarnar sem hann myndi gera, og keyrslan það sem hún myndi gera fyrir og eftir.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Herma</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Keyra</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Prufukeyrslan mistókst: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Hermun krefst PostgreSQL eða SQLite, þar sem hægt er að afturkalla breytingar á skema; á þessum gagnagrunni sýnir áætlunin hér fyrir neðan hvað keyrsla myndi gera.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Flutningarnir</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Flutningur</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ástand</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Hvað hann myndi gera</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Hermun: %result á %ms millisek.</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Enginn flutningur enn.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Fyrir og eftir keyrsluna</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Skyndimynd fyrir</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>tekin, og endurheimt ef flutningur mistekst</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>slökkt</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Skyndimynd eftir</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>tekin þegar keyrslan tókst</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total flutningar: %pending í bið, %done lokið, %failed mistókust.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Saga flutninga</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Hver keyrsla með notanda, umhverfi, skyndimyndum og því sem var commit-að, merkt og push-að. Hægt er að halda áfram með keyrslu sem mistókst eða var rofin; keyrslu með skyndimynd tekinni á undan má afturkalla.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ekki tókst að lesa keyrslurnar: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Töflur flutninganna eru ekki til enn: ./console exp:upgrade --apply býr þær til.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sýna</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Allar</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Keyrslur</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ræst</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Af</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Skyndimyndir</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Hugbúnaðarsafn</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aðgerðir</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>fyrir</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>eftir</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ýting: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Halda áfram</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Afturkalla</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Engin keyrsla í þessu ástandi.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Ræst hér</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Keyrslur, framhöld og afturkallanir ræstar á þessum síðum, með skýrslu hverrar.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Hvað</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Niðurstaða</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Afturköllun</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Afturköllun á %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Keyrsla %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Það sem keyrslan gerði, færsla hennar og annáll. Keyrsla ræst hér heldur áfram í bakgrunni þegar þessari síðu er lokað; opnaðu síðuna aftur til að fylgjast með henni.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Halda áfram með þessa keyrslu</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Afturkalla þessa keyrslu</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Ekki tókst að lesa færsluna: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Framvinda</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Ræst af %user kl. %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kóðinn er athugaður og skyndimynd tekin fyrir keyrsluna</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Keyrir %id (%index af %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done af %total lokið</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Flutningarnir hafa keyrt; skyndimyndin er endurheimt ef einn mistókst</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Skyndimynd tekin eftir keyrsluna, commit, merking og push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Skyndimyndin er endurheimt</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Keyrslunni er lokið. Skýrslan er hlaðin.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Ekki tókst að fylgjast með framvindunni. Endurhlaðið síðuna til að sjá hvernig keyrslunni gengur.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Þessi síða fylgist með keyrslunni meðan hún gengur.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Endurhlaða</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Skýrsla</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tímalengd</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisek.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Það sem keyrslan skrifaði út sem villur</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Færsla</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Umhverfi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ekkert</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Lokið</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit-færsla</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Merki</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ýting</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Skilaboð</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Flutningar þessarar keyrslu</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Uppruni</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Annáll keyrslunnar</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Aðeins endir annálsins er sýndur.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>í gangi</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>lauk án skýrslu</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>tókst</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mistókst</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>hafnað</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ekki náðist í gagnagrunninn</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>innri villa</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Keyrsla er í gangi</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ræst af %user kl. %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Fylgjast með</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Uppsetningin er læst</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Önnur keyrsla heldur læsingunni (uppfærsla eða keyrsla á skipanalínu): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>lokið</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>í bið</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ekki þörf</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>óþekkt</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>afturkallaður</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>beittur</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>yrði beitt</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>tekinn til baka</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>yrði tekinn til baka</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ekki keyrður</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>bíður eftir öðrum</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>breyting samþykkt</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>breyting yrði samþykkt</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>hermt</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Flutningar</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Saga</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Afturkalla %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Keyrsla er afturkölluð í skyndimyndina sem tekin var á undan henni, stakur flutningur með down() sínu. Endurheimt eldri skyndimyndar er fyrir sérfræðinga. Hvert um sig keyrir í bakgrunni sem þú, eftir skyndimynd af núverandi stöðu.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Ekki tókst að lesa hvað má afturkalla: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Keyrsla</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Einn flutningur</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Eldri skyndimynd</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Lýsing</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>já</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Skyndimynd</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Heiti</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Tekin</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tegund</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Hlutar til að endurheimta</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Gagnagrunnurinn</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Geymdu skrárnar (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Stillingarnar (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Endurheimt færir gagnagrunninn aftur til tíma skyndimyndarinnar, að lotum meðtöldum: þú gætir þurft að skrá þig inn aftur á eftir. Allt sem hefur breyst síðan glatast; fyrst er tekin skyndimynd af núverandi stöðu.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ég veit hvað þetta endurheimtir</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Sláðu auðkenni skyndimyndarinnar inn aftur</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Já, afturkalla</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hætta við</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Keyrslurnar með skyndimynd tekinni á undan.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Velja</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Engin keyrsla með skyndimynd enn.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Beittu flutningarnir sem geta afturkallað sig sjálfir (þeir hafa down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Enginn beittur flutningur hefur down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Eldri skyndimyndir (sérfræðingar)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Engin skyndimynd enn.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Keyra flutningana</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Keyrslan gengur í bakgrunni sem %user og síða hennar sýnir hana jafnóðum. Fyrir fyrsta flutninginn er tekin skyndimynd af uppsetningunni; ef flutningur mistekst stöðvast keyrslan og skyndimyndin er endurheimt.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Prufukeyrsla fyrst</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Ekki tókst að lesa stöðuna: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Flutningar í bið</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Þeir keyra í þessari röð. Taktu hakið af einum til að geyma hann, og þá sem þarfnast hans, til síðari keyrslu.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Keyra</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Kveikir á viðhaldsham meðan keyrt er.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Breyttir eftir að þeim var beitt</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Þessar skrár eru ekki þær sem var beitt. Keyrsla hafnar þeim nema breytingin sé samþykkt með rökstuðningi; þær eru ekki keyrðar aftur, nýja gátsumman er skráð og rökstuðningurinn geymdur í endurskoðunarannálnum.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Samþykkja breytingarnar</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ástæða</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Sjálfgefnu gildin eru þau öruggu. Hver reitur sleppir einu skrefi.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Engin skyndimynd</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Engin skyndimynd fyrir og eftir keyrsluna: ekki er hægt að endurheimta sjálfkrafa eftir villu.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Engin endurheimt</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Eftir villu, skilja uppsetninguna eftir eins og villan skildi hana eftir.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Halda breytingum sem eru ekki commit-aðar</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Keyra þótt stillingar, viðbætur eða útlit hafi breytingar sem eru ekki commit-aðar; þær fara í skyndimyndina.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Ekkert commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ekki commit-a stöðuskrána og annál keyrslunnar (hvorki merki né push heldur).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Ekkert push</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit-a og merkja, en ekki push-a.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Ekkert merki</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit-a og push-a, en ekki merkja keyrsluna.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Já, keyra þessa flutninga núna</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Enginn flutningur er í bið.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Aftur í stöðuna</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Breytingar á þessari uppsetningu skrifaðar einu sinni sem skrár (efni, klasar, hlutverk, stillingar, skema) og beitt á hverja uppsetningu vefsins í sömu röð. Keyrsla tekur fyrst skyndimynd, endurheimtir hana ef flutningur mistekst, og skráir, commit-ar og push-ar það sem hún gerði.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Keyra %count í bið</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yfirlit</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Í bið</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Lokið</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mistókust</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ekki þörf</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Gagnagrunnur</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>færslur: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Flutningar vefsins eru í migrations/, flutningar viðbótar í extension/&lt;name&gt;/migrations/. Þeir keyra í röð nafna sinna og þess sem þeir þarfnast.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Síðasta keyrsla</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Skránni var breytt eftir að henni var beitt.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Enginn flutningur enn. ./console exp:migration:generate --skeleton &lt;name&gt; --apply skrifar þann fyrsta.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Nýjustu keyrslurnar</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Allar keyrslur</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Engin keyrsla enn.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Hermun keyrslu krefst heimildarinnar migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Keyrsla er í gangi: hermdu þegar henni er lokið.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Uppsetning</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target er hvorki keyrsla, flutningur né skyndimynd þessarar uppsetningar.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Hakaðu fyrst við „Já, afturkalla“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Endurheimt eldri skyndimyndar er fyrir sérfræðinga: hakaðu við „Ég veit hvað þetta endurheimtir“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Sláðu auðkenni skyndimyndarinnar inn aftur: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Veldu að minnsta kosti einn hluta til að endurheimta.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Þessi keyrsla hefur enga skyndimynd tekna á undan: afturkallaðu flutninga hennar einn í einu, eða endurheimtu eldri skyndimynd.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Ekki er hægt að afturkalla þennan flutning einan: honum hefur ekki verið beitt, eða hann hefur ekki down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ekki tókst að lesa eyðublaðið.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Veldu keyrsluna sem á að halda áfram með.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Hakaðu fyrst við „Já, keyra þessa flutninga núna“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Veldu að minnsta kosti einn flutning.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Flutningi var breytt eftir að honum var beitt: samþykktu breytinguna með rökstuðningi, eða settu skrána aftur á sinn stað.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Tilgreindu ástæðuna fyrir því að breyttu flutningarnir eru samþykktir.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Ástæðan má vera í mesta lagi 500 stafir.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Keyrsla ræst hér er enn í gangi (%detail). Bíddu þar til henni lýkur.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Önnur keyrsla heldur læsingu uppsetningarinnar: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Keyrslan þarfnast innskráðs notanda sem er til.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ekkert php skipanalínuforrit fannst. Stilltu migration.ini [AdminSettings] PhpCliPath á fulla slóð þess.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>Slökkt er á proc_open, svo ekki er hægt að ræsa keyrslu hér. Keyrðu ./console exp:migration:migrate --apply á þjóninum.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ekki er hægt að skrifa í möppu keyrslnanna: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Keyrslan var ræst en tilkynnti ekki ferlisauðkenni sitt. Athugaðu %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Tilgreindu hvað á að afturkalla.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ekki tókst að ræsa keyrsluna.</translation>
     </message>
 </context>
 </TS>

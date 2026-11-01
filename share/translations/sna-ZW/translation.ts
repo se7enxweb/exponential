@@ -15142,6 +15142,14 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: magumo ayo, chirongwa uye nzvimbo yekuedza mibvunzo.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Kutama kwedata</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Shanduko dzekuiswa dzakachengetwa semafaira: mamiriro adzo, kumhanyisa, kumhanyisa nekudzosera shure.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Tumira shanduko ku /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Kutama kwedata</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Chimiro hachina kuverengwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Matafura ekutama kwedata haasati avepo: ./console exp:upgrade --apply inoaagadzira.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Kutama kwakakundikana: %count</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Kumhanyisa kuri kuitika, kwakatangwa na%user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Kuiswa kwakakiyiwa: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Rakamirira</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zvakakundikana</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Nherera</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Kumhanyisa kwekupedzisira</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hapana parizvino</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Kutama kwese</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Kumhanyisa kwekuedzesera</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Kumhanyisa kwekuedza</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Kutama kwakamirira kwakamhanya mutransaction yakazodzoserwa shure: hapana chakachengetwa. Pazasi pane zvakashandurwa nekumwe nekumwe mudhatabhesi.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Zvaizoitwa nekumhanyisa izvozvi. Hapana chinoshandurwa: kutama kwega kwega kwakamirira kunonyora shanduko kwaizoita, uye kumhanyisa zvaizoita pamberi napashure.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Edzesera</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Mhanyisa</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Kumhanyisa kwekuedza kwakakundikana: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Kuedzesera kunoda PostgreSQL kana SQLite, idzo shanduko dzeschema dzinogona kudzoserwa shure; padhatabhesi iyi chirongwa chiri pazasi ndizvo zvaizoitwa nekumhanyisa.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Kutama kwedata</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Kutama</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Mamiriro</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Zvaizoita</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Kuedzesera: %result mu%ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Hapana kutama parizvino.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Pamberi uye mushure mekumhanyisa</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Mufananidzo wepamberi</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>unotorwa, uye unodzoreredzwa kana kutama kwakundikana</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kwakadzimwa</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Mufananidzo wepashure</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>unotorwa kana kumhanyisa kwabudirira</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Kutama kwese: %total; kwakamirira: %pending, kwapera: %done, kwakakundikana: %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Nhoroondo yekutama</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Kumhanyisa kwega kwega nemushandisi wako, nharaunda, mifananidzo uye zvakanyorwa, zvakamakwa nezvakasundirwa. Kumhanyisa kwakakundikana kana kwakavhiringwa kunogona kuenderera; kumhanyisa kune mufananidzo wakatorwa pamberi pako kunogona kudzoserwa.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Kumhanyisa hakuna kukwanisa kuverengwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Matafura ekutama kwedata haasati avepo: ./console exp:upgrade --apply inoaagadzira.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ratidza</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zvese</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Kumhanyisa</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Zvakatanga</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Mifananidzo</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Dura</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Zviito</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>pamberi</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>mushure</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>kusundira: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Enderera</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Dzosera shure</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Hapana kumhanyisa kuri mumamiriro aya.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Zvakatangwa pano</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Kumhanyisa, kuenderera nekudzosera shure zvakatangwa pamapeji aya, nemushumo wechimwe nechimwe.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Chii</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Mhedzisiro</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Kudzosera shure</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Kudzosera shure kwe%target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Kumhanyisa %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Zvakaitwa nekumhanyisa, rekodhi yako uye log yako. Kumhanyisa kwakatangwa pano kunoenderera kuseri kana peji iri ravharwa; vhurazve peji kuti ukutevere.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Enderera nekumhanyisa uku</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Dzosera shure kumhanyisa uku</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Rekodhi haina kukwanisa kuverengwa: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Kufambira mberi</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Zvakatangwa na%user pa%time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kuongorora kodhi nekutora mufananidzo pamberi pekumhanyisa</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Kumhanyisa %id (%index pa%total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done pa%total zvapera</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Kutama kwamhanya; kudzorera mufananidzo kana kumwe kwakundikana</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Kutora mufananidzo mushure mekumhanyisa, kunyora, kumaka nekusundira</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Kudzorera mufananidzo</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Kumhanyisa kwapera. Kurodha mushumo wako.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Kufambira mberi hakuna kukwanisa kuteverwa. Rodhazve peji kuti uone kuti kumhanyisa kuri kufamba sei.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Peji iri rinotevera kumhanyisa pakunoenderera.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Rodhazve</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Mushumo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Nguva yakatorwa</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisekondi</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Zvakadhindwa nekumhanyisa sezvikanganiso</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Rekodhi</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Nharaunda</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hapana</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Zvakapera</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kunyora</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Mucherechedzo</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Kusundira</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Meseji</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Kutama kwekumhanyisa uku</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Kwakabva</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Log yekumhanyisa</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Magumo e-log chete ndiwo anoratidzwa.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>kuri kumhanya</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>zvakapera pasina mushumo</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>zvabudirira</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>zvakakundikana</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>zvakarambwa</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>dhatabhesi yanga isingasvikirwe</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>chikanganiso chemukati</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Kumhanyisa kuri kuitika</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind yakatangwa na%user pa%time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Kutevera</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Kuiswa kwakakiyiwa</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Kumwe kumhanyisa kwakabata kiyi (kuvandudza kana kumhanyisa pa console): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>zvapera</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>zvakamirira</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>hazvidiwi</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>hazvizivikanwe</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>zvakadzoserwa shure</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>zvakaiswa</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>zvaizoiswa</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>zvakadzoserwa</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>zvaizodzoserwa</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>hazvina kumhanyiswa</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>zvakamirira chimwe</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>shanduko yagamuchirwa</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>shanduko yaizogamuchirwa</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>zvakaedzeserwa</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Kutama kwedata</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Chimiro</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Nhoroondo</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Dzosera %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Kumhanyisa kunodzoserwa kumufananidzo wakatorwa pamberi pako, kutama kumwe ne down() yako. Kudzorera mufananidzo wekare ndekwenyanzvi. Chimwe nechimwe chinomhanya kuseri sewe, mushure memufananidzo wemamiriro azvino.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Zvinogona kudzoserwa hazvina kukwanisa kuverengwa: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Kumhanyisa</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Kutama kumwe</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Mufananidzo wekare</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Tsananguro</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>hongu</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>kwete</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Mufananidzo</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Zita</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Wakatorwa</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Rudzi</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Zvikamu zvekudzorera</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Dhatabhesi</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Mafaira ekuchengetera (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Marongero (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Kudzorera dhatabhesi kunoidzosera kunguva yemufananidzo, kusanganisira masession: ungazokumbirwa kupinda zvakare mushure. Zvese zvakashanduka kubva ipapo zvinorasika; mufananidzo wemamiriro azvino unotanga kutorwa.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ndinoziva zvinodzorerwa neizvi</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Nyora id yemufananidzo zvakare</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Hongu, dzosera</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanzura</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Kumhanyisa kune mufananidzo wakatorwa pamberi pako.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Sarudza</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Hapana kumhanyisa kune mufananidzo parizvino.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Kutama kwakaiswa kunogona kuzvidzosera kwega (kune down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Hapana kutama kwakaiswa kune down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Mifananidzo yekare (nyanzvi)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Hapana mufananidzo parizvino.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Mhanyisa kutama</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Kumhanyisa kunoenderera kuseri se%user, uye peji rako rinokuratidza pakunoenderera. Pamberi pekutama kwekutanga mufananidzo wekuiswa unotorwa; kana kutama kwakundikana kumhanyisa kunomira uye mufananidzo unodzorerwa.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Tanga nekumhanyisa kwekuedza</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Chimiro hachina kuverengwa: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Kutama kwakamirira</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Kunomhanya muhurongwa uhu. Bvisa chiratidzo pakutama kumwe kuti ukusiye, pamwe nekunokuda, kuti kuzomhanyiswa gare gare.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Kumhanyisa</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Kunobatidza modhi yekugadzirisa panguva yekumhanya.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Zvakashandurwa mushure mekuiswa</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Mafaira aya haasi iwo akaiswa. Kumhanyisa kunoaramba kunze kwekunge shanduko yagamuchirwa nechikonzero; haamhanyiswizve, checksum itsva inonyorwa uye chikonzero chinochengetwa mu audit log.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Gamuchira shanduko</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Sei</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Zvakatarwa kare ndizvo zvakachengeteka. Bhokisi rega rega rinosiya nhanho imwe.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Hapana mufananidzo</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Hapana mufananidzo pamberi nepashure pekumhanyisa: kukundikana hakugone kudzorerwa otomatiki.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Hapana kudzorera</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Mushure mekukundikana, siya kuiswa sezvakasiiwa nekukundikana.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Chengeta shanduko dzisati dzanyorwa</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Mhanyisa kunyangwe marongero, zvekuwedzera kana madhizaini aine shanduko dzisati dzanyorwa; dzinopinda mumufananidzo.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Hapana kunyora</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Usanyora faira rechimiro ne log yekumhanyisa (hapana mucherechedzo kana kusundira).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Hapana kusundira</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Nyora uye maka, asi usasundira.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Hapana mucherechedzo</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Nyora uye sundira, asi usamaka kumhanyisa.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Hongu, mhanyisa kutama uku izvozvi</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Hapana kutama kwakamirira.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Dzokera kuchimiro</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Shanduko dzekuiswa uku dzakanyorwa kamwe chete semafaira (zvirimo, makirasi, mabasa, marongero, schema) uye dzakaiswa pakuiswa kwese kwesaiti muhurongwa humwe chete. Kumhanyisa kunotanga kutora mufananidzo, kuudzorera kana kutama kwakundikana, uye kunonyora, kuchengeta nekusundira zvakaitwa.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Mhanyisa zvakamirira (%count)</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Muchidimbu</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Rakamirira</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Zvapera</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zvakakundikana</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Hazvidiwi</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Dhatabhesi</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>matransaction: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Kutama kwesaiti kuri mu migrations/, kwechiwedzerwa mu extension/&lt;name&gt;/migrations/. Kunomhanya muhurongwa hwemazita akwo nezvakunoda.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Kumhanyisa kwekupedzisira</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Faira rakashanduka mushure mekuiswa.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Hapana kutama parizvino. ./console exp:migration:generate --skeleton &lt;name&gt; --apply inonyora kwekutanga.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Kumhanyisa kwazvino</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Kumhanyisa kwese</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Hapana kumhanyisa parizvino.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Kuedzesera kumhanyisa kunoda mvumo migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Kumhanyisa kuri kuitika: edzesera kana kwapera.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gadziriro</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target hachisi kumhanyisa, kutama kana mufananidzo wekuiswa uku.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Tanga waisa chiratidzo pa &quot;Hongu, dzosera&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Kudzorera mufananidzo wekare ndekwenyanzvi: isa chiratidzo pa &quot;Ndinoziva zvinodzorerwa neizvi&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Nyora id yemufananidzo zvakare: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Sarudza chikamu chimwe chete kana kupfuura kuti chidzorerwe.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Kumhanyisa uku hakuna mufananidzo wakatorwa pamberi pako: dzosera kutama kwako kumwe nekumwe, kana dzorera mufananidzo wekare.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Kutama uku hakugone kudzoserwa kwega: hakuna kuiswa, kana hakuna down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Fomu harina kukwanisa kuverengwa.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Sarudza kumhanyisa kwekuenderera nako.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Tanga waisa chiratidzo pa &quot;Hongu, mhanyisa kutama uku izvozvi&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Sarudza kutama kumwe chete kana kupfuura.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Kutama kwakashanduka mushure mekuiswa: gamuchira shanduko nechikonzero, kana dzosera faira.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Ipa chikonzero nei kutama kwakashandurwa kuchigamuchirwa.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Chikonzero chinogona kuva nemavara 500 chete.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Kumhanyisa kwakatangwa pano kuchiri kuitika (%detail). Mirira kuti kupere.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Kumwe kumhanyisa kwakabata kiyi yekuiswa: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Kumhanyisa kunoda mushandisi akapinda aripo.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Hapana chirongwa che php chemutsara wemirairo chakawanikwa. Isa migration.ini [AdminSettings] PhpCliPath kunzira yacho yakazara.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open yakadzimwa, saka kumhanyisa hakugone kutangwa pano. Mhanyisa ./console exp:migration:migrate --apply pa server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Folda yekumhanyisa haigone kunyorwa: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Kumhanyisa kwakatangwa asi hakuna kuzivisa id yeprocess yako. Ongorora %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Taura zvekudzosera.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Kumhanyisa hakuna kukwanisa kutangwa.</translation>
     </message>
 </context>
 </TS>

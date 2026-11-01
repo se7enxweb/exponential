@@ -15081,6 +15081,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: 엔드포인트, 스키마 및 쿼리를 시험해 볼 수 있는 플레이그라운드.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>마이그레이션</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>파일로 보관된 설치 변경 사항: 상태, 실행 기록, 실행 및 되돌리기.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>뮤테이션은 /api/graphql로 보내십시오.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>마이그레이션</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>상태를 읽을 수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>마이그레이션 테이블이 아직 없습니다: ./console exp:upgrade --apply 로 생성합니다.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>마이그레이션 %count개 실패</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>실행이 진행 중입니다. 시작한 사용자: %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>설치가 잠겨 있습니다: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>보류 중</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>고아 항목</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>마지막 실행</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>아직 없음</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>모든 마이그레이션</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>시뮬레이션 실행</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>모의 실행</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>보류 중인 마이그레이션은 나중에 롤백된 트랜잭션 안에서 실행되었으므로 아무것도 유지되지 않았습니다. 아래는 각 마이그레이션이 데이터베이스에서 변경한 내용입니다.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>지금 실행하면 수행될 작업입니다. 아무것도 변경되지 않습니다. 보류 중인 각 마이그레이션은 수행할 변경 사항을, 실행은 전후에 수행할 작업을 나열합니다.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>시뮬레이션</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>실행</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>모의 실행이 실패했습니다: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>시뮬레이션에는 스키마 변경을 롤백할 수 있는 PostgreSQL 또는 SQLite가 필요합니다. 이 데이터베이스에서는 아래 계획이 실행 시 수행될 작업입니다.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>마이그레이션 목록</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>마이그레이션</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>수행할 작업</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>시뮬레이션: %result (%ms밀리초)</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>아직 마이그레이션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>실행 전후</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>실행 전 스냅숏</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>생성되며 마이그레이션이 실패하면 복원됨</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>꺼짐</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>실행 후 스냅숏</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>실행이 성공하면 생성됨</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>마이그레이션 %total개: 보류 %pending, 완료 %done, 실패 %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>마이그레이션 기록</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>사용자, 환경, 스냅숏과 커밋·태그·푸시된 내용을 포함한 모든 실행입니다. 실패하거나 중단된 실행은 재개할 수 있고, 실행 전 스냅숏이 있는 실행은 되돌릴 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>실행 기록을 읽을 수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>마이그레이션 테이블이 아직 없습니다: ./console exp:upgrade --apply 로 생성합니다.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>전체</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>실행</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>시작</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>실행자</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>스냅숏</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>저장소</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>전</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>후</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>푸시: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>재개</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>되돌리기</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>이 상태의 실행이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>여기서 시작됨</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>이 페이지에서 시작한 실행, 재개, 되돌리기와 각각의 보고서입니다.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>내용</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>결과</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>되돌리기</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target 되돌리기</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>실행 %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>실행이 한 작업, 기록과 로그입니다. 여기서 시작한 실행은 이 페이지를 닫아도 백그라운드에서 계속됩니다. 진행 상황을 보려면 페이지를 다시 여십시오.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>이 실행 재개</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>이 실행 되돌리기</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>기록을 읽을 수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>진행 상황</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%time에 %user이(가) 시작했습니다.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>코드를 확인하고 실행 전 스냅숏을 생성하는 중</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id 실행 중 (%total개 중 %index번째)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total개 중 %done개 완료</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>마이그레이션이 실행되었습니다. 실패한 것이 있으면 스냅숏을 복원하는 중</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>실행 후 스냅숏 생성, 커밋, 태그, 푸시 중</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>스냅숏 복원 중</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>실행이 끝났습니다. 보고서를 불러오는 중입니다.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>진행 상황을 추적할 수 없습니다. 실행 상태를 보려면 페이지를 새로 고치십시오.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>이 페이지는 실행 진행 상황을 따라갑니다.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>새로 고침</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>보고서</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>소요 시간</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms밀리초</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>실행이 오류로 출력한 내용</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>기록</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>환경</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>종료</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>커밋</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>태그</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>푸시</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>메시지</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>이 실행의 마이그레이션</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>출처</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>실행 로그</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>로그의 끝부분만 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>실행 중</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>보고서 없이 종료됨</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>성공</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>거부됨</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>데이터베이스에 연결할 수 없었음</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>내부 오류</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>실행이 진행 중입니다</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%time에 %user이(가) %kind을(를) 시작했습니다.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>따라가기</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>설치가 잠겨 있습니다</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>다른 실행(업그레이드 또는 콘솔에서의 실행)이 잠금을 보유하고 있습니다: %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>완료</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>보류 중</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>필요 없음</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>알 수 없음</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>롤백됨</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>적용됨</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>적용될 예정</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>되돌려짐</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>되돌려질 예정</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>실행되지 않음</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>다른 마이그레이션 대기 중</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>변경 승인됨</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>변경이 승인될 예정</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>시뮬레이션됨</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>마이그레이션</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>기록</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target 되돌리기</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>실행은 그 전에 생성된 스냅숏으로, 개별 마이그레이션은 down()으로 되돌립니다. 이전 스냅숏 복원은 전문가용입니다. 각 작업은 현재 상태의 스냅숏을 생성한 후 사용자 권한으로 백그라운드에서 실행됩니다.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>되돌릴 수 있는 항목을 읽을 수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>실행</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>개별 마이그레이션</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>이전 스냅숏</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>설명</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>아니요</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>스냅숏</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>레이블</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>생성 시각</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>종류</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>복원할 부분</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>데이터베이스</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>저장 파일 (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>설정 (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>데이터베이스를 복원하면 세션을 포함하여 스냅숏 시점으로 되돌아갑니다. 이후 다시 로그인해야 할 수 있습니다. 그 이후 변경된 모든 내용은 사라지며, 먼저 현재 상태의 스냅숏이 생성됩니다.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>무엇이 복원되는지 알고 있습니다</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>스냅숏 ID를 다시 입력하십시오</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>예, 되돌립니다</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>실행 전 스냅숏이 있는 실행입니다.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>선택</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>아직 스냅숏이 있는 실행이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>스스로 되돌릴 수 있는 적용된 마이그레이션입니다(down()이 있음).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>down()이 있는 적용된 마이그레이션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>이전 스냅숏 (전문가용)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>아직 스냅숏이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>마이그레이션 실행</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>실행은 %user 권한으로 백그라운드에서 진행되며 해당 페이지에서 진행 상황을 보여 줍니다. 첫 마이그레이션 전에 설치의 스냅숏이 생성되고, 마이그레이션이 실패하면 실행이 중지되고 스냅숏이 복원됩니다.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>먼저 모의 실행</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>상태를 읽을 수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>보류 중인 마이그레이션</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>이 순서대로 실행됩니다. 체크를 해제하면 해당 마이그레이션과 그에 의존하는 마이그레이션이 다음 실행으로 미뤄집니다.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>실행</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>실행 중에는 유지 관리 모드를 켭니다.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>적용 후 변경됨</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>이 파일들은 적용된 파일과 다릅니다. 변경이 사유와 함께 승인되지 않으면 실행이 이를 거부합니다. 다시 실행되지는 않으며, 새 체크섬이 기록되고 사유는 감사 로그에 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>변경 승인</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>사유</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>기본값이 안전한 설정입니다. 각 체크 상자는 단계 하나를 생략합니다.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>스냅숏 없음</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>실행 전후에 스냅숏을 생성하지 않습니다. 실패 시 자동으로 복원할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>복원 안 함</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>실패 후 설치를 실패한 상태 그대로 둡니다.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>커밋되지 않은 변경 유지</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>설정, 확장, 디자인에 커밋되지 않은 변경이 있어도 실행합니다. 해당 변경은 스냅숏에 포함됩니다.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>커밋 안 함</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>상태 파일과 실행 로그를 커밋하지 않습니다(태그와 푸시도 하지 않음).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>푸시 안 함</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>커밋하고 태그를 달지만 푸시하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>태그 안 함</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>커밋하고 푸시하지만 실행에 태그를 달지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>예, 이 마이그레이션을 지금 실행합니다</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>보류 중인 마이그레이션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>상태로 돌아가기</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>이 설치에 대한 변경 사항(콘텐츠, 클래스, 역할, 설정, 스키마)을 한 번 파일로 작성하여 사이트의 모든 설치에 같은 순서로 적용합니다. 실행은 먼저 스냅숏을 생성하고, 마이그레이션이 실패하면 이를 복원하며, 수행한 작업을 기록, 커밋, 푸시합니다.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>보류 중인 %count개 실행</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>개요</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>보류 중</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>완료</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>필요 없음</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>데이터베이스</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>트랜잭션: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>사이트 마이그레이션은 migrations/에, 확장의 마이그레이션은 extension/&lt;name&gt;/migrations/에 있습니다. 이름 순서와 의존 관계에 따라 실행됩니다.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>마지막 실행</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>적용 후 파일이 변경되었습니다.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>아직 마이그레이션이 없습니다. ./console exp:migration:generate --skeleton &lt;name&gt; --apply 로 첫 번째 마이그레이션을 작성합니다.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>최근 실행</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>모든 실행</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>아직 실행이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>실행을 시뮬레이션하려면 migration/run 정책이 필요합니다.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>실행이 진행 중입니다. 끝난 후에 시뮬레이션하십시오.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target은(는) 이 설치의 실행, 마이그레이션, 스냅숏 중 어느 것도 아닙니다.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>먼저 &quot;예, 되돌립니다&quot;에 체크하십시오.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>이전 스냅숏 복원은 전문가용입니다. &quot;무엇이 복원되는지 알고 있습니다&quot;에 체크하십시오.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>스냅숏 ID를 다시 입력하십시오: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>복원할 부분을 하나 이상 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>이 실행에는 실행 전 스냅숏이 없습니다. 마이그레이션을 하나씩 되돌리거나 이전 스냅숏을 복원하십시오.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>이 마이그레이션은 스스로 되돌릴 수 없습니다. 적용되지 않았거나 down()이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>양식을 읽을 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>재개할 실행을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>먼저 &quot;예, 이 마이그레이션을 지금 실행합니다&quot;에 체크하십시오.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>마이그레이션을 하나 이상 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>적용 후 변경된 마이그레이션이 있습니다. 사유와 함께 변경을 승인하거나 파일을 원래대로 되돌리십시오.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>변경된 마이그레이션을 승인하는 사유를 입력하십시오.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>사유는 최대 500자입니다.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>여기서 시작한 실행이 아직 진행 중입니다(%detail). 끝날 때까지 기다리십시오.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>다른 실행이 설치 잠금을 보유하고 있습니다: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>실행에는 존재하는 로그인 사용자가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php 명령줄 실행 파일을 찾을 수 없습니다. migration.ini [AdminSettings] PhpCliPath에 전체 경로를 설정하십시오.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open이 비활성화되어 있어 여기서 실행을 시작할 수 없습니다. 서버에서 ./console exp:migration:migrate --apply 를 실행하십시오.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>실행 폴더에 쓸 수 없습니다: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>실행이 시작되었지만 프로세스 ID를 알리지 않았습니다. %detail을(를) 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>되돌릴 대상을 지정하십시오.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>실행을 시작할 수 없습니다.</translation>
     </message>
 </context>
 </TS>

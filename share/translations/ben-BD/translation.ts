@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: এর এন্ড পয়েন্ট, স্কিমা এবং কোয়েরি চেষ্টা করার একটি প্লেগ্রাউন্ড।</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ফাইল হিসেবে রাখা ইনস্টলেশনের পরিবর্তন: তাদের অবস্থা, রানগুলো, চালানো ও ফিরিয়ে নেওয়া।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>মিউটেশন /api/graphql-এ পাঠান।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>অবস্থা পড়া যায়নি: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>মাইগ্রেশনের টেবিলগুলো এখনও নেই: ./console exp:upgrade --apply সেগুলো তৈরি করে।</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count টি মাইগ্রেশন ব্যর্থ হয়েছে</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>একটি রান চলছে, শুরু করেছেন %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ইনস্টলেশনটি লক করা আছে: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>মুলতুবি</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যর্থ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>অনাথ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>শেষ রান</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>এখনও নেই</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>সব মাইগ্রেশন</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>সিমুলেটেড রান</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>পরীক্ষামূলক রান</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>মুলতুবি মাইগ্রেশনগুলো একটি ট্রানজ্যাকশনে চলেছিল যা পরে রোলব্যাক করা হয়েছে: কিছুই রাখা হয়নি। নিচে দেখানো হলো প্রতিটি ডাটাবেসে কী পরিবর্তন করেছে।</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>এখন একটি রান কী করত। কিছুই পরিবর্তন হয় না: প্রতিটি মুলতুবি মাইগ্রেশন তার সম্ভাব্য পরিবর্তনগুলো দেখায়, আর রান দেখায় আগে ও পরে সে কী করত।</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>সিমুলেট করুন</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>চালান</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>পরীক্ষামূলক রান ব্যর্থ হয়েছে: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>সিমুলেশনের জন্য PostgreSQL বা SQLite দরকার, যাদের স্কিমা পরিবর্তন রোলব্যাক করা যায়; এই ডাটাবেসে নিচের পরিকল্পনাটি দেখায় একটি রান কী করত।</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>মাইগ্রেশনগুলো</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অবস্থা</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>এটি কী করত</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>সিমুলেশন: %ms মি.সে.-এ %result</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>এখনও কোনো মাইগ্রেশন নেই।</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>রানের আগে ও পরে</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>আগের ক্যাপশন</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>নেওয়া হয়, এবং কোনো মাইগ্রেশন ব্যর্থ হলে পুনরুদ্ধার করা হয়</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>বন্ধ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>পরের ক্যাপশন</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>রান সফল হলে নেওয়া হয়</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total টি মাইগ্রেশন: %pending টি মুলতুবি, %done টি সম্পন্ন, %failed টি ব্যর্থ।</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>মাইগ্রেশনের ইতিহাস</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>প্রতিটি রান তার ব্যবহারকারী, পরিবেশ, ক্যাপশন এবং কী কমিট, ট্যাগ ও পুশ করা হয়েছে তা সহ। ব্যর্থ বা বাধাপ্রাপ্ত রান আবার চালু করা যায়; যে রানের আগে ক্যাপশন নেওয়া হয়েছে তা ফিরিয়ে নেওয়া যায়।</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>রানগুলো পড়া যায়নি: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>মাইগ্রেশনের টেবিলগুলো এখনও নেই: ./console exp:upgrade --apply সেগুলো তৈরি করে।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>দেখান</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সব</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>রানসমূহ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>শুরু</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>কার দ্বারা</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ক্যাপশনসমূহ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>রিপোজিটরি</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>কার্যক্রম</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>আগে</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>পরে</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>পুশ: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>আবার চালু করুন</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ফিরিয়ে নিন</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>এই অবস্থায় কোনো রান নেই।</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>এখানে শুরু করা</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>এই পৃষ্ঠাগুলোতে শুরু করা রান, পুনরারম্ভ ও রোলব্যাক, প্রতিটির প্রতিবেদন সহ।</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>কী</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ফলাফল</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>রোলব্যাক</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target-এর রোলব্যাক</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>রান %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>রানটি কী করেছে, তার রেকর্ড ও লগ। এখানে শুরু করা রান এই পৃষ্ঠা বন্ধ করলেও পটভূমিতে চলতে থাকে; অনুসরণ করতে পৃষ্ঠাটি আবার খুলুন।</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>এই রানটি আবার চালু করুন</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>এই রানটি ফিরিয়ে নিন</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>রেকর্ডটি পড়া যায়নি: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>অগ্রগতি</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user %time-এ শুরু করেছেন।</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>কোড যাচাই করা হচ্ছে এবং রানের আগে ক্যাপশন নেওয়া হচ্ছে</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id চলছে (%total এর মধ্যে %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total এর মধ্যে %done টি সম্পন্ন</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>মাইগ্রেশনগুলো চলেছে; কোনোটি ব্যর্থ হলে ক্যাপশন পুনরুদ্ধার করা হচ্ছে</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>রানের পরে ক্যাপশন নেওয়া, কমিট, ট্যাগ ও পুশ করা হচ্ছে</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ক্যাপশন পুনরুদ্ধার করা হচ্ছে</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>রান শেষ হয়েছে। এর প্রতিবেদন লোড হচ্ছে।</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>অগ্রগতি অনুসরণ করা যায়নি। রান কেমন চলছে দেখতে পৃষ্ঠাটি পুনরায় লোড করুন।</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>রান চলার সময় এই পৃষ্ঠা তা অনুসরণ করে।</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>পুনরায় লোড করুন</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>প্রতিবেদন</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>সময়</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms মি.সে.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>রান ত্রুটি হিসেবে যা দেখিয়েছে</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>রেকর্ড</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>পরিবেশ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>কিছু নেই</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>শেষ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>কমিট</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ট্যাগ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>পুশ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>বার্তা</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>এই রানের মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>উৎস</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>রান লগ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>লগের শুধু শেষ অংশ দেখানো হয়েছে।</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>চলছে</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>প্রতিবেদন ছাড়াই শেষ হয়েছে</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>সফল</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ব্যর্থ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>প্রত্যাখ্যাত</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ডাটাবেসে পৌঁছানো যায়নি</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>অভ্যন্তরীণ ত্রুটি</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>একটি রান চলছে</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind শুরু করেছেন %user, %time-এ।</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>অনুসরণ করুন</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ইনস্টলেশনটি লক করা আছে</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>অন্য একটি রান লক ধরে রেখেছে (একটি আপগ্রেড বা কনসোলের একটি রান): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>সম্পন্ন</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>মুলতুবি</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>প্রয়োজন নেই</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>অজানা</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>রোলব্যাক করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>প্রয়োগ করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>প্রয়োগ করা হতো</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ফিরিয়ে নেওয়া হয়েছে</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ফিরিয়ে নেওয়া হতো</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>চালানো হয়নি</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>অন্যটির জন্য অপেক্ষা করছে</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>পরিবর্তন গৃহীত</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>পরিবর্তন গৃহীত হতো</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>সিমুলেটেড</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্ট্যাটাস</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ইতিহাস</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ফিরিয়ে নিন</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>একটি রান তার আগে নেওয়া ক্যাপশনে ফিরিয়ে নেওয়া হয়, একটি মাইগ্রেশন তার down() দিয়ে। আগের কোনো ক্যাপশন পুনরুদ্ধার করা বিশেষজ্ঞদের জন্য। প্রতিটি বর্তমান অবস্থার একটি ক্যাপশনের পরে আপনার নামে পটভূমিতে চলে।</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>কী ফিরিয়ে নেওয়া যায় তা পড়া যায়নি: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>একটি রান</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>একটি মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>আগের একটি ক্যাপশন</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>বিবরণ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>হ্যাঁ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>না</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ক্যাপশন</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>লেবেল</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>নেওয়া হয়েছে</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ধরন</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>পুনরুদ্ধারের অংশ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ডাটাবেস</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>স্টোরেজ ফাইল (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>সেটিংস (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>পুনরুদ্ধার ডাটাবেসকে ক্যাপশনের সময়ে ফিরিয়ে নেয়, সেশন সহ: পরে আপনাকে আবার সাইন ইন করতে বলা হতে পারে। তারপর থেকে যা কিছু পরিবর্তিত হয়েছে সব হারিয়ে যায়; প্রথমে বর্তমান অবস্থার একটি ক্যাপশন নেওয়া হয়।</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>আমি জানি এটি কী পুনরুদ্ধার করে</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ক্যাপশনের আইডি আবার লিখুন</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>হ্যাঁ, ফিরিয়ে নিন</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>বাতিল করুন</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>যে রানগুলোর আগে ক্যাপশন নেওয়া হয়েছে।</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>বেছে নিন</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>এখনও ক্যাপশনসহ কোনো রান নেই।</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>প্রয়োগ করা যে মাইগ্রেশনগুলো নিজেদের ফিরিয়ে নিতে পারে (তাদের একটি down() আছে)।</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>প্রয়োগ করা কোনো মাইগ্রেশনের down() নেই।</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>আগের ক্যাপশন (বিশেষজ্ঞদের জন্য)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>এখনও কোনো ক্যাপশন নেই।</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>মাইগ্রেশনগুলো চালান</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>রানটি পটভূমিতে %user হিসেবে চলে, এবং এর পৃষ্ঠা চলাকালীন তা দেখায়। প্রথম মাইগ্রেশনের আগে ইনস্টলেশনের একটি ক্যাপশন নেওয়া হয়; কোনো মাইগ্রেশন ব্যর্থ হলে রান থেমে যায় এবং ক্যাপশন পুনরুদ্ধার করা হয়।</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>আগে পরীক্ষামূলক রান</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>অবস্থা পড়া যায়নি: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>মুলতুবি মাইগ্রেশন</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>এগুলো এই ক্রমে চলে। কোনোটি এবং যেগুলো এর ওপর নির্ভর করে সেগুলো পরের রানের জন্য রেখে দিতে টিক তুলে দিন।</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>চালান</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>চলার সময় রক্ষণাবেক্ষণ মোড চালু করে।</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>প্রয়োগের পরে পরিবর্তিত</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>এই ফাইলগুলো প্রয়োগ করা ফাইল নয়। কারণসহ পরিবর্তন গৃহীত না হলে রান এগুলো প্রত্যাখ্যান করে; এগুলো আবার চালানো হয় না, নতুন চেকসাম রেকর্ড করা হয় এবং কারণটি অডিট লগে রাখা হয়।</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>পরিবর্তনগুলো গ্রহণ করুন</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>কেন</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ডিফল্টগুলোই নিরাপদ। প্রতিটি বাক্স একটি ধাপ বাদ দেয়।</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ক্যাপশন নয়</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>রানের আগে ও পরে কোনো ক্যাপশন নয়: ব্যর্থতা স্বয়ংক্রিয়ভাবে পুনরুদ্ধার করা যাবে না।</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>পুনরুদ্ধার নয়</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ব্যর্থতার পরে ইনস্টলেশনটি যেমন আছে তেমনই রেখে দিন।</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>কমিট না করা পরিবর্তন রাখুন</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>সেটিংস, এক্সটেনশন বা ডিজাইনে কমিট না করা পরিবর্তন থাকলেও চালান; সেগুলো ক্যাপশনে যায়।</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>কমিট নয়</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>স্ট্যাটাস ফাইল ও রান লগ কমিট করবেন না (ট্যাগ ও পুশও নয়)।</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>পুশ নয়</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>কমিট ও ট্যাগ করুন, কিন্তু পুশ করবেন না।</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ট্যাগ নয়</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>কমিট ও পুশ করুন, কিন্তু রানটি ট্যাগ করবেন না।</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>হ্যাঁ, এই মাইগ্রেশনগুলো এখনই চালান</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>কোনো মাইগ্রেশন মুলতুবি নেই।</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>স্ট্যাটাসে ফিরে যান</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>এই ইনস্টলেশনের পরিবর্তন, একবার ফাইল হিসেবে লেখা (কনটেন্ট, ক্লাস, রোল, সেটিংস, স্কিমা) এবং সাইটের প্রতিটি ইনস্টলেশনে একই ক্রমে প্রয়োগ করা। একটি রান প্রথমে একটি ক্যাপশন নেয়, কোনো মাইগ্রেশন ব্যর্থ হলে তা পুনরুদ্ধার করে, এবং যা করেছে তা রেকর্ড, কমিট ও পুশ করে।</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count টি মুলতুবি চালান</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>সংক্ষিপ্ত বিবরণ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>মুলতুবি</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>সম্পন্ন</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যর্থ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>প্রয়োজন নেই</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ডাটাবেস</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ট্রানজ্যাকশন: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>সাইটের মাইগ্রেশন migrations/-এ থাকে, এক্সটেনশনের মাইগ্রেশন extension/&lt;name&gt;/migrations/-এ। এগুলো নামের ক্রম ও নির্ভরতা অনুযায়ী চলে।</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>শেষ রান</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>প্রয়োগের পরে ফাইলটি পরিবর্তিত হয়েছে।</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>এখনও কোনো মাইগ্রেশন নেই। ./console exp:migration:generate --skeleton &lt;name&gt; --apply প্রথমটি লেখে।</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>সর্বশেষ রানগুলো</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>সব রান</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>এখনও কোনো রান নেই।</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>রান সিমুলেট করতে migration/run নীতি প্রয়োজন।</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>একটি রান চলছে: শেষ হলে সিমুলেট করুন।</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>সেটআপ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target এই ইনস্টলেশনের কোনো রান, মাইগ্রেশন বা ক্যাপশন নয়।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>প্রথমে “হ্যাঁ, ফিরিয়ে নিন” টিক দিন।</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>আগের ক্যাপশন পুনরুদ্ধার করা বিশেষজ্ঞদের জন্য: “আমি জানি এটি কী পুনরুদ্ধার করে” টিক দিন।</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ক্যাপশনের আইডি আবার লিখুন: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>পুনরুদ্ধারের জন্য অন্তত একটি অংশ বেছে নিন।</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>এই রানের আগে কোনো ক্যাপশন নেওয়া হয়নি: এর মাইগ্রেশনগুলো একে একে ফিরিয়ে নিন, অথবা আগের কোনো ক্যাপশন পুনরুদ্ধার করুন।</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>এই মাইগ্রেশন নিজে থেকে ফিরিয়ে নেওয়া যায় না: এটি প্রয়োগ করা হয়নি, অথবা এর down() নেই।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ফর্মটি পড়া যায়নি।</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>আবার চালু করার জন্য রান বেছে নিন।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>প্রথমে “হ্যাঁ, এই মাইগ্রেশনগুলো এখনই চালান” টিক দিন।</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>অন্তত একটি মাইগ্রেশন বেছে নিন।</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>প্রয়োগের পরে একটি মাইগ্রেশন পরিবর্তিত হয়েছে: কারণসহ পরিবর্তনটি গ্রহণ করুন, অথবা ফাইলটি আগের অবস্থায় ফিরিয়ে দিন।</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>পরিবর্তিত মাইগ্রেশনগুলো কেন গ্রহণ করা হচ্ছে তার কারণ দিন।</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>কারণ সর্বোচ্চ ৫০০ অক্ষরের হতে পারে।</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>এখানে শুরু করা একটি রান এখনও চলছে (%detail)। শেষ হওয়া পর্যন্ত অপেক্ষা করুন।</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>অন্য একটি রান ইনস্টলেশনের লক ধরে রেখেছে: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>রানের জন্য বিদ্যমান একজন সাইন-ইন করা ব্যবহারকারী প্রয়োজন।</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>কোনো php কমান্ড লাইন প্রোগ্রাম পাওয়া যায়নি। migration.ini [AdminSettings] PhpCliPath-এ এর সম্পূর্ণ পাথ সেট করুন।</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open নিষ্ক্রিয়, তাই এখানে রান শুরু করা যায় না। সার্ভারে ./console exp:migration:migrate --apply চালান।</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>রানগুলোর ফোল্ডারে লেখা যায় না: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>রানটি শুরু হয়েছে কিন্তু তার প্রসেস আইডি জানায়নি। %detail পরীক্ষা করুন।</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>কী ফিরিয়ে নিতে হবে তা উল্লেখ করুন।</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>রানটি শুরু করা যায়নি।</translation>
     </message>
 </context>
 </TS>

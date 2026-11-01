@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ปลายทาง สคีมา และพื้นที่ทดลองคิวรี</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ไมเกรชันของการติดตั้ง</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>การเปลี่ยนแปลงของการติดตั้งที่เก็บไว้เป็นไฟล์: สถานะ การเรียกใช้ เรียกใช้และย้อนกลับ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ส่งมิวเทชันไปที่ /api/graphql</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ไมเกรชันของการติดตั้ง</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ไม่สามารถอ่านสถานะได้: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ตารางของไมเกรชันยังไม่มีอยู่: ./console exp:upgrade --apply จะสร้างตารางเหล่านั้น</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>ไมเกรชันล้มเหลว %count รายการ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>มีการเรียกใช้กำลังดำเนินอยู่ เริ่มโดย %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>การติดตั้งถูกล็อก: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>รายการกำพร้า</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>การเรียกใช้ล่าสุด</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ยังไม่มี</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ไมเกรชันทั้งหมด</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>การเรียกใช้แบบจำลอง</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ทดลองเรียกใช้</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ไมเกรชันที่รอดำเนินการถูกเรียกใช้ในทรานแซกชันที่ถูกย้อนกลับภายหลัง: ไม่มีสิ่งใดถูกเก็บไว้ ด้านล่างคือสิ่งที่แต่ละรายการเปลี่ยนแปลงในฐานข้อมูล</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>สิ่งที่การเรียกใช้จะทำในตอนนี้ ไม่มีสิ่งใดถูกเปลี่ยนแปลง: ไมเกรชันที่รอดำเนินการแต่ละรายการแสดงการเปลี่ยนแปลงที่จะทำ และการเรียกใช้แสดงสิ่งที่จะทำก่อนและหลัง</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>จำลอง</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>เรียกใช้</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>การทดลองเรียกใช้ล้มเหลว: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>การจำลองต้องใช้ PostgreSQL หรือ SQLite ซึ่งการเปลี่ยนแปลงสคีมาสามารถย้อนกลับได้ บนฐานข้อมูลนี้ แผนด้านล่างคือสิ่งที่การเรียกใช้จะทำ</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ไมเกรชัน</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ชื่อไมเกรชัน</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>สิ่งที่จะทำ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>การจำลอง: %result ใน %ms มิลลิวินาที</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ยังไม่มีไมเกรชัน</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ก่อนและหลังการเรียกใช้</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>จุดคืนค่าก่อน</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ถูกสร้าง และคืนค่าเมื่อไมเกรชันล้มเหลว</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ปิด</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>จุดคืนค่าหลัง</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ถูกสร้างเมื่อการเรียกใช้สำเร็จ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>ไมเกรชัน %total รายการ: รอดำเนินการ %pending, เสร็จแล้ว %done, ล้มเหลว %failed</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ประวัติไมเกรชัน</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>การเรียกใช้ทุกครั้งพร้อมผู้ใช้ สภาพแวดล้อม จุดคืนค่า และสิ่งที่ถูกคอมมิต ติดแท็ก และพุช การเรียกใช้ที่ล้มเหลวหรือถูกขัดจังหวะสามารถดำเนินการต่อได้ การเรียกใช้ที่มีจุดคืนค่าสร้างไว้ก่อนสามารถย้อนกลับได้</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ไม่สามารถอ่านการเรียกใช้ได้: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ตารางของไมเกรชันยังไม่มีอยู่: ./console exp:upgrade --apply จะสร้างตารางเหล่านั้น</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>การเรียกใช้</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>เริ่มเมื่อ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>โดย</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>จุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>คลังโค้ด</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>การดำเนินการ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ก่อน</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>หลัง</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>พุช: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ดำเนินการต่อ</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ย้อนกลับ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ไม่มีการเรียกใช้ในสถานะนี้</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>เริ่มจากที่นี่</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>การเรียกใช้ การดำเนินการต่อ และการย้อนกลับที่เริ่มจากหน้าเหล่านี้ พร้อมรายงานของแต่ละรายการ</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>อะไร</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>การย้อนกลับ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>การย้อนกลับของ %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>การเรียกใช้ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>สิ่งที่การเรียกใช้ได้ทำ บันทึกและล็อกของการเรียกใช้ การเรียกใช้ที่เริ่มจากที่นี่จะทำงานต่อในเบื้องหลังเมื่อปิดหน้านี้ เปิดหน้านี้อีกครั้งเพื่อติดตาม</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ดำเนินการเรียกใช้นี้ต่อ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ย้อนกลับการเรียกใช้นี้</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ไม่สามารถอ่านบันทึกได้: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ความคืบหน้า</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>เริ่มโดย %user เมื่อ %time</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>กำลังตรวจสอบโค้ดและสร้างจุดคืนค่าก่อนการเรียกใช้</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>กำลังเรียกใช้ %id (%index จาก %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>เสร็จแล้ว %done จาก %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ไมเกรชันถูกเรียกใช้แล้ว กำลังคืนค่าจุดคืนค่าหากมีรายการที่ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>กำลังสร้างจุดคืนค่าหลังการเรียกใช้ คอมมิต ติดแท็ก และพุช</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>กำลังคืนค่าจุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>การเรียกใช้สิ้นสุดแล้ว กำลังโหลดรายงาน</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ไม่สามารถติดตามความคืบหน้าได้ โหลดหน้านี้ใหม่เพื่อดูสถานะของการเรียกใช้</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>หน้านี้ติดตามการเรียกใช้ขณะดำเนินอยู่</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>โหลดใหม่</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>รายงาน</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ระยะเวลา</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms มิลลิวินาที</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ข้อผิดพลาดที่การเรียกใช้แสดงออกมา</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>บันทึก</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>สภาพแวดล้อม</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ไม่มี</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>สิ้นสุดเมื่อ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>คอมมิต</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>แท็ก</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>พุช</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ข้อความ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ไมเกรชันของการเรียกใช้นี้</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ที่มา</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ล็อกการเรียกใช้</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>แสดงเฉพาะส่วนท้ายของล็อก</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>กำลังทำงาน</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>สิ้นสุดโดยไม่มีรายงาน</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>สำเร็จ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ถูกปฏิเสธ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ไม่สามารถเข้าถึงฐานข้อมูลได้</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ข้อผิดพลาดภายใน</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>มีการเรียกใช้กำลังดำเนินอยู่</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind เริ่มโดย %user เมื่อ %time</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ติดตาม</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>การติดตั้งถูกล็อก</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>การเรียกใช้อื่นถือล็อกอยู่ (การอัปเกรดหรือการเรียกใช้บนคอนโซล): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>เสร็จแล้ว</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ไม่จำเป็น</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ไม่ทราบ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ย้อนกลับแล้ว</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>นำไปใช้แล้ว</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>จะถูกนำไปใช้</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ถอนกลับแล้ว</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>จะถูกถอนกลับ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ไม่ได้เรียกใช้</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>รอรายการอื่น</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ยอมรับการเปลี่ยนแปลงแล้ว</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>การเปลี่ยนแปลงจะถูกยอมรับ</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>จำลองแล้ว</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ไมเกรชันของการติดตั้ง</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ประวัติ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>ย้อนกลับ %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>การเรียกใช้จะถูกย้อนกลับไปยังจุดคืนค่าที่สร้างไว้ก่อนหน้า ไมเกรชันเดี่ยวจะย้อนกลับด้วย down() การคืนค่าจุดคืนค่าที่เก่ากว่าเหมาะสำหรับผู้เชี่ยวชาญ แต่ละรายการทำงานในเบื้องหลังในนามของคุณ หลังจากสร้างจุดคืนค่าของสถานะปัจจุบัน</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ไม่สามารถอ่านรายการที่ย้อนกลับได้: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>การเรียกใช้</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ไมเกรชันเดียว</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>จุดคืนค่าที่เก่ากว่า</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>คำอธิบาย</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ใช่</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ไม่</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>จุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ป้ายชื่อ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>สร้างเมื่อ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ชนิด</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ส่วนที่จะคืนค่า</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ฐานข้อมูล</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ไฟล์ที่จัดเก็บ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>การตั้งค่า (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>การคืนค่าฐานข้อมูลจะนำฐานข้อมูลกลับไปยังเวลาของจุดคืนค่า รวมถึงเซสชัน: คุณอาจต้องเข้าสู่ระบบอีกครั้งหลังจากนั้น ทุกสิ่งที่เปลี่ยนแปลงหลังจากนั้นจะสูญหาย โดยจะสร้างจุดคืนค่าของสถานะปัจจุบันก่อน</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ฉันทราบว่าสิ่งนี้คืนค่าอะไร</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>พิมพ์รหัสของจุดคืนค่าอีกครั้ง</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ใช่ ย้อนกลับ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ยกเลิก</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>การเรียกใช้ที่มีจุดคืนค่าสร้างไว้ก่อนหน้า</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>เลือก</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ยังไม่มีการเรียกใช้ที่มีจุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ไมเกรชันที่นำไปใช้แล้วซึ่งย้อนกลับตัวเองได้ (มี down())</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ไม่มีไมเกรชันที่นำไปใช้แล้วรายการใดมี down()</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>จุดคืนค่าที่เก่ากว่า (ผู้เชี่ยวชาญ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ยังไม่มีจุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>เรียกใช้ไมเกรชัน</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>การเรียกใช้จะทำงานในเบื้องหลังในนาม %user และหน้าของการเรียกใช้จะแสดงความคืบหน้า ก่อนไมเกรชันแรกจะมีการสร้างจุดคืนค่าของการติดตั้ง เมื่อไมเกรชันล้มเหลว การเรียกใช้จะหยุดและคืนค่าจุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ทดลองเรียกใช้ก่อน</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ไม่สามารถอ่านสถานะได้: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ไมเกรชันที่รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ไมเกรชันจะทำงานตามลำดับนี้ ยกเลิกการเลือกรายการใดเพื่อเก็บรายการนั้นและรายการที่ต้องใช้รายการนั้นไว้สำหรับการเรียกใช้ครั้งถัดไป</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>เรียกใช้</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>เปิดโหมดบำรุงรักษาระหว่างการทำงาน</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>เปลี่ยนแปลงหลังจากนำไปใช้แล้ว</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ไฟล์เหล่านี้ไม่ใช่ไฟล์ที่ถูกนำไปใช้ การเรียกใช้จะปฏิเสธไฟล์เหล่านี้ เว้นแต่การเปลี่ยนแปลงจะได้รับการยอมรับพร้อมเหตุผล ไฟล์จะไม่ถูกเรียกใช้อีก ค่า checksum ใหม่จะถูกบันทึก และเหตุผลจะถูกเก็บไว้ในล็อกการตรวจสอบ</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ยอมรับการเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>เหตุผล</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ค่าเริ่มต้นคือค่าที่ปลอดภัย แต่ละช่องจะข้ามหนึ่งขั้นตอน</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ไม่สร้างจุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ไม่สร้างจุดคืนค่าก่อนและหลังการเรียกใช้: ความล้มเหลวจะไม่สามารถคืนค่าได้โดยอัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ไม่คืนค่า</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>หลังจากล้มเหลว ให้คงการติดตั้งไว้ในสภาพที่ความล้มเหลวทิ้งไว้</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>เก็บการเปลี่ยนแปลงที่ยังไม่ได้คอมมิต</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>เรียกใช้แม้การตั้งค่า ส่วนขยาย หรือดีไซน์มีการเปลี่ยนแปลงที่ยังไม่ได้คอมมิต การเปลี่ยนแปลงเหล่านั้นจะรวมอยู่ในจุดคืนค่า</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ไม่คอมมิต</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ไม่คอมมิตไฟล์สถานะและล็อกการเรียกใช้ (ไม่ติดแท็กและไม่พุชด้วย)</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ไม่พุช</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>คอมมิตและติดแท็ก แต่ไม่พุช</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ไม่ติดแท็ก</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>คอมมิตและพุช แต่ไม่ติดแท็กการเรียกใช้</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ใช่ เรียกใช้ไมเกรชันเหล่านี้ตอนนี้</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ไม่มีไมเกรชันที่รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>กลับไปที่สถานะ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>การเปลี่ยนแปลงของการติดตั้งนี้ที่เขียนไว้ครั้งเดียวเป็นไฟล์ (เนื้อหา คลาส บทบาท การตั้งค่า สคีมา) และนำไปใช้กับทุกการติดตั้งของไซต์ตามลำดับเดียวกัน การเรียกใช้จะสร้างจุดคืนค่าก่อน คืนค่าเมื่อไมเกรชันล้มเหลว แล้วบันทึก คอมมิต และพุชสิ่งที่ได้ทำ</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>เรียกใช้ %count รายการที่รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ภาพรวม</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>เสร็จแล้ว</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ไม่จำเป็น</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ฐานข้อมูล</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ทรานแซกชัน: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ไมเกรชันของไซต์อยู่ใน migrations/ ไมเกรชันของส่วนขยายอยู่ใน extension/&lt;name&gt;/migrations/ ไมเกรชันจะทำงานตามลำดับชื่อและสิ่งที่ต้องใช้</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>การเรียกใช้ล่าสุด</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ไฟล์ถูกเปลี่ยนแปลงหลังจากนำไปใช้แล้ว</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ยังไม่มีไมเกรชัน ./console exp:migration:generate --skeleton &lt;name&gt; --apply จะเขียนรายการแรก</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>การเรียกใช้ล่าสุด</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>การเรียกใช้ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ยังไม่มีการเรียกใช้</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>การจำลองการเรียกใช้ต้องมีนโยบาย migration/run</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>มีการเรียกใช้กำลังดำเนินอยู่: จำลองเมื่อสิ้นสุดแล้ว</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ตั้งค่าระบบ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ไม่ใช่การเรียกใช้ ไมเกรชัน หรือจุดคืนค่าของการติดตั้งนี้</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>เลือก &quot;ใช่ ย้อนกลับ&quot; ก่อน</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>การคืนค่าจุดคืนค่าที่เก่ากว่าเหมาะสำหรับผู้เชี่ยวชาญ: เลือก &quot;ฉันทราบว่าสิ่งนี้คืนค่าอะไร&quot;</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>พิมพ์รหัสของจุดคืนค่าอีกครั้ง: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>เลือกอย่างน้อยหนึ่งส่วนที่จะคืนค่า</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>การเรียกใช้นี้ไม่มีจุดคืนค่าที่สร้างไว้ก่อน: ย้อนกลับไมเกรชันทีละรายการ หรือคืนค่าจุดคืนค่าที่เก่ากว่า</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ไมเกรชันนี้ไม่สามารถย้อนกลับตัวเองได้: ยังไม่ได้นำไปใช้ หรือไม่มี down()</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ไม่สามารถอ่านแบบฟอร์มได้</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>เลือกการเรียกใช้ที่จะดำเนินการต่อ</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>เลือก &quot;ใช่ เรียกใช้ไมเกรชันเหล่านี้ตอนนี้&quot; ก่อน</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>เลือกอย่างน้อยหนึ่งไมเกรชัน</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ไมเกรชันถูกเปลี่ยนแปลงหลังจากนำไปใช้แล้ว: ยอมรับการเปลี่ยนแปลงพร้อมเหตุผล หรือนำไฟล์เดิมกลับมา</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>ระบุเหตุผลที่ยอมรับไมเกรชันที่ถูกเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>เหตุผลยาวได้ไม่เกิน 500 ตัวอักษร</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>การเรียกใช้ที่เริ่มจากที่นี่ยังดำเนินอยู่ (%detail) รอจนกว่าจะสิ้นสุด</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>การเรียกใช้อื่นถือล็อกของการติดตั้งอยู่: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>การเรียกใช้ต้องมีผู้ใช้ที่เข้าสู่ระบบและมีอยู่จริง</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ไม่พบไบนารีบรรทัดคำสั่ง php ตั้งค่า migration.ini [AdminSettings] PhpCliPath เป็นพาธเต็มของไบนารีนั้น</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ถูกปิดใช้งาน จึงไม่สามารถเริ่มการเรียกใช้จากที่นี่ได้ เรียกใช้ ./console exp:migration:migrate --apply บนเซิร์ฟเวอร์</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ไม่สามารถเขียนโฟลเดอร์ของการเรียกใช้ได้: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>การเรียกใช้เริ่มแล้วแต่ไม่ได้รายงานรหัสโปรเซส ตรวจสอบ %detail</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ระบุสิ่งที่จะย้อนกลับ</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ไม่สามารถเริ่มการเรียกใช้ได้</translation>
     </message>
 </context>
 </TS>

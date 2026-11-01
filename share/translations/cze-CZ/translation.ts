@@ -15567,6 +15567,14 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: koncový bod, schéma a hřiště pro zkoušení dotazů.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrace</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Změny instalace uložené jako soubory: jejich stav, běhy, spuštění a vrácení.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80941,6 +80949,888 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutace posílejte na /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrace</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Stav nelze načíst: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabulky migrací zatím neexistují: vytvoří je ./console exp:upgrade --apply.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Neúspěšné migrace: %count</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Probíhá běh, spustil jej %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Instalace je uzamčena: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Čeká na vyřízení</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neúspěšné</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Osiřelé</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Poslední běh</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>zatím žádný</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Všechny migrace</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simulovaný běh</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Zkušební běh</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Čekající migrace proběhly v transakci, která byla poté vrácena: nic nebylo zachováno. Níže je uvedeno, co každá změnila v databázi.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Co by běh nyní udělal. Nic se nemění: každá čekající migrace uvádí změny, které by provedla, a běh, co by udělal před a po.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulovat</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Spustit</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Zkušební běh selhal: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulace vyžaduje PostgreSQL nebo SQLite, jejichž změny schématu lze vrátit; v této databázi ukazuje plán níže, co by běh udělal.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migrace</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migrace</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Co by udělala</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulace: %result za %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Zatím žádná migrace.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Před během a po něm</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Snímek před</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>pořídí se a obnoví, pokud migrace selže</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vypnuto</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Snímek po</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>pořídí se, když běh uspěl</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Migrací celkem %total: čekající %pending, hotové %done, neúspěšné %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Historie migrací</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Každý běh s uživatelem, prostředím, snímky a tím, co bylo potvrzeno, označeno a odesláno. Neúspěšný nebo přerušený běh lze obnovit; běh se snímkem pořízeným před ním lze vzít zpět.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Běhy nelze načíst: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabulky migrací zatím neexistují: vytvoří je ./console exp:upgrade --apply.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Zobrazit</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vše</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Běhy</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Spuštěno</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Spustil</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Snímky</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitář</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>před</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>odeslání: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Pokračovat</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Vrátit</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Žádný běh v tomto stavu.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Spuštěno zde</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Běhy, pokračování a vrácení spuštěná na těchto stránkách, s hlášením ke každému.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Co</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Výsledek</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Vrácení</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Vrácení %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Běh %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Co běh udělal, jeho záznam a protokol. Běh spuštěný zde pokračuje na pozadí i po zavření této stránky; otevřete stránku znovu, abyste jej mohli sledovat.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Pokračovat v tomto běhu</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Vrátit tento běh</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Záznam nelze načíst: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Průběh</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Spustil %user v %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kontrola kódu a pořízení snímku před během</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Probíhá %id (%index z %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>Hotovo %done z %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migrace proběhly; obnovení snímku, pokud některá selhala</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Pořízení snímku po běhu, potvrzení, označení a odeslání</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Obnovování snímku</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Běh skončil. Načítá se jeho hlášení.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Průběh nelze sledovat. Načtěte stránku znovu a podívejte se, jak běh pokračuje.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Tato stránka sleduje běh v jeho průběhu.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Načíst znovu</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Hlášení</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Doba</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisekund</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Co běh vypsal jako chyby</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Záznam</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Prostředí</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>žádné</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Skončeno</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Potvrzení</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Značka</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Odeslání</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Zpráva</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migrace tohoto běhu</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Zdroj</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Protokol běhu</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Zobrazen je pouze konec protokolu.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>probíhá</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>skončeno bez hlášení</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>úspěšné</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>neúspěšné</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>odmítnuto</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>databáze nebyla dostupná</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>vnitřní chyba</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Probíhá běh</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind spustil %user v %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Sledovat</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Instalace je uzamčena</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Zámek drží jiný běh (aktualizace nebo běh v konzoli): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>hotovo</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>čeká</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>není potřeba</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznámé</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>vráceno</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>použito</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>bylo by použito</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>vzato zpět</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>bylo by vzato zpět</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>nespuštěno</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>čeká na jinou</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>změna přijata</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>změna by byla přijata</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulováno</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrace</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historie</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Vzít zpět %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Běh se vrací ke snímku pořízenému před ním, jednotlivá migrace pomocí své down(). Obnovení staršího snímku je pro odborníky. Každé vrácení běží na pozadí pod vaším uživatelem, po pořízení snímku současného stavu.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Nelze načíst, co lze vzít zpět: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Běh</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Jedna migrace</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Starší snímek</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ano</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Snímek</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Označení</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Pořízeno</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Druh</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Části k obnovení</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Databáze</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Uložené soubory (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Nastavení (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Obnovení vrátí databázi do doby pořízení snímku, včetně relací: poté se možná budete muset znovu přihlásit. Vše, co se od té doby změnilo, bude ztraceno; nejprve se pořídí snímek současného stavu.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Vím, co se tím obnoví</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Zadejte znovu ID snímku</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ano, vzít zpět</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Běhy se snímkem pořízeným před nimi.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Vybrat</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Zatím žádný běh se snímkem.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Použité migrace, které se mohou samy vzít zpět (mají down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Žádná použitá migrace nemá down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Starší snímky (pro odborníky)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Zatím žádný snímek.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Spustit migrace</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Běh probíhá na pozadí jako %user a jeho stránka jej průběžně zobrazuje. Před první migrací se pořídí snímek instalace; když migrace selže, běh se zastaví a snímek se obnoví.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Nejprve zkušební běh</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Stav nelze načíst: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Čekající migrace</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Spouštějí se v tomto pořadí. Zrušte zaškrtnutí u některé, chcete-li ji i migrace, které ji vyžadují, ponechat na pozdější běh.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Spustit</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Během běhu zapne režim údržby.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Změněno po použití</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Tyto soubory nejsou ty, které byly použity. Běh je odmítne, pokud změna není přijata s odůvodněním; znovu se nespouštějí, nový kontrolní součet se zaznamená a odůvodnění se uchová v auditním protokolu.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Přijmout změny</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Proč</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Výchozí volby jsou bezpečné. Každé políčko vynechá jeden krok.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Bez snímku</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Žádný snímek před během a po něm: selhání nelze automaticky obnovit.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Bez obnovení</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Po selhání ponechat instalaci tak, jak ji selhání zanechalo.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Ponechat nepotvrzené změny</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Spustit, i když nastavení, rozšíření nebo vzhledy mají nepotvrzené změny; ty se dostanou do snímku.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Bez potvrzení</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Nepotvrzovat soubor stavu a protokol běhu (ani značku, ani odeslání).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Bez odeslání</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Potvrdit a označit, ale neodesílat.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Bez značky</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Potvrdit a odeslat, ale běh neoznačovat.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ano, spustit tyto migrace nyní</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Žádná migrace nečeká.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Zpět na stav</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Změny této instalace jednou zapsané jako soubory (obsah, třídy, role, nastavení, schéma) a použité na každou instalaci webu ve stejném pořadí. Běh nejprve pořídí snímek, obnoví jej, když migrace selže, a zaznamená, potvrdí a odešle, co udělal.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Spustit čekající (%count)</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Přehled</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Čeká na vyřízení</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hotovo</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neúspěšné</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Není potřeba</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databáze</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transakce: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migrace webu jsou v migrations/, migrace rozšíření v extension/&lt;name&gt;/migrations/. Spouštějí se v pořadí svých názvů a závislostí.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Poslední běh</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Soubor se po použití změnil.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Zatím žádná migrace. První zapíše ./console exp:migration:generate --skeleton &lt;name&gt; --apply.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Poslední běhy</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Všechny běhy</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Zatím žádný běh.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Simulace běhu vyžaduje oprávnění migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Probíhá běh: simulujte, až skončí.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target není běh, migrace ani snímek této instalace.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Nejprve zaškrtněte „Ano, vzít zpět“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Obnovení staršího snímku je pro odborníky: zaškrtněte „Vím, co se tím obnoví“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Zadejte znovu ID snímku: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Vyberte alespoň jednu část k obnovení.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Tento běh nemá snímek pořízený před ním: vezměte jeho migrace zpět jednu po druhé, nebo obnovte starší snímek.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Tuto migraci nelze vzít zpět samostatně: není použita, nebo nemá down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulář nelze načíst.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Vyberte běh, ve kterém se má pokračovat.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Nejprve zaškrtněte „Ano, spustit tyto migrace nyní“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Vyberte alespoň jednu migraci.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migrace se po použití změnila: přijměte změnu s odůvodněním, nebo vraťte soubor zpět.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Uveďte, proč se změněné migrace přijímají.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Odůvodnění může mít nejvýše 500 znaků.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Běh spuštěný zde stále probíhá (%detail). Počkejte, až skončí.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Zámek instalace drží jiný běh: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Běh vyžaduje přihlášeného existujícího uživatele.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nebyl nalezen program php pro příkazový řádek. Nastavte v migration.ini [AdminSettings] PhpCliPath na jeho úplnou cestu.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open je zakázáno, proto zde nelze běh spustit. Spusťte na serveru ./console exp:migration:migrate --apply.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Do složky běhů nelze zapisovat: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Běh byl spuštěn, ale nenahlásil ID svého procesu. Zkontrolujte %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Uveďte, co se má vzít zpět.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Běh nelze spustit.</translation>
     </message>
 </context>
 </TS>

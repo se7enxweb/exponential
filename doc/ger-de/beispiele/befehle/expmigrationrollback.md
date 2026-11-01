@@ -56,6 +56,7 @@ command prints the steps to restore by hand.
 | `--no-safety-caption` |  | Wiederherstellen, ohne zuerst einen Sicherungspunkt des aktuellen Zustands anzulegen; auf einer Produktivinstallation ohne --force-no-caption verweigert |
 | `--force-no-caption` |  | Mit --no-safety-caption auf einer Produktivinstallation: trotzdem ohne Sicherungspunkt wiederherstellen |
 | `--no-verify` |  | Die Prüfung nach der Wiederherstellung auslassen |
+| `--progress` | erforderlich | Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

@@ -70,19 +70,19 @@ RequirePolicy=disabled
 
 ## HardLimit
 
-> Allows setting a Hard Limit to the subtree method to prevent the load of very large subtrees  
->  reducing server load and risk of DOS attacks.  
->  false disables the feature, any integer will set the hard limit.  
->  for example: a hard limit of 100 will allow limiting to 30 or 40, but will replace a  
->               limit of 150.  
+> The most items one subtree (and expsubitems rows) request returns, whatever limit it asks  
+> for: a request for a million children of a large folder would load them all. A larger  
+> limit is replaced by this one, a smaller one is kept: with 500, a limit of 30 stays 30 and  
+> 1000 becomes 500. 500 is the largest page size the admin's sub-items list offers.  
+> false (or 0) switches the limit off, as it was before 6.0.15.  
 
-Default: `false`.
+Default: `500`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/ezjscore.ini.append.php
 [ezjscServer_ezjscnode]
-HardLimit=false
+HardLimit=500
 */ ?>
 ```
 

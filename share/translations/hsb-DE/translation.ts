@@ -15142,6 +15142,14 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: jeho kónčny dypk, šema a hrajkanišćo za wupruwowanje naprašowanjow.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Změny instalacije jako dataje: jich staw, běhi, wuwjesć a wróćo wzać.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Pósćelće mutacije na /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Staw njeda so čitać: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabele migracijow hišće njeeksistuja: ./console exp:upgrade --apply je wutwori.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migracijow je so njeporadźiło</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Běh je w přewjedźenju, startowany wot %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Instalacija je zawrjena: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Čakacy</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njewuspěšny</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Syroty</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Posledni běh</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hišće žadyn</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Wšě migracije</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simulowany běh</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Pruwowy běh</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Čakace migracije běžachu w transakciji, kotraž bu potom wróćo wzata: ničo njebu wobchowane. Deleka steji, štož je kóžda w datowej bance změniła.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Štož by běh nětko činił. Ničo so njezměni: kóžda čakaca migracija nalistuje změny, kotrež by činiła, a běh, štož by do toho a po tym činił.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulować</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Wuwjesć</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Pruwowy běh je so njeporadźił: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Simulacija trjeba PostgreSQL abo SQLite, kotrychž změny šemy dadźa so wróćo wzać; na tutej datowej bance pokazuje plan deleka, štož by běh činił.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migracija</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staw</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Štož by činiła</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulacija: %result w %ms milisekundach</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Hišće žana migracija.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Před a po běhu</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Wobraz do toho</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>so zhotowi a wobnowi, hdyž so migracija njeporadźi</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wupinjene</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Wobraz po tym</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>so zhotowi, hdyž je so běh poradźił</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migracijow: %pending čakacych, %done dokónčenych, %failed njewuspěšnych.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Historija migracijow</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Kóždy běh z wužiwarjom, wokolinu, wobrazami a tym, štož bu zapodate, woznamjenjene a wotpósłane. Njewuspěšny abo přetorhnjeny běh da so pokročować; běh z wobrazom do toho da so wróćo wzać.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Běhi njedadźa so čitać: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Tabele migracijow hišće njeeksistuja: ./console exp:upgrade --apply je wutwori.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wšě</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Běhi</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startowany</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wot</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Wobrazy</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitorij</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcije</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>do toho</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>po tym</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>wotpósłanje: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Pokročować</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Wróćo wzać</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Žadyn běh w tutym stawje.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Tu startowane</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Na tutych stronach startowane běhi, pokročowanja a wróćowzaća ze rozprawu kóždeho.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Što</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wuslědk</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Wróćowzaće</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Wróćowzaće %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Běh %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Štož je běh činił, jeho zapisk a jeho protokol. Tu startowany běh dźe w pozadku dale, hdyž so tuta strona začini; wočińće stronu znowa, zo byšće jón slědźili.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Tutón běh pokročować</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Tutón běh wróćo wzać</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Zapisk njeda so čitać: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Postup</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Startowany wot %user %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kod so přepruwuje a před běhom so wobraz zhotowi</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id běži (%index z %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done z %total dokónčene</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Migracije su běželi; wobraz so wobnowja, jeli so jedna njeporadźi</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Wobraz po běhu, zapodaće, woznamjenjenje a wotpósłanje</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Wobraz so wobnowja</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Běh je skónčeny. Jeho rozprawa so začituje.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Postup njeda so slědźić. Začitajće stronu znowa, zo byšće widźeli, kak daloko je běh.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Tuta strona slědźi běh, mjeztym zo běži.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Znowa začitać</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rozprawa</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Traće</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milisekundow</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Štož je běh jako zmylki wudał</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Zapisk</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Wokolina</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>žadyn</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Skónčeny</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Zapodaće</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Wotpósłanje</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Zdźělenka</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migracije tutoho běha</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Žórło</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Protokol běha</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Jenož kónc protokola so pokazuje.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>běži</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>bjez rozprawy skónčeny</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>poradźeny</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>njewuspěšny</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wotpokazany</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>datowa banka njebě docpějomna</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>nutřkowny zmylk</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Běh je w přewjedźenju</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind startowany wot %user %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Slědźić</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Instalacija je zawrjena</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Druhi běh dźerži zawrjenje (aktualizacija abo běh na konsoli): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>dokónčena</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>čakaca</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>njetrěbna</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>njeznata</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>wróćo wzata</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>nałožena</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>by so nałožiła</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>wotwołana</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>by so wotwołała</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>njeje běžała</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>čaka na druhu</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>změna přiwzata</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>změna by so přiwzała</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulowana</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Staw</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historija</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target wróćo wzać</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Běh so na wobraz do njeho wróćo staji, jednotliwa migracija ze swojim down(). Wobnowjenje zašłeho wobraza je za fachowcow. Kóžde wróćowzaće běži w pozadku jako Wy, po wobrazu aktualneho stawa.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Štož da so wróćo wzać, njeda so čitać: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Běh</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Jedna migracija</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Zašły wobraz</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Wopisanje</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>haj</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ně</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Wobraz</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Pomjenowanje</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Zhotowjeny</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Družina</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Dźěle, kotrež maja so wobnowić</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Datowa banka</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Składowane dataje (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Nastajenja (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Wobnowjenje staji datowu banku na čas wobraza wróćo, posedźenja zapřijate: potom dyrbiće so snano znowa přizjewić. Wšitko, štož je so wot toho časa změniło, so zhubi; najprjedy so zhotowi wobraz aktualneho stawa.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Wěm, štož to wobnowi</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Zapodajće ID wobraza hišće raz</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Haj, wróćo wzać</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Přetorhnyć</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Běhi z wobrazom do nich.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Wubrać</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Hišće žadyn běh z wobrazom.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Nałožene migracije, kotrež móža so same wróćo wzać (maja down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Žana nałožena migracija nima down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Zašłe wobrazy (fachowcy)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Hišće žadyn wobraz.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Migracije wuwjesć</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Běh wotměwa so w pozadku jako %user a jeho strona jón při tym pokazuje. Před prěnjej migraciju so wobraz instalacije zhotowi; hdyž so migracija njeporadźi, běh zastanje a wobraz so wobnowi.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Najprjedy pruwowy běh</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Staw njeda so čitać: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Čakace migracije</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Běža w tutym porjedźe. Wotstrońće křižik pola jedneje, zo byšće ju a te, kotrež wot njeje wotwisuja, za pozdźiši běh wostajili.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Wuwjesć</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Zapina wothladowanski modus, mjeztym zo běži.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Po nałoženju změnjene</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Tute dataje njejsu te nałožene. Běh je wotpokaza, chibazo so změna z wopodstatnjenjom přiwozmje; znowa njeběža, nowa pruwowa suma so zapisa a wopodstatnjenje so w protokolu awdita wobchowa.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Změny přiwzać</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Čehodla</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Standardne nastajenja su te wěste. Kóžde kašćik wuwostaji jedyn krok.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Žadyn wobraz</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Žadyn wobraz před a po běhu: njeporadźenje njeda so awtomatisce wobnowić.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Žane wobnowjenje</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Po njeporadźenju instalaciju tak wostajić, kaž je ju njeporadźenje wostajiło.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Njezapodate změny wobchować</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Běžeć, hačrunjež nastajenja, rozšěrjenja abo designy maja njezapodate změny; woni přińdu do wobraza.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Žane zapodaće</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Statusowu dataju a protokol běha njezapodać (tež žana etiketa a žane wotpósłanje).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Žane wotpósłanje</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Zapodać a woznamjenić, ale njewotpósłać.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Žana etiketa</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Zapodać a wotpósłać, ale běh njewoznamjenić.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Haj, tute migracije nětko wuwjesć</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Žana migracija nječaka.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Wróćo k stawej</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Změny tuteje instalacije, jónu jako dataje napisane (wobsah, klasy, róle, nastajenja, šema) a na kóždu instalaciju sydła w samsnym porjedźe nałožene. Běh najprjedy wobraz zhotowi, wobnowi jón, hdyž so migracija njeporadźi, a zapisa, zapoda a wotpósła, štož je činił.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count čakacych wuwjesć</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Přehlad</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Čakace</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hotowe</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njewuspěšne</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Njetrěbne</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datowa banka</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transakcije: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migracije sydła su w migrations/, te rozšěrjenja w extension/&lt;name&gt;/migrations/. Běža w porjedźe swojich mjenow a swojich wotwisnosćow.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Posledni běh</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Dataja je so po nałoženju změniła.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Hišće žana migracija. ./console exp:migration:generate --skeleton &lt;name&gt; --apply napisa prěnju.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Najnowše běhi</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Wšě běhi</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Hišće žadyn běh.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Simulowanje běha trjeba prawidło migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Běh je w přewjedźenju: simulujće, hdyž je skónčeny.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Zarjadowanje</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target njeje ani běh, ani migracija, ani wobraz tuteje instalacije.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Stajće najprjedy křižik pola „Haj, wróćo wzać“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Wobnowjenje zašłeho wobraza je za fachowcow: stajće křižik pola „Wěm, štož to wobnowi“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Zapodajće ID wobraza hišće raz: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Wubjerće znajmjeńša jedyn dźěl k wobnowjenju.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Tutón běh nima wobraz do njeho: wzmiće jeho migracije jednotliwje wróćo abo wobnowće zašły wobraz.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Tuta migracija njemóže so sama wróćo wzać: njeje nałožena abo nima down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formular njeda so čitać.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Wubjerće běh, kotryž ma so pokročować.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Stajće najprjedy křižik pola „Haj, tute migracije nětko wuwjesć“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Wubjerće znajmjeńša jednu migraciju.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Migracija je so po nałoženju změniła: přiwozmiće změnu z wopodstatnjenjom abo wobnowće dataju.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Podajće, čehodla so změnjene migracije přiwozmu.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Wopodstatnjenje ma najwjace 500 znamješkow.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Tu startowany běh hišće běži (%detail). Čakajće, doniž njeje skónčeny.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Druhi běh dźerži zawrjenje instalacije: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Běh trjeba přizjewjeneho wužiwarja, kotryž eksistuje.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Žadyn php-program za přikazowu linku njebu namakany. Stajće migration.ini [AdminSettings] PhpCliPath na jeho dospołnu šćežku.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open je znjemóžnjeny, tohodla njeda so tu běh startować. Wuwjedźće ./console exp:migration:migrate --apply na serwerje.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Do rjadowaka běhow njeda so pisać: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Běh bu startowany, ale njeje swój ID procesa zdźělił. Přepruwujće %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Podajće, štož ma so wróćo wzać.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Běh njeda so startować.</translation>
     </message>
 </context>
 </TS>

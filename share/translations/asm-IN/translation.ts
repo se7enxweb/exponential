@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ইয়াৰ এণ্ড পইণ্ট, স্কিমা আৰু কোৱেৰী পৰীক্ষা কৰিবলৈ এখন প্লেগ্ৰাউণ্ড।</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>স্থানান্তৰণসমূহ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ফাইল হিচাপে ৰখা ইনষ্টলেশ্বনৰ পৰিৱৰ্তন: সেইবোৰৰ স্থিতি, চলনসমূহ, চলোৱা আৰু উভতাই নিয়া।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>মিউটেচন /api/graphql লৈ পঠিয়াওক।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>স্থানান্তৰণসমূহ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>স্থিতি পঢ়িব পৰা নগ&apos;ল: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>স্থানান্তৰণৰ টেবুলবোৰ এতিয়াও নাই: ./console exp:upgrade --apply এ সেইবোৰ সৃষ্টি কৰে।</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count টা স্থানান্তৰণ ব্যৰ্থ হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>এটা চলন চলি আছে, %user এ আৰম্ভ কৰিছে</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ইনষ্টলেশ্বন লক কৰা আছে: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>বিবেচনাধীন</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যৰ্থ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>অনাথ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>শেষ চলন</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>এতিয়ালৈ নাই</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>সকলো স্থানান্তৰণ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>অনুকৃত চলন</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>পৰীক্ষামূলক চলন</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>বিবেচনাধীন স্থানান্তৰণবোৰ এটা লেনদেনত চলিছিল যিটো পিছত উভতাই নিয়া হ&apos;ল: একো ৰখা নহ&apos;ল। তলত প্ৰতিটোৱে ডাটাবেছত কি সলনি কৰিলে দেখুওৱা হৈছে।</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>এটা চলনে এতিয়া কি কৰিব। একো সলনি কৰা নহয়: প্ৰতিটো বিবেচনাধীন স্থানান্তৰণে ই কৰিব লগা পৰিৱৰ্তনবোৰ, আৰু চলনে আগত আৰু পিছত কি কৰিব তাক তালিকাভুক্ত কৰে।</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>অনুকৰণ কৰক</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>চলাওক</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>পৰীক্ষামূলক চলন ব্যৰ্থ হ&apos;ল: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>অনুকৰণৰ বাবে PostgreSQL বা SQLite লাগে, যাৰ স্কিমা পৰিৱৰ্তন উভতাই নিব পাৰি; এই ডাটাবেছত তলৰ পৰিকল্পনাখনে চলনে কি কৰিব দেখুৱায়।</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>স্থানান্তৰণসমূহ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>স্থানান্তৰণ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অৱস্থা</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ই কি কৰিব</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>অনুকৰণ: %ms মি.ছে.ত %result</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>এতিয়ালৈ কোনো স্থানান্তৰণ নাই।</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>চলনৰ আগত আৰু পিছত</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>আগৰ স্নেপশ্বট</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>লোৱা হয়, আৰু স্থানান্তৰণ ব্যৰ্থ হ&apos;লে পুনৰুদ্ধাৰ কৰা হয়</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>বন্ধ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>পিছৰ স্নেপশ্বট</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>চলন সফল হ&apos;লে লোৱা হয়</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total টা স্থানান্তৰণ: %pending বিবেচনাধীন, %done সম্পূৰ্ণ, %failed ব্যৰ্থ।</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>স্থানান্তৰণৰ ইতিহাস</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>প্ৰতিটো চলন ইয়াৰ ব্যৱহাৰকাৰী, পৰিৱেশ, স্নেপশ্বট আৰু কি কমিট, টেগ আৰু পুশ্ব কৰা হ&apos;ল তাৰ সৈতে। ব্যৰ্থ বা বাধাপ্ৰাপ্ত চলন পুনৰ আৰম্ভ কৰিব পাৰি; আগতে স্নেপশ্বট লোৱা চলন উভতাই নিব পাৰি।</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>চলনসমূহ পঢ়িব পৰা নগ&apos;ল: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>স্থানান্তৰণৰ টেবুলবোৰ এতিয়াও নাই: ./console exp:upgrade --apply এ সেইবোৰ সৃষ্টি কৰে।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সকলো</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>চলনসমূহ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>আৰম্ভ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>কৰ্তা</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>স্নেপশ্বটসমূহ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ৰিপজিটৰী</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>কাৰ্য</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>আগত</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>পিছত</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>পুশ্ব: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>পুনৰ আৰম্ভ কৰক</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>উভতাই নিয়ক</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>এই অৱস্থাত কোনো চলন নাই।</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ইয়াত আৰম্ভ কৰা</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>এই পৃষ্ঠাবোৰত আৰম্ভ কৰা চলন, পুনৰাৰম্ভ আৰু উভতাই নিয়া কাৰ্য, প্ৰতিটোৰ প্ৰতিবেদনৰ সৈতে।</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>কি</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ফলাফল</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>উভতাই নিয়া</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target উভতাই নিয়া</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>চলন %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>চলনে কি কৰিলে, ইয়াৰ ৰেকৰ্ড আৰু লগ। ইয়াত আৰম্ভ কৰা চলন এই পৃষ্ঠা বন্ধ কৰিলেও নেপথ্যত চলি থাকে; ইয়াক অনুসৰণ কৰিবলৈ পৃষ্ঠাখন পুনৰ খোলক।</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>এই চলন পুনৰ আৰম্ভ কৰক</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>এই চলন উভতাই নিয়ক</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ৰেকৰ্ড পঢ়িব পৰা নগ&apos;ল: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>অগ্ৰগতি</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user এ %time ত আৰম্ভ কৰিছিল।</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ক&apos;ড পৰীক্ষা কৰা হৈছে আৰু চলনৰ আগত স্নেপশ্বট লোৱা হৈছে</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id চলি আছে (%total ৰ %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total ৰ %done সম্পূৰ্ণ</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>স্থানান্তৰণবোৰ চলিল; এটা ব্যৰ্থ হ&apos;লে স্নেপশ্বট পুনৰুদ্ধাৰ কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>চলনৰ পিছত স্নেপশ্বট লোৱা, কমিট, টেগ আৰু পুশ্ব কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>স্নেপশ্বট পুনৰুদ্ধাৰ কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>চলন শেষ হ&apos;ল। ইয়াৰ প্ৰতিবেদন লোড কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>অগ্ৰগতি অনুসৰণ কৰিব পৰা নগ&apos;ল। চলনটো কেনেকৈ চলি আছে চাবলৈ পৃষ্ঠাখন পুনৰ লোড কৰক।</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>এই পৃষ্ঠাই চলনটো চলি থকাৰ সময়ত অনুসৰণ কৰে।</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>পুনৰ লোড কৰক</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>প্ৰতিবেদন</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>সময়কাল</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms মি.ছে.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>চলনে ত্ৰুটি হিচাপে যি প্ৰিণ্ট কৰিলে</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ৰেকৰ্ড</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>পৰিৱেশ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>নাই</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>শেষ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>কমিট</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>টেগ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>পুশ্ব</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>বাৰ্তা</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>এই চলনৰ স্থানান্তৰণসমূহ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>উৎস</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>চলনৰ লগ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>লগৰ কেৱল শেষ অংশ দেখুওৱা হৈছে।</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>চলি আছে</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>প্ৰতিবেদন অবিহনে শেষ হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>সফল</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ব্যৰ্থ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>অস্বীকৃত</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ডাটাবেছ উপলব্ধ নাছিল</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>আভ্যন্তৰীণ ত্ৰুটি</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>এটা চলন চলি আছে</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user এ %time ত আৰম্ভ কৰিছিল।</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>অনুসৰণ কৰক</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ইনষ্টলেশ্বন লক কৰা আছে</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>আন এটা চলনে লকটো ধৰি আছে (এটা আপগ্ৰেড বা কনচ&apos;লত এটা চলন): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>সম্পূৰ্ণ</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>বিবেচনাধীন</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>প্ৰয়োজন নাই</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>অজ্ঞাত</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>উভতাই নিয়া হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>প্ৰয়োগ কৰা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>প্ৰয়োগ কৰা হ&apos;ব</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ঘূৰাই লোৱা হ&apos;ল</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ঘূৰাই লোৱা হ&apos;ব</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>চলোৱা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>আন এটাৰ বাবে অপেক্ষা কৰিছে</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>পৰিৱৰ্তন গৃহীত</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>পৰিৱৰ্তন গৃহীত হ&apos;ব</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>অনুকৃত</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>স্থানান্তৰণসমূহ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ইতিহাস</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ঘূৰাই লওক</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>এটা চলনক ইয়াৰ আগত লোৱা স্নেপশ্বটলৈ ঘূৰাই নিয়া হয়, এটা স্থানান্তৰণক ইয়াৰ down() ৰ দ্বাৰা। আগৰ স্নেপশ্বট পুনৰুদ্ধাৰ কৰাটো বিশেষজ্ঞৰ বাবে। প্ৰতিটো বৰ্তমান অৱস্থাৰ স্নেপশ্বট লোৱাৰ পিছত আপোনাৰ নামত নেপথ্যত চলে।</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>কি ঘূৰাই ল&apos;ব পাৰি সেয়া পঢ়িব পৰা নগ&apos;ল: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>এটা চলন</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>এটা স্থানান্তৰণ</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>আগৰ এটা স্নেপশ্বট</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>বিৱৰণ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>হয়</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>নহয়</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>স্নেপশ্বট</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>লেবেল</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>লোৱা হৈছে</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>প্ৰকাৰ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>পুনৰুদ্ধাৰ কৰিবলগীয়া অংশ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ডাটাবেছ</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>সঞ্চয়ৰ ফাইলসমূহ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ছেটিংছ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ডাটাবেছ পুনৰুদ্ধাৰ কৰিলে ছেছনকে ধৰি ইয়াক স্নেপশ্বটৰ সময়লৈ ঘূৰাই নিয়ে: পিছত আপোনাক পুনৰ ছাইন ইন কৰিবলৈ কোৱা হ&apos;ব পাৰে। তেতিয়াৰ পৰা সলনি হোৱা সকলো হেৰাই যায়; প্ৰথমে বৰ্তমান অৱস্থাৰ স্নেপশ্বট লোৱা হয়।</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ই কি পুনৰুদ্ধাৰ কৰে মই জানো</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>স্নেপশ্বটৰ আইডি পুনৰ লিখক</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>হয়, ঘূৰাই লওক</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>আগতে স্নেপশ্বট লোৱা চলনসমূহ।</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>এতিয়ালৈ স্নেপশ্বট থকা কোনো চলন নাই।</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>নিজকে ঘূৰাই ল&apos;ব পৰা প্ৰয়োগ কৰা স্থানান্তৰণসমূহ (সেইবোৰৰ down() আছে)।</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>কোনো প্ৰয়োগ কৰা স্থানান্তৰণৰ down() নাই।</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>আগৰ স্নেপশ্বটসমূহ (বিশেষজ্ঞ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>এতিয়ালৈ কোনো স্নেপশ্বট নাই।</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>স্থানান্তৰণসমূহ চলাওক</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>চলনটো %user হিচাপে নেপথ্যত চলে, আৰু ইয়াৰ পৃষ্ঠাই ইয়াক চলি থকাৰ সময়ত দেখুৱায়। প্ৰথম স্থানান্তৰণৰ আগত ইনষ্টলেশ্বনৰ স্নেপশ্বট লোৱা হয়; কোনো স্থানান্তৰণ ব্যৰ্থ হ&apos;লে চলন বন্ধ হয় আৰু স্নেপশ্বট পুনৰুদ্ধাৰ কৰা হয়।</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>প্ৰথমে পৰীক্ষামূলক চলন</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>স্থিতি পঢ়িব পৰা নগ&apos;ল: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>বিবেচনাধীন স্থানান্তৰণসমূহ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>সেইবোৰ এই ক্ৰমত চলে। এটাক আৰু ইয়াৰ ওপৰত নিৰ্ভৰশীলবোৰক পিছৰ চলনৰ বাবে এৰি দিবলৈ টিক আঁতৰাওক।</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>চলাওক</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>চলি থকাৰ সময়ত ৰক্ষণাবেক্ষণ ম&apos;ড অন কৰে।</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>প্ৰয়োগ কৰাৰ পিছত সলনি হোৱা</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>এই ফাইলবোৰ প্ৰয়োগ কৰাবোৰ নহয়। পৰিৱৰ্তনটো কাৰণসহ গ্ৰহণ নকৰিলে চলনে সেইবোৰ অস্বীকাৰ কৰে; সেইবোৰ পুনৰ চলোৱা নহয়, নতুন চেকছাম ৰেকৰ্ড কৰা হয় আৰু কাৰণটো অডিট লগত ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>পৰিৱৰ্তনসমূহ গ্ৰহণ কৰক</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>কিয়</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ডিফল্টবোৰেই সুৰক্ষিত। প্ৰতিটো বাকচে এটা পদক্ষেপ বাদ দিয়ে।</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>স্নেপশ্বট নাই</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>চলনৰ আগত আৰু পিছত স্নেপশ্বট নাই: ব্যৰ্থতা স্বয়ংক্ৰিয়ভাৱে পুনৰুদ্ধাৰ কৰিব নোৱাৰি।</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>পুনৰুদ্ধাৰ নাই</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ব্যৰ্থতাৰ পিছত ইনষ্টলেশ্বনক ব্যৰ্থতাই যেনেকৈ এৰি গৈছিল তেনেকৈয়ে ৰাখক।</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>কমিট নকৰা পৰিৱৰ্তনসমূহ ৰাখক</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ছেটিংছ, এক্সটেনশ্বন বা ডিজাইনত কমিট নকৰা পৰিৱৰ্তন থাকিলেও চলাওক; সেইবোৰ স্নেপশ্বটত সোমায়।</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>কমিট নাই</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>স্থিতি ফাইল আৰু চলনৰ লগ কমিট নকৰিব (টেগ আৰু পুশ্বো নাই)।</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>পুশ্ব নাই</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>কমিট আৰু টেগ কৰক, কিন্তু পুশ্ব নকৰিব।</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>টেগ নাই</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>কমিট আৰু পুশ্ব কৰক, কিন্তু চলনটো টেগ নকৰিব।</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>হয়, এই স্থানান্তৰণবোৰ এতিয়া চলাওক</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>কোনো স্থানান্তৰণ বিবেচনাধীন নাই।</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>স্থিতিলৈ উভতি যাওক</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>এই ইনষ্টলেশ্বনৰ পৰিৱৰ্তন, এবাৰ ফাইল হিচাপে লিখা (সমল, শ্ৰেণী, ভূমিকা, ছেটিংছ, স্কিমা) আৰু ছাইটৰ প্ৰতিটো ইনষ্টলেশ্বনত একে ক্ৰমত প্ৰয়োগ কৰা। এটা চলনে প্ৰথমে স্নেপশ্বট লয়, কোনো স্থানান্তৰণ ব্যৰ্থ হ&apos;লে ইয়াক পুনৰুদ্ধাৰ কৰে, আৰু ই যি কৰিলে তাক ৰেকৰ্ড, কমিট আৰু পুশ্ব কৰে।</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count টা বিবেচনাধীন চলাওক</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>অৱলোকন</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>বিবেচনাধীন</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>সম্পূৰ্ণ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যৰ্থ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>প্ৰয়োজন নাই</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ডাটাবেছ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>লেনদেন: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ছাইটৰ স্থানান্তৰণ migrations/ ত থাকে, এক্সটেনশ্বনৰ স্থানান্তৰণ extension/&lt;name&gt;/migrations/ ত। সেইবোৰ নামৰ ক্ৰম আৰু নিৰ্ভৰতা অনুসৰি চলে।</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>শেষ চলন</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>প্ৰয়োগ কৰাৰ পিছত ফাইলটো সলনি হ&apos;ল।</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>এতিয়ালৈ কোনো স্থানান্তৰণ নাই। ./console exp:migration:generate --skeleton &lt;name&gt; --apply এ প্ৰথমটো লিখে।</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>শেহতীয়া চলনসমূহ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>সকলো চলন</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>এতিয়ালৈ কোনো চলন নাই।</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>চলন অনুকৰণ কৰিবলৈ migration/run নীতি লাগে।</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>এটা চলন চলি আছে: শেষ হোৱাৰ পিছত অনুকৰণ কৰক।</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ছেটআপ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target এই ইনষ্টলেশ্বনৰ চলন, স্থানান্তৰণ বা স্নেপশ্বট নহয়।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>প্ৰথমে &quot;হয়, ঘূৰাই লওক&quot; টিক কৰক।</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>আগৰ স্নেপশ্বট পুনৰুদ্ধাৰ কৰাটো বিশেষজ্ঞৰ বাবে: &quot;ই কি পুনৰুদ্ধাৰ কৰে মই জানো&quot; টিক কৰক।</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>স্নেপশ্বটৰ আইডি পুনৰ লিখক: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>পুনৰুদ্ধাৰ কৰিবলৈ অন্ততঃ এটা অংশ বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>এই চলনৰ আগত কোনো স্নেপশ্বট লোৱা হোৱা নাই: ইয়াৰ স্থানান্তৰণবোৰ এটা এটাকৈ ঘূৰাই লওক, বা আগৰ এটা স্নেপশ্বট পুনৰুদ্ধাৰ কৰক।</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>এই স্থানান্তৰণ নিজে নিজে ঘূৰাই ল&apos;ব নোৱাৰি: ই প্ৰয়োগ কৰা হোৱা নাই, বা ইয়াৰ down() নাই।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ফৰ্মখন পঢ়িব পৰা নগ&apos;ল।</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>পুনৰ আৰম্ভ কৰিবলগীয়া চলন বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>প্ৰথমে &quot;হয়, এই স্থানান্তৰণবোৰ এতিয়া চলাওক&quot; টিক কৰক।</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>অন্ততঃ এটা স্থানান্তৰণ বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>এটা স্থানান্তৰণ প্ৰয়োগ কৰাৰ পিছত সলনি হ&apos;ল: পৰিৱৰ্তনটো কাৰণসহ গ্ৰহণ কৰক, বা ফাইলটো আগৰ দৰে কৰক।</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>সলনি হোৱা স্থানান্তৰণবোৰ কিয় গ্ৰহণ কৰা হৈছে তাৰ কাৰণ দিয়ক।</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>কাৰণটো সৰ্বাধিক 500 আখৰৰ।</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ইয়াত আৰম্ভ কৰা এটা চলন এতিয়াও চলি আছে (%detail)। ইয়াৰ শেষ হোৱালৈ অপেক্ষা কৰক।</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>আন এটা চলনে ইনষ্টলেশ্বনৰ লক ধৰি আছে: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>চলনৰ বাবে ছাইন ইন কৰা এজন বিদ্যমান ব্যৱহাৰকাৰী লাগে।</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>কোনো php কমাণ্ড লাইন প্ৰগ্ৰাম পোৱা নগ&apos;ল। migration.ini [AdminSettings] PhpCliPath ক ইয়াৰ সম্পূৰ্ণ পথলৈ ছেট কৰক।</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open নিষ্ক্ৰিয় কৰা আছে, সেয়েহে ইয়াত চলন আৰম্ভ কৰিব নোৱাৰি। ছাৰ্ভাৰত ./console exp:migration:migrate --apply চলাওক।</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>চলনৰ ফোল্ডাৰত লিখিব নোৱাৰি: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>চলনটো আৰম্ভ হ&apos;ল কিন্তু ইয়াৰ প্ৰচেছ আইডি জনোৱা নাই। %detail পৰীক্ষা কৰক।</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>কি ঘূৰাই ল&apos;ব লাগে উল্লেখ কৰক।</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>চলন আৰম্ভ কৰিব পৰা নগ&apos;ল।</translation>
     </message>
 </context>
 </TS>

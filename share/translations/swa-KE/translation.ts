@@ -15140,6 +15140,14 @@ Kumbuka: Usakinishaji wa vifurushi hautaondolewa.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: sehemu yake ya mwisho, skima na uwanja wa kujaribu hoja.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Uhamishaji</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mabadiliko ya usakinishaji yaliyohifadhiwa kama faili: hali yake, utekelezaji, tekeleza na rudisha nyuma.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Tuma mabadiliko (mutations) kwa /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Uhamishaji</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Hali haikuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Majedwali ya uhamishaji bado hayapo: ./console exp:upgrade --apply huyaunda.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Uhamishaji %count umeshindwa</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Utekelezaji unaendelea, ulioanzishwa na %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Usakinishaji umefungwa: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Inasubiri</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Imeshindwa</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Yatima</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Utekelezaji wa mwisho</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>hakuna bado</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Uhamishaji wote</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Utekelezaji wa kuiga</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Jaribio kavu</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Uhamishaji unaosubiri ulitekelezwa ndani ya muamala uliorudishwa nyuma baadaye: hakuna kilichohifadhiwa. Hapa chini ni kile kila mmoja ulichobadilisha kwenye hifadhidata.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Kile ambacho utekelezaji ungefanya sasa. Hakuna kinachobadilishwa: kila uhamishaji unaosubiri unaorodhesha mabadiliko ambayo ungefanya, na utekelezaji kile ambacho ungefanya kabla na baada.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Iga</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Tekeleza</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Jaribio kavu limeshindwa: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Uigaji unahitaji PostgreSQL au SQLite, ambazo mabadiliko yao ya muundo yanaweza kurudishwa nyuma; kwenye hifadhidata hii mpango ulio hapa chini ndio ambao utekelezaji ungefanya.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Uhamishaji</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Uhamishaji mmoja</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ungefanya nini</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Uigaji: %result kwa ms %ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Hakuna uhamishaji bado.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Kabla na baada ya utekelezaji</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Picha ya hali kabla</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>inachukuliwa, na kurejeshwa uhamishaji ukishindwa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>imezimwa</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Picha ya hali baada</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>inachukuliwa utekelezaji ukifaulu</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Uhamishaji %total: %pending unasubiri, %done umekamilika, %failed umeshindwa.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Historia ya uhamishaji</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Kila utekelezaji pamoja na mtumiaji wake, mazingira, picha za hali na kilichohifadhiwa, kuwekwa lebo na kutumwa. Utekelezaji ulioshindwa au kukatizwa unaweza kuendelezwa; utekelezaji wenye picha ya hali iliyochukuliwa kabla yake unaweza kutenduliwa.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Utekelezaji haukuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Majedwali ya uhamishaji bado hayapo: ./console exp:upgrade --apply huyaunda.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Onyesha</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Yote</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Utekelezaji</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ilianza</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Picha za hali</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Hazina</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Vitendo</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>kabla</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>baada</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>kutuma: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Endelea</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Tendua</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Hakuna utekelezaji katika hali hii.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Ulioanzishwa hapa</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Utekelezaji, uendelezaji na urudishaji nyuma ulioanzishwa kwenye kurasa hizi, pamoja na ripoti ya kila mmoja.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Nini</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Matokeo</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Urudishaji nyuma</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Urudishaji nyuma wa %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Utekelezaji %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Kile utekelezaji ulichofanya, rekodi yake na kumbukumbu yake. Utekelezaji ulioanzishwa hapa unaendelea chinichini ukurasa huu ukifungwa; fungua ukurasa tena kuufuatilia.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Endeleza utekelezaji huu</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Tendua utekelezaji huu</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Rekodi haikuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Maendeleo</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Ilianzishwa na %user saa %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Inakagua msimbo na kuchukua picha ya hali kabla ya utekelezaji</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Inatekeleza %id (%index kati ya %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done kati ya %total imekamilika</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Uhamishaji umetekelezwa; inarejesha picha ya hali ikiwa mmoja umeshindwa</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Inachukua picha ya hali baada ya utekelezaji, inahifadhi, inaweka lebo na kutuma</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Inarejesha picha ya hali</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Utekelezaji umekwisha. Inapakia ripoti yake.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Maendeleo hayakuweza kufuatiliwa. Pakia upya ukurasa kuona jinsi utekelezaji unavyoendelea.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ukurasa huu unafuatilia utekelezaji unapoendelea.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Pakia upya</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ripoti</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Muda</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>milisekunde %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Kile utekelezaji ulichochapisha kama makosa</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Rekodi</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Mazingira</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hakuna</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ilimalizika</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Hifadhi (commit)</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Lebo</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Kutuma</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ujumbe</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Uhamishaji wa utekelezaji huu</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Chanzo</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Kumbukumbu ya utekelezaji</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Ni mwisho wa kumbukumbu pekee unaoonyeshwa.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>unaendelea</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ulimalizika bila ripoti</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>umefaulu</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>umeshindwa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>umekataliwa</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>hifadhidata haikufikika</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>hitilafu ya ndani</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Utekelezaji unaendelea</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ulioanzishwa na %user saa %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Ufuatilie</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Usakinishaji umefungwa</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Utekelezaji mwingine unashikilia kufuli (uboreshaji au utekelezaji kwenye konsoli): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>umekamilika</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>unasubiri</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>hauhitajiki</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>haijulikani</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>umerudishwa nyuma</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>umetumika</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ungetumika</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>umetenduliwa</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ungetenduliwa</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>haujatekelezwa</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>unasubiri mwingine</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>badiliko limekubaliwa</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>badiliko lingekubaliwa</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>umeigwa</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Uhamishaji</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Tendua %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Utekelezaji hutenduliwa hadi picha ya hali iliyochukuliwa kabla yake, uhamishaji mmoja kwa down() yake. Kurejesha picha ya hali ya awali ni kwa wataalamu. Kila kimoja hufanyika chinichini kama wewe, baada ya picha ya hali ya sasa.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Kile kinachoweza kutenduliwa hakikuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Utekelezaji</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Uhamishaji mmoja tu</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Picha ya hali ya awali</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Maelezo</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ndiyo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hapana</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Picha ya hali</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Kichwa</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Ilichukuliwa</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Aina</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Sehemu za kurejesha</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Hifadhidata</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Faili za hifadhi (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Mipangilio (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Kurejesha hifadhidata kunairudisha hadi wakati wa picha ya hali, pamoja na vipindi: huenda ukaombwa kuingia tena baadaye. Kila kilichobadilika tangu hapo kinapotea; picha ya hali ya sasa huchukuliwa kwanza.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ninajua hiki kinarejesha nini</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Andika tena kitambulisho cha picha ya hali</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ndiyo, tendua</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ghairi</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Utekelezaji wenye picha ya hali iliyochukuliwa kabla yake.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Chagua</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Hakuna utekelezaji wenye picha ya hali bado.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Uhamishaji uliotumika unaoweza kujitendua wenyewe (una down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Hakuna uhamishaji uliotumika wenye down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Picha za hali za awali (wataalamu)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Hakuna picha ya hali bado.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Tekeleza uhamishaji</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Utekelezaji unaendelea chinichini kama %user, na ukurasa wake unauonyesha unapoendelea. Kabla ya uhamishaji wa kwanza picha ya hali ya usakinishaji huchukuliwa; uhamishaji ukishindwa utekelezaji husimama na picha ya hali hurejeshwa.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Jaribio kavu kwanza</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Hali haikuweza kusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Uhamishaji unaosubiri</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Hutekelezwa kwa mpangilio huu. Ondoa alama kwenye mmoja kuuacha, pamoja na ile inayouhitaji, kwa utekelezaji wa baadaye.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Uutekeleze</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Huwasha hali ya matengenezo wakati unatekelezwa.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Imebadilishwa baada ya kutumika</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Faili hizi si zile zilizotumika. Utekelezaji huzikataa isipokuwa badiliko likubaliwe kwa sababu; hazitekelezwi tena, checksum mpya hurekodiwa na sababu huhifadhiwa kwenye kumbukumbu ya ukaguzi.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Kubali mabadiliko</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Sababu</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Chaguo-msingi ndizo salama. Kila kisanduku kinaruka hatua moja.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Bila picha ya hali</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Hakuna picha ya hali kabla na baada ya utekelezaji: kushindwa hakuwezi kurejeshwa kiotomatiki.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Bila kurejesha</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Baada ya kushindwa, acha usakinishaji kama kushindwa kulivyouacha.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Weka mabadiliko ambayo hayajahifadhiwa</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Tekeleza ingawa mipangilio, viendelezi au miundo ina mabadiliko ambayo hayajahifadhiwa; yanaingia kwenye picha ya hali.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Bila kuhifadhi</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Usihifadhi faili ya hali na kumbukumbu ya utekelezaji (wala lebo wala kutuma).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Bila kutuma</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Hifadhi na weka lebo, lakini usitume.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Bila lebo</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Hifadhi na utume, lakini usiweke lebo kwenye utekelezaji.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ndiyo, tekeleza uhamishaji huu sasa</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Hakuna uhamishaji unaosubiri.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Rudi kwenye hali</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Mabadiliko ya usakinishaji huu yaliyoandikwa mara moja kama faili (maudhui, madarasa, majukumu, mipangilio, muundo) na kutumika kwa kila usakinishaji wa tovuti kwa mpangilio uleule. Utekelezaji huchukua picha ya hali kwanza, huirejesha uhamishaji ukishindwa, na hurekodi, huhifadhi na kutuma kile ulichofanya.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Tekeleza %count inayosubiri</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Muhtasari</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Inasubiri</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Imekamilika</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Imeshindwa</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Haihitajiki</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Hifadhidata</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>miamala: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Uhamishaji wa tovuti uko katika migrations/, ule wa kiendelezi katika extension/&lt;name&gt;/migrations/. Hutekelezwa kwa mpangilio wa majina yao na kile wanachohitaji.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Utekelezaji wa mwisho</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Faili ilibadilika baada ya kutumika.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Hakuna uhamishaji bado. ./console exp:migration:generate --skeleton &lt;name&gt; --apply huandika wa kwanza.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Utekelezaji wa hivi karibuni</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Kila utekelezaji</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Hakuna utekelezaji bado.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Kuiga utekelezaji kunahitaji sera migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Utekelezaji unaendelea: iga ukishamalizika.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Usanidi</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target si utekelezaji, si uhamishaji wala si picha ya hali ya usakinishaji huu.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Weka alama kwanza kwenye &quot;Ndiyo, tendua&quot;.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Kurejesha picha ya hali ya awali ni kwa wataalamu: weka alama kwenye &quot;Ninajua hiki kinarejesha nini&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Andika tena kitambulisho cha picha ya hali: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Chagua angalau sehemu moja ya kurejesha.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Utekelezaji huu hauna picha ya hali iliyochukuliwa kabla yake: tendua uhamishaji wake mmoja mmoja, au rejesha picha ya hali ya awali.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Uhamishaji huu hauwezi kujitendua wenyewe: haujatumika, au hauna down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Fomu haikuweza kusomwa.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Chagua utekelezaji wa kuendeleza.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Weka alama kwanza kwenye &quot;Ndiyo, tekeleza uhamishaji huu sasa&quot;.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Chagua angalau uhamishaji mmoja.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Uhamishaji ulibadilika baada ya kutumika: kubali badiliko kwa sababu, au rudisha faili.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Toa sababu kwa nini uhamishaji uliobadilishwa unakubaliwa.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Sababu ni herufi 500 kwa zaidi.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Utekelezaji ulioanzishwa hapa bado unaendelea (%detail). Subiri umalizike.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Utekelezaji mwingine unashikilia kufuli ya usakinishaji: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Utekelezaji unahitaji mtumiaji aliyeingia ambaye yupo.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Hakuna programu ya php ya mstari wa amri iliyopatikana. Weka njia yake kamili katika migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open imezimwa, kwa hivyo utekelezaji hauwezi kuanzishwa hapa. Endesha ./console exp:migration:migrate --apply kwenye seva.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Folda ya utekelezaji haiwezi kuandikiwa: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Utekelezaji ulianzishwa lakini haukuripoti kitambulisho cha mchakato wake. Kagua %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Taja kile cha kutendua.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Utekelezaji haukuweza kuanzishwa.</translation>
     </message>
 </context>
 </TS>

@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: нуқтаи ниҳоии он, схема ва майдонча барои санҷидани дархостҳо.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграсияҳо</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Тағйироти насб, ки ҳамчун файл нигоҳ дошта мешаванд: вазъи онҳо, иҷроҳо, иҷро ва бозгардонӣ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Мутатсияҳоро ба /api/graphql фиристед.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграсияҳо</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Вазъро хондан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Ҷадвалҳои миграсияҳо ҳоло вуҷуд надоранд: ./console exp:upgrade --apply онҳоро месозад.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count миграсия ноком шуд</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Иҷро идома дорад, онро %user оғоз кард</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Насб қулф аст: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ноком</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Бесоҳибҳо</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Иҷрои охирин</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ҳоло нест</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Ҳамаи миграсияҳо</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Иҷрои шабеҳсозӣ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Иҷрои озмоишӣ</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Миграсияҳои дар интизорӣ дар транзаксияе иҷро шуданд, ки баъдан бозгардонида шуд: ҳеҷ чиз нигоҳ дошта нашуд. Дар поён он чи ҳар яке дар пойгоҳи додаҳо тағйир дод.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Он чи иҷро ҳозир мекард. Ҳеҷ чиз тағйир дода намешавад: ҳар миграсияи дар интизорӣ тағйиротеро, ки ворид мекард, нишон медиҳад ва иҷро он чиро, ки пеш ва баъд мекард.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Шабеҳсозӣ кардан</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Иҷро кардан</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Иҷрои озмоишӣ ноком шуд: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Барои шабеҳсозӣ PostgreSQL ё SQLite лозим аст, ки тағйироти схемаашон бозгардонида мешаванд; дар ин пойгоҳи додаҳо нақшаи поён он чиро нишон медиҳад, ки иҷро мекард.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Рӯйхати миграсияҳо</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Миграсия</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ҳолат</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Чӣ мекард</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Шабеҳсозӣ: %result дар %ms мс</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Ҳоло миграсия нест.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Пеш ва баъд аз иҷро</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Акси пешин</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>гирифта мешавад ва ҳангоми ноком шудани миграсия барқарор мешавад</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>хомӯш</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Акси баъдина</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ҳангоми бомуваффақият гузаштани иҷро гирифта мешавад</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total миграсия: %pending дар интизорӣ, %done иҷрошуда, %failed ноком.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Таърихи миграсияҳо</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ҳар иҷро бо корбар, муҳит, аксҳо ва он чи коммит, нишонагузорӣ ва фиристода шуд. Иҷрои ноком ё қатъшударо идома додан мумкин аст; иҷроеро, ки пеш аз он акс гирифта шудааст, бозгардондан мумкин аст.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Иҷроҳоро хондан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Ҷадвалҳои миграсияҳо ҳоло вуҷуд надоранд: ./console exp:upgrade --apply онҳоро месозад.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Иҷроҳо</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Оғоз шуд</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Аз ҷониби</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Аксҳо</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Анбор</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Амалҳо</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>пеш</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>баъд</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>фиристодан: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Идома додан</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Бозгардондан</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Дар ин ҳолат иҷро нест.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Дар ин ҷо оғозшуда</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Иҷроҳо, идомаҳо ва бозгардониҳое, ки дар ин саҳифаҳо оғоз шудаанд, бо гузориши ҳар яке.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Чӣ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Натиҷа</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Бозгардонӣ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Бозгардонии %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Иҷрои %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Он чи иҷро кард, сабт ва журнали он. Иҷрое, ки дар ин ҷо оғоз шудааст, ҳангоми пӯшидани ин саҳифа дар замина идома меёбад; барои пайгирӣ саҳифаро дубора кушоед.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Ин иҷроро идома додан</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Ин иҷроро бозгардондан</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Сабтро хондан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Пешрафт</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Аз ҷониби %user дар %time оғоз шуд.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Санҷиши код ва гирифтани акс пеш аз иҷро</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Иҷрои %id (%index аз %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done аз %total иҷро шуд</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Миграсияҳо иҷро шуданд; агар яке ноком шуда бошад, акс барқарор мешавад</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Гирифтани акс баъд аз иҷро, коммит, нишонагузорӣ ва фиристодан</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Барқарорсозии акс</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Иҷро анҷом ёфт. Гузориши он бор мешавад.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Пешрафтро пайгирӣ кардан нашуд. Барои дидани ҳолати иҷро саҳифаро аз нав бор кунед.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ин саҳифа иҷроро дар ҷараён пайгирӣ мекунад.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Аз нав бор кардан</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Гузориш</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вақт</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Он чи иҷро ҳамчун хато чоп кард</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Сабт</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Муҳит</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>нест</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Анҷом ёфт</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Нишона</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Фиристодан</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Паём</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Миграсияҳои ин иҷро</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Манбаъ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Журнали иҷро</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Танҳо охири журнал нишон дода мешавад.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>дар ҷараён</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>бе гузориш анҷом ёфт</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>бомуваффақият</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ноком</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>рад шуд</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>пойгоҳи додаҳо дастрас набуд</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>хатои дохилӣ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Иҷро идома дорад</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind аз ҷониби %user дар %time оғоз шуд.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Пайгирӣ кардан</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Насб қулф аст</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Қулфро иҷрои дигар нигоҳ медорад (навсозӣ ё иҷро дар консол): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>иҷрошуда</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>лозим нест</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>номаълум</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>бозгардонида шуд</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>татбиқ шуд</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>татбиқ мешуд</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>бозпас гирифта шуд</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>бозпас гирифта мешуд</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>иҷро нашуд</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>дигареро интизор аст</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>тағйирот қабул шуд</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>тағйирот қабул мешуд</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>шабеҳсозӣ шуд</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграсияҳо</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Вазъ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Таърих</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Бозпас гирифтани %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Иҷро ба акси пеш аз он гирифташуда бозгардонида мешавад, як миграсия бо down()-и худ. Барқарорсозии акси пештара барои мутахассисон аст. Ҳар кадом пас аз гирифтани акси ҳолати ҳозира дар замина аз номи шумо иҷро мешавад.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Он чиро, ки бозпас гирифтан мумкин аст, хондан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Як иҷро</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Як миграсия</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Акси пештара</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Тавсиф</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ҳа</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Акс</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Тамға</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Гирифта шуд</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Навъ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Қисмҳо барои барқарорсозӣ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Пойгоҳи додаҳо</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Файлҳои анбор (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Танзимот (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Барқарорсозии пойгоҳи додаҳо онро якҷоя бо сеансҳо ба вақти акс бармегардонад: баъд шояд аз шумо дубора воридшавӣ талаб карда шавад. Ҳама чизе, ки аз он вақт тағйир ёфтааст, гум мешавад; аввал акси ҳолати ҳозира гирифта мешавад.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ман медонам, ки ин чиро барқарор мекунад</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Идентификатори аксро дубора ворид кунед</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ҳа, бозпас гирифтан</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бекор кардан</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Иҷроҳое, ки пеш аз онҳо акс гирифта шудааст.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Интихоб кардан</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Ҳоло иҷрои бо акс нест.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Миграсияҳои татбиқшуда, ки худро бозпас гирифта метавонанд (онҳо down() доранд).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Ягон миграсияи татбиқшуда down() надорад.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Аксҳои пештара (мутахассисон)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Ҳоло акс нест.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Иҷрои миграсияҳо</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Иҷро дар замина аз номи %user идома меёбад ва саҳифаи он онро дар ҷараён нишон медиҳад. Пеш аз миграсияи аввал акси насб гирифта мешавад; агар миграсия ноком шавад, иҷро қатъ мешавад ва акс барқарор мегардад.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Аввал иҷрои озмоишӣ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Вазъро хондан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Миграсияҳои дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Онҳо бо ҳамин тартиб иҷро мешаванд. Барои гузоштани як миграсия ва онҳое, ки ба он вобастаанд, ба иҷрои баъдӣ, қайдро бардоред.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Иҷро кунед</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Ҳангоми иҷро ҳолати хизматрасониро фаъол мекунад.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Пас аз татбиқ тағйир ёфтаанд</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Ин файлҳо он файлҳое нестанд, ки татбиқ шуда буданд. Иҷро онҳоро рад мекунад, агар тағйирот бо сабаб қабул нашавад; онҳо дубора иҷро намешаванд, суммаи назоратии нав сабт мешавад ва сабаб дар журнали аудит нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Қабули тағйирот</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Сабаб</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Қиматҳои пешфарз бехатартаринанд. Ҳар қайд як қадамро партофта мегузорад.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Бе акс</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Пеш ва баъд аз иҷро акс нест: нокомиро худкор барқарор кардан мумкин нест.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Бе барқарорсозӣ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Пас аз нокомӣ насбро ҳамон тавре гузоштан, ки нокомӣ гузошт.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Нигоҳ доштани тағйироти коммитнашуда</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Иҷро кардан, ҳарчанд танзимот, васеъкуниҳо ё дизайнҳо тағйироти коммитнашуда доранд; онҳо ба акс дохил мешаванд.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Бе коммит</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Файли вазъ ва журнали иҷроро коммит накардан (на нишона ва на фиристодан).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Бе фиристодан</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Коммит ва нишонагузорӣ кардан, вале нафиристодан.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Бе нишона</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Коммит кардан ва фиристодан, вале иҷроро нишона нагузоштан.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ҳа, ин миграсияҳоро ҳозир иҷро кунед</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Ягон миграсия дар интизорӣ нест.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Бозгашт ба вазъ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Тағйироти ин насб, ки як бор ҳамчун файл навишта шудаанд (мундариҷа, синфҳо, нақшҳо, танзимот, схема) ва ба ҳар насби сайт бо ҳамон тартиб татбиқ мешаванд. Иҷро аввал акс мегирад, ҳангоми нокомии миграсия онро барқарор мекунад ва он чи кардааст, сабт, коммит ва фиристода мекунад.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Иҷрои %count дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Тасвири умумӣ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Иҷрошуда</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ноком</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Лозим нест</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Пойгоҳи додаҳо</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>транзаксияҳо: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Миграсияҳои сайт дар migrations/, миграсияҳои васеъкунӣ дар extension/&lt;name&gt;/migrations/ мебошанд. Онҳо бо тартиби номҳо ва вобастагиҳояшон иҷро мешаванд.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Иҷрои охирин</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Файл пас аз татбиқ тағйир ёфт.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Ҳоло миграсия нест. ./console exp:migration:generate --skeleton &lt;name&gt; --apply аввалинро менависад.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Иҷроҳои охирин</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Ҳамаи иҷроҳо</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Ҳоло иҷро нест.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Барои шабеҳсозии иҷро сиёсати migration/run лозим аст.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Иҷро идома дорад: пас аз анҷоми он шабеҳсозӣ кунед.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Насб</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target на иҷро, на миграсия ва на акси ин насб аст.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Аввал «Ҳа, бозпас гирифтан»-ро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Барқарорсозии акси пештара барои мутахассисон аст: «Ман медонам, ки ин чиро барқарор мекунад»-ро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Идентификатори аксро дубора ворид кунед: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Барои барқарорсозӣ ақаллан як қисмро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Пеш аз ин иҷро акс гирифта нашудааст: миграсияҳои онро як-як бозпас гиред ё акси пештараро барқарор кунед.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Ин миграсия худро бозпас гирифта наметавонад: он татбиқ нашудааст ё down() надорад.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Шаклро хондан нашуд.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Иҷроеро, ки идома дода мешавад, интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Аввал «Ҳа, ин миграсияҳоро ҳозир иҷро кунед»-ро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Ақаллан як миграсияро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Миграсия пас аз татбиқ тағйир ёфт: тағйиротро бо сабаб қабул кунед ё файлро баргардонед.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Сабаби қабули миграсияҳои тағйирёфтаро нависед.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Сабаб на зиёда аз 500 аломат аст.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Иҷрое, ки дар ин ҷо оғоз шудааст, ҳанӯз идома дорад (%detail). Анҷоми онро интизор шавед.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Қулфи насбро иҷрои дигар нигоҳ медорад: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Барои иҷро корбари воридшудаи мавҷуда лозим аст.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Барномаи сатри фармони php ёфт нашуд. Роҳи пурраи онро дар migration.ini [AdminSettings] PhpCliPath муайян кунед.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open хомӯш аст, бинобар ин иҷроро дар ин ҷо оғоз кардан мумкин нест. Дар сервер ./console exp:migration:migrate --apply-ро иҷро кунед.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ба ҷузвдони иҷроҳо навиштан мумкин нест: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Иҷро оғоз шуд, вале идентификатори раванди худро хабар надод. %detail-ро санҷед.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Нишон диҳед, ки чиро бозпас гирифтан лозим аст.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Иҷроро оғоз кардан нашуд.</translation>
     </message>
 </context>
 </TS>

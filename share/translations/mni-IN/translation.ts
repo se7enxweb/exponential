@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: মসিগী এন্দ পোইন্ত, স্কিমা অমসুং কোয়েরি চংশিনবগীদমক প্লেগ্রাউন্দ অমা।</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>মাইগ্রেসনশিং</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ফাইল ওইনা থম্লিবা ইনস্টলেসনগী অহোংবশিং: মখোয়গী স্থিতি, রনশিং, রন তৌবা অমসুং রোলবেক তৌবা.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>মিউতেসনশিং /api/graphql দা থাবিয়ু।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>মাইগ্রেসনশিং</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>স্থিতি পাবা ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>মাইগ্রেসনশিংগী টেবলশিং হৌজিক ফাওবা লৈদ্রি: ./console exp:upgrade --apply না মখোয় শেম্মি.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>মাইগ্রেসন %count ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>রন অমা চলরি, %user না হৌদোকখিবা</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ইনস্টলেসন লোক তৌরে: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ঙাক্লিবা</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ঙমদ্রবা</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>মমা মপা লৈতবা</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>অরোইবা রন</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>হৌজিক ফাওবা লৈতে</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>মাইগ্রেসন পুম্নমক</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>সিমুলেট তৌখিবা রন</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ড্রাই রন</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ঙাক্লিবা মাইগ্রেসনশিং ট্রান্সেক্সন অমদা চলখি অমসুং মতুংদা রোলবেক তৌখি: করিসু থম্বা লৈতে. মখাদা মাইগ্রেসন খুদিংমকনা ডেটাবেজদা করি হোংদোকখিবগে উৎলি.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>হৌজিক রন অমনা করি তৌগনি. করিসু হোংদোকপা লৈতে: ঙাক্লিবা মাইগ্রেসন খুদিংমকনা মহাক্না পুরকপা অহোংবশিং পায়রি, অমসুং রননা মমাংদা অমসুং মতুংদা করি তৌগনি.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>সিমুলেট তৌবা</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>রন তৌবা</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ড্রাই রন ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>সিমুলেসন অমগীদমক PostgreSQL নত্রগা SQLite মথৌ তাই, মখোয়গী স্কিমা অহোংবশিং রোলবেক তৌবা য়াই; ডেটাবেজ অসিদা মখাগী প্লেন অসিনা রন অমনা করি তৌগনি উৎলি.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>মাইগ্রেসনশিং</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>মাইগ্রেসন</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অবস্থা</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>মসিনা করি তৌগনি</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>সিমুলেসন: %result, %ms ms দা</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>হৌজিক ফাওবা মাইগ্রেসন অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>রনগী মমাংদা অমসুং মতুংদা</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>মমাংগী স্নেপশট</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>লৌখি, অমসুং মাইগ্রেসন অমা ঙমদ্রবদা রিস্টোর তৌই</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>অফ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>মতুংগী স্নেপশট</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>রন মাইপাকপদা লৌখি</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>মাইগ্রেসন %total: %pending ঙাক্লিবা, %done লোইরবা, %failed ঙমদ্রবা.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>মাইগ্রেসনগী ইতিহাস</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>রন খুদিংমক মগী য়ুজার, এনভাইরনমেন্ট, স্নেপশটশিং অমসুং করি কমিট, টেগ অমসুং পুশ তৌখিবগে লোয়না. ঙমদ্রবা নত্রগা লেপখিবা রন অমা অনৌদা শুরু তৌবা য়াই; মমাংদা স্নেপশট লৌখিবা রন অমা হন্দোকপা য়াই.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>রনশিং পাবা ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>মাইগ্রেসনশিংগী টেবলশিং হৌজিক ফাওবা লৈদ্রি: ./console exp:upgrade --apply না মখোয় শেম্মি.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>উৎপা</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>রনশিং</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>হৌদোকখিবা</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>তৌখিবা মী</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>স্নেপশটশিং</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>রিপোজিটরি</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>থবকশিং</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>মমাংদা</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>মতুংদা</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>পুশ: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>অনৌদা শুরু তৌবা</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>রোলবেক তৌবা</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>অবস্থা অসিদা রন অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>মফম অসিদা হৌদোকখিবা</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>পেজ অসিশিংদা হৌদোকখিবা রন, অনৌদা শুরু তৌবা অমসুং রোলবেকশিং, খুদিংমকগী রিপোর্টগা লোয়না.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>করি</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>রেজল্ট</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>রোলবেক</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target গী রোলবেক</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>রন %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>রননা করি তৌখিবগে, মগী রেকর্ড অমসুং লোগ. মফম অসিদা হৌদোকখিবা রন অমা পেজ অসি লোক্কনবা মতমদা বেকগ্রাউন্দদা চলহৌরি; মদু ইনবগীদমক পেজ অসি অমুক হন্না হাংদোকউ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>রন অসি অনৌদা শুরু তৌবা</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>রন অসি রোলবেক তৌবা</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>রেকর্ড পাবা ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>অগ্রগতি</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user না %time দা হৌদোকখি.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>কোড চেক তৌরি অমসুং রনগী মমাংদা স্নেপশট লৌরি</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id চলরি (%total দগী %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total দগী %done লোইরে</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>মাইগ্রেসনশিং চলখ্রে; অমা ঙমদ্রবদি স্নেপশট রিস্টোর তৌরি</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>রনগী মতুংদা স্নেপশট লৌরি, কমিট, টেগ অমসুং পুশ তৌরি</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>স্নেপশট রিস্টোর তৌরি</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>রন লোইরে. মগী রিপোর্ট লোড তৌরি.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>অগ্রগতি ইনবা ঙমদ্রে. রন করম্না চলরিবগে য়েংনবা পেজ অসি রিলোড তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>পেজ অসিনা রন চলরিঙৈদা মদু ইন্নরি.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>রিলোড তৌবা</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>রিপোর্ট</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>মসময়</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms মিলিসেকেন্দ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>রননা ভুল ওইনা প্রিন্ট তৌখিবা</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>রেকর্ড</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>এনভাইরনমেন্ট</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>লৈতে</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>লোইখ্রে</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>কমিট</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>টেগ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>পুশ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ৱাংবা</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>রন অসিগী মাইগ্রেসনশিং</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>মমল</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>রন লোগ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>লোগকী অরোইবা শরুক খক্তমক উৎলি.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>চলরি</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>রিপোর্ট য়াওদনা লোইখ্রে</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>মাইপাক্লে</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ইনকার তৌখ্রে</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ডেটাবেজ য়ৌবা ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>মনুংগী ভুল</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>রন অমা চলরি</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %user না %time দা হৌদোকখি.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>মদু ইনবা</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ইনস্টলেসন লোক তৌরে</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>অতোপ্পা রন অমনা লোক অসি পাইরি (অপগ্রেড অমা নত্রগা কন্সোলদা রন অমা): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>লোইরে</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ঙাক্লিবা</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>মথৌ তাদে</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ফংদে</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>রোলবেক তৌখ্রে</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>শীজিন্নখ্রে</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>শীজিন্নগনি</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>হন্দোকখ্রে</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>হন্দোকপগনি</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>চলহৌদ্রি</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>অতোপ্পা অমা ঙাইরি</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>অহোংবা লৌখ্রে</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>অহোংবা লৌগনি</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>সিমুলেট তৌখ্রে</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>মাইগ্রেসনশিং</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ইতিহাস</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target হন্দোকপা</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>রন অমা মগী মমাংদা লৌখিবা স্নেপশটতা হন্দোকই, মাইগ্রেসন অমা মগী down() না. হন্নগী স্নেপশট অমা রিস্টোর তৌবা অসি মথম্বশিংগীদমকনি. খুদিংমক হৌজিকগী অবস্থাগী স্নেপশট লৌরবা মতুংদা নহাক্কী মমিংদা বেকগ্রাউন্দদা চলই.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>করি হন্দোকপা য়াগনি পাবা ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>রন অমা</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>মাইগ্রেসন অমা</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>হন্নগী স্নেপশট অমা</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>বর্ণনা</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>হোই</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>নত্তে</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>স্নেপশট</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>লেবেল</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>লৌখিবা</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>মখল</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>রিস্টোর তৌগদবা শরুকশিং</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ডেটাবেজ</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>স্টোরেজ ফাইলশিং (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>সেটিংশিং (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>রিস্টোর তৌবনা ডেটাবেজ অসি সেসনশিং যাওনা স্নেপশট লৌখিবা মতমদা হন্দোকই: মতুংদা নহাক্না অমুক হন্না সাইন ইন তৌনবা হায়গনি. মদুদগী হোংখিবা পুম্নমক মাংগনি; অহানবদা হৌজিকগী অবস্থাগী স্নেপশট অমা লৌই.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>মসিনা করি রিস্টোর তৌবগে ঐনা খঙই</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>স্নেপশটকী আইডি অমুক হন্না টাইপ তৌবিয়ু</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>হোই, হন্দোকপা</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>কেন্সেল তৌবা</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>মমাংদা স্নেপশট লৌখিবা রনশিং.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>খনবা</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>হৌজিক ফাওবা স্নেপশট লৈবা রন অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>মশাগী মশা হন্দোকপা য়াবা শীজিন্নখিবা মাইগ্রেসনশিং (মখোয়দা down() লৈ).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>শীজিন্নখিবা মাইগ্রেসন অমত্তদা down() লৈতে.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>হন্নগী স্নেপশটশিং (মথম্বশিং)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>হৌজিক ফাওবা স্নেপশট অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>মাইগ্রেসনশিং রন তৌবা</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>রন অসি %user ওইনা বেকগ্রাউন্দদা চলহৌরি, অমসুং মগী পেজনা চলরিঙৈদা উৎলি. অহানবা মাইগ্রেসনগী মমাংদা ইনস্টলেসনগী স্নেপশট অমা লৌই; মাইগ্রেসন অমা ঙমদ্রবদা রন লেপ্পি অমসুং স্নেপশট রিস্টোর তৌই.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>অহানবদা ড্রাই রন</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>স্থিতি পাবা ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ঙাক্লিবা মাইগ্রেসনশিং</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>মখোয় চাং অসিদা চলই. অমা, অমসুং মদু মথৌ তাবাশিং, মতুংগী রন অমগীদমক থাদোক্নবা মগী টিক লৌথোকউ.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>মদু রন তৌবা</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>চলরিঙৈদা মেন্টেনেন্স মোড হাংদোকই.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>শীজিন্নখিবা মতুংদা হোংখিবা</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ফাইল অসিশিং শীজিন্নখিবা ফাইলশিং নত্তে. অহোংবা অদু মরম অমগা লোয়না লৌদ্রবদি রননা মখোয় ইনকার তৌই; মখোয় অমুক হন্না চলহৌদে, অনৌবা চেকসম রেকর্ড তৌই অমসুং মরম অদু অডিট লোগতা থমই.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>অহোংবশিং লৌবা</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>মরম</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ডিফল্টশিং অদু ঙাক্লবশিংনি. বক্স খুদিংমকনা খোঙথাং অমা থাদোক্লি.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>স্নেপশট লৈতে</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>রনগী মমাংদা অমসুং মতুংদা স্নেপশট লৈতে: ঙমদ্রবা অমা মশানা রিস্টোর তৌবা য়াদে.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>রিস্টোর লৈতে</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ঙমদ্রবা মতুংদা, ইনস্টলেসন অদু ঙমদ্রবনা থাদোকখিবা মওং অদুমক থাদোকউ.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>কমিট তৌদ্রিবা অহোংবশিং থম্বা</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>সেটিংশিং, এক্সটেনসনশিং নত্রগা ডিজাইনশিংদা কমিট তৌদ্রিবা অহোংবশিং লৈরবসু রন তৌবা; মখোয় স্নেপশটতা চঙই.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>কমিট লৈতে</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>স্থিতিগী ফাইল অমসুং রন লোগ কমিট তৌগনু (টেগসু লৈতে, পুশসু লৈতে).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>পুশ লৈতে</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>কমিট অমসুং টেগ তৌবা, অদুবু পুশ তৌগনু.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>টেগ লৈতে</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>কমিট অমসুং পুশ তৌবা, অদুবু রন অদু টেগ তৌগনু.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>হোই, মাইগ্রেসন অসিশিং হৌজিক রন তৌবা</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ঙাক্লিবা মাইগ্রেসন অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>স্থিতিদা লেপ্পা</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ইনস্টলেসন অসিগী অহোংবশিং ফাইল ওইনা অমুকতং ইখি (কন্টেন্ট, ক্লাসশিং, রোলশিং, সেটিংশিং, স্কিমা) অমসুং সাইটকী ইনস্টলেসন খুদিংমকতা চাং অমত্তদা শীজিন্নই. রন অমনা অহানবদা স্নেপশট লৌই, মাইগ্রেসন অমা ঙমদ্রবদা মদু রিস্টোর তৌই, অমসুং মহাক্না তৌখিবা রেকর্ড, কমিট অমসুং পুশ তৌই.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>ঙাক্লিবা %count রন তৌবা</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ওভারভিউ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ঙাক্লিবা</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>লোইরবা</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ঙমদ্রবা</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>মথৌ তাদবা</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ডেটাবেজ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ট্রান্সেক্সনশিং: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>সাইটকী মাইগ্রেসনশিং migrations/ দা লৈ, এক্সটেনসন অমগীদু extension/&lt;name&gt;/migrations/ দা. মখোয় মমিংগী চাং অমসুং মখোয়না মথৌ তাবা অদুগী মতুং ইন্না চলই.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>অরোইবা রন</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>শীজিন্নখিবা মতুংদা ফাইল অদু হোংখ্রে.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>হৌজিক ফাওবা মাইগ্রেসন অমত্তা লৈতে. ./console exp:migration:generate --skeleton &lt;name&gt; --apply না অহানবা অদু ই.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>অনৌবা রনশিং</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>রন পুম্নমক</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>হৌজিক ফাওবা রন অমত্তা লৈতে.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>রন অমা সিমুলেট তৌনবা migration/run পোলিসি মথৌ তাই.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>রন অমা চলরি: মদু লোইরবা মতুংদা সিমুলেট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>সেটআপ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target অসি ইনস্টলেসন অসিগী রনসু নত্তে, মাইগ্রেসনসু নত্তে, স্নেপশটসু নত্তে.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>অহানবদা &quot;হোই, হন্দোকপা&quot; টিক তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>হন্নগী স্নেপশট অমা রিস্টোর তৌবা অসি মথম্বশিংগীদমকনি: &quot;মসিনা করি রিস্টোর তৌবগে ঐনা খঙই&quot; টিক তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>স্নেপশটকী আইডি অমুক হন্না টাইপ তৌবিয়ু: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>রিস্টোর তৌনবা খ্বাইদগী নংখনা শরুক অমা খনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>রন অসিগী মমাংদা স্নেপশট লৌখিদে: মগী মাইগ্রেসনশিং অমমম্না হন্দোকউ, নত্রগা হন্নগী স্নেপশট অমা রিস্টোর তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>মাইগ্রেসন অসি মশানা হন্দোকপা য়াদে: মসি শীজিন্নদ্রি, নত্রগা মসিদা down() লৈতে.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ফোর্ম পাবা ঙমদ্রে.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>অনৌদা শুরু তৌগদবা রন খনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>অহানবদা &quot;হোই, মাইগ্রেসন অসিশিং হৌজিক রন তৌবা&quot; টিক তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>খ্বাইদগী নংখনা মাইগ্রেসন অমা খনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>মাইগ্রেসন অমা শীজিন্নখিবা মতুংদা হোংখ্রে: অহোংবা অদু মরম অমগা লোয়না লৌবিয়ু, নত্রগা ফাইল অদু হন্দোক্লকউ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>হোংখিবা মাইগ্রেসনশিং করিগী লৌরিবগে মরম পীবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>মরম অদু খ্বাইদগী য়াম্লবদা চিন 500 নি.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>মফম অসিদা হৌদোকখিবা রন অমা হৌজিকসু চলরি (%detail). মদু লোইবা ফাওবা ঙাইবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>অতোপ্পা রন অমনা ইনস্টলেসনগী লোক পাইরি: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>রন অসিগীদমক লৈরিবা অমসুং সাইন ইন তৌরবা য়ুজার অমা মথৌ তাই.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php কমান্দ লাইন বাইনারি অমত্তা ফংদ্রে. migration.ini [AdminSettings] PhpCliPath দা মগী মপুং ফাবা পাথ সেট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open অসি ডিসেবল তৌরে, মরম অদুনা মফম অসিদা রন হৌদোকপা য়াদে. সর্ভরদা ./console exp:migration:migrate --apply রন তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>রনশিংগী ফোল্দরদা ইবা য়াদে: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>রন হৌদোকখি অদুবু মগী প্রোসেস আইডি রিপোর্ট তৌখিদে. %detail চেক তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>করি হন্দোকপগে হায়বিয়ু.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>রন হৌদোকপা ঙমদ্রে.</translation>
     </message>
 </context>
 </TS>

@@ -149,6 +149,18 @@ says so and points to the caption. When two sources have the same id, name one w
 Any caption of the list can be restored, also a manual one or one of `exp:upgrade`, with `--expert` and the
 caption's id typed again in `--confirm`. The same safety caption and parts as above apply.
 
+### In the administration
+
+**Setup > Migrations > Rollback** (`/migration/rollback`, policy `migration/rollback`) offers the same three:
+the runs with a caption before them, the applied migrations that have a `down()`, and the earlier captions (for
+experts: the box **I know what this restores** and the caption's id typed again, as `--expert --confirm`). For a run
+or a caption it restores the parts database, storage and settings, ticked by default as in
+`[CaptionSettings] RestoreParts[]`; libraries and code are restored on the console only. **Roll back** asks
+"Verify it's you" and starts `exp:migration:rollback --apply` in the background as the signed-in user, with the
+safety caption first; its page shows the progress and the report. **Roll back** in the history and
+**Roll back this run** on a run's page lead there too.
+[Run, dry run and rollback](../help/migrations/run-dry-run-and-rollback.md#roll-back) shows the page.
+
 ### What a rollback touches
 
 | Area | Restore of a caption | `down()` |

@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API՝ դրա վերջնակետը, սխեման և հարցումներ փորձելու հարթակ։</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Միգրացիաներ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Տեղադրման փոփոխություններ՝ պահված որպես ֆայլեր. դրանց վիճակը, գործարկումները, գործարկել և հետ վերադարձնել։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Ուղարկեք մուտացիաները /api/graphql հասցեով։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Միգրացիաներ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Չհաջողվեց կարդալ կարգավիճակը՝ %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Միգրացիաների աղյուսակները դեռ գոյություն չունեն. ./console exp:upgrade --apply-ը ստեղծում է դրանք։</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count միգրացիա ձախողվեց</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ընթանում է գործարկում, որը սկսել է %user-ը</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Տեղադրումը կողպված է՝ %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Սպասման մեջ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ձախողված</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Որբ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Վերջին գործարկումը</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>դեռ չկա</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Բոլոր միգրացիաները</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Մոդելավորված գործարկում</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Փորձնական գործարկում</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Սպասման մեջ գտնվող միգրացիաները կատարվեցին տրանզակցիայում, որը հետո հետ շրջվեց. ոչինչ չպահպանվեց։ Ստորև նշված է, թե յուրաքանչյուրն ինչ փոխեց տվյալների բազայում։</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Ինչ կաներ գործարկումը հիմա։ Ոչինչ չի փոխվում. սպասման մեջ գտնվող յուրաքանչյուր միգրացիա թվարկում է իր կատարելիք փոփոխությունները, իսկ գործարկումը՝ ինչ կաներ նախքան և հետո։</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Մոդելավորել</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Գործարկել</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Փորձնական գործարկումը ձախողվեց՝ %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Մոդելավորման համար անհրաժեշտ է PostgreSQL կամ SQLite, որոնց սխեմայի փոփոխությունները կարելի է հետ շրջել. այս տվյալների բազայում ստորև ներկայացված պլանը ցույց է տալիս, թե ինչ կաներ գործարկումը։</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Միգրացիաները</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Միգրացիա</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Վիճակ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ինչ կաներ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Մոդելավորում՝ %result, %ms մվ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Դեռ միգրացիա չկա։</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Գործարկումից առաջ և հետո</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Ակնթարթային պատկեր առաջ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>արվում է և վերականգնվում, եթե միգրացիան ձախողվում է</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>անջատված</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Ակնթարթային պատկեր հետո</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>արվում է, երբ գործարկումը հաջողվել է</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total միգրացիա՝ %pending սպասման մեջ, %done կատարված, %failed ձախողված։</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Միգրացիաների պատմություն</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Յուրաքանչյուր գործարկում՝ իր օգտատիրոջով, միջավայրով, ակնթարթային պատկերներով և այն ամենով, ինչ commit, tag և push է արվել։ Ձախողված կամ ընդհատված գործարկումը կարելի է վերսկսել. գործարկումը, որից առաջ ակնթարթային պատկեր է արվել, կարելի է հետ վերադարձնել։</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Չհաջողվեց կարդալ գործարկումները՝ %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Միգրացիաների աղյուսակները դեռ գոյություն չունեն. ./console exp:upgrade --apply-ը ստեղծում է դրանք։</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Ցուցադրել</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Բոլորը</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Գործարկումներ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Սկսված</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ում կողմից</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Ակնթարթային պատկերներ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Պահոց</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Գործողություններ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>առաջ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>հետո</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ուղարկում՝ %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Վերսկսել</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Հետ վերադարձնել</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Այս վիճակում գործարկում չկա։</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Սկսված այստեղ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Այս էջերում սկսված գործարկումներ, վերսկսումներ և հետ վերադարձներ՝ յուրաքանչյուրի հաշվետվությամբ։</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ինչ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Արդյունք</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Հետ վերադարձ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target-ի հետ վերադարձ</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Գործարկում %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Ինչ արեց գործարկումը, դրա գրառումը և մատյանը։ Այստեղ սկսված գործարկումը շարունակվում է հետին պլանում, երբ այս էջը փակվում է. կրկին բացեք էջը՝ այն հետևելու համար։</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Վերսկսել այս գործարկումը</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Հետ վերադարձնել այս գործարկումը</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Չհաջողվեց կարդալ գրառումը՝ %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ընթացք</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Սկսել է %user-ը՝ %time-ին։</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Կոդի ստուգում և ակնթարթային պատկերի ստեղծում գործարկումից առաջ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Կատարվում է %id-ը (%index՝ %total-ից)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done՝ %total-ից կատարված է</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Միգրացիաները կատարվել են. ակնթարթային պատկերը վերականգնվում է, եթե որևէ մեկը ձախողվել է</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ակնթարթային պատկեր գործարկումից հետո, commit, tag և push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Ակնթարթային պատկերի վերականգնում</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Գործարկումն ավարտվել է։ Հաշվետվությունը բեռնվում է։</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Չհաջողվեց հետևել ընթացքին։ Վերաբեռնեք էջը՝ տեսնելու, թե ինչպես է ընթանում գործարկումը։</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Այս էջը հետևում է գործարկմանը դրա ընթացքում։</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Վերաբեռնել</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Հաշվետվություն</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Տևողություն</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms մվ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Ինչ է գործարկումը տպել որպես սխալներ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Գրառում</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Միջավայր</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>չկա</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ավարտված</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Կոմիտ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Պիտակ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ուղարկում</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Հաղորդագրություն</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Այս գործարկման միգրացիաները</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Աղբյուր</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Գործարկման մատյան</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Ցուցադրվում է միայն մատյանի վերջը։</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ընթացքում</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ավարտվել է առանց հաշվետվության</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>հաջողված</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ձախողված</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>մերժված</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>տվյալների բազան հասանելի չէր</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ներքին սխալ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ընթանում է գործարկում</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, սկսել է %user-ը՝ %time-ին։</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Հետևել</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Տեղադրումը կողպված է</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Մեկ այլ գործարկում է պահում կողպեքը (թարմացում կամ գործարկում կոնսոլում)՝ %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>կատարված</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>սպասման մեջ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>անհրաժեշտ չէ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>անհայտ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>հետ շրջված</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>կիրառված</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>կկիրառվեր</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>հետ վերադարձված</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>հետ կվերադարձվեր</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>չի կատարվել</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>սպասում է մեկ ուրիշին</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>փոփոխությունն ընդունված է</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>փոփոխությունը կընդունվեր</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>մոդելավորված</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Միգրացիաներ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Կարգավիճակ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Պատմություն</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Հետ վերադարձնել %target-ը</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Գործարկումը հետ է վերադարձվում իրենից առաջ արված ակնթարթային պատկերին, առանձին միգրացիան՝ իր down()-ով։ Ավելի վաղ ակնթարթային պատկերի վերականգնումը փորձագետների համար է։ Յուրաքանչյուրը կատարվում է հետին պլանում՝ ձեր անունից, ներկա վիճակի ակնթարթային պատկերից հետո։</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Չհաջողվեց կարդալ, թե ինչ կարելի է հետ վերադարձնել՝ %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Գործարկում</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Մեկ միգրացիա</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ավելի վաղ ակնթարթային պատկեր</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Նկարագրություն</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>այո</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ոչ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Ակնթարթային պատկեր</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Անվանում</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Արված</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Տեսակ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Վերականգնվող մասեր</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Տվյալների բազան</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Պահված ֆայլերը (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Կարգավորումները (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Վերականգնումը տվյալների բազան վերադարձնում է ակնթարթային պատկերի պահին, ներառյալ սեանսները. դրանից հետո հնարավոր է՝ ստիպված լինեք նորից մուտք գործել։ Այդ պահից ի վեր փոխված ամեն ինչ կորչում է. նախ արվում է ներկա վիճակի ակնթարթային պատկերը։</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ես գիտեմ, թե սա ինչ է վերականգնում</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Կրկին մուտքագրեք ակնթարթային պատկերի նույնացուցիչը</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Այո, հետ վերադարձնել</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Չեղարկել</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Գործարկումները, որոնցից առաջ ակնթարթային պատկեր է արվել։</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Ընտրել</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Ակնթարթային պատկերով գործարկում դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Կիրառված միգրացիաները, որոնք կարող են ինքնուրույն հետ վերադառնալ (ունեն down())։</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Ոչ մի կիրառված միգրացիա down() չունի։</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Ավելի վաղ ակնթարթային պատկերներ (փորձագետների համար)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Ակնթարթային պատկեր դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Գործարկել միգրացիաները</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Գործարկումն ընթանում է հետին պլանում՝ որպես %user, և դրա էջը ցույց է տալիս ընթացքը։ Առաջին միգրացիայից առաջ արվում է տեղադրման ակնթարթային պատկերը. երբ միգրացիան ձախողվում է, գործարկումը կանգ է առնում, և ակնթարթային պատկերը վերականգնվում է։</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Նախ փորձնական գործարկում</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Չհաջողվեց կարդալ կարգավիճակը՝ %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Սպասման մեջ գտնվող միգրացիաներ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Դրանք կատարվում են այս հերթականությամբ։ Հանեք նշումը որևէ մեկից՝ այն և դրանից կախված միգրացիաները հետագա գործարկման թողնելու համար։</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Գործարկել այն</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Գործարկման ընթացքում միացնում է սպասարկման ռեժիմը։</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Փոխված կիրառումից հետո</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Այս ֆայլերը կիրառվածները չեն։ Գործարկումը մերժում է դրանք, եթե փոփոխությունը չի ընդունվում պատճառաբանությամբ. դրանք կրկին չեն կատարվում, նոր ստուգիչ գումարը գրանցվում է, իսկ պատճառը պահվում է աուդիտի մատյանում։</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Ընդունել փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Պատճառ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Լռելյայն արժեքներն անվտանգն են։ Յուրաքանչյուր վանդակ բաց է թողնում մեկ քայլ։</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Առանց ակնթարթային պատկերի</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Առանց ակնթարթային պատկերի գործարկումից առաջ և հետո. ձախողումից հետո ավտոմատ վերականգնում հնարավոր չէ։</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Առանց վերականգնման</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Ձախողումից հետո թողնել տեղադրումն այնպես, ինչպես այն թողել է ձախողումը։</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Պահել commit չարված փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Գործարկել, թեև կարգավորումները, ընդլայնումները կամ դիզայնները commit չարված փոփոխություններ ունեն. դրանք ներառվում են ակնթարթային պատկերում։</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Առանց commit-ի</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Commit չանել կարգավիճակի ֆայլը և գործարկման մատյանը (նաև առանց tag-ի և push-ի)։</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Առանց push-ի</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit և tag անել, բայց push չանել։</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Առանց tag-ի</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit և push անել, բայց գործարկմանը tag չդնել։</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Այո, գործարկել այս միգրացիաները հիմա</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Սպասման մեջ միգրացիա չկա։</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Վերադառնալ կարգավիճակին</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Այս տեղադրման փոփոխություններ՝ մեկ անգամ գրված որպես ֆայլեր (բովանդակություն, դասեր, դերեր, կարգավորումներ, սխեմա) և կիրառվող կայքի յուրաքանչյուր տեղադրման վրա նույն հերթականությամբ։ Գործարկումը նախ անում է ակնթարթային պատկեր, վերականգնում է այն, եթե միգրացիան ձախողվում է, և գրանցում, commit ու push է անում իր արածը։</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Գործարկել սպասման մեջ գտնվող %count-ը</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ընդհանուր տեսք</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Սպասման մեջ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Կատարված</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ձախողված</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Անհրաժեշտ չէ</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Տվյալների բազա</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>տրանզակցիաներ՝ %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Կայքի միգրացիաները գտնվում են migrations/-ում, ընդլայնման միգրացիաները՝ extension/&lt;name&gt;/migrations/-ում։ Դրանք կատարվում են ըստ իրենց անունների և կախվածությունների հերթականության։</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Վերջին գործարկումը</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Ֆայլը փոխվել է կիրառումից հետո։</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Դեռ միգրացիա չկա։ ./console exp:migration:generate --skeleton &lt;name&gt; --apply-ը գրում է առաջինը։</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Վերջին գործարկումները</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Բոլոր գործարկումները</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Դեռ գործարկում չկա։</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Գործարկման մոդելավորման համար անհրաժեշտ է migration/run քաղաքականությունը։</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ընթանում է գործարկում. մոդելավորեք, երբ այն ավարտվի։</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Կարգաբերում</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target-ը այս տեղադրման ո՛չ գործարկում է, ո՛չ միգրացիա, ո՛չ էլ ակնթարթային պատկեր։</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Նախ նշեք «Այո, հետ վերադարձնել»։</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ավելի վաղ ակնթարթային պատկերի վերականգնումը փորձագետների համար է. նշեք «Ես գիտեմ, թե սա ինչ է վերականգնում»։</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Կրկին մուտքագրեք ակնթարթային պատկերի նույնացուցիչը՝ %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Ընտրեք վերականգնման առնվազն մեկ մաս։</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Այս գործարկումից առաջ ակնթարթային պատկեր չի արվել. հետ վերադարձրեք դրա միգրացիաները մեկ առ մեկ կամ վերականգնեք ավելի վաղ ակնթարթային պատկեր։</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Այս միգրացիան չի կարող ինքնուրույն հետ վերադառնալ. այն կիրառված չէ կամ down() չունի։</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Չհաջողվեց կարդալ ձևը։</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Ընտրեք վերսկսվող գործարկումը։</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Նախ նշեք «Այո, գործարկել այս միգրացիաները հիմա»։</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Ընտրեք առնվազն մեկ միգրացիա։</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Միգրացիան փոխվել է կիրառումից հետո. ընդունեք փոփոխությունը պատճառաբանությամբ կամ վերադարձրեք ֆայլը։</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Նշեք պատճառը, թե ինչու են փոխված միգրացիաներն ընդունվում։</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Պատճառը կարող է լինել առավելագույնը 500 նիշ։</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Այստեղ սկսված գործարկումը դեռ ընթանում է (%detail)։ Սպասեք, մինչև այն ավարտվի։</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Մեկ այլ գործարկում է պահում տեղադրման կողպեքը՝ %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Գործարկման համար անհրաժեշտ է գոյություն ունեցող, մուտք գործած օգտատեր։</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php հրամանային տողի ծրագիր չի գտնվել։ Սահմանեք migration.ini [AdminSettings] PhpCliPath-ը դրա ամբողջական ուղով։</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open-ն անջատված է, ուստի այստեղ գործարկում սկսել հնարավոր չէ։ Սերվերում կատարեք ./console exp:migration:migrate --apply։</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Գործարկումների թղթապանակում հնարավոր չէ գրել՝ %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Գործարկումը սկսվել է, բայց չի հաղորդել իր պրոցեսի նույնացուցիչը։ Ստուգեք %detail-ը։</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Նշեք, թե ինչ պետք է հետ վերադարձնել։</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Չհաջողվեց սկսել գործարկումը։</translation>
     </message>
 </context>
 </TS>

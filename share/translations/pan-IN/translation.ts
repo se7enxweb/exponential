@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ਇਸਦਾ ਐਂਡ ਪੁਆਇੰਟ, ਸਕੀਮਾ ਅਤੇ ਕਵੇਰੀਆਂ ਅਜ਼ਮਾਉਣ ਲਈ ਇੱਕ ਪਲੇਗ੍ਰਾਊਂਡ।</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ਇੰਸਟਾਲੇਸ਼ਨ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਜੋ ਫਾਈਲਾਂ ਵਜੋਂ ਰੱਖੀਆਂ ਗਈਆਂ ਹਨ: ਉਹਨਾਂ ਦੀ ਸਥਿਤੀ, ਰਨ, ਚਲਾਉਣਾ ਅਤੇ ਵਾਪਸ ਲੈਣਾ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ਮਿਊਟੇਸ਼ਨ /api/graphql 'ਤੇ ਭੇਜੋ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ਸਥਿਤੀ ਪੜ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਦੀਆਂ ਟੇਬਲਾਂ ਅਜੇ ਮੌਜੂਦ ਨਹੀਂ ਹਨ: ./console exp:upgrade --apply ਉਹਨਾਂ ਨੂੰ ਬਣਾਉਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਅਸਫਲ ਹੋਈਆਂ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ਇੱਕ ਰਨ ਚੱਲ ਰਿਹਾ ਹੈ, %user ਵੱਲੋਂ ਸ਼ੁਰੂ ਕੀਤਾ ਗਿਆ</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ਇੰਸਟਾਲੇਸ਼ਨ ਲੌਕ ਹੈ: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ਬਕਾਇਆ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ਅਸਫਲ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ਅਨਾਥ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ਪਿਛਲਾ ਰਨ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ਅਜੇ ਕੋਈ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ਸਾਰੀਆਂ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>ਨਕਲੀ ਰਨ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ਪਰਖ ਰਨ</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ਬਕਾਇਆ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਇੱਕ ਟ੍ਰਾਂਜ਼ੈਕਸ਼ਨ ਵਿੱਚ ਚੱਲੀਆਂ ਜੋ ਬਾਅਦ ਵਿੱਚ ਵਾਪਸ ਲੈ ਲਈ ਗਈ: ਕੁਝ ਵੀ ਨਹੀਂ ਰੱਖਿਆ ਗਿਆ। ਹੇਠਾਂ ਦੱਸਿਆ ਹੈ ਕਿ ਹਰੇਕ ਨੇ ਡਾਟਾਬੇਸ ਵਿੱਚ ਕੀ ਬਦਲਿਆ।</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ਇੱਕ ਰਨ ਹੁਣ ਕੀ ਕਰੇਗਾ। ਕੁਝ ਵੀ ਨਹੀਂ ਬਦਲਿਆ ਜਾਂਦਾ: ਹਰ ਬਕਾਇਆ ਮਾਈਗ੍ਰੇਸ਼ਨ ਉਹ ਤਬਦੀਲੀਆਂ ਦੱਸਦੀ ਹੈ ਜੋ ਉਹ ਕਰੇਗੀ, ਅਤੇ ਰਨ ਦੱਸਦਾ ਹੈ ਕਿ ਉਹ ਪਹਿਲਾਂ ਅਤੇ ਬਾਅਦ ਵਿੱਚ ਕੀ ਕਰੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>ਨਕਲ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ਚਲਾਓ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ਪਰਖ ਰਨ ਅਸਫਲ ਰਿਹਾ: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ਨਕਲ ਲਈ PostgreSQL ਜਾਂ SQLite ਚਾਹੀਦਾ ਹੈ, ਜਿਹਨਾਂ ਦੀਆਂ ਸਕੀਮਾ ਤਬਦੀਲੀਆਂ ਵਾਪਸ ਲਈਆਂ ਜਾ ਸਕਦੀਆਂ ਹਨ; ਇਸ ਡਾਟਾਬੇਸ &apos;ਤੇ ਹੇਠਾਂ ਦਿੱਤੀ ਯੋਜਨਾ ਉਹ ਹੈ ਜੋ ਇੱਕ ਰਨ ਕਰੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਦੀ ਸੂਚੀ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ਹਾਲਤ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ਇਹ ਕੀ ਕਰੇਗੀ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ਨਕਲ: %result, %ms ms ਵਿੱਚ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ਅਜੇ ਕੋਈ ਮਾਈਗ੍ਰੇਸ਼ਨ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ਰਨ ਤੋਂ ਪਹਿਲਾਂ ਅਤੇ ਬਾਅਦ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ਪਹਿਲਾਂ ਦਾ ਸਨੈਪਸ਼ਾਟ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ਲਿਆ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਮਾਈਗ੍ਰੇਸ਼ਨ ਅਸਫਲ ਹੋਣ &apos;ਤੇ ਮੁੜ ਬਹਾਲ ਕੀਤਾ ਜਾਂਦਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ਬੰਦ</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ਬਾਅਦ ਦਾ ਸਨੈਪਸ਼ਾਟ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ਰਨ ਸਫਲ ਹੋਣ &apos;ਤੇ ਲਿਆ ਜਾਂਦਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ: %pending ਬਕਾਇਆ, %done ਪੂਰੀਆਂ, %failed ਅਸਫਲ।</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨ ਇਤਿਹਾਸ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ਹਰ ਰਨ ਆਪਣੇ ਯੂਜ਼ਰ, ਵਾਤਾਵਰਣ, ਸਨੈਪਸ਼ਾਟਾਂ ਅਤੇ ਜੋ ਕਮਿਟ, ਟੈਗ ਅਤੇ ਪੁਸ਼ ਕੀਤਾ ਗਿਆ ਉਸ ਸਮੇਤ। ਅਸਫਲ ਜਾਂ ਰੁਕਿਆ ਹੋਇਆ ਰਨ ਮੁੜ ਸ਼ੁਰੂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ; ਜਿਸ ਰਨ ਤੋਂ ਪਹਿਲਾਂ ਸਨੈਪਸ਼ਾਟ ਲਿਆ ਗਿਆ ਹੋਵੇ ਉਸਨੂੰ ਵਾਪਸ ਲਿਆ ਜਾ ਸਕਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ਰਨ ਪੜ੍ਹੇ ਨਹੀਂ ਜਾ ਸਕੇ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਦੀਆਂ ਟੇਬਲਾਂ ਅਜੇ ਮੌਜੂਦ ਨਹੀਂ ਹਨ: ./console exp:upgrade --apply ਉਹਨਾਂ ਨੂੰ ਬਣਾਉਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ਦਿਖਾਓ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ਸਾਰੇ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ਰਨ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ਸ਼ੁਰੂ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ਵੱਲੋਂ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ਸਨੈਪਸ਼ਾਟ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ਰਿਪੋਜ਼ਟਰੀ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ਕਾਰਵਾਈਆਂ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ਪਹਿਲਾਂ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ਬਾਅਦ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ਪੁਸ਼: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ਵਾਪਸ ਲਓ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ਇਸ ਹਾਲਤ ਵਿੱਚ ਕੋਈ ਰਨ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ਇੱਥੇ ਸ਼ੁਰੂ ਕੀਤੇ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ਇਹਨਾਂ ਪੰਨਿਆਂ &apos;ਤੇ ਸ਼ੁਰੂ ਕੀਤੇ ਰਨ, ਮੁੜ-ਸ਼ੁਰੂਆਤਾਂ ਅਤੇ ਵਾਪਸੀਆਂ, ਹਰੇਕ ਦੀ ਰਿਪੋਰਟ ਸਮੇਤ।</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ਕੀ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ਨਤੀਜਾ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ਵਾਪਸੀ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ਦੀ ਵਾਪਸੀ</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ਰਨ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ਰਨ ਨੇ ਕੀ ਕੀਤਾ, ਉਸਦਾ ਰਿਕਾਰਡ ਅਤੇ ਉਸਦਾ ਲੌਗ। ਇੱਥੇ ਸ਼ੁਰੂ ਕੀਤਾ ਰਨ ਇਹ ਪੰਨਾ ਬੰਦ ਹੋਣ &apos;ਤੇ ਪਿਛੋਕੜ ਵਿੱਚ ਚੱਲਦਾ ਰਹਿੰਦਾ ਹੈ; ਉਸਨੂੰ ਵੇਖਣ ਲਈ ਪੰਨਾ ਦੁਬਾਰਾ ਖੋਲ੍ਹੋ।</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ਇਹ ਰਨ ਮੁੜ ਸ਼ੁਰੂ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ਇਹ ਰਨ ਵਾਪਸ ਲਓ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ਰਿਕਾਰਡ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ਪ੍ਰਗਤੀ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ਵੱਲੋਂ %time &apos;ਤੇ ਸ਼ੁਰੂ ਕੀਤਾ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ਕੋਡ ਦੀ ਜਾਂਚ ਅਤੇ ਰਨ ਤੋਂ ਪਹਿਲਾਂ ਸਨੈਪਸ਼ਾਟ ਲੈਣਾ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ਚੱਲ ਰਹੀ ਹੈ (%total ਵਿੱਚੋਂ %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total ਵਿੱਚੋਂ %done ਪੂਰੀਆਂ</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਚੱਲ ਗਈਆਂ ਹਨ; ਜੇ ਕੋਈ ਅਸਫਲ ਹੋਈ ਤਾਂ ਸਨੈਪਸ਼ਾਟ ਬਹਾਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ਰਨ ਤੋਂ ਬਾਅਦ ਸਨੈਪਸ਼ਾਟ ਲੈਣਾ, ਕਮਿਟ, ਟੈਗ ਅਤੇ ਪੁਸ਼ ਕਰਨਾ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ਸਨੈਪਸ਼ਾਟ ਬਹਾਲ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ਰਨ ਖਤਮ ਹੋ ਗਿਆ ਹੈ। ਉਸਦੀ ਰਿਪੋਰਟ ਲੋਡ ਹੋ ਰਹੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ਪ੍ਰਗਤੀ ਦਾ ਪਿੱਛਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਰਨ ਦਾ ਹਾਲ ਵੇਖਣ ਲਈ ਪੰਨਾ ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ਇਹ ਪੰਨਾ ਰਨ ਨੂੰ ਨਾਲ-ਨਾਲ ਦਿਖਾਉਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ਦੁਬਾਰਾ ਲੋਡ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ਰਿਪੋਰਟ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ਸਮਾਂ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ਮਿ.ਸ.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ਰਨ ਨੇ ਗਲਤੀਆਂ ਵਜੋਂ ਕੀ ਛਾਪਿਆ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ਰਿਕਾਰਡ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ਵਾਤਾਵਰਣ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ਕੋਈ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ਖਤਮ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ਕਮਿਟ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ਟੈਗ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ਪੁਸ਼</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ਸੁਨੇਹਾ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ਇਸ ਰਨ ਦੀਆਂ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ਸਰੋਤ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ਰਨ ਲੌਗ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ਲੌਗ ਦਾ ਸਿਰਫ਼ ਅੰਤ ਦਿਖਾਇਆ ਗਿਆ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ਚੱਲ ਰਿਹਾ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ਰਿਪੋਰਟ ਤੋਂ ਬਿਨਾਂ ਖਤਮ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ਸਫਲ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ਅਸਫਲ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ਇਨਕਾਰ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ਡਾਟਾਬੇਸ ਤੱਕ ਪਹੁੰਚ ਨਹੀਂ ਹੋ ਸਕੀ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ਅੰਦਰੂਨੀ ਗਲਤੀ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ਇੱਕ ਰਨ ਚੱਲ ਰਿਹਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user ਵੱਲੋਂ %time &apos;ਤੇ ਸ਼ੁਰੂ ਕੀਤਾ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ਇਸਨੂੰ ਵੇਖੋ</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ਇੰਸਟਾਲੇਸ਼ਨ ਲੌਕ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ਕਿਸੇ ਹੋਰ ਰਨ ਕੋਲ ਲੌਕ ਹੈ (ਇੱਕ ਅੱਪਗ੍ਰੇਡ ਜਾਂ ਕੰਸੋਲ &apos;ਤੇ ਇੱਕ ਰਨ): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ਪੂਰੀ</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ਬਕਾਇਆ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ਲੋੜ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ਅਣਜਾਣ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ਵਾਪਸ ਲਈ ਗਈ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ਲਾਗੂ ਕੀਤੀ</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ਲਾਗੂ ਕੀਤੀ ਜਾਵੇਗੀ</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ਵਾਪਸ ਲਈ</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ਵਾਪਸ ਲਈ ਜਾਵੇਗੀ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ਨਹੀਂ ਚਲਾਈ</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ਕਿਸੇ ਹੋਰ ਦੀ ਉਡੀਕ ਵਿੱਚ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ਤਬਦੀਲੀ ਸਵੀਕਾਰ ਕੀਤੀ</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ਤਬਦੀਲੀ ਸਵੀਕਾਰ ਕੀਤੀ ਜਾਵੇਗੀ</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ਨਕਲ ਕੀਤੀ</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ਸਥਿਤੀ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ਇਤਿਹਾਸ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ਵਾਪਸ ਲਓ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ਇੱਕ ਰਨ ਉਸ ਤੋਂ ਪਹਿਲਾਂ ਲਏ ਸਨੈਪਸ਼ਾਟ ਤੱਕ ਵਾਪਸ ਲਿਆ ਜਾਂਦਾ ਹੈ, ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਉਸਦੇ down() ਨਾਲ। ਪੁਰਾਣਾ ਸਨੈਪਸ਼ਾਟ ਬਹਾਲ ਕਰਨਾ ਮਾਹਿਰਾਂ ਲਈ ਹੈ। ਹਰੇਕ ਮੌਜੂਦਾ ਹਾਲਤ ਦੇ ਸਨੈਪਸ਼ਾਟ ਤੋਂ ਬਾਅਦ ਤੁਹਾਡੇ ਵਜੋਂ ਪਿਛੋਕੜ ਵਿੱਚ ਚੱਲਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ਕੀ ਵਾਪਸ ਲਿਆ ਜਾ ਸਕਦਾ ਹੈ ਇਹ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ਇੱਕ ਰਨ</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ਇੱਕ ਪੁਰਾਣਾ ਸਨੈਪਸ਼ਾਟ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>ਵੇਰਵਾ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ਹਾਂ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ਸਨੈਪਸ਼ਾਟ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ਲੇਬਲ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ਲਿਆ ਗਿਆ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ਕਿਸਮ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ਬਹਾਲ ਕਰਨ ਵਾਲੇ ਹਿੱਸੇ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ਡਾਟਾਬੇਸ</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ਸਟੋਰੇਜ ਫਾਈਲਾਂ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ਸੈਟਿੰਗਾਂ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ਡਾਟਾਬੇਸ ਬਹਾਲ ਕਰਨ ਨਾਲ ਉਹ ਸਨੈਪਸ਼ਾਟ ਦੇ ਸਮੇਂ &apos;ਤੇ ਵਾਪਸ ਚਲਾ ਜਾਂਦਾ ਹੈ, ਸੈਸ਼ਨਾਂ ਸਮੇਤ: ਬਾਅਦ ਵਿੱਚ ਤੁਹਾਨੂੰ ਦੁਬਾਰਾ ਸਾਈਨ ਇਨ ਕਰਨ ਲਈ ਕਿਹਾ ਜਾ ਸਕਦਾ ਹੈ। ਉਸ ਤੋਂ ਬਾਅਦ ਬਦਲਿਆ ਸਭ ਕੁਝ ਗੁਆਚ ਜਾਂਦਾ ਹੈ; ਪਹਿਲਾਂ ਮੌਜੂਦਾ ਹਾਲਤ ਦਾ ਸਨੈਪਸ਼ਾਟ ਲਿਆ ਜਾਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ਮੈਂ ਜਾਣਦਾ ਹਾਂ ਕਿ ਇਹ ਕੀ ਬਹਾਲ ਕਰਦਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ਸਨੈਪਸ਼ਾਟ ਦੀ ਆਈਡੀ ਦੁਬਾਰਾ ਲਿਖੋ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ਹਾਂ, ਵਾਪਸ ਲਓ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ਰੱਦ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ਉਹ ਰਨ ਜਿਹਨਾਂ ਤੋਂ ਪਹਿਲਾਂ ਸਨੈਪਸ਼ਾਟ ਲਿਆ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ਚੁਣੋ</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ਅਜੇ ਸਨੈਪਸ਼ਾਟ ਵਾਲਾ ਕੋਈ ਰਨ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ਲਾਗੂ ਕੀਤੀਆਂ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਜੋ ਆਪਣੇ ਆਪ ਨੂੰ ਵਾਪਸ ਲੈ ਸਕਦੀਆਂ ਹਨ (ਉਹਨਾਂ ਕੋਲ down() ਹੈ)।</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ਕਿਸੇ ਵੀ ਲਾਗੂ ਮਾਈਗ੍ਰੇਸ਼ਨ ਕੋਲ down() ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ਪੁਰਾਣੇ ਸਨੈਪਸ਼ਾਟ (ਮਾਹਿਰ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ਅਜੇ ਕੋਈ ਸਨੈਪਸ਼ਾਟ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਚਲਾਓ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ਰਨ %user ਵਜੋਂ ਪਿਛੋਕੜ ਵਿੱਚ ਚੱਲਦਾ ਹੈ, ਅਤੇ ਉਸਦਾ ਪੰਨਾ ਉਸਨੂੰ ਨਾਲ-ਨਾਲ ਦਿਖਾਉਂਦਾ ਹੈ। ਪਹਿਲੀ ਮਾਈਗ੍ਰੇਸ਼ਨ ਤੋਂ ਪਹਿਲਾਂ ਇੰਸਟਾਲੇਸ਼ਨ ਦਾ ਸਨੈਪਸ਼ਾਟ ਲਿਆ ਜਾਂਦਾ ਹੈ; ਜਦੋਂ ਕੋਈ ਮਾਈਗ੍ਰੇਸ਼ਨ ਅਸਫਲ ਹੁੰਦੀ ਹੈ ਤਾਂ ਰਨ ਰੁਕ ਜਾਂਦਾ ਹੈ ਅਤੇ ਸਨੈਪਸ਼ਾਟ ਬਹਾਲ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ਪਹਿਲਾਂ ਪਰਖ ਰਨ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ਸਥਿਤੀ ਪੜ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕੀ: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ਬਕਾਇਆ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ਇਹ ਇਸ ਕ੍ਰਮ ਵਿੱਚ ਚੱਲਦੀਆਂ ਹਨ। ਕਿਸੇ ਨੂੰ, ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਜਿਹਨਾਂ ਨੂੰ ਉਸਦੀ ਲੋੜ ਹੈ, ਬਾਅਦ ਵਾਲੇ ਰਨ ਲਈ ਛੱਡਣ ਲਈ ਉਸਦਾ ਨਿਸ਼ਾਨ ਹਟਾਓ।</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ਇਸਨੂੰ ਚਲਾਓ</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>ਚੱਲਦੇ ਸਮੇਂ ਮੇਨਟੇਨੈਂਸ ਮੋਡ ਚਾਲੂ ਕਰਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>ਲਾਗੂ ਹੋਣ ਤੋਂ ਬਾਅਦ ਬਦਲੀਆਂ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ਇਹ ਫਾਈਲਾਂ ਉਹ ਨਹੀਂ ਹਨ ਜੋ ਲਾਗੂ ਕੀਤੀਆਂ ਗਈਆਂ ਸਨ। ਰਨ ਇਹਨਾਂ ਨੂੰ ਇਨਕਾਰ ਕਰਦਾ ਹੈ ਜਦ ਤੱਕ ਤਬਦੀਲੀ ਕਿਸੇ ਕਾਰਨ ਨਾਲ ਸਵੀਕਾਰ ਨਾ ਕੀਤੀ ਜਾਵੇ; ਇਹ ਦੁਬਾਰਾ ਨਹੀਂ ਚਲਾਈਆਂ ਜਾਂਦੀਆਂ, ਨਵਾਂ ਚੈੱਕਸਮ ਦਰਜ ਹੁੰਦਾ ਹੈ ਅਤੇ ਕਾਰਨ ਆਡਿਟ ਲੌਗ ਵਿੱਚ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ਤਬਦੀਲੀਆਂ ਸਵੀਕਾਰ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ਕਾਰਨ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ਡਿਫਾਲਟ ਹੀ ਸੁਰੱਖਿਅਤ ਹਨ। ਹਰ ਡੱਬਾ ਇੱਕ ਕਦਮ ਛੱਡ ਦਿੰਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ਕੋਈ ਸਨੈਪਸ਼ਾਟ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ਰਨ ਤੋਂ ਪਹਿਲਾਂ ਅਤੇ ਬਾਅਦ ਕੋਈ ਸਨੈਪਸ਼ਾਟ ਨਹੀਂ: ਅਸਫਲਤਾ ਆਪਣੇ ਆਪ ਬਹਾਲ ਨਹੀਂ ਹੋ ਸਕਦੀ।</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ਕੋਈ ਬਹਾਲੀ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ਅਸਫਲਤਾ ਤੋਂ ਬਾਅਦ, ਇੰਸਟਾਲੇਸ਼ਨ ਨੂੰ ਉਵੇਂ ਹੀ ਛੱਡੋ ਜਿਵੇਂ ਅਸਫਲਤਾ ਨੇ ਛੱਡਿਆ।</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>ਬਿਨਾਂ ਕਮਿਟ ਤਬਦੀਲੀਆਂ ਰੱਖੋ</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ਚਲਾਓ ਭਾਵੇਂ ਸੈਟਿੰਗਾਂ, ਐਕਸਟੈਂਸ਼ਨਾਂ ਜਾਂ ਡਿਜ਼ਾਈਨਾਂ ਵਿੱਚ ਬਿਨਾਂ ਕਮਿਟ ਤਬਦੀਲੀਆਂ ਹੋਣ; ਉਹ ਸਨੈਪਸ਼ਾਟ ਵਿੱਚ ਜਾਂਦੀਆਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ਕੋਈ ਕਮਿਟ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ਸਥਿਤੀ ਫਾਈਲ ਅਤੇ ਰਨ ਲੌਗ ਕਮਿਟ ਨਾ ਕਰੋ (ਨਾ ਟੈਗ ਅਤੇ ਨਾ ਪੁਸ਼)।</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ਕੋਈ ਪੁਸ਼ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ਕਮਿਟ ਅਤੇ ਟੈਗ ਕਰੋ, ਪਰ ਪੁਸ਼ ਨਾ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ਕੋਈ ਟੈਗ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ਕਮਿਟ ਅਤੇ ਪੁਸ਼ ਕਰੋ, ਪਰ ਰਨ ਨੂੰ ਟੈਗ ਨਾ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ਹਾਂ, ਇਹ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਹੁਣ ਚਲਾਓ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ਕੋਈ ਮਾਈਗ੍ਰੇਸ਼ਨ ਬਕਾਇਆ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ਸਥਿਤੀ &apos;ਤੇ ਵਾਪਸ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ਇਸ ਇੰਸਟਾਲੇਸ਼ਨ ਵਿੱਚ ਤਬਦੀਲੀਆਂ ਜੋ ਇੱਕ ਵਾਰ ਫਾਈਲਾਂ ਵਜੋਂ ਲਿਖੀਆਂ ਜਾਂਦੀਆਂ ਹਨ (ਸਮੱਗਰੀ, ਕਲਾਸਾਂ, ਭੂਮਿਕਾਵਾਂ, ਸੈਟਿੰਗਾਂ, ਸਕੀਮਾ) ਅਤੇ ਸਾਈਟ ਦੀ ਹਰ ਇੰਸਟਾਲੇਸ਼ਨ &apos;ਤੇ ਇੱਕੋ ਕ੍ਰਮ ਵਿੱਚ ਲਾਗੂ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ। ਰਨ ਪਹਿਲਾਂ ਸਨੈਪਸ਼ਾਟ ਲੈਂਦਾ ਹੈ, ਮਾਈਗ੍ਰੇਸ਼ਨ ਅਸਫਲ ਹੋਣ &apos;ਤੇ ਉਸਨੂੰ ਬਹਾਲ ਕਰਦਾ ਹੈ, ਅਤੇ ਜੋ ਕੀਤਾ ਉਸਨੂੰ ਦਰਜ, ਕਮਿਟ ਅਤੇ ਪੁਸ਼ ਕਰਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count ਬਕਾਇਆ ਚਲਾਓ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ਸੰਖੇਪ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ਬਕਾਇਆ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ਪੂਰੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ਅਸਫਲ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ਲੋੜ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ਡਾਟਾਬੇਸ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ਟ੍ਰਾਂਜ਼ੈਕਸ਼ਨਾਂ: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ਸਾਈਟ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ migrations/ ਵਿੱਚ ਹਨ, ਕਿਸੇ ਐਕਸਟੈਂਸ਼ਨ ਦੀਆਂ extension/&lt;name&gt;/migrations/ ਵਿੱਚ। ਇਹ ਆਪਣੇ ਨਾਵਾਂ ਅਤੇ ਲੋੜਾਂ ਦੇ ਕ੍ਰਮ ਵਿੱਚ ਚੱਲਦੀਆਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ਪਿਛਲਾ ਰਨ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ਫਾਈਲ ਲਾਗੂ ਹੋਣ ਤੋਂ ਬਾਅਦ ਬਦਲ ਗਈ।</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ਅਜੇ ਕੋਈ ਮਾਈਗ੍ਰੇਸ਼ਨ ਨਹੀਂ। ./console exp:migration:generate --skeleton &lt;name&gt; --apply ਪਹਿਲੀ ਲਿਖਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ਨਵੀਨਤਮ ਰਨ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ਹਰ ਰਨ</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ਅਜੇ ਕੋਈ ਰਨ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ਰਨ ਦੀ ਨਕਲ ਕਰਨ ਲਈ ਨੀਤੀ migration/run ਚਾਹੀਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ਇੱਕ ਰਨ ਚੱਲ ਰਿਹਾ ਹੈ: ਉਸਦੇ ਖਤਮ ਹੋਣ &apos;ਤੇ ਨਕਲ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ਸੈੱਟਅੱਪ</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ਇਸ ਇੰਸਟਾਲੇਸ਼ਨ ਦਾ ਨਾ ਕੋਈ ਰਨ, ਨਾ ਕੋਈ ਮਾਈਗ੍ਰੇਸ਼ਨ ਅਤੇ ਨਾ ਕੋਈ ਸਨੈਪਸ਼ਾਟ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ਪਹਿਲਾਂ &quot;ਹਾਂ, ਵਾਪਸ ਲਓ&quot; &apos;ਤੇ ਨਿਸ਼ਾਨ ਲਗਾਓ।</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ਪੁਰਾਣਾ ਸਨੈਪਸ਼ਾਟ ਬਹਾਲ ਕਰਨਾ ਮਾਹਿਰਾਂ ਲਈ ਹੈ: &quot;ਮੈਂ ਜਾਣਦਾ ਹਾਂ ਕਿ ਇਹ ਕੀ ਬਹਾਲ ਕਰਦਾ ਹੈ&quot; &apos;ਤੇ ਨਿਸ਼ਾਨ ਲਗਾਓ।</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ਸਨੈਪਸ਼ਾਟ ਦੀ ਆਈਡੀ ਦੁਬਾਰਾ ਲਿਖੋ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ਬਹਾਲ ਕਰਨ ਲਈ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਹਿੱਸਾ ਚੁਣੋ।</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ਇਸ ਰਨ ਤੋਂ ਪਹਿਲਾਂ ਕੋਈ ਸਨੈਪਸ਼ਾਟ ਨਹੀਂ ਲਿਆ ਗਿਆ: ਇਸਦੀਆਂ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਇੱਕ-ਇੱਕ ਕਰਕੇ ਵਾਪਸ ਲਓ, ਜਾਂ ਕੋਈ ਪੁਰਾਣਾ ਸਨੈਪਸ਼ਾਟ ਬਹਾਲ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ਇਹ ਮਾਈਗ੍ਰੇਸ਼ਨ ਆਪਣੇ ਆਪ ਵਾਪਸ ਨਹੀਂ ਲਈ ਜਾ ਸਕਦੀ: ਇਹ ਲਾਗੂ ਨਹੀਂ ਹੈ, ਜਾਂ ਇਸ ਕੋਲ down() ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ਫਾਰਮ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ਮੁੜ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਰਨ ਚੁਣੋ।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ਪਹਿਲਾਂ &quot;ਹਾਂ, ਇਹ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਹੁਣ ਚਲਾਓ&quot; &apos;ਤੇ ਨਿਸ਼ਾਨ ਲਗਾਓ।</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ਘੱਟੋ-ਘੱਟ ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਚੁਣੋ।</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਲਾਗੂ ਹੋਣ ਤੋਂ ਬਾਅਦ ਬਦਲ ਗਈ: ਤਬਦੀਲੀ ਕਾਰਨ ਸਮੇਤ ਸਵੀਕਾਰ ਕਰੋ, ਜਾਂ ਫਾਈਲ ਵਾਪਸ ਰੱਖੋ।</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>ਦੱਸੋ ਕਿ ਬਦਲੀਆਂ ਮਾਈਗ੍ਰੇਸ਼ਨਾਂ ਕਿਉਂ ਸਵੀਕਾਰ ਕੀਤੀਆਂ ਜਾਂਦੀਆਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>ਕਾਰਨ ਵੱਧ ਤੋਂ ਵੱਧ 500 ਅੱਖਰਾਂ ਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ਇੱਥੇ ਸ਼ੁਰੂ ਕੀਤਾ ਇੱਕ ਰਨ ਅਜੇ ਵੀ ਚੱਲ ਰਿਹਾ ਹੈ (%detail)। ਉਸਦੇ ਖਤਮ ਹੋਣ ਦੀ ਉਡੀਕ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ਕਿਸੇ ਹੋਰ ਰਨ ਕੋਲ ਇੰਸਟਾਲੇਸ਼ਨ ਦਾ ਲੌਕ ਹੈ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ਰਨ ਲਈ ਇੱਕ ਮੌਜੂਦ ਸਾਈਨ-ਇਨ ਕੀਤਾ ਯੂਜ਼ਰ ਚਾਹੀਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ਕੋਈ php ਕਮਾਂਡ ਲਾਈਨ ਬਾਈਨਰੀ ਨਹੀਂ ਮਿਲੀ। migration.ini [AdminSettings] PhpCliPath ਵਿੱਚ ਉਸਦਾ ਪੂਰਾ ਪਾਥ ਲਿਖੋ।</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ਬੰਦ ਹੈ, ਇਸ ਲਈ ਇੱਥੇ ਰਨ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ। ਸਰਵਰ &apos;ਤੇ ./console exp:migration:migrate --apply ਚਲਾਓ।</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ਰਨਾਂ ਦੇ ਫੋਲਡਰ ਵਿੱਚ ਲਿਖਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ਰਨ ਸ਼ੁਰੂ ਹੋਇਆ ਪਰ ਉਸਨੇ ਆਪਣੀ ਪ੍ਰੋਸੈਸ ਆਈਡੀ ਨਹੀਂ ਦੱਸੀ। %detail ਦੀ ਜਾਂਚ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ਦੱਸੋ ਕਿ ਕੀ ਵਾਪਸ ਲੈਣਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ਰਨ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।</translation>
     </message>
 </context>
 </TS>

@@ -15142,6 +15142,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>Yr API GraphQL: ei bwynt terfyn, y sgema a maes chwarae i roi cynnig ar ymholiadau.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mudiadau</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Newidiadau i&apos;r gosodiad wedi&apos;u cadw fel ffeiliau: eu cyflwr, y rhediadau, rhedeg a dychwelyd.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Anfonwch fwtaniadau i /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Mudiadau</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y statws: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Nid yw tablau&apos;r mudiadau&apos;n bodoli eto: mae ./console exp:upgrade --apply yn eu creu.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Methodd %count mudiad</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Mae rhediad ar y gweill, wedi&apos;i gychwyn gan %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Mae&apos;r gosodiad wedi&apos;i gloi: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn aros</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Wedi methu</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Amddifad</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Rhediad olaf</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>dim un eto</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Pob mudiad</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Rhediad efelychiedig</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Rhediad prawf</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Rhedodd y mudiadau sy&apos;n aros mewn trafodiad a ddychwelwyd wedyn: ni chadwyd dim. Isod mae&apos;r hyn a newidiodd pob un yn y gronfa ddata.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Beth fyddai rhediad yn ei wneud nawr. Nid oes dim yn cael ei newid: mae pob mudiad sy&apos;n aros yn rhestru&apos;r newidiadau y byddai&apos;n eu gwneud, a&apos;r rhediad beth fyddai&apos;n ei wneud cyn ac ar ôl.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Efelychu</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Rhedeg</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Methodd y rhediad prawf: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Mae efelychiad angen PostgreSQL neu SQLite, y gellir dychwelyd eu newidiadau sgema; ar y gronfa ddata hon, y cynllun isod yw&apos;r hyn y byddai rhediad yn ei wneud.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Y mudiadau</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Mudiad</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cyflwr</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Beth fyddai&apos;n ei wneud</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Efelychiad: %result mewn %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Dim mudiad eto.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Cyn ac ar ôl y rhediad</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Ciplun cyn</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>yn cael ei dynnu, a&apos;i adfer pan fydd mudiad yn methu</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>i ffwrdd</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Ciplun ar ôl</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>yn cael ei dynnu pan lwyddodd y rhediad</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total mudiad: %pending yn aros, %done wedi&apos;u gwneud, %failed wedi methu.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Hanes y mudiadau</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Pob rhediad gyda&apos;i ddefnyddiwr, ei amgylchedd, ei gipluniau a&apos;r hyn a ymrwymwyd, a nodwyd ac a wthiwyd. Gellir ailgychwyn rhediad a fethodd neu a dorrwyd; gellir dadwneud rhediad sydd â chiplun wedi&apos;i dynnu cyn iddo.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y rhediadau: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Nid yw tablau&apos;r mudiadau&apos;n bodoli eto: mae ./console exp:upgrade --apply yn eu creu.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Dangos</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Y cyfan</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Rhediadau</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dechreuwyd</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Gan</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Cipluniau</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ystorfa</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gweithredoedd</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>cyn</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ar ôl</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>gwthio: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Ailgychwyn</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Dychwelyd</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Dim rhediad yn y cyflwr hwn.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Dechreuwyd yma</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Rhediadau, ailgychwyniadau a dychweliadau a ddechreuwyd ar y tudalennau hyn, gydag adroddiad pob un.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Beth</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Canlyniad</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Dychweliad</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Dychwelyd %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Rhediad %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Beth wnaeth y rhediad, ei gofnod a&apos;i log. Mae rhediad a ddechreuwyd yma yn parhau yn y cefndir pan gaiff y dudalen hon ei chau; agorwch y dudalen eto i&apos;w ddilyn.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Ailgychwyn y rhediad hwn</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Dychwelyd y rhediad hwn</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y cofnod: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Cynnydd</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Dechreuwyd gan %user am %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Gwirio&apos;r cod a thynnu ciplun cyn y rhediad</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Yn rhedeg %id (%index o %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done o %total wedi&apos;u gwneud</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Mae&apos;r mudiadau wedi rhedeg; adfer y ciplun os methodd un</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Tynnu ciplun ar ôl y rhediad, ymrwymo, nodi a gwthio</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Adfer y ciplun</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Mae&apos;r rhediad wedi gorffen. Yn llwytho ei adroddiad.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Nid oedd modd dilyn y cynnydd. Ail-lwythwch y dudalen i weld sut mae&apos;r rhediad yn mynd.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Mae&apos;r dudalen hon yn dilyn y rhediad wrth iddo fynd.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ail-lwytho</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Adroddiad</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Amser</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms milieiliad</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Beth argraffodd y rhediad fel gwallau</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Cofnod</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Amgylchedd</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>dim</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Gorffennwyd</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Ymrwymiad</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Nod</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Gwthiad</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Neges</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Mudiadau&apos;r rhediad hwn</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Ffynhonnell</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Log y rhediad</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Dim ond diwedd y log sy&apos;n cael ei ddangos.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>yn rhedeg</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>wedi gorffen heb adroddiad</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>wedi llwyddo</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>wedi methu</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wedi&apos;i wrthod</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>nid oedd modd cyrraedd y gronfa ddata</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>gwall mewnol</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Mae rhediad ar y gweill</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind wedi&apos;i gychwyn gan %user am %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Ei ddilyn</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Mae&apos;r gosodiad wedi&apos;i gloi</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Mae rhediad arall yn dal y clo (uwchraddiad neu rediad ar y consol): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>wedi&apos;i wneud</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>yn aros</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>dim angen</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>anhysbys</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>wedi&apos;i ddychwelyd</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>wedi&apos;i gymhwyso</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>byddai&apos;n cael ei gymhwyso</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>wedi&apos;i ddadwneud</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>byddai&apos;n cael ei ddadwneud</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>heb redeg</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>yn aros am un arall</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>newid wedi&apos;i dderbyn</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>byddai&apos;r newid yn cael ei dderbyn</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>wedi&apos;i efelychu</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mudiadau</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statws</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Hanes</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Dadwneud %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Caiff rhediad ei ddadwneud i&apos;r ciplun a dynnwyd cyn iddo, un mudiad gyda&apos;i down(). Mae adfer ciplun cynharach i arbenigwyr. Mae pob un yn rhedeg yn y cefndir fel chi, ar ôl ciplun o&apos;r cyflwr presennol.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Nid oedd modd darllen yr hyn y gellir ei ddadwneud: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Rhediad</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Un mudiad</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ciplun cynharach</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Disgrifiad</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ie</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Ciplun</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Enw</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Tynnwyd</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Math</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Rhannau i&apos;w hadfer</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Y gronfa ddata</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Y ffeiliau storio (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Y gosodiadau (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Mae adfer y gronfa ddata yn mynd â hi&apos;n ôl i adeg y ciplun, gan gynnwys sesiynau: efallai y gofynnir i chi fewngofnodi eto wedyn. Collir popeth a newidiwyd ers hynny; tynnir ciplun o&apos;r cyflwr presennol yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Rwy&apos;n gwybod beth mae hyn yn ei adfer</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Teipiwch ID y ciplun eto</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ie, dadwneud</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Canslo</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Y rhediadau sydd â chiplun wedi&apos;i dynnu cyn iddynt.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Dewis</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Dim rhediad gyda chiplun eto.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Y mudiadau a gymhwyswyd sy&apos;n gallu dadwneud eu hunain (mae ganddynt down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Nid oes gan unrhyw fudiad a gymhwyswyd down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Cipluniau cynharach (arbenigwyr)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Dim ciplun eto.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Rhedeg y mudiadau</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Mae&apos;r rhediad yn mynd yn ei flaen yn y cefndir fel %user, ac mae ei dudalen yn ei ddangos wrth iddo fynd. Cyn y mudiad cyntaf tynnir ciplun o&apos;r gosodiad; pan fydd mudiad yn methu, mae&apos;r rhediad yn stopio ac adferir y ciplun.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Rhediad prawf yn gyntaf</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y statws: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Mudiadau sy&apos;n aros</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Maen nhw&apos;n rhedeg yn y drefn hon. Dad-diciwch un i&apos;w adael, a&apos;r rhai sydd ei angen, ar gyfer rhediad diweddarach.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Ei redeg</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Yn troi&apos;r modd cynnal a chadw ymlaen tra mae&apos;n rhedeg.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Wedi newid ar ôl eu cymhwyso</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Nid y ffeiliau hyn yw&apos;r rhai a gymhwyswyd. Mae rhediad yn eu gwrthod oni bai bod y newid yn cael ei dderbyn gyda rheswm; nid ydynt yn cael eu rhedeg eto, cofnodir y siec-swm newydd a chedwir y rheswm yn y log archwilio.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Derbyn y newidiadau</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Pam</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Y rhagosodiadau yw&apos;r rhai diogel. Mae pob blwch yn hepgor cam.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Dim ciplun</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Dim ciplun cyn ac ar ôl y rhediad: ni ellir adfer methiant yn awtomatig.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Dim adfer</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Ar ôl methiant, gadael y gosodiad fel y gadawodd y methiant ef.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Cadw newidiadau heb eu hymrwymo</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Rhedeg er bod gan osodiadau, estyniadau neu ddyluniadau newidiadau heb eu hymrwymo; maen nhw&apos;n mynd i&apos;r ciplun.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Dim ymrwymiad</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Peidio ag ymrwymo&apos;r ffeil statws a log y rhediad (dim nod a dim gwthio chwaith).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Dim gwthio</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Ymrwymo a nodi, ond peidio â gwthio.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Dim nod</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Ymrwymo a gwthio, ond peidio â nodi&apos;r rhediad.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ie, rhedeg y mudiadau hyn nawr</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Nid oes unrhyw fudiad yn aros.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Yn ôl i&apos;r statws</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Newidiadau i&apos;r gosodiad hwn wedi&apos;u hysgrifennu unwaith fel ffeiliau (cynnwys, dosbarthiadau, rolau, gosodiadau, sgema) a&apos;u cymhwyso i bob gosodiad o&apos;r safle yn yr un drefn. Mae rhediad yn tynnu ciplun yn gyntaf, yn ei adfer pan fydd mudiad yn methu, ac yn cofnodi, ymrwymo a gwthio&apos;r hyn a wnaeth.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Rhedeg %count sy&apos;n aros</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Trosolwg</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn aros</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wedi&apos;u gwneud</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Wedi methu</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Dim angen</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Cronfa ddata</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>trafodion: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Mae mudiadau&apos;r safle yn migrations/, rhai estyniad yn extension/&lt;name&gt;/migrations/. Maen nhw&apos;n rhedeg yn nhrefn eu henwau a&apos;r hyn sydd ei angen arnynt.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Rhediad olaf</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Newidiodd y ffeil ar ôl ei chymhwyso.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Dim mudiad eto. Mae ./console exp:migration:generate --skeleton &lt;name&gt; --apply yn ysgrifennu&apos;r cyntaf.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Y rhediadau diweddaraf</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Pob rhediad</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Dim rhediad eto.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Mae efelychu rhediad angen y polisi migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Mae rhediad ar y gweill: efelychwch pan fydd wedi gorffen.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gosod</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>Nid yw %target yn rhediad, yn fudiad nac yn giplun o&apos;r gosodiad hwn.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Ticiwch “Ie, dadwneud” yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Mae adfer ciplun cynharach i arbenigwyr: ticiwch “Rwy&apos;n gwybod beth mae hyn yn ei adfer”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Teipiwch ID y ciplun eto: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Dewiswch o leiaf un rhan i&apos;w hadfer.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Nid oes gan y rhediad hwn giplun wedi&apos;i dynnu cyn iddo: dadwnewch ei fudiadau fesul un, neu adferwch giplun cynharach.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Ni all y mudiad hwn ddadwneud ei hun: nid yw wedi&apos;i gymhwyso, neu nid oes ganddo down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Nid oedd modd darllen y ffurflen.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Dewiswch y rhediad i&apos;w ailgychwyn.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Ticiwch “Ie, rhedeg y mudiadau hyn nawr” yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Dewiswch o leiaf un mudiad.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Newidiodd mudiad ar ôl ei gymhwyso: derbyniwch y newid gyda rheswm, neu rhowch y ffeil yn ôl.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Rhowch y rheswm pam mae&apos;r mudiadau a newidiwyd yn cael eu derbyn.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Mae&apos;r rheswm yn 500 nod ar y mwyaf.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Mae rhediad a ddechreuwyd yma yn dal ar y gweill (%detail). Arhoswch iddo orffen.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Mae rhediad arall yn dal clo&apos;r gosodiad: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Mae&apos;r rhediad angen defnyddiwr wedi mewngofnodi sy&apos;n bodoli.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ni chanfuwyd rhaglen llinell orchymyn php. Gosodwch migration.ini [AdminSettings] PhpCliPath i&apos;w llwybr llawn.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>Mae proc_open wedi&apos;i analluogi, felly ni ellir cychwyn rhediad yma. Rhedwch ./console exp:migration:migrate --apply ar y gweinydd.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ni ellir ysgrifennu i ffolder y rhediadau: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Cychwynnwyd y rhediad ond ni adroddodd ID ei broses. Gwiriwch %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Enwch beth i&apos;w ddadwneud.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Nid oedd modd cychwyn y rhediad.</translation>
     </message>
 </context>
 </TS>

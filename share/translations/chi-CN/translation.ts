@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API：其端点、架构以及用于试验查询的测试平台。</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>迁移</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>以文件形式保存的安装变更：其状态、运行记录、运行和回滚。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>请将变更发送到 /api/graphql。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>迁移</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>无法读取状态：%problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>迁移表尚不存在：./console exp:upgrade --apply 会创建它们。</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count 个迁移失败</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>有一次运行正在进行，由 %user 启动</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>安装已锁定：%holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>待处理</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失败</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>孤立项</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>上次运行</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>暂无</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>所有迁移</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>模拟运行</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>试运行</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>待处理的迁移在一个事务中运行，随后该事务被回滚：未保留任何内容。下面是每个迁移在数据库中所做的更改。</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>现在运行将会执行的操作。不会更改任何内容：每个待处理的迁移列出它将做的更改，运行本身列出它在之前和之后将做的事情。</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>模拟</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>运行</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>试运行失败：%problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>模拟需要 PostgreSQL 或 SQLite，它们的结构更改可以回滚；在此数据库上，下面的计划就是运行将要执行的操作。</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>迁移列表</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>迁移</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状态</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>将执行的操作</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>模拟：%result，用时 %ms 毫秒</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>尚无迁移。</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>运行之前和之后</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>运行前快照</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>会创建，并在迁移失败时恢复</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>关闭</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>运行后快照</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>运行成功时创建</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total 个迁移：%pending 个待处理，%done 个已完成，%failed 个失败。</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>迁移历史</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>每次运行及其用户、环境、快照以及已提交、打标签和推送的内容。失败或中断的运行可以继续；运行前有快照的运行可以撤销。</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>无法读取运行记录：%problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>迁移表尚不存在：./console exp:upgrade --apply 会创建它们。</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>显示</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>运行记录</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>开始时间</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>启动者</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>快照</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>代码仓库</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>之前</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>之后</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>推送：%state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>继续</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>回滚</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>没有处于此状态的运行。</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>在此启动</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>在这些页面上启动的运行、继续和回滚，以及各自的报告。</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>内容</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>结果</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>回滚</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>回滚 %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>运行 %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>运行所做的操作、其记录和日志。在此启动的运行在关闭此页面后会在后台继续；重新打开此页面即可跟踪它。</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>继续此运行</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>回滚此运行</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>无法读取记录：%problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>进度</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>由 %user 于 %time 启动。</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>正在检查代码并在运行前创建快照</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>正在运行 %id（第 %index 个，共 %total 个）</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>已完成 %done / %total</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>迁移已运行；如有失败则恢复快照</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>运行后创建快照、提交、打标签并推送</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>正在恢复快照</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>运行已结束。正在加载其报告。</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>无法跟踪进度。请重新加载页面以查看运行情况。</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>此页面会实时跟踪运行过程。</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>重新加载</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>报告</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>用时</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms 毫秒</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>运行输出的错误信息</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>记录</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>环境</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>无</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>结束时间</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>提交</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>标签</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>推送</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>消息</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>此运行的迁移</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>来源</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>运行日志</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>仅显示日志的末尾部分。</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>运行中</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>已结束但无报告</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>成功</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>失败</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>已拒绝</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>无法连接数据库</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>内部错误</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>有一次运行正在进行</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind 由 %user 于 %time 启动。</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>跟踪</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>安装已锁定</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>另一个运行持有锁（升级或控制台上的运行）：%holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>已完成</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>待处理</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>无需执行</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>未知</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>已回滚</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>已应用</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>将被应用</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>已撤销</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>将被撤销</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>未运行</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>等待其他迁移</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>已接受更改</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>将接受更改</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>已模拟</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>迁移</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>状态</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>历史记录</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>撤销 %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>运行会撤销到其之前创建的快照，单个迁移则通过其 down() 撤销。恢复更早的快照仅供专家使用。每项撤销都会在为当前状态创建快照之后，以您的身份在后台运行。</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>无法读取可撤销的内容：%problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>一次运行</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>一个迁移</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>更早的快照</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>描述</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>快照</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>标注</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>创建时间</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>类型</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>要恢复的部分</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>数据库</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>存储文件（var/）</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>设置（settings/override）</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>恢复数据库会将其还原到快照时的状态，包括会话：之后您可能需要重新登录。此后的所有更改都将丢失；系统会先为当前状态创建快照。</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>我了解此操作会恢复什么</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>请再次输入快照的 ID</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>是的，撤销</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>运行前有快照的运行。</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>选择</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>尚无带快照的运行。</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>可以自行撤销的已应用迁移（它们有 down()）。</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>没有已应用的迁移具有 down()。</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>更早的快照（专家）</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>尚无快照。</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>运行迁移</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>运行以 %user 的身份在后台进行，其页面会实时显示进度。在第一个迁移之前会为安装创建快照；如果某个迁移失败，运行将停止并恢复快照。</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>先试运行</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>无法读取状态：%problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>待处理的迁移</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>它们按此顺序运行。取消勾选某个迁移，即可将它及依赖它的迁移留到以后运行。</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>运行</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>运行期间开启维护模式。</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>应用后已更改</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>这些文件与已应用的文件不同。除非附带理由接受更改，否则运行会拒绝它们；它们不会再次运行，新的校验和会被记录，理由保存在审计日志中。</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>接受更改</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>理由</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>默认设置是安全的。每个复选框都会跳过一个步骤。</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>不创建快照</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>运行前后不创建快照：失败后无法自动恢复。</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>不恢复</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>失败后，保持安装处于失败后的状态。</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>保留未提交的更改</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>即使设置、扩展或设计有未提交的更改也运行；这些更改会包含在快照中。</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>不提交</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>不提交状态文件和运行日志（也不打标签、不推送）。</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>不推送</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>提交并打标签，但不推送。</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>不打标签</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>提交并推送，但不为运行打标签。</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>是的，立即运行这些迁移</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>没有待处理的迁移。</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>返回状态</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>对此安装的更改以文件形式编写一次（内容、类、角色、设置、结构），并按相同顺序应用到站点的每个安装。运行会先创建快照，在迁移失败时恢复它，并记录、提交和推送所做的操作。</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>运行 %count 个待处理迁移</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>概览</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>待处理</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>已完成</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失败</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>无需执行</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>数据库</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>事务：%mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>站点迁移位于 migrations/，扩展的迁移位于 extension/&lt;name&gt;/migrations/。它们按名称顺序及依赖关系运行。</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>上次运行</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>该文件在应用后已更改。</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>尚无迁移。./console exp:migration:generate --skeleton &lt;name&gt; --apply 可编写第一个迁移。</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>最近的运行</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>所有运行</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>尚无运行。</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>模拟运行需要 migration/run 策略。</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>有一次运行正在进行：请在其结束后再模拟。</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>设置</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target 不是此安装的运行、迁移或快照。</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>请先勾选“是的，撤销”。</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>恢复更早的快照仅供专家使用：请勾选“我了解此操作会恢复什么”。</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>请再次输入快照的 ID：%target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>请至少选择一个要恢复的部分。</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>此运行之前没有快照：请逐个撤销其迁移，或恢复更早的快照。</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>此迁移无法自行撤销：它未被应用，或没有 down()。</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>无法读取表单。</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>请选择要继续的运行。</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>请先勾选“是的，立即运行这些迁移”。</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>请至少选择一个迁移。</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>某个迁移在应用后已更改：请附带理由接受更改，或还原该文件。</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>请说明接受已更改迁移的理由。</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>理由最多 500 个字符。</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>在此启动的运行仍在进行（%detail）。请等待其结束。</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>另一个运行持有安装锁：%detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>运行需要一个存在且已登录的用户。</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>未找到 php 命令行程序。请将 migration.ini [AdminSettings] PhpCliPath 设置为其完整路径。</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open 已被禁用，因此无法在此启动运行。请在服务器上运行 ./console exp:migration:migrate --apply。</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>无法写入运行文件夹：%detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>运行已启动，但未报告其进程 ID。请检查 %detail。</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>请指明要撤销的内容。</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>无法启动运行。</translation>
     </message>
 </context>
 </TS>
