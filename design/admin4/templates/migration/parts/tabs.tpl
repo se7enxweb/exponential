@@ -1,0 +1,14 @@
+{* The views of Setup > Migrations as tabs. Variables: view (the current one), can_run, can_rollback. *}
+<nav class="a4-section" aria-label="{'Migrations'|i18n( 'design/admin/migration' )|wash}">
+<ul class="a4-tabs">
+{foreach array( hash( 'view', 'status', 'text', 'Status'|i18n( 'design/admin/migration' ), 'show', true() ),
+                hash( 'view', 'history', 'text', 'History'|i18n( 'design/admin/migration' ), 'show', true() ),
+                hash( 'view', 'dryrun', 'text', 'Dry run'|i18n( 'design/admin/migration' ), 'show', true() ),
+                hash( 'view', 'run', 'text', 'Run'|i18n( 'design/admin/migration' ), 'show', $can_run ),
+                hash( 'view', 'rollback', 'text', 'Rollback'|i18n( 'design/admin/migration' ), 'show', $can_rollback ) ) as $tab}
+{if $tab.show}
+    <li>{if eq( $tab.view, $view )}<span class="current" aria-current="page">{$tab.text|wash}</span>{else}<a href={concat( 'migration/', $tab.view )|ezurl}>{$tab.text|wash}</a>{/if}</li>
+{/if}
+{/foreach}
+</ul>
+</nav>
