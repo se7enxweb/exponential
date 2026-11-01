@@ -15151,6 +15151,14 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <translation>Sigili yɛlɛmali minnu marara ka kɛ dosiyew ye: u hali, waleyaw, ka waleya ani ka segin kɔ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Kɔnɔko kuraw</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Kɔnɔko kuraw, fɛn minnu minɛna ka lajɛ, ani kɛwalew sugandili kan.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Siti dɔ kopi jɔlen bila kɛnɛ kan GitHub Pages kan walima git jatigi o jatigi kan.</translation>
     </message>
@@ -80581,6 +80589,670 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Waleya ma se ka daminɛ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dilanna</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tɔgɔ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kilasi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekisiyɔn</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Dilanbaga</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kɔnɔko kuraw</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Siti bɛɛ kɔnɔkow minnu dilanna walima yɛlɛmana kɔsa in na, kuraw fɔlɔ: bisigiyalaw ye fɛn minnu ci, fɛn minnu minɛna ka lajɛ, bruyɔnw minnu bɛ u bilali makɔnɔ. Fɛnw sugandi walasa k'u bila, k'u minɛ, k'u dogo, k'u jira, k'u bɔsi walima k'u bila sekisiyɔn wɛrɛ walima cogoya wɛrɛ la.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Lisi ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Lajɛli minɛni ma labɛn fɔlɔ, o de kosɔn foyi ma minɛ ani minɛni kɛwalew tɛ di. Yɛlɛmali taabolo 6.0.15-review-hold b'a labɛn: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lisi sɛnsɛn</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ka bɔ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka se</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Don</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Dilanna (bilali fɔlɔ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Bɛɛ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Bilalen</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Bruyɔn, ma bila abada</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>A bɛ makɔnɔni na (a bɛ sɔnni walima don dɔ makɔnɔ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Nɔgɔsigiyɔrɔ la</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Minɛna ka lajɛ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Minɛna</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ma minɛ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Dogolen</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Yeli</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Cira don min na</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Siti donda o donda</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Sɛgɛsɛgɛli ye min sɛbɛn o dɔrɔn.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Sisan: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Donni tɔgɔ walima baarakɛla ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sɛnsɛn</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Sɛnsɛnw bɔsi</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Fɛnw</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka se %to ma %count kɔnɔ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Fɛn si tɛ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(kalanna %ms ms kɔnɔ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Kɛwalew fɛn sugandilenw kan</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Ɲɛ in bɛɛ sugandi</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count sugandilen</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kɛwale</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kɛwale dɔ sugandi</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Minɛni bɔ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Minɛ ka lajɛ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Dogo</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Bila nɔgɔsigiyɔrɔ la</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Jɔsi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sekisiyɔn di</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Cogoya di</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sababu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Wajibi don ka minɛ; a bɛ mara minɛni fɛ ani sɛgɛsɛgɛli kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Sekisiyɔn dɔ sugandi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Cogoya dɔ sugandi</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>A kɛ sugandilenw na</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Fɛn kelen kelen bɛ lajɛ i yɛrɛ ka yamaruyaw la. Bilali nɔgɔsigiyɔrɔ la ani jɔsili b'a ɲini i ka sɔn. Ni fɛnw ka ca ni %count ye, u bɛ kɛ kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Sugandi</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Bilali</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Cira yɔrɔ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name sugandi</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>a ma kɛ fɔlɔ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(tɔgɔ tɛ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Bruyɔn</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>A bɛ makɔnɔni na</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>A faa ye a dogo</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Minɛna: ci kura</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Wɛrisiyɔn %version bɛ makɔnɔni na</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Wɛrisiyɔn %version bɛ baara la</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Bruyɔn, wɛrisiyɔn %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Wɛrisiyɔn %version bilalen</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Labɛnna %date kama</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>adrɛsi tɛ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Foyi tɛ bɛn sɛnsɛn ninnu ma.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Bɛɛ jira</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Kɔnɔko si tɛ fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ɲɛ kelen na</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fɛn %count jira ɲɛ kelen na.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ci dɔ ka adrɛsi ni a ka navigatɛri bɛ bɔ sɛgɛsɛgɛli indɛkisi la, min tɛ sɔrɔ yan: kolɔni b'a fɔ ko "ma sɛbɛn".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adrɛsi ni navigatɛri ye sɛgɛsɛgɛli ye minnu sɛbɛn fɛn in kama (minɛni yɛrɛma b'u sɛbɛn tuma bɛɛ; bilali ni dilanni b'u sɛbɛn yɔrɔ minnu na a bɔra yen dɔrɔn), i n'a fɔ a ka gundo labɛnw b'u mara cogo min na.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: fɛn %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Jɔsili bɛ fɛnw bɔ pewu, u ka wɛrisiyɔnw ni u ka bayɛlɛmaw bɛɛ. A tɛ se ka segin kɔ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Fɛnw bɛ taa nɔgɔsigiyɔrɔ la, u bɛ se ka segin ka bɔ yen.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Fɛn kelen kelen bɛ lajɛ i yɛrɛ ka yamaruyaw la; fɛn min bɛ ni fɛn dɔgɔmanw ye, o bɛ to a cogo la (a bɔsi kɔnɔko jɔcogo la). A bɛna ɲini i fɛ i k'a jira ko i yɛrɛ don.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Nin bɛ kɛ kɔfɛ: a taa ɲɛ bɛ yɛlɛ, ani fɛn kelen kelen jaabi bɛ jira n'a banna.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Fɛn sugandilenw</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ani %count wɛrɛ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dabila</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Foyi ma kɛ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sababu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Kɛwale bɛ kɛ kɔfɛ hali sisan.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>A taa ɲɛ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Kɔfɛ kɛwale ma ɲɛ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>A banna</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A ma sɔn</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>A ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Fɛn kelen kelen</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Fɛn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Jaabi</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Mun na</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Segin lisi ma</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Labɛnni</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Foyi ma kɛ hali dɔɔnin</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Sɔn</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kɛwale dɔ sugandi.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Fɛn kelen sugandi a dɔgɔya la.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Fɛn 1000 dɔrɔn sugandi a caya la siɲɛ kelen.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>A fɔ fɛnw minɛna mun na.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Sekisiyɔn sugandi.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Cogoya sugandi.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formilɛri ma se ka kalan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Kɔnɔko kuraw</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Jatew ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Minɛna ka lajɛ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Kura bi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Lajɛli minɛni ma labɛn fɔlɔ (yɛlɛmali taabolo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Kɔnɔko kura bɛɛ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>I tɛ se ka moderasiyɔn kɛwalew kɛ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderasiyɔn kɛwale ma dafa: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasiyɔn: %action objɛ %count kan</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done objɛ %total la: %ok banna, %refused ma sɔn, %failed ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok banna, %refused ma sɔn, %failed ma ɲɛ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>A tɛ yen tugun.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Yɔrɔ si t'a fɛ (a ma bila).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>I tɛ se k'a dogo (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>I tɛ se k'a jira (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>A dogolen don kaban.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>A ma dogo.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Dogolen.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Jiralen.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>A bɛ nɔgɔsigiyɔrɔ la: a lankolon walima a segin ka bɔ yen.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Bruyɔn min ma bila abada, o tɛ se ka taa nɔgɔsigiyɔrɔ la: a jɔsi.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>I tɛ se k'a jɔsi (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Jɔsilen.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>I tɛ se k'a bɔsi (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Fɛn dɔgɔmanw b'a la: a bɔsi kɔnɔko jɔcogo la, u lisi bɛ yɔrɔ min na.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>A ma bɔsi (baarasira dɔ bɛ se ka bɔsili minɛ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>A taara nɔgɔsigiyɔrɔ la.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sekisiyɔn tɛ yen.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>A bɛ sekisiyɔn in na kaban.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>I tɛ se ka sekisiyɔn in di (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sekisiyɔn ma di.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sekisiyɔn dilen.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Cogoya tɛ yen.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>A bɛ cogoya in na kaban.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>I tɛ se ka cogoya in di (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Cogoya ma di (baarasira dɔ bɛ se ka yɛlɛmali minɛ).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Cogoya dilen.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Kɛwale suguya tɛ yen.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Lajɛli minɛni ma labɛn (yɛlɛmali taabolo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>A fɔ a minɛna mun na.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>A minɛna kaban.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>I tɛ se k'a minɛ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Minɛni ma kɛ (baarasira dɔ bɛ se ka yɛlɛmali minɛ).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Minɛna.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>A ma minɛ.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>I tɛ se k'a bila (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Minɛni ma bɔ (baarasira dɔ bɛ se ka yɛlɛmali minɛ).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>A bilala; a dogolen don hali bi: i tɛ se k'a jira (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>A bilala.</translation>
     </message>
 </context>
 <context>

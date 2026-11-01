@@ -15151,6 +15151,14 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <translation>Ŝanĝoj al la instalaĵo konservataj kiel dosieroj: ilia stato, la ruloj, ruli kaj malfari.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Lastatempa enhavo</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>La plej nova enhavo, kio estas retenita por revizio, kaj agoj pri elekto.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publikigu statikan kopion de retejo ĉe GitHub Pages aŭ ĉe ajna git-gastiganto.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>La rulo ne startigeblis.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modifita</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Kreita</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomo</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klaso</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcio</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Kreinto</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Lastatempa enhavo</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>La plej lastatempe kreita kaj modifita enhavo de la tuta retejo, la plej nova unue: kion vizitantoj sendis, kio estas retenita por revizio, malnetoj atendantaj sian publikigon. Elektu erojn por liberigi, reteni, kaŝi, montri, forigi ilin aŭ movi ilin al alia sekcio aŭ stato.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>La listo ne legeblis: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>La retenado por revizio ankoraŭ ne estas agordita, do nenio estas retenita kaj la retenaj agoj ne estas proponataj. La ĝisdatiga paŝo 6.0.15-review-hold agordas ĝin: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtri la liston</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ĝis</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Kreita (unua publikigo)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ĉiuj</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statuso</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikigita</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Malneto, neniam publikigita</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Atendanta (aprobon aŭ daton)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>En la rubujo</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retenita por revizio</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retenita</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ne retenita</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Kaŝita</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Videbla</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Sendita je</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ajna retejaliro</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Nur kion la kontrolprotokolo registris.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nun: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Ensalutnomo aŭ uzanto-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtri</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Forigi filtrilojn</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Eroj</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ĝis %to el %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Neniu ero</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(legita en %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Agoj pri la elektitaj eroj</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Elekti ĉion en ĉi tiu paĝo</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count elektitaj</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ago</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Elektu agon</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Liberigi la retenon</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Reteni por revizio</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Kaŝi</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Movi al la rubujo</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Forigi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Atribui sekcion</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Atribui staton</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Kialo</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necesa por reteni; konservata kun la reteno kaj en la kontrolprotokolo.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Elektu sekcion</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Elektu staton</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Apliki al la elektitaj</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ĉiu ero estas kontrolata laŭ viaj propraj permesoj. Movi al la rubujo kaj forigi petas vian konfirmon. Pli ol %count eroj ruliĝas fone.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Elekti</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikigo</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Sendita de</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Elekti %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ankoraŭ ne</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(sen nomo)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Malneto</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Atendanta</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Kaŝita de sia gepatro</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retenita: nova sendaĵo</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versio %version atendanta</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versio %version prilaborata</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Malneto, versio %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versio %version publikigita</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Planita por %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>neniu adreso</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ne registrita</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nenio kongruas kun ĉi tiuj filtriloj.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Montri ĉion</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ankoraŭ ne estas enhavo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po paĝo</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Montri %count erojn po paĝo.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>La adreso kaj la retumilo de sendaĵo venas el la kontrolprotokola indekso, kiu ne disponeblas ĉi tie: la kolumno diras "ne registrita".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>La adreso kaj la retumilo estas tiuj, kiujn la kontrolprotokolo registris por la ero (la aŭtomata reteno ĉiam registras ilin; publikigo kaj kreado nur kie tio estas ŝaltita), tiel kiel ĝiaj privatecaj agordoj konservas ilin.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count eroj</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Forigo forviŝas la erojn definitive, kun ĉiuj iliaj versioj kaj tradukoj. Ĝi ne estas malfarebla.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>La eroj iras al la rubujo, el kie ili estas restaŭreblaj.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ĉiu ero estas kontrolata laŭ viaj propraj permesoj; ero kun subaj eroj restas kiel ĝi estas (forigu ĝin en la enhavstrukturo). Oni petos vin konfirmi, ke temas pri vi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ĉi tio ruliĝas fone: ĝia progresa paĝo malfermiĝas, kaj la rezulto por ĉiu ero aperas kiam ĝi finiĝis.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>La elektitaj eroj</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>kaj %count pliaj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Nuligi</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nenio estis farita</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Kialo: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>La ago ankoraŭ ruliĝas fone.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ĝia progreso</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>La fona ago malsukcesis: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Farita</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifuzita</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Malsukcesis</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Po ero</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ero</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezulto</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kial</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Reen al la listo</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Agordado</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nenio farita</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Konfirmi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Elektu agon.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Elektu almenaŭ unu eron.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Elektu maksimume 1000 erojn samtempe.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Diru, kial la eroj estas retenitaj.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Elektu la sekcion.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Elektu la staton.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>La formularo ne legeblis.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Lastatempa enhavo</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>La nombroj ne legeblis: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retenita por revizio</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Novaj hodiaŭ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenado por revizio ankoraŭ ne estas agordita (la ĝisdatiga paŝo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ĉiu lastatempa enhavo</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Vi ne rajtas ruli moderigajn agojn (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>La moderiga ago ne estas kompleta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderigo: %action sur %count objektoj</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done el %total objektoj: %ok faritaj, %refused rifuzitaj, %failed malsukcesaj</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok faritaj, %refused rifuzitaj, %failed malsukcesaj</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ĝi ne plu ekzistas.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ĝi havas neniun lokon (ne publikigita).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Vi ne rajtas kaŝi ĝin (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Vi ne rajtas montri ĝin (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ĝi jam estas kaŝita.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ĝi ne estas kaŝita.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Kaŝita.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Montrita.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ĝi estas en la rubujo: malplenigu aŭ restaŭru ĝin tie.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Malneto neniam publikigita ne povas iri al la rubujo: forigu ĝin.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Vi ne rajtas forigi ĝin (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Forigita.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Vi ne rajtas forpreni ĝin (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ĝi havas subajn erojn: forprenu ĝin en la enhavstrukturo, kie ili estas listigitaj.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ĝi ne estis forprenita (laborfluo eble retenas la forprenon).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Movita al la rubujo.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>La sekcio ne ekzistas.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ĝi jam estas en ĉi tiu sekcio.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Vi ne rajtas atribui ĉi tiun sekcion (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>La sekcio ne estis atribuita.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sekcio atribuita.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>La stato ne ekzistas.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ĝi jam estas en ĉi tiu stato.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Vi ne rajtas atribui ĉi tiun staton (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>La stato ne estis atribuita (laborfluo eble retenas la ŝanĝon).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stato atribuita.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ne ekzistas tia ago.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenado por revizio ne estas agordita (la ĝisdatiga paŝo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Diru, kial ĝi estas retenita.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ĝi jam estas retenita.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Vi ne rajtas reteni ĝin (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>La reteno ne estis metita (laborfluo eble retenas la ŝanĝon).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retenita.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ĝi ne estas retenita.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Vi ne rajtas liberigi ĝin (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>La reteno ne estis liberigita (laborfluo eble retenas la ŝanĝon).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Liberigita; ankoraŭ kaŝita: vi ne rajtas montri ĝin (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Liberigita.</translation>
     </message>
 </context>
 <context>

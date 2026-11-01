@@ -15151,6 +15151,14 @@ bellik: Paketler gurnamadan aýrylmaz.</translation>
         <translation>Gurnamadaky faýl görnüşinde saklanýan üýtgeşmeler: olaryň ýagdaýy, işledilmeler, işletmek we yzyna almak.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Täze mazmun</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Iň täze mazmun, barlag üçin saklanýanlar we saýlanan elementler boýunça hereketler.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Saýtyň statik nusgasyny GitHub Pages-e ýa-da islendik git hostingine neşir ediň.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>The run could not be started.</source>
         <translation>Işledilmäni başladyp bolmady.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Üýtgedilen</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Döredilen</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ady</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Döreden</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Täze mazmun</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Tutuş saýtyň iň soňky döredilen we üýtgedilen mazmuny, iň täzesi birinji: myhmanlaryň iberenleri, barlag üçin saklanýanlar, neşir edilmegine garaşýan garalamalar. Elementleri boşatmak, saklamak, gizlemek, görkezmek, aýyrmak ýa-da başga bölüme ýa ýagdaýa geçirmek üçin olary saýlaň.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Sanawy okap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Barlag üçin saklamak entek sazlanmadyk, şonuň üçin hiç zat saklanmaýar we saklamak hereketleri hödürlenmeýär. Ony 6.0.15-review-hold täzeleme ädimi sazlaýar: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sanawy süz</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Başlap</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Çenli</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Sene</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Döredilen (ilkinji neşir)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ählisi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Neşir ýagdaýy</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Neşir edilen</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Garalama, hiç haçan neşir edilmedik</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Garaşylýar (tassyklama ýa-da sene garaşylýar)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Zibil sebedinde</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Barlag üçin saklanýar</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Saklanýar</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Saklanmaýar</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Gizlin</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Görünýän</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Iberilen saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Islendik saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Diňe auditiň ýazga alanlary.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Häzir: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Login ýa-da ulanyjy belgisi.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Süz</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Süzgüçleri arassala</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementler</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count elementden %from–%to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Element ýok</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms-da okaldy)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Saýlanan elementler boýunça hereketler</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Bu sahypadakylaryň hemmesini saýla</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count saýlandy</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hereket</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Hereket saýlaň</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Saklamagy aýyr</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Barlag üçin sakla</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Gizle</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Görkez</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Zibil sebedine geçir</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Poz</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Bölüm bellemek</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Ýagdaý bellemek</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sebäp</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Saklamak üçin gerek; saklama bilen bilelikde we auditde saklanýar.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Bölüm saýlaň</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ýagdaý</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Ýagdaý saýlaň</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Saýlananlara ulan</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Her element siziň öz rugsatlaryňyz boýunça barlanýar. Zibil sebedine geçirmek we pozmak tassyklamagy soraýar. %count elementden köpüsi fonda ýerine ýetirilýär.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Saýla</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Neşir</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Nireden iberildi</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name saýla</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>entek däl</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(adsyz)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Belgi %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Garalama</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Garaşylýar</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ene elementi tarapyndan gizlenen</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Saklanýar: täze iberilen</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version wersiýa garaşylýar</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version wersiýa üstünde işlenýär</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Garalama, %version wersiýa</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version wersiýa neşir edildi</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date senesine meýilleşdirildi</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>salgy ýok</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ýazga alynmadyk</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Bu süzgüçlere hiç zat gabat gelmeýär.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hemmesini görkez</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Entek mazmun ýok.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sahypada</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Sahypada %count element görkez.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Iberilen elementiň salgysy we brauzeri audit indeksinden gelýär, ol bolsa bu ýerde elýeterli däl: sütünde “ýazga alynmadyk” ýazylýar.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Salgy we brauzer auditiň element üçin ýazga alanlarydyr (awtomatik saklama olary hemişe ýazga alýar; neşir etmek we döretmek diňe açylan ýerinde), gizlinlik sazlamalarynyň saklaýşy ýaly.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count element</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Pozmak elementleri ähli wersiýalary we terjimeleri bilen birlikde hemişelik aýyrýar. Ony yzyna gaýtaryp bolmaýar.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementler zibil sebedine gidýär, olary şol ýerden dikeldip bolýar.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Her element siziň öz rugsatlaryňyz boýunça barlanýar; içki elementleri bolan element bolşy ýaly galdyrylýar (ony mazmun gurluşynda aýyryň). Sizden özüňizdigini tassyklamak soralar.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Bu fonda ýerine ýetirilýär: onuň ýerine ýetiriliş sahypasy açylýar we tamamlananda her element boýunça netije görkezilýär.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Saýlanan elementler</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>we ýene %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ýatyr</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Hiç zat edilmedi</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sebäp: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Hereket entek fonda ýerine ýetirilýär.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Onuň ýerine ýetirilişi</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Fon hereketi şowsuz boldy: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tamamlandy</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ret edildi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Şowsuz</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Her element boýunça</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Netije</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Näme üçin</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Sanawa dolan</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazlama</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Hiç zat edilmedi</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Tassykla</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Hereket saýlaň.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Iň bolmanda bir element saýlaň.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Bir gezekde iň köp 1000 element saýlaň.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Elementleriň näme üçin saklanýandygyny ýazyň.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Bölümi saýlaň.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Ýagdaýy saýlaň.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formany okap bolmady.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Täze mazmun</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Sanlary okap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Barlag üçin saklanýar</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Şu gün täze</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Barlag üçin saklamak entek sazlanmadyk (6.0.15-review-hold täzeleme ädimi).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ähli täze mazmun</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Siz moderasiýa hereketlerini ýerine ýetirip bilmeýärsiňiz (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderasiýa hereketi doly däl: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasiýa: %count obýektde %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total obýektden %done: %ok tamamlandy, %refused ret edildi, %failed şowsuz</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok tamamlandy, %refused ret edildi, %failed şowsuz</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ol indi ýok.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Onuň ýerleşişi ýok (neşir edilmedik).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Siz ony gizläp bilmeýärsiňiz (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Siz ony görkezip bilmeýärsiňiz (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ol eýýäm gizlin.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ol gizlin däl.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Gizlendi.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Görkezildi.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ol zibil sebedinde: ony şol ýerde boşadyň ýa-da dikeldiň.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Hiç haçan neşir edilmedik garalama zibil sebedine gidip bilmeýär: ony pozuň.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Siz ony pozup bilmeýärsiňiz (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Pozuldy.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Siz ony aýyryp bilmeýärsiňiz (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Onuň içki elementleri bar: ony olaryň görkezilýän mazmun gurluşynda aýyryň.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ol aýrylmady (iş akymy aýyrmagy saklap biler).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Zibil sebedine geçirildi.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Bölüm ýok.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ol eýýäm bu bölümde.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Siz bu bölümi belläp bilmeýärsiňiz (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Bölüm bellenmedi.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Bölüm bellendi.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ýagdaý ýok.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ol eýýäm bu ýagdaýda.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Siz bu ýagdaýy belläp bilmeýärsiňiz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ýagdaý bellenmedi (iş akymy üýtgeşmäni saklap biler).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Ýagdaý bellendi.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Beýle hereket ýok.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Barlag üçin saklamak sazlanmadyk (6.0.15-review-hold täzeleme ädimi).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Onuň näme üçin saklanýandygyny ýazyň.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ol eýýäm saklanýar.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Siz ony saklap bilmeýärsiňiz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Saklama goýulmady (iş akymy üýtgeşmäni saklap biler).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Saklandy.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ol saklanmaýar.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Siz ony boşadyp bilmeýärsiňiz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Saklama aýrylmady (iş akymy üýtgeşmäni saklap biler).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Boşadyldy; entek gizlin: siz ony görkezip bilmeýärsiňiz (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Boşadyldy.</translation>
     </message>
 </context>
 <context>

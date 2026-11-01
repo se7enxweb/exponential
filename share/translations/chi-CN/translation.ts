@@ -15149,6 +15149,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>以文件形式保存的安装变更：其状态、运行记录、运行和回滚。</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>最新内容</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>最新的内容、暂扣待审的内容，以及对所选内容的操作。</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>将网站的静态副本发布到 GitHub Pages 或任何 git 主机。</translation>
     </message>
@@ -80579,6 +80587,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>无法启动运行。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>修改时间</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>创建时间</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名称</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>类</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>分区</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>创建者</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新内容</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>整个站点最近创建和修改的内容，最新的在前：访客提交的内容、暂扣待审的内容、等待发布的草稿。选择条目以解除暂扣、暂扣、隐藏、显示、移除，或将其移到另一个分区或状态。</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>无法读取列表：%problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>审核暂扣尚未设置，因此没有任何内容被暂扣，也不提供暂扣操作。升级步骤 6.0.15-review-hold 会设置它：./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>筛选列表</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>从</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>到</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日期</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>创建时间（首次发布）</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>状态</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>已发布</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>草稿，从未发布</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>待处理（等待批准或日期）</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>在回收站中</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>暂扣待审</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>已暂扣</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>未暂扣</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>隐藏</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可见</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>提交于</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>任意站点访问</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>仅限审计记录的内容。</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>当前：%name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>登录名或用户 ID。</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>筛选</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>清除筛选条件</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>条目</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>第 %from 至 %to 条，共 %count 条</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>没有条目</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>（读取用时 %ms 毫秒）</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>对所选条目的操作</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>全选本页</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>已选择 %count 个</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>选择操作</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>解除暂扣</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>暂扣待审</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>隐藏</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>显示</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>移到回收站</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>删除</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>分配分区</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>分配状态</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>原因</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>暂扣时必填；随暂扣一起保存并记入审计。</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>选择分区</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状态</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>选择状态</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>应用于所选条目</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>每个条目都会按照您自己的权限进行检查。移到回收站和删除需要您确认。超过 %count 个条目时将在后台运行。</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>选择</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>发布</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>提交来源</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>选择 %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>尚未</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>（无名称）</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>草稿</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>待处理</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>因父节点而隐藏</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>已暂扣：新提交</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>版本 %version 待处理</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>版本 %version 编辑中</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>草稿，版本 %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>版本 %version 已发布</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>计划于 %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>无地址</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>未记录</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>没有符合这些筛选条件的内容。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>显示全部</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>尚无内容。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>每页</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>每页显示 %count 个条目。</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>提交的地址和浏览器来自审计索引，而此处无法使用该索引：该列显示“未记录”。</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>地址和浏览器是审计为该条目记录的信息（自动暂扣总会记录它们；发布和创建仅在开启时记录），并按其隐私设置保留。</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action：%count 个条目</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>删除将永久移除这些条目及其所有版本和翻译。此操作无法撤销。</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>这些条目将进入回收站，可从那里恢复。</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>每个条目都会按照您自己的权限进行检查；带有子条目的条目将保持原样（请在内容结构中移除它）。系统会要求您验证身份。</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>此操作在后台运行：将打开其进度页面，完成后会显示每个条目的结果。</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>所选条目</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>以及另外 %count 个</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>未执行任何操作</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action（%extra）</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>原因：%reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>该操作仍在后台运行。</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>其进度</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>后台操作失败：%error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完成</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>已拒绝</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失败</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>按条目</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>条目</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>结果</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>原因</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>返回列表</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>设置</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>未执行任何操作</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>确认</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>请选择一个操作。</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>请至少选择一个条目。</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>每次最多选择 1000 个条目。</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>请说明暂扣这些条目的原因。</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>请选择分区。</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>请选择状态。</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>无法读取表单。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>最新内容</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>无法读取计数：%problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>暂扣待审</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>今日新增</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>审核暂扣尚未设置（升级步骤 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>所有最新内容</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>您不能执行审核操作（moderation/act）。</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>审核操作未完成：%errors。</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>审核：对 %count 个对象执行 %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total 个对象：%ok 个完成，%refused 个被拒绝，%failed 个失败</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok 个完成，%refused 个被拒绝，%failed 个失败</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>它已不存在。</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>它没有位置（未发布）。</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>您不能隐藏它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>您不能显示它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>它已经被隐藏。</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>它未被隐藏。</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>已隐藏。</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>已显示。</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>它在回收站中：请在那里清空或恢复它。</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>从未发布的草稿不能移到回收站：请删除它。</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>您不能删除它（content/remove）。</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>已删除。</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>您不能移除它（content/remove）。</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>它有子条目：请在列出子条目的内容结构中移除它。</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>它未被移除（可能有工作流暂缓了移除）。</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>已移到回收站。</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>该分区不存在。</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>它已在此分区中。</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>您不能分配此分区（section/assign）。</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>未分配分区。</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>已分配分区。</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>该状态不存在。</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>它已处于此状态。</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>您不能分配此状态（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>未分配状态（可能有工作流暂缓了此更改）。</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>已分配状态。</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>没有此操作。</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>审核暂扣尚未设置（升级步骤 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>请说明暂扣的原因。</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>它已被暂扣。</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>您不能暂扣它（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>未能暂扣（可能有工作流暂缓了此更改）。</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>已暂扣。</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>它未被暂扣。</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>您不能解除暂扣（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>未能解除暂扣（可能有工作流暂缓了此更改）。</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>已解除暂扣；仍处于隐藏状态：您不能显示它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>已解除暂扣。</translation>
     </message>
 </context>
 <context>

@@ -15090,6 +15090,14 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
         <translation>Įdiegimo pakeitimai, saugomi kaip failai: jų būklė, vykdymai, vykdymas ir atšaukimas.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Naujausias turinys</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Naujausias turinys, peržiūrai sulaikytas turinys ir veiksmai su pažymėtais.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publikuokite statinę svetainės kopiją GitHub Pages arba bet kuriame git serveryje.</translation>
     </message>
@@ -80611,6 +80619,670 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Nepavyko pradėti vykdymo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Pakeista</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Sukurta</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasė</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Skyrius</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Kūrėjas</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Naujausias turinys</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Visos svetainės naujausiai sukurtas ir pakeistas turinys, naujausias pirmas: ką pateikė lankytojai, kas sulaikyta peržiūrai, kurie juodraščiai laukia publikavimo. Pažymėkite elementus, kad juos atleistumėte, sulaikytumėte, paslėptumėte, atskleistumėte, pašalintumėte arba perkeltumėte į kitą skyrių ar būseną.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti sąrašo: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Sulaikymas peržiūrai dar nenustatytas, todėl niekas nesulaikoma ir sulaikymo veiksmai nesiūlomi. Jį nustato atnaujinimo žingsnis 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtruoti sąrašą</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nuo</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Iki</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Sukurta (pirmą kartą publikuota)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Būklė</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikuota</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Juodraštis, niekada nepublikuotas</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Laukiama (patvirtinimo arba datos)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Šiukšlinėje</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Sulaikyta peržiūrai</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Sulaikyta</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nesulaikyta</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Paslėptas</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Matomas</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Pateikta per prieigą prie svetainės</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Bet kuri prieiga prie svetainės</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Tik tai, ką užfiksavo auditas.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Dabar: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Prisijungimo vardas arba naudotojo ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtruoti</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Išvalyti filtrus</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementai</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>Nuo %from iki %to iš %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Elementų nėra</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(nuskaityta per %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Veiksmai su pažymėtais elementais</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Pažymėti viską šiame puslapyje</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Pažymėta: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Veiksmas</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Pasirinkite veiksmą</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Atšaukti sulaikymą</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Sulaikyti peržiūrai</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Slėpti</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Atskleisti</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Perkelti į šiukšlinę</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Šalinti</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Priskirti skyrių</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Priskirti būseną</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Priežastis</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Būtina sulaikant; saugoma kartu su sulaikymu ir audite.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Pasirinkite skyrių</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Pasirinkite būseną</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Taikyti pažymėtiems</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Kiekvienas elementas tikrinamas pagal jūsų teises. Perkeliant į šiukšlinę ir šalinant prašoma patvirtinti. Daugiau nei %count elementų apdorojama fone.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Pažymėti</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikavimas</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Pateikta iš</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Pažymėti %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>dar ne</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(be pavadinimo)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Identifikatorius %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Juodraštis</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Laukiama</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Paslėptas dėl tėvinio elemento</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Sulaikyta: naujas pateikimas</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versija %version laukia</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versija %version rengiama</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Juodraštis, versija %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versija %version publikuota</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Suplanuota: %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>adreso nėra</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>neužfiksuota</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Šiuos filtrus niekas neatitinka.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rodyti viską</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Turinio dar nėra.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Puslapyje</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Rodyti %count elementų puslapyje.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Pateikimo adresas ir naršyklė gaunami iš audito indekso, kuris čia nepasiekiamas: stulpelyje rašoma „neužfiksuota“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresas ir naršyklė yra tie, kuriuos auditas užfiksavo elementui (automatinis sulaikymas juos fiksuoja visada; publikavimas ir kūrimas tik ten, kur tai įjungta), kaip juos saugo jo privatumo nustatymai.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elementai</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Šalinimas visam laikui pašalina elementus su visomis jų versijomis ir vertimais. To atšaukti negalima.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementai perkeliami į šiukšlinę, iš kurios juos galima atkurti.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Kiekvienas elementas tikrinamas pagal jūsų teises; elementas su poelemenčiais paliekamas toks, koks yra (pašalinkite jį turinio struktūroje). Jūsų bus paprašyta patvirtinti, kad tai jūs.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Tai vykdoma fone: atsidaro eigos puslapis, o baigus rodomas kiekvieno elemento rezultatas.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Pažymėti elementai</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ir dar %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nieko nepadaryta</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Priežastis: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Veiksmas vis dar vykdomas fone.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Jo eiga</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Foninis veiksmas nepavyko: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Atlikta</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Atsisakyta</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nepavyko</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Pagal elementą</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elementas</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultatas</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kodėl</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Atgal į sąrašą</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sąranka</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nieko nepadaryta</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Patvirtinti</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Pasirinkite veiksmą.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Pažymėkite bent vieną elementą.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Vienu metu pažymėkite ne daugiau kaip 1000 elementų.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Nurodykite, kodėl elementai sulaikomi.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Pasirinkite skyrių.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Pasirinkite būseną.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Nepavyko nuskaityti formos.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Naujausias turinys</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Nepavyko nuskaityti skaičių: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Sulaikyta peržiūrai</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nauji šiandien</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Sulaikymas peržiūrai dar nenustatytas (atnaujinimo žingsnis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Visas naujausias turinys</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Jums neleidžiama vykdyti moderavimo veiksmų (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderavimo veiksmas neužbaigtas: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderavimas: %action su %count objektais</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done iš %total objektų: %ok atlikta, %refused atsisakyta, %failed nepavyko</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok atlikta, %refused atsisakyta, %failed nepavyko</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Jo nebėra.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Jis neturi vietos (nepublikuotas).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Jums neleidžiama jo paslėpti (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Jums neleidžiama jo atskleisti (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Jis jau paslėptas.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Jis nėra paslėptas.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Paslėpta.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Atskleista.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Jis yra šiukšlinėje: ten jį išvalykite arba atkurkite.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Niekada nepublikuoto juodraščio negalima perkelti į šiukšlinę: pašalinkite jį.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Jums neleidžiama jo šalinti (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Pašalinta.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Jums neleidžiama jo pašalinti (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Jis turi poelemenčių: pašalinkite jį turinio struktūroje, kur jie išvardyti.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Jis nebuvo pašalintas (darbo eiga gali sulaikyti pašalinimą).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Perkelta į šiukšlinę.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Skyrius neegzistuoja.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Jis jau yra šiame skyriuje.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Jums neleidžiama priskirti šio skyriaus (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Skyrius nepriskirtas.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Skyrius priskirtas.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Būsena neegzistuoja.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Jis jau yra šioje būsenoje.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Jums neleidžiama priskirti šios būsenos (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Būsena nepriskirta (darbo eiga gali sulaikyti pakeitimą).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Būsena priskirta.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tokio veiksmo nėra.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Sulaikymas peržiūrai nenustatytas (atnaujinimo žingsnis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Nurodykite, kodėl jis sulaikomas.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Jis jau sulaikytas.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Jums neleidžiama jo sulaikyti (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Sulaikymas nenustatytas (darbo eiga gali sulaikyti pakeitimą).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Sulaikyta.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Jis nėra sulaikytas.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Jums neleidžiama jo atleisti (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Sulaikymas neatšauktas (darbo eiga gali sulaikyti pakeitimą).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Atleista; vis dar paslėpta: jums neleidžiama jo atskleisti (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Atleista.</translation>
     </message>
 </context>
 <context>

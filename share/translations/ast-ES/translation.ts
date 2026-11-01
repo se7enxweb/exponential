@@ -15151,6 +15151,14 @@ Nota: los paquetes nun se desinstalarán.</translation>
         <translation>Cambeos na instalación guardaos como ficheros: el so estáu, les execuciones, executar y desfacer.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Conteníu recién</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>El conteníu más nuevu, lo que ta retenío pa revisión y aiciones sobre una esbilla.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Espublizar una copia estática d&apos;un sitiu en GitHub Pages o en cualquier agospiamientu git.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Nun se pudo aniciar la execución.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modificáu</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creáu</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Clase</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seición</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Creador</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Conteníu recién</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>El conteníu creáu y modificáu más recientemente de tol sitiu, lo más nuevo primero: lo qu'unviaron los visitantes, lo que ta retenío pa revisión, los borradores qu'esperen la so espublización. Esbille elementos pa lliberalos, retenelos, anubrilos, amosalos, desanicialos o movelos a otra seición o estáu.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Nun se pudo lleer la llista: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>La retención pa revisión entá nun ta configurada, polo que nun hai nada retenío y nun s'ufierten les aiciones de retención. El pasu d'anovamientu 6.0.15-review-hold configúrala: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar la llista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dende</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hasta</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creáu (primer espublizamientu)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Toos</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Situación</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Espublizáu</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Borrador, enxamás espublizáu</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendiente (d'aprobación o d'una data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Na papelera</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retenío pa revisión</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retenío</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Non retenío</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Anubríu</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Amosáu</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Unviáu'l</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Cualquier accesu al sitiu</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Namás lo que rexistró l'auditoría.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Agora: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Un nome d'usuariu o un ID d'usuariu.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Llimpiar los filtros</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementos</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nengún elementu</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lleío en %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Aiciones sobre los elementos esbillaos</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Esbillar too nesta páxina</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count esbillaos</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aición</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Escueya una aición</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Lliberar la retención</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Retener pa revisión</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Anubrir</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Amosar</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mover a la papelera</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Desaniciar</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Asignar seición</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Asignar estáu</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Motivu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necesariu pa retener; guárdase cola retención y na auditoría.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Escueya una seición</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estáu</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Escueya un estáu</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aplicar a los esbillaos</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Cada elementu compruébase colos sos propios permisos. Mover a la papelera y desaniciar piden confirmación. Con más de %count elementos, execútase en segundu planu.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Esbillar</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Espublizamientu</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Unviáu dende</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Esbillar %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>entá non</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ensin nome)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Borrador</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendiente</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Anubríu pol so padre</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retenío: unviu nuevu</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versión %version pendiente</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versión %version en cursu</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Borrador, versión %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versión %version espublizada</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Programáu pal %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ensin direición</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nun rexistráu</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nada nun coincide con estos filtros.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Amosar too</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Entá nun hai conteníu.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per páxina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Amosar %count elementos per páxina.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>La direición y el restolador d'un unviu vienen del índiz d'auditoría, que equí nun ta disponible: la columna diz «nun rexistráu».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>La direición y el restolador son los que l'auditoría rexistró pal elementu (la retención automática siempres los rexistra; l'espublizamientu y la creación namás onde ta activao), tal como los caltién la so configuración de privacidá.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elementos</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Desaniciar quita los elementos pa siempres, con toles sos versiones y traducciones. Nun se pue desfacer.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Los elementos van a la papelera, d'onde se puen restaurar.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Cada elementu compruébase colos sos propios permisos; un elementu con soelementos déxase como ta (quítelu na estructura de conteníos). Va pidísele que verifique que ye usté.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Esto execútase en segundu planu: ábrese la so páxina de progresu y, cuando acaba, amuésase'l resultáu de cada elementu.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Los elementos esbillaos</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>y %count más</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Encaboxar</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nun se fizo nada</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Motivu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>L'aición entá s'executa en segundu planu.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>El so progresu</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>L'aición en segundu planu falló: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fecho</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refugáu</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falló</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per elementu</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elementu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultáu</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Por qué</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Volver a la llista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuración</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nada fecho</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmar</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Escueya una aición.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Esbille polo menos un elementu.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Esbille como muncho 1000 elementos a la vez.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Indique por qué se retienen los elementos.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Escueya la seición.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Escueya l'estáu.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Nun se pudo lleer el formulariu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Conteníu recién</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Nun se pudieron lleer les cuentes: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Reteníos pa revisión</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nuevos güei</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retención pa revisión entá nun ta configurada (el pasu d'anovamientu 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tol conteníu recién</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Nun pue executar aiciones de moderación (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>L'aición de moderación nun ta completa: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderación: %action sobre %count oxetos</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done de %total oxetos: %ok fechos, %refused refugaos, %failed fallíos</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok fechos, %refused refugaos, %failed fallíos</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Yá nun esiste.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nun tien allugamientu (nun ta espublizáu).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Nun lu pue anubrir (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Nun lu pue amosar (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Yá ta anubríu.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nun ta anubríu.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Anubríu.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Amosáu.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ta na papelera: vacíela o restaurélu dende ellí.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Un borrador que enxamás s'espublizó nun pue dir a la papelera: desanicielu.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Nun lu pue desaniciar (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Desaniciáu.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Nun lu pue quitar (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Tien soelementos: quítelu na estructura de conteníos, onde tán llistaos.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nun se quitó (pue que un fluxu de trabayu retenga'l quitamientu).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Movíu a la papelera.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>La seición nun esiste.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Yá ta nesta seición.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Nun pue asignar esta seición (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Nun s'asignó la seición.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seición asignada.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>L'estáu nun esiste.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Yá ta nesti estáu.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Nun pue asignar esti estáu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Nun s'asignó l'estáu (pue que un fluxu de trabayu retenga'l cambéu).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Estáu asignáu.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nun esiste esa aición.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retención pa revisión nun ta configurada (el pasu d'anovamientu 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Indique por qué ta retenío.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Yá ta retenío.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Nun lu pue retener (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Nun s'aplicó la retención (pue que un fluxu de trabayu retenga'l cambéu).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retenío.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nun ta retenío.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Nun lu pue lliberar (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Nun se lliberó la retención (pue que un fluxu de trabayu retenga'l cambéu).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Lliberáu; sigue anubríu: nun lu pue amosar (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Lliberáu.</translation>
     </message>
 </context>
 <context>

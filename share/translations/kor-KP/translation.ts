@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>파일로 보관된 설치 변경들: 그 상태, 실행력사, 실행 및 되돌림.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>최근 내용</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>최신 내용, 검토를 위해 보류된것, 선택 항목에 대한 조작.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>싸이트의 정적사본을 GitHub Pages 또는 임의의 git 호스트에 게시합니다.</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>실행을 시작할수 없습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>수정일</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>생성일</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>클라스</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>섹션</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>작성자</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>최근 내용</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>싸이트 전체에서 최근에 생성되고 수정된 내용을 최신순으로 보여줍니다: 방문자가 제출한것, 검토를 위해 보류된것, 게시를 기다리는 초안. 항목을 선택하여 보류 해제, 보류, 숨기기, 표시, 제거하거나 다른 섹션이나 상태로 옮기십시오.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>목록을 읽을수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>검토 보류가 아직 설정되지 않아 보류된것이 없으며 보류 조작도 제공되지 않습니다. 갱신 단계 6.0.15-review-hold가 이를 설정합니다: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>목록 려과</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>시작</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>끝</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>날자</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>생성일(처음 게시)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>모두</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>게시됨</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>초안, 게시된적 없음</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>보류 중(승인 또는 날자 대기)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>휴지통에 있음</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>검토를 위해 보류됨</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>보류됨</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>보류되지 않음</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>숨김</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>표시됨</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>제출 위치</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>모든 싸이트접근</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>감사에 기록된것만.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>현재: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>가입명 또는 사용자 ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>려과</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>려과 지우기</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>항목</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count개 중 %from~%to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>항목 없음</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms 동안 읽음)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>선택한 항목에 대한 조작</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>이 페지 모두 선택</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count개 선택됨</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>조작</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>조작 선택</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>보류 해제</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>검토를 위해 보류</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>숨기기</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>표시</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>휴지통으로 이동</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>삭제</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>섹션 지정</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>상태 지정</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>사유</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>보류하려면 필요하며 보류 및 감사 기록에 함께 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>섹션 선택</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>상태 선택</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>선택한 항목에 적용</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>매 항목은 자신의 권한에 따라 확인됩니다. 휴지통으로 이동과 삭제는 확인을 요구합니다. %count개를 넘는 항목은 배경에서 실행됩니다.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>선택</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>게시</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>제출 출처</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name 선택</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>아직 없음</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(이름 없음)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>초안</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>보류 중</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>상위 항목에 의해 숨겨짐</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>보류됨: 새 제출</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>판본 %version 보류 중</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>판본 %version 작성 중</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>초안, 판본 %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>판본 %version 게시됨</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date 예정</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>주소 없음</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>기록되지 않음</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>이 려과조건과 일치하는것이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>모두 표시</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>아직 내용이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>페지당</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>페지당 %count개 항목을 표시합니다.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>제출의 주소와 열람기는 감사 색인에서 가져오는데 여기서는 사용할수 없습니다: 렬에 "기록되지 않음"이 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>주소와 열람기는 감사가 해당 항목에 대해 기록한것으로(자동 보류는 항상 기록하며 게시와 생성은 켜져있을 때만 기록) 개인정보 설정에 따라 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count개 항목</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>삭제하면 항목이 모든 판본 및 번역과 함께 영구적으로 제거됩니다. 되돌릴수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>항목은 휴지통으로 이동하며 거기에서 복원할수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>매 항목은 자신의 권한에 따라 확인됩니다. 하위 항목이 있는 항목은 그대로 남습니다(내용 구조에서 제거하십시오). 본인 확인을 요구받게 됩니다.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>이 조작은 배경에서 실행됩니다: 진행 페지가 열리고 완료되면 항목별 결과가 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>선택한 항목</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>외 %count개</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>아무 조작도 수행되지 않았습니다</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action(%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>사유: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>조작이 아직 배경에서 실행 중입니다.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>진행 상황</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>배경 조작이 실패했습니다: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>완료</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>거부됨</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>실패</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>항목별</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>항목</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>결과</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>리유</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>목록으로 돌아가기</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>수행된 조작 없음</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>확인</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>조작을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>항목을 하나 이상 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>한번에 최대 1000개 항목까지 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>항목을 보류하는 리유를 입력하십시오.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>섹션을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>상태를 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>양식을 읽을수 없습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>최근 내용</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>개수를 읽을수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>검토를 위해 보류됨</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>오늘 새로 추가됨</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>검토 보류가 아직 설정되지 않았습니다(갱신 단계 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>모든 최근 내용</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>검토 조작을 실행할 권한이 없습니다(moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>검토 조작이 완료되지 않았습니다: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>검토: 객체 %count개에 %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>객체 %total개 중 %done개: 완료 %ok개, 거부 %refused개, 실패 %failed개</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>완료 %ok개, 거부 %refused개, 실패 %failed개</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>더는 존재하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>위치가 없습니다(게시되지 않음).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>숨길 권한이 없습니다(content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>표시할 권한이 없습니다(content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>이미 숨겨져 있습니다.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>숨겨져 있지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>숨겼습니다.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>표시했습니다.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>휴지통에 있습니다: 거기에서 비우거나 복원하십시오.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>게시된적 없는 초안은 휴지통으로 이동할수 없습니다: 삭제하십시오.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>삭제할 권한이 없습니다(content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>삭제했습니다.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>제거할 권한이 없습니다(content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>하위 항목이 있습니다: 하위 항목이 렬거되는 내용 구조에서 제거하십시오.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>제거되지 않았습니다(작업흐름이 제거를 보류했을수 있습니다).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>휴지통으로 이동했습니다.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>섹션이 존재하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>이미 이 섹션에 있습니다.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>이 섹션을 지정할 권한이 없습니다(section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>섹션이 지정되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>섹션을 지정했습니다.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>상태가 존재하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>이미 이 상태입니다.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>이 상태를 지정할 권한이 없습니다(state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>상태가 지정되지 않았습니다(작업흐름이 변경을 보류했을수 있습니다).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>상태를 지정했습니다.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>그런 조작은 없습니다.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>검토 보류가 설정되지 않았습니다(갱신 단계 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>보류하는 리유를 입력하십시오.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>이미 보류되여 있습니다.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>보류할 권한이 없습니다(state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>보류되지 않았습니다(작업흐름이 변경을 보류했을수 있습니다).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>보류했습니다.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>보류되여 있지 않습니다.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>보류를 해제할 권한이 없습니다(state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>보류가 해제되지 않았습니다(작업흐름이 변경을 보류했을수 있습니다).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>보류를 해제했지만 여전히 숨겨져 있습니다: 표시할 권한이 없습니다(content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>보류를 해제했습니다.</translation>
     </message>
 </context>
 <context>

@@ -15090,6 +15090,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ファイルとして保管されたインストールへの変更: その状態、実行履歴、実行とロールバック。</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>最新のコンテンツ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>最新のコンテンツ、レビューのため保留中のもの、選択した項目への操作。</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>サイトの静的コピーを GitHub Pages または任意の git ホストに公開します。</translation>
     </message>
@@ -80611,6 +80619,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>実行を開始できませんでした。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>更新日時</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>作成日時</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>クラス</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>セクション</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>作成者</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新のコンテンツ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>サイト全体で最近作成・更新されたコンテンツを新しい順に表示します：訪問者が投稿したもの、レビューのため保留中のもの、公開を待つ下書き。項目を選択して、保留の解除、保留、非表示、表示、削除、または別のセクションや状態への移動を行います。</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>一覧を読み込めませんでした：%problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>レビュー保留はまだ設定されていないため、何も保留されておらず、保留の操作も提供されません。アップグレード手順 6.0.15-review-hold で設定されます：./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>一覧を絞り込む</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>開始</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>終了</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日付</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>作成日時（初回公開）</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ステータス</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>公開済み</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>下書き（未公開）</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>保留中（承認または日付待ち）</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ごみ箱内</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>レビューのため保留中</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>保留中</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>保留なし</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>非表示</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>投稿元サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>すべてのサイトアクセス</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>監査が記録したもののみ。</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>現在：%name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ログイン名またはユーザー ID。</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>絞り込む</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>絞り込みを解除</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count 件中 %from～%to 件</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>項目がありません</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>（読み込み %ms ミリ秒）</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>選択した項目への操作</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>このページをすべて選択</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count 件選択中</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>操作を選択</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>保留を解除</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>レビューのため保留</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>非表示にする</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>表示する</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ごみ箱に移動</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>セクションを割り当て</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>状態を割り当て</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>理由</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>保留に必須です。保留とともに、また監査に記録されます。</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>セクションを選択</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状態</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>状態を選択</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>選択した項目に適用</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>各項目はあなた自身の権限に照らして確認されます。ごみ箱への移動と削除には確認が必要です。%count 件を超える項目はバックグラウンドで実行されます。</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>選択</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>公開</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>投稿元</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name を選択</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>まだ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>（名前なし）</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>下書き</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>保留中</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>親により非表示</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>保留中：新しい投稿</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>バージョン %version 保留中</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>バージョン %version 編集中</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>下書き、バージョン %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>バージョン %version 公開済み</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date に予定</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>アドレスなし</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>記録なし</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>この絞り込み条件に一致するものはありません。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>すべて表示</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>コンテンツはまだありません。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ページあたり</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>1 ページに %count 件表示します。</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>投稿のアドレスとブラウザーは監査インデックスから取得されますが、ここでは利用できません：列には「記録なし」と表示されます。</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>アドレスとブラウザーは、監査がその項目について記録したものです（自動保留は常に記録します。公開と作成は有効にした場合のみ）。プライバシー設定に従って保持されます。</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action：%count 件</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>削除すると、項目はすべてのバージョンと翻訳とともに完全に削除されます。元に戻すことはできません。</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>項目はごみ箱に移動され、そこから復元できます。</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>各項目はあなた自身の権限に照らして確認されます。サブ項目を持つ項目はそのまま残ります（コンテンツ構造で削除してください）。本人確認を求められます。</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>これはバックグラウンドで実行されます：進行状況ページが開き、完了すると項目ごとの結果が表示されます。</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>選択した項目</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ほか %count 件</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>何も実行されませんでした</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action（%extra）</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>理由：%reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>操作はまだバックグラウンドで実行中です。</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>進行状況</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>バックグラウンド操作が失敗しました：%error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完了</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>拒否</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>項目ごと</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>理由</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>一覧に戻る</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>システム設定</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>実行なし</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>操作を選択してください。</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>少なくとも 1 つの項目を選択してください。</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>一度に選択できるのは 1000 件までです。</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>項目を保留する理由を入力してください。</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>セクションを選択してください。</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>状態を選択してください。</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>フォームを読み込めませんでした。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>最新のコンテンツ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>件数を読み込めませんでした：%problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>レビューのため保留中</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>今日の新着</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>レビュー保留はまだ設定されていません（アップグレード手順 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>最新のコンテンツをすべて表示</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>モデレーション操作を実行する権限がありません（moderation/act）。</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>モデレーション操作が完了していません：%errors。</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>モデレーション：%count 件のオブジェクトに %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total 件中 %done 件のオブジェクト：完了 %ok 件、拒否 %refused 件、失敗 %failed 件</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>完了 %ok 件、拒否 %refused 件、失敗 %failed 件</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>もう存在しません。</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>配置場所がありません（未公開）。</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>非表示にする権限がありません（content/hide）。</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>表示する権限がありません（content/hide）。</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>すでに非表示です。</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>非表示ではありません。</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>非表示にしました。</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>表示しました。</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ごみ箱内にあります：そこで空にするか復元してください。</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>一度も公開されていない下書きはごみ箱に移動できません：削除してください。</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>削除する権限がありません（content/remove）。</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>削除しました。</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>取り除く権限がありません（content/remove）。</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>サブ項目があります：それらが一覧表示されるコンテンツ構造で削除してください。</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>削除されませんでした（ワークフローが削除を保留している可能性があります）。</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ごみ箱に移動しました。</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>セクションが存在しません。</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>すでにこのセクションにあります。</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>このセクションを割り当てる権限がありません（section/assign）。</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>セクションは割り当てられませんでした。</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>セクションを割り当てました。</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>状態が存在しません。</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>すでにこの状態です。</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>この状態を割り当てる権限がありません（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>状態は割り当てられませんでした（ワークフローが変更を保留している可能性があります）。</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>状態を割り当てました。</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>そのような操作はありません。</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>レビュー保留が設定されていません（アップグレード手順 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>保留する理由を入力してください。</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>すでに保留中です。</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>保留する権限がありません（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>保留されませんでした（ワークフローが変更を保留している可能性があります）。</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>保留しました。</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>保留されていません。</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>保留を解除する権限がありません（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>保留は解除されませんでした（ワークフローが変更を保留している可能性があります）。</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>保留を解除しました。まだ非表示です：表示する権限がありません（content/hide）。</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>保留を解除しました。</translation>
     </message>
 </context>
 <context>

@@ -122,6 +122,7 @@
             <file>tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationStructureStepsMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expModerationMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php</file>
         </testsuite>
 

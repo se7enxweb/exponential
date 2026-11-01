@@ -15597,6 +15597,14 @@ Obs: Paketen avinstalleras inte.</translation>
         <translation>Ändringar av installationen sparade som filer: deras läge, körningarna, kör och återställ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Nytt innehåll</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Det nyaste innehållet, det som hålls kvar för granskning, och åtgärder för ett urval.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publicera en statisk kopia av en webbplats på GitHub Pages eller valfri git-värd.</translation>
     </message>
@@ -81884,6 +81892,670 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Körningen kunde inte startas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modifierad</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Skapad</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klass</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Författare</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innehåll</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Det senast skapade och ändrade innehållet på hela webbplatsen, nyaste först: det besökare har skickat in, det som hålls kvar för granskning, utkast som väntar på publicering. Välj objekt för att släppa, hålla kvar, dölja, visa, ta bort eller flytta dem till en annan sektion eller ett annat tillstånd.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Listan kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Kvarhållningen för granskning är inte konfigurerad än, så ingenting hålls kvar och åtgärderna för kvarhållning erbjuds inte. Uppgraderingssteget 6.0.15-review-hold konfigurerar den: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrera listan</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Från</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Till</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Skapad (först publicerad)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alla</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publiceringsstatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicerad</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Utkast, aldrig publicerat</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Väntar (på godkännande eller ett datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>I papperskorgen</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kvarhållet för granskning</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Kvarhållet</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Inte kvarhållet</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Dold</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Synlig</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Inskickat via</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Valfri webbplatsingång</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Endast det som granskningsloggen har registrerat.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nu: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Ett inloggningsnamn eller ett användar-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrera</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Rensa filter</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from till %to av %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Inget objekt</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(läst på %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Åtgärder för de valda objekten</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Välj alla på den här sidan</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count valda</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Åtgärd</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Välj en åtgärd</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Släpp kvarhållningen</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Håll kvar för granskning</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Dölj</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Visa</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Flytta till papperskorgen</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Tilldela sektion</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Tilldela tillstånd</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Anledning</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Krävs för att hålla kvar; sparas med kvarhållningen och i granskningsloggen.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Välj en sektion</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tillstånd</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Välj ett tillstånd</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Tillämpa på de valda</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Varje objekt kontrolleras mot dina egna behörigheter. Att flytta till papperskorgen och att ta bort kräver att du bekräftar. Fler än %count objekt körs i bakgrunden.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Välj</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicering</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Inskickat från</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Välj %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>inte än</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(inget namn)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Utkast</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Väntar</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Dold av sin förälder</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Kvarhållet: nytt inskick</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Version %version väntar</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Version %version under arbete</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Utkast, version %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Version %version publicerad</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Schemalagd till %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ingen adress</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>inte registrerad</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ingenting matchar dessa filter.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Visa alla</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Det finns inget innehåll än.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per sida</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Visa %count objekt per sida.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adressen och webbläsaren för ett inskick kommer från granskningsindexet, som inte är tillgängligt här: kolumnen visar ”inte registrerad”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adressen och webbläsaren är de som granskningsloggen registrerade för objektet (den automatiska kvarhållningen registrerar dem alltid; publicering och skapande bara där det är aktiverat), så som dess integritetsinställningar sparar dem.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count objekt</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Borttagning tar bort objekten för gott, med alla deras versioner och översättningar. Det kan inte ångras.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Objekten flyttas till papperskorgen, varifrån de kan återställas.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Varje objekt kontrolleras mot dina egna behörigheter; ett objekt med underobjekt lämnas som det är (ta bort det i innehållsstrukturen). Du kommer att ombes bekräfta att det är du.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Detta körs i bakgrunden: förloppssidan öppnas, och resultatet per objekt visas när det är klart.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>De valda objekten</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>och %count till</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ingenting gjordes</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Anledning: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Åtgärden körs fortfarande i bakgrunden.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Förloppet</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Bakgrundsåtgärden misslyckades: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Klar</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nekad</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misslyckad</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per objekt</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Varför</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Tillbaka till listan</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguration</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ingenting gjort</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bekräfta</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Välj en åtgärd.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Välj minst ett objekt.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Välj högst 1000 objekt åt gången.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Ange varför objekten hålls kvar.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Välj sektionen.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Välj tillståndet.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formuläret kunde inte läsas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innehåll</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Antalen kunde inte läsas: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kvarhållet för granskning</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nytt i dag</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kvarhållningen för granskning är inte konfigurerad än (uppgraderingssteget 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Allt nytt innehåll</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Du får inte utföra modereringsåtgärder (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Modereringsåtgärden är inte slutförd: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderering: %action på %count objekt</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done av %total objekt: %ok klara, %refused nekade, %failed misslyckade</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok klara, %refused nekade, %failed misslyckade</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Det finns inte längre.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Det har ingen placering (inte publicerat).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Du får inte dölja det (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Du får inte visa det (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Det är redan dolt.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Det är inte dolt.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Dolt.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Visat.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Det ligger i papperskorgen: töm den eller återställ det där.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ett utkast som aldrig har publicerats kan inte läggas i papperskorgen: ta bort det.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Du får inte ta bort det (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Borttaget.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Du får inte flytta bort det (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Det har underobjekt: ta bort det i innehållsstrukturen, där de listas.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Det togs inte bort (ett arbetsflöde håller kanske kvar borttagningen).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Flyttat till papperskorgen.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sektionen finns inte.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Det finns redan i den här sektionen.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Du får inte tilldela den här sektionen (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sektionen tilldelades inte.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sektion tilldelad.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Tillståndet finns inte.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Det har redan det här tillståndet.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Du får inte tilldela det här tillståndet (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Tillståndet tilldelades inte (ett arbetsflöde håller kanske kvar ändringen).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Tillstånd tilldelat.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Det finns ingen sådan åtgärd.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kvarhållningen för granskning är inte konfigurerad (uppgraderingssteget 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Ange varför det hålls kvar.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Det hålls redan kvar.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Du får inte hålla kvar det (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Kvarhållningen sattes inte (ett arbetsflöde håller kanske kvar ändringen).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Kvarhållet.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Det hålls inte kvar.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Du får inte släppa det (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Kvarhållningen släpptes inte (ett arbetsflöde håller kanske kvar ändringen).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Släppt; fortfarande dolt: du får inte visa det (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Släppt.</translation>
     </message>
 </context>
 <context>

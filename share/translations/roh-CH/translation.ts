@@ -15151,6 +15151,14 @@ Avertiment: Ils pachets na vegnan betg deinstallads.</translation>
         <translation>Midadas da l&apos;installaziun tegnidas sco datotecas: lur stadi, las execuziuns, exequir e revocar.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Cuntegn recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Il cuntegn il pli nov, quai che vegn retegnì per la verificaziun, ed acziuns per ina selecziun.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publitgar ina copia statica d&apos;ina website sin GitHub Pages u sin in auter purschider git.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>L&apos;execuziun n&apos;ha betg pudì vegnir aviada.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modifitgà</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creà</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Num</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secziun</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Autur</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Cuntegn recent</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Il cuntegn creà e modifitgà il pli recentamain da l'entira website, il pli nov l'emprim: quai che visitaders han tramess, quai che vegn retegnì per la verificaziun, sbozs che spetgan sin lur publicaziun. Tscherni elements per als liberar, retegnair, zuppentar, mussar, allontanar u spustar en in'autra secziun u in auter stadi.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>La glista n'ha betg pudì vegnir legida: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>La retegnida per la verificaziun n'è anc betg installada, perquai na vegn nagut retegnì e las acziuns da retegnair na vegnan betg purschidas. Il pass d'actualisaziun 6.0.15-review-hold l'installescha: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar la glista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creà (publitgà l'emprima giada)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tuts</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status da publicaziun</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publitgà</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Sboz, mai publitgà</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendent (spetga sin approvaziun u sin ina data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>En il chanaster da ruments</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retegnì per la verificaziun</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retegnì</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Betg retegnì</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Zuppentà</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visibel</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Tramess via</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Mintga access a la website</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Mo quai che l'audit ha registrà.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ussa: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>In num d'utilisader u in ID d'utilisader.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Stizzar ils filters</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elements</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from fin %to da %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nagin element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(legì en %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Acziuns per ils elements tschernids</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Tscherner tut sin questa pagina</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count tschernids</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acziun</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Tscherner in'acziun</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Abolir la retegnida</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Retegnair per la verificaziun</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Zuppentar</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Mussar</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Spustar en il chanaster da ruments</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Stizzar</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Attribuir ina secziun</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Attribuir in stadi</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Motiv</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necessari per retegnair; vegn memorisà cun la retegnida ed en l'audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Tscherner ina secziun</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stadi</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Tscherner in stadi</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Applitgar als tschernids</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Mintga element vegn controllà tenor Voss agens dretgs. Per spustar en il chanaster da ruments e per stizzar stuais Vus confermar. Dapli che %count elements vegnan exequids en il fund.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tscherner</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicaziun</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Tramess da</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Tscherner %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>anc betg</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(nagin num)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Sboz</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendent</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Zuppentà tras ses element superiur</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retegnì: nova tramessa</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versiun %version pendenta</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versiun %version en elavuraziun</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Sboz, versiun %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versiun %version publitgada</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Planisà per %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nagina adressa</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>betg registrà</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nagut na correspunda a quests filters.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mussar tut</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>I na dat anc nagin cuntegn.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mussar %count elements per pagina.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>L'adressa ed il navigatur d'ina tramessa derivan da l'index da l'audit, che n'è betg disponibel qua: la colonna mussa «betg registrà».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>L'adressa ed il navigatur èn quels che l'audit ha registrà per l'element (la retegnida automatica als registrescha adina; publitgar e crear mo nua che quai è activà), uschia sco ch'ils parameters da protecziun da datas als conservan.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elements</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Stizzar allontanescha ils elements definitivamain, cun tut lur versiuns e translaziuns. Quai na po betg vegnir revocà.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Ils elements van en il chanaster da ruments, nua ch'els pon vegnir restaurads.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Mintga element vegn controllà tenor Voss agens dretgs; in element cun sutelements resta sco ch'el è (allontanai el en la structura dal cuntegn). Vus vegnis dumandà da confermar che Vus essas quai.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Quai vegn exequì en il fund: la pagina da progress s'avra, ed il resultat per mintga element vegn mussà cur ch'el è terminà.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ils elements tschernids</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>e %count ulteriurs</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Interrumper</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nagut n'è vegnì fatg</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Motiv: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>L'acziun vegn anc exequida en il fund.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ses progress</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>L'acziun en il fund n'è betg reussida: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fatg</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refusà</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Betg reussì</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Pertge</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Enavos a la glista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuraziun</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nagut fatg</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confermar</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Tscherni in'acziun.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Tscherni almain in element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Tscherni maximalmain 1000 elements a la giada.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Inditgai pertge ch'ils elements vegnan retegnids.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Tscherni la secziun.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Tscherni il stadi.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Il formular n'ha betg pudì vegnir legì.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Cuntegn recent</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Ils dumbers n'han betg pudì vegnir legids: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retegnì per la verificaziun</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nov oz</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retegnida per la verificaziun n'è anc betg installada (il pass d'actualisaziun 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tut il cuntegn recent</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Vus na dastgais betg exequir acziuns da moderaziun (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>L'acziun da moderaziun n'è betg cumpletta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderaziun: %action per %count objects</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done da %total objects: %ok fatg, %refused refusà, %failed betg reussì</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok fatg, %refused refusà, %failed betg reussì</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Quai n'exista betg pli.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Quai n'ha nagin lieu (betg publitgà).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Vus na dastgais betg al zuppentar (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Vus na dastgais betg al mussar (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Quai è gia zuppentà.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Quai n'è betg zuppentà.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Zuppentà.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Mussà.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Quai è en il chanaster da ruments: svidai el u restaurai quai là.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>In sboz che n'è mai vegnì publitgà na po betg ir en il chanaster da ruments: stizzai el.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Vus na dastgais betg al stizzar (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Stizzà.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Vus na dastgais betg l'allontanar (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Quai ha sutelements: allontanai el en la structura dal cuntegn, nua ch'els vegnan enumerads.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Quai n'è betg vegnì allontanà (forsa retegna in decurs da lavur l'allontanament).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Spustà en il chanaster da ruments.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>La secziun n'exista betg.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Quai è gia en questa secziun.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Vus na dastgais betg attribuir questa secziun (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>La secziun n'è betg vegnida attribuida.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Secziun attribuida.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Il stadi n'exista betg.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Quai è gia en quest stadi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Vus na dastgais betg attribuir quest stadi (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Il stadi n'è betg vegnì attribuì (forsa retegna in decurs da lavur la midada).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stadi attribuì.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>I na dat nagina tala acziun.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retegnida per la verificaziun n'è betg installada (il pass d'actualisaziun 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Inditgai pertge che quai vegn retegnì.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Quai vegn gia retegnì.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Vus na dastgais betg al retegnair (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>La retegnida n'è betg vegnida fixada (forsa retegna in decurs da lavur la midada).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retegnì.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Quai na vegn betg retegnì.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Vus na dastgais betg al liberar (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>La retegnida n'è betg vegnida abolida (forsa retegna in decurs da lavur la midada).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Liberà; anc adina zuppentà: Vus na dastgais betg al mussar (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Liberà.</translation>
     </message>
 </context>
 <context>

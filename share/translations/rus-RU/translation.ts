@@ -15090,6 +15090,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>Изменения установки, хранимые в виде файлов: их состояние, запуски, выполнение и откат.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Новые материалы</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Новейшие материалы, то, что задержано на проверку, и действия с выбранными элементами.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Публикация статической копии сайта на GitHub Pages или любом git-хостинге.</translation>
     </message>
@@ -80611,6 +80619,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Не удалось начать запуск.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Изменено</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Создано</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Класс</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Секция</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Создатель</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Новые материалы</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Последние созданные и изменённые материалы всего сайта, сначала самые новые: то, что прислали посетители, что задержано на проверку, черновики, ожидающие публикации. Выберите элементы, чтобы снять задержку, задержать, скрыть, показать, удалить их или перенести в другую секцию или состояние.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Не удалось прочитать список: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Задержка на проверку ещё не настроена, поэтому ничего не задерживается и действия задержки недоступны. Её настраивает шаг обновления 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Фильтровать список</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>С</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>По</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Создано (первая публикация)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Все</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Опубликовано</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Черновик, ни разу не опубликован</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ожидает (одобрения или даты)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>В корзине</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Задержано на проверку</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Задержано</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Не задержано</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Скрыто</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видимо</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Отправлено через</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Любой доступ к сайту</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Только то, что записал аудит.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Сейчас: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Логин или ID пользователя.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фильтр</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Сбросить фильтры</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Элементы</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to из %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Нет элементов</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(прочитано за %ms мс)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Действия с выбранными элементами</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Выбрать все на этой странице</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Выбрано: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Действие</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Выберите действие</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Снять задержку</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Задержать на проверку</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Скрыть</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Показать</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Переместить в корзину</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Назначить секцию</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Назначить состояние</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Причина</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Нужна для задержки; сохраняется вместе с задержкой и в аудите.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Выберите секцию</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Состояние</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Выберите состояние</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Применить к выбранным</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Каждый элемент проверяется по вашим собственным правам. Перемещение в корзину и удаление требуют подтверждения. Более %count элементов обрабатываются в фоновом режиме.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Выбрать</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Публикация</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Отправлено с адреса</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Выбрать %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ещё нет</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(без названия)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Черновик</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ожидает</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Скрыто родителем</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Задержано: новая отправка</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Версия %version ожидает</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Версия %version в работе</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Черновик, версия %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Версия %version опубликована</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Запланировано на %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>нет адреса</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>не записано</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ничего не соответствует этим фильтрам.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Показать все</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Материалов пока нет.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На странице</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Показывать %count элементов на странице.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Адрес и браузер отправки берутся из индекса аудита, который здесь недоступен: в столбце указано «не записано».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Адрес и браузер — те, что аудит записал для элемента (автозадержка записывает их всегда; публикация и создание — только там, где это включено), в той мере, в какой их сохраняют его настройки конфиденциальности.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: элементов: %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Удаление уничтожает элементы навсегда, со всеми их версиями и переводами. Это нельзя отменить.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Элементы попадают в корзину, откуда их можно восстановить.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Каждый элемент проверяется по вашим собственным правам; элемент с подэлементами остаётся как есть (удалите его в структуре материалов). Вас попросят подтвердить, что это вы.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Это выполняется в фоновом режиме: откроется страница хода выполнения, а результат по каждому элементу будет показан по завершении.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Выбранные элементы</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>и ещё %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ничего не сделано</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Причина: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Действие всё ещё выполняется в фоновом режиме.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ход выполнения</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Фоновое действие завершилось ошибкой: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Выполнено</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Отклонено</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>По элементам</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Элемент</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Почему</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Назад к списку</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Настройка</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ничего не сделано</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Подтвердить</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Выберите действие.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Выберите хотя бы один элемент.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Выберите не более 1000 элементов за раз.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Укажите, почему элементы задержаны.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Выберите секцию.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Выберите состояние.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Не удалось прочитать форму.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Новые материалы</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Не удалось прочитать счётчики: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Задержано на проверку</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Новые сегодня</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Задержка на проверку ещё не настроена (шаг обновления 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Все новые материалы</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Вам не разрешено выполнять действия модерации (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Действие модерации не завершено: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модерация: %action для %count объектов</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done из %total объектов: выполнено %ok, отклонено %refused, ошибок %failed</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>выполнено %ok, отклонено %refused, ошибок %failed</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Объект больше не существует.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>У объекта нет размещения (не опубликован).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Вам не разрешено скрывать объект (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Вам не разрешено показывать объект (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Объект уже скрыт.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Объект не скрыт.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Скрыт.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Показан.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Объект в корзине: очистите корзину или восстановите его оттуда.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Черновик, который ни разу не публиковался, нельзя переместить в корзину: удалите его.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Вам не разрешено удалять объект (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Удалён.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Вам не разрешено убирать объект (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>У объекта есть подэлементы: удалите его в структуре материалов, где они перечислены.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Объект не был удалён (удаление может задерживать рабочий процесс).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Перемещён в корзину.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Секция не существует.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Объект уже находится в этой секции.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Вам не разрешено назначать эту секцию (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Секция не назначена.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Секция назначена.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Состояние не существует.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Объект уже находится в этом состоянии.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Вам не разрешено назначать это состояние (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Состояние не назначено (изменение может задерживать рабочий процесс).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Состояние назначено.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Такого действия нет.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Задержка на проверку не настроена (шаг обновления 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Укажите, почему объект задержан.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Объект уже задержан.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Вам не разрешено задерживать объект (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Задержка не установлена (изменение может задерживать рабочий процесс).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Задержан.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Объект не задержан.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Вам не разрешено снимать задержку с объекта (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Задержка не снята (изменение может задерживать рабочий процесс).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Задержка снята; объект по-прежнему скрыт: вам не разрешено показывать его (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Задержка снята.</translation>
     </message>
 </context>
 <context>

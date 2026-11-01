@@ -15149,6 +15149,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <translation>Canje-canje ga shigarwa da aka ajiye a matsayin fayiloli: matsayinsu, ayyukan, gudanarwa da mayarwa.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Sababbin abubuwa, abin da aka riƙe don dubawa, da ayyuka kan abubuwan da aka zaɓa.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Wallafa kwafin shafi na tsaye zuwa GitHub Pages ko kowane masaukin git.</translation>
     </message>
@@ -80579,6 +80587,670 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Ba a iya fara aikin ba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>An gyara</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>An ƙirƙira</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Suna</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Rukuni</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sashe</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Mai ƙirƙira</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Abubuwan da aka ƙirƙira kuma aka gyara kwanan nan a duk shafin, sababbi farko: abin da baƙi suka aiko, abin da aka riƙe don dubawa, daftarorin da ke jiran wallafawa. Zaɓi abubuwa don sakin su, riƙe su, ɓoye su, bayyana su, cire su ko mayar da su zuwa wani sashe ko matsayi.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Ba a iya karanta jerin ba: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Ba a saita riƙewa don dubawa ba tukuna, don haka babu abin da aka riƙe kuma ba a bayar da ayyukan riƙewa. Matakin haɓakawa 6.0.15-review-hold ne ke saita shi: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tace jerin</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Zuwa</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Kwanan wata</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>An ƙirƙira (wallafawa ta farko)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Duka</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>An wallafa</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Daftari, ba a taɓa wallafawa ba</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ana jira (ana jiran amincewa ko wata rana)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>A cikin shara</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>An riƙe don dubawa</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>An riƙe</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ba a riƙe ba</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Boyayye</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Mai gani</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>An aiko a ranar</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Kowace hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Abin da binciken ya rubuta kawai.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Yanzu: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Sunan shiga ko lambar ID ta mai amfani.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tace</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Share matatun</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Abubuwa</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from zuwa %to cikin %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Babu abu</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(an karanta cikin %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ayyuka kan abubuwan da aka zaɓa</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Zaɓi duka a wannan shafi</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>An zaɓi %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Zaɓi aiki</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Saki riƙewar</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Riƙe don dubawa</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Boye</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Bayyana</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mayar zuwa shara</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Goge</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Ba da sashe</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Ba da matsayi</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Dalili</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ana buƙata don riƙewa; ana adana shi tare da riƙewar da kuma cikin binciken.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Zaɓi sashe</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Zaɓi matsayi</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aiwatar kan waɗanda aka zaɓa</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ana duba kowane abu bisa izininka. Mayarwa zuwa shara da gogewa suna neman ka tabbatar. Fiye da abubuwa %count suna gudana a bayan fage.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Zaɓi</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Wallafawa</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>An aiko daga</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Zaɓi %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>tukuna ba</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(babu suna)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Lambar ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Daftari</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ana jira</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Mahaifinsa ya ɓoye shi</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>An riƙe: sabon aiko</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Sigar %version na jira</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Sigar %version na gudana</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Daftari, sigar %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>An wallafa sigar %version</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>An tsara don %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>babu adireshi</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ba a rubuta ba</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Babu abin da ya dace da waɗannan matatun.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Nuna duka</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Babu abun ciki tukuna.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>A kowane shafi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Nuna abubuwa %count a kowane shafi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adireshi da burauzar wani aiko suna fitowa daga fihirisar bincike, wadda babu a nan: ginshiƙin yana cewa &quot;ba a rubuta ba&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adireshi da burauzar sune waɗanda binciken ya rubuta don abun (riƙewa ta atomatik koyaushe tana rubuta su; wallafawa da ƙirƙira kawai inda aka kunna), kamar yadda saitunan sirrinsa ke adana su.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: abubuwa %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Gogewa tana cire abubuwan har abada, tare da duk sigoginsu da fassarorinsu. Ba za a iya mayar da shi ba.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Abubuwan suna zuwa shara, inda za a iya dawo da su.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ana duba kowane abu bisa izininka; abu mai ƙananan abubuwa ana barin sa yadda yake (cire shi a tsarin abun ciki). Za a nemi ka tabbatar cewa kai ne.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Wannan yana gudana a bayan fage: shafin ci gabansa yana buɗewa, kuma ana nuna sakamakon kowane abu idan ya gama.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Abubuwan da aka zaɓa</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>da ƙarin %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Soke</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ba a yi komai ba</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Dalili: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Aikin yana ci gaba da gudana a bayan fage.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ci gabansa</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Aikin bayan fage ya kasa: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>An gama</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>An ƙi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ya kasa</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Kowane abu</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Abu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sakamako</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Me ya sa</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Koma zuwa jerin</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Saitin farko</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ba a yi komai ba tukuna</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Tabbatar</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Zaɓi aiki.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Zaɓi aƙalla abu ɗaya.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Zaɓi abubuwa 1000 a mafi yawa a lokaci ɗaya.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Faɗi dalilin da yasa aka riƙe abubuwan.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Zaɓi sashen.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Zaɓi matsayin.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ba a iya karanta fom ɗin ba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Ba a iya karanta ƙididdigar ba: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>An riƙe don dubawa</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Sababbi a yau</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ba a saita riƙewa don dubawa ba tukuna (matakin haɓakawa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Duk abubuwan baya-bayan nan</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ba a yarda ka gudanar da ayyukan tantancewa ba (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Aikin tantancewa bai cika ba: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Tantancewa: %action kan abubuwa %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done cikin abubuwa %total: %ok an gama, %refused an ƙi, %failed sun kasa</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok an gama, %refused an ƙi, %failed sun kasa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ba ya wanzu kuma.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ba shi da wuri (ba a wallafa ba).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ba a yarda ka ɓoye shi ba (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ba a yarda ka bayyana shi ba (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>An riga an ɓoye shi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ba a ɓoye shi ba.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>An ɓoye.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>An bayyana.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Yana cikin shara: zubar da shi ko dawo da shi a can.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Daftarin da ba a taɓa wallafawa ba ba zai iya zuwa shara ba: goge shi.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ba a yarda ka goge shi ba (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>An goge.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ba a yarda ka cire shi ba (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Yana da ƙananan abubuwa: cire shi a tsarin abun ciki, inda aka jera su.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ba a cire shi ba (wani tsarin aiki yana iya riƙe cirewar).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>An mayar zuwa shara.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sashen ba ya wanzu.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>An riga yana cikin wannan sashe.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ba a yarda ka ba da wannan sashe ba (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Ba a ba da sashen ba.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>An ba da sashe.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Matsayin ba ya wanzu.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>An riga yana cikin wannan matsayi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ba a yarda ka ba da wannan matsayi ba (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ba a ba da matsayin ba (wani tsarin aiki yana iya riƙe canjin).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>An ba da matsayi.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Babu irin wannan aiki.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ba a saita riƙewa don dubawa ba (matakin haɓakawa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Faɗi dalilin da yasa aka riƙe shi.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>An riga an riƙe shi.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ba a yarda ka riƙe shi ba (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ba a sanya riƙewar ba (wani tsarin aiki yana iya riƙe canjin).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>An riƙe.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ba a riƙe shi ba.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ba a yarda ka sake shi ba (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ba a saki riƙewar ba (wani tsarin aiki yana iya riƙe canjin).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>An sake shi; har yanzu a ɓoye: ba a yarda ka bayyana shi ba (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>An sake shi.</translation>
     </message>
 </context>
 <context>

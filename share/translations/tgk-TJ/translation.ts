@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>Тағйироти насб, ки ҳамчун файл нигоҳ дошта мешаванд: вазъи онҳо, иҷроҳо, иҷро ва бозгардонӣ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Мундариҷаи нав</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Мундариҷаи навтарин, он чи барои баррасӣ нигоҳ дошта шудааст ва амалҳо бо интихоб.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Нусхаи статикии сомонаро ба GitHub Pages ё ҳар мизбони git нашр кунед.</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Иҷроро оғоз кардан нашуд.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Тағйирёфта</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Эҷодшуда</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ном</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Синф</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бахш</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Эҷодкунанда</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Мундариҷаи нав</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Мундариҷаи охирин эҷодшуда ва тағйирёфтаи тамоми сомона, аз навтарин: он чи меҳмонон фиристоданд, он чи барои баррасӣ нигоҳ дошта шудааст, сиёҳнависҳое, ки нашри худро интизоранд. Унсурҳоро интихоб кунед, то онҳоро озод кунед, нигоҳ доред, пинҳон кунед, нишон диҳед, хориҷ кунед ё ба бахш ё ҳолати дигар гузаронед.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Рӯйхатро хондан муяссар нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Нигоҳдорӣ барои баррасӣ ҳанӯз танзим нашудааст, бинобар ин ҳеҷ чиз нигоҳ дошта намешавад ва амалҳои нигоҳдорӣ пешниҳод намешаванд. Қадами навсозии 6.0.15-review-hold онро танзим мекунад: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Филтр кардани рӯйхат</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Аз</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>То</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Сана</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Эҷодшуда (нашри аввал)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Вазъи нашр</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Нашршуда</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Сиёҳнавис, ҳеҷ гоҳ нашр нашудааст</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Дар интизорӣ (тасдиқ ё санаро интизор аст)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Дар сабад</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Барои баррасӣ нигоҳ дошта шудааст</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Нигоҳ дошта шудааст</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Нигоҳ дошта нашудааст</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Пинҳон</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Намоён</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Дастрасии сомонаи фиристодан</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ҳар гуна дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Танҳо он чи аудит сабт кардааст.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ҳоло: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Логин ё рақами корбар.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Филтр кардан</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Тоза кардани филтрҳо</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Унсурҳо</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from то %to аз %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Унсур нест</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(дар %ms мс хонда шуд)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Амалҳо бо унсурҳои интихобшуда</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Ҳамаро дар ин саҳифа интихоб кардан</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count интихоб шуд</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Амал</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Амалро интихоб кунед</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Озод кардан аз нигоҳдорӣ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Барои баррасӣ нигоҳ доштан</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Пинҳон кардан</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Ба сабад гузоштан</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Нест кардан</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Таъин кардани бахш</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Таъин кардани ҳолат</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Сабаб</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Барои нигоҳдорӣ лозим аст; бо нигоҳдорӣ ва дар аудит нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Бахшро интихоб кунед</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ҳолат</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Ҳолатро интихоб кунед</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Ба интихобшудаҳо татбиқ кардан</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ҳар як унсур бо иҷозатҳои худи шумо санҷида мешавад. Ба сабад гузоштан ва нест кардан тасдиқро талаб мекунанд. Беш аз %count унсур дар пасзамина иҷро мешаванд.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Интихоб кардан</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Нашр</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Аз куҷо фиристода шуд</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Интихоб кардани %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ҳанӯз не</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(беном)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Рақам %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Сиёҳнавис</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Аз ҷониби волидаш пинҳон шудааст</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Нигоҳ дошта шудааст: фиристодаи нав</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Версияи %version дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Версияи %version дар ҷараён</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Сиёҳнавис, версияи %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Версияи %version нашр шуд</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Барои %date ба нақша гирифта шудааст</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>суроға нест</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ба ин филтрҳо ҳеҷ чиз мувофиқ нест.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Нишон додани ҳама</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ҳанӯз мундариҷа нест.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Дар як саҳифа</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Дар як саҳифа %count унсур нишон додан.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Суроға ва браузери фиристода аз индекси аудит гирифта мешаванд, ки дар ин ҷо дастрас нест: сутун «сабт нашудааст» мегӯяд.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Суроға ва браузер он чизҳое мебошанд, ки аудит барои унсур сабт кардааст (нигоҳдории худкор онҳоро ҳамеша сабт мекунад; нашр ва эҷод танҳо дар ҷое ки фаъол аст), чунон ки танзимоти махфияти он онҳоро нигоҳ медорад.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count унсур</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Нест кардан унсурҳоро бо ҳамаи версияҳо ва тарҷумаҳояшон ба таври доимӣ хориҷ мекунад. Онро баргардондан ғайриимкон аст.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Унсурҳо ба сабад мераванд, ки аз он ҷо онҳоро барқарор кардан мумкин аст.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ҳар як унсур бо иҷозатҳои худи шумо санҷида мешавад; унсуре, ки зерунсурҳо дорад, бетағйир монда мешавад (онро дар сохтори мундариҷа хориҷ кунед). Аз шумо хоҳиш карда мешавад, ки тасдиқ кунед, ки ин худи шумоед.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ин дар пасзамина иҷро мешавад: саҳифаи пешрафти он кушода мешавад ва ҳангоми анҷом натиҷа барои ҳар як унсур нишон дода мешавад.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Унсурҳои интихобшуда</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ва боз %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бекор кардан</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ҳеҷ чиз иҷро нашуд</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Сабаб: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Амал ҳанӯз дар пасзамина иҷро мешавад.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Пешрафти он</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Амали пасзамина ноком шуд: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Анҷом ёфт</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Рад шуд</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ноком</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Барои ҳар унсур</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Унсур</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Натиҷа</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Чаро</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Бозгашт ба рӯйхат</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Насб</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ҳеҷ чиз иҷро нашуд</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Тасдиқ кардан</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Амалро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Ақаллан як унсурро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Дар як вақт на зиёда аз 1000 унсур интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Нависед, ки чаро унсурҳо нигоҳ дошта мешаванд.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Бахшро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Ҳолатро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Шаклро хондан муяссар нашуд.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Мундариҷаи нав</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Шумораҳоро хондан муяссар нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Барои баррасӣ нигоҳ дошта шудааст</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Имрӯз нав</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Нигоҳдорӣ барои баррасӣ ҳанӯз танзим нашудааст (қадами навсозии 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ҳамаи мундариҷаи нав</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Шумо амалҳои модератсияро иҷро карда наметавонед (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Амали модератсия пурра нест: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модератсия: %action бо %count объект</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done аз %total объект: %ok анҷом ёфт, %refused рад шуд, %failed ноком</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok анҷом ёфт, %refused рад шуд, %failed ноком</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Он дигар вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Он ҷойгиршавӣ надорад (нашр нашудааст).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Шумо онро пинҳон карда наметавонед (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Шумо онро нишон дода наметавонед (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Он аллакай пинҳон аст.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Он пинҳон нест.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Пинҳон шуд.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Нишон дода шуд.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Он дар сабад аст: онро дар он ҷо холӣ ё барқарор кунед.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Сиёҳнависе, ки ҳеҷ гоҳ нашр нашудааст, ба сабад рафта наметавонад: онро нест кунед.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Шумо онро нест карда наметавонед (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Нест шуд.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Шумо онро хориҷ карда наметавонед (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Он зерунсурҳо дорад: онро дар сохтори мундариҷа, ки онҳо дар он ҷо номбар шудаанд, хориҷ кунед.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Он хориҷ нашуд (шояд ҷараёни корӣ хориҷкуниро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Ба сабад гузошта шуд.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Бахш вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Он аллакай дар ин бахш аст.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Шумо ин бахшро таъин карда наметавонед (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Бахш таъин нашуд.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Бахш таъин шуд.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ҳолат вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Он аллакай дар ин ҳолат аст.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Шумо ин ҳолатро таъин карда наметавонед (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ҳолат таъин нашуд (шояд ҷараёни корӣ тағйирро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Ҳолат таъин шуд.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Чунин амал вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Нигоҳдорӣ барои баррасӣ танзим нашудааст (қадами навсозии 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Нависед, ки чаро он нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Он аллакай нигоҳ дошта шудааст.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Шумо онро нигоҳ дошта наметавонед (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Нигоҳдорӣ гузошта нашуд (шояд ҷараёни корӣ тағйирро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Нигоҳ дошта шуд.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Он нигоҳ дошта нашудааст.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Шумо онро озод карда наметавонед (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Нигоҳдорӣ бардошта нашуд (шояд ҷараёни корӣ тағйирро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Озод шуд; ҳанӯз пинҳон аст: шумо онро нишон дода наметавонед (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Озод шуд.</translation>
     </message>
 </context>
 <context>

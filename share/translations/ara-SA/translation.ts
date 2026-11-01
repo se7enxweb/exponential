@@ -15090,6 +15090,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>تغييرات على التثبيت محفوظة كملفات: حالتها، وعمليات التشغيل، والتشغيل والتراجع.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>المحتوى الحديث</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>أحدث المحتوى، وما هو محتجز للمراجعة، وإجراءات على تحديد.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>انشر نسخة ثابتة من موقع على GitHub Pages أو أي مضيف git.</translation>
     </message>
@@ -80611,6 +80619,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>تعذّر بدء التشغيل.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>عُدّل</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>أُنشئ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>الفئة</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>القسم</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>المنشئ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>المحتوى الحديث</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>أحدث المحتوى المُنشأ والمُعدّل في الموقع بأكمله، الأحدث أولاً: ما أرسله الزوار، وما هو محتجز للمراجعة، والمسودات التي تنتظر نشرها. حدّد عناصر لتحريرها من الاحتجاز أو احتجازها أو إخفائها أو إظهارها أو إزالتها أو نقلها إلى قسم أو حالة أخرى.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>تعذّرت قراءة القائمة: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>لم يُعدّ الاحتجاز للمراجعة بعد، لذا لا شيء محتجز ولا تُعرض إجراءات الاحتجاز. خطوة الترقية 6.0.15-review-hold تُعدّه: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>تصفية القائمة</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>من</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>إلى</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>التاريخ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>الإنشاء (أول نشر)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>منشور</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>مسودة، لم تُنشر قط</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>معلّق (بانتظار الموافقة أو تاريخ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>في سلة المحذوفات</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>محتجز للمراجعة</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>محتجز</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>غير محتجز</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>مخفي</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>مرئي</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>أُرسل في</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>أي siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>فقط ما سجّله سجل التدقيق.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>الآن: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>اسم دخول أو معرّف مستخدم.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>تصفية</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>مسح عوامل التصفية</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>العناصر</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from إلى %to من %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>لا يوجد عنصر</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(قُرئت في %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>إجراءات على العناصر المحددة</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>تحديد الكل في هذه الصفحة</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count محدد</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>الإجراء</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>اختر إجراءً</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>رفع الاحتجاز</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>احتجاز للمراجعة</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>إخفاء</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>نقل إلى سلة المحذوفات</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>تعيين القسم</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>تعيين الحالة</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>السبب</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>مطلوب للاحتجاز؛ يُحفظ مع الاحتجاز وفي سجل التدقيق.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>اختر قسماً</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>اختر حالة</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>تطبيق على المحدد</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>يُفحص كل عنصر وفق صلاحياتك الخاصة. النقل إلى سلة المحذوفات والحذف يطلبان منك التأكيد. أكثر من %count عنصر يُنفَّذ في الخلفية.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>تحديد</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>النشر</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>أُرسل من</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>تحديد %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ليس بعد</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بلا اسم)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>المعرّف %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسودة</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>معلّق</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>مخفي بسبب العنصر الأب</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>محتجز: إرسال جديد</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>الإصدار %version معلّق</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>الإصدار %version قيد العمل</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>مسودة، الإصدار %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>الإصدار %version منشور</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>مجدول في %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>لا عنوان</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>لا شيء يطابق عوامل التصفية هذه.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>عرض الكل</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>لا يوجد محتوى بعد.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>لكل صفحة</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>عرض %count عنصر في كل صفحة.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>يأتي عنوان الإرسال ومتصفحه من فهرس سجل التدقيق، وهو غير متاح هنا: يظهر في العمود «غير مسجّل».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>العنوان والمتصفح هما ما سجّله سجل التدقيق للعنصر (الاحتجاز التلقائي يسجّلهما دائماً؛ النشر والإنشاء فقط حيث جرى تفعيل ذلك)، كما تحتفظ بهما إعدادات الخصوصية الخاصة به.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count عنصر</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>يزيل الحذف العناصر نهائياً، مع جميع إصداراتها وترجماتها. لا يمكن التراجع عنه.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>تنتقل العناصر إلى سلة المحذوفات، ومنها يمكن استعادتها.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>يُفحص كل عنصر وفق صلاحياتك الخاصة؛ ويُترك العنصر الذي له عناصر فرعية كما هو (أزله في بنية المحتوى). سيُطلب منك التحقق من أنك أنت.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>يُنفَّذ هذا في الخلفية: تُفتح صفحة تقدّمه، وتُعرض النتيجة لكل عنصر عند انتهائه.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>العناصر المحددة</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>و%count أخرى</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>لم يُنفَّذ شيء</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>السبب: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>لا يزال الإجراء قيد التنفيذ في الخلفية.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>تقدّمه</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>فشل الإجراء في الخلفية: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تم</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>لكل عنصر</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>العنصر</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>السبب</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>العودة إلى القائمة</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>لم يُنفَّذ أي شيء</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تأكيد</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>اختر إجراءً.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>حدّد عنصراً واحداً على الأقل.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>حدّد 1000 عنصر على الأكثر في كل مرة.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>اذكر سبب احتجاز العناصر.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>اختر القسم.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>اختر الحالة.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>تعذّرت قراءة النموذج.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>المحتوى الحديث</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>تعذّرت قراءة الأعداد: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>محتجز للمراجعة</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>جديد اليوم</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>لم يُعدّ الاحتجاز للمراجعة بعد (خطوة الترقية 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>كل المحتوى الحديث</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>لا يُسمح لك بتنفيذ إجراءات الإشراف (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>إجراء الإشراف غير مكتمل: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>الإشراف: %action على %count كائن</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done من %total كائن: %ok تم، %refused مرفوض، %failed فشل</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok تم، %refused مرفوض، %failed فشل</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>لم يعد موجوداً.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ليس له موقع (غير منشور).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>لا يُسمح لك بإخفائه (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>لا يُسمح لك بإظهاره (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>إنه مخفي بالفعل.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>إنه غير مخفي.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>أُخفي.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>أُظهر.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>إنه في سلة المحذوفات: أفرغها أو استعده من هناك.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>لا يمكن نقل مسودة لم تُنشر قط إلى سلة المحذوفات: احذفها.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>لا يُسمح لك بحذفه (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>حُذف.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>لا يُسمح لك بإزالته (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>له عناصر فرعية: أزله في بنية المحتوى، حيث تُعرض.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>لم تتم إزالته (قد يكون سير عمل يحتجز الإزالة).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>نُقل إلى سلة المحذوفات.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>القسم غير موجود.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>إنه في هذا القسم بالفعل.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>لا يُسمح لك بتعيين هذا القسم (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>لم يُعيَّن القسم.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>عُيِّن القسم.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>الحالة غير موجودة.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>إنه في هذه الحالة بالفعل.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>لا يُسمح لك بتعيين هذه الحالة (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>لم تُعيَّن الحالة (قد يكون سير عمل يحتجز التغيير).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>عُيِّنت الحالة.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>لا يوجد إجراء كهذا.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>لم يُعدّ الاحتجاز للمراجعة (خطوة الترقية 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>اذكر سبب احتجازه.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>إنه محتجز بالفعل.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>لا يُسمح لك باحتجازه (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>لم يُطبَّق الاحتجاز (قد يكون سير عمل يحتجز التغيير).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>احتُجز.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>إنه غير محتجز.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>لا يُسمح لك بتحريره من الاحتجاز (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>لم يُرفع الاحتجاز (قد يكون سير عمل يحتجز التغيير).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>رُفع الاحتجاز؛ لا يزال مخفياً: لا يُسمح لك بإظهاره (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>رُفع الاحتجاز.</translation>
     </message>
 </context>
 <context>

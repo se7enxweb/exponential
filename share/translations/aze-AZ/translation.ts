@@ -15151,6 +15151,14 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <translation>Fayl kimi saxlanılan quraşdırma dəyişiklikləri: vəziyyətləri, icralar, icra etmək və geri qaytarmaq.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Son məzmun</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ən yeni məzmun, yoxlama üçün saxlanılanlar və seçim üzərində əməliyyatlar.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Saytın statik surətini GitHub Pages-də və ya istənilən git hostinqində dərc edin.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>The run could not be started.</source>
         <translation>İcra başladıla bilmədi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Dəyişdirilib</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yaradılıb</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sinif</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölmə</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Yaradan</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Son məzmun</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Bütün saytın ən son yaradılmış və dəyişdirilmiş məzmunu, ən yenisi birinci: ziyarətçilərin göndərdikləri, yoxlama üçün saxlanılanlar, dərcini gözləyən qaralamalar. Elementləri buraxmaq, saxlamaq, gizlətmək, göstərmək, çıxarmaq və ya başqa bölməyə ya vəziyyətə keçirmək üçün onları seçin.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Siyahı oxuna bilmədi: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Yoxlama üçün saxlama hələ qurulmayıb, ona görə heç nə saxlanılmır və saxlama əməliyyatları təklif olunmur. 6.0.15-review-hold yeniləmə addımı onu qurur: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Siyahını filtrlə</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Başlanğıc</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Son</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tarix</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Yaradılıb (ilk dərc)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hamısı</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Dərc vəziyyəti</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Dərc edilib</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Qaralama, heç vaxt dərc edilməyib</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Gözləmədə (təsdiq və ya tarix gözləyir)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Zibil qutusunda</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Yoxlama üçün saxlanılıb</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Saxlanılıb</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Saxlanılmayıb</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Gizli</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Görünən</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Göndərildiyi sayt girişi</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>İstənilən sayt girişi</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Yalnız auditin qeydə aldıqları.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>İndi: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Giriş adı və ya istifadəçi identifikatoru.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrlə</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filtrləri təmizlə</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementlər</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Element yoxdur</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms-də oxundu)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Seçilmiş elementlər üzərində əməliyyatlar</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Bu səhifədəkilərin hamısını seç</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count seçilib</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Əməliyyat</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Əməliyyat seçin</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Saxlamanı ləğv et</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Yoxlama üçün saxla</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Gizlət</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Göstər</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Zibil qutusuna at</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Sil</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Bölmə təyin et</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Vəziyyət təyin et</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Səbəb</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Saxlamaq üçün tələb olunur; saxlama ilə birlikdə və auditdə saxlanılır.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Bölmə seçin</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Vəziyyət</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Vəziyyət seçin</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Seçilmişlərə tətbiq et</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Hər element sizin öz icazələrinizə görə yoxlanılır. Zibil qutusuna atmaq və silmək təsdiq tələb edir. %count elementdən çoxu arxa planda icra olunur.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seç</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Dərc</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Göndərildiyi yer</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name seç</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>hələ yox</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(adsız)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>İdentifikator %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Qaralama</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Gözləmədə</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Valideyni tərəfindən gizlədilib</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Saxlanılıb: yeni göndəriş</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versiya %version gözləmədədir</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versiya %version üzərində iş gedir</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Qaralama, versiya %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versiya %version dərc edilib</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date üçün planlaşdırılıb</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ünvan yoxdur</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>qeydə alınmayıb</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Bu filtrlərə uyğun heç nə yoxdur.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hamısını göstər</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Hələ məzmun yoxdur.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Səhifədə</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Səhifədə %count element göstər.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Göndərişin ünvanı və brauzeri audit indeksindən gəlir, o isə burada mövcud deyil: sütunda “qeydə alınmayıb” yazılır.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ünvan və brauzer auditin element üçün qeydə aldıqlarıdır (avtomatik saxlama onları həmişə qeydə alır; dərc və yaratma yalnız aktiv edildikdə), məxfilik ayarlarının saxladığı şəkildə.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count element</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Silmə elementləri bütün versiyaları və tərcümələri ilə birlikdə həmişəlik silir. Bunu geri qaytarmaq olmaz.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementlər zibil qutusuna gedir, oradan bərpa edilə bilərlər.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Hər element sizin öz icazələrinizə görə yoxlanılır; alt elementləri olan element olduğu kimi saxlanılır (onu məzmun strukturunda çıxarın). Sizdən özünüz olduğunuzu təsdiq etmək istəniləcək.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Bu, arxa planda icra olunur: onun gediş səhifəsi açılır və bitdikdə hər element üzrə nəticə göstərilir.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Seçilmiş elementlər</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>və daha %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ləğv et</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Heç nə edilmədi</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Səbəb: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Əməliyyat hələ arxa planda icra olunur.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Onun gedişi</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Arxa plan əməliyyatı uğursuz oldu: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hazırdır</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rədd edildi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Element üzrə</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nəticə</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Niyə</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Siyahıya qayıt</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Quraşdırma</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Heç nə edilmədi</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Təsdiq et</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Əməliyyat seçin.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Ən azı bir element seçin.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Bir dəfəyə ən çox 1000 element seçin.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Elementlərin niyə saxlanıldığını yazın.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Bölməni seçin.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Vəziyyəti seçin.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Forma oxuna bilmədi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Son məzmun</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Saylar oxuna bilmədi: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Yoxlama üçün saxlanılıb</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Bu gün yeni</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Yoxlama üçün saxlama hələ qurulmayıb (6.0.15-review-hold yeniləmə addımı).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Bütün son məzmun</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Moderasiya əməliyyatlarını icra edə bilməzsiniz (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderasiya əməliyyatı tamamlanmayıb: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasiya: %count obyekt üzərində %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total obyekt: %ok hazırdır, %refused rədd edildi, %failed uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok hazırdır, %refused rədd edildi, %failed uğursuz oldu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>O artıq mövcud deyil.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Onun yeri yoxdur (dərc edilməyib).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Onu gizlədə bilməzsiniz (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Onu göstərə bilməzsiniz (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>O artıq gizlidir.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>O gizli deyil.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Gizlədildi.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Göstərildi.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>O zibil qutusundadır: onu orada boşaldın və ya bərpa edin.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Heç vaxt dərc edilməmiş qaralama zibil qutusuna gedə bilməz: onu silin.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Onu silə bilməzsiniz (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Silindi.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Onu çıxara bilməzsiniz (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Onun alt elementləri var: onu, alt elementlərin göstərildiyi məzmun strukturunda çıxarın.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>O çıxarılmadı (iş axını çıxarmanı saxlaya bilər).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Zibil qutusuna atıldı.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Bölmə mövcud deyil.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>O artıq bu bölmədədir.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Bu bölməni təyin edə bilməzsiniz (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Bölmə təyin edilmədi.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Bölmə təyin edildi.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Vəziyyət mövcud deyil.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>O artıq bu vəziyyətdədir.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Bu vəziyyəti təyin edə bilməzsiniz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Vəziyyət təyin edilmədi (iş axını dəyişikliyi saxlaya bilər).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Vəziyyət təyin edildi.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Belə əməliyyat yoxdur.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Yoxlama üçün saxlama qurulmayıb (6.0.15-review-hold yeniləmə addımı).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Onun niyə saxlanıldığını yazın.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>O artıq saxlanılıb.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Onu saxlaya bilməzsiniz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Saxlama qoyulmadı (iş axını dəyişikliyi saxlaya bilər).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Saxlanıldı.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>O saxlanılmayıb.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Onu buraxa bilməzsiniz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Saxlama ləğv edilmədi (iş axını dəyişikliyi saxlaya bilər).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Buraxıldı; hələ də gizlidir: onu göstərə bilməzsiniz (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Buraxıldı.</translation>
     </message>
 </context>
 <context>

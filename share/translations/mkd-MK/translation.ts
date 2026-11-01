@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>Промени на инсталацијата чувани како датотеки: нивната состојба, извршувањата, извршување и враќање назад.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Нова содржина</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Најновата содржина, она што е задржано за преглед и дејства врз избор.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Објавете статичка копија од сајт на GitHub Pages или кој било git-хост.</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Извршувањето не можеше да се започне.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Изменето</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Создадено</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Име</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Класа</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Секција</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Создавач</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Нова содржина</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Најновата создадена и изменета содржина на целиот сајт, прво најновото: што испратиле посетителите, што е задржано за преглед, нацрти што чекаат објавување. Изберете ставки за да го ослободите задржувањето, да ги задржите, скриете, прикажете, отстраните или преместите во друга секција или состојба.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Листата не можеше да се прочита: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Задржувањето за преглед сè уште не е поставено, па ништо не се задржува и дејствата за задржување не се нудат. Чекорот за надградба 6.0.15-review-hold го поставува: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Филтрирај ја листата</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Од</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>До</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Датум</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Создадено (прво објавување)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Сите</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Објавено</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Нацрт, никогаш објавен</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>На чекање (одобрување или датум)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Во корпата</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Задржано за преглед</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Задржано</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Не е задржано</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Скриено</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видливо</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Испратено преку</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Секој пристап до сајтот</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Само она што го запишала ревизијата.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Сега: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Корисничко име или ID на корисник.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Филтер</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Исчисти ги филтрите</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ставки</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from до %to од %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Нема ставки</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(прочитано за %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Дејства врз избраните ставки</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Избери ги сите на оваа страница</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Избрани: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дејство</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Изберете дејство</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Ослободи го задржувањето</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Задржи за преглед</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Скриј</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Прикажи</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Премести во корпата</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Избриши</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Додели секција</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Додели состојба</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Причина</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Потребна за задржување; се чува со задржувањето и во ревизијата.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Изберете секција</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Состојба</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Изберете состојба</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Примени на избраните</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Секоја ставка се проверува според вашите сопствени дозволи. Преместувањето во корпата и бришењето бараат потврда. Повеќе од %count ставки се извршуваат во позадина.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Избери</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Објавување</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Испратено од</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Избери %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>сè уште не</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(без име)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Нацрт</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>На чекање</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Скриено од родителот</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Задржано: ново испраќање</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Верзија %version на чекање</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Верзија %version во тек</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Нацрт, верзија %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Верзија %version објавена</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Закажано за %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>нема адреса</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>не е запишано</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ништо не одговара на овие филтри.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Прикажи ги сите</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Сè уште нема содржина.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>По страница</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Прикажи %count ставки по страница.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Адресата и прелистувачот на испраќањето доаѓаат од индексот на ревизијата, кој тука не е достапен: во колоната пишува „не е запишано“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Адресата и прелистувачот се оние што ревизијата ги запишала за ставката (автоматското задржување секогаш ги запишува; објавувањето и создавањето само каде што е вклучено), како што ги чуваат нејзините поставки за приватност.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ставки</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Бришењето ги отстранува ставките засекогаш, со сите нивни верзии и преводи. Тоа не може да се врати.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Ставките одат во корпата, од каде што можат да се вратат.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Секоја ставка се проверува според вашите сопствени дозволи; ставка со подставки останува каква што е (отстранете ја во структурата на содржината). Ќе биде побарано да потврдите дека сте вие.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ова се извршува во позадина: се отвора страницата за напредок, а резултатот за секоја ставка се прикажува кога ќе заврши.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Избраните ставки</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>и уште %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Откажи</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ништо не беше направено</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Причина: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Дејството сè уште се извршува во позадина.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Неговиот напредок</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Дејството во позадина не успеа: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Готово</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Одбиено</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешно</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>По ставка</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ставка</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Резултат</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Зошто</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Назад кон листата</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Конфигурација</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ништо не е направено</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Потврди</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Изберете дејство.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Изберете барем една ставка.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Изберете најмногу 1000 ставки одеднаш.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Наведете зошто ставките се задржани.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Изберете ја секцијата.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Изберете ја состојбата.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Формуларот не можеше да се прочита.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Нова содржина</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Бројачите не можеа да се прочитаат: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Задржано за преглед</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ново денес</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Задржувањето за преглед сè уште не е поставено (чекорот за надградба 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Сета нова содржина</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Немате дозвола да извршувате дејства за модерација (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Дејството за модерација не е завршено: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модерација: %action врз %count објекти</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done од %total објекти: %ok извршени, %refused одбиени, %failed неуспешни</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok извршени, %refused одбиени, %failed неуспешни</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Веќе не постои.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Нема локација (не е објавено).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Немате дозвола да го скриете (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Немате дозвола да го прикажете (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Веќе е скриено.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Не е скриено.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Скриено.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Прикажано.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Во корпата е: испразнете ја или вратете го оттаму.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Нацрт што никогаш не бил објавен не може да оди во корпата: избришете го.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Немате дозвола да го избришете (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Избришано.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Немате дозвола да го отстраните (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Има подставки: отстранете го во структурата на содржината, каде што тие се наведени.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Не беше отстрането (работен тек може да го задржува отстранувањето).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Преместено во корпата.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Секцијата не постои.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Веќе е во оваа секција.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Немате дозвола да ја доделите оваа секција (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Секцијата не беше доделена.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Секцијата е доделена.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Состојбата не постои.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Веќе е во оваа состојба.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Немате дозвола да ја доделите оваа состојба (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Состојбата не беше доделена (работен тек може да ја задржува промената).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Состојбата е доделена.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Нема такво дејство.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Задржувањето за преглед не е поставено (чекорот за надградба 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Наведете зошто е задржано.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Веќе е задржано.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Немате дозвола да го задржите (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Задржувањето не беше поставено (работен тек може да ја задржува промената).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Задржано.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Не е задржано.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Немате дозвола да го ослободите (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Задржувањето не беше ослободено (работен тек може да ја задржува промената).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Ослободено; сè уште скриено: немате дозвола да го прикажете (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Ослободено.</translation>
     </message>
 </context>
 <context>

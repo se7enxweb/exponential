@@ -15151,6 +15151,14 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <translation>Jijjiiramoota inistaaleeshinii faayilaan kuufaman: haala isaanii, raawwiiwwan, raawwachiisuu fi duubatti deebisuu.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Qabiyyee haaraa</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Qabiyyee haaraa, wanta sakatta'iinsaaf qabame, fi tarkaanfiiwwan filannoo irratti.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Garagalchaa dhaabbataa marsariitii tokkoo GitHub Pages ykn hoostii git kamiyyuu irratti maxxansi.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Raawwiin jalqabamuu hin dandeenye.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Jijjiirame</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Uumame</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Maqaa</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Gita</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Kutaa</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Uumaa</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Qabiyyee haaraa</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Qabiyyee dhiyeenya uumamee fi jijjiirame marsariitii guutuu, kan haaraan dursee: wanta daawwattoonni galchan, wanta sakatta'iinsaaf qabame, wixineewwan maxxansa isaanii eeggatan. Wantoota filadhu akka gad dhiiftu, qabdu, dhoksitu, agarsiiftu, baastu ykn gara kutaa ykn haala biraatti dabarsitu.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Tarreen dubbifamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Qabiinsi sakatta'iinsaa ammallee hin qophoofne, kanaaf homtuu hin qabamu, tarkaanfiiwwan qabiinsaas hin dhiyaatan. Tarkaanfiin fooyyessaa 6.0.15-review-hold ni qopheessa: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tarree calaqqisi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Irraa</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanga</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Guyyaa</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Uumame (yeroo jalqabaaf maxxanfame)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hunda</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sadarkaa</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Maxxanfame</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Wixinee, gonkumaa hin maxxanfamne</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Eegaa jira (hayyama ykn guyyaa)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Kuusaa kosii keessa</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Sakatta'iinsaaf qabame</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Qabame</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Hin qabamne</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Dhokateera</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Mul'ataa</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Kan itti galfame</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Seensa marsariitii kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Wanta odiitiin galmeesse qofa.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Amma: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Maqaa seensaa ykn eenyummaa fayyadamaa.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Calaqqisi</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Calaqqisoota haqi</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Wantoota</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanga %to %count keessaa</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Wanti hin jiru</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms keessatti dubbifame)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Tarkaanfiiwwan wantoota filatamanii</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Fuula kana irratti hunda fili</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count filatameera</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tarkaanfii</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Tarkaanfii filadhu</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Qabiinsa gad dhiisi</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Sakatta'iinsaaf qabi</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Dhoksi</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Gara kuusaa kosiitti ergi</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Haqi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Kutaa ramadi</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Haala ramadi</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sababa</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Qabuuf barbaachisa; qabiinsaa fi odiitii keessatti ni kuufama.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Kutaa filadhu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Haala</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Haala filadhu</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Kanneen filataman irratti hojiirra oolchi</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Wanti tokkoon tokkoon hayyamoota kee mataa keetii wajjin ni sakatta'ama. Gara kuusaa kosiitti erguu fi haquun akka mirkaneessitu si gaafatu. Wantoota %count ol duuba keessatti hojjetamu.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fili</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Maxxansa</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Kan irraa galfame</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name fili</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ammallee miti</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(maqaa hin qabu)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Eenyummaa %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Wixinee</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Eegaa jira</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Kan olaanaan dhoksame</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Qabame: galmee haaraa</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Fooyya'iinsi %version eegaa jira</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Fooyya'iinsi %version hojii irra jira</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Wixinee, fooyya'iinsa %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Fooyya'iinsi %version maxxanfameera</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date tti karoorfame</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>teessoon hin jiru</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>hin galmaa'in</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Calaqqisoota kanneen wajjin homtuu wal hin simu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hunda agarsiisi</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ammallee qabiyyeen hin jiru.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fuula tokkoon</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fuula tokkoon wantoota %count agarsiisi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Teessoon fi barbaacha galmee tokkoo indeeksii odiitii irraa dhufu, kan asitti hin argamne: kutaan "hin galmaa'in" jedha.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Teessoon fi barbaachi kanneen odiitiin wanta kanaaf galmeesse dha (qabiinsi ofumaan yeroo hunda galmeessa; maxxansuu fi uumuun bakka banamee qofa), akkuma qindaa'inni dhuunfaa isaa isaan eegutti.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: wantoota %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Haquun wantoota bara baraan, fooyya'iinsota fi hiikkaawwan isaanii hunda wajjin balleessa. Deebi'uu hin danda'u.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Wantoonni gara kuusaa kosii deemu, achii irraa deebi'anii bakka buufamuu danda'u.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Wanti tokkoon tokkoon hayyamoota kee wajjin ni sakatta'ama; wanti wantoota xixiqqoo qabu akkuma jirutti dhiifama (caasaa qabiyyee keessatti baasi). Si ta'uu kee akka mirkaneessitu ni gaafatamta.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Kun duuba keessatti hojjetama: fuulli adeemsa isaa ni banama, bu'aan wanta tokkoon tokkoon yeroo xumuramu ni agarsiifama.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Wantoota filataman</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>fi %count dabalataa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dhiisi</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Homtuu hin hojjetamne</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sababa: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Tarkaanfiin ammallee duuba keessatti hojjetamaa jira.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Adeemsa isaa</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Tarkaanfiin duubaa hin milkoofne: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Xumurameera</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Didame</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Wanta tokkoon</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Wanta</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bu'aa</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Maaliif</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Gara tarreetti deebi'i</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Qopheessa</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Homtuu hin hojjetamne</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Mirkaneessi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Tarkaanfii filadhu.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Yoo xiqqaate wanta tokko filadhu.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Yeroo tokkotti wantoota 1000 hin caalle filadhu.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Wantoonni maaliif akka qabaman ibsi.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Kutaa filadhu.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Haala filadhu.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Unkaan dubbifamuu hin dandeenye.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Qabiyyee haaraa</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Lakkoofsonni dubbifamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Sakatta'iinsaaf qabame</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Har'a haaraa</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Qabiinsi sakatta'iinsaa ammallee hin qophoofne (tarkaanfii fooyyessaa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Qabiyyee haaraa hunda</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Tarkaanfiiwwan to'annoo hojjechuuf hayyama hin qabdu (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Tarkaanfiin to'annoo hin xumuramne: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>To'annoo: %action wantoota %count irratti</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>Wantoota %total keessaa %done: %ok xumurame, %refused didame, %failed hin milkoofne</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok xumurame, %refused didame, %failed hin milkoofne</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Kana booda hin jiru.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Bakka hin qabu (hin maxxanfamne).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Isa dhoksuuf hayyama hin qabdu (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Isa agarsiisuuf hayyama hin qabdu (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Duraanuu dhokateera.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Hin dhokanne.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Dhokfame.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Agarsiifame.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Kuusaa kosii keessa jira: achitti duwwaasi ykn deebisi.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Wixineen gonkumaa hin maxxanfamne gara kuusaa kosii deemuu hin danda'u: haqi.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Isa haquuf hayyama hin qabdu (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Haqameera.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Isa baasuuf hayyama hin qabdu (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Wantoota xixiqqoo qaba: caasaa qabiyyee keessatti baasi, bakka isaan tarreeffaman.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Hin baafamne (adeemsi hojii baasuu qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Gara kuusaa kosiitti ergameera.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Kutaan hin jiru.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Duraanuu kutaa kana keessa jira.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Kutaa kana ramaduuf hayyama hin qabdu (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Kutaan hin ramadamne.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Kutaan ramadameera.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Haalli hin jiru.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Duraanuu haala kana keessa jira.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Haala kana ramaduuf hayyama hin qabdu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Haalli hin ramadamne (adeemsi hojii jijjiirama qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Haalli ramadameera.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tarkaanfiin akkasii hin jiru.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Qabiinsi sakatta'iinsaa hin qophoofne (tarkaanfii fooyyessaa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Maaliif akka qabame ibsi.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Duraanuu qabameera.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Isa qabuuf hayyama hin qabdu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Qabiinsi hin kaa'amne (adeemsi hojii jijjiirama qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Qabameera.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Hin qabamne.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Isa gad dhiisuuf hayyama hin qabdu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Qabiinsi gad hin dhiifamne (adeemsi hojii jijjiirama qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Gad dhiifameera; ammallee dhokateera: isa agarsiisuuf hayyama hin qabdu (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Gad dhiifameera.</translation>
     </message>
 </context>
 <context>

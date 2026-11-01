@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ཡིག་སྣོད་བཟུམ་སྦེ་བཞག་མི་ གཞི་བཙུགས་ཀྱི་བསྒྱུར་བཅོས། དེ་ཚུ་གི་གནས་སྟངས་ གཡོག་བཀོལ་ཚུ་ གཡོག་བཀོལ་དང་ རྒྱབ་ལོག།</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>ནང་དོན་གསརཔ།</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ནང་དོན་གསར་ཤོས་ བསྐྱར་ཞིབ་ཀྱི་དོན་ལུ་བཀག་བཞག་མི་ དེ་ལས་སེལ་འཐུ་ཅིག་གུ་བྱ་བ་ཚུ།</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>དྲྭ་ཚིགས་ཀྱི་བརྟན་པའི་འདྲ་བཤུས་ཅིག་ GitHub Pages ཡང་ན་ git བདག་འཛིན་པ་ག་ཅི་ཨིན་རུང་ཁར་ དཔེ་སྐྲུན་འབད།</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>གཡོག་བཀོལ་ འགོ་བཙུགས་མ་ཚུགས།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>བསྒྱུར་བཅོས་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>གསར་བཟོ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>མིང་།</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>རིགས།</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>སྡེ་ཚན།</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>གསར་བཟོ་འབད་མི།</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ནང་དོན་གསརཔ།</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>དྲྭ་ཚིགས་ཧྲིལ་བུམ་གྱི་ཉེ་ཆར་གསར་བཟོ་དང་བསྒྱུར་བཅོས་འབད་མི་ནང་དོན་ གསར་ཤོས་ཧེ་མ་ལུ། ལྟ་བཟུརཝ་ཚུ་གིས་ཕུལ་མི་ བསྐྱར་ཞིབ་ཀྱི་དོན་ལུ་བཀག་བཞག་མི་ དཔེ་སྐྲུན་ལུ་བསྒུག་སྡོད་མི་ཟིན་བྲིས་ཚུ། རྣམ་གྲངས་ཚུ་སེལ་འཐུ་འབད་དེ་ བཀག་བཞག་བཏང་གྲོལ་ བཀག་བཞག་ སྦ་ སྟོན་ ཕྱིར་བཏོན་ ཡང་ན་ སྡེ་ཚན་ཡང་ན་རྣམ་པ་གཞན་ཅིག་ནང་སྤོ།</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ཐོ་ཡིག་ལྷག་མ་ཚུགས་པས། %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>བསྐྱར་ཞིབ་ཀྱི་བཀག་བཞག་ད་ལྟོ་ཡང་སྒྲིག་བཙུགས་མ་འབད་བས་ དེ་འབདཝ་ལས་ག་ནི་ཡང་བཀག་བཞག་མེད་ཅིང་ བཀག་བཞག་གི་བྱ་བ་ཚུ་བྱིན་མི་འདུག ཡར་དྲག་གི་རིམ་པ་ 6.0.15-review-hold གིས་སྒྲིག་བཙུགས་འབདཝ་ཨིན། ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ཐོ་ཡིག་འཚག་འདེམས་འབད།</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ལས།</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ཚུན།</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ཚེས་གྲངས།</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>གསར་བཟོ་འབད་ཡོདཔ། (དང་པ་དཔེ་སྐྲུན་འབད་མི།)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>གནས་སྟངས།</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>དཔེ་སྐྲུན་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ཟིན་བྲིས་ ནམ་ཡང་དཔེ་སྐྲུན་མ་འབད་བ།</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>བསྒུགས་བཞིནམ། (ཆོག་ཐམ་ཡང་ན་ཚེས་གྲངས་ལུ་བསྒུག་དོ།)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ཁུག་མའི་ནང་།</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>བསྐྱར་ཞིབ་ཀྱི་དོན་ལུ་བཀག་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>བཀག་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>བཀག་བཞག་མེདཔ།</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>སྦ་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>མཐོང་ཚུགསཔ།</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ཕུལ་མི་ཚེས་གྲངས།</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>དྲྭ་ཚིགས་འཛུལ་སྒོ་ག་ཅི་ཨིན་རུང་།</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>རྩིས་ཞིབ་ཀྱིས་ཐོ་བཀོད་འབད་མི་རྐྱངམ་ཅིག</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ད་ལྟོ། %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ནང་བསྐྱོད་མིང་ཡང་ན་ལག་ལེན་པའི་ ID།</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>འཚག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>འཚག་འདེམས་ཚུ་བསལ།</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>རྣམ་གྲངས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ལས་ %from ལས་ %to ཚུན།</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>རྣམ་གྲངས་མེད།</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms ནང་ལྷག་ཡོདཔ།)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>སེལ་འཐུ་འབད་མི་རྣམ་གྲངས་ཚུ་གི་བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ཤོག་ལེབ་འདི་གུ་ཆ་མཉམ་སེལ་འཐུ།</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count སེལ་འཐུ་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>བྱ་བ།</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>བྱ་བ་ཅིག་གདམ་ཁ་རྐྱབ།</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>བཀག་བཞག་བཏང་གྲོལ།</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>བསྐྱར་ཞིབ་ཀྱི་དོན་ལུ་བཀག་བཞག</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>སྦ།</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>སྟོན།</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ཁུག་མ་ནང་སྤོ།</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>བཏོན་གཏང་།</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>སྡེ་ཚན་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>རྣམ་པ་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>རྒྱུ་མཚན།</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>བཀག་བཞག་ནིའི་དོན་ལུ་དགོཔ་ཨིན། བཀག་བཞག་དང་མཉམ་དུ་དང་ རྩིས་ཞིབ་ནང་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>སྡེ་ཚན་ཅིག་གདམ་ཁ་རྐྱབ།</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>རྣམ་པ།</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>རྣམ་པ་ཅིག་གདམ་ཁ་རྐྱབ།</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>སེལ་འཐུ་འབད་མི་ལུ་ལག་ལེན་འཐབ།</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>རྣམ་གྲངས་རེ་རེ་ཁྱོད་རའི་གནང་བ་དང་བསྟུན་ཏེ་ཞིབ་དཔྱད་འབདཝ་ཨིན། ཁུག་མ་ནང་སྤོ་ནི་དང་བཏོན་གཏང་ནི་ལུ་ངེས་གཏན་འབད་དགོ %count ལས་ལྷག་པའི་རྣམ་གྲངས་ཚུ་རྒྱབ་ཁ་ལུ་གཡོག་བཀོལཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>སེལ་འཐུ།</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>དཔེ་སྐྲུན།</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ཕུལ་མི་ས་གནས།</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name སེལ་འཐུ།</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ད་ལྟོ་མེད།</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(མིང་མེད།)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ཟིན་བྲིས།</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>བསྒུགས་བཞིནམ།</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>དེའི་རྩ་བ་གིས་སྦ་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>བཀག་བཞག་ཡོདཔ། ཕུལ་ཡིག་གསརཔ།</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ཐོན་རིམ་ %version བསྒུགས་བཞིནམ།</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ཐོན་རིམ་ %version ལཱ་འབད་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ཟིན་བྲིས་ ཐོན་རིམ་ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ཐོན་རིམ་ %version དཔེ་སྐྲུན་འབད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date གི་དོན་ལུ་དུས་ཚོད་བཀོད་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ཁ་བྱང་མེད།</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ཐོ་བཀོད་མ་འབད་བ།</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>འཚག་འདེམས་འདི་ཚུ་དང་མཐུན་མི་ག་ནི་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ཆ་མཉམ་སྟོན།</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ད་ལྟོ་ནང་དོན་མེད།</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ཤོག་ལེབ་རེ་རེ་ལུ།</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ཤོག་ལེབ་རེ་རེ་ལུ་རྣམ་གྲངས་ %count སྟོན།</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ཕུལ་ཡིག་གི་ཁ་བྱང་དང་བརྡ་འཚོལ་ཆས་འདི་ རྩིས་ཞིབ་ཀྱི་ཟུར་ཐོ་ལས་འོངམ་ཨིན་ དེ་ནི་ནཱ་ལུ་མེད། ཀེར་ཐིག་ནང་ "ཐོ་བཀོད་མ་འབད་བ།" ཟེར་སྟོནམ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ཁ་བྱང་དང་བརྡ་འཚོལ་ཆས་འདི་ རྩིས་ཞིབ་ཀྱིས་རྣམ་གྲངས་དེའི་དོན་ལུ་ཐོ་བཀོད་འབད་མི་ཚུ་ཨིན། (རང་བཞིན་བཀག་བཞག་གིས་ཨ་རྟག་ར་ཐོ་བཀོད་འབདཝ་ཨིན། དཔེ་སྐྲུན་དང་གསར་བཟོ་འདི་ཁ་ཕྱེ་བའི་སྐབས་རྐྱངམ་ཅིག) དེའི་སྒེར་དོན་སྒྲིག་སྟངས་ཀྱིས་བཞག་མི་ལྟར།</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action། རྣམ་གྲངས་ %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>བཏོན་གཏང་ནི་འདི་གིས་ རྣམ་གྲངས་ཚུ་ ཐོན་རིམ་དང་སྐད་བསྒྱུར་ཆ་མཉམ་དང་གཅིག་ཁར་ ཡུན་བརྟན་སྦེ་བཏོན་གཏངམ་ཨིན། ལོག་སྟེ་འབད་མི་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>རྣམ་གྲངས་ཚུ་ཁུག་མ་ནང་འགྱོཝ་ཨིན་ དེ་ལས་སོར་ཆུད་འབད་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>རྣམ་གྲངས་རེ་རེ་ཁྱོད་རའི་གནང་བ་དང་བསྟུན་ཏེ་ཞིབ་དཔྱད་འབདཝ་ཨིན། ཡན་ལག་རྣམ་གྲངས་ཡོད་མི་རྣམ་གྲངས་འདི་ ཡོད་ལུགས་བཞིན་བཞགཔ་ཨིན། (ནང་དོན་གྱི་གཞི་བཀོད་ནང་ཕྱིར་བཏོན།) ཁྱོད་ར་ཨིན་ཟེར་བདེན་དཔྱད་འབད་དགོ</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>འདི་རྒྱབ་ཁ་ལུ་གཡོག་བཀོལཝ་ཨིན། དེའི་ཡར་འཕེལ་ཤོག་ལེབ་ཁ་ཕྱེཝ་ཨིན་ དེ་ལས་ཚར་བའི་སྐབས་ རྣམ་གྲངས་རེ་རེའི་གྲུབ་འབྲས་སྟོནམ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>སེལ་འཐུ་འབད་མི་རྣམ་གྲངས་ཚུ།</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>དེ་ལས་ %count ལྷག</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ཆ་མེད་གཏང་།</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ག་ནི་ཡང་མ་འབད།</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>རྒྱུ་མཚན། %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>བྱ་བ་འདི་ད་ལྟོ་ཡང་རྒྱབ་ཁ་ལུ་གཡོག་བཀོལ་དོ།</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>དེའི་ཡར་འཕེལ།</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>རྒྱབ་ཁའི་བྱ་བ་འཐུས་ཤོར་བྱུང་ཡོདཔ། %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ཚར་ཡི།</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ངོས་ལེན་མ་འབད།</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>འཐུས་ཤོར།</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>རྣམ་གྲངས་རེ་རེ་ལུ།</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>རྣམ་གྲངས།</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>གྲུབ་འབྲས།</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ག་ཅི་སྦེ།</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ཐོ་ཡིག་ལུ་ལོག</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>སྒྲིག་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ག་ནི་ཡང་འབད་མ་ཚར།</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ངེས་གཏན།</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>བྱ་བ་ཅིག་གདམ་ཁ་རྐྱབ་གནང་།</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ཉུང་མཐའ་རྣམ་གྲངས་གཅིག་སེལ་འཐུ་འབད་གནང་།</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ཚར་གཅིག་ལུ་རྣམ་གྲངས་ 1000 ལས་ལྷག་སྟེ་སེལ་འཐུ་མ་འབད།</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>རྣམ་གྲངས་ཚུ་ག་ཅི་སྦེ་བཀག་བཞག་ཨིན་ན་སླབ་གནང་།</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>སྡེ་ཚན་གདམ་ཁ་རྐྱབ་གནང་།</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>རྣམ་པ་གདམ་ཁ་རྐྱབ་གནང་།</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>འབྲི་ཤོག་ལྷག་མ་ཚུགས་པས།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ནང་དོན་གསརཔ།</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>གྱངས་ཁ་ཚུ་ལྷག་མ་ཚུགས་པས། %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>བསྐྱར་ཞིབ་ཀྱི་དོན་ལུ་བཀག་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ད་རིས་ཀྱི་གསརཔ།</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>བསྐྱར་ཞིབ་ཀྱི་བཀག་བཞག་ད་ལྟོ་ཡང་སྒྲིག་བཙུགས་མ་འབད། (ཡར་དྲག་གི་རིམ་པ་ 6.0.15-review-hold)</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ནང་དོན་གསརཔ་ཆ་མཉམ།</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ཁྱོད་ཀྱིས་ བར་འདུམ་གྱི་བྱ་བ་ཚུ་གཡོག་བཀོལ་མི་ཆོག (moderation/act)</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>བར་འདུམ་གྱི་བྱ་བ་མ་ཚང་པས། %errors།</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>བར་འདུམ། དངོས་པོ་ %count གུ་ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>དངོས་པོ་ %total ལས་ %done། %ok ཚར་ཡི་ %refused ངོས་ལེན་མ་འབད་ %failed འཐུས་ཤོར།</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ཚར་ཡི་ %refused ངོས་ལེན་མ་འབད་ %failed འཐུས་ཤོར།</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>འདི་ད་ལས་ཕར་མེད།</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>འདི་ལུ་ས་གནས་མེད། (དཔེ་སྐྲུན་མ་འབད་བ།)</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ཁྱོད་ཀྱིས་འདི་སྦ་མི་ཆོག (content/hide)</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ཁྱོད་ཀྱིས་འདི་སྟོན་མི་ཆོག (content/hide)</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>འདི་ཧེ་མ་ལས་སྦ་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>འདི་སྦ་བཞག་མེད།</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>སྦ་ཡི།</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>སྟོན་ཡི།</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>འདི་ཁུག་མའི་ནང་ཡོདཔ་ཨིན། ཕར་ས་སྟོངམ་བཟོ་ཡང་ན་སོར་ཆུད་འབད།</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ནམ་ཡང་དཔེ་སྐྲུན་མ་འབད་བའི་ཟིན་བྲིས་ཅིག་ཁུག་མ་ནང་འགྱོ་མི་ཚུགས། དེ་བཏོན་གཏང་།</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ཁྱོད་ཀྱིས་འདི་བཏོན་གཏང་མི་ཆོག (content/remove)</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>བཏོན་གཏང་ཡི།</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ཁྱོད་ཀྱིས་འདི་ཕྱིར་བཏོན་འབད་མི་ཆོག (content/remove)</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>འདི་ལུ་ཡན་ལག་རྣམ་གྲངས་ཡོདཔ་ཨིན། དེ་ཚུ་ཐོ་བཀོད་འབད་ཡོད་སའི་ ནང་དོན་གྱི་གཞི་བཀོད་ནང་ཕྱིར་བཏོན།</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>འདི་ཕྱིར་བཏོན་མ་འབད། (ལཱ་གི་རིམ་པ་ཅིག་གིས་ཕྱིར་བཏོན་བཀག་བཞག་འོང་།)</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ཁུག་མ་ནང་སྤོ་ཡི།</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>སྡེ་ཚན་འདི་མེད།</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>འདི་ཧེ་མ་ལས་སྡེ་ཚན་འདི་ནང་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ཁྱོད་ཀྱིས་སྡེ་ཚན་འདི་སྤྲོད་མི་ཆོག (section/assign)</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>སྡེ་ཚན་སྤྲོད་མ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>སྡེ་ཚན་སྤྲོད་ཡི།</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>རྣམ་པ་འདི་མེད།</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>འདི་ཧེ་མ་ལས་རྣམ་པ་འདི་ནང་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ཁྱོད་ཀྱིས་རྣམ་པ་འདི་སྤྲོད་མི་ཆོག (state/assign)</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>རྣམ་པ་སྤྲོད་མ་ཚུགས། (ལཱ་གི་རིམ་པ་ཅིག་གིས་བསྒྱུར་བཅོས་བཀག་བཞག་འོང་།)</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>རྣམ་པ་སྤྲོད་ཡི།</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>བྱ་བ་དེ་བཟུམ་མེད།</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>བསྐྱར་ཞིབ་ཀྱི་བཀག་བཞག་སྒྲིག་བཙུགས་མ་འབད། (ཡར་དྲག་གི་རིམ་པ་ 6.0.15-review-hold)</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>འདི་ག་ཅི་སྦེ་བཀག་བཞག་ཨིན་ན་སླབ་གནང་།</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>འདི་ཧེ་མ་ལས་བཀག་བཞག་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ཁྱོད་ཀྱིས་འདི་བཀག་བཞག་མི་ཆོག (state/assign)</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>བཀག་བཞག་བཀལ་མ་ཚུགས། (ལཱ་གི་རིམ་པ་ཅིག་གིས་བསྒྱུར་བཅོས་བཀག་བཞག་འོང་།)</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>བཀག་བཞག་ཡི།</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>འདི་བཀག་བཞག་མེད།</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ཁྱོད་ཀྱིས་འདི་བཏང་གྲོལ་འབད་མི་ཆོག (state/assign)</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>བཀག་བཞག་བཏང་གྲོལ་མ་ཚུགས། (ལཱ་གི་རིམ་པ་ཅིག་གིས་བསྒྱུར་བཅོས་བཀག་བཞག་འོང་།)</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>བཏང་གྲོལ་འབད་ཡི། ད་ལྟོ་ཡང་སྦ་བཞག་ཡོདཔ། ཁྱོད་ཀྱིས་འདི་སྟོན་མི་ཆོག (content/hide)</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>བཏང་གྲོལ་འབད་ཡི།</translation>
     </message>
 </context>
 <context>

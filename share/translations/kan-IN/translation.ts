@@ -15149,6 +15149,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ಫೈಲ್‌ಗಳಾಗಿ ಇರಿಸಲಾದ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಬದಲಾವಣೆಗಳು: ಅವುಗಳ ಸ್ಥಿತಿ, ರನ್‌ಗಳು, ರನ್ ಮತ್ತು ರೋಲ್‌ಬ್ಯಾಕ್.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>ಇತ್ತೀಚಿನ ವಿಷಯ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ಅತ್ಯಂತ ಹೊಸ ವಿಷಯ, ಪರಿಶೀಲನೆಗಾಗಿ ತಡೆಹಿಡಿಯಲಾದದ್ದು, ಮತ್ತು ಆಯ್ಕೆಯ ಮೇಲಿನ ಕ್ರಿಯೆಗಳು.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>ಸೈಟ್‌ನ ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು GitHub Pages ಅಥವಾ ಯಾವುದೇ git ಹೋಸ್ಟ್‌ಗೆ ಪ್ರಕಟಿಸಿ.</translation>
     </message>
@@ -80579,6 +80587,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>ರನ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ಮಾರ್ಪಡಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ರಚಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ವರ್ಗ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ವಿಭಾಗ</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ರಚಿಸಿದವರು</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ಇತ್ತೀಚಿನ ವಿಷಯ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ಇಡೀ ಸೈಟ್‌ನಲ್ಲಿ ಇತ್ತೀಚೆಗೆ ರಚಿಸಿದ ಮತ್ತು ಮಾರ್ಪಡಿಸಿದ ವಿಷಯ, ಹೊಸದು ಮೊದಲು: ಸಂದರ್ಶಕರು ಸಲ್ಲಿಸಿದ್ದು, ಪರಿಶೀಲನೆಗಾಗಿ ತಡೆಹಿಡಿಯಲಾದದ್ದು, ಪ್ರಕಟಣೆಗಾಗಿ ಕಾಯುತ್ತಿರುವ ಕರಡುಗಳು. ತಡೆಯನ್ನು ತೆಗೆಯಲು, ತಡೆಹಿಡಿಯಲು, ಅಡಗಿಸಲು, ಬಹಿರಂಗಪಡಿಸಲು, ತೆಗೆದುಹಾಕಲು ಅಥವಾ ಬೇರೆ ವಿಭಾಗ ಅಥವಾ ಸ್ಥಿತಿಗೆ ಸರಿಸಲು ಐಟಂಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ಪಟ್ಟಿಯನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ಪರಿಶೀಲನಾ ತಡೆ ಇನ್ನೂ ಹೊಂದಿಸಲಾಗಿಲ್ಲ, ಆದ್ದರಿಂದ ಏನೂ ತಡೆಹಿಡಿಯಲಾಗಿಲ್ಲ ಮತ್ತು ತಡೆ ಕ್ರಿಯೆಗಳನ್ನು ನೀಡಲಾಗುವುದಿಲ್ಲ. ಅಪ್‌ಗ್ರೇಡ್ ಹಂತ 6.0.15-review-hold ಅದನ್ನು ಹೊಂದಿಸುತ್ತದೆ: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ಪಟ್ಟಿಯನ್ನು ಫಿಲ್ಟರ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ಇಂದ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ವರೆಗೆ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ದಿನಾಂಕ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ರಚಿಸಲಾಗಿದೆ (ಮೊದಲು ಪ್ರಕಟಿಸಲಾಗಿದೆ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ಎಲ್ಲಾ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ಪ್ರಕಟಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ಕರಡು, ಎಂದಿಗೂ ಪ್ರಕಟಿಸಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ಬಾಕಿ ಇದೆ (ಅನುಮೋದನೆ ಅಥವಾ ದಿನಾಂಕಕ್ಕಾಗಿ ಕಾಯುತ್ತಿದೆ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ಕಸದ ಬುಟ್ಟಿಯಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ಪರಿಶೀಲನೆಗಾಗಿ ತಡೆಹಿಡಿಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ತಡೆಹಿಡಿಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ತಡೆಹಿಡಿಯಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ಅಡಗಿಸಲಾದ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ಗೋಚರಿಸುವ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ಸಲ್ಲಿಸಿದ ಸ್ಥಳ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ಯಾವುದೇ ಸೈಟ್‌ಆಕ್ಸೆಸ್</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ಆಡಿಟ್ ದಾಖಲಿಸಿದ್ದು ಮಾತ್ರ.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ಈಗ: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ಲಾಗಿನ್ ಹೆಸರು ಅಥವಾ ಬಳಕೆದಾರ ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ಫಿಲ್ಟರ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ಫಿಲ್ಟರ್‌ಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ಐಟಂಗಳು</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ರಲ್ಲಿ %from ರಿಂದ %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ಯಾವುದೇ ಐಟಂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms ನಲ್ಲಿ ಓದಲಾಗಿದೆ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿದ ಐಟಂಗಳ ಮೇಲಿನ ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ಈ ಪುಟದಲ್ಲಿ ಎಲ್ಲವನ್ನೂ ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ಕ್ರಿಯೆ</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ಕ್ರಿಯೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ತಡೆಯನ್ನು ತೆಗೆಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ಪರಿಶೀಲನೆಗಾಗಿ ತಡೆಹಿಡಿಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ಅಡಗಿಸು</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ಬಹಿರಂಗಪಡಿಸು</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ಕಸದ ಬುಟ್ಟಿಗೆ ಸರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ಅಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ವಿಭಾಗವನ್ನು ನಿಯೋಜಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ನಿಯೋಜಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>ಕಾರಣ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ತಡೆಹಿಡಿಯಲು ಅಗತ್ಯ; ತಡೆಯೊಂದಿಗೆ ಮತ್ತು ಆಡಿಟ್‌ನಲ್ಲಿ ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ವಿಭಾಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿದವುಗಳಿಗೆ ಅನ್ವಯಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ಪ್ರತಿ ಐಟಂ ಅನ್ನು ನಿಮ್ಮ ಸ್ವಂತ ಅನುಮತಿಗಳೊಂದಿಗೆ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ. ಕಸದ ಬುಟ್ಟಿಗೆ ಸರಿಸುವುದು ಮತ್ತು ಅಳಿಸುವುದು ನಿಮ್ಮ ದೃಢೀಕರಣವನ್ನು ಕೇಳುತ್ತವೆ. %count ಕ್ಕಿಂತ ಹೆಚ್ಚು ಐಟಂಗಳು ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಚಲಿಸುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ಇಲ್ಲಿಂದ ಸಲ್ಲಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ಆಯ್ಕೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ಇನ್ನೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ಹೆಸರಿಲ್ಲ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ಕರಡು</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ಬಾಕಿ ಇದೆ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ಅದರ ಪೋಷಕದಿಂದ ಅಡಗಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ತಡೆಹಿಡಿಯಲಾಗಿದೆ: ಹೊಸ ಸಲ್ಲಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ಆವೃತ್ತಿ %version ಬಾಕಿ ಇದೆ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ಆವೃತ್ತಿ %version ಪ್ರಗತಿಯಲ್ಲಿದೆ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ಕರಡು, ಆವೃತ್ತಿ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ಆವೃತ್ತಿ %version ಪ್ರಕಟಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ಗೆ ನಿಗದಿಪಡಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ವಿಳಾಸವಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ದಾಖಲಿಸಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ಈ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಯಾವುದೂ ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ಎಲ್ಲವನ್ನೂ ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ವಿಷಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ಪ್ರತಿ ಪುಟಕ್ಕೆ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ಪ್ರತಿ ಪುಟಕ್ಕೆ %count ಐಟಂಗಳನ್ನು ತೋರಿಸು.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>ಸಲ್ಲಿಕೆಯ ವಿಳಾಸ ಮತ್ತು ಬ್ರೌಸರ್ ಆಡಿಟ್ ಸೂಚಿಯಿಂದ ಬರುತ್ತವೆ, ಅದು ಇಲ್ಲಿ ಲಭ್ಯವಿಲ್ಲ: ಕಾಲಮ್ &quot;ದಾಖಲಿಸಲಾಗಿಲ್ಲ&quot; ಎಂದು ತೋರಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ವಿಳಾಸ ಮತ್ತು ಬ್ರೌಸರ್ ಆ ಐಟಂಗಾಗಿ ಆಡಿಟ್ ದಾಖಲಿಸಿದವು (ಸ್ವಯಂ-ತಡೆ ಅವುಗಳನ್ನು ಯಾವಾಗಲೂ ದಾಖಲಿಸುತ್ತದೆ; ಪ್ರಕಟಿಸುವುದು ಮತ್ತು ರಚಿಸುವುದು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಮಾತ್ರ), ಅದರ ಗೌಪ್ಯತಾ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಇರಿಸಿದಂತೆ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ಐಟಂಗಳು</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ಅಳಿಸುವುದು ಐಟಂಗಳನ್ನು ಅವುಗಳ ಎಲ್ಲಾ ಆವೃತ್ತಿಗಳು ಮತ್ತು ಅನುವಾದಗಳೊಂದಿಗೆ ಶಾಶ್ವತವಾಗಿ ತೆಗೆದುಹಾಕುತ್ತದೆ. ಇದನ್ನು ರದ್ದುಗೊಳಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ಐಟಂಗಳು ಕಸದ ಬುಟ್ಟಿಗೆ ಹೋಗುತ್ತವೆ, ಅಲ್ಲಿಂದ ಅವುಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ಪ್ರತಿ ಐಟಂ ಅನ್ನು ನಿಮ್ಮ ಸ್ವಂತ ಅನುಮತಿಗಳೊಂದಿಗೆ ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ; ಉಪ ಐಟಂಗಳಿರುವ ಐಟಂ ಅನ್ನು ಹಾಗೆಯೇ ಬಿಡಲಾಗುತ್ತದೆ (ಅದನ್ನು ವಿಷಯ ರಚನೆಯಲ್ಲಿ ತೆಗೆದುಹಾಕಿ). ಅದು ನೀವೇ ಎಂದು ದೃಢೀಕರಿಸಲು ನಿಮ್ಮನ್ನು ಕೇಳಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ಇದು ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಚಲಿಸುತ್ತದೆ: ಅದರ ಪ್ರಗತಿ ಪುಟ ತೆರೆಯುತ್ತದೆ, ಮತ್ತು ಮುಗಿದಾಗ ಪ್ರತಿ ಐಟಂನ ಫಲಿತಾಂಶವನ್ನು ತೋರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ಆಯ್ಕೆಮಾಡಿದ ಐಟಂಗಳು</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ಮತ್ತು ಇನ್ನೂ %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ಏನನ್ನೂ ಮಾಡಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>ಕಾರಣ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ಕ್ರಿಯೆ ಇನ್ನೂ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಚಲಿಸುತ್ತಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ಅದರ ಪ್ರಗತಿ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ಹಿನ್ನೆಲೆ ಕ್ರಿಯೆ ವಿಫಲವಾಗಿದೆ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ಪ್ರತಿ ಐಟಂಗೆ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ಐಟಂ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ಫಲಿತಾಂಶ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ಏಕೆ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ಪಟ್ಟಿಗೆ ಹಿಂತಿರುಗಿ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ಸೆಟಪ್</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ಏನೂ ಮಾಡಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ದೃಢೀಕರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ಕ್ರಿಯೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ಕನಿಷ್ಠ ಒಂದು ಐಟಂ ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ಒಂದು ಬಾರಿಗೆ ಗರಿಷ್ಠ 1000 ಐಟಂಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ಐಟಂಗಳನ್ನು ಏಕೆ ತಡೆಹಿಡಿಯಲಾಗಿದೆ ಎಂದು ತಿಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ವಿಭಾಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ಫಾರ್ಮ್ ಅನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ಇತ್ತೀಚಿನ ವಿಷಯ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ಎಣಿಕೆಗಳನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ಪರಿಶೀಲನೆಗಾಗಿ ತಡೆಹಿಡಿಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ಇಂದು ಹೊಸದು</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ಪರಿಶೀಲನಾ ತಡೆ ಇನ್ನೂ ಹೊಂದಿಸಲಾಗಿಲ್ಲ (ಅಪ್‌ಗ್ರೇಡ್ ಹಂತ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ಎಲ್ಲಾ ಇತ್ತೀಚಿನ ವಿಷಯ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ನೀವು ಮಾಡರೇಶನ್ ಕ್ರಿಯೆಗಳನ್ನು ಚಲಾಯಿಸುವಂತಿಲ್ಲ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ಮಾಡರೇಶನ್ ಕ್ರಿಯೆ ಪೂರ್ಣಗೊಂಡಿಲ್ಲ: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ಮಾಡರೇಶನ್: %count ವಸ್ತುಗಳ ಮೇಲೆ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total ರಲ್ಲಿ %done ವಸ್ತುಗಳು: %ok ಮುಗಿದಿವೆ, %refused ನಿರಾಕರಿಸಲಾಗಿದೆ, %failed ವಿಫಲವಾಗಿವೆ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ಮುಗಿದಿವೆ, %refused ನಿರಾಕರಿಸಲಾಗಿದೆ, %failed ವಿಫಲವಾಗಿವೆ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ಇದು ಇನ್ನು ಮುಂದೆ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ಇದಕ್ಕೆ ಸ್ಥಳವಿಲ್ಲ (ಪ್ರಕಟಿಸಲಾಗಿಲ್ಲ).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ನೀವು ಇದನ್ನು ಅಡಗಿಸುವಂತಿಲ್ಲ (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ನೀವು ಇದನ್ನು ಬಹಿರಂಗಪಡಿಸುವಂತಿಲ್ಲ (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ಇದನ್ನು ಈಗಾಗಲೇ ಅಡಗಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ಇದನ್ನು ಅಡಗಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ಅಡಗಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ಬಹಿರಂಗಪಡಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ಇದು ಕಸದ ಬುಟ್ಟಿಯಲ್ಲಿದೆ: ಅಲ್ಲಿ ಖಾಲಿ ಮಾಡಿ ಅಥವಾ ಮರುಸ್ಥಾಪಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ಎಂದಿಗೂ ಪ್ರಕಟಿಸದ ಕರಡು ಕಸದ ಬುಟ್ಟಿಗೆ ಹೋಗುವಂತಿಲ್ಲ: ಅದನ್ನು ಅಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ನೀವು ಇದನ್ನು ಅಳಿಸುವಂತಿಲ್ಲ (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ಅಳಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ನೀವು ಇದನ್ನು ತೆಗೆದುಹಾಕುವಂತಿಲ್ಲ (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ಇದಕ್ಕೆ ಉಪ ಐಟಂಗಳಿವೆ: ಅವು ಪಟ್ಟಿಯಾಗಿರುವ ವಿಷಯ ರಚನೆಯಲ್ಲಿ ಇದನ್ನು ತೆಗೆದುಹಾಕಿ.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ಇದನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿಲ್ಲ (ಒಂದು ವರ್ಕ್‌ಫ್ಲೋ ತೆಗೆದುಹಾಕುವಿಕೆಯನ್ನು ತಡೆಹಿಡಿದಿರಬಹುದು).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ಕಸದ ಬುಟ್ಟಿಗೆ ಸರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ವಿಭಾಗ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ಇದು ಈಗಾಗಲೇ ಈ ವಿಭಾಗದಲ್ಲಿದೆ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ನೀವು ಈ ವಿಭಾಗವನ್ನು ನಿಯೋಜಿಸುವಂತಿಲ್ಲ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ವಿಭಾಗವನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>ವಿಭಾಗವನ್ನು ನಿಯೋಜಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ಸ್ಥಿತಿ ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ಇದು ಈಗಾಗಲೇ ಈ ಸ್ಥಿತಿಯಲ್ಲಿದೆ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ನೀವು ಈ ಸ್ಥಿತಿಯನ್ನು ನಿಯೋಜಿಸುವಂತಿಲ್ಲ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿಲ್ಲ (ಒಂದು ವರ್ಕ್‌ಫ್ಲೋ ಬದಲಾವಣೆಯನ್ನು ತಡೆಹಿಡಿದಿರಬಹುದು).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ನಿಯೋಜಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ಅಂತಹ ಕ್ರಿಯೆ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ಪರಿಶೀಲನಾ ತಡೆ ಹೊಂದಿಸಲಾಗಿಲ್ಲ (ಅಪ್‌ಗ್ರೇಡ್ ಹಂತ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ಇದನ್ನು ಏಕೆ ತಡೆಹಿಡಿಯಲಾಗಿದೆ ಎಂದು ತಿಳಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ಇದನ್ನು ಈಗಾಗಲೇ ತಡೆಹಿಡಿಯಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ನೀವು ಇದನ್ನು ತಡೆಹಿಡಿಯುವಂತಿಲ್ಲ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ತಡೆಯನ್ನು ಹಾಕಲಾಗಿಲ್ಲ (ಒಂದು ವರ್ಕ್‌ಫ್ಲೋ ಬದಲಾವಣೆಯನ್ನು ತಡೆಹಿಡಿದಿರಬಹುದು).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ತಡೆಹಿಡಿಯಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ಇದನ್ನು ತಡೆಹಿಡಿಯಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ನೀವು ಇದನ್ನು ಬಿಡುಗಡೆ ಮಾಡುವಂತಿಲ್ಲ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ತಡೆಯನ್ನು ತೆಗೆಯಲಾಗಿಲ್ಲ (ಒಂದು ವರ್ಕ್‌ಫ್ಲೋ ಬದಲಾವಣೆಯನ್ನು ತಡೆಹಿಡಿದಿರಬಹುದು).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ಬಿಡುಗಡೆ ಮಾಡಲಾಗಿದೆ; ಇನ್ನೂ ಅಡಗಿಸಲಾಗಿದೆ: ನೀವು ಇದನ್ನು ಬಹಿರಂಗಪಡಿಸುವಂತಿಲ್ಲ (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ಬಿಡುಗಡೆ ಮಾಡಲಾಗಿದೆ.</translation>
     </message>
 </context>
 <context>

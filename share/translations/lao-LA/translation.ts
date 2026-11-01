@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ການປ່ຽນແປງການຕິດຕັ້ງທີ່ເກັບເປັນໄຟລ໌: ສະຖານະ, ການດຳເນີນການ, ດຳເນີນການ ແລະ ຍ້ອນກັບ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>ເນື້ອຫາລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ເນື້ອຫາໃໝ່ສຸດ, ສິ່ງທີ່ຖືກກັກໄວ້ເພື່ອກວດສອບ, ແລະ ການກະທຳກັບລາຍການທີ່ເລືອກ.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>ເຜີຍແຜ່ສຳເນົາແບບສະຖິດຂອງເວັບໄຊໄປຍັງ GitHub Pages ຫຼື ໂຮສ git ໃດກໍໄດ້.</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>ບໍ່ສາມາດເລີ່ມການດຳເນີນການໄດ້.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ແກ້ໄຂເມື່ອ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ສ້າງເມື່ອ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ຊື່</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ຄລາສ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ພາກສ່ວນ</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ຜູ້ສ້າງ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ເນື້ອຫາລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ເນື້ອຫາທີ່ສ້າງ ແລະ ແກ້ໄຂລ່າສຸດຂອງທັງໄຊ, ໃໝ່ສຸດກ່ອນ: ສິ່ງທີ່ຜູ້ເຂົ້າຊົມສົ່ງມາ, ສິ່ງທີ່ຖືກກັກໄວ້ເພື່ອກວດສອບ, ສະບັບຮ່າງທີ່ລໍຖ້າການເຜີຍແຜ່. ເລືອກລາຍການເພື່ອປົດການກັກ, ກັກໄວ້, ເຊື່ອງ, ສະແດງ, ເອົາອອກ ຫຼື ຍ້າຍໄປພາກສ່ວນ ຫຼື ສະພາບອື່ນ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ບໍ່ສາມາດອ່ານລາຍການໄດ້: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ການກັກໄວ້ເພື່ອກວດສອບຍັງບໍ່ໄດ້ຕັ້ງຄ່າ, ສະນັ້ນບໍ່ມີຫຍັງຖືກກັກໄວ້ ແລະ ບໍ່ມີການກະທຳກັກໃຫ້ໃຊ້. ຂັ້ນຕອນການອັບເກຣດ 6.0.15-review-hold ຈະຕັ້ງຄ່າໃຫ້: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ກັ່ນຕອງລາຍການ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ຈາກ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ເຖິງ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ວັນທີ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ສ້າງເມື່ອ (ເຜີຍແຜ່ຄັ້ງທຳອິດ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ສະຖານະ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ເຜີຍແຜ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ສະບັບຮ່າງ, ບໍ່ເຄີຍເຜີຍແຜ່</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ລໍຖ້າດຳເນີນການ (ລໍຖ້າການອະນຸມັດ ຫຼື ວັນທີ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ຢູ່ໃນຖັງຂີ້ເຫຍື້ອ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ຖືກກັກໄວ້ເພື່ອກວດສອບ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ຖືກກັກໄວ້</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ບໍ່ຖືກກັກໄວ້</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ຖືກເຊື່ອງ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ເບິ່ງເຫັນໄດ້</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ສົ່ງເມື່ອ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ການເຂົ້າເຖິງໄຊໃດກໍໄດ້</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ສະເພາະສິ່ງທີ່ການກວດສອບບັນທຶກໄວ້.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ດຽວນີ້: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ຊື່ເຂົ້າລະບົບ ຫຼື ID ຜູ້ໃຊ້.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ກັ່ນຕອງ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ລ້າງຕົວກັ່ນຕອງ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ລາຍການ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ຫາ %to ຈາກ %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ບໍ່ມີລາຍການ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(ອ່ານໃນ %ms ມິລລິວິນາທີ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ການກະທຳກັບລາຍການທີ່ເລືອກ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ເລືອກທັງໝົດໃນໜ້ານີ້</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>ເລືອກແລ້ວ %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ການກະທຳ</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ເລືອກການກະທຳ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ປົດການກັກ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ກັກໄວ້ເພື່ອກວດສອບ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ເຊື່ອງ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ສະແດງ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ຍ້າຍໄປຖັງຂີ້ເຫຍື້ອ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ລຶບ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ກຳນົດພາກສ່ວນ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ກຳນົດສະພາບ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>ເຫດຜົນ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ຈຳເປັນສຳລັບການກັກ; ເກັບໄວ້ກັບການກັກ ແລະ ໃນບັນທຶກການກວດສອບ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ເລືອກພາກສ່ວນ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ສະພາບ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ເລືອກສະພາບ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ນຳໃຊ້ກັບລາຍການທີ່ເລືອກ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ແຕ່ລະລາຍການຖືກກວດສອບຕາມສິດຂອງທ່ານເອງ. ການຍ້າຍໄປຖັງຂີ້ເຫຍື້ອ ແລະ ການລຶບຈະຂໍໃຫ້ທ່ານຢືນຢັນ. ຫຼາຍກວ່າ %count ລາຍການຈະເຮັດວຽກຢູ່ເບື້ອງຫຼັງ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ເລືອກ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ການເຜີຍແຜ່</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ສົ່ງຈາກ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>ເລືອກ %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ຍັງບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ບໍ່ມີຊື່)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ສະບັບຮ່າງ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ລໍຖ້າດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ຖືກເຊື່ອງໂດຍລາຍການແມ່</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ຖືກກັກໄວ້: ການສົ່ງໃໝ່</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ເວີຊັນ %version ລໍຖ້າດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ເວີຊັນ %version ກຳລັງແກ້ໄຂ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ສະບັບຮ່າງ, ເວີຊັນ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ເວີຊັນ %version ເຜີຍແຜ່ແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>ກຳນົດໄວ້ສຳລັບ %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ບໍ່ມີທີ່ຢູ່</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ບໍ່ໄດ້ບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ບໍ່ມີຫຍັງກົງກັບຕົວກັ່ນຕອງເຫຼົ່ານີ້.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ສະແດງທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ຍັງບໍ່ມີເນື້ອຫາ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ຕໍ່ໜ້າ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ສະແດງ %count ລາຍການຕໍ່ໜ້າ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ທີ່ຢູ່ ແລະ ບຣາວເຊີຂອງການສົ່ງມາຈາກດັດຊະນີການກວດສອບ, ເຊິ່ງບໍ່ມີຢູ່ທີ່ນີ້: ຖັນຈະສະແດງວ່າ "ບໍ່ໄດ້ບັນທຶກ".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ທີ່ຢູ່ ແລະ ບຣາວເຊີແມ່ນສິ່ງທີ່ການກວດສອບບັນທຶກໄວ້ສຳລັບລາຍການນັ້ນ (ການກັກອັດຕະໂນມັດບັນທຶກສະເໝີ; ການເຜີຍແຜ່ ແລະ ການສ້າງສະເພາະເມື່ອເປີດໃຊ້), ຕາມທີ່ການຕັ້ງຄ່າຄວາມເປັນສ່ວນຕົວຂອງມັນເກັບຮັກສາໄວ້.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ລາຍການ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ການລຶບຈະເອົາລາຍການອອກຢ່າງຖາວອນ, ພ້ອມທຸກເວີຊັນ ແລະ ຄຳແປຂອງມັນ. ບໍ່ສາມາດຍົກເລີກໄດ້.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ລາຍການຈະຖືກຍ້າຍໄປຖັງຂີ້ເຫຍື້ອ, ເຊິ່ງສາມາດກູ້ຄືນໄດ້ຈາກບ່ອນນັ້ນ.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ແຕ່ລະລາຍການຖືກກວດສອບຕາມສິດຂອງທ່ານເອງ; ລາຍການທີ່ມີລາຍການຍ່ອຍຈະຖືກປະໄວ້ຕາມເດີມ (ເອົາອອກໃນໂຄງສ້າງເນື້ອຫາ). ທ່ານຈະຖືກຂໍໃຫ້ຢືນຢັນວ່າແມ່ນທ່ານເອງ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ການກະທຳນີ້ເຮັດວຽກຢູ່ເບື້ອງຫຼັງ: ໜ້າຄວາມຄືບໜ້າຂອງມັນຈະເປີດຂຶ້ນ, ແລະ ຜົນລັບຂອງແຕ່ລະລາຍການຈະສະແດງເມື່ອສຳເລັດ.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ລາຍການທີ່ເລືອກ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ແລະ ອີກ %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ຍົກເລີກ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ບໍ່ມີຫຍັງຖືກດຳເນີນການ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>ເຫດຜົນ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ການກະທຳຍັງເຮັດວຽກຢູ່ເບື້ອງຫຼັງ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ຄວາມຄືບໜ້າ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ການກະທຳເບື້ອງຫຼັງລົ້ມເຫຼວ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ສຳເລັດ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ຖືກປະຕິເສດ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ລົ້ມເຫຼວ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ແຍກຕາມລາຍການ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ລາຍການ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ຜົນລັບ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ສາເຫດ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ກັບໄປທີ່ລາຍການ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ຕັ້ງຄ່າລະບົບ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ບໍ່ໄດ້ເຮັດຫຍັງ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ຢືນຢັນ</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ເລືອກການກະທຳ.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ເລືອກຢ່າງໜ້ອຍໜຶ່ງລາຍການ.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ເລືອກໄດ້ບໍ່ເກີນ 1000 ລາຍການຕໍ່ຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ບອກເຫດຜົນທີ່ລາຍການຖືກກັກໄວ້.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ເລືອກພາກສ່ວນ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ເລືອກສະພາບ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ບໍ່ສາມາດອ່ານແບບຟອມໄດ້.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ເນື້ອຫາລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ບໍ່ສາມາດອ່ານຈຳນວນໄດ້: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ຖືກກັກໄວ້ເພື່ອກວດສອບ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ໃໝ່ມື້ນີ້</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ການກັກໄວ້ເພື່ອກວດສອບຍັງບໍ່ໄດ້ຕັ້ງຄ່າ (ຂັ້ນຕອນການອັບເກຣດ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ເນື້ອຫາລ່າສຸດທັງໝົດ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ດຳເນີນການກວດກາເນື້ອຫາ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ການກວດກາເນື້ອຫາບໍ່ສົມບູນ: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ການກວດກາເນື້ອຫາ: %action ກັບ %count ອອບເຈັກ</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ຈາກ %total ອອບເຈັກ: ສຳເລັດ %ok, ຖືກປະຕິເສດ %refused, ລົ້ມເຫຼວ %failed</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>ສຳເລັດ %ok, ຖືກປະຕິເສດ %refused, ລົ້ມເຫຼວ %failed</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ມັນບໍ່ມີຢູ່ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ມັນບໍ່ມີຕຳແໜ່ງ (ບໍ່ໄດ້ເຜີຍແຜ່).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ເຊື່ອງມັນ (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ສະແດງມັນ (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ມັນຖືກເຊື່ອງຢູ່ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ມັນບໍ່ໄດ້ຖືກເຊື່ອງ.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ເຊື່ອງແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ສະແດງແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ມັນຢູ່ໃນຖັງຂີ້ເຫຍື້ອ: ລ້າງ ຫຼື ກູ້ຄືນມັນຢູ່ບ່ອນນັ້ນ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ສະບັບຮ່າງທີ່ບໍ່ເຄີຍເຜີຍແຜ່ບໍ່ສາມາດໄປຖັງຂີ້ເຫຍື້ອໄດ້: ໃຫ້ລຶບມັນ.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ລຶບມັນ (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ລຶບແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ເອົາມັນອອກ (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ມັນມີລາຍການຍ່ອຍ: ເອົາມັນອອກໃນໂຄງສ້າງເນື້ອຫາ, ບ່ອນທີ່ລາຍການຍ່ອຍຖືກສະແດງ.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ມັນບໍ່ໄດ້ຖືກເອົາອອກ (ຂັ້ນຕອນການເຮັດວຽກອາດກັກການເອົາອອກໄວ້).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ຍ້າຍໄປຖັງຂີ້ເຫຍື້ອແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ບໍ່ມີພາກສ່ວນນີ້.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ມັນຢູ່ໃນພາກສ່ວນນີ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ກຳນົດພາກສ່ວນນີ້ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ບໍ່ໄດ້ກຳນົດພາກສ່ວນ.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>ກຳນົດພາກສ່ວນແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ບໍ່ມີສະພາບນີ້.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ມັນຢູ່ໃນສະພາບນີ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ກຳນົດສະພາບນີ້ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ບໍ່ໄດ້ກຳນົດສະພາບ (ຂັ້ນຕອນການເຮັດວຽກອາດກັກການປ່ຽນແປງໄວ້).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ກຳນົດສະພາບແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ບໍ່ມີການກະທຳດັ່ງກ່າວ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ການກັກໄວ້ເພື່ອກວດສອບບໍ່ໄດ້ຕັ້ງຄ່າ (ຂັ້ນຕອນການອັບເກຣດ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ບອກເຫດຜົນທີ່ມັນຖືກກັກໄວ້.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ມັນຖືກກັກໄວ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ກັກມັນໄວ້ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ບໍ່ໄດ້ວາງການກັກ (ຂັ້ນຕອນການເຮັດວຽກອາດກັກການປ່ຽນແປງໄວ້).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ກັກໄວ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ມັນບໍ່ໄດ້ຖືກກັກໄວ້.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ປົດມັນ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ບໍ່ໄດ້ປົດການກັກ (ຂັ້ນຕອນການເຮັດວຽກອາດກັກການປ່ຽນແປງໄວ້).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ປົດແລ້ວ; ຍັງຖືກເຊື່ອງ: ທ່ານບໍ່ໄດ້ຮັບອະນຸຍາດໃຫ້ສະແດງມັນ (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ປົດແລ້ວ.</translation>
     </message>
 </context>
 <context>

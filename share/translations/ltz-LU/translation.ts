@@ -15151,6 +15151,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <translation>Ännerunge vun der Installatioun, als Dateien gehalen: hiren Zoustand, d&apos;Leef, lafe loossen an zréckrollen.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Nei Inhalter</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Déi neist Inhalter, wat fir d'Iwwerpréiwung zréckgehal gëtt, an Aktiounen op eng Auswiel.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>De Laf konnt net gestart ginn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Geännert</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Erstallt</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Numm</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klass</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektioun</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Ersteller</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nei Inhalter</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Déi lescht erstallt a geännert Inhalter vum ganze Site, déi neisten als éischt: wat Visiteuren agereecht hunn, wat fir d'Iwwerpréiwung zréckgehal gëtt, Entwërf, déi op hir Publikatioun waarden. Wielt Elementer aus, fir se fräizeginn, zréckzehalen, ze verstoppen, ze weisen, ewechzehuelen oder an eng aner Sektioun oder an en anere Zoustand ze réckelen.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>D'Lëscht konnt net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>D'Zréckhale fir d'Iwwerpréiwung ass nach net ageriicht, dofir gëtt näischt zréckgehalen an d'Aktioune fir zréckzehalen ginn net ugebueden. Den Aktualiséierungsschrëtt 6.0.15-review-hold riicht et an: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>D'Lëscht filteren</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Erstallt (fir d'éischt publizéiert)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alles</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publikatiounsstatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publizéiert</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Entworf, ni publizéiert</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Amgaang (waart op Fräigab oder en Datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>An der Dreckskëscht</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Fir d'Iwwerpréiwung zréckgehal</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zréckgehal</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Net zréckgehal</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Verstoppt</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Siichtbar</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Agereecht iwwer</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>All Site-Zougang</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Just dat, wat den Audit opgezeechent huet.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Elo: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>E Login oder eng Benotzer-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filteren</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filteren zrécksetzen</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementer</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to vun %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Keen Element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(gelies an %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Aktiounen op déi ausgewielt Elementer</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>All op dëser Säit auswielen</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ausgewielt</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aktioun</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Eng Aktioun wielen</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>D'Zréckhalen ophiewen</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Fir d'Iwwerpréiwung zréckhalen</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Verstoppen</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>An d'Dreckskëscht réckelen</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Läschen</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sektioun zouweisen</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Zoustand zouweisen</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Grond</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Néideg fir zréckzehalen; gëtt mam Zréckhalen an am Audit gespäichert.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Eng Sektioun wielen</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>En Zoustand wielen</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Op déi ausgewielt uwenden</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>All Element gëtt géint Är eege Rechter gepréift. Fir d'Réckelen an d'Dreckskëscht an d'Läsche musst Dir confirméieren. Méi wéi %count Elementer lafen am Hannergrond.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswielen</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikatioun</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Agereecht vun</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name auswielen</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>nach net</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(keen Numm)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Entworf</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Amgaang</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Duerch säin iwwergeuerdent Element verstoppt</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zréckgehal: nei Areechung</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versioun %version amgaang</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versioun %version a Bearbechtung</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Entworf, Versioun %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versioun %version publizéiert</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Geplangt fir %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>keng Adress</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>net opgezeechent</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Näischt passt op dës Filteren.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>All weisen</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Et gëtt nach keng Inhalter.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Säit</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elementer pro Säit weisen.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>D'Adress an de Browser vun enger Areechung kommen aus dem Audit-Index, deen hei net disponibel ass: d'Kolonn weist „net opgezeechent“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>D'Adress an de Browser sinn déi, déi den Audit fir d'Element opgezeechent huet (dat automatescht Zréckhalen zeechent se ëmmer op; Publizéieren an Erstellen nëmmen do, wou et ageschalt ass), sou wéi seng Dateschutzastellungen se behalen.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count Elementer</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>D'Läsche läscht d'Elementer definitiv, mat all hire Versiounen an Iwwersetzungen. Dat kann net réckgängeg gemaach ginn.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>D'Elementer kommen an d'Dreckskëscht, vu wou se erëmhiergestallt kënne ginn.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>All Element gëtt géint Är eege Rechter gepréift; en Element mat Ënnerelementer bleift wéi et ass (huelt et an der Inhaltsstruktur ewech). Dir gitt gefrot ze confirméieren, datt Dir et sidd.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dat leeft am Hannergrond: seng Fortschrëttssäit geet op, an d'Resultat pro Element gëtt gewisen, wann et fäerdeg ass.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Déi ausgewielt Elementer</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>an nach %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ofbriechen</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Et gouf näischt gemaach</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Grond: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>D'Aktioun leeft nach am Hannergrond.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Hire Fortschrëtt</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>D'Hannergrondaktioun ass feelgeschloen: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gemaach</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ofgeleent</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Pro Element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Firwat</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Zréck op d'Lëscht</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguratioun</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Näischt gemaach</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirméieren</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Wielt eng Aktioun.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Wielt mindestens een Element aus.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Wielt héchstens 1000 Elementer op eemol aus.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sot, firwat d'Elementer zréckgehal ginn.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Wielt d'Sektioun.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Wielt den Zoustand.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>De Formulaire konnt net gelies ginn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nei Inhalter</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>D'Zuele konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Fir d'Iwwerpréiwung zréckgehal</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Haut nei</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>D'Zréckhale fir d'Iwwerpréiwung ass nach net ageriicht (den Aktualiséierungsschrëtt 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>All nei Inhalter</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Dir däerft keng Moderatiounsaktioune maachen (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>D'Moderatiounsaktioun ass net komplett: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderatioun: %action op %count Objeten</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done vun %total Objeten: %ok gemaach, %refused ofgeleent, %failed feelgeschloen</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok gemaach, %refused ofgeleent, %failed feelgeschloen</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Et existéiert net méi.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Et huet keng Plaz (net publizéiert).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Dir däerft et net verstoppen (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Dir däerft et net weisen (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Et ass schonn verstoppt.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Et ass net verstoppt.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Verstoppt.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Gewisen.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Et ass an der Dreckskëscht: eidelt se oder stellt et do erëm hier.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>En Entworf, deen ni publizéiert gouf, kann net an d'Dreckskëscht: läscht en.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Dir däerft et net läschen (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Geläscht.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Dir däerft et net ewechhuelen (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Et huet Ënnerelementer: huelt et an der Inhaltsstruktur ewech, wou se opgelëscht sinn.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Et gouf net ewechgeholl (vläicht hält en Aarbechtsoflaf d'Ewechhuelen zréck).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>An d'Dreckskëscht geréckelt.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>D'Sektioun existéiert net.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Et ass schonn an dëser Sektioun.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Dir däerft dës Sektioun net zouweisen (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>D'Sektioun gouf net zougewisen.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sektioun zougewisen.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Den Zoustand existéiert net.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Et ass schonn an dësem Zoustand.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Dir däerft dësen Zoustand net zouweisen (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Den Zoustand gouf net zougewisen (vläicht hält en Aarbechtsoflaf d'Ännerung zréck).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Zoustand zougewisen.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Et gëtt keng esou Aktioun.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>D'Zréckhale fir d'Iwwerpréiwung ass net ageriicht (den Aktualiséierungsschrëtt 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sot, firwat et zréckgehal gëtt.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Et gëtt schonn zréckgehal.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Dir däerft et net zréckhalen (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>D'Zréckhale gouf net gesat (vläicht hält en Aarbechtsoflaf d'Ännerung zréck).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Zréckgehal.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Et gëtt net zréckgehal.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Dir däerft et net fräiginn (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>D'Zréckhale gouf net opgehuewen (vläicht hält en Aarbechtsoflaf d'Ännerung zréck).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Fräiginn; ëmmer nach verstoppt: Dir däerft et net weisen (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Fräiginn.</translation>
     </message>
 </context>
 <context>

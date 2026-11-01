@@ -157,6 +157,22 @@ class eZContentOperationCollection
         return class_exists( 'expReviewHold' ) ? expReviewHold::checkPublish( $objectID, $versionNum ) : null;
     }
 
+    /**
+     * The step auto-review-hold of the publish operation: the first publication of an object of a class in
+     * content.ini [ReviewHoldSettings] AutoHoldClassList[] by a user who is not exempt is held for review and hidden
+     * (expReviewHoldAuto, doc/eng-us/features/6.0/review-hold.md, "Auto-hold").
+     *
+     * @param int $objectID
+     * @param int $versionNum
+     * @return null
+     */
+    static public function autoReviewHold( $objectID, $versionNum )
+    {
+        if ( class_exists( 'expReviewHoldAuto' ) && class_exists( 'expReviewHold' ) )
+            expReviewHoldAuto::published( (int)$objectID, (int)$versionNum );
+        return null;
+    }
+
     static public function setVersionStatus( $objectID, $versionNum, $status )
     {
         $db = eZDB::instance();

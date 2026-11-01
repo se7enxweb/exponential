@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ការផ្លាស់ប្ដូរលើការដំឡើងដែលរក្សាទុកជាឯកសារ៖ ស្ថានភាពរបស់វា ការដំណើរការ ដំណើរការ និងត្រឡប់វិញ។</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>មាតិកាថ្មីៗ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>មាតិកាថ្មីបំផុត អ្វីដែលត្រូវបានឃាត់ទុកសម្រាប់ពិនិត្យ និងសកម្មភាពលើធាតុដែលបានជ្រើសរើស។</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>បោះពុម្ពផ្សាយច្បាប់ចម្លងឋិតិវន្តនៃគេហទំព័រទៅ GitHub Pages ឬម៉ាស៊ីន git ណាមួយ។</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>មិនអាចចាប់ផ្ដើមការដំណើរការបានទេ។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>បានកែប្រែ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>បានបង្កើត</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ថ្នាក់</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ផ្នែក</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>អ្នកបង្កើត</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>មាតិកាថ្មីៗ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>មាតិកាដែលបានបង្កើត និងកែប្រែថ្មីបំផុតនៃគេហទំព័រទាំងមូល ថ្មីបំផុតមុន៖ អ្វីដែលអ្នកទស្សនាបានដាក់ស្នើ អ្វីដែលត្រូវបានឃាត់ទុកសម្រាប់ពិនិត្យ សេចក្តីព្រាងដែលកំពុងរង់ចាំការបោះពុម្ពផ្សាយ។ ជ្រើសរើសធាតុដើម្បីដោះលែងការឃាត់ ឃាត់ទុក លាក់ បង្ហាញ ដកចេញ ឬផ្លាស់ទីវាទៅផ្នែក ឬស្ថានភាពផ្សេងទៀត។</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>មិនអាចអានបញ្ជីបានទេ៖ %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ការឃាត់ទុកសម្រាប់ពិនិត្យមិនទាន់បានរៀបចំនៅឡើយទេ ដូច្នេះគ្មានអ្វីត្រូវបានឃាត់ទុក ហើយសកម្មភាពឃាត់ទុកមិនត្រូវបានផ្ដល់ជូនទេ។ ជំហានធ្វើបច្ចុប្បន្នភាព 6.0.15-review-hold រៀបចំវា៖ ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ត្រងបញ្ជី</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ពី</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ដល់</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>កាលបរិច្ឆេទ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>បានបង្កើត (បោះពុម្ពផ្សាយលើកដំបូង)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ស្ថានភាពបោះពុម្ពផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>បានបោះពុម្ពផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>សេចក្តីព្រាង មិនដែលបោះពុម្ពផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>កំពុងរង់ចាំ (រង់ចាំការអនុម័ត ឬកាលបរិច្ឆេទ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>នៅក្នុងធុងសំរាម</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ត្រូវបានឃាត់ទុកសម្រាប់ពិនិត្យ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ត្រូវបានឃាត់ទុក</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>មិនត្រូវបានឃាត់ទុក</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ត្រូវបានលាក់</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>មើលឃើញ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ដាក់ស្នើនៅ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ការចូលគេហទំព័រណាមួយ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>មានតែអ្វីដែលសវនកម្មបានកត់ត្រា។</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ឥឡូវ៖ %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ឈ្មោះចូល ឬ ID អ្នកប្រើ។</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ត្រង</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>សម្អាតតម្រង</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ធាតុ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ដល់ %to នៃ %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>គ្មានធាតុ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(អានក្នុង %ms មិល្លីវិនាទី)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>សកម្មភាពលើធាតុដែលបានជ្រើសរើស</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ជ្រើសរើសទាំងអស់នៅលើទំព័រនេះ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>បានជ្រើសរើស %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>សកម្មភាព</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ជ្រើសរើសសកម្មភាព</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ដោះលែងការឃាត់</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ឃាត់ទុកសម្រាប់ពិនិត្យ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>លាក់</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>បង្ហាញ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ផ្លាស់ទីទៅធុងសំរាម</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>លុប</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ចាត់ផ្នែក</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ចាត់ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>មូលហេតុ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ចាំបាច់សម្រាប់ការឃាត់ទុក រក្សាទុកជាមួយការឃាត់ និងក្នុងសវនកម្ម។</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ជ្រើសរើសផ្នែក</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ជ្រើសរើសស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>អនុវត្តលើធាតុដែលបានជ្រើសរើស</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ធាតុនីមួយៗត្រូវបានពិនិត្យតាមសិទ្ធិផ្ទាល់ខ្លួនរបស់អ្នក។ ការផ្លាស់ទីទៅធុងសំរាម និងការលុប ស្នើឱ្យអ្នកបញ្ជាក់។ ធាតុលើសពី %count ដំណើរការនៅផ្ទៃខាងក្រោយ។</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ជ្រើសរើស</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ការបោះពុម្ពផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ដាក់ស្នើពី</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>ជ្រើសរើស %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>មិនទាន់</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(គ្មានឈ្មោះ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>សេចក្តីព្រាង</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>កំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ត្រូវបានលាក់ដោយមេរបស់វា</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ត្រូវបានឃាត់ទុក៖ ការដាក់ស្នើថ្មី</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>កំណែ %version កំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>កំណែ %version កំពុងកែសម្រួល</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>សេចក្តីព្រាង កំណែ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>កំណែ %version បានបោះពុម្ពផ្សាយ</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>បានកំណត់ពេលសម្រាប់ %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>គ្មានអាសយដ្ឋាន</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>មិនបានកត់ត្រា</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>គ្មានអ្វីត្រូវនឹងតម្រងទាំងនេះទេ។</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>បង្ហាញទាំងអស់</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>មិនទាន់មានមាតិកានៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ក្នុងមួយទំព័រ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>បង្ហាញ %count ធាតុក្នុងមួយទំព័រ។</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>អាសយដ្ឋាន និងកម្មវិធីរុករកនៃការដាក់ស្នើ មកពីលិបិក្រមសវនកម្ម ដែលមិនមាននៅទីនេះទេ៖ ជួរឈរបង្ហាញថា "មិនបានកត់ត្រា"។</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>អាសយដ្ឋាន និងកម្មវិធីរុករក គឺជាអ្វីដែលសវនកម្មបានកត់ត្រាសម្រាប់ធាតុនោះ (ការឃាត់ទុកស្វ័យប្រវត្តិតែងតែកត់ត្រាវា ការបោះពុម្ពផ្សាយ និងការបង្កើតតែនៅពេលបើកប៉ុណ្ណោះ) តាមដែលការកំណត់ឯកជនភាពរបស់វារក្សាទុក។</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action៖ %count ធាតុ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ការលុបដកធាតុចេញជាអចិន្ត្រៃយ៍ ជាមួយកំណែ និងការបកប្រែទាំងអស់របស់វា។ មិនអាចត្រឡប់វិញបានទេ។</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ធាតុទៅធុងសំរាម ដែលពីទីនោះអាចស្ដារវាឡើងវិញបាន។</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ធាតុនីមួយៗត្រូវបានពិនិត្យតាមសិទ្ធិផ្ទាល់ខ្លួនរបស់អ្នក ធាតុដែលមានធាតុរងត្រូវបានទុកដដែល (ដកវាចេញក្នុងរចនាសម្ព័ន្ធមាតិកា)។ អ្នកនឹងត្រូវបានស្នើឱ្យផ្ទៀងផ្ទាត់ថាជាអ្នកពិតប្រាកដ។</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>វាដំណើរការនៅផ្ទៃខាងក្រោយ៖ ទំព័រវឌ្ឍនភាពរបស់វាបើកឡើង ហើយលទ្ធផលសម្រាប់ធាតុនីមួយៗត្រូវបានបង្ហាញនៅពេលវារួចរាល់។</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ធាតុដែលបានជ្រើសរើស</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>និង %count ទៀត</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>បោះបង់</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>គ្មានអ្វីត្រូវបានធ្វើទេ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>មូលហេតុ៖ %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>សកម្មភាពនៅតែដំណើរការនៅផ្ទៃខាងក្រោយ។</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>វឌ្ឍនភាពរបស់វា</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>សកម្មភាពផ្ទៃខាងក្រោយបានបរាជ័យ៖ %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>រួចរាល់</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ត្រូវបានបដិសេធ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>បរាជ័យ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>តាមធាតុនីមួយៗ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ធាតុ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>លទ្ធផល</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ហេតុអ្វី</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ត្រឡប់ទៅបញ្ជី</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ការរៀបចំ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>មិនបានធ្វើអ្វីទេ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>បញ្ជាក់</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ជ្រើសរើសសកម្មភាព។</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ជ្រើសរើសយ៉ាងហោចណាស់ធាតុមួយ។</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ជ្រើសរើសច្រើនបំផុត 1000 ធាតុក្នុងមួយលើក។</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ប្រាប់មូលហេតុដែលធាតុត្រូវបានឃាត់ទុក។</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ជ្រើសរើសផ្នែក។</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ជ្រើសរើសស្ថានភាព។</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>មិនអាចអានទម្រង់បានទេ។</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>មាតិកាថ្មីៗ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>មិនអាចអានចំនួនបានទេ៖ %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ត្រូវបានឃាត់ទុកសម្រាប់ពិនិត្យ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ថ្មីថ្ងៃនេះ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ការឃាត់ទុកសម្រាប់ពិនិត្យមិនទាន់បានរៀបចំនៅឡើយទេ (ជំហានធ្វើបច្ចុប្បន្នភាព 6.0.15-review-hold)។</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>មាតិកាថ្មីៗទាំងអស់</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>អ្នកមិនអាចដំណើរការសកម្មភាពសម្របសម្រួលបានទេ (moderation/act)។</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>សកម្មភាពសម្របសម្រួលមិនទាន់ពេញលេញ៖ %errors។</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ការសម្របសម្រួល៖ %action លើវត្ថុ %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done នៃវត្ថុ %total៖ រួចរាល់ %ok បានបដិសេធ %refused បរាជ័យ %failed</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>រួចរាល់ %ok បានបដិសេធ %refused បរាជ័យ %failed</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>វាមិនមានទៀតទេ។</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>វាគ្មានទីតាំងទេ (មិនបានបោះពុម្ពផ្សាយ)។</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>អ្នកមិនអាចលាក់វាបានទេ (content/hide)។</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>អ្នកមិនអាចបង្ហាញវាបានទេ (content/hide)។</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>វាត្រូវបានលាក់រួចហើយ។</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>វាមិនត្រូវបានលាក់ទេ។</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>បានលាក់។</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>បានបង្ហាញ។</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>វានៅក្នុងធុងសំរាម៖ សម្អាត ឬស្ដារវានៅទីនោះ។</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>សេចក្តីព្រាងដែលមិនដែលបោះពុម្ពផ្សាយមិនអាចទៅធុងសំរាមបានទេ៖ លុបវាចោល។</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>អ្នកមិនអាចលុបវាបានទេ (content/remove)។</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>បានលុប។</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>អ្នកមិនអាចដកវាចេញបានទេ (content/remove)។</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>វាមានធាតុរង៖ ដកវាចេញក្នុងរចនាសម្ព័ន្ធមាតិកា ដែលធាតុរងទាំងនោះត្រូវបានរាយ។</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>វាមិនត្រូវបានដកចេញទេ (លំហូរការងារអាចកំពុងឃាត់ការដកចេញ)។</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>បានផ្លាស់ទីទៅធុងសំរាម។</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ផ្នែកមិនមានទេ។</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>វានៅក្នុងផ្នែកនេះរួចហើយ។</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>អ្នកមិនអាចចាត់ផ្នែកនេះបានទេ (section/assign)។</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ផ្នែកមិនត្រូវបានចាត់ទេ។</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>បានចាត់ផ្នែក។</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ស្ថានភាពមិនមានទេ។</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>វានៅក្នុងស្ថានភាពនេះរួចហើយ។</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>អ្នកមិនអាចចាត់ស្ថានភាពនេះបានទេ (state/assign)។</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ស្ថានភាពមិនត្រូវបានចាត់ទេ (លំហូរការងារអាចកំពុងឃាត់ការផ្លាស់ប្ដូរ)។</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>បានចាត់ស្ថានភាព។</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>គ្មានសកម្មភាពបែបនេះទេ។</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ការឃាត់ទុកសម្រាប់ពិនិត្យមិនបានរៀបចំទេ (ជំហានធ្វើបច្ចុប្បន្នភាព 6.0.15-review-hold)។</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ប្រាប់មូលហេតុដែលវាត្រូវបានឃាត់ទុក។</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>វាត្រូវបានឃាត់ទុករួចហើយ។</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>អ្នកមិនអាចឃាត់វាទុកបានទេ (state/assign)។</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ការឃាត់មិនត្រូវបានដាក់ទេ (លំហូរការងារអាចកំពុងឃាត់ការផ្លាស់ប្ដូរ)។</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>បានឃាត់ទុក។</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>វាមិនត្រូវបានឃាត់ទុកទេ។</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>អ្នកមិនអាចដោះលែងវាបានទេ (state/assign)។</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ការឃាត់មិនត្រូវបានដោះលែងទេ (លំហូរការងារអាចកំពុងឃាត់ការផ្លាស់ប្ដូរ)។</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>បានដោះលែង ប៉ុន្តែនៅតែលាក់៖ អ្នកមិនអាចបង្ហាញវាបានទេ (content/hide)។</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>បានដោះលែង។</translation>
     </message>
 </context>
 <context>

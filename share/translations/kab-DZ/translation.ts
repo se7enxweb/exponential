@@ -15151,6 +15151,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <translation>Ibeddilen n usebded yettwaḥerzen d ifuyla: addad-nsen, isedduyen, aseddu d tuɣalin ɣer deffir.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Agbur amaynut</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Agbur amaynut, ayen yettwaṭṭfen i weselken, d tigawin ɣef tefrant.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Siẓreg anɣel armid n usmel ɣer GitHub Pages neɣ ɣer yal asneftaɣ git.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>The run could not be started.</source>
         <translation>Asedday ur yezmir ara ad yebdu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Yettwabeddel</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yettwasnulfa-d</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Asmil</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Tigezmi</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Amesnulfu</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Agbur amaynut</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Agbur yettwasnulfan d win yettwabeddlen taggara n usmel meṛṛa, amaynut d amezwaru: ayen d-uznen yinebgawen, ayen yettwaṭṭfen i weselken, irewwayen yettraǧun asiẓreg-nsen. Fren iferdisen akken ad ten-tserrḥeḍ, ad ten-teṭṭfeḍ, ad ten-teffreḍ, ad ten-tesskneḍ, ad ten-tekkseḍ neɣ ad ten-tesmutteḍ ɣer tgezmi neɣ ɣer waddad nniḍen.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Tabdart ur tettwaɣra ara: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Aṭṭaf i weselken mazal ur yettwasbadu ara, ihi ulac ayen yettwaṭṭfen, tigawin n waṭṭaf ur ttwasumrent ara. Taseddart n uleqqem 6.0.15-review-hold tesbadu-t: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sizdeg tabdart</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Seg</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ɣer</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Azemz</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Yettwasnulfa-d (asiẓreg amezwaru)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Akk</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Liḥala</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Yettwasiẓreg</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Arewway, werǧin yettwasiẓreg</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Yettraǧu (aqbal neɣ azemz)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Deg iḍumman</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Yettwaṭṭef i weselken</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Yettwaṭṭef</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ur yettwaṭṭef ara</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Yeffer</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Yettban</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Yettwazen deg</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Yal anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ala ayen yesekles usenqed.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Tura: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Isem n tuqqna neɣ ID n useqdac.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sizdeg</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Sfeḍ imsizdagen</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Iferdisen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ɣer %to seg %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ulac aferdis</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(yettwaɣra deg %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Tigawin ɣef yiferdisen yettwafernen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Fren akk deg usebter-a</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count yettwafernen</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tigawt</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Fren tigawt</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Serreḥ i waṭṭaf</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Ṭṭef i weselken</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ffer</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Sken</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Smutti ɣer iḍumman</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Kkes</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sekn tigezmi</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Sekn addad</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Tamentilt</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Yesra i waṭṭaf; tettwaḥrez d waṭṭaf akked deg usenqed.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Fren tigezmi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Addad</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Fren addad</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Snes ɣef wid yettwafernen</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Yal aferdis yettwasenqad s tsirag-ik. Asmutti ɣer iḍumman d tukksa ad k-d-ssutren asentem. Ugar n %count iferdisen ad teddun deg ugilal.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fren</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Asiẓreg</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Yettwazen seg</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Fren %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>mazal</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ulac isem)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Arewway</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yettraǧu</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Yeffer s umaraw-is</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Yettwaṭṭef: tuzna tamaynut</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Lqem %version yettraǧu</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Lqem %version la yettwaxdam</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Arewway, lqem %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Lqem %version yettwasiẓreg</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Yettwasɣiwes i %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ulac tansa</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ur yettwasekles ara</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ulac ayen yemsasan d imsizdagen-a.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Sken akk</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Mazal ulac agbur.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>I yal asebter</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Sken %count iferdisen i yal asebter.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Tansa d yiminig n tuzna d-ttekken seg umatar n usenqed, ur nelli ara dagi: ajgu yeqqar "ur yettwasekles ara".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Tansa d yiminig d wid yesekles usenqed i uferdis (aṭṭaf awurman yesekles-iten yal tikkelt; asiẓreg d usnulfu kan anida yermed), akken ten-ḥerzen yiɣewwaren-is n tbaḍnit.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count iferdisen</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Tukksa tekkes iferdisen i lebda, s lqem-nsen akk d tsuqilin-nsen. Ur tezmireḍ ara ad tt-tesfesxeḍ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Iferdisen ad ddun ɣer iḍumman, ansi zemren ad d-uɣalen.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Yal aferdis yettwasenqad s tsirag-ik; aferdis yesɛan iferdisen yeddaw-s ad yeqqim akken yella (kkes-it deg tɣessa n ugbur). Ad k-d-ssutren ad tesneqdeḍ d kečč.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Aya ad yeddu deg ugilal: asebter n unnerni-ines ad d-yeldi, agmuḍ n yal aferdis ad d-yettwaskan mi ara yekfu.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Iferdisen yettwafernen</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>d %count nniḍen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sefsex</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ulac ayen yettwaxedmen</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Tamentilt: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Tigawt mazal-itt tteddu deg ugilal.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Anerni-ines</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Tigawt n ugilal ur teddi ara: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Yekfa</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Yettwagi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ur yeddukkel ara</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>I yal aferdis</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Aferdis</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Agmuḍ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Acuɣer</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Uɣal ɣer tebdart</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Asbadu</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ur yettwaxdem kra</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Sentem</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Fren tigawt.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Fren ma drus yiwen n uferdis.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Fren ma ugar 1000 n yiferdisen yal tikkelt.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Ini-d acuɣer ttwaṭṭfen yiferdisen.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Fren tigezmi.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Fren addad.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Tiferkit ur tettwaɣra ara.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Agbur amaynut</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Imḍanen ur ttwaɣran ara: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Yettwaṭṭef i weselken</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Imaynuten ass-a</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Aṭṭaf i weselken mazal ur yettwasbadu ara (taseddart n uleqqem 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Agbur amaynut akk</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ur tezmireḍ ara ad tselkmeḍ tigawin n useɣwel (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Tigawt n useɣwel ur tfuk ara: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Aseɣwel: %action ɣef %count tɣawsiwin</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done seg %total tɣawsiwin: %ok kfant, %refused ttwagint, %failed ur ddukklent ara</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok kfant, %refused ttwagint, %failed ur ddukklent ara</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ur yelli ara ultaɣ.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ur ɣur-s ara adig (ur yettwasiẓreg ara).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ur tezmireḍ ara ad t-teffreḍ (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ur tezmireḍ ara ad t-tesskneḍ (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Yeffer yakan.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ur yeffer ara.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Yeffer.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Yettwasken.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Yella deg iḍumman: sefreɣ-iten neɣ err-it-id seg dinna.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Arewway ur yettwasiẓregen werǧin ur yezmir ara ad yeddu ɣer iḍumman: kkes-it.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ur tezmireḍ ara ad t-tekkseḍ (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Yettwakkes.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ur tezmireḍ ara ad t-tessuffɣeḍ (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ɣur-s iferdisen yeddaw-s: ssuffeɣ-it deg tɣessa n ugbur, anida ttwabedren.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ur yettwassuffeɣ ara (yezmer aɣawas n umahil ad yeṭṭef tukksa).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Yettwasmutti ɣer iḍumman.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Tigezmi ulac-itt.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Yella yakan deg tgezmi-a.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ur tezmireḍ ara ad tesneḍ tigezmi-a (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Tigezmi ur tettwasekn ara.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Tigezmi tettwasekn.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Addad ulac-it.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Yella yakan deg waddad-a.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ur tezmireḍ ara ad tesneḍ addad-a (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Addad ur yettwasekn ara (yezmer aɣawas n umahil ad yeṭṭef abeddel).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Addad yettwasekn.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ulac tigawt am tagi.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Aṭṭaf i weselken ur yettwasbadu ara (taseddart n uleqqem 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Ini-d acuɣer yettwaṭṭef.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Yettwaṭṭef yakan.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ur tezmireḍ ara ad t-teṭṭfeḍ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Aṭṭaf ur yettwasers ara (yezmer aɣawas n umahil ad yeṭṭef abeddel).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Yettwaṭṭef.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ur yettwaṭṭef ara.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ur tezmireḍ ara ad t-tserrḥeḍ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Aṭṭaf ur yettwakkes ara (yezmer aɣawas n umahil ad yeṭṭef abeddel).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Yettwaserreḥ; mazal yeffer: ur tezmireḍ ara ad t-tesskneḍ (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Yettwaserreḥ.</translation>
     </message>
 </context>
 <context>

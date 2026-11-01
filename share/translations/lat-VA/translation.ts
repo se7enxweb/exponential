@@ -15093,6 +15093,14 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <translation>Mutationes installationis ut fasciculi servatae: earum status, cursus, exsecutio et revocatio.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Contentum recens</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Contentum novissimum, quae ad recognitionem retinentur, et actiones in selectionem.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Exemplar staticum situs in GitHub Pages vel in quolibet hospite git publica.</translation>
     </message>
@@ -80614,6 +80622,670 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Cursus incohari non potuit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creatum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classis</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectio</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Auctor</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contentum recens</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Contentum totius situs nuperrime creatum et mutatum, novissimum primum: quae visitatores miserunt, quae ad recognitionem retinentur, adumbrationes publicationem exspectantes. Res selige ut eas liberes, retineas, occultes, reveles, removeas vel in aliam sectionem aut statum moveas.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Index legi non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Retentio ad recognitionem nondum constituta est, itaque nihil retinetur neque actiones retentionis offeruntur. Gradus renovationis 6.0.15-review-hold eam constituit: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Indicem cribrare</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ab</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dies</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creatum (prima publicatio)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnia</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Condicio</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicatum</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Adumbratio, numquam publicata</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendens (approbationem vel diem exspectans)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In corbe</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ad recognitionem retentum</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retentum</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Non retentum</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Occultum</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visibile</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Missum die</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Quilibet aditus situs</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Solum quae inspectio rettulit.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nunc: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Nomen ingressus vel ID usoris.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Cribrare</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Cribra purgare</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Res</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ad %to ex %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nulla res</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lectum %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Actiones in res selectas</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Omnia in hac pagina seligere</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selecta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Actio</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Actionem elige</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Retentionem solvere</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Ad recognitionem retinere</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Occultare</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Revelare</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>In corbem movere</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Delere</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sectionem assignare</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Statum assignare</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Causa</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ad retinendum necessaria; cum retentione et in inspectione servatur.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Sectionem elige</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Statum elige</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Selectis applicare</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Quaeque res tuis permissionibus comparatur. In corbem movere et delere confirmationem petunt. Plures quam %count res in recessu aguntur.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seligere</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicatio</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Missum ex</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name seligere</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>nondum</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(sine nomine)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Adumbratio</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendens</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>A parente occultum</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retentum: nova missio</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versio %version pendens</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versio %version in opere</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Adumbratio, versio %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versio %version publicata</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Constitutum in %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nulla inscriptio</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>non relatum</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nihil his cribris congruit.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Omnia monstrare</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Nullum contentum adhuc est.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per paginam</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count res per paginam monstrare.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Inscriptio et navigatrum missionis ex indice inspectionis veniunt, qui hic non praesto est: columna dicit „non relatum“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Inscriptio et navigatrum ea sunt quae inspectio de re rettulit (retentio automatica ea semper refert; publicatio et creatio solum ubi activatae sunt), ut eius optiones secreti ea servant.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count res</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Delere res in perpetuum tollit, cum omnibus versionibus et translationibus. Rescindi non potest.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Res in corbem eunt, unde restitui possunt.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Quaeque res tuis permissionibus comparatur; res cum subrebus relinquitur ut est (eam in structura contenti remove). Rogaberis ut te esse confirmes.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Hoc in recessu agitur: pagina progressus aperitur, et exitus cuiusque rei ostenditur cum finitum est.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Res selectae</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>et %count aliae</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nihil factum est</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Causa: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Actio adhuc in recessu agitur.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Progressus eius</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Actio in recessu defecit: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Factum</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Recusatum</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defectum</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per rem</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Res</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Cur</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Ad indicem redire</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nihil factum</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmare</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Actionem elige.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Saltem unam rem selige.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Non plures quam 1000 res simul selige.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Dic cur res retineantur.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Sectionem elige.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Statum elige.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formula legi non potuit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Contentum recens</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Numeri legi non potuerunt: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ad recognitionem retenta</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nova hodie</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Retentio ad recognitionem nondum constituta est (gradus renovationis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Omne contentum recens</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Tibi non licet actiones moderationis agere (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Actio moderationis non est perfecta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderatio: %action in %count obiectis</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ex %total obiectis: %ok facta, %refused recusata, %failed defecta</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok facta, %refused recusata, %failed defecta</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Iam non exstat.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Locum non habet (non publicatum).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Tibi non licet id occultare (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Tibi non licet id revelare (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Iam occultum est.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Non est occultum.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Occultatum.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Revelatum.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>In corbe est: corbem vacua vel id inde restitue.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Adumbratio numquam publicata in corbem ire non potest: dele eam.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Tibi non licet id delere (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Deletum.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Tibi non licet id removere (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Subres habet: id in structura contenti remove, ubi enumerantur.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Non remotum est (cursus operis remotionem retinere potest).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>In corbem motum.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sectio non exstat.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Iam in hac sectione est.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Tibi non licet hanc sectionem assignare (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sectio assignata non est.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sectio assignata.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Status non exstat.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Iam in hoc statu est.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Tibi non licet hunc statum assignare (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Status assignatus non est (cursus operis mutationem retinere potest).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Status assignatus.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nulla talis actio est.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Retentio ad recognitionem non constituta est (gradus renovationis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Dic cur retineatur.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Iam retentum est.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Tibi non licet id retinere (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Retentio imposita non est (cursus operis mutationem retinere potest).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retentum.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Non est retentum.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Tibi non licet id liberare (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Retentio soluta non est (cursus operis mutationem retinere potest).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Liberatum; adhuc occultum: tibi non licet id revelare (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Liberatum.</translation>
     </message>
 </context>
 <context>

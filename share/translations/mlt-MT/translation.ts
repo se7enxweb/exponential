@@ -15090,6 +15090,14 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <translation>Bidliet fl-installazzjoni miżmuma bħala fajls: l-istat tagħhom, it-tħaddimiet, tħaddim u treġġigħ lura.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Kontenut riċenti</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>L-aktar kontenut ġdid, dak li qed jinżamm għar-reviżjoni, u azzjonijiet fuq għażla.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Ippubblika kopja statika ta&apos; sit fuq GitHub Pages jew fuq kwalunkwe host tal-git.</translation>
     </message>
@@ -80611,6 +80619,670 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>It-tħaddim ma setax jinbeda.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Immodifikat</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Maħluq</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klassi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taqsima</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Ħallieq</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kontenut riċenti</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>L-aktar kontenut maħluq u mmodifikat riċentement tas-sit kollu, l-aktar ġdid l-ewwel: dak li bagħtu l-viżitaturi, dak li qed jinżamm għar-reviżjoni, abbozzi li qed jistennew il-pubblikazzjoni tagħhom. Agħżel oġġetti biex teħlishom, iżżommhom, taħbihom, turihom, tneħħihom jew tmexxihom għal taqsima jew stat ieħor.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Il-lista ma setgħetx tinqara: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Iż-żamma għar-reviżjoni għadha mhix issettjata, għalhekk xejn mhu miżmum u l-azzjonijiet taż-żamma mhumiex offruti. Il-pass tal-aġġornament 6.0.15-review-hold jissettjaha: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iffiltra l-lista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sa</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Maħluq (l-ewwel pubblikazzjoni)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kollha</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stat tal-pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ippubblikat</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Abbozz, qatt ma ġie ppubblikat</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendenti (jistenna approvazzjoni jew data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Fil-barmil</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Miżmum għar-reviżjoni</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Miżmum</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Mhux miżmum</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Moħbi</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Viżibbli</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Mibgħut fil-</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Kwalunkwe aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Biss dak li rreġistra l-awditu.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Issa: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Isem tal-login jew ID tal-utent.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Iffiltra</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Neħħi l-filtri</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Oġġetti</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sa %to minn %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>L-ebda oġġett</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(moqri f&apos;%ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Azzjonijiet fuq l-oġġetti magħżula</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Agħżel kollox f&apos;din il-paġna</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count magħżula</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Azzjoni</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Agħżel azzjoni</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Eħles iż-żamma</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Żomm għar-reviżjoni</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Aħbi</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mexxi għall-barmil</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ħassar</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Assenja taqsima</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Assenja stat</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Raġuni</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Meħtieġa biex iżżomm; tinżamm maż-żamma u fl-awditu.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Agħżel taqsima</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Agħżel stat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Applika għal dawk magħżula</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Kull oġġett jiġi ċċekkjat skont il-permessi tiegħek. It-tmexxija għall-barmil u t-tħassir jitolbuk tikkonferma. Aktar minn %count oġġetti jaħdmu fl-isfond.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Agħżel</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Mibgħut minn</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Agħżel %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>għadu le</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bla isem)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Abbozz</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendenti</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Moħbi mill-ġenitur tiegħu</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Miżmum: sottomissjoni ġdida</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Verżjoni %version pendenti</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Verżjoni %version għaddejja</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Abbozz, verżjoni %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Verżjoni %version ippubblikata</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Skedat għal %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>l-ebda indirizz</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>mhux irreġistrat</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Xejn ma jaqbel ma&apos; dawn il-filtri.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Uri kollox</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Għad m&apos;hemmx kontenut.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Għal kull paġna</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Uri %count oġġetti għal kull paġna.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>L-indirizz u l-browser ta&apos; sottomissjoni ġejjin mill-indiċi tal-awditu, li mhuwiex disponibbli hawn: il-kolonna tgħid &quot;mhux irreġistrat&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>L-indirizz u l-browser huma dawk li l-awditu rreġistra għall-oġġett (iż-żamma awtomatika dejjem tirreġistrahom; il-pubblikazzjoni u l-ħolqien biss fejn huwa attivat), kif iżommhom is-settings tal-privatezza tiegħu.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count oġġetti</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>It-tħassir ineħħi l-oġġetti għal dejjem, bil-verżjonijiet u t-traduzzjonijiet kollha tagħhom. Ma jistax jitreġġa&apos; lura.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>L-oġġetti jmorru fil-barmil, minn fejn jistgħu jiġu rrestawrati.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Kull oġġett jiġi ċċekkjat skont il-permessi tiegħek; oġġett b&apos;sotto-oġġetti jitħalla kif inhu (neħħih fl-istruttura tal-kontenut). Tintalab tivverifika li int.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dan jaħdem fl-isfond: tinfetaħ il-paġna tal-progress tiegħu, u r-riżultat għal kull oġġett jintwera meta jispiċċa.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>L-oġġetti magħżula</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>u %count oħra</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ma sar xejn</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Raġuni: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>L-azzjoni għadha għaddejja fl-isfond.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Il-progress tagħha</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>L-azzjoni fl-isfond falliet: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Lest</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifjutat</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falla</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Għal kull oġġett</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Oġġett</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Riżultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Għaliex</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Lura għal-lista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazzjoni</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Xejn ma sar</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Ikkonferma</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Agħżel azzjoni.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Agħżel mill-inqas oġġett wieħed.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Agħżel l-aktar 1000 oġġett kull darba.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Għid għaliex l-oġġetti qed jinżammu.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Agħżel it-taqsima.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Agħżel l-istat.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Il-formola ma setgħetx tinqara.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Kontenut riċenti</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>L-għadd ma setax jinqara: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Miżmum għar-reviżjoni</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ġodda llum</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Iż-żamma għar-reviżjoni għadha mhix issettjata (il-pass tal-aġġornament 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Il-kontenut riċenti kollu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ma tistax tħaddem azzjonijiet ta&apos; moderazzjoni (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>L-azzjoni ta&apos; moderazzjoni mhix kompluta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderazzjoni: %action fuq %count oġġetti</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done minn %total oġġetti: %ok lesti, %refused rifjutati, %failed fallew</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok lesti, %refused rifjutati, %failed fallew</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ma għadux jeżisti.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>M&apos;għandux post (mhux ippubblikat).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ma tistax taħbih (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ma tistax turih (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Diġà moħbi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Mhuwiex moħbi.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Moħbi.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Muri.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Jinsab fil-barmil: battal jew irrestawrah hemmhekk.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Abbozz li qatt ma ġie ppubblikat ma jistax imur fil-barmil: ħassru.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ma tistax tħassru (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Imħassar.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ma tistax tneħħih (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Għandu sotto-oġġetti: neħħih fl-istruttura tal-kontenut, fejn huma elenkati.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ma tneħħiex (workflow jista&apos; jżomm it-tneħħija).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Imċaqlaq għall-barmil.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>It-taqsima ma teżistix.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Diġà jinsab f&apos;din it-taqsima.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ma tistax tassenja din it-taqsima (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>It-taqsima ma ġietx assenjata.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Taqsima assenjata.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>L-istat ma jeżistix.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Diġà jinsab f&apos;dan l-istat.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ma tistax tassenja dan l-istat (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>L-istat ma ġiex assenjat (workflow jista&apos; jżomm il-bidla).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stat assenjat.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>M&apos;hemmx azzjoni bħal din.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Iż-żamma għar-reviżjoni mhix issettjata (il-pass tal-aġġornament 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Għid għaliex qed jinżamm.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Diġà miżmum.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ma tistax iżżommu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Iż-żamma ma tqegħditx (workflow jista&apos; jżomm il-bidla).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Miżmum.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Mhuwiex miżmum.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ma tistax teħilsu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Iż-żamma ma nħelsitx (workflow jista&apos; jżomm il-bidla).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Meħlus; għadu moħbi: ma tistax turih (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Meħlus.</translation>
     </message>
 </context>
 <context>

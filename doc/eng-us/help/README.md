@@ -81,6 +81,7 @@ allowed to use is shown grayed out or not at all.
 | [Develop with Git](develop-with-git.md) | Install Exponential as Git clones with their full history (the recommended way to build websites), keep them up to date, and send fixes back as pull requests |
 | [Update with Git](update-with-git.md) | Get updates as they are pushed to GitHub and update Composer to match, hourly, daily, weekly, monthly or only at each release, by hand or automatically |
 | [Migrations](migrations/README.md) | Schema and content changes written once as files and applied to every installation: paths for beginners, administrators and teams, 25 recipes, the reference, the FAQ and help when a migration fails |
+| [Recent content](recent-content.md) | The newest content of the site, submissions held for review with who sent them from where, and releasing, hiding or removing a selection at once |
 | [Migrations in the administration](migrations/in-the-administration.md) | See the state of the migrations in Setup > Migrations, run them, follow a run as it goes, and take a run back |
 | [Migrations versus migrating a site](migrations/migrations-versus-migrating-a-site.md) | Which of the two jobs called "migration" you need: changes of one site, or moving and upgrading a whole installation |
 | [Contribute extensions back](contribute-extensions-back.md) | Publish your extensions so everyone can use them, and know what the GPL requires when you distribute one |

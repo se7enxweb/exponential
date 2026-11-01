@@ -9,7 +9,7 @@ generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_setup]
 
-The block `[Leftmenu_setup]` of `settings/menu.ini`, with 66 setting(s).
+The block `[Leftmenu_setup]` of `settings/menu.ini`, with 67 setting(s).
 
 Never edit `settings/menu.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -124,7 +124,7 @@ GroupSections[audit]=Leftmenu_audit
 
 ## GroupLinks_content_model
 
-Default: a list of 10: `classes`, `sections`, `states`, `languages`, `interface_languages`, `contentfinder`, `unreferenced_objects`, `broken_relations`, `storage_files`, `collected`.
+Default: a list of 11: `classes`, `sections`, `states`, `languages`, `interface_languages`, `contentfinder`, `unreferenced_objects`, `broken_relations`, `storage_files`, `collected`, `recent_content`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -142,6 +142,7 @@ GroupLinks_content_model[]=unreferenced_objects
 GroupLinks_content_model[]=broken_relations
 GroupLinks_content_model[]=storage_files
 GroupLinks_content_model[]=collected
+GroupLinks_content_model[]=recent_content
 */ ?>
 ```
 
@@ -369,7 +370,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> for a shown tile only; empty or not design: draws none  
 > An extension sets them for its own link in its menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Default: a hash of 60: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
+Default: a hash of 61: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -397,13 +398,13 @@ LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
 LinkIcons[global_setting]=globe
 LinkIcons[ini]=sliders
-# ... 40 more in the shipped file
+# ... 41 more in the shipped file
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Default: a hash of 60: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
+Default: a hash of 61: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -431,7 +432,7 @@ LinkDescriptions[git_manager]=The Git checkout of the installation and its updat
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
 LinkDescriptions[global_setting]=The settings of the whole site.
 LinkDescriptions[ini]=Read and edit the INI settings.
-# ... 40 more in the shipped file
+# ... 41 more in the shipped file
 */ ?>
 ```
 
@@ -466,6 +467,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > with its policy  
 > The cronjobs console. LinkNames is what the entry reads as: without it the  
 > menu falls back to the key, and "cronjobs" is not a label.  
+> Recent content (module moderation): the newest content of the site, held submissions, actions on a selection  
 > Migrations (module migration): the migrations of the site and its extensions, their runs, a run or a rollback in  
 > the background, the log of each run  
 > The log viewer (doc/eng-us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs  
@@ -501,7 +503,7 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 > PolicyList\_toolbar\_management\[\]=visual/\*  
 > RAD closes the group "Site and URLs"  
 
-Default: a hash of 47: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance`, `migrations=migration/status` ....
+Default: a hash of 48: `overview=setup/menu`, `cache=setup/cache`, `static_publishing=staticpublish/dashboard`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `recent_content=moderation/recent`, `maintenance=setup/maintenance` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -519,6 +521,7 @@ Links[contentfinder]=contentfinder/search
 Links[unreferenced_objects]=contentcheck/unreferenced
 Links[broken_relations]=contentcheck/brokenrelations
 Links[storage_files]=contentcheck/storage
+Links[recent_content]=moderation/recent
 Links[maintenance]=setup/maintenance
 Links[migrations]=migration/status
 Links[cronjobs]=setup/cronjobs
@@ -528,14 +531,13 @@ Links[design_node]=content/view/full/58
 Links[ini]=settings/view
 Links[languages]=content/translations
 Links[interface_languages]=setup/languages
-Links[mailpreferences]=mailpreferences/admin/status
-# ... 27 more in the shipped file
+# ... 28 more in the shipped file
 */ ?>
 ```
 
 ## LinkNames
 
-Default: a hash of 21: `static_publishing=Static publishing`, `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content`, `interface_languages=Interface languages` ....
+Default: a hash of 22: `static_publishing=Static publishing`, `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `recent_content=Recent content`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -549,6 +551,7 @@ LinkNames[contentfinder]=Content finder
 LinkNames[unreferenced_objects]=Unreferenced objects
 LinkNames[broken_relations]=Broken relations
 LinkNames[storage_files]=Storage files
+LinkNames[recent_content]=Recent content
 LinkNames[maintenance]=Maintenance
 LinkNames[migrations]=Migrations
 LinkNames[cronjobs]=Cronjobs
@@ -562,8 +565,7 @@ LinkNames[data_connections]=Connections
 LinkNames[secrets]=Secrets
 LinkNames[graphql]=GraphQL
 LinkNames[data_syncs]=Synchronisations
-LinkNames[sitedata]=Site data
-# ... 1 more in the shipped file
+# ... 2 more in the shipped file
 */ ?>
 ```
 
@@ -690,6 +692,20 @@ Default: a list of 1: `contentcheck/storage`.
 # an empty "PolicyList_storage_files[]" first replaces the shipped list; without it the items are added
 PolicyList_storage_files[]
 PolicyList_storage_files[]=contentcheck/storage
+*/ ?>
+```
+
+## PolicyList_recent_content
+
+Default: a list of 1: `moderation/read`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_setup]
+# an empty "PolicyList_recent_content[]" first replaces the shipped list; without it the items are added
+PolicyList_recent_content[]
+PolicyList_recent_content[]=moderation/read
 */ ?>
 ```
 

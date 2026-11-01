@@ -15090,6 +15090,14 @@ Märkus: pakette ei desinstallita.</translation>
         <translation>Paigalduse muudatused failidena: nende olek, käivitused, käivitamine ja tagasivõtmine.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Uus sisu</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Uusim sisu, ülevaatuseks kinni peetud sisu ja toimingud valikuga.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Avaldage saidi staatiline koopia GitHub Pagesis või mis tahes git-hostis.</translation>
     </message>
@@ -80611,6 +80619,670 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Käivitust ei õnnestunud alustada.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Muudetud</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Loodud</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klass</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Jaotis</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Looja</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Uus sisu</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Kogu saidi viimati loodud ja muudetud sisu, uusim eespool: mida külastajad saatsid, mis on ülevaatuseks kinni peetud, millised mustandid ootavad avaldamist. Valige üksused, et need vabastada, kinni pidada, peita, kuvada, eemaldada või teise jaotisesse või olekusse viia.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Loendit ei saanud lugeda: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Ülevaatuseks kinnipidamine pole veel seadistatud, seega midagi kinni ei peeta ja kinnipidamise toiminguid ei pakuta. Uuendussamm 6.0.15-review-hold seadistab selle: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtreeri loendit</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alates</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kuni</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Kuupäev</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Loodud (esmakordselt avaldatud)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kõik</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Avaldatud</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Mustand, pole kunagi avaldatud</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ootel (ootab kinnitust või kuupäeva)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Prügikastis</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ülevaatuseks kinni peetud</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Kinni peetud</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Pole kinni peetud</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Peidetud</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Nähtav</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Saadetud saidi juurdepääsust</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Mis tahes saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ainult see, mille audit salvestas.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Praegu: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Kasutajanimi või kasutaja ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtreeri</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Tühjenda filtrid</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Üksused</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kuni %to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Üksusi pole</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(loetud %ms ms jooksul)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Toimingud valitud üksustega</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Vali kõik sellel lehel</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count valitud</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiming</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Valige toiming</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Vabasta kinnipidamisest</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Pea ülevaatuseks kinni</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Peida</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Vii prügikasti</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Kustuta</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Määra jaotis</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Määra olek</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Põhjus</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Kinnipidamiseks vajalik; säilitatakse koos kinnipidamise ja auditiga.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Valige jaotis</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Valige olek</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Rakenda valitutele</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Iga üksust kontrollitakse teie enda õiguste suhtes. Prügikasti viimine ja kustutamine nõuavad kinnitust. Üle %count üksuse töödeldakse taustal.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vali</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Avaldamine</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Saadetud aadressilt</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Vali %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>veel mitte</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(nimeta)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Tunnus %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Mustand</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ootel</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Peidetud ülema tõttu</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Kinni peetud: uus saadetis</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versioon %version ootel</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versioon %version pooleli</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Mustand, versioon %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versioon %version avaldatud</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ajastatud: %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>aadress puudub</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>pole salvestatud</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nende filtritega ei leitud midagi.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kuva kõik</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Sisu veel pole.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lehel</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Kuva %count üksust lehel.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Saadetise aadress ja brauser tulevad auditi indeksist, mis pole siin saadaval: veerus on kirjas &quot;pole salvestatud&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Aadress ja brauser on need, mille audit üksuse kohta salvestas (automaatne kinnipidamine salvestab need alati; avaldamine ja loomine ainult siis, kui see on sisse lülitatud), nii nagu selle privaatsusseaded neid säilitavad.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count üksust</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Kustutamine eemaldab üksused jäädavalt koos kõigi nende versioonide ja tõlgetega. Seda ei saa tagasi võtta.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Üksused viiakse prügikasti, kust neid saab taastada.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Iga üksust kontrollitakse teie enda õiguste suhtes; alamüksustega üksus jäetakse puutumata (eemaldage see sisu struktuuris). Teil palutakse kinnitada, et see olete teie.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>See töötab taustal: avaneb selle edenemise leht ja kui see on valmis, kuvatakse tulemus iga üksuse kohta.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Valitud üksused</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ja veel %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Loobu</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Midagi ei tehtud</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Põhjus: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Toiming töötab endiselt taustal.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Selle edenemine</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Taustatoiming nurjus: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tehtud</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Keeldutud</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nurjus</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Üksuste kaupa</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Üksus</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulemus</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Miks</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Tagasi loendisse</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Häälestus</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Midagi ei tehtud</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kinnita</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Valige toiming.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Valige vähemalt üks üksus.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Valige korraga kõige rohkem 1000 üksust.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Öelge, miks üksused kinni peetakse.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Valige jaotis.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Valige olek.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Vormi ei saanud lugeda.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Uus sisu</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Arve ei saanud lugeda: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ülevaatuseks kinni peetud</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Täna uued</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ülevaatuseks kinnipidamine pole veel seadistatud (uuendussamm 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Kogu uus sisu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Teil pole lubatud modereerimistoiminguid käivitada (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Modereerimistoiming pole lõpetatud: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Modereerimine: %action %count objektil</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total objektist: %ok tehtud, %refused keeldutud, %failed nurjus</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok tehtud, %refused keeldutud, %failed nurjus</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Seda pole enam olemas.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Sellel pole asukohta (pole avaldatud).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Teil pole lubatud seda peita (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Teil pole lubatud seda kuvada (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>See on juba peidetud.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>See pole peidetud.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Peidetud.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Kuvatud.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>See on prügikastis: tühjendage või taastage see seal.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Mustandit, mida pole kunagi avaldatud, ei saa prügikasti viia: kustutage see.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Teil pole lubatud seda kustutada (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Kustutatud.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Teil pole lubatud seda eemaldada (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Sellel on alamüksused: eemaldage see sisu struktuuris, kus need on loetletud.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Seda ei eemaldatud (töövoog võib eemaldamist kinni pidada).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Viidud prügikasti.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Jaotist pole olemas.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>See on juba selles jaotises.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Teil pole lubatud seda jaotist määrata (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Jaotist ei määratud.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Jaotis määratud.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Olekut pole olemas.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>See on juba selles olekus.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Teil pole lubatud seda olekut määrata (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Olekut ei määratud (töövoog võib muudatust kinni pidada).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Olek määratud.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Sellist toimingut pole.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ülevaatuseks kinnipidamine pole seadistatud (uuendussamm 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Öelge, miks see kinni peetakse.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>See on juba kinni peetud.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Teil pole lubatud seda kinni pidada (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Kinnipidamist ei rakendatud (töövoog võib muudatust kinni pidada).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Kinni peetud.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>See pole kinni peetud.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Teil pole lubatud seda vabastada (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Kinnipidamist ei vabastatud (töövoog võib muudatust kinni pidada).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Vabastatud; endiselt peidetud: teil pole lubatud seda kuvada (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Vabastatud.</translation>
     </message>
 </context>
 <context>

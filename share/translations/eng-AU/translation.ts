@@ -15090,6 +15090,14 @@ Note: The packages will not be uninstalled.</translation>
         <translation>Changes to the installation kept as files: their state, the runs, run and roll back.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Recent content</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>The newest content, what is held for review, and actions on a selection.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publish a static copy of a site to GitHub Pages or any git host.</translation>
     </message>
@@ -80611,6 +80619,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>The run could not be started.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modified</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Created</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Section</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Creator</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Recent content</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>The list could not be read: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filter the list</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>From</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>To</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Date</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Created (first published)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>All</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Published</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Draft, never published</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pending (waiting for approval or a date)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In the trash</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Held for review</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Held</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Not held</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hidden</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Submitted on</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Any siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Only what the audit recorded.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Now: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>A login or a user id.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Clear filters</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Items</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>No item</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(read in %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Actions on the selected items</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Select all on this page</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selected</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Action</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Choose an action</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Release the hold</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Hold for review</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Hide</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Reveal</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Move to trash</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Delete</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Assign section</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Assign state</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Reason</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Needed to hold; kept with the hold and in the audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Choose a section</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Choose a state</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Apply to the selected</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Select</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publication</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Submitted from</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Select %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>not yet</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(no name)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draft</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pending</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Hidden by its parent</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Held: new submission</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Version %version pending</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Version %version in progress</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Draft, version %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Version %version published</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Scheduled for %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>no address</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>not recorded</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nothing matches these filters.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show all</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>There is no content yet.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per page</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Show %count items per page.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count items</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>The items go to the trash, from where they can be restored.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>This runs in the background: its progress page opens, and the result per item is shown when it is done.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>The selected items</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>and %count more</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nothing was done</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Reason: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>The action is still running in the background.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Its progress</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>The background action failed: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Done</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refused</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Failed</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per item</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Item</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Why</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Back to the list</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nothing done</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirm</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Choose an action.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Select at least one item.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Select at most 1000 items at a time.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Say why the items are held.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Choose the section.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Choose the state.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>The form could not be read.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Recent content</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>The counts could not be read: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Held for review</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>New today</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>All recent content</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>You may not run moderation actions (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>The moderation action is not complete: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderation: %action on %count objects</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done of %total objects: %ok done, %refused refused, %failed failed</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok done, %refused refused, %failed failed</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>It does not exist any more.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>It has no location (not published).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>You may not hide it (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>You may not reveal it (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>It is hidden already.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>It is not hidden.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Hidden.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Revealed.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>It is in the trash: empty or restore it there.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>A draft that was never published cannot go to the trash: delete it.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>You may not delete it (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Deleted.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>You may not remove it (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>It has sub items: remove it in the content structure, where they are listed.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>It was not removed (a workflow may hold the removal).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Moved to the trash.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>The section does not exist.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>It is in this section already.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>You may not assign this section (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>The section was not assigned.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Section assigned.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>The state does not exist.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>It is in this state already.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>You may not assign this state (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>The state was not assigned (a workflow may hold the change).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>State assigned.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>There is no such action.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>The review hold is not set up (the upgrade step 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Say why it is held.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>It is held already.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>You may not hold it (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>The hold was not placed (a workflow may hold the change).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Held.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>It is not held.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>You may not release it (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>The hold was not released (a workflow may hold the change).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Released; still hidden: you may not reveal it (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Released.</translation>
     </message>
 </context>
 <context>

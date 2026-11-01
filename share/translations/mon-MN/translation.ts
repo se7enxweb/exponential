@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>Файл хэлбэрээр хадгалсан суулгацын өөрчлөлтүүд: тэдгээрийн төлөв, ажиллуулалтууд, ажиллуулах ба буцаах.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Шинэ агуулга</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Хамгийн шинэ агуулга, хянуулахаар саатуулсан зүйлс болон сонголт дээрх үйлдлүүд.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Сайтын статик хуулбарыг GitHub Pages эсвэл дурын git хост руу нийтлэх.</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Ажиллуулалтыг эхлүүлж чадсангүй.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Өөрчилсөн</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Үүсгэсэн</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Нэр</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Анги</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Хэсэг</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Үүсгэгч</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Шинэ агуулга</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Бүх сайтын хамгийн сүүлд үүсгэсэн болон өөрчилсөн агуулга, хамгийн шинэ нь эхэндээ: зочдын илгээсэн зүйлс, хянуулахаар саатуулсан зүйлс, нийтлэгдэхээ хүлээж буй ноорогууд. Зүйлсийг чөлөөлөх, саатуулах, нуух, харуулах, хасах эсвэл өөр хэсэг, төлөв рүү шилжүүлэхийн тулд сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Жагсаалтыг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Хяналтын саатуулга хараахан тохируулагдаагүй тул юу ч саатуулагдахгүй бөгөөд саатуулах үйлдлүүд санал болгогдохгүй. Үүнийг 6.0.15-review-hold шинэчлэлийн алхам тохируулна: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Жагсаалтыг шүүх</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Эхлэх</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Дуусах</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Огноо</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Үүсгэсэн (анх нийтэлсэн)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Бүгд</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Нийтлэлийн статус</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Нийтлэгдсэн</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Ноорог, хэзээ ч нийтлэгдээгүй</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Хүлээгдэж буй (зөвшөөрөл эсвэл огноо хүлээж буй)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Хогийн саванд</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Хянуулахаар саатуулсан</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Саатуулсан</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Саатуулаагүй</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Нуугдсан</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Харагдах</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Илгээсэн сайтын хандалт</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Дурын сайтын хандалт</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Зөвхөн аудитын бүртгэсэн зүйлс.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Одоо: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Нэвтрэх нэр эсвэл хэрэглэгчийн дугаар.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Шүүх</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Шүүлтүүрийг цэвэрлэх</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Зүйлс</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count-аас %from–%to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Зүйл алга</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms мс-д уншсан)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Сонгосон зүйлс дээрх үйлдлүүд</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Энэ хуудсан дээрх бүгдийг сонгох</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count сонгосон</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Үйлдэл</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Үйлдэл сонгоно уу</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Саатуулгыг цуцлах</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Хянуулахаар саатуулах</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Нуух</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Харуулах</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Хогийн сав руу зөөх</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Устгах</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Хэсэг оноох</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Төлөв оноох</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Шалтгаан</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Саатуулахад шаардлагатай; саатуулгатай хамт болон аудитад хадгалагдана.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Хэсэг сонгоно уу</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Төлөв</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Төлөв сонгоно уу</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Сонгосонд хэрэгжүүлэх</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Зүйл бүрийг таны өөрийн зөвшөөрлөөр шалгана. Хогийн сав руу зөөх болон устгах үед баталгаажуулалт асууна. %count-аас олон зүйл ар талд ажиллана.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Сонгох</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Нийтлэл</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Хаанаас илгээсэн</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name-г сонгох</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>хараахан үгүй</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(нэргүй)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Дугаар %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ноорог</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Хүлээгдэж буй</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Эх зүйлээрээ нуугдсан</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Саатуулсан: шинэ илгээлт</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version хувилбар хүлээгдэж буй</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version хувилбар боловсруулагдаж буй</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Ноорог, %version хувилбар</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version хувилбар нийтлэгдсэн</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date-нд товлосон</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>хаяг алга</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>бүртгэгдээгүй</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Эдгээр шүүлтүүрт тохирох зүйл алга.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Бүгдийг харуулах</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Агуулга хараахан алга.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Хуудас бүрт</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Хуудас бүрт %count зүйл харуулах.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Илгээлтийн хаяг болон хөтөч аудитын индексээс ирдэг бөгөөд энд ашиглах боломжгүй: баганад «бүртгэгдээгүй» гэж бичигдэнэ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Хаяг болон хөтөч нь аудитын тухайн зүйлд бүртгэсэн утга юм (автомат саатуулга үүнийг үргэлж бүртгэдэг; нийтлэх болон үүсгэх нь зөвхөн идэвхжүүлсэн үед), нууцлалын тохиргоо хадгалсан хэлбэрээр.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count зүйл</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Устгах нь зүйлсийг бүх хувилбар, орчуулгынх нь хамт бүрмөсөн арилгана. Буцаах боломжгүй.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Зүйлс хогийн сав руу очих бөгөөд тэндээс сэргээж болно.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Зүйл бүрийг таны өөрийн зөвшөөрлөөр шалгана; дэд зүйлтэй зүйлийг хэвээр нь үлдээнэ (түүнийг агуулгын бүтцэд хасна уу). Таныг мөн эсэхийг баталгаажуулахыг танаас хүснэ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Энэ нь ар талд ажиллана: явцын хуудас нь нээгдэж, дууссаны дараа зүйл тус бүрийн үр дүн харагдана.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Сонгосон зүйлс</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>болон өөр %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Цуцлах</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Юу ч хийгдсэнгүй</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Шалтгаан: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Үйлдэл ар талд ажилласаар байна.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Түүний явц</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Ар талын үйлдэл амжилтгүй боллоо: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Дууссан</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Татгалзсан</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Амжилтгүй</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Зүйл тус бүрээр</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Зүйл</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Үр дүн</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Яагаад</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Жагсаалт руу буцах</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Тохируулга</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Юу ч хийгдсэнгүй</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Баталгаажуулах</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Үйлдэл сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Дор хаяж нэг зүйл сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Нэг удаад хамгийн ихдээ 1000 зүйл сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Зүйлсийг яагаад саатуулж буйг бичнэ үү.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Хэсгийг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Төлөвийг сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Маягтыг уншиж чадсангүй.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Шинэ агуулга</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Тоонуудыг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Хянуулахаар саатуулсан</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Өнөөдөр шинэ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Хяналтын саатуулга хараахан тохируулагдаагүй (6.0.15-review-hold шинэчлэлийн алхам).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Бүх шинэ агуулга</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Та модерацийн үйлдэл гүйцэтгэх эрхгүй (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Модерацийн үйлдэл дуусаагүй: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модераци: %count объект дээр %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total объектоос %done: %ok дууссан, %refused татгалзсан, %failed амжилтгүй</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok дууссан, %refused татгалзсан, %failed амжилтгүй</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Энэ одоо байхгүй болсон.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Энэ байршилгүй (нийтлэгдээгүй).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Та үүнийг нуух эрхгүй (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Та үүнийг харуулах эрхгүй (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Энэ аль хэдийн нуугдсан.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Энэ нуугдаагүй.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Нуусан.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Харуулсан.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Энэ хогийн саванд байна: тэнд хоосолж эсвэл сэргээнэ үү.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Хэзээ ч нийтлэгдээгүй ноорог хогийн сав руу орох боломжгүй: үүнийг устгана уу.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Та үүнийг устгах эрхгүй (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Устгасан.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Та үүнийг хасах эрхгүй (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Үүнд дэд зүйлс бий: дэд зүйлс нь жагсаагдсан агуулгын бүтцэд үүнийг хасна уу.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Үүнийг хасаагүй (ажлын урсгал хасалтыг саатуулж магадгүй).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Хогийн сав руу зөөсөн.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Хэсэг байхгүй.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Энэ аль хэдийн энэ хэсэгт байна.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Та энэ хэсгийг оноох эрхгүй (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Хэсгийг оноосонгүй.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Хэсгийг оноосон.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Төлөв байхгүй.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Энэ аль хэдийн энэ төлөвт байна.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Та энэ төлөвийг оноох эрхгүй (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Төлөвийг оноосонгүй (ажлын урсгал өөрчлөлтийг саатуулж магадгүй).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Төлөвийг оноосон.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ийм үйлдэл байхгүй.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Хяналтын саатуулга тохируулагдаагүй (6.0.15-review-hold шинэчлэлийн алхам).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Яагаад саатуулж буйг бичнэ үү.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Энэ аль хэдийн саатуулагдсан.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Та үүнийг саатуулах эрхгүй (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Саатуулга тавигдсангүй (ажлын урсгал өөрчлөлтийг саатуулж магадгүй).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Саатуулсан.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Энэ саатуулагдаагүй.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Та үүнийг чөлөөлөх эрхгүй (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Саатуулгыг цуцалсангүй (ажлын урсгал өөрчлөлтийг саатуулж магадгүй).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Чөлөөлсөн; одоо ч нуугдсан хэвээр: та үүнийг харуулах эрхгүй (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Чөлөөлсөн.</translation>
     </message>
 </context>
 <context>

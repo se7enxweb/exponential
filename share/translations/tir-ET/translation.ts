@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ኣብቲ ምትካል ከም ፋይላት ዝተዓቀቡ ለውጥታት: ኩነታቶም፡ ምክያዳት፡ ምክያድን ምምላስን።</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>ሓድሽ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>እቲ ሓድሽ ትሕዝቶ፡ ንግምገማ ዝተታሕዘ፡ ከምኡ'ውን ኣብ ምርጫ ዝግበሩ ተግባራት።</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>ስታቲክ ቅዳሕ ናይ መርበብ ናብ GitHub Pages ወይ ዝኾነ git ሆስት ኣሕትሙ።</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>እቲ ምክያድ ክጅመር ኣይከኣለን።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ዝተቐየረ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ዝተፈጥረ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ክፍሊ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ክፋል</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ፈጣሪ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ሓድሽ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ኣብ መላእ መርበብ ብቐረባ ዝተፈጥረን ዝተቐየረን ትሕዝቶ፡ እቲ ሓድሽ ቀዳማይ፦ በጻሕቲ ዘእተውዎ፡ ንግምገማ ዝተታሕዘ፡ ንምሕታሞም ዝጽበዩ ንድፍታት። ንምፍታሕ፡ ንምሓዝ፡ ንምሕባእ፡ ንምርኣይ፡ ንምውጻእ ወይ ናብ ካልእ ክፋል ወይ ኩነት ንምግዓዝ ኣቑሑት ምረጹ።</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>እቲ ዝርዝር ክንበብ ኣይከኣለን፦ %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ምሓዝ ንግምገማ ገና ኣይተዳለወን፡ ስለዚ ዝተታሕዘ የለን፡ ተግባራት ምሓዝ ድማ ኣይቀርቡን። እቲ ስጉምቲ ምምሕያሽ 6.0.15-review-hold የዳልዎ፦ ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ዝርዝር ኣጻሪ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ካብ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ክሳብ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ዕለት</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ዝተፈጥረ (ፈለማ ዝተሓተመ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ኩሉ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ኩነታት</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ዝተሓተመ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ንድፊ፡ ፈጺሙ ዘይተሓተመ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ዝጽበ (ፍቓድ ወይ ዕለት ዝጽበ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ኣብ መጓሓፊ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ንግምገማ ዝተታሕዘ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ዝተታሕዘ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ዘይተታሕዘ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ሕቡእ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ዝርአ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ዝኣተወሉ ዕለት</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ዝኾነ ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>እቲ ኦዲት ዝመዝገቦ ጥራይ።</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ሕጂ፦ %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ናይ ምእታው ስም ወይ መለለዪ ተጠቃሚ።</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ኣጻሪ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>መጻረዪታት ኣጽሪ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ክሳብ %to ካብ %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ኣቕሓ የለን</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(ኣብ %ms ms ተነቢቡ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ኣብ ዝተመርጹ ኣቑሑት ዝግበሩ ተግባራት</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ኣብዚ ገጽ ኩሉ ምረጽ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ተመሪጾም</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ተግባር</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ተግባር ምረጹ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ምሓዝ ፍታሕ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ንግምገማ ሓዝ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ሕባእ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ኣርኢ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ናብ መጓሓፊ ኣግዕዝ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ደምስስ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ክፋል መድብ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ኩነት መድብ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>ምኽንያት</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ንምሓዝ የድሊ፤ ምስቲ ምሓዝን ኣብ ኦዲትን ይዕቀብ።</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ክፋል ምረጹ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ኩነት</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ኩነት ምረጹ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ኣብ ዝተመርጹ ተግብር</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ነፍሲ ወከፍ ኣቕሓ ምስ ናይ ባዕልኹም ፍቓዳት ይምርመር። ናብ መጓሓፊ ምግዓዝን ምድምሳስን ከተረጋግጹ ይሓቱ። ካብ %count ዝበዝሑ ኣቑሑት ኣብ ድሕሪት ይካየዱ።</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ምረጽ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ሕትመት</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ዝኣተወሉ ቦታ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ምረጽ</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ገና</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ስም የብሉን)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>መለለዪ %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ንድፊ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ዝጽበ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ብወላዲኡ ዝተሓብአ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ዝተታሕዘ፦ ሓድሽ ምእታው</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ሕታም %version ዝጽበ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ሕታም %version ኣብ መስርሕ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ንድፊ፡ ሕታም %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ሕታም %version ተሓቲሙ</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>ን%date ዝተመደበ</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ኣድራሻ የለን</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ኣይተመዝገበን</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ምስዞም መጻረዪታት ዝሰማማዕ የለን።</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ኩሉ ኣርኢ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ገና ትሕዝቶ የለን።</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ኣብ ገጽ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ኣብ ገጽ %count ኣቑሑት ኣርኢ።</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ኣድራሻን መርበብ-ሓባብን ናይ ሓደ ምእታው ካብ መዝገብ ኦዲት ይመጹ፡ እዚ ኸኣ ኣብዚ የለን፦ እቲ ዓምዲ "ኣይተመዝገበን" ይብል።</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ኣድራሻን መርበብ-ሓባብን እቶም ኦዲት ነቲ ኣቕሓ ዝመዝገቦም እዮም (ኣውቶማቲክ ምሓዝ ኩሉ ግዜ ይምዝግቦም፤ ምሕታምን ምፍጣርን ምስ ዝበርሁ ጥራይ)፡ ከምቲ ቅጥዕታት ብሕትውናኡ ዝዕቅቦም።</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action፦ %count ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ምድምሳስ ነቶም ኣቑሑት ምስ ኩሎም ሕታማቶምን ትርጉማቶምን ንሓዋሩ የወግዶም። ክምለስ ኣይከኣልን።</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>እቶም ኣቑሑት ናብ መጓሓፊ ይኸዱ፡ ካብኡ ድማ ክምለሱ ይኽእሉ።</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ነፍሲ ወከፍ ኣቕሓ ምስ ናይ ባዕልኹም ፍቓዳት ይምርመር፤ ንኡሳን ኣቑሑት ዘለዎ ኣቕሓ ከምዘለዎ ይግደፍ (ኣብ ቅርጺ ትሕዝቶ ኣውጽእዎ)። ንስኹም ምዃንኩም ከተረጋግጹ ክትሕተቱ ኢኹም።</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>እዚ ኣብ ድሕሪት ይካየድ፦ ገጽ ምዕባለኡ ይኽፈት፡ ምስ ተወድአ ድማ ውጽኢት ነፍሲ ወከፍ ኣቕሓ ይርአ።</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>እቶም ዝተመርጹ ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ከምኡ'ውን %count ተወሳኺ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ዋላ ሓንቲ ኣይተገብረን</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>ምኽንያት፦ %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>እቲ ተግባር ሕጂ'ውን ኣብ ድሕሪት ይካየድ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ምዕባለኡ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>እቲ ናይ ድሕሪት ተግባር ኣይተዓወተን፦ %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ተወዲኡ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ተነጺጉ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ነፍሲ ወከፍ ኣቕሓ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ኣቕሓ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጽኢት</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ስለምንታይ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ናብ ዝርዝር ተመለስ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ምድላው</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ዋላ ሓንቲ ኣይተፈጸመን</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ኣረጋግጽ</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ተግባር ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>እንተወሓደ ሓደ ኣቕሓ ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ኣብ ሓደ ግዜ እንተበዝሐ 1000 ኣቑሑት ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>እቶም ኣቑሑት ስለምንታይ ከም ዝተታሕዙ ግለጹ።</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ነቲ ክፋል ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ነቲ ኩነት ምረጹ።</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>እቲ ቅጥዒ ክንበብ ኣይከኣለን።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ሓድሽ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>እቶም ቁጽርታት ክንበቡ ኣይከኣሉን፦ %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ንግምገማ ዝተታሕዘ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ሎሚ ሓድሽ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ምሓዝ ንግምገማ ገና ኣይተዳለወን (እቲ ስጉምቲ ምምሕያሽ 6.0.15-review-hold)።</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ኩሉ ሓድሽ ትሕዝቶ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ተግባራት ምቁጽጻር ከተካይዱ ኣይፍቀደልኩምን (moderation/act)።</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>እቲ ተግባር ምቁጽጻር ኣይተዛዘመን፦ %errors።</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ምቁጽጻር፦ %action ኣብ %count ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ካብ %total ኣቑሑት፦ %ok ተወዲኡ፡ %refused ተነጺጉ፡ %failed ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ተወዲኡ፡ %refused ተነጺጉ፡ %failed ኣይተዓወተን</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ድሕሪ ሕጂ የለን።</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ቦታ የብሉን (ኣይተሓተመን)።</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ክትሓብእዎ ኣይፍቀደልኩምን (content/hide)።</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ከተርእይዎ ኣይፍቀደልኩምን (content/hide)።</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ድሮ ተሓቢኡ እዩ።</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ሕቡእ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ተሓቢኡ።</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ተራእዩ።</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ኣብ መጓሓፊ እዩ፦ ኣብኡ ኣጽርይዎ ወይ ምለስዎ።</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ፈጺሙ ዘይተሓተመ ንድፊ ናብ መጓሓፊ ክኸይድ ኣይክእልን፦ ደምስስዎ።</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ክትድምስስዎ ኣይፍቀደልኩምን (content/remove)።</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ተደምሲሱ።</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ከተውጽእዎ ኣይፍቀደልኩምን (content/remove)።</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ንኡሳን ኣቑሑት ኣለዉዎ፦ ኣብቲ ዝተዘርዘሩሉ ቅርጺ ትሕዝቶ ኣውጽእዎ።</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ኣይወጽአን (ዝኾነ ስርሓት-ፍሰት ነቲ ምውጻእ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ናብ መጓሓፊ ተጓዒዙ።</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>እቲ ክፋል የለን።</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ድሮ ኣብዚ ክፋል እዩ።</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ነዚ ክፋል ክትምድቡ ኣይፍቀደልኩምን (section/assign)።</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>እቲ ክፋል ኣይተመደበን።</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>ክፋል ተመዲቡ።</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>እቲ ኩነት የለን።</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ድሮ ኣብዚ ኩነት እዩ።</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ነዚ ኩነት ክትምድቡ ኣይፍቀደልኩምን (state/assign)።</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>እቲ ኩነት ኣይተመደበን (ዝኾነ ስርሓት-ፍሰት ነቲ ለውጢ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ኩነት ተመዲቡ።</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ከምዚ ዝበለ ተግባር የለን።</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ምሓዝ ንግምገማ ኣይተዳለወን (እቲ ስጉምቲ ምምሕያሽ 6.0.15-review-hold)።</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ስለምንታይ ከም ዝተታሕዘ ግለጹ።</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ድሮ ተታሒዙ እዩ።</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ክትሕዝዎ ኣይፍቀደልኩምን (state/assign)።</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>እቲ ምሓዝ ኣይተቐመጠን (ዝኾነ ስርሓት-ፍሰት ነቲ ለውጢ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ተታሒዙ።</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ኣይተታሕዘን።</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ክትፈትሕዎ ኣይፍቀደልኩምን (state/assign)።</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>እቲ ምሓዝ ኣይተፈትሐን (ዝኾነ ስርሓት-ፍሰት ነቲ ለውጢ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ተፈቲሑ፤ ሕጂ'ውን ሕቡእ እዩ፦ ከተርእይዎ ኣይፍቀደልኩምን (content/hide)።</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ተፈቲሑ።</translation>
     </message>
 </context>
 <context>

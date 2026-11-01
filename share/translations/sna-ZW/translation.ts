@@ -15151,6 +15151,14 @@ Chenjerai: Mapakeji acho haazobviswi pakuiswa.</translation>
         <translation>Shanduko dzekuiswa dzakachengetwa semafaira: mamiriro adzo, kumhanyisa, kumhanyisa nekudzosera shure.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Zvirimo zvitsva</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Zvirimo zvitsva-tsva, zvakabatwa kuti zviongororwe, uye zviito pane zvakasarudzwa.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Buritsai kopi yakamira yesaiti kuGitHub Pages kana kune chero muchengeti we git.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Kumhanyisa hakuna kukwanisa kutangwa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Yakachinjwa</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yakagadzirwa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Zita</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kirasi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Chikamu</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Mugadziri</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Zvirimo zvitsva</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Zvirimo zvakagadzirwa nezvakachinjwa nguva pfupi yapfuura pasaiti yose, zvitsva pakutanga: zvakatumirwa nevashanyi, zvakabatwa kuti zviongororwe, madhirafiti akamirira kubudiswa. Sarudza zvinhu kuti uzvisunungure, uzvibate, uzvivanze, uzviratidze, uzvibvise kana kuzviendesa kune chimwe chikamu kana chimiro.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Rondedzero haina kugona kuverengwa: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Kubata kwekuongorora hakusati kwagadzirirwa, saka hapana chakabatwa uye zviito zvekubata hazvipiwi. Nhanho yekuvandudza 6.0.15-review-hold inozvigadzirira: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sefa rondedzero</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kubva</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kusvika</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Zuva</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Yakagadzirwa (payakatanga kubudiswa)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Zvose</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Chimiro</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Zvakabudiswa</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Dhirafiti, harina kumbobudiswa</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Rakamirira (mvumo kana zuva)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Mumarara</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zvakabatwa kuti zviongororwe</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zvakabatwa</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Hazvina kubatwa</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Rakavanzwa</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Rinooneka</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Zvakatumirwa pa</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Chero nzira yekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Izvo chete ongororo yakanyora.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Iye zvino: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Zita rekupinda kana nhamba yemushandisi.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sefa</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Bvisa masefa</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Zvinhu</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kusvika %to pa %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Hapana chinhu</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(zvakaverengwa mu ms %ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Zviito pazvinhu zvakasarudzwa</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Sarudza zvose papeji rino</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count zvakasarudzwa</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Chiito</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Sarudza chiito</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Sunungura kubata</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Bata kuti zviongororwe</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Vanza</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Ratidza</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Isa mumarara</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Dzima</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Pa chikamu</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Pa chimiro</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Chikonzero</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Chinodiwa kuti ubate; chinochengetwa pamwe nekubata uye muongororo.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Sarudza chikamu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Chimiro</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Sarudza chimiro</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Shandisa pane zvakasarudzwa</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Chinhu chimwe nechimwe chinoongororwa zvichienderana nemvumo yako. Kuisa mumarara nekudzima zvinokumbira kuti usimbise. Zvinhu zvinopfuura %count zvinoitwa kumashure.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Sarudza</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Kubudiswa</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Zvakatumirwa kubva</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Sarudza %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>kwete parizvino</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(hapana zita)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Nhamba %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Dhirafiti</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Rakamirira</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Rakavanzwa nepamusoro</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zvakabatwa: chitumirwa chitsva</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Vhezheni %version yakamirira</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Vhezheni %version iri kugadzirwa</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Dhirafiti, vhezheni %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Vhezheni %version yakabudiswa</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Zvakarongerwa %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>hapana kero</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>hazvina kunyorwa</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Hapana chinoenderana nemasefa aya.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ratidza zvose</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Hapasati pava nezvirimo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Papeji imwe neimwe</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Ratidza zvinhu %count papeji imwe neimwe.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Kero nebrowser zvechitumirwa zvinobva muindekisi yeongororo, isingawanikwe pano: koramu inoti "hazvina kunyorwa".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Kero nebrowser ndezvo ongororo yakanyorera chinhu ichi (kubata kwega kunogara kuchizvinyora; kubudisa nekugadzira chete pazvakabatidzwa), sezvazvinochengetwa nemagadzirirwo ayo ekuvanzika.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: zvinhu %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Kudzima kunobvisa zvinhu zvachose, pamwe chete nemavhezheni azvo ose neshanduro dzazvo. Hakugone kudzoserwa.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Zvinhu zvinoenda mumarara, kwazvinogona kudzoserwa.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Chinhu chimwe nechimwe chinoongororwa zvichienderana nemvumo yako; chinhu chine zvinhu zviri pasi pacho chinosiiwa sezvachiri (chibvise muchimiro chezvirimo). Uchakumbirwa kusimbisa kuti ndiwe.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Izvi zvinoitwa kumashure: peji rekufambira mberi kwazvo rinovhurwa, uye mhedzisiro yechinhu chimwe nechimwe inoratidzwa kana zvapera.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Zvinhu zvakasarudzwa</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>nezvimwe %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanzura</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Hapana chakaitwa</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Chikonzero: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Chiito chichiri kuitwa kumashure.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Kufambira mberi kwacho</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Chiito chekumashure chakundikana: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kwapera</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Zvarambwa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zvakundikana</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Pachinhu chimwe nechimwe</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Chinhu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Mhedzisiro</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Sei</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Dzokera kurondedzero</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gadziriro</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Hapana chakaitwa</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Simbisa</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Sarudza chiito.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Sarudza chinhu chimwe chete zvishoma.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Sarudza zvinhu zvisingapfuuri 1000 panguva imwe.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Taura kuti sei zvinhu zvakabatwa.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Sarudza chikamu.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Sarudza chimiro.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Fomu haina kugona kuverengwa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Zvirimo zvitsva</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Manhamba haana kugona kuverengwa: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zvakabatwa kuti zviongororwe</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Zvitsva nhasi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kubata kwekuongorora hakusati kwagadzirirwa (nhanho yekuvandudza 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Zvirimo zvose zvitsva</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Haubvumirwi kuita zviito zvekutarisira (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Chiito chekutarisira hachina kupera: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Kutarisira: %action pazvinhu %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done pa %total zvezvinhu: %ok zvapera, %refused zvarambwa, %failed zvakundikana</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok zvapera, %refused zvarambwa, %failed zvakundikana</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Hachichipo.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Hachina nzvimbo (hachina kubudiswa).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Haubvumirwi kuchivanza (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Haubvumirwi kuchiratidza (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Chakatovanzwa.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Hachina kuvanzwa.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Chavanzwa.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Charatidzwa.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Chiri mumarara: chidzime kana kuchidzosera ikoko.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Dhirafiti risina kumbobudiswa harigoni kuenda mumarara: ridzime.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Haubvumirwi kuchidzima (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Chadzimwa.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Haubvumirwi kuchibvisa (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Chine zvinhu zviri pasi pacho: chibvise muchimiro chezvirimo, mazvakanyorwa.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Hachina kubviswa (nhanho dzebasa dzingave dzakabata kubviswa).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Chaiswa mumarara.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Chikamu hachipo.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Chakatova muchikamu ichi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Haubvumirwi kupa chikamu ichi (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Chikamu hachina kupiwa.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Chikamu chapiwa.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Chimiro hachipo.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Chakatova muchimiro ichi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Haubvumirwi kupa chimiro ichi (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Chimiro hachina kupiwa (nhanho dzebasa dzingave dzakabata shanduko).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Chimiro chapiwa.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Hapana chiito chakadaro.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kubata kwekuongorora hakuna kugadzirirwa (nhanho yekuvandudza 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Taura kuti sei chakabatwa.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Chakatobatwa.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Haubvumirwi kuchibata (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Kubata hakuna kuiswa (nhanho dzebasa dzingave dzakabata shanduko).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Chabatwa.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Hachina kubatwa.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Haubvumirwi kuchisunungura (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Kubata hakuna kusunungurwa (nhanho dzebasa dzingave dzakabata shanduko).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Chasunungurwa; chichiri kuvanzwa: haubvumirwi kuchiratidza (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Chasunungurwa.</translation>
     </message>
 </context>
 <context>

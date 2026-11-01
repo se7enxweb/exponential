@@ -2,7 +2,7 @@
 title: Erweiterungspunkte in content.ini
 audience: developer, admin
 category: examples
-summary: Einstellungen von content.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (33, am Namen erkannt).
+summary: Einstellungen von content.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (34, am Namen erkannt).
 keywords: Erweiterungspunkt, Erweiterung, content.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -346,6 +346,18 @@ Ausgeliefert: eine leere Liste. [Die Einstellung](../ini-einstellungen/content/R
 # extension/expexample/settings/content.ini.append.php
 [ReverseRelationSettings]
 ProviderClassList[]=expExampleProviderClass    # Ihre Klasse oder Ihr Wert, zur Liste hinzugefügt
+*/ ?>
+```
+
+## ReviewHoldSettings AutoHoldClassList
+
+Ausgeliefert: eine Liste mit 1: `comment`. [Die Einstellung](../ini-einstellungen/content/ReviewHoldSettings.md#autoholdclasslist).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/content.ini.append.php
+[ReviewHoldSettings]
+AutoHoldClassList[]=expExampleAutoHoldClass    # Ihre Klasse oder Ihr Wert, zur Liste hinzugefügt
 */ ?>
 ```
 

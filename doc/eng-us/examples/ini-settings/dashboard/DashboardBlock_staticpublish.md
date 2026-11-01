@@ -22,13 +22,13 @@ Never edit `settings/dashboard.ini` itself: an update replaces it. Put the setti
 
 ## Priority
 
-Default: `28`.
+Default: `29`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/dashboard.ini.append.php
 [DashboardBlock_staticpublish]
-Priority=28
+Priority=29
 */ ?>
 ```
 

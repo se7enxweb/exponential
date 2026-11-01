@@ -25,6 +25,7 @@ Jedes `fetch( 'module', 'function', hash( ... ) )`, das der Kernel und die mitge
 | [infocollector](infocollector/README.md) | 4 | `kernel/infocollector/function_definition.php` |
 | [layout](layout/README.md) | 1 | `kernel/layout/function_definition.php` |
 | [migration](migration/README.md) | 1 | `kernel/migration/function_definition.php` |
+| [moderation](moderation/README.md) | 1 | `kernel/moderation/function_definition.php` |
 | [notification](notification/README.md) | 6 | `kernel/notification/function_definition.php` |
 | [package](package/README.md) | 15 | `kernel/package/function_definition.php` |
 | [role](role/README.md) | 3 | `kernel/role/function_definition.php` |

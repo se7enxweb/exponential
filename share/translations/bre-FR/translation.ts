@@ -15151,6 +15151,14 @@ Notenn: ne vo ket distaliet ar pakadoù.</translation>
         <translation>Kemmoù d&apos;ar staliadur miret evel restroù: o statud, al lañsadennoù, lañsañ ha distreiñ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Endalc'had nevez</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>An endalc'had nevesañ, ar pezh a zo dalc'het evit bezañ gwiriet, hag oberoù war un diuzad.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Embann un eilskrid stadek eus ul lec&apos;hienn war GitHub Pages pe war forzh peseurt herberc&apos;hier git.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>N&apos;eus ket bet gallet kregiñ al lañsadenn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Kemmet</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Krouet</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anv</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Rummad</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Rann</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Krouer</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Endalc'had nevez</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>An endalc'had krouet ha kemmet nevesañ el lec'hienn a-bezh, an nevesañ da gentañ : ar pezh o deus kaset ar weladennerien, ar pezh a zo dalc'het evit bezañ gwiriet, ar brouilhedoù a c'hortoz bezañ embannet. Diuzit elfennoù evit o dieubiñ, o derc'hel, o kuzhat, o diskouez, o lemel pe o dilec'hiañ d'ur rann pe d'ur stad all.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>N'eus ket bet gallet lenn ar roll : %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>N'eo ket bet kefluniet c'hoazh an dalc'h evit gwiriañ, neuze n'eus netra dalc'het ha n'eo ket kinniget oberoù an dalc'h. Ar bazenn hizivaat 6.0.15-review-hold a gefluni anezhañ : ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Silañ ar roll</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Eus</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Betek</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Deiziad</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Krouet (embannet evit ar wech kentañ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>An holl</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statud</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Embannet</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Brouilhed, morse embannet</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>O c'hortoz (un aprouadur pe un deiziad)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Er boubellenn</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Dalc'het evit bezañ gwiriet</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Dalc'het</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>N'eo ket dalc'het</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Kuzhet</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Gwelus</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Kaset d'an</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ne vern pe haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ar pezh en deus enrollet an aodit hepken.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Bremañ : %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Un anv kevreañ pe un ID implijer.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Silañ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Skarzhañ ar siloù</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elfennoù</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from betek %to diwar %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Elfenn ebet</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lennet e %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Oberoù war an elfennoù diuzet</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Diuzañ pep tra war ar bajenn-mañ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count diuzet</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ober</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Dibabit un ober</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Dieubiñ an dalc'h</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Derc'hel evit gwiriañ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Kuzhat</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Diskouez</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Kas d'ar boubellenn</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Dilemel</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Deverkañ ur rann</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Deverkañ ur stad</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Abeg</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ret evit derc'hel ; miret gant an dalc'h hag en aodit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Dibabit ur rann</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stad</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Dibabit ur stad</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Arloañ d'an diuzad</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Gwiriet e vez pep elfenn hervez ho kwirioù deoc'h. Kas d'ar boubellenn ha dilemel a c'houlenn ur gadarnadur. Ouzhpenn %count elfenn e vez kaset an ober en drekleur.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Diuzañ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Embann</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Kaset eus</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Diuzañ %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>n'eo ket c'hoazh</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(anv ebet)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Brouilhed</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>O c'hortoz</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Kuzhet gant e gerent</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Dalc'het : kasadenn nevez</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Stumm %version o c'hortoz</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Stumm %version war ober</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Brouilhed, stumm %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Stumm %version embannet</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Steuñvet evit an %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>chomlec'h ebet</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>n'eo ket enrollet</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Netra ne glot gant ar siloù-mañ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Diskouez pep tra</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>N'eus endalc'had ebet c'hoazh.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Dre bajenn</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Diskouez %count elfenn dre bajenn.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Chomlec'h ha merdeer ur gasadenn a zeu eus ibil an aodit, ha n'eo ket hegerz amañ : ar bann a lavar « n'eo ket enrollet ».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ar chomlec'h hag ar merdeer a zo ar re en deus enrollet an aodit evit an elfenn (an dalc'h emgefre a enroll anezho bepred ; an embann hag ar c'hrouiñ e-lec'h ma 'z eo gweredekaet hepken), evel ma vez miret gant e arventennoù prevezded.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action : %count elfenn</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Dilemel a lam an elfennoù da vat, gant o holl stummoù hag o holl droidigezhioù. Ne c'haller ket dizober.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>An elfennoù a ya d'ar boubellenn, ma c'hallont bezañ assavet diouti.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Gwiriet e vez pep elfenn hervez ho kwirioù deoc'h ; un elfenn he deus is-elfennoù a vez lezet evel m'emañ (lamit anezhi e framm an endalc'had). Goulennet e vo diganeoc'h gwiriañ ez eo c'hwi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Kaset e vez en drekleur : digeriñ a ra e bajenn araokadur, ha diskouezet e vez an disoc'h evit pep elfenn pa vez echu.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>An elfennoù diuzet</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ha %count all</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Nullañ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Netra n'eo bet graet</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Abeg : %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>An ober a dro c'hoazh en drekleur.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>E araokadur</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>C'hwitet en deus an ober en drekleur : %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Graet</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nac'het</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>C'hwitet</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Dre elfenn</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elfenn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Disoc'h</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Perak</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Distreiñ d'ar roll</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kefluniañ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Netra graet</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kadarnaat</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Dibabit un ober.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Diuzit un elfenn da nebeutañ.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Diuzit 1000 elfenn d'ar muiañ war un dro.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Lavarit perak ez eo dalc'het an elfennoù.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Dibabit ar rann.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Dibabit ar stad.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>N'eus ket bet gallet lenn ar furmskrid.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Endalc'had nevez</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>N'eus ket bet gallet lenn an niveroù : %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Dalc'het evit bezañ gwiriet</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nevez hiziv</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>N'eo ket bet kefluniet c'hoazh an dalc'h evit gwiriañ (ar bazenn hizivaat 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>An holl endalc'had nevez</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>N'oc'h ket aotreet da gas oberoù habaskaat (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>N'eo ket klok an ober habaskaat : %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Habaskaat : %action war %count objed</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done diwar %total objed : %ok graet, %refused nac'het, %failed c'hwitet</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok graet, %refused nac'het, %failed c'hwitet</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>N'eus ket anezhañ ken.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>N'en deus lec'hiadur ebet (n'eo ket embannet).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>N'oc'h ket aotreet d'e guzhat (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>N'oc'h ket aotreet d'e ziskouez (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Kuzhet eo dija.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>N'eo ket kuzhet.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Kuzhet.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Diskouezet.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Er boubellenn emañ : goullonderit anezhi pe assavit anezhañ diouti.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ur brouilhed n'eo bet embannet morse ne c'hall ket mont d'ar boubellenn : dilamit anezhañ.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>N'oc'h ket aotreet d'e zilemel (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Dilamet.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>N'oc'h ket aotreet d'e lemel (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Is-elfennoù en deus : lamit anezhañ e framm an endalc'had, e-lec'h m'emaint rollet.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>N'eo ket bet lamet (gallout a ra ul lanv-labour derc'hel al lamadenn).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Kaset d'ar boubellenn.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>N'eus ket eus ar rann.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Er rann-mañ emañ dija.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>N'oc'h ket aotreet da zeverkañ ar rann-mañ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>N'eo ket bet deverket ar rann.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Rann deverket.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>N'eus ket eus ar stad.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Er stad-mañ emañ dija.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>N'oc'h ket aotreet da zeverkañ ar stad-mañ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>N'eo ket bet deverket ar stad (gallout a ra ul lanv-labour derc'hel ar c'hemm).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stad deverket.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>N'eus ober ebet a seurt-se.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>N'eo ket kefluniet an dalc'h evit gwiriañ (ar bazenn hizivaat 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Lavarit perak ez eo dalc'het.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Dalc'het eo dija.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>N'oc'h ket aotreet d'e zerc'hel (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>N'eo ket bet lakaet an dalc'h (gallout a ra ul lanv-labour derc'hel ar c'hemm).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Dalc'het.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>N'eo ket dalc'het.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>N'oc'h ket aotreet d'e zieubiñ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>N'eo ket bet dieubet an dalc'h (gallout a ra ul lanv-labour derc'hel ar c'hemm).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Dieubet ; kuzhet c'hoazh : n'oc'h ket aotreet d'e ziskouez (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Dieubet.</translation>
     </message>
 </context>
 <context>

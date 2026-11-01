@@ -15151,6 +15151,14 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
         <translation>Tɔtrɔ siwo wowɔ le ɖoɖoa ŋu eye wodzra wo ɖo abe faɛlwo ene: woƒe nɔnɔme, wɔwɔwo, wɔe kple gbugbɔe ɖe megbe.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Nyatakaka yeyewo</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nyatakaka yeyetɔwo, nu siwo wolé ɖi hena dzodzro, kple dɔwɔwɔwo le esiwo wotia ŋu.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Ɖe nyatakakaɖoƒe aɖe ƒe kɔpi si metrɔna o ɖe dutoƒo le GitHub Pages alo git sɛva ɖesiaɖe dzi.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>The run could not be started.</source>
         <translation>Womete ŋu dze wɔwɔa gɔme o.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Wotrɔ asi le eŋu</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Wowɔe</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ŋkɔ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Hatsotso</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Akpa</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Wɔla</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nyatakaka yeyewo</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Nyatakaka siwo wowɔ kple esiwo wotrɔ asi le eŋu nyitsɔ laa le nyatakakaɖoƒe blibo la dzi, yeyetɔ gbã: nu siwo amedzrowo ɖo ɖa, nu siwo wolé ɖi hena dzodzro, ŋɔŋlɔ gbãtɔ siwo le lalam be woaɖe wo ɖe dutoƒo. Tia nuŋɔŋlɔwo be nàɖe asi le wo ŋu, alé wo ɖi, aɣla wo, aɖe wo afia, aɖe wo ɖa alo aɖe wo ayi akpa alo nɔnɔme bubu me.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Womete ŋu xlẽ ŋkɔŋɔŋlɔ la o: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Wometi ɖoɖo ɖe nulélé ɖi hena dzodzro ŋu haɖe o, eya ta naneke mele léle ɖi o eye womena nulélé ɖi ƒe dɔwɔwɔwo o. Ŋgɔyiyi ƒe afɔɖeɖe 6.0.15-review-hold ye ɖoa eƒe ɖoɖo: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tso ŋkɔŋɔŋlɔ la me</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Tso</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Va ɖo</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ŋkeke</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Wowɔe (woɖe ɖe dutoƒo zi gbãtɔ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wo katã</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ɖoƒe</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Woɖe ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Ŋɔŋlɔ gbãtɔ, womeɖe ɖe dutoƒo kpɔ o</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Le lalam (le lalam na ɖeɖe mɔ alo ŋkeke aɖe)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Le nugbegblẽƒe</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Wolé ɖi hena dzodzro</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Wolé ɖi</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Womelé ɖi o</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Woɣla</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Dze</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Woɖo ɖa le</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu ɖesiaɖe</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Nu siwo dzodzro la ŋlɔ ɖi ko.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Fifia: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Gegeɖe ŋkɔ alo zãla ƒe ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tso me</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Tutu tsotsonuwo ɖa</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Nuŋɔŋlɔwo</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from va ɖo %to le %count me</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nuŋɔŋlɔ aɖeke meli o</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(woxlẽe le %ms ms me)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Dɔwɔwɔwo le nuŋɔŋlɔ siwo wotia la ŋu</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Tia wo katã le axa sia dzi</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Wotia %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Dɔwɔwɔ</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Tia dɔwɔwɔ aɖe</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Ɖe asi le nulélé ɖi la ŋu</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Lée ɖi hena dzodzro</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ɣla</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Ɖee fia</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Ɖe yi nugbegblẽƒe</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Tutu ɖa</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Na akpa</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Na nɔnɔme</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Nuka ta</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ehiã hafi woalée ɖi; wodzranɛ ɖo kple nulélé ɖi la kple dzodzro la me.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Tia akpa aɖe</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Nɔnɔme</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Tia nɔnɔme aɖe</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Wɔe ɖe esiwo wotia ŋu</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Wodzroa nuŋɔŋlɔ ɖesiaɖe me ɖe wò ŋutɔ ƒe mɔɖeɖewo nu. Woabia wò be nàkɔ ɖe edzi hafi woaɖe nu ayi nugbegblẽƒe alo atutu nu ɖa. Nuŋɔŋlɔ siwo wu %count la wɔa dɔ le megbe.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tia</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Ɖeɖe ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Woɖo ɖa tso</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Tia %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>haɖe o</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ŋkɔ meli o)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ŋɔŋlɔ gbãtɔ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Le lalam</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Edzila ɣlɛ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Wolé ɖi: nu yeye si woɖo ɖa</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ʋɛsiɔn %version le lalam</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ʋɛsiɔn %version le edzi yim</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Ŋɔŋlɔ gbãtɔ, ʋɛsiɔn %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Woɖe ʋɛsiɔn %version ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Woɖo ɖi na %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>adrɛs meli o</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>womeŋlɔe ɖi o</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Naneke mewɔ ɖeka kple tsotsonu siawo o.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ɖe wo katã fia</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Nyatakaka aɖeke meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Le axa ɖesiaɖe dzi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Ɖe nuŋɔŋlɔ %count fia le axa ɖesiaɖe dzi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Nu si woɖo ɖa ƒe adrɛs kple mɔfiala tso dzodzro ƒe nuxlẽƒe si mele afi sia o me: dzidzimeŋɔŋlɔ la gblɔ be "womeŋlɔe ɖi o".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adrɛs kple mɔfiala la nye esiwo dzodzro la ŋlɔ ɖi na nuŋɔŋlɔ la (nulélé ɖi le eɖokui si ŋlɔa wo ɖi ɣesiaɣi; ɖeɖe ɖe dutoƒo kple wɔwɔ le afi siwo woʋu wo le ko), abe ale si eƒe adzɔgbeɖoɖowo dzraa wo ɖo ene.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: nuŋɔŋlɔ %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Tutuɖa ɖea nuŋɔŋlɔwo ɖa tegbee, kple woƒe ʋɛsiɔnwo kple gɔmeɖeɖewo katã. Womate ŋu atrɔe o.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Nuŋɔŋlɔwo yina nugbegblẽƒe, afi si woate ŋu agbugbɔ wo ali tso.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Wodzroa nuŋɔŋlɔ ɖesiaɖe me ɖe wò ŋutɔ ƒe mɔɖeɖewo nu; nuŋɔŋlɔ si te nuŋɔŋlɔ bubuwo le la, wogblẽnɛ ɖi nenema (ɖee ɖa le nyatakaka ƒe ɖoɖo me). Woabia wò be nàɖo kpe edzi be wòe.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Esia wɔa dɔ le megbe: eƒe ŋgɔyiyi ƒe axa ʋuna, eye woɖea nuŋɔŋlɔ ɖesiaɖe ƒe nyaʋiʋli fiana ne ewu enu.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Nuŋɔŋlɔ siwo wotia</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>kple %count bubuwo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ɖe asi le eŋu</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Womewɔ naneke o</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Nuka ta: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Dɔwɔwɔ la gale edzi yim le megbe.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Eƒe ŋgɔyiyi</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Dɔwɔwɔ si le megbe la mewɔ dɔ o: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wowɔe nu</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wogbe</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mewɔ dɔ o</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Le nuŋɔŋlɔ ɖesiaɖe nu</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Nuŋɔŋlɔ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nyaʋiʋli</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Nu ka ŋuti</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Trɔ yi ŋkɔŋɔŋlɔ la gbɔ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ɖoɖowɔwɔ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Womewɔ naneke kura o</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kɔ ɖe edzi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Tia dɔwɔwɔ aɖe.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Tia nuŋɔŋlɔ ɖeka ya teti.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Mègatia nuŋɔŋlɔ siwo wu 1000 zi ɖeka o.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Gblɔ nu si ta wolé nuŋɔŋlɔwo ɖi.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Tia akpa la.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Tia nɔnɔme la.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Womete ŋu xlẽ nuŋɔŋlɔgbalẽ la o.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nyatakaka yeyewo</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Womete ŋu xlẽ xexlẽmewo o: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Wolé ɖi hena dzodzro</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Yeye egbe</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Wometi ɖoɖo ɖe nulélé ɖi hena dzodzro ŋu haɖe o (ŋgɔyiyi ƒe afɔɖeɖe 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Nyatakaka yeyewo katã</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Mɔ meli na wò be nàwɔ nyatakaka dzikpɔkpɔ ƒe dɔwɔwɔwo o (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Nyatakaka dzikpɔkpɔ ƒe dɔwɔwɔ la mede blibo o: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Nyatakaka dzikpɔkpɔ: %action le nuwo %count dzi</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done le nu %total me: %ok wowɔe nu, %refused wogbe, %failed mewɔ dɔ o</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok wowɔe nu, %refused wogbe, %failed mewɔ dɔ o</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Megali o.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Teƒe aɖeke mele esi o (womeɖee ɖe dutoƒo o).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Mɔ meli na wò be nàɣlae o (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Mɔ meli na wò be nàɖee afia o (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Woɣlae xoxo.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Womeɣlae o.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Woɣlae.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Woɖee fia.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ele nugbegblẽƒe: ɖe nuwo le eme alo gbugbɔe ali tso afi ma.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ŋɔŋlɔ gbãtɔ si womeɖe ɖe dutoƒo kpɔ o la mate ŋu ayi nugbegblẽƒe o: tutui ɖa.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Mɔ meli na wò be nàtutui ɖa o (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Wotutui ɖa.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Mɔ meli na wò be nàɖee ɖa o (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Nuŋɔŋlɔ bubuwo le ete: ɖee ɖa le nyatakaka ƒe ɖoɖo me, afi si woŋlɔ wo ɖe.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Womeɖee ɖa o (dɔwɔwɔmɔ aɖe ate ŋu alé eɖeɖeɖa la ɖi).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Woɖe yi nugbegblẽƒe.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Akpa la meli o.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ele akpa sia me xoxo.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Mɔ meli na wò be nàna akpa sia o (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Womena akpa la o.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Wona akpa la.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Nɔnɔme la meli o.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ele nɔnɔme sia me xoxo.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Mɔ meli na wò be nàna nɔnɔme sia o (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Womena nɔnɔme la o (dɔwɔwɔmɔ aɖe ate ŋu alé tɔtrɔ la ɖi).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Wona nɔnɔme la.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Dɔwɔwɔ ma tɔgbi meli o.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Wometi ɖoɖo ɖe nulélé ɖi hena dzodzro ŋu o (ŋgɔyiyi ƒe afɔɖeɖe 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Gblɔ nu si ta wolée ɖi.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Wolée ɖi xoxo.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Mɔ meli na wò be nàlée ɖi o (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Wometsɔ nulélé ɖi la ɖo eŋu o (dɔwɔwɔmɔ aɖe ate ŋu alé tɔtrɔ la ɖi).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Wolée ɖi.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Womelée ɖi o.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Mɔ meli na wò be nàɖe asi le eŋu o (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Womeɖe asi le nulélé ɖi la ŋu o (dɔwɔwɔmɔ aɖe ate ŋu alé tɔtrɔ la ɖi).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Woɖe asi le eŋu; wogaɣlae ko: mɔ meli na wò be nàɖee afia o (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Woɖe asi le eŋu.</translation>
     </message>
 </context>
 <context>

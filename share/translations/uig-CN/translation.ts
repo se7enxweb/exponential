@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ئورنىتىلمىغا ھۆججەت شەكلىدە ساقلانغان ئۆزگىرىشلەر: ئۇلارنىڭ ھالىتى، ئىجرالار، ئىجرا قىلىش ۋە قايتۇرۇش.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>يېقىنقى مەزمۇن</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ئەڭ يېڭى مەزمۇن، تەكشۈرۈش ئۈچۈن توختىتىلغانلار ۋە تاللانغانلار ئۈستىدىكى مەشغۇلاتلار.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>تور بېكەتنىڭ ستاتىك نۇسخىسىنى GitHub Pages ياكى خالىغان git ساھىبخانىسىغا ئېلان قىلىڭ.</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>ئىجرانى باشلىغىلى بولمىدى.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ئۆزگەرتىلگەن</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>قۇرۇلغان</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ئىسىم</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>تىپ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بۆلەك</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>قۇرغۇچى</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>يېقىنقى مەزمۇن</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>پۈتكۈل تور بېكەتتە يېقىندا قۇرۇلغان ۋە ئۆزگەرتىلگەن مەزمۇنلار، ئەڭ يېڭىسى ئالدىدا: زىيارەتچىلەر يوللىغانلار، تەكشۈرۈش ئۈچۈن توختىتىلغانلار ۋە ئېلان قىلىنىشنى كۈتۈۋاتقان ئارگىناللار. تۈرلەرنى تاللاپ، ئۇلارنى قويۇپ بېرىڭ، توختىتىڭ، يوشۇرۇڭ، كۆرسىتىڭ، چىقىرىۋېتىڭ ياكى باشقا بۆلەك ياكى ھالەتكە يۆتكەڭ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>تىزىملىكنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>تەكشۈرۈش ئۈچۈن توختىتىش تېخى تەڭشەلمىگەن، شۇڭا ھېچنېمە توختىتىلمايدۇ ۋە توختىتىش مەشغۇلاتلىرى تەمىنلەنمەيدۇ. 6.0.15-review-hold يېڭىلاش قەدىمى ئۇنى تەڭشەيدۇ: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>تىزىملىكنى سۈزۈش</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>باشلىنىشى</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ئاخىرى</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>چېسلا</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>قۇرۇلغان (تۇنجى ئېلان قىلىنغان)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ھەممىسى</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ئېلان قىلىنغان</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ئارگىنال، ھېچقاچان ئېلان قىلىنمىغان</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>كۈتۈۋاتىدۇ (تەستىق ياكى بىر چېسلانى كۈتۈۋاتىدۇ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ئەخلەت چېلىكىدە</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>تەكشۈرۈش ئۈچۈن توختىتىلغان</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>توختىتىلغان</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>توختىتىلمىغان</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>يوشۇرۇن</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>كۆرۈنىدىغان</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>يوللانغان ۋاقىت</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ھەر قانداق تور بېكەت زىيارىتى</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>پەقەت تەپتىش خاتىرىلىگەنلىرىلا.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ھازىر: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>كىرىش ئىسمى ياكى ئىشلەتكۈچى كىملىكى.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>سۈز</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>سۈزگۈچلەرنى تازىلاش</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>تۈرلەر</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count دىن %from - %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>تۈر يوق</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms مىللىسېكۇنتتا ئوقۇلدى)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>تاللانغان تۈرلەر ئۈستىدىكى مەشغۇلاتلار</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>بۇ بەتتىكى ھەممىنى تاللا</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count تاللاندى</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>مەشغۇلات</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>بىر مەشغۇلات تاللاڭ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>توختىتىشنى بىكار قىلىش</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>تەكشۈرۈش ئۈچۈن توختىتىش</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>يوشۇر</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>كۆرسەت</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ئەخلەت چېلىكىگە يۆتكە</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ئۆچۈر</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>بۆلەك تەقسىملە</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ھالەت تەقسىملە</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>سەۋەب</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>توختىتىش ئۈچۈن زۆرۈر؛ توختىتىش بىلەن بىللە ۋە تەپتىشتە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>بىر بۆلەك تاللاڭ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>بىر ھالەت تاللاڭ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>تاللانغانلارغا ئىجرا قىل</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ھەر بىر تۈر سىزنىڭ ئۆز ھوقۇقلىرىڭىزغا ئاساسەن تەكشۈرۈلىدۇ. ئەخلەت چېلىكىگە يۆتكەش ۋە ئۆچۈرۈش جەزملەشنى تەلەپ قىلىدۇ. %count دىن ئارتۇق تۈر ئارقا سۇپىدا ئىجرا بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>تاللا</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ئېلان قىلىش</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>يوللانغان ئورۇن</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name نى تاللا</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>تېخى ئەمەس</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ئىسمى يوق)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>كىملىك %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ئارگىنال</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>كۈتۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ئاتا تۈرى تەرىپىدىن يوشۇرۇلغان</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>توختىتىلغان: يېڭى يوللانما</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version-نەشر كۈتۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version-نەشر تەھرىرلىنىۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ئارگىنال، %version-نەشر</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version-نەشر ئېلان قىلىندى</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date غا ئورۇنلاشتۇرۇلغان</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ئادرېس يوق</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>خاتىرىلەنمىگەن</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>بۇ سۈزگۈچلەرگە ماس كېلىدىغان ھېچنېمە يوق.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ھەممىنى كۆرسەت</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>تېخى ھېچقانداق مەزمۇن يوق.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ھەر بەتتە</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ھەر بەتتە %count تۈر كۆرسەت.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>يوللانمىنىڭ ئادرېسى ۋە توركۆرگۈچى تەپتىش ئىندېكسىدىن كېلىدۇ، ئۇ بۇ يەردە يوق: ئىستوندا "خاتىرىلەنمىگەن" دەپ كۆرسىتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ئادرېس ۋە توركۆرگۈچ تەپتىش بۇ تۈر ئۈچۈن خاتىرىلىگەنلەردۇر (ئاپتوماتىك توختىتىش ئۇلارنى ھەمىشە خاتىرىلەيدۇ؛ ئېلان قىلىش ۋە قۇرۇش پەقەت قوزغىتىلغان يەردىلا)، ئۇنىڭ مەخپىيەت تەڭشىكى ساقلىغان شەكىلدە.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count تۈر</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ئۆچۈرۈش تۈرلەرنى بارلىق نەشرلىرى ۋە تەرجىمىلىرى بىلەن بىللە مەڭگۈلۈك چىقىرىۋېتىدۇ. ئەسلىگە كەلتۈرگىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>تۈرلەر ئەخلەت چېلىكىگە كىرىدۇ، ئۇ يەردىن ئەسلىگە كەلتۈرگىلى بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ھەر بىر تۈر سىزنىڭ ئۆز ھوقۇقلىرىڭىزغا ئاساسەن تەكشۈرۈلىدۇ؛ تارماق تۈرلىرى بار تۈر ئەسلى پېتى قالىدۇ (ئۇنى مەزمۇن قۇرۇلمىسىدا چىقىرىۋېتىڭ). سىزدىن ئۆزىڭىز ئىكەنلىكىڭىزنى دەلىللەش تەلەپ قىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>بۇ ئارقا سۇپىدا ئىجرا بولىدۇ: ئۇنىڭ ئىلگىرىلەش بېتى ئېچىلىدۇ، تاماملانغاندا ھەر بىر تۈرنىڭ نەتىجىسى كۆرسىتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>تاللانغان تۈرلەر</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ۋە يەنە %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ۋاز كەچ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ھېچنېمە قىلىنمىدى</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>سەۋەب: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>مەشغۇلات تېخى ئارقا سۇپىدا ئىجرا بولۇۋاتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ئۇنىڭ ئىلگىرىلىشى</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ئارقا سۇپا مەشغۇلاتى مەغلۇپ بولدى: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تامام</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رەت قىلىندى</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ھەر بىر تۈر</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>تۈر</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نەتىجە</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>سەۋەبى</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>تىزىملىككە قايتىش</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ئورنىتىش</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ھېچنېمە قىلىنمىدى</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>جەزملە</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>بىر مەشغۇلات تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>كەم دېگەندە بىر تۈر تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>بىر قېتىمدا ئەڭ كۆپ بولغاندا 1000 تۈر تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>تۈرلەرنىڭ نېمە ئۈچۈن توختىتىلغانلىقىنى يېزىڭ.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>بۆلەكنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ھالەتنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>جەدۋەلنى ئوقۇغىلى بولمىدى.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>يېقىنقى مەزمۇن</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>سانلارنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>تەكشۈرۈش ئۈچۈن توختىتىلغان</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>بۈگۈنكى يېڭى</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>تەكشۈرۈش ئۈچۈن توختىتىش تېخى تەڭشەلمىگەن (6.0.15-review-hold يېڭىلاش قەدىمى).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>بارلىق يېقىنقى مەزمۇن</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>سىزنىڭ نازارەت مەشغۇلاتلىرىنى ئىجرا قىلىش ھوقۇقىڭىز يوق (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>نازارەت مەشغۇلاتى تاماملانمىدى: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>نازارەت: %count ئوبيېكتتا %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total ئوبيېكتتىن %done: %ok تامام، %refused رەت قىلىندى، %failed مەغلۇپ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok تامام، %refused رەت قىلىندى، %failed مەغلۇپ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ئۇ ئەمدى مەۋجۇت ئەمەس.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ئۇنىڭ ئورنى يوق (ئېلان قىلىنمىغان).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>سىزنىڭ ئۇنى يوشۇرۇش ھوقۇقىڭىز يوق (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>سىزنىڭ ئۇنى كۆرسىتىش ھوقۇقىڭىز يوق (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ئۇ ئاللىقاچان يوشۇرۇلغان.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ئۇ يوشۇرۇلمىغان.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>يوشۇرۇلدى.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>كۆرسىتىلدى.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ئۇ ئەخلەت چېلىكىدە: ئۇ يەردە تازىلاڭ ياكى ئەسلىگە كەلتۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ھېچقاچان ئېلان قىلىنمىغان ئارگىنال ئەخلەت چېلىكىگە كىرەلمەيدۇ: ئۇنى ئۆچۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>سىزنىڭ ئۇنى ئۆچۈرۈش ھوقۇقىڭىز يوق (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ئۆچۈرۈلدى.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>سىزنىڭ ئۇنى چىقىرىۋېتىش ھوقۇقىڭىز يوق (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ئۇنىڭ تارماق تۈرلىرى بار: ئۇلار تىزىلغان مەزمۇن قۇرۇلمىسىدا چىقىرىۋېتىڭ.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ئۇ چىقىرىۋېتىلمىدى (بىر خىزمەت ئېقىمى چىقىرىۋېتىشنى توختىتىپ تۇرغان بولۇشى مۇمكىن).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ئەخلەت چېلىكىگە يۆتكەلدى.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>بۆلەك مەۋجۇت ئەمەس.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ئۇ ئاللىقاچان بۇ بۆلەكتە.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>سىزنىڭ بۇ بۆلەكنى تەقسىملەش ھوقۇقىڭىز يوق (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>بۆلەك تەقسىملەنمىدى.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>بۆلەك تەقسىملەندى.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ھالەت مەۋجۇت ئەمەس.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ئۇ ئاللىقاچان بۇ ھالەتتە.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>سىزنىڭ بۇ ھالەتنى تەقسىملەش ھوقۇقىڭىز يوق (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ھالەت تەقسىملەنمىدى (بىر خىزمەت ئېقىمى ئۆزگەرتىشنى توختىتىپ تۇرغان بولۇشى مۇمكىن).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ھالەت تەقسىملەندى.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>بۇنداق مەشغۇلات يوق.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>تەكشۈرۈش ئۈچۈن توختىتىش تەڭشەلمىگەن (6.0.15-review-hold يېڭىلاش قەدىمى).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ئۇنىڭ نېمە ئۈچۈن توختىتىلغانلىقىنى يېزىڭ.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ئۇ ئاللىقاچان توختىتىلغان.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>سىزنىڭ ئۇنى توختىتىش ھوقۇقىڭىز يوق (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>توختىتىش قويۇلمىدى (بىر خىزمەت ئېقىمى ئۆزگەرتىشنى توختىتىپ تۇرغان بولۇشى مۇمكىن).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>توختىتىلدى.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ئۇ توختىتىلمىغان.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>سىزنىڭ ئۇنى قويۇپ بېرىش ھوقۇقىڭىز يوق (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>توختىتىش بىكار قىلىنمىدى (بىر خىزمەت ئېقىمى ئۆزگەرتىشنى توختىتىپ تۇرغان بولۇشى مۇمكىن).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>قويۇپ بېرىلدى؛ تېخىچە يوشۇرۇن: سىزنىڭ ئۇنى كۆرسىتىش ھوقۇقىڭىز يوق (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>قويۇپ بېرىلدى.</translation>
     </message>
 </context>
 <context>

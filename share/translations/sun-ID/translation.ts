@@ -15151,6 +15151,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <translation>Parobahan pamasangan anu disimpen salaku file: kaayaanana, jalananana, ngajalankeun sareng mulangkeun.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Eusi panganyarna</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eusi panganyarna, naon nu ditahan pikeun dipariksa, jeung aksi dina pilihan.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Terbitkeun salinan statis tina hiji situs ka GitHub Pages atanapi host git mana waé.</translation>
     </message>
@@ -80589,6 +80597,670 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Jalanan teu tiasa dimimitian.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Dirobih</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dijieun</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ngaran</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Séksi</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Nu nyieun</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Eusi panganyarna</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Eusi nu panganyarna dijieun jeung dirobih di sakumna situs, nu panganyarna heula: naon nu dikirim ku nu nganjang, naon nu ditahan pikeun dipariksa, draf nu ngantosan diterbitkeun. Pilih unsur pikeun ngaleupaskeun, nahan, nyumputkeun, némbongkeun, ngaluarkeun atawa mindahkeun kana séksi atawa kaayaan séjén.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Daptar teu bisa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Tahanan pamariksaan can disetél, jadi teu aya nu ditahan sarta aksi tahanan teu ditawarkeun. Léngkah ngamutahirkeun 6.0.15-review-hold nyetélna: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Saring daptar</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ti</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nepi ka</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tanggal</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Dijieun (mimiti diterbitkeun)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sadayana</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Diterbitkeun</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Draf, can kungsi diterbitkeun</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Nuju ngantosan (ngantosan persetujuan atawa tanggal)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Dina tong runtah</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ditahan pikeun dipariksa</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Ditahan</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Teu ditahan</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Disumputkeun</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Katingali</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Dikirim dina</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Aksés situs mana waé</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ngan naon nu dicatet ku audit.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ayeuna: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Login atawa ID pamaké.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Saring</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Hapus saringan</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Unsur</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nepi ka %to ti %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Euweuh unsur</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(dibaca dina %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Aksi pikeun unsur nu dipilih</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Pilih sadayana di kaca ieu</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count dipilih</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksi</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Pilih aksi</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Leupaskeun tahanan</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Tahan pikeun dipariksa</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Sumputkeun</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Témbongkeun</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Pindahkeun ka tong runtah</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Hapus</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Tetepkeun séksi</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Tetepkeun kaayaan</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Alesan</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Diperyogikeun pikeun nahan; disimpen babarengan jeung tahanan sarta dina audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Pilih séksi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kaayaan</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Pilih kaayaan</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Larapkeun ka nu dipilih</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Unggal unsur dipariksa dumasar idin anjeun sorangan. Mindahkeun ka tong runtah jeung ngahapus ménta konfirmasi anjeun. Leuwih ti %count unsur dijalankeun di latar tukang.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Pilih</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikasi</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Dikirim ti</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Pilih %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>can</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(teu aya ngaran)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draf</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Nuju ngantosan</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Disumputkeun ku indungna</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Ditahan: kiriman anyar</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Vérsi %version nuju ngantosan</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Vérsi %version keur digarap</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Draf, vérsi %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Vérsi %version diterbitkeun</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Dijadwalkeun pikeun %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>euweuh alamat</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>teu dicatet</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Euweuh nu cocog jeung saringan ieu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Témbongkeun sadayana</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Can aya eusi.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per kaca</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Témbongkeun %count unsur per kaca.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Alamat jeung browser hiji kiriman asalna tina indéks audit, nu teu sadia di dieu: kolomna nyebutkeun "teu dicatet".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Alamat jeung browser téh nu dicatet ku audit pikeun unsur éta (tahanan otomatis salawasna nyatetna; nerbitkeun jeung nyieun ngan lamun diaktipkeun), sakumaha nu dijaga ku setélan privasina.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count unsur</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ngahapus ngaluarkeun unsur-unsur salamina, babarengan jeung sakabéh vérsi jeung tarjamahanana. Ieu teu bisa dibolaykeun.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Unsur-unsur asup ka tong runtah, ti mana bisa dipulihkeun.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Unggal unsur dipariksa dumasar idin anjeun sorangan; unsur nu boga sub-unsur ditinggalkeun kitu waé (kaluarkeun dina struktur eusi). Anjeun bakal dipénta mastikeun yén éta téh anjeun.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ieu dijalankeun di latar tukang: kaca kamajuanana dibuka, sarta hasil per unsur dipintonkeun lamun geus réngsé.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Unsur nu dipilih</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>jeung %count deui</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Bolaykeun</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Euweuh nu dilakukeun</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Alesan: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Aksi masih jalan di latar tukang.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Kamajuanana</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Aksi latar tukang gagal: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Réngsé</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ditolak</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per unsur</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Unsur</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hasil</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Naha</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Balik deui ka daptar</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Panyetélan</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Teu aya nu dipigawé</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Konfirmasi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Pilih aksi.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Pilih sahenteuna hiji unsur.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Pilih paling loba 1000 unsur sakaligus.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sebutkeun naha unsur-unsur ditahan.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Pilih séksina.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Pilih kaayaanana.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulirna teu bisa dibaca.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Eusi panganyarna</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Jumlahna teu bisa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ditahan pikeun dipariksa</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Anyar poé ieu</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tahanan pamariksaan can disetél (léngkah ngamutahirkeun 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Sakabéh eusi panganyarna</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Anjeun teu meunang ngajalankeun aksi moderasi (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Aksi moderasi teu lengkep: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasi: %action dina %count objék</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ti %total objék: %ok réngsé, %refused ditolak, %failed gagal</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok réngsé, %refused ditolak, %failed gagal</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Éta geus teu aya deui.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Éta teu boga lokasi (can diterbitkeun).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Anjeun teu meunang nyumputkeunana (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Anjeun teu meunang némbongkeunana (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Éta geus disumputkeun.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Éta teu disumputkeun.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Disumputkeun.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Ditémbongkeun.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Éta aya dina tong runtah: kosongkeun atawa pulihkeun di dinya.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Draf nu can kungsi diterbitkeun teu bisa asup ka tong runtah: hapus waé.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Anjeun teu meunang ngahapusna (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Dihapus.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Anjeun teu meunang ngaluarkeunana (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Éta boga sub-unsur: kaluarkeun dina struktur eusi, tempat sub-unsur éta didaptarkeun.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Éta teu dikaluarkeun (alur kerja meureun nahan pangaluaranana).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Dipindahkeun ka tong runtah.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Séksina teu aya.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Éta geus aya dina séksi ieu.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Anjeun teu meunang netepkeun séksi ieu (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Séksina teu ditetepkeun.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Séksi ditetepkeun.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Kaayaanana teu aya.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Éta geus aya dina kaayaan ieu.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Anjeun teu meunang netepkeun kaayaan ieu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Kaayaanana teu ditetepkeun (alur kerja meureun nahan parobahanana).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Kaayaan ditetepkeun.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Euweuh aksi kitu.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tahanan pamariksaan can disetél (léngkah ngamutahirkeun 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sebutkeun naha éta ditahan.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Éta geus ditahan.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Anjeun teu meunang nahanana (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Tahanan teu dipasang (alur kerja meureun nahan parobahanana).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Ditahan.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Éta teu ditahan.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Anjeun teu meunang ngaleupaskeunana (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Tahanan teu dileupaskeun (alur kerja meureun nahan parobahanana).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Dileupaskeun; masih disumputkeun: anjeun teu meunang némbongkeunana (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Dileupaskeun.</translation>
     </message>
 </context>
 <context>

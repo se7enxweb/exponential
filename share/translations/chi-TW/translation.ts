@@ -15149,6 +15149,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>以檔案形式保存的安裝變更：其狀態、執行紀錄、執行與回復。</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>最新內容</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>最新的內容、暫扣待審的內容，以及對所選內容的操作。</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>將網站的靜態副本發佈到 GitHub Pages 或任何 git 主機。</translation>
     </message>
@@ -80579,6 +80587,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>無法啟動執行。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>修改時間</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>建立時間</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>類別</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>區段</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>建立者</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新內容</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>整個網站最近建立和修改的內容，最新的在前：訪客提交的內容、暫扣待審的內容、等待發佈的草稿。選取項目以解除暫扣、暫扣、隱藏、顯示、移除，或將其移到另一個區段或狀態。</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>無法讀取清單：%problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>審核暫扣尚未設定，因此沒有任何內容被暫扣，也不提供暫扣操作。升級步驟 6.0.15-review-hold 會設定它：./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>篩選清單</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>從</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>到</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日期</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>建立時間（首次發佈）</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>已發佈</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>草稿，從未發佈</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>待處理（等待核准或日期）</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>在垃圾桶中</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>暫扣待審</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>已暫扣</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>未暫扣</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>隱藏</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>提交於</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>任何網站存取</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>僅限稽核記錄的內容。</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>目前：%name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>登入名稱或使用者 ID。</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>篩選</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>清除篩選條件</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>第 %from 至 %to 筆，共 %count 筆</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>沒有項目</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>（讀取耗時 %ms 毫秒）</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>對所選項目的操作</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>全選此頁</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>已選取 %count 個</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>選擇操作</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>解除暫扣</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>暫扣待審</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>隱藏</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>移到垃圾桶</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>刪除</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>指派區段</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>指派狀態</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>原因</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>暫扣時必填；隨暫扣一起保存並記入稽核。</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>選擇區段</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>選擇狀態</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>套用至所選項目</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>每個項目都會依照您自己的權限進行檢查。移到垃圾桶和刪除需要您確認。超過 %count 個項目時將在背景執行。</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>選取</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>發佈</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>提交來源</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>選取 %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>尚未</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>（無名稱）</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>草稿</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>待處理</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>因上層節點而隱藏</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>已暫扣：新提交</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>版本 %version 待處理</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>版本 %version 編輯中</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>草稿，版本 %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>版本 %version 已發佈</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>排定於 %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>無位址</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>未記錄</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>沒有符合這些篩選條件的內容。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>顯示全部</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>尚無內容。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>每頁</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>每頁顯示 %count 個項目。</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>提交的位址和瀏覽器來自稽核索引，而此處無法使用該索引：該欄顯示「未記錄」。</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>位址和瀏覽器是稽核為該項目記錄的資訊（自動暫扣一律會記錄；發佈和建立僅在開啟時記錄），並依其隱私設定保留。</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action：%count 個項目</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>刪除會永久移除這些項目及其所有版本和翻譯。此操作無法復原。</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>這些項目將進入垃圾桶，可從那裡還原。</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>每個項目都會依照您自己的權限進行檢查；帶有子項目的項目將保持原樣（請在內容結構中移除它）。系統會要求您驗證身分。</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>此操作在背景執行：將開啟其進度頁面，完成後會顯示每個項目的結果。</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>所選項目</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>以及另外 %count 個</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>未執行任何操作</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action（%extra）</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>原因：%reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>該操作仍在背景執行。</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>其進度</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>背景操作失敗：%error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完成</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>已拒絕</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>依項目</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>原因</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>返回清單</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>未執行任何操作</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>請選擇一個操作。</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>請至少選取一個項目。</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>每次最多選取 1000 個項目。</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>請說明暫扣這些項目的原因。</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>請選擇區段。</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>請選擇狀態。</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>無法讀取表單。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>最新內容</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>無法讀取計數：%problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>暫扣待審</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>今日新增</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>審核暫扣尚未設定（升級步驟 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>所有最新內容</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>您不能執行審核操作（moderation/act）。</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>審核操作未完成：%errors。</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>審核：對 %count 個物件執行 %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total 個物件：%ok 個完成，%refused 個被拒絕，%failed 個失敗</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok 個完成，%refused 個被拒絕，%failed 個失敗</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>它已不存在。</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>它沒有位置（未發佈）。</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>您不能隱藏它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>您不能顯示它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>它已經被隱藏。</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>它未被隱藏。</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>已隱藏。</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>已顯示。</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>它在垃圾桶中：請在那裡清空或還原它。</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>從未發佈的草稿不能移到垃圾桶：請刪除它。</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>您不能刪除它（content/remove）。</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>已刪除。</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>您不能移除它（content/remove）。</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>它有子項目：請在列出子項目的內容結構中移除它。</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>它未被移除（可能有工作流程暫緩了移除）。</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>已移到垃圾桶。</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>該區段不存在。</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>它已在此區段中。</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>您不能指派此區段（section/assign）。</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>未指派區段。</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>已指派區段。</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>該狀態不存在。</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>它已處於此狀態。</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>您不能指派此狀態（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>未指派狀態（可能有工作流程暫緩了此變更）。</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>已指派狀態。</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>沒有此操作。</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>審核暫扣尚未設定（升級步驟 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>請說明暫扣的原因。</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>它已被暫扣。</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>您不能暫扣它（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>未能暫扣（可能有工作流程暫緩了此變更）。</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>已暫扣。</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>它未被暫扣。</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>您不能解除暫扣（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>未能解除暫扣（可能有工作流程暫緩了此變更）。</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>已解除暫扣；仍處於隱藏狀態：您不能顯示它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>已解除暫扣。</translation>
     </message>
 </context>
 <context>

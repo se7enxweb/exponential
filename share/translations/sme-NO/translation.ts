@@ -15151,6 +15151,14 @@ Muitte: Páhkaid sajáiduhttin ii sihkkojuvvo.</translation>
         <translation>Installašuvnna rievdadusat fiilan seailluhuvvon: sin dilli, vuodjimat, vuodjin ja ruovttoluotta máhcaheapmi.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Ođđa sisdoallu</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ođđaseamos sisdoallu, mii lea doallojuvvon guorahallama várás, ja doaimmat válljemiin.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Almmut neahttabáikki stáhtalaš kopiija GitHub Pages:ii dahje makkár beare git-guossoheaddjái.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Vuodjima ii sáhttán álggahit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Rievdaduvvon</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ráhkaduvvon</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namma</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Luohkká</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Oassi</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Ráhkadeaddji</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ođđa sisdoallu</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Olles neahttabáikki maŋimusat ráhkaduvvon ja rievdaduvvon sisdoallu, ođđaseamos vuosttažin: maid galledeaddjit sádde, mii lea doallojuvvon guorahallama várás, ja luonosat mat vuordet almmuheami. Vállje elemeanttaid vai luoittát, doalat, čiehkat, čájehat, sihkut dahje sirdát daid eará oassái dahje dillái.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Listtu ii sáhttán lohkat: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Guorahallandoallu ii leat vel ásahuvvon, nu ahte mihkkege ii dollo ja doallodoaimmat eai fállojuvvo. Ođasmahttinlávki 6.0.15-review-hold ásaha dan: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sillo listtu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Rájes</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gitta</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Beaivi</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Ráhkaduvvon (vuosttaš háve almmuhuvvon)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Buot</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Dilli</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Almmuhuvvon</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Luonos, ii goassege almmuhuvvon</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Vuordá (dohkkeheami dahje beaivvi)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Ruskalihttis</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Doallojuvvon guorahallama várás</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Doallojuvvon</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ii doallojuvvon</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Čihkosis</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Oidnosis</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Sáddejuvvon neahttabáikebeassamis</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Vaikko mii neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Dušše dat maid revišuvdna registrerii.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Dál: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Geavaheaddjinamma dahje geavaheaddji ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sillo</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Sihko sillut</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elemeanttat</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ii makkárge elemeanta</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lohkkojuvvon %ms ms:s)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Doaimmat válljejuvvon elemeanttaiguin</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Vállje buot dán siiddus</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count válljejuvvon</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Doaibma</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Vállje doaimma</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Luoitte doalu</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Doala guorahallama várás</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Čiehkat</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Čájehit</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Sirdde ruskalihttái</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Sihkkut</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Mearrit oasi</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Mearrit dili</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sivva</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Dárbbašuvvo doallama várás; vurkejuvvo doalu ja revišuvnna oktii.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Vállje oasi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dilli</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Vállje dili</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Geavat válljejuvvon elemeanttaide</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Juohke elemeanta dárkkistuvvo du iežat vuoigatvuođaid ektui. Ruskalihttái sirdin ja sihkkun gáibidit duođašteami. Eanet go %count elemeantta gieđahallojuvvojit duogážis.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vállje</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Almmuheapmi</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Sáddejuvvon čujuhusas</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Vállje %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ii vel</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ii nama)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Identifikáhtor %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Luonos</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Vuordá</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Čihkosis váhnenelemeantta dihte</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Doallojuvvon: ođđa sáddejupmi</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Veršuvdna %version vuordá</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Veršuvdna %version barggus</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Luonos, veršuvdna %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Veršuvdna %version almmuhuvvon</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Plánejuvvon: %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ii čujuhus</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ii registrerejuvvon</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Mihkkege ii heive dáidda silluide.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Čájet buot</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Sisdoallu ii leat vel.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Juohke siidui</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Čájet %count elemeantta juohke siidui.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Sáddejumi čujuhus ja neahttalohkki bohtet revišuvdnaindeavssas, mii ii leat olahanmuttus dáppe: čuoldda čállá "ii registrerejuvvon".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Čujuhus ja neahttalohkki leat dat maid revišuvdna registrerii elemeantta ovddas (automáhtalaš doallu registrere daid álo; almmuheapmi ja ráhkadeapmi dušše doppe gos dat lea čađahuvvon), nugo dan priváhtavuođaásahusat daid vurkejit.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elemeantta</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Sihkkun sihkku elemeanttaid agibeaivái, buot sin veršuvnnaiguin ja jorgalusaiguin. Dan ii sáhte máhcahit.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elemeanttat mannet ruskalihttái, gos daid sáhttá máhcahit.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Juohke elemeanta dárkkistuvvo du iežat vuoigatvuođaid ektui; elemeanta mas leat vuolleelemeanttat bázaha nugo lea (sihko dan sisdoallostruktuvrras). Don bivdojuvvot duođaštit ahte don leat don.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dát johtá duogážis: dan ovdáneapmesiidu rahpasa, ja boađus juohke elemeanttas čájehuvvo go dat lea gárvvis.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Válljejuvvon elemeanttat</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ja %count eanet</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Gaskkalduhttit</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Mihkkege ii dahkkojuvvon</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sivva: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Doaibma ain johtá duogážis.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Dan ovdáneapmi</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Duogášdoaibma ii lihkostuvvan: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Dahkkojuvvon</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hilgojuvvon</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ii lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Elemeantta mielde</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elemeanta</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Boađus</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Manne</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Ruovttoluotta listui</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ásaheapmi</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Mihkkege ii dahkkon</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Duođaš</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Vállje doaimma.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Vállje unnimusat ovtta elemeantta.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Vállje eanemusat 1000 elemeantta oktanaga.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Čálit manne elemeanttat dollojuvvojit.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Vállje oasi.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Vállje dili.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Skovi ii sáhttán lohkat.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ođđa sisdoallu</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Loguid ii sáhttán lohkat: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Doallojuvvon guorahallama várás</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ođđa odne</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Guorahallandoallu ii leat vel ásahuvvon (ođasmahttinlávki 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Buot ođđa sisdoallu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Dus ii leat lohpi čađahit moderašuvdnadoaimmaid (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderašuvdnadoaibma ii leat gárvvis: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderašuvdna: %action %count objeavttas</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total objeavttas: %ok dahkkojuvvon, %refused hilgojuvvon, %failed eai lihkostuvvan</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok dahkkojuvvon, %refused hilgojuvvon, %failed eai lihkostuvvan</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Dat ii gávdno šat.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Das ii leat báiki (ii almmuhuvvon).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Dus ii leat lohpi čiehkat dan (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Dus ii leat lohpi čájehit dan (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Dat lea juo čihkosis.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Dat ii leat čihkosis.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Čihkkojuvvon.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Čájehuvvon.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Dat lea ruskalihttis: guorrut dahje máhcat dan doppe.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Luonos mii ii leat goassege almmuhuvvon ii sáhte mannat ruskalihttái: sihko dan.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Dus ii leat lohpi sihkkut dan (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Sihkkojuvvon.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Dus ii leat lohpi váldit dan eret (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Das leat vuolleelemeanttat: sihko dan sisdoallostruktuvrras, gos dat leat listtuin.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Dat ii váldojuvvon eret (bargoproseassa sáhttá doallat eretváldima).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Sirdojuvvon ruskalihttái.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Oassi ii gávdno.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Dat lea juo dán oasis.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Dus ii leat lohpi mearridit dán oasi (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Oassi ii mearriduvvon.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Oassi mearriduvvon.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Dilli ii gávdno.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Dat lea juo dán dilis.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Dus ii leat lohpi mearridit dán dili (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Dilli ii mearriduvvon (bargoproseassa sáhttá doallat rievdadusa).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Dilli mearriduvvon.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Dakkár doaibma ii gávdno.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Guorahallandoallu ii leat ásahuvvon (ođasmahttinlávki 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Čálit manne dat dollojuvvo.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Dat lea juo doallojuvvon.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Dus ii leat lohpi doallat dan (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Doallu ii biddjojuvvon (bargoproseassa sáhttá doallat rievdadusa).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Doallojuvvon.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Dat ii leat doallojuvvon.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Dus ii leat lohpi luoitit dan (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Doallu ii luoitojuvvon (bargoproseassa sáhttá doallat rievdadusa).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Luitojuvvon; ain čihkosis: dus ii leat lohpi čájehit dan (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Luitojuvvon.</translation>
     </message>
 </context>
 <context>

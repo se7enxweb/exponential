@@ -15151,6 +15151,14 @@ Fanamarihana: Tsy hesorina ny fametrahan'ny fonosana.</translation>
         <translation>Fanovana ny fametrahana voatahiry ho rakitra: ny satany, ny fanatanterahana, fanatanterahana sy famerenana.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Votoaty vaovao</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ny votoaty vaovao indrindra, izay tazonina hodinihina, ary asa amin'ny voafidy.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Mamoaka dika statikan&apos;ny tranonkala amin&apos;ny GitHub Pages na mpampiantrano git hafa.</translation>
     </message>
@@ -80581,6 +80589,670 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>The run could not be started.</source>
         <translation>Tsy natomboka ny fanatanterahana.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Novaina</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Noforonina</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anarana</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kilasy</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Fizarana</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Mpamorona</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Votoaty vaovao</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ny votoaty vao haingana noforonina sy novaina amin'ny tranonkala manontolo, ny vaovao indrindra aloha: izay nalefan'ny mpitsidika, izay tazonina hodinihina, ireo drafitra miandry ny famoahana azy. Mifidiana singa hamotsorana, hitazonana, hanafenana, hanehoana, hanesorana na hamindrana azy any amin'ny fizarana na toetra hafa.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Tsy voavaky ny lisitra: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Mbola tsy voapetraka ny fitazonana hodinihina, ka tsy misy tazonina ary tsy atolotra ny asa fitazonana. Ny dingana fanavaozana 6.0.15-review-hold no mametraka azy: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sivano ny lisitra</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Manomboka</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hatramin'ny</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Daty</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Noforonina (navoaka voalohany)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Rehetra</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sata</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Navoaka</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Drafitra, mbola tsy navoaka mihitsy</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Miandry (miandry fankatoavana na daty)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Ao amin'ny fako</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tazonina hodinihina</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Tazonina</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Tsy tazonina</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Miafina</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Hita</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Nalefa tamin'ny</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Fidirana amin'ny tranonkala rehetra</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Izay voarakitry ny fanaraha-maso ihany.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ankehitriny: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Anarana fidirana na id mpampiasa.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sivano</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Esory ny sivana</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Singa</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hatramin'ny %to amin'ny %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tsy misy singa</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(novakiana tao anatin'ny %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Asa amin'ireo singa voafidy</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Fidio daholo izay amin'ity pejy ity</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count voafidy</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Asa</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Mifidiana asa</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Avoty ny fitazonana</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Tazony hodinihina</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Afeno</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Asehoy</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Afindra any amin'ny fako</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Fafao</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Omeo fizarana</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Omeo toetra</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Antony</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ilaina amin'ny fitazonana; tehirizina miaraka amin'ny fitazonana sy ao amin'ny fanaraha-maso.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Mifidiana fizarana</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toetra</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Mifidiana toetra</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Ampiharo amin'ireo voafidy</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Hamarinina araka ny fahazoan-dalanao manokana ny singa tsirairay. Ny famindrana any amin'ny fako sy ny famafana dia mangataka fanamafisana aminao. Mihoatra ny %count singa dia atao any ambadika.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fidio</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Famoahana</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Nalefa avy amin'ny</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Fidio %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>mbola tsy</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(tsy misy anarana)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Drafitra</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Miandry</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Nafenin'ny ray aman-dreniny</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Tazonina: fandefasana vaovao</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Dika %version miandry</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Dika %version eo am-panaovana</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Drafitra, dika %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Dika %version navoaka</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Voalahatra ho amin'ny %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>tsy misy adiresy</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>tsy voarakitra</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Tsy misy mifanaraka amin'ireo sivana ireo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Asehoy daholo</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Mbola tsy misy votoaty.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Isaky ny pejy</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Asehoy singa %count isaky ny pejy.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ny adiresy sy ny mpitety tranonkalan'ny fandefasana dia avy amin'ny fanondroana fanaraha-maso, izay tsy azo ampiasaina eto: ny tsanganana dia milaza hoe "tsy voarakitra".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ny adiresy sy ny mpitety tranonkala dia ireo voarakitry ny fanaraha-maso ho an'ilay singa (ny fitazonana ho azy dia mirakitra azy foana; ny famoahana sy ny famoronana raha alefa ihany), araka izay itahirizan'ny fikirana tsiambaratelony azy.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: singa %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ny famafana dia manala tanteraka ireo singa, miaraka amin'ny dikany sy fandikany rehetra. Tsy azo foanana izany.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Mankany amin'ny fako ireo singa, ka azo averina avy any.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Hamarinina araka ny fahazoan-dalanao manokana ny singa tsirairay; ny singa misy zana-tsinga dia avela toy izao (esory ao amin'ny rafitry ny votoaty izy). Hangatahina ianao hanamarina fa ianao tokoa izany.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Atao any ambadika izany: misokatra ny pejin'ny fandrosoany, ary aseho ny valiny isaky ny singa rehefa vita.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ireo singa voafidy</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>sy %count hafa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Foano</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Tsy nisy natao</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Antony: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Mbola mandeha any ambadika ny asa.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ny fandrosoany</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Tsy nahomby ny asa tany ambadika: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Vita</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nolavina</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Tsy nahomby</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Isaky ny singa</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Singa tokana</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Vokatra</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Nahoana</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Hiverina any amin'ny lisitra</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Fametrahana</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Tsy nisy vita</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Hamafiso</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Mifidiana asa.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Mifidiana singa iray farafahakeliny.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Mifidiana singa 1000 farafahabetsany indray mandeha.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Lazao ny antony itazonana ireo singa.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Fidio ny fizarana.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Fidio ny toetra.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Tsy voavaky ny taratasy fenoina.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Votoaty vaovao</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Tsy voavaky ny isa: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tazonina hodinihina</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Vaovao androany</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Mbola tsy voapetraka ny fitazonana hodinihina (ny dingana fanavaozana 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ny votoaty vaovao rehetra</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Tsy mahazo manatanteraka asa fanaraha-maso votoaty ianao (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Tsy feno ny asa fanaraha-maso votoaty: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Fanaraha-maso votoaty: %action amin'ny zavatra %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done amin'ny zavatra %total: %ok vita, %refused nolavina, %failed tsy nahomby</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok vita, %refused nolavina, %failed tsy nahomby</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Tsy misy intsony izy.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Tsy manana toerana izy (tsy navoaka).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Tsy mahazo manafina azy ianao (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Tsy mahazo maneho azy ianao (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Efa miafina izy.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Tsy miafina izy.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Nafenina.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Naseho.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ao amin'ny fako izy: foano na avereno avy any.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Drafitra tsy mbola navoaka mihitsy tsy afaka mankany amin'ny fako: fafao izy.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Tsy mahazo mamafa azy ianao (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Voafafa.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Tsy mahazo manala azy ianao (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Manana zana-tsinga izy: esory ao amin'ny rafitry ny votoaty izy, izay ahitana ny lisitr'ireo.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Tsy nesorina izy (mety misy fizotran'asa mitazona ny fanesorana).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Nafindra any amin'ny fako.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Tsy misy ilay fizarana.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Efa ao amin'ity fizarana ity izy.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Tsy mahazo manome ity fizarana ity ianao (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Tsy nomena ny fizarana.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Nomena ny fizarana.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Tsy misy ilay toetra.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Efa amin'ity toetra ity izy.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Tsy mahazo manome ity toetra ity ianao (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Tsy nomena ny toetra (mety misy fizotran'asa mitazona ny fanovana).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Nomena ny toetra.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tsy misy asa toy izany.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tsy voapetraka ny fitazonana hodinihina (ny dingana fanavaozana 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Lazao ny antony itazonana azy.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Efa tazonina izy.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Tsy mahazo mitazona azy ianao (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Tsy napetraka ny fitazonana (mety misy fizotran'asa mitazona ny fanovana).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Tazonina.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Tsy tazonina izy.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Tsy mahazo mamotsotra azy ianao (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Tsy navotsotra ny fitazonana (mety misy fizotran'asa mitazona ny fanovana).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Navotsotra; mbola miafina: tsy mahazo maneho azy ianao (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Navotsotra.</translation>
     </message>
 </context>
 <context>

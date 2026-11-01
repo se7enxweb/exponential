@@ -15092,6 +15092,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>שינויים בהתקנה שנשמרים כקבצים: מצבם, הריצות, הרצה והחזרה לאחור.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>תוכן אחרון</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>התוכן החדש ביותר, מה שמוחזק לבדיקה, ופעולות על בחירה.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>פרסום עותק סטטי של אתר ב-GitHub Pages או בכל מארח git.</translation>
     </message>
@@ -80613,6 +80621,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>לא ניתן היה להפעיל את הריצה.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>שונה</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>נוצר</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>מחלקה</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>מדור</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>יוצר</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>תוכן אחרון</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>התוכן שנוצר ושונה לאחרונה בכל האתר, מהחדש לישן: מה שגולשים שלחו, מה שמוחזק לבדיקה, טיוטות הממתינות לפרסום. בחרו פריטים כדי לשחרר, להחזיק, להסתיר, להציג, להסיר אותם או להעביר אותם למדור או למצב אחר.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>לא ניתן היה לקרוא את הרשימה: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ההחזקה לבדיקה עדיין לא הוגדרה, ולכן שום דבר אינו מוחזק ופעולות ההחזקה אינן מוצעות. שלב השדרוג 6.0.15-review-hold מגדיר אותה: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>סינון הרשימה</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מ-</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>תאריך</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>נוצר (פרסום ראשון)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>הכול</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>פורסם</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>טיוטה, מעולם לא פורסמה</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ממתין (לאישור או לתאריך)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>בסל המחזור</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>מוחזק לבדיקה</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>מוחזק</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>לא מוחזק</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>מוסתר</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>גלוי</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>נשלח בתאריך</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>כל גישת אתר</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>רק מה שנרשם ביומן הביקורת.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>כעת: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>שם כניסה או מזהה משתמש.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>סינון</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ניקוי מסננים</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>פריטים</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from עד %to מתוך %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>אין פריטים</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(נקרא תוך %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>פעולות על הפריטים שנבחרו</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>בחירת הכול בעמוד זה</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count נבחרו</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>פעולה</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>בחרו פעולה</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>שחרור ההחזקה</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>החזקה לבדיקה</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>הסתרה</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>הצגה</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>העברה לסל המחזור</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>מחיקה</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>הקצאת מדור</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>הקצאת מצב</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>סיבה</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>נדרשת להחזקה; נשמרת יחד עם ההחזקה וביומן הביקורת.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>בחרו מדור</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>בחרו מצב</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>החלה על הנבחרים</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>כל פריט נבדק מול ההרשאות שלכם. העברה לסל המחזור ומחיקה דורשות אישור. יותר מ-%count פריטים מבוצעים ברקע.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>בחירה</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>פרסום</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>נשלח מ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>בחירת %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>עדיין לא</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ללא שם)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>מזהה %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>טיוטה</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ממתין</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>מוסתר על ידי ההורה שלו</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>מוחזק: הגשה חדשה</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>גרסה %version ממתינה</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>גרסה %version בעבודה</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>טיוטה, גרסה %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>גרסה %version פורסמה</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>מתוזמן ל-%date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>אין כתובת</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>לא נרשם</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>אין פריטים התואמים למסננים אלה.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>הצגת הכול</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>עדיין אין תוכן.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>לכל עמוד</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>הצגת %count פריטים בכל עמוד.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>הכתובת והדפדפן של הגשה מגיעים מאינדקס יומן הביקורת, שאינו זמין כאן: בעמודה כתוב „לא נרשם”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>הכתובת והדפדפן הם אלה שיומן הביקורת רשם עבור הפריט (ההחזקה האוטומטית רושמת אותם תמיד; פרסום ויצירה רק היכן שהדבר הופעל), כפי שהגדרות הפרטיות שלו שומרות אותם.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count פריטים</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>מחיקה מסירה את הפריטים לצמיתות, עם כל הגרסאות והתרגומים שלהם. לא ניתן לבטל זאת.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>הפריטים עוברים לסל המחזור, שממנו ניתן לשחזר אותם.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>כל פריט נבדק מול ההרשאות שלכם; פריט עם פריטי משנה נשאר כפי שהוא (הסירו אותו במבנה התוכן). תתבקשו לאמת שזה אתם.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>הפעולה מתבצעת ברקע: עמוד ההתקדמות שלה נפתח, והתוצאה לכל פריט מוצגת בסיומה.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>הפריטים שנבחרו</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ועוד %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>לא בוצע דבר</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>סיבה: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>הפעולה עדיין מתבצעת ברקע.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ההתקדמות שלה</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>הפעולה ברקע נכשלה: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>בוצע</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>נדחה</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>נכשל</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>לכל פריט</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>פריט</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>תוצאה</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>מדוע</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>חזרה לרשימה</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>דבר לא בוצע</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>אישור</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>בחרו פעולה.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>בחרו לפחות פריט אחד.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>בחרו לכל היותר 1000 פריטים בכל פעם.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ציינו מדוע הפריטים מוחזקים.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>בחרו את המדור.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>בחרו את המצב.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>לא ניתן היה לקרוא את הטופס.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>תוכן אחרון</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>לא ניתן היה לקרוא את הספירות: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>מוחזק לבדיקה</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>חדש היום</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ההחזקה לבדיקה עדיין לא הוגדרה (שלב השדרוג 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>כל התוכן האחרון</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>אין לך הרשאה לבצע פעולות פיקוח (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>פעולת הפיקוח לא הושלמה: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>פיקוח: %action על %count אובייקטים</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done מתוך %total אובייקטים: %ok בוצעו, %refused נדחו, %failed נכשלו</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok בוצעו, %refused נדחו, %failed נכשלו</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>הוא כבר אינו קיים.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>אין לו מיקום (לא פורסם).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>אין לך הרשאה להסתיר אותו (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>אין לך הרשאה להציג אותו (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>הוא כבר מוסתר.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>הוא אינו מוסתר.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>הוסתר.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>הוצג.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>הוא נמצא בסל המחזור: רוקנו אותו או שחזרו אותו משם.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>טיוטה שמעולם לא פורסמה אינה יכולה לעבור לסל המחזור: מחקו אותה.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>אין לך הרשאה למחוק אותו (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>נמחק.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>אין לך הרשאה להסיר אותו (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>יש לו פריטי משנה: הסירו אותו במבנה התוכן, שם הם מופיעים.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>הוא לא הוסר (ייתכן שתהליך עבודה מעכב את ההסרה).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>הועבר לסל המחזור.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>המדור אינו קיים.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>הוא כבר נמצא במדור זה.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>אין לך הרשאה להקצות מדור זה (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>המדור לא הוקצה.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>המדור הוקצה.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>המצב אינו קיים.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>הוא כבר נמצא במצב זה.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>אין לך הרשאה להקצות מצב זה (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>המצב לא הוקצה (ייתכן שתהליך עבודה מעכב את השינוי).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>המצב הוקצה.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>אין פעולה כזו.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ההחזקה לבדיקה לא הוגדרה (שלב השדרוג 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ציינו מדוע הוא מוחזק.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>הוא כבר מוחזק.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>אין לך הרשאה להחזיק אותו (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ההחזקה לא הוטלה (ייתכן שתהליך עבודה מעכב את השינוי).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>הוחזק.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>הוא אינו מוחזק.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>אין לך הרשאה לשחרר אותו (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ההחזקה לא שוחררה (ייתכן שתהליך עבודה מעכב את השינוי).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>שוחרר; עדיין מוסתר: אין לך הרשאה להציג אותו (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>שוחרר.</translation>
     </message>
 </context>
 <context>

@@ -15151,6 +15151,14 @@ Fakatokanga: ʻE ʻikai toʻo ʻa e fokotuʻu ʻo e ngaahi pēkeisi.</translatio
         <translation>Ngaahi liliu ki he fokotuʻu ʻoku tauhi ko e ngaahi faile: ko honau tuʻunga, ngaahi fakalele, fakalele mo fakafoki.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Ngaahi meʻa foʻou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ko e ngaahi meʻa foʻou taha, ko e meʻa kuo taʻofi ke vakaiʻi, mo e ngaahi ngāue ki ha fili.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Pulusi ha tatau tuʻumaʻu ʻo ha uepisaiti ki he GitHub Pages pe ha hōsi git pē.</translation>
     </message>
@@ -80581,6 +80589,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Naʻe ʻikai lava ʻo kamataʻi ʻa e fakalele.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Kuo fakatonutonu</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Kuo faʻu</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Hingoa</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kalasi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Konga</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Tokotaha faʻu</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ngaahi meʻa foʻou</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ko e ngaahi meʻa naʻe faʻu mo fakatonutonu fakamuimui taha ʻi he uepisaiti kotoa, ko e foʻou taha ʻi muʻa: ko e meʻa naʻe fakahū mai ʻe he kau ʻaʻahi, ko e meʻa kuo taʻofi ke vakaiʻi, ko e ngaahi tohi fakataimi ʻoku tatali ke pulusi. Fili ha ngaahi meʻa ke tukuange, taʻofi, fufū, fakahā, toʻo pe hiki ki ha konga pe tūkunga kehe.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Naʻe ʻikai lava ke lau ʻa e lisi: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ʻOku teʻeki fokotuʻu ʻa e taʻofi ki he vakaiʻi, ko ia ʻoku ʻikai ha meʻa ʻoku taʻofi pea ʻoku ʻikai ʻoatu ʻa e ngaahi ngāue taʻofi. ʻOku fokotuʻu ia ʻe he sitepu fakafoʻou 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sivi ʻa e lisi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mei he</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki he</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ʻAho</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Kuo faʻu (pulusi ʻuluaki)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kotoa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tuʻunga</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Kuo pulusi</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Tohi fakataimi, teʻeki ai pulusi</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ʻOku tatali (tatali ki he fakangofua pe ki ha ʻaho)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ʻI he veve</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kuo taʻofi ke vakaiʻi</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Kuo taʻofi</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ʻIkai taʻofi</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Fufū</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Hā</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Fakahū ʻi he</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ha hūʻanga uepisaiti pē</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ko e meʻa pē naʻe lekooti ʻe he ʻatita.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ko eni: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Ko ha hingoa hū pe ko ha id ʻo e tokotaha ngāue.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sivi</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Fakaʻatā ʻa e ngaahi sivi</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ngaahi meʻa</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki he %to ʻo e %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ʻIkai ha meʻa</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lau ʻi he %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ngaahi ngāue ki he ngaahi meʻa kuo fili</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Fili kotoa ʻi he peesi ko ʻeni</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count kuo fili</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ngāue</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Fili ha ngāue</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Tukuange ʻa e taʻofi</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Taʻofi ke vakaiʻi</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Fufū</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Fakahā</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Hiki ki he veve</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Tamateʻi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Vahe ha konga</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Vahe ha tūkunga</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Tupuʻanga</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ʻOku fiemaʻu ke taʻofi; ʻoku tauhi fakataha mo e taʻofi pea ʻi he ʻatita.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Fili ha konga</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tūkunga</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Fili ha tūkunga</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Fakaʻaongaʻi ki he meʻa kuo fili</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ʻOku siviʻi ʻa e meʻa taki taha ʻo fakatatau ki hoʻo ngaahi ngofua pē ʻaʻau. ʻOku kole ʻe he hiki ki he veve mo e tamateʻi ke ke fakapapauʻi. Ko e meʻa ʻoku lahi hake ʻi he %count ʻoku fakahoko ia ʻi mui.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fili</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Pulusi</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Fakahū mei he</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Fili ʻa %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>teʻeki</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ʻikai ha hingoa)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Tohi fakataimi</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ʻOku tatali</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Fufū ʻe heʻene matuʻa</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Kuo taʻofi: fakahū foʻou</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Paaki %version ʻoku tatali</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Paaki %version ʻoku lolotonga ngāueʻi</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Tohi fakataimi, paaki %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Paaki %version kuo pulusi</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Fokotuʻutuʻu ki he %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ʻikai ha tuʻasila</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ʻikai lekooti</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ʻOku ʻikai ha meʻa ʻoku hoa mo e ngaahi sivi ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fakahā kotoa</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ʻOku teʻeki ha meʻa.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ʻI he peesi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fakahā ʻa e meʻa ʻe %count ʻi he peesi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ko e tuʻasila mo e palausa ʻo ha fakahū ʻoku haʻu mei he fakahokohoko ʻatita, ʻa ia ʻoku ʻikai maʻu heni: ʻoku pehē ʻe he kōlomu "ʻikai lekooti".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ko e tuʻasila mo e palausa ko ia naʻe lekooti ʻe he ʻatita ki he meʻa (ʻoku lekooti maʻu pē ʻe he taʻofi ʻōtomētiki; ko e pulusi mo e faʻu ʻi he taimi pē kuo fakaava), ʻo hangē ko ia ʻoku tauhi ʻe heʻene ngaahi fokotuʻu fakafoʻituitui.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: meʻa ʻe %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ʻOku toʻo taʻengata ʻe he tamateʻi ʻa e ngaahi meʻa, fakataha mo honau ngaahi paaki mo e liliu kotoa. ʻOku ʻikai lava ke toe fakafoki.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ʻOku ʻalu ʻa e ngaahi meʻa ki he veve, ʻa ia ʻe lava ke toe fakafoki mei ai.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ʻOku siviʻi ʻa e meʻa taki taha ʻo fakatatau ki hoʻo ngaahi ngofua pē ʻaʻau; ko ha meʻa ʻoku ʻi ai hono ngaahi meʻa siʻi ʻe tuku pē ia (toʻo ia ʻi he fokotuʻutuʻu ʻo e ngaahi meʻa). ʻE kole atu ke ke fakamoʻoniʻi ko koe ʻeni.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ʻOku fakahoko ʻeni ʻi mui: ʻe ava ʻa e peesi ʻo hono laka ki muʻa, pea ʻe fakahā ʻa e ola ʻo e meʻa taki taha ʻo ka ʻosi.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ko e ngaahi meʻa kuo fili</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>mo e %count ʻe taha</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kaniseli</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Naʻe ʻikai ha meʻa naʻe fai</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Tupuʻanga: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ʻOku kei fakahoko ʻa e ngāue ʻi mui.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Hono laka ki muʻa</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Naʻe ʻikai lavameʻa ʻa e ngāue ʻi mui: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kuo ʻosi</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Kuo fakafisi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuo ʻikai lavameʻa</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Meʻa taki taha</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Meʻa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ola</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ko e hā</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Foki ki he lisi</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Fokotuʻu</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Naʻe ʻikai ha meʻa kuo ʻosi</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Fakapapauʻi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Fili ha ngāue.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Fili ha meʻa ʻe taha ʻi he siʻisiʻi taha.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Fili ha meʻa ʻe 1000 ʻi he lahi taha ʻi he taimi ʻe taha.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Fakahā ʻa e ʻuhinga ʻoku taʻofi ai ʻa e ngaahi meʻa.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Fili ʻa e konga.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Fili ʻa e tūkunga.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Naʻe ʻikai lava ke lau ʻa e foomu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ngaahi meʻa foʻou</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Naʻe ʻikai lava ke lau ʻa e ngaahi lau: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kuo taʻofi ke vakaiʻi</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Foʻou he ʻaho ni</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ʻOku teʻeki fokotuʻu ʻa e taʻofi ki he vakaiʻi (ko e sitepu fakafoʻou 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ko e ngaahi meʻa foʻou kotoa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke fakahoko ʻa e ngaahi ngāue fakamaʻumaʻu (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ʻOku ʻikai kakato ʻa e ngāue fakamaʻumaʻu: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Fakamaʻumaʻu: %action ki he meʻa ʻe %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ʻo e meʻa ʻe %total: %ok kuo ʻosi, %refused kuo fakafisi, %failed kuo ʻikai lavameʻa</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok kuo ʻosi, %refused kuo fakafisi, %failed kuo ʻikai lavameʻa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ʻOku ʻikai ke toe ʻi ai.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ʻOku ʻikai hano feituʻu (teʻeki pulusi).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke fufū ia (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke fakahā ia (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Kuo ʻosi fufū ia.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ʻOku ʻikai fufū ia.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Kuo fufū.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Kuo fakahā.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ʻOku ʻi he veve: fakaʻatā pe toe fakafoki ia mei ai.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ʻOku ʻikai lava ke ʻalu ki he veve ha tohi fakataimi naʻe teʻeki pulusi: tamateʻi ia.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke tamateʻi ia (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Kuo tamateʻi.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke toʻo ia (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ʻOku ʻi ai hono ngaahi meʻa siʻi: toʻo ia ʻi he fokotuʻutuʻu ʻo e ngaahi meʻa, ʻa ia ʻoku lisi ai kinautolu.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Naʻe ʻikai toʻo ia (mahalo ʻoku taʻofi ʻe ha founga ngāue ʻa e toʻo).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Kuo hiki ki he veve.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ʻOku ʻikai ʻi ai ʻa e konga.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ʻOku ʻosi ʻi he konga ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke vahe ʻa e konga ko ʻeni (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Naʻe ʻikai vahe ʻa e konga.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Kuo vahe ʻa e konga.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ʻOku ʻikai ʻi ai ʻa e tūkunga.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ʻOku ʻosi ʻi he tūkunga ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke vahe ʻa e tūkunga ko ʻeni (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Naʻe ʻikai vahe ʻa e tūkunga (mahalo ʻoku taʻofi ʻe ha founga ngāue ʻa e liliu).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Kuo vahe ʻa e tūkunga.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ʻOku ʻikai ha ngāue pehē.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ʻOku ʻikai fokotuʻu ʻa e taʻofi ki he vakaiʻi (ko e sitepu fakafoʻou 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Fakahā ʻa e ʻuhinga ʻoku taʻofi ai.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Kuo ʻosi taʻofi ia.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke taʻofi ia (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Naʻe ʻikai fokotuʻu ʻa e taʻofi (mahalo ʻoku taʻofi ʻe ha founga ngāue ʻa e liliu).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Kuo taʻofi.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ʻOku ʻikai taʻofi ia.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ʻOku ʻikai ke ngofua ke ke tukuange ia (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Naʻe ʻikai tukuange ʻa e taʻofi (mahalo ʻoku taʻofi ʻe ha founga ngāue ʻa e liliu).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Kuo tukuange; ʻoku kei fufū: ʻoku ʻikai ke ngofua ke ke fakahā ia (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Kuo tukuange.</translation>
     </message>
 </context>
 <context>

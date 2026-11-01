@@ -16444,6 +16444,14 @@ Nota: Os pacotes não serão desinstalados.</translation>
         <translation>Alterações da instalação mantidas como arquivos: sua situação, as execuções, executar e reverter.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Conteúdo recente</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>O conteúdo mais novo, o que está retido para revisão e ações sobre uma seleção.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publique uma cópia estática de um site no GitHub Pages ou em qualquer hospedagem git.</translation>
     </message>
@@ -82577,6 +82585,670 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>The run could not be started.</source>
         <translation>Não foi possível iniciar a execução.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modificado</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Criado</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classe</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seção</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Criado por</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Conteúdo recente</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>O conteúdo criado e modificado mais recentemente de todo o site, o mais novo primeiro: o que os visitantes enviaram, o que está retido para revisão, os rascunhos aguardando publicação. Selecione itens para liberá-los, retê-los, escondê-los, revelá-los, removê-los ou movê-los para outra seção ou estado.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Não foi possível ler a lista: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>A retenção para revisão ainda não está configurada, então nada está retido e as ações de retenção não são oferecidas. A etapa de atualização 6.0.15-review-hold a configura: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar a lista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Até</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Criado (primeira publicação)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Todos</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Situação</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicado</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Rascunho, nunca publicado</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendente (aguardando aprovação ou uma data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Na lixeira</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retido para revisão</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retido</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Não retido</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Escondido</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visível</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Enviado em</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Qualquer acesso ao site</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Somente o que a auditoria registrou.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Agora: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Um login ou um ID de usuário.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Limpar filtros</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Itens</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nenhum item</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lido em %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ações nos itens selecionados</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Selecionar todos nesta página</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selecionados</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ação</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Escolha uma ação</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Liberar a retenção</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Reter para revisão</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Esconder</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Revelar</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mover para a lixeira</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Excluir</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Atribuir seção</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Atribuir estado</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Motivo</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necessário para reter; guardado com a retenção e na auditoria.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Escolha uma seção</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Escolha um estado</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aplicar aos selecionados</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Cada item é verificado com as suas próprias permissões. Mover para a lixeira e excluir pedem confirmação. Mais de %count itens são processados em segundo plano.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selecionar</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicação</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Enviado de</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Selecionar %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ainda não</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(sem nome)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Rascunho</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendente</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Escondido pelo seu pai</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retido: novo envio</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versão %version pendente</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versão %version em andamento</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Rascunho, versão %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versão %version publicada</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Agendado para %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>sem endereço</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>não registrado</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nada corresponde a estes filtros.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostrar tudo</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ainda não há conteúdo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Por página</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostrar %count itens por página.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>O endereço e o navegador de um envio vêm do índice de auditoria, que não está disponível aqui: a coluna diz &quot;não registrado&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>O endereço e o navegador são os que a auditoria registrou para o item (a retenção automática sempre os registra; a publicação e a criação somente onde estiver ativado), conforme as suas configurações de privacidade os guardam.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count itens</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Excluir remove os itens definitivamente, com todas as suas versões e traduções. Não pode ser desfeito.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Os itens vão para a lixeira, de onde podem ser restaurados.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Cada item é verificado com as suas próprias permissões; um item com subitens é deixado como está (remova-o na estrutura de conteúdo). Será pedido que você confirme que é você.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Isto é executado em segundo plano: a sua página de progresso é aberta, e o resultado por item é mostrado quando terminar.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Os itens selecionados</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>e mais %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nada foi feito</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Motivo: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>A ação ainda está sendo executada em segundo plano.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>O seu progresso</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>A ação em segundo plano falhou: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Concluído</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Recusado</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falhou</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Por item</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Item</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Por quê</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Voltar para a lista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuração</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nada feito</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmar</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Escolha uma ação.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Selecione pelo menos um item.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Selecione no máximo 1000 itens de cada vez.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Diga por que os itens estão retidos.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Escolha a seção.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Escolha o estado.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Não foi possível ler o formulário.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Conteúdo recente</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Não foi possível ler as contagens: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retido para revisão</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Novos hoje</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>A retenção para revisão ainda não está configurada (a etapa de atualização 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Todo o conteúdo recente</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Você não pode executar ações de moderação (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>A ação de moderação não está completa: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderação: %action em %count objetos</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done de %total objetos: %ok concluídos, %refused recusados, %failed com falha</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok concluídos, %refused recusados, %failed com falha</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Não existe mais.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Não tem localização (não publicado).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Você não pode escondê-lo (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Você não pode revelá-lo (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Já está escondido.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Não está escondido.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Escondido.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Revelado.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Está na lixeira: esvazie-a ou restaure-o lá.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Um rascunho que nunca foi publicado não pode ir para a lixeira: exclua-o.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Você não pode excluí-lo (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Excluído.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Você não pode removê-lo (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Tem subitens: remova-o na estrutura de conteúdo, onde eles são listados.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Não foi removido (um fluxo de trabalho pode reter a remoção).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Movido para a lixeira.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>A seção não existe.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Já está nesta seção.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Você não pode atribuir esta seção (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>A seção não foi atribuída.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seção atribuída.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>O estado não existe.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Já está neste estado.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Você não pode atribuir este estado (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>O estado não foi atribuído (um fluxo de trabalho pode reter a alteração).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Estado atribuído.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Essa ação não existe.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>A retenção para revisão não está configurada (a etapa de atualização 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Diga por que está retido.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Já está retido.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Você não pode retê-lo (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>A retenção não foi aplicada (um fluxo de trabalho pode reter a alteração).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retido.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Não está retido.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Você não pode liberá-lo (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>A retenção não foi liberada (um fluxo de trabalho pode reter a alteração).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Liberado; ainda escondido: você não pode revelá-lo (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Liberado.</translation>
     </message>
 </context>
 <context>
