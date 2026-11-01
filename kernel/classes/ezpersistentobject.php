@@ -1147,7 +1147,7 @@ class eZPersistentObject
                 {
                     $db_params["limit"] = $limit["limit"];
                 }
-                else
+                else if ( isset( $limit['length'] ) )
                 {
                     $db_params["limit"] = $limit["length"];
                 }

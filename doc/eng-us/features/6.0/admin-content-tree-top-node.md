@@ -53,7 +53,7 @@ still filtered by the editor's read access when they are fetched.
 | Tab name and tooltip in English only | translated | `[TopAdminMenu]` blocks |
 
 A tab listed twice in `[TopAdminMenu] Tabs[]` is shown once, at its first place. Extensions append their tab to that
-list, and their settings are read after a siteaccess's. So a siteaccess that restated the whole list to put the tabs in
+list, and their settings (an extension in `ActiveExtensions[]`) are read after a siteaccess's. So a siteaccess that restated the whole list to put the tabs in
 its own order used to get every extension tab a second time at the end.
 
 The Setup menu entries Maintenance, Cronjobs, Preload Sites and oAuth admin are translated too (German: Wartung,

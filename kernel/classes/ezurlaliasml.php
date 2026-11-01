@@ -526,7 +526,11 @@ class eZURLAliasML extends eZPersistentObject
                         $languageName = false, $linkID = false, $alwaysAvailable = false, $rootID = false,
                         $cleanupElements = true, $autoAdjustName = false, $reportErrors = true, $aliasRedirects = true )
     {
-        $path = eZURLAliasML::cleanURL( $path );
+        // An absolute URL pasted as the alias (https://www.example.com/news) is stored as its path (news), not as the
+        // elements "https", "noname2", "www-example-com" and "news". One without a path stays as it was: the empty
+        // path is the root node's entry, never something a pasted address may replace.
+        $pathOfURL = eZURLAliasML::cleanURL( eZURLAliasML::stripURLOrigin( $path ) );
+        $path = $pathOfURL !== '' ? $pathOfURL : eZURLAliasML::cleanURL( $path );
         if ( $languageName === false )
         {
             $languageName = eZContentLanguage::topPriorityLanguage();
@@ -1999,12 +2003,15 @@ class eZURLAliasML extends eZPersistentObject
     {
         $uriString = eZURLAliasML::cleanURL( $uriString );
 
-        $db = eZDB::instance();
         if ( $uriString == '' && $glob !== false )
             $elements = array();
         else
             $elements = explode( '/', $uriString );
         $len      = count( $elements );
+        // One self-join per element: a path deeper than any alias can be is not looked up at all
+        if ( $len + ( $glob !== false ? 1 : 0 ) > self::maxPathDepth() )
+            return array();
+        $db = eZDB::instance();
         $i = 0;
         $selects = array();
         $tables  = array();
@@ -2158,6 +2165,19 @@ class eZURLAliasML extends eZPersistentObject
         return $nodeID;
     }
 
+    /**
+     * The deepest path translate() and fetchByPath() look up: site.ini [URLTranslator] MaxPathDepth (default 30, at
+     * least 1). Each element of a path is one self-join of ezurlalias_ml.
+     *
+     * @return int
+     */
+    static public function maxPathDepth()
+    {
+        $ini = eZINI::instance();
+        $depth = $ini->hasVariable( 'URLTranslator', 'MaxPathDepth' ) ? (int)$ini->variable( 'URLTranslator', 'MaxPathDepth' ) : 30;
+        return $depth > 0 ? $depth : 30;
+    }
+
     /*!
      \static
      Transforms the URI if there exists an alias for it, the new URI is replaced in $uri.
@@ -2293,6 +2313,11 @@ class eZURLAliasML extends eZPersistentObject
                 }
             }
         }
+
+        // One self-join per element: a request for /a/b/c/... deeper than any alias can be is not an alias, and the
+        // query for it is not run (a crawler with endless paths kept the database busy with joins of dozens of tables)
+        if ( substr_count( $internalURIString, '/' ) + 1 > self::maxPathDepth() )
+            return false;
 
         $db = eZDB::instance();
 
@@ -3084,6 +3109,24 @@ class eZURLAliasML extends eZPersistentObject
     static public function cleanURL( $url )
     {
         return trim( $url, '/ ' );
+    }
+
+    /**
+     * The path of an absolute URL: "https://www.example.com:8443/news/item?x=1#top" gives "/news/item". The scheme,
+     * the host, the port, the query and the fragment are not part of a URL alias. Anything that does not start with
+     * a scheme and "://" is returned as it is, so a relative path such as "news/item" or "a:b/c" is unchanged.
+     *
+     * @param string $url
+     * @return string
+     */
+    static public function stripURLOrigin( $url )
+    {
+        $url = (string)$url;
+        if ( preg_match( '#^\s*[a-z][a-z0-9+.\-]*://[^/?\#]*([^?\#]*)#i', $url, $match ) )
+        {
+            return $match[1];
+        }
+        return $url;
     }
 
     /*!

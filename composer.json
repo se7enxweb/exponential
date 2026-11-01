@@ -102,7 +102,7 @@
         "zetacomponents/persistent-object": "~1.8.1",
         "zetacomponents/signal-slot": "~1.2",
         "zetacomponents/system-information": "~1.1.2",
-        "se7enxweb/zetacomponents-webdav": "~1.2.1",
+        "se7enxweb/expcomponents-webdav": "~1.2.2",
         "zetacomponents/base": "^1.9.5"
     },
     "replace": {

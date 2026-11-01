@@ -52,6 +52,10 @@ Die linke Spalte ändert sich mit dem Reiter:
 - Auf dem Dashboard listet sie Ihre eigenen Seiten auf: **Meine Warteliste**, **Meine Entwürfe**, **Meine Lesezeichen**,
   **Meine E-Mail-Einstellungen**, **Meine Benachrichtigungseinstellungen**, **Passwort ändern**, **Profil bearbeiten**
   und mehr.
+- Unter **Setup** listet sie die Seiten der Einrichtung in Gruppen auf, jede nur für Rollen, die sie öffnen dürfen.
+  Eine davon ist **Migrationen** in der Gruppe **System**: die Migrationen der Installation, ihre Läufe, ein Lauf oder
+  eine Rücknahme im Hintergrund und das Protokoll jedes Laufs
+  ([Migrationen in der Administration](migrationen/README.md)).
 
 ![Das Menü eines Objekts im Baum](bilder/context-menu.webp)
 
@@ -89,7 +93,11 @@ Das Dashboard ist die erste Seite nach der Anmeldung. Von oben:
 4. **Meine Warteliste**, **Meine Entwürfe**, **Aktuellster Inhalt** und **Mein aktuellster Content**: kurze Listen,
    die zu den Objekten führen.
 
-Administratoren sehen außerdem Blöcke zum System, zu Updates und zu Sicherheitsereignissen.
+Administratoren sehen außerdem Blöcke zum System, zu Updates und zu Sicherheitsereignissen sowie den Block
+**Migrationen**: wie viele Migrationen ausstehen oder fehlgeschlagen sind, die verwaisten (aufgezeichnet, ihre Datei
+fehlt), den letzten Lauf mit seinem Stand, einen Hinweis, solange ein Lauf im Gang ist, und **Alle Migrationen**, einen
+Link zu Setup > Migrationen. Der Block erscheint nur für Benutzer, die die Migrationen sehen dürfen
+([Der Dashboard-Block](migrationen/status-und-verlauf.md#der-dashboard-block)).
 
 ![Meine Lesezeichen: die Objekte, die Sie mit „Lesezeichen setzen“ markiert haben, um sie mit einem Klick wieder zu öffnen](bilder/accounts/my-bookmarks.webp)
 

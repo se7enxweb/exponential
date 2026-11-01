@@ -1,0 +1,6 @@
+{
+    "ini:settings/site.ini [URLTranslator] MaxPathDepth": {
+        "en": "The deepest URL (number of path elements) looked up as a URL alias. Each element is one join of\nezurlalias_ml; a deeper URL is not an alias and gives \"not found\" without a query.",
+        "de": "Die tiefste URL (Anzahl der Pfadelemente), die als URL-Alias nachgeschlagen wird. Jedes Element ist ein Join von\nezurlalias_ml; eine tiefere URL ist kein Alias und ergibt \"nicht gefunden\" ohne Abfrage."
+    }
+}

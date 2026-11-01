@@ -19,11 +19,11 @@ Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei
 
 ## PhpCliPath
 
-> Setup > Migrations (module migration) starts a run or a rollback as a console process of its own, which goes on when  
-> the page is closed; its files are in var/<site>/migration/jobs/.  
+> Einrichtung > Migrationen (Modul migration) startet einen Lauf oder eine Rücknahme als eigenen Konsolenprozess, der weiterläuft, wenn  
+> die Seite geschlossen wird; seine Dateien liegen in var/<site>/migration/jobs/.  
 >
-> The php command line binary those processes run with. Empty: cronjob.ini \[AdminSettings\] PhpCliPath, else the  
-> usual places (the bin directory of this php, /usr/bin/php, /usr/local/bin/php). Never the php-fpm binary.  
+> Das PHP-Kommandozeilenprogramm, mit dem diese Prozesse laufen. Leer: cronjob.ini \[AdminSettings\] PhpCliPath, sonst die  
+> üblichen Orte (das bin-Verzeichnis dieses PHP, /usr/bin/php, /usr/local/bin/php). Nie das php-fpm-Programm.  
 
 Standard: leer.
 
@@ -37,7 +37,7 @@ PhpCliPath=
 
 ## JobHistory
 
-> How many runs started there keep their files (the newest ones; a run going on is always kept).  
+> Wie viele dort gestartete Läufe ihre Dateien behalten (die neuesten; ein laufender Lauf wird immer behalten).  
 
 Standard: `50`.
 
@@ -51,7 +51,7 @@ JobHistory=50
 
 ## LogBytes
 
-> How much of the end of a run log a page shows, in bytes.  
+> Wie viel vom Ende eines Laufprotokolls eine Seite zeigt, in Byte.  
 
 Standard: `262144`.
 

@@ -49,14 +49,15 @@ Später gewinnt:
 | Reihenfolge | Geltungsbereich | Verzeichnisse |
 |---|---|---|
 | 0 | Standards | `settings/<file>.ini` |
-| 1 | `sa-extension` | Verzeichnisse je Siteaccess innerhalb von Erweiterungen (`extension/<ext>/settings/siteaccess/<sa>/` und verwandte) |
-| 2 | `siteaccess` | `settings/siteaccess/<sa>/` |
-| 3 | `extension` | `extension/<ext>/settings/` jeder aktiven Erweiterung |
+| 1 | `sa-extension` | `extension/<ext>/settings/` der Erweiterungen in `ActiveAccessExtensions[]` des Siteaccess |
+| 2 | `siteaccess` | Verzeichnisse je Siteaccess innerhalb von Erweiterungen (`extension/<ext>/settings/siteaccess/<sa>/`, `settings/override__<group>/`, `settings/override/`), danach `settings/siteaccess/<sa>/` |
+| 3 | `extension` | `extension/<ext>/settings/` der Erweiterungen in `ActiveExtensions[]` (die zuerst genannte gewinnt) |
 | 4 | `override` | `settings/override/` |
 
 Zwei Folgen, über die Ingenieure stolpern:
 
-- `settings/` einer Erweiterung setzt sich gegen `settings/siteaccess/<sa>/` durch.
+- `settings/` einer Erweiterung in `ActiveExtensions[]` setzt sich gegen `settings/siteaccess/<sa>/` durch; das einer
+  Erweiterung in `ActiveAccessExtensions[]` nicht.
 - `settings/override/` setzt sich gegen alles durch.
 
 Erweiterungen werden in `site.ini [ExtensionSettings] ActiveExtensions[]` (global) und `ActiveAccessExtensions[]` (je

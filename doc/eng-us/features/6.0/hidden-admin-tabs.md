@@ -4,7 +4,7 @@ This page is for administrators who want a simpler admin on one siteaccess, for 
 settings take a tab out of the admin's top menu or the node view, whatever added it. Added 2026-10-01.
 
 Before, a siteaccess could restate the list of tabs but never remove an extension's tab: extensions append their
-tabs, and extension settings are read after a siteaccess's.
+tabs, and the settings of an extension in `ActiveExtensions[]` are read after a siteaccess's.
 
 ## Settings
 
