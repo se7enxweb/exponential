@@ -551,11 +551,16 @@ class expIniMover
     {
         list( $b, $v, $sa ) = explode( "\x1f", $key );
         $winner = self::winningFile( $file, $b, $v, $sa === '' ? null : $sa );
+        if ( $winner === null )
+            $why = '';
+        else if ( $winner === $target->relativePath() )
+            $why = " ($winner wins: it is read" . ( $sa === '' ? '' : " for siteaccess $sa" ) . ' after every file that sets it)';
+        else
+            $why = " ($winner wins: it loads after " . $target->relativePath() . ')';
         return sprintf( '%s.ini [%s] %s in effect%s would change from %s to %s%s', $file, $b, $v,
                         $sa === '' ? '' : " for siteaccess $sa",
                         self::shown( $this->c->display( $v, $before[$key] ) ),
-                        self::shown( $this->c->display( $v, $after[$key] ) ),
-                        $winner !== null ? " ($winner wins: it loads after " . $target->relativePath() . ')' : '' );
+                        self::shown( $this->c->display( $v, $after[$key] ) ), $why );
     }
 
     /**
@@ -641,24 +646,11 @@ class expIniMover
                 $last = end( $where['files'] );
                 return $last ? $last['path'] : null;
             }
-            // the editor's chain under another root (expIniEditor::effectiveValue())
-            $order = array( 'default' );
-            foreach ( array_reverse( expIniEditor::activeExtensions() ) as $ext )
-                $order[] = "extension:$ext";
-            if ( $siteAccess !== null )
-            {
-                $order[] = "siteaccess:$siteAccess";
-                foreach ( expIniEditor::activeExtensions() as $ext )
-                    $order[] = "extension:$ext:siteaccess:$siteAccess";
-            }
-            $order[] = 'global';
-            $byName = array();
-            foreach ( expIniEditor::scopes() as $s )
-                $byName[$s->name()] = $s;
+            // the editor's chain under another root, in eZINI's order (expIniEditor::loadOrder())
             $winner = null;
-            foreach ( $order as $name )
-                if ( isset( $byName[$name] ) && ( new expIniEditor( $byName[$name], $file ) )->get( $block, $variable ) !== null )
-                    $winner = $byName[$name]->relativePath( $file );
+            foreach ( expIniEditor::loadOrder( $siteAccess ) as $scope )
+                if ( is_file( $scope->path( $file ) ) && ( new expIniEditor( $scope, $file ) )->get( $block, $variable ) !== null )
+                    $winner = $scope->relativePath( $file );
             return $winner;
         }
         catch ( Exception $e )

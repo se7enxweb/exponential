@@ -227,27 +227,35 @@ class expIniCommand
     }
 
     /**
-     * Works under another installation root, with the extensions that root activates: ActiveExtensions[] of
-     * its settings/site.ini and settings/override, and the ActiveAccessExtensions[] of its siteaccesses (an
-     * approximation: the editor's chain under another root has one list of active extensions for every
-     * siteaccess). Called again after a move activated an extension.
+     * Works under another installation root, with the extensions that root activates. ActiveExtensions[] (after
+     * RequiredExtensions[] that are installed there) is read as eZExtension::activateExtensions( 'default' ) reads
+     * it, from settings/site.ini and settings/override alone; those extensions are read for every siteaccess, after
+     * settings/siteaccess/<sa>. The ActiveAccessExtensions[] of each siteaccess are read by the editor's chain for
+     * that siteaccess (expIniEditor::accessExtensions()), before settings/siteaccess/<sa>. An extension of either
+     * list counts as active for the scope list. Called again after a move activated an extension.
      *
      * @param string $root
      */
     public static function useRoot( $root )
     {
         expIniEditor::setRoot( $root, array() );
-        $active = (array)expIniEditor::effectiveValue( 'site', 'ExtensionSettings', 'ActiveExtensions' );
+        $default = array();
+        foreach ( (array)expIniEditor::effectiveValue( 'site', 'ExtensionSettings', 'RequiredExtensions' ) as $name )
+        {
+            if ( expIniEditor::isValidName( (string)$name ) && is_dir( rtrim( $root, '/' ) . '/extension/' . $name ) )
+                $default[] = (string)$name;
+        }
+        $default = array_merge( $default, (array)expIniEditor::effectiveValue( 'site', 'ExtensionSettings', 'ActiveExtensions' ) );
+        $default = array_values( array_unique( array_filter( array_map( 'strval', $default ), 'strlen' ) ) );
+        expIniEditor::setRoot( $root, $default, null, $default );
+        $active = $default;
         foreach ( expIniEditor::scopes() as $scope )
         {
-            if ( $scope->kind() !== expIniScope::KIND_SITEACCESS || !is_file( $scope->path( 'site' ) ) )
-                continue;
-            $values = expIniWriter::fromFile( $scope->path( 'site' ) )->values();
-            if ( isset( $values['ExtensionSettings']['ActiveAccessExtensions'] ) )
-                $active = array_merge( $active, (array)$values['ExtensionSettings']['ActiveAccessExtensions'] );
+            if ( $scope->kind() === expIniScope::KIND_SITEACCESS && $scope->siteAccess() )
+                $active = array_merge( $active, expIniEditor::accessExtensions( $scope->siteAccess() ) );
         }
-        $active = array_values( array_unique( array_filter( array_map( 'strval', $active ), 'strlen' ) ) );
-        expIniEditor::setRoot( $root, $active );
+        $active = array_values( array_unique( $active ) );
+        expIniEditor::setRoot( $root, $active, null, $default );
     }
 
     /** Reports a failure before an action ran. */
