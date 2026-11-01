@@ -296,7 +296,23 @@ class expMigrationCaption
             $code = $head['ok'] ? trim( $head['output'] ) : '';
         }
         return array( 'format' => self::MARKER_FORMAT, 'engine' => $this->context->engine(), 'database' => $database,
-                      'storage' => self::filesMarker( $storage ), 'settings' => self::filesMarker( "$root/settings/override" ), 'code' => $code );
+                      'storage' => self::filesMarker( $storage ), 'settings' => self::filesMarker( $this->settingsDir( $root ) ), 'code' => $code );
+    }
+
+    /**
+     * The settings folder the marker covers: the option settings-dir (relative to the root, '' for none, as storage-dir),
+     * else settings/override.
+     *
+     * @param string $root
+     * @return string
+     */
+    protected function settingsDir( $root )
+    {
+        $dir = $this->context->option( 'settings-dir' );
+        if ( $dir === null )
+            return "$root/settings/override";
+        $dir = (string)$dir;
+        return ( $dir === '' || $dir[0] === '/' ) ? $dir : "$root/$dir";
     }
 
     /**
