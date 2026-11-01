@@ -84,8 +84,8 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'outside', $c['kind'], '/index.php without the prefix is the default siteaccess, not this site' );
         $c = $r->classify( '/var/site/storage/images/a/b.jpg', '/site/x' );
         $this->assertSame( array( 'file', 'var/site/storage/images/a/b.jpg' ), array( $c['kind'], $c['output'] ) );
-        $c = $r->classify( '/extension/theme/design/x/stylesheets/a.css?v=2', '/site/x' );
-        $this->assertSame( array( 'file', 'extension/theme/design/x/stylesheets/a.css', '?v=2' ), array( $c['kind'], $c['output'], $c['query'] ) );
+        $c = $r->classify( '/extension/theme/design/x/stylesheets/a.css?x=2', '/site/x' );
+        $this->assertSame( array( 'file', 'extension/theme/design/x/stylesheets/a.css', '?x=2' ), array( $c['kind'], $c['output'], $c['query'] ) );
         $c = $r->classify( '/site/content/download/12/34/file/report.pdf', '/site/x' );
         $this->assertSame( array( 'file', 'content/download/12/34/file/report.pdf' ), array( $c['kind'], $c['output'] ) );
         $c = $r->classify( '/admin/content/view', '/site/x' );

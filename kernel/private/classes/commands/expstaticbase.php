@@ -76,6 +76,16 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     abstract protected function name();
 
     /**
+     * The command's work: parse with begin(), call the expStatic* class, print with finish(). Every command
+     * overrides it; this one only starts the script and ends with a usage error.
+     */
+    public function run()
+    {
+        $this->begin();
+        $this->usage( $this->name() . ' has no work of its own' );
+    }
+
+    /**
      * Starts the script: $this->script( array( 'description' => "...", ... ) ) and $this->startup( '<config>',
      * '<arguments>', <help> ), written out literally in each command, so ./console exp:help:examples reads the help
      * text and the options from the code. The option configuration must equal contract() and every help text

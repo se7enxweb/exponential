@@ -22,7 +22,7 @@
  * site root is index.html. A link to a page the export does not hold (a module view such as the search or the login,
  * a page with a query string, a page left out) goes to the live site when a live address is known, so it keeps
  * working; a link outside the site (another siteaccess, the administration) does too. Fragments (#top) and the query
- * of a file (style.css?v=2) are kept. Addresses that are not links (mailto:, tel:, data:, javascript:) and links to
+ * of a file (style.css?x=1) are kept. Addresses that are not links (mailto:, tel:, data:, javascript:) and links to
  * other hosts are left alone.
  *
  * The specification: doc/eng-us/specifications/6.0/static-publishing-build-format.md.

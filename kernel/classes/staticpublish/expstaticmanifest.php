@@ -271,7 +271,7 @@ class expStaticManifest
     public function save( $dir, $file = self::FILE )
     {
         $path = rtrim( (string)$dir, '/\\' ) . '/' . $file;
-        if ( !is_dir( dirname( $path ) ) && !mkdir( dirname( $path ), 0775, true ) && !is_dir( dirname( $path ) ) )
+        if ( !is_dir( dirname( $path ) ) && !mkdir( dirname( $path ), eZDir::dirMode( 0775 ), true ) && !is_dir( dirname( $path ) ) )
             return false;
         return file_put_contents( $path, $this->toJson() ) !== false;
     }

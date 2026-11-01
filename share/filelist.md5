@@ -6738,7 +6738,7 @@ fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
 a46d405f5296bc36483dd00721014cbc  doc/eng-us/features/6.0/sqlite-database.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
-9e3736720fde52e8085822e14e8e13f4  doc/eng-us/features/6.0/static-publishing.md
+ec826c8497b417a177a08c8198480886  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
 9f9bea9c87ecaffffafb0e1ac4361b00  doc/eng-us/features/6.0/string-template-operators.md
 e0fe70a6b6d52d4ec6f29e9cee750368  doc/eng-us/features/6.0/subitems-copy-selected.md
@@ -16094,7 +16094,7 @@ c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-beste
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 1c981d8a54aac59d03d7a8849d066c38  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
-a3da857cb5551841eedfda00d8fb80bd  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
+01ac6b6451a335a2b5177080979b9a5d  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
 e3f9f4f40efea9ae4d8d4382d03600b1  doc/ger-de/funktionen/6.0/systemkarte.md
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
 1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
@@ -23976,12 +23976,12 @@ a4256533dc1c0a8afd51c4fe5de6c60d  kernel/classes/role/exprolepolicysentence.php
 80cae0667e44194ecb0dabaaffd54c59  kernel/classes/shopaccounthandlers/ezdefaultshopaccounthandler.php
 1c4fa7096fba89e218b26115fc26bd37  kernel/classes/shopaccounthandlers/ezsimpleshopaccounthandler.php
 a6942c619908de9aff2835601b137d63  kernel/classes/shopaccounthandlers/ezusershopaccounthandler.php
-6948b6aa5a0549dc033725d211c97602  kernel/classes/staticpublish/expstaticassetcollector.php
-a1c4300742befcd9c3f332b6e1058833  kernel/classes/staticpublish/expstaticbuild.php
+4c27e245a401bd764beda0c02e40fe82  kernel/classes/staticpublish/expstaticassetcollector.php
+fb00d2da58e13ab4eda476453e074d9e  kernel/classes/staticpublish/expstaticbuild.php
 807b2f0f3987120c6f4ff11c4985de40  kernel/classes/staticpublish/expstaticextras.php
 7f2d293dedb7a328f2321f3a7535d4fe  kernel/classes/staticpublish/expstaticlinkchecker.php
-572d451b5b255c06a1927a2f10a7bef2  kernel/classes/staticpublish/expstaticlinkrewriter.php
-44666499f2c0755e739c4f819a0fcabe  kernel/classes/staticpublish/expstaticmanifest.php
+989efd874fa7a50dcbead52880194f60  kernel/classes/staticpublish/expstaticlinkrewriter.php
+6037e14340786977a4efee9773ba1f31  kernel/classes/staticpublish/expstaticmanifest.php
 f3ffb95c95bae76d1044ce8526760a46  kernel/classes/staticpublish/expstaticpostprocessor.php
 386e04254e4cd64f9912ebeefa255b22  kernel/classes/staticpublish/expstaticserve.php
 f9f2e22898cc0425f92f7f6792326803  kernel/classes/staticpublish/expstaticserverouter.php
@@ -24431,7 +24431,7 @@ d8ae82aa3dbce2b193abb8a3a5a17510  kernel/private/classes/commands/expmigrationmi
 180ff4f1bb02469aa440dc45a57033af  kernel/private/classes/commands/expmigrationresume.php
 9c156aa9bf248209f4c361d0455eec7c  kernel/private/classes/commands/expmigrationrollback.php
 c22b8f05181328d28e0b44a498863941  kernel/private/classes/commands/expmigrationstatus.php
-1f20369c64bcc84598574ce9ee0f6500  kernel/private/classes/commands/expstaticbase.php
+d271ba3273ca00f4c5969812260906f3  kernel/private/classes/commands/expstaticbase.php
 ec529cf0234b2b8edc059aec24e63fd0  kernel/private/classes/commands/expstaticbuild.php
 9c775811f3a55a1e34117ae08a4f889b  kernel/private/classes/commands/expstaticdiff.php
 790ffd558849532f1a7e0d3d6fc0ac1b  kernel/private/classes/commands/expstaticserve.php
@@ -28017,7 +28017,7 @@ c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopRe
 53691584efe12216a63af85954ebf649  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 2c3fc5c8adacfc04a0802560a185f7ff  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
 f9f6e7d3550d867ef242158560604dfb  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
-e2ab107b456f5e74cc4bc4a0d30c04ae  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
+c84634e3e809c1f62ebf9d36a557f0a2  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
 ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php
 c0270dfd56beef0020bc5367d280e9be  tests/tests/kernel/classes/staticpublish/expStaticPostProcessorTest.php
 840a0b13adcf6470d7604377ec560167  tests/tests/kernel/classes/staticpublish/expStaticTargetTest.php

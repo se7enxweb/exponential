@@ -281,7 +281,7 @@ class expStaticAssetCollector
 
     private function makeDir( $dir )
     {
-        return is_dir( $dir ) || mkdir( $dir, 0775, true ) || is_dir( $dir );
+        return is_dir( $dir ) || mkdir( $dir, eZDir::dirMode( 0775 ), true ) || is_dir( $dir );
     }
 
     /**

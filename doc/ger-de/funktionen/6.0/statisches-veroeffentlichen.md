@@ -73,7 +73,7 @@ Linkprüfung dieses Builds fand unter 18.534 Links und Dateien keinen defekten, 
 |---|---|
 | Eine Seite der Website (`/about-us`, `/index.php/about-us`, `https://www.example.com/about-us`) | `about-us/` relativ zur Seite (`../about-us/` von einer Seite eine Ebene tiefer) oder `/meine-site/about-us/` mit `Links=base-path` |
 | Die Startseite | `./` oder `../../`, oder `/meine-site/` |
-| Eine Datei (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | ihr Pfad in der Kopie, relativ oder unterhalb des Basispfads; der Query-String einer Datei (`?v=2`) bleibt |
+| Eine Datei (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | ihr Pfad in der Kopie, relativ oder unterhalb des Basispfads; der Query-String einer Datei (`?x=1`) bleibt |
 | Ein Fragment (`#top`), `mailto:`, `tel:`, `data:`, ein anderer Host | unverändert |
 | Eine Seite oder Datei, die die Kopie nicht enthält (die Suche, die Anmeldung, die Aktion eines Formulars, eine Seite mit Query-String, ein Download, den die Website verweigert hat) | die Live-Website: `LiveURL`, standardmäßig `https://` und der Host der `SiteURL` des Siteaccess |
 | Canonical, `hreflang`-Alternativen, `og:url`, `og:image`, `twitter:image`, die Adressen strukturierter Daten (`application/ld+json`) | absolut, unterhalb von `PublicURL`, wenn es gesetzt ist |

@@ -66,7 +66,7 @@ found no broken link or file among 18,534, at the root and below `/<repository>/
 |---|---|
 | A page of the site (`/about-us`, `/index.php/about-us`, `https://www.example.com/about-us`) | `about-us/` relative to the page (`../about-us/` from a page one level down), or `/my-site/about-us/` with `Links=base-path` |
 | The front page | `./` or `../../`, or `/my-site/` |
-| A file (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | its path in the copy, relative or below the base path; the query of a file (`?v=2`) is kept |
+| A file (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | its path in the copy, relative or below the base path; the query of a file (`?x=1`) is kept |
 | A fragment (`#top`), `mailto:`, `tel:`, `data:`, another host | unchanged |
 | A page or file the copy does not hold (the search, the login, a form's action, a page with a query, a download the site refused) | the live site: `LiveURL`, by default `https://` and the host of the siteaccess's `SiteURL` |
 | Canonical, `hreflang` alternates, `og:url`, `og:image`, `twitter:image`, the addresses in structured data (`application/ld+json`) | absolute, below `PublicURL`, when it is set |
