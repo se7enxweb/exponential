@@ -62,6 +62,9 @@ Eine Änderung einer einzelnen Site (ihre eigene Tabelle, Klassen, Inhalte, Roll
 `./console exp:migration:migrate --apply` führt die ausstehenden der Reihe nach aus, in einer Transaktion, wo die
 Engine eine hat, stellt nach einem Fehler die Caption wieder her und committet die Aufzeichnung des Laufs
 ([Migrationen](../../anleitungen/migrationen.md), [PHP-Migrationen](../../anleitungen/migrationen-php.md)).
+Die Upgrade-Schritte stehen dort ebenfalls, als Migrationen der Quelle `kernel`, und ein Migrationslauf führt die
+ausstehenden Schritte der Stufen `database` und `scripts` vor den Migrationen der Site aus, unter demselben
+Sicherungspunkt; eine Migration der Site kann daher einen Schritt verlangen (`requires: 6.0.15-migration-tables`).
 
 ## Die Werkzeuge
 

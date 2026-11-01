@@ -1490,6 +1490,8 @@ return array(
       'expMigrationStepContent'                                      => 'kernel/classes/migration/steps/expmigrationstepcontent.php',
       'expMigrationStepLocation'                                     => 'kernel/classes/migration/steps/expmigrationsteplocation.php',
       'expMigrationStepContentVersion'                               => 'kernel/classes/migration/steps/expmigrationstepcontentversion.php',
+      'expMigrationUpgradeSource'                                    => 'kernel/classes/migration/expmigrationupgradesource.php',
+      'expMigrationUpgradeStep'                                      => 'kernel/classes/migration/expmigrationupgradestep.php',
       'expModuleExtensionWizard'                                     => 'kernel/setup/expmoduleextensionwizard.php',
       'expModuleTableCode'                                           => 'kernel/setup/expmoduletablecode.php',
       'expModuleTableWizard'                                         => 'kernel/setup/expmoduletablewizard.php',

@@ -140,6 +140,14 @@ ebenfalls Warnungen.
 Liefern Sie die Schritte im Repository der Erweiterung und in ihrem `-ezpackage`-Repository gleichermaßen aus: Beide
 werden installiert, und beide werden aktualisiert.
 
+Die Schritte einer Erweiterung sind ebenfalls Migrationen der Quelle `kernel`, wie die des Kernels
+([Die Schritte unter den Migrationen](aktualisieren-mit-der-konsole.md#die-schritte-unter-den-migrationen)):
+`./console exp:migration:status` und Setup > Migrationen listen sie, und `./console exp:migration:migrate --apply`
+führt die ausstehenden der Stufen `database` und `scripts` vor den Migrationen aus. Eine Migration in
+`extension/<name>/migrations/`, die die Tabelle des Schritts braucht, nennt ihn in ihrem Kopf
+(`requires: myext-1.2-widget-table`). Wählen Sie einen Upgrade-Schritt für das, was jede Installation der Erweiterung
+beim Upgrade braucht, und eine Migration für eine Änderung, die eine Site einmal vornimmt.
+
 ## Einen Schritt testen
 
 Testen Sie jeden Schritt auf vier Arten auf einer Wegwerf-Datenbank (immer SQLite; MySQL und PostgreSQL, wo

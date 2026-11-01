@@ -30,6 +30,12 @@
  * (migration-failure) and the pre caption restored; after the run the caption migration-post is taken (a success) and
  * the record is committed, tagged and pushed in the migrations repository.
  *
+ * The kernel's upgrade steps (exp:upgrade) are migrations of the source "kernel" (expMigrationUpgradeSource) and come
+ * first (installation()): migrate() applies the pending steps of the stages database and scripts before the site's
+ * migrations, in the same run, under the same lock and caption. A pending step of the stages code, libraries and
+ * finish is not run (action "deferred", with a warning that names the exp:upgrade command), and a migration that
+ * requires it waits. Upgrade steps have no checksum guard and no transaction (expMigrationUpgradeStep).
+ *
  * The checksum guard: a migration recorded as done whose file has changed since (another checksum) is refused, and
  * the run with it, unless the run is forced with a reason (options force and reason, --force --reason=<text>); the
  * new checksum is then recorded and the override audited (system.migration.apply, verb accept-change). The migration
@@ -111,7 +117,8 @@ class expMigrationRunner
      *                       select()), migrations (expMigration[] in their order instead of the installation's: a
      *                       test's), the options of expMigrationContext and those of
      *                       expMigrationRunFlow::fromSettings() (no-caption, no-restore, no-commit, no-push, no-tag,
-     *                       include-uncommitted), progress (a callable, see the class)
+     *                       include-uncommitted), progress (a callable, see the class), upgrade-source and locator
+     *                       (installation())
      * @return array the report; the problems of finding and loading are its errors
      */
     public static function migrate( array $options = array() )
@@ -120,7 +127,8 @@ class expMigrationRunner
             $options['repository'] = expMigrationRepository::fromSettings( $options )->directory();
         $context = new expMigrationContext( isset( $options['db'] ) ? $options['db'] : null, !empty( $options['apply'] ), $options );
         $errors = array();
-        $migrations = isset( $options['migrations'] ) ? array_values( (array)$options['migrations'] ) : self::migrations( $context->environment(), $errors );
+        $warnings = array();
+        $migrations = isset( $options['migrations'] ) ? array_values( (array)$options['migrations'] ) : self::installation( $context->environment(), $errors, $warnings, $options );
         $only = isset( $options['only'] ) ? expUpgrade::listOption( $options['only'] ) : array();
         $paths = isset( $options['path'] ) ? expUpgrade::listOption( $options['path'] ) : array();
         if ( $only || $paths )
@@ -151,10 +159,34 @@ class expMigrationRunner
             $context = new expMigrationContext( $context->db(), false, $options + array( 'run-id' => $context->runId() ) );
             $report = ( new self( $context ) )->run( $migrations );
             $report['errors'] = array_merge( $errors, $report['errors'] );
+            $report['warnings'] = array_merge( $warnings, $report['warnings'] );
             $report['exit'] = expUpgrade::EXIT_FAILED;
             return $report;
         }
-        return $runner->run( $migrations );
+        $report = $runner->run( $migrations );
+        $report['warnings'] = array_merge( $warnings, $report['warnings'] );
+        return $report;
+    }
+
+    /**
+     * Every migration of the installation in the order a run takes them: the kernel's upgrade steps first
+     * (expMigrationUpgradeSource, in exp:upgrade's order), then the migrations of the site, the active extensions and
+     * the packages (migrations()). A site migration may require a step by its id.
+     *
+     * @param string|null $environment null: the installation's
+     * @param string[] $errors problems of finding and loading the migrations are added here
+     * @param string[] $warnings problems of the upgrade steps' registry are added here (exp:upgrade reports them as
+     *                           warnings too: a step whose class is missing is left out, the rest runs)
+     * @param array $options upgrade-source (an expMigrationUpgradeSource), locator (an expMigrationLocator)
+     * @return expMigration[]
+     */
+    public static function installation( $environment = null, array &$errors = array(), array &$warnings = array(), array $options = array() )
+    {
+        $source = isset( $options['upgrade-source'] ) ? $options['upgrade-source'] : expMigrationUpgradeSource::fromSettings();
+        foreach ( $source->errors() as $error )
+            $warnings[] = 'upgrade step: ' . $error;
+        $site = self::migrations( $environment, $errors, isset( $options['locator'] ) ? $options['locator'] : null, $source->ids() );
+        return expMigrationUpgradeSource::merge( $source->migrations(), $site, $errors );
     }
 
     /**
@@ -257,9 +289,10 @@ class expMigrationRunner
      * @param string|null $environment null: the installation's
      * @param string[] $errors problems are added here
      * @param expMigrationLocator|null $locator
+     * @param string[] $kernel the ids of the kernel's upgrade steps, which a migration may require (they run first)
      * @return expMigration[]
      */
-    public static function migrations( $environment = null, array &$errors = array(), $locator = null )
+    public static function migrations( $environment = null, array &$errors = array(), $locator = null, array $kernel = array() )
     {
         $locator = $locator ?: expMigrationLocator::fromSettings();
         $definitions = $locator->find();
@@ -267,7 +300,7 @@ class expMigrationRunner
             $errors[] = $error;
         $extensions = class_exists( 'eZExtension' ) ? eZExtension::activeExtensions() : null;
         $graph = new expMigrationGraph( $definitions, array( 'environment' => $environment === null ? expMigrationRecord::environment() : $environment,
-                                                             'extensions' => $extensions ) );
+                                                             'extensions' => $extensions, 'kernel' => $kernel ) );
         foreach ( $graph->errors() as $error )
             $errors[] = $error;
         return self::load( $graph->migrations(), $errors );
@@ -374,9 +407,21 @@ class expMigrationRunner
             }
 
             $pending = array();
+            $deferred = array();
             foreach ( $report['migrations'] as $i => $entry )
                 if ( in_array( $entry['state'], array( expMigration::PENDING, expMigration::FAILED ), true ) )
+                {
+                    // an upgrade step of the stages code, libraries or finish: listed, run by exp:upgrade
+                    $migration = $byId[$entry['id']];
+                    if ( method_exists( $migration, 'runnable' ) && !$migration->runnable() )
+                    {
+                        $report['migrations'][$i]['action'] = 'deferred';
+                        $report['warnings'][] = $entry['id'] . ': ' . $entry['state'] . ', not run by a migration run: ' . $migration->notRunReason();
+                        $deferred[$entry['id']] = 'deferred';
+                        continue;
+                    }
                     $pending[] = $i;
+                }
                 else if ( $entry['state'] === expMigration::UNKNOWN )
                     $report['warnings'][] = $entry['id'] . ': skipped, its state cannot be told: ' . $entry['detail'];
 
@@ -474,7 +519,7 @@ class expMigrationRunner
                     foreach ( $changed as $i )
                         $this->acceptChange( $report['migrations'][$i], $byId[$report['migrations'][$i]['id']] );
 
-                $outcome = array();
+                $outcome = $deferred;
                 $stop = false;
                 $total = count( $pending );
                 $index = 0;
@@ -533,6 +578,13 @@ class expMigrationRunner
         $this->summarize( $report );
         if ( $runStarted )
         {
+            foreach ( $report['migrations'] as $entry )
+                if ( $entry['source'] === expMigrationUpgradeStep::SOURCE && $entry['action'] === 'applied' )
+                {
+                    // exp:upgrade's finish stage (deploy, caches, smoke check) is not part of a migration run
+                    $report['warnings'][] = 'kernel upgrade steps were applied: ./console exp:upgrade:finish --apply makes them live (deploy, caches, smoke check)';
+                    break;
+                }
             $this->finishRun( $report );
             // the caption after the run, then the commit, tag and push of the migrations repository
             $flow = $this->flow();
@@ -747,7 +799,8 @@ class expMigrationRunner
         $written = $context->writeRecord( array(
             'source' => $entry['source'],
             'migration_id' => $id,
-            'stage' => 'migration',
+            'stage' => $entry['stage'],
+            'version' => method_exists( $migration, 'version' ) ? (string)$migration->version() : '',
             'file_path' => $entry['file'],
             'checksum' => (string)$entry['checksum'],
             'state' => $entry['state'],
@@ -913,6 +966,7 @@ class expMigrationRunner
             'id' => $id,
             'source' => $source,
             'description' => (string)$migration->description(),
+            'stage' => method_exists( $migration, 'stage' ) ? (string)$migration->stage() : 'migration',
             'file' => $file,
             'checksum' => $checksum,
             'record_checksum' => $record ? (string)$record['checksum'] : '',
@@ -944,13 +998,17 @@ class expMigrationRunner
         try
         {
             $entry['state'] = (string)$migration->state( $context );
+            if ( method_exists( $migration, 'detail' ) )
+                $entry['detail'] = (string)$migration->detail();
         }
         catch ( Throwable $e )
         {
             $entry['state'] = expMigration::UNKNOWN;
             $entry['detail'] = 'the state cannot be told: ' . $e->getMessage();
         }
-        $entry['changed'] = $entry['state'] === expMigration::DONE && $record && $record['state'] === expMigration::DONE
+        // no guard for a migration whose state is detected (an upgrade step: its class changes with the kernel)
+        $guarded = !method_exists( $migration, 'guarded' ) || $migration->guarded();
+        $entry['changed'] = $guarded && $entry['state'] === expMigration::DONE && $record && $record['state'] === expMigration::DONE
                             && $record['checksum'] !== '' && $checksum !== null && $record['checksum'] !== $checksum;
         return $entry;
     }
@@ -1015,7 +1073,8 @@ class expMigrationRunner
     {
         // states (done, pending, not-needed, failed, unknown) and actions (applied ...); "failed" is the state
         $states = array( expMigration::DONE, expMigration::PENDING, expMigration::NOT_NEEDED, expMigration::FAILED, expMigration::UNKNOWN );
-        $actions = array( 'applied', 'would-apply', 'not-run', 'blocked', 'refused', 'accepted', 'would-accept', 'undone', 'would-undo', 'restored', 'simulated' );
+        $actions = array( 'applied', 'would-apply', 'not-run', 'blocked', 'refused', 'accepted', 'would-accept', 'undone', 'would-undo', 'restored', 'simulated',
+                          'deferred' );
         $summary = array( 'total' => count( $report['migrations'] ) ) + array_fill_keys( array_merge( $states, $actions ), 0 );
         foreach ( $report['migrations'] as $entry )
         {

@@ -2581,7 +2581,21 @@
       "tests/tests/kernel/classes/migration/expMigrationYamlDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php"
+    ],
+    "kernel/classes/upgrade/*": [
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceSqliteTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationUpgradeSource*": [
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php"
     ],
     "kernel/classes/upgrade/expupgradelock.php": [
       "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
