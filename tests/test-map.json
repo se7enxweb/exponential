@@ -733,7 +733,8 @@
     ],
     "kernel/content/ezcontentoperationcollection.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
-      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php",
+      "tests/tests/kernel/content/eZContentOperationCollectionPublishNodeTest.php"
     ],
     "kernel/content/operation_definition.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
