@@ -3385,7 +3385,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-ada7caef81e1cb9e34a38e0b17915527  doc/changelogs/6.0/6.0.15.md
+34da7933cfcd874a8a902a44962bcde2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3626,7 +3626,7 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 ca85100835c4c7bfd63a2a423d377af2  doc/eng-us/examples/README.md
-9dbc1623dbb2ba0c297ca86f0561312c  doc/eng-us/examples/commands/README.md
+f2db8f4e32a03f6395f06cb30873c825  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 47d52e658c8d83c44d5cb6fae172824e  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
 6d35731551f1ea3e02af6513220b0122  doc/eng-us/examples/commands/adddefaultstates.md
@@ -3684,6 +3684,10 @@ fe8029a581c530b848866f3caf04ac77  doc/eng-us/examples/commands/expmigrationpush.
 9b59b46ce8c2f6d0b27dd5c309082a99  doc/eng-us/examples/commands/expmigrationstatus.md
 72277384d4d27ff6ee5753275edda0d9  doc/eng-us/examples/commands/exppatterncatalogue.md
 9e435392f7116c7d5176b7a8bb93901b  doc/eng-us/examples/commands/exprepair.md
+ae1c03aa72c6e48d70da16adae5c9e66  doc/eng-us/examples/commands/expstaticbuild.md
+d16d8a2f908a6c14f85ec2b2679bc842  doc/eng-us/examples/commands/expstaticdiff.md
+1dbd8bcdb391e030b1d3ef96d5ba0b96  doc/eng-us/examples/commands/expstaticserve.md
+bbaca9274aeae6a88c8d5a71dce28191  doc/eng-us/examples/commands/expstatictargets.md
 644a7a084ca2542ee31c3852fe24f2af  doc/eng-us/examples/commands/exptemplatecheck.md
 06efa0ba5ab996ed272607d93fd20b38  doc/eng-us/examples/commands/exptemplateconvert.md
 9b480da02a4d895e8bde573899ba29d3  doc/eng-us/examples/commands/exptemplateconvertdiff.md
@@ -4132,7 +4136,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 5fd72660cc5c80f159ea936f0d72133b  doc/eng-us/examples/htaccess
-21762d1b0966d28e37875b5b756d7812  doc/eng-us/examples/ini-settings/README.md
+422579824bdaefcd8ba7415bccda07cd  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -5352,7 +5356,9 @@ e94a792189737daf9faba5d983f30005  doc/eng-us/examples/ini-settings/soap/GeneralS
 1215b8a22acf431ee66a14e1fd3077e5  doc/eng-us/examples/ini-settings/solr/README.md
 bf02cda33caea946f6ca68a305e6dbdd  doc/eng-us/examples/ini-settings/solr/SolrSettings.md
 73d85b9ae40a5d141847ad3e1143a768  doc/eng-us/examples/ini-settings/staticcache/CacheSettings.md
-d39a480181961484bdf38f02cbf8bc6e  doc/eng-us/examples/ini-settings/staticcache/README.md
+cc65b1430b019b350864602b61c6b05d  doc/eng-us/examples/ini-settings/staticcache/README.md
+01ed1aaae5782fd20d5170e72a25974f  doc/eng-us/examples/ini-settings/staticcache/StaticPublishSettings.md
+cc9c2ff66cb9248ce16173605c82eb04  doc/eng-us/examples/ini-settings/staticcache/Target_example.md
 b7966a1493a890a2069df8cbf21fb616  doc/eng-us/examples/ini-settings/subitems/Defaults_media.md
 69e73f81beb54abd96703666a1a0712d  doc/eng-us/examples/ini-settings/subitems/Defaults_users.md
 ca7c9510412159019e2908e2d8b6a88e  doc/eng-us/examples/ini-settings/subitems/Preset_editorial.md
@@ -6560,7 +6566,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-30a768c22adbd2e9327fdb682ae9c11d  doc/eng-us/features/6.0/README.md
+5a930239b3d97a206e16cb3ae8b9f12c  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6732,6 +6738,7 @@ fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
 a46d405f5296bc36483dd00721014cbc  doc/eng-us/features/6.0/sqlite-database.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
+9e3736720fde52e8085822e14e8e13f4  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
 9f9bea9c87ecaffffafb0e1ac4361b00  doc/eng-us/features/6.0/string-template-operators.md
 e0fe70a6b6d52d4ec6f29e9cee750368  doc/eng-us/features/6.0/subitems-copy-selected.md
@@ -6770,7 +6777,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 f5369a8e40538e4fa46a98c65aa2320d  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
-5c5090c3273ae731741c616ff17a91cd  doc/eng-us/guides/README.md
+967893a8642c6f727ac548e956b6449c  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 a68843766fba12d6bf9d1878a045e9eb  doc/eng-us/guides/approving-new-editor-accounts.md
 158d25c3e5f52e97b5cfaad49c8e6a00  doc/eng-us/guides/benchmarking.md
@@ -6793,6 +6800,7 @@ cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-refe
 996ecbfce279c75c2c2fdfdd94d6a171  doc/eng-us/guides/getting-started.md
 6301c1c013d5581b176c0ec1a1dbf1ac  doc/eng-us/guides/graphql-recipes.md
 39b2ec78e026ac8f19a5466682cc008a  doc/eng-us/guides/graphql-walkthrough.md
+749f9b1acbb1f4533893fe64bc8b5e6e  doc/eng-us/guides/host-static-sites-on-github-pages.md
 fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
 8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
 4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
@@ -12680,7 +12688,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/eng-us/specifications/4.3/admin_refresh/fu
 e14335da02fc54b98c731ab8152fbda6  doc/eng-us/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/eng-us/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/eng-us/specifications/4.5/asynchronous_publishing.txt
-73c17f90ce64ccdceab6a3f80a15e582  doc/eng-us/specifications/6.0/README.md
+6c4d3e92a02c27f9c70e492b7a0e2b59  doc/eng-us/specifications/6.0/README.md
 eda0b07008cb76a441bdf3174151403c  doc/eng-us/specifications/6.0/audit-event-model.md
 abe08b4c1433579efbb54605157734a1  doc/eng-us/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/eng-us/specifications/6.0/cjw_newsletter.md
@@ -12713,6 +12721,7 @@ acf80981b12ccd8ca2d672ee2d1c1ec0  doc/eng-us/specifications/6.0/runnable-command
 7cfa35396e92191dbe2408004e86d416  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
 26d18bdf558a01bafff2ac715a841d66  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
+94b87b31117ff2cb3541957ab9c62c72  doc/eng-us/specifications/6.0/static-publishing-build-format.md
 b118225dc0e1ae32082c94ca48138d4c  doc/eng-us/specifications/6.0/syndication.md
 b23159133a1d0d3c2ad55fbda0c8597a  doc/eng-us/specifications/6.0/velocity-engine-settings.md
 1f27955fa2b346075a4c0762ba079e22  doc/eng-us/specifications/6.0/velocity-http2-and-security.md
@@ -12957,15 +12966,16 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 6a70b571120591d5b4e86a3bb3d8a25f  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
 f26edba2f4dce1ecdfe95d75e31d053e  doc/ger-de/.examples/descriptions/21-legacy-fork-fixes-2026-10-31.json
 10a08e679ae26b663b8bf8d01d87cbba  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
+190d2ccb82fee0178e4a9fce164305df  doc/ger-de/.examples/descriptions/23-static-publishing-2026-11-01.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-304a6ed932c9adbaf9e1d84a2a70b23b  doc/ger-de/.paths.json
+90dff9026c9811d53d17e0e839fef749  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
-f83fe0b18f0c6f128ad952b8c94a44f8  doc/ger-de/anleitungen/README.md
+d078be5c86b15046c7a3aa388fa3cee2  doc/ger-de/anleitungen/README.md
 7611110580265b6af8b318470861bddd  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -13058,6 +13068,7 @@ e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
 3d68e8329fa2aaef4030a2530bd4e3a1  doc/ger-de/anleitungen/sicherheit-und-audit.md
 9e388232668d81a22e1a5ec8da626be5  doc/ger-de/anleitungen/sitzungen.md
+0f214ca95e8ab1d55c728eccce2dd8cd  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
 5cde673181ca9270862809be220cfb98  doc/ger-de/anleitungen/systeminformationen.md
 e2353a9acc40010bfb026b399ea3a82d  doc/ger-de/anleitungen/template-engines-geschwindigkeit.md
 e7be92b09a1fa57489bf3f6b2642ba21  doc/ger-de/anleitungen/template-konvertierung.md
@@ -13203,7 +13214,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 a3dcf55e730c5618d14fc3750baee71e  doc/ger-de/beispiele/README.md
-b4d6b8ebf82dc2ff3e4bb9aacfb2c2eb  doc/ger-de/beispiele/befehle/README.md
+9d72585fde22c7abf721cbd5b00db6cb  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 1b32eaf6f85858eaa99ca055cddccb7a  doc/ger-de/beispiele/befehle/adddefaultstates.md
@@ -13261,6 +13272,10 @@ c6ae12322470cf8abd025f2595c8666d  doc/ger-de/beispiele/befehle/expmigrationrollb
 903242079d58b9a6899d0ecdce5fe5d3  doc/ger-de/beispiele/befehle/expmigrationstatus.md
 16fe7df54dc979294b4408ba544d1b42  doc/ger-de/beispiele/befehle/exppatterncatalogue.md
 26d0f974b931b2d2925b580ec98f1fce  doc/ger-de/beispiele/befehle/exprepair.md
+9d490273f9989d08f68c4cc074822dc5  doc/ger-de/beispiele/befehle/expstaticbuild.md
+d3610361e8f5f816ca6d51ca0d3d08c8  doc/ger-de/beispiele/befehle/expstaticdiff.md
+a0548d51b39154b0e276f7c1b1e99d8d  doc/ger-de/beispiele/befehle/expstaticserve.md
+eb78eadac5eba0735c8647ca23666b89  doc/ger-de/beispiele/befehle/expstatictargets.md
 e627e9889b8c085a80992a0bc9ac998f  doc/ger-de/beispiele/befehle/exptemplatecheck.md
 9bb5e83c38ec0948aec861703df3f3c6  doc/ger-de/beispiele/befehle/exptemplateconvert.md
 60c42912a3ed4e790da52c9213bad6db  doc/ger-de/beispiele/befehle/exptemplateconvertdiff.md
@@ -13683,7 +13698,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 8383861c182b6605aac7f6f6d7819b37  doc/ger-de/beispiele/fetch-funktionen/workflow/README.md
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
-455bd8b335d28b80f11ba6b3cce2636e  doc/ger-de/beispiele/ini-einstellungen/README.md
+dc1812a3984e25afcf47808c208b16a6  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 da8522f9eb603cff06146203b11e3431  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_datatable.md
@@ -14903,7 +14918,9 @@ eabb9e584ae2dc964d7c94eb5c49117e  doc/ger-de/beispiele/ini-einstellungen/soap/Ge
 272d2872646e9284a607ada05ee5d104  doc/ger-de/beispiele/ini-einstellungen/solr/README.md
 b0dc36b499f6bb53381464cc91bb464a  doc/ger-de/beispiele/ini-einstellungen/solr/SolrSettings.md
 e1b3e3f084109414fed2281625e0b949  doc/ger-de/beispiele/ini-einstellungen/staticcache/CacheSettings.md
-4a8b3f83fa05b897bb30d3770641d05d  doc/ger-de/beispiele/ini-einstellungen/staticcache/README.md
+f54fa16caadb8622c5bd5388bac1a3ca  doc/ger-de/beispiele/ini-einstellungen/staticcache/README.md
+0d488ad42b2e6525631c3e6d8aa4da12  doc/ger-de/beispiele/ini-einstellungen/staticcache/StaticPublishSettings.md
+b957f3b5e5e48e85c3e4e0615d0b37de  doc/ger-de/beispiele/ini-einstellungen/staticcache/Target_example.md
 19f8469ff6b1b9290ce0160dfbf35547  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_media.md
 31681049d4d11f5823b75dc5fcb1b3d2  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_users.md
 bd9579a93d6b61e7aaabeb52f2a150ec  doc/ger-de/beispiele/ini-einstellungen/subitems/Preset_editorial.md
@@ -15908,7 +15925,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-6d5b0d99db812b0d6450f6d062570b12  doc/ger-de/funktionen/6.0/README.md
+8475834dc029f93a4b156899504594b7  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -16077,6 +16094,7 @@ c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-beste
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 1c981d8a54aac59d03d7a8849d066c38  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
+a3da857cb5551841eedfda00d8fb80bd  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
 e3f9f4f40efea9ae4d8d4382d03600b1  doc/ger-de/funktionen/6.0/systemkarte.md
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
 1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
@@ -21814,7 +21832,7 @@ c74c61782aae1da372a0885d9225ed72  doc/ger-de/installation/migration/shopify.md
 370891338e6b7eecbc0ccf974791157b  doc/ger-de/installation/migration/symfony-anwendungen.md
 7afe7da9a50da9a5b91d6b6f220248fb  doc/ger-de/installation/migration/website-baukaesten.md
 f4364e8ca67a26c8ba3463b279f83d39  doc/ger-de/installation/migration/wordpress.md
-81057bf3e6b332cd56837f79cefea0b4  doc/ger-de/spezifikationen/6.0/README.md
+fab0273dea8c1cdb1b226d543cc78e43  doc/ger-de/spezifikationen/6.0/README.md
 cb14f86e781d2b9b69cfc504606c22ea  doc/ger-de/spezifikationen/6.0/audit-ereignismodell.md
 46a672ef5e561501db056a629bf555ff  doc/ger-de/spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md
 c48e255150e2911443c00aa09df401b3  doc/ger-de/spezifikationen/6.0/bccie.md
@@ -21847,6 +21865,7 @@ da71ae2edb8e08a7c2003f78957321a1  doc/ger-de/spezifikationen/6.0/mail-einstellun
 c83d971494616e6050d2ac9fad29ff2f  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-6.0.13.md
 e74b59965ce8bdb608a720100c84692b  doc/ger-de/spezifikationen/6.0/sicherheitsvorgaben-2026-09.md
 876a7f3c2cc819436930c0fa5235088c  doc/ger-de/spezifikationen/6.0/sqlite3-datenbanktreiber.md
+79b45ec0b9bde6df0f70a6cacd005834  doc/ger-de/spezifikationen/6.0/statisches-veroeffentlichen-build-format.md
 f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 8faea3493dbcfc10fdf62435ec8c2a7d  doc/ger-de/spezifikationen/6.0/velocity-engine-einstellungen.md
 c26c10f120d2b58bf79e3ceefedb7568  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md

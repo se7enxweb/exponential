@@ -70,6 +70,7 @@ nginx with PHP-FPM keep working as before.
 - [Cache clears that move directories aside](cache-clear-rename-aside.md)
 - [Keep the content and INI caches in Redis or Valkey](valkey-cache-hooks.md)
 - [Static cache generator](static-cache-generator.md)
+- [Static publishing: a static copy of a site for GitHub Pages and any static host](static-publishing.md)
 - [Cronjobs console](cronjobs-console.md), [Pausing cronjob parts](cronjob-pause.md),
   [Leaving out a cronjob part](cronjob-part-filter.md)
 - [Log rotation and pruning](log-rotation.md), [The log viewer](log-viewer.md),

@@ -76,6 +76,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Cache leeren, indem Verzeichnisse beiseitegeschoben werden](cache-leeren-durch-umbenennen.md)
 - [Inhalts- und INI-Cache in Redis oder Valkey halten](valkey-cache-hooks.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
+- [Statisches Veröffentlichen: eine statische Kopie einer Website für GitHub Pages und jeden statischen Host](statisches-veroeffentlichen.md)
 - [Cronjob-Konsole](cronjobs-in-der-konsole.md), [Cronjob-Teile pausieren](cronjobs-pausieren.md),
   [Einen Cronjob-Teil auslassen](filter-fuer-cronjob-teile.md)
 - [Rotation und Bereinigung der Logs](log-rotation.md), [Der Log-Viewer](log-betrachter.md),
