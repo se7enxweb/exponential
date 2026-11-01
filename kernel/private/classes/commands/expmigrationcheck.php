@@ -27,7 +27,9 @@ class Expmigrationcheck extends ExpmigrationBase
                              "The lint for CI, without a database: every migration of the migration directories (or of --path)\n" .
                              "is checked for a valid file name, a header of known keys, requirements that exist and no cycle,\n" .
                              "active extensions it requires, and, for a PHP migration, its syntax and exactly one class that\n" .
-                             "extends expMigrationPhp and loads. Nothing of a migration is run. Exit 1 when something is wrong.\n" .
+                             "extends expMigrationPhp and loads; for a YAML migration, its YAML and every step against the\n" .
+                             "schema of its step type, with its conditions, loops and references. Nothing of a migration is run.\n" .
+                             "Exit 1 when something is wrong.\n" .
                              "\n" .
                              "./console exp:migration:check\n" .
                              "./console exp:migration:check --path=extension/expnews/migrations --format=json\n" .

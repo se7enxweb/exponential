@@ -68,8 +68,8 @@
         "de": "Die Migrationen in einer Transaktion ausführen, die zurückgerollt wird (PostgreSQL und SQLite; anderswo wird der Plan aufgelistet)"
     },
     "command:expmigrationgenerate": {
-        "en": "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(); a dry run unless --apply",
-        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(); ein Probelauf ohne --apply"
+        "en": "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; a dry run unless --apply",
+        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; ein Probelauf ohne --apply"
     },
     "command:expmigrationgenerate --author": {
         "en": "The author in the header of the new migration",
@@ -84,16 +84,16 @@
         "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
     },
     "command:expmigrationgenerate --skeleton": {
-        "en": "An empty PHP migration with its header, plan(), up() and down()",
-        "de": "Eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down()"
+        "en": "An empty migration with its header: PHP with plan(), up() and down(), or YAML without steps",
+        "de": "Eine leere Migration mit Kopfzeilen: PHP mit plan(), up() und down(), oder YAML ohne Schritte"
     },
     "command:expmigrationgenerate --source": {
         "en": "The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)",
         "de": "Die Quelle: site oder extension:<Name> (generate: wohin die Datei kommt; rollback: welche Migration, wenn zwei Quellen ihre ID haben)"
     },
     "command:expmigrationgenerate --type": {
-        "en": "The type of the new migration: php (the default and, for now, the only one)",
-        "de": "Der Typ der neuen Migration: php (der Standard und vorerst der einzige)"
+        "en": "The type of the new migration: php (the default) or yml",
+        "de": "Der Typ der neuen Migration: php (der Standard) oder yml"
     },
     "command:expmigrationmigrate": {
         "en": "Run the pending migrations: a dry run unless --apply; captions before and after, restore on failure, commit, tag and push",

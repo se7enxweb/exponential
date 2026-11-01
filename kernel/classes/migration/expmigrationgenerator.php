@@ -9,10 +9,11 @@
 
 /**
  * Writes new migration files, for exp:migration:generate. The skeleton is an empty PHP migration with its header,
- * plan(), up() and down(), named YYYYMMDDHHMMSS_<name>.php after the time of now, in the site's migrations
- * directory (the first [MigrationSettings] DirectoryList entry) or in an extension's (ExtensionDirectory).
+ * plan(), up() and down() (type php), or an empty YAML migration with its header and no steps (type yml), named
+ * YYYYMMDDHHMMSS_<name>.<type> after the time of now, in the site's migrations directory (the first
+ * [MigrationSettings] DirectoryList entry) or in an extension's (ExtensionDirectory).
  *
- * The class is named after the name and the time, in a namespace of its source (Site\Migrations,
+ * The class of a PHP migration is named after the name and the time, in a namespace of its source (Site\Migrations,
  * Extension\<Name>\Migrations), so two migrations never declare the same class. An existing file is never replaced.
  *
  * @since 6.0.15
@@ -21,7 +22,7 @@
 class expMigrationGenerator
 {
     /** The types a skeleton can be written for. */
-    const SKELETON_TYPES = array( 'php' );
+    const SKELETON_TYPES = array( 'php', 'yml' );
 
     /**
      * A migration name as a file name takes it: lower case, words joined with "_". Pure.
@@ -73,7 +74,7 @@ class expMigrationGenerator
      *
      * @param string $name the name (made a slug())
      * @param array $options source (site, the default, or extension:<name>), directory (the folder instead of the
-     *                       source's), description, author, time (a Unix time, default now), type (php), root,
+     *                       source's), description, author, time (a Unix time, default now), type (php or yml), root,
      *                       ini (migration.ini)
      * @return array ok, errors (string[]), id, file (absolute), path (relative to root), class, namespace, content
      */
@@ -113,9 +114,16 @@ class expMigrationGenerator
         $result['id'] = $id;
         $result['file'] = $file;
         $result['path'] = expMigrationCheck::relative( $file, $root );
-        $result['class'] = $class;
-        $result['namespace'] = $namespace;
-        $result['content'] = self::phpSkeleton( $namespace, $class, $description, $author );
+        if ( $type === 'yml' )
+        {
+            $result['content'] = self::yamlSkeleton( $description, $author );
+        }
+        else
+        {
+            $result['class'] = $class;
+            $result['namespace'] = $namespace;
+            $result['content'] = self::phpSkeleton( $namespace, $class, $description, $author );
+        }
         if ( file_exists( $file ) )
             $result['errors'][] = $result['path'] . ' exists already';
         $result['ok'] = !$result['errors'];
@@ -158,6 +166,41 @@ class expMigrationGenerator
         if ( strpos( $source, 'extension:' ) === 0 )
             return rtrim( eZExtension::baseDirectory(), '/' ) . '/' . substr( $source, 10 ) . '/' . $settings['extension_directory'];
         return $settings['directories'] ? (string)$settings['directories'][0] : '';
+    }
+
+    /**
+     * The content of a YAML skeleton: the header and an empty list of steps, with an example in comments. Pure.
+     *
+     * @param string $description
+     * @param string $author
+     * @return string
+     */
+    public static function yamlSkeleton( $description, $author = '' )
+    {
+        $lines = array( '# description: ' . $description );
+        if ( $author !== '' )
+            $lines[] = '# author: ' . $author;
+        $lines = array_merge( $lines, array(
+            '#',
+            '# The comment lines at the top of the file are the header the migration engine reads. Other keys, one line each:',
+            '# "requires" (migration ids, extension:<name>), "environments" (staging, production, !development to leave one',
+            '# out), "engines" (mysql, postgresql, sqlite, oracle, mongodb), "maintenance" (yes or no) and "author".',
+            'steps: []',
+            '',
+            '# Replace [] with the steps, which run in order. "type" names the step type (migration.ini [StepSettings]',
+            '# StepTypeList); the other keys are the type\'s, plus if, environments, engines and references:',
+            '#',
+            '# steps:',
+            '#     - type: reference',
+            '#       set:',
+            '#           news_parent: ${idmap.node.news}',
+            '#     - type: assert',
+            '#       that: { ref: news_parent, set: true }',
+            '#',
+            '# down: the steps that undo the migration, for ./console exp:migration:rollback <id> (optional).',
+            '',
+        ) );
+        return implode( "\n", $lines );
     }
 
     /**

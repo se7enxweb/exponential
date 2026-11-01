@@ -1,11 +1,12 @@
 # Spezifikation: das Migrationsdateiformat
 
 Diese Seite ist die verbindliche Beschreibung einer Migrationsdatei von Exponential 6.0.15: der Dateiname, der Kopf, die
-PHP-Klasse, die Prüfsumme und die Formate der Aufzeichnungsdateien, die ein Lauf schreibt (die Statusdatei und das
-Laufprotokoll). Sie deckt ab, was der Kernel von 6.0.15 liest und schreibt; die Schritte von YAML-, SQL- und
-INI-Migrationen kommen hinzu, sobald es sie gibt. Die Anleitung ist [Migrationen](../../anleitungen/migrationen.md).
+PHP-Klasse, das YAML-Dokument mit seinen Schritten, Platzhaltern, Bedingungen und Schleifen, die ID-Zuordnung, die
+Prüfsumme und die Formate der Aufzeichnungsdateien, die ein Lauf schreibt (die Statusdatei und das Laufprotokoll). Sie
+deckt ab, was der Kernel von 6.0.15 liest und schreibt; SQL- und INI-Migrationen kommen hinzu, sobald es sie gibt. Die
+Anleitung ist [Migrationen](../../anleitungen/migrationen.md).
 
-Version dieser Spezifikation: 1 (exp-migration/1, exp-migration-status/1).
+Version dieser Spezifikation: 1 (exp-migration/1, exp-migration-status/1, exp-migration-idmap/1).
 
 ## Der Dateiname
 
@@ -29,7 +30,7 @@ YYYYMMDDHHMMSS_<name>.<engine>.sql
 - Eine Datei, deren Name nicht mit 14 Ziffern und `_` beginnt, ist keine Migration und wird übersprungen (eine README,
   eine `.gitkeep`); eine, die so beginnt, aber eine Regel oben verletzt, ist ein Fehler.
 - Nur die Dateien direkt in einem Migrationsordner werden gelesen; Unterordner nicht.
-- In 6.0.15 läuft nur `php`; die anderen Typen werden gefunden, geordnet und geprüft und vom Runner abgelehnt.
+- In 6.0.15 laufen `php` und `yml`; `sql` und `ini` werden gefunden, geordnet und geprüft und vom Runner abgelehnt.
 
 ## Der Kopf
 
@@ -95,6 +96,172 @@ Reihenfolge, damit eine Liste sie noch zeigt. Solange ein Fehler da ist, läuft 
   sind frei ([PHP-Migrationen](../../anleitungen/migrationen-php.md#die-methoden)).
 - `up()` meldet einen Fehler, indem es wirft; es gibt die Zeilen dessen zurück, was es getan hat.
 - `detect()` gibt `done`, `pending`, `not-needed` oder `null` zurück; `null` heißt, die Aufzeichnung entscheidet.
+
+## Die YAML-Migration
+
+Eine `.yml`-Datei wird mit symfony/yaml gelesen (`^5.4 || ^6.4 || ^7.0`; composer.json verlangt es, und
+`migration.ini [YamlSettings] LibraryPath` nennt eine Kopie außerhalb des Composer-`vendor/`). Ohne die Bibliothek
+wird jede YAML-Migration mit dem Installationshinweis abgelehnt. Gelesen wird nur einfaches YAML: Ein doppelter
+Schlüssel ist ein Fehler, `!php/...`-Tags werden abgelehnt, und ein Datum ohne Anführungszeichen ist kein Text
+(schreiben Sie `'2026-11-01'`). Der Kopf bleibt in den `#`-Kommentarzeilen am Anfang; als YAML-Schlüssel geschriebene
+Kopfschlüssel sind ein Fehler.
+
+### Das Dokument
+
+Das Dokument ist entweder die Liste der Schritte allein oder eine Zuordnung:
+
+| Schlüssel | Wert | Standard |
+|---|---|---|
+| `steps` | die Liste der Schritte, in Reihenfolge ausgeführt (in der Zuordnungsform Pflicht) | |
+| `down` | die Liste der Schritte, die die Migration zurücknehmen (`exp:migration:rollback <id>`) | keine |
+| `transactional` | `false`: keine Transaktion um die Migration | `true` |
+
+Jeder andere Schlüssel ist ein Fehler. Ein Dokument ohne Schritte ist gültig und tut nichts (eine Warnung in
+`exp:migration:check`).
+
+```yaml
+# description: The languages of the news, checked before the import
+steps:
+    - type: reference
+      set: { news_languages: [ eng-US, ger-DE ] }
+    - foreach: "${ref.news_languages}"
+      as: language
+      steps:
+          - type: assert
+            that: { value: "${loop.language}", matches: "/^[a-z]{3}-[A-Z]{2}$/" }
+down:
+    - type: reference
+      set: { news_languages: [] }
+```
+
+### Ein Schritt
+
+Ein Schritt ist eine Zuordnung. Die Schlüssel, die die Engine liest:
+
+| Schlüssel | Wert |
+|---|---|
+| `type` | der Schritttyp, wie `migration.ini [StepSettings] StepTypeList[<Name>]` ihn registriert (Pflicht) |
+| `mode` | der Modus, einer von denen, die das Schema des Schritttyps nennt (`create`, `update`, `ensure`, `delete` ...); ohne Angabe der Standard des Typs; ein Typ ohne Modi nimmt kein `mode` |
+| `if` | eine Bedingung (unten): Der Schritt wird übersprungen, wenn sie falsch ist |
+| `environments` | eine Liste (oder ein Text mit Kommas) von Umgebungen; `!<Name>` lässt eine aus (wie im Kopf) |
+| `engines` | eine Liste aus `mysql`, `postgresql`, `sqlite`, `oracle`, `mongodb`; `!<Name>` lässt eine aus |
+| `references` | eine Zuordnung `<Referenzname>: <Wertname>`: Nach dem Schritt wird jede Referenz auf diesen Wert des Ergebnisses gesetzt |
+| `comment` | ein Text, ignoriert |
+
+Jeder andere Schlüssel gehört dem Schritttyp und wird gegen sein Schema geprüft: Unbekannte Schlüssel, fehlende
+Pflichtschlüssel, der Typ jedes Werts (`string`, `int`, `number`, `bool`, `scalar`, `list`, `map`, `any`,
+`identifier`, `condition`), die erlaubten Werte und Schlüssel eines anderen Modus sind Fehler. Ein Wert mit einem
+Platzhalter wird geprüft, wenn der Schritt läuft, nachdem der Platzhalter ersetzt ist; ein Schritttyp ergänzt eigene
+Prüfungen (`expMigrationStepType::validate()`). Die Standardwerte des Typs werden vor dem Lauf eingesetzt.
+
+Ein Referenzname besteht aus Buchstaben, Ziffern und `_` und beginnt nicht mit einer Ziffer. `references:` darf nur
+die Werte nennen, die das Schema des Schritttyps aufführt.
+
+### Schleifen
+
+Ein Schritt mit `foreach` oder `while` ist eine Schleife; er hat kein `type`.
+
+| Schlüssel | Wert | Standard |
+|---|---|---|
+| `foreach` | eine Liste, eine Zuordnung oder ein Platzhalter, der für eine steht (`"${ref.languages}"`) | |
+| `as` | nur `foreach`: der Name des aktuellen Elements | `item` |
+| `key` | nur `foreach`: der Name des aktuellen Schlüssels (die Position in einer Liste) | `key` |
+| `while` | eine Bedingung, vor jedem Durchlauf ausgewertet | |
+| `max` | nur `while`: die meisten Durchläufe; einer mehr lässt die Migration scheitern | `[StepSettings] MaxLoopIterations` (1000) |
+| `steps` | die Schritte der Schleife (Pflicht, nicht leer) | |
+| `if`, `comment` | wie bei einem Schritt | |
+
+In einer Schleife sind `${loop.<as>}`, `${loop.<key>}` und `${loop.index}` (der Durchlauf, ab 0) gesetzt; eine
+verschachtelte Schleife sieht die Variablen der Schleifen um sie herum. Ein `${loop.<Name>}`, das keine Schleife um
+ihn setzt, ist ein Fehler. Schleifen verschachteln höchstens 8 Ebenen tief.
+
+### Platzhalter
+
+`${<Bereich>.<Name>[.<Schlüssel>...]}` in einem Wert wird direkt vor dem Schritt ersetzt:
+
+| Bereich | Steht für |
+|---|---|
+| `ref` | eine Referenz: gesetzt von `references:` eines früheren Schritts, von einem `reference`-Schritt oder von einer früheren Migration desselben Laufs (`$context->setReference()` in PHP) |
+| `loop` | eine Variable einer Schleife um den Schritt |
+| `idmap` | `${idmap.<Art>.<Name>}`: die ID-Zuordnung der Umgebung des Laufs (unten) |
+| `run` | `${run.id}`, `${run.environment}`, `${run.engine}` |
+
+- Ein Wert, der nur aus einem Platzhalter besteht, behält den Typ dessen, wofür er steht (eine Zahl, eine Liste); in
+  einem längeren Text wird der Wert hineingeschrieben (`true`/`false` für einen Wahrheitswert, nichts für `null`), und
+  eine Liste oder Zuordnung ist dort ein Fehler.
+- `.<Schlüssel>` geht in eine Liste oder Zuordnung hinein (`${ref.node.id}`, `${ref.list.0}`).
+- `$${` ist ein wörtliches `${`. Schlüssel von Zuordnungen werden nie ersetzt, nur Werte.
+- Ein Platzhalter, der nichts benennt, lässt den Schritt scheitern. Im Probelauf bleibt er stehen, wie er geschrieben
+  ist, und der Plan sagt, was erst beim Lauf der Migration entschieden wird.
+
+### Bedingungen
+
+`if:`, `while:` und das `that:` eines `assert`-Schritts nehmen eine Bedingung:
+
+| Form | Wahr, wenn |
+|---|---|
+| `true`, `false` | wie geschrieben |
+| `"${ref.flag}"` | der Wert nicht `null`, `false`, `0`, `""`, `"0"`, `"false"`, `"no"` oder eine leere Liste ist |
+| `{ all: [ <Bedingung>, ... ] }` | jede wahr ist (eine leere Liste ist wahr) |
+| `{ any: [ <Bedingung>, ... ] }` | eine wahr ist (eine leere Liste ist falsch) |
+| `{ not: <Bedingung> }` | die Bedingung falsch ist |
+| `{ ref: <Name>, set: true }` | die Referenz gesetzt ist (`set: false`: sie ist es nicht) |
+| `{ environment: <Name oder Liste> }` | die Umgebung des Laufs eine von ihnen ist; `!<Name>` wie im Kopf |
+| `{ engine: <Name oder Liste> }` | die Datenbank-Engine eine von ihnen ist |
+| `{ value: <Wert>, <Operator>: <Operand> }` | der Vergleich gilt |
+
+Operatoren: `equals`, `not_equals` (Zahlen und Zahlentexte werden als Zahlen verglichen), `in`, `not_in` (eine
+Liste), `gt`, `gte`, `lt`, `lte` (Zahlen), `matches` (ein PCRE-Muster mit seinen Begrenzern), `empty` (`true` oder
+`false`). Genau ein Operator je `value`.
+
+### Bezeichner und die ID-Zuordnung
+
+Ein Schlüssel vom Typ `identifier` nennt einen Knoten oder ein Objekt: eine Zahl (die ID), `remote:<Remote-ID>`,
+`object-remote:<Remote-ID>` (ein Knoten: der Hauptknoten dieses Objekts) oder `path:<URL-Pfad>`
+(`path:media/images`). IDs unterscheiden sich zwischen Installationen; eine Site hält die Namen ihrer IDs je Umgebung
+in `<Repository>/idmap/<Umgebung>.json` (`default.json` ohne Umgebung):
+
+```json
+{
+    "schema": "exp-migration-idmap/1",
+    "ids": {
+        "node": { "news": 1234, "media": "remote:media-root" }
+    }
+}
+```
+
+Arten und Namen bestehen aus Buchstaben, Ziffern, `_` und `-`; ein Wert ist eine Zahl oder ein Bezeichnertext. Eine
+fehlende Datei ist eine leere Zuordnung; eine Datei, die keine ist, lässt jede YAML-Migration des Laufs scheitern.
+
+### Schritttypen
+
+Der Kernel registriert `reference` (`set:` eine Zuordnung von Referenzen), `assert` (`that:` eine Bedingung,
+`message:` der Text des Fehlers), `content`, `location` und `content_version`; jeden Schlüssel jedes Typs nennt seine
+erzeugte Seite ([die Schritttypen](../../beispiele/migrationsschritte/README.md)). Ein Bezeichner-Schlüssel nennt
+seine Art: `node`, `object`, `class`, `section`, `language`, `user`, `role` oder `state`; die letzten sechs nehmen
+auch einen Namen (Bezeichner einer Klasse oder Sektion, eine Locale, ein Login, ein Rollenname, `<gruppe>/<zustand>`).
+Eine Erweiterung registriert ihre eigenen Schritttypen in ihrer `migration.ini.append.php`:
+
+```ini
+[StepSettings]
+StepTypeList[news_import]=expNewsImportStep
+```
+
+Die Klasse implementiert `expMigrationStepType` (`name()`, `schema()`, `validate()`, `caches()`, `plan()`, `apply()`;
+`expMigrationStepTypeBase` hat die Standards). `apply()` gibt `lines` (was es getan hat) und `values` (was
+`references:` nehmen kann) zurück. Eine Klasse, die es nicht gibt, die einen anderen Namen nennt oder ein fehlerhaftes
+Schema hat, wird nicht registriert und ist ein Fehler jeder geprüften YAML-Migration.
+
+### Ausführen und zurücknehmen
+
+- `up()` führt die Schritte der Reihe nach aus; der erste, der scheitert, beendet die Migration mit seiner Stelle
+  (`steps[1].steps[0] (assert): ...`), und die Transaktion der Migration wird zurückgerollt.
+- `plan()` (der Probelauf) listet den Plan jedes Schritts; von einem `reference`-Schritt gesetzte Werte gelten für die
+  Schritte danach, alles andere, was erst beim Lauf feststeht, wird so markiert.
+- `down()` führt die `down:`-Schritte aus; ohne `down:` lässt sich eine Migration nur zurücknehmen, wenn der Typ jedes
+  Schritts `expMigrationRevertibleStepType` implementiert und keiner eine Schleife ist: Dann läuft `revert()` jedes
+  Schritts, der letzte zuerst, mit den Referenzen des Laufs, der zurücknimmt. `reference` und `assert` nehmen nichts
+  zurück.
 
 ## Die Prüfsumme
 

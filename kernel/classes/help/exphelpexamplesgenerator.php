@@ -43,6 +43,7 @@ class expHelpExamplesGenerator
         'cronjobs'           => 'Cronjob scripts and parts',
         'commands'           => 'Console commands',
         'extension-points'   => 'Extension points',
+        'migration-steps'    => 'Migration step types',
     );
 
     /** Settings whose name says they name classes, handlers or directories others can add to (a heuristic) */
@@ -2250,6 +2251,117 @@ class expHelpExamplesGenerator
                                   $this->t( 'Where an extension plugs into the kernel through settings: INI settings that name handler classes, filters, providers, listeners, repositories or extension directories. They are **found by the setting\'s name (a heuristic)**, one page per INI file, each with an override an extension can ship. Other ways to extend: [template operators](../template-operators/README.md), [modules](../module-views/README.md), [datatypes](../datatypes/README.md), [workflow events](../workflow-events/README.md), [cronjobs](../cronjobs/README.md) and [design overrides](../cookbook/template-override.md).' ), '',
                                   $this->t( '| INI file | From | Settings | Examples |' ), '|---|---|---|---|' ), $fileRows );
         $this->index( $area, $this->t( 'Extension points' ), $this->t( 'INI-driven handler, class and directory lists an extension can add to (found by name, a heuristic).' ), $md, array() );
+    }
+
+    /**
+     * The step types of YAML migrations: one page per type registered in the shipped migration.ini [StepSettings]
+     * StepTypeList, made from its schema() (expMigrationStepType): modes, keys, the values "references:" can take,
+     * whether its steps undo themselves, the caches it touches and its example.
+     */
+    protected function areaMigrationSteps()
+    {
+        $area = 'migration-steps';
+        // the step types are the classes of this process: only for a root that ships the migration.ini they come from
+        if ( !class_exists( 'expMigrationStepRegistry' ) || !in_array( 'settings/migration.ini', $this->files, true ) )
+            return;
+        $registry = expMigrationStepRegistry::fromSettings( eZINI::instance( 'migration.ini' ) );
+        foreach ( $registry->errors() as $error )
+            $this->warnings[] = "migration.ini [StepSettings]: $error";
+        $rows = array();
+        foreach ( $registry->types() as $name => $type )
+        {
+            $schema = $type->schema();
+            $class = get_class( $type );
+            $file = $this->classFile( $class );
+            $description = rtrim( $this->d( "step:$name", isset( $schema['description'] ) ? $schema['description'] : '' ), '.' );
+            $modes = isset( $schema['modes'] ) ? (array)$schema['modes'] : array();
+            $md = array( "# $name", '' );
+            if ( $description !== '' )
+                $md[] = $description . '.';
+            $md[] = '';
+            $md[] = $this->t( 'A step of a YAML migration with `type: {name}`. The class `{class}`{file} is registered in `settings/migration.ini` `[StepSettings] StepTypeList[{name}]`.',
+                              array( 'name' => $name, 'class' => $class, 'file' => $file !== null ? ' (`' . $file . '`)' : '' ) );
+            $md[] = '';
+            if ( $modes )
+            {
+                $md[] = $this->t( '## Modes' );
+                $md[] = '';
+                $md[] = isset( $schema['mode'] ) ? $this->t( '`mode:` is one of {list}; without it, {default}.', array( 'list' => implode( ', ', array_map( function ( $m ) { return '`' . $m . '`'; }, $modes ) ), 'default' => '`' . $schema['mode'] . '`' ) )
+                                                 : $this->t( '`mode:` is one of {list}; every step names one.', array( 'list' => implode( ', ', array_map( function ( $m ) { return '`' . $m . '`'; }, $modes ) ) ) );
+                $md[] = '';
+            }
+            $keys = isset( $schema['keys'] ) ? (array)$schema['keys'] : array();
+            if ( $keys )
+            {
+                $md[] = $this->t( '## Keys' );
+                $md[] = '';
+                $md[] = $modes ? $this->t( '| Key | Type | Modes | Default | What it is |' ) . "\n|---|---|---|---|---|" : $this->t( '| Key | Type | Default | What it is |' ) . "\n|---|---|---|---|";
+                foreach ( $keys as $key => $definition )
+                {
+                    $typeText = '`' . $definition['type'] . '`' . ( isset( $definition['kind'] ) ? ' (' . $definition['kind'] . ')' : '' );
+                    if ( isset( $definition['values'] ) )
+                        $typeText .= ': ' . implode( ', ', array_map( function ( $v ) { return '`' . $v . '`'; }, (array)$definition['values'] ) );
+                    $default = array_key_exists( 'default', $definition ) ? '`' . self::cell( json_encode( $definition['default'] ) ) . '`' : ( !empty( $definition['required'] ) ? $this->t( 'required' ) : '' );
+                    $text = self::cell( $this->d( "step:$name $key", isset( $definition['description'] ) ? $definition['description'] : '' ) );
+                    $md[] = '| `' . $key . '` | ' . $typeText . ' | ' . ( $modes ? ( isset( $definition['modes'] ) ? implode( ', ', (array)$definition['modes'] ) : $this->t( 'all' ) ) . ' | ' : '' ) . $default . ' | ' . $text . ' |';
+                }
+                $md[] = '';
+                $md[] = $this->t( 'Besides these, every step takes the keys of the engine: `type`, `mode`, `if`, `references`, `environments`, `engines` and `comment` ([the file format](../../specifications/6.0/migration-file-format.md#a-step)). A key of type `identifier` names a node, an object or another part of the installation by id, remote id, path or name ([identifiers](../../specifications/6.0/migration-file-format.md#identifiers-and-the-id-map)).' );
+                $md[] = '';
+            }
+            $values = isset( $schema['values'] ) ? (array)$schema['values'] : array();
+            if ( $values )
+            {
+                $md[] = $this->t( '## Values for references' );
+                $md[] = '';
+                $md[] = $this->t( '`references: { <name>: <value> }` keeps a value of the step\'s result as `${ref.<name>}` for the steps and migrations after it:' );
+                $md[] = '';
+                $md[] = $this->t( '| Value | What it is |' );
+                $md[] = '|---|---|';
+                foreach ( $values as $value => $text )
+                    $md[] = '| `' . $value . '` | ' . self::cell( $this->d( "step:$name value $value", $text ) ) . ' |';
+                $md[] = '';
+            }
+            $md[] = $this->t( '## Undoing' );
+            $md[] = '';
+            if ( $type instanceof expMigrationPartlyRevertibleStepType )
+                $md[] = $this->t( 'Some steps of this type undo themselves when their migration is rolled back without `down:` (the class says which); a migration with any other step of it needs `down:` or a rollback to its caption.' );
+            else if ( $type instanceof expMigrationRevertibleStepType )
+                $md[] = $this->t( 'Every step of this type undoes itself when its migration is rolled back without `down:`.' );
+            else
+                $md[] = $this->t( 'A step of this type does not undo itself: a migration with it needs `down:` or a rollback to its caption.' );
+            $md[] = '';
+            $caches = array();
+            foreach ( $modes ?: array( null ) as $mode )
+                foreach ( (array)$type->caches( $mode === null ? array() : array( 'mode' => $mode ) ) as $cache )
+                    $caches[] = (string)$cache;
+            $caches = array_values( array_unique( $caches ) );
+            $md[] = $caches ? $this->t( 'Caches it touches (cleared after the run): {list}.', array( 'list' => implode( ', ', array_map( function ( $c ) { return '`' . $c . '`'; }, $caches ) ) ) )
+                            : $this->t( 'It touches no cache.' );
+            $md[] = '';
+            if ( isset( $schema['example'] ) && trim( (string)$schema['example'] ) !== '' )
+            {
+                $md[] = $this->t( '## Example' );
+                $md[] = '';
+                $md[] = '```yaml';
+                foreach ( explode( "\n", rtrim( (string)$schema['example'] ) ) as $line )
+                    $md[] = $line;
+                $md[] = '```';
+                $md[] = '';
+            }
+            $md[] = $this->t( '## Related' );
+            $md[] = '';
+            $md[] = $this->t( '- [All step types](README.md)' );
+            $md[] = $this->t( '- [YAML migration steps](../../guides/migrations-yaml-steps.md)' );
+            $this->page( "$area/" . self::fileName( $name ) . '.md', $name . ' (' . $this->t( 'migration step' ) . ')', $description !== '' ? $description . '.' : $name,
+                         array( $name, 'migration', 'YAML', 'step', $class ), array_values( array_filter( array( 'settings/migration.ini', $file ) ) ), $md );
+            $rows[] = '| [' . $name . '](' . self::fileName( $name ) . '.md) | ' . ( $modes ? implode( ', ', $modes ) : '' ) . ' | ' . self::cell( $description ) . ' |';
+            ++$this->counts[$area];
+        }
+        $md = array_merge( array( $this->t( '# Migration step types' ), '',
+                                  $this->t( 'Every step type of YAML migrations the kernel registers in `settings/migration.ini` `[StepSettings] StepTypeList`, one page each, made from the type\'s schema: its modes, keys, the values `references:` can take, whether it undoes itself, the caches it touches and an example. An extension registers its own types the same way ([how](../../guides/migrations-yaml-steps.md)).' ), '',
+                                  $this->t( '| Step type | Modes | What it does |' ), '|---|---|---|' ), $rows );
+        $this->index( $area, $this->t( 'Migration step types' ), $this->t( 'Every step type of YAML migrations with its modes, keys, reference values and an example.' ), $md, array( 'settings/migration.ini' ) );
     }
 
     // ------------------------------------------------------------------------------------------------------------

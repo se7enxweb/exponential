@@ -1,11 +1,12 @@
 # Specification: the migration file format
 
 This page is the normative description of a migration file of Exponential 6.0.15: the file name, the header, the
-PHP class, the checksum, and the formats of the record files a run writes (the status file and the run log). It
-covers what the 6.0.15 kernel reads and writes; the steps of YAML, SQL and INI migrations will be added to it when
-they exist. The guide is [Migrations](../../guides/migrations.md).
+PHP class, the YAML document with its steps, placeholders, conditions and loops, the id map, the checksum, and the
+formats of the record files a run writes (the status file and the run log). It covers what the 6.0.15 kernel reads
+and writes; SQL and INI migrations will be added to it when they exist. The guide is
+[Migrations](../../guides/migrations.md).
 
-Version of this specification: 1 (exp-migration/1, exp-migration-status/1).
+Version of this specification: 1 (exp-migration/1, exp-migration-status/1, exp-migration-idmap/1).
 
 ## The file name
 
@@ -28,7 +29,7 @@ YYYYMMDDHHMMSS_<name>.<engine>.sql
 - A file whose name does not start with 14 digits and `_` is not a migration and is skipped (a README, a `.gitkeep`);
   one that does but breaks a rule above is an error.
 - Only the files directly in a migrations folder are read; subfolders are not.
-- In 6.0.15 only `php` runs; the other types are found, ordered and checked, and refused by the runner.
+- In 6.0.15 `php` and `yml` run; `sql` and `ini` are found, ordered and checked, and refused by the runner.
 
 ## The header
 
@@ -94,6 +95,168 @@ error.
   are optional ([PHP migrations](../../guides/migrations-php.md#the-methods)).
 - `up()` signals a failure by throwing; it returns the lines of what it did.
 - `detect()` returns `done`, `pending`, `not-needed` or `null`; `null` means the record decides.
+
+## The YAML migration
+
+A `.yml` file is read with symfony/yaml (`^5.4 || ^6.4 || ^7.0`; composer.json requires it, and
+`migration.ini [YamlSettings] LibraryPath` names a copy outside the Composer `vendor/`). Without it every YAML
+migration is refused with the install hint. Only plain YAML is read: a duplicate key is an error, `!php/...` tags
+are refused, and a date without quotes is not a text (write `'2026-11-01'`). The header stays in the `#` comment
+lines at the top; header keys written as YAML keys are an error.
+
+### The document
+
+The document is either the list of steps alone, or a map:
+
+| Key | Value | Default |
+|---|---|---|
+| `steps` | the list of steps, run in order (required in the map form) | |
+| `down` | the list of steps that undo the migration (`exp:migration:rollback <id>`) | none |
+| `transactional` | `false`: no transaction around the migration | `true` |
+
+Any other key is an error. A document without steps is valid and does nothing (a warning in `exp:migration:check`).
+
+```yaml
+# description: The languages of the news, checked before the import
+steps:
+    - type: reference
+      set: { news_languages: [ eng-US, ger-DE ] }
+    - foreach: "${ref.news_languages}"
+      as: language
+      steps:
+          - type: assert
+            that: { value: "${loop.language}", matches: "/^[a-z]{3}-[A-Z]{2}$/" }
+down:
+    - type: reference
+      set: { news_languages: [] }
+```
+
+### A step
+
+A step is a map. The keys the engine reads:
+
+| Key | Value |
+|---|---|
+| `type` | the step type, as `migration.ini [StepSettings] StepTypeList[<name>]` registers it (required) |
+| `mode` | the mode, one of those the step type's schema names (`create`, `update`, `ensure`, `delete` ...); the type's default when not given; a type without modes takes no `mode` |
+| `if` | a condition (below): the step is skipped when it is false |
+| `environments` | a list (or a comma-separated text) of environments; `!<name>` leaves one out (as in the header) |
+| `engines` | a list of `mysql`, `postgresql`, `sqlite`, `oracle`, `mongodb`; `!<name>` leaves one out |
+| `references` | a map `<reference name>: <value name>`: after the step, each reference is set to that value of the step's result |
+| `comment` | a text, ignored |
+
+Every other key belongs to the step type and is checked against its schema: unknown keys, missing required keys,
+the type of each value (`string`, `int`, `number`, `bool`, `scalar`, `list`, `map`, `any`, `identifier`,
+`condition`), the allowed values, and keys that belong to another mode are errors. A value with a placeholder is
+checked when the step runs, after the placeholder is replaced; a step type adds its own checks
+(`expMigrationStepType::validate()`). The type's defaults are filled in before it runs.
+
+A reference name is letters, digits and `_`, not starting with a digit. `references:` may only name the values the
+step type's schema lists.
+
+### Loops
+
+A step with `foreach` or `while` is a loop; it has no `type`.
+
+| Key | Value | Default |
+|---|---|---|
+| `foreach` | a list, a map, or one placeholder that stands for one (`"${ref.languages}"`) | |
+| `as` | `foreach` only: the name of the current item | `item` |
+| `key` | `foreach` only: the name of the current key (the position in a list) | `key` |
+| `while` | a condition, evaluated before each turn | |
+| `max` | `while` only: the most turns; one more fails the migration | `[StepSettings] MaxLoopIterations` (1000) |
+| `steps` | the loop's steps (required, not empty) | |
+| `if`, `comment` | as for a step | |
+
+Inside a loop `${loop.<as>}`, `${loop.<key>}` and `${loop.index}` (the turn, from 0) are set; a nested loop sees the
+variables of the loops around it. A `${loop.<name>}` that no loop around it sets is an error. Loops nest 8 deep at most.
+
+### Placeholders
+
+`${<scope>.<name>[.<key>...]}` in a value is replaced right before the step runs:
+
+| Scope | Stands for |
+|---|---|
+| `ref` | a reference: set by `references:` of an earlier step, by a `reference` step, or by an earlier migration of the same run (`$context->setReference()` in PHP) |
+| `loop` | a variable of a loop around the step |
+| `idmap` | `${idmap.<kind>.<name>}`: the id map of the run's environment (below) |
+| `run` | `${run.id}`, `${run.environment}`, `${run.engine}` |
+
+- A value that is one placeholder and nothing else keeps the type of what it stands for (a number, a list); inside a
+  longer text the value is written into it (`true`/`false` for a boolean, nothing for `null`), and a list or map
+  there is an error.
+- `.<key>` goes into a list or map (`${ref.node.id}`, `${ref.list.0}`).
+- `$${` is a literal `${`. Keys of maps are never replaced, only values.
+- A placeholder that names nothing fails the step. In the dry run it stays as written and the plan says what is
+  decided when the migration runs.
+
+### Conditions
+
+`if:`, `while:` and the `that:` of an `assert` step take a condition:
+
+| Form | True when |
+|---|---|
+| `true`, `false` | as written |
+| `"${ref.flag}"` | the value is not `null`, `false`, `0`, `""`, `"0"`, `"false"`, `"no"` or an empty list |
+| `{ all: [ <condition>, ... ] }` | every one is true (an empty list is true) |
+| `{ any: [ <condition>, ... ] }` | one is true (an empty list is false) |
+| `{ not: <condition> }` | the condition is false |
+| `{ ref: <name>, set: true }` | the reference is set (`set: false`: it is not) |
+| `{ environment: <name or list> }` | the run's environment is one of them; `!<name>` as in the header |
+| `{ engine: <name or list> }` | the database engine is one of them |
+| `{ value: <value>, <operator>: <operand> }` | the comparison holds |
+
+Operators: `equals`, `not_equals` (numbers and numeric texts compare as numbers), `in`, `not_in` (a list), `gt`,
+`gte`, `lt`, `lte` (numbers), `matches` (a PCRE pattern with its delimiters), `empty` (`true` or `false`). Exactly
+one operator per `value`.
+
+### Identifiers and the id map
+
+A key of type `identifier` names a node or an object: a number (the id), `remote:<remote id>`,
+`object-remote:<remote id>` (a node: the main node of that object) or `path:<url path>` (`path:media/images`).
+Ids differ between installations; a site keeps the names of its ids per environment in
+`<repository>/idmap/<environment>.json` (`default.json` without an environment):
+
+```json
+{
+    "schema": "exp-migration-idmap/1",
+    "ids": {
+        "node": { "news": 1234, "media": "remote:media-root" }
+    }
+}
+```
+
+Kinds and names are letters, digits, `_` and `-`; a value is a number or an identifier text. A missing file is an
+empty map; a file that is not one fails every YAML migration of the run.
+
+### Step types
+
+The kernel registers `reference` (`set:` a map of references), `assert` (`that:` a condition, `message:` the text
+of the failure), `content`, `location` and `content_version`; every key of each is on its generated page
+([the step types](../../examples/migration-steps/README.md)). An identifier key names its kind: `node`, `object`,
+`class`, `section`, `language`, `user`, `role` or `state`; the last six also take a name (a class or section
+identifier, a locale, a login, a role name, `<group>/<state>`). An extension registers its own step types in its
+`migration.ini.append.php`:
+
+```ini
+[StepSettings]
+StepTypeList[news_import]=expNewsImportStep
+```
+
+The class implements `expMigrationStepType` (`name()`, `schema()`, `validate()`, `caches()`, `plan()`, `apply()`;
+`expMigrationStepTypeBase` has the defaults). `apply()` returns `lines` (what it did) and `values` (what
+`references:` can take). A class that does not exist, answers another name or has a broken schema is not registered
+and is an error of every YAML migration that is checked.
+
+### Running and undoing
+
+- `up()` runs the steps in order; the first that fails stops the migration with its place
+  (`steps[1].steps[0] (assert): ...`), and the migration's transaction is rolled back.
+- `plan()` (the dry run) lists each step's plan; values set by a `reference` step are used for the steps after it,
+  everything else that is only known when the migration runs is marked so.
+- `down()` runs the `down:` steps; without `down:` a migration can be undone only when every step's type implements
+  `expMigrationRevertibleStepType` and none is a loop: each step's `revert()` runs, the last first, with the
+  references of the run that rolls back. `reference` and `assert` revert to nothing.
 
 ## The checksum
 
