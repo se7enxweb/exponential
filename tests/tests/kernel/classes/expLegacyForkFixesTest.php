@@ -230,6 +230,33 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * Flash ended in 2020 and no browser runs it. The Online Editor's TinyMCE media plugin carried moxieplayer.swf as
+     * the Flash fallback of an MP4 or FLV video; the file is gone and the plugin adds no Flash player unless a site
+     * names one in flash_video_player_url.
+     */
+    public function testOnlineEditorShipsNoFlashPlayer()
+    {
+        $media = self::root() . '/extension/ezoe/design/standard/javascript/plugins/media';
+        $this->assertFileDoesNotExist( $media . '/moxieplayer.swf' );
+        foreach ( array( 'editor_plugin.js', 'editor_plugin_src.js' ) as $file )
+        {
+            $code = file_get_contents( $media . '/' . $file );
+            $this->assertStringNotContainsString( 'moxieplayer.swf', $code, $file );
+            $this->assertMatchesRegularExpression( '/getParam\(\s*["\']flash_video_player_url["\']\s*,\s*false\s*\)/', $code, $file );
+        }
+
+        $swf = array();
+        foreach ( array( 'design', 'extension/ezoe' ) as $dir )
+        {
+            $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( self::root() . '/' . $dir, FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $it as $f )
+                if ( strtolower( $f->getExtension() ) === 'swf' )
+                    $swf[] = substr( $f->getPathname(), strlen( self::root() ) + 1 );
+        }
+        $this->assertSame( array(), $swf );
+    }
+
     public function testRestKernelRegistersTheEventListeners()
     {
         $kernel = file_get_contents( self::root() . '/kernel/private/rest/classes/ezpkernelrest.php' );

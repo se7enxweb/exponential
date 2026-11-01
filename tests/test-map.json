@@ -2587,6 +2587,12 @@
     ],
     "lib/ezutils/classes/ezfileextensionblacklistvalidator.php": [
       "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/plugins/media/editor_plugin.js": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/plugins/media/editor_plugin_src.js": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ]
   },
   "generated": {

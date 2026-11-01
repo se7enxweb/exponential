@@ -22717,13 +22717,12 @@ b732a86187723cd9cc32853d67730061  extension/ezoe/design/standard/javascript/plug
 46ba57884d8fe05d92cd9d98d3bb00af  extension/ezoe/design/standard/javascript/plugins/lists/editor_plugin.js
 04e1f245c19d6dc9454dae57faec9b6f  extension/ezoe/design/standard/javascript/plugins/lists/editor_plugin_src.js
 f211293a697a2c83da00effd67f535a2  extension/ezoe/design/standard/javascript/plugins/media/css/media.css
-50357276b12ae5ac6c77d46d12e69044  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin.js
-ec7637c61d20a8cdd68356ee343a77da  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin_src.js
+69d9c110d65bbff02e5d5ea7d3fe51d0  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin.js
+2b193c731d8c8d511a28a303d4a2d00d  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin_src.js
 39ebc57f44e1cc683724e1c1ff761894  extension/ezoe/design/standard/javascript/plugins/media/js/embed.js
 4f35c0283a30f3556e023e76c34368b2  extension/ezoe/design/standard/javascript/plugins/media/js/media.js
 9523fc123c577642000fd409bd862c3f  extension/ezoe/design/standard/javascript/plugins/media/langs/en_dlg.js
 be58b1edf9a4a4dbf3a1993e3d897e1a  extension/ezoe/design/standard/javascript/plugins/media/media.htm
-9217cea72c76c361fa5033526712284e  extension/ezoe/design/standard/javascript/plugins/media/moxieplayer.swf
 232f23a586f10bd8ddabf38d767113d4  extension/ezoe/design/standard/javascript/plugins/nonbreaking/editor_plugin.js
 fefbda5243d10652038ccf40801b8893  extension/ezoe/design/standard/javascript/plugins/nonbreaking/editor_plugin_src.js
 00a1abdc0742b3b719e07c2df6e5f493  extension/ezoe/design/standard/javascript/plugins/noneditable/editor_plugin.js
@@ -26822,7 +26821,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-7be25aef3ee9c5ea71d19b2e468e5a3d  tests/test-map.json
+cbbad5cec836c5b17062ae9d18d4440f  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -27395,7 +27394,7 @@ bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultEx
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
 d32b95c53aa6c4d7db1e92129156c0fa  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
-51619fa3abf53a4a6de692e16d109798  tests/tests/kernel/classes/expLegacyForkFixesTest.php
+3b2b910bb1e42b0e3f7b92b6a5940a16  tests/tests/kernel/classes/expLegacyForkFixesTest.php
 448f58b85fd061fe10776ed7828bb7f0  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
 be0d9664a26c04457647f96100bb1fa9  tests/tests/kernel/classes/expLoveStackFixture.php
