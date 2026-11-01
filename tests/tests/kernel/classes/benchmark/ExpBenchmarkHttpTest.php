@@ -143,8 +143,10 @@ class ExpBenchmarkHttpTest extends \PHPUnit\Framework\TestCase
     {
         $rows = expBenchmarkHttp::run( array( self::$base ), array( '/slow' ), $this->options( array( 'requests' => 8, 'concurrency' => 4, 'rounds' => 1 ) ) );
         $this->assertGreaterThanOrEqual( 20.0, $rows[0]['min'] );
-        // One at a time, 8 requests of 20 ms cannot exceed 50 per second; four at a time they do.
-        $this->assertGreaterThan( 50.0, $rows[0]['rps'] );
+        // Four at a time are clearly faster than one at a time, measured side by side: a fixed floor (50 per second)
+        // failed on a loaded machine at 47, where both sides slow down alike (2026-10-31).
+        $serial = expBenchmarkHttp::run( array( self::$base ), array( '/slow' ), $this->options( array( 'requests' => 8, 'concurrency' => 1, 'rounds' => 1 ) ) );
+        $this->assertGreaterThan( 1.5 * $serial[0]['rps'], $rows[0]['rps'], 'concurrency 4 against 1' );
     }
 
     public function testTwoTargetsGiveOneRowEachAndAPair()
