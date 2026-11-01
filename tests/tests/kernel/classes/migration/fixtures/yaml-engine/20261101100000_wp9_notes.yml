@@ -1,0 +1,29 @@
+# description: Notes written by a YAML migration on every engine (the WP9 engine test)
+# author: Exponential tests
+steps:
+    - type: reference
+      set:
+          languages: [ eng-US, ger-DE ]
+    - foreach: "${ref.languages}"
+      as: language
+      steps:
+          - type: wp9_note
+            text: "note ${loop.index} in ${loop.language} on ${run.engine}"
+            references: { last_note: id }
+    - type: wp9_node
+      node: "${idmap.node.users}"
+      references: { users_node: node_id, users_object: object_id }
+    - type: wp9_node
+      node: "remote:3f6d92f8044aed134f32153517850f5a"
+      references: { users_by_remote: node_id }
+    - type: wp9_note
+      if: { all: [ { value: "${ref.users_node}", equals: 5 }, { value: "${ref.users_by_remote}", equals: 5 } ] }
+      text: "users is node ${ref.users_node} of object ${ref.users_object}"
+    - type: wp9_note
+      if: { environment: production }
+      text: never written
+    - type: assert
+      that: { value: "${ref.last_note}", equals: 2 }
+down:
+    - type: wp9_note
+      mode: clear

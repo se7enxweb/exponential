@@ -94,9 +94,55 @@ nicht durchsucht. Eine Datei, deren Name nicht mit `YYYYMMDDHHMMSS_` beginnt (ei
 ## Typen
 
 Der Typ ist die Endung der Datei: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
-`mongodb`) und `ini`. In 6.0.15 wird eine Migration in **PHP** geschrieben: Die Engine findet, ordnet und prüft die
-anderen Typen, und der Runner lehnt sie mit einem Fehler ab, bis ihre Schritte kommen. `exp:migration:check` meldet
-eine `.yml`-, `.sql`- oder `.ini`-Migration aus demselben Grund als Fehler.
+`mongodb`) und `ini`. In 6.0.15 wird eine Migration in **PHP** oder in **YAML** geschrieben: Die Engine findet, ordnet
+und prüft die anderen Typen, und der Runner lehnt sie mit einem Fehler ab, bis ihre Schritte kommen.
+`exp:migration:check` meldet eine `.sql`- oder `.ini`-Migration aus demselben Grund als Fehler. Eine PHP- und eine
+YAML-Migration können einander voraussetzen und sich im selben Lauf Werte weitergeben (Referenzen).
+
+## YAML-Migrationen
+
+Eine YAML-Migration ist eine Liste von Schritten; jeder nennt seinen Schritttyp, und die Engine führt sie der Reihe
+nach aus, mit Platzhaltern, Bedingungen und Schleifen dazwischen:
+
+```yaml
+# description: The languages of the news, checked before the import
+# author: Site team
+steps:
+    - type: reference
+      set:
+          news_languages: [ eng-US, ger-DE ]
+          news_parent: "${idmap.node.news}"
+    - foreach: "${ref.news_languages}"
+      as: language
+      steps:
+          - type: assert
+            that: { value: "${loop.language}", matches: "/^[a-z]{3}-[A-Z]{2}$/" }
+            message: "${loop.language} is not a language code"
+    - type: assert
+      if: { environment: production }
+      that: { value: "${ref.news_parent}", not_equals: 2 }
+      message: production names its own news node in its id map
+```
+
+- Der Kopf besteht aus denselben `#`-Kommentarzeilen wie bei jeder Migration. `exp:migration:generate --skeleton
+  <Name> --type=yml` schreibt eine leere.
+- `type` nennt einen Schritttyp aus `migration.ini [StepSettings] StepTypeList`. Der Kernel hat `reference`
+  (Referenzen setzen) und `assert` (die Migration scheitern lassen, wenn eine Bedingung falsch ist); die Schritttypen,
+  die Inhalte, Klassen, Rollen und die anderen Teile einer Installation ändern, werden dort registriert, sobald es sie
+  gibt, und eine Erweiterung fügt ihre eigenen genauso hinzu. Die übrigen Schlüssel eines Schritts werden gegen das
+  Schema seines Typs geprüft, bevor irgendetwas läuft.
+- `${ref.<Name>}` ist eine Referenz (gesetzt von `references:` eines früheren Schritts, von einem `reference`-Schritt
+  oder von einer früheren PHP- oder YAML-Migration des Laufs), `${loop.<Name>}` eine Schleifenvariable,
+  `${idmap.<Art>.<Name>}` eine ID der ID-Zuordnung `migrations/idmap/<Umgebung>.json`, `${run.environment}` die
+  Umgebung des Laufs.
+- `if:` überspringt einen Schritt, `environments:` und `engines:` beschränken ihn; `foreach:` und `while:` (mit einem
+  Höchstwert) wiederholen Schritte.
+- `down:` listet die Schritte, die die Migration für `exp:migration:rollback <id>` zurücknehmen.
+- YAML wird mit symfony/yaml gelesen, das composer.json verlangt; eine Installation, die es woanders hält, nennt den
+  Ordner in `[YamlSettings] LibraryPath`.
+
+[Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md#die-yaml-migration) nennt jede Regel, und
+[das Tutorial](migrationen-tutorial.md#12-eine-yaml-migration) führt eine aus.
 
 ## Reihenfolge
 
@@ -193,7 +239,7 @@ Halter. Ein Probelauf nimmt keine Sperre. Ein Lauf läuft als der angemeldete Be
 | [`exp:migration:caption`](../beispiele/befehle/expmigrationcaption.md) | jetzt einen Sicherungspunkt, oder die Liste |
 | [`exp:migration:push`](../beispiele/befehle/expmigrationpush.md) | die Läufe, deren Push scheiterte, noch einmal gepusht |
 | [`exp:migration:check`](../beispiele/befehle/expmigrationcheck.md) | die Prüfung für CI |
-| [`exp:migration:generate`](../beispiele/befehle/expmigrationgenerate.md) | eine neue PHP-Migration aus dem Gerüst |
+| [`exp:migration:generate`](../beispiele/befehle/expmigrationgenerate.md) | eine neue PHP- oder (`--type=yml`) YAML-Migration aus dem Gerüst |
 
 Alle nehmen `--format=json` (die Maschinenausgabe `exp-migration/1`) und enden mit den Exit-Codes von `exp:upgrade`:
 0 in Ordnung, 1 gescheitert (oder ausstehend mit `exp:migration:status --fail-on-pending`), 2 Bedienfehler, 3 die
@@ -234,8 +280,9 @@ Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/in-der-admi
 
 ## Noch nicht in 6.0.15
 
-YAML-, SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration (Generatoren außer dem
-Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil dieses Releases.
+Die YAML-Schritttypen, die Inhalte, Klassen, Rollen und Einstellungen ändern, SQL- und INI-Migrationen, der Editor und
+die Generatoren in der Administration (Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy
+--migrate` sind geplant und nicht Teil dieses Releases.
 
 ## Verwandte Seiten
 

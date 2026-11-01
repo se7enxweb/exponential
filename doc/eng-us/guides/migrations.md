@@ -90,9 +90,52 @@ file whose name does not start with `YYYYMMDDHHMMSS_` (a README, a `.gitkeep`) i
 ## Types
 
 The type is the file's extension: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
-`mongodb`) and `ini`. In 6.0.15 a migration is written in **PHP**: the engine finds, orders and checks the other
-types, and the runner refuses them with an error until their steps arrive. `exp:migration:check` reports a `.yml`,
-`.sql` or `.ini` migration as an error for the same reason.
+`mongodb`) and `ini`. In 6.0.15 a migration is written in **PHP** or in **YAML**: the engine finds, orders and checks
+the other types, and the runner refuses them with an error until their steps arrive. `exp:migration:check` reports a
+`.sql` or `.ini` migration as an error for the same reason. A PHP migration and a YAML migration can require each
+other and pass values on to each other (references) in the same run.
+
+## YAML migrations
+
+A YAML migration is a list of steps; each names its step type, and the engine runs them in order, with placeholders,
+conditions and loops between them:
+
+```yaml
+# description: The languages of the news, checked before the import
+# author: Site team
+steps:
+    - type: reference
+      set:
+          news_languages: [ eng-US, ger-DE ]
+          news_parent: "${idmap.node.news}"
+    - foreach: "${ref.news_languages}"
+      as: language
+      steps:
+          - type: assert
+            that: { value: "${loop.language}", matches: "/^[a-z]{3}-[A-Z]{2}$/" }
+            message: "${loop.language} is not a language code"
+    - type: assert
+      if: { environment: production }
+      that: { value: "${ref.news_parent}", not_equals: 2 }
+      message: production names its own news node in its id map
+```
+
+- The header is the same `#` comment lines as in every migration. `exp:migration:generate --skeleton <name>
+  --type=yml` writes an empty one.
+- `type` names a step type of `migration.ini [StepSettings] StepTypeList`. The kernel has `reference` (set
+  references) and `assert` (fail the migration when a condition is false); the step types that change content,
+  classes, roles and the other parts of an installation are registered there as they come, and an extension adds its
+  own the same way. A step's other keys are checked against its type's schema before anything runs.
+- `${ref.<name>}` is a reference (set by `references:` of an earlier step, by a `reference` step, or by an earlier
+  PHP or YAML migration of the run), `${loop.<name>}` a loop variable, `${idmap.<kind>.<name>}` an id of the id map
+  `migrations/idmap/<environment>.json`, `${run.environment}` the run's environment.
+- `if:` skips a step, `environments:` and `engines:` limit it; `foreach:` and `while:` (with a maximum) repeat steps.
+- `down:` lists the steps that undo the migration for `exp:migration:rollback <id>`.
+- YAML is read with symfony/yaml, which composer.json requires; an installation that keeps it elsewhere names the
+  folder in `[YamlSettings] LibraryPath`.
+
+[The file format](../specifications/6.0/migration-file-format.md#the-yaml-migration) gives every rule, and
+[the tutorial](migrations-tutorial.md#12-a-yaml-migration) runs one.
 
 ## Order
 
@@ -187,7 +230,7 @@ login; `--login=<login>` takes another.
 | [`exp:migration:caption`](../examples/commands/expmigrationcaption.md) | a caption now, or the list |
 | [`exp:migration:push`](../examples/commands/expmigrationpush.md) | the runs whose push failed, pushed again |
 | [`exp:migration:check`](../examples/commands/expmigrationcheck.md) | the lint for CI |
-| [`exp:migration:generate`](../examples/commands/expmigrationgenerate.md) | a new PHP migration from the skeleton |
+| [`exp:migration:generate`](../examples/commands/expmigrationgenerate.md) | a new PHP or (`--type=yml`) YAML migration from the skeleton |
 
 All of them take `--format=json` (the machine output `exp-migration/1`) and end with the exit codes of
 `exp:upgrade`: 0 fine, 1 failed (or pending with `exp:migration:status --fail-on-pending`), 2 usage error, 3 the
@@ -226,8 +269,9 @@ The pages: [Migrations in the administration](../help/migrations/in-the-administ
 
 ## Not in 6.0.15 yet
 
-YAML, SQL and INI migrations, the editor and the generators in the administration (generators other than the
-skeleton), recording, and `exp:velocity deploy --migrate` are planned and not part of this release.
+The YAML step types that change content, classes, roles and settings, SQL and INI migrations, the editor and the
+generators in the administration (generators other than the skeleton), recording, and `exp:velocity deploy --migrate`
+are planned and not part of this release.
 
 ## Related pages
 

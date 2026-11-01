@@ -3,7 +3,8 @@
 In this tutorial you write two PHP migrations for a site: one creates a table `exp_news_note` with a first row, the
 other publishes a folder "News" below the content root and notes it in the table. You check them, look at the dry
 run and the simulation, run them, read the record, take one back with its `down()`, and see what happens when a
-migration fails. It takes about 20 minutes.
+migration fails. At the end you write a YAML migration with references, a loop and a condition. It takes about 25
+minutes.
 
 The output below is from a run on SQLite on 31 October 2026, on an installation with the clean data; run ids, times
 and object ids differ on yours. Run every command from the installation root as the user the web server runs as
@@ -434,13 +435,142 @@ caption taken before the run was restored. Fix the migration (or delete the file
 again. [Rollback and captions](migrations-rollback-and-captions.md) explains each part, and
 [Troubleshooting](migrations-troubleshooting.md) what to do with every message.
 
+## 12. A YAML migration
+
+The same life cycle works for a migration written as YAML steps. The output below was taken on 1 November 2026 on a
+development installation where it was the only migration. Generate one:
+
+```bash
+./console exp:migration:generate --skeleton news_languages --type=yml --description="The languages of the news, checked before the import" --apply
+```
+
+```text
+Exponential migrations: generate
+Wrote migrations/20261101094239_news_languages.yml
+Migration 20261101094239_news_languages
+Next: write the steps, then ./console exp:migration:check and ./console exp:migration:dry-run
+PASS
+```
+
+The skeleton has the header and `steps: []`, with an example in comments. Replace it with:
+
+```yaml
+# description: The languages of the news, checked before the import
+# author: Site team
+steps:
+    - type: reference
+      set:
+          news_languages: [ eng-US, ger-DE ]
+          news_parent: "${idmap.node.news}"
+    - foreach: "${ref.news_languages}"
+      as: language
+      steps:
+          - type: assert
+            that: { value: "${loop.language}", matches: "/^[a-z]{3}-[A-Z]{2}$/" }
+            message: "${loop.language} is not a language code"
+    - type: assert
+      if: { environment: production }
+      that: { value: "${ref.news_parent}", not_equals: 2 }
+      message: production names its own news node in its id map
+```
+
+`${idmap.node.news}` reads the id map of the environment, `migrations/idmap/development.json` here:
+
+```json
+{
+    "schema": "exp-migration-idmap/1",
+    "ids": {
+        "node": {
+            "news": 2
+        }
+    }
+}
+```
+
+The check reads the YAML and checks every step against its step type, without a database. A file with mistakes
+(a misspelled type, an unknown operator, a loop variable that no loop sets, a reference name that starts with a
+digit) shows each with its place:
+
+```text
+Exponential migrations: check
+  site                     migrations
+
+  ok    20261101094239_news_languages                yml  migrations/20261101094239_news_languages.yml
+  FAIL  20261101094500_news_typo                     yml  migrations/20261101094500_news_typo.yml
+        steps[0]: the unknown step type refrence (registered: assert, reference; an extension adds one in migration.ini [StepSettings] StepTypeList)
+        steps[1] (assert).that: value takes exactly one operator (equals, not_equals, in, not_in, gt, gte, lt, lte, matches, empty), not bigger
+        steps[2].steps[0]: ${loop.language} names no variable of a loop around it (item, key, index)
+        steps[2].steps[0] (reference): set.1st: a reference name is letters, digits and _, not starting with a digit
+
+2 migration(s) checked
+...
+FAIL (exit 1)
+```
+
+With the broken file gone, the dry run shows the plan, with the loop unrolled and the step for production skipped:
+
+```bash
+./console exp:migration:migrate
+```
+
+```text
+Exponential migrations: dry run, nothing is changed (--apply runs the migrations)
+Run 20261101-094515-4b20db, environment development, database sqlite (transactions: full)
+
+  would-apply 20261101094239_news_languages                site               The languages of the news, checked before the import
+              would set the reference news_languages to ["eng-US","ger-DE"]
+              would set the reference news_parent to 2
+              would run for each of 2 item(s), as language:
+                would check that {"value":"eng-US","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+                would check that {"value":"ger-DE","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+              would skip steps[2] (assert): the condition is false
+
+Captions: pre would-take, post would-take
+Summary: 1 migration(s): 0 done, 1 pending, 0 not needed, 0 failed, 0 unknown; 1 would-apply
+PASS
+```
+
+and the run does it:
+
+```bash
+./console exp:migration:migrate --apply --no-commit --no-caption
+```
+
+```text
+Exponential migrations: run
+Run 20261101-094534-57f2cf, environment development, database sqlite (transactions: full), as admin
+
+  applied     20261101094239_news_languages                site               The languages of the news, checked before the import
+              set the reference news_languages
+              set the reference news_parent
+              checked that {"value":"eng-US","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+              checked that {"value":"ger-DE","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+              skipped steps[2] (assert): the condition is false
+
+Repository: no commit, push disabled
+Summary: 1 migration(s): 1 done, 0 pending, 0 not needed, 0 failed, 0 unknown; 1 applied
+WARN no caption before the run (--no-caption or [CaptionSettings] Before=disabled): a failure cannot be restored automatically
+PASS
+```
+
+The record, the run log, the checksum guard, the captions and the commit work as for the PHP migrations above. An
+assert that is false fails the migration like an exception in `up()`, and its transaction is rolled back. This
+migration has a loop and no `down:`, so `exp:migration:rollback 20261101094239_news_languages` refuses it: add a
+`down:` list to undo a YAML migration by itself, or roll the run back to its caption.
+
+The kernel's step types are `reference` and `assert`; the steps that create content, classes and roles are added to
+`migration.ini [StepSettings] StepTypeList` as they come, and an extension registers its own there.
+[The file format](../specifications/6.0/migration-file-format.md#the-yaml-migration) lists every key, placeholder,
+condition and loop.
+
 ## What you did
 
 - generated a migration and filled in `plan()`, `up()` and `down()`;
 - ordered two migrations with `requires:` and passed a value from one to the next with `setReference()`;
 - checked them without a database, looked at the dry run and the simulation;
 - ran them, read the record and the run log, met the checksum guard;
-- took one back with `down()` and saw a failure restored from its caption.
+- took one back with `down()` and saw a failure restored from its caption;
+- wrote a YAML migration with references, a loop, a condition and the id map, and checked, planned and ran it.
 
 Next: [PHP migrations](migrations-php.md) for everything a migration class can do.
 

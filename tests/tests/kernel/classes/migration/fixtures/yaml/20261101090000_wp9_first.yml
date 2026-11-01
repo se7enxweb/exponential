@@ -1,0 +1,11 @@
+---
+# description: The first YAML migration of the engine test
+# author: Exponential tests
+- type: reference
+  set:
+      parent: 42
+      title: "Parent of ${run.environment}"
+- type: wp9_record
+  name: first
+  value: "${ref.parent}"
+  references: { first_name: name, first_value: value }

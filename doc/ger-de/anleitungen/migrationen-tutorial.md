@@ -3,7 +3,8 @@
 In diesem Tutorial schreiben Sie zwei PHP-Migrationen für eine Site: Die eine legt eine Tabelle `exp_news_note` mit
 einer ersten Zeile an, die andere veröffentlicht einen Ordner „News“ unter der Inhaltswurzel und vermerkt ihn in der
 Tabelle. Sie prüfen sie, sehen sich Probelauf und Simulation an, führen sie aus, lesen die Aufzeichnung, nehmen eine
-mit ihrem `down()` zurück und sehen, was passiert, wenn eine Migration scheitert. Es dauert etwa 20 Minuten.
+mit ihrem `down()` zurück und sehen, was passiert, wenn eine Migration scheitert. Zum Schluss schreiben Sie eine
+YAML-Migration mit Referenzen, einer Schleife und einer Bedingung. Es dauert etwa 25 Minuten.
 
 Die Ausgaben unten stammen aus einem Lauf auf SQLite am 31. Oktober 2026, auf einer Installation mit den Grunddaten;
 Lauf-IDs, Zeiten und Objekt-IDs sind bei Ihnen andere. Führen Sie jeden Befehl im Wurzelverzeichnis der Installation
@@ -442,13 +443,145 @@ Die Transaktion der Migration hat ihre Zeile zurückgenommen; dann wurde der Zus
 [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md) erklärt jeden Teil, und
 [Fehlerbehebung](migrationen-fehlerbehebung.md), was bei jeder Meldung zu tun ist.
 
+## 12. Eine YAML-Migration
+
+Derselbe Lebenszyklus gilt für eine Migration aus YAML-Schritten. Die Ausgabe unten stammt vom 1. November 2026 von
+einer Entwicklungsinstallation, auf der sie die einzige Migration war. Erzeugen Sie eine:
+
+```bash
+./console exp:migration:generate --skeleton news_languages --type=yml --description="The languages of the news, checked before the import" --apply
+```
+
+```text
+Exponential migrations: generate
+Wrote migrations/20261101094239_news_languages.yml
+Migration 20261101094239_news_languages
+Next: write the steps, then ./console exp:migration:check and ./console exp:migration:dry-run
+PASS
+```
+
+Das Gerüst hat den Kopf und `steps: []`, mit einem Beispiel in Kommentaren. Ersetzen Sie es durch:
+
+```yaml
+# description: The languages of the news, checked before the import
+# author: Site team
+steps:
+    - type: reference
+      set:
+          news_languages: [ eng-US, ger-DE ]
+          news_parent: "${idmap.node.news}"
+    - foreach: "${ref.news_languages}"
+      as: language
+      steps:
+          - type: assert
+            that: { value: "${loop.language}", matches: "/^[a-z]{3}-[A-Z]{2}$/" }
+            message: "${loop.language} is not a language code"
+    - type: assert
+      if: { environment: production }
+      that: { value: "${ref.news_parent}", not_equals: 2 }
+      message: production names its own news node in its id map
+```
+
+`${idmap.node.news}` liest die ID-Zuordnung der Umgebung, hier `migrations/idmap/development.json`:
+
+```json
+{
+    "schema": "exp-migration-idmap/1",
+    "ids": {
+        "node": {
+            "news": 2
+        }
+    }
+}
+```
+
+Die Prüfung liest das YAML und prüft jeden Schritt gegen seinen Schritttyp, ohne Datenbank. Eine Datei mit Fehlern
+(ein falsch geschriebener Typ, ein unbekannter Operator, eine Schleifenvariable, die keine Schleife setzt, ein
+Referenzname, der mit einer Ziffer beginnt) zeigt jeden mit seiner Stelle:
+
+```text
+Exponential migrations: check
+  site                     migrations
+
+  ok    20261101094239_news_languages                yml  migrations/20261101094239_news_languages.yml
+  FAIL  20261101094500_news_typo                     yml  migrations/20261101094500_news_typo.yml
+        steps[0]: the unknown step type refrence (registered: assert, reference; an extension adds one in migration.ini [StepSettings] StepTypeList)
+        steps[1] (assert).that: value takes exactly one operator (equals, not_equals, in, not_in, gt, gte, lt, lte, matches, empty), not bigger
+        steps[2].steps[0]: ${loop.language} names no variable of a loop around it (item, key, index)
+        steps[2].steps[0] (reference): set.1st: a reference name is letters, digits and _, not starting with a digit
+
+2 migration(s) checked
+...
+FAIL (exit 1)
+```
+
+Ohne die fehlerhafte Datei zeigt der Probelauf den Plan, mit aufgelöster Schleife und übersprungenem Schritt für
+die Produktion:
+
+```bash
+./console exp:migration:migrate
+```
+
+```text
+Exponential migrations: dry run, nothing is changed (--apply runs the migrations)
+Run 20261101-094515-4b20db, environment development, database sqlite (transactions: full)
+
+  would-apply 20261101094239_news_languages                site               The languages of the news, checked before the import
+              would set the reference news_languages to ["eng-US","ger-DE"]
+              would set the reference news_parent to 2
+              would run for each of 2 item(s), as language:
+                would check that {"value":"eng-US","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+                would check that {"value":"ger-DE","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+              would skip steps[2] (assert): the condition is false
+
+Captions: pre would-take, post would-take
+Summary: 1 migration(s): 0 done, 1 pending, 0 not needed, 0 failed, 0 unknown; 1 would-apply
+PASS
+```
+
+und der Lauf führt sie aus:
+
+```bash
+./console exp:migration:migrate --apply --no-commit --no-caption
+```
+
+```text
+Exponential migrations: run
+Run 20261101-094534-57f2cf, environment development, database sqlite (transactions: full), as admin
+
+  applied     20261101094239_news_languages                site               The languages of the news, checked before the import
+              set the reference news_languages
+              set the reference news_parent
+              checked that {"value":"eng-US","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+              checked that {"value":"ger-DE","matches":"/^[a-z]{3}-[A-Z]{2}$/"}
+              skipped steps[2] (assert): the condition is false
+
+Repository: no commit, push disabled
+Summary: 1 migration(s): 1 done, 0 pending, 0 not needed, 0 failed, 0 unknown; 1 applied
+WARN no caption before the run (--no-caption or [CaptionSettings] Before=disabled): a failure cannot be restored automatically
+PASS
+```
+
+Die Aufzeichnung, das Laufprotokoll, die Prüfsummen-Sperre, die Sicherungspunkte und der Commit funktionieren wie
+bei den PHP-Migrationen oben. Ein falsches `assert` lässt die Migration scheitern wie eine Ausnahme in `up()`, und
+ihre Transaktion wird zurückgerollt. Diese Migration hat eine Schleife und kein `down:`, darum lehnt
+`exp:migration:rollback 20261101094239_news_languages` sie ab: Fügen Sie eine `down:`-Liste hinzu, um eine
+YAML-Migration selbst zurückzunehmen, oder setzen Sie den Lauf auf seinen Sicherungspunkt zurück.
+
+Die Schritttypen des Kernels sind `reference` und `assert`; die Schritte, die Inhalte, Klassen und Rollen anlegen,
+kommen in `migration.ini [StepSettings] StepTypeList` hinzu, sobald es sie gibt, und eine Erweiterung registriert
+dort ihre eigenen. [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md#die-yaml-migration) nennt jeden
+Schlüssel, Platzhalter, jede Bedingung und Schleife.
+
 ## Was Sie getan haben
 
 - eine Migration erzeugt und `plan()`, `up()` und `down()` ausgefüllt;
 - zwei Migrationen mit `requires:` geordnet und mit `setReference()` einen Wert von der einen an die nächste gegeben;
 - sie ohne Datenbank geprüft, Probelauf und Simulation angesehen;
 - sie ausgeführt, die Aufzeichnung und das Laufprotokoll gelesen, die Prüfsummen-Sperre kennengelernt;
-- eine mit `down()` zurückgenommen und einen Fehler gesehen, der aus seinem Sicherungspunkt wiederhergestellt wurde.
+- eine mit `down()` zurückgenommen und einen Fehler gesehen, der aus seinem Sicherungspunkt wiederhergestellt wurde;
+- eine YAML-Migration mit Referenzen, einer Schleife, einer Bedingung und der ID-Zuordnung geschrieben, geprüft,
+  geplant und ausgeführt.
 
 Weiter: [PHP-Migrationen](migrationen-php.md) für alles, was eine Migrationsklasse kann.
 

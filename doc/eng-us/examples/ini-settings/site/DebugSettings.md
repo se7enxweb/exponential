@@ -3,13 +3,13 @@ title: site.ini [DebugSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [DebugSettings] in site.ini: DebugOutput, AlwaysLog, DeprecatedLog, ScriptDebugOutput, DebugByIP, DebugIPList, DebugByUser, DebugUserIDList ..."
-keywords: site.ini, DebugSettings, INI, setting, DebugOutput, AlwaysLog, DeprecatedLog, ScriptDebugOutput, DebugByIP, DebugIPList, DebugByUser, DebugUserIDList, Debug, DebugRedirection, DisplayDebugWarnings, DebugLogOnly, DebugToolbar, DisplayIncludedFiles, QuickSettingsList, UsedTemplateEditUrl
+keywords: site.ini, DebugSettings, INI, setting, DebugOutput, AlwaysLog, DeprecatedLog, ScriptDebugOutput, DebugByIP, DebugIPList, DebugByUser, DebugUserIDList, CollectStatsPolicyList, Debug, DebugRedirection, DisplayDebugWarnings, DebugLogOnly, DebugToolbar, DisplayIncludedFiles, QuickSettingsList, UsedTemplateEditUrl
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [DebugSettings]
 
-The block `[DebugSettings]` of `settings/site.ini`, with 16 setting(s).
+The block `[DebugSettings]` of `settings/site.ini`, with 17 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -158,10 +158,32 @@ DebugUserIDList[]
 */ ?>
 ```
 
-## Debug
+## CollectStatsPolicyList
 
 > Examples  
 > DebugUserIDList\[\]=14  
+> Signed-in users who hold one of these policies (module/function) get each  
+> request's statistics collected without any debug output: page time, SQL  
+> statements, the content view cache, cache-blocks and the template tree, as  
+> the debug bar shows them. Nothing is printed and no debug message is kept;  
+> a tool of theirs shows the figures (the website sidebar's Performance panel  
+> adds expwt/performance here). Empty: only with debug output on.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DebugSettings]
+# an empty "CollectStatsPolicyList[]" first replaces the shipped list; without it the items are added
+CollectStatsPolicyList[]
+*/ ?>
+```
+
+## Debug
+
+> Examples  
+> CollectStatsPolicyList\[\]=expwt/performance  
 > Controls how debug is displayed, inline means that the debug is displayed in  
 > page itself while popup will create a new popup window with the debug.  
 > Popup window might not work in all browsers.  

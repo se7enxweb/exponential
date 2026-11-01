@@ -1474,6 +1474,8 @@
     "beispiele/ini-einstellungen/migration/README.md": "examples/ini-settings/migration/README.md",
     "beispiele/ini-einstellungen/migration/RepositorySettings.md": "examples/ini-settings/migration/RepositorySettings.md",
     "beispiele/ini-einstellungen/migration/RunSettings.md": "examples/ini-settings/migration/RunSettings.md",
+    "beispiele/ini-einstellungen/migration/StepSettings.md": "examples/ini-settings/migration/StepSettings.md",
+    "beispiele/ini-einstellungen/migration/YamlSettings.md": "examples/ini-settings/migration/YamlSettings.md",
     "beispiele/ini-einstellungen/mime/3gp.md": "examples/ini-settings/mime/3gp.md",
     "beispiele/ini-einstellungen/mime/README.md": "examples/ini-settings/mime/README.md",
     "beispiele/ini-einstellungen/mime/af.md": "examples/ini-settings/mime/af.md",

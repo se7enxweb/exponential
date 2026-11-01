@@ -219,7 +219,11 @@ class expMigrationCommandToolsTest extends PHPUnit\Framework\TestCase
         $site = expMigrationCheck::run( array( 'paths' => array( "$fixtures/site" ), 'root' => self::$root ) );
         $this->assertSame( 1, $site['exit'] );
         $byId = array_column( $site['migrations'], null, 'id' );
-        $this->assertContains( 'migrations of type .yml cannot be run yet', $byId['20261004100000_news_content']['errors'] );
+        // a YAML migration whose step type no extension registers (the content steps come later)
+        $this->assertFalse( $byId['20261004100000_news_content']['ok'] );
+        $this->assertStringContainsString( expMigrationYamlParser::available() ? 'the unknown step type content' : 'symfony/yaml is not installed',
+                                           implode( "\n", $byId['20261004100000_news_content']['errors'] ) );
+        $this->assertContains( 'migrations of type .ini cannot be run yet', $byId['20261003100000_news_settings']['errors'] );
 
         $runnerBroken = expMigrationCheck::run( array( 'paths' => array( "$fixtures/runner-broken" ), 'root' => self::$root ) );
         $this->assertSame( 1, $runnerBroken['exit'] );
@@ -283,7 +287,7 @@ class expMigrationCommandToolsTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf( 'Site\\Migrations\\ToolsTestSkeleton20261031120000', $migration );
         $this->assertTrue( $migration->reversible() );
 
-        foreach ( array( array( '', array() ), array( 'x', array( 'type' => 'yml' ) ), array( 'x', array( 'source' => 'package:demo' ) ) ) as $bad )
+        foreach ( array( array( '', array() ), array( 'x', array( 'type' => 'ini' ) ), array( 'x', array( 'source' => 'package:demo' ) ) ) as $bad )
         {
             $result = expMigrationGenerator::skeleton( $bad[0], $bad[1] + array( 'directory' => $dir, 'root' => self::$root ) );
             $this->assertFalse( $result['ok'] );
