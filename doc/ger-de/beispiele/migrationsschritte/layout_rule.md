@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Legt eine Regel von Exponential Layouts an, die Seiten einem Layout zuordnet, ändert, sichert oder löscht sie.
 
-Ein Schritt einer YAML-Migration mit `type: layout_rule`. Die Klasse `expMigrationStepLayoutRule` ist in `settings/migration.ini` `[StepSettings] StepTypeList[layout_rule]` registriert.
+Ein Schritt einer YAML-Migration mit `type: layout_rule`. Die Klasse `expMigrationStepLayoutRule` (`kernel/classes/migration/steps/expmigrationsteplayoutrule.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[layout_rule]` registriert.
 
 ## Modi
 
@@ -68,4 +68,4 @@ Caches, die er berührt (nach dem Lauf geleert): `content`, `template-block`.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationsteplayoutrule.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

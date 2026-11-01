@@ -2,14 +2,14 @@
 title: admininterface.ini [PaginationSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [PaginationSettings] in admininterface.ini: DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session"
-keywords: Einstellung, admininterface.ini, PaginationSettings, INI, setting, DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session
+summary: "Die Einstellungen von [PaginationSettings] in admininterface.ini: DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session ..."
+keywords: Einstellung, admininterface.ini, PaginationSettings, INI, setting, DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session, ItemsPerPageList_moderation_recent
 type: generated
 generated: exp:help:examples
 ---
 # admininterface.ini [PaginationSettings]
 
-Der Block `[PaginationSettings]` von `settings/admininterface.ini`, mit 7 Einstellung(en).
+Der Block `[PaginationSettings]` von `settings/admininterface.ini`, mit 8 Einstellung(en).
 
 Bearbeiten Sie `settings/admininterface.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -160,6 +160,27 @@ ItemsPerPageList_setup_session[]
 ItemsPerPageList_setup_session[]=50
 ItemsPerPageList_setup_session[]=25
 ItemsPerPageList_setup_session[]=100
+*/ ?>
+```
+
+## ItemsPerPageList_moderation_recent
+
+> Setup > Recent content (moderation/recent): the objects shown at once. The first size is the default; the viewer's  
+> choice is remembered (the preference admin\_moderation\_limit). At most 1000 are shown whatever is set here.  
+
+Standard: eine Liste mit 5: `25`, `100`, `300`, `700`, `1000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/admininterface.ini.append.php
+[PaginationSettings]
+# ein leeres "ItemsPerPageList_moderation_recent[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+ItemsPerPageList_moderation_recent[]
+ItemsPerPageList_moderation_recent[]=25
+ItemsPerPageList_moderation_recent[]=100
+ItemsPerPageList_moderation_recent[]=300
+ItemsPerPageList_moderation_recent[]=700
+ItemsPerPageList_moderation_recent[]=1000
 */ ?>
 ```
 

@@ -15150,6 +15150,22 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Các thay đổi của bản cài đặt được lưu thành tệp: tình trạng, các lượt chạy, chạy và hoàn tác.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nội dung mới nhất, những gì đang bị giữ lại để duyệt, và các hành động trên các mục được chọn.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Xuất bản một bản sao tĩnh của trang web lên GitHub Pages hoặc bất kỳ máy chủ git nào.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Xuất bản tĩnh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Câu trả lời của các truy vấn đã lưu của API GraphQL và các lớp nội dung của lược đồ.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Xuất bản một bản sao tĩnh lên GitHub Pages hoặc bất kỳ máy chủ git nào</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Xuất bản tĩnh</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Bộ nhớ đệm tĩnh phục vụ các trang từ máy chủ này. Để xuất bản một bản sao tĩnh của trang web ở nơi khác, trên GitHub Pages hoặc bất kỳ máy chủ git nào, hãy dùng xuất bản tĩnh.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Các thay đổi của bản cài đặt được lưu thành tệp: tình trạng, các lượt chạy, chạy và hoàn tác.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Xuất bản một bản sao tĩnh của trang web lên GitHub Pages hoặc bất kỳ máy chủ git nào.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Xuất bản tĩnh</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>The run could not be started.</source>
         <translation>Không thể bắt đầu lượt chạy.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Đã sửa đổi</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Đã tạo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Lớp</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Khu vực</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Người tạo</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Nội dung được tạo và sửa đổi gần đây nhất của toàn bộ trang, mới nhất trước: những gì khách truy cập đã gửi, những gì đang bị giữ lại để duyệt, các bản nháp đang chờ xuất bản. Chọn các mục để bỏ giữ lại, giữ lại, ẩn, hiện, gỡ bỏ hoặc chuyển chúng sang khu vực hoặc trạng thái khác.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Không đọc được danh sách: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Chức năng giữ lại để duyệt chưa được thiết lập, vì vậy không có gì bị giữ lại và các hành động giữ lại không được cung cấp. Bước nâng cấp 6.0.15-review-hold sẽ thiết lập nó: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lọc danh sách</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Từ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Đến</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ngày</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Đã tạo (lần xuất bản đầu tiên)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tình trạng</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Đã xuất bản</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Bản nháp, chưa từng xuất bản</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Đang chờ (chờ phê duyệt hoặc đến ngày)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Trong thùng rác</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Bị giữ lại để duyệt</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Bị giữ lại</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Không bị giữ lại</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Bị ẩn</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Gửi lúc</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Mọi điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Chỉ những gì nhật ký kiểm tra đã ghi lại.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Hiện tại: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Tên đăng nhập hoặc ID người dùng.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Lọc</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Xóa bộ lọc</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Mục</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from đến %to trong số %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Không có mục nào</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(đọc trong %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Hành động trên các mục đã chọn</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Chọn tất cả trên trang này</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Đã chọn %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hành động</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Chọn một hành động</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Bỏ giữ lại</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Giữ lại để duyệt</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ẩn</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Hiện</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Chuyển vào thùng rác</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Xóa</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Gán khu vực</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Gán trạng thái</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Lý do</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Bắt buộc khi giữ lại; được lưu cùng việc giữ lại và trong nhật ký kiểm tra.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Chọn một khu vực</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Chọn một trạng thái</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Áp dụng cho các mục đã chọn</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Mỗi mục được kiểm tra theo quyền của chính bạn. Chuyển vào thùng rác và xóa sẽ yêu cầu bạn xác nhận. Hơn %count mục sẽ chạy ở chế độ nền.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Chọn</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Xuất bản</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Gửi từ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Chọn %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>chưa có</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(không có tên)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Bản nháp</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Đang chờ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Bị ẩn bởi mục cha</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Bị giữ lại: bài gửi mới</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Phiên bản %version đang chờ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Phiên bản %version đang soạn</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Bản nháp, phiên bản %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Phiên bản %version đã xuất bản</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Đã lên lịch vào %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>không có địa chỉ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>không được ghi lại</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Không có gì khớp với các bộ lọc này.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hiện tất cả</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Chưa có nội dung nào.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Mỗi trang</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hiển thị %count mục mỗi trang.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Địa chỉ và trình duyệt của một bài gửi lấy từ chỉ mục nhật ký kiểm tra, vốn không có sẵn ở đây: cột này ghi "không được ghi lại".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Địa chỉ và trình duyệt là những gì nhật ký kiểm tra đã ghi lại cho mục này (việc tự động giữ lại luôn ghi lại chúng; việc xuất bản và tạo chỉ khi được bật), theo mức mà các thiết lập quyền riêng tư của nó lưu giữ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count mục</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Xóa sẽ loại bỏ vĩnh viễn các mục, cùng với tất cả phiên bản và bản dịch của chúng. Không thể hoàn tác.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Các mục được chuyển vào thùng rác, từ đó có thể khôi phục chúng.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Mỗi mục được kiểm tra theo quyền của chính bạn; một mục có mục con sẽ được giữ nguyên (hãy gỡ bỏ nó trong cấu trúc nội dung). Bạn sẽ được yêu cầu xác minh rằng đó là bạn.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Việc này chạy ở chế độ nền: trang tiến trình của nó sẽ mở ra, và kết quả của từng mục được hiển thị khi hoàn tất.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Các mục đã chọn</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>và %count mục khác</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hủy</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Không có gì được thực hiện</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Lý do: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Hành động vẫn đang chạy ở chế độ nền.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Tiến trình của nó</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Hành động nền đã thất bại: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hoàn tất</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bị từ chối</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Theo từng mục</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Mục</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Kết quả</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Tại sao</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Quay lại danh sách</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Thiết lập</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Chưa làm gì</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Xác nhận</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Hãy chọn một hành động.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Hãy chọn ít nhất một mục.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Mỗi lần chỉ chọn tối đa 1000 mục.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Hãy cho biết lý do các mục bị giữ lại.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Hãy chọn khu vực.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Hãy chọn trạng thái.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Không đọc được biểu mẫu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Không đọc được số liệu: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Bị giữ lại để duyệt</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Mới hôm nay</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Chức năng giữ lại để duyệt chưa được thiết lập (bước nâng cấp 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tất cả nội dung mới</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Bạn không được phép thực hiện các hành động kiểm duyệt (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Hành động kiểm duyệt chưa hoàn tất: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Kiểm duyệt: %action trên %count đối tượng</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done trong số %total đối tượng: %ok hoàn tất, %refused bị từ chối, %failed thất bại</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok hoàn tất, %refused bị từ chối, %failed thất bại</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Nó không còn tồn tại.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nó không có vị trí (chưa xuất bản).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Bạn không được phép ẩn nó (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Bạn không được phép hiện nó (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Nó đã bị ẩn rồi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nó không bị ẩn.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Đã ẩn.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Đã hiện.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Nó đang ở trong thùng rác: hãy làm trống hoặc khôi phục nó ở đó.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Một bản nháp chưa từng được xuất bản không thể chuyển vào thùng rác: hãy xóa nó.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Bạn không được phép xóa nó (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Đã xóa.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Bạn không được phép gỡ bỏ nó (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Nó có mục con: hãy gỡ bỏ nó trong cấu trúc nội dung, nơi chúng được liệt kê.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nó chưa được gỡ bỏ (có thể một quy trình làm việc đang giữ việc gỡ bỏ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Đã chuyển vào thùng rác.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Khu vực không tồn tại.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Nó đã ở trong khu vực này rồi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Bạn không được phép gán khu vực này (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Khu vực chưa được gán.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Đã gán khu vực.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Trạng thái không tồn tại.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Nó đã ở trạng thái này rồi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Bạn không được phép gán trạng thái này (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Trạng thái chưa được gán (có thể một quy trình làm việc đang giữ thay đổi).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Đã gán trạng thái.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Không có hành động như vậy.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Chức năng giữ lại để duyệt chưa được thiết lập (bước nâng cấp 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Hãy cho biết lý do nó bị giữ lại.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Nó đã bị giữ lại rồi.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Bạn không được phép giữ lại nó (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Việc giữ lại chưa được áp dụng (có thể một quy trình làm việc đang giữ thay đổi).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Đã giữ lại.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nó không bị giữ lại.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Bạn không được phép bỏ giữ lại nó (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Việc giữ lại chưa được bỏ (có thể một quy trình làm việc đang giữ thay đổi).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Đã bỏ giữ lại; vẫn bị ẩn: bạn không được phép hiện nó (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Đã bỏ giữ lại.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Tất cả các đích</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Lần xuất bản gần nhất</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Xuất bản miễn phí một bản sao tĩnh của trang web của bạn trên GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Trang lỗi thời</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Xuất bản tĩnh</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Xuất bản tĩnh đang tắt.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Đích</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Không đọc được các đích: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>một tác vụ đang chạy</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>bản dựng cần kiểm tra</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ẩn mục này</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>tạo một đích</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>chưa bao giờ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>đọc hướng dẫn</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added được thêm, %changed được thay đổi, %removed bị xóa</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes trên %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Còn %count mục khác không được liệt kê.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Đã ghi %pages trang</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path có kích thước %size, vượt quá mức máy chủ lưu trữ cho phép cho một tệp.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % của giới hạn</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds giây</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag là lần xuất bản mà trang web đang có.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: tác vụ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/kho-ma/ cho một trang dự án GitHub; để trống nếu dùng tên miền riêng hoặc trang người dùng.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Trang web</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Máy chủ lưu trữ</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Đăng nhập vào kho mã</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Kho mã</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Liên kết và đường dẫn gốc</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Tên miền của riêng bạn</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Bản dựng chứa những gì</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Khi nào được xuất bản</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Xem lại và lưu</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Trang dự án GitHub nằm dưới /&lt;repository&gt;/; liên kết tương đối hoạt động ở đó và ở mọi nơi khác.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Một bản dựng tải mọi trang của %site như khách truy cập chưa đăng nhập nhìn thấy, viết lại các liên kết, sao chép các tệp và ghi kết quả vào thư mục của đích. Không có gì được xuất bản cho đến khi bạn kiểm tra bản dựng và nhấn Xuất bản.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Một biểu thức cron, ví dụ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Khóa triển khai được lưu dưới dạng bí mật %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Khóa triển khai cho phép bản cài đặt này đẩy lên đúng một kho mã qua SSH và không nơi nào khác. Nửa riêng tư của nó nằm trong Thiết lập &gt; Bí mật; chỉ nửa công khai được hiển thị.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Một khóa triển khai được tạo cho đích này</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Khóa triển khai đăng nhập qua SSH: hãy đổi địa chỉ git sang địa chỉ SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Một tác vụ đang chạy, do %user khởi động</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Một tác vụ của đích này vẫn đang chạy (%detail). Hãy chờ nó kết thúc.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Một tác vụ của đích này vẫn đang chạy. Hãy chờ nó kết thúc.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Liên kết từ trang /news/ đến trang /about-us/team sẽ được viết thành</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Một khóa triển khai mới đã được tạo. Hãy thêm nửa công khai của nó vào kho mã ngay bây giờ.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Một trang vẫn còn đầu ra gỡ lỗi, token biểu mẫu hoặc mã phiên sau khi lọc sẽ không bao giờ được xuất bản.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Hoàn tác dành cho chuyên gia: đánh dấu &quot;Tôi biết điều này thay đổi gì&quot; và nhập lại tên của thẻ.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Một trang web có thể lớn tới %site, một tệp tới %file, với khoảng 100 GB lưu lượng mỗi tháng. Với gói miễn phí, kho mã phải ở chế độ công khai. GitHub Pages không dành cho cửa hàng hoặc các giao dịch thương mại khác.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Một đích là một trang web được xuất bản lên một kho git. Không có gì được dựng hay xuất bản ở đây: Lưu sẽ ghi các thiết lập vào settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Một đích là một trang web được xuất bản đến một nơi, ví dụ trang web công khai của bạn trên GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Một token từ Thiết lập &gt; Bí mật</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Một quy trình (workflow) của kho mã sẽ xuất bản nó.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Hãy thêm khóa công khai này vào kho mã với quyền ghi. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, đánh dấu Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Đã thêm</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Máy chủ git khác</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Một tiến trình khác đang làm việc trên đích này: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Quay lại</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Đường dẫn gốc</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Trước</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Dưới một đường dẫn gốc</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Nhánh</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Liên kết hỏng</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Liên kết hỏng trong bản dựng</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Bản dựng</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Bản dựng %id bởi %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Dựng %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Dựng ngay</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Bản dựng cần kiểm tra</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Bởi</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Thủ công, tại đây</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hủy</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Thay đổi</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Đã thay đổi</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Các thay đổi</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Hãy kiểm tra trước</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kiểm tra các thiết lập này</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kiểm tra những gì bản dựng thay đổi, xem nó, rồi xuất bản hoặc loại bỏ nó.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Chọn lần xuất bản để quay về.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Sẽ có trong một phiên bản sau.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Cam kết (commit)</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Các commit</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Commit bản dựng, gắn thẻ và đẩy nó lên %remote. Lệnh đẩy không bao giờ bị ép buộc; bạn có thể quay về bất kỳ lần xuất bản nào sau này.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>So với thư mục trước đó: %added được thêm, %changed được thay đổi, %removed bị xóa, %unchanged không đổi.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>So với lần xuất bản gần nhất.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Thông tin xác thực</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Tên miền riêng</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Đầu ra gỡ lỗi, token biểu mẫu, mã phiên và nonce luôn được loại bỏ.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Khóa triển khai</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Khóa triển khai của %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Loại bỏ</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Loại bỏ bản dựng</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Tên miền</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Để trống: địa chỉ của trang web. Nếu không, một địa chỉ nội bộ của cùng trang web đó.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Kết thúc</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Mọi liên kết đều bắt đầu bằng đường dẫn gốc.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Mỗi lần xuất bản là một commit với thẻ static/%id/&lt;n&gt;. Quay lại sẽ tạo một commit mới với các tệp của một lần xuất bản trước: lịch sử được giữ nguyên, không thẻ nào bị di chuyển và không có gì bị ép buộc.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Tệp bổ sung</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Tải các trang từ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Tệp</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Các tệp</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Thiếu tệp</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Các tệp của</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Các tệp không thể thu thập</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Dấu vân tay</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Thư mục</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Dành cho địa chỉ SSH. Khóa được tạo sau khi lưu; bạn thêm nửa công khai của nó vào kho mã.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Dành cho địa chỉ https://. GitHub: một fine-grained token có quyền đọc và ghi Contents trên kho mã.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Dành cho chuyên gia. Trang web công khai thay đổi ngay khi lệnh đẩy hoàn tất.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Biểu mẫu</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Lưu trữ miễn phí từ một kho mã GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Từ nhánh</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Địa chỉ git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages cho phép một trang web %site và một tệp %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Giới hạn của GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages xuất bản các tệp nguyên trạng (cần thiết cho các tệp bắt đầu bằng _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub phục vụ nhánh đúng như khi được đẩy lên. Mặc định.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, máy chủ của riêng bạn: bất kỳ kho git nào.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Quay về một lần xuất bản trước</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Trợ giúp</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Trợ giúp về trình hướng dẫn</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Ẩn chúng</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Lịch sử</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Lịch sử của %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Máy chủ lưu trữ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Cách GitHub Pages nhận bản dựng</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Tôi đã kiểm tra các thay đổi</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Tôi biết điều này thay đổi gì</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Mã định danh</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Tính năng đang tắt: không thể dựng gì cho đến khi bật lên.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Nó chạy trong nền với tư cách %user; bạn có thể đóng trang này.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Tác vụ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Được lưu dưới dạng bí mật %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Loại</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Lần xuất bản gần nhất</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Bỏ qua các trang này</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Bỏ qua các mục này</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Liên kết</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Liên kết đã viết lại</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Trang web thật</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Xem bản dựng</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Chữ thường, chữ số, _ và -, ví dụ github-public. Nó đặt tên cho thư mục và các thẻ (static/&lt;id&gt;/&lt;n&gt;) và không thể thay đổi sau này.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Tạo khóa mới</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Tạo một đích</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Tạo khóa</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Hãy tạo kho mã trên máy chủ lưu trữ trước; kho trống cũng được.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Bản kê tệp</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Thông điệp</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Hầu hết các trang</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Tên của token trong Thiết lập &gt; Bí mật</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Đích mới</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Tiếp theo</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Không</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Chưa có commit nào.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Không tạo được khóa: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Không tìm thấy tệp thực thi dòng lệnh php. Hãy đặt migration.ini [AdminSettings] PhpCliPath thành đường dẫn đầy đủ của nó.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Chưa có thẻ nào.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Chưa có đích nào.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Không có</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Không có trong bản dựng.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Chưa có gì được xuất bản.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Chưa có gì được xuất bản: mọi tệp đều mới.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Thông báo</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Theo lịch</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Trên dòng lệnh</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Trên máy chủ: ./console exp:static:serve %id phục vụ nó theo cùng cách.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Mỗi dòng một đường dẫn, * khớp với bất kỳ phần nào: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Chỉ một cái tên được lưu cùng đích; bản thân token hoặc khóa vẫn nằm trong Thiết lập &gt; Bí mật và không bao giờ xuất hiện trong nhật ký.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Chỉ những gì các trang nêu tên</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Chỉ với token. env:NAME đọc một biến môi trường của máy chủ thay thế.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Mở bản xem trước</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Mở bản dựng như máy chủ lưu trữ sẽ phục vụ, từ thư mục của đích. Liên kết hoạt động với bạn trong một giờ.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Tùy chọn. Để trống: những gì đã được xuất bản.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Tùy chọn. Với một tên miền, trang web được phục vụ tại gốc của nó.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Đầu ra</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Trang</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Các trang của đích</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Trang bị từ chối</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Xử lý sau</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Xem trước</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Xem trước và xuất bản</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Xem trước và xuất bản %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Xem trước bản dựng</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Tiến độ</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Địa chỉ công khai</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Khóa công khai</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Xuất bản</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Xuất bản một bản sao tĩnh của trang web lên GitHub Pages hoặc bất kỳ máy chủ git nào: dựng nó, kiểm tra các thay đổi, xuất bản, và quay về một lần xuất bản trước khi cần.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Lần xuất bản để quay về</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Các lần xuất bản</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Đẩy (push)</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Đọc hướng dẫn</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Nhật ký</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bị từ chối</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Tương đối</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Tải lại</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Đã xóa</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Thay khóa: khóa cũ sẽ ngừng hoạt động</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Báo cáo</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Báo cáo của bản dựng</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Kho mã</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Xem lại</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Bước xem lại kiểm tra mọi thiết lập và hiển thị các dòng sẽ được ghi. Chưa có gì được lưu.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Hoàn tác</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Hoàn tác</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lưu</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Lịch</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Trang tìm kiếm</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Mã các mục, phân cách bằng dấu phẩy.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Chuyển chúng đến trang web thật</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Mục thiết lập</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Các thiết lập</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Thiết lập của %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Thiết lập</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Thiết lập &gt; Bí mật</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Hiển thị trong danh sách, ví dụ &quot;Trang web công khai trên GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Đăng nhập bằng GitHub App sẽ có cùng với tích hợp GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Trang web</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Trang web cần xuất bản</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Kích thước</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Kích thước và giới hạn</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Kích thước của bản dựng</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Trang lỗi thời</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Bắt đầu</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Do %user bắt đầu lúc %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Xuất bản tĩnh</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Xuất bản tĩnh đang tắt</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Xuất bản tĩnh đang tắt.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Xuất bản tĩnh đang tắt. Hãy bật nó trong Thiết lập &gt; Xuất bản tĩnh trước.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Xuất bản tĩnh đang bật.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Bước %step trên %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Các bước</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Lọc bỏ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Tắt</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Bật</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Bật xuất bản tĩnh</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Thẻ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Các thẻ</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Đích</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Có thể tạo và thay đổi các đích, nhưng không có gì được dựng hay xuất bản cho đến khi tính năng được bật.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Cho công cụ tìm kiếm biết nên đọc gì.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Không thể loại bỏ bản dựng: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Bản dựng giống hệt lần xuất bản gần nhất: không có gì để xuất bản.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Bản dựng đã bị loại bỏ: thư mục lại chứa lần xuất bản gần nhất.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Các giá trị mặc định phù hợp với hầu hết các trang web.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Thư mục đang chứa một bản dựng chưa được xuất bản; một bản dựng mới sẽ thay thế nó.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Không thể ghi vào thư mục của các tác vụ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Không thể chuẩn bị tác vụ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Không thể khởi động tác vụ.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Tác vụ đã kết thúc. Đang tải báo cáo của nó.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Tác vụ cần một người dùng đã đăng nhập.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Tác vụ đã được khởi động nhưng không báo mã tiến trình của nó. Hãy kiểm tra %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Khóa</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Tệp lớn nhất: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Các dòng sẽ được ghi</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Danh sách trang cho công cụ tìm kiếm; cần địa chỉ công khai.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Các trang được tải như khách truy cập chưa đăng nhập nhìn thấy. Các siteaccess quản trị và biên tập không bao giờ được đưa ra.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Không thể theo dõi tiến độ. Hãy tải lại trang để xem tác vụ đang ra sao.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Nửa công khai của khóa:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Gốc của nhánh</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Kho bí mật chưa được thiết lập (./console exp:upgrade --apply sẽ tạo bảng của nó), nên không thể lưu khóa nào.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Máy chủ tự đăng nhập (bằng khóa SSH riêng hoặc trình hỗ trợ thông tin xác thực), hoặc kho mã nằm trên máy chủ này.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Không thể ghi thiết lập: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Các thiết lập hợp lệ. Những dòng sau sẽ được ghi:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Không thể đọc tệp thiết lập: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Trang web quay về các tệp của lần xuất bản đó; một bản dựng chưa xuất bản phải được xuất bản hoặc loại bỏ trước.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Trang riêng của trang web cho các địa chỉ không tồn tại.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Không thể lưu đích: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Đích chưa đăng nhập bằng khóa này: hãy chọn &quot;Một khóa triển khai được tạo cho đích này&quot; trong thiết lập của nó.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Không đọc được các đích: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Chưa có bản dựng nào để kiểm tra.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Bản cài đặt này không có siteaccess phía trước. Các siteaccess quản trị và biên tập không bao giờ được xuất bản.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Trang này theo dõi tác vụ trong khi chạy; tác vụ tiếp tục chạy trong nền khi trang bị đóng.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Đích này chưa có khóa triển khai.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Đích này chưa được dựng ở đây.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Đích này đã có một khóa.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Loại bỏ bản dựng này: thư mục lại chứa lần xuất bản gần nhất. Trang web thật không thay đổi.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Hãy đánh dấu &quot;Tôi đã kiểm tra các thay đổi&quot; trước.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Thời gian</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Trình kích hoạt</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Nhập lại tên của thẻ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Không đổi</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Gì</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Những gì thay đổi</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Mỗi tệp là gì; luôn được ghi.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Những gì tác vụ đã làm và nhật ký của nó. Một tác vụ được bắt đầu tại đây sẽ tiếp tục chạy trong nền khi trang này bị đóng.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Những lỗi mà tác vụ đã in ra</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Những gì các trang nêu tên, và mọi hình ảnh của nội dung đã xuất bản</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Khi nào</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Khi một lần xuất bản thất bại</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Khi một lần xuất bản thành công</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Khi nội dung được xuất bản</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Nơi các liên kết đến những gì bản sao không chứa sẽ dẫn tới (tìm kiếm, đăng nhập).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Nơi bản sao tĩnh được phục vụ.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Trang web nào được xuất bản, và đích được gọi là gì.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Hoạt động dưới bất kỳ đường dẫn nào. Mặc định.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Được ghi bất cứ khi nào đặt tên miền riêng.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Có</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Bạn luôn có thể dựng và xuất bản thủ công tại đây và trên dòng lệnh.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>chỉ một cái tên; giá trị vẫn nằm trong Thiết lập &gt; Bí mật</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>dưới %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>kết thúc mà không có báo cáo</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>bổ sung</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>thất bại</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>tệp</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, hoặc main với thư mục docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>máy chủ git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (với token) hoặc git@github.com:owner/repo.git (với khóa triển khai); không bao giờ chứa mật khẩu hay token.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, cho sơ đồ trang web và các liên kết chính tắc.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>hình ảnh</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>chưa bao giờ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>không</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>không có kho từ xa</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>không có: các commit nằm lại trong thư mục</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>không có: không có gì thay đổi</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>chưa đẩy</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>không có gì thay đổi</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>trang</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>đạt</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open bị vô hiệu hóa, nên không thể khởi động tác vụ tại đây. Hãy dùng ./console exp:static:build trên máy chủ.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>lần xuất bản</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>đã xuất bản</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>đang chờ đẩy</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>đã đẩy</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>bị từ chối</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>tương đối</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>hoàn tác</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>đã hoàn tác</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>đang chạy</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>chỉ thư mục</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: được ghi vào tệp CNAME. Hãy trỏ DNS của tên miền đến máy chủ lưu trữ theo hướng dẫn của nó; HTTPS có thể mất một lúc để bắt đầu hoạt động.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>có, chưa xuất bản</translation>
     </message>
 </context>
 </TS>

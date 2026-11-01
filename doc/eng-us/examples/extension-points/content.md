@@ -2,7 +2,7 @@
 title: Extension points in content.ini
 audience: developer, admin
 category: examples
-summary: Settings of content.ini that list handlers, classes or directories an extension can add to (33, found by name).
+summary: Settings of content.ini that list handlers, classes or directories an extension can add to (34, found by name).
 keywords: content.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -346,6 +346,18 @@ Shipped: an empty list. [The setting](../ini-settings/content/ReverseRelationSet
 # extension/expexample/settings/content.ini.append.php
 [ReverseRelationSettings]
 ProviderClassList[]=expExampleProviderClass    # your class or value, added to the list
+*/ ?>
+```
+
+## ReviewHoldSettings AutoHoldClassList
+
+Shipped: a list of 1: `comment`. [The setting](../ini-settings/content/ReviewHoldSettings.md#autoholdclasslist).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/content.ini.append.php
+[ReviewHoldSettings]
+AutoHoldClassList[]=expExampleAutoHoldClass    # your class or value, added to the list
 */ ?>
 ```
 

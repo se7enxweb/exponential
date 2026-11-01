@@ -15089,6 +15089,22 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Izmene instalacije čuvane kao datoteke: njihovo stanje, pokretanja, izvršavanje i vraćanje.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnoviji sadržaj, ono što je zadržano radi pregleda, i radnje nad izborom.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Objavite statičku kopiju sajta na GitHub Pages ili bilo kom git hostu.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statičko objavljivanje</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22104,18 @@ Napomena: paketi neće biti deinstalirani.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Odgovori sačuvanih upita GraphQL API-ja i klase sadržaja njegove šeme.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Objavite statičku kopiju na GitHub Pages ili bilo kom git hostu</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statičko objavljivanje</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statički keš poslužuje stranice sa ovog servera. Da biste objavili statičku kopiju sajta negde drugde, na GitHub Pages ili bilo kom git hostu, koristite statičko objavljivanje.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76173,14 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Izmene instalacije čuvane kao datoteke: njihovo stanje, pokretanja, izvršavanje i vraćanje.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Objavite statičku kopiju sajta na GitHub Pages ili bilo kom git hostu.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statičko objavljivanje</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80583,6 +80619,2028 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Pokretanje nije moglo da se započne.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Izmenjeno</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Napravljeno</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcija</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Tvorac</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Najnovije napravljeni i izmenjeni sadržaj celog sajta, od najnovijeg: šta su poslali posetioci, šta je zadržano radi pregleda, skice koje čekaju objavljivanje. Izaberite stavke da biste ih oslobodili, zadržali, sakrili, otkrili, uklonili ili premestili u drugu sekciju ili stanje.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Listu nije moguće pročitati: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Zadržavanje radi pregleda još nije podešeno, pa ništa nije zadržano i radnje zadržavanja nisu ponuđene. Podešava ga korak nadogradnje 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtriraj listu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Napravljeno (prvo objavljivanje)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sve</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status objave</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Objavljeno</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Skica, nikad objavljena</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Na čekanju (čeka odobrenje ili datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>U korpi za otpatke</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržano radi pregleda</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zadržano</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nije zadržano</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Sakriveno</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidljivo</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Poslato</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Bilo koji pristup sajtu</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Samo ono što je revizija zabeležila.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Sada: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Korisničko ime ili ID korisnika.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtriraj</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Očisti filtere</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Stavke</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nema stavki</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(pročitano za %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Radnje nad izabranim stavkama</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Izaberi sve na ovoj stranici</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Izabrano: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Radnja</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Izaberite radnju</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Oslobodi zadržavanje</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Zadrži radi pregleda</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Sakrij</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Otkrij</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Premesti u korpu za otpatke</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Obriši</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Dodeli sekciju</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Dodeli stanje</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Razlog</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Potreban za zadržavanje; čuva se uz zadržavanje i u reviziji.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Izaberite sekciju</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Izaberite stanje</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Primeni na izabrano</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Svaka stavka se proverava prema vašim sopstvenim dozvolama. Premeštanje u korpu za otpatke i brisanje traže potvrdu. Više od %count stavki izvršava se u pozadini.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Izaberi</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Objavljivanje</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Poslato sa</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Izaberi %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>još ne</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bez naziva)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Skica</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Na čekanju</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Sakriveno od strane nadređenog</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zadržano: nova prijava</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Verzija %version na čekanju</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Verzija %version u izradi</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Skica, verzija %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Verzija %version objavljena</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Zakazano za %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nema adrese</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nije zabeleženo</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ništa ne odgovara ovim filterima.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Prikaži sve</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Još nema sadržaja.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po stranici</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Prikaži %count stavki po stranici.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adresa i pregledač prijave potiču iz indeksa revizije, koji ovde nije dostupan: u koloni piše „nije zabeleženo”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresa i pregledač su oni koje je revizija zabeležila za stavku (automatsko zadržavanje ih uvek beleži; objavljivanje i pravljenje samo tamo gde je uključeno), onako kako ih čuvaju njena podešavanja privatnosti.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count stavki</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Brisanje trajno uklanja stavke, sa svim njihovim verzijama i prevodima. To se ne može poništiti.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Stavke idu u korpu za otpatke, odakle se mogu vratiti.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Svaka stavka se proverava prema vašim sopstvenim dozvolama; stavka sa podstavkama ostaje kakva jeste (uklonite je u strukturi sadržaja). Bićete zamoljeni da potvrdite da ste to vi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ovo se izvršava u pozadini: otvara se stranica napretka, a rezultat za svaku stavku prikazuje se kada završi.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Izabrane stavke</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>i još %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Odustani</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ništa nije urađeno</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Razlog: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Radnja se još izvršava u pozadini.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Njen napredak</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Radnja u pozadini nije uspela: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Završeno</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odbijeno</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Po stavci</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Stavka</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Zašto</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Nazad na listu</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Podešavanje</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ništa urađeno</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potvrdi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Izaberite radnju.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Izaberite bar jednu stavku.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Izaberite najviše 1000 stavki odjednom.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Navedite zašto su stavke zadržane.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Izaberite sekciju.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Izaberite stanje.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Obrazac nije moguće pročitati.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Brojeve nije moguće pročitati: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržano radi pregleda</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Novo danas</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržavanje radi pregleda još nije podešeno (korak nadogradnje 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Sav novi sadržaj</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ne smete izvršavati radnje moderiranja (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Radnja moderiranja nije završena: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderiranje: %action na %count objekata</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done od %total objekata: %ok uspešno, %refused odbijeno, %failed neuspešno</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok uspešno, %refused odbijeno, %failed neuspešno</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Više ne postoji.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nema lokaciju (nije objavljeno).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ne smete ga sakriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ne smete ga otkriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Već je sakriveno.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nije sakriveno.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Sakriveno.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Otkriveno.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>U korpi za otpatke je: tamo ispraznite korpu ili ga vratite.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Skica koja nikad nije objavljena ne može u korpu za otpatke: obrišite je.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ne smete ga obrisati (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Obrisano.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ne smete ga ukloniti (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ima podstavke: uklonite ga u strukturi sadržaja, gde su navedene.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nije uklonjeno (radni tok možda zadržava uklanjanje).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Premešteno u korpu za otpatke.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sekcija ne postoji.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Već je u ovoj sekciji.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ne smete dodeliti ovu sekciju (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sekcija nije dodeljena.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sekcija dodeljena.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Stanje ne postoji.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Već je u ovom stanju.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ne smete dodeliti ovo stanje (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Stanje nije dodeljeno (radni tok možda zadržava promenu).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stanje dodeljeno.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Takva radnja ne postoji.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržavanje radi pregleda nije podešeno (korak nadogradnje 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Navedite zašto je zadržano.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Već je zadržano.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ne smete ga zadržati (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Zadržavanje nije postavljeno (radni tok možda zadržava promenu).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Zadržano.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nije zadržano.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ne smete ga osloboditi (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Zadržavanje nije oslobođeno (radni tok možda zadržava promenu).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Oslobođeno; i dalje sakriveno: ne smete ga otkriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Oslobođeno.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Svi ciljevi</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Poslednja objava</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Objavite besplatnu statičku kopiju sajta na GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Zastarele stranice</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statičko objavljivanje</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statičko objavljivanje je isključeno.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cilj</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ciljevi nisu mogli da se pročitaju: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>posao je u toku</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>izgradnja za proveru</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>sakrij ovo</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>napravi cilj</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikad</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>pročitaj uputstvo</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>Dodato %added, promenjeno %changed, uklonjeno %removed</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes od %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Još %count nije navedeno.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Upisano stranica: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ima %size, više nego što host dozvoljava za jednu datoteku.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ograničenja</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag je objava koju sajt sada ima.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: posao %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repozitorijum/ za sajt GitHub projekta; prazno za sopstveni domen ili korisnički sajt.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Sajt</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Host</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Prijava u repozitorijum</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Repozitorijum</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Linkovi i osnovna putanja</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Vaš sopstveni domen</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Šta izgradnja sadrži</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kada se objavljuje</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Provera i čuvanje</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Sajt GitHub projekta nalazi se ispod /&lt;repository&gt;/; relativni linkovi rade tamo i bilo gde drugde.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Izgradnja preuzima svaku stranicu sajta %site onako kako je vidi posetilac koji nije prijavljen, prepisuje linkove, kopira datoteke i upisuje rezultat u fasciklu cilja. Ništa se ne objavljuje dok ne proverite izgradnju i ne pritisnete Objavi.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron izraz, na primer 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ključ za postavljanje čuva se kao tajna %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ključ za postavljanje omogućava ovoj instalaciji da šalje u jedan repozitorijum preko SSH i nigde drugde. Njegova privatna polovina ostaje u Podešavanje &gt; Tajne; prikazuje se samo javna polovina.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ključ za postavljanje napravljen za ovaj cilj</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ključ za postavljanje se prijavljuje preko SSH: promenite git adresu u SSH adresu (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Posao je u toku, pokrenuo ga je %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Posao ovog cilja je još u toku (%detail). Sačekajte da se završi.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Posao ovog cilja je još u toku. Sačekajte da se završi.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Link sa stranice /news/ na stranicu /about-us/team biće upisan kao</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Napravljen je novi ključ za postavljanje. Odmah dodajte njegovu javnu polovinu u repozitorijum.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Stranica koja posle čišćenja i dalje sadrži izlaz za otklanjanje grešaka, token obrasca ili ID sesije nikada se ne objavljuje.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Vraćanje je za stručnjake: označite „Znam šta ovo menja” i ponovo upišite naziv oznake.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Sajt može da ima do %site, jedna datoteka do %file, uz oko 100 GB saobraćaja mesečno. Na besplatnom planu repozitorijum mora da bude javan. GitHub Pages nije namenjen prodavnicama ni drugim komercijalnim transakcijama.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Cilj je jedan sajt objavljen u jedan git repozitorijum. Ovde se ništa ne gradi niti objavljuje: Sačuvaj upisuje podešavanja u settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Cilj je jedan sajt objavljen na jedno mesto, na primer vaš javni sajt na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token iz Podešavanje &gt; Tajne</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Objavljuje je tok rada (workflow) repozitorijuma.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Dodajte ovaj javni ključ u repozitorijum sa pravom upisa. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, označite Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Dodato</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Drugi git host</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Drugi proces radi na ovom cilju: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Nazad</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Osnovna putanja</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pre</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Ispod osnovne putanje</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Grana</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Neispravni linkovi</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Neispravni linkovi u izgradnji</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Izgradnja</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Izgradnja %id, pokrenuo %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Izgradnja %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Izgradi sada</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Izgradnja za proveru</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Pokrenuo</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Ručno, ovde</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Otkaži</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Promeni</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Promenjeno</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Izmene</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Prvo je proverite</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Proverite ova podešavanja</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Proverite šta izgradnja menja, pogledajte je, pa je objavite ili odbacite.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Izaberite objavu na koju se vraćate.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Dolazi u nekom od sledećih izdanja.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Komit</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Komitovi</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Komituje izgradnju, označava je oznakom i šalje je na %remote. Slanje nikada nije prinudno; kasnije se možete vratiti na bilo koju objavu.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>U poređenju sa prethodnim sadržajem fascikle: dodato %added, promenjeno %changed, uklonjeno %removed, nepromenjeno %unchanged.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>U poređenju sa poslednjom objavom.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Akreditiv</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Sopstveni domen</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Izlaz za otklanjanje grešaka, tokeni obrazaca, ID-ovi sesija i nonce vrednosti uvek se uklanjaju.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ključ za postavljanje</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Ključ za postavljanje za %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Odbaci</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Odbaci izgradnju</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domen</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Prazno: adresa sajta. U suprotnom, interna adresa istog sajta.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Završeno</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Svaki link počinje osnovnom putanjom.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Svaka objava je komit sa oznakom static/%id/&lt;n&gt;. Vraćanje pravi novi komit sa datotekama ranije objave: istorija ostaje, nijedna oznaka se ne pomera i ništa nije prinudno.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Dodaci</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Preuzmi stranice sa</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Datoteka</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Datoteke</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Nedostaju datoteke</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Datoteke sajta</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Datoteke koje nisu mogle da se prikupe</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Otisak</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Fascikla</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Za SSH adresu. Ključ se pravi posle čuvanja; vi dodajete njegovu javnu polovinu u repozitorijum.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Za https:// adresu. GitHub: detaljni token (fine-grained) sa pravom Contents za čitanje i upis na repozitorijumu.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Za stručnjake. Javni sajt se menja čim se slanje završi.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Obrasci</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Besplatni hosting iz GitHub repozitorijuma.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Iz grane</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git adresa</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub aplikacija</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages dozvoljava sajt od %site i datoteku od %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Ograničenja GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages objavljuje datoteke onakve kakve jesu (potrebno za datoteke koje počinju sa _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub poslužuje granu onakvu kakva je poslata. Podrazumevano.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, vaš sopstveni server: bilo koji git repozitorijum.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Vrati se na raniju objavu</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Pomoć</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Pomoć za čarobnjak</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Sakrij ih</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Istorija</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Istorija za %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Kako GitHub Pages prima izgradnju</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Izmene su proverene</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Znam šta ovo menja</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Isključeno je: ništa ne može da se izgradi dok se ne uključi.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Radi u pozadini kao %user; možete zatvoriti ovu stranicu.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Posao %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Čuva se kao tajna %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Poslednja objava</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Izostavi ove stranice</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Izostavi ove odeljke</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Linkovi</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Prepisani linkovi</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Aktivni sajt</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Pogledaj izgradnju</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Mala slova, cifre, _ i -, na primer github-public. Određuje naziv fascikle i oznaka (static/&lt;id&gt;/&lt;n&gt;) i kasnije ne može da se promeni.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Napravi novi ključ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Napravi cilj</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Napravi ključ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Prvo napravite repozitorijum na hostu; prazan je u redu.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Popis datoteka</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Poruka</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Većina stranica</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Naziv tokena u Podešavanje &gt; Tajne</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Novi cilj</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Dalje</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Još nema komita.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Ključ nije napravljen: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nije pronađena izvršna datoteka php komandne linije. Podesite migration.ini [AdminSettings] PhpCliPath na njenu punu putanju.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Još nema oznake.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Još nema cilja.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nijedno</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nije u izgradnji.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Još ništa nije objavljeno.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Još ništa nije objavljeno: svaka datoteka je nova.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Obaveštenja</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Po rasporedu</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Na konzoli</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Na serveru: ./console exp:static:serve %id je poslužuje na isti način.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Jedna putanja po redu, * odgovara bilo kom delu: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Uz cilj se čuva samo naziv; sam token ili ključ ostaje u Podešavanje &gt; Tajne i nikada se ne pojavljuje u dnevniku.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Samo ono što stranice navode</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Samo sa tokenom. env:NAME umesto toga čita promenljivu okruženja servera.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Otvori pregled</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Otvara izgradnju iz fascikle cilja onako kako će je host posluživati. Link vam radi sat vremena.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opciono. Prazno: ono što je objavljeno.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opciono. Sa domenom se sajt poslužuje iz svog korena.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Izlaz</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Stranice</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Stranice cilja</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Odbijene stranice</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Naknadna obrada</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Pregled i objavljivanje</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Pregled i objavljivanje: %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Pregledaj izgradnju</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Napredak</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Javna adresa</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Javni ključ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Objavi</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Objavite statičku kopiju sajta na GitHub Pages ili bilo kom git hostu: izgradite je, proverite izmene, objavite i vratite se na raniju objavu kada vam zatreba.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Objava na koju se vraćate</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Objave</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Slanje</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Pročitaj uputstvo</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Zapis</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odbijeno</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativni</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ponovo učitaj</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Uklonjeno</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Zameni ključ: stari prestaje da radi</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Izveštaj</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Izveštaj o izgradnji</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitorijum</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Provera</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Provera ispituje svako podešavanje i prikazuje redove koji će biti upisani. Ništa još nije sačuvano.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Vrati</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Vraćanje</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sačuvaj</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Raspored</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Stranica pretrage</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ID-ovi odeljaka, odvojeni zarezima.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Pošalji ih na aktivni sajt</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Podešavanje</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Podešavanja</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Podešavanja za %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Podešavanje</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Podešavanje &gt; Tajne</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Prikazuje se u listama, na primer „Javni sajt na GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Prijava preko GitHub aplikacije dolazi sa GitHub integracijom.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sajt</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Sajt za objavljivanje</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Veličina</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Veličina i ograničenja</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Veličina izgradnje</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Zastarele stranice</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Započeto</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Pokrenuo %user u %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statičko objavljivanje</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statičko objavljivanje je isključeno</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statičko objavljivanje je isključeno.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statičko objavljivanje je isključeno. Prvo ga uključite u Podešavanje &gt; Statičko objavljivanje.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statičko objavljivanje je uključeno.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Korak %step od %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Koraci</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Čišćenje</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Isključi</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Uključi</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Uključi statičko objavljivanje</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Oznaka</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Oznake</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cilj</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Ciljevi mogu da se prave i menjaju, ali ništa se ne gradi niti objavljuje dok se objavljivanje ne uključi.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Govori pretraživačima šta da čitaju.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Izgradnja nije mogla da se odbaci: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Izgradnja je ista kao poslednja objava: nema šta da se objavi.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Izgradnja je odbačena: fascikla ponovo sadrži poslednju objavu.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Podrazumevane vrednosti odgovaraju većini sajtova.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Fascikla sadrži izgradnju koja još nije objavljena; nova izgradnja je zamenjuje.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>U fasciklu poslova ne može da se upisuje: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Posao nije mogao da se pripremi: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Posao nije mogao da se pokrene.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Posao je završen. Učitava se njegov izveštaj.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Za posao je potreban prijavljen korisnik.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Posao je pokrenut, ali nije prijavio ID procesa. Proverite %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ključ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Najveća datoteka: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Redovi koji će biti upisani</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Lista stranica za pretraživače; zahteva javnu adresu.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Stranice se preuzimaju onako kako ih vidi posetilac koji nije prijavljen. Pristupi sajtu za administraciju i uređivanje nikada se ne nude.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Napredak nije mogao da se prati. Ponovo učitajte stranicu da biste videli kako posao napreduje.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Javna polovina ključa:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Koren grane</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Skladište tajni još nije podešeno (./console exp:upgrade --apply pravi njegovu tabelu), pa nijedan ključ ne može da se sačuva.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Server se prijavljuje sam (sopstvenim SSH ključem ili pomoćnikom za akreditive), ili je repozitorijum na ovom serveru.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Podešavanje nije moglo da se upiše: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Podešavanja su ispravna. Biće upisani ovi redovi:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Datoteka podešavanja ne može da se pročita: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Sajt se vraća na datoteke te objave; izgradnja koja još nije objavljena mora prvo da se objavi ili odbaci.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Sopstvena stranica sajta za adrese koje ne postoje.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Cilj nije mogao da se sačuva: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Cilj se još ne prijavljuje ovim ključem: izaberite „Ključ za postavljanje napravljen za ovaj cilj” u njegovim podešavanjima.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ciljevi nisu mogli da se pročitaju: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Još nema izgradnje za proveru.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ova instalacija nema javni pristup sajtu. Pristupi sajtu za administraciju i uređivanje nikada se ne objavljuju.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ova stranica prati posao dok traje; on se nastavlja u pozadini kada se stranica zatvori.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ovaj cilj još nema ključ za postavljanje.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Ovaj cilj ovde još nije izgrađen.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ovaj cilj ga ima.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Odbacuje ovu izgradnju: fascikla ponovo sadrži poslednju objavu. Aktivni sajt se ne menja.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Prvo označite „Izmene su proverene”.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Vreme</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Okidači</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Ponovo upišite naziv oznake</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nepromenjeno</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Vebhuk</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Šta</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Šta se menja</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Šta je koja datoteka; uvek se upisuje.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Šta je posao uradio i njegov zapis. Posao pokrenut ovde nastavlja se u pozadini kada se ova stranica zatvori.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Šta je posao ispisao kao greške</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Ono što stranice navode i svaka slika objavljenog sadržaja</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kada</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Kada objava ne uspe</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Kada objava uspe</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kada se sadržaj objavi</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kuda vode linkovi ka onome što kopija ne sadrži (pretraga, prijava).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Odakle se poslužuje statička kopija.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Koji se sajt objavljuje i kako se cilj zove.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Radi ispod bilo koje putanje. Podrazumevano.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Upisuje se kad god je podešen sopstveni domen.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Uvek možete ručno da gradite i objavljujete ovde i na konzoli.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>samo naziv; vrednost ostaje u Podešavanje &gt; Tajne</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>ispod %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>završeno bez izveštaja</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>dodatak</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>neuspelo</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>datoteka</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ili main sa fasciklom docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git hosting</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (sa tokenom) ili git@github.com:owner/repo.git (sa ključem za postavljanje); nikada lozinka ili token u njoj.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, za mapu sajta i kanonske linkove.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>slika</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikad</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>nema udaljenog repozitorijuma</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>nema: komitovi ostaju u fascikli</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>nema: ništa se nije promenilo</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>nije poslato</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ništa se nije promenilo</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>stranica</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>uspelo</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open je onemogućen, pa ovde ne može da se pokrene posao. Koristite ./console exp:static:build na serveru.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>objava</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>objavljeno</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>slanje na čekanju</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>poslato</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>odbijeno</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativni</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>vraćanje</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>vraćeno</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>u toku</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>samo fascikla</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: upisuje se u datoteku CNAME. Usmerite DNS domena na host kako on objašnjava; za pokretanje HTTPS može da prođe neko vreme.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>da, još nije objavljeno</translation>
     </message>
 </context>
 </TS>

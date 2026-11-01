@@ -78,6 +78,10 @@ class expAuditTaxonomy
         'content.node.section' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.object.state' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.object.hold.refused' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'Publication of a held object refused' ),
+        'content.object.hold.auto' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content', 'label' => 'New content held for review automatically' ),
+        'content.object.hold.place' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'Review hold placed' ),
+        'content.object.hold.release' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'Review hold released' ),
+        'content.moderation.action' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'Moderation action on a selection' ),
         'content.node.main' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content', 'label' => 'Main location change' ),
         'content.node.sort' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
         'content.node.priority' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
@@ -226,10 +230,12 @@ class expAuditTaxonomy
         'system.migration.mail' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration mail sent' ),
         'system.migration.command' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration console command run' ),
         // static publishing (doc/eng-us/guides/static-publishing-targets-and-credentials.md): a publish or a push
-        // retried, a rollback, a deploy key made or replaced (never a credential's value)
+        // retried, a rollback, a deploy key made or replaced (never a credential's value), a target saved in the
+        // administration or the feature switched on or off
         'system.staticpublish.publish' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site published' ),
         'system.staticpublish.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site rolled back' ),
         'system.staticpublish.credential' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static publishing credential changed' ),
+        'system.staticpublish.target' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static publishing target changed' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         // the Velocity watchdog (doc/eng-us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)

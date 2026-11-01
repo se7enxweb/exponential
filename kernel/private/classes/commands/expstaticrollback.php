@@ -33,11 +33,14 @@ class Expstaticrollback extends ExpstaticBase
                              "./console exp:static:rollback github-public 4 --apply\n" .
                              "./console exp:static:rollback github-public static/github-public/4 --apply --no-push",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[apply][message:][no-push][format:]', '[target][to]', array(
+        return (array)$this->startup( '[apply][message:][no-push][format:][login:][run-id:][progress:]', '[target][to]', array(
             'apply' => 'Make the rollback commit; without it the command only lists what would change',
             'message' => 'The commit message (default: what was published, or which publish is restored)',
             'no-push' => 'Commit and tag, but do not push (exp:static:push pushes later)',
             'format' => 'text (default) or json (the machine output exp-static/1)',
+            'login' => 'Run as this user (the administration starts its jobs so); recorded as who ran it',
+            'run-id' => 'The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job\'s id)',
+            'progress' => 'Also append the progress, one JSON object per line, to this file (the administration follows it)',
         ) );
     }
 
@@ -46,6 +49,7 @@ class Expstaticrollback extends ExpstaticBase
         $options = $this->begin();
         $format = $this->format( $options );
         $to = isset( $options['arguments'][1] ) ? trim( (string)$options['arguments'][1] ) : '';
+        $job = $this->jobOptions( $options );
         $target = $this->target( $options, $format );
         if ( $to === '' )
             $this->usage( 'name the publish to go back to: exp:static:rollback ' . $target->id() . ' <n|static/' . $target->id() . '/<n>>' );
@@ -53,7 +57,8 @@ class Expstaticrollback extends ExpstaticBase
             $this->usage( "$to is not a publish of " . $target->id() . ': a number or static/' . $target->id() . '/<n>' );
         $this->requireEnabled( $target, 'rollback', $format );
         $db = $this->database( $format );
-        $publisher = $this->publisher( $target, $db, array( 'push' => !empty( $options['no-push'] ) ? false : null ) );
+        $publisher = $this->publisher( $target, $db, array( 'push' => !empty( $options['no-push'] ) ? false : null, 'emit' => $job['progress'],
+                                                            'by' => $job['by'], 'run_id' => $job['run_id'] ) );
         $message = isset( $options['message'] ) && $options['message'] !== false ? (string)$options['message'] : '';
         $this->finish( $publisher->rollback( $to, array( 'apply' => !empty( $options['apply'] ), 'message' => $message ) ), $format );
     }

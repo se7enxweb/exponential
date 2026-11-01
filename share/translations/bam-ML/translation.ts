@@ -15150,6 +15150,22 @@ Ko: pakew tɛna sigili bɔ.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Sigili yɛlɛmali minnu marara ka kɛ dosiyew ye: u hali, waleyaw, ka waleya ani ka segin kɔ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kɔnɔko kuraw</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Kɔnɔko kuraw, fɛn minnu minɛna ka lajɛ, ani kɛwalew sugandili kan.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Siti dɔ kopi jɔlen bila kɛnɛ kan GitHub Pages kan walima git jatigi o jatigi kan.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bilali jɔlen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Ko: pakew tɛna sigili bɔ.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API ka ɲininkali maralenw jaabiw, ani a sigicogo kɔnɔko kuluw.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Kopi jɔlen bila kɛnɛ kan GitHub Pages kan walima git jatigi o jatigi kan</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bilali jɔlen</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Kasi jɔlen bɛ ɲɛw di ka bɔ nin sɛriwɛri in na. Walasa ka siti kopi jɔlen bila kɛnɛ kan yɔrɔ wɛrɛ la, GitHub Pages kan walima git jatigi o jatigi kan, bilali jɔlen kɛ.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Sigili yɛlɛmali minnu marara ka kɛ dosiyew ye: u hali, waleyaw, ka waleya ani ka segin kɔ.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Siti dɔ kopi jɔlen bila kɛnɛ kan GitHub Pages kan walima git jatigi o jatigi kan.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bilali jɔlen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Waleya ma se ka daminɛ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dilanna</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tɔgɔ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kilasi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekisiyɔn</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Dilanbaga</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kɔnɔko kuraw</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Siti bɛɛ kɔnɔkow minnu dilanna walima yɛlɛmana kɔsa in na, kuraw fɔlɔ: bisigiyalaw ye fɛn minnu ci, fɛn minnu minɛna ka lajɛ, bruyɔnw minnu bɛ u bilali makɔnɔ. Fɛnw sugandi walasa k'u bila, k'u minɛ, k'u dogo, k'u jira, k'u bɔsi walima k'u bila sekisiyɔn wɛrɛ walima cogoya wɛrɛ la.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Lisi ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Lajɛli minɛni ma labɛn fɔlɔ, o de kosɔn foyi ma minɛ ani minɛni kɛwalew tɛ di. Yɛlɛmali taabolo 6.0.15-review-hold b'a labɛn: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lisi sɛnsɛn</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ka bɔ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ka se</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Don</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Dilanna (bilali fɔlɔ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Bɛɛ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Bilalen</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Bruyɔn, ma bila abada</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>A bɛ makɔnɔni na (a bɛ sɔnni walima don dɔ makɔnɔ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Nɔgɔsigiyɔrɔ la</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Minɛna ka lajɛ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Minɛna</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ma minɛ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Dogolen</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Yeli</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Cira don min na</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Siti donda o donda</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Sɛgɛsɛgɛli ye min sɛbɛn o dɔrɔn.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Sisan: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Donni tɔgɔ walima baarakɛla ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sɛnsɛn</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Sɛnsɛnw bɔsi</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Fɛnw</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ka se %to ma %count kɔnɔ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Fɛn si tɛ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(kalanna %ms ms kɔnɔ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Kɛwalew fɛn sugandilenw kan</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Ɲɛ in bɛɛ sugandi</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count sugandilen</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kɛwale</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kɛwale dɔ sugandi</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Minɛni bɔ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Minɛ ka lajɛ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Dogo</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Jira</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Bila nɔgɔsigiyɔrɔ la</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Jɔsi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sekisiyɔn di</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Cogoya di</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sababu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Wajibi don ka minɛ; a bɛ mara minɛni fɛ ani sɛgɛsɛgɛli kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Sekisiyɔn dɔ sugandi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Cogoya dɔ sugandi</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>A kɛ sugandilenw na</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Fɛn kelen kelen bɛ lajɛ i yɛrɛ ka yamaruyaw la. Bilali nɔgɔsigiyɔrɔ la ani jɔsili b'a ɲini i ka sɔn. Ni fɛnw ka ca ni %count ye, u bɛ kɛ kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Sugandi</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Bilali</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Cira yɔrɔ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name sugandi</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>a ma kɛ fɔlɔ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(tɔgɔ tɛ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Bruyɔn</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>A bɛ makɔnɔni na</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>A faa ye a dogo</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Minɛna: ci kura</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Wɛrisiyɔn %version bɛ makɔnɔni na</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Wɛrisiyɔn %version bɛ baara la</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Bruyɔn, wɛrisiyɔn %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Wɛrisiyɔn %version bilalen</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Labɛnna %date kama</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>adrɛsi tɛ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ma sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Foyi tɛ bɛn sɛnsɛn ninnu ma.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Bɛɛ jira</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Kɔnɔko si tɛ fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ɲɛ kelen na</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fɛn %count jira ɲɛ kelen na.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ci dɔ ka adrɛsi ni a ka navigatɛri bɛ bɔ sɛgɛsɛgɛli indɛkisi la, min tɛ sɔrɔ yan: kolɔni b'a fɔ ko "ma sɛbɛn".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adrɛsi ni navigatɛri ye sɛgɛsɛgɛli ye minnu sɛbɛn fɛn in kama (minɛni yɛrɛma b'u sɛbɛn tuma bɛɛ; bilali ni dilanni b'u sɛbɛn yɔrɔ minnu na a bɔra yen dɔrɔn), i n'a fɔ a ka gundo labɛnw b'u mara cogo min na.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: fɛn %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Jɔsili bɛ fɛnw bɔ pewu, u ka wɛrisiyɔnw ni u ka bayɛlɛmaw bɛɛ. A tɛ se ka segin kɔ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Fɛnw bɛ taa nɔgɔsigiyɔrɔ la, u bɛ se ka segin ka bɔ yen.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Fɛn kelen kelen bɛ lajɛ i yɛrɛ ka yamaruyaw la; fɛn min bɛ ni fɛn dɔgɔmanw ye, o bɛ to a cogo la (a bɔsi kɔnɔko jɔcogo la). A bɛna ɲini i fɛ i k'a jira ko i yɛrɛ don.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Nin bɛ kɛ kɔfɛ: a taa ɲɛ bɛ yɛlɛ, ani fɛn kelen kelen jaabi bɛ jira n'a banna.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Fɛn sugandilenw</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ani %count wɛrɛ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dabila</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Foyi ma kɛ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sababu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Kɛwale bɛ kɛ kɔfɛ hali sisan.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>A taa ɲɛ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Kɔfɛ kɛwale ma ɲɛ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>A banna</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A ma sɔn</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>A ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Fɛn kelen kelen</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Fɛn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Jaabi</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Mun na</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Segin lisi ma</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Labɛnni</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Foyi ma kɛ hali dɔɔnin</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Sɔn</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kɛwale dɔ sugandi.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Fɛn kelen sugandi a dɔgɔya la.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Fɛn 1000 dɔrɔn sugandi a caya la siɲɛ kelen.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>A fɔ fɛnw minɛna mun na.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Sekisiyɔn sugandi.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Cogoya sugandi.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formilɛri ma se ka kalan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Kɔnɔko kuraw</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Jatew ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Minɛna ka lajɛ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Kura bi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Lajɛli minɛni ma labɛn fɔlɔ (yɛlɛmali taabolo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Kɔnɔko kura bɛɛ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>I tɛ se ka moderasiyɔn kɛwalew kɛ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderasiyɔn kɛwale ma dafa: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasiyɔn: %action objɛ %count kan</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done objɛ %total la: %ok banna, %refused ma sɔn, %failed ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok banna, %refused ma sɔn, %failed ma ɲɛ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>A tɛ yen tugun.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Yɔrɔ si t'a fɛ (a ma bila).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>I tɛ se k'a dogo (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>I tɛ se k'a jira (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>A dogolen don kaban.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>A ma dogo.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Dogolen.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Jiralen.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>A bɛ nɔgɔsigiyɔrɔ la: a lankolon walima a segin ka bɔ yen.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Bruyɔn min ma bila abada, o tɛ se ka taa nɔgɔsigiyɔrɔ la: a jɔsi.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>I tɛ se k'a jɔsi (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Jɔsilen.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>I tɛ se k'a bɔsi (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Fɛn dɔgɔmanw b'a la: a bɔsi kɔnɔko jɔcogo la, u lisi bɛ yɔrɔ min na.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>A ma bɔsi (baarasira dɔ bɛ se ka bɔsili minɛ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>A taara nɔgɔsigiyɔrɔ la.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sekisiyɔn tɛ yen.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>A bɛ sekisiyɔn in na kaban.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>I tɛ se ka sekisiyɔn in di (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sekisiyɔn ma di.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sekisiyɔn dilen.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Cogoya tɛ yen.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>A bɛ cogoya in na kaban.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>I tɛ se ka cogoya in di (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Cogoya ma di (baarasira dɔ bɛ se ka yɛlɛmali minɛ).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Cogoya dilen.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Kɛwale suguya tɛ yen.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Lajɛli minɛni ma labɛn (yɛlɛmali taabolo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>A fɔ a minɛna mun na.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>A minɛna kaban.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>I tɛ se k'a minɛ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Minɛni ma kɛ (baarasira dɔ bɛ se ka yɛlɛmali minɛ).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Minɛna.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>A ma minɛ.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>I tɛ se k'a bila (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Minɛni ma bɔ (baarasira dɔ bɛ se ka yɛlɛmali minɛ).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>A bilala; a dogolen don hali bi: i tɛ se k'a jira (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>A bilala.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Taayɔrɔw bɛɛ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Bilali laban</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>I ka siti kopi jɔlen bila kɛnɛ kan fu GitHub Pages kan:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Ɲɛ kɔrɔlenw</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bilali jɔlen</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Bilali jɔlen datugulen don.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Taayɔrɔ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Taayɔrɔw ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>baara dɔ bɛ kɛ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>dilanni min ka kan ka lajɛ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>nin dogo</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>taayɔrɔ dilan</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>abada</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>kalanni kalan</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added farala a kan, %changed yɛlɛmana, %removed bɔra</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes %limit kɔnɔ (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count wɛrɛw ma sɛbɛn yan.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Ɲɛ %pages sɛbɛnna</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path bonya ye %size ye, o ka bon ni jatigi bɛ sɔn min ma fisiye kelen na.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Dan ka %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>segin %seconds</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ye bilali ye min bɛ siti kan sisan.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: baara %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/marayɔrɔ/ GitHub porozɛ siti kama; a to lankolon domɛni yɛrɛ ta walima baarakɛla siti kama.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Siti</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Jatigi</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Donni marayɔrɔ la</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Marayɔrɔ</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Siriw ani sira jusigi</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. I yɛrɛ ka domɛni</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Dilanni bɛ min kɔnɔ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. A bɛ bila kɛnɛ kan tuma min na</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Lajɛ ka mara</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub porozɛ siti bɛ /&lt;repository&gt;/ jukɔrɔ; siri sumanenw bɛ baara kɛ yen ani yɔrɔ wɛrɛ bɛɛ la.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Dilanni bɛ %site ka ɲɛ bɛɛ ta i n&apos;a fɔ lajɛlikɛla min ma don b&apos;a ye cogo min na, ka siriw sɛbɛn kokura, ka fisiyew kopi ani ka jaabi sɛbɛn taayɔrɔ ka kɛsu kɔnɔ. Foyi tɛ bila kɛnɛ kan fɔ i ka dilanni lajɛ ka Bila kɛnɛ kan digi.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron kumasen, i n&apos;a fɔ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Bilali kile bɛ mara i n&apos;a fɔ gundo %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Bilali kile bɛ sira di nin sigili ma ka ci marayɔrɔ kelen ma SSH fɛ, a tɛ taa yɔrɔ wɛrɛ la. A tilayɔrɔ gundo bɛ to Labɛnni &gt; Gundow kɔnɔ; a tilayɔrɔ kɛnɛ kan dɔrɔn de bɛ jira.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Bilali kile min dilanna nin taayɔrɔ in kama</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Bilali kile bɛ don SSH fɛ: git adarɛsi yɛlɛma ka kɛ SSH adarɛsi ye (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Baara dɔ bɛ kɛ, %user de y&apos;a daminɛ</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Nin taayɔrɔ in ka baara dɔ bɛ kɛ hali bi (%detail). A makɔnɔ fɔ a ka ban.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Nin taayɔrɔ in ka baara dɔ bɛ kɛ hali bi. A makɔnɔ fɔ a ka ban.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Siri min bɛ bɔ ɲɛ /news/ la ka taa ɲɛ /about-us/team la, o bɛna sɛbɛn nin cogo la</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Bilali kile kura dilanna. A tilayɔrɔ kɛnɛ kan fara marayɔrɔ kan sisan.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Ɲɛ min bɛ ni ɲɛjiri bɔlenw ye hali bi, walima formulɛri tɔkɛn, walima sesiyɔn tɔgɔ saniyali kɔfɛ, o tɛ bila kɛnɛ kan abada.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Segin kɔ ye dɔnnikɛlaw ta ye: &quot;N b&apos;a dɔn nin bɛ min yɛlɛma&quot; sugandi ka taamasiyɛn tɔgɔ sɛbɛn tugun.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Siti bonya bɛ se ka se %site ma, fisiye kelen %file ma, ni taamaw ye 100 GB ɲɔgɔn ye kalo kɔnɔ. Fu labɛn kan, marayɔrɔ ka kan ka kɛ kɛnɛ kan. GitHub Pages ma dilan butikiw walima jago wɛrɛw kama.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Taayɔrɔ ye siti kelen ye min bɛ bila git marayɔrɔ kelen kɔnɔ. Foyi tɛ dilan walima ka bila kɛnɛ kan yan: Mara bɛ labɛnw sɛbɛn settings/override/staticcache.ini.append.php kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Taayɔrɔ ye siti kelen ye min bɛ bila yɔrɔ kelen na, i n&apos;a fɔ i ka siti kɛnɛ kan GitHub Pages kan.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Tɔkɛn min bɔra Labɛnni &gt; Gundow la</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Marayɔrɔ ka baarasira dɔ b&apos;a bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Nin kile kɛnɛ kan fara marayɔrɔ kan ni sɛbɛnni sira ye. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access sugandi.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Farala a kan</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Git jatigi wɛrɛ</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Baarakɛcogo wɛrɛ bɛ baara kɛ nin taayɔrɔ in kan: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Segin kɔ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Sira jusigi</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Sira jusigi dɔ jukɔrɔ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Bolo</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Siri tiɲɛnenw</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Siri tiɲɛnenw dilanni kɔnɔ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Dilanni</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Dilanni %id, %user fɛ</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name dilan</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>A dilan sisan</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Dilanni min ka kan ka lajɛ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Min ye</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Ni bolo ye, yan</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dabila</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Yɛlɛmana</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Yɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>A lajɛ fɔlɔ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Nin labɛnw lajɛ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Dilanni bɛ min yɛlɛma o lajɛ, a filɛ, o kɔ a bila kɛnɛ kan walima a fili.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Bilali sugandi i bɛ segin min ma.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Bɛna na bɔli nata dɔ la.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Mara</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Maraliw</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Dilanni bɛ mara, ka taamasiyɛn don a la ani k&apos;a ci %remote ma. Ci tɛ kɛ ni fanga ye abada; i bɛ se ka segin bilali o bilali ma kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Ni kɛsu fɔlɔ ye: %added farala a kan, %changed yɛlɛmana, %removed bɔra, %unchanged ma yɛlɛma.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Ni bilali laban ye.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Donni sɛbɛn</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domɛni yɛrɛ ta</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Ɲɛjiri bɔlenw, formulɛri tɔkɛnw, sesiyɔn tɔgɔw ani nonce bɛ bɔ a la tuma bɛɛ.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Bilali kile</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ka bilali kile</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>A fili</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Dilanni fili</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domɛni</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Lankolon: siti adarɛsi. N&apos;o tɛ, siti kelen in adarɛsi kɔnɔnata.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Banna</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Siri bɛɛ bɛ daminɛ ni sira jusigi ye.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Bilali bɛɛ ye marali ye ni taamasiyɛn static/%id/&lt;n&gt; ye. Segin kɔ bɛ marali kura kɛ ni bilali fɔlɔ dɔ ka fisiyew ye: tariku bɛ to, taamasiyɛn si tɛ lamaga, foyi tɛ kɛ ni fanga ye.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Fisiye farataw</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Ɲɛw ta ka bɔ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fisiye</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fisiyew</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fisiye dɛsɛlenw</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fisiyew:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fisiye minnu ma se ka lajɛ</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Bolonɔ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Kɛsu</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH adarɛsi kama. Kile bɛ dilan marali kɔfɛ; i b&apos;a tilayɔrɔ kɛnɛ kan fara marayɔrɔ kan.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// adarɛsi kama. GitHub: tɔkɛn dafalen ni Contents kalanni ani sɛbɛnni sira ye marayɔrɔ kan.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Dɔnnikɛlaw kama. Siti kɛnɛ kan bɛ yɛlɛma ci banni kɔfɛ yɔrɔnin kelen.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formulɛriw</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Jatigiya fu ka bɔ GitHub marayɔrɔ dɔ la.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Ka bɔ bolo la</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git adarɛsi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages bɛ sɔn siti ma min bonya ye %site ye ani fisiye min bonya ye %file ye.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages danw</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages bɛ fisiyew bila kɛnɛ kan u cogo la (o mako bɛ fisiye minnu bɛ daminɛ ni _ ye).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub bɛ bolo di a cira cogo min na. A fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, i yɛrɛ ka sɛriwɛri: git marayɔrɔ o marayɔrɔ.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Segin bilali fɔlɔ dɔ ma</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Dɛmɛ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Dɛmɛ ladilikɛla kama</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>U dogo</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Tariku</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ka tariku</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Jatigi</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages bɛ dilanni sɔrɔ cogo min na</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>N ye yɛlɛmaw lajɛ</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>N b&apos;a dɔn nin bɛ min yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Tɔgɔnɔ</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>A datugulen don: foyi tɛ se ka dilan fɔ a ka da wuli.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>A bɛ baara kɛ kɔfɛ i n&apos;a fɔ %user; i bɛ se ka nin ɲɛ datugu.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Baara %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>A marara i n&apos;a fɔ gundo %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Suguya</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Bilali laban</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Nin ɲɛw bila kɛrɛfɛ</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Nin yɔrɔw bila kɛrɛfɛ</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Siriw</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Siri sɛbɛnnen kokuraw</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Siti kɛnɛ kan</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Dilanni filɛ</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Sɛbɛnnisun fitininw, jateden, _ ani -, i n&apos;a fɔ github-public. A bɛ tɔgɔ da kɛsu ani taamasiyɛnw na (static/&lt;id&gt;/&lt;n&gt;) wa a tɛ se ka yɛlɛma kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Kile kura dilan</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Taayɔrɔ dilan</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Kile dilan</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Marayɔrɔ dilan jatigi kan fɔlɔ; lankolon fana bɛ ɲɛ.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Fisiyew lisi</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Cikan</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Ɲɛ caman</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tɔgɔ</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Tɔkɛn tɔgɔ Labɛnni &gt; Gundow kɔnɔ</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Taayɔrɔ kura</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Nata</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ayi</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Marali si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Kile si ma dilan: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php ka baarakɛminɛn ci sira ma sɔrɔ. migration.ini [AdminSettings] PhpCliPath sigi a sira dafalen na.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Taamasiyɛn si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Taayɔrɔ si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Foyi</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>A tɛ dilanni kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Foyi ma bila kɛnɛ kan fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Foyi ma bila kɛnɛ kan fɔlɔ: fisiye bɛɛ ye kura ye.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Kunnafoni di</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Waati labɛnnen na</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsoli kan</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Sɛriwɛri kan: ./console exp:static:serve %id b&apos;a di o cogo kelen na.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Sira kelen sɛbɛnsen kelen na, * bɛ bɛn yɔrɔ o yɔrɔ ma: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Tɔgɔ dɔrɔn de bɛ mara taayɔrɔ fɛ; tɔkɛn walima kile yɛrɛ bɛ to Labɛnni &gt; Gundow kɔnɔ wa a tɛ jira sɛbɛnni kɔnɔ abada.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Ɲɛw bɛ min tɔgɔ fɔ o dɔrɔn</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Ni tɔkɛn ye dɔrɔn. env:NAME bɛ sɛriwɛri ka sigiyɔrɔ yɛlɛmata kalan o nɔ na.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Ɲɛfɛlajɛ da wuli</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Dilanni bɛ da wuli i n&apos;a fɔ jatigi bɛna a di cogo min na, ka bɔ taayɔrɔ ka kɛsu la. Siri bɛ baara kɛ i ye lɛrɛ kelen kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>A tɛ wajibi ye. Lankolon: min bilara kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>A tɛ wajibi ye. Ni domɛni bɛ yen, siti bɛ di a ju la.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Bɔli</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Ɲɛw</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Taayɔrɔ ka ɲɛw</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Ɲɛ banlenw</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Baara kɔfɛta</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ɲɛfɛlajɛ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Ɲɛfɛlajɛ ani bilali</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Ɲɛfɛlajɛ ani bilali %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Dilanni ɲɛfɛlajɛ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Taabolo</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Adarɛsi kɛnɛ kan</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Kile kɛnɛ kan</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Bila kɛnɛ kan</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Siti dɔ kopi jɔlen bila kɛnɛ kan GitHub Pages kan walima git jatigi o jatigi kan: a dilan, yɛlɛmaw lajɛ, a bila kɛnɛ kan, ani ka segin bilali fɔlɔ dɔ ma ni mako b&apos;a la.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Bilali min ma segin</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Bilaliw</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ci</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Kalanni kalan</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Sɛbɛnni</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A banna</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Sumanenw</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>A lata kokura</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Bɔra</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Kile falen: kɔrɔlen tɛna baara kɛ tugun</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Jatebɔ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Dilanni jatebɔ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Marayɔrɔ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Lajɛli</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Lajɛli bɛ labɛn kelen kelen bɛɛ lajɛ ka sɛbɛnsen minnu bɛna sɛbɛn olu jira. Foyi ma mara fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Segin kɔ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Segin kɔ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mara</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Waati labɛnnen</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Ɲinini ɲɛ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Yɔrɔw tɔgɔnɔw, u farala ɲɔgɔn na ni bisigili ye.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>U ci siti kɛnɛ kan ma</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Labɛn</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Labɛnw</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ka labɛnw</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Labɛnni</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Labɛnni &gt; Gundow</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>A bɛ jira lisiw kɔnɔ, i n&apos;a fɔ &quot;Siti kɛnɛ kan GitHub Pages kan&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Donni ni GitHub App ye bɛna na ni GitHub ɲɔgɔndɛmɛ ye.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Siti</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Siti min ka kan ka bila kɛnɛ kan</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Bonya</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Bonya ani danw</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Dilanni bonya</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Ɲɛ kɔrɔlenw</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Daminɛna</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user y&apos;a daminɛ %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bilali jɔlen</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Bilali jɔlen datugulen don</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Bilali jɔlen datugulen don.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Bilali jɔlen datugulen don. A da wuli Labɛnni &gt; Bilali jɔlen kɔnɔ fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Bilali jɔlen dayɛlɛlen don.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Taabolo %step %total kɔnɔ</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Taabolow</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Saniyali</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>A datugu</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>A da wuli</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Bilali jɔlen da wuli</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Taamasiyɛn</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Taamasiyɛnw</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Taayɔrɔ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Taayɔrɔw bɛ se ka dilan ani ka yɛlɛma, nka foyi tɛ dilan walima ka bila kɛnɛ kan fɔ a ka da wuli.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>A bɛ a fɔ ɲininikɛminɛnw ye u ka kan ka min kalan.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Dilanni ma se ka fili: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Dilanni ni bilali laban ye kelen ye: foyi tɛ yen ka bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Dilanni filila: kɛsu bɛ ni bilali laban ye tugun.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>A fɔlɔ labɛnw bɛ bɛn siti caman ma.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Dilanni dɔ bɛ kɛsu kɔnɔ min ma bila kɛnɛ kan fɔlɔ; dilanni kura bɛna a nɔ ta.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Baaraw ka kɛsu tɛ se ka sɛbɛn: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Baara ma se ka labɛn: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Baara ma se ka daminɛ.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Baara banna. A jatebɔ bɛ lata.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Baara mako bɛ baarakɛla donnen dɔ la.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Baara daminɛna nka a ma a ka baarakɛcogo tɔgɔnɔ fɔ. %detail lajɛ.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Kile</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Fisiye belebele: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Sɛbɛnsen minnu bɛna sɛbɛn</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Ɲɛw lisi ɲininikɛminɛnw kama; adarɛsi kɛnɛ kan mago b&apos;a la.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Ɲɛw bɛ ta i n&apos;a fɔ lajɛlikɛla min ma don b&apos;u ye cogo min na. Ɲɛmɔgɔya ani latilenni siteaccess tɛ di abada.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Taabolo ma se ka tugu. Ɲɛ lata kokura walasa ka baara cogoya ye.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Kile tilayɔrɔ kɛnɛ kan:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Bolo ju</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Gundow marayɔrɔ ma labɛn fɔlɔ (./console exp:upgrade --apply b&apos;a ka tabali dilan), o de kosɔn kile si tɛ se ka mara.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Sɛriwɛri bɛ don a yɛrɛ ma (a yɛrɛ ka SSH kile walima donni sɛbɛn dɛmɛbaga fɛ), walima marayɔrɔ bɛ nin sɛriwɛri in kan.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Labɛn ma se ka sɛbɛn: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Labɛnw ɲɛna. Nin sɛbɛnsenw bɛna sɛbɛn:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Labɛnw fisiye tɛ se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Siti bɛ segin o bilali ka fisiyew ma; dilanni min ma bila kɛnɛ kan fɔlɔ, o ka kan ka bila kɛnɛ kan walima ka fili fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Siti yɛrɛ ka ɲɛ adarɛsi minnu tɛ yen olu kama.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Taayɔrɔ ma se ka mara: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Taayɔrɔ tɛ don ni nin kile ye fɔlɔ: &quot;Bilali kile min dilanna nin taayɔrɔ in kama&quot; sugandi a ka labɛnw kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Taayɔrɔw ma se ka kalan: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Dilanni si tɛ yen ka lajɛ fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Siteaccess ɲɛfɛta si tɛ nin sigili in na. Ɲɛmɔgɔya ani latilenni siteaccess tɛ bila kɛnɛ kan abada.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Nin ɲɛ bɛ tugu baara kɔ a taabolo la; ni ɲɛ datugura, a bɛ taa a fɛ kɔfɛ.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Bilali kile si tɛ nin taayɔrɔ in fɛ fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Nin taayɔrɔ in ma dilan yan fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Kelen bɛ nin taayɔrɔ in fɛ.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Nin dilanni bɛ fili: kɛsu bɛ ni bilali laban ye tugun. Siti kɛnɛ kan tɛ yɛlɛma.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>&quot;N ye yɛlɛmaw lajɛ&quot; sugandi fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waati</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Daminɛcogow</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Taamasiyɛn tɔgɔ sɛbɛn tugun</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>A ma yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Mun</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Min bɛ yɛlɛma</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Fisiye kelen kelen ye min ye; a bɛ sɛbɛn tuma bɛɛ.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Baara ye min kɛ ani a ka sɛbɛnni. Baara min daminɛna yan, o bɛ taa a fɛ kɔfɛ ni nin ɲɛ datugura.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Baara ye min bɔ i n&apos;a fɔ filiw</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Ɲɛw bɛ min tɔgɔ fɔ, ani kɔnɔkow bilalenw ka ja bɛɛ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Tuma jumɛn</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Ni bilali ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Ni bilali ɲɛna</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Ni kɔnɔkow bilara kɛnɛ kan</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kopi tɛ ni min ye, siriw bɛ taa o yɔrɔ min (ɲinini, donni).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Kopi jɔlen bɛ di ka bɔ yɔrɔ min na.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Siti min bɛ bila kɛnɛ kan, ani taayɔrɔ tɔgɔ.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>A bɛ baara kɛ sira o sira jukɔrɔ. A fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>A bɛ sɛbɛn tuma o tuma ni domɛni yɛrɛ ta sigira.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ɔwɔ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>I bɛ se ka dilan ani ka bila kɛnɛ kan ni bolo ye tuma bɛɛ yan ani konsoli kan.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>tɔgɔ dɔrɔn; a nafa bɛ to Labɛnni &gt; Gundow kɔnɔ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path jukɔrɔ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>banna jatebɔ tɛ</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>farata</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ma ɲɛ</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fisiye</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, walima main ni kɛsu docs ye.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git jatigi</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ni tɔkɛn ye) walima git@github.com:owner/repo.git (ni bilali kile ye); tɛmɛsira walima tɔkɛn kana kɛ a kɔnɔ abada.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, siti kɔrɔfɔlan ani siri sɔbɛw kama.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>abada</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ayi</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>yɔrɔjan si tɛ</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>foyi: maraliw bɛ to kɛsu kɔnɔ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>foyi: foyi ma yɛlɛma</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ma ci</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>foyi ma yɛlɛma</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ɲɛ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>a ɲɛna</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open datugulen don, o de kosɔn baara tɛ se ka daminɛ yan. ./console exp:static:build kɛ sɛriwɛri kan.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>bilali</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>bilalen kɛnɛ kan</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ci bɛ makɔnɔ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>cira</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>a banna</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>sumanenw</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>segin kɔ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>seginna kɔ</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>a bɛ kɛ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>kɛsu dɔrɔn</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: a bɛ sɛbɛn fisiye CNAME kɔnɔ. Domɛni ka DNS ɲɛsin jatigi ma i n&apos;a fɔ a b&apos;a ɲɛfɔ cogo min na; HTTPS bɛ se ka mɛn sani a ka daminɛ.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ɔwɔ, a ma bila kɛnɛ kan fɔlɔ</translation>
     </message>
 </context>
 </TS>

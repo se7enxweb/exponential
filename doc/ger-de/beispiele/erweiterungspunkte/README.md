@@ -22,7 +22,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [bookmark.ini](bookmark.md) | Kernel | 1 | TypeClass |
 | [browse.ini](browse.md) | Kernel | 3 | Class, Class, Class |
 | [collaboration.ini](collaboration.md) | Kernel | 1 | Repositories |
-| [content.ini](content.md) | Kernel | 33 | VersionHistoryClass, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, AvailableClasses, AvailableClasses ... |
+| [content.ini](content.md) | Kernel | 34 | VersionHistoryClass, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, AvailableClasses, AvailableClasses ... |
 | [contentcheck.ini](contentcheck.md) | Kernel | 3 | AssetClassList, StorageParentClassList, Handlers |
 | [contentstructuremenu.ini](contentstructuremenu.md) | Kernel | 2 | ShowClasses, ChapterClasses |
 | [cronjob.ini](cronjob.md) | Kernel | 1 | ExtensionDirectories |

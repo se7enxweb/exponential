@@ -15148,6 +15148,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ഫയലുകളായി സൂക്ഷിച്ച ഇൻസ്റ്റലേഷനിലെ മാറ്റങ്ങൾ: അവയുടെ നില, റണ്ണുകൾ, പ്രവർത്തിപ്പിക്കുക, തിരികെയാക്കുക.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>സമീപകാല ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ഏറ്റവും പുതിയ ഉള്ളടക്കം, അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്, ഒരു തിരഞ്ഞെടുപ്പിലെ പ്രവർത്തനങ്ങൾ.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ഒരു സൈറ്റിന്റെ സ്റ്റാറ്റിക് പകർപ്പ് GitHub Pages-ലോ ഏതെങ്കിലും git ഹോസ്റ്റിലോ പ്രസിദ്ധീകരിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22147,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API-യുടെ സംഭരിച്ച ക്വറികളുടെ ഉത്തരങ്ങളും അതിന്റെ സ്കീമയുടെ ഉള്ളടക്ക ക്ലാസുകളും.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>സ്റ്റാറ്റിക് പകർപ്പ് GitHub Pages-ലോ ഏതെങ്കിലും git ഹോസ്റ്റിലോ പ്രസിദ്ധീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>സ്റ്റാറ്റിക് കാഷെ ഈ സെർവറിൽ നിന്ന് പേജുകൾ നൽകുന്നു. ഒരു സൈറ്റിന്റെ സ്റ്റാറ്റിക് പകർപ്പ് മറ്റെവിടെയെങ്കിലും, GitHub Pages-ലോ ഏതെങ്കിലും git ഹോസ്റ്റിലോ, പ്രസിദ്ധീകരിക്കാൻ സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം ഉപയോഗിക്കുക.</translation>
     </message>
 </context>
 <context>
@@ -76204,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ഫയലുകളായി സൂക്ഷിച്ച ഇൻസ്റ്റലേഷനിലെ മാറ്റങ്ങൾ: അവയുടെ നില, റണ്ണുകൾ, പ്രവർത്തിപ്പിക്കുക, തിരികെയാക്കുക.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ഒരു സൈറ്റിന്റെ സ്റ്റാറ്റിക് പകർപ്പ് GitHub Pages-ലോ ഏതെങ്കിലും git ഹോസ്റ്റിലോ പ്രസിദ്ധീകരിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80551,6 +80587,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>റൺ ആരംഭിക്കാനായില്ല.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>പരിഷ്കരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>സൃഷ്ടിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>പേര്</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ക്ലാസ്</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>വിഭാഗം</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>സൃഷ്ടാവ്</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>സമീപകാല ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>മുഴുവൻ സൈറ്റിലും അടുത്തിടെ സൃഷ്ടിച്ചതും പരിഷ്കരിച്ചതുമായ ഉള്ളടക്കം, ഏറ്റവും പുതിയത് ആദ്യം: സന്ദർശകർ സമർപ്പിച്ചത്, അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്, പ്രസിദ്ധീകരണത്തിനായി കാത്തിരിക്കുന്ന ഡ്രാഫ്റ്റുകൾ. തടഞ്ഞുവയ്ക്കൽ നീക്കാനോ, തടഞ്ഞുവയ്ക്കാനോ, മറയ്ക്കാനോ, വെളിപ്പെടുത്താനോ, നീക്കം ചെയ്യാനോ, മറ്റൊരു വിഭാഗത്തിലേക്കോ സ്ഥിതിയിലേക്കോ മാറ്റാനോ ഇനങ്ങൾ തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ലിസ്റ്റ് വായിക്കാൻ കഴിഞ്ഞില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>അവലോകന തടഞ്ഞുവയ്ക്കൽ ഇതുവരെ സജ്ജീകരിച്ചിട്ടില്ല, അതിനാൽ ഒന്നും തടഞ്ഞുവച്ചിട്ടില്ല, തടഞ്ഞുവയ്ക്കൽ പ്രവർത്തനങ്ങൾ ലഭ്യമല്ല. നവീകരണ ഘട്ടം 6.0.15-review-hold ഇത് സജ്ജീകരിക്കുന്നു: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ലിസ്റ്റ് ഫിൽട്ടർ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>മുതൽ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>വരെ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>തീയതി</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>സൃഷ്ടിച്ചത് (ആദ്യം പ്രസിദ്ധീകരിച്ചത്)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>എല്ലാം</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>നില</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>പ്രസിദ്ധീകരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ഡ്രാഫ്റ്റ്, ഒരിക്കലും പ്രസിദ്ധീകരിച്ചിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>തീർച്ചപ്പെടുത്താത്തത് (അംഗീകാരത്തിനോ തീയതിക്കോ കാത്തിരിക്കുന്നു)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ട്രാഷിൽ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>തടഞ്ഞുവച്ചത്</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>തടഞ്ഞുവച്ചിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>മറച്ചത്</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ദൃശ്യമായത്</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>സമർപ്പിച്ചത് ഇവിടെ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ഏത് സൈറ്റ്ആക്സസും</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ഓഡിറ്റ് രേഖപ്പെടുത്തിയത് മാത്രം.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ഇപ്പോൾ: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ഒരു ലോഗിൻ നാമം അല്ലെങ്കിൽ ഉപയോക്തൃ ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ഫിൽട്ടർ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ഫിൽട്ടറുകൾ മായ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ൽ %from മുതൽ %to വരെ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ഇനങ്ങളൊന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms ൽ വായിച്ചു)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>തിരഞ്ഞെടുത്ത ഇനങ്ങളിലെ പ്രവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ഈ പേജിലെ എല്ലാം തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count തിരഞ്ഞെടുത്തു</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ഒരു പ്രവർത്തനം തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>തടഞ്ഞുവയ്ക്കൽ നീക്കുക</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>അവലോകനത്തിനായി തടഞ്ഞുവയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>മറയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>വെളിപ്പെടുത്തുക</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ട്രാഷിലേക്ക് നീക്കുക</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ഇല്ലാതാക്കുക</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>വിഭാഗം നിയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>സ്ഥിതി നിയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>കാരണം</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>തടഞ്ഞുവയ്ക്കാൻ ആവശ്യമാണ്; തടഞ്ഞുവയ്ക്കലിനൊപ്പവും ഓഡിറ്റിലും സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ഒരു വിഭാഗം തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>സ്ഥിതി</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ഒരു സ്ഥിതി തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>തിരഞ്ഞെടുത്തവയിൽ പ്രയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ഓരോ ഇനവും നിങ്ങളുടെ സ്വന്തം അനുമതികളുമായി പരിശോധിക്കുന്നു. ട്രാഷിലേക്ക് നീക്കുന്നതും ഇല്ലാതാക്കുന്നതും സ്ഥിരീകരണം ആവശ്യപ്പെടുന്നു. %count ൽ കൂടുതൽ ഇനങ്ങൾ പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>സമർപ്പിച്ച ഉറവിടം</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ഇതുവരെ ഇല്ല</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(പേരില്ല)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ഡ്രാഫ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>തീർച്ചപ്പെടുത്താത്തത്</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>പാരന്റ് മറച്ചത്</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>തടഞ്ഞുവച്ചത്: പുതിയ സമർപ്പണം</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>പതിപ്പ് %version തീർച്ചപ്പെടുത്താത്തത്</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>പതിപ്പ് %version പുരോഗതിയിൽ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ഡ്രാഫ്റ്റ്, പതിപ്പ് %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>പതിപ്പ് %version പ്രസിദ്ധീകരിച്ചു</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ന് ഷെഡ്യൂൾ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>വിലാസമില്ല</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>രേഖപ്പെടുത്തിയിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ഈ ഫിൽട്ടറുകളുമായി ഒന്നും പൊരുത്തപ്പെടുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>എല്ലാം കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ഇതുവരെ ഉള്ളടക്കമൊന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ഓരോ പേജിലും</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ഓരോ പേജിലും %count ഇനങ്ങൾ കാണിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>ഒരു സമർപ്പണത്തിന്റെ വിലാസവും ബ്രൗസറും ഓഡിറ്റ് സൂചികയിൽ നിന്നാണ് വരുന്നത്, അത് ഇവിടെ ലഭ്യമല്ല: കോളം &quot;രേഖപ്പെടുത്തിയിട്ടില്ല&quot; എന്ന് കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>വിലാസവും ബ്രൗസറും ആ ഇനത്തിനായി ഓഡിറ്റ് രേഖപ്പെടുത്തിയവയാണ് (സ്വയം-തടഞ്ഞുവയ്ക്കൽ എപ്പോഴും അവ രേഖപ്പെടുത്തുന്നു; പ്രസിദ്ധീകരിക്കലും സൃഷ്ടിക്കലും ഓണാക്കിയിടത്ത് മാത്രം), അതിന്റെ സ്വകാര്യതാ ക്രമീകരണങ്ങൾ സൂക്ഷിക്കുന്നതുപോലെ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ഇല്ലാതാക്കുന്നത് ഇനങ്ങളെ അവയുടെ എല്ലാ പതിപ്പുകളും വിവർത്തനങ്ങളും സഹിതം ശാശ്വതമായി നീക്കം ചെയ്യുന്നു. ഇത് പഴയപടിയാക്കാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ഇനങ്ങൾ ട്രാഷിലേക്ക് പോകുന്നു, അവിടെ നിന്ന് അവ പുനഃസ്ഥാപിക്കാം.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ഓരോ ഇനവും നിങ്ങളുടെ സ്വന്തം അനുമതികളുമായി പരിശോധിക്കുന്നു; ഉപ ഇനങ്ങളുള്ള ഒരു ഇനം അതേപടി വിടുന്നു (അത് ഉള്ളടക്ക ഘടനയിൽ നീക്കം ചെയ്യുക). അത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കാൻ ആവശ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ഇത് പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കുന്നു: അതിന്റെ പുരോഗതി പേജ് തുറക്കുന്നു, പൂർത്തിയാകുമ്പോൾ ഓരോ ഇനത്തിന്റെയും ഫലം കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>തിരഞ്ഞെടുത്ത ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>കൂടാതെ %count എണ്ണം കൂടി</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ഒന്നും ചെയ്തില്ല</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>കാരണം: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>പ്രവർത്തനം ഇപ്പോഴും പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>അതിന്റെ പുരോഗതി</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>പശ്ചാത്തല പ്രവർത്തനം പരാജയപ്പെട്ടു: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>പൂർത്തിയായി</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ഓരോ ഇനത്തിനും</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ഇനം</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ഫലം</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>എന്തുകൊണ്ട്</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ലിസ്റ്റിലേക്ക് മടങ്ങുക</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>സജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ഒന്നും ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>സ്ഥിരീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ഒരു പ്രവർത്തനം തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>കുറഞ്ഞത് ഒരു ഇനമെങ്കിലും തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ഒരു സമയം പരമാവധി 1000 ഇനങ്ങൾ തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ഇനങ്ങൾ എന്തുകൊണ്ട് തടഞ്ഞുവച്ചു എന്ന് പറയുക.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>വിഭാഗം തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>സ്ഥിതി തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ഫോം വായിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>സമീപകാല ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>എണ്ണങ്ങൾ വായിക്കാൻ കഴിഞ്ഞില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ഇന്ന് പുതിയത്</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>അവലോകന തടഞ്ഞുവയ്ക്കൽ ഇതുവരെ സജ്ജീകരിച്ചിട്ടില്ല (നവീകരണ ഘട്ടം 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>എല്ലാ സമീപകാല ഉള്ളടക്കവും</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>നിങ്ങൾക്ക് മോഡറേഷൻ പ്രവർത്തനങ്ങൾ നടത്താൻ അനുവാദമില്ല (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>മോഡറേഷൻ പ്രവർത്തനം പൂർത്തിയായിട്ടില്ല: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>മോഡറേഷൻ: %count ഒബ്ജക്റ്റുകളിൽ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total ൽ %done ഒബ്ജക്റ്റുകൾ: %ok പൂർത്തിയായി, %refused നിരസിച്ചു, %failed പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok പൂർത്തിയായി, %refused നിരസിച്ചു, %failed പരാജയപ്പെട്ടു</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ഇത് ഇനി നിലവിലില്ല.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ഇതിന് സ്ഥാനമില്ല (പ്രസിദ്ധീകരിച്ചിട്ടില്ല).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് മറയ്ക്കാൻ അനുവാദമില്ല (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് വെളിപ്പെടുത്താൻ അനുവാദമില്ല (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ഇത് ഇതിനകം മറച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ഇത് മറച്ചിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>മറച്ചു.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>വെളിപ്പെടുത്തി.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ഇത് ട്രാഷിലാണ്: അവിടെ ശൂന്യമാക്കുകയോ പുനഃസ്ഥാപിക്കുകയോ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ഒരിക്കലും പ്രസിദ്ധീകരിക്കാത്ത ഡ്രാഫ്റ്റ് ട്രാഷിലേക്ക് പോകാൻ കഴിയില്ല: അത് ഇല്ലാതാക്കുക.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് ഇല്ലാതാക്കാൻ അനുവാദമില്ല (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ഇല്ലാതാക്കി.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് നീക്കം ചെയ്യാൻ അനുവാദമില്ല (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ഇതിന് ഉപ ഇനങ്ങളുണ്ട്: അവ ലിസ്റ്റ് ചെയ്തിരിക്കുന്ന ഉള്ളടക്ക ഘടനയിൽ ഇത് നീക്കം ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ഇത് നീക്കം ചെയ്തില്ല (ഒരു വർക്ക്ഫ്ലോ നീക്കം ചെയ്യൽ തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ട്രാഷിലേക്ക് നീക്കി.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>വിഭാഗം നിലവിലില്ല.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ഇത് ഇതിനകം ഈ വിഭാഗത്തിലാണ്.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഈ വിഭാഗം നിയോഗിക്കാൻ അനുവാദമില്ല (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>വിഭാഗം നിയോഗിച്ചില്ല.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>വിഭാഗം നിയോഗിച്ചു.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>സ്ഥിതി നിലവിലില്ല.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ഇത് ഇതിനകം ഈ സ്ഥിതിയിലാണ്.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഈ സ്ഥിതി നിയോഗിക്കാൻ അനുവാദമില്ല (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>സ്ഥിതി നിയോഗിച്ചില്ല (ഒരു വർക്ക്ഫ്ലോ മാറ്റം തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>സ്ഥിതി നിയോഗിച്ചു.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>അങ്ങനെയൊരു പ്രവർത്തനമില്ല.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>അവലോകന തടഞ്ഞുവയ്ക്കൽ സജ്ജീകരിച്ചിട്ടില്ല (നവീകരണ ഘട്ടം 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ഇത് എന്തുകൊണ്ട് തടഞ്ഞുവച്ചു എന്ന് പറയുക.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ഇത് ഇതിനകം തടഞ്ഞുവച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് തടഞ്ഞുവയ്ക്കാൻ അനുവാദമില്ല (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>തടഞ്ഞുവയ്ക്കൽ സ്ഥാപിച്ചില്ല (ഒരു വർക്ക്ഫ്ലോ മാറ്റം തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>തടഞ്ഞുവച്ചു.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ഇത് തടഞ്ഞുവച്ചിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് വിട്ടുകൊടുക്കാൻ അനുവാദമില്ല (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>തടഞ്ഞുവയ്ക്കൽ നീക്കിയില്ല (ഒരു വർക്ക്ഫ്ലോ മാറ്റം തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>വിട്ടുകൊടുത്തു; ഇപ്പോഴും മറച്ചിരിക്കുന്നു: നിങ്ങൾക്ക് ഇത് വെളിപ്പെടുത്താൻ അനുവാദമില്ല (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>വിട്ടുകൊടുത്തു.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>എല്ലാ ലക്ഷ്യങ്ങളും</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>അവസാന പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>നിങ്ങളുടെ സൈറ്റിന്റെ സൗജന്യ സ്റ്റാറ്റിക് പകർപ്പ് GitHub Pages-ൽ പ്രസിദ്ധീകരിക്കുക:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>പഴകിയ പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം ഓഫാണ്.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ലക്ഷ്യം</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ലക്ഷ്യങ്ങൾ വായിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ഒരു ജോലി നടക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>പരിശോധിക്കാനുള്ള ബിൽഡ്</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ഇത് മറയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ഒരു ലക്ഷ്യം സൃഷ്ടിക്കുക</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ഒരിക്കലുമില്ല</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ട്യൂട്ടോറിയൽ വായിക്കുക</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ചേർത്തു, %changed മാറ്റി, %removed നീക്കം ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit-ൽ %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count എണ്ണം കൂടി പട്ടികയിലില്ല.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages പേജുകൾ എഴുതി</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path-ന്റെ വലുപ്പം %size ആണ്, ഒരു ഫയലിന് ഹോസ്റ്റ് അനുവദിക്കുന്നതിലും കൂടുതൽ.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>പരിധിയുടെ %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds സെ.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ആണ് സൈറ്റിൽ ഇപ്പോഴുള്ള പ്രസിദ്ധീകരണം.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ജോലി %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub പ്രോജക്റ്റ് സൈറ്റിന് /repository/; കസ്റ്റം ഡൊമെയ്നിനോ ഉപയോക്തൃ സൈറ്റിനോ ശൂന്യം.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. സൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. ഹോസ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. റിപ്പോസിറ്ററിയിലേക്ക് സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. റിപ്പോസിറ്ററി</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. ലിങ്കുകളും ബേസ് പാത്തും</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. നിങ്ങളുടെ സ്വന്തം ഡൊമെയ്ൻ</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ബിൽഡിൽ എന്തുണ്ട്</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. എപ്പോൾ പ്രസിദ്ധീകരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. അവലോകനം ചെയ്ത് സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>ഒരു GitHub പ്രോജക്റ്റ് സൈറ്റ് /&lt;repository&gt;/ എന്നതിന് താഴെയാണ്; ആപേക്ഷിക ലിങ്കുകൾ അവിടെയും മറ്റെവിടെയും പ്രവർത്തിക്കും.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ഒരു ബിൽഡ് %site-ന്റെ ഓരോ പേജും സൈൻ ഇൻ ചെയ്യാത്ത സന്ദർശകൻ കാണുന്നതുപോലെ കൊണ്ടുവരുന്നു, ലിങ്കുകൾ മാറ്റിയെഴുതുന്നു, ഫയലുകൾ പകർത്തുന്നു, ഫലം ലക്ഷ്യത്തിന്റെ ഫോൾഡറിൽ എഴുതുന്നു. നിങ്ങൾ ബിൽഡ് പരിശോധിച്ച് പ്രസിദ്ധീകരിക്കുക അമർത്തുന്നതുവരെ ഒന്നും പ്രസിദ്ധീകരിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>ഒരു cron എക്സ്പ്രഷൻ, ഉദാഹരണത്തിന് 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>ഡിപ്ലോയ് കീ %secret എന്ന രഹസ്യമായി സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>ഒരു ഡിപ്ലോയ് കീ ഈ ഇൻസ്റ്റലേഷനെ SSH വഴി ഒരു റിപ്പോസിറ്ററിയിലേക്ക് മാത്രം പുഷ് ചെയ്യാൻ അനുവദിക്കുന്നു, മറ്റെവിടേക്കുമില്ല. അതിന്റെ സ്വകാര്യ പകുതി സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിൽ തുടരുന്നു; പൊതു പകുതി മാത്രം കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ഈ ലക്ഷ്യത്തിനായി സൃഷ്ടിച്ച ഡിപ്ലോയ് കീ</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>ഡിപ്ലോയ് കീ SSH വഴി സൈൻ ഇൻ ചെയ്യുന്നു: git വിലാസം SSH വിലാസമാക്കി മാറ്റുക (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ഒരു ജോലി നടക്കുന്നു, %user ആരംഭിച്ചത്</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ഈ ലക്ഷ്യത്തിന്റെ ഒരു ജോലി ഇപ്പോഴും നടക്കുന്നു (%detail). അത് അവസാനിക്കുന്നതുവരെ കാത്തിരിക്കുക.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ഈ ലക്ഷ്യത്തിന്റെ ഒരു ജോലി ഇപ്പോഴും നടക്കുന്നു. അത് അവസാനിക്കുന്നതുവരെ കാത്തിരിക്കുക.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ എന്ന പേജിൽ നിന്ന് /about-us/team എന്ന പേജിലേക്കുള്ള ലിങ്ക് ഇങ്ങനെ എഴുതും</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>ഒരു പുതിയ ഡിപ്ലോയ് കീ സൃഷ്ടിച്ചു. അതിന്റെ പൊതു പകുതി ഇപ്പോൾ റിപ്പോസിറ്ററിയിലേക്ക് ചേർക്കുക.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>വൃത്തിയാക്കിയ ശേഷവും ഡീബഗ് ഔട്ട്പുട്ട്, ഫോം ടോക്കൺ അല്ലെങ്കിൽ സെഷൻ ഐഡി ഉള്ള പേജ് ഒരിക്കലും പ്രസിദ്ധീകരിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>റോൾബാക്ക് വിദഗ്ധർക്കുള്ളതാണ്: &quot;ഇത് എന്ത് മാറ്റുമെന്ന് എനിക്കറിയാം&quot; ടിക്ക് ചെയ്ത് ടാഗിന്റെ പേര് വീണ്ടും ടൈപ്പ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ഒരു സൈറ്റ് %site വരെയും ഒരു ഫയൽ %file വരെയും ആകാം, മാസം ഏകദേശം 100 GB ട്രാഫിക്കോടെ. സൗജന്യ പ്ലാനിൽ റിപ്പോസിറ്ററി പൊതുവായിരിക്കണം. GitHub Pages കടകൾക്കോ മറ്റ് വാണിജ്യ ഇടപാടുകൾക്കോ ഉദ്ദേശിച്ചുള്ളതല്ല.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ഒരു ലക്ഷ്യം എന്നത് ഒരു git റിപ്പോസിറ്ററിയിലേക്ക് പ്രസിദ്ധീകരിക്കുന്ന ഒരു സൈറ്റാണ്. ഇവിടെ ഒന്നും ബിൽഡ് ചെയ്യുകയോ പ്രസിദ്ധീകരിക്കുകയോ ഇല്ല: സംരക്ഷിക്കുക ക്രമീകരണങ്ങൾ settings/override/staticcache.ini.append.php-ൽ എഴുതുന്നു.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ഒരു ലക്ഷ്യം എന്നത് ഒരിടത്തേക്ക് പ്രസിദ്ധീകരിക്കുന്ന ഒരു സൈറ്റാണ്, ഉദാഹരണത്തിന് GitHub Pages-ലെ നിങ്ങളുടെ പൊതു സൈറ്റ്.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിൽ നിന്നുള്ള ടോക്കൺ</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>റിപ്പോസിറ്ററിയുടെ ഒരു വർക്ക്ഫ്ലോ അത് പ്രസിദ്ധീകരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ഈ പൊതു കീ എഴുതാനുള്ള അനുമതിയോടെ റിപ്പോസിറ്ററിയിലേക്ക് ചേർക്കുക. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access ടിക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ചേർത്തു</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>മറ്റൊരു git ഹോസ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>മറ്റൊരു പ്രോസസ് ഈ ലക്ഷ്യത്തിൽ പ്രവർത്തിക്കുന്നു: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>തിരികെ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>ബേസ് പാത്ത്</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>മുമ്പ്</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ഒരു ബേസ് പാത്തിന് താഴെ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ബ്രാഞ്ച്</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>തകർന്ന ലിങ്കുകൾ</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ബിൽഡിലെ തകർന്ന ലിങ്കുകൾ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ബിൽഡ്</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user നടത്തിയ ബിൽഡ് %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name-ന്റെ ബിൽഡ്</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ഇപ്പോൾ ബിൽഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>പരിശോധിക്കാനുള്ള ബിൽഡ്</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ആര്</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>കൈകൊണ്ട്, ഇവിടെ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>മാറ്റി</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>മാറ്റങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ആദ്യം പരിശോധിക്കുക</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ഈ ക്രമീകരണങ്ങൾ പരിശോധിക്കുക</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ബിൽഡ് എന്ത് മാറ്റുന്നുവെന്ന് പരിശോധിക്കുക, അത് നോക്കുക, തുടർന്ന് പ്രസിദ്ധീകരിക്കുകയോ ഉപേക്ഷിക്കുകയോ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>തിരികെ പോകേണ്ട പ്രസിദ്ധീകരണം തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>പിന്നീടുള്ള റിലീസിൽ വരും.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>കമ്മിറ്റ്</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>കമ്മിറ്റുകൾ</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ബിൽഡ് കമ്മിറ്റ് ചെയ്ത്, ടാഗ് ചെയ്ത്, %remote-ലേക്ക് പുഷ് ചെയ്യുന്നു. പുഷ് ഒരിക്കലും നിർബന്ധിതമല്ല; പിന്നീട് ഏത് പ്രസിദ്ധീകരണത്തിലേക്കും തിരികെ പോകാം.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>മുമ്പത്തെ ഫോൾഡറുമായി താരതമ്യം: %added ചേർത്തു, %changed മാറ്റി, %removed നീക്കം ചെയ്തു, %unchanged മാറ്റമില്ല.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>അവസാന പ്രസിദ്ധീകരണവുമായി താരതമ്യം ചെയ്തത്.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ക്രെഡൻഷ്യൽ</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>കസ്റ്റം ഡൊമെയ്ൻ</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>ഡീബഗ് ഔട്ട്പുട്ട്, ഫോം ടോക്കണുകൾ, സെഷൻ ഐഡികൾ, നോൺസുകൾ എന്നിവ എപ്പോഴും നീക്കം ചെയ്യും.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>ഡിപ്ലോയ് കീ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name-ന്റെ ഡിപ്ലോയ് കീ</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ഉപേക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ബിൽഡ് ഉപേക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ഡൊമെയ്ൻ</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ശൂന്യം: സൈറ്റിന്റെ വിലാസം. അല്ലെങ്കിൽ അതേ സൈറ്റിന്റെ ഒരു ആന്തരിക വിലാസം.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>അവസാനിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ഓരോ ലിങ്കും ബേസ് പാത്തിൽ തുടങ്ങുന്നു.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ഓരോ പ്രസിദ്ധീകരണവും static/%id/&lt;n&gt; എന്ന ടാഗുള്ള ഒരു കമ്മിറ്റാണ്. തിരികെ പോകുന്നത് മുമ്പത്തെ ഒരു പ്രസിദ്ധീകരണത്തിന്റെ ഫയലുകളോടെ പുതിയ കമ്മിറ്റ് സൃഷ്ടിക്കുന്നു: ചരിത്രം നിലനിൽക്കുന്നു, ഒരു ടാഗും നീങ്ങുന്നില്ല, ഒന്നും നിർബന്ധിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>അധിക ഫയലുകൾ</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>പേജുകൾ ഇവിടെ നിന്ന് കൊണ്ടുവരിക</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ഫയൽ</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ഫയലുകൾ</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>കാണാതായ ഫയലുകൾ</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ഇതിന്റെ ഫയലുകൾ</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ശേഖരിക്കാൻ കഴിയാത്ത ഫയലുകൾ</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>ഫിംഗർപ്രിന്റ്</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ഫോൾഡർ</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>ഒരു SSH വിലാസത്തിന്. സംരക്ഷിച്ച ശേഷം കീ സൃഷ്ടിക്കും; അതിന്റെ പൊതു പകുതി നിങ്ങൾ റിപ്പോസിറ്ററിയിലേക്ക് ചേർക്കുക.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>ഒരു https:// വിലാസത്തിന്. GitHub: റിപ്പോസിറ്ററിയിൽ Contents വായിക്കാനും എഴുതാനുമുള്ള അനുമതിയുള്ള fine-grained ടോക്കൺ.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>വിദഗ്ധർക്ക്. പുഷ് പൂർത്തിയായ ഉടൻ പൊതു സൈറ്റ് മാറും.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ഫോമുകൾ</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>ഒരു GitHub റിപ്പോസിറ്ററിയിൽ നിന്ന് സൗജന്യ ഹോസ്റ്റിംഗ്.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ബ്രാഞ്ചിൽ നിന്ന്</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git വിലാസം</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site വരെയുള്ള സൈറ്റും %file വരെയുള്ള ഫയലും അനുവദിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages പരിധികൾ</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ഫയലുകൾ അതേപടി പ്രസിദ്ധീകരിക്കുന്നു (_ ൽ തുടങ്ങുന്ന ഫയലുകൾക്ക് ആവശ്യമാണ്).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ബ്രാഞ്ച് പുഷ് ചെയ്തതുപോലെ നൽകുന്നു. സ്ഥിരസ്ഥിതി.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, നിങ്ങളുടെ സ്വന്തം സെർവർ: ഏത് git റിപ്പോസിറ്ററിയും.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>മുമ്പത്തെ ഒരു പ്രസിദ്ധീകരണത്തിലേക്ക് തിരികെ പോകുക</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>സഹായം</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>വിസാർഡിനുള്ള സഹായം</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>അവ മറയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ചരിത്രം</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name-ന്റെ ചരിത്രം</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ഹോസ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ബിൽഡ് എങ്ങനെ സ്വീകരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ഞാൻ മാറ്റങ്ങൾ പരിശോധിച്ചു</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ഇത് എന്ത് മാറ്റുമെന്ന് എനിക്കറിയാം</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ഐഡി</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ഇത് ഓഫാണ്: ഓണാക്കുന്നതുവരെ ഒന്നും ബിൽഡ് ചെയ്യാനാവില്ല.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ഇത് പശ്ചാത്തലത്തിൽ %user ആയി പ്രവർത്തിക്കുന്നു; നിങ്ങൾക്ക് ഈ പേജ് അടയ്ക്കാം.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ജോലി %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret എന്ന രഹസ്യമായി സൂക്ഷിച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>തരം</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>അവസാന പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ഈ പേജുകൾ ഒഴിവാക്കുക</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ഈ വിഭാഗങ്ങൾ ഒഴിവാക്കുക</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>ലിങ്കുകൾ</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>മാറ്റിയെഴുതിയ ലിങ്കുകൾ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ലൈവ് സൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ബിൽഡ് കാണുക</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ചെറിയ അക്ഷരങ്ങൾ, അക്കങ്ങൾ, _ ഉം - ഉം, ഉദാഹരണത്തിന് github-public. ഇത് ഫോൾഡറിനും ടാഗുകൾക്കും (static/&lt;id&gt;/&lt;n&gt;) പേര് നൽകുന്നു, പിന്നീട് മാറ്റാനാവില്ല.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>പുതിയ കീ സൃഷ്ടിക്കുക</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ഒരു ലക്ഷ്യം സൃഷ്ടിക്കുക</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>കീ സൃഷ്ടിക്കുക</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ആദ്യം ഹോസ്റ്റിൽ റിപ്പോസിറ്ററി സൃഷ്ടിക്കുക; ശൂന്യമായതും മതി.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>മാനിഫെസ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>സന്ദേശം</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>മിക്ക പേജുകളും</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>പേര്</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിലെ ടോക്കണിന്റെ പേര്</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>പുതിയ ലക്ഷ്യം</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>അടുത്തത്</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ഇതുവരെ കമ്മിറ്റില്ല.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>കീ സൃഷ്ടിച്ചില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php കമാൻഡ് ലൈൻ ബൈനറി കണ്ടെത്തിയില്ല. migration.ini [AdminSettings] PhpCliPath അതിന്റെ പൂർണ്ണ പാത്തായി സജ്ജമാക്കുക.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ഇതുവരെ ടാഗില്ല.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ഇതുവരെ ലക്ഷ്യമില്ല.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ഒന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ബിൽഡിൽ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ഇതുവരെ ഒന്നും പ്രസിദ്ധീകരിച്ചിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ഇതുവരെ ഒന്നും പ്രസിദ്ധീകരിച്ചിട്ടില്ല: ഓരോ ഫയലും പുതിയതാണ്.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>അറിയിക്കുക</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>ഒരു ഷെഡ്യൂൾ പ്രകാരം</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>കൺസോളിൽ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>സെർവറിൽ: ./console exp:static:serve %id അതേ രീതിയിൽ ഇത് നൽകുന്നു.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ഒരു വരിയിൽ ഒരു പാത്ത്, * ഏത് ഭാഗവുമായും പൊരുത്തപ്പെടുന്നു: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ലക്ഷ്യത്തോടൊപ്പം ഒരു പേര് മാത്രം സൂക്ഷിക്കുന്നു; ടോക്കണോ കീയോ സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിൽ തുടരുന്നു, ഒരിക്കലും ലോഗിൽ വരില്ല.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>പേജുകൾ പരാമർശിക്കുന്നവ മാത്രം</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>ടോക്കണിനൊപ്പം മാത്രം. env:NAME പകരം സെർവറിന്റെ ഒരു എൻവയോൺമെന്റ് വേരിയബിൾ വായിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>പ്രിവ്യൂ തുറക്കുക</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ഹോസ്റ്റ് നൽകുന്നതുപോലെ ലക്ഷ്യത്തിന്റെ ഫോൾഡറിൽ നിന്ന് ബിൽഡ് തുറക്കുന്നു. ലിങ്ക് നിങ്ങൾക്ക് ഒരു മണിക്കൂർ പ്രവർത്തിക്കും.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ഓപ്ഷണൽ. ശൂന്യം: പ്രസിദ്ധീകരിച്ചത്.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ഓപ്ഷണൽ. ഡൊമെയ്ൻ ഉണ്ടെങ്കിൽ സൈറ്റ് അതിന്റെ റൂട്ടിൽ നൽകും.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ഔട്ട്പുട്ട്</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ലക്ഷ്യത്തിന്റെ പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>നിരസിച്ച പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>പോസ്റ്റ്-പ്രോസസിംഗ്</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>പ്രിവ്യൂ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>പ്രിവ്യൂവും പ്രസിദ്ധീകരണവും</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name-ന്റെ പ്രിവ്യൂവും പ്രസിദ്ധീകരണവും</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ബിൽഡിന്റെ പ്രിവ്യൂ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>പുരോഗതി</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>പൊതു വിലാസം</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>പൊതു കീ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>പ്രസിദ്ധീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ഒരു സൈറ്റിന്റെ സ്റ്റാറ്റിക് പകർപ്പ് GitHub Pages-ലോ ഏതെങ്കിലും git ഹോസ്റ്റിലോ പ്രസിദ്ധീകരിക്കുക: ബിൽഡ് ചെയ്യുക, മാറ്റങ്ങൾ പരിശോധിക്കുക, പ്രസിദ്ധീകരിക്കുക, ആവശ്യമുള്ളപ്പോൾ മുമ്പത്തെ ഒരു പ്രസിദ്ധീകരണത്തിലേക്ക് തിരികെ പോകുക.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>തിരികെ പോകേണ്ട പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>പ്രസിദ്ധീകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>പുഷ്</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ട്യൂട്ടോറിയൽ വായിക്കുക</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>രേഖ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ആപേക്ഷികം</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>വീണ്ടും ലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>നീക്കം ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>കീ മാറ്റിസ്ഥാപിക്കുക: പഴയത് പ്രവർത്തിക്കാതാകും</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>റിപ്പോർട്ട്</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ബിൽഡിന്റെ റിപ്പോർട്ട്</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>റിപ്പോസിറ്ററി</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>അവലോകനം</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>അവലോകനം ഓരോ ക്രമീകരണവും പരിശോധിച്ച് എഴുതാൻ പോകുന്ന വരികൾ കാണിക്കുന്നു. ഇതുവരെ ഒന്നും സംരക്ഷിച്ചിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>തിരികെയാക്കുക</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>റോൾബാക്ക്</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ഷെഡ്യൂൾ</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>തിരയൽ പേജ്</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>വിഭാഗ ഐഡികൾ, കോമ ഉപയോഗിച്ച് വേർതിരിച്ചത്.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>അവയെ ലൈവ് സൈറ്റിലേക്ക് അയയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ക്രമീകരണം</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ക്രമീകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name-ന്റെ ക്രമീകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>സജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>പട്ടികകളിൽ കാണിക്കുന്നു, ഉദാഹരണത്തിന് &quot;GitHub Pages-ലെ പൊതു സൈറ്റ്&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App ഉപയോഗിച്ചുള്ള സൈൻ ഇൻ GitHub സംയോജനത്തോടൊപ്പം വരും.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>സൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>പ്രസിദ്ധീകരിക്കേണ്ട സൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>വലുപ്പം</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>വലുപ്പവും പരിധികളും</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ബിൽഡിന്റെ വലുപ്പം</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>പഴകിയ പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ആരംഭിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%time-ന് %user ആരംഭിച്ചു.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>അവസ്ഥ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം ഓഫാണ്</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം ഓഫാണ്.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം ഓഫാണ്. ആദ്യം സജ്ജീകരണം &gt; സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം എന്നതിൽ ഇത് ഓണാക്കുക.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം ഓണാണ്.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total-ൽ ഘട്ടം %step</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ഘട്ടങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>വൃത്തിയാക്കൽ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ഓഫാക്കുക</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ഓണാക്കുക</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം ഓണാക്കുക</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ടാഗ്</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ടാഗുകൾ</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ലക്ഷ്യം</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ലക്ഷ്യങ്ങൾ സൃഷ്ടിക്കാനും മാറ്റാനും കഴിയും, പക്ഷേ ഇത് ഓണാക്കുന്നതുവരെ ഒന്നും ബിൽഡ് ചെയ്യുകയോ പ്രസിദ്ധീകരിക്കുകയോ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>സെർച്ച് എഞ്ചിനുകളോട് എന്ത് വായിക്കണമെന്ന് പറയുന്നു.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ബിൽഡ് ഉപേക്ഷിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ബിൽഡ് അവസാന പ്രസിദ്ധീകരണത്തിന് സമാനമാണ്: പ്രസിദ്ധീകരിക്കാൻ ഒന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ബിൽഡ് ഉപേക്ഷിച്ചു: ഫോൾഡറിൽ വീണ്ടും അവസാന പ്രസിദ്ധീകരണമാണ്.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>സ്ഥിരസ്ഥിതികൾ മിക്ക സൈറ്റുകൾക്കും അനുയോജ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ഫോൾഡറിൽ ഇതുവരെ പ്രസിദ്ധീകരിക്കാത്ത ഒരു ബിൽഡ് ഉണ്ട്; പുതിയ ബിൽഡ് അതിനെ മാറ്റിസ്ഥാപിക്കും.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ജോലികളുടെ ഫോൾഡറിൽ എഴുതാനാവില്ല: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ജോലി തയ്യാറാക്കാനായില്ല: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ജോലി ആരംഭിക്കാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ജോലി അവസാനിച്ചു. അതിന്റെ റിപ്പോർട്ട് ലോഡ് ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ജോലിക്ക് സൈൻ ഇൻ ചെയ്ത ഒരു ഉപയോക്താവ് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ജോലി ആരംഭിച്ചെങ്കിലും അതിന്റെ പ്രോസസ് ഐഡി അറിയിച്ചില്ല. %detail പരിശോധിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>കീ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ഏറ്റവും വലിയ ഫയൽ: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>എഴുതാൻ പോകുന്ന വരികൾ</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>സെർച്ച് എഞ്ചിനുകൾക്കുള്ള പേജുകളുടെ പട്ടിക; പൊതു വിലാസം ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>സൈൻ ഇൻ ചെയ്യാത്ത സന്ദർശകൻ കാണുന്നതുപോലെ പേജുകൾ കൊണ്ടുവരുന്നു. അഡ്മിനിസ്ട്രേഷൻ, എഡിറ്റിംഗ് siteaccess-കൾ ഒരിക്കലും നൽകില്ല.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>പുരോഗതി പിന്തുടരാനായില്ല. ജോലി എങ്ങനെ പോകുന്നുവെന്ന് കാണാൻ പേജ് വീണ്ടും ലോഡ് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>കീയുടെ പൊതു പകുതി:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ബ്രാഞ്ചിന്റെ റൂട്ട്</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>രഹസ്യ സംഭരണി ഇതുവരെ സജ്ജമാക്കിയിട്ടില്ല (./console exp:upgrade --apply അതിന്റെ പട്ടിക സൃഷ്ടിക്കുന്നു), അതിനാൽ ഒരു കീയും സൂക്ഷിക്കാനാവില്ല.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>സെർവർ സ്വയം സൈൻ ഇൻ ചെയ്യുന്നു (സ്വന്തം SSH കീ അല്ലെങ്കിൽ ക്രെഡൻഷ്യൽ ഹെൽപ്പർ ഉപയോഗിച്ച്), അല്ലെങ്കിൽ റിപ്പോസിറ്ററി ഈ സെർവറിൽ തന്നെയാണ്.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ക്രമീകരണം എഴുതാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ക്രമീകരണങ്ങൾ സാധുവാണ്. ഈ വരികൾ എഴുതും:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>ക്രമീകരണ ഫയൽ വായിക്കാനാവില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>സൈറ്റ് ആ പ്രസിദ്ധീകരണത്തിന്റെ ഫയലുകളിലേക്ക് തിരികെ പോകുന്നു; ഇതുവരെ പ്രസിദ്ധീകരിക്കാത്ത ബിൽഡ് ആദ്യം പ്രസിദ്ധീകരിക്കുകയോ ഉപേക്ഷിക്കുകയോ വേണം.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>നിലവിലില്ലാത്ത വിലാസങ്ങൾക്കുള്ള സൈറ്റിന്റെ സ്വന്തം പേജ്.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ലക്ഷ്യം സംരക്ഷിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ലക്ഷ്യം ഇതുവരെ ഈ കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുന്നില്ല: അതിന്റെ ക്രമീകരണങ്ങളിൽ &quot;ഈ ലക്ഷ്യത്തിനായി സൃഷ്ടിച്ച ഡിപ്ലോയ് കീ&quot; തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ലക്ഷ്യങ്ങൾ വായിക്കാനായില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>പരിശോധിക്കാൻ ഇതുവരെ ബിൽഡ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ഈ ഇൻസ്റ്റലേഷനിൽ ഫ്രണ്ട് siteaccess ഇല്ല. അഡ്മിനിസ്ട്രേഷൻ, എഡിറ്റിംഗ് siteaccess-കൾ ഒരിക്കലും പ്രസിദ്ധീകരിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ഈ പേജ് ജോലി നടക്കുമ്പോൾ അത് പിന്തുടരുന്നു; പേജ് അടച്ചാലും അത് പശ്ചാത്തലത്തിൽ തുടരും.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ഈ ലക്ഷ്യത്തിന് ഇതുവരെ ഡിപ്ലോയ് കീ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ഈ ലക്ഷ്യം ഇവിടെ ഇതുവരെ ബിൽഡ് ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ഈ ലക്ഷ്യത്തിന് ഒന്നുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ഈ ബിൽഡ് ഉപേക്ഷിക്കുന്നു: ഫോൾഡറിൽ വീണ്ടും അവസാന പ്രസിദ്ധീകരണം വരും. ലൈവ് സൈറ്റ് മാറുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ആദ്യം &quot;ഞാൻ മാറ്റങ്ങൾ പരിശോധിച്ചു&quot; ടിക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>സമയം</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ട്രിഗറുകൾ</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ടാഗിന്റെ പേര് വീണ്ടും ടൈപ്പ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>മാറ്റമില്ല</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>വെബ്ഹുക്ക്</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>എന്ത്</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>എന്ത് മാറുന്നു</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ഓരോ ഫയലും എന്താണ്; എപ്പോഴും എഴുതും.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ജോലി എന്ത് ചെയ്തു, അതിന്റെ രേഖയും. ഇവിടെ ആരംഭിച്ച ജോലി ഈ പേജ് അടച്ചാലും പശ്ചാത്തലത്തിൽ തുടരും.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ജോലി പിശകുകളായി പ്രിന്റ് ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>പേജുകൾ പരാമർശിക്കുന്നവയും പ്രസിദ്ധീകരിച്ച ഉള്ളടക്കത്തിലെ എല്ലാ ചിത്രങ്ങളും</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>എപ്പോൾ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ഒരു പ്രസിദ്ധീകരണം പരാജയപ്പെടുമ്പോൾ</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ഒരു പ്രസിദ്ധീകരണം വിജയിക്കുമ്പോൾ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ഉള്ളടക്കം പ്രസിദ്ധീകരിക്കുമ്പോൾ</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>പകർപ്പിൽ ഇല്ലാത്തവയിലേക്കുള്ള ലിങ്കുകൾ എവിടേക്ക് പോകുന്നു (തിരയൽ, ലോഗിൻ).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>സ്റ്റാറ്റിക് പകർപ്പ് എവിടെ നിന്ന് നൽകുന്നു.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ഏത് സൈറ്റ് പ്രസിദ്ധീകരിക്കുന്നു, ലക്ഷ്യത്തിന്റെ പേര് എന്ത്.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ഏത് പാത്തിന് താഴെയും പ്രവർത്തിക്കും. സ്ഥിരസ്ഥിതി.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>കസ്റ്റം ഡൊമെയ്ൻ സജ്ജമാക്കുമ്പോഴെല്ലാം എഴുതും.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>നിങ്ങൾക്ക് എപ്പോഴും ഇവിടെയും കൺസോളിലും കൈകൊണ്ട് ബിൽഡ് ചെയ്യാനും പ്രസിദ്ധീകരിക്കാനും കഴിയും.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ഒരു പേര് മാത്രം; മൂല്യം സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ എന്നതിൽ തുടരുന്നു</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path-ന് താഴെ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>റിപ്പോർട്ടില്ലാതെ അവസാനിച്ചു</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>അധികം</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ഫയൽ</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, അല്ലെങ്കിൽ docs ഫോൾഡറോടെ main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ഹോസ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ടോക്കണോടെ) അല്ലെങ്കിൽ git@github.com:owner/repo.git (ഡിപ്ലോയ് കീയോടെ); ഇതിൽ ഒരിക്കലും പാസ്‌വേഡോ ടോക്കണോ പാടില്ല.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, സൈറ്റ്മാപ്പിനും കാനോനിക്കൽ ലിങ്കുകൾക്കും.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ചിത്രം</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ഒരിക്കലുമില്ല</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>റിമോട്ട് ഇല്ല</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ഒന്നുമില്ല: കമ്മിറ്റുകൾ ഫോൾഡറിൽ തുടരുന്നു</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ഒന്നുമില്ല: ഒന്നും മാറിയില്ല</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>പുഷ് ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ഒന്നും മാറിയില്ല</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>പേജ്</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>വിജയിച്ചു</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open പ്രവർത്തനരഹിതമാണ്, അതിനാൽ ഇവിടെ ജോലി ആരംഭിക്കാനാവില്ല. സെർവറിൽ ./console exp:static:build ഉപയോഗിക്കുക.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>പ്രസിദ്ധീകരിച്ചു</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>പുഷ് ബാക്കി</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>പുഷ് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ആപേക്ഷികം</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>റോൾബാക്ക്</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>തിരികെയാക്കി</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>പ്രവർത്തിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ഫോൾഡർ മാത്രം</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME ഫയലിൽ എഴുതും. ഹോസ്റ്റ് വിശദീകരിക്കുന്നതുപോലെ ഡൊമെയ്നിന്റെ DNS ഹോസ്റ്റിലേക്ക് ചൂണ്ടുക; HTTPS ആരംഭിക്കാൻ കുറച്ച് സമയമെടുത്തേക്കാം.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>അതെ, ഇതുവരെ പ്രസിദ്ധീകരിച്ചിട്ടില്ല</translation>
     </message>
 </context>
 </TS>

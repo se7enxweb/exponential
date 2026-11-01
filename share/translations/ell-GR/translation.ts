@@ -15089,6 +15089,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Αλλαγές στην εγκατάσταση που φυλάσσονται ως αρχεία: η κατάστασή τους, οι εκτελέσεις, εκτέλεση και αναίρεση.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Πρόσφατο περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Το νεότερο περιεχόμενο, ό,τι κρατείται για έλεγχο, και ενέργειες σε μια επιλογή.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Δημοσιεύστε ένα στατικό αντίγραφο ενός ιστότοπου στο GitHub Pages ή σε οποιονδήποτε διακομιστή git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Στατική δημοσίευση</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22104,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Απαντήσεις των αποθηκευμένων ερωτημάτων του GraphQL API και οι κλάσεις περιεχομένου του σχήματός του.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Δημοσιεύστε ένα στατικό αντίγραφο στο GitHub Pages ή σε οποιονδήποτε διακομιστή git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Στατική δημοσίευση</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Η στατική προσωρινή μνήμη εξυπηρετεί σελίδες από αυτόν τον διακομιστή. Για να δημοσιεύσετε ένα στατικό αντίγραφο ενός ιστότοπου κάπου αλλού, στο GitHub Pages ή σε οποιονδήποτε διακομιστή git, χρησιμοποιήστε τη στατική δημοσίευση.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76173,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Αλλαγές στην εγκατάσταση που φυλάσσονται ως αρχεία: η κατάστασή τους, οι εκτελέσεις, εκτέλεση και αναίρεση.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Δημοσιεύστε ένα στατικό αντίγραφο ενός ιστότοπου στο GitHub Pages ή σε οποιονδήποτε διακομιστή git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Στατική δημοσίευση</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80583,6 +80619,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Δεν ήταν δυνατή η έναρξη της εκτέλεσης.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Τροποποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Δημιουργήθηκε</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Κλάση</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ενότητα</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Δημιουργός</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Πρόσφατο περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Το πιο πρόσφατα δημιουργημένο και τροποποιημένο περιεχόμενο ολόκληρου του ιστότοπου, με τα νεότερα πρώτα: ό,τι υπέβαλαν οι επισκέπτες, ό,τι κρατείται για έλεγχο, προσχέδια που περιμένουν τη δημοσίευσή τους. Επιλέξτε στοιχεία για να άρετε την κράτησή τους, να τα κρατήσετε, να τα αποκρύψετε, να τα εμφανίσετε, να τα αφαιρέσετε ή να τα μετακινήσετε σε άλλη ενότητα ή κατάσταση.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση της λίστας: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Η κράτηση για έλεγχο δεν έχει ρυθμιστεί ακόμη, οπότε τίποτα δεν κρατείται και οι ενέργειες κράτησης δεν προσφέρονται. Το βήμα αναβάθμισης 6.0.15-review-hold τη ρυθμίζει: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Φιλτράρισμα της λίστας</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Έως</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ημερομηνία</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Δημιουργία (πρώτη δημοσίευση)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Όλα</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Δημοσιευμένο</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Προσχέδιο, δεν δημοσιεύτηκε ποτέ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Σε εκκρεμότητα (αναμένει έγκριση ή ημερομηνία)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Στον κάδο απορριμμάτων</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Σε κράτηση για έλεγχο</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Σε κράτηση</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Χωρίς κράτηση</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Κρυφό</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ορατό</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Υποβλήθηκε στο</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Οποιαδήποτε πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Μόνο ό,τι κατέγραψε το αρχείο ελέγχου.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Τώρα: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Ένα όνομα σύνδεσης ή ένα αναγνωριστικό χρήστη.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Φίλτρο</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Καθαρισμός φίλτρων</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Στοιχεία</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from έως %to από %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Κανένα στοιχείο</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(ανάγνωση σε %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ενέργειες για τα επιλεγμένα στοιχεία</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Επιλογή όλων σε αυτή τη σελίδα</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count επιλεγμένα</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ενέργεια</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Επιλέξτε ενέργεια</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Άρση της κράτησης</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Κράτηση για έλεγχο</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Απόκρυψη</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Μετακίνηση στον κάδο απορριμμάτων</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Ανάθεση ενότητας</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Ανάθεση κατάστασης</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Αιτία</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Απαιτείται για την κράτηση· φυλάσσεται μαζί με την κράτηση και στο αρχείο ελέγχου.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Επιλέξτε ενότητα</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Επιλέξτε κατάσταση</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Εφαρμογή στα επιλεγμένα</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Κάθε στοιχείο ελέγχεται σύμφωνα με τα δικά σας δικαιώματα. Η μετακίνηση στον κάδο απορριμμάτων και η διαγραφή ζητούν επιβεβαίωση. Περισσότερα από %count στοιχεία εκτελούνται στο παρασκήνιο.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Υποβλήθηκε από</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Επιλογή %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>όχι ακόμη</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(χωρίς όνομα)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Αναγνωριστικό %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Προσχέδιο</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Σε εκκρεμότητα</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Κρυφό λόγω του γονικού του</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Σε κράτηση: νέα υποβολή</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Η έκδοση %version εκκρεμεί</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Η έκδοση %version είναι σε εξέλιξη</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Προσχέδιο, έκδοση %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Η έκδοση %version δημοσιεύτηκε</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Προγραμματισμένο για %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>χωρίς διεύθυνση</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>δεν καταγράφηκε</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Τίποτα δεν ταιριάζει με αυτά τα φίλτρα.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Εμφάνιση όλων</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Δεν υπάρχει ακόμη περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ανά σελίδα</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Εμφάνιση %count στοιχείων ανά σελίδα.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Η διεύθυνση και ο περιηγητής μιας υποβολής προέρχονται από το ευρετήριο του αρχείου ελέγχου, το οποίο δεν είναι διαθέσιμο εδώ: η στήλη γράφει «δεν καταγράφηκε».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Η διεύθυνση και ο περιηγητής είναι αυτά που κατέγραψε το αρχείο ελέγχου για το στοιχείο (η αυτόματη κράτηση τα καταγράφει πάντα· η δημοσίευση και η δημιουργία μόνο όπου είναι ενεργοποιημένο), όπως τα διατηρούν οι ρυθμίσεις απορρήτου του.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count στοιχεία</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Η διαγραφή αφαιρεί οριστικά τα στοιχεία, με όλες τις εκδόσεις και τις μεταφράσεις τους. Δεν μπορεί να αναιρεθεί.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Τα στοιχεία μεταφέρονται στον κάδο απορριμμάτων, από όπου μπορούν να επαναφερθούν.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Κάθε στοιχείο ελέγχεται σύμφωνα με τα δικά σας δικαιώματα· ένα στοιχείο με υποστοιχεία μένει ως έχει (αφαιρέστε το στη δομή περιεχομένου). Θα σας ζητηθεί να επιβεβαιώσετε ότι είστε εσείς.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Αυτό εκτελείται στο παρασκήνιο: ανοίγει η σελίδα προόδου του και το αποτέλεσμα ανά στοιχείο εμφανίζεται όταν ολοκληρωθεί.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Τα επιλεγμένα στοιχεία</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>και %count ακόμη</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Δεν έγινε τίποτα</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Αιτία: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Η ενέργεια εκτελείται ακόμη στο παρασκήνιο.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Η πρόοδός της</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Η ενέργεια στο παρασκήνιο απέτυχε: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ολοκληρώθηκε</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Απορρίφθηκε</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Απέτυχε</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Ανά στοιχείο</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Στοιχείο</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Αποτέλεσμα</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Γιατί</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Επιστροφή στη λίστα</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ρυθμίσεις συστήματος</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Τίποτα δεν έγινε</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Επιβεβαίωση</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Επιλέξτε ενέργεια.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Επιλέξτε τουλάχιστον ένα στοιχείο.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Επιλέξτε το πολύ 1000 στοιχεία κάθε φορά.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Αναφέρετε γιατί κρατούνται τα στοιχεία.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Επιλέξτε την ενότητα.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Επιλέξτε την κατάσταση.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση της φόρμας.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Πρόσφατο περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση των μετρήσεων: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Σε κράτηση για έλεγχο</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Νέα σήμερα</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Η κράτηση για έλεγχο δεν έχει ρυθμιστεί ακόμη (το βήμα αναβάθμισης 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Όλο το πρόσφατο περιεχόμενο</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Δεν επιτρέπεται να εκτελείτε ενέργειες εποπτείας (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Η ενέργεια εποπτείας δεν ολοκληρώθηκε: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Εποπτεία: %action σε %count αντικείμενα</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done από %total αντικείμενα: %ok ολοκληρώθηκαν, %refused απορρίφθηκαν, %failed απέτυχαν</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ολοκληρώθηκαν, %refused απορρίφθηκαν, %failed απέτυχαν</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Δεν υπάρχει πλέον.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Δεν έχει θέση (δεν έχει δημοσιευτεί).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Δεν επιτρέπεται να το αποκρύψετε (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Δεν επιτρέπεται να το εμφανίσετε (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Είναι ήδη κρυφό.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Δεν είναι κρυφό.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Αποκρύφθηκε.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Εμφανίστηκε.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Βρίσκεται στον κάδο απορριμμάτων: αδειάστε τον ή επαναφέρετέ το από εκεί.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ένα προσχέδιο που δεν δημοσιεύτηκε ποτέ δεν μπορεί να πάει στον κάδο απορριμμάτων: διαγράψτε το.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Δεν επιτρέπεται να το διαγράψετε (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Διαγράφηκε.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Δεν επιτρέπεται να το αφαιρέσετε (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Έχει υποστοιχεία: αφαιρέστε το στη δομή περιεχομένου, όπου εμφανίζονται.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Δεν αφαιρέθηκε (μια ροή εργασιών μπορεί να κρατά την αφαίρεση).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Μετακινήθηκε στον κάδο απορριμμάτων.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Η ενότητα δεν υπάρχει.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Βρίσκεται ήδη σε αυτή την ενότητα.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Δεν επιτρέπεται να αναθέσετε αυτή την ενότητα (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Η ενότητα δεν ανατέθηκε.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Η ενότητα ανατέθηκε.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Η κατάσταση δεν υπάρχει.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Βρίσκεται ήδη σε αυτή την κατάσταση.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Δεν επιτρέπεται να αναθέσετε αυτή την κατάσταση (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Η κατάσταση δεν ανατέθηκε (μια ροή εργασιών μπορεί να κρατά την αλλαγή).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Η κατάσταση ανατέθηκε.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Δεν υπάρχει τέτοια ενέργεια.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Η κράτηση για έλεγχο δεν έχει ρυθμιστεί (το βήμα αναβάθμισης 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Αναφέρετε γιατί κρατείται.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Βρίσκεται ήδη σε κράτηση.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Δεν επιτρέπεται να το θέσετε σε κράτηση (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Η κράτηση δεν τέθηκε (μια ροή εργασιών μπορεί να κρατά την αλλαγή).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Σε κράτηση.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Δεν βρίσκεται σε κράτηση.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Δεν επιτρέπεται να άρετε την κράτησή του (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Η κράτηση δεν άρθηκε (μια ροή εργασιών μπορεί να κρατά την αλλαγή).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Η κράτηση άρθηκε· παραμένει κρυφό: δεν επιτρέπεται να το εμφανίσετε (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Η κράτηση άρθηκε.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Όλοι οι προορισμοί</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Τελευταία δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Δημοσιεύστε δωρεάν ένα στατικό αντίγραφο του ιστότοπού σας στο GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Παρωχημένες σελίδες</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Στατική δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Η στατική δημοσίευση είναι απενεργοποιημένη.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Προορισμός</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση των προορισμών: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>μια εργασία βρίσκεται σε εξέλιξη</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>δόμηση προς έλεγχο</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>απόκρυψη</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>δημιουργία προορισμού</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ποτέ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>διαβάστε τον οδηγό</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added προστέθηκαν, %changed άλλαξαν, %removed αφαιρέθηκαν</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes από %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count ακόμη δεν εμφανίζονται.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages σελίδες γράφτηκαν</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>Το %path έχει μέγεθος %size, περισσότερο από όσο επιτρέπει ο διακομιστής για ένα αρχείο.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % του ορίου</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds δευτ.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>Το %tag είναι η δημοσίευση που έχει τώρα ο ιστότοπος.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: εργασία %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/αποθετήριο/ για ιστότοπο έργου GitHub· κενό για δικό σας τομέα ή ιστότοπο χρήστη.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Ο ιστότοπος</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Ο διακομιστής</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Σύνδεση στο αποθετήριο</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Το αποθετήριο</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Σύνδεσμοι και βασική διαδρομή</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Ο δικός σας τομέας</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Τι περιέχει η δόμηση</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Πότε δημοσιεύεται</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Έλεγχος και αποθήκευση</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Ένας ιστότοπος έργου GitHub βρίσκεται κάτω από το /&lt;repository&gt;/· οι σχετικοί σύνδεσμοι λειτουργούν εκεί και οπουδήποτε αλλού.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Μια δόμηση λαμβάνει κάθε σελίδα του %site όπως τη βλέπει ένας επισκέπτης που δεν έχει συνδεθεί, ξαναγράφει τους συνδέσμους, αντιγράφει τα αρχεία και γράφει το αποτέλεσμα στον φάκελο του προορισμού. Τίποτα δεν δημοσιεύεται μέχρι να ελέγξετε τη δόμηση και να πατήσετε Δημοσίευση.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Μια έκφραση cron, για παράδειγμα 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Το κλειδί ανάπτυξης φυλάσσεται ως το μυστικό %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ένα κλειδί ανάπτυξης επιτρέπει σε αυτή την εγκατάσταση να κάνει προώθηση σε ένα αποθετήριο μέσω SSH και πουθενά αλλού. Το ιδιωτικό του μισό μένει στις Ρυθμίσεις συστήματος &gt; Μυστικά· εμφανίζεται μόνο το δημόσιο μισό.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ένα κλειδί ανάπτυξης δημιουργημένο για αυτόν τον προορισμό</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ένα κλειδί ανάπτυξης συνδέεται μέσω SSH: αλλάξτε τη διεύθυνση git στη διεύθυνση SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Μια εργασία βρίσκεται σε εξέλιξη, την ξεκίνησε ο/η %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Μια εργασία αυτού του προορισμού βρίσκεται ακόμη σε εξέλιξη (%detail). Περιμένετε να τελειώσει.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Μια εργασία αυτού του προορισμού βρίσκεται ακόμη σε εξέλιξη. Περιμένετε να τελειώσει.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Ένας σύνδεσμος από τη σελίδα /news/ προς τη σελίδα /about-us/team θα γραφτεί ως</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Δημιουργήθηκε νέο κλειδί ανάπτυξης. Προσθέστε τώρα το δημόσιο μισό του στο αποθετήριο.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Μια σελίδα που μετά τον καθαρισμό εξακολουθεί να περιέχει έξοδο αποσφαλμάτωσης, διακριτικό φόρμας ή αναγνωριστικό συνεδρίας δεν δημοσιεύεται ποτέ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Η αναίρεση είναι για έμπειρους χρήστες: επιλέξτε &quot;Ξέρω τι αλλάζει αυτό&quot; και πληκτρολογήστε ξανά το όνομα της σήμανσης.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Ένας ιστότοπος μπορεί να φτάσει τα %site, ένα αρχείο τα %file, με περίπου 100 GB κίνησης τον μήνα. Σε δωρεάν πρόγραμμα το αποθετήριο πρέπει να είναι δημόσιο. Το GitHub Pages δεν προορίζεται για ηλεκτρονικά καταστήματα ή άλλες εμπορικές συναλλαγές.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ένας προορισμός είναι ένας ιστότοπος που δημοσιεύεται σε ένα αποθετήριο git. Εδώ δεν δομείται ούτε δημοσιεύεται τίποτα: η Αποθήκευση γράφει τις ρυθμίσεις στο settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ένας προορισμός είναι ένας ιστότοπος που δημοσιεύεται σε ένα μέρος, για παράδειγμα ο δημόσιος ιστότοπός σας στο GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Ένα διακριτικό από τις Ρυθμίσεις συστήματος &gt; Μυστικά</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Τον δημοσιεύει μια ροή εργασιών του αποθετηρίου.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Προσθέστε αυτό το δημόσιο κλειδί στο αποθετήριο με δικαίωμα εγγραφής. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, επιλέξτε Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Προστέθηκε</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Άλλος διακομιστής git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Μια άλλη διεργασία εργάζεται σε αυτόν τον προορισμό: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Πίσω</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Βασική διαδρομή</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Πριν</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Κάτω από μια βασική διαδρομή</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Κλάδος</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Κατεστραμμένοι σύνδεσμοι</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Κατεστραμμένοι σύνδεσμοι στη δόμηση</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Δόμηση</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Δόμηση %id από %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Δόμηση του %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Δόμηση τώρα</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Δόμηση προς έλεγχο</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Χειροκίνητα, εδώ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Αλλαγή</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Άλλαξε</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Αλλαγές</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Ελέγξτε την πρώτα</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Ελέγξτε αυτές τις ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Ελέγξτε τι αλλάζει η δόμηση, δείτε την και μετά δημοσιεύστε την ή απορρίψτε την.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Επιλέξτε τη δημοσίευση στην οποία θα επιστρέψετε.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Έρχεται σε επόμενη έκδοση.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Υποβολή</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Υποβολές</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Υποβάλλει τη δόμηση, τη σημαίνει και την προωθεί στο %remote. Η προώθηση δεν εξαναγκάζεται ποτέ· μπορείτε αργότερα να επιστρέψετε σε οποιαδήποτε δημοσίευση.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Σε σύγκριση με τον φάκελο πριν: %added προστέθηκαν, %changed άλλαξαν, %removed αφαιρέθηκαν, %unchanged αμετάβλητα.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Σε σύγκριση με την τελευταία δημοσίευση.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Διαπιστευτήρια</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Δικός σας τομέας</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Η έξοδος αποσφαλμάτωσης, τα διακριτικά φορμών, τα αναγνωριστικά συνεδρίας και τα nonce αφαιρούνται πάντα.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Κλειδί ανάπτυξης</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Κλειδί ανάπτυξης του %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Απόρριψη</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Απόρριψη της δόμησης</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Τομέας</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Κενό: η διεύθυνση του ιστότοπου. Διαφορετικά, μια εσωτερική διεύθυνση του ίδιου ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Λήξη</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Κάθε σύνδεσμος ξεκινά με τη βασική διαδρομή.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Κάθε δημοσίευση είναι μια υποβολή με σήμανση static/%id/&lt;n&gt;. Η επιστροφή δημιουργεί μια νέα υποβολή με τα αρχεία μιας προηγούμενης δημοσίευσης: το ιστορικό παραμένει, καμία σήμανση δεν μετακινείται και τίποτα δεν εξαναγκάζεται.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Πρόσθετα</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Λήψη των σελίδων από</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Αρχείο</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Αρχεία</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Λείπουν αρχεία</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Αρχεία του</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Αρχεία που δεν ήταν δυνατό να συλλεχθούν</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Αποτύπωμα</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Φάκελος</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Για διεύθυνση SSH. Το κλειδί δημιουργείται μετά την αποθήκευση· εσείς προσθέτετε το δημόσιο μισό του στο αποθετήριο.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Για διεύθυνση https://. GitHub: ένα fine-grained διακριτικό με Contents ανάγνωσης και εγγραφής στο αποθετήριο.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Για έμπειρους χρήστες. Ο δημόσιος ιστότοπος αλλάζει μόλις ολοκληρωθεί η προώθηση.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Φόρμες</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Δωρεάν φιλοξενία από ένα αποθετήριο GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Από τον κλάδο</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Διεύθυνση git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>Το GitHub Pages επιτρέπει ιστότοπο %site και αρχείο %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Όρια του GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>Το GitHub Pages δημοσιεύει τα αρχεία όπως είναι (απαραίτητο για αρχεία που ξεκινούν με _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>Το GitHub εξυπηρετεί τον κλάδο όπως προωθείται. Η προεπιλογή.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ο δικός σας διακομιστής: οποιοδήποτε αποθετήριο git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Επιστροφή σε προηγούμενη δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Βοήθεια</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Βοήθεια με τον οδηγό</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Απόκρυψή τους</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Ιστορικό</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Ιστορικό του %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Διακομιστής</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Πώς λαμβάνει το GitHub Pages τη δόμηση</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Έλεγξα τις αλλαγές</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ξέρω τι αλλάζει αυτό</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Αναγνωριστικό</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Είναι απενεργοποιημένη: τίποτα δεν μπορεί να δομηθεί μέχρι να ενεργοποιηθεί.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Εκτελείται στο παρασκήνιο ως %user· μπορείτε να κλείσετε αυτή τη σελίδα.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Εργασία %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Φυλάσσεται ως το μυστικό %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Είδος</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Τελευταία δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Εξαίρεση αυτών των σελίδων</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Εξαίρεση αυτών των ενοτήτων</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Σύνδεσμοι</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Σύνδεσμοι που ξαναγράφτηκαν</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Ζωντανός ιστότοπος</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Προβολή της δόμησης</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Πεζά γράμματα, ψηφία, _ και -, για παράδειγμα github-public. Δίνει όνομα στον φάκελο και στις σημάνσεις (static/&lt;id&gt;/&lt;n&gt;) και δεν μπορεί να αλλάξει αργότερα.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Δημιουργία νέου κλειδιού</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Δημιουργία προορισμού</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Δημιουργία του κλειδιού</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Δημιουργήστε πρώτα το αποθετήριο στον διακομιστή· ένα κενό αρκεί.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Δηλωτικό</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Μήνυμα</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Οι περισσότερες σελίδες</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Όνομα του διακριτικού στις Ρυθμίσεις συστήματος &gt; Μυστικά</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Νέος προορισμός</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Επόμενο</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Όχι</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Καμία υποβολή ακόμη.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Δεν δημιουργήθηκε κλειδί: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Δεν βρέθηκε εκτελέσιμο γραμμής εντολών php. Ορίστε στο migration.ini [AdminSettings] PhpCliPath την πλήρη διαδρομή του.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Καμία σήμανση ακόμη.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Κανένας προορισμός ακόμη.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Κανένα</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Δεν περιέχεται στη δόμηση.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Δεν έχει δημοσιευτεί τίποτα ακόμη.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Δεν έχει δημοσιευτεί τίποτα ακόμη: κάθε αρχείο είναι νέο.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Ειδοποίηση</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Βάσει χρονοδιαγράμματος</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Στην κονσόλα</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Στον διακομιστή: το ./console exp:static:serve %id το εξυπηρετεί με τον ίδιο τρόπο.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Μία διαδρομή ανά γραμμή, το * ταιριάζει με οποιοδήποτε τμήμα: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Με τον προορισμό αποθηκεύεται μόνο ένα όνομα· το ίδιο το διακριτικό ή κλειδί μένει στις Ρυθμίσεις συστήματος &gt; Μυστικά και δεν εμφανίζεται ποτέ σε αρχείο καταγραφής.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Μόνο ό,τι αναφέρουν οι σελίδες</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Μόνο με διακριτικό. Το env:NAME διαβάζει αντί γι&apos; αυτό μια μεταβλητή περιβάλλοντος του διακομιστή.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Άνοιγμα της προεπισκόπησης</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Ανοίγει τη δόμηση όπως θα την εξυπηρετήσει ο διακομιστής, από τον φάκελο του προορισμού. Ο σύνδεσμος λειτουργεί για εσάς για μία ώρα.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Προαιρετικό. Κενό: ό,τι δημοσιεύτηκε.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Προαιρετικό. Με τομέα, ο ιστότοπος εξυπηρετείται στη ρίζα του.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Έξοδος</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Σελίδες</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Σελίδες του προορισμού</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Σελίδες που απορρίφθηκαν</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Μεταεπεξεργασία</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Προεπισκόπηση</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Προεπισκόπηση και δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Προεπισκόπηση και δημοσίευση του %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Προεπισκόπηση της δόμησης</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Πρόοδος</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Δημόσια διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Δημόσιο κλειδί</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Δημοσιεύστε ένα στατικό αντίγραφο ενός ιστότοπου στο GitHub Pages ή σε οποιονδήποτε διακομιστή git: δομήστε το, ελέγξτε τις αλλαγές, δημοσιεύστε και επιστρέψτε σε προηγούμενη δημοσίευση όταν χρειαστεί.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Δημοσίευση για επιστροφή</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Δημοσιεύσεις</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Προώθηση</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Διαβάστε τον οδηγό</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Εγγραφή</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Απορρίφθηκε</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Σχετικοί</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Επαναφόρτωση</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Αφαιρέθηκε</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Αντικατάσταση του κλειδιού: το παλιό παύει να λειτουργεί</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Αναφορά</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Αναφορά της δόμησης</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Αποθετήριο</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Έλεγχος</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Ο έλεγχος εξετάζει κάθε ρύθμιση και δείχνει τις γραμμές που θα γραφτούν. Τίποτα δεν έχει αποθηκευτεί ακόμη.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Αναίρεση</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Αναίρεση</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Χρονοδιάγραμμα</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Σελίδα αναζήτησης</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Αναγνωριστικά ενοτήτων, χωρισμένα με κόμματα.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Αποστολή στον ζωντανό ιστότοπο</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ρύθμιση</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ρυθμίσεις</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Ρυθμίσεις του %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ρυθμίσεις συστήματος</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Ρυθμίσεις συστήματος &gt; Μυστικά</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Εμφανίζεται σε λίστες, για παράδειγμα &quot;Δημόσιος ιστότοπος στο GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Η σύνδεση με GitHub App έρχεται με την ενσωμάτωση του GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Ιστότοπος</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Ιστότοπος προς δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Μέγεθος</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Μέγεθος και όρια</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Μέγεθος της δόμησης</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Παρωχημένες σελίδες</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Έναρξη</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Ξεκίνησε από %user στις %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Στατική δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Η στατική δημοσίευση είναι απενεργοποιημένη</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Η στατική δημοσίευση είναι απενεργοποιημένη.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Η στατική δημοσίευση είναι απενεργοποιημένη. Ενεργοποιήστε την πρώτα στις Ρυθμίσεις συστήματος &gt; Στατική δημοσίευση.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Η στατική δημοσίευση είναι ενεργοποιημένη.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Βήμα %step από %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Βήματα</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Καθαρισμός</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Απενεργοποίηση</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ενεργοποίηση</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Ενεργοποίηση της στατικής δημοσίευσης</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Σήμανση</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Σημάνσεις</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Προορισμός</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Οι προορισμοί μπορούν να δημιουργηθούν και να αλλάξουν, αλλά τίποτα δεν δομείται ούτε δημοσιεύεται μέχρι να ενεργοποιηθεί.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Λέει στις μηχανές αναζήτησης τι να διαβάσουν.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Δεν ήταν δυνατή η απόρριψη της δόμησης: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Η δόμηση είναι ίδια με την τελευταία δημοσίευση: δεν υπάρχει τίποτα για δημοσίευση.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Η δόμηση απορρίφθηκε: ο φάκελος περιέχει ξανά την τελευταία δημοσίευση.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Οι προεπιλογές ταιριάζουν στους περισσότερους ιστότοπους.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Ο φάκελος περιέχει μια δόμηση που δεν έχει δημοσιευτεί ακόμη· μια νέα δόμηση την αντικαθιστά.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Δεν είναι δυνατή η εγγραφή στον φάκελο των εργασιών: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Δεν ήταν δυνατή η προετοιμασία της εργασίας: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Δεν ήταν δυνατή η έναρξη της εργασίας.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Η εργασία ολοκληρώθηκε. Φόρτωση της αναφοράς της.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Η εργασία χρειάζεται συνδεδεμένο χρήστη.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Η εργασία ξεκίνησε αλλά δεν ανέφερε το αναγνωριστικό διεργασίας της. Ελέγξτε το %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Το κλειδί</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Το μεγαλύτερο αρχείο: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Οι γραμμές που θα γραφτούν</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Η λίστα σελίδων για τις μηχανές αναζήτησης· χρειάζεται τη δημόσια διεύθυνση.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Οι σελίδες λαμβάνονται όπως τις βλέπει ένας επισκέπτης που δεν έχει συνδεθεί. Τα siteaccess διαχείρισης και επεξεργασίας δεν προσφέρονται ποτέ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Δεν ήταν δυνατή η παρακολούθηση της προόδου. Επαναφορτώστε τη σελίδα για να δείτε πώς πάει η εργασία.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Το δημόσιο μισό του κλειδιού:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Η ρίζα του κλάδου</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Ο χώρος αποθήκευσης μυστικών δεν έχει ρυθμιστεί ακόμη (το ./console exp:upgrade --apply δημιουργεί τον πίνακά του), οπότε δεν μπορεί να φυλαχτεί κανένα κλειδί.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Ο διακομιστής συνδέεται μόνος του (με δικό του κλειδί SSH ή βοηθό διαπιστευτηρίων) ή το αποθετήριο βρίσκεται σε αυτόν τον διακομιστή.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Δεν ήταν δυνατή η εγγραφή της ρύθμισης: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Οι ρυθμίσεις είναι έγκυρες. Θα γραφτούν οι εξής γραμμές:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Δεν είναι δυνατή η ανάγνωση του αρχείου ρυθμίσεων: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Ο ιστότοπος επιστρέφει στα αρχεία εκείνης της δημοσίευσης· μια δόμηση που δεν έχει δημοσιευτεί ακόμη πρέπει πρώτα να δημοσιευτεί ή να απορριφθεί.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Η σελίδα του ίδιου του ιστότοπου για διευθύνσεις που δεν υπάρχουν.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Δεν ήταν δυνατή η αποθήκευση του προορισμού: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ο προορισμός δεν συνδέεται ακόμη με αυτό το κλειδί: επιλέξτε &quot;Ένα κλειδί ανάπτυξης δημιουργημένο για αυτόν τον προορισμό&quot; στις ρυθμίσεις του.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση των προορισμών: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Δεν υπάρχει ακόμη δόμηση προς έλεγχο.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Αυτή η εγκατάσταση δεν έχει δημόσιο siteaccess. Τα siteaccess διαχείρισης και επεξεργασίας δεν δημοσιεύονται ποτέ.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Αυτή η σελίδα παρακολουθεί την εργασία καθώς προχωρά· η εργασία συνεχίζεται στο παρασκήνιο όταν κλείσει η σελίδα.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Αυτός ο προορισμός δεν έχει ακόμη κλειδί ανάπτυξης.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Αυτός ο προορισμός δεν έχει δομηθεί ακόμη εδώ.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Αυτός ο προορισμός έχει ένα.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Απορρίπτει αυτή τη δόμηση: ο φάκελος περιέχει ξανά την τελευταία δημοσίευση. Ο ζωντανός ιστότοπος δεν αλλάζει.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Επιλέξτε πρώτα &quot;Έλεγξα τις αλλαγές&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ώρα</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Εναύσματα</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Πληκτρολογήστε ξανά το όνομα της σήμανσης</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Αμετάβλητο</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Τι</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Τι αλλάζει</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Τι είναι κάθε αρχείο· γράφεται πάντα.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Τι έκανε η εργασία και η εγγραφή της. Μια εργασία που ξεκίνησε εδώ συνεχίζεται στο παρασκήνιο όταν κλείσει αυτή η σελίδα.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Τι εμφάνισε η εργασία ως σφάλματα</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Ό,τι αναφέρουν οι σελίδες και κάθε εικόνα δημοσιευμένου περιεχομένου</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Πότε</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Όταν μια δημοσίευση αποτύχει</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Όταν μια δημοσίευση πετύχει</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Όταν δημοσιεύεται περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Πού οδηγούν οι σύνδεσμοι προς ό,τι δεν περιέχει το αντίγραφο (η αναζήτηση, η σύνδεση).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Από πού εξυπηρετείται το στατικό αντίγραφο.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Ποιος ιστότοπος δημοσιεύεται και πώς ονομάζεται ο προορισμός.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Λειτουργεί κάτω από οποιαδήποτε διαδρομή. Η προεπιλογή.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Γράφεται όποτε έχει οριστεί δικός σας τομέας.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναι</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Μπορείτε πάντα να δομήσετε και να δημοσιεύσετε χειροκίνητα, εδώ και στην κονσόλα.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>μόνο ένα όνομα· η τιμή μένει στις Ρυθμίσεις συστήματος &gt; Μυστικά</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>κάτω από %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ολοκληρώθηκε χωρίς αναφορά</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>πρόσθετο</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>απέτυχε</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>αρχείο</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ή main με τον φάκελο docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>διακομιστής git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (με διακριτικό) ή git@github.com:owner/repo.git (με κλειδί ανάπτυξης)· ποτέ κωδικός πρόσβασης ή διακριτικό μέσα σε αυτήν.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, για τον χάρτη ιστότοπου και τους κανονικούς συνδέσμους.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>εικόνα</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ποτέ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>όχι</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>χωρίς απομακρυσμένο</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>κανένα: οι υποβολές μένουν στον φάκελο</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>κανένα: δεν άλλαξε τίποτα</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>δεν προωθήθηκε</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>δεν άλλαξε τίποτα</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>σελίδα</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>επιτυχία</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>Το proc_open είναι απενεργοποιημένο, οπότε δεν μπορεί να ξεκινήσει εργασία εδώ. Χρησιμοποιήστε το ./console exp:static:build στον διακομιστή.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>δημοσίευση</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>δημοσιευμένο</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>εκκρεμεί προώθηση</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>προωθήθηκε</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>απορρίφθηκε</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>σχετικοί</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>αναίρεση</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>αναιρέθηκε</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>σε εξέλιξη</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>μόνο ο φάκελος</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: γράφεται στο αρχείο CNAME. Στρέψτε το DNS του τομέα στον διακομιστή όπως εξηγεί· το HTTPS μπορεί να χρειαστεί λίγο χρόνο για να ξεκινήσει.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ναι, δεν έχει δημοσιευτεί ακόμη</translation>
     </message>
 </context>
 </TS>

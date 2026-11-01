@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Führt einen exp:*-Konsolenbefehl der Installation aus, den migration.ini erlaubt, ohne Shell.
 
-Ein Schritt einer YAML-Migration mit `type: command`. Die Klasse `expMigrationStepCommand` ist in `settings/migration.ini` `[StepSettings] StepTypeList[command]` registriert.
+Ein Schritt einer YAML-Migration mit `type: command`. Die Klasse `expMigrationStepCommand` (`kernel/classes/migration/steps/expmigrationstepcommand.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[command]` registriert.
 
 ## Schlüssel
 
@@ -54,4 +54,4 @@ Er berührt keinen Cache.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepcommand.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

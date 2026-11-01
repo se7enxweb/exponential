@@ -35,7 +35,9 @@ Enabled=true
 
 ## Rules
 
-Standard: eine Liste mit 2: `content/trash EmptyButton RemoveButton`, `content/removeobject * bulk`.
+> Setup > Recent content: moving the selected items to the trash or deleting them (the confirmation's button)  
+
+Standard: eine Liste mit 3: `content/trash EmptyButton RemoveButton`, `content/removeobject * bulk`, `moderation/action ConfirmDestructiveButton`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +47,7 @@ Standard: eine Liste mit 2: `content/trash EmptyButton RemoveButton`, `content/r
 Rules[]
 Rules[]=content/trash EmptyButton RemoveButton
 Rules[]=content/removeobject * bulk
+Rules[]=moderation/action ConfirmDestructiveButton
 */ ?>
 ```
 

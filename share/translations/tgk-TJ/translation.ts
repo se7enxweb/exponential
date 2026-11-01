@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Тағйироти насб, ки ҳамчун файл нигоҳ дошта мешаванд: вазъи онҳо, иҷроҳо, иҷро ва бозгардонӣ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Мундариҷаи нав</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Мундариҷаи навтарин, он чи барои баррасӣ нигоҳ дошта шудааст ва амалҳо бо интихоб.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Нусхаи статикии сомонаро ба GitHub Pages ё ҳар мизбони git нашр кунед.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Нашри статикӣ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Ҷавобҳои дархостҳои захирашудаи GraphQL API ва синфҳои мундариҷаи схемаи он.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Нусхаи статикиро ба GitHub Pages ё ҳар мизбони git нашр кунед</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Нашри статикӣ</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Кэши статикӣ саҳифаҳоро аз ҳамин сервер медиҳад. Барои нашри нусхаи статикии сомона дар ҷои дигар, дар GitHub Pages ё ҳар мизбони git, нашри статикиро истифода баред.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Тағйироти насб, ки ҳамчун файл нигоҳ дошта мешаванд: вазъи онҳо, иҷроҳо, иҷро ва бозгардонӣ.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Нусхаи статикии сомонаро ба GitHub Pages ё ҳар мизбони git нашр кунед.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Нашри статикӣ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Иҷроро оғоз кардан нашуд.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Тағйирёфта</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Эҷодшуда</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ном</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Синф</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бахш</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Эҷодкунанда</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Мундариҷаи нав</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Мундариҷаи охирин эҷодшуда ва тағйирёфтаи тамоми сомона, аз навтарин: он чи меҳмонон фиристоданд, он чи барои баррасӣ нигоҳ дошта шудааст, сиёҳнависҳое, ки нашри худро интизоранд. Унсурҳоро интихоб кунед, то онҳоро озод кунед, нигоҳ доред, пинҳон кунед, нишон диҳед, хориҷ кунед ё ба бахш ё ҳолати дигар гузаронед.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Рӯйхатро хондан муяссар нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Нигоҳдорӣ барои баррасӣ ҳанӯз танзим нашудааст, бинобар ин ҳеҷ чиз нигоҳ дошта намешавад ва амалҳои нигоҳдорӣ пешниҳод намешаванд. Қадами навсозии 6.0.15-review-hold онро танзим мекунад: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Филтр кардани рӯйхат</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Аз</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>То</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Сана</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Эҷодшуда (нашри аввал)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ҳама</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Вазъи нашр</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Нашршуда</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Сиёҳнавис, ҳеҷ гоҳ нашр нашудааст</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Дар интизорӣ (тасдиқ ё санаро интизор аст)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Дар сабад</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Барои баррасӣ нигоҳ дошта шудааст</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Нигоҳ дошта шудааст</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Нигоҳ дошта нашудааст</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Пинҳон</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Намоён</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Дастрасии сомонаи фиристодан</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ҳар гуна дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Танҳо он чи аудит сабт кардааст.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ҳоло: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Логин ё рақами корбар.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Филтр кардан</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Тоза кардани филтрҳо</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Унсурҳо</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from то %to аз %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Унсур нест</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(дар %ms мс хонда шуд)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Амалҳо бо унсурҳои интихобшуда</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Ҳамаро дар ин саҳифа интихоб кардан</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count интихоб шуд</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Амал</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Амалро интихоб кунед</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Озод кардан аз нигоҳдорӣ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Барои баррасӣ нигоҳ доштан</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Пинҳон кардан</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Нишон додан</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Ба сабад гузоштан</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Нест кардан</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Таъин кардани бахш</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Таъин кардани ҳолат</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Сабаб</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Барои нигоҳдорӣ лозим аст; бо нигоҳдорӣ ва дар аудит нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Бахшро интихоб кунед</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ҳолат</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Ҳолатро интихоб кунед</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Ба интихобшудаҳо татбиқ кардан</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ҳар як унсур бо иҷозатҳои худи шумо санҷида мешавад. Ба сабад гузоштан ва нест кардан тасдиқро талаб мекунанд. Беш аз %count унсур дар пасзамина иҷро мешаванд.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Интихоб кардан</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Нашр</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Аз куҷо фиристода шуд</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Интихоб кардани %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ҳанӯз не</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(беном)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Рақам %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Сиёҳнавис</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Аз ҷониби волидаш пинҳон шудааст</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Нигоҳ дошта шудааст: фиристодаи нав</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Версияи %version дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Версияи %version дар ҷараён</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Сиёҳнавис, версияи %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Версияи %version нашр шуд</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Барои %date ба нақша гирифта шудааст</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>суроға нест</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>сабт нашудааст</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ба ин филтрҳо ҳеҷ чиз мувофиқ нест.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Нишон додани ҳама</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ҳанӯз мундариҷа нест.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Дар як саҳифа</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Дар як саҳифа %count унсур нишон додан.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Суроға ва браузери фиристода аз индекси аудит гирифта мешаванд, ки дар ин ҷо дастрас нест: сутун «сабт нашудааст» мегӯяд.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Суроға ва браузер он чизҳое мебошанд, ки аудит барои унсур сабт кардааст (нигоҳдории худкор онҳоро ҳамеша сабт мекунад; нашр ва эҷод танҳо дар ҷое ки фаъол аст), чунон ки танзимоти махфияти он онҳоро нигоҳ медорад.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count унсур</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Нест кардан унсурҳоро бо ҳамаи версияҳо ва тарҷумаҳояшон ба таври доимӣ хориҷ мекунад. Онро баргардондан ғайриимкон аст.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Унсурҳо ба сабад мераванд, ки аз он ҷо онҳоро барқарор кардан мумкин аст.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ҳар як унсур бо иҷозатҳои худи шумо санҷида мешавад; унсуре, ки зерунсурҳо дорад, бетағйир монда мешавад (онро дар сохтори мундариҷа хориҷ кунед). Аз шумо хоҳиш карда мешавад, ки тасдиқ кунед, ки ин худи шумоед.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ин дар пасзамина иҷро мешавад: саҳифаи пешрафти он кушода мешавад ва ҳангоми анҷом натиҷа барои ҳар як унсур нишон дода мешавад.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Унсурҳои интихобшуда</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ва боз %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бекор кардан</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ҳеҷ чиз иҷро нашуд</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Сабаб: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Амал ҳанӯз дар пасзамина иҷро мешавад.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Пешрафти он</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Амали пасзамина ноком шуд: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Анҷом ёфт</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Рад шуд</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ноком</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Барои ҳар унсур</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Унсур</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Натиҷа</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Чаро</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Бозгашт ба рӯйхат</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Насб</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ҳеҷ чиз иҷро нашуд</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Тасдиқ кардан</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Амалро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Ақаллан як унсурро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Дар як вақт на зиёда аз 1000 унсур интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Нависед, ки чаро унсурҳо нигоҳ дошта мешаванд.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Бахшро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Ҳолатро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Шаклро хондан муяссар нашуд.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Мундариҷаи нав</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Шумораҳоро хондан муяссар нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Барои баррасӣ нигоҳ дошта шудааст</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Имрӯз нав</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Нигоҳдорӣ барои баррасӣ ҳанӯз танзим нашудааст (қадами навсозии 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ҳамаи мундариҷаи нав</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Шумо амалҳои модератсияро иҷро карда наметавонед (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Амали модератсия пурра нест: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модератсия: %action бо %count объект</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done аз %total объект: %ok анҷом ёфт, %refused рад шуд, %failed ноком</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok анҷом ёфт, %refused рад шуд, %failed ноком</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Он дигар вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Он ҷойгиршавӣ надорад (нашр нашудааст).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Шумо онро пинҳон карда наметавонед (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Шумо онро нишон дода наметавонед (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Он аллакай пинҳон аст.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Он пинҳон нест.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Пинҳон шуд.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Нишон дода шуд.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Он дар сабад аст: онро дар он ҷо холӣ ё барқарор кунед.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Сиёҳнависе, ки ҳеҷ гоҳ нашр нашудааст, ба сабад рафта наметавонад: онро нест кунед.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Шумо онро нест карда наметавонед (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Нест шуд.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Шумо онро хориҷ карда наметавонед (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Он зерунсурҳо дорад: онро дар сохтори мундариҷа, ки онҳо дар он ҷо номбар шудаанд, хориҷ кунед.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Он хориҷ нашуд (шояд ҷараёни корӣ хориҷкуниро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Ба сабад гузошта шуд.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Бахш вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Он аллакай дар ин бахш аст.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Шумо ин бахшро таъин карда наметавонед (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Бахш таъин нашуд.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Бахш таъин шуд.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ҳолат вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Он аллакай дар ин ҳолат аст.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Шумо ин ҳолатро таъин карда наметавонед (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ҳолат таъин нашуд (шояд ҷараёни корӣ тағйирро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Ҳолат таъин шуд.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Чунин амал вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Нигоҳдорӣ барои баррасӣ танзим нашудааст (қадами навсозии 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Нависед, ки чаро он нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Он аллакай нигоҳ дошта шудааст.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Шумо онро нигоҳ дошта наметавонед (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Нигоҳдорӣ гузошта нашуд (шояд ҷараёни корӣ тағйирро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Нигоҳ дошта шуд.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Он нигоҳ дошта нашудааст.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Шумо онро озод карда наметавонед (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Нигоҳдорӣ бардошта нашуд (шояд ҷараёни корӣ тағйирро нигоҳ дорад).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Озод шуд; ҳанӯз пинҳон аст: шумо онро нишон дода наметавонед (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Озод шуд.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Ҳамаи ҳадафҳо</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Нашри охирин</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Нусхаи статикии сомонаи худро ройгон дар GitHub Pages нашр кунед:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Саҳифаҳои кӯҳнашуда</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Нашри статикӣ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Нашри статикӣ хомӯш аст.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ҳадаф</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ҳадафҳоро хондан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>вазифа иҷро мешавад</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>сохт барои санҷиш</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>инро пинҳон кардан</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ҳадаф сохтан</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ҳеҷ гоҳ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>дастурро хондан</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added илова шуд, %changed тағйир ёфт, %removed хориҷ шуд</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes аз %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Боз %count дар рӯйхат нишон дода нашудаанд.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages саҳифа навишта шуд</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path андозаи %size дорад, аз он ки мизбон ба як файл иҷозат медиҳад, зиёдтар.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % аз маҳдудият</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds сония</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag нашрест, ки сомона ҳоло дорад.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: вазифаи %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/анбор/ барои сомонаи лоиҳаи GitHub; барои домени худ ё сомонаи корбар холӣ.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Сомона</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Мизбон</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Ворид шудан ба анбор</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Анбор</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Пайвандҳо ва роҳи асосӣ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Домени худатон</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Сохт чӣ дорад</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Кай нашр мешавад</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Баррасӣ ва захира</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Сомонаи лоиҳаи GitHub дар зери /&lt;repository&gt;/ ҷойгир аст; пайвандҳои нисбӣ дар он ҷо ва дар ҳама ҷои дигар кор мекунанд.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Сохт ҳар саҳифаи %site-ро тавре мегирад, ки меҳмони вориднашуда мебинад, пайвандҳоро аз нав менависад, файлҳоро нусхабардорӣ мекунад ва натиҷаро ба ҷузвдони ҳадаф менависад. То он даме, ки шумо сохтро насанҷед ва Нашр кардан-ро пахш накунед, ҳеҷ чиз нашр намешавад.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Ифодаи cron, масалан 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Калиди ҷойгиркунӣ ҳамчун рамзи %secret нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Калиди ҷойгиркунӣ ба ин насб имкон медиҳад, ки тавассути SSH танҳо ба як анбор фиристад ва ба ҷои дигар не. Нимаи хусусии он дар Насб &gt; Рамзҳо мемонад; танҳо нимаи оммавӣ нишон дода мешавад.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Калиди ҷойгиркунӣ, ки барои ин ҳадаф сохта шудааст</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Калиди ҷойгиркунӣ тавассути SSH ворид мешавад: суроғаи git-ро ба суроғаи SSH иваз кунед (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Вазифа иҷро мешавад, ки онро %user оғоз кардааст</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Вазифаи ин ҳадаф ҳоло иҷро мешавад (%detail). Интизор шавед, то он анҷом ёбад.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Вазифаи ин ҳадаф ҳоло иҷро мешавад. Интизор шавед, то он анҷом ёбад.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Пайванд аз саҳифаи /news/ ба саҳифаи /about-us/team чунин навишта мешавад</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Калиди нави ҷойгиркунӣ сохта шуд. Ҳозир нимаи оммавии онро ба анбор илова кунед.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Саҳифае, ки пас аз тозакунӣ ҳанӯз натиҷаи ислоҳ, токени шакл ё рақами ҷаласа дорад, ҳеҷ гоҳ нашр намешавад.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Бозгардонӣ барои мутахассисон аст: &quot;Ман медонам, ки ин чиро тағйир медиҳад&quot;-ро қайд кунед ва номи нишонаро боз нависед.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Сомона метавонад то %site, як файл то %file бошад ва тақрибан 100 GB трафик дар як моҳ. Дар нақшаи ройгон анбор бояд оммавӣ бошад. GitHub Pages барои мағозаҳо ё дигар муомилоти тиҷоратӣ пешбинӣ нашудааст.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ҳадаф як сомонаест, ки ба як анбори git нашр мешавад. Дар ин ҷо ҳеҷ чиз сохта ё нашр намешавад: Захира кардан танзимотро ба settings/override/staticcache.ini.append.php менависад.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ҳадаф як сомонаест, ки ба як ҷой нашр мешавад, масалан сомонаи оммавии шумо дар GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Токен аз Насб &gt; Рамзҳо</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Ҷараёни кории анбор онро нашр мекунад.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Ин калиди оммавиро бо иҷозати навиштан ба анбор илова кунед. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access-ро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Илова шуд</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Мизбони дигари git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Раванди дигар бо ин ҳадаф кор мекунад: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Бозгашт</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Роҳи асосӣ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Пеш аз ин</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Дар зери роҳи асосӣ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Шоха</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Пайвандҳои вайрон</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Пайвандҳои вайрон дар сохт</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Сохт</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Сохти %id аз ҷониби %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Сохти %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Ҳозир сохтан</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Сохт барои санҷиш</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Аз ҷониби</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Дастӣ, дар ин ҷо</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бекор кардан</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Тағйир додан</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Тағйир ёфт</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Тағйирот</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Аввал санҷед</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Ин танзимотро санҷед</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Санҷед, ки сохт чиро тағйир медиҳад, онро бинед, пас нашр кунед ё партоед.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Нашреро, ки ба он баргаштан мехоҳед, интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Дар нашрияи оянда меояд.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Коммитҳо</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Сохтро коммит мекунад, ба он нишона мегузорад ва ба %remote мефиристад. Фиристодан ҳеҷ гоҳ маҷбурӣ нест; баъдтар метавонед ба ҳар нашр баргардед.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Дар муқоиса бо ҷузвдони пешина: %added илова шуд, %changed тағйир ёфт, %removed хориҷ шуд, %unchanged бетағйир.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Дар муқоиса бо нашри охирин.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Маълумоти воридшавӣ</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Домени худ</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Натиҷаи ислоҳ, токенҳои шакл, рақамҳои ҷаласа ва nonce-ҳо ҳамеша хориҷ карда мешаванд.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Калиди ҷойгиркунӣ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Калиди ҷойгиркунии %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Партофтан</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Сохтро партофтан</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Домен</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Холӣ: суроғаи сомона. Дар акси ҳол суроғаи дохилии ҳамон сомона.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Анҷом ёфт</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Ҳар пайванд бо роҳи асосӣ оғоз мешавад.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Ҳар нашр коммитест бо нишонаи static/%id/&lt;n&gt;. Баргаштан коммити нав бо файлҳои нашри пештара месозад: таърих мемонад, ҳеҷ нишона ҷой иваз намекунад ва ҳеҷ чиз маҷбурӣ нест.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Иловагиҳо</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Саҳифаҳоро гирифтан аз</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Файлҳо</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Файлҳои гумшуда</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Файлҳои</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Файлҳое, ки ҷамъоварӣ нашуданд</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Изи ангушт</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Ҷузвдон</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Барои суроғаи SSH. Калид пас аз захира сохта мешавад; шумо нимаи оммавии онро ба анбор илова мекунед.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Барои суроғаи https://. GitHub: токени дақиқ (fine-grained) бо иҷозати Contents хондан ва навиштан дар анбор.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Барои мутахассисон. Сомонаи оммавӣ ҳамин ки фиристодан анҷом ёбад, тағйир меёбад.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Шаклҳо</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Ҷойгиркунии ройгон аз анбори GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Аз шоха</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Суроғаи git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages сомонаи %site ва файли %file-ро иҷозат медиҳад.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Маҳдудиятҳои GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages файлҳоро ҳамон тавре ки ҳастанд нашр мекунад (барои файлҳое, ки бо _ оғоз мешаванд, лозим аст).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub шохаро ҳамон тавре ки фиристода шудааст, медиҳад. Пешфарз.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, сервери худатон: ҳар анбори git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Ба нашри пештара баргаштан</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Кӯмак</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Кӯмак бо устод</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Онҳоро пинҳон кардан</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Таърих</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Таърихи %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Мизбон</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages сохтро чӣ тавр қабул мекунад</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Ман тағйиротро санҷидам</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ман медонам, ки ин чиро тағйир медиҳад</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Рақам</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Он хомӯш аст: то фаъол нашудан ҳеҷ чиз сохта намешавад.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Он дар пасзамина ҳамчун %user иҷро мешавад; шумо метавонед ин саҳифаро пӯшед.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Вазифаи %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Ҳамчун рамзи %secret нигоҳ дошта мешавад.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Навъ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Нашри охирин</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Ин саҳифаҳоро истисно кардан</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Ин бахшҳоро истисно кардан</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Пайвандҳо</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Пайвандҳои аз нав навишташуда</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Сомонаи зинда</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Сохтро дидан</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Ҳарфҳои хурд, рақамҳо, _ ва -, масалан github-public. Он ҷузвдон ва нишонаҳоро (static/&lt;id&gt;/&lt;n&gt;) ном мебарад ва баъдтар тағйир дода намешавад.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Калиди нав сохтан</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Ҳадаф сохтан</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Калидро сохтан</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Аввал анборро дар мизбон созед; анбори холӣ ҳам мувофиқ аст.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Феҳристи файлҳо</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Паём</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Аксари саҳифаҳо</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ном</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Номи токен дар Насб &gt; Рамзҳо</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Ҳадафи нав</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Баъдӣ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Ҳоло коммит нест.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Калид сохта нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Файли иҷрошавандаи сатри фармони php ёфт нашуд. migration.ini [AdminSettings] PhpCliPath-ро ба роҳи пурраи он танзим кунед.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Ҳоло нишона нест.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Ҳоло ҳадаф нест.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ҳеҷ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Дар сохт нест.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Ҳоло ҳеҷ чиз нашр нашудааст.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Ҳоло ҳеҷ чиз нашр нашудааст: ҳар файл нав аст.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Огоҳ кардан</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Аз рӯи ҷадвал</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Дар консол</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Дар сервер: ./console exp:static:serve %id онро ҳамин тавр медиҳад.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Дар ҳар сатр як роҳ, * ба ҳар қисм мувофиқ аст: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Бо ҳадаф танҳо ном нигоҳ дошта мешавад; худи токен ё калид дар Насб &gt; Рамзҳо мемонад ва ҳеҷ гоҳ дар сабт пайдо намешавад.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Танҳо он чи саҳифаҳо ном мебаранд</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Танҳо бо токен. env:NAME ба ҷои он тағйирёбандаи муҳити серверро мехонад.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Пешнамоишро кушодан</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Сохтро тавре мекушояд, ки мизбон онро аз ҷузвдони ҳадаф медиҳад. Пайванд барои шумо як соат кор мекунад.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Ихтиёрӣ. Холӣ: он чи нашр шуд.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Ихтиёрӣ. Бо домен сомона дар решаи он дода мешавад.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Натиҷа</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Саҳифаҳо</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Саҳифаҳои ҳадаф</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Саҳифаҳои радшуда</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Коркарди баъдӣ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Пешнамоиш</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Пешнамоиш ва нашр</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Пешнамоиш ва нашри %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Пешнамоиши сохт</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Пешрафт</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Суроғаи оммавӣ</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Калиди оммавӣ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Нашр кардан</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Нусхаи статикии сомонаро ба GitHub Pages ё ҳар мизбони git нашр кунед: онро созед, тағйиротро санҷед, нашр кунед ва ҳангоми зарурат ба нашри пештара баргардед.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Нашр барои баргаштан</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Нашрҳо</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Фиристодан</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Дастурро хондан</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Сабт</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Рад шуд</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Нисбӣ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Аз нав бор кардан</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Хориҷ шуд</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Калидро иваз кардан: калиди кӯҳна кор карданро бас мекунад</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ҳисобот</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Ҳисоботи сохт</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Анбор</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Баррасӣ</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Баррасӣ ҳар танзимотро месанҷад ва сатрҳоеро, ки навишта мешаванд, нишон медиҳад. Ҳоло ҳеҷ чиз захира нашудааст.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Бозгардондан</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Бозгардонӣ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Захира кардан</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ҷадвал</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Саҳифаи ҷустуҷӯ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Рақамҳои бахшҳо, бо вергул ҷудо карда.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Онҳоро ба сомонаи зинда фиристодан</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Танзим</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Танзимот</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Танзимоти %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Насб</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Насб &gt; Рамзҳо</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Дар рӯйхатҳо нишон дода мешавад, масалан &quot;Сомонаи оммавӣ дар GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Воридшавӣ бо GitHub App бо ҳамгироии GitHub меояд.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Сомона</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Сомона барои нашр</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Андоза</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Андоза ва маҳдудиятҳо</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Андозаи сохт</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Саҳифаҳои кӯҳнашуда</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Оғоз шуд</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Аз ҷониби %user дар %time оғоз шуд.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ҳолат</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Нашри статикӣ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Нашри статикӣ хомӯш аст</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Нашри статикӣ хомӯш аст.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Нашри статикӣ хомӯш аст. Аввал онро дар Насб &gt; Нашри статикӣ фаъол кунед.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Нашри статикӣ фаъол аст.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Қадами %step аз %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Қадамҳо</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Тозакунӣ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Хомӯш кардан</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Фаъол кардан</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Нашри статикиро фаъол кардан</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Нишона</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Нишонаҳо</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ҳадаф</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Ҳадафҳоро сохтан ва тағйир додан мумкин аст, аммо то фаъол нашудан ҳеҷ чиз сохта ё нашр намешавад.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Ба низомҳои ҷустуҷӯ мегӯяд, ки чиро хонанд.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Сохтро партофтан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Сохт бо нашри охирин якхела аст: чизе барои нашр нест.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Сохт партофта шуд: ҷузвдон боз нашри охиринро дорад.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Пешфарзҳо ба аксари сомонаҳо мувофиқанд.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Ҷузвдон сохтеро дорад, ки ҳоло нашр нашудааст; сохти нав онро иваз мекунад.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Ба ҷузвдони вазифаҳо навиштан мумкин нест: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Вазифаро омода кардан нашуд: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Вазифаро оғоз кардан нашуд.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Вазифа анҷом ёфт. Ҳисоботи он бор мешавад.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Вазифа корбари воридшударо талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Вазифа оғоз шуд, аммо рақами раванди худро хабар надод. %detail-ро санҷед.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Калид</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Калонтарин файл: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Сатрҳое, ки навишта мешаванд</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Рӯйхати саҳифаҳо барои низомҳои ҷустуҷӯ; суроғаи оммавиро талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Саҳифаҳо тавре гирифта мешаванд, ки меҳмони вориднашуда мебинад. Siteaccess-ҳои идоракунӣ ва таҳрир ҳеҷ гоҳ пешниҳод намешаванд.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Пешрафтро пайгирӣ кардан нашуд. Саҳифаро аз нав бор кунед, то бинед, ки вазифа чӣ ҳол дорад.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Нимаи оммавии калид:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Решаи шоха</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Анбори рамзҳо ҳоло танзим нашудааст (./console exp:upgrade --apply ҷадвали онро месозад), бинобар ин ягон калидро нигоҳ доштан мумкин нест.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Сервер худаш ворид мешавад (бо калиди SSH ё ёрдамчии маълумоти воридшавии худ), ё анбор дар ҳамин сервер аст.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Танзимро навиштан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Танзимот дурустанд. Ин сатрҳо навишта мешаванд:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Файли танзимотро хондан мумкин нест: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Сомона ба файлҳои он нашр бармегардад; сохте, ки ҳоло нашр нашудааст, бояд аввал нашр ё партофта шавад.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Саҳифаи худи сомона барои суроғаҳое, ки вуҷуд надоранд.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Ҳадафро захира кардан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ҳадаф ҳоло бо ин калид ворид намешавад: дар танзимоти он &quot;Калиди ҷойгиркунӣ, ки барои ин ҳадаф сохта шудааст&quot;-ро интихоб кунед.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ҳадафҳоро хондан нашуд: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Ҳоло сохте барои санҷиш нест.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ин насб siteaccess-и ҷабҳавӣ надорад. Siteaccess-ҳои идоракунӣ ва таҳрир ҳеҷ гоҳ нашр намешаванд.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ин саҳифа вазифаро ҳангоми иҷро пайгирӣ мекунад; вақте саҳифа пӯшида мешавад, он дар пасзамина идома меёбад.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ин ҳадаф ҳоло калиди ҷойгиркунӣ надорад.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Ин ҳадаф ҳоло дар ин ҷо сохта нашудааст.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ин ҳадаф як калид дорад.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Ин сохтро мепартояд: ҷузвдон боз нашри охиринро дорад. Сомонаи зинда тағйир намеёбад.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Аввал &quot;Ман тағйиротро санҷидам&quot;-ро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вақт</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Ангезандаҳо</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Номи нишонаро боз нависед</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Бетағйир</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Вебхук</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Чӣ</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Чӣ тағйир меёбад</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Ҳар файл чист; ҳамеша навишта мешавад.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Вазифа чӣ кард ва сабти он. Вазифае, ки дар ин ҷо оғоз шудааст, ҳангоми пӯшидани ин саҳифа дар пасзамина идома меёбад.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Он чи вазифа ҳамчун хатоҳо чоп кард</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Он чи саҳифаҳо ном мебаранд ва ҳар тасвири мундариҷаи нашршуда</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Кай</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Вақте нашр ноком мешавад</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Вақте нашр муваффақ мешавад</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Вақте мундариҷа нашр мешавад</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Пайвандҳо ба он чи нусха надорад, ба куҷо мераванд (ҷустуҷӯ, воридшавӣ).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Нусхаи статикӣ аз куҷо дода мешавад.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Кадом сомона нашр мешавад ва ҳадаф чӣ ном дорад.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Дар зери ҳар роҳ кор мекунад. Пешфарз.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Ҳар вақте ки домени худ муқаррар шавад, навишта мешавад.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ҳа</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Шумо ҳамеша метавонед дастӣ дар ин ҷо ва дар консол сохта ва нашр кунед.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>танҳо ном; қимат дар Насб &gt; Рамзҳо мемонад</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>дар зери %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>бе ҳисобот анҷом ёфт</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>иловагӣ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ноком шуд</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>файл</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ё main бо ҷузвдони docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>мизбони git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (бо токен) ё git@github.com:owner/repo.git (бо калиди ҷойгиркунӣ); ҳеҷ гоҳ парол ё токен дар он набошад.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, барои харитаи сомона ва пайвандҳои canonical.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>тасвир</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ҳеҷ гоҳ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>бе remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ҳеҷ: коммитҳо дар ҷузвдон мемонанд</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ҳеҷ: чизе тағйир наёфт</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>фиристода нашуд</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>чизе тағйир наёфт</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>саҳифа</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>гузашт</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open хомӯш аст, бинобар ин дар ин ҷо вазифаро оғоз кардан мумкин нест. Дар сервер ./console exp:static:build-ро истифода баред.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>нашр</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>нашршуда</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>фиристодан дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>фиристода шуд</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>рад шуд</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>нисбӣ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>бозгардонӣ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>бозгардонида шуд</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>иҷро мешавад</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>танҳо ҷузвдон</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ба файли CNAME навишта мешавад. DNS-и доменро тавре ки мизбон шарҳ медиҳад, ба мизбон равона кунед; оғози HTTPS метавонад каме вақт гирад.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ҳа, ҳоло нашр нашудааст</translation>
     </message>
 </context>
 </TS>

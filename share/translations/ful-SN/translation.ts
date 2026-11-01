@@ -15150,6 +15150,22 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Bayle aafgol ngol ɗe mooftaa no fiilde: no ɗe ngonri, doggi ɗii, dogin e artirgol.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Loowdi kesi</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Loowdi kesi ndi, ko daraa ngam ƴeewndaagol, e golle e ko suɓaa.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Yaltin nokkuure statik lowre e GitHub Pages walla e host git kala.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Yaltingol statik</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Jaabawol ñaamde mooftaaɗe GraphQL API, e ndenndi loowdi schema mayre.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Yaltin nokkuure statik e GitHub Pages walla e host git kala</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Yaltingol statik</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Cache static oo ina rokka kelle immorde e ndee sarwoor. Ngam yaltinde nokkuure statik lowre nokku goɗɗo, e GitHub Pages walla e host git kala, huutoro yaltingol statik.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Bayle aafgol ngol ɗe mooftaa no fiilde: no ɗe ngonri, doggi ɗii, dogin e artirgol.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Yaltin nokkuure statik lowre e GitHub Pages walla e host git kala.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Yaltingol statik</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Dogal ngal waawaa fuɗɗeede.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Waylaama</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Tagaama</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Innde</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sifaa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taƴre</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Tagooɗo</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Loowdi kesi</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Loowdi lowre ndee fof tagaandi walla waylaandi sakket, kesi ɗi adii: ko yillotooɓe neldi, ko daraama ngam ƴeewndaagol, daartole sakkiiɗe yaltinegol mum en. Suɓo geɗe ngam accitde, darnude, suuɗde, hollude, ittude walla werlude ɗe e taƴre walla ngonka goɗɗo.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Doggol ngol waawaa janngeede: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Darnugol ngam ƴeewndaagol teeltaaka tawo, ɗum noon hay huunde darnaaka, golle darnugol ndokkataake. Daawal hesɗitingol 6.0.15-review-hold teeltata ɗum: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sooɓ doggol ngol</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Gila</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Haa</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ñalnde</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Tagaama (yaltinegol arano)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Fof</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ngonka yaltinegol</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Yaltinaama</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Daartol, yaltinaaka abadaa</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ina fadi (ina fadi jaɓegol walla ñalnde)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>E ɓalli</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Daraama ngam ƴeewndaagol</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Daraama</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Daraaka</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Suuɗaama</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ina yiyee</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Neldaa ñalnde</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Naatirde lowre fof</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ko taskaano winndi tan.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Jooni: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Innde seŋorde walla ID kuutoro.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sooɓ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Momtu sooɓe</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Geɗe</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from haa %to e nder %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Alaa huunde</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(janngaa e nder %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Golle e geɗe suɓaaɗe</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Suɓo fof e hello ngoo</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count suɓaama</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Suɓo golle</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Accit darnugol</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Darnu ngam ƴeewndaagol</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Suuɗ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Hollu</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Werlu e ɓalli</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Momtu</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Hokku taƴre</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Hokku ngonka</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sabaabu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ina waɗɗii ngam darnude; ina mooftee e darnugol ngol e nder taskaano.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Suɓo taƴre</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ngonka</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Suɓo ngonka</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Waɗ e ko suɓaa</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Huunde fof ina ƴeewee e jamirooje maa. Werlude e ɓalli e momtude ina ɗaminira ma. Ko ɓuri geɗe %count ina waɗee e caggal.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Suɓo</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Yaltinegol</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Neldaa gila</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Suɓo %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>tawo</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(alaa innde)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Daartol</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ina fadi</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Suuɗaama e jinnaaɗo mum</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Daraama: neldaa kesum</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Yamre %version ina fadi</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Yamre %version ina waɗee</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Daartol, yamre %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Yamre %version yaltinaama</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Yamiraama ngam %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>alaa ñiiɓirde</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>winndaaka</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Alaa huunde fotndi e sooɓe ɗee.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hollu fof</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Alaa loowdi tawo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>E hello</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hollu geɗe %count e hello kala.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ñiiɓirde e wanngorde neldal ummotoo ko e tippude taskaano, ngal heɓaaka ɗoo: dognol ngol ina wiya "winndaaka".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ñiiɓirde e wanngorde ko ɗe taskaano winndi ngam huunde ndee (darnugol jaajaagol ina winnda ɗe sahaa kala; yaltinegol e tagugol tan ɗo ɗum huɓɓinaa), no teelte suturo mayre mooftirta ɗe.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: geɗe %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Momtugol ina itta geɗe ɗee haa abadaa, e yamre mum en fof e firooji mum en. Ɗum waawaa artireede.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Geɗe ɗee ina yaha e ɓalli, ɗo ɗe mbaawi artireede.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Huunde fof ina ƴeewee e jamirooje maa; huunde jogiinde geɗe les mayre accitete no woniri (ittu nde e mbaadi loowdi). A ƴamete ƴeewtinde ko an woni.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ɗum ina waɗee e caggal: hello yaarngo mum ina udditoo, njaɓɓi huunde fof ina hollee so timmii.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Geɗe suɓaaɗe</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>e %count goɗɗe</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Haaytu</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Hay huunde waɗaaka</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sabaabu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Golle ɗee ina waɗee e caggal tawo.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Yaarngo mum</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Golle caggal ɗee ronkii: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Timmi</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Salaama</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Waɗaaki</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Huunde kala</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Huunde</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njaɓɓi</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ko waɗi</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Rutto e doggol ngol</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Teeltugol</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Waɗaaka hay huunde</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Tabbitin</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Suɓo golle.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Suɓo huunde wootere e ɓuri famɗude.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Suɓo geɗe 1000 e ɓuri heewde e nder sahaa gooto.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Wiy ko waɗi geɗe ɗee daraa.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Suɓo taƴre ndee.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Suɓo ngonka ngal.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Fiise ndee waawaa janngeede.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Loowdi kesi</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Limooje ɗee waawaa janngeede: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Daraama ngam ƴeewndaagol</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Kesi hannde</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Darnugol ngam ƴeewndaagol teeltaaka tawo (daawal hesɗitingol 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Loowdi kesi fof</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>A waawaa waɗde golle moderasiyoŋ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Golle moderasiyoŋ timmaani: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasiyoŋ: %action e geɗe %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done e %total geɗe: %ok timmi, %refused salaama, %failed waɗaaki</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok timmi, %refused salaama, %failed waɗaaki</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ɗum woodaani kadi.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Alaa nokku (yaltinaaka).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>A waawaa suuɗde ɗum (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>A waawaa hollude ɗum (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ɗum suuɗaama gila.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ɗum suuɗaaka.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Suuɗaama.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Hollaama.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ɗum ina e ɓalli: ɓoliɗin walla artir ɗum ɗoon.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Daartol yaltinaaka abadaa waawaa yahde e ɓalli: momtu ɗum.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>A waawaa momtude ɗum (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Momtaama.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>A waawaa ittude ɗum (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ɗum jogii geɗe les mum: ittu ɗum e mbaadi loowdi, ɗo ɗe limtaa.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ɗum ittaaka (laawol golle ina waawi darnude ittugol ngol).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Werlaama e ɓalli.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Taƴre ndee woodaani.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ɗum ina e taƴre ndee gila.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>A waawaa hokkude taƴre ndee (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Taƴre ndee hokkaaka.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Taƴre hokkaama.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ngonka ngal woodaani.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ɗum ina e ngonka ngal gila.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>A waawaa hokkude ngonka ngal (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ngonka ngal hokkaaka (laawol golle ina waawi darnude waylo ngo).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Ngonka hokkaama.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Alaa golle ɗe nanndi e ɗum.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Darnugol ngam ƴeewndaagol teeltaaka (daawal hesɗitingol 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Wiy ko waɗi ɗum daraa.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ɗum daraama gila.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>A waawaa darnude ɗum (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Darnugol ngol waɗaaka (laawol golle ina waawi darnude waylo ngo).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Daraama.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ɗum daraaka.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>A waawaa accitde ɗum (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Darnugol ngol accitaaka (laawol golle ina waawi darnude waylo ngo).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Accitaama; ina suuɗii tawo: a waawaa hollude ɗum (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Accitaama.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Jahayɗe ɗee fof</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Yaltingol sakkitorgol</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Yaltin nokkuure statik lowre maa e GitHub Pages ko aldaa e njoɓdi:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Kelle ɓooyɗe</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Yaltingol statik</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Yaltingol statik ñifaama.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Jahaynde</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Jahayɗe ɗee mbaawaa janngeede: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>gollal ina yaha</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>mahngo ngo ƴeewetee</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>suuɗ ɗum</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>sos jahaynde</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>abada</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>jangu jaŋde ndee</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ɓeydaama, %changed waylaama, %removed ittaama</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes e %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count goɗɗe ndimmii ɗe limtaaka.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages hello mbinndaama</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ko %size, ɓuri ko host oo jaɓi fichier gooto.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % e ɓoggo oo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds segoon</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ko yaltingol ngol lowre ndee jogii jooni.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: gollal %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/mooftirde/ ngam lowre porose GitHub; meho ngam domain maa walla lowre kuutoroowo.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Lowre ndee</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Host oo</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Seŋaade e mooftirde ndee</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Mooftirde ndee</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Jokkorde e laawol ɗaɓɓorgol</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Domain maa</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Ko mahngo ngoo jogii</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Nde yaltinetee</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Tar e mooftu</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Lowre porose GitHub ina woni les /&lt;repository&gt;/; jokkorde jokkondirɗe ina golla ɗoon e nokku kala.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Mahngo ina heɓa kala hello %site no yiilotooɗo mo seŋaaki yiyrata ngo, ina winndita jokkorde ɗee, ina natta fichiers ɗee, ina winnda njeñtudi ndii e dossier jahaynde ndee. Hay huunde yaltintaake si a ƴeewaani mahngo ngoo a ñoƴƴaani Yaltin.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Konngol cron, ko wayi no 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Coktirgal deploy ina mooftee no suuɗaangal %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Coktirgal deploy ina yamira ngal teeltugol neldude e mooftirde wootere tan rewrude e SSH, nokku goɗɗo alaa. Feccere mum suuɗaande ina heddoo e Teeltugol &gt; Ɗuuɗe suuɗɗe; ko feccere mum renndinaande tan hollirtee.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Coktirgal deploy sosanaangal ndee jahaynde</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Coktirgal deploy ina seŋoo rewrude e SSH: waylu ñiiɓirde git ndee e ñiiɓirde SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Gollal ina yaha, %user fuɗɗini ngal</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Gollal ndee jahaynde ina yaha tawo (%detail). Fadu haa ngal gasa.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Gollal ndee jahaynde ina yaha tawo. Fadu haa ngal gasa.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Jokkol immorde e hello /news/ haa hello /about-us/team ina winndee no</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Coktirgal deploy kesal sosaama. Ɓeydu feccere mum renndinaande e mooftirde ndee jooni.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Hello ngo jogii tawo ko muulni debug, token formilaar walla ID session caggal laɓɓingol yaltintaake abada.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Artirgol ko ngam ganduɓe: maandin “Mi anndi ko ɗum waylata” winndaa innde maande ndee kadi.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Lowre ina waawi yettaade %site, fichier gooto haa %file, e wonde 100 GB jahaa-ngartaa nder lewru. E kaŋko alaa njoɓdi, mooftirde ndee ina haani wonde renndinaande. GitHub Pages waɗaaka ngam bitikuuji walla njeeygu goɗɗo.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Jahaynde ko lowre wootere yaltinteende e mooftirde git wootere. Hay huunde mahetaake walla yaltinetaake ɗoo: Mooftu ina winnda teelte ɗee e settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Jahaynde ko lowre wootere yaltinteende e nokku gooto, ko wayi no lowre maa renndinaande e GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token immorde e Teeltugol &gt; Ɗuuɗe suuɗɗe</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Workflow mooftirde ndee ina yaltina ɗum.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Ɓeydu ngal coktirgal renndinaangal e mooftirde ndee e jamirde winndugol. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, maandin Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ɓeydaama</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Host git goɗɗo</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Golle goɗɗe ina ngolla e ndee jahaynde: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Rutto</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Laawol ɗaɓɓorgol</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Adii</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Les laawol ɗaɓɓorgol</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Caljal</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Jokkorde taƴaaɗe</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Jokkorde taƴaaɗe e mahngo ngoo</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Mahngo</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Mahngo %id, %user mahi ngo</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Mahngo %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Mah jooni</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Mahngo ngo ƴeewetee</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Baɗɗo</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>E junngo, ɗoo</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Haaytu</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Waylu</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Waylaama</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Waylaaji</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Ƴeew ɗum taho</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Ƴeew ɗee teelte</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Ƴeew ko mahngo ngoo waylata, ndaar ngo, refti yaltin ngo walla werlaa ngo.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Suɓo yaltingol ngol ngartataa e mum.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Ina warta e yaltingol garoowol.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Teeŋtingol</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Teeŋtine</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Ina teeŋtina mahngo ngoo, ina maandina ngo, ina nelda ngo e %remote. Neldugol doolnetaake abada; a waawii rutto e yaltingol kala caggal ɗuum.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Fotndiraa e dossier adiiɗo: %added ɓeydaama, %changed waylaama, %removed ittaama, %unchanged waylaaka.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Fotndiraa e yaltingol sakkitorgol.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ko seŋorta</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domain maa</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Ko muulni debug, tokeeje formilaar, ID session e nonces ina ittee sahaa kala.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Coktirgal deploy</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Coktirgal deploy %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Werlu</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Werlu mahngo ngoo</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domain</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Meho: ñiiɓirde lowre ndee. So wonaa ɗuum, ñiiɓirde nder lowre ndee hoore mum.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Gasii</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Kala jokkol ina fuɗɗoo e laawol ɗaɓɓorgol.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Kala yaltingol ko teeŋtingol jogiingol maande static/%id/&lt;n&gt;. Ruttagol ina waɗa teeŋtingol kesol e fichiers yaltingol adiingol: daartol ngol ina heddoo, hay maande dirtaaki, hay huunde doolnaaka.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Ɓeyditte</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Heɓ kelle ɗee immorde e</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fichiers</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fichiers majjuɗi</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fichiers</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fichiers ɗi mbaawaa renndineede</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Maande sigaare</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Dossier</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Ngam ñiiɓirde SSH. Coktirgal ngal ina sosee caggal mooftugol; aan ɓeydata feccere mum renndinaande e mooftirde ndee.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Ngam ñiiɓirde https://. GitHub: token fine-grained jogiiɗo janngugol e winndugol e Contents mooftirde ndee.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ngam ganduɓe. Lowre renndinaande ndee ina waylo tuma neldugol ngol timmi.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formilaarji</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Hosting alaa njoɓdi immorde e mooftirde GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Immorde e caljal ngal</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Ñiiɓirde git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages ina jaɓa lowre %site e fichier %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Keeri GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ina yaltina fichiers ɗee no ɗi ngoniri (ina haani ngam fichiers fuɗɗotooɗi e _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ina rokka caljal ngal no ngal neldiraa. Ko ɗum woni ko woowaa.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, sarwoor maa: mooftirde git kala.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Rutto e yaltingol adiingol</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ballal</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Ballal e jaŋde ndee</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Suuɗ ɗe</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Daartol</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Daartol %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>No GitHub Pages heɓrata mahngo ngoo</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Mi ƴeewii waylaaji ɗii</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Mi anndi ko ɗum waylata</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Ina ñifaa: hay huunde mahetaake si huuɓnaaka.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ina dogga e cakkitte no %user; a waawii uddude ngoo hello.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Gollal %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Mooftaama no suuɗaangal %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Sifaa</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Yaltingol sakkitorgol</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Accu ɗee kelle</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Accu ɗee taƴe</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Jokkorde</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Jokkorde winnditaaɗe</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Lowre ndee jooni</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Ndaar mahngo ngoo</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Alkule tokoose, limle, _ e -, ko wayi no github-public. Ina inna dossier oo e maandeeji ɗii (static/&lt;id&gt;/&lt;n&gt;), waylotaako caggal ɗuum.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Sos coktirgal kesal</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Sos jahaynde</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Sos coktirgal ngal</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Sos mooftirde ndee e host oo taho; mooftirde meho ina moƴƴi.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ɗerewol</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Ko ɓuri heewde e kelle</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Innde</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Innde token oo e Teeltugol &gt; Ɗuuɗe suuɗɗe</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Jahaynde kesre</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ɗiɗaɓo</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Alaa</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Alaa teeŋtingol tawo.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Alaa coktirgal sosaangal: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Alaa porogaraam php gonngal e laawol yamiroore. Teel migration.ini [AdminSettings] PhpCliPath e laawol mum timmungol.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Alaa maande tawo.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Alaa jahaynde tawo.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Alaa</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Alaa e mahngo ngoo.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Hay huunde yaltinaaka tawo.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Hay huunde yaltinaaka tawo: kala fichier ko kesum.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Tintin</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>E teelol waktu</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>E konsol</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>E sarwoor: ./console exp:static:serve %id ina rokka ɗum e no wootere.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Laawol gootol e kala diidol, * ina fota e kala feccere: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Ko innde tan mooftetee e jahaynde ndee; token oo walla coktirgal ngal hoore mum ina heddoo e Teeltugol &gt; Ɗuuɗe suuɗɗe, ɓanngintaake abada e deftere.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Ko kelle ɗee innata tan</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>E token tan. env:NAME ina jaŋga ɓeyɗital jooɗorde sarwoor oo e nokku mum.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Uddit yiyde adan</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Ina uddita mahngo ngoo no host oo rokkirta ngo, immorde e dossier jahaynde ndee. Jokkol ngol ina golla ngam maa waktu gooto.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Suɓaade. Meho: ko yaltinaa.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Suɓaade. E domain, lowre ndee ina rokkee e ɗaɗol mum.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Sottugol</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Kelle</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Kelle jahaynde ndee</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Kelle salaaɗe</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Waɗtugol caggal</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Yiyde adan</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Yiyde adan e yaltingol</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Yiyde adan e yaltingol %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Yiyde adan mahngo ngoo</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ko yaha</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Ñiiɓirde renndinaande</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Coktirgal renndinaangal</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Yaltin</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Yaltin nokkuure statik lowre e GitHub Pages walla e host git kala: mah ɗum, ƴeew waylaaji ɗii, yaltin, rutto e yaltingol adiingol so a haajii.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Yaltingol ngol ngartetee e mum</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Yaltine</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Neldugol</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Jangu jaŋde ndee</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Winndannde</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Salaama</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Jokkondirɗo</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Loow kadi</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Ittaama</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Lomtin coktirgal ngal: ngal ɓooyngal ina daroo golle</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Ciimtol</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Ciimtol mahngo ngoo</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Mooftirde</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Tar</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Tar ina ƴeewa kala teelol, ina hollira diidi ɗi mbinndetee. Hay huunde mooftaaka tawo.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Artir</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Artirgol</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mooftu</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Teelol waktu</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Hello njiylaw</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ID taƴe, seertinaaɗe e virgule.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Nel ɗe e lowre ndee jooni</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Teelol</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Teelte</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Teelte %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Teeltugol</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Teeltugol &gt; Ɗuuɗe suuɗɗe</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ina hollee e doggol, ko wayi no “Lowre renndinaande e GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Seŋaade e GitHub App ina warta e jokkondiral GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Lowre</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Lowre yaltinteende</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Mawnugol</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Mawnugol e keeri</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Mawnugol mahngo ngoo</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Kelle ɓooyɗe</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Fuɗɗii</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user fuɗɗini ngal e %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>No ngonri</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Yaltingol statik</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Yaltingol statik ñifaama</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Yaltingol statik ñifaama.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Yaltingol statik ñifaama. Huuɓnu ɗum taho e Teeltugol &gt; Yaltingol statik.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Yaltingol statik huuɓnaama.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Jahal %step e %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Laawɗe</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Laɓɓingol</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Ñif</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Huuɓnu</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Huuɓnu yaltingol statik</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Maande</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Maandeeji</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Jahaynde</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Jahayɗe ina mbaawi soseede e waylteede, kono hay huunde mahetaake walla yaltinetaake si huuɓnaaka.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Ina wiya masiŋaaji njiylaw ko ɗi njanngata.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Mahngo ngoo waawaa werleede: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Mahngo ngoo ina nanndi e yaltingol sakkitorgol: alaa ko yaltinetee.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Mahngo ngoo werlaama: dossier oo ina jogii yaltingol sakkitorgol kadi.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Teelte woowaaɗe ɗee ina poti e ko ɓuri heewde e lowe.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Dossier oo ina jogii mahngo ngo yaltinaaka tawo; mahngo kesngo ina lomtoo ngo.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Dossier golle ɗee waawaa winndireede: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Gollal ngal waawaa heboteede: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Gollal ngal waawaa fuɗɗeede.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Gollal ngal gasii. Ciimtol mum ina loowee.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Gollal ngal ina haani kuutoroowo seŋiiɗo.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Gollal ngal fuɗɗii kono humpitaani ID porose mum. Ƴeew %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Coktirgal ngal</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Fichier ɓurngo mawnude: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Diidi ɗi mbinndetee</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Doggol kelle ngam masiŋaaji njiylaw; ina haani ñiiɓirde renndinaande ndee.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Kelle ɗee ina keɓee no yiilotooɗo mo seŋaaki yiyrata ɗe. Siteaccess toppitagol e taƴtagol hokketaake abada.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Ko yaha oo waawaa rewee. Loow hello ngoo kadi ngam yiyde no gollal ngal yahrata.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Feccere renndinaande coktirgal ngal:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Ɗaɗol caljal ngal</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Nokku mooftirɗo suuɗaaɗi teeltaaka tawo (./console exp:upgrade --apply ina sosa taabal mum), ndeen alaa coktirgal mooftotoongal.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Sarwoor oo ina seŋoo hoore mum (e coktirgal SSH mum walla ballitoowo ko seŋorta), walla mooftirde ndee ina woni e ndee sarwoor.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Teelol ngol waawaa winndireede: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Teelte ɗee ina poti. Ɗee diidi ina mbinndee:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Fichier teelte oo waawaa janngeede: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Lowre ndee ina rutta e fichiers ngol yaltingol; mahngo ngo yaltinaaka tawo ina haani yaltineede walla werleede taho.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Hello lowre ndee hoore mum ngam ñiiɓirɗe ɗe ngonaa.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Jahaynde ndee waawaa mooftireede: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Jahaynde ndee seŋotaake e ngal coktirgal tawo: suɓo “Coktirgal deploy sosanaangal ndee jahaynde” e teelte mum.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Jahayɗe ɗee mbaawaa janngeede: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Alaa mahngo ngo ƴeewetee tawo.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ngal teeltugol alaa siteaccess yeeso. Siteaccess toppitagol e taƴtagol yaltinetaake abada.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ngoo hello ina rewa gollal ngal no ngal yahrata; ngal ina jokka e cakkitte so hello ngoo uddaama.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ndee jahaynde alaa coktirgal deploy tawo.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Ndee jahaynde mahaaka ɗoo tawo.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ndee jahaynde ina jogii gootal.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Ina werla ngoo mahngo: dossier oo ina jogii yaltingol sakkitorgol kadi. Lowre ndee jooni waylotaako.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Maandin “Mi ƴeewii waylaaji ɗii” taho.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Juuteendi</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Fuɗɗinooji</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Winndu innde maande ndee kadi</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Waylaaka</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ko honɗum</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Ko waylotoo</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Ko kala fichier woni; ina winndee sahaa kala.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Ko gollal ngal waɗi e winndannde mum. Gollal fuɗɗaangal ɗoo ina jokka e cakkitte so ngoo hello uddaama.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Ko gollal ngal muulni no juumre</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Ko kelle ɗee innata, e kala natal loowdi yaltinaandi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Nde</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>So yaltingol waɗaaki</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>So yaltingol moƴƴii</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>So loowdi yaltinaama</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>To jokkorde yahata ngam ko nokkuure ndee jogiaani (njiylaw, seŋorde).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Nokku nokkuure statik ndee rokketee.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Lowre ndee yaltinetee, e innde jahaynde ndee.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Ina golla les laawol kala. Ko ɗum woni ko woowaa.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Ina winndee kala nde domain maa teeltaa.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Eey</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>A waawii sahaa kala mahde e yaltinde e junngo ɗoo e e konsol.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>innde tan; ko ɗum jogii ina heddoo e Teeltugol &gt; Ɗuuɗe suuɗɗe</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>les %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>gasii tawa alaa ciimtol</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ɓeydaari</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>waɗaaki</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fichier</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, walla main e dossier docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>host git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (e token) walla git@github.com:owner/repo.git (e coktirgal deploy); alaa finnde walla token e nder mum abada.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, ngam sitemap e jokkorde canonical.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>natal</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>abada</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>alaa</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>alaa remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>alaa: teeŋtine ina keddoo e dossier</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>alaa: hay huunde waylaaki</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>neldaaka</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>hay huunde waylaaki</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>hello</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>moƴƴii</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ko ñifaaɗo, ndeen gollal waawaa fuɗɗeede ɗoo. Huutoro ./console exp:static:build e sarwoor oo.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>yaltingol</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>yaltinaama</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>neldugol ina fadi</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>neldaama</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>salaama</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>jokkondirɗo</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>artirgol</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>artiraama</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ina dogga</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>dossier oo tan</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ina winndee e fichier CNAME. Fewnu DNS domain oo e host oo no o firtiri; HTTPS ina waawi neeɓude seeɗa ado fuɗɗaade.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>eey, yaltinaaka tawo</translation>
     </message>
 </context>
 </TS>

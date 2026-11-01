@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Орнатуға енгізілетін, файл ретінде сақталған өзгерістер: олардың күйі, орындаулар, орындау және кері қайтару.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Жаңа мазмұн</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ең жаңа мазмұн, тексеруге ұсталғандар және таңдалғандарға әрекеттер.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Сайттың статикалық көшірмесін GitHub Pages-ке немесе кез келген git хостқа жариялау.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статикалық жариялау</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API сақталған сұрауларының жауаптары және оның схемасының мазмұн кластары.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Статикалық көшірмені GitHub Pages-ке немесе кез келген git хостқа жариялау</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статикалық жариялау</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Статикалық кэш беттерді осы серверден береді. Сайттың статикалық көшірмесін басқа жерде, GitHub Pages-те немесе кез келген git хостта жариялау үшін статикалық жариялауды пайдаланыңыз.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Орнатуға енгізілетін, файл ретінде сақталған өзгерістер: олардың күйі, орындаулар, орындау және кері қайтару.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Сайттың статикалық көшірмесін GitHub Pages-ке немесе кез келген git хостқа жариялау.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статикалық жариялау</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Орындауды бастау мүмкін болмады.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Өзгертілген</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Жасалған</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Атауы</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Класс</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бөлім</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Жасаушы</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Жаңа мазмұн</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Бүкіл сайттың соңғы жасалған және өзгертілген мазмұны, ең жаңасы бірінші: келушілер жіберген материалдар, тексеруге ұсталғандар, жариялануды күтіп тұрған жобалар. Элементтерді ұстаудан босату, ұстау, жасыру, көрсету, жою немесе басқа бөлімге не күйге ауыстыру үшін таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Тізімді оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Тексеруге ұстау әлі бапталмаған, сондықтан ештеңе ұсталмайды және ұстау әрекеттері ұсынылмайды. Оны 6.0.15-review-hold жаңарту қадамы баптайды: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Тізімді сүзу</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Бастап</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Дейін</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Күні</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Жасалған (алғаш жарияланған)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барлығы</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Мәртебе</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Жарияланған</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Жоба, ешқашан жарияланбаған</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Күтуде (мақұлдауды немесе күнді)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Қоқыс себетінде</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Тексеруге ұсталған</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Ұсталған</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ұсталмаған</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Жасырылған</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Көрінетін</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Жіберілген кіру нүктесі</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Кез келген сайтқа кіру нүктесі</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Тек аудит жазғаны ғана.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Қазір: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Логин немесе пайдаланушы ID-і.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Сүзгі</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Сүзгілерді тазарту</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Элементтер</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ішінен %from – %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Элемент жоқ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms мс ішінде оқылды)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Таңдалған элементтерге әрекеттер</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Осы беттегінің барлығын таңдау</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count таңдалды</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Әрекет</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Әрекетті таңдаңыз</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Ұстаудан босату</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Тексеруге ұстау</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Жасыру</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Көрсету</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Қоқыс себетіне жылжыту</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Жою</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Бөлімді тағайындау</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Күйді тағайындау</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Себебі</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ұстау үшін қажет; ұстаумен бірге және аудитте сақталады.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Бөлімді таңдаңыз</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Күй</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Күйді таңдаңыз</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Таңдалғандарға қолдану</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Әрбір элемент сіздің өз рұқсаттарыңыз бойынша тексеріледі. Қоқыс себетіне жылжыту және жою растауды талап етеді. %count элементтен көбі фондық режимде орындалады.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Таңдау</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Жариялау</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Жіберілген мекенжай</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name таңдау</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>әлі жоқ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(атауы жоқ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Жоба</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Күтуде</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ата-анасы жасырған</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Ұсталған: жаңа жіберілім</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version нұсқасы күтуде</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version нұсқасы өңделуде</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Жоба, %version нұсқасы</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version нұсқасы жарияланған</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date күніне жоспарланған</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>мекенжай жоқ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>жазылмаған</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Бұл сүзгілерге ештеңе сәйкес келмейді.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Барлығын көрсету</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Әзірге мазмұн жоқ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Бетте</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Бетте %count элемент көрсету.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Жіберілімнің мекенжайы мен браузері аудит индексінен алынады, ол мұнда қолжетімсіз: бағанда «жазылмаған» деп көрсетіледі.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Мекенжай мен браузер — аудит элемент үшін жазғандар (автоұстау оларды әрқашан жазады; жариялау мен жасау тек қосылған жерде ғана), оның құпиялылық баптаулары сақтағандай.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count элемент</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Жою элементтерді барлық нұсқалары мен аудармаларымен бірге біржола жояды. Мұны болдырмау мүмкін емес.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Элементтер қоқыс себетіне түседі, оларды сол жерден қалпына келтіруге болады.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Әрбір элемент сіздің өз рұқсаттарыңыз бойынша тексеріледі; ішкі элементтері бар элемент өзгеріссіз қалады (оны мазмұн құрылымында жойыңыз). Сізден бұл сіз екеніңізді растау сұралады.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Бұл фондық режимде орындалады: оның барыс беті ашылады, ал әр элементтің нәтижесі аяқталғанда көрсетіледі.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Таңдалған элементтер</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>және тағы %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Бас тарту</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ештеңе жасалмады</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Себебі: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Әрекет әлі фондық режимде орындалуда.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Оның барысы</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Фондық әрекет сәтсіз аяқталды: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Орындалды</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Бас тартылды</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Сәтсіз</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Әр элемент бойынша</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Элемент</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиже</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Себебі</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Тізімге оралу</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Баптау</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ештеңе жасалмады</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Растау</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Әрекетті таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Кемінде бір элементті таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Бір уақытта 1000 элементтен артық таңдамаңыз.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Элементтер неге ұсталғанын көрсетіңіз.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Бөлімді таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Күйді таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Пішінді оқу мүмкін болмады.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Жаңа мазмұн</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Санауыштарды оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Тексеруге ұсталған</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Бүгін жаңа</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Тексеруге ұстау әлі бапталмаған (6.0.15-review-hold жаңарту қадамы).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Барлық жаңа мазмұн</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Сізге модерация әрекеттерін орындауға рұқсат жоқ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Модерация әрекеті аяқталмады: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модерация: %count нысанға %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total нысанның %done: %ok орындалды, %refused бас тартылды, %failed сәтсіз</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok орындалды, %refused бас тартылды, %failed сәтсіз</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ол енді жоқ.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Оның орналасқан жері жоқ (жарияланбаған).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Сізге оны жасыруға рұқсат жоқ (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Сізге оны көрсетуге рұқсат жоқ (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ол бұрыннан жасырылған.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ол жасырылмаған.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Жасырылды.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Көрсетілді.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ол қоқыс себетінде: себетті тазартыңыз немесе оны сол жерден қалпына келтіріңіз.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ешқашан жарияланбаған жобаны қоқыс себетіне жіберу мүмкін емес: оны жойыңыз.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Сізге оны жоюға рұқсат жоқ (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Жойылды.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Сізге оны алып тастауға рұқсат жоқ (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Оның ішкі элементтері бар: оны олар тізімделген мазмұн құрылымында алып тастаңыз.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ол алып тасталмады (жұмыс ағыны алып тастауды ұстап тұруы мүмкін).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Қоқыс себетіне жылжытылды.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Бөлім жоқ.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ол бұрыннан осы бөлімде.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Сізге бұл бөлімді тағайындауға рұқсат жоқ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Бөлім тағайындалмады.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Бөлім тағайындалды.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Күй жоқ.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ол бұрыннан осы күйде.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Сізге бұл күйді тағайындауға рұқсат жоқ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Күй тағайындалмады (жұмыс ағыны өзгерісті ұстап тұруы мүмкін).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Күй тағайындалды.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Мұндай әрекет жоқ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Тексеруге ұстау бапталмаған (6.0.15-review-hold жаңарту қадамы).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Оның неге ұсталғанын көрсетіңіз.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ол бұрыннан ұсталған.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Сізге оны ұстауға рұқсат жоқ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ұстау орнатылмады (жұмыс ағыны өзгерісті ұстап тұруы мүмкін).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Ұсталды.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ол ұсталмаған.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Сізге оны босатуға рұқсат жоқ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ұстау алынбады (жұмыс ағыны өзгерісті ұстап тұруы мүмкін).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Босатылды; әлі де жасырын: сізге оны көрсетуге рұқсат жоқ (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Босатылды.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Барлық мақсаттар</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Соңғы жариялау</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Сайтыңыздың тегін статикалық көшірмесін GitHub Pages-те жариялаңыз:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Ескірген беттер</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статикалық жариялау</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статикалық жариялау өшірулі.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Мақсат</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Мақсаттарды оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>тапсырма орындалуда</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>тексерілетін құрастыру</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>мұны жасыру</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>мақсат жасау</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ешқашан</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>нұсқаулықты оқу</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added қосылды, %changed өзгертілді, %removed жойылды</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Тағы %count тізімде көрсетілмеген.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages бет жазылды</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path өлшемі %size, бұл хост бір файлға рұқсат ететіннен көп.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Шектің %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag – сайттың қазіргі жариялауы.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: %id тапсырмасы</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/репозиторий/ GitHub жоба сайты үшін; жеке домен немесе пайдаланушы сайты үшін бос.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Сайт</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Хост</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Репозиторийге кіру</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Репозиторий</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Сілтемелер және негізгі жол</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Өз доменіңіз</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Құрастыруда не бар</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Қашан жарияланады</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Тексеру және сақтау</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub жоба сайты /&lt;repository&gt;/ астында орналасады; салыстырмалы сілтемелер онда да, басқа жерде де жұмыс істейді.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Құрастыру %site сайтының әр бетін жүйеге кірмеген келушіге көрінетіндей етіп жүктеп алады, сілтемелерді қайта жазады, файлдарды көшіреді және нәтижені мақсаттың қалтасына жазады. Құрастыруды тексеріп, «Жариялау» батырмасын баспайынша ештеңе жарияланбайды.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron өрнегі, мысалы 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Орналастыру кілті %secret құпиясы ретінде сақталады.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Орналастыру кілті бұл орнатымға SSH арқылы тек бір репозиторийге жіберуге мүмкіндік береді, басқа ешқайда емес. Оның жеке бөлігі Баптау &gt; Құпиялар бөлімінде қалады; тек ашық бөлігі көрсетіледі.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Осы мақсат үшін жасалған орналастыру кілті</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Орналастыру кілті SSH арқылы кіреді: git мекенжайын SSH мекенжайына өзгертіңіз (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Тапсырма орындалуда, оны бастаған: %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Осы мақсаттың тапсырмасы әлі орындалуда (%detail). Оның аяқталуын күтіңіз.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Осы мақсаттың тапсырмасы әлі орындалуда. Оның аяқталуын күтіңіз.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ бетінен /about-us/team бетіне сілтеме былай жазылады:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Жаңа орналастыру кілті жасалды. Оның ашық бөлігін репозиторийге қазір қосыңыз.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Тазалаудан кейін де жөндеу шығысы, форма токені немесе сессия идентификаторы бар бет ешқашан жарияланбайды.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Кері қайтару тәжірибелі пайдаланушыларға арналған: «Бұл нені өзгертетінін білемін» белгісін қойып, тегтің атауын қайта теріңіз.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Сайт %site дейін, бір файл %file дейін болуы мүмкін, айына шамамен 100 GB трафикпен. Тегін жоспарда репозиторий ашық болуы керек. GitHub Pages дүкендерге немесе басқа коммерциялық транзакцияларға арналмаған.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Мақсат – бір git репозиторийіне жарияланатын бір сайт. Мұнда ештеңе құрастырылмайды және жарияланбайды: «Сақтау» баптауларды settings/override/staticcache.ini.append.php файлына жазады.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Мақсат – бір жерге жарияланатын бір сайт, мысалы GitHub Pages-тегі ашық сайтыңыз.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Баптау &gt; Құпиялар бөліміндегі токен</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Оны репозиторийдің жұмыс ағыны (workflow) жариялайды.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Бұл ашық кілтті репозиторийге жазу рұқсатымен қосыңыз. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access белгісін қойыңыз.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Қосылды</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Басқа git хост</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Бұл мақсатпен басқа процесс жұмыс істеп жатыр: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Артқа</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Негізгі жол</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Бұрын</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Негізгі жолдың астында</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Тармақ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Үзілген сілтемелер</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Құрастырудағы үзілген сілтемелер</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Құрастыру</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%id құрастыруы, авторы: %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name құрастыру</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Қазір құрастыру</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Тексерілетін құрастыру</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Кім</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Қолмен, осы жерде</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Болдырмау</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өзгерту</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Өзгертілді</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Өзгерістер</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Алдымен тексеріңіз</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Осы баптауларды тексеріңіз</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Құрастыру нені өзгертетінін тексеріңіз, оны қараңыз, содан кейін жариялаңыз немесе тастаңыз.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Қайтатын жариялауды таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Кейінгі шығарылымда қолжетімді болады.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Коммиттер</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Құрастыруды коммиттейді, тег қояды және %remote ішіне жібереді. Жіберу ешқашан мәжбүрлі емес; кейін кез келген жариялауға қайта аласыз.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Алдыңғы қалтамен салыстырғанда: %added қосылды, %changed өзгертілді, %removed жойылды, %unchanged өзгеріссіз.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Соңғы жариялаумен салыстырғанда.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Кіру деректері</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Жеке домен</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Жөндеу шығысы, форма токендері, сессия идентификаторлары және nonce мәндері әрқашан алынып тасталады.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Орналастыру кілті</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name орналастыру кілті</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Тастау</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Құрастыруды тастау</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Домен</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Бос: сайттың мекенжайы. Әйтпесе сол сайттың ішкі мекенжайы.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Аяқталды</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Әр сілтеме негізгі жолдан басталады.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Әр жариялау – static/%id/&lt;n&gt; тегі бар коммит. Кері қайту бұрынғы жариялаудың файлдарымен жаңа коммит жасайды: тарих сақталады, ешбір тег жылжымайды және ештеңе мәжбүрлі емес.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Қосымша файлдар</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Беттерді жүктеп алатын мекенжай</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Файлдар</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Жетіспейтін файлдар</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Файлдары:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Жинау мүмкін болмаған файлдар</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Саусақ ізі</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Қалта</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH мекенжайы үшін. Кілт сақтағаннан кейін жасалады; оның ашық бөлігін репозиторийге өзіңіз қосасыз.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// мекенжайы үшін. GitHub: репозиторийде Contents оқу және жазу рұқсаты бар fine-grained токен.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Тәжірибелі пайдаланушыларға арналған. Жіберу аяқталған бойда ашық сайт өзгереді.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Формалар</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub репозиторийінен тегін хостинг.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Тармақтан</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git мекенжайы</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site өлшемді сайтқа және %file өлшемді файлға рұқсат етеді.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages шектеулері</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages файлдарды сол күйінде жариялайды (_ белгісінен басталатын файлдар үшін қажет).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub тармақты жіберілген күйінде береді. Әдепкі.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, өз серверіңіз: кез келген git репозиторийі.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Бұрынғы жариялауға қайту</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Анықтама</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Шебер бойынша анықтама</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Оларды жасыру</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Тарих</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name тарихы</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Хост</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages құрастыруды қалай алады</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Өзгерістерді тексердім</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Бұл нені өзгертетінін білемін</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Ол өшірулі: қосылмайынша ештеңе құрастырылмайды.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ол фондық режимде %user атынан жұмыс істейді; бұл бетті жаба аласыз.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>%id тапсырмасы</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret құпиясы ретінде сақталады.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Түрі</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Соңғы жариялау</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Мына беттерді қоспау</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Мына бөлімдерді қоспау</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Сілтемелер</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Қайта жазылған сілтемелер</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Тірі сайт</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Құрастыруды қарау</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Кіші әріптер, цифрлар, _ және -, мысалы github-public. Ол қалта мен тегтерді (static/&lt;id&gt;/&lt;n&gt;) атайды және кейін өзгертілмейді.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Жаңа кілт жасау</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Мақсат жасау</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Кілтті жасау</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Алдымен хостта репозиторий жасаңыз; бос репозиторий де жарайды.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Манифест</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Хабарлама</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Беттердің көбі</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Атауы</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Баптау &gt; Құпиялар бөліміндегі токен атауы</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Жаңа мақсат</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Келесі</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Жоқ</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Әзірге коммит жоқ.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Кілт жасалмады: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php командалық жол бағдарламасы табылмады. migration.ini [AdminSettings] PhpCliPath параметріне оның толық жолын көрсетіңіз.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Әзірге тег жоқ.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Әзірге мақсат жоқ.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ешқайсысы</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Құрастыруда жоқ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Әзірге ештеңе жарияланбаған.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Әзірге ештеңе жарияланбаған: әр файл жаңа.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Хабарландыру</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Кесте бойынша</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Консольде</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Серверде: ./console exp:static:serve %id оны дәл солай береді.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Әр жолға бір жол, * кез келген бөлікке сәйкес келеді: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Мақсатпен бірге тек атау сақталады; токеннің немесе кілттің өзі Баптау &gt; Құпиялар бөлімінде қалады және журналда ешқашан көрінбейді.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Тек беттер атайтын нәрсе</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Тек токенмен. env:NAME оның орнына сервердің орта айнымалысын оқиды.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Алдын ала қарауды ашу</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Құрастыруды мақсаттың қалтасынан хост беретіндей етіп ашады. Сілтеме сіз үшін бір сағат жұмыс істейді.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Міндетті емес. Бос: жарияланған нұсқа.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Міндетті емес. Доменмен сайт оның түбірінде беріледі.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Шығыс</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Беттер</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Мақсаттың беттері</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Қабылданбаған беттер</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Кейінгі өңдеу</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Алдын ала қарау</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Алдын ала қарау және жариялау</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name: алдын ала қарау және жариялау</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Құрастыруды алдын ала қарау</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Ашық мекенжай</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Ашық кілт</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Жариялау</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Сайттың статикалық көшірмесін GitHub Pages-ке немесе кез келген git хостқа жариялаңыз: оны құрастырыңыз, өзгерістерді тексеріңіз, жариялаңыз және қажет болғанда бұрынғы жариялауға қайтыңыз.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Қайтатын жариялау</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Жариялаулар</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Жіберу</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Нұсқаулықты оқу</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Журнал</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Қабылданбады</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Салыстырмалы</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Қайта жүктеу</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Жойылды</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Кілтті ауыстыру: ескісі жұмыс істеуін тоқтатады</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Есеп</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Құрастыру есебі</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Репозиторий</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Тексеру</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Тексеру әр баптауды тексеріп, жазылатын жолдарды көрсетеді. Әзірге ештеңе сақталмайды.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Кері қайтару</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Кері қайтару</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сақтау</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Кесте</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Іздеу беті</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Бөлім идентификаторлары, үтірмен бөлінген.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Оларды тірі сайтқа жіберу</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Параметр</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Баптаулар</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name баптаулары</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Баптау</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Баптау &gt; Құпиялар</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Тізімдерде көрсетіледі, мысалы «GitHub Pages-тегі ашық сайт».</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App арқылы кіру GitHub интеграциясымен бірге келеді.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Сайт</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Жариялайтын сайт</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Өлшемі</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Өлшемі мен шектеулері</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Құрастыру өлшемі</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Ескірген беттер</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Басталды</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Бастаған: %user, уақыты: %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Күйі</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статикалық жариялау</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Статикалық жариялау өшірулі</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статикалық жариялау өшірулі.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Статикалық жариялау өшірулі. Алдымен оны Баптау &gt; Статикалық жариялау бөлімінде қосыңыз.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Статикалық жариялау қосулы.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total ішінен %step-қадам</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Қадамдар</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Тазалау</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Өшіру</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Қосу</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Статикалық жариялауды қосу</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Тег</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Тегтер</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Мақсат</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Мақсаттарды жасауға және өзгертуге болады, бірақ ол қосылмайынша ештеңе құрастырылмайды және жарияланбайды.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Іздеу жүйелеріне не оқу керектігін айтады.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Құрастыруды тастау мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Құрастыру соңғы жариялаумен бірдей: жариялайтын ештеңе жоқ.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Құрастыру тасталды: қалтада қайтадан соңғы жариялау тұр.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Әдепкі мәндер сайттардың көбіне сәйкес келеді.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Қалтада әлі жарияланбаған құрастыру бар; жаңа құрастыру оны ауыстырады.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Тапсырмалар қалтасына жазу мүмкін емес: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Тапсырманы дайындау мүмкін болмады: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Тапсырманы бастау мүмкін болмады.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Тапсырма аяқталды. Оның есебі жүктелуде.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Тапсырмаға жүйеге кірген пайдаланушы қажет.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Тапсырма басталды, бірақ өз процесінің идентификаторын хабарламады. %detail тексеріңіз.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Кілт</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Ең үлкен файл: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Жазылатын жолдар</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Іздеу жүйелеріне арналған беттер тізімі; ашық мекенжай қажет.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Беттер жүйеге кірмеген келушіге көрінетіндей етіп жүктеп алынады. Әкімшілік және өңдеу siteaccess-тері ешқашан ұсынылмайды.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Барысын қадағалау мүмкін болмады. Тапсырманың қалай орындалып жатқанын көру үшін бетті қайта жүктеңіз.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Кілттің ашық бөлігі:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Тармақтың түбірі</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Құпиялар қоймасы әлі бапталмаған (./console exp:upgrade --apply оның кестесін жасайды), сондықтан кілтті сақтау мүмкін емес.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Сервер өзі кіреді (өз SSH кілтімен немесе credential helper арқылы), немесе репозиторий осы серверде.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Баптауды жазу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Баптаулар дұрыс. Мына жолдар жазылады:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Баптаулар файлын оқу мүмкін емес: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Сайт сол жариялаудың файлдарына қайтады; әлі жарияланбаған құрастыруды алдымен жариялау немесе тастау керек.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Жоқ мекенжайларға арналған сайттың өз беті.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Мақсатты сақтау мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Мақсат әлі бұл кілтпен кірмейді: оның баптауларында «Осы мақсат үшін жасалған орналастыру кілті» тармағын таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Мақсаттарды оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Әзірге тексерілетін құрастыру жоқ.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Бұл орнатымда ашық siteaccess жоқ. Әкімшілік және өңдеу siteaccess-тері ешқашан жарияланбайды.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Бұл бет тапсырманың барысын қадағалайды; бет жабылғанда тапсырма фондық режимде жалғасады.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Бұл мақсаттың әлі орналастыру кілті жоқ.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Бұл мақсат мұнда әлі құрастырылмаған.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Бұл мақсатта бар.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Бұл құрастыруды тастайды: қалтада қайтадан соңғы жариялау болады. Тірі сайт өзгермейді.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Алдымен «Өзгерістерді тексердім» белгісін қойыңыз.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Уақыт</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Іске қосушылар</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Тегтің атауын қайта теріңіз</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Өзгеріссіз</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Вебхук</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Не өзгереді</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Әр файлдың не екені; әрқашан жазылады.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Тапсырманың не істегені және оның журналы. Осы жерде басталған тапсырма бет жабылғанда фондық режимде жалғасады.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Тапсырма қате ретінде шығарған мәтін</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Беттер атайтын нәрсе және жарияланған мазмұнның барлық суреттері</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Қашан</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Жариялау сәтсіз болғанда</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Жариялау сәтті болғанда</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Мазмұн жарияланғанда</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Көшірмеде жоқ нәрсеге (іздеу, кіру) сілтемелер қайда апарады.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Статикалық көшірме қайдан беріледі.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Қай сайт жарияланады және мақсат қалай аталады.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Кез келген жолдың астында жұмыс істейді. Әдепкі.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Жеке домен орнатылған кезде жазылады.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Иә</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Мұнда және консольде әрқашан қолмен құрастырып, жариялай аласыз.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>тек атау; мәні Баптау &gt; Құпиялар бөлімінде қалады</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path астында</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>есепсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>қосымша</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>сәтсіз</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>файл</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages немесе docs қалтасы бар main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git хост</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (токенмен) немесе git@github.com:owner/repo.git (орналастыру кілтімен); ішінде ешқашан құпиясөз немесе токен болмауы керек.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, сайт картасы мен канондық сілтемелер үшін.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>сурет</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ешқашан</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>жоқ</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>қашықтағы репозиторий жоқ</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>жоқ: коммиттер қалтада қалады</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>жоқ: ештеңе өзгермеді</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>жіберілмеген</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ештеңе өзгермеді</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>бет</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>сәтті</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open өшірулі, сондықтан мұнда тапсырманы бастау мүмкін емес. Серверде ./console exp:static:build пайдаланыңыз.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>жариялау</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>жарияланды</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>жіберу күтуде</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>жіберілді</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>қабылданбады</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>салыстырмалы</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>кері қайтару</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>кері қайтарылды</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>орындалуда</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>тек қалта</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME файлына жазылады. Доменнің DNS жазбасын хост түсіндіргендей оған бағыттаңыз; HTTPS іске қосылуына біраз уақыт кетуі мүмкін.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>иә, әлі жарияланбаған</translation>
     </message>
 </context>
 </TS>

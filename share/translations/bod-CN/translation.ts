@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ཡིག་ཆའི་རྣམ་པར་ཉར་བའི་སྒྲིག་འཇུག་གི་འགྱུར་བ། དེ་དག་གི་གནས་སྟངས། འཁོར་སྐྱོད་ཁག འཁོར་སྐྱོད་དང་ཕྱིར་ལོག</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ཉེ་ཆར་གྱི་ནང་དོན།</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ནང་དོན་གསར་ཤོས། ཞིབ་བཤེར་ཆེད་འཇོག་ཉར་བྱས་པ། འདེམས་ཟིན་པའི་བྱ་སྤྱོད།</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>དྲ་ཚིགས་ཀྱི་ཁ་བརྟན་འདྲ་བཤུས་ GitHub Pages ཡང་ན་ git བཅོལ་ཉར་ས་གང་རུང་དུ་འགྲེམས་སྤེལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API ཡི་ཉར་ཚགས་བྱས་པའི་འདྲི་རྩད་ཀྱི་ལན་དང་། དེའི་གཞི་ཁྲམ་གྱི་ནང་དོན་རིགས།</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>ཁ་བརྟན་འདྲ་བཤུས་ GitHub Pages ཡང་ན་ git བཅོལ་ཉར་ས་གང་རུང་དུ་འགྲེམས་སྤེལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ཁ་བརྟན་མྱུར་ཉར་གྱིས་ཞབས་ཞུ་འཕྲུལ་ཆས་འདི་ནས་དྲ་ངོས་མཁོ་སྤྲོད་བྱེད། དྲ་ཚིགས་ཀྱི་ཁ་བརྟན་འདྲ་བཤུས་གནས་གཞན་དུ་ GitHub Pages ཡང་ན་ git བཅོལ་ཉར་ས་གང་རུང་དུ་འགྲེམས་སྤེལ་བྱེད་ན། ཁ་བརྟན་འགྲེམས་སྤེལ་བེད་སྤྱོད་གནང་།</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ཡིག་ཆའི་རྣམ་པར་ཉར་བའི་སྒྲིག་འཇུག་གི་འགྱུར་བ། དེ་དག་གི་གནས་སྟངས། འཁོར་སྐྱོད་ཁག འཁོར་སྐྱོད་དང་ཕྱིར་ལོག</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>དྲ་ཚིགས་ཀྱི་ཁ་བརྟན་འདྲ་བཤུས་ GitHub Pages ཡང་ན་ git བཅོལ་ཉར་ས་གང་རུང་དུ་འགྲེམས་སྤེལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ།</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>འཁོར་སྐྱོད་འགོ་འཛུགས་མ་ཐུབ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>བཟོ་བཅོས་བྱས།</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>གསར་བཟོ་བྱས།</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>མིང་།</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>རིགས།</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>སྡེ་ཚན།</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>གསར་བཟོ་བྱེད་མཁན།</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ཉེ་ཆར་གྱི་ནང་དོན།</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>དྲ་ཚིགས་ཧྲིལ་པོའི་ནང་ཉེ་ཆར་གསར་བཟོ་དང་བཟོ་བཅོས་བྱས་པའི་ནང་དོན། གསར་ཤོས་སྔོན་ལ། ལྟ་མཁན་གྱིས་ཕུལ་བ། ཞིབ་བཤེར་ཆེད་འཇོག་ཉར་བྱས་པ། འགྲེམས་སྤེལ་ལ་སྒུག་བཞིན་པའི་ཟིན་བྲིས། འཇོག་ཉར་གློད་པ། འཇོག་ཉར་བྱེད་པ། སྦས་པ། མངོན་པ། སུབ་པ། ཡང་ན་སྡེ་ཚན་དང་རྣམ་པ་གཞན་དུ་སྤོ་བར་དངོས་པོ་འདེམས་རོགས།</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ཐོ་འདི་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ཞིབ་བཤེར་འཇོག་ཉར་ད་དུང་སྒྲིག་བཀོད་བྱས་མེད། དེར་བརྟེན་གང་ཡང་འཇོག་ཉར་བྱས་མེད་ལ་འཇོག་ཉར་གྱི་བྱ་སྤྱོད་ཀྱང་མི་འདོན། རིམ་སྤོར་གོམ་རིམ 6.0.15-review-hold ཡིས་དེ་སྒྲིག་བཀོད་བྱེད། ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ཐོ་འཚག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ནས།</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>བར།</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ཚེས་གྲངས།</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>གསར་བཟོ་བྱས། (ཐེངས་དང་པོར་འགྲེམས་སྤེལ།)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ཚང་མ།</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>གནས་སྟངས།</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>འགྲེམས་སྤེལ་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ཟིན་བྲིས། ནམ་ཡང་འགྲེམས་སྤེལ་བྱས་མེད།</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>སྒུག་བཞིན་པ། (ཆོག་མཆན་ནམ་ཚེས་གྲངས་ལ་སྒུག་བཞིན།)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>གད་སྙིགས་སྒམ་ནང་།</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ཞིབ་བཤེར་ཆེད་འཇོག་ཉར་བྱས།</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>འཇོག་ཉར་བྱས།</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>འཇོག་ཉར་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>སྦས་པ།</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>མཐོང་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ཕུལ་ས།</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོ་གང་རུང་།</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>རྩིས་ཞིབ་ཀྱིས་ཐོ་འགོད་བྱས་པ་ཁོ་ན།</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ད་ལྟ། %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ནང་འཛུལ་མིང་ངམ་སྤྱོད་མཁན་ID།</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>འཚག་འདེམས་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>འཚག་འདེམས་གཙང་སེལ།</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>དངོས་པོ།</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ལས %from ནས %to བར།</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>དངོས་པོ་མེད།</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms ནང་ཀློག་ཟིན།)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>འདེམས་ཟིན་པའི་དངོས་པོའི་བྱ་སྤྱོད།</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ཤོག་ངོས་འདིའི་ཚང་མ་འདེམས།</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count འདེམས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>བྱ་སྤྱོད།</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>བྱ་སྤྱོད་ཅིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>འཇོག་ཉར་གློད།</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ཞིབ་བཤེར་ཆེད་འཇོག་ཉར།</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>སྦས།</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>མངོན།</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>གད་སྙིགས་སྒམ་དུ་སྤོ།</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>བསུབ།</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>སྡེ་ཚན་བགོ་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>རྣམ་པ་བགོ་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>རྒྱུ་མཚན།</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>འཇོག་ཉར་ལ་དགོས། འཇོག་ཉར་དང་རྩིས་ཞིབ་ནང་ཉར་ཚགས་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>སྡེ་ཚན་ཞིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>རྣམ་པ།</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>རྣམ་པ་ཞིག་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>འདེམས་ཟིན་པར་སྤྱོད།</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>དངོས་པོ་རེ་རེ་ཁྱེད་རང་གི་ཆོག་མཆན་ལྟར་ཞིབ་བཤེར་བྱེད། གད་སྙིགས་སྒམ་དུ་སྤོ་བ་དང་བསུབ་པར་ཁྱེད་ཀྱི་ངེས་གཏན་དགོས། %count ལས་མང་བའི་དངོས་པོ་རྒྱབ་ལྗོངས་སུ་འཁོར།</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>འདེམས།</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ཕུལ་བའི་འབྱུང་ཁུངས།</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name འདེམས།</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ད་དུང་མེད།</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(མིང་མེད།)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ཟིན་བྲིས།</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>སྒུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ཕ་མའི་རྒྱུ་ལས་སྦས་པ།</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>འཇོག་ཉར་བྱས། ཕུལ་བ་གསར་པ།</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>པར་གཞི %version སྒུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>པར་གཞི %version བྱེད་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ཟིན་བྲིས། པར་གཞི %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>པར་གཞི %version འགྲེམས་སྤེལ་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ལ་འཆར་གཞི་བཀོད།</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ཁ་བྱང་མེད།</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ཐོ་འགོད་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>འཚག་འདེམས་འདི་དག་དང་མཐུན་པ་གང་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ཚང་མ་སྟོན།</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ད་དུང་ནང་དོན་མེད།</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ཤོག་ངོས་རེར།</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ཤོག་ངོས་རེར་དངོས་པོ %count སྟོན།</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ཕུལ་བའི་ཁ་བྱང་དང་བཤར་ཆས་རྩིས་ཞིབ་དཀར་ཆག་ནས་ཡོང་། དེ་འདིར་མི་ཐོབ། སྟར་ཕྲེང་ནང་"ཐོ་འགོད་མ་བྱས།"ཞེས་སྟོན།</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ཁ་བྱང་དང་བཤར་ཆས་ནི་རྩིས་ཞིབ་ཀྱིས་དངོས་པོ་དེའི་ཆེད་ཐོ་འགོད་བྱས་པ་ཡིན། (རང་འགུལ་འཇོག་ཉར་གྱིས་རྟག་ཏུ་ཐོ་འགོད་བྱེད། འགྲེམས་སྤེལ་དང་གསར་བཟོ་ནི་ཁ་ཕྱེ་བའི་སྐབས་ཁོ་ན།) སྒེར་དོན་སྒྲིག་འགོད་ལྟར་ཉར་ཚགས་བྱེད།</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: དངོས་པོ %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>བསུབ་ན་དངོས་པོ་དག་པར་གཞི་དང་ཡིག་སྒྱུར་ཡོངས་རྫོགས་དང་མཉམ་དུ་གཏན་འཁེལ་སུབ་ངེས། ཕྱིར་ལོག་བྱེད་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>དངོས་པོ་དག་གད་སྙིགས་སྒམ་དུ་འགྲོ། དེ་ནས་སླར་གསོ་བྱེད་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>དངོས་པོ་རེ་རེ་ཁྱེད་རང་གི་ཆོག་མཆན་ལྟར་ཞིབ་བཤེར་བྱེད། དངོས་པོ་ཕལ་བ་ཡོད་པའི་དངོས་པོ་ཇི་བཞིན་བཞག་ངེས། (ནང་དོན་སྒྲིག་གཞིའི་ནང་སུབ་རོགས།) ཁྱེད་རང་ཡིན་པ་ར་སྤྲོད་བྱེད་དགོས།</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>འདི་རྒྱབ་ལྗོངས་སུ་འཁོར། དེའི་འཕེལ་རིམ་ཤོག་ངོས་ཁ་ཕྱེ་ནས་ཚར་རྗེས་དངོས་པོ་རེ་རེའི་མཇུག་འབྲས་སྟོན།</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>འདེམས་ཟིན་པའི་དངོས་པོ།</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ད་དུང %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ཕྱིར་འཐེན།</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>གང་ཡང་བྱས་མེད།</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>རྒྱུ་མཚན། %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>བྱ་སྤྱོད་ད་དུང་རྒྱབ་ལྗོངས་སུ་འཁོར་བཞིན་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>དེའི་འཕེལ་རིམ།</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>རྒྱབ་ལྗོངས་བྱ་སྤྱོད་ཕམ། %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ཚར།</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ཁས་མ་བླངས།</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ཕམ།</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>དངོས་པོ་རེ་རེར།</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>དངོས་པོ།</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>མཇུག་འབྲས།</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ཅིའི་ཕྱིར།</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ཐོར་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>གང་ཡང་བྱས་མེད།</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ངེས་གཏན།</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>བྱ་སྤྱོད་ཅིག་འདེམས་རོགས།</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ཉུང་མཐར་དངོས་པོ་གཅིག་འདེམས་རོགས།</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ཐེངས་རེར་མང་མཐར་དངོས་པོ 1000 འདེམས་རོགས།</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>དངོས་པོ་འཇོག་ཉར་བྱེད་པའི་རྒྱུ་མཚན་ཤོད་རོགས།</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>སྡེ་ཚན་འདེམས་རོགས།</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>རྣམ་པ་འདེམས་རོགས།</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>རེའུ་མིག་ཀློག་མ་ཐུབ།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ཉེ་ཆར་གྱི་ནང་དོན།</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>གྲངས་ཀ་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ཞིབ་བཤེར་ཆེད་འཇོག་ཉར་བྱས།</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>དེ་རིང་གསར་པ།</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ཞིབ་བཤེར་འཇོག་ཉར་ད་དུང་སྒྲིག་བཀོད་བྱས་མེད། (རིམ་སྤོར་གོམ་རིམ 6.0.15-review-hold)</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ཉེ་ཆར་གྱི་ནང་དོན་ཚང་མ།</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ཁྱེད་ཀྱིས་ཞིབ་བཤེར་བྱ་སྤྱོད་འཁོར་མི་ཆོག (moderation/act)</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ཞིབ་བཤེར་བྱ་སྤྱོད་མ་ཚར། %errors།</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ཞིབ་བཤེར། དངོས་པོ %count ལ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>དངོས་པོ %total ལས %done། %ok ཚར། %refused ཁས་མ་བླངས། %failed ཕམ།</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ཚར། %refused ཁས་མ་བླངས། %failed ཕམ།</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>དེ་ད་ནས་མེད།</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>དེ་ལ་གནས་ས་མེད། (འགྲེམས་སྤེལ་བྱས་མེད།)</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ཁྱེད་ཀྱིས་དེ་སྦས་མི་ཆོག (content/hide)</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ཁྱེད་ཀྱིས་དེ་མངོན་མི་ཆོག (content/hide)</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>དེ་སྔོན་ནས་སྦས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>དེ་སྦས་མེད།</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>སྦས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>མངོན་ཟིན།</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>དེ་གད་སྙིགས་སྒམ་ནང་ཡོད། དེར་སྟོང་པ་བཟོ་བའམ་སླར་གསོ་བྱེད་རོགས།</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ནམ་ཡང་འགྲེམས་སྤེལ་མ་བྱས་པའི་ཟིན་བྲིས་གད་སྙིགས་སྒམ་དུ་འགྲོ་མི་ཐུབ། དེ་བསུབ་རོགས།</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ཁྱེད་ཀྱིས་དེ་བསུབ་མི་ཆོག (content/remove)</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>བསུབ་ཟིན།</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ཁྱེད་ཀྱིས་དེ་སེལ་མི་ཆོག (content/remove)</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>དེ་ལ་དངོས་པོ་ཕལ་བ་ཡོད། དེ་དག་ཐོར་བཀོད་པའི་ནང་དོན་སྒྲིག་གཞིའི་ནང་སུབ་རོགས།</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>དེ་སེལ་མེད། (ལས་རིམ་ཞིག་གིས་སེལ་བ་འཇོག་ཉར་བྱས་སྲིད།)</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>གད་སྙིགས་སྒམ་དུ་སྤོས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>སྡེ་ཚན་དེ་མེད།</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>དེ་སྔོན་ནས་སྡེ་ཚན་འདིའི་ནང་ཡོད།</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ཁྱེད་ཀྱིས་སྡེ་ཚན་འདི་བགོ་སྤྲོད་བྱེད་མི་ཆོག (section/assign)</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>སྡེ་ཚན་བགོ་སྤྲོད་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>སྡེ་ཚན་བགོ་སྤྲོད་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>རྣམ་པ་དེ་མེད།</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>དེ་སྔོན་ནས་རྣམ་པ་འདིར་ཡོད།</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ཁྱེད་ཀྱིས་རྣམ་པ་འདི་བགོ་སྤྲོད་བྱེད་མི་ཆོག (state/assign)</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>རྣམ་པ་བགོ་སྤྲོད་མ་བྱས། (ལས་རིམ་ཞིག་གིས་འགྱུར་བ་འཇོག་ཉར་བྱས་སྲིད།)</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>རྣམ་པ་བགོ་སྤྲོད་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>བྱ་སྤྱོད་དེ་འདྲ་མེད།</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ཞིབ་བཤེར་འཇོག་ཉར་སྒྲིག་བཀོད་བྱས་མེད། (རིམ་སྤོར་གོམ་རིམ 6.0.15-review-hold)</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>དེ་འཇོག་ཉར་བྱེད་པའི་རྒྱུ་མཚན་ཤོད་རོགས།</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>དེ་སྔོན་ནས་འཇོག་ཉར་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ཁྱེད་ཀྱིས་དེ་འཇོག་ཉར་བྱེད་མི་ཆོག (state/assign)</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>འཇོག་ཉར་མ་བྱས། (ལས་རིམ་ཞིག་གིས་འགྱུར་བ་འཇོག་ཉར་བྱས་སྲིད།)</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>འཇོག་ཉར་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>དེ་འཇོག་ཉར་བྱས་མེད།</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ཁྱེད་ཀྱིས་དེ་གློད་མི་ཆོག (state/assign)</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>འཇོག་ཉར་གློད་མེད། (ལས་རིམ་ཞིག་གིས་འགྱུར་བ་འཇོག་ཉར་བྱས་སྲིད།)</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>གློད་ཟིན། ད་དུང་སྦས་ཡོད། ཁྱེད་ཀྱིས་དེ་མངོན་མི་ཆོག (content/hide)</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>གློད་ཟིན།</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>དམིགས་ཡུལ་ཚང་མ།</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>མཐའ་མའི་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>ཁྱེད་ཀྱི་དྲ་ཚིགས་ཀྱི་ཁ་བརྟན་འདྲ་བཤུས་རིན་མེད་ཅིག GitHub Pages སྟེང་འགྲེམས་སྤེལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ཡལ་བའི་དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ་སྒོ་བརྒྱབ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>དམིགས་ཡུལ།</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>དམིགས་ཡུལ་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ལས་ཀ་ཞིག་འཁོར་སྐྱོད་བྱེད་བཞིན་ཡོད།</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ཞིབ་བཤེར་བྱ་རྒྱུའི་བཟོ་སྐྲུན།</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>འདི་སྦས།</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>དམིགས་ཡུལ་ཞིག་བཟོ།</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ནམ་ཡང་མིན།</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>སློབ་ཚན་ཀློག</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added སྣོན། %changed བསྒྱུར། %removed བསུབ།</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit ནང་ནས་ %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>ད་དུང་ %count ཐོ་ནང་མ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>དྲ་ངོས་ %pages བྲིས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ནི་ %size ཡིན། བཅོལ་ཉར་ས་ཡིས་ཡིག་ཆ་གཅིག་ལ་ཆོག་པ་ལས་བརྒལ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>ཚད་བཀག་གི་ %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>སྐར་ཆ་ %seconds</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ནི་དྲ་ཚིགས་ལ་ད་ལྟ་ཡོད་པའི་འགྲེམས་སྤེལ་ཡིན།</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ལས་ཀ་ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub འཆར་གཞིའི་དྲ་ཚིགས་ལ་ /མཛོད་ཁང་/ ། རང་གི་ཁྱབ་ཁོངས་སམ་བེད་སྤྱོད་པའི་དྲ་ཚིགས་ལ་སྟོང་པ།</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>༡. དྲ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>༢. བཅོལ་ཉར་ས།</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>༣. མཛོད་ཁང་དུ་ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>༤. མཛོད་ཁང་།</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>༥. སྦྲེལ་ཐག་དང་གཞི་རྩའི་ལམ་ཐིག</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>༦. ཁྱེད་རང་གི་ཁྱབ་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>༧. བཟོ་སྐྲུན་ནང་ཅི་ཡོད།</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>༨. ནམ་འགྲེམས་སྤེལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>༩. བསྐྱར་ཞིབ་དང་ཉར་ཚགས།</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub འཆར་གཞིའི་དྲ་ཚིགས་ནི་ /&lt;repository&gt;/ འོག་ཏུ་ཡོད། འབྲེལ་ཡོད་སྦྲེལ་ཐག་དེ་དང་གནས་གཞན་གང་དུའང་ལག་ལེན་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>བཟོ་སྐྲུན་ཞིག་གིས་ %site ཡི་དྲ་ངོས་རེ་རེ་ནང་མ་འཛུལ་བའི་ལྟ་མཁན་གྱིས་མཐོང་བ་ལྟར་ལེན། སྦྲེལ་ཐག་བསྐྱར་འབྲི་བྱེད། ཡིག་ཆ་འདྲ་བཤུས་བྱེད། མཇུག་འབྲས་དམིགས་ཡུལ་གྱི་ཡིག་སྣོད་དུ་འབྲི། ཁྱེད་ཀྱིས་བཟོ་སྐྲུན་ཞིབ་བཤེར་བྱས་ཏེ་འགྲེམས་སྤེལ་མ་མནན་བར་གང་ཡང་འགྲེམས་སྤེལ་མི་བྱེད།</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron བརྗོད་ཚིག་ཅིག དཔེར་ན། 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>སྤེལ་འཇུག་ལྡེ་མིག་གསང་བ་ %secret ལྟར་ཉར་ཡོད།</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>སྤེལ་འཇུག་ལྡེ་མིག་གིས་སྒྲིག་འཇུག་འདིར་ SSH བརྒྱུད་མཛོད་ཁང་གཅིག་ཁོ་ནར་སྐྱེལ་བ་བྱེད་དུ་འཇུག་ལ། གནས་གཞན་དུ་མི་འཇུག དེའི་སྒེར་གྱི་ཕྱེད་ཀ་ སྒྲིག་བཀོད། &gt; གསང་བ། ནང་དུ་ལུས། སྤྱི་སྤྱོད་ཕྱེད་ཀ་ཁོ་ན་མངོན།</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>དམིགས་ཡུལ་འདིའི་ཆེད་དུ་བཟོས་པའི་སྤེལ་འཇུག་ལྡེ་མིག</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>སྤེལ་འཇུག་ལྡེ་མིག་གིས་ SSH བརྒྱུད་ནང་འཛུལ་བྱེད། git ཁ་བྱང་ SSH ཁ་བྱང་དུ་བསྒྱུར། (git@github.com:owner/repo.git)</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ལས་ཀ་ཞིག་འཁོར་སྐྱོད་བྱེད་བཞིན་ཡོད། འགོ་འཛུགས་མཁན་ %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>དམིགས་ཡུལ་འདིའི་ལས་ཀ་ཞིག་ད་དུང་འཁོར་སྐྱོད་བྱེད་བཞིན་ཡོད། (%detail) མཇུག་མ་རྫོགས་བར་སྒུག</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>དམིགས་ཡུལ་འདིའི་ལས་ཀ་ཞིག་ད་དུང་འཁོར་སྐྱོད་བྱེད་བཞིན་ཡོད། མཇུག་མ་རྫོགས་བར་སྒུག</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>དྲ་ངོས་ /news/ ནས་དྲ་ངོས་ /about-us/team ལ་སྦྲེལ་བའི་སྦྲེལ་ཐག་འདི་ལྟར་འབྲི་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>སྤེལ་འཇུག་ལྡེ་མིག་གསར་པ་ཞིག་བཟོས་ཟིན། དེའི་སྤྱི་སྤྱོད་ཕྱེད་ཀ་ད་ལྟ་མཛོད་ཁང་དུ་སྣོན།</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>གཙང་སེལ་བྱས་རྗེས་ད་དུང་ debug ཐོན་འབྲས་དང་། རེའུ་མིག་ལག་ཁྱེར། ཡང་ན་ session ID ཡོད་པའི་དྲ་ངོས་ནམ་ཡང་འགྲེམས་སྤེལ་མི་བྱེད།</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ཕྱིར་ལོག་ནི་མཁས་པའི་ཆེད་དུ་ཡིན། &quot;འདིས་ཅི་ཞིག་བསྒྱུར་རྒྱུ་ང་ལ་ཤེས།&quot; ལ་རྟགས་རྒྱག་པ་དང་། རྟགས་བྱང་གི་མིང་བསྐྱར་དུ་འབྲི།</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>དྲ་ཚིགས་ཀྱི་ཆེ་ཆུང་ %site བར། ཡིག་ཆ་གཅིག་ %file བར་ཡིན་ཆོག ཟླ་རེར་ 100 GB ཙམ་གྱི་འགྲིམ་འགྲུལ་ཡོད། རིན་མེད་འཆར་གཞིའི་ཐོག་མཛོད་ཁང་སྤྱི་སྤྱོད་ཡིན་དགོས། GitHub Pages ནི་ཚོང་ཁང་ངམ་ཚོང་དོན་གྱི་ཉོ་འཚོང་གཞན་ཆེད་དུ་མིན།</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>དམིགས་ཡུལ་ནི་དྲ་ཚིགས་གཅིག་ git མཛོད་ཁང་གཅིག་ཏུ་འགྲེམས་སྤེལ་བ་ཡིན། འདིར་གང་ཡང་བཟོ་སྐྲུན་དང་འགྲེམས་སྤེལ་མི་བྱེད། ཉར་ཚགས། ཡིས་སྒྲིག་འགོད་ settings/override/staticcache.ini.append.php ནང་འབྲི།</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>དམིགས་ཡུལ་ནི་དྲ་ཚིགས་གཅིག་གནས་གཅིག་ཏུ་འགྲེམས་སྤེལ་བ་ཡིན། དཔེར་ན། GitHub Pages སྟེང་གི་ཁྱེད་ཀྱི་སྤྱི་སྤྱོད་དྲ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>སྒྲིག་བཀོད། &gt; གསང་བ། ནས་ལག་ཁྱེར་ཞིག</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>མཛོད་ཁང་གི་ལས་རིམ་ (workflow) ཞིག་གིས་འདི་འགྲེམས་སྤེལ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>སྤྱི་སྤྱོད་ལྡེ་མིག་འདི་འབྲི་ཆོག་པའི་དབང་ཚད་དང་མཉམ་དུ་མཛོད་ཁང་ལ་སྣོན། GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access ལ་རྟགས་རྒྱག</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>སྣོན་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>git བཅོལ་ཉར་ས་གཞན།</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>བྱ་རིམ་གཞན་ཞིག་དམིགས་ཡུལ་འདིའི་ཐོག་ལས་ཀ་བྱེད་བཞིན་ཡོད། %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>གཞི་རྩའི་ལམ་ཐིག</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>སྔོན།</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>གཞི་རྩའི་ལམ་ཐིག་འོག</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ཡན་ལག</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ཆག་པའི་སྦྲེལ་ཐག</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>བཟོ་སྐྲུན་ནང་གི་ཆག་པའི་སྦྲེལ་ཐག</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>བཟོ་སྐྲུན།</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>བཟོ་སྐྲུན་ %id ། བྱེད་མཁན་ %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name བཟོ་སྐྲུན་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ད་ལྟ་བཟོ་སྐྲུན་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>ཞིབ་བཤེར་བྱ་རྒྱུའི་བཟོ་སྐྲུན།</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>བྱེད་མཁན།</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ལག་བཟོ། འདིར།</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ཕྱིར་འཐེན།</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>བསྒྱུར།</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>བསྒྱུར་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>འགྱུར་བ།</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>སྔོན་ལ་ཞིབ་བཤེར་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>སྒྲིག་འགོད་འདི་དག་ཞིབ་བཤེར་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>བཟོ་སྐྲུན་གྱིས་ཅི་ཞིག་བསྒྱུར་བ་ཞིབ་བཤེར་བྱེད། དེར་ལྟ། དེ་ནས་འགྲེམས་སྤེལ་བྱེད་པའམ་དོར།</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ཕྱིར་ལོག་བྱ་རྒྱུའི་འགྲེམས་སྤེལ་འདེམས།</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>རྗེས་མའི་པར་གཞི་ཞིག་ཏུ་ཡོང་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ཀོམ་མིཊ།</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ཀོམ་མིཊ་ཁག</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>བཟོ་སྐྲུན་ཀོམ་མིཊ་བྱེད། རྟགས་བྱང་སྦྱར། %remote ལ་སྐྱེལ་བ་བྱེད། སྐྱེལ་བ་ནམ་ཡང་བཙན་ཤེད་མི་བྱེད། རྗེས་སུ་འགྲེམས་སྤེལ་གང་རུང་ལ་ཕྱིར་ལོག་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>སྔོན་གྱི་ཡིག་སྣོད་དང་བསྡུར་ན། %added སྣོན། %changed བསྒྱུར། %removed བསུབ། %unchanged མ་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>མཐའ་མའི་འགྲེམས་སྤེལ་དང་བསྡུར་བ།</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ངོ་སྤྲོད་ལག་ཁྱེར།</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>རང་གི་ཁྱབ་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>debug ཐོན་འབྲས་དང་། རེའུ་མིག་ལག་ཁྱེར། session ID། nonce བཅས་རྟག་ཏུ་བསུབ།</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>སྤེལ་འཇུག་ལྡེ་མིག</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ཡི་སྤེལ་འཇུག་ལྡེ་མིག</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>དོར།</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>བཟོ་སྐྲུན་དོར།</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ཁྱབ་ཁོངས།</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>སྟོང་པ། དྲ་ཚིགས་ཀྱི་ཁ་བྱང་། དེ་མིན་དྲ་ཚིགས་དེ་ཉིད་ཀྱི་ནང་ཁུལ་ཁ་བྱང་ཞིག</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>མཇུག་རྫོགས།</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>སྦྲེལ་ཐག་རེ་རེ་གཞི་རྩའི་ལམ་ཐིག་ནས་འགོ་འཛུགས།</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>འགྲེམས་སྤེལ་རེ་རེ་ནི་རྟགས་བྱང་ static/%id/&lt;n&gt; ཡོད་པའི་ཀོམ་མིཊ་ཞིག་ཡིན། ཕྱིར་ལོག་བྱས་ན་སྔོན་གྱི་འགྲེམས་སྤེལ་ཞིག་གི་ཡིག་ཆས་ཀོམ་མིཊ་གསར་པ་ཞིག་བཟོ། ལོ་རྒྱུས་ལུས། རྟགས་བྱང་གང་ཡང་མི་སྤོ། གང་ཡང་བཙན་ཤེད་མི་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>ཟུར་སྣོན།</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>དྲ་ངོས་ལེན་ས།</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ཡིག་ཆ།</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ཡིག་ཆ་ཁག</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ཡིག་ཆ་མི་འདུག</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ཡིག་ཆའི་འབྱུང་ཁུངས།</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>བསྡུ་མ་ཐུབ་པའི་ཡིག་ཆ།</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>མཛུབ་རིས།</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ཡིག་སྣོད།</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH ཁ་བྱང་ཆེད། ཉར་ཚགས་བྱས་རྗེས་ལྡེ་མིག་བཟོ། ཁྱེད་ཀྱིས་དེའི་སྤྱི་སྤྱོད་ཕྱེད་ཀ་མཛོད་ཁང་ལ་སྣོན།</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// ཁ་བྱང་ཆེད། GitHub: མཛོད་ཁང་ཐོག་ Contents ཀློག་འབྲི་ཡོད་པའི་ fine-grained ལག་ཁྱེར་ཞིག</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>མཁས་པའི་ཆེད། སྐྱེལ་བ་གྲུབ་མ་ཐག་སྤྱི་སྤྱོད་དྲ་ཚིགས་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>རེའུ་མིག</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub མཛོད་ཁང་ནས་རིན་མེད་བཅོལ་ཉར།</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ཡན་ལག་ནས།</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages ཡིས་དྲ་ཚིགས་ %site དང་ཡིག་ཆ་ %file བར་ཆོག</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ཡི་ཚད་བཀག</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ཡིས་ཡིག་ཆ་ཇི་བཞིན་འགྲེམས་སྤེལ་བྱེད། (_ ཡིས་འགོ་འཛུགས་པའི་ཡིག་ཆར་དགོས།)</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ཡིས་ཡན་ལག་སྐྱེལ་བ་བྱས་པ་ཇི་བཞིན་མཁོ་སྤྲོད་བྱེད། སྔོན་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ཁྱེད་རང་གི་ཞབས་ཞུ་འཕྲུལ་ཆས། git མཛོད་ཁང་གང་རུང་།</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>སྔོན་གྱི་འགྲེམས་སྤེལ་ཞིག་ལ་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>རོགས་རམ།</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>ལམ་སྟོན་ཆས་ཀྱི་རོགས་རམ།</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>དེ་དག་སྦས།</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ལོ་རྒྱུས།</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ཡི་ལོ་རྒྱུས།</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>བཅོལ་ཉར་ས།</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ཡིས་བཟོ་སྐྲུན་ཇི་ལྟར་ལེན་པ།</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ངས་འགྱུར་བ་ཞིབ་བཤེར་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>འདིས་ཅི་ཞིག་བསྒྱུར་རྒྱུ་ང་ལ་ཤེས།</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ཐོ་ཨང་།</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>སྒོ་བརྒྱབ་ཡོད། སྒོ་མ་ཕྱེ་བར་གང་ཡང་བཟོ་སྐྲུན་བྱེད་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>རྒྱབ་ལྗོངས་སུ་ %user ལྟར་འཁོར་སྐྱོད་བྱེད། ཁྱེད་ཀྱིས་དྲ་ངོས་འདི་སྒོ་རྒྱག་ཆོག</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ལས་ཀ་ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>གསང་བ་ %secret ལྟར་ཉར་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>རིགས།</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>མཐའ་མའི་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>དྲ་ངོས་འདི་དག་ཕུད།</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>སྡེ་ཚན་འདི་དག་ཕུད།</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>སྦྲེལ་ཐག</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>བསྐྱར་བྲིས་པའི་སྦྲེལ་ཐག</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ཐད་གཏོང་དྲ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>བཟོ་སྐྲུན་ལ་ལྟ།</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>དབྱིན་ཡིག་ཆུང་བ། ཨང་ཀི། _ དང་ -, དཔེར་ན། github-public ། འདིས་ཡིག་སྣོད་དང་རྟགས་བྱང་ (static/&lt;id&gt;/&lt;n&gt;) ལ་མིང་འདོགས། རྗེས་སུ་བསྒྱུར་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ལྡེ་མིག་གསར་པ་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>དམིགས་ཡུལ་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ལྡེ་མིག་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>སྔོན་ལ་བཅོལ་ཉར་སའི་ཐོག་མཛོད་ཁང་བཟོ། སྟོང་པ་ཡིན་ཡང་ཆོག</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ཡིག་ཆའི་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>འཕྲིན།</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>དྲ་ངོས་མང་ཆེ་བ།</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>མིང་།</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>སྒྲིག་བཀོད། &gt; གསང་བ། ནང་གི་ལག་ཁྱེར་གྱི་མིང་།</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>དམིགས་ཡུལ་གསར་པ།</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>རྗེས་མ།</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>མིན།</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ད་དུང་ཀོམ་མིཊ་མེད།</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ལྡེ་མིག་བཟོ་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php བཀའ་ཕྲེང་གི་ལག་ཆ་རྙེད་མ་བྱུང་། migration.ini [AdminSettings] PhpCliPath དེའི་ལམ་ཐིག་ཆ་ཚང་ལ་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ད་དུང་རྟགས་བྱང་མེད།</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ད་དུང་དམིགས་ཡུལ་མེད།</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>མེད།</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>བཟོ་སྐྲུན་ནང་མེད།</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ད་དུང་གང་ཡང་འགྲེམས་སྤེལ་བྱས་མེད།</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ད་དུང་གང་ཡང་འགྲེམས་སྤེལ་བྱས་མེད། ཡིག་ཆ་ཚང་མ་གསར་པ་ཡིན།</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>བརྡ་ཁྱབ།</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>དུས་ཚོད་རེའུ་མིག་ལྟར།</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>ཚོད་འཛིན་སྒྲོམ་ཐོག</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>ཞབས་ཞུ་འཕྲུལ་ཆས་ཐོག ./console exp:static:serve %id ཡིས་དེ་ཉིད་ཐབས་ལམ་གཅིག་པས་མཁོ་སྤྲོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ཐིག་ཕྲེང་རེར་ལམ་ཐིག་གཅིག * ཡིས་ཆ་ཤས་གང་རུང་དང་མཐུན། /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>དམིགས་ཡུལ་དང་མཉམ་དུ་མིང་ཁོ་ན་ཉར། ལག་ཁྱེར་རམ་ལྡེ་མིག་རང་ སྒྲིག་བཀོད། &gt; གསང་བ། ནང་ལུས་ལ་ཟིན་ཐོ་ནང་ནམ་ཡང་མི་མངོན།</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>དྲ་ངོས་ཀྱིས་མིང་བཏགས་པ་ཁོ་ན།</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>ལག་ཁྱེར་ཁོ་ནར། env:NAME ཡིས་དེའི་ཚབ་ཏུ་ཞབས་ཞུ་འཕྲུལ་ཆས་ཀྱི་ཁོར་ཡུག་འགྱུར་ཚད་ཀློག</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>སྔོན་ལྟ་ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>བཅོལ་ཉར་སས་མཁོ་སྤྲོད་བྱེད་རྒྱུ་ལྟར་དམིགས་ཡུལ་གྱི་ཡིག་སྣོད་ནས་བཟོ་སྐྲུན་ཁ་ཕྱེ། སྦྲེལ་ཐག་ཁྱེད་ལ་ཆུ་ཚོད་གཅིག་རིང་ནུས་པ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>གདམ་ཁ། སྟོང་པ། འགྲེམས་སྤེལ་བྱས་པ།</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>གདམ་ཁ། ཁྱབ་ཁོངས་ཡོད་ན་དྲ་ཚིགས་དེའི་རྩ་བར་མཁོ་སྤྲོད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ཐོན་འབྲས།</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>དམིགས་ཡུལ་གྱི་དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ངོས་ལེན་མ་བྱས་པའི་དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>རྗེས་ལས་སྣོན་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>སྔོན་ལྟ།</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>སྔོན་ལྟ་དང་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ཡི་སྔོན་ལྟ་དང་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>བཟོ་སྐྲུན་སྔོན་ལྟ།</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>འཕེལ་རིམ།</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>སྤྱི་སྤྱོད་ཁ་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>སྤྱི་སྤྱོད་ལྡེ་མིག</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>དྲ་ཚིགས་ཀྱི་ཁ་བརྟན་འདྲ་བཤུས་ GitHub Pages ཡང་ན་ git བཅོལ་ཉར་ས་གང་རུང་དུ་འགྲེམས་སྤེལ་བྱེད། བཟོ་སྐྲུན་བྱེད། འགྱུར་བ་ཞིབ་བཤེར་བྱེད། འགྲེམས་སྤེལ་བྱེད། དགོས་ན་སྔོན་གྱི་འགྲེམས་སྤེལ་ལ་ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ཕྱིར་ལོག་བྱ་རྒྱུའི་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>འགྲེམས་སྤེལ་ཁག</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>སྐྱེལ་བ།</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>སློབ་ཚན་ཀློག</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ཟིན་ཐོ།</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ངོས་ལེན་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>འབྲེལ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>བསྐྱར་འཇུག</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>བསུབ་ཟིན།</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ལྡེ་མིག་བརྗེ། རྙིང་པ་ནུས་མེད་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>སྙན་ཞུ།</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>བཟོ་སྐྲུན་གྱི་སྙན་ཞུ།</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>མཛོད་ཁང་།</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>བསྐྱར་ཞིབ།</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>བསྐྱར་ཞིབ་ཀྱིས་སྒྲིག་འགོད་རེ་རེ་ཞིབ་བཤེར་བྱས་ནས་འབྲི་རྒྱུའི་ཐིག་ཕྲེང་སྟོན། ད་དུང་གང་ཡང་ཉར་མེད།</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ཉར་ཚགས།</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>དུས་ཚོད་རེའུ་མིག</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>འཚོལ་བཤེར་དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>སྡེ་ཚན་གྱི་ཐོ་ཨང་། ཚེག་རྟགས་ (,) ཀྱིས་ཁ་གྱེས།</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>དེ་དག་ཐད་གཏོང་དྲ་ཚིགས་ལ་བསྐུར།</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>སྒྲིག་འགོད།</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>སྒྲིག་འགོད་ཁག</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ཡི་སྒྲིག་འགོད།</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>སྒྲིག་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>སྒྲིག་བཀོད། &gt; གསང་བ།</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ཐོ་གཞུང་ནང་མངོན། དཔེར་ན། &quot;GitHub Pages སྟེང་གི་སྤྱི་སྤྱོད་དྲ་ཚིགས།&quot;</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App ཡིས་ནང་འཛུལ་བྱ་རྒྱུ་ GitHub མཉམ་འབྲེལ་དང་མཉམ་དུ་ཡོང་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>དྲ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>འགྲེམས་སྤེལ་བྱ་རྒྱུའི་དྲ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ཆེ་ཆུང་།</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ཆེ་ཆུང་དང་ཚད་བཀག</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>བཟོ་སྐྲུན་གྱི་ཆེ་ཆུང་།</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ཡལ་བའི་དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ཡིས་ %time ལ་འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>གནས་བབ།</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ་སྒོ་བརྒྱབ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ་སྒོ་བརྒྱབ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ་སྒོ་བརྒྱབ་ཡོད། སྔོན་ལ་ སྒྲིག་བཀོད། &gt; ཁ་བརྟན་འགྲེམས་སྤེལ། ནང་སྒོ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ་སྒོ་ཕྱེ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total ནང་ནས་གོ་རིམ་ %step</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>གོ་རིམ།</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>གཙང་སེལ།</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>སྒོ་རྒྱག</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>སྒོ་འབྱེད།</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ཁ་བརྟན་འགྲེམས་སྤེལ་སྒོ་འབྱེད།</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>རྟགས་བྱང་།</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>རྟགས་བྱང་ཁག</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>དམིགས་ཡུལ།</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>དམིགས་ཡུལ་བཟོ་བ་དང་བསྒྱུར་ཆོག་ཀྱང་། སྒོ་མ་ཕྱེ་བར་གང་ཡང་བཟོ་སྐྲུན་དང་འགྲེམས་སྤེལ་མི་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>འཚོལ་བཤེར་འཕྲུལ་འཁོར་ལ་ཅི་ཞིག་ཀློག་དགོས་པ་བརྡ་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>བཟོ་སྐྲུན་དོར་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>བཟོ་སྐྲུན་དེ་མཐའ་མའི་འགྲེམས་སྤེལ་དང་གཅིག་མཚུངས་ཡིན། འགྲེམས་སྤེལ་བྱ་རྒྱུ་གང་ཡང་མེད།</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>བཟོ་སྐྲུན་དོར་ཟིན། ཡིག་སྣོད་ནང་ཡང་བསྐྱར་མཐའ་མའི་འགྲེམས་སྤེལ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>སྔོན་སྒྲིག་དེ་དྲ་ཚིགས་མང་ཆེ་བར་འཚམ།</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ཡིག་སྣོད་ནང་ད་དུང་འགྲེམས་སྤེལ་མ་བྱས་པའི་བཟོ་སྐྲུན་ཞིག་ཡོད། བཟོ་སྐྲུན་གསར་པས་དེའི་ཚབ་བྱེད།</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ལས་ཀའི་ཡིག་སྣོད་ནང་འབྲི་མི་ཐུབ། %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ལས་ཀ་གྲ་སྒྲིག་བྱེད་མ་ཐུབ། %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ལས་ཀ་འགོ་འཛུགས་མ་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ལས་ཀ་མཇུག་རྫོགས། དེའི་སྙན་ཞུ་འཇུག་བཞིན་པ།</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ལས་ཀར་ནང་འཛུལ་བྱས་པའི་བེད་སྤྱོད་པ་ཞིག་དགོས།</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ལས་ཀ་འགོ་བཙུགས་ཀྱང་དེའི་བྱ་རིམ་ཐོ་ཨང་བརྡ་མ་སྤྲད། %detail ཞིབ་བཤེར་བྱེད།</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ལྡེ་མིག</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ཡིག་ཆ་ཆེ་ཤོས། %path, %size</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>འབྲི་རྒྱུའི་ཐིག་ཕྲེང་།</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>འཚོལ་བཤེར་འཕྲུལ་འཁོར་གྱི་ཆེད་དུ་དྲ་ངོས་ཀྱི་ཐོ། སྤྱི་སྤྱོད་ཁ་བྱང་དགོས།</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>དྲ་ངོས་ནང་མ་འཛུལ་བའི་ལྟ་མཁན་གྱིས་མཐོང་བ་ལྟར་ལེན། དོ་དམ་དང་རྩོམ་སྒྲིག་གི་ siteaccess ནམ་ཡང་མི་འདོན།</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>འཕེལ་རིམ་རྗེས་འདེད་བྱེད་མ་ཐུབ། ལས་ཀ་ཇི་ལྟར་འགྲོ་བཞིན་པ་ལྟ་བར་དྲ་ངོས་བསྐྱར་འཇུག་བྱེད།</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ལྡེ་མིག་གི་སྤྱི་སྤྱོད་ཕྱེད་ཀ</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ཡན་ལག་གི་རྩ་བ།</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>གསང་བའི་མཛོད་ད་དུང་སྒྲིག་མེད། (./console exp:upgrade --apply ཡིས་དེའི་རེའུ་མིག་བཟོ།) དེས་ན་ལྡེ་མིག་ཉར་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>ཞབས་ཞུ་འཕྲུལ་ཆས་རང་ཉིད་ཀྱིས་ནང་འཛུལ་བྱེད། (རང་གི་ SSH ལྡེ་མིག་གམ་ངོ་སྤྲོད་ལག་ཁྱེར་རོགས་ཆས།) ཡང་ན་མཛོད་ཁང་ཞབས་ཞུ་འཕྲུལ་ཆས་འདིའི་ཐོག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>སྒྲིག་འགོད་འབྲི་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>སྒྲིག་འགོད་ཚད་ལྡན་ཡིན། ཐིག་ཕྲེང་འདི་དག་འབྲི་རྒྱུ།</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>སྒྲིག་འགོད་ཡིག་ཆ་ཀློག་མི་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>དྲ་ཚིགས་འགྲེམས་སྤེལ་དེའི་ཡིག་ཆར་ཕྱིར་ལོག ད་དུང་འགྲེམས་སྤེལ་མ་བྱས་པའི་བཟོ་སྐྲུན་ཞིག་སྔོན་ལ་འགྲེམས་སྤེལ་ལམ་དོར་དགོས།</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>མེད་པའི་ཁ་བྱང་ཆེད་དྲ་ཚིགས་རང་གི་དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>དམིགས་ཡུལ་ཉར་ཚགས་བྱེད་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>དམིགས་ཡུལ་འདི་ད་དུང་ལྡེ་མིག་འདིས་ནང་འཛུལ་མི་བྱེད། དེའི་སྒྲིག་འགོད་ནང་ &quot;དམིགས་ཡུལ་འདིའི་ཆེད་དུ་བཟོས་པའི་སྤེལ་འཇུག་ལྡེ་མིག&quot; འདེམས།</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>དམིགས་ཡུལ་ཀློག་མ་ཐུབ། %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>ད་དུང་ཞིབ་བཤེར་བྱ་རྒྱུའི་བཟོ་སྐྲུན་མེད།</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>སྒྲིག་འཇུག་འདི་ལ་མདུན་ངོས་ siteaccess མེད། དོ་དམ་དང་རྩོམ་སྒྲིག་གི་ siteaccess ནམ་ཡང་འགྲེམས་སྤེལ་མི་བྱེད།</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>དྲ་ངོས་འདིས་ལས་ཀ་འགྲོ་བཞིན་པར་རྗེས་འདེད་བྱེད། དྲ་ངོས་སྒོ་བརྒྱབ་ཀྱང་རྒྱབ་ལྗོངས་སུ་མུ་མཐུད།</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>དམིགས་ཡུལ་འདི་ལ་ད་དུང་སྤེལ་འཇུག་ལྡེ་མིག་མེད།</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>དམིགས་ཡུལ་འདི་འདིར་ད་དུང་བཟོ་སྐྲུན་བྱས་མེད།</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>དམིགས་ཡུལ་འདི་ལ་གཅིག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>བཟོ་སྐྲུན་འདི་དོར། ཡིག་སྣོད་ནང་ཡང་བསྐྱར་མཐའ་མའི་འགྲེམས་སྤེལ་ཡོད། ཐད་གཏོང་དྲ་ཚིགས་མི་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>སྔོན་ལ་ &quot;ངས་འགྱུར་བ་ཞིབ་བཤེར་བྱས་ཟིན།&quot; ལ་རྟགས་རྒྱག</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>དུས་ཚོད།</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>སྐུལ་སློང་།</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>རྟགས་བྱང་གི་མིང་བསྐྱར་དུ་འབྲི།</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>མ་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>དྲ་ཐོག་སྐུལ་བརྡ། (Webhook)</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ཅི།</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ཅི་ཞིག་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ཡིག་ཆ་རེ་རེ་ཅི་ཡིན་པ། རྟག་ཏུ་འབྲི།</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ལས་ཀས་ཅི་བྱས་པ་དང་དེའི་ཟིན་ཐོ། འདིར་འགོ་བཙུགས་པའི་ལས་ཀ་དྲ་ངོས་འདི་སྒོ་བརྒྱབ་ཀྱང་རྒྱབ་ལྗོངས་སུ་མུ་མཐུད།</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ལས་ཀས་ནོར་འཁྲུལ་ལྟར་པར་བསྐྲུན་པ།</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>དྲ་ངོས་ཀྱིས་མིང་བཏགས་པ་དང་། འགྲེམས་སྤེལ་བྱས་པའི་ནང་དོན་གྱི་པར་རིས་ཚང་མ།</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ནམ།</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>འགྲེམས་སྤེལ་ཕམ་སྐབས།</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>འགྲེམས་སྤེལ་ལེགས་གྲུབ་སྐབས།</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ནང་དོན་འགྲེམས་སྤེལ་སྐབས།</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>འདྲ་བཤུས་ནང་མེད་པའི་དོན་ལ་སྦྲེལ་ཐག་གང་དུ་འགྲོ་བ། (འཚོལ་བཤེར། ནང་འཛུལ།)</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>ཁ་བརྟན་འདྲ་བཤུས་གང་ནས་མཁོ་སྤྲོད་བྱེད་པ།</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>དྲ་ཚིགས་གང་འགྲེམས་སྤེལ་བྱེད་པ་དང་། དམིགས་ཡུལ་ལ་མིང་ཅི་ཟེར་བ།</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ལམ་ཐིག་གང་རུང་གི་འོག་ཏུ་ལག་ལེན་ཐུབ། སྔོན་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>རང་གི་ཁྱབ་ཁོངས་སྒྲིག་དུས་རྟག་ཏུ་འབྲི།</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ཡིན།</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ཁྱེད་ཀྱིས་འདི་དང་ཚོད་འཛིན་སྒྲོམ་ཐོག་རྟག་ཏུ་ལག་བཟོས་བཟོ་སྐྲུན་དང་འགྲེམས་སྤེལ་བྱེད་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>མིང་ཁོ་ན། གྲངས་ཐང་ སྒྲིག་བཀོད། &gt; གསང་བ། ནང་ལུས།</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path འོག</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>སྙན་ཞུ་མེད་པར་མཇུག་རྫོགས།</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ཟུར་སྣོན།</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ཕམ།</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ཡིག་ཆ།</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ཡང་ན་ docs ཡིག་སྣོད་དང་མཉམ་དུ་ main</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git བཅོལ་ཉར་ས།</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ལག་ཁྱེར་དང་མཉམ་དུ།) ཡང་ན་ git@github.com:owner/repo.git (སྤེལ་འཇུག་ལྡེ་མིག་དང་མཉམ་དུ།) དེའི་ནང་གསང་གྲངས་སམ་ལག་ཁྱེར་ནམ་ཡང་མི་འཇུག</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, དྲ་ཚིགས་ས་ཁྲ་དང་ཚད་ལྡན་སྦྲེལ་ཐག་ཆེད།</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>པར་རིས།</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ནམ་ཡང་མིན།</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>མིན།</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>རྒྱང་རིང་མཛོད་ཁང་མེད།</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>མེད། ཀོམ་མིཊ་ཡིག་སྣོད་ནང་ལུས།</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>མེད། གང་ཡང་མ་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>སྐྱེལ་བ་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>གང་ཡང་མ་འགྱུར།</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>དྲ་ངོས།</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ལེགས་གྲུབ།</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ནུས་མེད་བཏང་ཡོད་པས་འདིར་ལས་ཀ་འགོ་འཛུགས་མི་ཐུབ། ཞབས་ཞུ་འཕྲུལ་ཆས་ཐོག་ ./console exp:static:build བེད་སྤྱོད་གནང་།</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>འགྲེམས་སྤེལ།</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>འགྲེམས་སྤེལ་ཟིན།</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>སྐྱེལ་བ་སྒུག་བཞིན།</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>སྐྱེལ་བ་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ངོས་ལེན་མ་བྱས།</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>འབྲེལ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ཕྱིར་ལོག</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ཕྱིར་ལོག་བྱས་ཟིན།</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>འཁོར་སྐྱོད་བྱེད་བཞིན།</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ཡིག་སྣོད་ཁོ་ན།</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ཡིག་ཆ་ CNAME ནང་འབྲི། བཅོལ་ཉར་སས་འགྲེལ་བཤད་བྱས་པ་ལྟར་ཁྱབ་ཁོངས་ཀྱི་ DNS བཅོལ་ཉར་སར་ཁ་ཕྱོགས། HTTPS འགོ་འཛུགས་པར་དུས་ཚོད་ཅུང་ཟད་འགོར་སྲིད།</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ཡིན། ད་དུང་འགྲེམས་སྤེལ་མ་བྱས།</translation>
     </message>
 </context>
 </TS>

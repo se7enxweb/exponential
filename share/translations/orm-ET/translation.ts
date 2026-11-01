@@ -15150,6 +15150,22 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Jijjiiramoota inistaaleeshinii faayilaan kuufaman: haala isaanii, raawwiiwwan, raawwachiisuu fi duubatti deebisuu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Qabiyyee haaraa</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Qabiyyee haaraa, wanta sakatta'iinsaaf qabame, fi tarkaanfiiwwan filannoo irratti.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Garagalchaa dhaabbataa marsariitii tokkoo GitHub Pages ykn hoostii git kamiyyuu irratti maxxansi.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Maxxansa dhaabbataa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Yaadannoo: Paakeejiiwwan diriirsi isaanii hin haqamu.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Deebiiwwan gaaffiiwwan kuufaman GraphQL API, fi gosoota qabiyyee caasaa isaa.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Garagalchaa dhaabbataa GitHub Pages ykn hoostii git kamiyyuu irratti maxxansi</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Maxxansa dhaabbataa</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Kuusaan yeroo dhaabbataa fuulota sarvara kana irraa dhiyeessa. Garagalchaa dhaabbataa marsariitii tokkoo bakka biraatti, GitHub Pages ykn hoostii git kamiyyuu irratti maxxansuuf, maxxansa dhaabbataa fayyadami.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Jijjiiramoota inistaaleeshinii faayilaan kuufaman: haala isaanii, raawwiiwwan, raawwachiisuu fi duubatti deebisuu.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Garagalchaa dhaabbataa marsariitii tokkoo GitHub Pages ykn hoostii git kamiyyuu irratti maxxansi.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Maxxansa dhaabbataa</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Raawwiin jalqabamuu hin dandeenye.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Jijjiirame</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Uumame</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Maqaa</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Gita</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Kutaa</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Uumaa</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Qabiyyee haaraa</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Qabiyyee dhiyeenya uumamee fi jijjiirame marsariitii guutuu, kan haaraan dursee: wanta daawwattoonni galchan, wanta sakatta'iinsaaf qabame, wixineewwan maxxansa isaanii eeggatan. Wantoota filadhu akka gad dhiiftu, qabdu, dhoksitu, agarsiiftu, baastu ykn gara kutaa ykn haala biraatti dabarsitu.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Tarreen dubbifamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Qabiinsi sakatta'iinsaa ammallee hin qophoofne, kanaaf homtuu hin qabamu, tarkaanfiiwwan qabiinsaas hin dhiyaatan. Tarkaanfiin fooyyessaa 6.0.15-review-hold ni qopheessa: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tarree calaqqisi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Irraa</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanga</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Guyyaa</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Uumame (yeroo jalqabaaf maxxanfame)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hunda</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sadarkaa</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Maxxanfame</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Wixinee, gonkumaa hin maxxanfamne</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Eegaa jira (hayyama ykn guyyaa)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Kuusaa kosii keessa</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Sakatta'iinsaaf qabame</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Qabame</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Hin qabamne</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Dhokateera</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Mul'ataa</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Kan itti galfame</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Seensa marsariitii kamiyyuu</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Wanta odiitiin galmeesse qofa.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Amma: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Maqaa seensaa ykn eenyummaa fayyadamaa.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Calaqqisi</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Calaqqisoota haqi</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Wantoota</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanga %to %count keessaa</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Wanti hin jiru</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms keessatti dubbifame)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Tarkaanfiiwwan wantoota filatamanii</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Fuula kana irratti hunda fili</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count filatameera</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tarkaanfii</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Tarkaanfii filadhu</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Qabiinsa gad dhiisi</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Sakatta'iinsaaf qabi</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Dhoksi</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Agarsiisi</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Gara kuusaa kosiitti ergi</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Haqi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Kutaa ramadi</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Haala ramadi</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sababa</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Qabuuf barbaachisa; qabiinsaa fi odiitii keessatti ni kuufama.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Kutaa filadhu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Haala</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Haala filadhu</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Kanneen filataman irratti hojiirra oolchi</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Wanti tokkoon tokkoon hayyamoota kee mataa keetii wajjin ni sakatta'ama. Gara kuusaa kosiitti erguu fi haquun akka mirkaneessitu si gaafatu. Wantoota %count ol duuba keessatti hojjetamu.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Fili</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Maxxansa</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Kan irraa galfame</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name fili</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ammallee miti</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(maqaa hin qabu)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Eenyummaa %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Wixinee</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Eegaa jira</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Kan olaanaan dhoksame</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Qabame: galmee haaraa</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Fooyya'iinsi %version eegaa jira</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Fooyya'iinsi %version hojii irra jira</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Wixinee, fooyya'iinsa %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Fooyya'iinsi %version maxxanfameera</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date tti karoorfame</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>teessoon hin jiru</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>hin galmaa'in</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Calaqqisoota kanneen wajjin homtuu wal hin simu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hunda agarsiisi</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ammallee qabiyyeen hin jiru.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fuula tokkoon</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fuula tokkoon wantoota %count agarsiisi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Teessoon fi barbaacha galmee tokkoo indeeksii odiitii irraa dhufu, kan asitti hin argamne: kutaan "hin galmaa'in" jedha.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Teessoon fi barbaachi kanneen odiitiin wanta kanaaf galmeesse dha (qabiinsi ofumaan yeroo hunda galmeessa; maxxansuu fi uumuun bakka banamee qofa), akkuma qindaa'inni dhuunfaa isaa isaan eegutti.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: wantoota %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Haquun wantoota bara baraan, fooyya'iinsota fi hiikkaawwan isaanii hunda wajjin balleessa. Deebi'uu hin danda'u.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Wantoonni gara kuusaa kosii deemu, achii irraa deebi'anii bakka buufamuu danda'u.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Wanti tokkoon tokkoon hayyamoota kee wajjin ni sakatta'ama; wanti wantoota xixiqqoo qabu akkuma jirutti dhiifama (caasaa qabiyyee keessatti baasi). Si ta'uu kee akka mirkaneessitu ni gaafatamta.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Kun duuba keessatti hojjetama: fuulli adeemsa isaa ni banama, bu'aan wanta tokkoon tokkoon yeroo xumuramu ni agarsiifama.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Wantoota filataman</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>fi %count dabalataa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dhiisi</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Homtuu hin hojjetamne</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sababa: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Tarkaanfiin ammallee duuba keessatti hojjetamaa jira.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Adeemsa isaa</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Tarkaanfiin duubaa hin milkoofne: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Xumurameera</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Didame</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Wanta tokkoon</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Wanta</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bu'aa</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Maaliif</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Gara tarreetti deebi'i</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Qopheessa</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Homtuu hin hojjetamne</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Mirkaneessi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Tarkaanfii filadhu.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Yoo xiqqaate wanta tokko filadhu.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Yeroo tokkotti wantoota 1000 hin caalle filadhu.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Wantoonni maaliif akka qabaman ibsi.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Kutaa filadhu.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Haala filadhu.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Unkaan dubbifamuu hin dandeenye.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Qabiyyee haaraa</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Lakkoofsonni dubbifamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Sakatta'iinsaaf qabame</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Har'a haaraa</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Qabiinsi sakatta'iinsaa ammallee hin qophoofne (tarkaanfii fooyyessaa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Qabiyyee haaraa hunda</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Tarkaanfiiwwan to'annoo hojjechuuf hayyama hin qabdu (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Tarkaanfiin to'annoo hin xumuramne: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>To'annoo: %action wantoota %count irratti</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>Wantoota %total keessaa %done: %ok xumurame, %refused didame, %failed hin milkoofne</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok xumurame, %refused didame, %failed hin milkoofne</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Kana booda hin jiru.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Bakka hin qabu (hin maxxanfamne).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Isa dhoksuuf hayyama hin qabdu (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Isa agarsiisuuf hayyama hin qabdu (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Duraanuu dhokateera.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Hin dhokanne.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Dhokfame.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Agarsiifame.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Kuusaa kosii keessa jira: achitti duwwaasi ykn deebisi.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Wixineen gonkumaa hin maxxanfamne gara kuusaa kosii deemuu hin danda'u: haqi.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Isa haquuf hayyama hin qabdu (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Haqameera.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Isa baasuuf hayyama hin qabdu (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Wantoota xixiqqoo qaba: caasaa qabiyyee keessatti baasi, bakka isaan tarreeffaman.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Hin baafamne (adeemsi hojii baasuu qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Gara kuusaa kosiitti ergameera.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Kutaan hin jiru.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Duraanuu kutaa kana keessa jira.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Kutaa kana ramaduuf hayyama hin qabdu (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Kutaan hin ramadamne.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Kutaan ramadameera.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Haalli hin jiru.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Duraanuu haala kana keessa jira.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Haala kana ramaduuf hayyama hin qabdu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Haalli hin ramadamne (adeemsi hojii jijjiirama qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Haalli ramadameera.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tarkaanfiin akkasii hin jiru.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Qabiinsi sakatta'iinsaa hin qophoofne (tarkaanfii fooyyessaa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Maaliif akka qabame ibsi.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Duraanuu qabameera.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Isa qabuuf hayyama hin qabdu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Qabiinsi hin kaa'amne (adeemsi hojii jijjiirama qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Qabameera.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Hin qabamne.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Isa gad dhiisuuf hayyama hin qabdu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Qabiinsi gad hin dhiifamne (adeemsi hojii jijjiirama qabaachuu danda'a).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Gad dhiifameera; ammallee dhokateera: isa agarsiisuuf hayyama hin qabdu (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Gad dhiifameera.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Kaayyoowwan hunda</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Maxxansa dhumaa</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Garagalchaa dhaabbataa bilisaa marsariitii keetii GitHub Pages irratti maxxansi:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Fuulota moofaa ta&apos;an</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Maxxansa dhaabbataa</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Maxxansi dhaabbataan dhaamee jira.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Kaayyoo</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Kaayyoowwan dubbifamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>hojiin tokko adeemaa jira</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ijaarsa mirkanaa&apos;uu qabu</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>kana dhoksi</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>kaayyoo uumi</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>gonkumaa</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>qajeelfama dubbisi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added dabalame, %changed jijjiirame, %removed haqame</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes kan %limit keessaa (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Kan biroo %count hin tarreeffamne.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Fuulota %pages barreeffaman</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path hammi isaa %size, kunis faayilii tokkoof waan hoostiin hayyamu caala.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Daangaa irraa %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag maxxansa marsariitiin amma qabu dha.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: hojii %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/kuusaa/ marsariitii pirojektii GitHub tokkoof; domeenii dhuunfaa ykn marsariitii fayyadamaatiif duwwaa.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Marsariitii</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Hoostii</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Kuusaa koodii seenuu</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Kuusaa koodii</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Liinkiiwwanii fi karaa bu&apos;uuraa</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Domeenii mataa keetii</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Wanta ijaarsi qabu</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Yeroo maxxanfamu</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Gamaaggamii olkaa&apos;i</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Marsariitiin pirojektii GitHub /&lt;repository&gt;/ jala jiraata; liinkiiwwan walitti dhiyeenyaa achittis bakka kamittuu ni hojjetu.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Ijaarsi tokko fuula %site hunda akka daawwataan hin seenin argutti fida, liinkiiwwan irra deebi&apos;ee barreessa, faayilota garagalcha, bu&apos;aa isaas kuusaa faayilii kaayyoo keessatti barreessa. Hanga ijaarsa mirkaneessitee Maxxansi tuqxutti homtuu hin maxxanfamu.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Ibsa cron, fakkeenyaaf 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Furtuun bobbaasaa akka icciitii %secret kuufama.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Furtuun bobbaasaa dhaabbii kana SSH dhaan kuusaa koodii tokko qofatti akka ergu hayyama, bakka biraa hin hayyamu. Walakkaan isaa dhuunfaa Qopheessa &gt; Icciitiiwwan keessa tura; walakkaa ummataa qofatu mul&apos;ata.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Furtuu bobbaasaa kaayyoo kanaaf uumame</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Furtuun bobbaasaa SSH dhaan seena: teessoo git gara teessoo SSH (git@github.com:owner/repo.git) jijjiiri.</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Hojiin tokko adeemaa jira, kan %user jalqabe</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Hojiin kaayyoo kanaa tokko ammallee adeemaa jira (%detail). Hanga xumuramutti eegi.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Hojiin kaayyoo kanaa tokko ammallee adeemaa jira. Hanga xumuramutti eegi.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Liinkiin fuula /news/ irraa gara fuula /about-us/team akkasitti barreeffama</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Furtuun bobbaasaa haaraan uumameera. Walakkaa ummataa isaa amma kuusaa koodiitti dabali.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Fuulli qulqulleessuun booda ammallee bu&apos;aa sirreessaa, tookenii unkaa ykn eenyummaa seeshinii qabu gonkumaa hin maxxanfamu.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Duubatti deebiin ogeeyyiif qofa: &quot;Wanti kun maal akka jijjiiru nan beeka&quot; mallatteessi, maqaa mallattoo irra deebi&apos;ii barreessi.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Marsariitiin hanga %site, faayiliin tokko hanga %file ta&apos;uu danda&apos;a, tiraafikii ji&apos;aan GB 100 naannoo qabu waliin. Karoora bilisaa irratti kuusaan koodii ummataaf banaa ta&apos;uu qaba. GitHub Pages suuqiiwwaniif ykn daldala biraaf hin qophoofne.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Kaayyoon marsariitii tokko kan kuusaa git tokkotti maxxanfamu dha. Asitti homtuu hin ijaaramu ykn hin maxxanfamu: Olkaa&apos;i qindaa&apos;ina settings/override/staticcache.ini.append.php keessatti barreessa.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Kaayyoon marsariitii tokko kan bakka tokkotti maxxanfamu dha, fakkeenyaaf marsariitii ummataa kee GitHub Pages irratti.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Tookenii Qopheessa &gt; Icciitiiwwan keessaa</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Adeemsi hojii kuusaa koodii isa maxxansa.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Furtuu ummataa kana hayyama barreessuu waliin kuusaa koodiitti dabali. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access mallatteessi.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Dabalame</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Hoostii git biraa</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Adeemsi biraa kaayyoo kana irratti hojjetaa jira: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Duubatti</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Karaa bu&apos;uuraa</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Kanaan dura</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Karaa bu&apos;uuraa tokko jala</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Damee</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Liinkiiwwan cabaan</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Liinkiiwwan cabaan ijaarsa keessa jiran</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Ijaarsa</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Ijaarsa %id, kan %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ijaari</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Amma ijaari</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Ijaarsa mirkanaa&apos;uu qabu</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kan raawwate</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Harkaan, asitti</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Dhiisi</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Jijjiiri</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Jijjiirame</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Jijjiiramoota</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Dura mirkaneessi</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Qindaa&apos;ina kana mirkaneessi</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Wanta ijaarsi jijjiiru mirkaneessi, ilaali, achiis maxxansi ykn gatii.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Maxxansa itti deebitu filadhu.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Gadhiisa itti aanu keessatti dhufa.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Galmeessuu</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Galmeewwan</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Ijaarsa galmeessa, mallattoo itti godha, gara %remote ergas. Erguun gonkumaa dirqiin hin raawwatamu; booda maxxansa kamittuu deebi&apos;uu dandeessa.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Kuusaa faayilii duraa waliin yoo wal bira qabamu: %added dabalame, %changed jijjiirame, %removed haqame, %unchanged hin jijjiiramne.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Maxxansa dhumaa waliin wal bira qabame.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ragaa seensaa</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domeenii dhuunfaa</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Bu&apos;aan sirreessaa, tookeniiwwan unkaa, eenyummaawwan seeshinii fi nonce&apos;n yeroo hunda ni baafamu.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Furtuu bobbaasaa</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Furtuu bobbaasaa %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Gatii</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Ijaarsa gatii</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domeenii</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Duwwaa: teessoo marsariitii. Yoo kana hin taane, teessoo keessaa marsariitii sanaa.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Xumurame</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Liinkiin hundi karaa bu&apos;uuraatiin jalqaba.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Maxxansi hundi galmee mallattoo static/%id/&lt;n&gt; qabu dha. Duubatti deebi&apos;uun faayilota maxxansa duraa tokkoon galmee haaraa uuma: seenaan ni tura, mallattoon tokkollee hin socho&apos;u, homtuu dirqiin hin raawwatamu.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Faayilota dabalataa</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Fuulota irraa fidi</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faayilii</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Faayilota</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Faayilota hin jirre</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Faayilota</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Faayilota walitti qabamuu hin dandeenye</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Mallattoo addaa</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Kuusaa faayilii</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Teessoo SSH tokkoof. Furtuun erga olkaa&apos;amee booda uumama; walakkaa ummataa isaa kuusaa koodiitti dabalta.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Teessoo https:// tokkoof. GitHub: tookenii bal&apos;ina xiqqaa qabu, kuusaa koodii irratti Contents dubbisuu fi barreessuu kan hayyamu.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ogeeyyiif. Marsariitiin ummataa akkuma erguun xumurameen jijjiirama.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Unkaawwan</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Kuusaa koodii GitHub irraa hoostii bilisaa.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Damee irraa</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Teessoo git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages marsariitii %site fi faayilii %file hayyama.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Daangaawwan GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages faayilota akkuma jiranitti maxxansa (faayilota _ dhaan jalqabaniif barbaachisaa dha).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub damee akkuma ergameetti dhiyeessa. Durtii.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, sarvara mataa keetii: kuusaa git kamiyyuu.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Gara maxxansa duraa tokkootti deebi&apos;i</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Gargaarsa</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Gargaarsa qajeelchaa</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Isaan dhoksi</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Seenaa</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Seenaa %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hoostii</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Akkaataa GitHub Pages ijaarsa itti fudhatu</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Jijjiiramoota mirkaneesseera</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Wanti kun maal akka jijjiiru nan beeka</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Eenyummaa</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Dhaamee jira: hanga ka&apos;utti homtuu ijaaramuu hin danda&apos;u.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Duuba keessatti akka %user hojjeta; fuula kana cufuu dandeessa.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Hojii %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Akka icciitii %secret kuufame.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Gosa</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Maxxansa dhumaa</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Fuulota kana dhiisi</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Kutaalee kana dhiisi</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Liinkiiwwan</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Liinkiiwwan irra deebi&apos;amanii barreeffaman</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Marsariitii jiraataa</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Ijaarsa ilaali</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Qubeewwan xiqqaa, lakkoofsota, _ fi -, fakkeenyaaf github-public. Kuusaa faayilii fi mallattoowwan (static/&lt;id&gt;/&lt;n&gt;) moggaasa, booda jijjiiramuu hin danda&apos;u.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Furtuu haaraa uumi</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Kaayyoo uumi</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Furtuu uumi</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Dura kuusaa koodii hoostii irratti uumi; kan duwwaa ta&apos;es ni ta&apos;a.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Tarree faayilotaa</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ergaa</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Fuulota baay&apos;ee</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Maqaa</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Maqaa tookenii Qopheessa &gt; Icciitiiwwan keessaa</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Kaayyoo haaraa</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Itti aanu</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Lakki</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Ammaaf galmeen hin jiru.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Furtuun hin uumamne: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Sarara ajajaa php hin argamne. migration.ini [AdminSettings] PhpCliPath karaa isaa guutuu irratti qindeessi.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Ammaaf mallattoon hin jiru.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Ammaaf kaayyoon hin jiru.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Homaa</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Ijaarsa keessa hin jiru.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Ammaaf homtuu hin maxxanfamne.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Ammaaf homtuu hin maxxanfamne: faayiliin hundi haaraa dha.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Beeksisi</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Sagantaa irratti</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsoolii irratti</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Sarvara irratti: ./console exp:static:serve %id haaluma walfakkaatuun dhiyeessa.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Sarara tokko keessatti karaa tokko, * kutaa kamiyyuu waliin wal sima: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Kaayyoo waliin maqaa qofatu kuufama; tookeniin ykn furtuun mataan isaa Qopheessa &gt; Icciitiiwwan keessa tura, galmee hojii keessattis gonkumaa hin mul&apos;atu.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Wanta fuulonni maqaa dhahan qofa</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Tookenii qofa waliin. env:NAME bakka isaa jijjiiramaa naannoo sarvaraa dubbisa.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Dursee ilaaluu bani</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Ijaarsa akkuma hoostiin dhiyeessutti, kuusaa faayilii kaayyoo irraa bana. Liinkiin siif sa&apos;aatii tokkoof hojjeta.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Filannoo. Duwwaa: wanta maxxanfame.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Filannoo. Domeenii waliin marsariitiin hundee isaatti dhiyaata.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Bu&apos;aa</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Fuulota</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Fuulota kaayyoo</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Fuulota didaman</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Booda-qindeessuu</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Dursee ilaali</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Dursee ilaali fi maxxansi</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name dursee ilaali fi maxxansi</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Ijaarsa dursee ilaali</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Adeemsa</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Teessoo ummataa</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Furtuu ummataa</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Maxxansi</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Garagalchaa dhaabbataa marsariitii tokkoo GitHub Pages ykn hoostii git kamiyyuu irratti maxxansi: ijaari, jijjiiramoota mirkaneessi, maxxansi, yeroo barbaachisutti immoo gara maxxansa duraatti deebi&apos;i.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Maxxansa itti deebi&apos;amu</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Maxxansawwan</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Erguu</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Qajeelfama dubbisi</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Galmee</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Didame</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Walitti dhiyeenyaa</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Irra deebiitii fe&apos;i</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Haqame</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Furtuu bakka buusi: inni moofaan hojii dhaabata</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Gabaasa</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Gabaasa ijaarsaa</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Kuusaa koodii</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Gamaaggamaa</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Gamaaggamni qindaa&apos;ina hunda mirkaneessa, sararoota barreeffaman ni agarsiisa. Ammaaf homtuu hin olkaa&apos;amne.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Duubatti deebisi</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Duubatti deebii</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Olkaa&apos;i</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Sagantaa</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Fuula barbaachaa</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Eenyummaa kutaalee, qooddii (,) dhaan addaan baafaman.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Gara marsariitii jiraataatti ergi</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Qindaa&apos;ina</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Qindaa&apos;ina</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Qindaa&apos;ina %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Qopheessa</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Qopheessa &gt; Icciitiiwwan</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Tarree keessatti mul&apos;ata, fakkeenyaaf &quot;Marsariitii ummataa GitHub Pages irratti&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App waliin seenuun walitti makama GitHub waliin dhufa.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Marsariitii</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Marsariitii maxxanfamu</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Hamma</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Hammaa fi daangaawwan</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Hamma ijaarsaa</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Fuulota moofaa ta&apos;an</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Jalqabame</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user dhaan %time irratti jalqabame.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Haala</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Maxxansa dhaabbataa</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Maxxansi dhaabbataan dhaamee jira</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Maxxansi dhaabbataan dhaamee jira.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Maxxansi dhaabbataan dhaamee jira. Dura Qopheessa &gt; Maxxansa dhaabbataa keessatti kaasi.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Maxxansi dhaabbataan ka&apos;ee jira.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Tarkaanfii %step kan %total keessaa</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Tarkaanfiiwwan</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Qulqulleessuu</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dhaamsi</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Kaasi</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Maxxansa dhaabbataa kaasi</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Mallattoo</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Mallattoowwan</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Kaayyoo</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Kaayyoowwan uumamuu fi jijjiiramuu danda&apos;u, garuu hanga ka&apos;utti homtuu hin ijaaramu ykn hin maxxanfamu.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Motora barbaachaatiif wanta dubbisan himti.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Ijaarsi gatamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Ijaarsi maxxansa dhumaa waliin tokko: wanti maxxanfamu hin jiru.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Ijaarsi gatameera: kuusaan faayilii ammas maxxansa dhumaa qaba.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Durtiiwwan marsariitiiwwan baay&apos;ee ni ta&apos;u.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Kuusaan faayilii ijaarsa ammallee hin maxxanfamne qaba; ijaarsi haaraan bakka isaa bu&apos;a.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Kuusaa faayilii hojiiwwanii keessatti barreessuun hin danda&apos;amu: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Hojiin qophaa&apos;uu hin dandeenye: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Hojiin jalqabuu hin dandeenye.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Hojiin xumurameera. Gabaasni isaa fe&apos;amaa jira.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Hojiin fayyadamaa seene barbaada.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Hojiin jalqabame garuu eenyummaa adeemsa isaa hin gabaasne. %detail mirkaneessi.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Furtuu</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Faayilii guddaa: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Sararoota barreeffaman</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Tarree fuulotaa motora barbaachaatiif; teessoo ummataa barbaada.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Fuulonni akka daawwataan hin seenin argutti fidamu. Siteaccess bulchiinsaa fi gulaallii gonkumaa hin dhiyaatan.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Adeemsi hordofamuu hin dandeenye. Hojiin akkam akka jiru arguuf fuula irra deebiitii fe&apos;i.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Walakkaa ummataa furtuu:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Hundee damee</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Kuusaan icciitii ammallee hin qophoofne (./console exp:upgrade --apply gabatee isaa uuma), kanaaf furtuun tokkollee kuufamuu hin danda&apos;u.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Sarvarri ofumaan seena (furtuu SSH mataa isaa ykn gargaaraa ragaa seensaa), ykn kuusaan koodii sarvara kana irra jira.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Qindaa&apos;inni barreeffamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Qindaa&apos;inni sirrii dha. Sararoonni kun ni barreeffamu:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Faayiliin qindaa&apos;inaa dubbifamuu hin danda&apos;u: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Marsariitiin gara faayilota maxxansa sanaatti deebi&apos;a; ijaarsi ammallee hin maxxanfamne dura maxxanfamuu ykn gatamuu qaba.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Fuula marsariitii mataa isaa teessoowwan hin jirreef.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Kaayyoon olkaa&apos;amuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Kaayyoon ammallee furtuu kanaan hin seenu: qindaa&apos;ina isaa keessatti &quot;Furtuu bobbaasaa kaayyoo kanaaf uumame&quot; filadhu.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Kaayyoowwan dubbifamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Ammaaf ijaarsi mirkanaa&apos;uu qabu hin jiru.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Dhaabbiin kun siteaccess fuulduraa hin qabu. Siteaccess bulchiinsaa fi gulaallii gonkumaa hin maxxanfaman.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Fuulli kun hojii akkuma adeemutti hordofa; yeroo fuulli cufamu duuba keessatti itti fufa.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Kaayyoon kun ammallee furtuu bobbaasaa hin qabu.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Kaayyoon kun ammallee asitti hin ijaaramne.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Kaayyoon kun tokko qaba.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Ijaarsa kana gata: kuusaan faayilii ammas maxxansa dhumaa qaba. Marsariitiin jiraataan hin jijjiiramu.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Dura &quot;Jijjiiramoota mirkaneesseera&quot; mallatteessi.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Yeroo</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Kakaasota</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Maqaa mallattoo irra deebi&apos;ii barreessi</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Hin jijjiiramne</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Maal</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Wanta jijjiiramu</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Faayiliin tokkoon tokkoon maal akka ta&apos;e; yeroo hunda ni barreeffama.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Wanta hojiin godhe fi galmee isaa. Hojiin asitti jalqabame yeroo fuulli kun cufamu duuba keessatti itti fufa.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Wanta hojiin akka dogoggoraatti maxxanse</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Wanta fuulonni maqaa dhahan, fi suuraa qabiyyee maxxanfamee hunda</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Yoom</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Yeroo maxxansi fashalaa&apos;u</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Yeroo maxxansi milkaa&apos;u</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Yeroo qabiyyeen maxxanfamu</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Liinkiiwwan gara waan garagalchaan hin qabneetti (barbaacha, seensa) eessa akka deeman.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Garagalchaan dhaabbataan eessaa akka dhiyaatu.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Marsariitiin kam akka maxxanfamu, fi kaayyoon maal akka jedhamu.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Karaa kamiyyuu jalatti hojjeta. Durtii.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Yeroo domeeniin dhuunfaa qindaa&apos;u hunda ni barreeffama.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Eeyyee</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Yeroo hunda asittis konsoolii irrattis harkaan ijaaruu fi maxxansuu dandeessa.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>maqaa qofa; gatiin isaa Qopheessa &gt; Icciitiiwwan keessa tura</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path jala</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>gabaasa malee xumurame</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>dabalataa</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>fashalaa&apos;e</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>faayilii</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ykn main kuusaa faayilii docs waliin.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>hoostii git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (tookenii waliin) ykn git@github.com:owner/repo.git (furtuu bobbaasaa waliin); jecha darbii ykn tookenii gonkumaa of keessaa hin qabu.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, kaartaa marsariitii fi liinkiiwwan seera qabeessaaf.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>suuraa</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>gonkumaa</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>lakki</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>remote hin jiru</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>homaa: galmeewwan kuusaa faayilii keessa turu</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>homaa: homtuu hin jijjiiramne</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>hin ergamne</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>homtuu hin jijjiiramne</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>fuula</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>milkaa&apos;e</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open dhaamee jira, kanaaf hojiin asitti jalqabuu hin danda&apos;u. Sarvara irratti ./console exp:static:build fayyadami.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>maxxansa</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>maxxanfame</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>erguun eegaa jira</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ergame</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>didame</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>walitti dhiyeenyaa</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>duubatti deebii</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>duubatti deebi&apos;e</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>hojjetaa jira</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>kuusaa faayilii qofa</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: faayilii CNAME keessatti barreeffama. DNS domeenii akka hoostiin ibsutti gara hoostiitti qajeelchi; HTTPS jalqabuuf yeroo fudhachuu danda&apos;a.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>eeyyee, ammallee hin maxxanfamne</translation>
     </message>
 </context>
 </TS>

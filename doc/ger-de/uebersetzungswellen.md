@@ -35,14 +35,14 @@ eine Welle gemacht und geprüft wird. Die Sprachen, ihre Locales und ihre Übers
 
 | Was | Umfang |
 |---|---:|
-| Administration: Texte in `share/translations/untranslated/translation.ts`, in 11 Teilen | **19.628** (132.943 Wörter) |
+| Administration: Texte in `share/translations/untranslated/translation.ts`, in 11 Teilen | **20.138** (135.894 Wörter) |
 | Mitgelieferte Erweiterungen (`expimageeditor`, `ezjscore`, `ezoe`) | **567** Texte |
-| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.856** Seiten, 5.239.084 Wörter |
-| Hilfe: Tabellen der erzeugten Beispielseiten (`.examples/`) | **3.873** Einträge, 105.413 Wörter |
+| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.863** Seiten, 5.243.451 Wörter |
+| Hilfe: Tabellen der erzeugten Beispielseiten (`.examples/`) | **3.786** Einträge, 104.372 Wörter |
 | Übersetzungen der Administration, davon vollständig | **155**, 155 |
 | davon im täglichen Gebrauch (Administration, Erweiterungen und Hilfe des Alltags ≥ 97 %) | **2** |
 | Sprachen ohne Übersetzung der Administration ([Liste](#sprachen-ohne-übersetzung)), davon auf einem Branch in Arbeit | **22**, 0 |
-| Wellen bis 100 % in jeder Sprache | **32.345** |
+| Wellen bis 100 % in jeder Sprache | **32.498** |
 
 ### Wo jede Sprache steht
 
@@ -50,189 +50,189 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 
 | Sprache | Code | Sprecher (Mio.) | Schwierigkeit | Administration | Erweiterungen | Hilfe des Alltags | Hilfe gesamt | Wellen offen | Nächste Welle |
 |---|---|---:|:-:|---:|---:|---:|---:|---:|---|
-| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 211 | #436 `S` |
-| Akan | `aka-GH` | 11 | 3 | 100 | 100 | **0** | **0** | 211 | #461 `S` |
-| Albanisch | `sqi-AL` | 8 | 2 | 100 | 100 | **0** | **0** | 211 | #460 `S` |
-| Amharisch | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 211 | #420 `S` |
-| Arabisch | `ara-SA` | 400 | 4 | 100 | 100 | **0** | **0** | 211 | #6 `S` |
-| Aramäisch | `arc-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 211 | #514 `S` |
-| Armenisch | `hye-AM` | 5 | 4 | 100 | 100 | **0** | **0** | 211 | #483 `S` |
-| Aserbaidschanisch | `aze-AZ` | 10 | 3 | 100 | 100 | **0** | **0** | 211 | #463 `S` |
-| Assamesisch | `asm-IN` | 15 | 5 | 100 | 100 | **0** | **0** | 211 | #465 `S` |
-| Asturisch | `ast-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #512 `S` |
-| Bambara | `bam-ML` | 14 | 3 | 100 | 100 | **0** | **0** | 211 | #452 `S` |
-| Baskisch | `eus-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #505 `S` |
-| Belarussisch | `bel-BY` | 5 | 4 | 100 | 100 | **0** | **0** | 211 | #484 `S` |
-| Bengalisch | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 211 | #397 `S` |
-| Bhojpuri | `bho-IN` | 52 | 5 | 100 | 100 | **0** | **0** | 211 | #427 `S` |
-| Birmanisch | `mya-MM` | 43 | 5 | 100 | 100 | **0** | **0** | 211 | #435 `S` |
-| Bodo | `brx-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 211 | #503 `S` |
-| Bosnisch | `bos-BA` | 3 | 3 | 100 | 100 | **0** | **0** | 211 | #489 `S` |
-| Bretonisch | `bre-FR` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #519 `S` |
-| Bulgarisch | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 211 | #456 `S` |
-| Cebuano | `ceb-PH` | 28 | 3 | 100 | 100 | **0** | **0** | 211 | #431 `S` |
-| Chinesisch (traditionell) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 211 | #416 `S` |
-| Chinesisch (vereinfacht) | `chi-CN` | 1.100 | 2 | 100 | 100 | **0** | **0** | 211 | #389 `S` |
-| Dänisch | `dan-DK` | 6 | 1 | 100 | 100 | **0** | **0** | 211 | #447 `S` |
-| Dari (Persisch in Afghanistan) | `fas-AF` | 35 | 4 | 100 | 100 | **0** | **0** | 211 | #433 `S` |
-| Deutsch | `ger-DE` | 135 | 2 | 100 | **76** | **90** | 99 | 9 | #1 `E` |
-| Dhivehi | `div-MV` | < 1 | 5 | 100 | 100 | **0** | **0** | 211 | #516 `S` |
-| Dogri | `doi-IN` | 3 | 5 | 100 | 100 | **0** | **0** | 211 | #497 `S` |
-| Dzongkha | `dzo-BT` | < 1 | 5 | 100 | 100 | **0** | **0** | 211 | #511 `S` |
+| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 212 | #436 `S` |
+| Akan | `aka-GH` | 11 | 3 | 100 | 100 | **0** | **0** | 212 | #461 `S` |
+| Albanisch | `sqi-AL` | 8 | 2 | 100 | 100 | **0** | **0** | 212 | #460 `S` |
+| Amharisch | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 212 | #420 `S` |
+| Arabisch | `ara-SA` | 400 | 4 | 100 | 100 | **0** | **0** | 212 | #6 `S` |
+| Aramäisch | `arc-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 212 | #514 `S` |
+| Armenisch | `hye-AM` | 5 | 4 | 100 | 100 | **0** | **0** | 212 | #483 `S` |
+| Aserbaidschanisch | `aze-AZ` | 10 | 3 | 100 | 100 | **0** | **0** | 212 | #463 `S` |
+| Assamesisch | `asm-IN` | 15 | 5 | 100 | 100 | **0** | **0** | 212 | #465 `S` |
+| Asturisch | `ast-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #512 `S` |
+| Bambara | `bam-ML` | 14 | 3 | 100 | 100 | **0** | **0** | 212 | #452 `S` |
+| Baskisch | `eus-ES` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #505 `S` |
+| Belarussisch | `bel-BY` | 5 | 4 | 100 | 100 | **0** | **0** | 212 | #484 `S` |
+| Bengalisch | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 212 | #397 `S` |
+| Bhojpuri | `bho-IN` | 52 | 5 | 100 | 100 | **0** | **0** | 212 | #427 `S` |
+| Birmanisch | `mya-MM` | 43 | 5 | 100 | 100 | **0** | **0** | 212 | #435 `S` |
+| Bodo | `brx-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 212 | #503 `S` |
+| Bosnisch | `bos-BA` | 3 | 3 | 100 | 100 | **0** | **0** | 212 | #489 `S` |
+| Bretonisch | `bre-FR` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #519 `S` |
+| Bulgarisch | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 212 | #456 `S` |
+| Cebuano | `ceb-PH` | 28 | 3 | 100 | 100 | **0** | **0** | 212 | #431 `S` |
+| Chinesisch (traditionell) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 212 | #416 `S` |
+| Chinesisch (vereinfacht) | `chi-CN` | 1.100 | 2 | 100 | 100 | **0** | **0** | 212 | #389 `S` |
+| Dänisch | `dan-DK` | 6 | 1 | 100 | 100 | **0** | **0** | 212 | #447 `S` |
+| Dari (Persisch in Afghanistan) | `fas-AF` | 35 | 4 | 100 | 100 | **0** | **0** | 212 | #433 `S` |
+| Deutsch | `ger-DE` | 135 | 2 | 100 | **76** | **90** | 99 | 10 | #1 `E` |
+| Dhivehi | `div-MV` | < 1 | 5 | 100 | 100 | **0** | **0** | 212 | #516 `S` |
+| Dogri | `doi-IN` | 3 | 5 | 100 | 100 | **0** | **0** | 212 | #497 `S` |
+| Dzongkha | `dzo-BT` | < 1 | 5 | 100 | 100 | **0** | **0** | 212 | #511 `S` |
 | Englisch (Australien) | `eng-AU` | 1.500 | 1 | 100 | 100 | 100 | 100 | 0 | Quelltexte |
 | Englisch (USA) | `eng-US` | 1.500 | 1 | 100 | 100 | 100 | 100 | 0 | Quelltexte |
-| Esperanto | `epo-EO` | < 1 | 2 | 100 | 100 | **0** | **0** | 211 | #520 `S` |
-| Estnisch | `est-EE` | 1 | 3 | 100 | 100 | **0** | **0** | 211 | #500 `S` |
-| Ewe | `ewe-GH` | 5 | 3 | 100 | 100 | **0** | **0** | 211 | #479 `S` |
-| Färöisch | `fao-FO` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #523 `S` |
-| Filipino | `fil-PH` | 83 | 2 | 100 | 100 | **0** | **0** | 211 | #402 `S` |
-| Finnisch | `fin-FI` | 6 | 2 | 100 | 100 | **0** | **0** | 211 | #467 `S` |
-| Französisch | `fre-FR` | 310 | 1 | 100 | 100 | **0** | **0** | 211 | #391 `S` |
-| Fulfulde | `ful-SN` | 37 | 4 | 100 | 100 | **0** | **0** | 211 | #432 `S` |
-| Galicisch | `glg-ES` | 2 | 2 | 100 | 100 | **0** | **0** | 211 | #487 `S` |
-| Georgisch | `kat-GE` | 4 | 4 | 100 | 100 | **0** | **0** | 211 | #493 `S` |
-| Griechisch | `ell-GR` | 13 | 3 | 100 | 100 | **0** | **0** | 211 | #455 `S` |
-| Grönländisch | `kal-GL` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #524 `S` |
-| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 211 | #417 `S` |
-| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 211 | #405 `S` |
-| Hawaiisch | `haw-US` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #526 `S` |
-| Hebräisch | `heb-IL` | 9 | 4 | 100 | 100 | **0** | **0** | 211 | #472 `S` |
-| Hindi | `hin-IN` | 610 | 4 | 100 | 100 | **0** | **0** | 211 | #394 `S` |
-| Hulaulá (jüdisches Neuaramäisch) | `huy-IL` | < 1 | 5 | 100 | 100 | **0** | **0** | 211 | #530 `S` |
-| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 211 | #428 `S` |
-| Indonesisch | `ind-ID` | 252 | 1 | 100 | 100 | **0** | **0** | 211 | #392 `S` |
-| Irisch | `gle-IE` | 2 | 4 | 100 | 100 | **0** | **0** | 211 | #498 `S` |
-| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 211 | #451 `S` |
-| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 211 | #443 `S` |
-| Isländisch | `isl-IS` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #513 `S` |
-| Italienisch | `ita-IT` | 68 | 1 | 100 | 100 | **0** | **0** | 211 | #398 `S` |
-| Japanisch | `jpn-JP` | 123 | 3 | 100 | 100 | **0** | **0** | 211 | #403 `S` |
-| Javanisch | `jav-ID` | 68 | 3 | 100 | 100 | **0** | **0** | 211 | #411 `S` |
-| Jiddisch | `yid-US` | 1 | 5 | 100 | 100 | **0** | **0** | 211 | #507 `S` |
-| Kabylisch | `kab-DZ` | 5 | 4 | 100 | 100 | **0** | **0** | 211 | #485 `S` |
-| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 211 | #423 `S` |
-| Kasachisch | `kaz-KZ` | 16 | 4 | 100 | 100 | **0** | **0** | 211 | #457 `S` |
-| Kaschmiri | `kas-IN` | 7 | 5 | 100 | 100 | **0** | **0** | 211 | #482 `S` |
-| Katalanisch | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 211 | #429 `S` |
-| Khmer | `khm-KH` | 18 | 4 | 100 | 100 | **0** | **0** | 211 | #453 `S` |
-| Kikuyu | `kik-KE` | 8 | 4 | 100 | 100 | **0** | **0** | 211 | #475 `S` |
-| Kinyarwanda | `kin-RW` | 15 | 4 | 100 | 100 | **0** | **0** | 211 | #458 `S` |
-| Kirgisisch | `kir-KG` | 5 | 5 | 100 | 100 | **0** | **0** | 211 | #490 `S` |
-| Kirundi | `run-BI` | 12 | 4 | 100 | 100 | **0** | **0** | 211 | #466 `S` |
-| Klingonisch | `tlh-QO` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #533 `S` |
-| Konkani | `kok-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 211 | #499 `S` |
-| Koreanisch | `kor-KR` | 82 | 3 | 100 | 100 | **0** | **0** | 211 | #406 `S` |
-| Koreanisch (Nordkorea, Munhwaŏ) | `kor-KP` | 26 | 3 | 100 | 100 | **0** | **0** | 211 | #434 `S` |
-| Kroatisch | `cro-HR` | 5 | 2 | 100 | 100 | **0** | **0** | 211 | #470 `S` |
-| Kurdisch (Kurmandschi) | `kur-TR` | 16 | 3 | 100 | 100 | **0** | **0** | 211 | #12 `S` |
-| Laotisch | `lao-LA` | 30 | 5 | 100 | 100 | **0** | **0** | 211 | #448 `S` |
-| Latein | `lat-VA` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #531 `S` |
-| Lettisch | `lav-LV` | 2 | 3 | 100 | 100 | **0** | **0** | 211 | #496 `S` |
-| Lingala | `lin-CD` | 40 | 4 | 100 | 100 | **0** | **0** | 211 | #430 `S` |
-| Litauisch | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 211 | #491 `S` |
-| Luganda | `lug-UG` | 11 | 4 | 100 | 100 | **0** | **0** | 211 | #469 `S` |
-| Luxemburgisch | `ltz-LU` | < 1 | 2 | 100 | 100 | **0** | **0** | 211 | #506 `S` |
-| Maithili | `mai-IN` | 34 | 5 | 100 | 100 | **0** | **0** | 211 | #444 `S` |
-| Malagasy | `mlg-MG` | 25 | 3 | 100 | 100 | **0** | **0** | 211 | #437 `S` |
-| Malaiisch | `msa-MY` | 60 | 1 | 100 | 100 | **0** | **0** | 211 | #399 `S` |
-| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 211 | #441 `S` |
-| Maltesisch | `mlt-MT` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #508 `S` |
-| Maori | `mri-NZ` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #517 `S` |
-| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 211 | #410 `S` |
-| Marokkanisches Standard-Tamazight | `zgh-MA` | 14 | 5 | 100 | 100 | **0** | **0** | 211 | #468 `S` |
-| Mazedonisch | `mkd-MK` | 2 | 3 | 100 | 100 | **0** | **0** | 211 | #495 `S` |
-| Meitei | `mni-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 211 | #502 `S` |
-| Mongolisch | `mon-MN` | 6 | 5 | 100 | 100 | **0** | **0** | 211 | #488 `S` |
-| Nepali | `nep-NP` | 32 | 4 | 100 | 100 | **0** | **0** | 211 | #438 `S` |
-| Niederländisch | `dut-NL` | 25 | 1 | 100 | 100 | **0** | **0** | 211 | #408 `S` |
-| Niedersorbisch | `dsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #529 `S` |
-| Nigerianisches Pidgin | `pcm-NG` | 120 | 3 | 100 | 100 | **0** | **0** | 211 | #404 `S` |
-| Nordsamisch | `sme-NO` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #525 `S` |
-| Norwegisch | `nor-NO` | 5 | 1 | 100 | 100 | **0** | **0** | 211 | #450 `S` |
-| N’Ko | `nqo-GN` | – | 5 | 100 | 100 | **0** | **0** | 211 | #532 `S` |
-| Obersorbisch | `hsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #528 `S` |
-| Okzitanisch | `oci-FR` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #510 `S` |
-| Oriya | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 211 | #439 `S` |
-| Oromo | `orm-ET` | 45 | 4 | 100 | 100 | **0** | **0** | 211 | #425 `S` |
-| Panjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 211 | #422 `S` |
-| Paschtu | `pus-AF` | 60 | 5 | 100 | 100 | **0** | **0** | 211 | #11 `S` |
-| Persisch | `fas-IR` | 83 | 4 | 100 | 100 | **0** | **0** | 211 | #10 `S` |
-| Polnisch | `pol-PL` | 40 | 2 | 100 | 100 | **0** | **0** | 211 | #412 `S` |
-| Portugiesisch (Brasilien) | `por-BR` | 215 | 1 | 100 | 100 | **0** | **0** | 211 | #393 `S` |
-| Portugiesisch (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 211 | #401 `S` |
-| Quechua | `que-PE` | 8 | 4 | 100 | 100 | **0** | **0** | 211 | #476 `S` |
-| Rätoromanisch | `roh-CH` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #522 `S` |
-| Rumänisch | `ron-RO` | 25 | 1 | 100 | 100 | **0** | **0** | 211 | #409 `S` |
-| Russisch | `rus-RU` | 255 | 3 | 100 | 100 | **0** | **0** | 211 | #9 `S` |
-| Sanskrit | `san-IN` | < 1 | 5 | 100 | 100 | **0** | **0** | 211 | #527 `S` |
-| Santali | `sat-IN` | 8 | 5 | 100 | 100 | **0** | **0** | 211 | #480 `S` |
-| Schottisch-Gälisch | `gla-GB` | < 1 | 4 | 100 | 100 | **0** | **0** | 211 | #521 `S` |
-| Schwedisch | `swe-SE` | 13 | 1 | 100 | 100 | **0** | **0** | 211 | #421 `S` |
-| Serbisch (kyrillisch) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 211 | #471 `S` |
-| Serbisch (lateinisch) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 211 | #464 `S` |
-| Shona | `sna-ZW` | 15 | 4 | 100 | 100 | **0** | **0** | 211 | #459 `S` |
-| Sindhi | `snd-PK` | 34 | 5 | 100 | 100 | **0** | **0** | 211 | #445 `S` |
-| Singhalesisch | `sin-LK` | 18 | 4 | 100 | 100 | **0** | **0** | 211 | #454 `S` |
-| Slowakisch | `slk-SK` | 7 | 2 | 100 | 100 | **0** | **0** | 211 | #462 `S` |
-| Slowenisch | `slv-SI` | 3 | 3 | 100 | 100 | **0** | **0** | 211 | #494 `S` |
-| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 211 | #440 `S` |
-| Spanisch (Mexiko) | `esl-MX` | 130 | 1 | 100 | 100 | **0** | **0** | 211 | #395 `S` |
-| Spanisch (Spanien) | `esl-ES` | 430 | 1 | 100 | 100 | **0** | **0** | 211 | #390 `S` |
-| Sundanesisch | `sun-ID` | 32 | 3 | 100 | 100 | **0** | **0** | 211 | #426 `S` |
-| Swahili | `swa-KE` | 80 | 3 | 100 | 100 | **0** | **0** | 211 | #407 `S` |
-| Syrisch (Aramäisch) | `syr-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 211 | #515 `S` |
-| Tadschikisch | `tgk-TJ` | 9 | 4 | 100 | 100 | **0** | **0** | 211 | #473 `S` |
-| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 211 | #415 `S` |
-| Tatarisch | `tat-RU` | 5 | 5 | 100 | 100 | **0** | **0** | 211 | #492 `S` |
-| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 211 | #413 `S` |
-| Thai | `tha-TH` | 61 | 4 | 100 | 100 | **0** | **0** | 211 | #419 `S` |
-| Tibetisch | `bod-CN` | 6 | 5 | 100 | 100 | **0** | **0** | 211 | #486 `S` |
-| Tigrinya | `tir-ET` | 10 | 5 | 100 | 100 | **0** | **0** | 211 | #477 `S` |
-| Tongaisch | `ton-TO` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #518 `S` |
-| Tschechisch | `cze-CZ` | 11 | 2 | 100 | 100 | **0** | **0** | 211 | #449 `S` |
-| Tschetschenisch | `che-RU` | 2 | 5 | 100 | 100 | **0** | **0** | 211 | #501 `S` |
-| Türkisch | `tur-TR` | 90 | 2 | 100 | 100 | **0** | **0** | 211 | #7 `S` |
-| Turkmenisch | `tuk-TM` | 7 | 4 | 100 | 100 | **0** | **0** | 211 | #478 `S` |
-| Uigurisch | `uig-CN` | 11 | 5 | 100 | 100 | **0** | **0** | 211 | #474 `S` |
-| Ukrainisch | `ukr-UA` | 39 | 3 | 100 | 100 | **0** | **0** | 211 | #8 `S` |
-| Ungarisch | `hun-HU` | 13 | 2 | 100 | 100 | **0** | **0** | 211 | #446 `S` |
-| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 211 | #400 `S` |
-| Usbekisch | `uzb-UZ` | 35 | 3 | 100 | 100 | **0** | **0** | 211 | #424 `S` |
-| Vietnamesisch | `vie-VN` | 86 | 1 | 100 | 100 | **0** | **0** | 211 | #396 `S` |
-| Walisisch | `cym-GB` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #504 `S` |
-| Westfriesisch | `fry-NL` | < 1 | 3 | 100 | 100 | **0** | **0** | 211 | #509 `S` |
-| Westpanjabi | `pnb-PK` | 90 | 5 | 100 | 100 | **0** | **0** | 211 | #414 `S` |
-| Wolof | `wol-SN` | 22 | 3 | 100 | 100 | **0** | **0** | 211 | #442 `S` |
-| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 211 | #418 `S` |
-| Zentralkurdisch (Sorani) | `ckb-IQ` | 7 | 5 | 100 | 100 | **0** | **0** | 211 | #481 `S` |
+| Esperanto | `epo-EO` | < 1 | 2 | 100 | 100 | **0** | **0** | 212 | #520 `S` |
+| Estnisch | `est-EE` | 1 | 3 | 100 | 100 | **0** | **0** | 212 | #500 `S` |
+| Ewe | `ewe-GH` | 5 | 3 | 100 | 100 | **0** | **0** | 212 | #479 `S` |
+| Färöisch | `fao-FO` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #523 `S` |
+| Filipino | `fil-PH` | 83 | 2 | 100 | 100 | **0** | **0** | 212 | #402 `S` |
+| Finnisch | `fin-FI` | 6 | 2 | 100 | 100 | **0** | **0** | 212 | #467 `S` |
+| Französisch | `fre-FR` | 310 | 1 | 100 | 100 | **0** | **0** | 212 | #391 `S` |
+| Fulfulde | `ful-SN` | 37 | 4 | 100 | 100 | **0** | **0** | 212 | #432 `S` |
+| Galicisch | `glg-ES` | 2 | 2 | 100 | 100 | **0** | **0** | 212 | #487 `S` |
+| Georgisch | `kat-GE` | 4 | 4 | 100 | 100 | **0** | **0** | 212 | #493 `S` |
+| Griechisch | `ell-GR` | 13 | 3 | 100 | 100 | **0** | **0** | 212 | #455 `S` |
+| Grönländisch | `kal-GL` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #524 `S` |
+| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 212 | #417 `S` |
+| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 212 | #405 `S` |
+| Hawaiisch | `haw-US` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #526 `S` |
+| Hebräisch | `heb-IL` | 9 | 4 | 100 | 100 | **0** | **0** | 212 | #472 `S` |
+| Hindi | `hin-IN` | 610 | 4 | 100 | 100 | **0** | **0** | 212 | #394 `S` |
+| Hulaulá (jüdisches Neuaramäisch) | `huy-IL` | < 1 | 5 | 100 | 100 | **0** | **0** | 212 | #530 `S` |
+| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 212 | #428 `S` |
+| Indonesisch | `ind-ID` | 252 | 1 | 100 | 100 | **0** | **0** | 212 | #392 `S` |
+| Irisch | `gle-IE` | 2 | 4 | 100 | 100 | **0** | **0** | 212 | #498 `S` |
+| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 212 | #451 `S` |
+| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 212 | #443 `S` |
+| Isländisch | `isl-IS` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #513 `S` |
+| Italienisch | `ita-IT` | 68 | 1 | 100 | 100 | **0** | **0** | 212 | #398 `S` |
+| Japanisch | `jpn-JP` | 123 | 3 | 100 | 100 | **0** | **0** | 212 | #403 `S` |
+| Javanisch | `jav-ID` | 68 | 3 | 100 | 100 | **0** | **0** | 212 | #411 `S` |
+| Jiddisch | `yid-US` | 1 | 5 | 100 | 100 | **0** | **0** | 212 | #507 `S` |
+| Kabylisch | `kab-DZ` | 5 | 4 | 100 | 100 | **0** | **0** | 212 | #485 `S` |
+| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 212 | #423 `S` |
+| Kasachisch | `kaz-KZ` | 16 | 4 | 100 | 100 | **0** | **0** | 212 | #457 `S` |
+| Kaschmiri | `kas-IN` | 7 | 5 | 100 | 100 | **0** | **0** | 212 | #482 `S` |
+| Katalanisch | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 212 | #429 `S` |
+| Khmer | `khm-KH` | 18 | 4 | 100 | 100 | **0** | **0** | 212 | #453 `S` |
+| Kikuyu | `kik-KE` | 8 | 4 | 100 | 100 | **0** | **0** | 212 | #475 `S` |
+| Kinyarwanda | `kin-RW` | 15 | 4 | 100 | 100 | **0** | **0** | 212 | #458 `S` |
+| Kirgisisch | `kir-KG` | 5 | 5 | 100 | 100 | **0** | **0** | 212 | #490 `S` |
+| Kirundi | `run-BI` | 12 | 4 | 100 | 100 | **0** | **0** | 212 | #466 `S` |
+| Klingonisch | `tlh-QO` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #533 `S` |
+| Konkani | `kok-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 212 | #499 `S` |
+| Koreanisch | `kor-KR` | 82 | 3 | 100 | 100 | **0** | **0** | 212 | #406 `S` |
+| Koreanisch (Nordkorea, Munhwaŏ) | `kor-KP` | 26 | 3 | 100 | 100 | **0** | **0** | 212 | #434 `S` |
+| Kroatisch | `cro-HR` | 5 | 2 | 100 | 100 | **0** | **0** | 212 | #470 `S` |
+| Kurdisch (Kurmandschi) | `kur-TR` | 16 | 3 | 100 | 100 | **0** | **0** | 212 | #12 `S` |
+| Laotisch | `lao-LA` | 30 | 5 | 100 | 100 | **0** | **0** | 212 | #448 `S` |
+| Latein | `lat-VA` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #531 `S` |
+| Lettisch | `lav-LV` | 2 | 3 | 100 | 100 | **0** | **0** | 212 | #496 `S` |
+| Lingala | `lin-CD` | 40 | 4 | 100 | 100 | **0** | **0** | 212 | #430 `S` |
+| Litauisch | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 212 | #491 `S` |
+| Luganda | `lug-UG` | 11 | 4 | 100 | 100 | **0** | **0** | 212 | #469 `S` |
+| Luxemburgisch | `ltz-LU` | < 1 | 2 | 100 | 100 | **0** | **0** | 212 | #506 `S` |
+| Maithili | `mai-IN` | 34 | 5 | 100 | 100 | **0** | **0** | 212 | #444 `S` |
+| Malagasy | `mlg-MG` | 25 | 3 | 100 | 100 | **0** | **0** | 212 | #437 `S` |
+| Malaiisch | `msa-MY` | 60 | 1 | 100 | 100 | **0** | **0** | 212 | #399 `S` |
+| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 212 | #441 `S` |
+| Maltesisch | `mlt-MT` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #508 `S` |
+| Maori | `mri-NZ` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #517 `S` |
+| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 212 | #410 `S` |
+| Marokkanisches Standard-Tamazight | `zgh-MA` | 14 | 5 | 100 | 100 | **0** | **0** | 212 | #468 `S` |
+| Mazedonisch | `mkd-MK` | 2 | 3 | 100 | 100 | **0** | **0** | 212 | #495 `S` |
+| Meitei | `mni-IN` | 2 | 5 | 100 | 100 | **0** | **0** | 212 | #502 `S` |
+| Mongolisch | `mon-MN` | 6 | 5 | 100 | 100 | **0** | **0** | 212 | #488 `S` |
+| Nepali | `nep-NP` | 32 | 4 | 100 | 100 | **0** | **0** | 212 | #438 `S` |
+| Niederländisch | `dut-NL` | 25 | 1 | 100 | 100 | **0** | **0** | 212 | #408 `S` |
+| Niedersorbisch | `dsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #529 `S` |
+| Nigerianisches Pidgin | `pcm-NG` | 120 | 3 | 100 | 100 | **0** | **0** | 212 | #404 `S` |
+| Nordsamisch | `sme-NO` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #525 `S` |
+| Norwegisch | `nor-NO` | 5 | 1 | 100 | 100 | **0** | **0** | 212 | #450 `S` |
+| N’Ko | `nqo-GN` | – | 5 | 100 | 100 | **0** | **0** | 212 | #532 `S` |
+| Obersorbisch | `hsb-DE` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #528 `S` |
+| Okzitanisch | `oci-FR` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #510 `S` |
+| Oriya | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 212 | #439 `S` |
+| Oromo | `orm-ET` | 45 | 4 | 100 | 100 | **0** | **0** | 212 | #425 `S` |
+| Panjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 212 | #422 `S` |
+| Paschtu | `pus-AF` | 60 | 5 | 100 | 100 | **0** | **0** | 212 | #11 `S` |
+| Persisch | `fas-IR` | 83 | 4 | 100 | 100 | **0** | **0** | 212 | #10 `S` |
+| Polnisch | `pol-PL` | 40 | 2 | 100 | 100 | **0** | **0** | 212 | #412 `S` |
+| Portugiesisch (Brasilien) | `por-BR` | 215 | 1 | 100 | 100 | **0** | **0** | 212 | #393 `S` |
+| Portugiesisch (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 212 | #401 `S` |
+| Quechua | `que-PE` | 8 | 4 | 100 | 100 | **0** | **0** | 212 | #476 `S` |
+| Rätoromanisch | `roh-CH` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #522 `S` |
+| Rumänisch | `ron-RO` | 25 | 1 | 100 | 100 | **0** | **0** | 212 | #409 `S` |
+| Russisch | `rus-RU` | 255 | 3 | 100 | 100 | **0** | **0** | 212 | #9 `S` |
+| Sanskrit | `san-IN` | < 1 | 5 | 100 | 100 | **0** | **0** | 212 | #527 `S` |
+| Santali | `sat-IN` | 8 | 5 | 100 | 100 | **0** | **0** | 212 | #480 `S` |
+| Schottisch-Gälisch | `gla-GB` | < 1 | 4 | 100 | 100 | **0** | **0** | 212 | #521 `S` |
+| Schwedisch | `swe-SE` | 13 | 1 | 100 | 100 | **0** | **0** | 212 | #421 `S` |
+| Serbisch (kyrillisch) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 212 | #471 `S` |
+| Serbisch (lateinisch) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 212 | #464 `S` |
+| Shona | `sna-ZW` | 15 | 4 | 100 | 100 | **0** | **0** | 212 | #459 `S` |
+| Sindhi | `snd-PK` | 34 | 5 | 100 | 100 | **0** | **0** | 212 | #445 `S` |
+| Singhalesisch | `sin-LK` | 18 | 4 | 100 | 100 | **0** | **0** | 212 | #454 `S` |
+| Slowakisch | `slk-SK` | 7 | 2 | 100 | 100 | **0** | **0** | 212 | #462 `S` |
+| Slowenisch | `slv-SI` | 3 | 3 | 100 | 100 | **0** | **0** | 212 | #494 `S` |
+| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 212 | #440 `S` |
+| Spanisch (Mexiko) | `esl-MX` | 130 | 1 | 100 | 100 | **0** | **0** | 212 | #395 `S` |
+| Spanisch (Spanien) | `esl-ES` | 430 | 1 | 100 | 100 | **0** | **0** | 212 | #390 `S` |
+| Sundanesisch | `sun-ID` | 32 | 3 | 100 | 100 | **0** | **0** | 212 | #426 `S` |
+| Swahili | `swa-KE` | 80 | 3 | 100 | 100 | **0** | **0** | 212 | #407 `S` |
+| Syrisch (Aramäisch) | `syr-IQ` | < 1 | 5 | 100 | 100 | **0** | **0** | 212 | #515 `S` |
+| Tadschikisch | `tgk-TJ` | 9 | 4 | 100 | 100 | **0** | **0** | 212 | #473 `S` |
+| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 212 | #415 `S` |
+| Tatarisch | `tat-RU` | 5 | 5 | 100 | 100 | **0** | **0** | 212 | #492 `S` |
+| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 212 | #413 `S` |
+| Thai | `tha-TH` | 61 | 4 | 100 | 100 | **0** | **0** | 212 | #419 `S` |
+| Tibetisch | `bod-CN` | 6 | 5 | 100 | 100 | **0** | **0** | 212 | #486 `S` |
+| Tigrinya | `tir-ET` | 10 | 5 | 100 | 100 | **0** | **0** | 212 | #477 `S` |
+| Tongaisch | `ton-TO` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #518 `S` |
+| Tschechisch | `cze-CZ` | 11 | 2 | 100 | 100 | **0** | **0** | 212 | #449 `S` |
+| Tschetschenisch | `che-RU` | 2 | 5 | 100 | 100 | **0** | **0** | 212 | #501 `S` |
+| Türkisch | `tur-TR` | 90 | 2 | 100 | 100 | **0** | **0** | 212 | #7 `S` |
+| Turkmenisch | `tuk-TM` | 7 | 4 | 100 | 100 | **0** | **0** | 212 | #478 `S` |
+| Uigurisch | `uig-CN` | 11 | 5 | 100 | 100 | **0** | **0** | 212 | #474 `S` |
+| Ukrainisch | `ukr-UA` | 39 | 3 | 100 | 100 | **0** | **0** | 212 | #8 `S` |
+| Ungarisch | `hun-HU` | 13 | 2 | 100 | 100 | **0** | **0** | 212 | #446 `S` |
+| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 212 | #400 `S` |
+| Usbekisch | `uzb-UZ` | 35 | 3 | 100 | 100 | **0** | **0** | 212 | #424 `S` |
+| Vietnamesisch | `vie-VN` | 86 | 1 | 100 | 100 | **0** | **0** | 212 | #396 `S` |
+| Walisisch | `cym-GB` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #504 `S` |
+| Westfriesisch | `fry-NL` | < 1 | 3 | 100 | 100 | **0** | **0** | 212 | #509 `S` |
+| Westpanjabi | `pnb-PK` | 90 | 5 | 100 | 100 | **0** | **0** | 212 | #414 `S` |
+| Wolof | `wol-SN` | 22 | 3 | 100 | 100 | **0** | **0** | 212 | #442 `S` |
+| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 212 | #418 `S` |
+| Zentralkurdisch (Sorani) | `ckb-IQ` | 7 | 5 | 100 | 100 | **0** | **0** | 212 | #481 `S` |
 
 ### Die Hilfe in Stufen
 
 | Stufe | Abschnitte | Seiten | Wörter | Teile |
 |---|---|---:|---:|---:|
-| Alltag: Redakteure, Benutzer, Anleitungen für Administratoren | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 317 | 410.034 | 16 |
-| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 24 weitere | 3.735 | 2.977.159 | 118 |
-| Entwicklerreferenz | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` und 12 weitere | 1.804 | 1.851.891 | 72 |
-| Tabellen der erzeugten Beispiele | `examples` | 3.873 Einträge | 105.413 | 4 |
+| Alltag: Redakteure, Benutzer, Anleitungen für Administratoren | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 318 | 410.040 | 16 |
+| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 25 weitere | 3.741 | 2.981.488 | 119 |
+| Entwicklerreferenz | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` und 12 weitere | 1.804 | 1.851.923 | 72 |
+| Tabellen der erzeugten Beispiele | `examples` | 3.786 Einträge | 104.372 | 4 |
 
-<details><summary>Die 210 Teile der Hilfe</summary>
+<details><summary>Die 211 Teile der Hilfe</summary>
 
 | Teil | Stufe | Seiten | Wörter | Erste … letzte Seite |
 |---|---|---:|---:|---|
-| `H-help-01` | daily | 13 | 32.546 | `help/README.md` … `help/editing-content.md` |
+| `H-help-01` | daily | 13 | 32.733 | `help/README.md` … `help/editing-content.md` |
 | `H-help-02` | daily | 13 | 16.112 | `help/free-documentation.md` … `help/project-files.md` |
-| `H-help-03` | daily | 13 | 34.697 | `help/publishing-and-versions.md` … `help/why-exponential-supports-php-7-4.md` |
+| `H-help-03` | daily | 14 | 35.275 | `help/publishing-and-versions.md` … `help/why-exponential-supports-php-7-4.md` |
 | `H-help-manual-01` | daily | 44 | 17.659 | `help/manual/README.md` … `help/manual/how-do-i-let-a-translator-edit-one-language.md` |
 | `H-help-manual-02` | daily | 44 | 18.751 | `help/manual/how-do-i-move-a-user-to-another-group.md` … `help/manual/why-does-search-not-find-an-item.md` |
 | `H-help-non-technical-people` | daily | 47 | 28.042 | `help/non-technical-people/checklists/README.md` … `help/non-technical-people/words/the-site-and-the-administration.md` |
 | `H-guides-01` | daily | 12 | 35.476 | `guides/README.md` … `guides/content-languages.md` |
-| `H-guides-02` | daily | 13 | 34.365 | `guides/content-model-and-editing.md` … `guides/litespeed-page-cache.md` |
-| `H-guides-03` | daily | 13 | 28.733 | `guides/mail-preferences-administrator.md` … `guides/notifications-developer.md` |
+| `H-guides-02` | daily | 13 | 34.380 | `guides/content-model-and-editing.md` … `guides/litespeed-page-cache.md` |
+| `H-guides-03` | daily | 13 | 27.948 | `guides/mail-preferences-administrator.md` … `guides/notifications-developer.md` |
 | `H-guides-04` | daily | 13 | 37.386 | `guides/object-states.md` … `guides/sessions.md` |
 | `H-guides-05` | daily | 13 | 33.313 | `guides/settings-page.md` … `guides/smarty-templates-tutorial.md` |
 | `H-guides-06` | daily | 13 | 23.860 | `guides/smarty-templates.md` … `guides/twig-templates-compatibility.md` |
 | `H-guides-07` | daily | 13 | 13.819 | `guides/twig-templates-converter.md` … `guides/twig-templates-troubleshooting.md` |
-| `H-guides-08` | daily | 13 | 31.315 | `guides/twig-templates-tutorial.md` … `guides/your-devices-and-sessions.md` |
+| `H-guides-08` | daily | 13 | 31.326 | `guides/twig-templates-tutorial.md` … `guides/your-devices-and-sessions.md` |
 | `H-help-book-learning` | daily | 31 | 18.870 | `help/book-learning/README.md` … `help/book-learning/workflows-and-triggers.md` |
 | `H-help-book-building-a-site` | daily | 9 | 5.090 | `help/book-building-a-site/README.md` … `help/book-building-a-site/the-news-pages.md` |
 | `H-install-01` | guides | 7 | 36.128 | `install/01-introduction.md` … `install/07-console-install.md` |
@@ -241,15 +241,15 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-install-04` | guides | 7 | 8.467 | `install/migration/coldfusion-apps.md` … `install/migration/exponential-platform-legacy.md` |
 | `H-install-05` | guides | 7 | 7.934 | `install/migration/exponential-platform-nexus.md` … `install/migration/magento.md` |
 | `H-install-06` | guides | 7 | 5.299 | `install/migration/older-releases.md` … `install/migration/wordpress.md` |
-| `H-features-01` | guides | 21 | 36.535 | `features/4.7/cluster_events.md` … `features/6.0/benchmark.md` |
+| `H-features-01` | guides | 21 | 36.555 | `features/4.7/cluster_events.md` … `features/6.0/benchmark.md` |
 | `H-features-02` | guides | 22 | 39.619 | `features/6.0/bookmark-folders.md` … `features/6.0/exp-debug-bar.md` |
 | `H-features-03` | guides | 22 | 16.907 | `features/6.0/exp-ini-command.md` … `features/6.0/extensions/ezautosave.md` |
-| `H-features-04` | guides | 21 | 16.558 | `features/6.0/extensions/ezdemo.md` … `features/6.0/extensions/git_manager.md` |
-| `H-features-05` | guides | 22 | 44.701 | `features/6.0/extensions/hcaptcha.md` … `features/6.0/help-system.md` |
-| `H-features-06` | guides | 22 | 32.672 | `features/6.0/hidden-admin-tabs.md` … `features/6.0/online-editor-tinymce8.md` |
-| `H-features-07` | guides | 21 | 21.867 | `features/6.0/order-list-sorting.md` … `features/6.0/publish-without-notification.md` |
-| `H-features-08` | guides | 22 | 26.313 | `features/6.0/quality-checks.md` … `features/6.0/secret-store.md` |
-| `H-features-09` | guides | 22 | 27.726 | `features/6.0/setup-files-and-config-php-commands.md` … `features/6.0/ui-switch-design.md` |
+| `H-features-04` | guides | 22 | 17.204 | `features/6.0/extensions/ezdemo.md` … `features/6.0/extensions/hcaptcha.md` |
+| `H-features-05` | guides | 22 | 44.556 | `features/6.0/extensions/ngclasslist.md` … `features/6.0/hidden-admin-tabs.md` |
+| `H-features-06` | guides | 21 | 31.815 | `features/6.0/icon-themes-in-extensions.md` … `features/6.0/notifications.md` |
+| `H-features-07` | guides | 22 | 23.318 | `features/6.0/online-editor-tinymce8.md` … `features/6.0/publish-without-notification.md` |
+| `H-features-08` | guides | 22 | 26.751 | `features/6.0/quality-checks.md` … `features/6.0/secret-store.md` |
+| `H-features-09` | guides | 22 | 27.915 | `features/6.0/setup-files-and-config-php-commands.md` … `features/6.0/ui-switch-design.md` |
 | `H-features-10` | guides | 22 | 31.249 | `features/6.0/ui-switch-languages.md` … `features/6.0/website-sidebar.md` |
 | `H-help-adopters` | guides | 46 | 16.730 | `help/adopters/adopters-checklists.md` … `help/adopters/what-adoption-means.md` |
 | `H-help-advocates-01` | guides | 48 | 29.465 | `help/advocates/7x-and-the-foundation-for-advocates.md` … `help/advocates/proposing-a-contribution-sprint.md` |
@@ -308,7 +308,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-leadership-02` | guides | 9 | 20.248 | `help/leadership/project-managers-start-here.md` … `help/leadership/working-with-the-community.md` |
 | `H-help-local-businesses-01` | guides | 27 | 17.683 | `help/local-businesses/budget/README.md` … `help/local-businesses/getting-started/working-with-a-local-partner-or-freelancer.md` |
 | `H-help-local-businesses-02` | guides | 28 | 19.105 | `help/local-businesses/local-businesses-faq.md` … `help/local-businesses/templates/website-brief-for-a-local-business.md` |
-| `H-help-migrations-01` | guides | 19 | 14.919 | `help/migrations/README.md` … `help/migrations/recipes/create-or-change-a-content-class.md` |
+| `H-help-migrations-01` | guides | 19 | 14.869 | `help/migrations/README.md` … `help/migrations/recipes/create-or-change-a-content-class.md` |
 | `H-help-migrations-02` | guides | 19 | 16.020 | `help/migrations/recipes/deploying-with-migrations.md` … `help/migrations/when-a-migration-fails.md` |
 | `H-help-non-profits-01` | guides | 27 | 18.785 | `help/non-profits/accessibility/README.md` … `help/non-profits/non-profits-faq.md` |
 | `H-help-non-profits-02` | guides | 28 | 19.746 | `help/non-profits/non-profits-glossary.md` … `help/non-profits/volunteers/volunteers-as-editors.md` |
@@ -327,6 +327,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-site-packages-02` | guides | 26 | 29.251 | `help/site-packages/cjw-multisite/the-demo-content-package.md` … `help/site-packages/requirements/the-requirements-checklist.md` |
 | `H-help-site-packages-03` | guides | 26 | 26.765 | `help/site-packages/requirements/thumbnails-and-screenshots.md` … `help/site-packages/your-own/versioning-your-own-packages.md` |
 | `H-help-sponsors` | guides | 11 | 5.286 | `help/sponsors/7x-the-first-sponsor.md` … `help/sponsors/what-sponsorship-funds.md` |
+| `H-help-static-publishing` | guides | 5 | 2.577 | `help/static-publishing/README.md` … `help/static-publishing/who-may-publish-roles-and-policies.md` |
 | `H-help-students-01` | guides | 27 | 21.052 | `help/students/asking-for-help-and-study-groups.md` … `help/students/project-04-a-page-with-layouts.md` |
 | `H-help-students-02` | guides | 28 | 23.247 | `help/students/project-05-a-multilingual-site.md` … `help/students/your-first-site-three-ways.md` |
 | `H-help-supporters` | guides | 12 | 5.721 | `help/supporters/advocacy.md` … `help/supporters/ways-to-support-exponential.md` |
@@ -352,7 +353,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-trainers-18` | guides | 32 | 19.670 | `help/trainers/train-the-trainer/module-06-assessment-and-follow-up/checking-understanding-during-class.md` … `help/trainers/workshops/module-05-capstone-projects/multilingual-event-site.md` |
 | `H-reference` | guides | 1 | 1.858 | `reference/template-check-rules.md` |
 | `H-root-01` | guides | 4 | 12.098 | `INSTALL.md` … `UPDATE.md` |
-| `H-root-02` | guides | 4 | 34.232 | `branch-overview.md` … `languages.md` |
+| `H-root-02` | guides | 4 | 34.292 | `branch-overview.md` … `languages.md` |
 | `H-help-extension-development-01` | reference | 43 | 36.427 | `help/extension-development/README.md` … `help/extension-development/part-2-builder/the-exp-ini-command.md` |
 | `H-help-extension-development-02` | reference | 43 | 25.222 | `help/extension-development/part-2-builder/view-modes-for-builders.md` … `help/extension-development/part-3-extension-developer/tutorials/by-hand-custom-tag.md` |
 | `H-help-extension-development-03` | reference | 43 | 28.645 | `help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md` … `help/extension-development/part-4-upgrading/old-jquery-to-jquery-4.md` |
@@ -386,7 +387,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-integrators-02` | reference | 28 | 23.801 | `help/integrators/login-handlers-ldap-and-textfile.md` … `help/integrators/writing-an-import-script.md` |
 | `H-help-sqli-import` | reference | 6 | 6.974 | `help/sqli-import/README.md` … `help/sqli-import/upgrading-from-1x.md` |
 | `H-specifications-01` | reference | 13 | 16.727 | `specifications/6.0/README.md` … `specifications/6.0/help-standards.md` |
-| `H-specifications-02` | reference | 13 | 22.015 | `specifications/6.0/help-style-guide.md` … `specifications/6.0/platform-console-commands.md` |
+| `H-specifications-02` | reference | 13 | 21.936 | `specifications/6.0/help-style-guide.md` … `specifications/6.0/platform-console-commands.md` |
 | `H-specifications-03` | reference | 13 | 21.393 | `specifications/6.0/platform-package-map.md` … `specifications/6.0/xrowextract.md` |
 | `H-standards-01` | reference | 18 | 34.531 | `standards/README.md` … `standards/patterns/area-extension-bcgooglesitemaps.md` |
 | `H-standards-02` | reference | 18 | 21.769 | `standards/patterns/area-extension-bcwebsitestatistics.md` … `standards/patterns/area-extension-explayouts-content-browser.md` |
@@ -400,7 +401,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-standards-10` | reference | 18 | 69.242 | `standards/patterns/area-lib-eztemplate.md` … `standards/patterns/iterator.md` |
 | `H-standards-11` | reference | 19 | 79.324 | `standards/patterns/module-view.md` … `standards/web-platform.md` |
 | `H-bc-01` | reference | 11 | 42.573 | `bc/5.90/README.md` … `bc/6.0/admin4-styling.md` |
-| `H-bc-02` | reference | 11 | 65.344 | `bc/6.0/admin4l.md` … `bc/6.0/cache-console.md` |
+| `H-bc-02` | reference | 11 | 65.510 | `bc/6.0/admin4l.md` … `bc/6.0/cache-console.md` |
 | `H-bc-03` | reference | 11 | 30.551 | `bc/6.0/ci.md` … `bc/6.0/draft-edit-access.md` |
 | `H-bc-04` | reference | 11 | 25.260 | `bc/6.0/eZINI_PRESERVES_COMMENTS.md` … `bc/6.0/hardening.md` |
 | `H-bc-05` | reference | 11 | 20.565 | `bc/6.0/help-content-dita-ebooks-reviews.md` … `bc/6.0/legacy-fork-fixes.md` |
@@ -409,7 +410,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-bc-08` | reference | 11 | 14.380 | `bc/6.0/oauth-token-hardening.md` … `bc/6.0/php8.md` |
 | `H-bc-09` | reference | 11 | 36.010 | `bc/6.0/phpunitv10.md` … `bc/6.0/response-cache-and-navigation.md` |
 | `H-bc-10` | reference | 11 | 30.461 | `bc/6.0/rest-cors.md` … `bc/6.0/trash.md` |
-| `H-bc-11` | reference | 12 | 31.108 | `bc/6.0/trusted-proxies.md` … `bc/6.0/yui-removal.md` |
+| `H-bc-11` | reference | 12 | 31.053 | `bc/6.0/trusted-proxies.md` … `bc/6.0/yui-removal.md` |
 | `H-history-01` | reference | 23 | 9.704 | `history/2023/2023-12.md` … `history/2025/2025-09.md` |
 | `H-history-02` | reference | 24 | 42.484 | `history/2025/2025-10.md` … `history/ecosystem/adminneo.md` |
 | `H-history-03` | reference | 24 | 20.834 | `history/ecosystem/cjw-exponential-platform-nexus.md` … `history/ecosystem/ezplatform-query-fieldtype.md` |
@@ -428,7 +429,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `X01` | tables | 1.138 Einträge | 25.742 | `descriptions/01-command-accesscheck.json` … `descriptions/05-ini-settings-content-ini.json` |
 | `X02` | tables | 595 Einträge | 25.564 | `descriptions/06-ini-settings-debugbar-ini.json` … `descriptions/08-ini-settings-package-ini.json` |
 | `X03` | tables | 690 Einträge | 29.351 | `descriptions/09-ini-settings-site-ini.json` … `descriptions/12-shell-checkcalltimeref.json` |
-| `X04` | tables | 1.450 Einträge | 24.756 | `descriptions/13-command-exptemplateconvert.json` … `strings.json` |
+| `X04` | tables | 1.363 Einträge | 23.715 | `descriptions/13-command-exptemplateconvert.json` … `strings.json` |
 
 </details>
 
@@ -437,16 +438,16 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | Teil | Texte | Wörter | Kontexte (erster … letzter) |
 |---|---:|---:|---|
 | `A01` | 1.978 | 12.759 | `contentstructuremenu/show_content_structure` … `design/admin/infocollector/confirmremoval` |
-| `A02` | 2.000 | 11.504 | `design/admin/infocollector/overview` … `design/admin/preview/company` |
-| `A03` | 1.772 | 12.003 | `design/admin/preview/feedbackform` … `design/admin/setup/extensions` |
+| `A02` | 2.000 | 11.529 | `design/admin/infocollector/overview` … `design/admin/preview/article` |
+| `A03` | 1.779 | 12.050 | `design/admin/preview/company` … `design/admin/setup/extensions` |
 | `A04` | 1.972 | 20.876 | `design/admin/setup/info` … `design/admin/setup/rad/override` |
 | `A05` | 1.998 | 14.899 | `design/admin/setup/rad/settings` … `design/admin/visual/templateview` |
 | `A06` | 1.984 | 8.966 | `design/admin/visual/toolbar` … `design/standard/section` |
 | `A07` | 1.922 | 13.628 | `design/standard/setup` … `kernel/collaboration` |
 | `A08` | 1.839 | 13.074 | `kernel/content` … `kernel/contentfinder` |
 | `A09` | 1.992 | 11.165 | `design/admin/audit` … `kernel/mailpreferences` |
-| `A10` | 1.964 | 12.811 | `kernel/mailpreferences/mail` … `design/admin/dashboard/migrations` |
-| `A11` | 207 | 1.258 | `design/admin/migration` … `design/admin/migration` |
+| `A10` | 1.966 | 12.827 | `kernel/mailpreferences/mail` … `design/admin/dashboard/migrations` |
+| `A11` | 708 | 4.121 | `design/admin/migration` … `design/admin/staticpublish` |
 
 </details>
 
@@ -489,8 +490,8 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | 4. Neue Übersetzungen | 264 |
 | 5. Erweiterungen der übrigen Sprachen | 0 |
 | 6. Hilfe des Alltags der übrigen Sprachen | 2.465 |
-| 7. Übrige Hilfe der Prioritätsgruppe | 1.362 |
-| 8. Übrige Hilfe der übrigen Sprachen | 28.130 |
+| 7. Übrige Hilfe der Prioritätsgruppe | 1.370 |
+| 8. Übrige Hilfe der übrigen Sprachen | 28.275 |
 
 | # | Welle | Sprache | Arbeitspaket | Umfang (offen) | Schwierigkeit | Voraussetzungen |
 |---:|---|---|---|---|:-:|---|
@@ -498,7 +499,7 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | 2 | `ger-DE/H-guides-05` | Deutsch | Hilfe `H-guides-05` | 13 Seiten, 27.650 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 3 | `ger-DE/H-guides-06` | Deutsch | Hilfe `H-guides-06` | 13 Seiten, 5.250 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 4 | `ger-DE/H-guides-07` | Deutsch | Hilfe `H-guides-07` | 13 Seiten, 6.772 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 5 | `ger-DE/H-guides-08` | Deutsch | Hilfe `H-guides-08` | 13 Seiten, 1.879 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 5 | `ger-DE/H-guides-08` | Deutsch | Hilfe `H-guides-08` | 13 Seiten, 1.880 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 6 | `ara-SA/S` | Arabisch | Hilfe einrichten | klein | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab |
 | 7 | `tur-TR/S` | Türkisch | Hilfe einrichten | klein | 2 | `GUIDE.md` |
 | 8 | `ukr-UA/S` | Ukrainisch | Hilfe einrichten | klein | 3 | `GUIDE.md` |
@@ -506,13 +507,13 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | 10 | `fas-IR/S` | Persisch | Hilfe einrichten | klein | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab |
 | 11 | `pus-AF/S` | Paschtu | Hilfe einrichten | klein | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab |
 | 12 | `kur-TR/S` | Kurdisch (Kurmandschi) | Hilfe einrichten | klein | 3 | `GUIDE.md` |
-| 13 | `ara-SA/H-help-01` | Arabisch | Hilfe `H-help-01` | 13 Seiten, 32.546 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 14 | `tur-TR/H-help-01` | Türkisch | Hilfe `H-help-01` | 13 Seiten, 32.546 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 15 | `ukr-UA/H-help-01` | Ukrainisch | Hilfe `H-help-01` | 13 Seiten, 32.546 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 16 | `rus-RU/H-help-01` | Russisch | Hilfe `H-help-01` | 13 Seiten, 32.546 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 17 | `fas-IR/H-help-01` | Persisch | Hilfe `H-help-01` | 13 Seiten, 32.546 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 18 | `pus-AF/H-help-01` | Paschtu | Hilfe `H-help-01` | 13 Seiten, 32.546 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 19 | `kur-TR/H-help-01` | Kurdisch (Kurmandschi) | Hilfe `H-help-01` | 13 Seiten, 32.546 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 13 | `ara-SA/H-help-01` | Arabisch | Hilfe `H-help-01` | 13 Seiten, 32.733 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 14 | `tur-TR/H-help-01` | Türkisch | Hilfe `H-help-01` | 13 Seiten, 32.733 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 15 | `ukr-UA/H-help-01` | Ukrainisch | Hilfe `H-help-01` | 13 Seiten, 32.733 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 16 | `rus-RU/H-help-01` | Russisch | Hilfe `H-help-01` | 13 Seiten, 32.733 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 17 | `fas-IR/H-help-01` | Persisch | Hilfe `H-help-01` | 13 Seiten, 32.733 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 18 | `pus-AF/H-help-01` | Paschtu | Hilfe `H-help-01` | 13 Seiten, 32.733 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 19 | `kur-TR/H-help-01` | Kurdisch (Kurmandschi) | Hilfe `H-help-01` | 13 Seiten, 32.733 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
 | 20 | `ara-SA/H-help-02` | Arabisch | Hilfe `H-help-02` | 13 Seiten, 16.112 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
 | 21 | `tur-TR/H-help-02` | Türkisch | Hilfe `H-help-02` | 13 Seiten, 16.112 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 22 | `ukr-UA/H-help-02` | Ukrainisch | Hilfe `H-help-02` | 13 Seiten, 16.112 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
@@ -520,13 +521,13 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | 24 | `fas-IR/H-help-02` | Persisch | Hilfe `H-help-02` | 13 Seiten, 16.112 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
 | 25 | `pus-AF/H-help-02` | Paschtu | Hilfe `H-help-02` | 13 Seiten, 16.112 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
 | 26 | `kur-TR/H-help-02` | Kurdisch (Kurmandschi) | Hilfe `H-help-02` | 13 Seiten, 16.112 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 27 | `ara-SA/H-help-03` | Arabisch | Hilfe `H-help-03` | 13 Seiten, 34.697 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 28 | `tur-TR/H-help-03` | Türkisch | Hilfe `H-help-03` | 13 Seiten, 34.697 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 29 | `ukr-UA/H-help-03` | Ukrainisch | Hilfe `H-help-03` | 13 Seiten, 34.697 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 30 | `rus-RU/H-help-03` | Russisch | Hilfe `H-help-03` | 13 Seiten, 34.697 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
-| 31 | `fas-IR/H-help-03` | Persisch | Hilfe `H-help-03` | 13 Seiten, 34.697 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 32 | `pus-AF/H-help-03` | Paschtu | Hilfe `H-help-03` | 13 Seiten, 34.697 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
-| 33 | `kur-TR/H-help-03` | Kurdisch (Kurmandschi) | Hilfe `H-help-03` | 13 Seiten, 34.697 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 27 | `ara-SA/H-help-03` | Arabisch | Hilfe `H-help-03` | 14 Seiten, 35.275 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 28 | `tur-TR/H-help-03` | Türkisch | Hilfe `H-help-03` | 14 Seiten, 35.275 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 29 | `ukr-UA/H-help-03` | Ukrainisch | Hilfe `H-help-03` | 14 Seiten, 35.275 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 30 | `rus-RU/H-help-03` | Russisch | Hilfe `H-help-03` | 14 Seiten, 35.275 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
+| 31 | `fas-IR/H-help-03` | Persisch | Hilfe `H-help-03` | 14 Seiten, 35.275 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 32 | `pus-AF/H-help-03` | Paschtu | Hilfe `H-help-03` | 14 Seiten, 35.275 Wörter | 5 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
+| 33 | `kur-TR/H-help-03` | Kurdisch (Kurmandschi) | Hilfe `H-help-03` | 14 Seiten, 35.275 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
 | 34 | `ara-SA/H-help-manual-01` | Arabisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.659 Wörter | 4 | `GUIDE.md`, RTL, PDF-Schrift Arab, Wellen `S` und Administration |
 | 35 | `tur-TR/H-help-manual-01` | Türkisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.659 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 36 | `ukr-UA/H-help-manual-01` | Ukrainisch | Hilfe `H-help-manual-01` | 44 Seiten, 17.659 Wörter | 3 | `GUIDE.md`, Wellen `S` und Administration |
@@ -558,7 +559,7 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 Die ganze Warteschlange und die Seiten einer Welle: `./console exp:i18n waves --list`, `./console exp:i18n waves --wave=<Welle>`.
 
 Erzeugt mit `./console exp:i18n waves`; `./console exp:i18n waves --check` und der Test `expI18nTranslationWavesTest` schlagen fehl, sobald ein Prozentwert nicht mehr stimmt oder ein Umfang um mehr als 3 % abweicht.
-<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"aka-GH":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,100,0,0],"arc-IQ":[100,100,0,0],"asm-IN":[100,100,0,0],"ast-ES":[100,100,0,0],"aze-AZ":[100,100,0,0],"bam-ML":[100,100,0,0],"bel-BY":[100,100,0,0],"ben-BD":[100,100,0,0],"bho-IN":[100,100,0,0],"bod-CN":[100,100,0,0],"bos-BA":[100,100,0,0],"bre-FR":[100,100,0,0],"brx-IN":[100,100,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"ceb-PH":[100,100,0,0],"che-RU":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"ckb-IQ":[100,100,0,0],"cro-HR":[100,100,0,0],"cym-GB":[100,100,0,0],"cze-CZ":[100,100,0,0],"dan-DK":[100,100,0,0],"div-MV":[100,100,0,0],"doi-IN":[100,100,0,0],"dsb-DE":[100,100,0,0],"dut-NL":[100,100,0,0],"dzo-BT":[100,100,0,0],"ell-GR":[100,100,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[100,100,0,0],"esl-ES":[100,100,0,0],"esl-MX":[100,100,0,0],"est-EE":[100,100,0,0],"eus-ES":[100,100,0,0],"ewe-GH":[100,100,0,0],"fao-FO":[100,100,0,0],"fas-AF":[100,100,0,0],"fas-IR":[100,100,0,0],"fil-PH":[100,100,0,0],"fin-FI":[100,100,0,0],"fre-FR":[100,100,0,0],"fry-NL":[100,100,0,0],"ful-SN":[100,100,0,0],"ger-DE":[100,76,90,99],"gla-GB":[100,100,0,0],"gle-IE":[100,100,0,0],"glg-ES":[100,100,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"haw-US":[100,100,0,0],"heb-IL":[100,100,0,0],"hin-IN":[100,100,0,0],"hsb-DE":[100,100,0,0],"hun-HU":[100,100,0,0],"huy-IL":[100,100,0,0],"hye-AM":[100,100,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,100,0,0],"isl-IS":[100,100,0,0],"ita-IT":[100,100,0,0],"jav-ID":[100,100,0,0],"jpn-JP":[100,100,0,0],"kab-DZ":[100,100,0,0],"kal-GL":[100,100,0,0],"kan-IN":[100,100,0,0],"kas-IN":[100,100,0,0],"kat-GE":[100,100,0,0],"kaz-KZ":[100,100,0,0],"khm-KH":[100,100,0,0],"kik-KE":[100,100,0,0],"kin-RW":[100,100,0,0],"kir-KG":[100,100,0,0],"kok-IN":[100,100,0,0],"kor-KP":[100,100,0,0],"kor-KR":[100,100,0,0],"kur-TR":[100,100,0,0],"lao-LA":[100,100,0,0],"lat-VA":[100,100,0,0],"lav-LV":[100,100,0,0],"lin-CD":[100,100,0,0],"lit-LT":[100,100,0,0],"ltz-LU":[100,100,0,0],"lug-UG":[100,100,0,0],"mai-IN":[100,100,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mkd-MK":[100,100,0,0],"mlg-MG":[100,100,0,0],"mlt-MT":[100,100,0,0],"mni-IN":[100,100,0,0],"mon-MN":[100,100,0,0],"mri-NZ":[100,100,0,0],"msa-MY":[100,100,0,0],"mya-MM":[100,100,0,0],"nep-NP":[100,100,0,0],"nor-NO":[100,100,0,0],"nqo-GN":[100,100,0,0],"oci-FR":[100,100,0,0],"ori-IN":[100,100,0,0],"orm-ET":[100,100,0,0],"pan-IN":[100,100,0,0],"pcm-NG":[100,100,0,0],"pnb-PK":[100,100,0,0],"pol-PL":[100,100,0,0],"por-BR":[100,100,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,100,0,0],"que-PE":[100,100,0,0],"roh-CH":[100,100,0,0],"ron-RO":[100,100,0,0],"run-BI":[100,100,0,0],"rus-RU":[100,100,0,0],"san-IN":[100,100,0,0],"sat-IN":[100,100,0,0],"ser-SR":[100,100,0,0],"sin-LK":[100,100,0,0],"slk-SK":[100,100,0,0],"slv-SI":[100,100,0,0],"sme-NO":[100,100,0,0],"sna-ZW":[100,100,0,0],"snd-PK":[100,100,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,100,0,0],"srp-RS":[100,100,0,0],"sun-ID":[100,100,0,0],"swa-KE":[100,100,0,0],"swe-SE":[100,100,0,0],"syr-IQ":[100,100,0,0],"tam-IN":[100,100,0,0],"tat-RU":[100,100,0,0],"tel-IN":[100,100,0,0],"tgk-TJ":[100,100,0,0],"tha-TH":[100,100,0,0],"tir-ET":[100,100,0,0],"tlh-QO":[100,100,0,0],"ton-TO":[100,100,0,0],"tuk-TM":[100,100,0,0],"tur-TR":[100,100,0,0],"uig-CN":[100,100,0,0],"ukr-UA":[100,100,0,0],"urd-PK":[100,100,0,0],"uzb-UZ":[100,100,0,0],"vie-VN":[100,100,0,0],"wol-SN":[100,100,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,100,0,0],"yor-NG":[100,100,0,0],"zgh-MA":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":19628,"extensions":567,"parts":210,"daily_pages":317,"daily_words":410034,"guides_pages":3735,"guides_words":2977159,"reference_pages":1804,"reference_words":1851891,"tables_pages":0,"tables_words":105413},"waves":32345,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
+<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"aka-GH":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,100,0,0],"arc-IQ":[100,100,0,0],"asm-IN":[100,100,0,0],"ast-ES":[100,100,0,0],"aze-AZ":[100,100,0,0],"bam-ML":[100,100,0,0],"bel-BY":[100,100,0,0],"ben-BD":[100,100,0,0],"bho-IN":[100,100,0,0],"bod-CN":[100,100,0,0],"bos-BA":[100,100,0,0],"bre-FR":[100,100,0,0],"brx-IN":[100,100,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"ceb-PH":[100,100,0,0],"che-RU":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"ckb-IQ":[100,100,0,0],"cro-HR":[100,100,0,0],"cym-GB":[100,100,0,0],"cze-CZ":[100,100,0,0],"dan-DK":[100,100,0,0],"div-MV":[100,100,0,0],"doi-IN":[100,100,0,0],"dsb-DE":[100,100,0,0],"dut-NL":[100,100,0,0],"dzo-BT":[100,100,0,0],"ell-GR":[100,100,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[100,100,0,0],"esl-ES":[100,100,0,0],"esl-MX":[100,100,0,0],"est-EE":[100,100,0,0],"eus-ES":[100,100,0,0],"ewe-GH":[100,100,0,0],"fao-FO":[100,100,0,0],"fas-AF":[100,100,0,0],"fas-IR":[100,100,0,0],"fil-PH":[100,100,0,0],"fin-FI":[100,100,0,0],"fre-FR":[100,100,0,0],"fry-NL":[100,100,0,0],"ful-SN":[100,100,0,0],"ger-DE":[100,76,90,99],"gla-GB":[100,100,0,0],"gle-IE":[100,100,0,0],"glg-ES":[100,100,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"haw-US":[100,100,0,0],"heb-IL":[100,100,0,0],"hin-IN":[100,100,0,0],"hsb-DE":[100,100,0,0],"hun-HU":[100,100,0,0],"huy-IL":[100,100,0,0],"hye-AM":[100,100,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,100,0,0],"isl-IS":[100,100,0,0],"ita-IT":[100,100,0,0],"jav-ID":[100,100,0,0],"jpn-JP":[100,100,0,0],"kab-DZ":[100,100,0,0],"kal-GL":[100,100,0,0],"kan-IN":[100,100,0,0],"kas-IN":[100,100,0,0],"kat-GE":[100,100,0,0],"kaz-KZ":[100,100,0,0],"khm-KH":[100,100,0,0],"kik-KE":[100,100,0,0],"kin-RW":[100,100,0,0],"kir-KG":[100,100,0,0],"kok-IN":[100,100,0,0],"kor-KP":[100,100,0,0],"kor-KR":[100,100,0,0],"kur-TR":[100,100,0,0],"lao-LA":[100,100,0,0],"lat-VA":[100,100,0,0],"lav-LV":[100,100,0,0],"lin-CD":[100,100,0,0],"lit-LT":[100,100,0,0],"ltz-LU":[100,100,0,0],"lug-UG":[100,100,0,0],"mai-IN":[100,100,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mkd-MK":[100,100,0,0],"mlg-MG":[100,100,0,0],"mlt-MT":[100,100,0,0],"mni-IN":[100,100,0,0],"mon-MN":[100,100,0,0],"mri-NZ":[100,100,0,0],"msa-MY":[100,100,0,0],"mya-MM":[100,100,0,0],"nep-NP":[100,100,0,0],"nor-NO":[100,100,0,0],"nqo-GN":[100,100,0,0],"oci-FR":[100,100,0,0],"ori-IN":[100,100,0,0],"orm-ET":[100,100,0,0],"pan-IN":[100,100,0,0],"pcm-NG":[100,100,0,0],"pnb-PK":[100,100,0,0],"pol-PL":[100,100,0,0],"por-BR":[100,100,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,100,0,0],"que-PE":[100,100,0,0],"roh-CH":[100,100,0,0],"ron-RO":[100,100,0,0],"run-BI":[100,100,0,0],"rus-RU":[100,100,0,0],"san-IN":[100,100,0,0],"sat-IN":[100,100,0,0],"ser-SR":[100,100,0,0],"sin-LK":[100,100,0,0],"slk-SK":[100,100,0,0],"slv-SI":[100,100,0,0],"sme-NO":[100,100,0,0],"sna-ZW":[100,100,0,0],"snd-PK":[100,100,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,100,0,0],"srp-RS":[100,100,0,0],"sun-ID":[100,100,0,0],"swa-KE":[100,100,0,0],"swe-SE":[100,100,0,0],"syr-IQ":[100,100,0,0],"tam-IN":[100,100,0,0],"tat-RU":[100,100,0,0],"tel-IN":[100,100,0,0],"tgk-TJ":[100,100,0,0],"tha-TH":[100,100,0,0],"tir-ET":[100,100,0,0],"tlh-QO":[100,100,0,0],"ton-TO":[100,100,0,0],"tuk-TM":[100,100,0,0],"tur-TR":[100,100,0,0],"uig-CN":[100,100,0,0],"ukr-UA":[100,100,0,0],"urd-PK":[100,100,0,0],"uzb-UZ":[100,100,0,0],"vie-VN":[100,100,0,0],"wol-SN":[100,100,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,100,0,0],"yor-NG":[100,100,0,0],"zgh-MA":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":20138,"extensions":567,"parts":211,"daily_pages":318,"daily_words":410040,"guides_pages":3741,"guides_words":2981488,"reference_pages":1804,"reference_words":1851923,"tables_pages":0,"tables_words":104372},"waves":32498,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
 <!-- generated: exp:i18n waves (end) -->
 
 ## Was die Wellen sind

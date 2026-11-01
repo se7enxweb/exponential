@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ኣብቲ ምትካል ከም ፋይላት ዝተዓቀቡ ለውጥታት: ኩነታቶም፡ ምክያዳት፡ ምክያድን ምምላስን።</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ሓድሽ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>እቲ ሓድሽ ትሕዝቶ፡ ንግምገማ ዝተታሕዘ፡ ከምኡ'ውን ኣብ ምርጫ ዝግበሩ ተግባራት።</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ስታቲክ ቅዳሕ ናይ መርበብ ናብ GitHub Pages ወይ ዝኾነ git ሆስት ኣሕትሙ።</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ስታቲክ ምሕታም</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>መልስታት ናይ ዝተዓቀቡ ሕቶታት GraphQL API፣ ከምኡ&apos;ውን ክፍልታት ትሕዝቶ ናይ ኣወዳድባኡ።</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>ስታቲክ ቅዳሕ ናብ GitHub Pages ወይ ዝኾነ git ሆስት ኣሕትሙ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ስታቲክ ምሕታም</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ስታቲክ ካሽ ገጻት ካብዚ ሰርቨር የቕርብ። ስታቲክ ቅዳሕ ናይ መርበብ ኣብ ካልእ ቦታ፡ ኣብ GitHub Pages ወይ ዝኾነ git ሆስት ንምሕታም፡ ስታቲክ ምሕታም ተጠቐሙ።</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ኣብቲ ምትካል ከም ፋይላት ዝተዓቀቡ ለውጥታት: ኩነታቶም፡ ምክያዳት፡ ምክያድን ምምላስን።</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ስታቲክ ቅዳሕ ናይ መርበብ ናብ GitHub Pages ወይ ዝኾነ git ሆስት ኣሕትሙ።</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ስታቲክ ምሕታም</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80589,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>እቲ ምክያድ ክጅመር ኣይከኣለን።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ዝተቐየረ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ዝተፈጥረ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ክፍሊ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ክፋል</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ፈጣሪ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ሓድሽ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ኣብ መላእ መርበብ ብቐረባ ዝተፈጥረን ዝተቐየረን ትሕዝቶ፡ እቲ ሓድሽ ቀዳማይ፦ በጻሕቲ ዘእተውዎ፡ ንግምገማ ዝተታሕዘ፡ ንምሕታሞም ዝጽበዩ ንድፍታት። ንምፍታሕ፡ ንምሓዝ፡ ንምሕባእ፡ ንምርኣይ፡ ንምውጻእ ወይ ናብ ካልእ ክፋል ወይ ኩነት ንምግዓዝ ኣቑሑት ምረጹ።</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>እቲ ዝርዝር ክንበብ ኣይከኣለን፦ %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ምሓዝ ንግምገማ ገና ኣይተዳለወን፡ ስለዚ ዝተታሕዘ የለን፡ ተግባራት ምሓዝ ድማ ኣይቀርቡን። እቲ ስጉምቲ ምምሕያሽ 6.0.15-review-hold የዳልዎ፦ ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ዝርዝር ኣጻሪ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ካብ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ክሳብ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ዕለት</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ዝተፈጥረ (ፈለማ ዝተሓተመ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ኩሉ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ኩነታት</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ዝተሓተመ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ንድፊ፡ ፈጺሙ ዘይተሓተመ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ዝጽበ (ፍቓድ ወይ ዕለት ዝጽበ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ኣብ መጓሓፊ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ንግምገማ ዝተታሕዘ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ዝተታሕዘ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ዘይተታሕዘ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ሕቡእ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ዝርአ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ዝኣተወሉ ዕለት</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ዝኾነ ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>እቲ ኦዲት ዝመዝገቦ ጥራይ።</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ሕጂ፦ %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ናይ ምእታው ስም ወይ መለለዪ ተጠቃሚ።</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ኣጻሪ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>መጻረዪታት ኣጽሪ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ክሳብ %to ካብ %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ኣቕሓ የለን</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(ኣብ %ms ms ተነቢቡ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ኣብ ዝተመርጹ ኣቑሑት ዝግበሩ ተግባራት</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ኣብዚ ገጽ ኩሉ ምረጽ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ተመሪጾም</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ተግባር</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ተግባር ምረጹ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ምሓዝ ፍታሕ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ንግምገማ ሓዝ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ሕባእ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ኣርኢ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ናብ መጓሓፊ ኣግዕዝ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ደምስስ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ክፋል መድብ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ኩነት መድብ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>ምኽንያት</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ንምሓዝ የድሊ፤ ምስቲ ምሓዝን ኣብ ኦዲትን ይዕቀብ።</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ክፋል ምረጹ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ኩነት</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ኩነት ምረጹ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ኣብ ዝተመርጹ ተግብር</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ነፍሲ ወከፍ ኣቕሓ ምስ ናይ ባዕልኹም ፍቓዳት ይምርመር። ናብ መጓሓፊ ምግዓዝን ምድምሳስን ከተረጋግጹ ይሓቱ። ካብ %count ዝበዝሑ ኣቑሑት ኣብ ድሕሪት ይካየዱ።</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ምረጽ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ሕትመት</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ዝኣተወሉ ቦታ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ምረጽ</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ገና</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ስም የብሉን)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>መለለዪ %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ንድፊ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ዝጽበ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ብወላዲኡ ዝተሓብአ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ዝተታሕዘ፦ ሓድሽ ምእታው</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ሕታም %version ዝጽበ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ሕታም %version ኣብ መስርሕ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ንድፊ፡ ሕታም %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ሕታም %version ተሓቲሙ</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>ን%date ዝተመደበ</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ኣድራሻ የለን</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ኣይተመዝገበን</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ምስዞም መጻረዪታት ዝሰማማዕ የለን።</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ኩሉ ኣርኢ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ገና ትሕዝቶ የለን።</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ኣብ ገጽ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ኣብ ገጽ %count ኣቑሑት ኣርኢ።</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ኣድራሻን መርበብ-ሓባብን ናይ ሓደ ምእታው ካብ መዝገብ ኦዲት ይመጹ፡ እዚ ኸኣ ኣብዚ የለን፦ እቲ ዓምዲ "ኣይተመዝገበን" ይብል።</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ኣድራሻን መርበብ-ሓባብን እቶም ኦዲት ነቲ ኣቕሓ ዝመዝገቦም እዮም (ኣውቶማቲክ ምሓዝ ኩሉ ግዜ ይምዝግቦም፤ ምሕታምን ምፍጣርን ምስ ዝበርሁ ጥራይ)፡ ከምቲ ቅጥዕታት ብሕትውናኡ ዝዕቅቦም።</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action፦ %count ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ምድምሳስ ነቶም ኣቑሑት ምስ ኩሎም ሕታማቶምን ትርጉማቶምን ንሓዋሩ የወግዶም። ክምለስ ኣይከኣልን።</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>እቶም ኣቑሑት ናብ መጓሓፊ ይኸዱ፡ ካብኡ ድማ ክምለሱ ይኽእሉ።</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ነፍሲ ወከፍ ኣቕሓ ምስ ናይ ባዕልኹም ፍቓዳት ይምርመር፤ ንኡሳን ኣቑሑት ዘለዎ ኣቕሓ ከምዘለዎ ይግደፍ (ኣብ ቅርጺ ትሕዝቶ ኣውጽእዎ)። ንስኹም ምዃንኩም ከተረጋግጹ ክትሕተቱ ኢኹም።</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>እዚ ኣብ ድሕሪት ይካየድ፦ ገጽ ምዕባለኡ ይኽፈት፡ ምስ ተወድአ ድማ ውጽኢት ነፍሲ ወከፍ ኣቕሓ ይርአ።</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>እቶም ዝተመርጹ ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ከምኡ'ውን %count ተወሳኺ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ዋላ ሓንቲ ኣይተገብረን</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>ምኽንያት፦ %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>እቲ ተግባር ሕጂ'ውን ኣብ ድሕሪት ይካየድ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ምዕባለኡ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>እቲ ናይ ድሕሪት ተግባር ኣይተዓወተን፦ %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ተወዲኡ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ተነጺጉ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ነፍሲ ወከፍ ኣቕሓ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ኣቕሓ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጽኢት</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ስለምንታይ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ናብ ዝርዝር ተመለስ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ምድላው</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ዋላ ሓንቲ ኣይተፈጸመን</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ኣረጋግጽ</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ተግባር ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>እንተወሓደ ሓደ ኣቕሓ ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ኣብ ሓደ ግዜ እንተበዝሐ 1000 ኣቑሑት ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>እቶም ኣቑሑት ስለምንታይ ከም ዝተታሕዙ ግለጹ።</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ነቲ ክፋል ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ነቲ ኩነት ምረጹ።</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>እቲ ቅጥዒ ክንበብ ኣይከኣለን።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ሓድሽ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>እቶም ቁጽርታት ክንበቡ ኣይከኣሉን፦ %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ንግምገማ ዝተታሕዘ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ሎሚ ሓድሽ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ምሓዝ ንግምገማ ገና ኣይተዳለወን (እቲ ስጉምቲ ምምሕያሽ 6.0.15-review-hold)።</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ኩሉ ሓድሽ ትሕዝቶ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ተግባራት ምቁጽጻር ከተካይዱ ኣይፍቀደልኩምን (moderation/act)።</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>እቲ ተግባር ምቁጽጻር ኣይተዛዘመን፦ %errors።</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ምቁጽጻር፦ %action ኣብ %count ኣቑሑት</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ካብ %total ኣቑሑት፦ %ok ተወዲኡ፡ %refused ተነጺጉ፡ %failed ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ተወዲኡ፡ %refused ተነጺጉ፡ %failed ኣይተዓወተን</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ድሕሪ ሕጂ የለን።</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ቦታ የብሉን (ኣይተሓተመን)።</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ክትሓብእዎ ኣይፍቀደልኩምን (content/hide)።</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ከተርእይዎ ኣይፍቀደልኩምን (content/hide)።</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ድሮ ተሓቢኡ እዩ።</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ሕቡእ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ተሓቢኡ።</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ተራእዩ።</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ኣብ መጓሓፊ እዩ፦ ኣብኡ ኣጽርይዎ ወይ ምለስዎ።</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ፈጺሙ ዘይተሓተመ ንድፊ ናብ መጓሓፊ ክኸይድ ኣይክእልን፦ ደምስስዎ።</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ክትድምስስዎ ኣይፍቀደልኩምን (content/remove)።</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ተደምሲሱ።</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ከተውጽእዎ ኣይፍቀደልኩምን (content/remove)።</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ንኡሳን ኣቑሑት ኣለዉዎ፦ ኣብቲ ዝተዘርዘሩሉ ቅርጺ ትሕዝቶ ኣውጽእዎ።</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ኣይወጽአን (ዝኾነ ስርሓት-ፍሰት ነቲ ምውጻእ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ናብ መጓሓፊ ተጓዒዙ።</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>እቲ ክፋል የለን።</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ድሮ ኣብዚ ክፋል እዩ።</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ነዚ ክፋል ክትምድቡ ኣይፍቀደልኩምን (section/assign)።</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>እቲ ክፋል ኣይተመደበን።</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>ክፋል ተመዲቡ።</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>እቲ ኩነት የለን።</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ድሮ ኣብዚ ኩነት እዩ።</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ነዚ ኩነት ክትምድቡ ኣይፍቀደልኩምን (state/assign)።</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>እቲ ኩነት ኣይተመደበን (ዝኾነ ስርሓት-ፍሰት ነቲ ለውጢ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ኩነት ተመዲቡ።</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ከምዚ ዝበለ ተግባር የለን።</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ምሓዝ ንግምገማ ኣይተዳለወን (እቲ ስጉምቲ ምምሕያሽ 6.0.15-review-hold)።</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ስለምንታይ ከም ዝተታሕዘ ግለጹ።</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ድሮ ተታሒዙ እዩ።</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ክትሕዝዎ ኣይፍቀደልኩምን (state/assign)።</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>እቲ ምሓዝ ኣይተቐመጠን (ዝኾነ ስርሓት-ፍሰት ነቲ ለውጢ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ተታሒዙ።</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ኣይተታሕዘን።</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ክትፈትሕዎ ኣይፍቀደልኩምን (state/assign)።</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>እቲ ምሓዝ ኣይተፈትሐን (ዝኾነ ስርሓት-ፍሰት ነቲ ለውጢ ሒዝዎ ይኸውን)።</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ተፈቲሑ፤ ሕጂ'ውን ሕቡእ እዩ፦ ከተርእይዎ ኣይፍቀደልኩምን (content/hide)።</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ተፈቲሑ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ኩሎም ዕላማታት</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ናይ መወዳእታ ሕትመት</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>ስታቲክ ቅዳሕ ናይ መርበብኩም ብነጻ ኣብ GitHub Pages ኣሕትሙ:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ዝኣረጉ ገጻት</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ስታቲክ ምሕታም</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ስታቲክ ምሕታም ጠፊኡ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ዕላማ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>እቶም ዕላማታት ክንበቡ ኣይከኣሉን: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ዕማም ይካየድ ኣሎ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ዝምርመር ምህናጽ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>እዚ ሕባእ</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ዕላማ ፍጠር</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ፈጺሙ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>መምርሒ ኣንብብ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ተወሲኹ፡ %changed ተቐይሩ፡ %removed ተኣልዩ</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes ካብ %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>ካልኦት %count ኣይተዘርዘሩን።</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages ገጻት ተጻሒፎም</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path %size እዩ፡ ሆስት ንሓደ ፋይል ካብ ዘፍቅዶ ይበልጽ።</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ካብ ደረት</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ካልኢት</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag እቲ መርበብ ሕጂ ዘለዎ ሕትመት እዩ።</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ዕማም %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/ማህደር/ ንመርበብ ፕሮጀክት GitHub፤ ንናይ ገዛእ ርእስኹም ዶሜን ወይ መርበብ ተጠቃሚ ባዶ።</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. እቲ መርበብ</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. እቲ ሆስት</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ናብ ማህደር ምእታው</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. እቲ ማህደር</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. መላግብትን መሰረታዊ መንገድን</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. ናይ ገዛእ ርእስኹም ዶሜን</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. እቲ ምህናጽ እንታይ ይሕዝ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. መዓስ ይሕተም</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. ርአዩን ኣቐምጡን</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>መርበብ ፕሮጀክት GitHub ኣብ ትሕቲ /&lt;repository&gt;/ ይርከብ፤ ተዛማዲ መላግብቲ ኣብኡን ኣብ ካልእ ቦታን ይሰርሑ።</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ምህናጽ ነፍሲ ወከፍ ገጽ ናይ %site ከምቲ ዘይኣተወ በጻሒ ዝርእዮ ይወስድ፡ መላግብቲ ዳግማይ ይጽሕፍ፡ ፋይላት ይቕዳሕ፡ ውጽኢቱ ድማ ናብ ፎልደር ናይቲ ዕላማ ይጽሕፍ። ነቲ ምህናጽ ክሳብ ትምርምሩን ኣሕትም ትጥውቑን ዋላ ሓንቲ ኣይሕተምን።</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron መግለጺ፡ ንኣብነት 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>መፍትሕ ምዝርጋሕ ከም ምስጢር %secret ይዕቀብ።</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>መፍትሕ ምዝርጋሕ ነዚ ምትካል ብ SSH ናብ ሓደ ማህደር ጥራይ ክሰድድ የፍቅደሉ፡ ናብ ካልእ ኣይኮነን። ብሕታዊ ፍርቁ ኣብ ምድላው &gt; ምስጢራት ይተርፍ፤ ህዝባዊ ፍርቁ ጥራይ ይርአ።</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ነዚ ዕላማ ዝተፈጥረ መፍትሕ ምዝርጋሕ</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>መፍትሕ ምዝርጋሕ ብ SSH ይኣቱ: ኣድራሻ git ናብቲ ናይ SSH ቀይሩዎ (git@github.com:owner/repo.git)።</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ብ %user ዝተጀመረ ዕማም ይካየድ ኣሎ</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ዕማም ናይዚ ዕላማ ገና ይካየድ ኣሎ (%detail)። ክሳብ ዝውዳእ ተጸበዩ።</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ዕማም ናይዚ ዕላማ ገና ይካየድ ኣሎ። ክሳብ ዝውዳእ ተጸበዩ።</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>ካብ ገጽ /news/ ናብ ገጽ /about-us/team ዝኸይድ መላግቦ ከምዚ ይጽሓፍ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>ሓድሽ መፍትሕ ምዝርጋሕ ተፈጢሩ። ህዝባዊ ፍርቁ ሕጂ ናብቲ ማህደር ወስኹ።</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>ድሕሪ ምጽራይ ገና ናይ debug ውጽኢት፡ ቶከን ቅጥዒ ወይ መለለዪ ክፍለ-ግዜ ዝሓዘ ገጽ ፈጺሙ ኣይሕተምን።</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ምምላስ ንኽኢላታት እዩ: &quot;እዚ እንታይ ከም ዝቕይር ይፈልጥ እየ&quot; ምልክት ግበሩ፡ ስም ናይቲ ታግ ድማ ደጊምኩም ጽሓፉ።</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>መርበብ ክሳብ %site፡ ሓደ ፋይል ክሳብ %file ክኸውን ይኽእል፡ ብወርሒ ኣስታት 100 GB ትራፊክ። ኣብ ነጻ መደብ እቲ ማህደር ህዝባዊ ክኸውን ኣለዎ። GitHub Pages ንድኳናት ወይ ካልእ ንግዳዊ ምልውዋጥ ኣይተሓሰበን።</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ዕላማ ሓደ መርበብ ናብ ሓደ ማህደር git ዝሕተም እዩ። ኣብዚ ዋላ ሓንቲ ኣይህነጽን ኣይሕተምን: ኣቐምጥ ነቲ ቅጥዕታት ናብ settings/override/staticcache.ini.append.php ይጽሕፎ።</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ዕላማ ሓደ መርበብ ናብ ሓደ ቦታ ዝሕተም እዩ፡ ንኣብነት ህዝባዊ መርበብኩም ኣብ GitHub Pages።</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ካብ ምድላው &gt; ምስጢራት ዝመጽእ ቶከን</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ዎርክፍሎው ናይቲ ማህደር የሕትሞ።</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ነዚ ህዝባዊ መፍትሕ ምስ ፍቓድ ምጽሓፍ ናብቲ ማህደር ወስኹ። GitHub: Settings &gt; Deploy keys &gt; Add deploy key፡ Allow write access ምልክት ግበሩ።</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ተወሲኹ</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>ካልእ git ሆስት</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ካልእ መስርሕ ኣብዚ ዕላማ ይሰርሕ ኣሎ: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ተመለስ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>መሰረታዊ መንገዲ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ቅድሚኡ</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ኣብ ትሕቲ መሰረታዊ መንገዲ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ጨንፈር</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ዝተሰብሩ መላግብቲ</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ኣብቲ ምህናጽ ዝተሰብሩ መላግብቲ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ምህናጽ</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>ምህናጽ %id ብ %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>ምህናጽ %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ሕጂ ህነጽ</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>ዝምርመር ምህናጽ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ብ</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ብኢድ፡ ኣብዚ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ቀይር</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ተቐይሩ</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ለውጥታት</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ቅድም መርምሮ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ነዚ ቅጥዕታት መርምሩ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>እቲ ምህናጽ እንታይ ከም ዝቕይር መርምሩ፡ ርአዩዎ፡ ድሕሪኡ ኣሕትሙዎ ወይ ደርብዩዎ።</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ክትምለሱሉ እትደልዩ ሕትመት ምረጹ።</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>ኣብ ዝመጽእ ሕታም ክመጽእ እዩ።</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ምርካብ</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ምርካባት</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ነቲ ምህናጽ commit ይገብሮ፡ ታግ ይገብረሉ፡ ናብ %remote ድማ ይሰድዶ። ምስዳድ ፈጺሙ ብሓይሊ ኣይኮነን፤ ድሕሪ ሕጂ ናብ ዝኾነ ሕትመት ክትምለሱ ትኽእሉ።</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ምስቲ ቅድሚኡ ዝነበረ ፎልደር ብምንጽጻር: %added ተወሲኹ፡ %changed ተቐይሩ፡ %removed ተኣልዩ፡ %unchanged ዘይተቐየረ።</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ምስቲ ናይ መወዳእታ ሕትመት ብምንጽጻር።</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>መረጋገጺ</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>ናይ ገዛእ ርእስኹም ዶሜን</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>ናይ debug ውጽኢት፡ ቶከናት ቅጥዒ፡ መለለዪታት ክፍለ-ግዜን nonce-ታትን ኩሉ ግዜ ይእለዩ።</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>መፍትሕ ምዝርጋሕ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>መፍትሕ ምዝርጋሕ ናይ %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ደርቢ</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ነቲ ምህናጽ ደርቢ</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ዶሜን</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ባዶ: ኣድራሻ ናይቲ መርበብ። እንተዘይኮይኑ ውሽጣዊ ኣድራሻ ናይቲ ሓደ መርበብ።</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ዝተወደአሉ</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ነፍሲ ወከፍ መላግቦ ብመሰረታዊ መንገዲ ይጅምር።</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ነፍሲ ወከፍ ሕትመት static/%id/&lt;n&gt; ዝብል ታግ ዘለዎ commit እዩ። ምምላስ ምስ ፋይላት ናይ ቅድሚኡ ሕትመት ሓድሽ commit ይፈጥር: እቲ ታሪኽ ይተርፍ፡ ዋላ ሓደ ታግ ኣይንቀሳቐስን ዋላ ሓንቲ ብሓይሊ ኣይግበርን።</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>ተወሰኽቲ</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>ገጻት ካብዚ ውሰድ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ፋይላት</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ዝጎደሉ ፋይላት</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ፋይላት ናይ</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ክእከቡ ዘይከኣሉ ፋይላት</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>ኣሻራ ጣት</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ፎልደር</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>ን SSH ኣድራሻ። እቲ መፍትሕ ድሕሪ ምቕማጥ ይፍጠር፤ ህዝባዊ ፍርቁ ናብቲ ማህደር ትውስኹ።</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>ን https:// ኣድራሻ። GitHub: fine-grained ቶከን ምስ Contents ንባብን ምጽሓፍን ኣብቲ ማህደር።</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ንኽኢላታት። እቲ ህዝባዊ መርበብ ምስዳድ ምስ ተወድአ ይቕየር።</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ቅጥዕታት</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>ካብ ማህደር GitHub ነጻ ሆስቲንግ።</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ካብቲ ጨንፈር</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>ኣድራሻ git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages ናይ %site መርበብን ናይ %file ፋይልን የፍቅድ።</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>ደረታት GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ፋይላት ከም ዘለዉ የሕትሞም (ብ _ ንዝጅምሩ ፋይላት የድሊ)።</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ነቲ ጨንፈር ከምቲ ዝተሰደደ የቕርቦ። ነባሪ።</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab፡ Gitea፡ ናይ ገዛእ ርእስኹም ሰርቨር: ዝኾነ ማህደር git።</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ናብ ዝሓለፈ ሕትመት ተመለስ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>ሓገዝ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>ሓገዝ ምስ መምርሒ ስጉምቲ</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ሕብኦም</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ታሪኽ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>ታሪኽ ናይ %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ሆስት</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ነቲ ምህናጽ ብኸመይ ይቕበሎ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ነቲ ለውጥታት መርሚረዮ እየ</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>እዚ እንታይ ከም ዝቕይር ይፈልጥ እየ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>መለለዪ</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ጠፊኡ ኣሎ: ክሳብ ዝበርህ ዋላ ሓንቲ ክህነጽ ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ኣብ ድሕሪት ከም %user ይካየድ፤ ነዚ ገጽ ክትዓጽውዎ ትኽእሉ።</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ዕማም %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>ከም ምስጢር %secret ተዓቂቡ።</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ናይ መወዳእታ ሕትመት</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ነዞም ገጻት ግደፎም</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ነዞም ክፍልታት ግደፎም</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>መላግብቲ</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>ዳግማይ ዝተጻሕፉ መላግብቲ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ህያው መርበብ</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ነቲ ምህናጽ ርአ</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ንኣሽቱ ፊደላት፡ ኣሃዛት፡ _ን -ን፡ ንኣብነት github-public። ንፎልደርን ታግታትን (static/&lt;id&gt;/&lt;n&gt;) ስም ይህብ፡ ደሓር ድማ ክቕየር ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ሓድሽ መፍትሕ ፍጠር</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ዕላማ ፍጠር</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>እቲ መፍትሕ ፍጠር</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ቅድም ነቲ ማህደር ኣብቲ ሆስት ፍጠሩዎ፤ ባዶ ማህደር ይኣክል።</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ዝርዝር ፋይላት</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>መልእኽቲ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>መብዛሕትኦም ገጻት</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ስም ናይቲ ቶከን ኣብ ምድላው &gt; ምስጢራት</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ሓድሽ ዕላማ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ዝቕጽል</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ኣይፋል</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ገና commit የለን።</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>መፍትሕ ኣይተፈጥረን: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ናይ php መስመር ትእዛዝ ፋይል ኣይተረኽበን። migration.ini [AdminSettings] PhpCliPath ናብ ምሉእ መንገዱ ኣዳልዉ።</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ገና ታግ የለን።</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ገና ዕላማ የለን።</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>የለን</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ኣብቲ ምህናጽ የለን።</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ገና ዋላ ሓንቲ ኣይተሓተመን።</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ገና ዋላ ሓንቲ ኣይተሓተመን: ነፍሲ ወከፍ ፋይል ሓድሽ እዩ።</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>ሓብር</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>ብመደብ</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>ኣብ ኮንሶል</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>ኣብ ሰርቨር: ./console exp:static:serve %id ብተመሳሳሊ መንገዲ የቕርቦ።</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ሓደ መንገዲ ኣብ ነፍሲ ወከፍ መስመር፡ * ዝኾነ ክፋል የሰማምዕ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ምስቲ ዕላማ ስም ጥራይ ይዕቀብ፤ እቲ ቶከን ወይ መፍትሕ ባዕሉ ኣብ ምድላው &gt; ምስጢራት ይተርፍ፡ ኣብ መዝገብ ድማ ፈጺሙ ኣይርአን።</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>እቶም ገጻት ዝጠቕስዎ ጥራይ</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>ምስ ቶከን ጥራይ። env:NAME ኣብ ክንዲኡ ናይ ከባቢ ተለዋዋጢ ናይቲ ሰርቨር የንብብ።</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ቅድመ ርእይቶ ክፈት</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ነቲ ምህናጽ ከምቲ ሆስት ዘቕርቦ ካብ ፎልደር ናይቲ ዕላማ ይኸፍቶ። እቲ መላግቦ ንዓኹም ንሓደ ሰዓት ይሰርሕ።</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ኣማራጺ። ባዶ: ዝተሓተመ።</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ኣማራጺ። ምስ ዶሜን እቲ መርበብ ኣብ ሱሩ ይቐርብ።</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ውጽኢት</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>ገጻት</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ገጻት ናይቲ ዕላማ</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ዝተነጽጉ ገጻት</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>ድሕሪ ምስራሕ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ቅድመ ርእይቶ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ቅድመ ርእይቶን ምሕታምን</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>ቅድመ ርእይቶን ምሕታምን %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ቅድመ ርእይቶ ናይቲ ምህናጽ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ዕቤት</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>ህዝባዊ ኣድራሻ</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>ህዝባዊ መፍትሕ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ኣሕትም</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ስታቲክ ቅዳሕ ናይ መርበብ ናብ GitHub Pages ወይ ዝኾነ git ሆስት ኣሕትሙ: ህነጽዎ፡ ለውጥታት መርምሩ፡ ኣሕትሙ፡ ኣድላዪ ምስ ዝኸውን ድማ ናብ ዝሓለፈ ሕትመት ተመለሱ።</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ዝምለሰሉ ሕትመት</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ሕትመታት</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ምስዳድ</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>መምርሒ ኣንብብ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>መዝገብ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ተነጺጉ</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ተዛማዲ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ደጊምካ ጽዓን</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ተኣልዩ</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>መፍትሕ ቀይር: እቲ ኣረጊት ምስራሕ የቋርጽ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ጸብጻብ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ጸብጻብ ናይቲ ምህናጽ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ማህደር</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ርአ</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>ምርኣይ ነፍሲ ወከፍ ቅጥዒ ይምርምር፡ ዝጽሓፉ መስመራት ድማ የርኢ። ገና ዋላ ሓንቲ ኣይተቐመጠን።</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ምለስ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ምምላስ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ኣቐምጥ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>መደብ</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ገጽ ምድላይ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>መለለዪታት ክፍልታት፡ ብኮማ ዝተፈላለዩ።</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ናብ ህያው መርበብ ስደዶም</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ቅጥዒ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ቅጥዕታት</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>ቅጥዕታት ናይ %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ምድላው</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>ምድላው &gt; ምስጢራት</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ኣብ ዝርዝራት ይርአ፡ ንኣብነት &quot;ህዝባዊ መርበብ ኣብ GitHub Pages&quot;።</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>ብ GitHub App ምእታው ምስ ምትእስሳር GitHub ይመጽእ።</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>መርበብ</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ዝሕተም መርበብ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ዓቐን</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ዓቐንን ደረታትን</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ዓቐን ናይቲ ምህናጽ</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ዝኣረጉ ገጻት</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ዝጀመረሉ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>ብ %user ኣብ %time ተጀሚሩ።</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ኩነት</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ስታቲክ ምሕታም</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ስታቲክ ምሕታም ጠፊኡ ኣሎ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ስታቲክ ምሕታም ጠፊኡ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ስታቲክ ምሕታም ጠፊኡ ኣሎ። ቅድም ኣብ ምድላው &gt; ስታቲክ ምሕታም ኣብርሁዎ።</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ስታቲክ ምሕታም በሪሁ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>ስጉምቲ %step ካብ %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ስጉምትታት</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ምጽራይ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ኣጥፍእ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ኣንቅሕ</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ስታቲክ ምሕታም ኣብርህ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ታግ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ታግታት</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ዕላማ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ዕላማታት ክፍጠሩን ክቕየሩን ይኽእሉ፡ ግን ክሳብ ዝበርህ ዋላ ሓንቲ ኣይህነጽን ኣይሕተምን።</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ንመደለዪ ማሽናት እንታይ ከም ዘንብቡ ይነግር።</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>እቲ ምህናጽ ክድርበ ኣይከኣለን: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>እቲ ምህናጽ ምስቲ ናይ መወዳእታ ሕትመት ሓደ እዩ: ዝሕተም የለን።</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>እቲ ምህናጽ ተደርብዩ: እቲ ፎልደር ደጊሙ ናይ መወዳእታ ሕትመት ሒዙ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>እቶም ነባሪታት ንመብዛሕትኦም መርበባት ይሰማምዑ።</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>እቲ ፎልደር ገና ዘይተሓተመ ምህናጽ ሒዙ ኣሎ፤ ሓድሽ ምህናጽ ይትክኦ።</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ፎልደር ናይ ዕማማት ክጽሓፍ ኣይክእልን: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>እቲ ዕማም ክዳሎ ኣይከኣለን: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>እቲ ዕማም ክጅምር ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>እቲ ዕማም ተወዲኡ። ጸብጻቡ ይጽዓን ኣሎ።</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>እቲ ዕማም ዝኣተወ ተጠቃሚ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>እቲ ዕማም ተጀሚሩ ግን መለለዪ መስርሑ ኣይሓበረን። %detail መርምሩ።</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>እቲ መፍትሕ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>እቲ ዝዓበየ ፋይል: %path፡ %size።</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ዝጽሓፉ መስመራት</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ዝርዝር ገጻት ንመደለዪ ማሽናት፤ ህዝባዊ ኣድራሻ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>እቶም ገጻት ከምቲ ዘይኣተወ በጻሒ ዝርእዮም ይውሰዱ። ናይ ምምሕዳርን ምእራምን siteaccess ፈጺሞም ኣይቐርቡን።</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>እቲ ዕቤት ክስዕብ ኣይከኣለን። እቲ ዕማም ከመይ ከም ዘሎ ንምርኣይ ነቲ ገጽ ደጊምኩም ጽዓኑዎ።</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ህዝባዊ ፍርቂ ናይቲ መፍትሕ:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ሱር ናይቲ ጨንፈር</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>መኽዘን ምስጢራት ገና ኣይተዳለወን (./console exp:upgrade --apply ሰሌዳኡ ይፈጥር)፡ ስለዚ ዝኾነ መፍትሕ ክዕቀብ ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>እቲ ሰርቨር ባዕሉ ይኣቱ (ብናይ ገዛእ ርእሱ SSH መፍትሕ ወይ ሓጋዚ መረጋገጺ)፡ ወይ እቲ ማህደር ኣብዚ ሰርቨር እዩ።</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>እቲ ቅጥዒ ክጽሓፍ ኣይከኣለን: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>እቶም ቅጥዕታት ቅኑዓት እዮም። እዞም መስመራት ክጽሓፉ እዮም:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>ፋይል ቅጥዕታት ክንበብ ኣይክእልን: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>እቲ መርበብ ናብ ፋይላት ናይቲ ሕትመት ይምለስ፤ ገና ዘይተሓተመ ምህናጽ ቅድም ክሕተም ወይ ክድርበ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>ናይ ገዛእ ርእሱ ገጽ ናይቲ መርበብ ንዘየለዉ ኣድራሻታት።</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>እቲ ዕላማ ክቕመጥ ኣይከኣለን: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>እቲ ዕላማ ገና ብዚ መፍትሕ ኣይኣቱን: ኣብ ቅጥዕታቱ &quot;ነዚ ዕላማ ዝተፈጥረ መፍትሕ ምዝርጋሕ&quot; ምረጹ።</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>እቶም ዕላማታት ክንበቡ ኣይከኣሉን: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>ገና ዝምርመር ምህናጽ የለን።</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>እዚ ምትካል ቅድመ-ገጽ siteaccess የብሉን። ናይ ምምሕዳርን ምእራምን siteaccess ፈጺሞም ኣይሕተሙን።</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>እዚ ገጽ ነቲ ዕማም ክካየድ ከሎ ይስዕቦ፤ እቲ ገጽ ምስ ተዓጽወ ኣብ ድሕሪት ይቕጽል።</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>እዚ ዕላማ ገና መፍትሕ ምዝርጋሕ የብሉን።</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>እዚ ዕላማ ገና ኣብዚ ኣይተሃንጸን።</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>እዚ ዕላማ ሓደ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ነዚ ምህናጽ ይድርብዮ: እቲ ፎልደር ደጊሙ ናይ መወዳእታ ሕትመት ይሕዝ። እቲ ህያው መርበብ ኣይቕየርን።</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ቅድም &quot;ነቲ ለውጥታት መርሚረዮ እየ&quot; ምልክት ግበሩ።</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ግዜ</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ቀስቀስቲ</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ስም ናይቲ ታግ ደጊምካ ጽሓፍ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ዘይተቐየረ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ዌብሁክ</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>እንታይ</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>እንታይ ይቕየር</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ነፍሲ ወከፍ ፋይል እንታይ ምዃኑ፤ ኩሉ ግዜ ይጽሓፍ።</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>እቲ ዕማም እንታይ ከም ዝገበረን መዝገቡን። ኣብዚ ዝጀመረ ዕማም እዚ ገጽ ምስ ተዓጽወ ኣብ ድሕሪት ይቕጽል።</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>እቲ ዕማም ከም ጌጋታት ዝሓተሞ</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>እቶም ገጻት ዝጠቕስዎ፡ ከምኡ ድማ ነፍሲ ወከፍ ምስሊ ናይ ዝተሓተመ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>መዓስ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ሕትመት ምስ ዝፈሽል</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ሕትመት ምስ ዝዕወት</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ትሕዝቶ ምስ ዝሕተም</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>ናብቲ ቅዳሕ ዘይሓዞ ዝኸዱ መላግብቲ ናበይ ይኸዱ (ምድላይ፡ ምእታው)።</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>እቲ ስታቲክ ቅዳሕ ካበይ ይቐርብ።</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ኣየናይ መርበብ ይሕተም፡ እቲ ዕላማ ድማ እንታይ ይበሃል።</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ኣብ ትሕቲ ዝኾነ መንገዲ ይሰርሕ። ነባሪ።</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>ናይ ገዛእ ርእስኹም ዶሜን ኣብ ዝተዳለወሉ ኩሉ ግዜ ይጽሓፍ።</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>እወ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ኩሉ ግዜ ኣብዚን ኣብ ኮንሶልን ብኢድ ክትሃንጹን ከተሕትሙን ትኽእሉ።</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ስም ጥራይ፤ እቲ ዋጋ ኣብ ምድላው &gt; ምስጢራት ይተርፍ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>ኣብ ትሕቲ %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ብዘይ ጸብጻብ ተወዲኡ</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ተወሳኺ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ፈሺሉ</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ፋይል</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages፡ ወይ main ምስ ፎልደር docs።</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ሆስት</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ምስ ቶከን) ወይ git@github.com:owner/repo.git (ምስ መፍትሕ ምዝርጋሕ)፤ ፈጺሙ ፓስዎርድ ወይ ቶከን ኣብኡ ኣይሃሉ።</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/፡ ንካርታ መርበብን canonical መላግብትን።</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ምስሊ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ፈጺሙ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ኣይፋል</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>remote የለን</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>የለን: commit-ታት ኣብቲ ፎልደር ይተርፉ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>የለን: ዋላ ሓንቲ ኣይተቐየረን</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ኣይተሰደደን</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ዋላ ሓንቲ ኣይተቐየረን</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ገጽ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ሓሊፉ</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ጠፊኡ ስለ ዘሎ ኣብዚ ዕማም ክጅምር ኣይክእልን። ኣብ ሰርቨር ./console exp:static:build ተጠቐሙ።</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ሕትመት</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ተሓቲሙ</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ምስዳድ ይጽበ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ተሰዲዱ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ተነጺጉ</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ተዛማዲ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ምምላስ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ተመሊሱ</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ይካየድ ኣሎ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>እቲ ፎልደር ጥራይ</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ናብ ፋይል CNAME ይጽሓፍ። DNS ናይቲ ዶሜን ከምቲ ሆስት ዝገልጾ ናብ ሆስት ኣመልክቱ፤ HTTPS ንምጅማር ግዜ ክወስድ ይኽእል።</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>እወ፡ ገና ኣይተሓተመን</translation>
     </message>
 </context>
 </TS>

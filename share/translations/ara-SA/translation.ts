@@ -15089,6 +15089,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>تغييرات على التثبيت محفوظة كملفات: حالتها، وعمليات التشغيل، والتشغيل والتراجع.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>المحتوى الحديث</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>أحدث المحتوى، وما هو محتجز للمراجعة، وإجراءات على تحديد.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>انشر نسخة ثابتة من موقع على GitHub Pages أو أي مضيف git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22104,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>إجابات الاستعلامات المحفوظة لواجهة GraphQL البرمجية، وفئات المحتوى في مخططها.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>انشر نسخة ثابتة على GitHub Pages أو أي مضيف git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>تقدّم ذاكرة التخزين المؤقت الثابتة الصفحات من هذا الخادم. لنشر نسخة ثابتة من موقع في مكان آخر، على GitHub Pages أو أي مضيف git، استخدم النشر الثابت.</translation>
     </message>
 </context>
 <context>
@@ -74476,6 +74504,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>تغييرات على التثبيت محفوظة كملفات: حالتها، وعمليات التشغيل، والتشغيل والتراجع.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>انشر نسخة ثابتة من موقع على GitHub Pages أو أي مضيف git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -80583,6 +80619,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>تعذّر بدء التشغيل.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>عُدّل</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>أُنشئ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>الفئة</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>القسم</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>المنشئ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>المحتوى الحديث</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>أحدث المحتوى المُنشأ والمُعدّل في الموقع بأكمله، الأحدث أولاً: ما أرسله الزوار، وما هو محتجز للمراجعة، والمسودات التي تنتظر نشرها. حدّد عناصر لتحريرها من الاحتجاز أو احتجازها أو إخفائها أو إظهارها أو إزالتها أو نقلها إلى قسم أو حالة أخرى.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>تعذّرت قراءة القائمة: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>لم يُعدّ الاحتجاز للمراجعة بعد، لذا لا شيء محتجز ولا تُعرض إجراءات الاحتجاز. خطوة الترقية 6.0.15-review-hold تُعدّه: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>تصفية القائمة</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>من</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>إلى</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>التاريخ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>الإنشاء (أول نشر)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>منشور</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>مسودة، لم تُنشر قط</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>معلّق (بانتظار الموافقة أو تاريخ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>في سلة المحذوفات</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>محتجز للمراجعة</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>محتجز</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>غير محتجز</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>مخفي</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>مرئي</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>أُرسل في</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>أي siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>فقط ما سجّله سجل التدقيق.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>الآن: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>اسم دخول أو معرّف مستخدم.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>تصفية</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>مسح عوامل التصفية</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>العناصر</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from إلى %to من %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>لا يوجد عنصر</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(قُرئت في %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>إجراءات على العناصر المحددة</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>تحديد الكل في هذه الصفحة</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count محدد</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>الإجراء</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>اختر إجراءً</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>رفع الاحتجاز</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>احتجاز للمراجعة</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>إخفاء</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>إظهار</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>نقل إلى سلة المحذوفات</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>تعيين القسم</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>تعيين الحالة</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>السبب</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>مطلوب للاحتجاز؛ يُحفظ مع الاحتجاز وفي سجل التدقيق.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>اختر قسماً</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>اختر حالة</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>تطبيق على المحدد</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>يُفحص كل عنصر وفق صلاحياتك الخاصة. النقل إلى سلة المحذوفات والحذف يطلبان منك التأكيد. أكثر من %count عنصر يُنفَّذ في الخلفية.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>تحديد</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>النشر</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>أُرسل من</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>تحديد %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ليس بعد</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بلا اسم)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>المعرّف %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسودة</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>معلّق</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>مخفي بسبب العنصر الأب</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>محتجز: إرسال جديد</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>الإصدار %version معلّق</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>الإصدار %version قيد العمل</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>مسودة، الإصدار %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>الإصدار %version منشور</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>مجدول في %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>لا عنوان</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>غير مسجّل</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>لا شيء يطابق عوامل التصفية هذه.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>عرض الكل</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>لا يوجد محتوى بعد.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>لكل صفحة</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>عرض %count عنصر في كل صفحة.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>يأتي عنوان الإرسال ومتصفحه من فهرس سجل التدقيق، وهو غير متاح هنا: يظهر في العمود «غير مسجّل».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>العنوان والمتصفح هما ما سجّله سجل التدقيق للعنصر (الاحتجاز التلقائي يسجّلهما دائماً؛ النشر والإنشاء فقط حيث جرى تفعيل ذلك)، كما تحتفظ بهما إعدادات الخصوصية الخاصة به.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count عنصر</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>يزيل الحذف العناصر نهائياً، مع جميع إصداراتها وترجماتها. لا يمكن التراجع عنه.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>تنتقل العناصر إلى سلة المحذوفات، ومنها يمكن استعادتها.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>يُفحص كل عنصر وفق صلاحياتك الخاصة؛ ويُترك العنصر الذي له عناصر فرعية كما هو (أزله في بنية المحتوى). سيُطلب منك التحقق من أنك أنت.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>يُنفَّذ هذا في الخلفية: تُفتح صفحة تقدّمه، وتُعرض النتيجة لكل عنصر عند انتهائه.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>العناصر المحددة</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>و%count أخرى</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>لم يُنفَّذ شيء</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>السبب: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>لا يزال الإجراء قيد التنفيذ في الخلفية.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>تقدّمه</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>فشل الإجراء في الخلفية: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تم</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>لكل عنصر</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>العنصر</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>السبب</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>العودة إلى القائمة</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>لم يُنفَّذ أي شيء</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تأكيد</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>اختر إجراءً.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>حدّد عنصراً واحداً على الأقل.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>حدّد 1000 عنصر على الأكثر في كل مرة.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>اذكر سبب احتجاز العناصر.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>اختر القسم.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>اختر الحالة.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>تعذّرت قراءة النموذج.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>المحتوى الحديث</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>تعذّرت قراءة الأعداد: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>محتجز للمراجعة</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>جديد اليوم</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>لم يُعدّ الاحتجاز للمراجعة بعد (خطوة الترقية 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>كل المحتوى الحديث</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>لا يُسمح لك بتنفيذ إجراءات الإشراف (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>إجراء الإشراف غير مكتمل: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>الإشراف: %action على %count كائن</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done من %total كائن: %ok تم، %refused مرفوض، %failed فشل</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok تم، %refused مرفوض، %failed فشل</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>لم يعد موجوداً.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ليس له موقع (غير منشور).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>لا يُسمح لك بإخفائه (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>لا يُسمح لك بإظهاره (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>إنه مخفي بالفعل.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>إنه غير مخفي.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>أُخفي.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>أُظهر.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>إنه في سلة المحذوفات: أفرغها أو استعده من هناك.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>لا يمكن نقل مسودة لم تُنشر قط إلى سلة المحذوفات: احذفها.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>لا يُسمح لك بحذفه (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>حُذف.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>لا يُسمح لك بإزالته (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>له عناصر فرعية: أزله في بنية المحتوى، حيث تُعرض.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>لم تتم إزالته (قد يكون سير عمل يحتجز الإزالة).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>نُقل إلى سلة المحذوفات.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>القسم غير موجود.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>إنه في هذا القسم بالفعل.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>لا يُسمح لك بتعيين هذا القسم (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>لم يُعيَّن القسم.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>عُيِّن القسم.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>الحالة غير موجودة.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>إنه في هذه الحالة بالفعل.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>لا يُسمح لك بتعيين هذه الحالة (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>لم تُعيَّن الحالة (قد يكون سير عمل يحتجز التغيير).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>عُيِّنت الحالة.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>لا يوجد إجراء كهذا.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>لم يُعدّ الاحتجاز للمراجعة (خطوة الترقية 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>اذكر سبب احتجازه.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>إنه محتجز بالفعل.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>لا يُسمح لك باحتجازه (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>لم يُطبَّق الاحتجاز (قد يكون سير عمل يحتجز التغيير).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>احتُجز.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>إنه غير محتجز.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>لا يُسمح لك بتحريره من الاحتجاز (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>لم يُرفع الاحتجاز (قد يكون سير عمل يحتجز التغيير).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>رُفع الاحتجاز؛ لا يزال مخفياً: لا يُسمح لك بإظهاره (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>رُفع الاحتجاز.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>كل الأهداف</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخر نشر</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>انشر نسخة ثابتة مجانية من موقعك على GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>الصفحات القديمة</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>النشر الثابت متوقف.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>الهدف</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>تعذّرت قراءة الأهداف: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>مهمة قيد التنفيذ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>بناء بانتظار الفحص</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>إخفاء هذا</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>إنشاء هدف</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>أبدًا</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>قراءة الدليل التعليمي</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added مضاف، %changed متغيّر، %removed محذوف</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes من %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count أخرى غير مدرجة.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages صفحة مكتوبة</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>حجم %path هو %size، أكثر مما يسمح به المضيف لملف واحد.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % من الحد</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ث</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag هو النشر الحالي للموقع.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: المهمة %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/المستودع/ لموقع مشروع على GitHub؛ فارغ لنطاق مخصص أو موقع مستخدم.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. الموقع</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. المضيف</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. تسجيل الدخول إلى المستودع</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. المستودع</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. الروابط والمسار الأساسي</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. نطاقك الخاص</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. محتوى البناء</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. متى يُنشر</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. المراجعة والحفظ</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>يقع موقع مشروع GitHub تحت /&lt;repository&gt;/؛ والروابط النسبية تعمل هناك وفي أي مكان آخر.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>يجلب البناء كل صفحة من %site كما يراها زائر غير مسجّل الدخول، ويعيد كتابة الروابط، وينسخ الملفات ويكتب النتيجة في مجلد الهدف. لا يُنشر شيء حتى تفحص البناء وتضغط نشر.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>تعبير cron، مثلًا 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>يُحفظ مفتاح النشر كسرّ باسم %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>يسمح مفتاح النشر لهذا التثبيت بالدفع إلى مستودع واحد عبر SSH ولا مكان غيره. يبقى نصفه الخاص في الإعداد &gt; الأسرار؛ ولا يُعرض إلا النصف العام.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>مفتاح نشر أُنشئ لهذا الهدف</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>يسجّل مفتاح النشر الدخول عبر SSH: غيّر عنوان git إلى عنوان SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>مهمة قيد التنفيذ، بدأها %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>لا تزال مهمة لهذا الهدف قيد التنفيذ (%detail). انتظر حتى تنتهي.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>لا تزال مهمة لهذا الهدف قيد التنفيذ. انتظر حتى تنتهي.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>سيُكتب الرابط من الصفحة /news/ إلى الصفحة /about-us/team هكذا</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>أُنشئ مفتاح نشر جديد. أضف نصفه العام إلى المستودع الآن.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>الصفحة التي لا تزال تحمل مخرجات تصحيح أو رمز نموذج أو معرّف جلسة بعد التنظيف لا تُنشر أبدًا.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>التراجع للخبراء: حدّد &quot;أعرف ما يغيّره هذا&quot; واكتب اسم الوسم مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>يمكن أن يصل حجم الموقع إلى %site، والملف الواحد إلى %file، مع نحو 100 GB من الحركة شهريًا. في الخطة المجانية يجب أن يكون المستودع عامًا. GitHub Pages غير مخصص للمتاجر أو المعاملات التجارية الأخرى.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>الهدف هو موقع واحد يُنشر في مستودع git واحد. لا يُبنى ولا يُنشر شيء هنا: يكتب الحفظ الإعدادات في settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>الهدف هو موقع واحد يُنشر في مكان واحد، مثل موقعك العام على GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>رمز مميز من الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>يتولى سير عمل في المستودع نشره.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>أضف هذا المفتاح العام إلى المستودع مع صلاحية الكتابة. GitHub: Settings &gt; Deploy keys &gt; Add deploy key، وحدّد Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>مضاف</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>مضيف git آخر</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>عملية أخرى تعمل على هذا الهدف: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>رجوع</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>المسار الأساسي</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>قبل</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>تحت مسار أساسي</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>الفرع</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>روابط معطلة</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>روابط معطلة في البناء</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>البناء</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>البناء %id بواسطة %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>بناء %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ابنِ الآن</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>بناء بانتظار الفحص</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>بواسطة</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>يدويًا، هنا</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغيير</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>متغيّر</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>التغييرات</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>افحصه أولًا</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>افحص هذه الإعدادات</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>افحص ما يغيّره البناء، وعاينه، ثم انشره أو تخلّص منه.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>اختر النشر الذي تريد الرجوع إليه.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>متاح في إصدار لاحق.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>الإيداع</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>الإيداعات</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>يودع البناء ويسمه ويدفعه إلى %remote. لا يُفرض الدفع أبدًا؛ يمكنك الرجوع إلى أي نشر لاحقًا.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>مقارنة بالمجلد السابق: %added مضاف، %changed متغيّر، %removed محذوف، %unchanged دون تغيير.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>مقارنة بآخر نشر.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>بيانات الاعتماد</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>نطاق مخصص</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>تُزال دائمًا مخرجات التصحيح ورموز النماذج ومعرّفات الجلسات والقيم العابرة (nonces).</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>مفتاح النشر</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>مفتاح النشر لـ %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>تجاهل</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>تجاهل البناء</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>النطاق</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>فارغ: عنوان الموقع. وإلا فعنوان داخلي للموقع نفسه.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>انتهى</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>يبدأ كل رابط بالمسار الأساسي.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>كل نشر هو إيداع بوسم static/%id/&lt;n&gt;. الرجوع ينشئ إيداعًا جديدًا بملفات نشر سابق: يبقى السجل، ولا يتحرك أي وسم ولا يُفرض شيء.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>الإضافات</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>اجلب الصفحات من</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>الملف</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>الملفات</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ملفات مفقودة</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ملفات</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>الملفات التي تعذّر جمعها</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>البصمة</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>المجلد</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>لعنوان SSH. يُنشأ المفتاح بعد الحفظ؛ وتضيف أنت نصفه العام إلى المستودع.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>لعنوان https://. GitHub: رمز مميز دقيق الصلاحيات مع Contents للقراءة والكتابة على المستودع.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>للخبراء. يتغيّر الموقع العام بمجرد اكتمال الدفع.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>النماذج</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>استضافة مجانية من مستودع GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>من الفرع</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>عنوان git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>يسمح GitHub Pages بموقع حجمه %site وملف حجمه %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>حدود GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>ينشر GitHub Pages الملفات كما هي (ضروري للملفات التي تبدأ بـ _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>يقدّم GitHub الفرع كما دُفع. الافتراضي.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab وGitea وخادمك الخاص: أي مستودع git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>الرجوع إلى نشر سابق</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>مساعدة</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>مساعدة في المعالج</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>إخفاؤها</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>السجل</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>سجل %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>المضيف</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>كيف يستقبل GitHub Pages البناء</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>لقد فحصت التغييرات</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>أعرف ما يغيّره هذا</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>المعرّف</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>إنه متوقف: لا يمكن بناء شيء حتى يُشغَّل.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>يعمل في الخلفية باسم %user؛ يمكنك إغلاق هذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>المهمة %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>محفوظ كسرّ باسم %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخر نشر</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>استبعاد هذه الصفحات</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>استبعاد هذه الأقسام</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>الروابط</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>الروابط المعاد كتابتها</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>الموقع الحي</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>عاين البناء</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>أحرف لاتينية صغيرة وأرقام و_ و-، مثلًا github-public. يسمّي المجلد والوسوم (static/&lt;id&gt;/&lt;n&gt;) ولا يمكن تغييره لاحقًا.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>إنشاء مفتاح جديد</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>إنشاء هدف</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>إنشاء المفتاح</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>أنشئ المستودع على المضيف أولًا؛ لا بأس بمستودع فارغ.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>البيان</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>الرسالة</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>معظم الصفحات</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>اسم الرمز المميز في الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>هدف جديد</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>التالي</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>لا يوجد إيداع بعد.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>لم يُنشأ أي مفتاح: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>لم يُعثر على برنامج سطر أوامر php. اضبط migration.ini [AdminSettings] PhpCliPath على مساره الكامل.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>لا يوجد وسم بعد.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>لا يوجد هدف بعد.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>لا شيء</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ليس في البناء.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>لم يُنشر شيء بعد.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>لم يُنشر شيء بعد: كل ملف جديد.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>الإشعار</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>وفق جدول زمني</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>من سطر الأوامر</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>على الخادم: الأمر ./console exp:static:serve %id يقدّمه بالطريقة نفسها.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>مسار واحد في كل سطر، و* تطابق أي جزء: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>لا يُخزَّن مع الهدف إلا اسم؛ يبقى الرمز المميز أو المفتاح نفسه في الإعداد &gt; الأسرار ولا يظهر أبدًا في سجل.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>فقط ما تذكره الصفحات</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>مع رمز مميز فقط. env:NAME يقرأ بدلًا من ذلك متغير بيئة من الخادم.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>فتح المعاينة</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>يفتح البناء كما سيقدّمه المضيف، من مجلد الهدف. يعمل الرابط لك لمدة ساعة.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>اختياري. فارغ: ما نُشر.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>اختياري. مع نطاق يُقدَّم الموقع من جذره.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>المخرجات</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>الصفحات</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>صفحات الهدف</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>صفحات مرفوضة</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>المعالجة اللاحقة</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>معاينة</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>المعاينة والنشر</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>معاينة ونشر %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>معاينة البناء</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>التقدم</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>العنوان العام</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>المفتاح العام</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>نشر</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>انشر نسخة ثابتة من موقع على GitHub Pages أو أي مضيف git: ابنِها، وافحص التغييرات، وانشر، وارجع إلى نشر سابق عند الحاجة.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>النشر المراد الرجوع إليه</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>عمليات النشر</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>الدفع</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>اقرأ الدليل التعليمي</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>السجل</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>نسبي</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>إعادة التحميل</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>محذوف</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>استبدال المفتاح: يتوقف المفتاح القديم عن العمل</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>التقرير</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>تقرير البناء</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>المستودع</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>المراجعة</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>تفحص المراجعة كل إعداد وتعرض الأسطر التي ستُكتب. لم يُحفظ شيء بعد.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>تراجع</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>التراجع</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>الجدولة</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>صفحة البحث</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>معرّفات الأقسام، مفصولة بفواصل.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>إرسالها إلى الموقع الحي</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>الإعدادات</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>إعدادات %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>يظهر في القوائم، مثلًا &quot;الموقع العام على GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>يأتي تسجيل الدخول باستخدام GitHub App مع تكامل GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>الموقع</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>الموقع المراد نشره</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>الحجم</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>الحجم والحدود</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>حجم البناء</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>الصفحات القديمة</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>بدأ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>بدأها %user في %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>النشر الثابت</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>النشر الثابت متوقف</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>النشر الثابت متوقف.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>النشر الثابت متوقف. شغّله أولًا في الإعداد &gt; النشر الثابت.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>النشر الثابت مشغّل.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>الخطوة %step من %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>الخطوات</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>التنظيف</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>إيقاف</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>تشغيل</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>تشغيل النشر الثابت</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>الوسم</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>الوسوم</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>الهدف</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>يمكن إنشاء الأهداف وتغييرها، لكن لا يُبنى ولا يُنشر شيء حتى يُشغَّل.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>يخبر محركات البحث بما تقرأه.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>تعذّر التخلص من البناء: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>البناء مطابق لآخر نشر: لا يوجد ما يُنشر.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>تم التخلص من البناء: يحتوي المجلد على آخر نشر مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>القيم الافتراضية تناسب معظم المواقع.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>يحتوي المجلد على بناء لم يُنشر بعد؛ أي بناء جديد يحل محله.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>لا يمكن الكتابة في مجلد المهام: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>تعذّر تحضير المهمة: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>تعذّر بدء المهمة.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>انتهت المهمة. جارٍ تحميل تقريرها.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>تحتاج المهمة إلى مستخدم مسجّل الدخول.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>بدأت المهمة لكنها لم تُبلغ عن معرّف عمليتها. افحص %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>المفتاح</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>أكبر ملف: %path، %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>الأسطر التي ستُكتب</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>قائمة الصفحات لمحركات البحث؛ تحتاج إلى العنوان العام.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>تُجلب الصفحات كما يراها زائر غير مسجّل الدخول. لا تُعرض أبدًا وصولات الإدارة والتحرير.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>تعذّرت متابعة التقدم. أعد تحميل الصفحة لترى حال المهمة.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>النصف العام من المفتاح:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>جذر الفرع</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>مخزن الأسرار غير مُعدّ بعد (الأمر ./console exp:upgrade --apply ينشئ جدوله)، لذا لا يمكن حفظ أي مفتاح.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>يسجّل الخادم الدخول بنفسه (بمفتاح SSH الخاص به أو بمساعد بيانات الاعتماد)، أو أن المستودع على هذا الخادم.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>تعذّرت كتابة الإعداد: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>الإعدادات صالحة. ستُكتب هذه الأسطر:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>لا يمكن قراءة ملف الإعدادات: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>يعود الموقع إلى ملفات ذلك النشر؛ والبناء الذي لم يُنشر بعد يجب نشره أو التخلص منه أولًا.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>صفحة الموقع الخاصة بالعناوين غير الموجودة.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>تعذّر حفظ الهدف: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>لا يسجّل الهدف الدخول بهذا المفتاح بعد: اختر &quot;مفتاح نشر أُنشئ لهذا الهدف&quot; في إعداداته.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>تعذّرت قراءة الأهداف: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>لا يوجد بناء بانتظار الفحص بعد.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>لا يوجد في هذا التثبيت وصول أمامي للموقع. لا تُنشر أبدًا وصولات الإدارة والتحرير.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>تتابع هذه الصفحة المهمة أثناء سيرها؛ وتستمر المهمة في الخلفية عند إغلاق الصفحة.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>لا يوجد لهذا الهدف مفتاح نشر بعد.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>لم يُبنَ هذا الهدف هنا بعد.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>لهذا الهدف مفتاح.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>يتخلص من هذا البناء: يحتوي المجلد على آخر نشر مرة أخرى. لا يتغيّر الموقع الحي.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>حدّد &quot;لقد فحصت التغييرات&quot; أولًا.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>الوقت</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>المشغّلات</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>اكتب اسم الوسم مرة أخرى</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>دون تغيير</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>خطاف الويب</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ماذا</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ما يتغيّر</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ما هو كل ملف؛ يُكتب دائمًا.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ما فعلته المهمة وسجلها. المهمة التي تبدأ هنا تستمر في الخلفية عند إغلاق هذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ما طبعته المهمة كأخطاء</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ما تذكره الصفحات، وكل صورة من المحتوى المنشور</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>متى</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>عند فشل نشر</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>عند نجاح نشر</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>عند نشر المحتوى</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>إلى أين تذهب الروابط إلى ما لا تحتويه النسخة (البحث، تسجيل الدخول).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>المكان الذي تُقدَّم منه النسخة الثابتة.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>أي موقع يُنشر، وما اسم الهدف.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>يعمل تحت أي مسار. الافتراضي.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>يُكتب كلما ضُبط نطاق مخصص.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>يمكنك دائمًا البناء والنشر يدويًا هنا ومن سطر الأوامر.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>اسم فقط؛ تبقى القيمة في الإعداد &gt; الأسرار</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>تحت %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>انتهت دون تقرير</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>إضافي</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ملف</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages، أو main مع المجلد docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>مضيف git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (مع رمز مميز) أو git@github.com:owner/repo.git (مع مفتاح نشر)؛ دون كلمة مرور أو رمز مميز فيه أبدًا.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/، لخريطة الموقع والروابط الأساسية.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>صورة</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>أبدًا</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>لا يوجد مستودع بعيد</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>لا شيء: تبقى الإيداعات في المجلد</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>لا شيء: لم يتغيّر شيء</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>لم يُدفع</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>لم يتغيّر شيء</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>صفحة</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>نجح</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open معطّل، لذا لا يمكن بدء مهمة هنا. استخدم ./console exp:static:build على الخادم.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>نشر</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>منشور</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>الدفع معلّق</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>مدفوع</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>مرفوض</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>نسبي</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>تراجع</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>تم التراجع</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>قيد التشغيل</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>المجلد فقط</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: يُكتب في الملف CNAME. وجّه DNS النطاق إلى المضيف كما يشرح؛ قد يستغرق HTTPS بعض الوقت ليبدأ.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>نعم، لم يُنشر بعد</translation>
     </message>
 </context>
 </TS>

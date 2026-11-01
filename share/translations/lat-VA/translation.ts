@@ -15092,6 +15092,22 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mutationes installationis ut fasciculi servatae: earum status, cursus, exsecutio et revocatio.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contentum recens</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Contentum novissimum, quae ad recognitionem retinentur, et actiones in selectionem.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Exemplar staticum situs in GitHub Pages vel in quolibet hospite git publica.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicatio statica</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22091,6 +22107,18 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Responsa quaestionum servatarum API GraphQL, et classes contenti schematis eius.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Exemplar staticum in GitHub Pages vel in quolibet hospite git publica</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicatio statica</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Promptuarium staticum paginas ex hoc servitore praebet. Ut exemplar staticum situs alibi publices, in GitHub Pages vel in quolibet hospite git, publicatione statica utere.</translation>
     </message>
 </context>
 <context>
@@ -74479,6 +74507,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mutationes installationis ut fasciculi servatae: earum status, cursus, exsecutio et revocatio.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Exemplar staticum situs in GitHub Pages vel in quolibet hospite git publica.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicatio statica</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -80586,6 +80622,2028 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Cursus incohari non potuit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creatum</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classis</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectio</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Auctor</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contentum recens</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Contentum totius situs nuperrime creatum et mutatum, novissimum primum: quae visitatores miserunt, quae ad recognitionem retinentur, adumbrationes publicationem exspectantes. Res selige ut eas liberes, retineas, occultes, reveles, removeas vel in aliam sectionem aut statum moveas.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Index legi non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Retentio ad recognitionem nondum constituta est, itaque nihil retinetur neque actiones retentionis offeruntur. Gradus renovationis 6.0.15-review-hold eam constituit: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Indicem cribrare</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ab</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dies</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creatum (prima publicatio)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnia</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Condicio</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicatum</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Adumbratio, numquam publicata</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendens (approbationem vel diem exspectans)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In corbe</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ad recognitionem retentum</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retentum</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Non retentum</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Occultum</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visibile</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Missum die</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Quilibet aditus situs</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Solum quae inspectio rettulit.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nunc: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Nomen ingressus vel ID usoris.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Cribrare</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Cribra purgare</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Res</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ad %to ex %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nulla res</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lectum %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Actiones in res selectas</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Omnia in hac pagina seligere</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selecta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Actio</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Actionem elige</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Retentionem solvere</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Ad recognitionem retinere</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Occultare</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Revelare</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>In corbem movere</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Delere</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sectionem assignare</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Statum assignare</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Causa</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ad retinendum necessaria; cum retentione et in inspectione servatur.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Sectionem elige</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Statum elige</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Selectis applicare</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Quaeque res tuis permissionibus comparatur. In corbem movere et delere confirmationem petunt. Plures quam %count res in recessu aguntur.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seligere</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicatio</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Missum ex</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name seligere</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>nondum</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(sine nomine)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Adumbratio</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendens</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>A parente occultum</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retentum: nova missio</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versio %version pendens</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versio %version in opere</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Adumbratio, versio %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versio %version publicata</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Constitutum in %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nulla inscriptio</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>non relatum</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nihil his cribris congruit.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Omnia monstrare</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Nullum contentum adhuc est.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per paginam</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count res per paginam monstrare.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Inscriptio et navigatrum missionis ex indice inspectionis veniunt, qui hic non praesto est: columna dicit „non relatum“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Inscriptio et navigatrum ea sunt quae inspectio de re rettulit (retentio automatica ea semper refert; publicatio et creatio solum ubi activatae sunt), ut eius optiones secreti ea servant.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count res</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Delere res in perpetuum tollit, cum omnibus versionibus et translationibus. Rescindi non potest.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Res in corbem eunt, unde restitui possunt.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Quaeque res tuis permissionibus comparatur; res cum subrebus relinquitur ut est (eam in structura contenti remove). Rogaberis ut te esse confirmes.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Hoc in recessu agitur: pagina progressus aperitur, et exitus cuiusque rei ostenditur cum finitum est.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Res selectae</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>et %count aliae</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nihil factum est</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Causa: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Actio adhuc in recessu agitur.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Progressus eius</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Actio in recessu defecit: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Factum</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Recusatum</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defectum</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per rem</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Res</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Cur</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Ad indicem redire</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nihil factum</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmare</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Actionem elige.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Saltem unam rem selige.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Non plures quam 1000 res simul selige.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Dic cur res retineantur.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Sectionem elige.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Statum elige.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formula legi non potuit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Contentum recens</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Numeri legi non potuerunt: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ad recognitionem retenta</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nova hodie</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Retentio ad recognitionem nondum constituta est (gradus renovationis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Omne contentum recens</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Tibi non licet actiones moderationis agere (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Actio moderationis non est perfecta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderatio: %action in %count obiectis</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ex %total obiectis: %ok facta, %refused recusata, %failed defecta</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok facta, %refused recusata, %failed defecta</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Iam non exstat.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Locum non habet (non publicatum).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Tibi non licet id occultare (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Tibi non licet id revelare (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Iam occultum est.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Non est occultum.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Occultatum.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Revelatum.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>In corbe est: corbem vacua vel id inde restitue.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Adumbratio numquam publicata in corbem ire non potest: dele eam.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Tibi non licet id delere (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Deletum.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Tibi non licet id removere (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Subres habet: id in structura contenti remove, ubi enumerantur.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Non remotum est (cursus operis remotionem retinere potest).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>In corbem motum.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sectio non exstat.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Iam in hac sectione est.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Tibi non licet hanc sectionem assignare (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sectio assignata non est.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sectio assignata.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Status non exstat.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Iam in hoc statu est.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Tibi non licet hunc statum assignare (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Status assignatus non est (cursus operis mutationem retinere potest).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Status assignatus.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nulla talis actio est.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Retentio ad recognitionem non constituta est (gradus renovationis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Dic cur retineatur.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Iam retentum est.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Tibi non licet id retinere (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Retentio imposita non est (cursus operis mutationem retinere potest).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retentum.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Non est retentum.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Tibi non licet id liberare (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Retentio soluta non est (cursus operis mutationem retinere potest).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Liberatum; adhuc occultum: tibi non licet id revelare (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Liberatum.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Omnes scopi</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ultima publicatio</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Exemplar staticum gratuitum situs tui in GitHub Pages publica:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Paginae obsoletae</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicatio statica</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Publicatio statica exstincta est.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Scopus</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Scopi legi non potuerunt: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>opus agitur</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>constructio probanda</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>hoc celare</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>scopum creare</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>numquam</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>institutionem legere</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added addita, %changed mutata, %removed remota</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes ex %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Alia %count non enumerantur.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Paginae scriptae: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path est %size, plus quam hospes uni fasciculo permittit.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % finis</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sec.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag est publicatio quam situs nunc habet.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: opus %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repositorium/ pro situ projecti GitHub; vacuum pro dominio proprio vel situ usoris.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Situs</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Hospes</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Aditus ad repositorium</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Repositorium</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Nexus et via basis</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Dominium tuum</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Quid constructio contineat</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Quando publicetur</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Recensere et servare</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Situs projecti GitHub sub /&lt;repository&gt;/ habitat; nexus relativi ibi et ubique alibi valent.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Constructio omnem paginam %site affert ut visitator non inscriptus eam videt, nexus rescribit, fasciculos exscribit et exitum in capsam scopi scribit. Nihil publicatur donec constructionem probaveris et &quot;Publicare&quot; presseris.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Expressio cron, exempli gratia 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Clavis deponendi ut secretum %secret servatur.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Clavis deponendi huic institutioni permittit in unum repositorium per SSH mittere (push) neque alibi. Pars eius privata in Configuratio &gt; Secreta manet; sola pars publica ostenditur.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Clavis deponendi huic scopo facta</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Clavis deponendi per SSH intrat: inscriptionem git in inscriptionem SSH muta (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Opus agitur, ab %user incohatum</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Opus huius scopi adhuc agitur (%detail). Exspecta dum finiatur.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Opus huius scopi adhuc agitur. Exspecta dum finiatur.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Nexus a pagina /news/ ad paginam /about-us/team sic scribetur:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Nova clavis deponendi facta est. Partem eius publicam nunc repositorio adde.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Pagina quae post purgationem adhuc exitum vestigationis, signum formae vel id sessionis continet numquam publicatur.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Revocatio peritis est: nota &quot;Scio quid hoc mutet&quot; et nomen pittacii iterum scribe.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Situs usque ad %site esse potest, unus fasciculus usque ad %file, cum circiter 100 GB commeatus in mense. In consilio gratuito repositorium publicum esse debet. GitHub Pages non est ad tabernas vel alia negotia commercialia.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Scopus est unus situs in unum repositorium git publicatus. Hic nihil construitur neque publicatur: &quot;Servare&quot; optiones in settings/override/staticcache.ini.append.php scribit.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Scopus est unus situs in unum locum publicatus, exempli gratia situs tuus publicus in GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Signum ex Configuratio &gt; Secreta</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Cursus operis repositorii id publicat.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Hanc clavem publicam repositorio cum iure scribendi adde. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, nota Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Additum</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Alius hospes git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Alius processus in hoc scopo laborat: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Redire</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Via basis</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Antea</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Sub via basis</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Ramus</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Nexus fracti</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Nexus fracti in constructione</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Constructio</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Constructio %id ab %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Construere %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Nunc construere</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Constructio probanda</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ab</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Manu, hic</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mutare</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mutationes</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Primum proba</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Has optiones proba</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Proba quid constructio mutet, eam inspice, deinde publica aut abice.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Elige publicationem ad quam redeas.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>In editione posteriore veniet.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commissio</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commissiones</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Constructionem committit (commit), pittacio signat et ad %remote mittit (push). Missio numquam cogitur; postea ad quamlibet publicationem redire potes.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Comparatum cum capsa priore: %added addita, %changed mutata, %removed remota, %unchanged immutata.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Comparatum cum ultima publicatione.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Testimonium aditus</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Dominium proprium</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Exitus vestigationis, signa formarum, id sessionum et numeri semel adhibiti semper removentur.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Clavis deponendi</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Clavis deponendi %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Abicere</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Constructionem abicere</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Dominium</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Vacuum: inscriptio situs. Aliter inscriptio interna eiusdem situs.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Finitum</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Omnis nexus a via basis incipit.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Omnis publicatio est commissio cum pittacio static/%id/&lt;n&gt;. Reditus novam commissionem cum fasciculis publicationis prioris facit: historia manet, nullum pittacium movetur et nihil cogitur.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Addenda</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Paginas afferre ex</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fasciculus</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fasciculi</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fasciculi desunt</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fasciculi ex</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fasciculi qui colligi non potuerunt</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Impressio digitalis</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Capsa</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Pro inscriptione SSH. Clavis post servationem fit; partem eius publicam repositorio addis.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Pro inscriptione https://. GitHub: signum subtile (fine-grained) cum Contents legendi et scribendi in repositorio.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Peritis. Situs publicus mutatur simul ac missio perfecta est.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formae</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Hospitium gratuitum ex repositorio GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Ex ramo</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Inscriptio git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages situm %site et fasciculum %file permittit.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Fines GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages fasciculos ut sunt publicat (necessarium pro fasciculis qui ab _ incipiunt).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ramum praebet ut missus est. Praefinitum.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, servitor tuus: quodlibet repositorium git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Ad publicationem priorem redire</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Auxilium</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Auxilium de duce</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Eas celare</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historia %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hospes</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Quomodo GitHub Pages constructionem accipiat</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Mutationes probavi</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Scio quid hoc mutet</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Numerus</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Exstincta est: nihil construi potest donec accensa sit.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>In recessu ut %user currit; hanc paginam claudere potes.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Opus %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Ut secretum %secret servatum.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Genus</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ultima publicatio</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Has paginas omittere</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Has sectiones omittere</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Nexus</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Nexus rescripti</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Situs vivus</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Constructionem inspicere</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Litterae minusculae, numeri, _ et -, exempli gratia github-public. Capsam et pittacia (static/&lt;id&gt;/&lt;n&gt;) nominat neque postea mutari potest.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Novam clavem facere</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Scopum creare</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Clavem facere</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Primum repositorium in hospite crea; vacuum quoque sufficit.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Index fasciculorum</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nuntius</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Plurimae paginae</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Nomen signi in Configuratio &gt; Secreta</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Novus scopus</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Sequens</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Nulla commissio adhuc.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Nulla clavis facta est: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nullum programma php lineae mandatorum inventum est. Pone migration.ini [AdminSettings] PhpCliPath ad viam eius plenam.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Nullum pittacium adhuc.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Nullus scopus adhuc.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nihil</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Non in constructione.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Nihil adhuc publicatum est.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Nihil adhuc publicatum est: omnis fasciculus novus est.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Nuntiare</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Ex horario</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>In console</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>In servitore: ./console exp:static:serve %id eodem modo praebet.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Una via in quaque linea, * quamlibet partem congruit: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Solum nomen cum scopo servatur; ipsum signum vel clavis in Configuratio &gt; Secreta manet neque umquam in acta apparet.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Solum quod paginae nominant</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Solum cum signo. env:NAME pro eo variabilem ambitus servitoris legit.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Praevisionem aperire</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Constructionem aperit ut hospes eam praebebit, ex capsa scopi. Nexus tibi per horam valet.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Optionale. Vacuum: quod publicatum est.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Optionale. Cum dominio situs in radice eius praebetur.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Paginae</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Paginae scopi</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Paginae recusatae</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Postprocessio</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Praevisio</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Praevidere et publicare</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Praevidere et publicare %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Constructionem praevidere</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progressus</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Inscriptio publica</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Clavis publica</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publicare</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Exemplar staticum situs in GitHub Pages vel in quolibet hospite git publica: construe, mutationes proba, publica et ad publicationem priorem redi cum opus est.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publicatio ad quam redeas</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publicationes</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Missio</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Institutionem legere</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Acta</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Recusatum</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativi</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Renovare</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Remotum</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Clavem substituere: vetus desinit valere</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Relatio</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Relatio constructionis</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repositorium</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Recensio</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Recensio omnem optionem probat et lineas quae scribentur ostendit. Nihil adhuc servatur.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Revocare</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Revocatio</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Servare</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Horarium</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Pagina quaerendi</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Numeri sectionum, commatibus separati.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Ad situm vivum mittere</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Optio</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Optiones</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Optiones %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Configuratio &gt; Secreta</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>In indicibus ostenditur, exempli gratia &quot;Situs publicus in GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Aditus cum GitHub App cum integratione GitHub veniet.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Situs</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Situs publicandus</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Magnitudo</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Magnitudo et fines</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Magnitudo constructionis</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Paginae obsoletae</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Incohatum</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Ab %user incohatum hora %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Condicio</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicatio statica</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Publicatio statica exstincta est</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Publicatio statica exstincta est.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Publicatio statica exstincta est. Primum eam accende in Configuratio &gt; Publicatio statica.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Publicatio statica accensa est.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Gradus %step ex %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Gradus</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Purgatio</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Exstinguere</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Accendere</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Publicationem staticam accendere</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Pittacium</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Pittacia</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Scopus</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Scopi creari et mutari possunt, sed nihil construitur neque publicatur donec accensa sit.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Machinis quaerendi dicit quid legant.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Constructio abici non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Constructio eadem est ac ultima publicatio: nihil publicandum est.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Constructio abiecta est: capsa iterum ultimam publicationem continet.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Valores praefiniti plerisque situs conveniunt.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Capsa constructionem nondum publicatam continet; nova constructio eam substituit.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>In capsam operum scribi non potest: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Opus parari non potuit: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Opus incohari non potuit.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Opus finitum est. Relatio eius oneratur.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Opus usorem inscriptum requirit.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Opus incohatum est sed numerum processus sui non rettulit. Proba %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Clavis</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Fasciculus maximus: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Lineae quae scribentur</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Index paginarum pro machinis quaerendi; inscriptionem publicam requirit.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Paginae afferuntur ut visitator non inscriptus eas videt. Aditus administrationis et emendationis numquam offeruntur.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Progressus sequi non potuit. Paginam renova ut videas quomodo opus procedat.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Pars publica clavis:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Radix rami</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Repositorium secretorum nondum paratum est (./console exp:upgrade --apply tabulam eius creat), itaque nulla clavis servari potest.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Servitor per se intrat (clave SSH sua vel adiutore testimoniorum), aut repositorium in hoc servitore est.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Optio scribi non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Optiones validae sunt. Hae lineae scribentur:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Fasciculus optionum legi non potest: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Situs ad fasciculos illius publicationis redit; constructio nondum publicata prius publicanda aut abicienda est.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Pagina propria situs pro inscriptionibus quae non exstant.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Scopus servari non potuit: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Scopus nondum hac clave intrat: in optionibus eius elige &quot;Clavis deponendi huic scopo facta&quot;.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Scopi legi non potuerunt: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Nulla constructio probanda adhuc est.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Haec institutio nullum aditum publicum habet. Aditus administrationis et emendationis numquam publicantur.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Haec pagina opus procedens sequitur; clausa pagina in recessu pergit.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Hic scopus nondum clavem deponendi habet.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Hic scopus hic nondum constructus est.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Hic scopus unam habet.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Hanc constructionem abicit: capsa iterum ultimam publicationem continet. Situs vivus non mutatur.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Primum nota &quot;Mutationes probavi&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tempus</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Incitamenta</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Nomen pittacii iterum scribe</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Immutatum</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Uncus interretialis</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Quid</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Quid mutatur</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Quid quisque fasciculus sit; semper scribitur.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Quid opus fecerit et acta eius. Opus hic incohatum in recessu pergit cum haec pagina clauditur.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Quid opus ut errores scripserit</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Quod paginae nominant, et omnis imago contenti publicati</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Quando</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Cum publicatio deficit</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Cum publicatio succedit</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Cum contentum publicatur</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Quo nexus ad ea quae exemplar non continet ducant (quaerere, intrare).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Unde exemplar staticum praebeatur.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Quis situs publicetur et quomodo scopus appelletur.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Sub qualibet via valet. Praefinitum.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Scribitur quotiens dominium proprium ponitur.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ita</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Semper manu hic et in console construere et publicare potes.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>nomen tantum; valor in Configuratio &gt; Secreta manet</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>sub %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>sine relatione finitum</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>addendum</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>defecit</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fasciculus</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, vel main cum capsa docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>hospes git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (cum signo) vel git@github.com:owner/repo.git (cum clave deponendi); numquam tessera vel signum in ea.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, pro mappa situs et nexibus canonicis.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>imago</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>numquam</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>nullum repositorium remotum</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>nihil: commissiones in capsa manent</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>nihil: nihil mutatum</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>non missum</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>nihil mutatum</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>pagina</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>successit</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open inactivum est, itaque opus hic incohari non potest. In servitore ./console exp:static:build adhibe.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publicatio</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publicatum</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>missio exspectatur</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>missum</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>recusatum</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativi</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>revocatio</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>revocatum</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>currit</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>capsa tantum</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: in fasciculum CNAME scribitur. DNS dominii ad hospitem dirige ut ille explicat; HTTPS aliquamdiu ad incipiendum requirere potest.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ita, nondum publicatum</translation>
     </message>
 </context>
 </TS>

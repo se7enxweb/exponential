@@ -1446,3 +1446,8 @@ label.a4-package-option-label {
 @media (max-width: 960px) {
   .a4-graphql-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Setup > Static publishing (module staticpublish): repository addresses and folder paths are long words */
+.a4-setup-publish .a4-meta,
+.a4-setup-publish .a4-code,
+.a4-setup-publish .a4-facts dd { overflow-wrap: anywhere; }

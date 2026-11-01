@@ -15148,6 +15148,22 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Kurulumda dosya olarak tutulan değişiklikler: durumları, çalıştırmalar, çalıştırma ve geri alma.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Son içerikler</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>En yeni içerikler, inceleme için bekletilenler ve bir seçim üzerindeki eylemler.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Bir sitenin statik kopyasını GitHub Pages&apos;e veya herhangi bir git sunucusuna yayımlayın.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik yayımlama</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22147,6 +22163,18 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API&apos;nin kalıcı sorgularının yanıtları ve şemasının içerik sınıfları.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>GitHub Pages&apos;e veya herhangi bir git sunucusuna statik bir kopya yayımlayın</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik yayımlama</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statik önbellek sayfaları bu sunucudan sunar. Bir sitenin statik kopyasını başka bir yerde, GitHub Pages&apos;te veya herhangi bir git sunucusunda yayımlamak için statik yayımlamayı kullanın.</translation>
     </message>
 </context>
 <context>
@@ -74761,6 +74789,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Kurulumda dosya olarak tutulan değişiklikler: durumları, çalıştırmalar, çalıştırma ve geri alma.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Bir sitenin statik kopyasını GitHub Pages&apos;e veya herhangi bir git sunucusuna yayımlayın.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik yayımlama</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>
@@ -80558,6 +80594,2028 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The run could not be started.</source>
         <translation>Çalıştırma başlatılamadı.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Değiştirilme</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Oluşturulma</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sınıf</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Oluşturan</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Son içerikler</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Tüm sitenin en son oluşturulan ve değiştirilen içeriği, en yenisi önce: ziyaretçilerin gönderdikleri, inceleme için bekletilenler, yayımlanmayı bekleyen taslaklar. Öğeleri serbest bırakmak, bekletmek, gizlemek, göstermek, kaldırmak ya da başka bir bölüme veya duruma taşımak için seçin.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Liste okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>İnceleme bekletmesi henüz kurulmadı; bu nedenle hiçbir şey bekletilmiyor ve bekletme eylemleri sunulmuyor. 6.0.15-review-hold yükseltme adımı bunu kurar: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Listeyi filtrele</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tarih</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Oluşturulma (ilk yayım)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tümü</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Yayım durumu</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Yayımlanmış</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Taslak, hiç yayımlanmamış</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Beklemede (onay ya da bir tarih bekleniyor)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Çöp kutusunda</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>İnceleme için bekletiliyor</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Bekletiliyor</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Bekletilmiyor</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Gizli</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Görünür</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Gönderildiği site erişimi</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Herhangi bir site erişimi</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Yalnızca denetimin kaydettikleri.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Şu an: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Bir kullanıcı adı ya da kullanıcı kimliği.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrele</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filtreleri temizle</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Öğeler</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Öğe yok</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms içinde okundu)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Seçili öğeler üzerinde eylemler</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Bu sayfadakilerin tümünü seç</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count seçili</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Eylem</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Bir eylem seçin</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Bekletmeyi kaldır</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>İnceleme için beklet</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Gizle</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Göster</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Çöp kutusuna taşı</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Sil</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Bölüm ata</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Durum ata</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Neden</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Bekletmek için gereklidir; bekletmeyle birlikte ve denetimde saklanır.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Bir bölüm seçin</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Bir durum seçin</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Seçililere uygula</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Her öğe sizin izinlerinize göre denetlenir. Çöp kutusuna taşıma ve silme onayınızı ister. %count öğeden fazlası arka planda çalışır.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seç</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Yayım</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Gönderildiği adres</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name öğesini seç</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>henüz değil</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(adsız)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Kimlik %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Taslak</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Beklemede</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Üst öğesi tarafından gizlendi</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Bekletiliyor: yeni gönderim</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Sürüm %version beklemede</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Sürüm %version üzerinde çalışılıyor</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Taslak, sürüm %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Sürüm %version yayımlandı</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date için zamanlandı</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>adres yok</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>kaydedilmedi</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Bu filtrelere uyan bir şey yok.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tümünü göster</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Henüz içerik yok.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sayfa başına</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Sayfa başına %count öğe göster.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Bir gönderimin adresi ve tarayıcısı denetim dizininden gelir; bu dizin burada kullanılamıyor: sütunda “kaydedilmedi” yazar.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adres ve tarayıcı, denetimin öğe için kaydettikleridir (otomatik bekletme bunları her zaman kaydeder; yayımlama ve oluşturma yalnızca açık olduğunda), gizlilik ayarlarının sakladığı biçimde.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count öğe</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Silme, öğeleri tüm sürümleri ve çevirileriyle birlikte kalıcı olarak kaldırır. Geri alınamaz.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Öğeler çöp kutusuna gider; oradan geri yüklenebilirler.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Her öğe sizin izinlerinize göre denetlenir; alt öğeleri olan bir öğe olduğu gibi bırakılır (onu içerik yapısında kaldırın). Siz olduğunuzu doğrulamanız istenecek.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Bu işlem arka planda çalışır: ilerleme sayfası açılır ve bittiğinde her öğenin sonucu gösterilir.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Seçili öğeler</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ve %count tane daha</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Hiçbir şey yapılmadı</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Neden: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Eylem hâlâ arka planda çalışıyor.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>İlerlemesi</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Arka plan eylemi başarısız oldu: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tamamlandı</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Reddedildi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Başarısız</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Öğe başına</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Öğe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sonuç</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Gerekçe</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Listeye dön</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Hiçbir şey yapılmadı</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Onayla</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Bir eylem seçin.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>En az bir öğe seçin.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Bir seferde en fazla 1000 öğe seçin.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Öğelerin neden bekletildiğini belirtin.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Bölümü seçin.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Durumu seçin.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Form okunamadı.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Son içerikler</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Sayılar okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>İnceleme için bekletiliyor</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Bugün yeni</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>İnceleme bekletmesi henüz kurulmadı (6.0.15-review-hold yükseltme adımı).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tüm son içerikler</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Moderasyon eylemlerini çalıştıramazsınız (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderasyon eylemi tamamlanmadı: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasyon: %count nesne üzerinde %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total nesne: %ok tamamlandı, %refused reddedildi, %failed başarısız</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok tamamlandı, %refused reddedildi, %failed başarısız</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Artık mevcut değil.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Konumu yok (yayımlanmamış).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Bunu gizleyemezsiniz (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Bunu gösteremezsiniz (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Zaten gizli.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Gizli değil.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Gizlendi.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Gösterildi.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Çöp kutusunda: orada boşaltın ya da geri yükleyin.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Hiç yayımlanmamış bir taslak çöp kutusuna gidemez: onu silin.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Bunu silemezsiniz (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Silindi.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Bunu kaldıramazsınız (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Alt öğeleri var: onu, alt öğelerin listelendiği içerik yapısında kaldırın.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Kaldırılmadı (bir iş akışı kaldırmayı bekletiyor olabilir).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Çöp kutusuna taşındı.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Bölüm mevcut değil.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Zaten bu bölümde.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Bu bölümü atayamazsınız (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Bölüm atanmadı.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Bölüm atandı.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Durum mevcut değil.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Zaten bu durumda.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Bu durumu atayamazsınız (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Durum atanmadı (bir iş akışı değişikliği bekletiyor olabilir).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Durum atandı.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Böyle bir eylem yok.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>İnceleme bekletmesi kurulmamış (6.0.15-review-hold yükseltme adımı).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Neden bekletildiğini belirtin.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Zaten bekletiliyor.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Bunu bekletemezsiniz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Bekletme uygulanmadı (bir iş akışı değişikliği bekletiyor olabilir).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Bekletildi.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Bekletilmiyor.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Bunu serbest bırakamazsınız (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Bekletme kaldırılmadı (bir iş akışı değişikliği bekletiyor olabilir).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Serbest bırakıldı; hâlâ gizli: bunu gösteremezsiniz (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Serbest bırakıldı.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Tüm hedefler</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Son yayın</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Sitenizin ücretsiz statik bir kopyasını GitHub Pages üzerinde yayımlayın:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Eskimiş sayfalar</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik yayımlama</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statik yayımlama kapalı.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Hedef</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Hedefler okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>bir iş sürüyor</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>kontrol edilecek derleme</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>bunu gizle</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>hedef oluştur</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiçbir zaman</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>öğreticiyi okuyun</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added eklendi, %changed değişti, %removed kaldırıldı</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count tane daha listelenmedi.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages sayfa yazıldı</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path boyutu %size; barındırma hizmetinin bir dosya için izin verdiğinden büyük.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Sınırın %percent % kadarı</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sn</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag, sitenin şu anki yayınıdır.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: iş %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub proje sitesi için /depo/; özel alan adı veya kullanıcı sitesi için boş.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Site</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Barındırma hizmeti</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Depoda oturum açma</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Depo</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Bağlantılar ve temel yol</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Kendi alan adınız</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Derlemenin içeriği</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Ne zaman yayımlanacağı</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Gözden geçir ve kaydet</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Bir GitHub proje sitesi /&lt;repository&gt;/ altında yer alır; göreli bağlantılar orada ve başka her yerde çalışır.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Bir derleme, %site sitesinin her sayfasını oturum açmamış bir ziyaretçinin gördüğü gibi alır, bağlantıları yeniden yazar, dosyaları kopyalar ve sonucu hedefin klasörüne yazar. Siz derlemeyi kontrol edip Yayımla düğmesine basana kadar hiçbir şey yayımlanmaz.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Bir cron ifadesi, örneğin 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Dağıtım anahtarı %secret gizli değeri olarak saklanır.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Dağıtım anahtarı, bu kurulumun SSH üzerinden yalnızca tek bir depoya gönderme yapmasını sağlar, başka hiçbir yere değil. Özel yarısı Kurulum &gt; Gizli değerler içinde kalır; yalnızca açık yarısı gösterilir.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Bu hedef için oluşturulan bir dağıtım anahtarı</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Dağıtım anahtarı SSH üzerinden oturum açar: git adresini SSH adresiyle değiştirin (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Bir iş sürüyor, başlatan: %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Bu hedefin bir işi hâlâ sürüyor (%detail). Bitmesini bekleyin.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Bu hedefin bir işi hâlâ sürüyor. Bitmesini bekleyin.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ sayfasından /about-us/team sayfasına giden bir bağlantı şöyle yazılır</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Yeni bir dağıtım anahtarı oluşturuldu. Açık yarısını şimdi depoya ekleyin.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Temizlemeden sonra hâlâ hata ayıklama çıktısı, form belirteci veya oturum kimliği taşıyan bir sayfa asla yayımlanmaz.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Geri alma uzmanlar içindir: &quot;Bunun neyi değiştirdiğini biliyorum&quot; kutusunu işaretleyin ve etiketin adını yeniden yazın.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Bir site en fazla %site, bir dosya en fazla %file olabilir; ayda yaklaşık 100 GB trafik kullanılabilir. Ücretsiz planda depo herkese açık olmalıdır. GitHub Pages, mağazalar veya diğer ticari işlemler için tasarlanmamıştır.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Bir hedef, tek bir git deposuna yayımlanan tek bir sitedir. Burada hiçbir şey derlenmez veya yayımlanmaz: Kaydet, ayarları settings/override/staticcache.ini.append.php dosyasına yazar.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Bir hedef, tek bir yere yayımlanan tek bir sitedir; örneğin GitHub Pages&apos;teki herkese açık siteniz.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Kurulum &gt; Gizli değerler içinden bir belirteç</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Deponun bir iş akışı onu yayımlar.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Bu açık anahtarı depoya yazma erişimiyle ekleyin. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Eklendi</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Başka bir git sunucusu</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Bu hedef üzerinde başka bir işlem çalışıyor: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Geri</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Temel yol</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Önce</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Bir temel yolun altında</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Dal</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Bozuk bağlantılar</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Derlemedeki bozuk bağlantılar</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Derleme</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Derleme %id, %user tarafından</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Derleme: %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Şimdi derle</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Kontrol edilecek derleme</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Başlatan</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Elle, burada</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Değiştir</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Değişti</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Değişiklikler</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Önce kontrol edin</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Bu ayarları kontrol edin</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Derlemenin neyi değiştirdiğini kontrol edin, ona göz atın, sonra yayımlayın ya da vazgeçin.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Geri dönülecek yayını seçin.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Sonraki bir sürümle gelecek.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit kaydı</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commit kayıtları</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Derlemeyi commit eder, etiketler ve %remote adresine gönderir. Gönderme asla zorlanmaz; daha sonra istediğiniz yayına geri dönebilirsiniz.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Önceki klasöre göre: %added eklendi, %changed değişti, %removed kaldırıldı, %unchanged değişmedi.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Son yayına göre.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kimlik bilgisi</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Özel alan adı</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Hata ayıklama çıktısı, form belirteçleri, oturum kimlikleri ve nonce değerleri her zaman çıkarılır.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Dağıtım anahtarı</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name dağıtım anahtarı</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Vazgeç</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Derlemeden vazgeç</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Alan adı</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Boş: sitenin adresi. Aksi halde aynı sitenin dahili bir adresi.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Bitti</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Her bağlantı temel yolla başlar.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Her yayın, static/%id/&lt;n&gt; etiketli bir commit kaydıdır. Geri dönmek, önceki bir yayının dosyalarıyla yeni bir commit kaydı oluşturur: geçmiş kalır, hiçbir etiket taşınmaz ve hiçbir şey zorlanmaz.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Ek dosyalar</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Sayfaların alınacağı adres</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosya</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dosyalar</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Eksik dosyalar</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Şu sitenin dosyaları</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Toplanamayan dosyalar</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Parmak izi</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Klasör</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Bir SSH adresi için. Anahtar kaydettikten sonra oluşturulur; açık yarısını depoya siz eklersiniz.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Bir https:// adresi için. GitHub: depo üzerinde Contents okuma ve yazma iznine sahip ayrıntılı (fine-grained) bir belirteç.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Uzmanlar için. Herkese açık site, gönderme tamamlanır tamamlanmaz değişir.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formlar</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Bir GitHub deposundan ücretsiz barındırma.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Daldan</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git adresi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages, %site boyutunda bir siteye ve %file boyutunda bir dosyaya izin verir.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages sınırları</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages dosyaları olduğu gibi yayımlar (_ ile başlayan dosyalar için gerekir).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub, dalı gönderildiği gibi sunar. Varsayılan.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, kendi sunucunuz: herhangi bir git deposu.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Önceki bir yayına geri dön</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Yardım</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Sihirbaz için yardım</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Gizle</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geçmiş</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name geçmişi</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Barındırma hizmeti</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages derlemeyi nasıl alır</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Değişiklikleri kontrol ettim</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Bunun neyi değiştirdiğini biliyorum</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Kimlik</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Kapalı: açılana kadar hiçbir şey derlenemez.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Arka planda %user olarak çalışır; bu sayfayı kapatabilirsiniz.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>İş %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret gizli değeri olarak saklanır.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tür</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Son yayın</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Bu sayfaları dışarıda bırak</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Bu bölümleri dışarıda bırak</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Bağlantılar</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Yeniden yazılan bağlantılar</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Canlı site</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Derlemeye göz at</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Küçük harfler, rakamlar, _ ve -, örneğin github-public. Klasörü ve etiketleri (static/&lt;id&gt;/&lt;n&gt;) adlandırır ve sonradan değiştirilemez.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Yeni anahtar oluştur</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Hedef oluştur</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Anahtarı oluştur</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Önce depoyu barındırma hizmetinde oluşturun; boş bir depo yeterlidir.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest dosyası</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mesaj</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Çoğu sayfa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Kurulum &gt; Gizli değerler içindeki belirtecin adı</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Yeni hedef</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Sonraki</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Henüz commit kaydı yok.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Anahtar oluşturulmadı: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php komut satırı programı bulunamadı. migration.ini [AdminSettings] PhpCliPath ayarına tam yolunu yazın.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Henüz etiket yok.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Henüz hedef yok.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Hiçbiri</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Derlemede yok.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Henüz hiçbir şey yayımlanmadı.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Henüz hiçbir şey yayımlanmadı: her dosya yeni.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Bildirimler</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Bir zamanlamaya göre</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsolda</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Sunucuda: ./console exp:static:serve %id onu aynı şekilde sunar.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Satır başına bir yol, * herhangi bir parçayla eşleşir: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Hedefle birlikte yalnızca bir ad saklanır; belirtecin veya anahtarın kendisi Kurulum &gt; Gizli değerler içinde kalır ve hiçbir günlükte görünmez.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Yalnızca sayfaların adını verdikleri</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Yalnızca belirteçle. env:NAME bunun yerine sunucunun bir ortam değişkenini okur.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Önizlemeyi aç</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Derlemeyi, barındırma hizmetinin sunacağı şekilde hedefin klasöründen açar. Bağlantı sizin için bir saat çalışır.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>İsteğe bağlı. Boş: yayımlanmış olan.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>İsteğe bağlı. Bir alan adıyla site, kök dizininde sunulur.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Çıktı</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Sayfalar</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Hedefin sayfaları</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Reddedilen sayfalar</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Son işlem</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Önizleme</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Önizle ve yayımla</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Önizle ve yayımla: %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Derlemeyi önizle</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>İlerleme</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Herkese açık adres</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Açık anahtar</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Yayımla</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Bir sitenin statik kopyasını GitHub Pages&apos;e veya herhangi bir git sunucusuna yayımlayın: derleyin, değişiklikleri kontrol edin, yayımlayın ve gerektiğinde önceki bir yayına geri dönün.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Geri dönülecek yayın</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Yayınlar</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Gönderme</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Öğreticiyi okuyun</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Günlük</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Reddedildi</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Göreli</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Yeniden yükle</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Kaldırıldı</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Anahtarı değiştir: eskisi çalışmayı bırakır</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapor</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Derleme raporu</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depo</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Gözden geçir</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Gözden geçirme her ayarı kontrol eder ve yazılacak satırları gösterir. Henüz hiçbir şey kaydedilmedi.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Geri al</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Geri alma</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Zamanlama</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Arama sayfası</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Virgülle ayrılmış bölüm kimlikleri.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Bunları canlı siteye gönder</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ayar</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ayarlar</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ayarları</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Kurulum &gt; Gizli değerler</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Listelerde gösterilir, örneğin &quot;GitHub Pages&apos;teki herkese açık site&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App ile oturum açma, GitHub entegrasyonuyla birlikte gelecek.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Yayımlanacak site</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Boyut</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Boyut ve sınırlar</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Derlemenin boyutu</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Eskimiş sayfalar</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Başladı</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user tarafından %time zamanında başlatıldı.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik yayımlama</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statik yayımlama kapalı</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statik yayımlama kapalı.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statik yayımlama kapalı. Önce Kurulum &gt; Statik yayımlama bölümünden açın.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statik yayımlama açık.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Adım %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Adımlar</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Temizleme</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Kapat</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Statik yayımlamayı aç</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etiketler</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Hedef</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Hedefler oluşturulabilir ve değiştirilebilir, ancak açılana kadar hiçbir şey derlenmez veya yayımlanmaz.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Arama motorlarına neyi okuyacaklarını söyler.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Derlemeden vazgeçilemedi: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Derleme son yayınla aynı: yayımlanacak bir şey yok.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Derlemeden vazgeçildi: klasör yeniden son yayını içeriyor.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Varsayılanlar çoğu siteye uygundur.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Klasörde henüz yayımlanmamış bir derleme var; yeni bir derleme onun yerini alır.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>İşlerin klasörüne yazılamıyor: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>İş hazırlanamadı: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>İş başlatılamadı.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>İş bitti. Raporu yükleniyor.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>İş için oturum açmış bir kullanıcı gerekir.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>İş başlatıldı ancak süreç kimliğini bildirmedi. Şunu kontrol edin: %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Anahtar</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>En büyük dosya: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Yazılacak satırlar</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Arama motorları için sayfa listesi; herkese açık adresi gerektirir.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Sayfalar, oturum açmamış bir ziyaretçinin gördüğü gibi alınır. Yönetim ve düzenleme site erişimleri hiçbir zaman sunulmaz.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>İlerleme izlenemedi. İşin durumunu görmek için sayfayı yeniden yükleyin.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Anahtarın açık yarısı:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Dalın kökü</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Gizli değer deposu henüz kurulmadı (./console exp:upgrade --apply tablosunu oluşturur), bu yüzden hiçbir anahtar saklanamaz.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Sunucu kendi kendine oturum açar (kendi SSH anahtarı veya kimlik bilgisi yardımcısıyla) ya da depo bu sunucudadır.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Ayar yazılamadı: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Ayarlar geçerli. Şu satırlar yazılacak:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Ayar dosyası okunamıyor: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Site o yayının dosyalarına geri döner; henüz yayımlanmamış bir derleme önce yayımlanmalı veya ondan vazgeçilmelidir.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Sitenin, var olmayan adresler için kendi sayfası.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Hedef kaydedilemedi: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Hedef henüz bu anahtarla oturum açmıyor: ayarlarında &quot;Bu hedef için oluşturulan bir dağıtım anahtarı&quot; seçeneğini seçin.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Hedefler okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Henüz kontrol edilecek derleme yok.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Bu kurulumda ön yüz site erişimi yok. Yönetim ve düzenleme site erişimleri hiçbir zaman yayımlanmaz.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Bu sayfa işi ilerledikçe izler; sayfa kapatıldığında iş arka planda devam eder.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Bu hedefin henüz dağıtım anahtarı yok.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Bu hedef burada henüz derlenmedi.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Bu hedefin bir anahtarı var.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Bu derlemeden vazgeçer: klasör yeniden son yayını içerir. Canlı site değişmez.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Önce &quot;Değişiklikleri kontrol ettim&quot; kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zaman</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Tetikleyiciler</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Etiketin adını yeniden yazın</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Değişmedi</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Neler değişiyor</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Her dosyanın ne olduğu; her zaman yazılır.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>İşin ne yaptığı ve günlüğü. Burada başlatılan bir iş, bu sayfa kapatıldığında arka planda devam eder.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>İşin hata olarak yazdırdıkları</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Sayfaların adını verdikleri ve yayımlanmış içeriğin her görseli</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ne zaman</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Bir yayın başarısız olduğunda</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Bir yayın başarılı olduğunda</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>İçerik yayımlandığında</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kopyanın içermediği şeylere (arama, oturum açma) giden bağlantıların nereye gideceği.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Statik kopyanın sunulduğu yer.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Hangi sitenin yayımlandığı ve hedefin adı.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Herhangi bir yolun altında çalışır. Varsayılan.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Özel bir alan adı ayarlandığında yazılır.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Burada ve konsolda her zaman elle derleyip yayımlayabilirsiniz.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>yalnızca bir ad; değer Kurulum &gt; Gizli değerler içinde kalır</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path altında</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>rapor olmadan bitti</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ek</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>başarısız</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>dosya</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages veya docs klasörüyle main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git sunucusu</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (belirteçle) veya git@github.com:owner/repo.git (dağıtım anahtarıyla); içinde asla parola veya belirteç olmamalı.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, site haritası ve kanonik bağlantılar için.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>görsel</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiçbir zaman</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hayır</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>uzak depo yok</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>yok: commit kayıtları klasörde kalır</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>yok: hiçbir şey değişmedi</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>gönderilmedi</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>hiçbir şey değişmedi</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>sayfa</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>başarılı</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open devre dışı, bu yüzden burada iş başlatılamaz. Sunucuda ./console exp:static:build kullanın.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>yayın</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>yayımlandı</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>gönderme bekliyor</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>gönderildi</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>reddedildi</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>göreli</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>geri alma</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>geri alındı</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>çalışıyor</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>yalnızca klasör</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME dosyasına yazılır. Alan adının DNS kaydını barındırma hizmetinin açıkladığı şekilde ona yönlendirin; HTTPS&apos;nin devreye girmesi biraz zaman alabilir.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>evet, henüz yayımlanmadı</translation>
     </message>
 </context>
 </TS>

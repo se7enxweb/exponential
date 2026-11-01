@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Sendet eine E-Mail über den Mailtransport der Installation.
 
-Ein Schritt einer YAML-Migration mit `type: mail`. Die Klasse `expMigrationStepMail` ist in `settings/migration.ini` `[StepSettings] StepTypeList[mail]` registriert.
+Ein Schritt einer YAML-Migration mit `type: mail`. Die Klasse `expMigrationStepMail` (`kernel/classes/migration/steps/expmigrationstepmail.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[mail]` registriert.
 
 ## Schlüssel
 
@@ -59,4 +59,4 @@ Er berührt keinen Cache.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepmail.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

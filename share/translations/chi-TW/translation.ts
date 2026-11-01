@@ -15148,6 +15148,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>以檔案形式保存的安裝變更：其狀態、執行紀錄、執行與回復。</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新內容</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>最新的內容、暫扣待審的內容，以及對所選內容的操作。</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>將網站的靜態副本發佈到 GitHub Pages 或任何 git 主機。</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>靜態發佈</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22147,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API 持久化查詢的回應，以及其結構描述的內容類別。</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>將靜態副本發佈到 GitHub Pages 或任何 git 主機</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>靜態發佈</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>靜態快取由本伺服器提供頁面。若要將網站的靜態副本發佈到其他地方（GitHub Pages 或任何 git 主機），請使用靜態發佈。</translation>
     </message>
 </context>
 <context>
@@ -76204,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>以檔案形式保存的安裝變更：其狀態、執行紀錄、執行與回復。</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>將網站的靜態副本發佈到 GitHub Pages 或任何 git 主機。</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>靜態發佈</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80551,6 +80587,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>無法啟動執行。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>修改時間</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>建立時間</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>類別</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>區段</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>建立者</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新內容</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>整個網站最近建立和修改的內容，最新的在前：訪客提交的內容、暫扣待審的內容、等待發佈的草稿。選取項目以解除暫扣、暫扣、隱藏、顯示、移除，或將其移到另一個區段或狀態。</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>無法讀取清單：%problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>審核暫扣尚未設定，因此沒有任何內容被暫扣，也不提供暫扣操作。升級步驟 6.0.15-review-hold 會設定它：./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>篩選清單</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>從</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>到</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>日期</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>建立時間（首次發佈）</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>已發佈</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>草稿，從未發佈</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>待處理（等待核准或日期）</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>在垃圾桶中</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>暫扣待審</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>已暫扣</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>未暫扣</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>隱藏</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>提交於</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>任何網站存取</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>僅限稽核記錄的內容。</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>目前：%name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>登入名稱或使用者 ID。</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>篩選</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>清除篩選條件</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>第 %from 至 %to 筆，共 %count 筆</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>沒有項目</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>（讀取耗時 %ms 毫秒）</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>對所選項目的操作</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>全選此頁</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>已選取 %count 個</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>選擇操作</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>解除暫扣</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>暫扣待審</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>隱藏</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>顯示</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>移到垃圾桶</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>刪除</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>指派區段</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>指派狀態</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>原因</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>暫扣時必填；隨暫扣一起保存並記入稽核。</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>選擇區段</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>選擇狀態</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>套用至所選項目</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>每個項目都會依照您自己的權限進行檢查。移到垃圾桶和刪除需要您確認。超過 %count 個項目時將在背景執行。</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>選取</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>發佈</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>提交來源</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>選取 %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>尚未</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>（無名稱）</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>草稿</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>待處理</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>因上層節點而隱藏</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>已暫扣：新提交</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>版本 %version 待處理</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>版本 %version 編輯中</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>草稿，版本 %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>版本 %version 已發佈</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>排定於 %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>無位址</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>未記錄</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>沒有符合這些篩選條件的內容。</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>顯示全部</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>尚無內容。</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>每頁</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>每頁顯示 %count 個項目。</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>提交的位址和瀏覽器來自稽核索引，而此處無法使用該索引：該欄顯示「未記錄」。</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>位址和瀏覽器是稽核為該項目記錄的資訊（自動暫扣一律會記錄；發佈和建立僅在開啟時記錄），並依其隱私設定保留。</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action：%count 個項目</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>刪除會永久移除這些項目及其所有版本和翻譯。此操作無法復原。</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>這些項目將進入垃圾桶，可從那裡還原。</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>每個項目都會依照您自己的權限進行檢查；帶有子項目的項目將保持原樣（請在內容結構中移除它）。系統會要求您驗證身分。</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>此操作在背景執行：將開啟其進度頁面，完成後會顯示每個項目的結果。</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>所選項目</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>以及另外 %count 個</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>未執行任何操作</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action（%extra）</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>原因：%reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>該操作仍在背景執行。</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>其進度</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>背景操作失敗：%error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>完成</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>已拒絕</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>依項目</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>項目</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>原因</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>返回清單</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>未執行任何操作</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>請選擇一個操作。</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>請至少選取一個項目。</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>每次最多選取 1000 個項目。</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>請說明暫扣這些項目的原因。</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>請選擇區段。</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>請選擇狀態。</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>無法讀取表單。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>最新內容</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>無法讀取計數：%problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>暫扣待審</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>今日新增</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>審核暫扣尚未設定（升級步驟 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>所有最新內容</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>您不能執行審核操作（moderation/act）。</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>審核操作未完成：%errors。</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>審核：對 %count 個物件執行 %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total 個物件：%ok 個完成，%refused 個被拒絕，%failed 個失敗</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok 個完成，%refused 個被拒絕，%failed 個失敗</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>它已不存在。</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>它沒有位置（未發佈）。</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>您不能隱藏它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>您不能顯示它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>它已經被隱藏。</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>它未被隱藏。</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>已隱藏。</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>已顯示。</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>它在垃圾桶中：請在那裡清空或還原它。</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>從未發佈的草稿不能移到垃圾桶：請刪除它。</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>您不能刪除它（content/remove）。</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>已刪除。</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>您不能移除它（content/remove）。</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>它有子項目：請在列出子項目的內容結構中移除它。</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>它未被移除（可能有工作流程暫緩了移除）。</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>已移到垃圾桶。</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>該區段不存在。</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>它已在此區段中。</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>您不能指派此區段（section/assign）。</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>未指派區段。</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>已指派區段。</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>該狀態不存在。</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>它已處於此狀態。</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>您不能指派此狀態（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>未指派狀態（可能有工作流程暫緩了此變更）。</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>已指派狀態。</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>沒有此操作。</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>審核暫扣尚未設定（升級步驟 6.0.15-review-hold）。</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>請說明暫扣的原因。</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>它已被暫扣。</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>您不能暫扣它（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>未能暫扣（可能有工作流程暫緩了此變更）。</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>已暫扣。</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>它未被暫扣。</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>您不能解除暫扣（state/assign）。</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>未能解除暫扣（可能有工作流程暫緩了此變更）。</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>已解除暫扣；仍處於隱藏狀態：您不能顯示它（content/hide）。</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>已解除暫扣。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>所有目標</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>最近一次發佈</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>在 GitHub Pages 上免費發佈網站的靜態副本：</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>過時頁面</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>靜態發佈</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>靜態發佈已關閉。</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>目標</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>無法讀取目標：%problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>有工作正在進行</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>待檢查的建置</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>隱藏此項</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>建立目標</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>從未</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>閱讀教學</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>新增 %added 個，變更 %changed 個，移除 %removed 個</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit（%percent %）</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>另有 %count 項未列出。</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>已寫入 %pages 個頁面</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path 大小為 %size，超過主機允許的單一檔案大小。</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>已達上限的 %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds 秒</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag 是網站目前的發佈版本。</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target：工作 %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub 專案網站填寫 /儲存庫/；自訂網域或使用者網站則留空。</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. 網站</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. 主機</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. 登入儲存庫</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. 儲存庫</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. 連結與基礎路徑</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. 您自己的網域</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. 建置包含的內容</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. 何時發佈</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. 檢查並儲存</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub 專案網站位於 /&lt;repository&gt;/ 之下；相對連結在那裡及其他任何地方都能使用。</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>建置會以未登入訪客看到的樣子擷取 %site 的每個頁面，改寫連結，複製檔案，並將結果寫入目標的資料夾。在您檢查建置並按下「發佈」之前，不會發佈任何內容。</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron 運算式，例如 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>部署金鑰儲存為祕密 %secret。</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>部署金鑰讓本安裝透過 SSH 推送到一個儲存庫，且僅限於此。其私密部分保留在「設定 &gt; 祕密」中；只會顯示公開部分。</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>為此目標建立的部署金鑰</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>部署金鑰透過 SSH 登入：請將 git 位址改為 SSH 位址（git@github.com:owner/repo.git）。</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>有工作正在進行，由 %user 啟動</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>此目標的一個工作仍在進行（%detail）。請等待它結束。</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>此目標的一個工作仍在進行。請等待它結束。</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>從頁面 /news/ 到頁面 /about-us/team 的連結將寫成</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>已建立新的部署金鑰。請立即將其公開部分加入儲存庫。</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>清理後仍帶有除錯輸出、表單權杖或工作階段 ID 的頁面絕不會被發佈。</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>回復僅供專家使用：勾選「我知道這會變更什麼」，並再次輸入標籤名稱。</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>網站最大可為 %site，單一檔案最大 %file，每月流量約 100 GB。使用免費方案時儲存庫必須為公開。GitHub Pages 不適用於商店或其他商業交易。</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>一個目標就是發佈到一個 git 儲存庫的一個網站。這裡不會建置或發佈任何內容：「儲存」會將設定寫入 settings/override/staticcache.ini.append.php。</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>一個目標就是發佈到一個位置的一個網站，例如 GitHub Pages 上的公開網站。</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>來自「設定 &gt; 祕密」的權杖</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>由儲存庫的工作流程發佈。</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>將此公開金鑰加入儲存庫並授予寫入權限。GitHub：Settings &gt; Deploy keys &gt; Add deploy key，勾選 Allow write access。</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>已新增</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>其他 git 主機</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>另一個程序正在處理此目標：%detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>返回</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>基礎路徑</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>之前</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>位於基礎路徑之下</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>分支</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>失效連結</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>建置中的失效連結</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>建置</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>建置 %id，由 %user 建立</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>建置 %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>立即建置</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>待檢查的建置</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>啟動者</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>在此手動</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>變更</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>已變更</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>變更內容</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>先檢查</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>請檢查這些設定</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>檢查建置所做的變更並查看它，然後發佈或捨棄。</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>選擇要回到的發佈版本。</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>將在後續版本中提供。</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>提交</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>提交紀錄</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>提交建置、加上標籤並推送到 %remote。推送絕不會強制執行；之後您可以回到任何發佈版本。</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>與之前的資料夾相比：新增 %added 個，變更 %changed 個，移除 %removed 個，未變更 %unchanged 個。</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>與最近一次發佈相比。</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>憑證</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>自訂網域</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>除錯輸出、表單權杖、工作階段 ID 與 nonce 一律會被移除。</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>部署金鑰</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name 的部署金鑰</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>捨棄</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>捨棄此建置</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>網域</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>留空：網站的位址。否則填寫同一網站的內部位址。</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>結束時間</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>每個連結都以基礎路徑開頭。</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>每次發佈都是一個帶有標籤 static/%id/&lt;n&gt; 的提交。回到先前的發佈會以該次發佈的檔案建立新的提交：歷程保留，標籤不會移動，也不會強制執行任何動作。</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>額外檔案</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>頁面擷取位址</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>檔案</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>檔案</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>缺少的檔案</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>檔案來源</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>無法收集的檔案</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>指紋</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>資料夾</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>用於 SSH 位址。金鑰會在儲存後建立；您需要將其公開部分加入儲存庫。</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>用於 https:// 位址。GitHub：一個對該儲存庫具有 Contents 讀寫權限的細粒度權杖。</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>僅供專家使用。推送完成後，公開網站會立即變更。</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>表單</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>由 GitHub 儲存庫提供的免費代管。</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>從分支</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git 位址</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages 允許網站最大 %site，單一檔案最大 %file。</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages 限制</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages 依原樣發佈檔案（以 _ 開頭的檔案需要此項）。</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub 依推送的原樣提供分支。預設選項。</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab、Gitea、您自己的伺服器：任何 git 儲存庫。</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>回到先前的發佈版本</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>說明</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>精靈說明</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>隱藏它們</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>歷程記錄</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name 的歷程記錄</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>主機</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages 如何接收建置</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>我已檢查這些變更</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>我知道這會變更什麼</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>它已關閉：開啟之前無法建置任何內容。</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>它以 %user 身分在背景執行；您可以關閉此頁面。</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>工作 %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>儲存為祕密 %secret。</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>類型</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>最近一次發佈</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>排除這些頁面</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>排除這些區段</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>連結</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>已改寫的連結</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>線上網站</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>查看建置</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>小寫字母、數字、_ 與 -，例如 github-public。它用於命名資料夾與標籤（static/&lt;id&gt;/&lt;n&gt;），之後無法變更。</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>建立新金鑰</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>建立目標</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>建立金鑰</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>請先在主機上建立儲存庫；空的儲存庫即可。</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>清單</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>訊息</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>大多數頁面</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>「設定 &gt; 祕密」中的權杖名稱</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>新增目標</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>下一步</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>尚無提交。</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>未建立金鑰：%problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>找不到 php 命令列程式。請將 migration.ini [AdminSettings] PhpCliPath 設為其完整路徑。</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>尚無標籤。</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>尚無目標。</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>無</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>不在建置中。</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>尚未發佈任何內容。</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>尚未發佈任何內容：每個檔案都是新的。</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>通知</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>依排程</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>在主控台上</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>在伺服器上：./console exp:static:serve %id 會以相同方式提供它。</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>每行一個路徑，* 符合任意部分：/members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>目標只儲存一個名稱；權杖或金鑰本身保留在「設定 &gt; 祕密」中，絕不會出現在記錄中。</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>僅頁面引用的檔案</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>僅適用於權杖。env:NAME 改為讀取伺服器的環境變數。</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>開啟預覽</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>從目標的資料夾，依主機提供的方式開啟建置。此連結對您有效一小時。</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>選填。留空：已發佈的版本。</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>選填。設定網域後，網站會在其根目錄提供。</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>輸出</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>頁面</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>目標的頁面</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>被拒絕的頁面</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>後處理</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>預覽</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>預覽並發佈</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>預覽並發佈 %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>預覽建置</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>進度</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>公開位址</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>公開金鑰</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>發佈</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>將網站的靜態副本發佈到 GitHub Pages 或任何 git 主機：建置、檢查變更、發佈，並在需要時回到先前的發佈版本。</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>要回到的發佈版本</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>發佈紀錄</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>推送</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>閱讀教學</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>紀錄</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>已拒絕</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>相對</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>重新載入</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>已移除</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>更換金鑰：舊金鑰將失效</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>報告</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>建置報告</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>儲存庫</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>檢查</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>檢查會核對每項設定，並顯示將寫入的行。尚未儲存任何內容。</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>回復</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>回復</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>排程</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>搜尋頁面</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>區段 ID，以逗號分隔。</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>將它們導向線上網站</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>設定項目</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name 的設定</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>設定 &gt; 祕密</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>顯示在清單中，例如「GitHub Pages 上的公開網站」。</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>使用 GitHub App 登入將隨 GitHub 整合一起提供。</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>網站</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>要發佈的網站</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>大小</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>大小與限制</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>建置大小</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>過時頁面</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>開始時間</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>由 %user 於 %time 啟動。</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>靜態發佈</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>靜態發佈已關閉</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>靜態發佈已關閉。</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>靜態發佈已關閉。請先在「設定 &gt; 靜態發佈」中開啟。</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>靜態發佈已開啟。</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>第 %step 步，共 %total 步</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>步驟</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>清理</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>開啟靜態發佈</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>標籤</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>標籤</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>目標</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>可以建立與變更目標，但在開啟之前不會建置或發佈任何內容。</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>告訴搜尋引擎要讀取什麼。</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>無法捨棄此建置：%problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>此建置與最近一次發佈相同：沒有可發佈的內容。</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>建置已捨棄：資料夾再次保存最近一次發佈。</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>預設值適合大多數網站。</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>資料夾中有一個尚未發佈的建置；新的建置將取代它。</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>無法寫入工作資料夾：%detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>無法準備工作：%detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>無法啟動工作。</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>工作已結束。正在載入其報告。</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>工作需要已登入的使用者。</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>工作已啟動，但未回報其程序 ID。請檢查 %detail。</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>金鑰</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>最大的檔案：%path，%size。</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>將寫入的行</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>供搜尋引擎使用的頁面清單；需要公開位址。</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>頁面以未登入訪客看到的樣子擷取。管理與編輯網站存取絕不會提供。</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>無法追蹤進度。請重新載入頁面以查看工作的狀態。</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>金鑰的公開部分：</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>分支的根目錄</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>祕密儲存區尚未設定（./console exp:upgrade --apply 會建立其資料表），因此無法保存金鑰。</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>伺服器自行登入（使用其本身的 SSH 金鑰或憑證輔助程式），或儲存庫就在本伺服器上。</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>無法寫入設定：%problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>設定有效。將寫入以下各行：</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>無法讀取設定檔：%problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>網站會回到該次發佈的檔案；尚未發佈的建置必須先發佈或捨棄。</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>網站本身用於不存在位址的頁面。</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>無法儲存目標：%problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>目標尚未使用此金鑰登入：請在其設定中選擇「為此目標建立的部署金鑰」。</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>無法讀取目標：%problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>尚無待檢查的建置。</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>此安裝沒有前台網站存取。管理與編輯網站存取絕不會發佈。</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>此頁面會追蹤工作的進展；關閉頁面後工作仍會在背景繼續。</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>此目標尚無部署金鑰。</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>此目標尚未在此建置過。</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>此目標已有一個。</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>捨棄此建置：資料夾再次保存最近一次發佈。線上網站不會變更。</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>請先勾選「我已檢查這些變更」。</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>觸發條件</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>再次輸入標籤名稱</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>未變更</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>內容</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>會變更什麼</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>每個檔案是什麼；一律寫入。</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>工作做了什麼及其紀錄。在此啟動的工作在關閉此頁面後仍會在背景繼續。</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>工作輸出的錯誤</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>頁面引用的檔案，以及已發佈內容的所有圖片</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>何時</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>發佈失敗時</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>發佈成功時</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>內容發佈時</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>指向副本中不包含之內容（搜尋、登入）的連結導向何處。</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>靜態副本的提供位置。</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>發佈哪個網站，以及目標的名稱。</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>可在任何路徑下使用。預設選項。</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>設定自訂網域時一律寫入。</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>您隨時可以在此處及主控台上手動建置與發佈。</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>僅名稱；值保留在「設定 &gt; 祕密」中</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>位於 %path 之下</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>結束但沒有報告</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>額外</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>檔案</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages，或 main 搭配 docs 資料夾。</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git 主機</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git（使用權杖）或 git@github.com:owner/repo.git（使用部署金鑰）；其中絕不能包含密碼或權杖。</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/，用於網站地圖與標準連結。</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>圖片</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>從未</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>無遠端</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>無：提交保留在資料夾中</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>無：沒有變更</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>未推送</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>沒有變更</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>頁面</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>通過</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open 已停用，因此無法在此啟動工作。請在伺服器上使用 ./console exp:static:build。</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>發佈</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>已發佈</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>等待推送</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>已推送</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>已拒絕</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>相對</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>回復</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>已回復</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>執行中</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>僅資料夾</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com：寫入 CNAME 檔案。依主機的說明將網域的 DNS 指向主機；HTTPS 可能需要一段時間才會生效。</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>是，尚未發佈</translation>
     </message>
 </context>
 </TS>

@@ -505,8 +505,9 @@ class Job extends \Exponential\Runnable\ModuleView
             return true;
         if ( self::canSeeAll( $user ) )
             return true;
-        // an audit export is about audit records, not content: its owner and content/jobs only
-        if ( $job->type() === 'auditexport' )
+        // an audit export is about audit records, not content, and a moderation action reports on objects of the
+        // whole installation: their owner and content/jobs only
+        if ( in_array( $job->type(), array( 'auditexport', 'moderation' ), true ) )
             return false;
         $access = $user->hasAccessTo( 'content', $job->type() === 'copy' ? 'create' : 'remove' );
         return $access['accessWord'] === 'yes';
