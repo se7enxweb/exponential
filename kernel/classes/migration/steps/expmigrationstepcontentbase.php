@@ -191,6 +191,18 @@ abstract class expMigrationStepContentBase extends expMigrationStepTypeBase
     }
 
     /**
+     * locale() for the other step types: the locale of a language key, checked to be a language of the installation.
+     *
+     * @param mixed $language
+     * @return string
+     * @throws RuntimeException
+     */
+    public static function localeOf( $language )
+    {
+        return self::locale( $language );
+    }
+
+    /**
      * Every language an object has, whether or not the siteaccess shows it (availableLanguages() lists only the
      * prioritized ones of the siteaccess).
      *

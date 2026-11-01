@@ -24,11 +24,13 @@ Never edit `settings/upgrade.ini` itself: an update replaces it. Put the setting
 > the order listed here, after the steps they name in after().  
 > stage code: the git checkouts, fast-forward only, through git\_manager  
 > stage libraries: Composer (an update only when asked with --update, then install from composer.lock)  
-> stage database: schema and data, every engine (step 0 first: the record table)  
+> stage database: schema and data, every engine (step 0 first: the record table exp\_migration)  
+> the older record expupgrade\_step of a pre-release of 6.0.15: its rows copied into exp\_migration, then dropped  
+> SQLite only: the tables the .dba keys on more than one column (ezcontentobject\_attribute on id, version) get that key  
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Default: a list of 40: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationTables`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders` ....
+Default: a list of 41: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -39,8 +41,9 @@ StepList[]
 StepList[]=expUpgradeStepCodeUpdate
 StepList[]=expUpgradeStepLibrariesUpdate
 StepList[]=expUpgradeStepLibrariesInstall
-StepList[]=expUpgradeStepRecordTable
 StepList[]=expUpgradeStepMigrationTables
+StepList[]=expUpgradeStepRecordTable
+StepList[]=expUpgradeStepSqliteCompositeKeys
 StepList[]=expUpgradeStepPasswordHashWidth
 StepList[]=expUpgradeStepTrashColumns
 StepList[]=expUpgradeStepPdfExportFooter
@@ -55,8 +58,7 @@ StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
 StepList[]=expUpgradeStepUserSessionTable
-StepList[]=expUpgradeStepOAuthPkceColumns
-# ... 20 more in the shipped file
+# ... 21 more in the shipped file
 */ ?>
 ```
 

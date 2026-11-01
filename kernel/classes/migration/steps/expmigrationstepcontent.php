@@ -413,6 +413,8 @@ class expMigrationStepContent extends expMigrationStepContentBase implements exp
     protected function delete( eZContentObject $object, array $step )
     {
         $values = self::objectValues( $object );
+        $runAs = eZUser::currentUser();
+        $runAsId = (int)eZUser::currentUserID();
         $nodeIds = array();
         foreach ( (array)eZContentObjectTreeNode::fetchByContentObjectID( (int)$object->attribute( 'id' ) ) as $node )
             $nodeIds[] = (int)$node->attribute( 'node_id' );
@@ -427,7 +429,15 @@ class expMigrationStepContent extends expMigrationStepContentBase implements exp
             $object->purge();
             $db->commit();
         }
+        // removing an account ends the sessions of that account (eZUser::removeSessionData()), which in a console run
+        // forgets who is signed in: the migration goes on as the user it runs as
+        if ( (int)eZUser::currentUserID() !== $runAsId && $runAsId !== (int)$values['object_id'] && $runAs instanceof eZUser )
+            eZUser::setCurrentlyLoggedInUser( $runAs, $runAsId, eZUser::NO_SESSION_REGENERATE );
         eZContentObject::clearCache( array( (int)$values['object_id'] ) );
+        // the delete operation leaves a node it may not remove (content/remove of the user running the migration) without a word
+        $row = eZContentObject::fetch( (int)$values['object_id'], false );
+        if ( is_array( $row ) && (int)$row['status'] === eZContentObject::STATUS_PUBLISHED )
+            throw new RuntimeException( 'the object ' . $values['object_id'] . ' "' . $values['name'] . '" was not deleted (may the user the migration runs as remove it?)' );
         return self::result( array( 'deleted the object ' . $values['object_id'] . ' "' . $values['name'] . '"' . ( !empty( $step['trash'] ) ? ' to the trash' : '' ) ),
                              $values + array( 'created' => false, 'changed' => true ) );
     }

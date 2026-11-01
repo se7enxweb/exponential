@@ -18,6 +18,14 @@ listed on its generated reference page ([all step types](../examples/migration-s
 | [`content`](../examples/migration-steps/content.md) | creates, updates, ensures or deletes a content object | create, update, ensure, delete |
 | [`location`](../examples/migration-steps/location.md) | adds, changes, removes, moves, copies, hides or shows a node | create, update, delete, move, copy, hide, unhide |
 | [`content_version`](../examples/migration-steps/content_version.md) | restores an earlier version or removes old versions | restore, cleanup |
+| [`content_class`](../examples/migration-steps/content_class.md) | creates, changes, ensures or deletes a class with its attributes | create, update, ensure, delete |
+| [`content_class_group`](../examples/migration-steps/content_class_group.md) | creates, renames, ensures or deletes a class group | create, update, ensure, delete |
+| [`user`](../examples/migration-steps/user.md) | creates, changes, ensures or deletes a user account | create, update, ensure, delete |
+| [`user_group`](../examples/migration-steps/user_group.md) | creates, changes, ensures or deletes a user group | create, update, ensure, delete |
+| [`role`](../examples/migration-steps/role.md) | a role with its policies and limitations, and its assignments | create, update, ensure, delete, assign, unassign |
+| [`section`](../examples/migration-steps/section.md) | a section, and its assignment to a part of the tree | create, update, ensure, delete, assign |
+| [`language`](../examples/migration-steps/language.md) | adds, renames, ensures or removes a language of content | create, update, ensure, delete |
+| [`object_state_group`](../examples/migration-steps/object_state_group.md) | an object state group with its states | create, update, ensure, delete |
 
 Every step goes through the kernel's own API, the way the administration does it: a new object is made by its class
 (`eZContentClass::instantiate()`), a new version by `createNewVersionIn()`, and both are published by the publish
@@ -100,6 +108,90 @@ node and its subtree. `copy` copies the object of the node (its published versio
 and publish does in the version history), `mode: cleanup` removes archived versions so that `keep:` of them are left,
 and with `drafts: true` the drafts as well.
 
+## Classes and class groups
+
+```yaml
+- type: content_class_group
+  mode: ensure
+  name: News
+- type: content_class
+  mode: ensure
+  identifier: news_article
+  language: eng-GB
+  name: News article
+  names: { ger-DE: Nachrichtenartikel }
+  name_pattern: "<title>"
+  groups: [ News ]
+  attributes:
+    - { identifier: title, type: ezstring, name: Title, names: { ger-DE: Titel }, required: true, settings: { data_int1: 255 } }
+    - { identifier: body, type: ezxmltext, name: Body }
+```
+
+A class is created with its names in each language (`name:` in the language of `language:`, `names:` for the others),
+its groups (by name) and its attributes. An attribute names its datatype (`type:`), its names and descriptions, the
+flags `required`, `searchable`, `translatable` and `information_collector`, a `category`, a `placement`, and its
+datatype settings as the columns the datatype's class edit stores them in (`settings: { data_int1: 255 }`:
+`data_int1` to `data_int4`, `data_float1` to `data_float4`, `data_text1` to `data_text5`; the reference of each
+datatype says which column holds what). `ensure` creates a missing class and otherwise adds the missing attributes and
+changes what differs; `update` changes a class with `add_attributes:`, `update_attributes:` (by identifier) and
+`remove_attributes:`. An attribute is added as the setup wizard adds one (`eZSiteInstaller::addClassAttributes()`):
+every object of the class gets it in each of its versions and languages. A removed attribute takes its data in every
+object with it. A datatype cannot be changed; remove the attribute and add a new one. A class with objects is deleted
+only with `with_objects: true`, and its objects with it.
+
+## Users, groups and roles
+
+```yaml
+- type: user_group
+  mode: ensure
+  parent: 5
+  remote_id: news-editors
+  name: News editors
+  references: { editors: node_id }
+- type: user
+  mode: ensure
+  login: editor
+  email: editor@example.com
+  password: "${ref.editor_password}"
+  groups: [ "${ref.editors}" ]
+  fields: { first_name: News, last_name: Editor }
+- type: role
+  mode: ensure
+  name: News editor
+  policies:
+    - { module: content, function: read }
+    - { module: content, function: edit, limitations: { Class: [ news_article ], Subtree: [ "path:news" ] } }
+- type: role
+  mode: assign
+  role: News editor
+  groups: [ "remote:news-editors" ]
+  subtree: "path:news"
+```
+
+A user group is a content object of the class `user_group`, so `user_group` creates, translates and deletes it as
+`content` does. A user is an object of the class `user` in one or more groups (`groups:` names their nodes, the first
+is the main location); its account is set from `login:` and `email:`, and its password is hashed as the kernel hashes
+it. Never write a password into a migration file: take it from a reference or the environment, or give an existing
+hash with `password_hash:` and `password_hash_type:`. No plan, log or record shows a password. `ensure` leaves the
+password of an existing account alone.
+
+Policies are written as in the administration, and their limitation values may name what they limit to as the rest
+of the migration does: `Class` and `ParentClass` take class identifiers, `Section` and `UserSection` section
+identifiers, `Node` node identifiers, `Subtree` and `UserSubtree` node identifiers (stored as the path of the node),
+`SiteAccess` siteaccess names, `StateGroup_<group>` state identifiers. `mode: assign` gives the role to users
+(`users:`, by login) and groups (`groups:`, object identifiers), limited to a subtree or a section or not at all;
+`mode: unassign` takes it back.
+
+## Sections, languages and object states
+
+`section` creates a section (`identifier`, `name`, `navigation_part`) and assigns it with `mode: assign` to a node's
+object and, by `scope:`, the objects below it (`subtree`), only those that had the same section (`inherited`), or the
+object alone (`object`), as section/assign of the administration does. `language` adds a language of content (the
+locale must be one the installation knows); which languages a siteaccess shows stays a setting. A section or a
+language in use is not deleted. `object_state_group` creates a group with its states and their names in each
+language; the first state is the state of every object, and a removed state's objects get the first state left. The
+groups of the kernel (`ez_lock` and the other identifiers starting with `ez`) are not changed.
+
 ## Workflows and notifications
 
 A step runs the operation without the workflows of its trigger, and publishes without a notification event: a
@@ -116,9 +208,12 @@ A migration without `down:` can be undone by itself when each of its steps can:
 | `content` create with a `remote_id` | the object is removed again |
 | `location` create | the location is removed again |
 | `location` hide / unhide | the node is shown / hidden again |
+| `content_class`, `content_class_group`, `section`, `language`, `object_state_group`, `role`, `user` create | removed again (a class only while it has no objects, a section or a language only while unused) |
+| `user_group` create with a `remote_id` | the group is removed again |
+| `role` assign / unassign | the assignment is taken back / made again |
 | `reference`, `assert` | nothing to undo |
 
-Every other step (an update, an ensure, a delete, a move ...) cannot know what was there before: give the migration a
+Every other step (an update, an ensure, a delete, a move, a section assign ...) cannot know what was there before: give the migration a
 `down:` list, or roll the run back to the caption taken before it. `exp:migration:rollback` refuses a migration that
 cannot be undone and says so.
 

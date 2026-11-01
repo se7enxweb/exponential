@@ -180,7 +180,7 @@ class expMigrationContentStepsTest extends PHPUnit\Framework\TestCase
                          array( 'node', 'folder' ) ) as $bad )
             $this->assertNotNull( expMigrationIdentifier::problem( $bad[0], $bad[1] ), json_encode( $bad ) );
         $this->assertNull( expMigrationIdentifier::problem( 'section', '${ref.section}' ) );
-        $this->assertSame( array( 'node', 'object', 'class', 'section', 'language', 'user', 'role', 'state' ), expMigrationIdentifier::KINDS );
+        $this->assertSame( array( 'node', 'object', 'class', 'section', 'language', 'user', 'role', 'state', 'class_group', 'state_group' ), expMigrationIdentifier::KINDS );
     }
 
     /**

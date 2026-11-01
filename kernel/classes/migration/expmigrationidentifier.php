@@ -19,7 +19,8 @@
  *                              object
  *   <name>                     the kinds that have a name of their own: a class by its identifier (folder), a
  *                              section by its identifier (standard), a language by its locale (ger-DE), a user by
- *                              the login, a role by its name, an object state as <group>/<state> (ez_lock/locked)
+ *                              the login, a role by its name, an object state as <group>/<state> (ez_lock/locked),
+ *                              a class group by its name (Content), an object state group by its identifier (ez_lock)
  *
  * A placeholder is replaced first, so ${idmap.node.news} (the id map of the environment, expMigrationIdMap) and
  * ${ref.folder} work wherever an identifier does. Step types call resolve() for the keys their schema declares as
@@ -31,14 +32,14 @@
 class expMigrationIdentifier
 {
     /** The kinds resolve() knows. */
-    const KINDS = array( 'node', 'object', 'class', 'section', 'language', 'user', 'role', 'state' );
+    const KINDS = array( 'node', 'object', 'class', 'section', 'language', 'user', 'role', 'state', 'class_group', 'state_group' );
 
     /** The prefixes of an identifier text. */
     const FORMS = array( 'remote', 'object-remote', 'path' );
 
     /** The kinds named by a name of their own, and what the name is. */
     const NAMES = array( 'class' => 'identifier', 'section' => 'identifier', 'language' => 'locale', 'user' => 'login',
-                         'role' => 'name', 'state' => '<group>/<state>' );
+                         'role' => 'name', 'state' => '<group>/<state>', 'class_group' => 'name', 'state_group' => 'identifier' );
 
     /** The prefixed forms each kind takes (besides the id and, for the kinds of NAMES, the name). */
     const KIND_FORMS = array( 'node' => array( 'remote', 'object-remote', 'path' ), 'object' => array( 'remote', 'path' ),
@@ -110,8 +111,11 @@ class expMigrationIdentifier
                 return (bool)preg_match( '/^[a-z]{2,3}-[A-Za-z]{2,4}(@[a-z]+)?$/', $value );
             case 'state':
                 return (bool)preg_match( '#^[A-Za-z0-9_\-]+/[A-Za-z0-9_\-]+$#', $value );
+            case 'state_group':
+                return (bool)preg_match( '/^[A-Za-z0-9_\-]+$/', $value );
             case 'user':
             case 'role':
+            case 'class_group':
                 return strpos( $value, ':' ) === false;
         }
         return false;
@@ -290,6 +294,12 @@ class expMigrationIdentifier
                     $found = $group instanceof eZContentObjectStateGroup ? eZContentObjectState::fetchByIdentifier( $stateName, $group->attribute( 'id' ) ) : null;
                 }
                 return $found instanceof eZContentObjectState ? (int)$found->attribute( 'id' ) : null;
+            case 'class_group':
+                $found = $form === 'id' ? eZContentClassGroup::fetch( $value ) : eZContentClassGroup::fetchByName( $value );
+                return $found instanceof eZContentClassGroup ? (int)$found->attribute( 'id' ) : null;
+            case 'state_group':
+                $found = $form === 'id' ? eZContentObjectStateGroup::fetchById( $value ) : eZContentObjectStateGroup::fetchByIdentifier( $value );
+                return $found instanceof eZContentObjectStateGroup ? (int)$found->attribute( 'id' ) : null;
         }
         return null;
     }

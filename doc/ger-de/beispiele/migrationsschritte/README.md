@@ -19,6 +19,14 @@ Jeder Schritttyp von YAML-Migrationen, den der Kernel in `settings/migration.ini
 | [content](content.md) | create, update, ensure, delete | Legt ein Inhaltsobjekt an, ändert, sichert oder löscht es, mit seinen Feldern in einer oder mehreren Sprachen |
 | [location](location.md) | create, update, delete, move, copy, hide, unhide | Fügt einen Ort (Knoten) eines Inhaltsobjekts hinzu, ändert, entfernt, verschiebt, kopiert, verbirgt oder zeigt ihn |
 | [content_version](content_version.md) | restore, cleanup | Stellt eine frühere Version eines Inhaltsobjekts wieder her oder entfernt seine alten Versionen |
+| [content_class](content_class.md) | create, update, ensure, delete | Legt eine Inhaltsklasse mit ihren Attributen, deren Datentyp-Einstellungen und den Übersetzungen ihrer Namen an, ändert, sichert oder löscht sie |
+| [content_class_group](content_class_group.md) | create, update, ensure, delete | Legt eine Gruppe von Inhaltsklassen an, benennt sie um, sichert oder löscht sie |
+| [user](user.md) | create, update, ensure, delete | Legt ein Benutzerkonto mit seinen Gruppen, seinem Passwort und seinen Feldern an, ändert, sichert oder löscht es |
+| [user_group](user_group.md) | create, update, ensure, delete | Legt eine Benutzergruppe mit ihrem Namen und ihrer Beschreibung in einer oder mehreren Sprachen an, ändert, sichert oder löscht sie |
+| [role](role.md) | create, update, ensure, delete, assign, unassign | Legt eine Rolle mit ihren Richtlinien und Einschränkungen an, ändert, sichert oder löscht sie, oder weist sie Benutzern und Benutzergruppen zu oder nimmt sie ihnen |
+| [section](section.md) | create, update, ensure, delete, assign | Legt eine Sektion an, ändert, sichert oder löscht sie, oder weist einem Teil des Inhaltsbaums eine Sektion zu |
+| [language](language.md) | create, update, ensure, delete | Fügt eine Sprache der Inhalte hinzu, benennt sie um, sichert oder entfernt sie |
+| [object_state_group](object_state_group.md) | create, update, ensure, delete | Legt eine Objektzustandsgruppe mit ihren Zuständen und den Übersetzungen ihrer Namen an, ändert, sichert oder löscht sie |
 
 - [Alle Beispiele](../README.md)
 

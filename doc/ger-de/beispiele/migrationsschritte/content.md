@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Legt ein Inhaltsobjekt an, ändert, sichert oder löscht es, mit seinen Feldern in einer oder mehreren Sprachen.
 
-Ein Schritt einer YAML-Migration mit `type: content`. Die Klasse `expMigrationStepContent` ist in `settings/migration.ini` `[StepSettings] StepTypeList[content]` registriert.
+Ein Schritt einer YAML-Migration mit `type: content`. Die Klasse `expMigrationStepContent` (`kernel/classes/migration/steps/expmigrationstepcontent.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[content]` registriert.
 
 ## Modi
 
@@ -82,4 +82,4 @@ Caches, die er berührt (nach dem Lauf geleert): `content`.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepcontent.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

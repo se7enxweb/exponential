@@ -19,6 +19,14 @@ Every step type of YAML migrations the kernel registers in `settings/migration.i
 | [content](content.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a content object, with its fields in one or more languages |
 | [location](location.md) | create, update, delete, move, copy, hide, unhide | Adds, changes, removes, moves, copies, hides or shows a location (node) of a content object |
 | [content_version](content_version.md) | restore, cleanup | Restores an earlier version of a content object or removes its old versions |
+| [content_class](content_class.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a content class with its attributes, their datatype settings and the translations of their names |
+| [content_class_group](content_class_group.md) | create, update, ensure, delete | Creates, renames, ensures or deletes a group of content classes |
+| [user](user.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a user account with its groups, password and fields |
+| [user_group](user_group.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a user group, with its name and description in one or more languages |
+| [role](role.md) | create, update, ensure, delete, assign, unassign | Creates, updates, ensures or deletes a role with its policies and limitations, or assigns it to users and user groups or takes it from them |
+| [section](section.md) | create, update, ensure, delete, assign | Creates, updates, ensures or deletes a section, or assigns a section to a part of the content tree |
+| [language](language.md) | create, update, ensure, delete | Adds, renames, ensures or removes a language of content |
+| [object_state_group](object_state_group.md) | create, update, ensure, delete | Creates, updates, ensures or deletes an object state group with its states and the translations of their names |
 
 - [All examples](../README.md)
 

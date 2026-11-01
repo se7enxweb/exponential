@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Stellt eine frühere Version eines Inhaltsobjekts wieder her oder entfernt seine alten Versionen.
 
-Ein Schritt einer YAML-Migration mit `type: content_version`. Die Klasse `expMigrationStepContentVersion` ist in `settings/migration.ini` `[StepSettings] StepTypeList[content_version]` registriert.
+Ein Schritt einer YAML-Migration mit `type: content_version`. Die Klasse `expMigrationStepContentVersion` (`kernel/classes/migration/steps/expmigrationstepcontentversion.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[content_version]` registriert.
 
 ## Modi
 
@@ -64,4 +64,4 @@ Caches, die er berührt (nach dem Lauf geleert): `content`.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepcontentversion.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
