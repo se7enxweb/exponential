@@ -353,7 +353,7 @@
 			function addPlayer(video_src, poster_src) {
 				var baseUri, flashVars, flashVarsOutput, params, flashPlayer;
 
-				// no Flash fallback unless flash_video_player_url names a player: the bundled moxieplayer.swf was removed
+				// no Flash fallback unless flash_video_player_url names a player: the bundled Flash player was removed
 				flashPlayer = editor.getParam('flash_video_player_url', false);
 				if (flashPlayer) {
 					baseUri = editor.documentBaseURI;
