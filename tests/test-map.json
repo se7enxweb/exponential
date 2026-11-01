@@ -571,6 +571,9 @@
     "kernel/classes/audit/*": [
       "tests/tests/design/AdminSelfContainedTest.php"
     ],
+    "kernel/classes/audit/format/*": [
+      "tests/tests/kernel/classes/audit/expAuditArchiveTest.php"
+    ],
     "share/icons/crystal*": [
       "tests/tests/design/AdminIconsTest.php"
     ],

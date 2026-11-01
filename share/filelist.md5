@@ -3342,7 +3342,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7eb9e8c28a5ca4f683cdd8122c1e5a60  doc/changelogs/6.0/6.0.15.md
+9acc1b5d46628b1737f581b3f423a138  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -23146,12 +23146,12 @@ a9c7b2d7db2dc3484712ab0c1678d9c4  kernel/classes/audit/expauditsink.php
 211e12eced11c07249c1fb04e0a75d4a  kernel/classes/audit/expauditverifier.php
 7046fa2f4def0eee720f6521544e8a93  kernel/classes/audit/expauditwriter.php
 f3df100147c1489c76ee168eb615e0a4  kernel/classes/audit/format/expauditbzip2format.php
-b30f6540f075b1da65cb138109e0c8cd  kernel/classes/audit/format/expauditformatbase.php
+01e1a6431da9e484155d4fac420cc898  kernel/classes/audit/format/expauditformatbase.php
 0e5c48257eb13d9707475cccc166f7a2  kernel/classes/audit/format/expauditformatregistry.php
 72f8a98e03311b737c3a1555550652cb  kernel/classes/audit/format/expauditgzipformat.php
 816c47e5cb64c98dca2d001dc5180b5e  kernel/classes/audit/format/expauditxzformat.php
 99bbf0a25d401cbcc0f292a1c1bcdb1c  kernel/classes/audit/format/expauditzipformat.php
-dc4ec6025cab2b1578418f8b754c2181  kernel/classes/audit/format/expauditzstdformat.php
+4732234ea7140340b37d83277b9cb41f  kernel/classes/audit/format/expauditzstdformat.php
 364c71e66d6afd8248d236db452d0a40  kernel/classes/audit/hook/expaudithook.php
 a225cd9252777670a7817706c7381e2e  kernel/classes/audit/index/expauditindexer.php
 aaaf00d47034b628bdbfae683d0889af  kernel/classes/audit/index/expauditindexrow.php
@@ -26822,7 +26822,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-023497ee28c689f93e8b8930386c8d1a  tests/test-map.json
+9f6223d359a897cef04803a436778949  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -27164,7 +27164,7 @@ f6c3d0aa867c0635f05f7891c8928594  tests/tests/kernel/classes/SiteAccessDesignAnd
 cd88070243e2458b9beaa9bbab338c20  tests/tests/kernel/classes/apikey/expApiKeyTest.php
 9a0f7b29e44549582e410b59df9fe23d  tests/tests/kernel/classes/apikey/expRestLiveTestCleanup.php
 13b96d681cf2f6c6ef63fe625be9ddcf  tests/tests/kernel/classes/audit/expAuditAlertsTest.php
-bc84855dcfe74c5628ff27ddde1c38bf  tests/tests/kernel/classes/audit/expAuditArchiveTest.php
+69bdbe8c32e696d58aebe18d349fb121  tests/tests/kernel/classes/audit/expAuditArchiveTest.php
 b84437173246a9f345e237d3f725e2a9  tests/tests/kernel/classes/audit/expAuditBufferTest.php
 da3a084ef14a6f3275659c54356ae2df  tests/tests/kernel/classes/audit/expAuditChainTest.php
 0984fe3f2a07c5087c7ad7f07370b12c  tests/tests/kernel/classes/audit/expAuditCompatTest.php
