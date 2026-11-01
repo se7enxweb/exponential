@@ -2,14 +2,14 @@
 title: exp:expmigrationgenerate
 audience: developer, admin
 category: examples
-summary: "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(); a dry run unless --apply."
+summary: "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; a dry run unless --apply."
 keywords: exp:expmigrationgenerate, expmigrationgenerate, console, command, CLI, expmigrationgenerate.php, exp:migration:generate
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationgenerate
 
-Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(); a dry run unless --apply.
+Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; a dry run unless --apply.
 
 Script `bin/php/expmigrationgenerate.php`, code in `kernel/private/classes/commands/expmigrationgenerate.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -27,10 +27,12 @@ Write a new migration
 with the header (description, author), plan(), up() and down(), in the site's migrations directory
 (the first [MigrationSettings] DirectoryList entry) or, with --source=extension:<name>, in the
 extension's. The class is named after the name and the time, in the namespace Site\Migrations or
-Extension\<Name>\Migrations. Without --apply it shows the file and writes nothing; an existing file is
+Extension\<Name>\Migrations. With --type=yml it writes YYYYMMDDHHMMSS_<name>.yml instead: the header
+and an empty list of steps. Without --apply it shows the file and writes nothing; an existing file is
 never replaced.
 
 ./console exp:migration:generate --skeleton add_news_class
+./console exp:migration:generate --skeleton news_folder --type=yml --apply
 ./console exp:migration:generate --skeleton add_news_class --description="The news class" --apply
 ./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply
 ```
@@ -39,11 +41,11 @@ never replaced.
 
 | Option | Value | Help |
 |---|---|---|
-| `--skeleton` |  | An empty PHP migration with its header, plan(), up() and down() |
+| `--skeleton` |  | An empty migration with its header: PHP with plan(), up() and down(), or YAML without steps |
 | `--source` | required | The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id) |
 | `--description` | required | The description in the header of the new migration |
 | `--author` | required | The author in the header of the new migration |
-| `--type` | required | The type of the new migration: php (the default and, for now, the only one) |
+| `--type` | required | The type of the new migration: php (the default) or yml |
 | `--apply` |  | Make the changes (the default is a dry run that lists them and changes nothing) |
 | `--dry-run` |  | The default, accepted for scripts that pass it: list what would change, change nothing |
 | `--format` | required | text (default) or json (the machine output exp-migration/1) |

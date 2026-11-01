@@ -17,7 +17,10 @@
  *   extensions   the extensions a migration requires are active (only for the installation's directories)
  *   PHP          the file parses, declares exactly one class that extends expMigrationPhp, no class name is
  *                declared by two files, and the class loads (loading declares it; nothing of it is run)
- *   types        .yml, .sql and .ini migrations cannot be run yet: an error, as the runner refuses them
+ *   YAML         the file is YAML (symfony/yaml), its document and every step are valid: a registered step type,
+ *                its mode and keys against the type's schema, conditions, loops, references and placeholders
+ *                (expMigrationYaml); a migration without steps is a warning
+ *   types        .sql and .ini migrations cannot be run yet: an error, as the runner refuses them
  *
  * The report (exp-migration/1, mode "check"): checked (count), migrations (id, source, type, files, ok, errors,
  * warnings), errors, warnings, exit (0 when nothing is wrong, 1 otherwise).
@@ -32,7 +35,8 @@ class expMigrationCheck
      *
      * @param array $options paths (files or folders to check instead of the installation's migration directories,
      *                       relative to root or absolute), environment (null: every migration), root, locator
-     *                       (expMigrationLocator, for a test), extensions (string[] the active ones; null: not checked)
+     *                       (expMigrationLocator, for a test), extensions (string[] the active ones; null: not checked),
+     *                       registry (expMigrationStepRegistry, for a test; default the step types of migration.ini)
      * @return array the report
      */
     public static function run( array $options = array() )
@@ -101,7 +105,9 @@ class expMigrationCheck
                 $entry['errors'][] = self::relative( $error, $root );
             if ( trim( (string)$definition->description() ) === '' )
                 $entry['warnings'][] = 'no description in the header';
-            if ( $definition->type() !== 'php' )
+            if ( $definition->type() === 'yml' )
+                self::checkYaml( $definition, $entry, isset( $options['registry'] ) ? $options['registry'] : null );
+            else if ( $definition->type() !== 'php' )
                 $entry['errors'][] = 'migrations of type .' . $definition->type() . ' cannot be run yet';
             else
                 self::checkPhp( $definition, $entry, $classes );
@@ -170,6 +176,25 @@ class expMigrationCheck
         {
             $entry['errors'][] = $e->getMessage();
         }
+    }
+
+    /**
+     * The checks of a YAML migration: the YAML, the document, every step against its type's schema, conditions,
+     * loops, references and placeholders (expMigrationYaml::read()). Nothing is run.
+     *
+     * @param expMigrationDefinition $definition
+     * @param array $entry its errors and warnings are added
+     * @param expMigrationStepRegistry|null $registry null: the step types of migration.ini
+     */
+    protected static function checkYaml( expMigrationDefinition $definition, array &$entry, $registry = null )
+    {
+        $errors = array();
+        $warnings = array();
+        expMigrationYaml::read( $definition, $registry, $errors, $warnings );
+        foreach ( $errors as $error )
+            $entry['errors'][] = $error;
+        foreach ( $warnings as $warning )
+            $entry['warnings'][] = $warning;
     }
 
     /**

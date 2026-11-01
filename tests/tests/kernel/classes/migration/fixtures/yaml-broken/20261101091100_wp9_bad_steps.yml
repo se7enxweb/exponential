@@ -1,0 +1,26 @@
+# description: Steps the engine refuses before anything runs
+steps:
+    - type: no_such_type
+    - name: no type
+    - type: wp9_record
+      mode: replace
+      name: bad mode
+    - type: wp9_record
+      colour: red
+    - type: wp9_record
+      name: invalid
+      color: blue
+      count: many
+      references: { 1st: name, other: size }
+    - type: wp9_record
+      name: "${ref.unclosed"
+      value: "${nope.x}"
+    - foreach: [ a ]
+      type: wp9_record
+      steps: []
+    - while: { value: 1, bigger: 0 }
+      max: 0
+      steps:
+          - type: wp9_record
+            name: in a loop
+            if: maybe

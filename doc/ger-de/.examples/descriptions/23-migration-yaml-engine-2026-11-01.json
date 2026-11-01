@@ -1,0 +1,14 @@
+{
+    "ini:settings/migration.ini [StepSettings] MaxLoopIterations": {
+        "en": "The most turns a \"while\" loop of a YAML migration takes when it names no \"max\"; one more fails the migration.",
+        "de": "Die meisten Durchläufe, die eine \"while\"-Schleife einer YAML-Migration macht, wenn sie kein \"max\" nennt; einer mehr lässt die Migration scheitern."
+    },
+    "ini:settings/migration.ini [StepSettings] StepTypeList": {
+        "en": "The step types of YAML migrations: StepTypeList[<name>]=<class>, where <name> is what \"type:\" of a step names and\nthe class implements expMigrationStepType. An extension registers its own in its migration.ini.append.php.",
+        "de": "Die Schritttypen von YAML-Migrationen: StepTypeList[<Name>]=<Klasse>, wobei <Name> das ist, was \"type:\" eines Schritts nennt, und\ndie Klasse expMigrationStepType implementiert. Eine Erweiterung registriert ihre eigenen in ihrer migration.ini.append.php."
+    },
+    "ini:settings/migration.ini [YamlSettings] LibraryPath": {
+        "en": "YAML migrations (YYYYMMDDHHMMSS_name.yml) are read with symfony/yaml, which composer.json requires. An\ninstallation that keeps it outside its Composer vendor/ names the folder here: a Composer directory (with\nvendor/autoload.php) or the package itself (the folder with Yaml.php), relative to the root or absolute. The\nenvironment variable MIGRATION_YAML_LIBRARY_PATH is read the same way when this is empty.",
+        "de": "YAML-Migrationen (YYYYMMDDHHMMSS_name.yml) werden mit symfony/yaml gelesen, das composer.json verlangt. Eine\nInstallation, die es außerhalb ihres Composer-vendor/ hält, nennt hier den Ordner: ein Composer-Verzeichnis (mit\nvendor/autoload.php) oder das Paket selbst (den Ordner mit Yaml.php), relativ zur Wurzel oder absolut. Die\nUmgebungsvariable MIGRATION_YAML_LIBRARY_PATH wird genauso gelesen, wenn dies leer ist."
+    }
+}

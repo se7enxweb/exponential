@@ -101,10 +101,10 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'list' => 'List the captions instead of taking one',
             'label' => 'The label of the caption (default: "manual caption" with the time)',
             'limit' => 'Push at most this many runs (default 20)',
-            'skeleton' => 'An empty PHP migration with its header, plan(), up() and down()',
+            'skeleton' => 'An empty migration with its header: PHP with plan(), up() and down(), or YAML without steps',
             'description' => 'The description in the header of the new migration',
             'author' => 'The author in the header of the new migration',
-            'type' => 'The type of the new migration: php (the default and, for now, the only one)',
+            'type' => 'The type of the new migration: php (the default) or yml',
             'run-id' => 'The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run',
             'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
         );
@@ -363,8 +363,9 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
         {
             $label = $m['action'] !== 'none' && $mode !== 'status' ? $m['action'] : $m['state'];
             $lines[] = sprintf( '  %-11s %-44s %-18s %s', $label, $m['id'], $m['source'], $m['detail'] !== '' ? $m['detail'] : $m['description'] );
+            // a plan line indented by its migration (the steps of a YAML loop) keeps its indent before "would"
             foreach ( $m['plan'] as $line )
-                $lines[] = '              would ' . $line;
+                $lines[] = '              ' . str_repeat( ' ', strlen( $line ) - strlen( ltrim( $line, ' ' ) ) ) . 'would ' . ltrim( $line, ' ' );
             if ( isset( $m['simulation'] ) )
             {
                 $s = $m['simulation'];
