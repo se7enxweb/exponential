@@ -63,6 +63,9 @@ trait expMigrationCommandEngineChecks
         $this->assertSame( array( '20261031130000_wp3_note_table' ), array_column( $only['migrations'], 'id' ) );
         $this->assertSame( array(), $only['runs'] );
         $db->query( 'DELETE FROM ' . expMigrationRecord::TABLE . " WHERE migration_id = '20261031125900_wp5_gone'" );
+        // one statement per row: the rows of this check go on every engine (MongoDB included)
+        foreach ( array( '20261031-125900-aaaaaa', '20261031-130000-bbbbbb' ) as $runId )
+            $db->query( 'DELETE FROM ' . expMigrationRecord::RUN_TABLE . " WHERE run_id = '$runId'" );
         $this->clearRunnerRecord( $db );
     }
 
