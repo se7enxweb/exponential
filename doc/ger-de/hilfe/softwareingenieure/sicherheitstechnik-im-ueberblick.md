@@ -59,6 +59,7 @@ Content Security Policy in `Mode=auto` (nur berichtend in der Administration, au
 | 6.0.13 | vier SQL-Injektionen, zwei Betriebssystem-Befehlsinjektionen, ein reflektiertes Cross-Site-Scripting ([Sicherheitshärtung von 6.0.13](../../bc/6.0/haertung.md)) |
 | August 2026 | [Sicherheitshärtung, August 2026](../../spezifikationen/6.0/sicherheitshaertung-2026-08.md) |
 | September 2026 | [Sicherheitsstandards](../../spezifikationen/6.0/sicherheitsvorgaben-2026-09.md) |
+| Oktober 2026 | die Korrekturen der Forks von Opencontent und Mugo Web (Pull Request #345): Grenze der URL-Alias-Tiefe, einzeilige `eZLog`-Einträge, REST-Listener, längere Upload-Sperrliste, `HardLimit` für Teilbäume ([Korrekturen aus den Forks von Opencontent und Mugo Web](../../funktionen/6.0/korrekturen-aus-den-legacy-forks.md)) |
 
 Die Seite zu 6.0.13 listet auch die Muster, die Entwickler von Erweiterungen in ihrem eigenen Code prüfen müssen: Eine
 Kernel-Aktualisierung behebt sie in Erweiterungen nicht.

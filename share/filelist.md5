@@ -28,8 +28,8 @@ afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
 2643f3926dc8ca1f0acb7f41d2e71a30  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
-a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
-7513c7f61bc8e54ba40b9a80302d2fa9  benchmarks/classes/ezbenchmarkrunner.php
+c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
+96161412faa89075a3102704f0c15d80  benchmarks/classes/ezbenchmarkrunner.php
 e93b9a43fda95eef8a5e2411b71125c4  benchmarks/classes/ezbenchmarkunit.php
 b67671608dfad3cdf86c71f5b3640d08  benchmarks/ezmark.php
 89ebf1bb7431f1577961072f8a6a2111  benchmarks/eztemplate/benchmark.php
@@ -2553,7 +2553,7 @@ f3c0d870ef6616fc9e9ede4d36989813  design/standard/templates/content/datatype/pdf
 77cf9a0fae7658ebfd89e7416c4f9bff  design/standard/templates/content/datatype/pdf/ezxmltags/link.tpl
 003f04a85cf91d0b2c5392351b2397c1  design/standard/templates/content/datatype/pdf/ezxmltags/literal.tpl
 f657eacbebc671f3c900c9fc3001e282  design/standard/templates/content/datatype/pdf/ezxmltags/object.tpl
-dba9663c317a7f3984b6e4cc5e01cb53  design/standard/templates/content/datatype/pdf/ezxmltags/object_denied.tpl
+efdd6123978a7eadaa2dffc290ac26e8  design/standard/templates/content/datatype/pdf/ezxmltags/object_denied.tpl
 6a0857656b66dd345c7f356efe50bf13  design/standard/templates/content/datatype/pdf/ezxmltags/ol.tpl
 a3576ee200bb13b199afc4cae9881fb0  design/standard/templates/content/datatype/pdf/ezxmltags/paragraph.tpl
 4f62772b87fc57b101032e6485e15634  design/standard/templates/content/datatype/pdf/ezxmltags/strike.tpl
@@ -3381,7 +3381,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-fc84af2d91d6b9e7343b8fa6c5a117ea  doc/changelogs/6.0/6.0.15.md
+42c5588736c8adf4cb71931eb2f13ab2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3550,6 +3550,7 @@ ca5c128dd8208e512e824d14b875859f  doc/eng-us/bc/6.0/ini-save-file-permissions.md
 24d7e5caa496255e38881fcd63bbee64  doc/eng-us/bc/6.0/installer-crontab.md
 3660f38720e7641629091aba0a56e2b5  doc/eng-us/bc/6.0/kernel-services.md
 68f4f3e4160b983bbac0e3414f0baeec  doc/eng-us/bc/6.0/kickstartercli.md
+5ca820d5c8967133b8ad17d9f5876d7c  doc/eng-us/bc/6.0/legacy-fork-fixes.md
 e507882afaa6ee338610d13740239af1  doc/eng-us/bc/6.0/locations-tab-paging-and-sorting.md
 55e1c907228e8d0b48be0e9f4da11b39  doc/eng-us/bc/6.0/love/API.md
 85a6069ca7ea137e100f7e74cd960b0e  doc/eng-us/bc/6.0/love/CHANGELOG.md
@@ -4751,7 +4752,7 @@ a3feeb41067b4f7c778c11ddf26f5597  doc/eng-us/examples/ini-settings/ezjscore-ezjs
 3a141d7897f326ceed2bc54119e7931c  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_expsubitems.md
 f60c2fb6dc4c457eff39b48bd99188b1  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezajaxuploader.md
 37c89b0d49ef65557ebd1890b1268155  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjsc.md
-8a2e83dd52e66b27018d5361e8aa8648  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjscnode.md
+2c099c1cb0c829177687068a5e26bf08  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjscnode.md
 09d1b9b28cd962b4fafc4d7ebf8e6d34  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjsctemplate.md
 f93e118939721fe60aa9ee4c55c4c0e3  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezpublishingqueue.md
 304b20a014dd79ce2095eaa3120a3684  doc/eng-us/examples/ini-settings/ezoe-ezoe/EditorLayout.md
@@ -4779,7 +4780,7 @@ de4e6a1e90d57005a552a667d9c3a0bd  doc/eng-us/examples/ini-settings/fetchalias/ne
 63f3ff979945562b65e0b97b1b026855  doc/eng-us/examples/ini-settings/file/BinaryFileSettings.md
 3922dca96b568576c37e05087ad92b3e  doc/eng-us/examples/ini-settings/file/ClusterEventsSettings.md
 888b30231a3094e437e290ed4ddbb3eb  doc/eng-us/examples/ini-settings/file/ClusteringSettings.md
-d34e3776a762647357e25ff1b13fe88c  doc/eng-us/examples/ini-settings/file/FileSettings.md
+a0907ff3dc390295c137f9843e5f8c51  doc/eng-us/examples/ini-settings/file/FileSettings.md
 bf32564c7a1a92b4de72ca42c5a07e96  doc/eng-us/examples/ini-settings/file/PassThroughSettings.md
 3baf29e40ee836d3a84f5bffff6100bc  doc/eng-us/examples/ini-settings/file/README.md
 3eab3b076ded343b9c9f94f0bbfa040b  doc/eng-us/examples/ini-settings/file/eZDFSClusteringSettings.md
@@ -5306,7 +5307,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-396b767f59fb5fb6ead2b24e443404a3  doc/eng-us/examples/ini-settings/site/README.md
+b4f453c82a16d58368828e1049ed4954  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -5334,7 +5335,7 @@ d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteData
 7f49107a3863d0c6ba769baa561d084b  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
 6923dbcc08a6b096908508291722e55b  doc/eng-us/examples/ini-settings/site/TimeZoneSettings.md
 f71ee5c2e368a56f3de8ca5747acc89e  doc/eng-us/examples/ini-settings/site/TipAFriend.md
-79013d607c265d5f841acddc0eaf32ca  doc/eng-us/examples/ini-settings/site/URLTranslator.md
+fe998451ec3b99d9c71b6a5fcf636c01  doc/eng-us/examples/ini-settings/site/URLTranslator.md
 daa5454492380b74d1f3f81dc57185f5  doc/eng-us/examples/ini-settings/site/UnitSettings.md
 74dfa7874556808e069f7144e2f09302  doc/eng-us/examples/ini-settings/site/UserSessionSettings.md
 7d2f92817b6ce3b446c6ea1113894aee  doc/eng-us/examples/ini-settings/site/UserSettings.md
@@ -6555,7 +6556,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-b52cdd44c9c4f4af204c920b67491f53  doc/eng-us/features/6.0/README.md
+30a768c22adbd2e9327fdb682ae9c11d  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6664,6 +6665,7 @@ c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command
 ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
 4c96dc340d9978f9df05c778f26cd192  doc/eng-us/features/6.0/kickstarter-cli.md
 04a373a7481b984288eb74d3f580269d  doc/eng-us/features/6.0/legacy-bridge.md
+dc5174c6c6658955b28fe63f7b7a8047  doc/eng-us/features/6.0/legacy-fork-fixes.md
 4363ad61fc0af57c4a88abd40393b9f6  doc/eng-us/features/6.0/log-rotation.md
 2f7a4a1e5919f2dabe7304e0e9855d68  doc/eng-us/features/6.0/log-viewer.md
 3bbfd911c86b7d7853c0838a963d01f4  doc/eng-us/features/6.0/mail-layout.md
@@ -11289,7 +11291,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 b00714130b76fb0c884c9dc788b5f665  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
 394d650a8081ea6aa3f781a2fec01087  doc/eng-us/help/searching.md
-6f04fc8024c664abcb52a7ee78895fa1  doc/eng-us/help/security-hardening.md
+a5c7ce5b15c58ce20085b4f8951ef35b  doc/eng-us/help/security-hardening.md
 667c277cee294d069affee6d78b8ad88  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
 91942493ef5ce934473bb7e67e280b77  doc/eng-us/help/site-packages/admin-gui/README.md
@@ -11407,7 +11409,7 @@ ca5825b0a98f97cea64427e30481cdea  doc/eng-us/help/software-engineers/persistence
 46e7b9ae43c242f2e89002bc78d2818b  doc/eng-us/help/software-engineers/request-lifecycle.md
 b36ea0644245dfa7998635b4ac0a4443  doc/eng-us/help/software-engineers/scaling-and-clustering.md
 a645e25c6f4103d0f14ec8f54e35abb2  doc/eng-us/help/software-engineers/schema-changes-and-migrations.md
-61aa763224845fe39255b84f1381e4c4  doc/eng-us/help/software-engineers/security-engineering-overview.md
+1ac6acc88060ee9661993de50f2fdd32  doc/eng-us/help/software-engineers/security-engineering-overview.md
 646b822e9125dbcb27437f141b008929  doc/eng-us/help/software-engineers/security-review-checklist.md
 a13eb33997c7242bca855531bfa337af  doc/eng-us/help/software-engineers/siteaccesses-and-configuration.md
 980423ea43e74f5d276e13e85a0eb89e  doc/eng-us/help/software-engineers/software-engineer-faq.md
@@ -12923,10 +12925,10 @@ d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
-de686b8d700cc7766d927e28537101f7  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
+aa5ab6296e9da39ebdc0cd0e51c8a6c2  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 12320733ddd4b1155b033ddcff05c221  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 37ce091c6d6540fd6587386c87562cbe  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
-decce9bb06ae705823bfd0e79ffbc52e  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
+15e277a9117ef5100823e7974ba96698  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 165a26352e7de5255bc58002930bc22d  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 e1f333e7548632bd3736756fa7fcdf14  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 b09583bc5cb22d2c91a42a2ec393f30a  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
@@ -12949,11 +12951,12 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 4b3123282c26437cef7e45cb65269a22  doc/ger-de/.examples/descriptions/20-editor-role-class-sets-2026-10-30.json
 3e5f3c6f2f15b756e23860af52d46bf0  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
 6a70b571120591d5b4e86a3bb3d8a25f  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
+f26edba2f4dce1ecdfe95d75e31d053e  doc/ger-de/.examples/descriptions/21-legacy-fork-fixes-2026-10-31.json
 10a08e679ae26b663b8bf8d01d87cbba  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-f9932e6b9fdeb80eb0ae0eb41c7e7110  doc/ger-de/.paths.json
+304a6ed932c9adbaf9e1d84a2a70b23b  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13120,6 +13123,7 @@ f7afe9eda5b02d1cb4e810857a818dd0  doc/ger-de/bc/6.0/inhaltsjobs.md
 4e809d5414ab035953f3b8ebe675aee7  doc/ger-de/bc/6.0/kernel-dienste.md
 197db39abf7f4ea2eeb9a260a803daee  doc/ger-de/bc/6.0/kickstartercli.md
 6eb74a075ecaeb09a213b3adc9e697e8  doc/ger-de/bc/6.0/konsole.md
+ff3ac9f50c3e4b1237a93c4431b08964  doc/ger-de/bc/6.0/korrekturen-aus-den-legacy-forks.md
 979fddf6ff7f1e318735008a12c2afbd  doc/ger-de/bc/6.0/layouts.md
 e701feff32d7e37a85a19231c4799fe1  doc/ger-de/bc/6.0/lesezeichen-fuer-systemseiten.md
 a004e13c4ed73564f977fa433d7563da  doc/ger-de/bc/6.0/lesezeichenordner.md
@@ -14299,7 +14303,7 @@ f07d483b99e4cf2d715ef278e75b3f8d  doc/ger-de/beispiele/ini-einstellungen/ezjscor
 938cbc138399371d82ac3acc89d57a74  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_expsubitems.md
 163e7faea7cee4df60d5f819a7815c63  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezajaxuploader.md
 6c2dc67dde520d5c5f95b8c58f12eff4  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjsc.md
-9604b0b89c478ec39175dea28ad49c95  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjscnode.md
+3896b2281e9e1223cf1d95cdf3a0ce3b  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjscnode.md
 76a6e67471204560cb60a1e2f0517e62  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjsctemplate.md
 1512f1ef835eedaf69f918813fc72a4c  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezpublishingqueue.md
 fef61a724441c543a428758f8582b550  doc/ger-de/beispiele/ini-einstellungen/ezoe-ezoe/EditorLayout.md
@@ -14327,7 +14331,7 @@ aade68517d55cb92cdd456240d80bbf0  doc/ger-de/beispiele/ini-einstellungen/fetchal
 7a6d15afb89a071779b7f20885d44657  doc/ger-de/beispiele/ini-einstellungen/file/BinaryFileSettings.md
 208d854d1e1feae55f4c61926399341f  doc/ger-de/beispiele/ini-einstellungen/file/ClusterEventsSettings.md
 185780f16b3884339e8d4a76d02fa862  doc/ger-de/beispiele/ini-einstellungen/file/ClusteringSettings.md
-661ae32d3dc0732b356256d3aab02184  doc/ger-de/beispiele/ini-einstellungen/file/FileSettings.md
+4cfa02b7321d3d1e456c8d0910f2f198  doc/ger-de/beispiele/ini-einstellungen/file/FileSettings.md
 c7e0a65f64bad5e826e902417cefbc7d  doc/ger-de/beispiele/ini-einstellungen/file/PassThroughSettings.md
 c417cc736ef99d340cf8f6d178c5584c  doc/ger-de/beispiele/ini-einstellungen/file/README.md
 a00ea5dfccec576bed611262d7b8b0ca  doc/ger-de/beispiele/ini-einstellungen/file/eZDFSClusteringSettings.md
@@ -14854,7 +14858,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-522f14e9800f8181b40fb00461737099  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+204f29c9c0fe169411e6a33bc8c4e052  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 c375924685d1a0433a06fea38df0efb6  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 2fbb7d1eafbe1175201652854abfc88f  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -14882,7 +14886,7 @@ b138b048f1e956c000627dc11e780a23  doc/ger-de/beispiele/ini-einstellungen/site/Te
 ccaf98e0b1b49b29d81a119c87a177aa  doc/ger-de/beispiele/ini-einstellungen/site/TemplateSettings.md
 bd2cdec549f737c40f2e666e9bb56eb8  doc/ger-de/beispiele/ini-einstellungen/site/TimeZoneSettings.md
 20b486bb370d31a7d01543c720859c7d  doc/ger-de/beispiele/ini-einstellungen/site/TipAFriend.md
-fa3c91c1d428a3a3de6c3d51dad9cb4a  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
+908abb0010fa65d25e1b832461545a48  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
 46e156bc589500349c2054c9ac53788d  doc/ger-de/beispiele/ini-einstellungen/site/UnitSettings.md
 74b63220a9edeaeb7bebb0d6539c90e5  doc/ger-de/beispiele/ini-einstellungen/site/UserSessionSettings.md
 5e3fb4200faf756deabd4c67be23bf1f  doc/ger-de/beispiele/ini-einstellungen/site/UserSettings.md
@@ -15900,7 +15904,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-056cb3bb5dc66ec6d9e947f25ea41a07  doc/ger-de/funktionen/6.0/README.md
+6d5b0d99db812b0d6450f6d062570b12  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -16015,6 +16019,7 @@ bc213bb8f5033a0ce486c9bfbe9fa047  doc/ger-de/funktionen/6.0/installationsname-in
 e92e4911d0e5f8a9b081e9373ea8d5d4  doc/ger-de/funktionen/6.0/jquery4-und-entfernung-von-yui.md
 3065fbb8dc6cd3235d8740c0b74bd4e9  doc/ger-de/funktionen/6.0/kickstarter-cli.md
 a23c82e7bfd15faed6bd3072d4203e4e  doc/ger-de/funktionen/6.0/klassenattribute-an-den-rand-verschieben.md
+943d439434d58de8e76d73c0a7f0be00  doc/ger-de/funktionen/6.0/korrekturen-aus-den-legacy-forks.md
 c9de4471d5c29a61f80d16650e22b29a  doc/ger-de/funktionen/6.0/ladereihenfolge-der-extensions.md
 2c4d56fdc633b7a35390ebf1c5c06270  doc/ger-de/funktionen/6.0/laendergruppen.md
 68af730977a4562fde48dd55a371e5ad  doc/ger-de/funktionen/6.0/legacy-bridge.md
@@ -19501,7 +19506,7 @@ c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite
 b0200212398d100a07f395dcecc75e21  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md
 3c150880ec051e7faefd02da69bd082b  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md
 27f30d5a9f89ed9593b599f2582c1bdc  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/woraus-sevenx-multisite-besteht.md
-e70ffd1c527dbdf60659a973cea6c637  doc/ger-de/hilfe/sicherheitshaertung.md
+9863e064d2772cdb82b6ea0cf82c4e8f  doc/ger-de/hilfe/sicherheitshaertung.md
 c702aca91ab21f76627d538e4011e007  doc/ger-de/hilfe/softwareingenieure/abhaengigkeitsverwaltung-mit-composer.md
 476e52a10fdca789926b377d7d701538  doc/ger-de/hilfe/softwareingenieure/anwendungsserver.md
 f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design-rest-ezjscore-headless.md
@@ -19541,7 +19546,7 @@ ad4fd9db0ff546d028af0f9daef48b50  doc/ger-de/hilfe/softwareingenieure/portables-
 3eab4fd6c1427d2a174c9e166efe7baf  doc/ger-de/hilfe/softwareingenieure/release-engineering.md
 8a5f8d39c43904ed91523e9b760bfa5f  doc/ger-de/hilfe/softwareingenieure/richtlinie-zur-rueckwaertskompatibilitaet.md
 d2f9d159192aa07587e99eebecec366a  doc/ger-de/hilfe/softwareingenieure/schemaaenderungen-und-migrationen.md
-d691687e273e9332058473aeffa18186  doc/ger-de/hilfe/softwareingenieure/sicherheitstechnik-im-ueberblick.md
+f37312fa037795c29fe53fd2c10d925a  doc/ger-de/hilfe/softwareingenieure/sicherheitstechnik-im-ueberblick.md
 45828582a8d337ebaa4df01b28896d23  doc/ger-de/hilfe/softwareingenieure/siteaccesses-und-konfiguration.md
 8078ff2c1b31668c28026823e0cec9c8  doc/ger-de/hilfe/softwareingenieure/skalierung-und-clustering.md
 4a2b91f59e9e59d52bb18bea714b5ab8  doc/ger-de/hilfe/softwareingenieure/softwareingenieure-hier-beginnen.md
@@ -22432,7 +22437,7 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 42ea162998c72daf52fdd7bd897a2166  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-ba5ada44ebf6e6a0ac123f00f07e3bbc  extension/ezjscore/CHANGELOG
+02d9dbd975324397fd9d5f48805d5222  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 9208e7b829680078ee72389d8a71c152  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
@@ -22477,7 +22482,7 @@ cb1f0862f4c6ea0793348c45f1e89806  extension/ezjscore/ezinfo.php
 eebabdb564222de9447a3200209a41fd  extension/ezjscore/modules/ezjscore/run.php
 cd79b07cce2bbd4e295736ff7c4d9bea  extension/ezjscore/settings/design.ini.append.php
 8db36481e5d6f0b49507c6531cc3639c  extension/ezjscore/settings/ezfind.ini.append.php
-f8c67f2de957256e99977ae033e0dc56  extension/ezjscore/settings/ezjscore.ini
+477b49045c5420936225c7e2f6fc4b5e  extension/ezjscore/settings/ezjscore.ini
 a13eb1cb59361c9f259aa92f7a3b995b  extension/ezjscore/settings/module.ini.append.php
 6e26cbc62f8879008cd08f31618c3043  extension/ezjscore/settings/rad.ini.append.php
 b67e983627ca245b51be9f0bcf9e5a80  extension/ezjscore/settings/site.ini.append.php
@@ -22653,7 +22658,7 @@ cd5255df9edd1ef350c45a94b28f7c68  extension/ezoe/classes/expoetinymce3engine.php
 1e23be7550ea1cf04913eb59a56a7448  extension/ezoe/classes/expoetinymce8engine.php
 a18f127e5001fce4c5901658e468fbb8  extension/ezoe/classes/expoeurlexception.php
 abd2c01dbc24cfd5c3e809adb3b42be7  extension/ezoe/classes/expoeurlfetcher.php
-657741bcc8e20cc346cce65b5194f333  extension/ezoe/classes/ezoeserverfunctions.php
+19ad41d96165dacf770616136fba3bea  extension/ezoe/classes/ezoeserverfunctions.php
 98f19cad31fa30e8db390293bea76904  extension/ezoe/classes/runnable/views/ezoe/dialog.php
 ea437e7be02cdf619991e0632c319cc0  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
 681c052ee9f666c32ace9864641c503d  extension/ezoe/classes/runnable/views/ezoe/load.php
@@ -22844,13 +22849,12 @@ b732a86187723cd9cc32853d67730061  extension/ezoe/design/standard/javascript/plug
 46ba57884d8fe05d92cd9d98d3bb00af  extension/ezoe/design/standard/javascript/plugins/lists/editor_plugin.js
 04e1f245c19d6dc9454dae57faec9b6f  extension/ezoe/design/standard/javascript/plugins/lists/editor_plugin_src.js
 f211293a697a2c83da00effd67f535a2  extension/ezoe/design/standard/javascript/plugins/media/css/media.css
-50357276b12ae5ac6c77d46d12e69044  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin.js
-ec7637c61d20a8cdd68356ee343a77da  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin_src.js
+69d9c110d65bbff02e5d5ea7d3fe51d0  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin.js
+094e7f48dc8982a3a5664450ae2bc407  extension/ezoe/design/standard/javascript/plugins/media/editor_plugin_src.js
 39ebc57f44e1cc683724e1c1ff761894  extension/ezoe/design/standard/javascript/plugins/media/js/embed.js
 4f35c0283a30f3556e023e76c34368b2  extension/ezoe/design/standard/javascript/plugins/media/js/media.js
 9523fc123c577642000fd409bd862c3f  extension/ezoe/design/standard/javascript/plugins/media/langs/en_dlg.js
 be58b1edf9a4a4dbf3a1993e3d897e1a  extension/ezoe/design/standard/javascript/plugins/media/media.htm
-9217cea72c76c361fa5033526712284e  extension/ezoe/design/standard/javascript/plugins/media/moxieplayer.swf
 232f23a586f10bd8ddabf38d767113d4  extension/ezoe/design/standard/javascript/plugins/nonbreaking/editor_plugin.js
 fefbda5243d10652038ccf40801b8893  extension/ezoe/design/standard/javascript/plugins/nonbreaking/editor_plugin_src.js
 00a1abdc0742b3b719e07c2df6e5f493  extension/ezoe/design/standard/javascript/plugins/noneditable/editor_plugin.js
@@ -23203,7 +23207,7 @@ e65182a8e462ca0d7bd99f6011003023  extension/ezoe/translations/zul-ZA/translation
 91b1aa0e8f21ce629c9cf29eef5a4569  favicon.ico
 1a9cc96f78b1080813efbd8d0208572d  index.js
 6a4841552b9bf6001ec6516ff49d500d  index.php
-b47a98ba7ad311d9071d794322135ef4  index_cluster.php
+9cc272c1c96c2a1b557a4bc4e027b678  index_cluster.php
 aa6fdf4b7f8ff02491f654d4aa531bb5  index_rest.php
 fe9a9825788314f32e42c60b995687b9  index_soap.php
 cec7756e16e4606e5e1cb5155efe1b0c  index_treemenu.php
@@ -23626,7 +23630,7 @@ ba78dc96e133f23cd5c57d245d3f98d3  kernel/classes/ezpackageuploadinspector.php
 50948f33c9b79caaada74f24d101e93d  kernel/classes/ezpathelement.php
 aaeeda8026fb49f47008f2bad5fe07ed  kernel/classes/ezpdfexport.php
 9a7a26f0243dbd89adfb7575e9258407  kernel/classes/ezpendingactions.php
-9ee1cdaa785fdfbc82102298649eb37e  kernel/classes/ezpersistentobject.php
+ff79ccc31351dac34458c9ba91a704d4  kernel/classes/ezpersistentobject.php
 4f6b381df30c44c4d3c9e7dccd03a1c3  kernel/classes/ezpolicy.php
 9d00d37866395ec2415afa03f3d1775d  kernel/classes/ezpolicylimitation.php
 e8866d91d2bb5f5724954b03b8766800  kernel/classes/ezpolicylimitationvalue.php
@@ -23660,7 +23664,7 @@ dffefb91b2729dcb077cb99ae076fb4d  kernel/classes/eztextinputparser.php
 517f5a1b12d7d2de2ff8ee1ba372389e  kernel/classes/eztipafriendrequest.php
 aaa9aa87850a92027797223872a012b8  kernel/classes/eztrigger.php
 6e1c6da2435bc8144de81f72493cbf4a  kernel/classes/ezurlaliasfilter.php
-85334ae7ef75f4ef9f472b0e4d780422  kernel/classes/ezurlaliasml.php
+67a9f24fc015157802aac6b3d7895715  kernel/classes/ezurlaliasml.php
 be5095ad4a950f05a013d927440c0eee  kernel/classes/ezurlaliasquery.php
 78fcc87c43965d48db0530df6e129a1a  kernel/classes/ezurlwildcard.php
 e5198c312191591389da3b48d195e0fb  kernel/classes/ezuserdiscountrule.php
@@ -24163,7 +24167,7 @@ b85dea0cf41c041c649e4aa6c4e07d3e  kernel/content/browse.php
 5f2671ea32925e5f1c54d6c792d7ce9e  kernel/content/draft.php
 2da41c5e91dee90bc2490993a82c8b1a  kernel/content/edit.php
 fafda7d9742af73e66deaf690ca62587  kernel/content/ezcontentfunctioncollection.php
-53ca210432ecdaad148b5ebc896d75d5  kernel/content/ezcontentoperationcollection.php
+6fb7b2b64cf1170b036da230ea171932  kernel/content/ezcontentoperationcollection.php
 bfc735ea8665dbb870074c7a69427d77  kernel/content/ezcontentpublishingbehaviour.php
 8332a57d75764017379dd394a2ed88ea  kernel/content/function_definition.php
 7388554514526aa970cf52f0f66b5ca8  kernel/content/hide.php
@@ -24320,7 +24324,7 @@ bce1a829a3c43dc3f8c73328b81d8fa7  kernel/private/api/content/exceptions/content_
 6a0ce133c34459d88f5bc55b6138d4cb  kernel/private/api/content/exceptions/content_field_not_found.php
 dd7be581524f06ebbd76442da104478a  kernel/private/api/content/exceptions/content_not_found.php
 709ecad53aee15699831c6d95b0aa57d  kernel/private/api/content/field.php
-f6d29699913a4b6c83bb6cb8c60fe210  kernel/private/api/content/field_set.php
+5d1dcb6831bcf8b2c9b914be8fb1df94  kernel/private/api/content/field_set.php
 2a85334d428585c46e6e00c943ff0e7d  kernel/private/api/content/list.php
 65df7bef3af1745314446bd510b8aeb7  kernel/private/api/content/location.php
 14b2f7d9bb6b76ef621ce9c2d0f2f1ac  kernel/private/api/content/location_set.php
@@ -24360,7 +24364,7 @@ f13e3841fcce5856381fe87ae00b245a  kernel/private/classes/commands/checkdbfiles.p
 a4c832d9f7b99ebc2f6b1986681d2468  kernel/private/classes/commands/cleanuppolicies.php
 1717d54026ca1647f4cedf5613e7a4bc  kernel/private/classes/commands/cleanuprss.php
 e4893218b5f80d2f5b7857d880ebcf87  kernel/private/classes/commands/cleanupversions.php
-fa7644c10f5abd5d2a57a468104fda64  kernel/private/classes/commands/clusterize.php
+cc587fd2e74ad1e9215ec175b94b44fd  kernel/private/classes/commands/clusterize.php
 7cef4218b6e6aac5c8a0868dc469469a  kernel/private/classes/commands/clusterpurge.php
 3fd794c0e45d7404d18c17c01fb3dfad  kernel/private/classes/commands/collaborationsampledata.php
 83c204b579fa2ef025da88dbc6172942  kernel/private/classes/commands/configphp.php
@@ -24735,7 +24739,7 @@ df56e317fa5f601da8cbe537ca7daa2b  kernel/private/classes/views/migration/log.php
 a3c367c9b8d6bd58082da764a67d9471  kernel/private/classes/views/migration/rollback.php
 c2b425c7d8e0c591d0d9c621fb71ae65  kernel/private/classes/views/migration/run.php
 c4cef231581596de59b2b6bc010a9ebf  kernel/private/classes/views/migration/status.php
-8523292a0851cb96d9cdf27bb516892d  kernel/private/classes/views/migration/stream.php
+40b00807b0ed550cd7e3b84002255c52  kernel/private/classes/views/migration/stream.php
 5b19fa6a4a0b63334fba877b6600f13f  kernel/private/classes/views/notification/addtonotification.php
 8937905459227cb8c6a1edc0bab23031  kernel/private/classes/views/notification/job.php
 5380e9ff910a31d64c18a625fdd5715d  kernel/private/classes/views/notification/runfilter.php
@@ -24989,7 +24993,7 @@ ac917a570f155f538c90bd69ee28a5a4  kernel/private/rest/classes/exceptions/rest_pr
 7102fb4cd55b1dcb553425c878f52345  kernel/private/rest/classes/exceptions/route_method_not_allowed.php
 4ef1516e747314749faff513f262ac70  kernel/private/rest/classes/exceptions/route_security_filter_not_found.php
 e6cf9146063965f631e6a733a03cfb8a  kernel/private/rest/classes/exceptions/user_not_found.php
-9c5cc33712723bb0069177ce3dabe223  kernel/private/rest/classes/ezpkernelrest.php
+c1113a269ce6c69318e8a8ba78522986  kernel/private/rest/classes/ezpkernelrest.php
 da61d84862c64c2544344bfff518bd1f  kernel/private/rest/classes/http_response_codes.php
 445e43b4da32ae268d67eed88aac46f4  kernel/private/rest/classes/interfaces/content_renderer.php
 fa4efa1c7a0fcb9aac0bfb0904a9ea51  kernel/private/rest/classes/interfaces/prerouting_filter.php
@@ -25057,7 +25061,7 @@ c8efb1b6bd89fd44276c1107c9aafe75  kernel/rss/feed.php
 4afd10ddd499e35116500499a18d170f  kernel/search/ezsearchfunctioncollection.php
 21cb82eff40e85eec0808b1b06e501eb  kernel/search/function_definition.php
 48d375d668c69a9441c52a7670fc99f9  kernel/search/module.php
-e8ec3262e971d9072d163e62db1ce4cd  kernel/search/plugins/ezsearchengine/ezsearchengine.php
+5c6a1d584399656aa743802a68592b79  kernel/search/plugins/ezsearchengine/ezsearchengine.php
 24506cfb1509c73b11e267e0909f0756  kernel/search/stats.php
 b7e9ad6c1c58dfe6c0e0253d87d721f0  kernel/secrets/list.php
 2a1570ad382beccea603f65258a851ba  kernel/secrets/module.php
@@ -25332,7 +25336,7 @@ bb756bbc09b7354be6f0299dbf33266c  lib/ezfile/classes/ezfile.php
 b0732e9bb42c3064b9c25d98f0932f79  lib/ezfile/classes/ezgzipcompressionhandler.php
 3542e48f46d118e6940583e79d325ac0  lib/ezfile/classes/ezgzipshellcompressionhandler.php
 c6192465f37951341d60924e9fa53cc9  lib/ezfile/classes/ezgzipzlibcompressionhandler.php
-46ad7ae4c9952cfee946ddcffbf1118f  lib/ezfile/classes/ezlog.php
+506497ebea3765031da66bcd2e08f492  lib/ezfile/classes/ezlog.php
 0978fbe3c96040ede4eaf4c7cae95522  lib/ezfile/classes/ezmd5.php
 2a95bc96a39e413683322abe5d0c0fab  lib/ezfile/classes/eznocompressionhandler.php
 4c75edf8304530c54bc3cbd6c6ef6f93  lib/ezi18n/classes/expi18nfallbackconfiguredrule.php
@@ -25408,7 +25412,7 @@ c491f066b55329cfac1484004644acf4  lib/ezpdf/classes/fonts/php_ZapfDingbats.font
 5cd51448a5a3624d19352fa9812619d8  lib/ezsession/classes/ezpsessionhandlerdb.php
 627dfde8ef963a33cbc82ee356d3548f  lib/ezsession/classes/ezpsessionhandlerphp.php
 766b8e815ebe56467ff96151cfaf94f3  lib/ezsession/classes/ezpsessionhandlersymfony.php
-40df7b3bc911b423e0fd44dacab30283  lib/ezsession/classes/ezsession.php
+ece811eb597a89981733819993e624eb  lib/ezsession/classes/ezsession.php
 a688eb0c32a975caa217a98e1f2170c0  lib/ezsoap/classes/ezsoapbody.php
 4ab0c3a7dc7704885b384589dfd245dd  lib/ezsoap/classes/ezsoapclient.php
 2f5b999188cebb7ecd42aee093ee2266  lib/ezsoap/classes/ezsoapcodec.php
@@ -25444,7 +25448,7 @@ c26dbec4684104037b6b62edc581dde1  lib/eztemplate/classes/eztemplatedebugfunction
 ad2874ee4a139d460d9ee6e73d0a7eab  lib/eztemplate/classes/eztemplateforfunction.php
 04805fd78bcfa73f0337ce6e236960ef  lib/eztemplate/classes/eztemplatefunctionelement.php
 655803ad0d246fb1952eec4febeb910d  lib/eztemplate/classes/eztemplateiffunction.php
-30033b14a495633562422a00df11315f  lib/eztemplate/classes/eztemplateimageoperator.php
+1d35e68fbffb343c601f64e054f2fd88  lib/eztemplate/classes/eztemplateimageoperator.php
 a5c904b160da136ec9878e332cc8c165  lib/eztemplate/classes/eztemplateincludefunction.php
 9b1a83422a0b27955b7df9bd9fccc883  lib/eztemplate/classes/eztemplatelocaleoperator.php
 7de0c67a7c78bf6ae4ff9bf9259bc755  lib/eztemplate/classes/eztemplatelogicoperator.php
@@ -25493,7 +25497,7 @@ d7ab655e877ac2a6cb313bba14f33505  lib/ezutils/classes/ezfloatvalidator.php
 7a2bd096bd646542db1fa4a81d03bdcd  lib/ezutils/classes/ezhttpfile.php
 96744a5512d7d89c096150ae2f50183a  lib/ezutils/classes/ezhttppersistence.php
 6fa9bafc7b70c2a6a8b56ce25b25906a  lib/ezutils/classes/ezhttptool.php
-45c9bd0c01a8560482782106a15d3318  lib/ezutils/classes/ezini.php
+4783b723ac5c2bb2ae972e88d93aef3a  lib/ezutils/classes/ezini.php
 0247448f3c1943d07ceb1def3d2dede5  lib/ezutils/classes/ezinputvalidator.php
 10e59a99bb171ef6f813f968db16bf0e  lib/ezutils/classes/ezintegervalidator.php
 d950cf9fbd7d6560d51a52dd8058ce6c  lib/ezutils/classes/ezmail.php
@@ -25614,7 +25618,7 @@ b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
-cb0b16d6478138ba8429920d17189ded  settings/file.ini
+8a08f49a06fb10c51b72ec58628b9aba  settings/file.ini
 cd1dd3724d551ca1880d7e172ea97d07  settings/graphql.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 7950720aa3badcf77219100657347b45  settings/i18n.ini
@@ -25646,7 +25650,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-a2733355ec93d4b8d8c70323dee412ef  settings/site.ini
+365345d2c8c07fd33308fbb408eab3de  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -26988,7 +26992,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-0bb03e2c9750dcdc01e2c110c09f1600  tests/test-map.json
+12fa1cf6bdb55267708eb3665c2e10eb  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -27561,6 +27565,7 @@ bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultEx
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
 d32b95c53aa6c4d7db1e92129156c0fa  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
+3b2b910bb1e42b0e3f7b92b6a5940a16  tests/tests/kernel/classes/expLegacyForkFixesTest.php
 448f58b85fd061fe10776ed7828bb7f0  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
 be0d9664a26c04457647f96100bb1fa9  tests/tests/kernel/classes/expLoveStackFixture.php
@@ -28085,6 +28090,7 @@ c942dcc1e90873d238ed9ca5194fabc5  tests/tests/kernel/common/eZURLOperatorAbsolut
 ce11659d7ef102c44a77972a943abab2  tests/tests/kernel/content/eZAuditLocationTest.php
 58f7ee8e4f533776e22a8ff26c76097e  tests/tests/kernel/content/eZContentFunctionCollectionClassFilterTypeTest.php
 0cf37345e3660647c5f9cb3b13a37a59  tests/tests/kernel/content/eZContentFunctionCollectionSiteDataTest.php
+1b001822686196f6b88fdf5137ba9173  tests/tests/kernel/content/eZContentOperationCollectionPublishNodeTest.php
 8ca759ff9aca8bed38c4ee14e101e777  tests/tests/kernel/content/eZContentOperationCollectionTest.php
 6621b245b9540e19529626f735b1c071  tests/tests/kernel/content/eZContentVersionviewPlacementTest.php
 a3f58dd84b4e820a76e77160f38d09b0  tests/tests/kernel/content/eZEditLocationsVisibilityTest.php

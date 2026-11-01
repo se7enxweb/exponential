@@ -195,7 +195,7 @@ class eZBenchmarkrunner
      \protected
      Called whenever a test is run, can be overriden to print out the test result immediately.
     */
-    function display( $result, $repeatCount )
+    function display( $result, $repeatCount = 1 )
     {
     }
 

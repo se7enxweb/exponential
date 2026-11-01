@@ -270,7 +270,8 @@
     ],
     "lib/ezfile/classes/ezlog.php": [
       "tests/tests/lib/ezfile/expLogRotatorTest.php",
-      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ],
     "lib/ezutils/classes/ezdebug.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
@@ -562,7 +563,8 @@
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
     ],
     "extension/ezjscore/settings/ezjscore.ini": [
-      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ],
     "extension/ezjscore/extension.xml": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -743,7 +745,9 @@
       "tests/tests/design/AdminSubitemsTranslationsTest.php"
     ],
     "kernel/content/ezcontentoperationcollection.php": [
-      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php",
+      "tests/tests/kernel/content/eZContentOperationCollectionPublishNodeTest.php"
     ],
     "kernel/content/operation_definition.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
@@ -832,7 +836,8 @@
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
     ],
     "extension/ezjscore/classes/ezjscserverfunctionsnode.php": [
-      "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php"
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ],
     "kernel/classes/subitems/expsubitemsserverfunctions.php": [
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
@@ -2637,6 +2642,24 @@
     "bin/php/expmigration*": [
       "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
       "tests/tests/bin/ConsoleExtensionAliasTest.php"
+    ],
+    "kernel/search/plugins/ezsearchengine/ezsearchengine.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "kernel/classes/ezurlaliasml.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "settings/file.ini": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "lib/ezutils/classes/ezfileextensionblacklistvalidator.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/plugins/media/editor_plugin.js": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "extension/ezoe/design/standard/javascript/plugins/media/editor_plugin_src.js": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ]
   },
   "generated": {
@@ -3664,6 +3687,21 @@
     ],
     "lib/ezdb/classes/ezsqlite3db.php": [
       "tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php"
+    ],
+    "index_cluster.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "kernel/private/rest/classes/ezpkernelrest.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "benchmarks/classes/ezbenchmarkrunner.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "benchmarks/classes/ezbenchmarkclirunner.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "design/standard/templates/content/datatype/pdf/ezxmltags/object_denied.tpl": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ]
   }
 }

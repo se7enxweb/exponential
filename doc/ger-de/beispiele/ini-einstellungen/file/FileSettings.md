@@ -76,8 +76,14 @@ Handlers[gzipshell]=ezgzipshellcompressionhandler
 
 > Die Sperrliste der Dateiendungen dient zur Prüfung hochgeladener Dateien.  
 > Dateitypen auf der Sperrliste werden abgelehnt, aus Sicherheits- oder anderen Gründen.  
+> Die Liste enthält die Endungen, die ein Webserver als Code ausführen kann: jede PHP-  
+> Endung, die die Handler von PHP-FPM, mod\_php und den Panels zuordnen (php3 bis  
+> php8, phtml, pht, phps, phar, phpt, pgif), Server-Side Includes (shtml),  
+> CGI-Skripte (cgi, pl) und die Seiten anderer Plattformen (asp, aspx, jsp)  
+> sowie .htaccess. Schreiben Sie die Werte klein: Die Endung eines Dateinamens wird  
+> in Kleinbuchstaben verglichen, shell.PHP5 wird also als php5 abgelehnt.  
 
-Standard: eine Liste mit 7: `php`, `php3`, `phar`, `phpt`, `pht`, `phtml`, `pgif`.
+Standard: eine Liste mit 19: `php`, `php3`, `php4`, `php5`, `php7`, `php8`, `phps`, `phar`, `phpt`, `pht`, `phtml`, `pgif` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -87,11 +93,23 @@ Standard: eine Liste mit 7: `php`, `php3`, `phar`, `phpt`, `pht`, `phtml`, `pgif
 FileExtensionBlackList[]
 FileExtensionBlackList[]=php
 FileExtensionBlackList[]=php3
+FileExtensionBlackList[]=php4
+FileExtensionBlackList[]=php5
+FileExtensionBlackList[]=php7
+FileExtensionBlackList[]=php8
+FileExtensionBlackList[]=phps
 FileExtensionBlackList[]=phar
 FileExtensionBlackList[]=phpt
 FileExtensionBlackList[]=pht
 FileExtensionBlackList[]=phtml
 FileExtensionBlackList[]=pgif
+FileExtensionBlackList[]=shtml
+FileExtensionBlackList[]=cgi
+FileExtensionBlackList[]=pl
+FileExtensionBlackList[]=asp
+FileExtensionBlackList[]=aspx
+FileExtensionBlackList[]=jsp
+FileExtensionBlackList[]=htaccess
 */ ?>
 ```
 

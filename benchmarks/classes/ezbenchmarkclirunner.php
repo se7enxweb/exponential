@@ -46,7 +46,7 @@ class eZBenchmarkCLIRunner extends eZBenchmarkRunner
     /*!
      Displays the result text on the console.
     */
-    function display( $result )
+    function display( $result, $repeatCount = 1 )
     {
         $cli = eZCLI::instance();
         $col = 60;

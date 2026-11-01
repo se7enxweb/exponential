@@ -466,7 +466,12 @@ class eZContentOperationCollection
         {
             $existingNode = eZContentObjectTreeNode::fetchByRemoteID( $nodeAssignment->attribute( 'parent_remote_id' ) );
         }
-        if ( !$existingNode );
+        // The node found by the assignment's remote ID is taken only when it is this object's node below this parent;
+        // a remote ID that names another object's node (a package import, a copy) must not have that node changed.
+        // This was "if ( !$existingNode );" with an empty statement, so the lookup below always ran.
+        if ( !$existingNode instanceof eZContentObjectTreeNode
+             || (int)$existingNode->attribute( 'contentobject_id' ) !== (int)$object->attribute( 'id' )
+             || (int)$existingNode->attribute( 'parent_node_id' ) !== (int)$nodeID )
         {
             $existingNode = eZContentObjectTreeNode::findNode( $nodeID , $object->attribute( 'id' ), true );
         }

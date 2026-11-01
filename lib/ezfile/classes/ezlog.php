@@ -61,7 +61,8 @@ class eZLog
             $logMessage = "[ " . $time . " ]";
             $logMessage .= "[ " . self::siteAccessName() . " ]";
             $logMessage .= '[ ' . self::requestContext() . ' ]';
-            $logMessage .= " $message\n";
+            // One entry, one line: a line break in the message (a user name, a URL) would forge further entries
+            $logMessage .= ' ' . self::oneLine( $message ) . "\n";
             @fwrite( $logFile, $logMessage );
             @fclose( $logFile );
             if ( !$fileExisted )
@@ -75,6 +76,18 @@ class eZLog
         {
             eZDebug::writeError( 'Couldn\'t create the log file "' . $fileName . '"', __METHOD__ );
         }
+    }
+
+    /**
+     * $text with every line break (CR LF, CR, LF) replaced by a space: a log entry is one line, so a line break in a
+     * logged value (a user name, a URL, an uploaded file's name) cannot forge further entries.
+     *
+     * @param mixed $text
+     * @return string
+     */
+    public static function oneLine( $text )
+    {
+        return str_replace( array( "\r\n", "\r", "\n" ), ' ', (string)$text );
     }
 
     /**
@@ -170,7 +183,8 @@ class eZLog
         if ( $logFile )
         {
             $time = date( "M d Y H:i:s", strtotime( "now" ) );
-            $logMessage = "[ " . $time . " ] [" . $dir . $name . "]\n";
+            // A file name may contain a line break (any byte but / and NUL): one entry, one line, as in write()
+            $logMessage = "[ " . $time . " ] [" . self::oneLine( $dir . $name ) . "]\n";
             @fwrite( $logFile, $logMessage );
             @fclose( $logFile );
             if ( !$fileExisted )
