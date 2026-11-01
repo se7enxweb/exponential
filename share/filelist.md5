@@ -648,7 +648,7 @@ ec2ff5c144d0214b01f433e39eb24120  design/admin/templates/migration/rollback.tpl
 485232701642d41e8692446265c7ec80  design/admin/templates/migration/run.tpl
 7b016dfc783fda51fcdcc6595aeaac98  design/admin/templates/migration/status.tpl
 83f6fc7f6055241e1d04605a015091a1  design/admin/templates/moderation/confirm.tpl
-5d8a0f279eaa91fe1e5ed13994aeb58b  design/admin/templates/moderation/recent.tpl
+62a7270c91946fab6c5128d97849b5ba  design/admin/templates/moderation/recent.tpl
 360f4f74f5b80d4f0d74075af47b54be  design/admin/templates/moderation/report.tpl
 e6a3c2f8012b44d7d40ee02614debd4b  design/admin/templates/navigator/alphabetical.tpl
 3fb8436c59191e84cb572d212aad2087  design/admin/templates/navigator/google.tpl
@@ -1070,7 +1070,7 @@ f8432aa870359774108e8df134437550  design/admin4/javascript/a4_actions.js
 53c0e366816c6be502a801133bd79780  design/admin4/javascript/a4_head.js
 01ea871f6ca6124d661784a91fd73c98  design/admin4/javascript/a4_mega_menu.js
 c500ef710f1fcf31270ce339c169589c  design/admin4/javascript/a4_url.js
-ea9dccaffc59a45df85f651b04bbcb39  design/admin4/javascript/admin4.js
+8c9eddd9e920f5ac25023dcf71756d59  design/admin4/javascript/admin4.js
 887be83feca2a551d0d055694b8cb861  design/admin4/javascript/contentcheck_select.js
 c298e839ce3acde72bc6126b87eb17c6  design/admin4/javascript/contentcheck_storage.js
 8a56464f4fccc291d296587e29a0a118  design/admin4/javascript/contentstructuremenu_dynamic.js
@@ -1453,7 +1453,7 @@ ec2ff5c144d0214b01f433e39eb24120  design/admin4/templates/migration/rollback.tpl
 485232701642d41e8692446265c7ec80  design/admin4/templates/migration/run.tpl
 7b016dfc783fda51fcdcc6595aeaac98  design/admin4/templates/migration/status.tpl
 83f6fc7f6055241e1d04605a015091a1  design/admin4/templates/moderation/confirm.tpl
-5d8a0f279eaa91fe1e5ed13994aeb58b  design/admin4/templates/moderation/recent.tpl
+62a7270c91946fab6c5128d97849b5ba  design/admin4/templates/moderation/recent.tpl
 360f4f74f5b80d4f0d74075af47b54be  design/admin4/templates/moderation/report.tpl
 e6a3c2f8012b44d7d40ee02614debd4b  design/admin4/templates/navigator/alphabetical.tpl
 c6caf8a9fa0db2771a975b122bcb5226  design/admin4/templates/navigator/google.tpl
@@ -6722,7 +6722,7 @@ fb41e999d70ad1fbeef83693d1ee6c77  doc/eng-us/features/6.0/mail-preferences.md
 70689845801571a8ad48a92751b21397  doc/eng-us/features/6.0/maintenance-mode.md
 a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.md
 e1a58f145a5091dfe462a7cdf4326d55  doc/eng-us/features/6.0/migrations.md
-aafcb51c0e9bd3d8f1a3da9416186640  doc/eng-us/features/6.0/moderation.md
+1ec56f21e8f01f5db8da16e7c24f7a85  doc/eng-us/features/6.0/moderation.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 df9251aeb6fb79ab9f17590b0bbbb3fb  doc/eng-us/features/6.0/mongodb-database-support.md
 ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrides.md
@@ -6961,9 +6961,9 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
-655e15dd7366882b460bf5e06352ffc5  doc/eng-us/help/README.md
+b414c1167cdf71c19062dd705f9aed13  doc/eng-us/help/README.md
 f3a6eb643757b14f92dc0cede99d6396  doc/eng-us/help/accounts-and-sign-in.md
-aa9483fa61724b5f27f0622d869c730f  doc/eng-us/help/admin-tour.md
+b12d8f5961634ffa90806b0ce2cfa200  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
 343049d14d1e2c4513fc60df674ab3c5  doc/eng-us/help/adopters/adopters-faq.md
 04ff20877f980fe17316137d932f3e7e  doc/eng-us/help/adopters/adopters-glossary.md
@@ -10891,7 +10891,6 @@ f0559498dcd382721582d01118209c59  doc/eng-us/help/mobile-app-developers/rest-api
 e68fe2eced95ad725375c49248ceb1b0  doc/eng-us/help/mobile-app-developers/testing/testing-against-a-demo.md
 2c099fe9a37f746cd9c996f399aa30f2  doc/eng-us/help/mobile-app-developers/what-the-apis-do-not-do.md
 5a6698cd8399945624f54401de4c2c25  doc/eng-us/help/mobile-app-developers/which-api-for-your-app.md
-04559878c838cd23e25ca8a5ee602a70  doc/eng-us/help/moderation/README.md
 c49ff3f06466b607fd9d2ead0f6ef129  doc/eng-us/help/non-profits/accessibility/README.md
 40bbecb67bd5b35dc0945c4719d515c6  doc/eng-us/help/non-profits/accessibility/accessibility-basics-for-non-profits.md
 0a2dc4bf2134cccb1594ce7f8e22458f  doc/eng-us/help/non-profits/accessibility/accessibility-statement-for-non-profits.md
@@ -11339,6 +11338,7 @@ c35d4534c04f8ba7a3851ae0a28be669  doc/eng-us/help/project/licensing-faq.md
 b1cf8332afed01b2b188622f0750ca80  doc/eng-us/help/project/roadmap.md
 50da3ae7b9a1de071a0189a761db8aa5  doc/eng-us/help/publishing-and-versions.md
 754b44ed76cc7e5ab984dd4faf3daa35  doc/eng-us/help/reading-help-in-other-languages.md
+85c199745c49bde9df568c287fef403e  doc/eng-us/help/recent-content.md
 10fe5e2ae75e47966d84dea3787dc0f3  doc/eng-us/help/resellers/basics/choosing-a-partner-level.md
 9195a494eda04764739ca93a8d46db12  doc/eng-us/help/resellers/basics/referral-only-reselling.md
 d59a1874a74ca10666ac91ecf1069b69  doc/eng-us/help/resellers/basics/reseller-models.md
@@ -13066,7 +13066,7 @@ f56fa83763547c460a36e6da14499dc5  doc/ger-de/.examples/descriptions/25-migration
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 ddb2374c66d6de87d6b41208337b819b  doc/ger-de/.examples/strings.json
-7066ffe301e7c312053c11d6a6cfa27d  doc/ger-de/.paths.json
+c7dab05abf7ea12aa612f5171b659a0d  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -16593,7 +16593,7 @@ b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
 b09a44b16ccd4475f7fb0ccea9c82b0e  doc/ger-de/glossar.md
-a7b3d7ba1d9600344ebe4f3fbc379f48  doc/ger-de/hilfe/README.md
+0562bd56c8299f607fbb4d9f85448980  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 9d80999100f6fc01d6769705d3ac7e48  doc/ger-de/hilfe/anmelden-im-editor.md
 8bd0a5eb4b20867b8eedd184b9b7873b  doc/ger-de/hilfe/anmelden-in-der-administration.md
@@ -19076,7 +19076,7 @@ e5a4089acf8f54a4b66e1bb2649d2191  doc/ger-de/hilfe/mobile-app-entwickler/veroeff
 4fb6a317c89f20c5aba7d4acf610a832  doc/ger-de/hilfe/mobile-app-entwickler/was-die-apis-nicht-koennen.md
 09a111d770ea2227fafce84e2f8f8093  doc/ger-de/hilfe/mobile-app-entwickler/welche-api-fuer-ihre-app.md
 98480585266235816a7ceb8cdb9e50f3  doc/ger-de/hilfe/mobile-app-entwickler/wie-exponential-inhalte-in-eine-app-gelangen.md
-acc2194990c0966fdcff1b7cfd1b035b  doc/ger-de/hilfe/moderation/README.md
+ba16b0de2701a0c92927e9478dc2ee3e  doc/ger-de/hilfe/neue-inhalte.md
 6f7eb0250c3ff0e1d62d392149f80dde  doc/ger-de/hilfe/nicht-technische-menschen/begriffe/README.md
 a8171eeb84149a540c77a4b25ed0f8aa  doc/ger-de/hilfe/nicht-technische-menschen/begriffe/caches-erklaert.md
 a273e7ba94f4a9f2b3caa37799ebfa6d  doc/ger-de/hilfe/nicht-technische-menschen/begriffe/die-website-und-die-administration.md
@@ -19621,7 +19621,7 @@ d67a690066e82331b7f0914d1936f604  doc/ger-de/hilfe/projekt/mit-exponential-bauen
 48bef02fd241141dcc9f29ce1754f132  doc/ger-de/hilfe/projekt/verhaltenskodex.md
 0e387802fda4fe2400fa5dbcf1de93e8  doc/ger-de/hilfe/projekt/zum-projekt-beitragen.md
 844c2dea4b786d018b10b819da645dad  doc/ger-de/hilfe/projektdateien.md
-2ec2fa2e48e89baa076f85c18923b318  doc/ger-de/hilfe/rundgang-durch-die-administration.md
+455f596a2f2edc7304dd12d18104b12d  doc/ger-de/hilfe/rundgang-durch-die-administration.md
 a85b1e0a5ca224ed96b8cd423e8c85e9  doc/ger-de/hilfe/seitenpakete/README.md
 190b8e1722736fb69d61f2812ed0caff  doc/ger-de/hilfe/seitenpakete/admin-oberflaeche/README.md
 91015dd306ccadb70896ea561af932a5  doc/ger-de/hilfe/seitenpakete/admin-oberflaeche/berechtigungen-fuer-pakete.md
@@ -24112,7 +24112,7 @@ d5f29f4ca102d2bbb4c631e4a9501af9  kernel/classes/migration/steps/expmigrationste
 4095a16caf6dc4efa66c5680048cf118  kernel/classes/migration/steps/expmigrationstepuser.php
 54c316afb7d389b3aaef535742e7130f  kernel/classes/migration/steps/expmigrationstepusergroup.php
 bbe9728ee757512ef51296789b11367b  kernel/classes/moderation/expmoderationaction.php
-13c8aec0c06c696b374af67c37840faa  kernel/classes/moderation/expmoderationadmin.php
+d66c797cf71c799a646488c54d0b531f  kernel/classes/moderation/expmoderationadmin.php
 02a404122468bd9dfb8ac814598630f8  kernel/classes/moderation/expmoderationlist.php
 1dfa7a7301c1084388960048d9235010  kernel/classes/notification/event/ezcollaboration/ezcollaborationtype.php
 028b6f97a649a7dd399acde15e5c0c86  kernel/classes/notification/event/ezcurrenttime/ezcurrenttimetype.php
@@ -24998,7 +24998,7 @@ c2b425c7d8e0c591d0d9c621fb71ae65  kernel/private/classes/views/migration/run.php
 c4cef231581596de59b2b6bc010a9ebf  kernel/private/classes/views/migration/status.php
 40b00807b0ed550cd7e3b84002255c52  kernel/private/classes/views/migration/stream.php
 8f7b9123998e3253773157bde9f5f221  kernel/private/classes/views/moderation/action.php
-7d50bcbdb99032504c08335c277d4e0b  kernel/private/classes/views/moderation/recent.php
+4c318b914bf542442b0f4e0cc650958d  kernel/private/classes/views/moderation/recent.php
 e984f1220dc2e1d2d37b81391ae531a1  kernel/private/classes/views/moderation/report.php
 5b19fa6a4a0b63334fba877b6600f13f  kernel/private/classes/views/notification/addtonotification.php
 8937905459227cb8c6a1edc0bab23031  kernel/private/classes/views/notification/job.php
@@ -25874,7 +25874,7 @@ c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 546a2136d4ba2d6bff06dee5f0a8fe6f  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-db9bf908d9a25a942f70e20efc70c6cf  settings/exphelp.ini
+32757aef8895b67b81a35ec5c52895bd  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -25892,7 +25892,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
-3602b8d9daad3a6681fc3b0dabd2132e  settings/menu.ini
+e85aa76533c32bc26db50412c8e6eb6f  settings/menu.ini
 d91ff528c8f8302322dba4b5d742df53  settings/migration.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 d52120a6f183b668fa33094da1e2182b  settings/module.ini
@@ -27290,7 +27290,7 @@ d55b1b850aa51d771cc5619fd9dcbdc3  tests/tests/design/AdminFontStackTest.php
 fd71d7959d63132b80132870a59d56ef  tests/tests/design/AdminFormErrorsTest.php
 ea1a269082152f8dde9365c7154fc73d  tests/tests/design/AdminFormLabelsTest.php
 2040da2cdcdda1c9312009c18b310bc0  tests/tests/design/AdminHeaderTabOrderTest.php
-a2ea0cccee1cffb4c89369a0893d1a96  tests/tests/design/AdminHeaderTest.php
+e1ffce9c44669b53944492b6ad85357c  tests/tests/design/AdminHeaderTest.php
 3ca1b7ccc51475cf1cf4e572e25a7c7f  tests/tests/design/AdminHelpFrameClassScopeTest.php
 0b6c210a98f8937b84577dc64170b49f  tests/tests/design/AdminHelpLanguageLineTest.php
 99e2c87996d18a40fee1d89b93a67188  tests/tests/design/AdminHelpScriptTest.php
@@ -28121,7 +28121,7 @@ a2bd21e6cc6eaf6a1f7bcde63a436a28  tests/tests/kernel/classes/migration/fixtures/
 651356d2d0d63fb372b66752dcd84af3  tests/tests/kernel/classes/moderation/expModerationDatabaseTest.php
 1bc0afab622bdfe0506cf12044c96976  tests/tests/kernel/classes/moderation/expModerationEngineChecks.php
 b0c7a787609dc536e5f2845273de01e0  tests/tests/kernel/classes/moderation/expModerationSqliteTest.php
-8948a89d5bf1567dff701250469d93b6  tests/tests/kernel/classes/moderation/expModerationTest.php
+0b2cada29ed36bac08c7a6b2689c105f  tests/tests/kernel/classes/moderation/expModerationTest.php
 ccb0cfb6e86619942966dae18e9d7ca1  tests/tests/kernel/classes/namelists/eZSerializedObjectNameListMappingTest.php
 ef670105374ed5d9d92ff0a71354e646  tests/tests/kernel/classes/notification/NotificationSystemTest.php
 be5b81c8844c0960b337ca46f6c49211  tests/tests/kernel/classes/notification/eZNotificationScheduleTest.php
@@ -29167,7 +29167,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-5646b40c11114ce29abc5d738fa06e61  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+c68d9b5030f9a74ba8c27fed7b0e6fd0  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -29226,9 +29226,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-ed26159cc395db39eeb03e57a05eeb76  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+fdd2af3bed3145a7823d9f8c7fdbc0a8  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-e48f8065230eca3a03a9309e89b2137a  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+228541a1df4cc0e7152860b09af30db1  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php

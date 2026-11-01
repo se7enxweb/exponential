@@ -107,7 +107,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'Logout: ', $tpl, "$path: logout left the menu row" );
         }
         $js = self::file( 'design/admin4/javascript/admin4.js' );
-        foreach ( array( "new ResizeObserver(fit).observe(nav);", "list.insertBefore(tabs[i], list.firstChild);",
+        foreach ( array( "new ResizeObserver(fit).observe(nav);", "if (!kept[j]) list.insertBefore(tabs[j], list.firstChild);",
+                         // the tabs are measured once, not the page laid out again after each move (seconds on a long table)
+                         "var boxes = tabs.map(function (li) { return li.getBoundingClientRect(); });",
                          "if (li.parentNode !== bar || li.nextSibling !== next)", "if (!wide.matches && !list.firstChild) return;",
                          "var more = document.querySelector('#header .a4-nav-more');",
                          "toggle.classList.toggle('has-current', !!list.querySelector('[aria-current]'));",
