@@ -698,7 +698,7 @@ class expStaticRepository
     public function state()
     {
         $state = array( 'repository' => file_exists( $this->checkout . '/.git' ), 'branch' => '', 'head' => '', 'subject' => '', 'tags' => 0,
-                        'last_tag' => '', 'uncommitted' => 0, 'unpushed' => null, 'remote' => '' );
+                        'last_tag' => '', 'last_tag_commit' => '', 'uncommitted' => 0, 'unpushed' => null, 'remote' => '' );
         if ( !$state['repository'] )
             return $state;
         $branch = $this->git( array( 'symbolic-ref', '--quiet', '--short', 'HEAD' ) );
@@ -711,7 +711,11 @@ class expStaticRepository
         $tags = $this->tags();
         $state['tags'] = count( $tags );
         if ( $tags )
+        {
             $state['last_tag'] = self::tagName( $this->target->id(), self::nextNumber( $tags, $this->target->id() ) - 1 );
+            $commit = $this->git( array( 'rev-parse', '--verify', '--quiet', 'refs/tags/' . $state['last_tag'] . '^{commit}' ) );
+            $state['last_tag_commit'] = $commit['ok'] ? trim( $commit['output'] ) : '';
+        }
         $state['uncommitted'] = count( $this->lines( $this->git( array( 'status', '--porcelain', '--untracked-files=all', '--', $this->prefix() !== '' ? $this->prefix() : '.' ) ) ) );
         $url = $this->git( array( 'remote', 'get-url', self::REMOTE ) );
         $state['remote'] = $url['ok'] ? $this->credentials->redact( trim( $url['output'] ) ) : '';

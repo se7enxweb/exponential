@@ -83404,6 +83404,10 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Mae eu testun yn aros. Ni chaiff delweddau, ffurflenni na dolenni i wefannau eraill byth eu tynnu.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Fersiwn</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

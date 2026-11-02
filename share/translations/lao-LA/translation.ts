@@ -83404,6 +83404,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ຂໍ້ຄວາມຂອງມັນຍັງຢູ່. ຮູບພາບ, ແບບຟອມ ແລະ ລິ້ງໄປຫາເວັບໄຊອື່ນ ບໍ່ເຄີຍຖືກລຶບ.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>ເວີຊັນ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

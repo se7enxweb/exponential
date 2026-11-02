@@ -83402,6 +83402,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ederede ha na-anọgide. A naghị ewepụ foto, fọm na njikọ na saịtị ndị ọzọ ma ọlị.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Ụdị</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83404,6 +83404,10 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Fanaidh an teacsa aca. Cha tèid dealbhan, foirmean is ceanglaichean gu làraichean eile a thoirt air falbh idir.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Tionndadh</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -84811,6 +84811,10 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Il loro testo resta. Immagini, moduli e link ad altri siti non vengono mai rimossi.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versione</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

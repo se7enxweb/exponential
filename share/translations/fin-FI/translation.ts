@@ -83434,6 +83434,10 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Niiden teksti säilyy. Kuvia, lomakkeita ja linkkejä muille sivustoille ei koskaan poisteta.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

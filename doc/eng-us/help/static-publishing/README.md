@@ -18,6 +18,11 @@ there is nothing on the public side to update, patch or attack.
 You do it in **Setup > Static publishing**: make a target once with the wizard, then build, check what changes and
 publish. Every publish is kept, so you can always go back to an earlier one.
 
+Each target on the page shows its published **version** (the number `n` of its newest tag `static/<target>/<n>`), the
+short **commit** id of that version (a link to the commit on GitHub when the repository is there) and its **last
+publish** with the state of the push: pushed, push pending, failed, nothing changed or not pushed; the time opens the
+page of the run. The state of the GitHub Pages build is on the **History** page, which asks GitHub for it.
+
 ![Setup > Static publishing: a target with its last publish, its stale pages and the buttons Build, Preview, History and Settings](../images/static-publishing/dashboard-light.webp)
 
 ## Contents

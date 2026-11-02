@@ -83402,6 +83402,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Nivîsa wan dimîne. Wêne, form û girêdanên ber bi malperên din tu carî nayên rakirin.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Guherto</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

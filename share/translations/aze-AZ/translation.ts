@@ -83404,6 +83404,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Onların mətni qalır. Şəkillər, formalar və digər saytlara keçidlər heç vaxt silinmir.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiya</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

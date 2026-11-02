@@ -83434,6 +83434,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksti i tyre mbetet. Figurat, formularët dhe lidhjet drejt sajteve të tjera nuk hiqen kurrë.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versioni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

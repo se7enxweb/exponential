@@ -83404,6 +83404,10 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O zestenn a chom. Ar skeudennoù, ar furmskridoù hag al liammoù d'al lec'hiennoù all n'int biken lamet.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Handelv</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

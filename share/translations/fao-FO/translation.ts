@@ -83404,6 +83404,10 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teirra tekstur verður verandi. Myndir, formar og leinkjur til aðrar heimasíður verða ongantíð strikaðar.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Útgáva</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83404,6 +83404,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Văn bản của chúng vẫn giữ nguyên. Hình ảnh, biểu mẫu và liên kết đến trang khác không bao giờ bị gỡ.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Phiên bản</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

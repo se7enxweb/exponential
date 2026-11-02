@@ -87663,6 +87663,10 @@ Gracias por la retroalimentación</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Su texto se mantiene. Las imágenes, los formularios y los enlaces a otros sitios nunca se quitan.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

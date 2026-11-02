@@ -83434,6 +83434,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>A szövegük megmarad. A képek, űrlapok és más webhelyekre mutató hivatkozások soha nem kerülnek eltávolításra.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Verzió</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

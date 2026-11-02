@@ -83434,6 +83434,10 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Fanann a dtéacs. Ní bhaintear íomhánna, foirmeacha ná naisc chuig suíomhanna eile choíche.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Leagan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83402,6 +83402,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Rubutunsu yana nan. Ba a taɓa cire hotuna, fom da mahaɗa zuwa wasu shafuka ba.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Sigar</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83434,6 +83434,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jų tekstas lieka. Paveikslėliai, formos ir nuorodos į kitas svetaines niekada nešalinami.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versija</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

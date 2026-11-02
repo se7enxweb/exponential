@@ -83434,6 +83434,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Textul lor rămâne. Imaginile, formularele și legăturile către alte site-uri nu sunt eliminate niciodată.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiune</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

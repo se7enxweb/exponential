@@ -69,7 +69,8 @@ class History extends Page
         $runs = array();
         try
         {
-            $runs = \expStaticStatus::runs( \eZDB::instance(), $target->id(), 50 );
+            foreach ( \expStaticStatus::runs( \eZDB::instance(), $target->id(), 50 ) as $run )
+                $runs[] = \expStaticAdmin::runView( $run, $target->id() );
         }
         catch ( \Throwable $e )
         {
@@ -96,9 +97,7 @@ class History extends Page
      */
     public static function commitUrl( $remote )
     {
-        if ( preg_match( '#^(?:https://github\.com/|git@github\.com:|ssh://git@github\.com/)([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+?)(?:\.git)?/?$#', (string)$remote, $m ) )
-            return 'https://github.com/' . $m[1] . '/' . $m[2] . '/commit/';
-        return '';
+        return \expStaticAdmin::commitUrl( $remote );
     }
 }
 

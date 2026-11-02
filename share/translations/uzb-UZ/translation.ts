@@ -83404,6 +83404,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida o ªzgartirishingiz kerak bo 
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ularning matni qoladi. Rasmlar, shakllar va boshqa saytlarga havolalar hech qachon olib tashlanmaydi.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiya</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

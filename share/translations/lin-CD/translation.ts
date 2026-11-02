@@ -83404,6 +83404,10 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Makomi na yango etikalaka. Bilili, mikanda ya kotondisa mpe ba lien ya ba site mosusu elongolamaka soki moke te.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

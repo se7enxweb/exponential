@@ -83404,6 +83404,10 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Lur text resta. Maletgs, formulars e colliaziuns ad autras websites na vegnan mai allontanads.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiun</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

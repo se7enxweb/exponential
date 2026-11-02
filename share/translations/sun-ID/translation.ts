@@ -83412,6 +83412,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Téksna tetep aya. Gambar, formulir jeung tutumbu ka situs séjén henteu pernah dihapus.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Vérsi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

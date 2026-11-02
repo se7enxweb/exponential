@@ -83404,6 +83404,10 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Mavara azvo anosara. Mifananidzo, mafomu nezvinongedzo zvinoenda kune dzimwe saiti hazvimbobviswi.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Vhezheni</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

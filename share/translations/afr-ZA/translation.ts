@@ -83434,6 +83434,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Hul teks bly. Beelde, vorms en skakels na ander werwe word nooit verwyder nie.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Weergawe</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

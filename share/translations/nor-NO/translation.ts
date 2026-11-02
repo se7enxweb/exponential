@@ -84662,6 +84662,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksten deres blir stående. Bilder, skjemaer og lenker til andre nettsteder fjernes aldri.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versjon</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

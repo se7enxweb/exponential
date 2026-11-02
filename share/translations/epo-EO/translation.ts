@@ -83404,6 +83404,10 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ilia teksto restas. Bildoj, formularoj kaj ligiloj al aliaj retejoj neniam estas forigataj.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

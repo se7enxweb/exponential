@@ -84629,6 +84629,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Hun tekst blijft staan. Afbeeldingen, formulieren en links naar andere sites worden nooit verwijderd.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versie</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

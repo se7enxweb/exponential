@@ -83402,6 +83402,10 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Maandishi yake yanabaki. Picha, fomu na viungo vya tovuti nyingine haviondolewi kamwe.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Toleo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

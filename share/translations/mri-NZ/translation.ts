@@ -83404,6 +83404,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ka noho tonu tō rātou kuputuhi. Kāore rawa e tangohia ngā whakaahua, ngā puka me ngā hononga ki ētahi atu pae.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Putanga</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

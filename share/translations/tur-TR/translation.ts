@@ -83409,6 +83409,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Metinleri kalır. Görseller, formlar ve diğer sitelere giden bağlantılar asla kaldırılmaz.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Sürüm</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>
