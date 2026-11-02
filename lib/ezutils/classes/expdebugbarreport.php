@@ -1671,27 +1671,6 @@ class expDebugBarReport
         return $html;
     }
 
-    /**
-     * The Policies section of the User tab: closed, and filled by the script from expdebugbar::policies only when it
-     * is opened, a page at a time and filtered by module and function, so a user with hundreds of roles costs nothing
-     * until somebody asks.
-     *
-     * @param array $assignments expDebugBarUser::assignments()
-     * @return string HTML
-     */
-    public static function userPoliciesHtml( array $assignments )
-    {
-        $roles = array();
-        foreach ( $assignments as $a )
-            $roles[(int)$a['role_id']] = true;
-        return '<h3>' . self::h( 'Policies' ) . '</h3>'
-             . '<details class="exp-debug-user-policies" data-exp-debug-policies="' . count( $roles ) . '"><summary>'
-             . self::h( 'Show the policies of the roles (%count)', array( '%count' => count( $roles ) ) ) . '</summary>'
-             . '<div class="exp-debug-user-policies-box"><p class="exp-debug-hint">'
-             . self::h( 'The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.' )
-             . '</p></div></details>';
-    }
-
     /** The content view cache's state as a sentence, with its reason. */
     protected static function renderingStateText( array $cache )
     {

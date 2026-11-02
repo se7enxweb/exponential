@@ -22,21 +22,11 @@
  * Shown to users with setup/setup, and to an anonymous visitor who gets the debug output: the parts carry role and
  * limitation ids, an anonymous visitor's are those of every anonymous visitor. A logged-in user also sees the profile
  * of anonymous visitors, to tell at once whether the two share the cache files.
- *
- * The policies of the user's roles are not in the report: the tab's Policies section asks for them
- * (expdebugbar::policies, policies()) when it is opened, a page at a time and filtered by module and function, for the
- * same people (mayView()).
  */
 class expDebugBarUser
 {
     /** Characters of a fingerprint. */
     const FINGERPRINT_LENGTH = 8;
-
-    /** Policies on a page of the User tab's Policies section. */
-    const POLICY_PAGE = 100;
-
-    /** Ids in one IN () of a policy query. */
-    const POLICY_QUERY_CHUNK = 500;
 
     /**
      * The current user's profile, or null when there is no user to ask (an early error, a script without the kernel).
@@ -286,7 +276,7 @@ class expDebugBarUser
     }
 
     /**
-     * Whether the current request may see the User tab and its role policies: a user with setup/setup, or an anonymous
+     * Whether the current request may see the User tab: a user with setup/setup, or an anonymous
      * visitor who gets the debug output (whose roles are those of every anonymous visitor). A logged-in user without
      * setup/setup does not, even with debug output (DebugByUser).
      *
@@ -298,141 +288,6 @@ class expDebugBarUser
     public static function mayView( $canSetup, $loggedIn, $debugOutput )
     {
         return (bool)$canSetup || ( !$loggedIn && (bool)$debugOutput );
-    }
-
-    /**
-     * The policies of the user's roles (those assigned to the user and to their groups), a page of them, for the
-     * User tab, which asks for them only when its Policies section is opened (expdebugbar::policies).
-     *
-     * @param eZUser $user
-     * @param string|null $module only the policies of this module, and those of every module (*); null: all
-     * @param string|null $function only the policies of this function, and those of every function (*); null: all
-     * @param int $offset the first policy of the page
-     * @param int $limit policies on a page
-     * @return array see policyPage()
-     */
-    public static function policies( $user, $module = null, $function = null, $offset = 0, $limit = self::POLICY_PAGE )
-    {
-        $roles = array();
-        foreach ( self::assignments( $user ) as $a )
-            $roles[$a['role_id']] = $a['role'];
-        return self::policyPage( self::policyRows( array_keys( $roles ) ), $roles, $module, $function, $offset, $limit );
-    }
-
-    /**
-     * The policies of roles with their limitations and values, through the persistent objects of ezpolicy,
-     * ezpolicy_limitation and ezpolicy_limitation_value (three queries per POLICY_QUERY_CHUNK ids, on every database).
-     *
-     * @param int[] $roleIDs
-     * @return array of array( id, role_id, module, function, limitations => array( identifier => string[] ) )
-     */
-    public static function policyRows( array $roleIDs )
-    {
-        $roleIDs = array_values( array_unique( array_map( 'intval', $roleIDs ) ) );
-        if ( !$roleIDs )
-            return array();
-        $fetch = function ( $definition, $column, array $ids ) {
-            $rows = array();
-            foreach ( array_chunk( $ids, self::POLICY_QUERY_CHUNK ) as $chunk )
-            {
-                $found = eZPersistentObject::fetchObjectList( $definition, null, array( $column => array( $chunk ) ), null, null, false );
-                if ( is_array( $found ) )
-                    $rows = array_merge( $rows, $found );
-            }
-            return $rows;
-        };
-
-        $policies = array();
-        foreach ( $fetch( eZPolicy::definition(), 'role_id', $roleIDs ) as $row )
-        {
-            $policies[(int)$row['id']] = array( 'id' => (int)$row['id'], 'role_id' => (int)$row['role_id'],
-                                                'module' => (string)$row['module_name'], 'function' => (string)$row['function_name'],
-                                                'limitations' => array() );
-        }
-        if ( !$policies )
-            return array();
-        $limitations = array();
-        foreach ( $fetch( eZPolicyLimitation::definition(), 'policy_id', array_keys( $policies ) ) as $row )
-            $limitations[(int)$row['id']] = array( (int)$row['policy_id'], (string)$row['identifier'] );
-        $values = array();
-        if ( $limitations )
-        {
-            foreach ( $fetch( eZPolicyLimitationValue::definition(), 'limitation_id', array_keys( $limitations ) ) as $row )
-                $values[(int)$row['limitation_id']][] = (string)$row['value'];
-        }
-        foreach ( $limitations as $id => list( $policyID, $identifier ) )
-        {
-            if ( isset( $policies[$policyID] ) )
-                $policies[$policyID]['limitations'][$identifier] = isset( $values[$id] ) ? $values[$id] : array();
-        }
-        return array_values( $policies );
-    }
-
-    /**
-     * A page of policies, filtered by module and function: a policy of every module (*) or every function (*) stays in
-     * every filter, it grants those as well. Sorted by role, module, function and policy id.
-     *
-     * @param array $policies policyRows()
-     * @param array $roles role id => name
-     * @param string|null $module null or '': every module
-     * @param string|null $function null or '': every function
-     * @param int $offset
-     * @param int $limit
-     * @return array roles (count), total (every policy), matching (policies the filter keeps), offset, limit,
-     *               next_offset (null on the last page), module, function (the filter, null for all),
-     *               modules (list of array( module, functions )), policies (the page: id, role_id, role, module,
-     *               function, limitations as a list of array( identifier, values ))
-     */
-    public static function policyPage( array $policies, array $roles, $module = null, $function = null, $offset = 0, $limit = self::POLICY_PAGE )
-    {
-        $module = $module === null || $module === '' ? null : (string)$module;
-        $function = $function === null || $function === '' ? null : (string)$function;
-        $offset = max( 0, (int)$offset );
-        $limit = max( 1, min( 500, (int)$limit ) );
-
-        $modules = array();
-        foreach ( $policies as $p )
-            $modules[$p['module']][$p['function']] = true;
-        ksort( $modules, SORT_STRING );
-        $moduleList = array();
-        foreach ( $modules as $name => $functions )
-        {
-            $functions = array_keys( $functions );
-            sort( $functions, SORT_STRING );
-            $moduleList[] = array( 'module' => (string)$name, 'functions' => array_map( 'strval', $functions ) );
-        }
-
-        $matching = array_values( array_filter( $policies, function ( $p ) use ( $module, $function ) {
-            return ( $module === null || $p['module'] === $module || $p['module'] === '*' )
-                && ( $function === null || $p['function'] === $function || $p['function'] === '*' );
-        } ) );
-        usort( $matching, function ( $a, $b ) {
-            return $a['role_id'] <=> $b['role_id'] ?: strcmp( $a['module'], $b['module'] ) ?: strcmp( $a['function'], $b['function'] ) ?: $a['id'] <=> $b['id'];
-        } );
-        $page = array();
-        foreach ( array_slice( $matching, $offset, $limit ) as $p )
-        {
-            $limitations = array();
-            ksort( $p['limitations'], SORT_STRING );
-            foreach ( $p['limitations'] as $identifier => $values )
-                $limitations[] = array( 'identifier' => (string)$identifier, 'values' => array_values( array_map( 'strval', $values ) ) );
-            $page[] = array( 'id' => $p['id'], 'role_id' => $p['role_id'],
-                             'role' => isset( $roles[$p['role_id']] ) ? (string)$roles[$p['role_id']] : '',
-                             'module' => $p['module'], 'function' => $p['function'], 'limitations' => $limitations );
-        }
-        $next = $offset + $limit < count( $matching ) ? $offset + $limit : null;
-        return array(
-            'roles'       => count( $roles ),
-            'total'       => count( $policies ),
-            'matching'    => count( $matching ),
-            'offset'      => $offset,
-            'limit'       => $limit,
-            'next_offset' => $next,
-            'module'      => $module,
-            'function'    => $function,
-            'modules'     => $moduleList,
-            'policies'    => $page,
-        );
     }
 
     /**
