@@ -81094,6 +81094,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>कुनै माइग्रेसन लेखिएन: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>खण्डहरूमा एउटा लामो रन</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>खाली फिल्डहरूले migration.ini [RunSettings] का सेटिङ राख्छन्।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>अधिकतम यति माइग्रेसन</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>यसपछि थप माइग्रेसन छैन (सेकेन्ड)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>माइग्रेसनहरूबीच विराम (सेकेन्ड)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>कम प्राथमिकता (1 देखि 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>लामो रनको फिल्ड 1 बाट सुरु हुने पूर्ण संख्या हो (विराम: 0 देखि 60 सेकेन्ड, प्राथमिकता: 1 देखि 19), वा खाली।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>यो %time मा आफैं बन्द हुन्छ।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>यसपछि आफैं बन्द गर्नुहोस् (मिनेट, ऐच्छिक)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>मिनेट 1 देखि 44640 (31 दिन) सम्मको पूर्ण संख्या हो, वा खाली।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

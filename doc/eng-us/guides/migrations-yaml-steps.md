@@ -45,6 +45,7 @@ listed on its generated reference page ([all step types](../examples/migration-s
 | [`sql`](../examples/migration-steps/sql.md) | statements of the engine, in the step or in files next to the migration | |
 | [`settings`](../examples/migration-steps/settings.md) | one INI file of `settings/override` or of a siteaccess, with a backup | |
 | [`graphql`](../examples/migration-steps/graphql.md) | a query or mutation of the GraphQL API, in process as the run's user | |
+| [`code_file`](../examples/migration-steps/code_file.md) | one code or design file below the allowed folders, with a backup and checksums ([Packages, deploys and long runs](migrations-packages-deploy-and-long-runs.md#code-and-design-files)) | create, update, ensure, delete |
 
 Every step goes through the kernel's own API, the way the administration does it: a new object is made by its class
 (`eZContentClass::instantiate()`), a new version by `createNewVersionIn()`, and both are published by the publish
@@ -439,6 +440,7 @@ A migration without `down:` can be undone by itself when each of its steps can:
 | `tag` create | the tag is removed again while no object uses it |
 | `url_alias` create | the address or wildcard is removed again while it leads where the step set it |
 | `trash` move (by `object:`) / restore | the object is restored where it was / moved to the trash again |
+| `code_file` (every mode) | the old file is put back, or the new one removed, while the file is still the one the migration wrote |
 | `reference`, `assert` | nothing to undo |
 
 Every other step (an update, an ensure, a delete, a move, a section assign ...) cannot know what was there before: give the migration a

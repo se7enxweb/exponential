@@ -81086,6 +81086,46 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>No migration was written: %reason</source>
         <translation>Ez da migraziorik idatzi: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Exekuzio luzea zatika</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Eremu hutsek migration.ini [RunSettings] fitxategiaren ezarpenak mantentzen dituzte.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Gehienez migrazio hauek</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ez egin migrazio gehiago honen ondoren (segundo)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Etena migrazioen artean (segundo)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Lehentasun txikiagoa (1etik 19ra)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Exekuzio luzearen eremua 1etik hasi eta zenbaki osoa da (etena: 0tik 60ra segundo, lehentasuna: 1etik 19ra), edo hutsik.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Berez ixten da %time orduan.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Itxi berez honen ondoren (minutu, aukerakoa)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minutuak 1etik 44640ra (31 egun) arteko zenbaki osoa dira, edo hutsik.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

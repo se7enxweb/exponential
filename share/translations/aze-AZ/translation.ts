@@ -81086,6 +81086,46 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>No migration was written: %reason</source>
         <translation>Heç bir miqrasiya yazılmadı: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Hissələrlə uzun icra</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Boş sahələr migration.ini [RunSettings] parametrlərini saxlayır.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ən çoxu bu qədər miqrasiya</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Bundan sonra miqrasiya yoxdur (saniyə)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Miqrasiyalar arasında fasilə (saniyə)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Aşağı prioritet (1-dən 19-a qədər)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Uzun icra sahəsi 1-dən başlayan tam ədəddir (fasilə: 0-dan 60 saniyəyə qədər, prioritet: 1-dən 19-a qədər) və ya boşdur.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>O, %time vaxtında özü bağlanır.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Bu müddətdən sonra özü bağlansın (dəqiqə, ixtiyari)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Dəqiqələr 1-dən 44640-a (31 gün) qədər tam ədəddir və ya boşdur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81116,6 +81116,46 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>No migration was written: %reason</source>
         <translation>Ma nkitbet l-ebda migrazzjoni: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Tħaddim twil f'partijiet</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>L-oqsma vojta jżommu s-settings ta' migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>L-aktar dan in-numru ta' migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ebda migrazzjoni oħra wara (sekondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Waqfa bejn il-migrazzjonijiet (sekondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prijorità aktar baxxa (1 sa 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Qasam ta' tħaddim twil huwa numru sħiħ minn 1 (il-waqfa: sekondi minn 0 sa 60, il-prijorità: 1 sa 19), jew vojt.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Jingħalaq waħdu fil-%time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Agħlaq waħdu wara (minuti, mhux obbligatorju)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Il-minuti huma numru sħiħ minn 1 sa 44640 (31 jum), jew vojt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81094,6 +81094,46 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>No migration was written: %reason</source>
         <translation>Ora ana migrasi sing ditulis: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Eksekusi dawa kanthi bertahap</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Kolom kosong njaga setelan migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Paling akeh migrasi semene</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ora ana migrasi maneh sawise (detik)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Jeda antarane migrasi (detik)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritas luwih endhek (1 nganti 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Kolom eksekusi dawa yaiku angka bulat wiwit 1 (jeda: detik saka 0 nganti 60, prioritas: 1 nganti 19), utawa kosong.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Nutup dhewe ing %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Nutup dhewe sawise (menit, opsional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Menit yaiku angka bulat saka 1 nganti 44640 (31 dina), utawa kosong.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

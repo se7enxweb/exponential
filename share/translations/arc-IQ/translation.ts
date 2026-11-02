@@ -81095,6 +81095,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ܠܐ ܐܬܟܬܒ ܫܘܢܝܐ: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ܥܒܕܐ ܐܪܝܟܐ ܒܦܘܠܓܐ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ܚܩܠܐ ܣܪܝܩܐ ܢܛܪܝܢ ܣܝܡܬܐ ܕmigration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ܐܬܪܘܬܐ ܠܐ ܝܬܝܪܐ ܡܢ ܗܠܝܢ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ܐܬܪܘܬܐ ܐܚܪܬܐ ܠܝܬ ܒܬܪ (ܪܦܦܐ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ܢܝܚܐ ܒܝܢܬ ܐܬܪܘܬܐ (ܪܦܦܐ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ܩܕܡܘܬܐ ܬܚܬܝܬܐ (1 ܥܕܡܐ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ܚܩܠܐ ܕܥܒܕܐ ܐܪܝܟܐ ܡܢܝܢܐ ܡܠܝܐ ܗܘ ܡܢ 1 (ܢܝܚܐ: ܪܦܦܐ ܡܢ 0 ܥܕܡܐ 60، ܩܕܡܘܬܐ: 1 ܥܕܡܐ 19)، ܐܘ ܣܪܝܩܐ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ܣܟܪ ܒܢܦܫܗ ܒ%time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ܣܟܪ ܒܢܦܫܗ ܒܬܪ (ܩܛܝܢܬܐ، ܨܒܘܬܢܝܬܐ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ܩܛܝܢܬܐ ܡܢܝܢܐ ܡܠܝܐ ܗܘ ܡܢ 1 ܥܕܡܐ 44640 (31 ܝܘܡܬܐ)، ܐܘ ܣܪܝܩܐ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

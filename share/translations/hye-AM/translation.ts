@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Ոչ մի միգրացիա չի գրվել՝ %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Երկար գործարկում մասերով</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Դատարկ դաշտերը պահում են migration.ini [RunSettings] կարգավորումները։</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Առավելագույնը այսքան միգրացիա</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Այլևս միգրացիա չկա (վայրկյան) հետո</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Դադար միգրացիաների միջև (վայրկյան)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ավելի ցածր առաջնահերթություն (1-ից 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Երկար գործարկման դաշտը 1-ից սկսվող ամբողջ թիվ է (դադար՝ 0-ից 60 վայրկյան, առաջնահերթություն՝ 1-ից 19) կամ դատարկ։</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Այն ինքնուրույն փակվում է %time-ին։</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Ինքնուրույն փակել (րոպե, ըստ ցանկության) հետո</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Րոպեները 1-ից 44640 (31 օր) ամբողջ թիվ են կամ դատարկ։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

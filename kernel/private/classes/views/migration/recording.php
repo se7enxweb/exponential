@@ -37,6 +37,9 @@ class Recording extends \Exponential\Runnable\ModuleView
         {
             $db = \eZDB::instance();
             $ready = \expMigrationRecording::tablesExist( $db ) === true;
+            // a window that has ended is stopped before the page shows it
+            if ( $ready )
+                \expMigrationRecording::closeEnded( $db );
         }
         catch ( \Throwable $e )
         {
@@ -52,9 +55,15 @@ class Recording extends \Exponential\Runnable\ModuleView
             {
                 $site = $http->hasPostVariable( 'StartSiteButton' );
                 $label = trim( preg_replace( '/\s+/', ' ', (string)$http->postVariable( 'RecordingLabel', '' ) ) );
-                $row = \expMigrationRecording::start( $db, $site ? \expMigrationRecording::MODE_SITE : \expMigrationRecording::MODE_SESSION,
-                                                      $userId, mb_substr( $label, 0, 255 ), $errors );
-                if ( $row )
+                $row = null;
+                $until = self::windowEnd($site ? (string)$http->postVariable( 'RecordingMinutes', '' ) : '', time() );
+                if ( $until === null )
+                    $errors[] = 'minutes';
+                else
+                    $row = \expMigrationRecording::start( $db, $site ? \expMigrationRecording::MODE_SITE : \expMigrationRecording::MODE_SESSION,
+                                                          $userId, mb_substr( $label, 0, 255 ), $errors, $until );
+                // a window of time: the page says when it closes by itself
+                if ( $row !== null )
                     $done = $site ? \ezpI18n::tr( 'design/admin/migration', 'The site-wide recording has started: every change of every user is recorded until you stop it.' )
                                   : \ezpI18n::tr( 'design/admin/migration', 'Recording has started: your changes are recorded until you stop it.' );
             }
@@ -242,10 +251,30 @@ class Recording extends \Exponential\Runnable\ModuleView
      * @param string $error
      * @return string
      */
+    /**
+     * The end of a site-wide window from the minutes of the form: 0 without, null when it is no number of minutes
+     * from 1 to 44640 (31 days). Pure.
+     *
+     * @param string $minutes
+     * @param int $now
+     * @return int|null
+     */
+    public static function windowEnd( $minutes, $now )
+    {
+        $minutes = trim( (string)$minutes );
+        if ( $minutes === '' )
+            return 0;
+        if ( !ctype_digit( $minutes ) || (int)$minutes < 1 || (int)$minutes * 60 > \expMigrationRecording::MAX_WINDOW )
+            return null;
+        return (int)$now + 60 * (int)$minutes;
+    }
+
     public static function errorText( $error )
     {
         switch ( $error )
         {
+            case 'minutes':
+                return \ezpI18n::tr( 'design/admin/migration', 'The minutes are a whole number from 1 to 44640 (31 days), or empty.' );
             case 'confirm':
                 return \ezpI18n::tr( 'design/admin/migration', 'Tick "Yes, discard this recording" first.' );
             case 'not yours':

@@ -82493,6 +82493,46 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>No migration was written: %reason</source>
         <translation>Nessuna migrazione è stata scritta: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Un'esecuzione lunga a parti</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>I campi vuoti mantengono le impostazioni di migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Al massimo questo numero di migrazioni</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nessuna ulteriore migrazione dopo (secondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa tra le migrazioni (secondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Priorità più bassa (da 1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un campo di esecuzione lunga è un numero intero a partire da 1 (la pausa: secondi da 0 a 60, la priorità: da 1 a 19), oppure vuoto.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Si chiude da sola alle %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Chiudi da sola dopo (minuti, facoltativo)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>I minuti sono un numero intero da 1 a 44640 (31 giorni), oppure vuoto.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

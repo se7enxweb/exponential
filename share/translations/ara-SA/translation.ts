@@ -81116,6 +81116,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>لم تتم كتابة أي ترحيل: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>تشغيل طويل على أجزاء</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>الحقول الفارغة تحتفظ بإعدادات migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>الحد الأقصى لعدد عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>لا ترحيل آخر بعد (ثوانٍ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>فاصل بين عمليات الترحيل (ثوانٍ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>أولوية أقل (من 1 إلى 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>حقل التشغيل الطويل عدد صحيح يبدأ من 1 (الفاصل: ثوانٍ من 0 إلى 60، الأولوية: من 1 إلى 19)، أو فارغ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>يُغلق تلقائيًا في %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>يُغلق تلقائيًا بعد (دقائق، اختياري)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>الدقائق عدد صحيح من 1 إلى 44640 (31 يومًا)، أو فارغ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

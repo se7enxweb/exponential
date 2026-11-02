@@ -81119,6 +81119,46 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>No migration was written: %reason</source>
         <translation>Nulla migratio scripta est: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Cursus longus in partibus</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Campi vacui occupant optiones migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ad summum tot migrationes</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nulla migratio ulterior post (secunda)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Intermissio inter migrationes (secunda)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritas inferior (1 ad 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Campus cursus longi est numerus integer ab 1 (intermissio: secunda a 0 ad 60, prioritas: 1 ad 19), aut vacuus.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Se ipsum claudit hora %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Se ipsum claudat post (minuta, optionale)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minuta sunt numerus integer ab 1 ad 44640 (31 dies), aut vacua.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

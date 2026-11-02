@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Миграци язйина яц: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Дикка лелор дакъошкахь</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Іаьвшина аренаша migration.ini [RunSettings] нисдарш лардо.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Уггар а дукха миграцеш</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Хьалха миграци дац тӀаьхьа (секундаш)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Миграцеш юкъара паузa (секундаш)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Лахара коьрта (1 1аьржа 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Дикка лелоран аре 1 хьалха терахь бу (пауза: 0 1аьржа 60 секунд, коьрта: 1 1аьржа 19) я іаьвшина.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Иза шех %time долуш юкъадоьллу.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Шех юкъадаккха тӀаьхьа (минуташ, ваьшта)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Минуташ 1 1аьржа 44640 (31 де) терахь бу, я іаьвшина.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

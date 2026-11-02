@@ -81084,6 +81084,46 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>No migration was written: %reason</source>
         <translation>Tu koçberî nehat nivîsandin: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Xebateke dirêj bi beşan</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Qadên vala mîhengên migration.ini [RunSettings] diparêzin.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Herî zêde ev qas koçberî</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Piştî (çirke) êdî koçberî tune</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Navbera koçberiyan (çirke)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Girîngiya nizmtir (1 heta 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Qada xebata dirêj hejmareke tam e ji 1 û pê ve (navber: çirke ji 0 heta 60, girîngî: 1 heta 19), an vala.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Wê di %time de bi xwe bê girtin.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Piştî (deqe, bijarte) bi xwe bigire</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Deqe hejmareke tam e ji 1 heta 44640 (31 roj), an vala.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

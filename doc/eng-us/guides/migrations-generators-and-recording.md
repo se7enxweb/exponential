@@ -68,7 +68,8 @@ A migration run is not recorded: its changes are a migration already.
 | **site-wide** | every change of every user and of the console | a holder of `migration/edit` in Setup > Migrations (asks ["Verify it's you"](verify-its-you.md)); `exp:migration:record:start --site-wide` | one |
 
 Use a session recording to capture what you configure yourself. Use the site-wide window when several people prepare
-a release together on a staging installation. A change made while both run is kept by both.
+a release together on a staging installation. A change made while both run is kept by both. Either can be opened for
+a window of time that closes by itself (`--for=<minutes>`, `--until=<time>`; [A recording window of time](migrations-packages-deploy-and-long-runs.md#a-recording-window-of-time)).
 
 While the site-wide window is open, every user of the administration sees the "Recording…" bar, because their
 changes are recorded too; only holders of `migration/edit` can close it.

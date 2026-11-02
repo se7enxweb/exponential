@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ڪا به لڏپلاڻ نه لکي وئي: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>حصن ۾ هڪ ڊگهو رن</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>خالي خانا migration.ini [RunSettings] جون سيٽنگون رکن ٿا.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>وڌ ۾ وڌ ايترا مائگريشن</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>هن کان پوءِ وڌيڪ مائگريشن ناهي (سيڪنڊ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>مائگريشنن وچ ۾ وقفو (سيڪنڊ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>گهٽ ترجيح (1 کان 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ڊگهي رن جو خانو 1 کان شروع ٿيندڙ پورو عدد آهي (وقفو: 0 کان 60 سيڪنڊ، ترجيح: 1 کان 19)، يا خالي.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>اهو %time تي پاڻ بند ٿئي ٿو.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>هن کان پوءِ پاڻ بند ڪريو (منٽ، اختياري)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>منٽ 1 کان 44640 (31 ڏينهن) تائين پورو عدد آهن، يا خالي.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

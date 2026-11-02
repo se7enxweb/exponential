@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ရွှေ့ပြောင်းမှု မရေးရပါ- %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>အပိုင်းလိုက် ကြာရှည်ပြေးခြင်း</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ကွက်လပ်များသည် migration.ini [RunSettings] ၏ ဆက်တင်များကို ထိန်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ပြောင်းရွှေ့မှု ဤအရေအတွက်အထိသာ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ယင်းနောက် ထပ်ပြောင်းရွှေ့မှု မရှိ (စက္ကန့်)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ပြောင်းရွှေ့မှုများကြား ခေတ္တရပ်ခြင်း (စက္ကန့်)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ပိုနိမ့်သော ဦးစားပေးမှု (1 မှ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ကြာရှည်ပြေးခြင်းအကွက်သည် 1 မှစသော ကိန်းပြည့်ဖြစ်သည် (ရပ်ခြင်း၊ စက္ကန့် 0 မှ 60၊ ဦးစားပေး 1 မှ 19) သို့မဟုတ် ကွက်လပ်။</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>၎င်းသည် %time တွင် ကိုယ်တိုင်ပိတ်သည်။</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ယင်းနောက် ကိုယ်တိုင်ပိတ်ရန် (မိနစ်၊ ရွေးချယ်နိုင်)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>မိနစ်သည် 1 မှ 44640 (၃၁ ရက်) အထိ ကိန်းပြည့်ဖြစ်သည် သို့မဟုတ် ကွက်လပ်။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

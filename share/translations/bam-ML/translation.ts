@@ -81086,6 +81086,46 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>No migration was written: %reason</source>
         <translation>Migration si ma sɛbɛn: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Baara jan min tilalen bɛ cɛ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Yɔrɔ lankolonnen na migration.ini [RunSettings] sigidaw lakana.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migrasiyɔn caman fɔlɔ ka dɔgɔ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migrasiyɔn wɛrɛ tɛ kɔ (sekɔndi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Lafiɲɛ migrasiyɔnw cɛ (sekɔndi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Kɔrɔbɔ ɲɛnabɔ (1 ka se 19 ma)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Baara jan yɔrɔ ye jatiw bɛnnen ye ka bɔ 1 la (lafiɲɛ: sekɔndi 0 ka se 60 ma, ɲɛnabɔ: 1 ka se 19 ma), walima lankolon.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>A b'a yɛrɛ datugu %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>A yɛrɛ datugu kɔ (miniti, sugandi)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minitiw ye jatiw bɛnnen ye 1 ka se 44640 ma (don 31), walima lankolon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81086,6 +81086,46 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>No migration was written: %reason</source>
         <translation>Cap de migracion es pas estada escricha : %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Una execucion longa en parts</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Los camps voids gardan los reglatges de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Al mai aquel nombre de migracions</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Pas mai de migracion aprèp (segondas)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa entre las migracions (segondas)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritat mai bassa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un camp d'execucion longa es un nombre entièr a partir de 1 (la pausa : segondas de 0 a 60, la prioritat : 1 a 19), o void.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Se barra tot sol a las %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Barrar tot sol aprèp (minutas, facultatiu)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Las minutas son un nombre entièr de 1 a 44640 (31 jorns), o void.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

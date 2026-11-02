@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>მიგრაცია არ ჩაწერილა: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ხანგრძლივი გაშვება ნაწილებად</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ცარიელი ველები ინარჩუნებს migration.ini [RunSettings] პარამეტრებს.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>მაქსიმუმ ამდენი მიგრაცია</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>აღარ დაიწყოს მიგრაცია ამის შემდეგ (წამი)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>პაუზა მიგრაციებს შორის (წამი)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>დაბალი პრიორიტეტი (1-დან 19-მდე)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ხანგრძლივი გაშვების ველი არის მთელი რიცხვი 1-დან (პაუზა: წამები 0-დან 60-მდე, პრიორიტეტი: 1-დან 19-მდე) ან ცარიელი.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ის თავისით იხურება %time-ზე.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>თავისით დაიხუროს ამის შემდეგ (წუთი, არასავალდებულო)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>წუთები არის მთელი რიცხვი 1-დან 44640-მდე (31 დღე) ან ცარიელი.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

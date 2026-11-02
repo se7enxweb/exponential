@@ -81086,6 +81086,46 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>No migration was written: %reason</source>
         <translation>ʻAʻohe neʻe i kākau ʻia: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>He holo lōʻihi ma nā ʻāpana</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Mālama nā kahua hakahaka i nā hoʻonohonoho o migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ʻAʻole ʻoi aku ma mua o kēia nui o nā neʻe</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ʻAʻohe neʻe hou ma hope o (kekona)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Hoʻomaha ma waena o nā neʻe (kekona)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ka mea koʻikoʻi haʻahaʻa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>He helu piha ke kahua holo lōʻihi mai 1 (ka hoʻomaha: kekona mai 0 a 60, ka mea koʻikoʻi: 1 a 19), a i ʻole hakahaka.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Pani ʻo ia iā ia iho i ka %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Pani iā ia iho ma hope o (minuke, koho)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>He helu piha nā minuke mai 1 a 44640 (31 lā), a i ʻole hakahaka.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

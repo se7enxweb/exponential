@@ -81116,6 +81116,46 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>No migration was written: %reason</source>
         <translation>Migraatiota ei kirjoitettu: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Pitkä ajo osissa</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tyhjät kentät säilyttävät tiedoston migration.ini [RunSettings] asetukset.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Enintään näin monta migraatiota</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ei enää migraatioita tämän jälkeen (sekuntia)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Tauko migraatioiden välillä (sekuntia)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Alempi prioriteetti (1–19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Pitkän ajon kenttä on kokonaisluku alkaen 1:stä (tauko: sekuntia 0–60, prioriteetti: 1–19) tai tyhjä.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Se sulkeutuu itsestään kello %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Sulkeudu itsestään tämän jälkeen (minuuttia, valinnainen)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minuutit ovat kokonaisluku väliltä 1–44640 (31 päivää) tai tyhjä.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

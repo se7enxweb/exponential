@@ -81086,6 +81086,46 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>No migration was written: %reason</source>
         <translation>Hapana kutama kwakanyorwa: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Kumhanya kurefu mumagumbo</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Minda isina chinhu inochengeta marongero emigration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Kazhinji migration dzinoita zvizvi</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Hapana migration imwe shure kwe (masekondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Zororo pakati pemigration (masekondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Kukosha kwakaderera (1 kusvika 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Munda wekumhanya kurefu inhamba yakazara kubva pa1 (zororo: masekondi kubva pa0 kusvika 60, kukosha: 1 kusvika 19), kana isina chinhu.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Inozvivhara pa%time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Zvivhare shure kwe (maminitsi, zvinoda)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Maminitsi inhamba yakazara kubva pa1 kusvika 44640 (mazuva 31), kana isina chinhu.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

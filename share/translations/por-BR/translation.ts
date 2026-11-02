@@ -83082,6 +83082,46 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>No migration was written: %reason</source>
         <translation>Nenhuma migração foi escrita: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Uma execução longa em partes</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Campos vazios mantêm as configurações de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>No máximo esta quantidade de migrações</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nenhuma migração adicional após (segundos)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa entre migrações (segundos)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioridade mais baixa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Um campo de execução longa é um número inteiro a partir de 1 (a pausa: segundos de 0 a 60, a prioridade: 1 a 19), ou vazio.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Fecha sozinha às %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Fechar sozinha após (minutos, opcional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Os minutos são um número inteiro de 1 a 44640 (31 dias), ou vazio.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

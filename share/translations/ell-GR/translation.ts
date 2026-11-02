@@ -81116,6 +81116,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Δεν γράφτηκε καμία μετάβαση: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Μια μεγάλη εκτέλεση σε μέρη</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Τα κενά πεδία διατηρούν τις ρυθμίσεις του migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Το πολύ τόσες μεταφορές</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Καμία άλλη μεταφορά μετά από (δευτερόλεπτα)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Παύση μεταξύ μεταφορών (δευτερόλεπτα)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Χαμηλότερη προτεραιότητα (1 έως 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ένα πεδίο μεγάλης εκτέλεσης είναι ακέραιος αριθμός από 1 (η παύση: δευτερόλεπτα από 0 έως 60, η προτεραιότητα: 1 έως 19) ή κενό.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Κλείνει μόνο του στις %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Αυτόματο κλείσιμο μετά από (λεπτά, προαιρετικό)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Τα λεπτά είναι ακέραιος αριθμός από 1 έως 44640 (31 ημέρες) ή κενό.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

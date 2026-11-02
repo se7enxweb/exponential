@@ -81086,6 +81086,46 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>No migration was written: %reason</source>
         <translation>Wɔankyerɛw migration biara: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Nkɔso tenten a ɛkyea mu nkyem</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ahyɛdeɛ a ɛda mpan no gyina migration.ini [RunSettings] so.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migration dodoɔ a ɛkorɔn paa</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migration foforɔ biara nni hɔ wɔ (sɛkɛnd) akyi</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ahomegye wɔ migration ntam (sɛkɛnd)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Nneɛma a ɛho hia kakra (1 kɔsi 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ahyɛdeɛ a ɛyɛ tenten no yɛ ɔdan a ɛyɛ pɛ firi 1 (ahomegye: sɛkɛnd 0 kɔsi 60, nneɛma a ɛho hia: 1 kɔsi 19), anaa ɛda mpan.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ɛno ankasa bɛto mu wɔ %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>To mu ankasa wɔ (simma, ɛnyɛ dwuma) akyi</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Simma no yɛ ɔdan a ɛyɛ pɛ firi 1 kɔsi 44640 (nnansa 31), anaa ɛda mpan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

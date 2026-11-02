@@ -81086,6 +81086,46 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>No migration was written: %reason</source>
         <translation>Walang naisulat na migration: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Isang mahabang takbo sa mga bahagi</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Pinananatili ng mga walang laman na field ang mga setting ng migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Hanggang ganito karaming migration</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Wala nang migration pagkatapos ng (segundo)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pahinga sa pagitan ng mga migration (segundo)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Mas mababang priyoridad (1 hanggang 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ang field ng mahabang takbo ay buong bilang mula 1 (ang pahinga: segundo mula 0 hanggang 60, ang priyoridad: 1 hanggang 19), o walang laman.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Magsasara ito nang kusa sa %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Magsara nang kusa pagkatapos ng (minuto, opsyonal)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Ang mga minuto ay buong bilang mula 1 hanggang 44640 (31 araw), o walang laman.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

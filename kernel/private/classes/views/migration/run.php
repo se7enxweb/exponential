@@ -27,7 +27,7 @@ class Run extends \Exponential\Runnable\ModuleView
         $messages = array();
         $problem = '';
         $post = $isPost ? $_POST : array();
-        $form = array( 'chosen' => null, 'flags' => array(), 'force' => false, 'reason' => '' );
+        $form = array( 'chosen' => null, 'flags' => array(), 'force' => false, 'reason' => '', 'long' => array_fill_keys( \expMigrationAdmin::LONG_RUN_FIELDS, '' ) );
 
         try
         {
@@ -70,15 +70,19 @@ class Run extends \Exponential\Runnable\ModuleView
             $options = \expMigrationAdmin::runOptions( $post, $pendingIds, $errors );
             $form = array( 'chosen' => isset( $post['MigrationOnly'] ) ? array_map( 'strval', (array)$post['MigrationOnly'] ) : ( empty( $post['MigrationChoice'] ) ? $pendingIds : array() ),
                            'flags' => isset( $post['RunFlag'] ) ? array_keys( array_filter( (array)$post['RunFlag'] ) ) : array(),
-                           'force' => !empty( $post['ForceChanged'] ), 'reason' => isset( $post['ForceReason'] ) ? (string)$post['ForceReason'] : '' );
+                           'force' => !empty( $post['ForceChanged'] ), 'reason' => isset( $post['ForceReason'] ) ? (string)$post['ForceReason'] : '',
+                           'long' => $form['long'] );
+            foreach ( \expMigrationAdmin::LONG_RUN_FIELDS as $name )
+                if ( isset( $post['LongRun'][$name] ) && is_scalar( $post['LongRun'][$name] ) )
+                    $form['long'][$name] = mb_substr( trim( (string)$post['LongRun'][$name] ), 0, 20 );
             if ( empty( $post['ConfirmRun'] ) )
                 $errors[] = 'confirm';
             if ( !$pending && !$changed )
                 $errors[] = 'nothing';
             if ( $changed && empty( $options['force'] ) && !in_array( 'reason', $errors, true ) )
                 $errors[] = 'changed';
-            foreach ( $errors as $code )
-                $messages[] = array( 'kind' => 'bad', 'text' => self::formError( $code ) );
+            foreach ( array_unique( array_map( array( __CLASS__, 'formError' ), $errors ) ) as $text )
+                $messages[] = array( 'kind' => 'bad', 'text' => $text );
             if ( !$errors )
             {
                 $started = \expMigrationJob::start( 'migrate', $options, $login );
@@ -96,6 +100,8 @@ class Run extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'changed', $changed );
         $tpl->setVariable( 'form', $form );
         $tpl->setVariable( 'flags', \expMigrationAdmin::RUN_FLAGS );
+        $tpl->setVariable( 'long_run', \expMigrationAdmin::LONG_RUN_FIELDS );
+        $tpl->setVariable( 'long_run_defaults', \expMigrationAdmin::longRunDefaults() );
         $tpl->setVariable( 'messages', $messages );
         $tpl->setVariable( 'problem', $problem );
         $tpl->setVariable( 'job', \expMigrationJob::running() );
@@ -135,6 +141,11 @@ class Run extends \Exponential\Runnable\ModuleView
                 return \ezpI18n::tr( 'design/admin/migration', 'Give the reason why the changed migrations are accepted.' );
             case 'reason-length':
                 return \ezpI18n::tr( 'design/admin/migration', 'The reason is at most 500 characters.' );
+            case 'max-migrations':
+            case 'max-time':
+            case 'throttle':
+            case 'nice':
+                return \ezpI18n::tr( 'design/admin/migration', 'A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.' );
         }
         return \ezpI18n::tr( 'design/admin/migration', 'The form could not be read.' );
     }

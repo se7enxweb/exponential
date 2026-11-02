@@ -82389,6 +82389,46 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>No migration was written: %reason</source>
         <translation>Ingen migrering skrevs: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>En lång körning i delar</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tomma fält behåller inställningarna i migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Högst så många migreringar</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Inga fler migreringar efter (sekunder)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Paus mellan migreringar (sekunder)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Lägre prioritet (1 till 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ett fält för lång körning är ett heltal från 1 (pausen: sekunder från 0 till 60, prioriteten: 1 till 19) eller tomt.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Det stängs av sig självt kl. %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Stäng av sig självt efter (minuter, valfritt)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minuterna är ett heltal från 1 till 44640 (31 dagar) eller tomt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

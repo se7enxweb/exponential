@@ -81084,6 +81084,46 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>No migration was written: %reason</source>
         <translation>Ba a rubuta wata ƙaura ba: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Gudu mai tsawo a sassa</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Filayen da ba komai suna riƙe saitunan migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Mafi yawa waɗannan migrations</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Babu wani migration bayan (daƙiƙa)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Hutu tsakanin migrations (daƙiƙa)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ƙaramin fifiko (1 zuwa 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Filin gudu mai tsawo cikakken lamba ne daga 1 (hutun: daƙiƙa daga 0 zuwa 60, fifikon: 1 zuwa 19), ko babu komai.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Yana rufe kansa da %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Rufe kansa bayan (mintuna, na zaɓi)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Mintunan cikakken lamba ne daga 1 zuwa 44640 (kwanaki 31), ko babu komai.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

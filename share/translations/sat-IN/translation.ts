@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>ᱡᱟᱦᱟᱸᱱ ᱵᱚᱫᱚᱞ ᱵᱟᱝ ᱚᱞ ᱮᱱᱟ: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>ᱫᱚᱦᱲᱟ ᱫᱚᱦᱲᱟ ᱨᱮ ᱢᱤᱫ ᱥᱟᱸᱜᱮᱱ ᱨᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ᱠᱷᱟᱞᱤ ᱠᱷᱮᱛ ᱠᱚ migration.ini [RunSettings] ᱨᱮᱭᱟᱜ ᱥᱮᱴᱤᱝ ᱠᱚ ᱪᱷᱚᱫᱚ ᱠᱚᱣᱟ ᱾</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ᱥᱟᱱᱟᱢ ᱥᱟᱱᱟᱢ ᱟᱹᱭᱩᱨ ᱱᱚᱶᱟ ᱞᱮᱠᱟ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱟᱞᱟᱜ ᱨᱮ ᱮᱴᱟᱜ ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱵᱟᱝ (ᱥᱮᱠᱮᱱᱰ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ᱢᱟᱭᱜᱨᱮᱥᱚᱱ ᱠᱚ ᱛᱟᱞᱟ ᱨᱮ ᱛᱟᱞᱟ (ᱥᱮᱠᱮᱱᱰ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ᱞᱟᱛᱟᱨ ᱵᱷᱚᱨᱚᱥᱟ (1 ᱠᱷᱚᱱ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ᱥᱟᱸᱜᱮᱱ ᱨᱟᱱ ᱠᱷᱮᱛ ᱢᱮᱱ 1 ᱠᱷᱚᱱ ᱯᱩᱨᱟᱹ ᱮᱞ (ᱛᱟᱞᱟ: 0 ᱠᱷᱚᱱ 60 ᱥᱮᱠᱮᱱᱰ, ᱵᱷᱚᱨᱚᱥᱟ: 1 ᱠᱷᱚᱱ 19) ᱵᱟᱝᱠᱷᱟᱱ ᱠᱷᱟᱞᱤ ᱾</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ᱱᱚᱶᱟ %time ᱨᱮ ᱡᱤᱭᱚᱜ ᱵᱚᱸᱫᱚ ᱞᱮᱱᱟ ᱾</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱟᱞᱟᱜ ᱡᱤᱭᱚᱜ ᱵᱚᱸᱫᱚ ᱢᱮ (ᱢᱤᱱᱤᱴ, ᱨᱮᱭᱟᱜ ᱵᱟᱝ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ᱢᱤᱱᱤᱴ ᱠᱚ 1 ᱠᱷᱚᱱ 44640 (31 ᱦᱤᱸᱥ) ᱯᱩᱨᱟᱹ ᱮᱞ ᱠᱚ, ᱵᱟᱝᱠᱷᱟᱱ ᱠᱷᱟᱞᱤ ᱾</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

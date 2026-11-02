@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>කිසිදු සංක්‍රමණයක් ලියා නැත: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>කොටස් වශයෙන් දිගු ධාවනයක්</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>හිස් ක්ෂේත්‍ර migration.ini [RunSettings] හි සැකසුම් රඳවා ගනී.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>උපරිම වශයෙන් මෙතරම් සංක්‍රමණ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>මෙයට පසු තවත් සංක්‍රමණයක් නැත (තත්පර)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>සංක්‍රමණ අතර විරාමය (තත්පර)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>පහළ ප්‍රමුඛතාව (1 සිට 19 දක්වා)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>දිගු ධාවන ක්ෂේත්‍රය 1 සිට ආරම්භ වන පූර්ණ සංඛ්‍යාවකි (විරාමය: තත්පර 0 සිට 60 දක්වා, ප්‍රමුඛතාව: 1 සිට 19 දක්වා), නැතහොත් හිස්.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>එය %time දී ස්වයං වසා දමයි.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>මෙයට පසු ස්වයං වසන්න (මිනිත්තු, විකල්ප)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>මිනිත්තු 1 සිට 44640 (දින 31) දක්වා පූර්ණ සංඛ්‍යාවකි, නැතහොත් හිස්.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

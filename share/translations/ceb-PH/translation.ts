@@ -81086,6 +81086,46 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>No migration was written: %reason</source>
         <translation>Walay migration nga nasulat: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Taas nga dagan sa mga bahin</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ang mga walay sulod nga field magpabilin sa mga setting sa migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Hangtod kini kadaghang migrasyon</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Wala nay laing migrasyon human sa (segundo)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Paghunong tali sa mga migrasyon (segundo)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Mas ubos nga prayoridad (1 hangtod 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ang field sa taas nga dagan usa ka tibuok nga numero gikan sa 1 (ang paghunong: segundo gikan sa 0 hangtod 60, ang prayoridad: 1 hangtod 19), o walay sulod.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Kini mosira sa kaugalingon sa %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Sirad-an sa kaugalingon human sa (minuto, opsyonal)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Ang mga minuto usa ka tibuok nga numero gikan sa 1 hangtod 44640 (31 ka adlaw), o walay sulod.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

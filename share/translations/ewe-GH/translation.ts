@@ -81086,6 +81086,46 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>No migration was written: %reason</source>
         <translation>Womeŋlɔ migration aɖeke o: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Dɔwɔɖoɖo didi si wokaka ɖe akpa aɖewo me</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Teƒe gbadzɛwo me ɖoɖowo le migration.ini [RunSettings] me ahe.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migration sɔ gbɔ eve aɖe pɛ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migration bubu aɖeke meli o le (sekɛnd) megbe</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ɣeyiɣi dzudzɔ le migration dome (sekɛnd)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Vevienyenye sue (1 va ɖo 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Dɔwɔɖoɖo didi ƒe teƒea nye ɖokuiwo si dzi nuwo dzi tso 1 (dzudzɔ: sekɛnd 0 va ɖo 60, vevienyenye: 1 va ɖo 19), alo gbadzɛ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Eɖokui tue le %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Tu ɖokui le (miniti, ɖe wò ɖokui nu) megbe</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minitiwo nye ɖokuiwo si dzi nuwo tso 1 va ɖo 44640 (ŋkeke 31), alo gbadzɛ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

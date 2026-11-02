@@ -81091,6 +81091,46 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>No migration was written: %reason</source>
         <translation>Hiçbir taşıma yazılmadı: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Parçalar halinde uzun bir çalıştırma</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Boş alanlar migration.ini [RunSettings] ayarlarını korur.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>En fazla bu kadar geçiş</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Şundan sonra başka geçiş yok (saniye)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Geçişler arasında duraklama (saniye)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Daha düşük öncelik (1 ile 19 arası)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Uzun çalıştırma alanı 1'den başlayan bir tam sayıdır (duraklama: 0 ile 60 saniye arası, öncelik: 1 ile 19 arası) ya da boştur.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>%time saatinde kendiliğinden kapanır.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Şundan sonra kendiliğinden kapan (dakika, isteğe bağlı)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Dakika, 1 ile 44640 (31 gün) arasında bir tam sayıdır ya da boştur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

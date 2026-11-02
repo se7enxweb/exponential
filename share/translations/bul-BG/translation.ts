@@ -81116,6 +81116,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Не е записана миграция: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Дълго изпълнение на части</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Празните полета запазват настройките на migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Най-много толкова миграции</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Повече миграции след (секунди)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Пауза между миграциите (секунди)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>По-нисък приоритет (от 1 до 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Поле за дълго изпълнение е цяло число от 1 (паузата: секунди от 0 до 60, приоритетът: от 1 до 19) или празно.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Затваря се сам в %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Затваряне само след (минути, по избор)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Минутите са цяло число от 1 до 44640 (31 дни) или празно.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

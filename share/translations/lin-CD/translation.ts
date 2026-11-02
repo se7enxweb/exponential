@@ -81086,6 +81086,46 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>No migration was written: %reason</source>
         <translation>Bobongoli moko te ekomamaki: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Mosala molai na biteni</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Bisika ya pamba ebombi bibongisi bya migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Migration ebele mingi ndenge oyo</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migration mosusu te nsima ya (sekonde)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Kopema kati na migration (sekonde)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Libosoliso moke (1 tii 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Esika ya mosala molai ezali motango mobimba uta na 1 (kopema: sekonde uta na 0 tii 60, libosoliso: 1 tii 19), to pamba.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Etiami yango moko na %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Tia yango moko nsima ya (miniti, soki olingi)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Miniti ezali motango mobimba uta na 1 tii 44640 (mikolo 31), to pamba.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

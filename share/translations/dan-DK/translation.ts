@@ -81766,6 +81766,46 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>No migration was written: %reason</source>
         <translation>Ingen migrering blev skrevet: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>En lang kørsel i dele</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tomme felter beholder indstillingerne i migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Højst så mange migreringer</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ingen yderligere migrering efter (sekunder)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pause mellem migreringer (sekunder)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Lavere prioritet (1 til 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Et felt for lang kørsel er et helt tal fra 1 (pausen: sekunder fra 0 til 60, prioriteten: 1 til 19) eller tomt.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Det lukker af sig selv kl. %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Luk af sig selv efter (minutter, valgfrit)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minutterne er et helt tal fra 1 til 44640 (31 dage) eller tomt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

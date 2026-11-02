@@ -82311,6 +82311,46 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>No migration was written: %reason</source>
         <translation>Er is geen migratie geschreven: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Een lange run in delen</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Lege velden behouden de instellingen van migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Hooguit zoveel migraties</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Geen verdere migratie na (seconden)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauze tussen migraties (seconden)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Lagere prioriteit (1 tot 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Een veld voor de lange run is een geheel getal vanaf 1 (de pauze: seconden van 0 tot 60, de prioriteit: 1 tot 19), of leeg.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Het sluit zichzelf om %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Sluit zichzelf na (minuten, optioneel)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>De minuten zijn een geheel getal van 1 tot 44640 (31 dagen), of leeg.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

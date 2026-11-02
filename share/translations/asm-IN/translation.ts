@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>কোনো মাইগ্ৰেচন লিখা নহ'ল: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>খণ্ডে খণ্ডে এটা দীঘলীয়া ৰান</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>খালী ক্ষেত্ৰই migration.ini [RunSettings]-ৰ ছেটিংছ ৰাখে।</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>সৰ্বোচ্চ ইমানখিনি মাইগ্ৰেচন</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ইয়াৰ পাছত আন মাইগ্ৰেচন নহয় (ছেকেণ্ড)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>মাইগ্ৰেচনৰ মাজত বিৰতি (ছেকেণ্ড)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>কম অগ্ৰাধিকাৰ (1 ৰ পৰা 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>দীঘলীয়া ৰানৰ ক্ষেত্ৰ 1 ৰ পৰা এটা পূৰ্ণ সংখ্যা (বিৰতি: 0 ৰ পৰা 60 ছেকেণ্ড, অগ্ৰাধিকাৰ: 1 ৰ পৰা 19), বা খালী।</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ই %time ত নিজেই বন্ধ হ'ব।</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ইমান পাছত নিজেই বন্ধ হওক (মিনিট, ঐচ্ছিক)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>মিনিট 1 ৰ পৰা 44640 (31 দিন) লৈ এটা পূৰ্ণ সংখ্যা, বা খালী।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -81084,6 +81084,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>未写入迁移:%reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>分段长时间运行</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>留空的字段保留 migration.ini [RunSettings] 中的设置。</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>最多这么多个迁移</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>在此之后不再启动迁移（秒）</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>迁移之间的暂停（秒）</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>较低优先级（1 到 19）</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>长时间运行字段是从 1 开始的整数（暂停：0 到 60 秒，优先级：1 到 19），或留空。</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>它将在 %time 自动关闭。</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>在此之后自动关闭（分钟，可选）</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>分钟数为 1 到 44640（31 天）的整数，或留空。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

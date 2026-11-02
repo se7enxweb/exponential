@@ -81116,6 +81116,46 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>No migration was written: %reason</source>
         <translation>Níor scríobhadh imirce ar bith: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Rith fada i gcodanna</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Coinníonn réimsí folmha socruithe migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>An líon seo imirce ar a mhéad</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Gan imirce eile tar éis (soicindí)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Sos idir imirce (soicindí)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Tosaíocht níos ísle (1 go 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Is slánuimhir ó 1 í réimse rith fada (an sos: soicindí ó 0 go 60, an tosaíocht: 1 go 19), nó folamh.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Dúnann sé de féin ag %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Dún de féin tar éis (nóiméad, roghnach)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Is slánuimhir ó 1 go 44640 (31 lá) iad na nóiméid, nó folamh.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

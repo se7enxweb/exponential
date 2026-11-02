@@ -81116,6 +81116,46 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>No migration was written: %reason</source>
         <translation>Nuk u shkrua asnjë migrim: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Një ekzekutim i gjatë pjesë-pjesë</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Fushat bosh ruajnë cilësimet e migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Më së shumti kaq migrime</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Asnjë migrim tjetër pas (sekondash)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauzë ndërmjet migrimeve (sekonda)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Përparësi më e ulët (1 deri në 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Një fushë e ekzekutimit të gjatë është numër i plotë nga 1 (pauza: sekonda nga 0 deri në 60, përparësia: 1 deri në 19), ose bosh.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Mbyllet vetë në %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Mbylle vetë pas (minutash, opsionale)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minutat janë numër i plotë nga 1 deri në 44640 (31 ditë), ose bosh.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

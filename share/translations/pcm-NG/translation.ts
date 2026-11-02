@@ -81094,6 +81094,46 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>No migration was written: %reason</source>
         <translation>No migration write: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Long run for parts</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Empty fields go keep di settings for migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Na only dis many migrations</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>No more migration after (seconds)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Rest between migrations (seconds)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Lower priority (1 to 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Long-run field na whole number from 1 (di rest: seconds from 0 to 60, di priority: 1 to 19), or e dey empty.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>E go close by itself for %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Close by itself after (minutes, if you want)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Di minutes na whole number from 1 to 44640 (31 days), or e dey empty.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

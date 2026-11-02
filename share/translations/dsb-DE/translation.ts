@@ -81116,6 +81116,46 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>No migration was written: %reason</source>
         <translation>Žedna migracija njejo se napisała: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Dłujke běgnjenje we źělach</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Prozne pola wobchowaju nastajenja z migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Maksimalnje tak wjele migracijow</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Žedne dalšne migracije pó (sekundach)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pawza mjazy migracijami (sekundy)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Niskša priorita (1 až 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Pole dłujkego běgnjenja jo cełe licba wót 1 (pawza: sekundy wót 0 do 60, priorita: 1 až 19) abo prozne.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zacynja se samo ku %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Samo zacyniś pó (minutach, opcionalnje)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minuty su cełe licba wót 1 do 44640 (31 dnjow) abo prozne.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

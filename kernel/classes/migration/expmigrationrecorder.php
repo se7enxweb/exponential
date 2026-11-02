@@ -222,10 +222,38 @@ class expMigrationRecorder
         return self::$source ?: new expMigrationRecordingResolver();
     }
 
-    /** @return array[] the running recordings, from the file */
+    /**
+     * The running recordings, from the file. A window that has ended is stopped first (one query, only then).
+     *
+     * @return array[]
+     */
     protected static function readActive()
     {
-        return expMigrationRecording::active();
+        $active = expMigrationRecording::active();
+        $now = time();
+        foreach ( $active as $r )
+        {
+            if ( !expMigrationRecording::ended( $r, $now ) )
+                continue;
+            try
+            {
+                self::$inside++;
+                expMigrationRecording::closeEnded( eZDB::instance(), $now );
+            }
+            catch ( Throwable $e )
+            {
+                if ( class_exists( 'eZDebug' ) )
+                    eZDebug::writeNotice( 'A recording whose window ended could not be stopped: ' . $e->getMessage(), __METHOD__ );
+            }
+            finally
+            {
+                self::$inside--;
+            }
+            return array_values( array_filter( expMigrationRecording::active(), function ( $one ) use ( $now ) {
+                return !expMigrationRecording::ended( $one, $now );
+            } ) );
+        }
+        return $active;
     }
 
     /** @return int the user making the change */

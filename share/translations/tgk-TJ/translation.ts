@@ -81086,6 +81086,46 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>Ягон муҳоҷират навишта нашуд: %reason</translation>
     </message>
+    <message>
+        <source>A long run in parts</source>
+        <translation>Иҷрои дароз бо қисмҳо</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Майдонҳои холӣ танзимоти migration.ini [RunSettings]-ро нигоҳ медоранд.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ҳадди аксар ин қадар муҳоҷират</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Баъд аз ин муҳоҷирати дигар нест (сония)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Танаффус байни муҳоҷиратҳо (сония)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Афзалияти пасттар (аз 1 то 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Майдони иҷрои дароз адади бутун аз 1 аст (танаффус: сония аз 0 то 60, афзалият: аз 1 то 19) ё холӣ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Он дар %time худаш баста мешавад.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Баъд аз ин худаш баста шавад (дақиқа, ихтиёрӣ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Дақиқаҳо адади бутун аз 1 то 44640 (31 рӯз) ё холӣ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
