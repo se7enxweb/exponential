@@ -909,7 +909,7 @@ e924bd63036012dc73222cda54185c3c  design/admin/templates/staticpublish/parts/rep
 2ad89b6474369624bef08c8d9296122c  design/admin/templates/staticpublish/parts/run_state.tpl
 8b19eb2c5eb23a5840c30533f54819ed  design/admin/templates/staticpublish/parts/tabs.tpl
 10b4a4217ea8cbb6c1e16e30a5189c7f  design/admin/templates/staticpublish/preview.tpl
-276f8afc32d1f4f7d04a7b7bfd94f3b3  design/admin/templates/staticpublish/target.tpl
+8dba95efcc65dd2cd08774018d4b0ff6  design/admin/templates/staticpublish/target.tpl
 afe77d6ca1128176cf8b6899858c0049  design/admin/templates/tabs/audit/node.tpl
 a28d02058dcaceb3f0bd665a92aff6b9  design/admin/templates/tabs/audit/node_header.tpl
 e6208f1e6735de4da01e80e1b20fe589  design/admin/templates/tabs/datatable/node.tpl
@@ -1758,7 +1758,7 @@ e924bd63036012dc73222cda54185c3c  design/admin4/templates/staticpublish/parts/re
 2ad89b6474369624bef08c8d9296122c  design/admin4/templates/staticpublish/parts/run_state.tpl
 8b19eb2c5eb23a5840c30533f54819ed  design/admin4/templates/staticpublish/parts/tabs.tpl
 10b4a4217ea8cbb6c1e16e30a5189c7f  design/admin4/templates/staticpublish/preview.tpl
-276f8afc32d1f4f7d04a7b7bfd94f3b3  design/admin4/templates/staticpublish/target.tpl
+8dba95efcc65dd2cd08774018d4b0ff6  design/admin4/templates/staticpublish/target.tpl
 242e73b25fef0e05cbc075c78c692e72  design/admin4/templates/tabs/audit/node.tpl
 a28d02058dcaceb3f0bd665a92aff6b9  design/admin4/templates/tabs/audit/node_header.tpl
 e6208f1e6735de4da01e80e1b20fe589  design/admin4/templates/tabs/datatable/node.tpl
