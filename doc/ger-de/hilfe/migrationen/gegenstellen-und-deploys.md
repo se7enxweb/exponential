@@ -13,7 +13,7 @@ type: help
 Eine **Gegenstelle** ist eine andere Installation derselben Site (dev, stage, beta, production ...), an die diese
 Installation ihre Migrationen sendet. Ein **Deploy** sendet die Migrationen an die gewählten Gegenstellen und führt sie
 dort aus, alle gleichzeitig und im Gleichstand: Jede Gegenstelle endet im selben Migrationsstand, oder keine ändert
-sich. Die Seiten sind **Setup > Migrationen > Gegenstellen** und **Setup > Migrationen > Deploys**; auf der Konsole
+sich. Die Seiten sind **Setup > Migrationen > Gegenstellen** und **Setup > Migrationen > Auslieferungen**; auf der Konsole
 leistet `exp:migration:deploy` dasselbe (siehe [Remote-Deploy](../../anleitungen/migrationen-remote-deploy.md), das
 auch jede Phase im Einzelnen erklärt).
 
@@ -51,7 +51,7 @@ bleiben im Verlauf.
 
 ## Deploys
 
-**Deploys** hat das Formular, das einen Deploy startet, und darunter den **Verlauf**: jeden Deploy, der etwas gesendet
+**Auslieferungen** hat das Formular, das einen Deploy startet, und darunter den **Verlauf**: jeden Deploy, der etwas gesendet
 oder ausgeführt hat, den neuesten zuerst, mit seinem Stand, dem Stand jeder Gegenstelle, wer ihn gestartet hat und wann.
 
 1. **Die Gegenstellen**: Kreuzen Sie Gegenstellen einzeln an, eine Gruppe (jede ihrer Gegenstellen) oder beides.
@@ -65,7 +65,7 @@ oder ausgeführt hat, den neuesten zuerst, mit seinem Stand, dem Stand jeder Geg
 
 **Nur Preflight** startet einen Probelauf: Jede Gegenstelle wird geprüft (erreichbar, ihre Sperre frei, dort nichts
 gescheitert, dieselbe Kernel-Version, keine Migration nach dem Anwenden geändert) und die zu sendenden Dateien werden
-geplant; nichts wird gesendet oder geändert, und kein Bericht wird behalten. **Deploy** (kreuzen Sie „Ja, jetzt
+geplant; nichts wird gesendet oder geändert, und kein Bericht wird behalten. **Ausliefern** (kreuzen Sie „Ja, jetzt
 ausliefern“ an) startet den Deploy und fragt **Identität bestätigen**.
 
 Beide laufen im Hintergrund unter Ihrem Benutzer und öffnen die Seite des Deploys. Es läuft immer nur ein Lauf oder
@@ -129,7 +129,7 @@ Problemen und die Adresse der Seite des Deploys.
 
 | Richtlinie | Erlaubt |
 |---|---|
-| `migration/read` | die Seiten Gegenstellen und Deploys, die Seite eines Deploys und seinen Bericht |
+| `migration/read` | die Seiten Gegenstellen und Auslieferungen, die Seite eines Deploys und seinen Bericht |
 | `migration/remotes` | Gegenstellen anlegen, ändern und entfernen, Verbindung testen |
 | `migration/deploy` | Preflight, Deploy, ein Tor freigeben, einen Deploy zurücknehmen |
 

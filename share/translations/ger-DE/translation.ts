@@ -88418,7 +88418,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Deploys</source>
-        <translation>Deploys</translation>
+        <translation>Auslieferungen</translation>
     </message>
     <message>
         <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
@@ -88442,7 +88442,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Deploy</source>
-        <translation>Deploy</translation>
+        <translation>Ausliefern</translation>
     </message>
     <message>
         <source>Send and run</source>
@@ -88506,7 +88506,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Deploy %deploy</source>
-        <translation>Deploy %deploy</translation>
+        <translation>Auslieferung %deploy</translation>
     </message>
     <message>
         <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
@@ -88518,7 +88518,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Preflight</source>
-        <translation>Preflight</translation>
+        <translation>Vorabprüfung</translation>
     </message>
     <message>
         <source>Next stage</source>
@@ -88558,7 +88558,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Phase</source>
-        <translation>Phase</translation>
+        <translation>Schritt</translation>
     </message>
     <message>
         <source>This page follows the deploy as it goes.</source>
