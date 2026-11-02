@@ -68848,6 +68848,42 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown seg %matching tisertiyin (%total s umata)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Yettuɣal-d mi ara yettwaldi.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, tamlilt, talast</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Nadi deg tsertiyin</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Sali-d ugar</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Amudil/tawuri</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Akk timlilin (%count n tsertiyin)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ulac tasertit i yemṣadan.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown seg %matched n tsertiyin</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ulac tiririt</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

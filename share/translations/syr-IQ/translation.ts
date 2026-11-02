@@ -68856,6 +68856,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ܡܢ %matching ܢܡܘܣ̈ܐ (%total ܒܟܠ)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ܡܫܬܥܝܐ ܟܕ ܡܬܦܬܚ.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ܬܫܡܫܬܐ, ܚܘܕܪܐ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ܒܨܝ ܒܣܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ܛܥܘܢ ܝܬܝܪ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ܡܘܕܘܠ/ܦܘܠܚܢܐ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ܟܠ ܬܫܡܫܬܐ (%count ܣܝܡܬܐ)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ܠܐ ܐܝܬ ܣܝܡܬܐ ܕܡܬܚܠܦܐ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ܡܢ %matched ܣܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ܠܐ ܐܝܬ ܬܘܒܬܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68848,6 +68848,42 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown o %matching polisi (%total i gyd)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Wedi'i lwytho wrth agor.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modiwl/swyddogaeth, rôl, cyfyngiad</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Chwilio'r polisïau</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Llwytho mwy</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modiwl/swyddogaeth</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Pob rôl (%count polisi)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Dim polisi'n cyfateb.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown o %matched polisi</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Dim ateb</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

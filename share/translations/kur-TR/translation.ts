@@ -67396,6 +67396,42 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ji %matching polîtîkayan (bi giştî %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Gava tê vekirin tê barkirin.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, sînorkirin</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Di polîtîkayan de bigere</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Zêdetir bar bike</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/fonksiyon</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Hemû rol (%count polîtîka)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Tu polîtîka nayê.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ji %matched polîtîkayan</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Bersiv tune</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

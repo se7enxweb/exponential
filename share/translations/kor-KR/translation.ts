@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>정책 %shown / %matching (전체 %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>열 때 불러옵니다.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, 역할, 제한</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>정책 검색</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>더 불러오기</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>모듈/기능</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>모든 역할 (정책 %count개)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>일치하는 정책이 없습니다.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>정책 %matched개 중 %shown개</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>응답 없음</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

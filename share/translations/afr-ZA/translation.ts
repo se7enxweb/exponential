@@ -68787,6 +68787,42 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown van %matching beleide (%total in totaal)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Gelaai wanneer geopen.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/funksie, rol, beperking</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Soek in die beleide</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Laai meer</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/funksie</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle rolle (%count beleide)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Geen beleid stem ooreen nie.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown van %matched beleide</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Geen antwoord</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

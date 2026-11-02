@@ -68848,6 +68848,42 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ci %matching politig (%total lépp)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Dafay yeb bu ñu ko ubbee.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, kër, tëralin</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Wër ci yoon yi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Yeb yeneen</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modil/fonksiyoŋ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Kër yépp (yoon %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Amul yoon wu jëkkoon.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ci yoon yi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Amul tontu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

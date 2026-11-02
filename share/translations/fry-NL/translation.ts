@@ -68848,6 +68848,42 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown fan %matching beliedsregels (%total yn totaal)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Wurdt laden by iepenjen.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, beheining</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Sykje yn de belied</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Mear laden</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/funksje</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle rollen (%count belieden)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Gjin belied komt oerien.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown fan %matched belieden</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Gjin antwurd</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

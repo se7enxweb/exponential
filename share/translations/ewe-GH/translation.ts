@@ -68848,6 +68848,42 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown le %matching ɖoɖowo dome (%total katã)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Wokpɔna ne woʋee.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, dɔwɔɖoɖo, tameɖoɖo</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Dii ɖoɖo siwo li la</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Kpɔ bubu hã</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mɔdul/dɔwɔwɔ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Dɔwɔɖoɖo ɖesiaɖe (ɖoɖo %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ɖoɖo aɖeke meɖo ɖe eŋu o.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown le ɖoɖo %matched me</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Eŋuɖoɖo aɖeke meli o</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

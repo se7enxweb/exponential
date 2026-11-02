@@ -68848,6 +68848,42 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching ta siyosatdan %shown ta (jami %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ochilganda yuklanadi.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funksiya, rol, cheklov</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Siyosatlarni qidirish</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Yana yuklash</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funksiya</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Barcha rollar (%count siyosat)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Mos keladigan siyosat yo‘q.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched siyosatdan %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Javob yo‘q</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

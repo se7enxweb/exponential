@@ -67396,6 +67396,42 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching ilke (toplam %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Açıldığında yüklenir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modül/işlev, rol, sınırlama</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>İlkelerde ara</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Daha fazla yükle</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modül/işlev</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Tüm roller (%count ilke)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Eşleşen ilke yok.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched ilkeden %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Yanıt yok</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

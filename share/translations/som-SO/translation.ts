@@ -68846,6 +68846,42 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ka mid ah %matching siyaasadood (wadar ahaan %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>La soo rarayaa marka la furo.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>moodal/shaqo, door, xaddid</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Raadi siyaasadaha</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Soo rar dheeraad ah</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moodal/shaqo</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Dhammaan doorarka (%count siyaasad)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ma jirto siyaasad is waafaqda.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ka mid ah %matched siyaasad</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Jawaab ma jirto</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

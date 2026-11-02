@@ -68848,6 +68848,42 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown da %matching directivas (%total en total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Vegn chargià cura che ei vegn avert.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rolla, restricziun</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Tschertgar las directivas</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Chargiar dapli</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funcziun</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Tut las rollas (%count directivas)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nagina directiva correspunda.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown da %matched directivas</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nagina resposta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

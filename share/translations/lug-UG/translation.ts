@@ -68848,6 +68848,42 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ku %matching enkola (%total zonna awamu)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Kitikkibwa nga kiggule.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, omulimu, ekkomo</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Noonya amateeka</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Teekawo ebirala</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduli/fankisoni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Emirimu gyonna (amateeka %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Tewali tteeka eriraga.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ku mateeka %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Tewali kuddamu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68747,6 +68747,42 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown sur %matching politiques (%total au total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Chargé à l'ouverture.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/fonction, rôle, limitation</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Rechercher dans les politiques</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Charger plus</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/fonction</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Tous les rôles (%count politiques)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Aucune politique ne correspond.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown sur %matched politiques</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Aucune réponse</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

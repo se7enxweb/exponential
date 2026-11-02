@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown از %matching پالیسی (مجموعاً %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>هنگام باز شدن بارگیری می‌شود.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>ماژول/تابع، نقش، محدودیت</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>جستجو در خط‌مشی‌ها</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>بارگیری بیشتر</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ماژول/تابع</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>همه نقش‌ها (%count خط‌مشی)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>هیچ خط‌مشی مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown از %matched خط‌مشی</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>پاسخی وجود ندارد</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68787,6 +68787,42 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown iš %matching politikų (iš viso %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Įkeliama atidarius.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, vaidmuo, apribojimas</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Ieškoti politikų</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Įkelti daugiau</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulis/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Visi vaidmenys (%count politikų)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nė viena politika neatitinka.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown iš %matched politikų</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nėra atsakymo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

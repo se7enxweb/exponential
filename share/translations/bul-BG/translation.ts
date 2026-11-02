@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown от %matching политики (общо %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Зарежда се при отваряне.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>модул/функция, роля, ограничение</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Търсене в политиките</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Зареди още</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модул/функция</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Всички роли (%count политики)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Няма съвпадащи политики.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown от %matched политики</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Няма отговор</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

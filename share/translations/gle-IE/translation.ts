@@ -68787,6 +68787,42 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown as %matching polasaí (%total san iomlán)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Luchtaithe nuair a osclaítear é.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modúl/feidhm, ról, teorainn</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Cuardaigh na polasaithe</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Luchtaigh tuilleadh</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modúl/feidhm</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Gach ról (%count polasaí)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Níl polasaí ar bith ag teacht leis.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown as %matched polasaí</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Gan freagra</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
