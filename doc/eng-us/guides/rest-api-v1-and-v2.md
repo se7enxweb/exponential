@@ -317,6 +317,7 @@ The state of the migrations and their runs, read only, under `/api/migration/v1`
 | `GET` | `/api/migration/v1/status` | `summary` (pending, failed, orphans, total, ready), `environment`, `engine`, `lock`, every migration with its state (`migrations`), `orphans`, `warnings`, `errors` |
 | `GET` | `/api/migration/v1/runs?limit=20&offset=0` | the latest runs, newest first (at most 100 at once) |
 | `GET` | `/api/migration/v1/runs/<run id>` | one run and the migrations it wrote; `404` for an unknown run |
+| `GET` | `/api/migration/v1/snapshot?compare=classes,roles&subtree=<node remote id>&limit=500` | fingerprints (SHA-1) of the classes, roles, sections, object state groups, languages, settings of `settings/override` (secrets left out) and a content subtree, never a value: what `exp:migration:generate --from-diff=<address>` of another installation compares with ([generators](migrations-generators-and-recording.md#generating-a-migration-from-a-difference)); `400` for an unknown kind |
 
 The user needs the policy `migration/read` (`403 access_denied` without it). A personal API key needs the scope
 `migration:read` ("Read the state of the migrations"); an OAuth token reads as its user. The answers are never kept

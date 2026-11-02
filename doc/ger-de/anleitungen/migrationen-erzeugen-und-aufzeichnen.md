@@ -8,9 +8,10 @@ diese auf Staging und Produktion aus.
 
 Diese Seite erklärt die Aufzeichnung und die Generatoren von Exponential 6.0.15: den, der aus einer Aufzeichnung eine
 Migrationsdatei macht, den, der eine Migration dessen schreibt, was eine Installation jetzt hat (Inhalte, Klassen,
-Rollen, Sektionen, Einstellungen), die Gerüste jeder Art von Migrationsdatei, den Editor der Administration und den
-Konverter aus dem YAML des Referenz-Bundles. Das Erzeugen aus einem Vergleich folgt später. Die Ausgaben unten entstanden am 1. und 2. November 2026 auf
-SQLite.
+Rollen, Sektionen, Einstellungen), den, der eine Migration dessen schreibt, was sich seit einem gespeicherten Stand
+geändert hat (ein Sicherungspunkt, eine andere Installation, ein Datenbank-Dump), die Gerüste jeder Art von
+Migrationsdatei, den Editor der Administration und den Konverter aus dem YAML des Referenz-Bundles. Die Ausgaben unten
+entstanden am 1. und 2. November 2026 auf SQLite.
 
 [Anleitungen](README.md) · [Migrationen](migrationen.md) · Verwandt: [PHP-Migrationen](migrationen-php.md),
 [Rücknahme und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md), [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md#aufgezeichnete-ereignisse-exp-migration-recording-event1),
@@ -485,6 +486,61 @@ Regeln wie für eine Aufzeichnung: stabile Bezeichner, Benutzer über Geheimniss
 ```text
 $ ./console exp:migration:generate --from-class=news_article --from-role="News editor" --from-section=news news_setup --apply
 ```
+
+## Eine Migration aus einem Vergleich erzeugen
+
+`--from-diff` vergleicht die Installation jetzt mit einem gespeicherten Stand und schreibt eine Migration dessen, was
+sich geändert hat. Auf dem gespeicherten Stand ausgeführt, macht die Migration ihn wie diese Installation: Änderungen
+in der Administration einer Installation werden zu einer Migration für die anderen, ohne dass dabei eine Aufzeichnung
+lief.
+
+| `--from-diff=` | Der gespeicherte Stand |
+|---|---|
+| eine Sicherungspunkt-ID (`20261102-101500`) | der Sicherungspunkt: sein Datenbank-Dump und seine Kopie von `settings/override`. `./console exp:migration:caption --list` listet sie auf; `--backup-dir` nennt den Ordner der ohne git_manager angelegten Sicherungspunkte |
+| eine Datei (`var/backup/before.sqlite`, `before.sql`) | ein Datenbank-Dump desselben Schemas: eine SQLite-Datei (an Ort und Stelle nur gelesen) oder ein SQL-Dump der Datenbank-Engine dieser Installation (SQLite, MySQL oder MariaDB, PostgreSQL), der mit dem Konto der Installation in eine Wegwerf-Datenbank `<Datenbank>_migdiff_<pid>` geladen und danach gelöscht wird. Ein MongoDB-Dump wird nicht gelesen: spielen Sie ihn in eine eigene Datenbank ein und vergleichen Sie mit jener Installation über ihre Adresse |
+| eine Adresse (`https://staging.example.com`) | eine andere Installation, einmal über ihre REST-Route `GET /api/migration/v1/snapshot` gelesen (Richtlinie `migration/read`; ein API-Schlüssel mit der Berechtigung `migration:read`, genannt mit `--token=<Name des Geheimnisses>` oder `--token=env:VARIABLE`). Dort wird nichts geschrieben |
+
+`--compare` nennt, was verglichen wird; Standard ist alles außer Inhalten:
+
+| Art | Verglichen über | Schritte |
+|---|---|---|
+| `classes` | Bezeichner: die Definition und jedes Attribut | `content_class` ensure oder delete |
+| `roles` | Name: die Richtlinien mit ihren Einschränkungen (nicht die Zuweisungen: sie nennen Benutzer) | `role` ensure oder delete |
+| `sections` | Bezeichner: Name und Navigationsbereich | `section` ensure oder delete |
+| `states` | Bezeichner der Objektzustandsgruppe: ihre Zustände und Namen | `object_state_group` ensure oder delete |
+| `languages` | Locale: der Name | `language` ensure oder delete |
+| `content` | mit `--subtree=<Knoten>`: die Objekte dieses Teilbaums über ihre Remote-ID (geändert, Version, Sektion, Elternteil); `--max-objects` (Standard 500) weist einen größeren Teilbaum ab, statt einen Teil davon zu vergleichen | `content` ensure (Eltern zuerst); delete des obersten entfernten Objekts |
+| `settings` | `settings/override`: jede Variable jeder Datei (nur ein Sicherungspunkt oder eine andere Installation hat sie) | `settings` set oder remove |
+
+Was hinzukam oder sich änderte, wird so erzeugt, wie `--from-content`, `--from-class` und die anderen es erzeugen
+(Modus `ensure`, stabile Bezeichner, Benutzer über Geheimnisse); was entfernt wurde, wird zu einem delete-Schritt nach
+allem, was angelegt wird. Jede Seite wird als Momentaufnahme von Fingerabdrücken gelesen (ein SHA-1 dessen, was ein
+Schritt setzen würde), so dass eine andere Installation nie einen Wert herausgibt: Die Werte in der Migration sind
+immer die dieser Installation. Geheime Einstellungen fehlen in beiden Momentaufnahmen: Setzen Sie sie von Hand. Ein
+verschobenes Objekt steht in den Kopfzeilen und ist von Hand mit einem location-Schritt zu verschieben.
+
+```text
+$ ./console exp:migration:generate --from-diff=var/backup/before.sqlite --compare=classes,roles,sections,languages,content --subtree=2 news_changes
+Exponential migrations: generate from a difference, dry run (--apply writes the file)
+Compared with the dump before.sqlite
+  classes    0 added, 1 changed, 0 removed
+  roles      0 added, 0 changed, 1 removed
+  sections   1 added, 1 changed, 0 removed
+  languages  1 added, 0 changed, 0 removed
+  content    0 added, 1 changed, 0 removed
+    1  language/ensure language nor-NO
+    2  section/ensure section diff_news
+    3  section/ensure section standard
+    4  class/create class folder
+    5  content/create object remote:9459d3c29e15006e45197295722c7ade
+    6  role/delete role Editor
+File migrations/20261102120000_news_changes.yml
+...
+```
+
+(Die Planzeilen nennen die aufgezeichnete Form `create`; die Schritte verwenden `ensure`.) Ohne Unterschiede wird
+nichts geschrieben, und der Befehl endet mit 0 und "no differences: nothing to generate". Mit `--apply` wird die Datei
+geschrieben; eine vorhandene Datei wird nie ersetzt.
 
 ## Gerüste
 

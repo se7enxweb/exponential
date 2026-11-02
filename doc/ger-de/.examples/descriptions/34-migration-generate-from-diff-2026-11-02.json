@@ -1,0 +1,22 @@
+{
+    "command:expmigrationgenerate --from-diff": {
+        "en": "Generate a YAML migration of what changed since a saved state: a caption id, the address of another installation (https://...) or a database dump",
+        "de": "Erzeugt eine YAML-Migration von dem, was sich seit einem gespeicherten Stand geändert hat: eine Sicherungspunkt-ID, die Adresse einer anderen Installation (https://...) oder ein Datenbank-Dump"
+    },
+    "command:expmigrationgenerate --compare": {
+        "en": "With --from-diff: what to compare (classes, roles, sections, states, languages, content, settings; comma-separated, default all but content)",
+        "de": "Mit --from-diff: was verglichen wird (classes, roles, sections, states, languages, content, settings; durch Kommas getrennt, Standard alles außer content)"
+    },
+    "command:expmigrationgenerate --subtree": {
+        "en": "With --from-diff: compare the content of the subtree of this node (id, remote:<remote id>, path:<url path>)",
+        "de": "Mit --from-diff: vergleicht die Inhalte des Teilbaums dieses Knotens (ID, remote:<Remote-ID>, path:<URL-Pfad>)"
+    },
+    "command:expmigrationgenerate --token": {
+        "en": "With --from-diff=<address>: the API key of the other installation with the scope migration:read, by secret name or env:VARIABLE",
+        "de": "Mit --from-diff=<Adresse>: der API-Schlüssel der anderen Installation mit der Berechtigung migration:read, als Name eines Geheimnisses oder env:VARIABLE"
+    },
+    "command:expmigrationgenerate --backup-dir": {
+        "en": "Where the captions made without git_manager are (default var/backup/upgrade)",
+        "de": "Wo die ohne git_manager angelegten Sicherungspunkte liegen (Standard var/backup/upgrade)"
+    }
+}

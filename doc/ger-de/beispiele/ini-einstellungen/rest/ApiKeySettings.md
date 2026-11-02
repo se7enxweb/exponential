@@ -195,7 +195,7 @@ DefaultReadScope=read
 
 ## RouteScopes
 
-Standard: ein Hash mit 10: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`, `expGraphQLRestController_query=graphql:read`, `expGraphQLRestController_subscribe=graphql:read`, `expMigrationRestController_status=migration:read`, `expMigrationRestController_runs=migration:read`, `expMigrationRestController_run=migration:read`.
+Standard: ein Hash mit 11: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`, `expGraphQLRestController_query=graphql:read`, `expGraphQLRestController_subscribe=graphql:read`, `expMigrationRestController_status=migration:read`, `expMigrationRestController_runs=migration:read`, `expMigrationRestController_run=migration:read`, `expMigrationRestController_snapshot=migration:read`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -213,6 +213,7 @@ RouteScopes[expGraphQLRestController_subscribe]=graphql:read
 RouteScopes[expMigrationRestController_status]=migration:read
 RouteScopes[expMigrationRestController_runs]=migration:read
 RouteScopes[expMigrationRestController_run]=migration:read
+RouteScopes[expMigrationRestController_snapshot]=migration:read
 */ ?>
 ```
 
