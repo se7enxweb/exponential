@@ -237,9 +237,8 @@ and turns the level up **below** its values, see
 | `iptest` | `address`, `list` (JSON array) | setup/setup |
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
-| `policies` | GET [`role`, `q`, `offset`] | setup/setup: the policies of the current user's roles, a page of 200 rows (see [User](#user-roles-and-cache-profile)) |
+| `policies[::<role>[::<offset>[::<search>]]]` | GET; everything in the path: a role id or `-`, the offset, the search as base64url of its UTF-8 text or `-` (`expdebugbar::policies::-::0::Y29udGVudC9yZWFk` searches `content/read`) | setup/setup: the policies of the current user's roles, a page of 200 rows (see [User](#user-roles-and-cache-profile)) |
 | `panelheight` | POST `height` (pixels, `0` for the default) | a logged-in user (never an anonymous visitor) with debug output for the request: stores the user preference `expdebugbar_panel_height` (see [The panel's height](#the-panels-height)) |
-| `policies[::<module>[::<function>[::<offset>]]]` | GET; the filter in the path, `-` for any (`expdebugbar::policies::content::read::0`) | setup/setup, or an anonymous visitor with debug output for the request: a page of the policies of the user's roles (see [User: policies](#policies)) |
 
 Every POST must carry the form token (`ezxform_token`, or the header `X-CSRF-Token`); the `settings` answer has
 it. Someone who only sees the debug report gets the settings without the IP and user lists, the log or the
@@ -290,9 +289,9 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `expDebugBarIPListTest` | addresses and CIDR of both families, IPv4-mapped clients, entries with labels and expiries, writing entries, the match, the warnings, the suggestions. Needs no kernel |
 | `expDebugBarSettingsTest` | the registry and discovery, the values in effect against `expIniLocator::where()`, writes of every type and op with the log and undo, dry runs, refusals, a siteaccess scope, presets as a group, the lock-out and open checks, eZDebug's IP check and its fallback, the summary, the server functions (registration, answers, POST, token and policy, what a visitor without policy sees) |
 | `RadSurveyDebugBarTest` | the two registries, the total, the bar's figures, the new problem kinds |
-| `expDebugBarPoliciesTest` | the policies of the User tab: rows and limitation values as one sorted list, the selection by role and by search (module/function, role name, class name, limitation, stored value), a row with readable values, the section only for those allowed, with the address for the role links, the script's words. No database |
+| `expDebugBarPoliciesTest` | the policies of the User tab (UP-01 to UP-04, UP-06 to UP-08): rows and limitation values as one sorted list, the selection by role and by search (module/function, role name, class name, limitation, stored value), a search for a module and function that also finds the wildcards granting it, a row with readable values, the section only for those allowed, with the address for the role links, the script's words, the queries in chunks of 500 ids, 600 policies of 300 roles. No database |
 | `expDebugBarUserTest` | the User tab: the user's parts of the view cache key and each ignore tweak, the preferences key against the code it replaced, the preferences of every view mode (one name with two defaults), the fingerprint, the profile from a view's key (parts a listener left out or changed, pr_user), anonymous visitors, the chip, the tab escaped, the copy text. No database |
-| `expDebugBarUserPoliciesTest` | the User tab's policies: who may see them, a page sorted by role, module and function, the filter with policies of every module or function (*), 600 policies of 300 roles in pages, the closed section in the tab, the path arguments, the script's request and its words. No database |
+| `expDebugBarUserPoliciesTest` | who sees the User tab, and how its policies are asked for (UP-05, UP-09, UP-10): the arguments of `expdebugbar::policies` in the path and what is refused, the script's request without a query string. No database |
 
 `expDebugBarSettingsTest` starts the kernel once on the admin siteaccess with the installation's own database, as
 the subitems column tests do; no test database is created. Its writes go to a probe block
@@ -473,7 +472,7 @@ the report's own defaults.
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
 | Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); only for `setup/setup` |
-| User | the user, their cache profile (the parts of the content view cache key that depend on them), their preferences, role assignments and, on demand, the policies of those roles (see [below](#user-roles-and-cache-profile)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
+| User | the user, their cache profile (the parts of the content view cache key that depend on them), their preferences, role assignments and, on demand and for `setup/setup` only, the policies of those roles (see [below](#user-roles-and-cache-profile)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
 | (extensions) | a tab per panel an extension registers, after Memory (see [Panels of extensions](#panels-of-extensions)) |
 | Server | where the request entered and which process rendered the report (Exponential Velocity, PHP-FPM, mod_php, the command line ...), in one sentence (see [below](#server-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache; called Velocity until 16 October 2026, its section id is still `exp-debug-panel-velocity` |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
@@ -615,13 +614,19 @@ page; a role, a search and *Load more* ask again, 200 rows at a time. A row is t
 the limitations with readable values (classes, sections, siteaccesses and nodes by name, with the id) and the role.
 The search looks in module/function (`content/read`), role names, limitation types, values as stored and the names of
 classes, sections and siteaccesses; other limitations (`Owner`, `Group`, `StateGroup_*` ...) show their stored values.
-The role ids here and in the Roles table link to `role/view/<id>` in the current siteaccess (in an administration
-siteaccess the role's page; elsewhere only where the module `role` is reachable). The policies and their limitations of
-all roles come with two queries, the names of classes, sections and siteaccesses once, the names of the nodes of a
-page with one more (`expDebugBarPolicies`, `kernel/classes/debugbar/expdebugbarpolicies.php`); only the latest answer
-fills the table when the search changes while one is on its way.
+A search that names a module and a function also finds the policies that grant it with a wildcard: `content/read`
+lists `content/*` and `*/*` as well, `content/*` every function of `content`. The role ids here and in the Roles table
+link to `role/view/<id>` in the current siteaccess (in an administration siteaccess the role's page; elsewhere only
+where the module `role` is reachable). The role, the page and the search travel in the path
+(`expdebugbar::policies::<role>::<offset>::<search>`, the search as base64url, since it may hold a `/`), never in the
+query string; anything else is refused. The published policies, their limitations and values of all roles are read
+through the persistent objects of `ezpolicy`, `ezpolicy_limitation` and `ezpolicy_limitation_value`, three queries
+per 500 ids, so hundreds of roles work on every database (MySQL, PostgreSQL, SQLite, Oracle, MongoDB); the names of
+classes, sections and siteaccesses are read once, the names of the nodes of a page 500 at a time
+(`expDebugBarPolicies`, `kernel/classes/debugbar/expdebugbarpolicies.php`); only the latest answer fills the table
+when the search changes while one is on its way.
 
-Tests: `expDebugBarUserTest` and `expDebugBarPoliciesTest` (no database).
+Tests: `expDebugBarUserTest`, `expDebugBarPoliciesTest` and `expDebugBarUserPoliciesTest` (no database).
 
 ### Panels of extensions
 
