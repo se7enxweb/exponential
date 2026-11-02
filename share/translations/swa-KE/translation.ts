@@ -83170,5 +83170,17 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Fomu haikukubaliwa: angalia ulichoweka kisha uitume tena.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Ondoa viungo vya kurasa ambazo nakala haina</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Ondoa viungo vya kwenda kwenye usimamizi</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Maandishi yake yanabaki. Picha, fomu na viungo vya tovuti nyingine haviondolewi kamwe.</translation>
+    </message>
 </context>
 </TS>

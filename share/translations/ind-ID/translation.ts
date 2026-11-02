@@ -83172,5 +83172,17 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulir tidak diterima: periksa isian Anda dan kirim lagi.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Hapus tautan ke halaman yang tidak ada di salinan</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Hapus tautan ke administrasi</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Teksnya tetap ada. Gambar, formulir, dan tautan ke situs lain tidak pernah dihapus.</translation>
+    </message>
 </context>
 </TS>

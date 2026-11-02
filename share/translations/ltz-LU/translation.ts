@@ -83172,5 +83172,17 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>De Formulaire gouf net ugeholl: kontrolléiert, wat Dir aginn hutt, a schéckt en nach eng Kéier.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Linken op Säiten ewechhuelen, déi d'Kopie net enthält</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Linken an d'Administratioun ewechhuelen</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Hiren Text bleift stoen. Biller, Formulairen a Linken op aner Websäite ginn ni ewechgeholl.</translation>
+    </message>
 </context>
 </TS>

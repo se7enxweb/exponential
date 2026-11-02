@@ -83172,5 +83172,17 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Fomu ntiyemewe: suzuma ibyo wanditse maze wongere uyohereze.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Kuraho amahuza ajya ku mpapuro kopi idafite</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Kuraho amahuza ajya mu buyobozi</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Inyandiko yayo isigara. Amashusho, amafishi n'amahuza ajya ku zindi mbuga ntibikurwaho na rimwe.</translation>
+    </message>
 </context>
 </TS>

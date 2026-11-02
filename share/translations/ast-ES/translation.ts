@@ -83172,5 +83172,17 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Nun s'aceptó'l formulariu: comprueba lo qu'escribisti y vuelve unviar.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Quitar los enllaces a páxines que la copia nun tien</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Quitar los enllaces a l'alministración</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>El so testu queda. Les imáxenes, los formularios y los enllaces a otros sitios enxamás se quiten.</translation>
+    </message>
 </context>
 </TS>

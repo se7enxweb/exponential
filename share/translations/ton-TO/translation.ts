@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Naʻe ʻikai tali ʻa e foomu: sivi ʻa e me'a naʻá ke hū ki ai pea toe fakahū.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Toʻo ʻa e ngaahi fehokotaki ki he ngaahi peesi ʻoku ʻikai ʻi he tatau</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Toʻo ʻa e ngaahi fehokotaki ki he puleʻanga pule</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>ʻOku nofo pē honau tohi. ʻOku ʻikai teitei toʻo ʻa e ngaahi ʻata, foomu mo e fehokotaki ki he ngaahi uepisaiti kehe.</translation>
+    </message>
 </context>
 </TS>

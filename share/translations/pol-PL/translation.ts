@@ -84384,5 +84384,17 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formularz nie został przyjęty: sprawdź wpisane dane i wyślij go ponownie.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Usuń linki do stron, których kopia nie zawiera</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Usuń linki do administracji</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ich tekst pozostaje. Obrazy, formularze i linki do innych witryn nigdy nie są usuwane.</translation>
+    </message>
 </context>
 </TS>

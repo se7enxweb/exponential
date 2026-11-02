@@ -390,6 +390,23 @@
                 <span class="a4-help">{'Where links to what the copy does not hold go (the search, the login).'|i18n( 'design/admin/staticpublish' )}</span>
             </div>
         </div>
+        <div class="a4-grid">
+            <div class="a4-field">
+                <label class="a4-label" for="sp-outsidelinks">{'Remove links to pages the copy does not hold'|i18n( 'design/admin/staticpublish' )}</label>
+                <select id="sp-outsidelinks" name="Target[OutsideLinks]">
+                    <option value="keep"{if eq( $settings.OutsideLinks, 'keep' )} selected="selected"{/if}>{'No'|i18n( 'design/admin/staticpublish' )}</option>
+                    <option value="unlink"{if eq( $settings.OutsideLinks, 'unlink' )} selected="selected"{/if}>{'Yes'|i18n( 'design/admin/staticpublish' )}</option>
+                </select>
+                <span class="a4-help">{'Their text stays. Images, forms and links to other sites are never removed.'|i18n( 'design/admin/staticpublish' )}</span>
+            </div>
+            <div class="a4-field">
+                <label class="a4-label" for="sp-adminlinks">{'Remove links into the administration'|i18n( 'design/admin/staticpublish' )}</label>
+                <select id="sp-adminlinks" name="Target[AdminLinks]">
+                    <option value="keep"{if eq( $settings.AdminLinks, 'keep' )} selected="selected"{/if}>{'No'|i18n( 'design/admin/staticpublish' )}</option>
+                    <option value="unlink"{if eq( $settings.AdminLinks, 'unlink' )} selected="selected"{/if}>{'Yes'|i18n( 'design/admin/staticpublish' )}</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="a4-card-foot a4-actions" data-sp-nav="7" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="6">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="8">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
 </section>

@@ -83204,5 +83204,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>הטופס לא התקבל: בדקו את מה שהזנתם ושלחו שוב.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>הסרת קישורים לדפים שהעותק אינו מכיל</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>הסרת קישורים לממשק הניהול</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>הטקסט שלהם נשאר. תמונות, טפסים וקישורים לאתרים אחרים לעולם אינם מוסרים.</translation>
+    </message>
 </context>
 </TS>

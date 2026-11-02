@@ -83172,5 +83172,17 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulario mana chaskisqachu karqan: qillqasqaykita qhawariy hinaspa kutimpuni apachiy.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Qhichuy t'inkikunata mana copiapi kaq p'anqakunaman</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Qhichuy t'inkikunata kamachiyman</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Qillqankuna qhepakun. Siq'ikuna, formulariokuna, hukkunaq sitionkunaman t'inkikunapas manapuni qhichusqachu.</translation>
+    </message>
 </context>
 </TS>

@@ -83172,5 +83172,17 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Hindi tinanggap ang form: suriin ang inilagay mo at ipadala ulit.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Alisin ang mga link sa mga pahinang wala sa kopya</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Alisin ang mga link papunta sa administrasyon</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Nananatili ang kanilang teksto. Hindi kailanman inaalis ang mga larawan, form at link sa ibang site.</translation>
+    </message>
 </context>
 </TS>

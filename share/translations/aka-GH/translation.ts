@@ -83172,5 +83172,17 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Wɔannye form no: hwɛ nea wokyerɛw no na fa san kɔ.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Yi link a ɛkɔ nkratafa a nsusuansoɔ no nni so</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Yi link a ɛkɔ adwumayɛfoɔ afa no so</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Wɔn nsɛm no bɛtena hɔ. Wɔnnyi mfoni, krataa a wɔhyɛ ma ne link a ɛkɔ beaeɛ foforɔ da.</translation>
+    </message>
 </context>
 </TS>

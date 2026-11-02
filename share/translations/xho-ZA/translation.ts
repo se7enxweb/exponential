@@ -83170,5 +83170,17 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Ifomu ayamkelwanga: khangela oyifake uphinde uyithumele.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Susa amakhonkco aya kumaphepha angekhoyo kwikopi</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Susa amakhonkco aya kulawulo</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Isicatshulwa sawo siyahlala. Imifanekiso, iifomu namakhonkco aya kwezinye iisayithi akaze asuswe.</translation>
+    </message>
 </context>
 </TS>

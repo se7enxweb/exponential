@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ফোর্মদু লৈখি তৌদ্রে: নখোয়না ইনবা অসি যেংবীয়ু অমসুং অমুক থাবীয়ু।</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>কোপিদা লৈতবা লমাইশিংগী লিংকশিং লৌথোকউ</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>এদমিনিস্ত্রেসনদা চৎপা লিংকশিং লৌথোকউ</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>মখোয়গী তেক্সত লৈরি। মফম, ফোর্ম অমসুং অতোপ্পা সাইতকী লিংকশিং কদাইদসু লৌথোকদে।</translation>
+    </message>
 </context>
 </TS>

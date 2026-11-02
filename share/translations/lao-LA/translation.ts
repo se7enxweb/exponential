@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ຟອມບໍ່ຖືກຍອມຮັບ: ກວດສອບສິ່ງທີ່ທ່ານປ້ອນ ແລ້ວສົ່ງອີກຄັ້ງ.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>ລຶບລິ້ງໄປຫາໜ້າທີ່ສຳເນົາບໍ່ມີ</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>ລຶບລິ້ງໄປຫາສ່ວນບໍລິຫານ</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>ຂໍ້ຄວາມຂອງມັນຍັງຢູ່. ຮູບພາບ, ແບບຟອມ ແລະ ລິ້ງໄປຫາເວັບໄຊອື່ນ ບໍ່ເຄີຍຖືກລຶບ.</translation>
+    </message>
 </context>
 </TS>

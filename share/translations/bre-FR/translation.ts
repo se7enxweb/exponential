@@ -83172,5 +83172,17 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>N'eo ket bet degemeret ar furmskrid: gwiriit ar pezh hoc'h eus lakaet ha kasit en-dro.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Lemel al liammoù d'ar pajennoù n'emaint ket en eilskrid</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Lemel al liammoù d'ar merañ</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>O zestenn a chom. Ar skeudennoù, ar furmskridoù hag al liammoù d'al lec'hiennoù all n'int biken lamet.</translation>
+    </message>
 </context>
 </TS>

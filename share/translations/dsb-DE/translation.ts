@@ -83202,5 +83202,17 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formular njejo se pśiwzeł: pśeglědajśo, což sćo zapisał, a pósćelśo jen znowego.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Wótkazy na boki wótwónoźeś, kótarež kopija njewopśimujo</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Wótkazy do administracije wótwónoźeś</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Jich tekst wóstanjo. Wobraze, formulary a wótkazy na druge sedła se nigda njewótwónoźuju.</translation>
+    </message>
 </context>
 </TS>

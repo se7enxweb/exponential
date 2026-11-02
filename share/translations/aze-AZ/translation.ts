@@ -83172,5 +83172,17 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Forma qəbul edilmədi: daxil etdiyinizi yoxlayın və yenidən göndərin.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Nüsxədə olmayan səhifələrə keçidləri sil</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>İdarəetməyə keçidləri sil</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Onların mətni qalır. Şəkillər, formalar və digər saytlara keçidlər heç vaxt silinmir.</translation>
+    </message>
 </context>
 </TS>

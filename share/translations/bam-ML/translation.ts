@@ -83172,5 +83172,17 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulɛri ma sɔn: i ka min sɛbɛn, a lajɛ ka a ci tuun.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Jɛɲɔgɔnya minnu bɛ taa ɲɛ minnu tɛ kopi kɔnɔ, olu bɔ</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Jɛɲɔgɔnya minnu bɛ taa ɲɛmɔgɔya la, olu bɔ</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>U ka sɛbɛn bɛ to yen. Jaw, fɔrimiw ani jɛɲɔgɔnya minnu bɛ taa siti wɛrɛw la, olu tɛ bɔ abada.</translation>
+    </message>
 </context>
 </TS>
