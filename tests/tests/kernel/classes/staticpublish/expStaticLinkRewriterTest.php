@@ -17,6 +17,15 @@
  *  LR-12 dot segments and base path normalisation
  *  LR-13 links to other hosts that carry an address of the site in their query (share links) get the public
  *        address there, or the live one; never the crawl address
+ *  LR-14 OutsideLinks=unlink: a link to a page the export does not hold (relative, absolute, with a query) becomes
+ *        its text, a class kept on a <span>; held pages, fragments, files, srcset, images, forms and other hosts
+ *        untouched; counted
+ *  LR-15 AdminLinks=unlink: links into an administration siteaccess (with or without a site path, on the live
+ *        address too) become text, /administrators is no admin path; each setting alone; navigation <link>s dropped,
+ *        style sheets kept; the admin paths a build derives (expStaticBuild::adminPaths())
+ *  LR-16 keep (the default) changes nothing: the output is byte for byte the one without the settings
+ *  LR-17 a site served at the root of its SiteURL host (origin_site_paths): its pages there are the site's below either
+ *        path, so a canonical link names the public address and links to held pages are never taken out
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -266,7 +275,7 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'var/site/storage/images/x.png' => '/var/site/storage/images/x.png', 'files/r.pdf' => '/site/files/r.pdf' ), $r->foundFiles() );
         $r->reset();
         $this->assertSame( array(), $r->foundFiles() );
-        $this->assertSame( array( 'rewritten' => 0, 'live' => 0, 'external' => 0 ), $r->counts() );
+        $this->assertSame( array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0 ), $r->counts() );
     }
 
     /** LR-12 */
@@ -306,5 +315,122 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
 
         $none = self::rewriter( array( 'live_url' => '' ) );
         $this->assertSame( $html, $none->rewriteHtml( $html, '/x', 'x/index.html' ), 'neither: left as it is' );
+    }
+
+    /** A rewriter of /site that holds / and /about, with the given link settings. */
+    private static function unlinker( array $options = array() )
+    {
+        return self::rewriter( $options + array(
+            'site_path' => '/site',
+            'admin_paths' => array( '/admin', '/admin4/' ),
+            'pages' => function ( $page, $query ) { return $query === '' && in_array( $page, array( '/', '/about' ), true ); },
+        ) );
+    }
+
+    /** LR-14 */
+    public function testOutsideLinksUnlink()
+    {
+        $r = self::unlinker( array( 'outside_links' => 'unlink' ) );
+        $html = '<p><a href="/site/user/login" class="nav-link login" target="_blank" rel="nofollow">Log in</a>'
+              . ' <a href="basket">Basket</a>'
+              . ' <a href=\'http://127.0.0.1:18308/site/news?page=2\' class=\'more\'>More <b>news</b></a>'
+              . ' <a href="https://www.example.com/site/eng/about">English</a>'
+              . ' <a href="/site/about?x=1#top">Query</a>'
+              . ' <a href="/site/about#team" class="in">Team</a>'
+              . ' <a href="#top">Top</a>'
+              . ' <a href="https://other.example.org/site/user/login">Other</a>'
+              . ' <a href="/var/site/storage/a.pdf">PDF</a>'
+              . ' <img src="/site/content/view/image/1" srcset="/site/x/y 2x" />'
+              . ' <form action="/site/content/search"><input name="SearchText" /></form></p>';
+        $out = $r->rewriteHtml( $html, '/site/about', 'about/index.html' );
+        $this->assertStringContainsString( '<p><span class="nav-link login">Log in</span>', $out, 'a class stays on a <span>' );
+        $this->assertStringNotContainsString( 'nofollow', $out );
+        $this->assertStringContainsString( ' Basket ', $out, 'relative, no class: only the text' );
+        $this->assertStringContainsString( "<span class='more'>More <b>news</b></span>", $out, 'absolute with a query' );
+        $this->assertStringContainsString( ' English ', $out, 'another siteaccess on the live address' );
+        $this->assertStringContainsString( ' Query ', $out, 'a held page with a query is not held' );
+        $this->assertStringContainsString( '<a href="./#team" class="in">Team</a>', $out, 'a held page stays a link' );
+        $this->assertStringContainsString( '<a href="#top">Top</a>', $out );
+        $this->assertStringContainsString( '<a href="https://other.example.org/site/user/login">Other</a>', $out, 'other hosts untouched' );
+        $this->assertStringContainsString( '<a href="../var/site/storage/a.pdf">PDF</a>', $out, 'files are files' );
+        $this->assertStringContainsString( 'src="https://www.example.com/site/content/view/image/1" srcset="https://www.example.com/site/x/y 2x"', $out, 'images untouched' );
+        $this->assertStringContainsString( '<form action="https://www.example.com/site/content/search">', $out, 'forms are the degrader\'s' );
+        $this->assertSame( 0, substr_count( $out, '</a>' ) - 4, 'every closing tag of a removed link is gone' );
+        $counts = $r->counts();
+        $this->assertSame( 5, $counts['removed_outside'] );
+        $this->assertSame( 0, $counts['removed_admin'] );
+
+        $noLive = self::unlinker( array( 'outside_links' => 'unlink', 'live_url' => '' ) );
+        $this->assertSame( 'Log in', $noLive->rewriteHtml( '<a href="/site/user/login">Log in</a>', '/site', 'index.html' ), 'without a live site too' );
+        $this->assertSame( 'a<span class="x">b</span><a href="./">c</a>', $r->rewriteHtml( 'a<a class="x" href="/site/user">b<a href="/site/">c</a>', '/site', 'index.html' ),
+                           'an <a> ends the one before it' );
+        $this->assertSame( '<span class="x">a<!-- c -->b</span>', $r->rewriteHtml( '<a class="x" href="/site/user">a<!-- c -->b</a>', '/site', 'index.html' ),
+                           'across a comment' );
+    }
+
+    /** LR-15 */
+    public function testAdminLinksUnlink()
+    {
+        $html = '<a href="/admin/content/view/full/2" class="edit">Edit</a> <a href="https://www.example.com/admin4">Admin</a>'
+              . ' <a href="/administrators">People</a> <a href="/site/user/login">Log in</a>'
+              . '<link rel="alternate" type="application/rss+xml" href="/site/rss/feed/news" />'
+              . '<link rel="stylesheet" href="/site/user/style" /><link rel="search" href="/admin/search" />';
+        $r = self::unlinker( array( 'admin_links' => 'unlink' ) );
+        $out = $r->rewriteHtml( $html, '/site', 'index.html' );
+        $this->assertStringStartsWith( '<span class="edit">Edit</span> Admin <a href="https://www.example.com/administrators">People</a>'
+                                       . ' <a href="https://www.example.com/site/user/login">Log in</a>', $out );
+        $this->assertStringContainsString( '<link rel="alternate" type="application/rss+xml" href="https://www.example.com/site/rss/feed/news" />', $out, 'outside kept' );
+        $this->assertStringNotContainsString( 'rel="search"', $out, 'a navigation <link> into the administration is dropped' );
+        $this->assertSame( array( 2, 1 ), array( $r->counts()['removed_admin'] - 1, $r->counts()['removed_outside'] + 1 ) );
+
+        $both = self::unlinker( array( 'admin_links' => 'unlink', 'outside_links' => 'unlink' ) );
+        $out = $both->rewriteHtml( $html, '/site', 'index.html' );
+        $this->assertStringContainsString( ' Log in', $out );
+        $this->assertStringNotContainsString( 'rel="alternate"', $out, 'a feed the copy does not hold' );
+        $this->assertStringContainsString( '<link rel="stylesheet" href="https://www.example.com/site/user/style" />', $out, 'a style sheet is never dropped' );
+        $this->assertSame( 3, $both->counts()['removed_admin'] );
+        $this->assertSame( 3, $both->counts()['removed_outside'] );
+
+        $root = self::unlinker( array( 'site_path' => '', 'admin_links' => 'unlink', 'pages' => null ) );
+        $this->assertSame( 'Edit <a href="about/">About</a>', $root->rewriteHtml( '<a href="/admin/x">Edit</a> <a href="/about">About</a>', '/', 'index.html' ),
+                           'a site at the root: /admin is not one of its pages' );
+
+        $this->assertTrue( $r->isAdminPath( '/admin' ) );
+        $this->assertTrue( $r->isAdminPath( '/admin4/setup' ) );
+        $this->assertFalse( $r->isAdminPath( '/administrators' ) );
+        $this->assertFalse( $r->isAdminPath( '/site/admin' ) );
+
+        $context = array( 'admin' => array( 'admin', 'editor', 'site' ), 'urls' => array( 'admin' => 'www.example.com/backend', 'editor' => 'edit.example.com',
+                                                                                        'site' => 'www.example.com/site' ) );
+        $this->assertSame( array( '/admin', '/backend', '/editor' ), expStaticBuild::adminPaths( $context, array( 'http://127.0.0.1:8080', 'https://www.example.com' ), '/site' ),
+                           'the SiteURL path only on a host of the site; never the site itself' );
+        $this->assertSame( array(), expStaticBuild::adminPaths( array(), array() ) );
+    }
+
+    /** LR-16 */
+    public function testKeepChangesNothing()
+    {
+        $html = '<a href="/site/user/login" class="x">a</a><a href="/admin/x">b</a><link rel="search" href="/site/s" /><a href="/site/about">c</a>';
+        $plain = self::unlinker()->rewriteHtml( $html, '/site', 'index.html' );
+        $this->assertSame( $plain, self::unlinker( array( 'outside_links' => 'keep', 'admin_links' => 'keep' ) )->rewriteHtml( $html, '/site', 'index.html' ) );
+        $this->assertSame( $plain, self::unlinker( array( 'outside_links' => 'bogus' ) )->rewriteHtml( $html, '/site', 'index.html' ), 'anything else is keep' );
+        $this->assertStringContainsString( '<a href="https://www.example.com/admin/x">b</a>', $plain );
+    }
+
+    /** LR-17 */
+    public function testSiteAtTheRootOfItsSiteUrlHost()
+    {
+        $r = self::unlinker( array( 'outside_links' => 'unlink', 'admin_links' => 'unlink', 'public_url' => 'https://owner.github.io/repo/',
+                                    'origin_site_paths' => array( 'www.example.com' => '' ) ) );
+        $html = '<link rel="canonical" href="https://www.example.com/about" />'
+              . '<a href="https://www.example.com/about">root</a> <a href="https://www.example.com/site/about">prefixed</a>'
+              . ' <a href="https://www.example.com/user/login">login</a> <a href="https://www.example.com/admin/x">admin</a>'
+              . ' <a href="http://127.0.0.1:18308/about">crawl</a> <a href="https://www.example.com:8080/about">port</a>';
+        $out = $r->rewriteHtml( $html, '/site/about', 'about/index.html' );
+        $this->assertStringContainsString( '<link rel="canonical" href="https://owner.github.io/repo/about/" />', $out, 'the canonical of a page the copy holds' );
+        $this->assertStringContainsString( '<a href="./">root</a> <a href="./">prefixed</a> login admin', $out, 'below either path on the SiteURL host' );
+        $this->assertStringContainsString( ' crawl ', $out, 'on the crawl origin the site path stays /site' );
+        $this->assertStringContainsString( '<a href="https://www.example.com:8080/about">port</a>', $out, 'another port is another host' );
+        $this->assertSame( array( 2, 1 ), array( $r->counts()['removed_outside'], $r->counts()['removed_admin'] ) );
     }
 }

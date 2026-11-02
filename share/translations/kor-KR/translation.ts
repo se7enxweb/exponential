@@ -83202,5 +83202,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>양식이 승인되지 않았습니다. 입력한 내용을 확인하고 다시 보내 주세요.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>사본에 없는 페이지로 가는 링크 제거</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>관리 화면으로 가는 링크 제거</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>링크의 텍스트는 남습니다. 이미지, 양식, 다른 사이트로 가는 링크는 제거되지 않습니다.</translation>
+    </message>
 </context>
 </TS>

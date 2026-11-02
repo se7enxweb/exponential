@@ -83202,5 +83202,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>フォームが受け付けられませんでした。入力内容を確認して、もう一度送信してください。</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>コピーに含まれないページへのリンクを削除</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>管理画面へのリンクを削除</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>リンクのテキストは残ります。画像、フォーム、他のサイトへのリンクは削除されません。</translation>
+    </message>
 </context>
 </TS>

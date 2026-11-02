@@ -83172,5 +83172,17 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Unkaan hin fudhatamne: waan galchite sakatta'iitii irra deebi'ii ergi.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Hidhoota fuula koppiin hin qabnetti geessan haqi</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Hidhoota bulchiinsatti geessan haqi</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Barreeffamni isaanii ni hafa. Suuraaleen, unkaaleen fi hidhoonni marsariitii biraatti geessan gonkumaa hin haqaman.</translation>
+    </message>
 </context>
 </TS>

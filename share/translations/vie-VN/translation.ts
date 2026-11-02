@@ -83172,5 +83172,17 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Biểu mẫu không được chấp nhận: hãy kiểm tra nội dung đã nhập và gửi lại.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Gỡ liên kết đến các trang mà bản sao không có</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Gỡ liên kết vào phần quản trị</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Văn bản của chúng vẫn giữ nguyên. Hình ảnh, biểu mẫu và liên kết đến trang khác không bao giờ bị gỡ.</translation>
+    </message>
 </context>
 </TS>

@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>प्रपत्रं न स्वीकृतम्: लिखितं परीक्ष्य पुनः प्रेषयतु।</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>प्रतिलिप्यां अविद्यमानानां पृष्ठानां सम्पर्कान् अपनयतु</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>प्रशासनं प्रति सम्पर्कान् अपनयतु</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>तेषां पाठः तिष्ठति। चित्राणि, प्रपत्राणि अन्यजालस्थानानां सम्पर्काः च कदापि न अपनीयन्ते।</translation>
+    </message>
 </context>
 </TS>

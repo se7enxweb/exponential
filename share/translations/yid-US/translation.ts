@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>די פֿאָרם איז נישט אָנגענומען געוואָרן: קאָנטראָלירט וואָס איר האָט אַרײַנגעשריבן און שיקט נאָך אַ מאָל.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>אַוועקנעמען לינקען צו זײַטן וואָס די קאָפּיע האָט נישט</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>אַוועקנעמען לינקען אין דער אַדמיניסטראַציע</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>זייער טעקסט בלײַבט. בילדער, פֿאָרמען און לינקען צו אַנדערע זײַטלעך ווערן קיינמאָל נישט אַוועקגענומען.</translation>
+    </message>
 </context>
 </TS>

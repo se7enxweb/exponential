@@ -83170,5 +83170,17 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Ifomu ayemukelwanga: hlola ofake bese uyithumela futhi.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Susa izixhumanisi eziya emakhasini ikhophi engenawo</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Susa izixhumanisi eziya ekuphathweni</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Umbhalo wazo uyahlala. Izithombe, amafomu nezixhumanisi eziya kwamanye amasayithi azisuswa neze.</translation>
+    </message>
 </context>
 </TS>

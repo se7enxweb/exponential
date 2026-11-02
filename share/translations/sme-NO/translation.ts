@@ -83172,5 +83172,17 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Skovi ii dohkkehuvvon: dárkkis maid čállit ja sádde dan ođđasit.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Sihko liŋkkaid siidduide maid máŋgosis ii leat</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Sihko liŋkkaid hálddahussii</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Sin teaksta báhcá. Govat, skovit ja liŋkkat eará neahttabáikkiide eai goassige sihkkojuvvo.</translation>
+    </message>
 </context>
 </TS>

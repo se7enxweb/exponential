@@ -82,7 +82,10 @@ codiert; ein Tag ohne etwas zum Umschreiben behält seine Bytes.
 
 Eine Adresse gehört zur Website, wenn sie wurzelrelativ ist, relativ (aufgelöst gegen die Adresse des Dokuments
 selbst) oder absolut auf einem der Ursprünge des Builds: die Adresse, von der der Build abrief, die `SiteURL` des
-Siteaccess und `LiveURL`. Punktsegmente werden aufgelöst und `/index.php` entfernt. Dann:
+Siteaccess und `LiveURL`. Auf dem Host der `SiteURL` (wenn er nicht die Adresse ist, von der der Build abrief)
+liegt die Website auch unterhalb des Pfads der `SiteURL` dort: Eine Website, die unterhalb von `/site` abgerufen,
+aber an der Wurzel von `www.example.com` ausgeliefert wird, besitzt `https://www.example.com/about` ebenso wie
+`https://www.example.com/site/about`. Punktsegmente werden aufgelöst und `/index.php` entfernt. Dann:
 
 | Art | Regel | Geschrieben als |
 |---|---|---|
@@ -96,6 +99,14 @@ Query-String), und eine Datei, die nicht gesammelt werden konnte, werden als Adr
 `LiveURL` (Standard `https://` und der Host der `SiteURL`), gefolgt von Pfad, Query und Fragment des Originals. Ohne
 Live-Adresse bleiben sie unverändert. Adressen auf anderen Hosts, Fragmente derselben Seite (`#top`), ein alleiniger
 Query-String (`?x`) und `mailto:`, `tel:`, `javascript:`, `data:` und andere Schemata werden nie geändert.
+
+Mit `OutsideLinks=unlink` wird ein Link (`<a href>`) auf eine solche Seite, und mit `AdminLinks=unlink` ein Link,
+dessen Pfad mit dem Pfad eines Siteaccess der Administration beginnt, stattdessen herausgenommen: Das `<a>` und sein
+schließendes Tag werden zu einem `<span>` mit dem `class`-Attribut des Links, oder zu nichts, wenn er keines hatte, so
+dass nur sein Inhalt bleibt. Ein `<link>`, dessen `rel` nur Navigation nennt (`alternate`, `search`, `home`, `next`,
+`prev` ...), wird entfernt. Dateien, Bilder, Stylesheets, Skripte, Formularaktionen und andere Hosts werden nie
+herausgenommen. Ein Pfad der Administration gilt nie als Seite der Website. Der Bericht zählt beides
+(`links_removed_outside`, `links_removed_admin`).
 
 **Relative Links** (`Links=relative`) sind relativ zum Ordner der Datei, die sie enthält: `about-us/` von
 `index.html`, `../` von `about-us/index.html` zur Startseite, `./` zur eigenen Seite des Ordners.
@@ -191,7 +202,7 @@ dasselbe Objekt in eine Datei.
 | `scope` | `full` oder `partial` |
 | `target`, `siteaccess`, `run_id`, `started_at`, `duration_ms`, `directory` | der Build |
 | `links` | `mode`, `base_path`, `public_url` |
-| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `site_broken_links`, `bytes`, `stripped` (nach dem, was herausgenommen wurde) |
+| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `site_broken_links`, `bytes`, `stripped` (nach dem, was herausgenommen wurde) |
 | `diff` | `added`, `changed`, `removed`, `unchanged` (Anzahlen), `bytes_added`, `bytes_removed`, `files` (die Pfade, höchstens 500 von jedem) |
 | `pages` | jede Seite: `path`, `file`, `bytes`, `node`, `stripped` |
 | `refused` | jede abgelehnte Seite: `path`, `url`, `reasons` |

@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>फर्मखौ सानाय हायाखै: नाङै नायखौ नायखौ आरो दैथाय।</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>कपियाव गैया बिलाइफोरनि लिंकफोरखौ होखार</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>बेबहारनायाव थांनाय लिंकफोरखौ होखार</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>बेफोरनि लिरनायआ थायो। सावगारि, फर्म आरो गुबुन साइटनि लिंकफोरखौ माबेसेबां होखारा।</translation>
+    </message>
 </context>
 </TS>

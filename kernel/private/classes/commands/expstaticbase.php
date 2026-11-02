@@ -389,7 +389,10 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
         $lines[] = sprintf( '  Pages:  %d exported, %d refused, %d skipped, %d excluded', $c['pages'], $c['pages_refused'], $c['pages_skipped'], $c['pages_excluded'] );
         $lines[] = sprintf( '  Files:  %d named by the pages, %d of the storage, %d extras, %d could not be collected', $c['files'], $c['storage'], $c['extras'], $c['files_failed'] )
                  . ( !empty( $c['storage_missing'] ) ? sprintf( ' (%d image file(s) the image table lists are missing from the storage)', $c['storage_missing'] ) : '' );
-        $lines[] = sprintf( '  Links:  %d rewritten, %d to the live site, %d left as they are', $c['links_rewritten'], $c['links_live'], $c['links_external'] );
+        $lines[] = sprintf( '  Links:  %d rewritten, %d to the live site, %d left as they are', $c['links_rewritten'], $c['links_live'], $c['links_external'] )
+                 . ( !empty( $c['links_removed_outside'] ) || !empty( $c['links_removed_admin'] )
+                     ? sprintf( '; links removed: %d outside, %d admin', isset( $c['links_removed_outside'] ) ? $c['links_removed_outside'] : 0,
+                                isset( $c['links_removed_admin'] ) ? $c['links_removed_admin'] : 0 ) : '' );
         $lines[] = sprintf( '  Size:   %s in %d files', \expStaticBuild::bytes( $c['bytes'] ), $c['pages'] + $c['files'] + $c['storage'] + $c['extras'] );
         if ( !empty( $c['stripped'] ) )
         {

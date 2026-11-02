@@ -83180,5 +83180,17 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulir teu katarima: pariksa naon anu diasupkeun terus kirim deui.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Hapus tutumbu ka kaca anu henteu aya dina salinan</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Hapus tutumbu ka administrasi</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Téksna tetep aya. Gambar, formulir jeung tutumbu ka situs séjén henteu pernah dihapus.</translation>
+    </message>
 </context>
 </TS>

@@ -83202,5 +83202,17 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>No s'ha acceptat el formulari: comprova què has escrit i torna a enviar-lo.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Treu els enllaços a pàgines que la còpia no conté</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Treu els enllaços a l'administració</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>El seu text es manté. Les imatges, els formularis i els enllaços a altres llocs no es treuen mai.</translation>
+    </message>
 </context>
 </TS>

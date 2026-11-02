@@ -83172,5 +83172,17 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Fomu haina kugamuchirwa: tarirai zvamakanyora mutumire zvakare.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Bvisa zvinongedzo zvinoenda kumapeji asina mukopi</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Bvisa zvinongedzo zvinoenda kuhutungamiri</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Mavara azvo anosara. Mifananidzo, mafomu nezvinongedzo zvinoenda kune dzimwe saiti hazvimbobviswi.</translation>
+    </message>
 </context>
 </TS>

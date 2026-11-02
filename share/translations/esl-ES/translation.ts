@@ -84654,5 +84654,17 @@ Gracias por tu feedback</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>No se aceptó el formulario: comprueba lo que escribiste y vuelve a enviarlo.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Quitar los enlaces a páginas que la copia no contiene</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Quitar los enlaces a la administración</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Su texto se mantiene. Las imágenes, los formularios y los enlaces a otros sitios nunca se quitan.</translation>
+    </message>
 </context>
 </TS>

@@ -83172,5 +83172,17 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Forma kabul edilmedi: giren zadyňyzy barlaň we ýene iberiň.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Nusgada ýok sahypalara salgylary aýyr</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Dolandyryşa salgylary aýyr</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Olaryň teksti galýar. Suratlar, formalar we beýleki saýtlara salgylar hiç haçan aýrylmaýar.</translation>
+    </message>
 </context>
 </TS>

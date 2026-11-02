@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ဖောင်ကို လက်မခံပါ- ထည့်သွင်းထားသည်များကို စစ်ဆေးပြီး ထပ်ပို့ပါ။</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>မိတ္တူတွင် မပါသော စာမျက်နှာများသို့ လင့်ခ်များကို ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>စီမံခန့်ခွဲမှုသို့ လင့်ခ်များကို ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>၎င်းတို့၏ စာသား ကျန်ရှိသည်။ ပုံများ၊ ဖောင်များနှင့် အခြားဆိုက်များသို့ လင့်ခ်များကို ဘယ်တော့မှ မဖယ်ရှားပါ။</translation>
+    </message>
 </context>
 </TS>

@@ -45,6 +45,8 @@ class expStaticTarget
         'Credential' => 'none',
         'CrawlURL' => '',
         'LiveURL' => '',
+        'OutsideLinks' => 'keep',
+        'AdminLinks' => 'keep',
         'MaxPages' => '10000',
         'MaxDepth' => '',
         'Assets' => 'referenced-and-storage',
@@ -361,7 +363,8 @@ class expStaticTarget
         else if ( ( !isset( $urls[$s['SiteAccess']] ) || $urls[$s['SiteAccess']] === '' ) && $s['CrawlURL'] === '' )
             $errors[] = "The siteaccess {$s['SiteAccess']} has no SiteURL and the target no CrawlURL: there is no address to build from.";
 
-        foreach ( array( 'Kind' => self::KINDS, 'Delivery' => self::DELIVERIES, 'Links' => self::LINKS, 'Assets' => self::ASSETS, 'Forms' => self::FORMS ) as $name => $allowed )
+        foreach ( array( 'Kind' => self::KINDS, 'Delivery' => self::DELIVERIES, 'Links' => self::LINKS, 'Assets' => self::ASSETS, 'Forms' => self::FORMS,
+                         'OutsideLinks' => expStaticLinkRewriter::LINK_ACTIONS, 'AdminLinks' => expStaticLinkRewriter::LINK_ACTIONS ) as $name => $allowed )
             if ( !in_array( $s[$name], $allowed, true ) )
                 $errors[] = "$name={$s[$name]} is not one of " . implode( ', ', $allowed ) . '.';
         foreach ( array( 'Extras' => self::EXTRAS, 'PostProcess' => self::POST_PROCESS, 'Triggers' => self::TRIGGERS, 'Notify' => self::NOTIFY ) as $name => $allowed )

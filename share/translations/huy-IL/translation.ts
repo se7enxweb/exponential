@@ -83181,5 +83181,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>טופסא לא אתקבל: בדוק מה דהקלדת ושדר תוב.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>ܫܩܘܠ ܐܣܘܪܐ ܠܦܐܬܐ ܕܠܝܬ ܓܘ ܢܘܣܚܐ</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>ܫܩܘܠ ܐܣܘܪܐ ܠܡܕܒܪܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>ܟܬܒܬܐ ܕܝܗܘܢ ܦܝܫܐ. ܨܘܪܐ، ܛܘܦܣܐ ܘܐܣܘܪܐ ܠܕܘܟܐ ܐܚܪܢܐ ܠܐ ܦܝܫܝ ܫܩܝܠܐ ܡܢ ܡܬܘܡ.</translation>
+    </message>
 </context>
 </TS>

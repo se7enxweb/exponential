@@ -83202,5 +83202,17 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Il-formola ma ntqablitx: iċċekkja dak li dħalt u ibgħatha mill-ġdid.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Neħħi l-links għal paġni li l-kopja ma fihiex</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Neħħi l-links għall-amministrazzjoni</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>It-test tagħhom jibqa'. Stampi, formoli u links għal siti oħra qatt ma jitneħħew.</translation>
+    </message>
 </context>
 </TS>
