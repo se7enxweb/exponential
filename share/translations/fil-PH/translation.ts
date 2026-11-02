@@ -68848,6 +68848,42 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown sa %matching na policy (%total lahat)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Nilo-load kapag binuksan.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, tungkulin, limitasyon</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hanapin sa mga patakaran</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Mag-load pa</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/punsiyon</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Lahat ng tungkulin (%count patakaran)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Walang tumutugmang patakaran.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown sa %matched na patakaran</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Walang sagot</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

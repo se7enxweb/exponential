@@ -68673,6 +68673,42 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown z %matching pravidel (celkem %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Načte se po otevření.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, role, omezení</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hledat v zásadách</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Načíst další</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkce</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Všechny role (%count zásad)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Žádná zásada neodpovídá.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown z %matched zásad</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Žádná odpověď</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

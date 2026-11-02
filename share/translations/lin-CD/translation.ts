@@ -68848,6 +68848,42 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown na kati ya mibeko %matching (%total nyonso)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ekɛngami ntango efungami.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, mokumba, mokɔlɔ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Luka na bibongisi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Kɛnga mingi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/mosala</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Bikumba nyonso (bibongisi %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Libongisi moko te ekokani.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown na bibongisi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Eyano ezali te</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68659,6 +68659,26 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Loaded when opened.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Limitations</source>
         <translation type="unfinished"></translation>
     </message>
@@ -68676,6 +68696,22 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%shown of %matching policies (%total in all)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No answer</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

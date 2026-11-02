@@ -38,10 +38,12 @@ screens under Setup > Static publishing. The GitHub setup is added to it when it
    site's front page, follows only the links the site itself writes, and leaves out module views such as the search,
    the login and the editing screens. A target can fetch from an internal address (`CrawlURL`) instead of the site's
    public `SiteURL`.
-2. **Take out what must not be public.** Every page loses its debug output, form tokens (`ezxform_token` fields and
-   the `csrf-token` tags), session ids in addresses and Content Security Policy nonces.
-3. **Refuse what cannot be cleaned.** A page whose response set a session cookie, or that still carries debug output
-   or a form token, is refused. The build then fails and the target's folder is not changed. Pages that only exist
+2. **Take out what must not be public.** Every request carries a signed `X-Exp-Static-Build` header, so this server
+   renders the page without debug output even when its own address is in `DebugIPList[]` (see "Debug output and the
+   build" in the troubleshooting guide). Every page loses its form tokens (`ezxform_token` fields and the
+   `csrf-token` tags), session ids in addresses and Content Security Policy nonces.
+3. **Refuse what cannot be cleaned.** A page whose response set a session cookie, that still comes with debug output
+   (it is not stripped: the server did not take the signature), or that still carries a form token, is refused. The build then fails and the target's folder is not changed. Pages that only exist
    with a query string (`/blog?page=2`) and paths that cannot be a file name on every system are skipped and
    reported.
 4. **Collect the files.** Every file the pages and their style sheets name is copied: the designs' style sheets,
@@ -260,8 +262,9 @@ A target can publish itself: `Triggers[]=publish` (pages marked stale on content
 
 - Builds run as the anonymous user: the crawl sends no cookie, and the database checks (which storage images may be
   copied) are made for the anonymous user.
-- Pages with debug output, form tokens or session ids are cleaned; a page that cannot be cleaned, or whose response
-  set a session cookie, stops the build before anything is written to the target's folder.
+- The build's requests are signed so the server sends no debug output; a page that still comes with debug output
+  stops the build. Form tokens and session ids are cleaned; a page that cannot be cleaned, or whose response set a
+  session cookie, stops the build before anything is written to the target's folder.
 - Storage images are copied only for the published version of content the anonymous user may read. Images of drafts
   (`storage/images-versioned`) and files in `storage/original` are never copied from the storage; a download goes into
   the copy only when a page links it and the site hands it to an anonymous visitor.

@@ -68848,6 +68848,42 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching chính sách (tổng %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Được tải khi mở.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, vai trò, giới hạn</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Tìm kiếm chính sách</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Tải thêm</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mô-đun/chức năng</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Tất cả vai trò (%count chính sách)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Không có chính sách nào khớp.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown trên %matched chính sách</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Không có phản hồi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

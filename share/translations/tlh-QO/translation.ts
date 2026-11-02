@@ -67340,6 +67340,42 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching chutmey (%total Hoch)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>chenmoH 'e' poSDI' lan.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, Qu', chuq</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>lut nej</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>law' lan</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ngoq 'ay'/vangghach</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Qu' Hoch (lut %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>lut 'oH ghajbe'.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>lut %matched vo' %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>jang pagh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

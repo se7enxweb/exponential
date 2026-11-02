@@ -68848,6 +68848,42 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown war %matching reolenn (%total en holl)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Karget e vez pa vez digoret.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, roll, strishadur</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Klask er politikoù</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Kargañ muioc'h</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mollad/arc'hwel</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>An holl rolloù (%count politikaenn)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Politikaenn ebet ne glot.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown war %matched politikaenn</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Respont ebet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

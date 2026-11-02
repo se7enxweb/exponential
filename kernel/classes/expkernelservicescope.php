@@ -61,6 +61,9 @@ class expKernelServiceScope
         'classifier'  => array( 'expRequestClassifier', 'reset' ),
         // the configurations of the "Approve user accounts" events are read again: a changed workflow counts at once
         'userapproval' => array( 'expUserApproval', 'resetRequest' ),
+        // a static publishing build's request: its verdict is made again, the template debug switches it turned off
+        // are given back (expStaticBuildSignature)
+        'staticbuild' => array( 'expStaticBuildSignature', 'resetRequest' ),
     );
 
     /**

@@ -68787,6 +68787,42 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown de %matching polítiques (%total en total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Es carrega en obrir-ho.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, limitació</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Cerca les polítiques</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Carrega'n més</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mòdul/funció</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Tots els rols (%count polítiques)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Cap política coincideix.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown de %matched polítiques</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Sense resposta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

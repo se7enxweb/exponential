@@ -68848,6 +68848,42 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown sa %matching ka policy (%total tanan)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Gi-load kon ablihan.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, papel, limitasyon</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Pangita sa mga palisiya</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Pag-load pa</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/punsyon</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Tanang papel (%count ka palisiya)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Walay palisiya nga motugma.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown sa %matched ka palisiya</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Walay tubag</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

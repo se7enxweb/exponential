@@ -68787,6 +68787,42 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown nga %matching politika (%total gjithsej)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ngarkohet kur hapet.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, roli, kufizim</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Kërko te politikat</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Ngarko më shumë</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduli/funksioni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Të gjitha rolet (%count politika)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Asnjë politikë nuk përputhet.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown nga %matched politika</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nuk ka përgjigje</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68787,6 +68787,42 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching poliitikat (kokku %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Laaditakse avamisel.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>moodul/funktsioon, roll, piirang</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Otsi eeskirjadest</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Laadi veel</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moodul/funktsioon</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Kõik rollid (%count eeskirja)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ühtegi eeskirja ei leitud.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown / %matched eeskirja</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Vastust pole</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

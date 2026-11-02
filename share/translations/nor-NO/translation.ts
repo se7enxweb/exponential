@@ -68649,6 +68649,42 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown av %matching policyer (%total totalt)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Lastes når den åpnes.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rolle, begrensning</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Søk i retningslinjene</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Last inn flere</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funksjon</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle roller (%count retningslinjer)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ingen retningslinje samsvarer.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown av %matched retningslinjer</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ingen svar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

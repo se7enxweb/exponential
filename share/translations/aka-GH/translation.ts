@@ -68848,6 +68848,42 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown firi %matching mmara mu (%total nyinaa)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Wɔde ba bere a wobue no.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, dwumadi, ahyɛde</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hwehwɛ mmara ahyɛde no</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Fa pii ba</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/dwumadie</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Dwumadi nyinaa (mmara ahyɛde %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Mmara ahyɛde biara nhyia.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown wɔ mmara ahyɛde %matched mu</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nnaano biara nni hɔ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

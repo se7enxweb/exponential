@@ -69383,6 +69383,42 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown de %matching políticas (%total no total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Carregado ao abrir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, papel, limitação</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Pesquisar as políticas</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Carregar mais</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Módulo/função</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Todos os papéis (%count políticas)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nenhuma política corresponde.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown de %matched políticas</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Sem resposta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68848,6 +68848,42 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching njuolggadusa (oktiibuot %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Viežžá go rahpa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rolla, ráddjejupmi</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Oza njuolggadusaid</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Viečča eambbo</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduvla/doaibma</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Buot rollat (%count njuolggadusa)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ii oktage njuolggadus heive.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown %matched njuolggadusas</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Eai vástádus</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

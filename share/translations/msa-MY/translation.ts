@@ -68848,6 +68848,42 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown daripada %matching polisi (%total kesemuanya)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Dimuatkan apabila dibuka.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, peranan, had</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Cari dasar</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Muat lagi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/fungsi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Semua peranan (%count dasar)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Tiada dasar yang sepadan.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown daripada %matched dasar</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Tiada jawapan</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

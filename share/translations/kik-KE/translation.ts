@@ -68848,6 +68848,42 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ya %matching ma mawatho (%total mothe)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Nĩ ĩrehwo rĩrĩa ĩhingũrwo.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/wĩra, mũrimo, ũthibitĩri</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Caria mawatho</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Rehe maingĩ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/wĩra</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Mĩrimo yothe (mawatho %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Gũtirĩ watho ũhoyanaga.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown kuuma mawatho %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Gũtirĩ ũndũ ũgaruririo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

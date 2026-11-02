@@ -68848,6 +68848,42 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown av %matching politikkum (%total í alt)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Verður loadað, tá opnað verður.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, leiklutur, avmarking</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Leita í reglunum</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Loada meira</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funktión</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Allir leiklutir (%count reglur)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Eingin regla passar.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown av %matched reglum</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Einki svar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

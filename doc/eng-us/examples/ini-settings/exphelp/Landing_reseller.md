@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_reseller]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_reseller] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_reseller, INI, setting, StartPage, Related
+summary: "The settings of [Landing_reseller] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_reseller, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_reseller]
 
-The block `[Landing_reseller]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_reseller]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/resellers/resellers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_reseller]
 StartPage=help/resellers/resellers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/integrators/offer-static-hosting-to-your-clients.md`, `guides/host-static-sites-on-github-pages.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_reseller]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/integrators/offer-static-hosting-to-your-clients.md
+InfoPages[]=guides/host-static-sites-on-github-pages.md
 */ ?>
 ```
 

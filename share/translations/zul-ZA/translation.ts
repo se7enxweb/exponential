@@ -68846,6 +68846,42 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown kwezi %matching izinqubomgomo (%total sezizonke)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ilayishwa uma ivulwa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, indima, umkhawulo</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Sesha izinqubomgomo</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Layisha okwengeziwe</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Imojuli/umsebenzi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Zonke izindima (izinqubomgomo ezingu-%count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Azikho izinqubomgomo ezifanayo.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown kwezinqubomgomo ezingu-%matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Alukho impendulo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

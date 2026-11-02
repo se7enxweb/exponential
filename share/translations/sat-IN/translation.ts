@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching ᱯᱚᱞᱤᱥᱤ ᱠᱷᱚᱱ %shown (ᱡᱚᱛᱚ %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ᱠᱷᱩᱞᱟ ᱚᱠᱛᱮ ᱞᱚᱰ ᱠᱟᱱᱟ ᱾</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>ᱢᱚᱰᱭᱩᱞ/ᱠᱟᱢᱤ, ᱵᱷᱩᱢᱤᱠᱟ, ᱵᱚᱸᱫᱷᱚᱱ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ ᱠᱚ ᱯᱟᱱᱛᱮ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱞᱚᱰ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ᱢᱚᱰᱭᱩᱞ/ᱠᱟᱢᱤ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ᱡᱚᱛᱚ ᱵᱷᱩᱢᱤᱠᱟ (ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ᱢᱤᱫ ᱦᱚᱸ ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ ᱵᱟᱝ ᱢᱤᱞᱟᱣ ᱾</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ ᱠᱷᱚᱱ %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ᱡᱟᱣᱟᱵ ᱵᱟᱝ ᱢᱮᱱᱟᱜ ᱾</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

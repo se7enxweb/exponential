@@ -68848,6 +68848,42 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown kuri %matching y'amategeko (%total yose hamwe)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Biraremerwa igihe bifunguwe.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, uruhara, ikibujijwe</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Rondera amategeko</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Rema ibindi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modile/igikorwa</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Uruhara rwose (amategeko %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nta tegeko rihuye.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown muri %matched y'amategeko</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nta gisubizo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68787,6 +68787,42 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown minn %matching politika (%total b'kollox)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Jitgħabba meta jinfetaħ.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rwol, limitazzjoni</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Fittex il-politiki</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Agħmel aktar</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulu/funzjoni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ir-rwoli kollha (%count politiki)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>L-ebda politika ma taqbel.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown minn %matched politiki</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ebda tweġiba</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

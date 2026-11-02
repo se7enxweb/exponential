@@ -68848,6 +68848,42 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching syýasat (jemi %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Açylanda ýüklenýär.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, çäklendirme</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Syýasatlary gözle</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Has köp ýükle</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funksiýa</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ähli rollar (%count syýasat)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Hiç bir syýasat gabat gelmeýär.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched syýasatdan %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Jogap ýok</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

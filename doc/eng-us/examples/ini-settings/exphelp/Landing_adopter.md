@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_adopter]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_adopter] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_adopter, INI, setting, StartPage, Related
+summary: "The settings of [Landing_adopter] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_adopter, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_adopter]
 
-The block `[Landing_adopter]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_adopter]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/adopters/adopters-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_adopter]
 StartPage=help/adopters/adopters-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/adopters/try-exponential-and-publish-a-free-site.md`, `help/static-publishing/make-a-free-website-in-15-minutes.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_adopter]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/adopters/try-exponential-and-publish-a-free-site.md
+InfoPages[]=help/static-publishing/make-a-free-website-in-15-minutes.md
 */ ?>
 ```
 

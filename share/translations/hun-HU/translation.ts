@@ -68787,6 +68787,42 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching házirend (összesen %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Megnyitáskor töltődik be.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funkció, szerepkör, korlátozás</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Keresés a szabályzatokban</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Továbbiak betöltése</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkció</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Minden szerepkör (%count szabályzat)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nincs egyező szabályzat.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown / %matched szabályzat</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nincs válasz</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

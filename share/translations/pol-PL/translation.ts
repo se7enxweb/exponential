@@ -68603,6 +68603,42 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown z %matching polityk (łącznie %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ładowane po otwarciu.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rola, ograniczenie</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Przeszukaj polityki</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Załaduj więcej</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduł/funkcja</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Wszystkie role (%count polityk)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Żadna polityka nie pasuje.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown z %matched polityk</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Brak odpowiedzi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

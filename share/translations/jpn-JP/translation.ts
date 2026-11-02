@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching 件のポリシー（全 %total 件）</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>開くと読み込まれます。</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>モジュール/ファンクション、ロール、制限</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ポリシーを検索</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>さらに読み込む</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>モジュール/ファンクション</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>すべてのロール（%count 件のポリシー）</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>一致するポリシーはありません。</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched 件中 %shown 件のポリシー</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>応答がありません</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

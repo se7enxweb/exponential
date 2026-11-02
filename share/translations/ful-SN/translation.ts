@@ -68848,6 +68848,42 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown e %matching dawaale (%total fof)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>A ɗon loowee to ɗum maɓɓi.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, kuugal, ɓamtol</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Ɗaɓɓutu laawol ɗiɗi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Loowtu ko ɓuri</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/golle</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Kuuje fuu (laawol %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Walaa laawol jaajanoojo.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown e laawol %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Walaa jaabawol</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

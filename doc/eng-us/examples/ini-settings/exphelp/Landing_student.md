@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_student]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_student] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_student, INI, setting, StartPage, Related
+summary: "The settings of [Landing_student] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_student, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_student]
 
-The block `[Landing_student]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_student]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/students/students-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_student]
 StartPage=help/students/students-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/students/publish-your-portfolio-free-on-github-pages.md`, `help/static-publishing/make-a-free-website-in-15-minutes.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_student]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/students/publish-your-portfolio-free-on-github-pages.md
+InfoPages[]=help/static-publishing/make-a-free-website-in-15-minutes.md
 */ ?>
 ```
 

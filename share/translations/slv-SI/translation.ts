@@ -68787,6 +68787,42 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown od %matching pravilnikov (skupaj %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Naloži se ob odprtju.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funkcija, vloga, omejitev</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Išči po politikah</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Naloži več</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Vse vloge (%count politik)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nobena politika se ne ujema.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown od %matched politik</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ni odgovora</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

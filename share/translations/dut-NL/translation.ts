@@ -68616,6 +68616,42 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown van %matching policy's (%total in totaal)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Wordt geladen bij openen.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, beperking</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Beleidsregels doorzoeken</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Meer laden</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/functie</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle rollen (%count beleidsregels)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Geen beleidsregel komt overeen.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown van %matched beleidsregels</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Geen antwoord</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

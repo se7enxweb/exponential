@@ -39,11 +39,26 @@ listet jede Veröffentlichung mit ihrem Push-Status.
 |---|---|
 | `No page was exported` | Der Server kann die Site unter `SiteURL` nicht abrufen; `CrawlURL` auf eine erreichbare Adresse setzen |
 | `refused: the response set the session cookie` | Die Seite startet eine Session für anonyme Besucher (ein Formular, ein Warenkorb, eine Registrierung); mit `ExcludePaths[]` auslassen oder ändern |
-| `refused: debug output` | Debug-Ausgaben sind für die Adresse des Builds eingeschaltet; dort ausschalten |
+| `came with debug output`, `refused: debug output from the server` | Der antwortende Server hat den signierten Header `X-Exp-Static-Build` des Builds nicht angenommen (siehe unten): vom eigenen Server dieser Installation abrufen, nach einem Update PHP-FPM neu laden und Velocity neu starten |
 | Seiten `skipped` | Sie existieren nur mit einer Query, oder ihr Pfad kann nicht auf jedem System ein Dateiname sein |
 | Dateien `could not be collected` | Die Site gibt sie anonymen Besuchern nicht heraus; ihre Links führen zur Live-Site (`files_failed` in `--format=json`) |
 | `another process works on the target` | Ein Build, eine Veröffentlichung, ein Zurücknehmen oder ein Push dieses Ziels läuft; warten |
 | Ein Build ist sehr groß | `Assets=referenced` kopiert nur, was Seiten nennen; Sektionen auslassen, die nicht öffentlich sein müssen |
+
+**Debug-Ausgaben und der Build.** Ein Build ruft die Site per HTTP vom Server ab, auf dem er läuft, und dessen eigene
+Adressen (`127.0.0.1`, `::1`, seine öffentliche Adresse) stehen oft in `site.ini [DebugSettings] DebugIPList[]`.
+Deshalb trägt jede Anfrage eines Builds einen signierten Header `X-Exp-Static-Build`: einen HMAC mit einem Schlüssel
+aus dem Geheimnis der Installation (demselben, mit dem die Formular-Tokens statischer Kopien signiert werden) über
+eine frische Nonce, gültig für zwei Minuten und für höchstens vier Anfragen (die Anfrage und ihre Weiterleitungen).
+Eine Anfrage mit gültiger Signatur, die vom Server selbst kommt (ihre `REMOTE_ADDR` ist eine Loopback-Adresse oder
+eine der eigenen Adressen des Servers, nie ein weitergeleiteter Header), bekommt keine Debug-Ausgaben: keinen
+Debug-Bericht, keine Debug-Leiste, keine Template-Debug-Kommentare, kein DebugByUser. Die Seite ist genau das, was ein
+Besucher außerhalb der Liste sieht, unter Apache mit PHP-FPM wie unter Velocity, und an keiner `site.ini` ändert sich
+etwas. Der Header kann Debug-Ausgaben nur aus-, nie einschalten; von einer anderen Adresse, abgelaufen, gefälscht oder
+aufgebraucht ändert er nichts. Eine Seite, die trotzdem mit Debug-Ausgaben kommt (oder mit einem Antwort-Header, der
+nach Debugging benannt ist), wird nicht bereinigt, sondern abgelehnt, und der Build scheitert mit
+`came with debug output`: Der Server hat die Signatur nicht angenommen, weil der Build von einem anderen Rechner
+abgerufen hat (`CrawlURL`) oder der Webserver noch älteren Code oder ein anderes Geheimnis verwendet.
 
 ## Die Veröffentlichung
 

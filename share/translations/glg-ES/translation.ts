@@ -68848,6 +68848,42 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown de %matching políticas (%total en total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Cárgase ao abrir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, limitación</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Buscar nas políticas</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Cargar máis</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Módulo/función</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Todos os roles (%count políticas)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ningunha política coincide.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown de %matched políticas</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Sen resposta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68848,6 +68848,42 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching politika (guztira %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Irekitzean kargatzen da.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rola, murriztapena</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Bilatu politikak</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Kargatu gehiago</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulua/funtzioa</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Rol guztiak (%count politika)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ez dago bat datorren politikarik.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched politikatik %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Erantzunik ez</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68848,6 +68848,42 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown à %matching poileasaidhean (%total uile gu lèir)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Thèid a luchdadh nuair a dh'fhosglas tu e.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, dreuchd, cuingealachadh</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Lorg sna poileasaidhean</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Luchdaich barrachd</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mòideal/foincsean</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>A h-uile dreuchd (%count poileasaidhean)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Chan eil poileasaidh a' freagairt.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown à %matched poileasaidhean</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Chan eil freagairt ann</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>ප්‍රතිපත්ති %matching න් %shown (මුළු %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>විවෘත කළ විට පූරණය වේ.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, භූමිකාව, සීමාව</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ප්‍රතිපත්ති සොයන්න</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>තවත් පූරණය කරන්න</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>මොඩියුලය/ශ්‍රිතය</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>සියලු භූමිකා (ප්‍රතිපත්ති %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ගැලපෙන ප්‍රතිපත්තියක් නැත.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>ප්‍රතිපත්ති %matched න් %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>පිළිතුරක් නැත</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

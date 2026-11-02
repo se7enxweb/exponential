@@ -68846,6 +68846,42 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown kati ya sera %matching (%total kwa jumla)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Hupakiwa inapofunguliwa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>moduli/kitendakazi, jukumu, kikomo</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Tafuta sera</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Pakia zaidi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduli/kitendakazi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Majukumu yote (sera %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Hakuna sera inayolingana.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>Sera %shown kati ya %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Hakuna jibu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
