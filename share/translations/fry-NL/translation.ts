@@ -83172,5 +83172,17 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>It formulier is net akseptearre: kontrolearje wat ynfierd is en ferstjoer it opnij.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Keppelings fuortsmite nei siden dy't de kopy net befettet</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Keppelings nei it behear fuortsmite</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Harren tekst bliuwt stean. Ofbyldings, formulieren en keppelings nei oare siden wurde nea fuortsmiten.</translation>
+    </message>
 </context>
 </TS>

@@ -83172,5 +83172,17 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Kāore i whakaaetia te puka: tirohia ō tuhinga ka tuku anō.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Tangohia ngā hononga ki ngā whārangi kāore i te kape</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Tangohia ngā hononga ki te whakahaere</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ka noho tonu tō rātou kuputuhi. Kāore rawa e tangohia ngā whakaahua, ngā puka me ngā hononga ki ētahi atu pae.</translation>
+    </message>
 </context>
 </TS>

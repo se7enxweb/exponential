@@ -83202,5 +83202,17 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Lomaketta ei hyväksytty: tarkista syöttämäsi ja lähetä se uudelleen.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Poista linkit sivuille, joita kopio ei sisällä</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Poista linkit ylläpitoon</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Niiden teksti säilyy. Kuvia, lomakkeita ja linkkejä muille sivustoille ei koskaan poisteta.</translation>
+    </message>
 </context>
 </TS>

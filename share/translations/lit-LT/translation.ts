@@ -83202,5 +83202,17 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Forma nepriimta: patikrinkite įvestus duomenis ir siųskite dar kartą.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Pašalinti nuorodas į puslapius, kurių kopijoje nėra</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Pašalinti nuorodas į administravimą</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Jų tekstas lieka. Paveikslėliai, formos ir nuorodos į kitas svetaines niekada nešalinami.</translation>
+    </message>
 </context>
 </TS>

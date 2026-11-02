@@ -83172,5 +83172,17 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Il formular n'è betg vegnì acceptà: controllai tge che vus avais endatà e trametteit il danovamain.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Allontanar colliaziuns a paginas che la copia na cuntegna betg</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Allontanar colliaziuns en l'administraziun</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Lur text resta. Maletgs, formulars e colliaziuns ad autras websites na vegnan mai allontanads.</translation>
+    </message>
 </context>
 </TS>

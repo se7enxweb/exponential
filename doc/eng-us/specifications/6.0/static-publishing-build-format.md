@@ -91,6 +91,13 @@ followed by the original path, query and fragment. Without a live address they s
 hosts, fragments of the same page (`#top`), a lone query (`?x`), and `mailto:`, `tel:`, `javascript:`, `data:` and
 other schemes are never changed.
 
+With `OutsideLinks=unlink` a link (`<a href>`) to such a page, and with `AdminLinks=unlink` a link whose path starts
+with the path of an administration siteaccess, is taken out instead: the `<a>` and its closing tag become a `<span>`
+with the link's `class` attribute, or nothing when it had none, so only its content stays. A `<link>` whose `rel` only
+names navigation (`alternate`, `search`, `home`, `next`, `prev` ...) is dropped. Files, images, style sheets, scripts,
+form actions and other hosts are never taken out. An administration path is never held as a page of the site. The
+report counts both (`links_removed_outside`, `links_removed_admin`).
+
 **Relative links** (`Links=relative`) are relative to the folder of the file that holds them: `about-us/` from
 `index.html`, `../` from `about-us/index.html` to the front page, `./` to the folder's own page. **Base-path links**
 (`Links=base-path`) are `BasePath` followed by the address in the copy: `/my-site/about-us/`. With a `PublicURL`,
@@ -185,7 +192,7 @@ object to a file.
 | `scope` | `full` or `partial` |
 | `target`, `siteaccess`, `run_id`, `started_at`, `duration_ms`, `directory` | the build |
 | `links` | `mode`, `base_path`, `public_url` |
-| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `site_broken_links`, `bytes`, `stripped` (by what was taken out) |
+| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `site_broken_links`, `bytes`, `stripped` (by what was taken out) |
 | `diff` | `added`, `changed`, `removed`, `unchanged` (counts), `bytes_added`, `bytes_removed`, `files` (the paths, at most 500 of each) |
 | `pages` | each page: `path`, `file`, `bytes`, `node`, `stripped` |
 | `refused` | each refused page: `path`, `url`, `reasons` |

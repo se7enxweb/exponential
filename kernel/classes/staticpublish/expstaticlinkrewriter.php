@@ -25,6 +25,13 @@
  * of a file (style.css?x=1) are kept. Addresses that are not links (mailto:, tel:, data:, javascript:) and links to
  * other hosts are left alone.
  *
+ * Links a visitor of the copy cannot use can be taken out instead (outside_links and admin_links set to unlink, the
+ * target settings OutsideLinks and AdminLinks): a link (<a href>) to a page of the site's own host that the export
+ * does not hold, or into an administration siteaccess (admin_paths), becomes its text; a class the link had stays on
+ * a <span> around the text, so the styling holds. A <link> of navigation (alternate, search, home, next ...) to such
+ * a page is dropped. Images, style sheets, scripts, forms (the degrader's work, the target setting Forms) and links
+ * to other hosts are never taken out.
+ *
  * The specification: doc/eng-us/specifications/6.0/static-publishing-build-format.md.
  */
 class expStaticLinkRewriter
@@ -50,7 +57,22 @@ class expStaticLinkRewriter
     /** <meta> names and properties whose content is an address (social cards) */
     const META_URL = '#^(og:(url|image|image:url|image:secure_url|audio|video|video:url)|twitter:(image|image:src|url)|msapplication-tileimage|thumbnail)$#i';
 
+    /** What happens to a link the copy cannot use: kept (to the live site, or as it is) or taken out */
+    const LINK_ACTIONS = array( 'keep', 'unlink' );
+
+    /** <link rel> values that only point somewhere: such a <link> can be dropped without changing the page */
+    const NAVIGATION_RELS = '#^\s*(?:(?:alternate|search|home|index|start|help|author|license|next|prev|previous|first|last|up|shortlink|edit|edituri|bookmark|archives|contents|sitemap)\s*)+$#i';
+
     private $origins = array();
+    private $outsideLinks = 'keep';
+    private $adminLinks = 'keep';
+    private $adminPaths = array();
+
+    /** The open <a> of the markup being rewritten: '' none or kept, 'span' taken out with a <span>, 'drop' taken out */
+    private $anchor = '';
+
+    /** Set by rewriteAttributes() when the tag it rewrote is taken out */
+    private $unlinked = false;
     private $sitePath = '';
     private $mode = self::MODE_RELATIVE;
     private $basePath = '/';
@@ -66,7 +88,7 @@ class expStaticLinkRewriter
     /** output path => source path, of the files found since reset() */
     private $foundFiles = array();
 
-    private $counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0 );
+    private $counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0 );
 
     /**
      * @param array $options origins (array of scheme://host[:port]), site_path ('' or /site), mode (relative or
@@ -75,7 +97,9 @@ class expStaticLinkRewriter
      *        link), live_url (where links to what the export does not hold go: https://www.example.com; empty: left
      *        as they are), pages (callable( $pagePath, $query ) => bool: whether the export holds the page; null:
      *        every page without a query), files (callable( $outputPath ) => bool: whether the export holds the
-     *        file; null: every file)
+     *        file; null: every file), outside_links (keep or unlink: a link to a page of the site's host the export
+     *        does not hold), admin_links (keep or unlink: a link into an administration siteaccess), admin_paths
+     *        (array of host paths of the administration siteaccesses: /admin)
      */
     public function __construct( array $options = array() )
     {
@@ -93,6 +117,29 @@ class expStaticLinkRewriter
         $this->pages = isset( $options['pages'] ) && is_callable( $options['pages'] ) ? $options['pages'] : null;
         $this->files = isset( $options['files'] ) && is_callable( $options['files'] ) ? $options['files'] : null;
         $this->fileExtensions = array_flip( explode( ',', self::FILE_EXTENSIONS ) );
+        $this->outsideLinks = isset( $options['outside_links'] ) && $options['outside_links'] === 'unlink' ? 'unlink' : 'keep';
+        $this->adminLinks = isset( $options['admin_links'] ) && $options['admin_links'] === 'unlink' ? 'unlink' : 'keep';
+        foreach ( isset( $options['admin_paths'] ) ? (array)$options['admin_paths'] : array() as $path )
+        {
+            $path = self::trimSlash( (string)$path );
+            if ( $path !== '' )
+                $this->adminPaths[$path] = true;
+        }
+    }
+
+    /**
+     * Whether a host path is in an administration siteaccess: /admin, /admin/content/view/full/2, not /administrators.
+     *
+     * @param string $path
+     * @return bool
+     */
+    public function isAdminPath( $path )
+    {
+        $path = (string)$path;
+        foreach ( $this->adminPaths as $prefix => $true )
+            if ( $path === $prefix || strpos( $path, $prefix . '/' ) === 0 )
+                return true;
+        return false;
     }
 
     /**
@@ -137,7 +184,7 @@ class expStaticLinkRewriter
     {
         $this->foundPages = array();
         $this->foundFiles = array();
-        $this->counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0 );
+        $this->counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0 );
     }
 
     /** @return array page path => true, of the internal page links found since reset() */
@@ -152,7 +199,10 @@ class expStaticLinkRewriter
         return $this->foundFiles;
     }
 
-    /** @return array rewritten, live (sent to the live site), external (left alone) */
+    /**
+     * @return array rewritten, live (sent to the live site), external (left alone), removed_outside (links to pages
+     *         the export does not hold, taken out), removed_admin (links into the administration, taken out)
+     */
     public function counts()
     {
         return $this->counts;
@@ -381,9 +431,10 @@ class expStaticLinkRewriter
      * @param string $documentPath the host path of the document holding it
      * @param string $fromFile its file in the export
      * @param bool $absolute an absolute address is wanted (canonical, alternate, social cards)
-     * @return string
+     * @param bool $unlinkable the address is a link that may be taken out (outside_links, admin_links)
+     * @return string|null null: the link is taken out (only with $unlinkable)
      */
-    public function rewriteUrl( $url, $documentPath, $fromFile, $absolute = false )
+    public function rewriteUrl( $url, $documentPath, $fromFile, $absolute = false, $unlinkable = false )
     {
         $c = $this->classify( $url, $documentPath );
         if ( $c['kind'] === 'none' )
@@ -408,13 +459,35 @@ class expStaticLinkRewriter
             $file = self::pageFile( $c['page'] );
             if ( $c['query'] === '' && $file !== null )
                 $this->foundPages[$c['page']] = true;
-            $held = $file !== null && ( $this->pages === null ? $c['query'] === '' : (bool)call_user_func( $this->pages, $c['page'], $c['query'] ) );
+            // a page of an administration siteaccess is never one of the site's, even for a site at the root of the host
+            $held = $file !== null && !$this->isAdminPath( $c['path'] ) && ( $this->pages === null ? $c['query'] === '' : (bool)call_user_func( $this->pages, $c['page'], $c['query'] ) );
             if ( !$held )
-                return $this->live( $url, $c );
+                return $unlinkable && $this->removes( $c ) ? null : $this->live( $url, $c );
             $this->counts['rewritten']++;
             return $this->link( self::pageUrl( (string)$file ), $fromFile, $absolute ) . $c['query'] . $c['fragment'];
         }
-        return $this->live( $url, $c );
+        return $unlinkable && $this->removes( $c ) ? null : $this->live( $url, $c );
+    }
+
+    /**
+     * Whether a link to a page the export does not hold (or outside the site) is taken out, counted when it is.
+     *
+     * @param array $c classify()
+     * @return bool
+     */
+    private function removes( array $c )
+    {
+        if ( $this->isAdminPath( $c['path'] ) )
+        {
+            if ( $this->adminLinks !== 'unlink' )
+                return false;
+            $this->counts['removed_admin']++;
+            return true;
+        }
+        if ( $this->outsideLinks !== 'unlink' )
+            return false;
+        $this->counts['removed_outside']++;
+        return true;
     }
 
     /**
@@ -562,6 +635,7 @@ class expStaticLinkRewriter
     public function rewriteHtml( $html, $documentPath, $fromFile )
     {
         $html = (string)$html;
+        $this->anchor = '';
         $parts = preg_split( '#(<!--.*?-->|<script\b[^>]*>.*?</script\s*>|<style\b[^>]*>.*?</style\s*>)#is', $html, -1, PREG_SPLIT_DELIM_CAPTURE );
         if ( $parts === false )
             return $html;
@@ -623,13 +697,54 @@ class expStaticLinkRewriter
     private function rewriteTags( $markup, $documentPath, $fromFile )
     {
         $rewriter = $this;
-        return (string)preg_replace_callback( '#<([a-zA-Z][a-zA-Z0-9:-]*)(\s[^>]*?)?(/?)>#s', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        return (string)preg_replace_callback( '#<(/?)([a-zA-Z][a-zA-Z0-9:-]*)(\s[^>]*?)?(/?)>#s', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
-            if ( !isset( $m[2] ) || $m[2] === '' )
-                return $m[0];
-            $attributes = $rewriter->rewriteAttributes( strtolower( $m[1] ), $m[2], $documentPath, $fromFile );
-            return $attributes === $m[2] ? $m[0] : '<' . $m[1] . $attributes . $m[3] . '>';
+            return $rewriter->rewriteTag( $m, $documentPath, $fromFile );
         }, $markup );
+    }
+
+    /**
+     * One tag rewritten. Public for the callback; use rewriteHtml().
+     *
+     * @param array $m the match of rewriteTags(): 1 the / of a closing tag, 2 the name, 3 the attributes, 4 the / of an
+     *        empty element
+     * @param string $documentPath
+     * @param string $fromFile
+     * @return string
+     */
+    public function rewriteTag( array $m, $documentPath, $fromFile )
+    {
+        $tag = strtolower( $m[2] );
+        if ( $m[1] === '/' )
+        {
+            if ( $tag !== 'a' )
+                return $m[0];
+            $anchor = $this->anchor;
+            $this->anchor = '';
+            return $anchor === 'span' ? '</span>' : ( $anchor === 'drop' ? '' : $m[0] );
+        }
+        // an <a> ends the one before it, as a browser reads it
+        $before = $tag === 'a' && $this->anchor === 'span' ? '</span>' : '';
+        if ( $tag === 'a' )
+            $this->anchor = '';
+        if ( !isset( $m[3] ) || $m[3] === '' )
+            return $before . $m[0];
+        $this->unlinked = false;
+        $attributes = $this->rewriteAttributes( $tag, $m[3], $documentPath, $fromFile );
+        if ( $this->unlinked )
+        {
+            $this->unlinked = false;
+            if ( $tag === 'link' )
+                return '';
+            if ( preg_match( '#\sclass\s*=\s*("[^"]*"|\'[^\']*\'|[^\s"\'>]+)#i', $m[3], $class ) )
+            {
+                $this->anchor = 'span';
+                return $before . '<span class=' . ( $class[1][0] === '"' || $class[1][0] === "'" ? $class[1] : '"' . $class[1] . '"' ) . '>';
+            }
+            $this->anchor = 'drop';
+            return $before;
+        }
+        return $before . ( $attributes === $m[3] ? $m[0] : '<' . $m[2] . $attributes . $m[4] . '>' );
     }
 
     /**
@@ -660,6 +775,9 @@ class expStaticLinkRewriter
                        ( isset( $names['name'] ) && preg_match( self::META_URL, $names['name'] ) ) ||
                        ( isset( $names['itemprop'] ) && preg_match( '#^(image|url|thumbnailurl)$#i', $names['itemprop'] ) ) );
 
+        // a link that may be taken out: <a href>, and a <link> that only points somewhere
+        $unlinkable = $tag === 'a' || ( $tag === 'link' && isset( $names['rel'] ) && preg_match( self::NAVIGATION_RELS, $names['rel'] ) );
+
         $out = '';
         $position = 0;
         foreach ( $all as $a )
@@ -670,7 +788,16 @@ class expStaticLinkRewriter
             $raw = self::attributeValue( $a );
             $value = html_entity_decode( $raw, ENT_QUOTES | ENT_HTML5, 'UTF-8' );
             $new = $value;
-            if ( in_array( $name, self::URL_ATTRIBUTES, true ) )
+            if ( $name === 'href' && $unlinkable )
+            {
+                $new = $this->rewriteUrl( $value, $documentPath, $fromFile, $absolute, true );
+                if ( $new === null )
+                {
+                    $this->unlinked = true;
+                    return $attributes;
+                }
+            }
+            else if ( in_array( $name, self::URL_ATTRIBUTES, true ) )
                 $new = $this->rewriteUrl( $value, $documentPath, $fromFile, $absolute );
             else if ( in_array( $name, self::SRCSET_ATTRIBUTES, true ) )
                 $new = $this->rewriteSrcset( $value, $documentPath, $fromFile );

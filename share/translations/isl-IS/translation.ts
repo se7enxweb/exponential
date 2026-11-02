@@ -83202,5 +83202,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Eyðublaðið var ekki samþykkt: athugaðu það sem þú slóst inn og sendu aftur.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Fjarlægja tengla á síður sem afritið inniheldur ekki</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Fjarlægja tengla í stjórnborðið</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Texti þeirra stendur eftir. Myndir, eyðublöð og tenglar á aðra vefi eru aldrei fjarlægð.</translation>
+    </message>
 </context>
 </TS>

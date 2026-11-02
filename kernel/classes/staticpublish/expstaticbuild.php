@@ -158,7 +158,7 @@ class expStaticBuild
             'links' => array( 'mode' => $this->target->linkMode(), 'base_path' => $this->target->basePath(), 'public_url' => $this->target->publicUrl() ),
             'counts' => array( 'pages' => 0, 'pages_refused' => 0, 'pages_skipped' => 0, 'pages_excluded' => 0, 'files' => 0,
                                'storage' => 0, 'storage_missing' => 0, 'files_failed' => 0, 'extras' => 0, 'links_rewritten' => 0, 'links_live' => 0,
-                               'links_external' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0,
+                               'links_external' => 0, 'links_removed_outside' => 0, 'links_removed_admin' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0,
                                'fingerprinted' => 0, 'precompressed' => 0 ),
             'degraded' => array(),
             'search' => null,
@@ -293,7 +293,9 @@ class expStaticBuild
         $this->say( 'phase-item', 'From:   ' . $originUrl . ( $sitePath === '' ? '/' : $sitePath . '/' ) );
         $this->say( 'phase-item', 'To:     ' . $targetDir . ( $this->options['dry_run'] ? ' (dry run: not changed)' : '' ) );
         $this->say( 'phase-item', 'Links:  ' . $target->linkMode() . ( $target->linkMode() === 'base-path' ? ' ' . $target->basePath() : '' )
-                    . ( $liveUrl !== '' ? ', what is not exported goes to ' . $liveUrl : '' ) );
+                    . ( $liveUrl !== '' ? ', what is not exported goes to ' . $liveUrl : '' )
+                    . ( $target->setting( 'OutsideLinks' ) === 'unlink' ? ', links to pages not exported are taken out' : '' )
+                    . ( $target->setting( 'AdminLinks' ) === 'unlink' ? ', links into the administration are taken out' : '' ) );
 
         // 1. the crawl
         $paths = array_values( array_map( 'strval', (array)$this->options['paths'] ) );
@@ -376,7 +378,9 @@ class expStaticBuild
             return $partial && $old !== null && $old->has( $output );
         };
         $rewriterOptions = array( 'origins' => $origins, 'site_path' => $sitePath, 'mode' => $target->linkMode(), 'base_path' => $target->basePath(),
-                                  'public_url' => $target->publicUrl(), 'live_url' => $liveUrl, 'pages' => $held, 'files' => $files );
+                                  'public_url' => $target->publicUrl(), 'live_url' => $liveUrl, 'pages' => $held, 'files' => $files,
+                                  'outside_links' => $target->setting( 'OutsideLinks' ), 'admin_links' => $target->setting( 'AdminLinks' ),
+                                  'admin_paths' => self::adminPaths( $this->context, $origins, $sitePath ) );
         $rewriter = new expStaticLinkRewriter( $rewriterOptions );
         $collector = new expStaticAssetCollector( array( 'root' => $this->options['root'], 'output' => $staging, 'origin' => $originUrl,
                                                          'fetch' => array( $this, 'request' ), 'rewriter' => $rewriter, 'emit' => $this->emit,
@@ -496,6 +500,8 @@ class expStaticBuild
         $this->report['counts']['links_rewritten'] = $counts['rewritten'];
         $this->report['counts']['links_live'] = $counts['live'];
         $this->report['counts']['links_external'] = $counts['external'];
+        $this->report['counts']['links_removed_outside'] = $counts['removed_outside'];
+        $this->report['counts']['links_removed_admin'] = $counts['removed_admin'];
         $this->report['counts']['bytes'] = $manifest->bytes();
 
         // 4. diff, limits, check, apply
@@ -1096,5 +1102,45 @@ class expStaticBuild
         if ( $host === 'localhost' || substr( $host, -10 ) === '.localhost' || $host === '::1' || $host === '0.0.0.0' )
             return true;
         return (bool)preg_match( '#^127(?:\.\d{1,3}){3}$#', $host );
+    }
+
+    /**
+     * The host paths of the administration siteaccesses, for AdminLinks: /<name> of every one (the URI match), and
+     * the path of its SiteURL when that is on one of the build's hosts. A path that holds the published site itself
+     * is never one. Pure.
+     *
+     * @param array $context expStaticTarget::siteAccessContext(): admin (names), urls (name => SiteURL)
+     * @param array $origins the addresses of the site (scheme://host[:port])
+     * @param string $sitePath the path of the published site ('' or /site)
+     * @return array of paths (/admin)
+     */
+    public static function adminPaths( array $context, array $origins, $sitePath = '' )
+    {
+        $hosts = array();
+        foreach ( $origins as $origin )
+        {
+            $host = parse_url( 'http://' . preg_replace( '#^[a-z]+://#i', '', (string)$origin ), PHP_URL_HOST );
+            if ( is_string( $host ) && $host !== '' )
+                $hosts[strtolower( $host )] = true;
+        }
+        $paths = array();
+        foreach ( isset( $context['admin'] ) ? (array)$context['admin'] : array() as $name )
+        {
+            $name = (string)$name;
+            if ( $name === '' )
+                continue;
+            $paths[] = '/' . $name;
+            $url = isset( $context['urls'][$name] ) ? 'http://' . preg_replace( '#^[a-z]+://#i', '', (string)$context['urls'][$name] ) : '';
+            $host = $url !== '' ? parse_url( $url, PHP_URL_HOST ) : null;
+            $path = $url !== '' ? rtrim( (string)parse_url( $url, PHP_URL_PATH ), '/' ) : '';
+            if ( is_string( $host ) && isset( $hosts[strtolower( $host )] ) && $path !== '' )
+                $paths[] = $path;
+        }
+        $sitePath = rtrim( (string)$sitePath, '/' );
+        $out = array();
+        foreach ( array_unique( $paths ) as $path )
+            if ( $sitePath === '' || ( $sitePath !== $path && strpos( $sitePath . '/', $path . '/' ) !== 0 ) )
+                $out[] = $path;
+        return $out;
     }
 }

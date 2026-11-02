@@ -84,7 +84,8 @@ class expStaticTargetTest extends PHPUnit\Framework\TestCase
     /** TG-04 */
     public function testEnumerations()
     {
-        foreach ( array( 'Kind' => 'ftp', 'Delivery' => 'zip', 'Links' => 'absolute', 'Assets' => 'all', 'Forms' => 'mail', 'Search' => 'yes' ) as $name => $value )
+        foreach ( array( 'Kind' => 'ftp', 'Delivery' => 'zip', 'Links' => 'absolute', 'Assets' => 'all', 'Forms' => 'mail', 'Search' => 'yes',
+                         'OutsideLinks' => 'drop', 'AdminLinks' => 'remove' ) as $name => $value )
             $this->assertNotEmpty( self::errors( self::valid( array( $name => $value ) ) ), "$name=$value" );
         foreach ( array( 'Extras' => 'zip', 'PostProcess' => 'obfuscate', 'Triggers' => 'webhook', 'Notify' => 'always' ) as $name => $value )
             $this->assertStringContainsString( "{$name}[]=$value", implode( ' ', self::errors( self::valid( array( $name => array( $value ) ) ) ) ) );

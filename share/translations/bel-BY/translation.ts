@@ -83172,5 +83172,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Форма не прынята: праверце ўведзенае і адпраўце яшчэ раз.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Выдаляць спасылкі на старонкі, якіх няма ў копіі</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Выдаляць спасылкі ў адміністраванне</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Іх тэкст застаецца. Выявы, формы і спасылкі на іншыя сайты ніколі не выдаляюцца.</translation>
+    </message>
 </context>
 </TS>

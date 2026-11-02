@@ -3,13 +3,13 @@ title: staticcache.ini [Target_example]
 audience: developer, admin
 category: examples
 summary: "The settings of [Target_example] in staticcache.ini: Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links ..."
-keywords: staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
+keywords: staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, OutsideLinks, AdminLinks, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [Target_example]
 
-The block `[Target_example]` of `settings/staticcache.ini`, with 28 setting(s).
+The block `[Target_example]` of `settings/staticcache.ini`, with 30 setting(s).
 
 Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -231,6 +231,42 @@ Default: empty.
 # settings/override/staticcache.ini.append.php
 [Target_example]
 LiveURL=
+*/ ?>
+```
+
+## OutsideLinks
+
+> Links to pages of the site's own host (or LiveURL) that the build does not  
+> hold (a module view such as /user/login or /shop/basket, a page with a  
+> query string, a page left out, another siteaccess): keep (they go to the  
+> live site, or stay as they are without one) or unlink (the link becomes  
+> its text; a class it had stays on a <span>). Images, style sheets, forms  
+> (see Forms) and links to other hosts are never taken out.  
+
+Default: `keep`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+OutsideLinks=keep
+*/ ?>
+```
+
+## AdminLinks
+
+> Links into an administration siteaccess (/admin/..., on the site's own host  
+> or LiveURL): keep (as OutsideLinks=keep) or unlink. The administration  
+> siteaccesses are the ones the target's checks already know: a login is  
+> required, an administration design, or a name such as admin or editor.  
+
+Default: `keep`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+AdminLinks=keep
 */ ?>
 ```
 

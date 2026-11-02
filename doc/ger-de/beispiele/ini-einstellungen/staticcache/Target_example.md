@@ -3,13 +3,13 @@ title: staticcache.ini [Target_example]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [Target_example] in staticcache.ini: Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links ..."
-keywords: Einstellung, staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
+keywords: Einstellung, staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, OutsideLinks, AdminLinks, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [Target_example]
 
-Der Block `[Target_example]` von `settings/staticcache.ini`, mit 28 Einstellung(en).
+Der Block `[Target_example]` von `settings/staticcache.ini`, mit 30 Einstellung(en).
 
 Bearbeiten Sie `settings/staticcache.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -232,6 +232,42 @@ Standard: leer.
 # settings/override/staticcache.ini.append.php
 [Target_example]
 LiveURL=
+*/ ?>
+```
+
+## OutsideLinks
+
+> Links auf Seiten des eigenen Hosts der Website (oder LiveURL), die der Build nicht  
+> enthält (eine Modulansicht wie /user/login oder /shop/basket, eine Seite mit  
+> Query-String, eine ausgelassene Seite, ein anderer Siteaccess): keep (sie gehen zur  
+> Live-Website, oder bleiben ohne eine, wie sie sind) oder unlink (der Link wird zu  
+> seinem Text; eine class, die er hatte, bleibt an einem <span>). Bilder, Stylesheets,  
+> Formulare (siehe Forms) und Links auf andere Hosts werden nie herausgenommen.  
+
+Standard: `keep`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+OutsideLinks=keep
+*/ ?>
+```
+
+## AdminLinks
+
+> Links in einen Siteaccess der Administration (/admin/..., auf dem eigenen Host der  
+> Website oder LiveURL): keep (wie OutsideLinks=keep) oder unlink. Die Siteaccesses der  
+> Administration sind die, die die Prüfungen des Ziels schon kennen: eine Anmeldung ist  
+> nötig, ein Administrationsdesign oder ein Name wie admin oder editor.  
+
+Standard: `keep`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+AdminLinks=keep
 */ ?>
 ```
 

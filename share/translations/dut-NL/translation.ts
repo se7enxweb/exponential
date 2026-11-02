@@ -84397,5 +84397,17 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Het formulier is niet geaccepteerd: controleer wat u hebt ingevoerd en verzend het opnieuw.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Links verwijderen naar pagina's die de kopie niet bevat</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Links naar het beheer verwijderen</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Hun tekst blijft staan. Afbeeldingen, formulieren en links naar andere sites worden nooit verwijderd.</translation>
+    </message>
 </context>
 </TS>

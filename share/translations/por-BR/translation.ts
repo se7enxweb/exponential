@@ -85168,5 +85168,17 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>O formulário não foi aceito: verifique o que você digitou e envie novamente.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Remover links para páginas que a cópia não contém</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Remover links para a administração</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>O texto deles permanece. Imagens, formulários e links para outros sites nunca são removidos.</translation>
+    </message>
 </context>
 </TS>
