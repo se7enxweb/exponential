@@ -25276,7 +25276,7 @@ c2b425c7d8e0c591d0d9c621fb71ae65  kernel/private/classes/views/migration/run.php
 c4cef231581596de59b2b6bc010a9ebf  kernel/private/classes/views/migration/status.php
 40b00807b0ed550cd7e3b84002255c52  kernel/private/classes/views/migration/stream.php
 8f7b9123998e3253773157bde9f5f221  kernel/private/classes/views/moderation/action.php
-4c318b914bf542442b0f4e0cc650958d  kernel/private/classes/views/moderation/recent.php
+fe205876ffdd1748e61445c0ef3fd7a2  kernel/private/classes/views/moderation/recent.php
 e984f1220dc2e1d2d37b81391ae531a1  kernel/private/classes/views/moderation/report.php
 5b19fa6a4a0b63334fba877b6600f13f  kernel/private/classes/views/notification/addtonotification.php
 8937905459227cb8c6a1edc0bab23031  kernel/private/classes/views/notification/job.php
