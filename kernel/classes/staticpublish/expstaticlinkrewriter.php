@@ -391,7 +391,7 @@ class expStaticLinkRewriter
         if ( $c['kind'] === 'external' )
         {
             $this->counts['external']++;
-            return $url;
+            return strpos( $url, '?' ) === false ? $url : $this->rewriteEmbedded( $url, $documentPath, $fromFile );
         }
         if ( $c['kind'] === 'file' )
         {
@@ -415,6 +415,38 @@ class expStaticLinkRewriter
             return $this->link( self::pageUrl( (string)$file ), $fromFile, $absolute ) . $c['query'] . $c['fragment'];
         }
         return $this->live( $url, $c );
+    }
+
+    /**
+     * The addresses of the site itself that a link to another host carries in its query, encoded (the share links
+     * of social networks: https://www.facebook.com/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8080%2Fsite%2Fabout),
+     * rewritten to their absolute address in the export (public_url), or on the live site when the export does not
+     * hold them. Without either an absolute address cannot be given, and the link is left as it is.
+     *
+     * @param string $url a link to another host
+     * @param string $documentPath
+     * @param string $fromFile
+     * @return string
+     */
+    private function rewriteEmbedded( $url, $documentPath, $fromFile )
+    {
+        if ( $this->publicUrl === '' && $this->liveUrl === '' )
+            return $url;
+        $rewriter = $this;
+        $publicUrl = $this->publicUrl;
+        $liveUrl = $this->liveUrl;
+        return (string)preg_replace_callback( '#([?&;][^=&;\#]*=)(https?(?:%3A|:)(?:%2F|/){2}[^&;\#]*)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile, $publicUrl, $liveUrl )
+        {
+            $inner = urldecode( $m[2] );
+            $c = $rewriter->classify( $inner, $documentPath );
+            if ( $c['kind'] === 'none' || $c['kind'] === 'external' )
+                return $m[0];
+            $new = $publicUrl !== '' ? $rewriter->rewriteUrl( $inner, $documentPath, $fromFile, true )
+                                     : $liveUrl . $c['path'] . $c['query'] . $c['fragment'];
+            if ( !preg_match( '#^https?://#i', $new ) || $new === $inner )
+                return $m[0];
+            return $m[1] . rawurlencode( $new );
+        }, $url );
     }
 
     /** The address on the live site, or the address unchanged when no live site is known. */

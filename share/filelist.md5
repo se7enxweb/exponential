@@ -24479,7 +24479,7 @@ d2a209c210d20f86e5763a64ef73e08f  kernel/classes/staticpublish/expstaticextras.p
 e4af3364468ad9469593250767cd8ce8  kernel/classes/staticpublish/expstaticgithub.php
 31fb0a784e250e5c1ec396b53df5a21f  kernel/classes/staticpublish/expstaticjob.php
 7f2d293dedb7a328f2321f3a7535d4fe  kernel/classes/staticpublish/expstaticlinkchecker.php
-989efd874fa7a50dcbead52880194f60  kernel/classes/staticpublish/expstaticlinkrewriter.php
+ce19db95def8c2b7d3c54df70afa2d53  kernel/classes/staticpublish/expstaticlinkrewriter.php
 20e9c4c0d6946b224498ff039be5d02a  kernel/classes/staticpublish/expstaticlock.php
 6037e14340786977a4efee9773ba1f31  kernel/classes/staticpublish/expstaticmanifest.php
 b7086d6b660a5b747eed2eee477e8540  kernel/classes/staticpublish/expstaticnotifier.php
@@ -28648,7 +28648,7 @@ c043add0dcb7a14de3d5d610b5c45115  tests/tests/kernel/classes/staticpublish/expSt
 b674b9f3f52a668377100f22d8104e61  tests/tests/kernel/classes/staticpublish/expStaticFormEndpointTest.php
 197ad228066dc318abc3c6105189e835  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
 f9f6e7d3550d867ef242158560604dfb  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
-c84634e3e809c1f62ebf9d36a557f0a2  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
+2307703b878f57acb1f2ee99c343afde  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
 ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php
 87d9e9e8a8eba07e15f47b2d69a101f4  tests/tests/kernel/classes/staticpublish/expStaticNotifierTest.php
 adb80e7b78eabc0a7df0252fe4fa55ea  tests/tests/kernel/classes/staticpublish/expStaticPostProcessorTest.php

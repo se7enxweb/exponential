@@ -15,6 +15,8 @@
  *  LR-10 entities and quoting survive; unchanged tags are byte for byte the same
  *  LR-11 what the rewriter found: pages, files (with their source path), counts
  *  LR-12 dot segments and base path normalisation
+ *  LR-13 links to other hosts that carry an address of the site in their query (share links) get the public
+ *        address there, or the live one; never the crawl address
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -279,5 +281,30 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '/', expStaticLinkRewriter::normaliseBasePath( '' ) );
         $this->assertSame( '/', expStaticLinkRewriter::normaliseBasePath( '/../' ) );
         $this->assertSame( '/a/', expStaticLinkRewriter::normaliseBasePath( '\\a\\' ), 'Windows separators' );
+    }
+
+    /** LR-13 */
+    public function testShareLinksCarryThePublicAddress()
+    {
+        $r = self::rewriter( array( 'site_path' => '/site', 'public_url' => 'https://owner.github.io/repo/' ) );
+        $html = '<a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2F127.0.0.1%3A18308%2Fsite%2Ffitness%2Frun&amp;t=Run+fast">f</a>'
+              . '<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2F127.0.0.1%3A18308%2Fsite%2Ffitness%2Frun&amp;title=Run">l</a>'
+              . '<a href="https://twitter.com/intent/tweet?url=https://www.example.com/site/fitness/run">t</a>'
+              . '<a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fother.example.org%2Fx">o</a>'
+              . '<a href="https://www.example.org/?q=plain">p</a>';
+        $out = $r->rewriteHtml( $html, '/site/fitness/run', 'fitness/run/index.html' );
+        $this->assertStringNotContainsString( '127.0.0.1', $out );
+        $encoded = rawurlencode( 'https://owner.github.io/repo/fitness/run/' );
+        $this->assertStringContainsString( 'sharer.php?u=' . $encoded . '&amp;t=Run+fast"', $out );
+        $this->assertStringContainsString( 'shareArticle?mini=true&amp;url=' . $encoded . '&amp;title=Run"', $out );
+        $this->assertStringContainsString( 'tweet?url=' . $encoded . '"', $out, 'a plain address in the query too' );
+        $this->assertStringContainsString( 'sharer.php?u=https%3A%2F%2Fother.example.org%2Fx"', $out, 'an address of another host stays' );
+        $this->assertStringContainsString( 'href="https://www.example.org/?q=plain"', $out );
+
+        $live = self::rewriter( array( 'site_path' => '/site' ) )->rewriteHtml( $html, '/site/fitness/run', 'fitness/run/index.html' );
+        $this->assertStringContainsString( 'sharer.php?u=' . rawurlencode( 'https://www.example.com/site/fitness/run' ), $live, 'no public address: the live one' );
+
+        $none = self::rewriter( array( 'live_url' => '' ) );
+        $this->assertSame( $html, $none->rewriteHtml( $html, '/x', 'x/index.html' ), 'neither: left as it is' );
     }
 }
