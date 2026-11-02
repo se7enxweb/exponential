@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ҳа, ҳоло нашр нашудааст</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Сохт ҳар саҳифаи %site-ро тавре мегирад, ки меҳмони вориднашуда мебинад, пайвандҳоро аз нав менависад, файлҳоро нусхабардорӣ мекунад ва натиҷаро ба ҷузвдони ҳадаф менависад. То он даме, ки шумо сохтро насанҷед ва Нашр кардан-ро пахш накунед, ҳеҷ чиз нашр намешавад.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Бозгардонӣ барои мутахассисон аст: "Ман медонам, ки ин чиро тағйир медиҳад"-ро қайд кунед ва номи нишонаро боз нависед.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Сохтро тавре мекушояд, ки мизбон онро аз ҷузвдони ҳадаф медиҳад. Пайванд барои шумо як соат кор мекунад.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Дар рӯйхатҳо нишон дода мешавад, масалан "Сомонаи оммавӣ дар GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Саҳифаи худи сомона барои суроғаҳое, ки вуҷуд надоранд.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ҳадаф ҳоло бо ин калид ворид намешавад: дар танзимоти он "Калиди ҷойгиркунӣ, ки барои ин ҳадаф сохта шудааст"-ро интихоб кунед.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Аввал "Ман тағйиротро санҷидам"-ро қайд кунед.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Барномаи GitHub App</translation>
     </message>

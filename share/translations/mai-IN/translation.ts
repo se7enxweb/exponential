@@ -82837,34 +82837,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>हँ, एखन धरि प्रकाशित नहि</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>बिल्ड %site क प्रत्येक पृष्ठ ओहिना आनैत अछि जेना साइन इन नहि कएल आगंतुक देखैत छथि, लिंक फेरसँ लिखैत अछि, फाइल कॉपी करैत अछि आ परिणाम लक्ष्यक फोल्डरमे लिखैत अछि। जा धरि अहाँ बिल्ड जाँचि केँ प्रकाशित करू नहि दबाबी, ता धरि किछु प्रकाशित नहि होइत अछि।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>रोलबैक विशेषज्ञ सभक लेल अछि: "हम जनैत छी जे ई की बदलैत अछि" पर टिक करू आ टैगक नाम फेरसँ टाइप करू।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>बिल्डकेँ लक्ष्यक फोल्डरसँ ओहिना खोलैत अछि जेना होस्ट परोसत। ई लिंक अहाँक लेल एक घंटा धरि काज करैत अछि।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>सूचीमे देखाओल जाइत अछि, उदाहरणक लेल "GitHub Pages पर सार्वजनिक साइट"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>नहि रहल पता सभक लेल साइटक अपन पृष्ठ।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्य एखन धरि एहि कीसँ साइन इन नहि करैत अछि: ओकर सेटिंगमे "एहि लक्ष्यक लेल बनाओल गेल डिप्लॉय की" चुनू।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>पहिने "हम परिवर्तन जाँचि लेलहुँ अछि" पर टिक करू।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>एकटा GitHub App</translation>
     </message>

@@ -82829,34 +82829,6 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>ja, ikki útgivið enn</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ein bygging heintar hvørja síðu av %site, sum ein vitjandi, ið ikki er innritaður, sær hana, skrivar leinkini um, avritar fílurnar og skrivar úrslitið í mappuna hjá málinum. Einki verður útgivið, fyrr enn tú hevur kannað bygging og trýst á Útgev.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ein afturtøka er fyri serfrøðingar: set kross við "Eg veit, hvat hetta broytir" og skriva navnið á merkinum aftur.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Opnar bygging, sum hýsarin fer at veita hana, úr mappuni hjá málinum. Leinkið virkar fyri teg í ein tíma.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Víst í listum, til dømis "Almenn heimasíða á GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Egna síða heimasíðunnar fyri adressur, sum ikki eru til.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Málið ritar ikki inn við hesum lyklinum enn: vel "Ein deploy-lykil gjørdur til hetta málið" í stillingunum.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Set fyrst kross við "Eg havi kannað broytingarnar".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Ein GitHub App</translation>
     </message>

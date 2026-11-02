@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ஆம், இன்னும் வெளியிடப்படவில்லை</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ஓர் உருவாக்கம் %site இன் ஒவ்வொரு பக்கத்தையும் உள்நுழையாத பார்வையாளர் பார்ப்பது போலவே பெற்று, இணைப்புகளை மாற்றி எழுதி, கோப்புகளை நகலெடுத்து, முடிவை இலக்கின் கோப்புறையில் எழுதுகிறது. நீங்கள் உருவாக்கத்தைச் சரிபார்த்து வெளியிடு என்பதை அழுத்தும் வரை எதுவும் வெளியிடப்படாது.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>திரும்பப்பெறுதல் நிபுணர்களுக்கானது: "இது என்ன மாற்றும் என்று எனக்குத் தெரியும்" என்பதைத் தேர்வுசெய்து குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>இலக்கின் கோப்புறையிலிருந்து, வழங்கி வழங்குவது போலவே உருவாக்கத்தைத் திறக்கிறது. இணைப்பு உங்களுக்கு ஒரு மணி நேரம் வேலை செய்யும்.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>பட்டியல்களில் காட்டப்படும், எடுத்துக்காட்டாக "GitHub Pages இல் உள்ள பொதுத் தளம்".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>இல்லாத முகவரிகளுக்கான தளத்தின் சொந்தப் பக்கம்.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>இலக்கு இன்னும் இந்த விசையுடன் உள்நுழையவில்லை: அதன் அமைப்புகளில் "இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை" என்பதைத் தேர்ந்தெடுங்கள்.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>முதலில் "மாற்றங்களைச் சரிபார்த்துவிட்டேன்" என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>ஒரு GitHub App</translation>
     </message>

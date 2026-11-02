@@ -82837,34 +82837,6 @@ You go need change di class of di node wit di swap functionality.</translation>
         <translation>yes, e never publish</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Build dey fetch every page of %site as visitor wey never sign in dey see am, e go rewrite di links, copy di files and write wetin come out inside di target folder. Nothing go publish until you check di build and press Publish.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Turn-back na for expert dem: tick "I sabi wetin dis one go change" and type di name of di tag again.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>E dey open di build as di host go serve am, from di target folder. Di link go work for you for one hour.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>E dey show for list, for example "Public site for GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Di site own page for address wey no exist.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Di target never dey sign in with dis key: pick "Deploy key wey we make for dis target" for im settings.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>First tick "I don check di change dem".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>One GitHub App</translation>
     </message>

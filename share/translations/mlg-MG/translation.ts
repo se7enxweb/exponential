@@ -82829,34 +82829,6 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <translation>eny, mbola tsy navoaka</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ny fanorenana dia maka ny pejy rehetra ao amin'ny %site araka ny hitan'ny mpitsidika tsy niditra, manoratra indray ny rohy, mandika ny rakitra ary manoratra ny vokatra ao amin'ny lahatahirin'ny tanjona. Tsy misy avoaka raha tsy efa nojerenao ny fanorenana ary notsindrianao ny Avoaky.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ho an'ny manam-pahaizana ny famerenana: mariho ny "Fantatro izay ovain'ity" ary soraty indray ny anaran'ny marika.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Manokatra ny fanorenana araka ny hanolorana azy amin'ny mpampiantrano, avy amin'ny lahatahirin'ny tanjona. Mandeha ho anao mandritra ny adiny iray ny rohy.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Aseho ao anaty lisitra, ohatra "Tranonkala ho an'ny besinimaro amin'ny GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Ny pejin'ny tranonkala ho an'ny adiresy tsy misy.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Mbola tsy miditra amin'ity lakile ity ny tanjona: safidio ny "Lakilen'ny fandefasana natao ho an'ity tanjona ity" ao amin'ny fikirany.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Mariho aloha ny "Efa nojereko ny fiovana".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App iray</translation>
     </message>

@@ -82827,34 +82827,6 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>haa, weli lama daabicin</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Dhismuhu wuxuu soo qaadaa bog kasta oo %site ah sida uu u arko booqde aan soo gelin, wuxuu dib u qoraa xiriirinnada, wuxuu nuqulaa faylasha wuxuuna natiijada ku qoraa galka bartilmaameedka. Waxba lama daabaco ilaa aad hubiso dhismaha oo aad riixdo Daabac.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Dib-u-celintu waxay u tahay khubarada: calaamadee "Waan ogahay waxa tani beddesho" oo mar kale qor magaca calaamadda.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Wuxuu u furaa dhismaha sida martigeliyuhu u bixin doono, galka bartilmaameedka. Xiriirintu adiga ayay kuu shaqaynaysaa hal saac.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Waxaa lagu muujiyaa liisaska, tusaale ahaan "Goobta dadweynaha ee GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Bogga goobta ee cinwaannada aan jirin.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Bartilmaameedku weli kuma soo galo furahan: dejintiisa ka dooro "Furaha dejinta ee loo sameeyay bartilmaameedkan".</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marka hore calaamadee "Waan hubiyay isbeddellada".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Barnaamij GitHub App</translation>
     </message>

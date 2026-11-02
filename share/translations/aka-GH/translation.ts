@@ -82829,34 +82829,6 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <translation>aane, wɔntintimii da</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Nkyekyeɛ fa %site krataafa biara sɛdeɛ ɔsrafoɔ a ɔnhyɛɛ mu hu no, ɛsan kyerɛw link no, ɛsuasua fael no na ɛkyerɛw deɛ ɛfiri mu ba no kɔ botaeɛ no fɔlda mu. Wɔntintim hwee kosi sɛ wobɛhwɛ nkyekyeɛ no na woapia Tintim.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Nsan-kɔ-akyi yɛ ma animdefoɔ: hyɛ "Menim deɛ yei sesa" agyiraeɛ na kyerɛw agyiraeɛ no din bio.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ɛbue nkyekyeɛ no sɛdeɛ host no bɛma, firi botaeɛ no fɔlda mu. Link no yɛ adwuma ma wo dɔnhwere baako.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Wɔkyerɛ wɔ nkrataa tenten mu, sɛ nhwɛsoɔ "Wɛbsaet a ɛda adi wɔ GitHub Pages so".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Wɛbsaet no ankasa krataafa ma adrɛse a ɛnni hɔ.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Botaeɛ no nhyɛ mu ne safoa yi da: paw "Deploy safoa a wɔyɛɛ maa botaeɛ yi" wɔ ne nhyehyɛeɛ mu.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Di kan hyɛ "Mahwɛ nsakraeɛ no" agyiraeɛ.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App bi</translation>
     </message>

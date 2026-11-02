@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>होय, दासिमबो फोरमायाखै</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>मोनसे बिल्डआ %site नि मोनफ्रोमबो बिलाइखौ साइन इन खालामाखै सुबुं नुनाय बादि लायो, लिंकफोरखौ गोदान महराव लिरो, फाइलफोरखौ कपि खालामो आरो फलाफलखौ लक्ष्यनि फोल्डारआव लिरो। नोंथाङा बिल्डखौ नायसिनो आरो "फोरमाय" नेबखांनो सिम जेबो फोरमायनाय जाया।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>फिन लाबोनाया एक्सपार्टफोरनि थाखाय: "बेयो मा सोलायो बेखौ आं मिथिगौ" खौ टिक खालाम आरो टेगनि मुंखौ फिन लिर।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>होस्टआ होनाय बादि बिल्डखौ लक्ष्यनि फोल्डारनिफ्राय खेवो। लिंकआ नोंथांनि थाखाय मोनसे घन्टा हाबायो।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>लिस्टफोराव दिन्थिनाय जायो, बिदिन्थियाव "GitHub Pages आव पाब्लिक साइट"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>गैयि ठिकानाफोरनि थाखाय साइटनि गावनि बिलाइ।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्यआ दासिमबो बे कीजों साइन इन खालामा: बेनि सेटिंफोराव "बे लक्ष्यनि थाखाय सोरजिनाय मोनसे डिप्लय की" खौ सायख।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>सिगां "आं सोलायनायफोरखौ नायसिबाय" खौ टिक खालाम।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>मोनसे GitHub App</translation>
     </message>

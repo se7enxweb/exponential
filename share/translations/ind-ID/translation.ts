@@ -82829,34 +82829,6 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>ya, belum diterbitkan</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Sebuah build mengambil setiap halaman %site sebagaimana dilihat oleh pengunjung yang belum masuk, menulis ulang tautan, menyalin berkas, dan menulis hasilnya ke folder tujuan. Tidak ada yang diterbitkan sampai Anda memeriksa build dan menekan Terbitkan.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Pengembalian ditujukan untuk ahli: centang "Saya tahu apa yang diubahnya" dan ketik nama tag lagi.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Membuka build sebagaimana host akan menyajikannya, dari folder tujuan. Tautan berfungsi untuk Anda selama satu jam.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ditampilkan dalam daftar, misalnya "Situs publik di GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Halaman situs sendiri untuk alamat yang tidak ada.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Tujuan belum masuk dengan kunci ini: pilih "Kunci deploy yang dibuat untuk tujuan ini" di pengaturannya.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Centang "Saya sudah memeriksa perubahannya" terlebih dahulu.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Sebuah GitHub App</translation>
     </message>

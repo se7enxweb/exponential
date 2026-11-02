@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هو، لا نه دی خپور شوی</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>یو جوړښت د %site هره پاڼه هغسې راوړي لکه څنګه یې یو نه ننوتلی لیدونکی ویني، لینکونه بیا لیکي، دوتنې کاپي کوي او پایله د موخې فولډر ته لیکي. تر هغه چې تاسو جوړښت ونه ګورئ او خپرول کېکاږئ، هیڅ نه خپرېږي.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>بېرته ګرځونه د ماهرانو لپاره ده: "زه پوهېږم چې دا څه بدلوي" نښه کړئ او د نښې نوم بیا ولیکئ.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>جوړښت هغسې پرانیزي لکه څنګه چې کوربه به یې وړاندې کړي، د موخې له فولډر څخه. لینک ستاسو لپاره یو ساعت کار کوي.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>په لېستونو کې ښودل کېږي، د بېلګې په توګه "په GitHub Pages کې عامه سایټ".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>د سایټ خپله پاڼه د هغو پتو لپاره چې شتون نه لري.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>موخه لا په دې کیلي نه ننوځي: په امستنو کې یې "د دې موخې لپاره جوړه شوې ډیپلای کیلي" وټاکئ.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>لومړی "ما بدلونونه کتلي دي" نښه کړئ.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>یو GitHub App</translation>
     </message>

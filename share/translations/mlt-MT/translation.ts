@@ -82859,34 +82859,6 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>iva, għadu mhux ippubblikat</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Bini jġib kull paġna ta' %site kif jaraha viżitatur li mhux illoggjat, jikteb mill-ġdid il-links, jikkopja l-fajls u jikteb ir-riżultat fil-folder tal-mira. Xejn ma jiġi ppubblikat qabel ma tiċċekkja l-bini u tagħfas Ippubblika.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Treġġigħ lura huwa għall-esperti: immarka "Naf x'jibdel dan" u erġa' ikteb l-isem tat-tikketta.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Jiftaħ il-bini kif se jservih il-host, mill-folder tal-mira. Il-link jaħdem għalik għal siegħa.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Jintwera fil-listi, pereżempju "Sit pubbliku fuq GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Il-paġna tas-sit stess għal indirizzi li ma jeżistux.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Il-mira għadha ma tidħolx b'din iċ-ċavetta: agħżel "Ċavetta tal-iskjerament magħmula għal din il-mira" fl-issettjar tagħha.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>L-ewwel immarka "Iċċekkjajt il-bidliet".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

@@ -84236,34 +84236,6 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>sì, non ancora pubblicata</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Una build recupera ogni pagina di %site come la vede un visitatore non connesso, riscrive i link, copia i file e scrive il risultato nella cartella della destinazione. Nulla viene pubblicato finché non verifichi la build e premi Pubblica.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Il ripristino è per esperti: spunta "So cosa cambia" e digita di nuovo il nome del tag.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Apre la build come la servirà l'host, dalla cartella della destinazione. Il link funziona per te per un'ora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Mostrato negli elenchi, per esempio "Sito pubblico su GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>La pagina del sito per gli indirizzi che non esistono.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La destinazione non accede ancora con questa chiave: scegli "Una chiave di deploy creata per questa destinazione" nelle sue impostazioni.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Spunta prima "Ho verificato le modifiche".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Una GitHub App</translation>
     </message>

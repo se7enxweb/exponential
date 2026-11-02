@@ -82829,34 +82829,6 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <translation>eey, yaltinaaka tawo</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Mahngo ina heɓa kala hello %site no yiilotooɗo mo seŋaaki yiyrata ngo, ina winndita jokkorde ɗee, ina natta fichiers ɗee, ina winnda njeñtudi ndii e dossier jahaynde ndee. Hay huunde yaltintaake si a ƴeewaani mahngo ngoo a ñoƴƴaani Yaltin.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Artirgol ko ngam ganduɓe: maandin “Mi anndi ko ɗum waylata” winndaa innde maande ndee kadi.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ina uddita mahngo ngoo no host oo rokkirta ngo, immorde e dossier jahaynde ndee. Jokkol ngol ina golla ngam maa waktu gooto.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ina hollee e doggol, ko wayi no “Lowre renndinaande e GitHub Pages”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Hello lowre ndee hoore mum ngam ñiiɓirɗe ɗe ngonaa.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Jahaynde ndee seŋotaake e ngal coktirgal tawo: suɓo “Coktirgal deploy sosanaangal ndee jahaynde” e teelte mum.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Maandin “Mi ƴeewii waylaaji ɗii” taho.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

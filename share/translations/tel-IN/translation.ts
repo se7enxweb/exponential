@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>అవును, ఇంకా ప్రచురించబడలేదు</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ఒక బిల్డ్ %site లోని ప్రతి పేజీని సైన్ ఇన్ చేయని సందర్శకుడు చూసే విధంగా తెచ్చి, లింక్‌లను తిరిగి వ్రాసి, ఫైల్‌లను కాపీ చేసి, ఫలితాన్ని లక్ష్యం యొక్క ఫోల్డర్‌లో వ్రాస్తుంది. మీరు బిల్డ్‌ను తనిఖీ చేసి ప్రచురించండి నొక్కే వరకు ఏదీ ప్రచురించబడదు.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>వెనక్కి తీసుకోవడం నిపుణుల కోసం: "ఇది ఏమి మారుస్తుందో నాకు తెలుసు" ను టిక్ చేసి ట్యాగ్ పేరును మళ్లీ టైప్ చేయండి.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>హోస్ట్ అందించే విధంగానే, లక్ష్యం యొక్క ఫోల్డర్ నుండి బిల్డ్‌ను తెరుస్తుంది. లింక్ మీ కోసం ఒక గంట పనిచేస్తుంది.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>జాబితాలలో చూపబడుతుంది, ఉదాహరణకు "GitHub Pages లో పబ్లిక్ సైట్".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>ఉనికిలో లేని చిరునామాల కోసం సైట్ యొక్క సొంత పేజీ.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>లక్ష్యం ఇంకా ఈ కీతో సైన్ ఇన్ అవ్వదు: దాని సెట్టింగ్‌లలో "ఈ లక్ష్యం కోసం సృష్టించిన డిప్లాయ్ కీ" ను ఎంచుకోండి.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ముందుగా "నేను మార్పులను తనిఖీ చేశాను" ను టిక్ చేయండి.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>ఒక GitHub App</translation>
     </message>

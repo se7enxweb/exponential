@@ -82859,34 +82859,6 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>po, ende i papublikuar</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Një ndërtim merr çdo faqe të %site ashtu siç e sheh një vizitor që nuk ka hyrë, rishkruan lidhjet, kopjon skedarët dhe e shkruan rezultatin në dosjen e destinacionit. Asgjë nuk publikohet derisa ta kontrolloni ndërtimin dhe të shtypni Publiko.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Kthimi mbrapsht është për ekspertë: shënoni „E di çfarë ndryshon kjo“ dhe shkruani sërish emrin e etiketës.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Hap ndërtimin ashtu siç do ta shërbejë hosti, nga dosja e destinacionit. Lidhja funksionon për ju për një orë.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Shfaqet në lista, për shembull „Sajti publik në GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Faqja e vetë sajtit për adresat që nuk ekzistojnë.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Destinacioni ende nuk hyn me këtë çelës: zgjidhni „Një çelës vendosjeje i krijuar për këtë destinacion“ te cilësimet e tij.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Shënoni fillimisht „I kam kontrolluar ndryshimet“.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Një GitHub App</translation>
     </message>

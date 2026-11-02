@@ -82829,34 +82829,6 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <translation>ɛ̃, womeɖee ɖe dutoƒo haɖe o</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Tutu xɔa %site ƒe axa ɖesiaɖe abe ale si amedzro si mege ɖe eme o kpɔnɛ ene, egbugbɔa kadodowo ŋlɔna, eɖea faɛlwo ƒe kɔpi eye wòŋlɔa emetsonu ɖe taɖodzinua ƒe faɛldzraɖoƒe me. Womaɖe naneke ɖe dutoƒo o vaseɖe esime nàkpɔ tutua ɖa eye nàzi Ɖe ɖe dutoƒo dzi.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Gbugbɔgbɔ ɖe megbe nye na aɖaŋutɔwo: tia "Menya nu si esia atrɔ" eye nàgaŋlɔ dzesia ƒe ŋkɔ ake.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Eʋua tutua abe ale si sɛva la anae ene, tso taɖodzinua ƒe faɛldzraɖoƒe me. Kadodoa awɔ dɔ na wò gaƒoƒo ɖeka.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Wofiaa le ŋkɔŋlɔwo me, abe "Dutoƒo nyatakakaɖoƒe le GitHub Pages dzi" ene.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Nyatakakaɖoƒea ŋutɔ ƒe axa na adrɛs siwo meli o.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Taɖodzinua mege ɖe eme kple safui sia haɖe o: tia "Ɖoɖo ɖa ƒe safui si wowɔ na taɖodzinu sia" le eƒe ɖoɖowo me.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Tia "Mekpɔ tɔtrɔawo ɖa" gbã.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App aɖe</translation>
     </message>

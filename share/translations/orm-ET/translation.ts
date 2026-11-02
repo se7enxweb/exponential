@@ -82829,34 +82829,6 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <translation>eeyyee, ammallee hin maxxanfamne</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ijaarsi tokko fuula %site hunda akka daawwataan hin seenin argutti fida, liinkiiwwan irra deebi'ee barreessa, faayilota garagalcha, bu'aa isaas kuusaa faayilii kaayyoo keessatti barreessa. Hanga ijaarsa mirkaneessitee Maxxansi tuqxutti homtuu hin maxxanfamu.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Duubatti deebiin ogeeyyiif qofa: "Wanti kun maal akka jijjiiru nan beeka" mallatteessi, maqaa mallattoo irra deebi'ii barreessi.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ijaarsa akkuma hoostiin dhiyeessutti, kuusaa faayilii kaayyoo irraa bana. Liinkiin siif sa'aatii tokkoof hojjeta.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Tarree keessatti mul'ata, fakkeenyaaf "Marsariitii ummataa GitHub Pages irratti".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Fuula marsariitii mataa isaa teessoowwan hin jirreef.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Kaayyoon ammallee furtuu kanaan hin seenu: qindaa'ina isaa keessatti "Furtuu bobbaasaa kaayyoo kanaaf uumame" filadhu.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Dura "Jijjiiramoota mirkaneesseera" mallatteessi.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App tokko</translation>
     </message>

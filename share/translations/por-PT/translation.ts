@@ -82859,34 +82859,6 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <translation>sim, ainda não publicado</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Uma compilação obtém cada página de %site tal como um visitante sem sessão iniciada a vê, reescreve as ligações, copia os ficheiros e escreve o resultado na pasta do destino. Nada é publicado até verificar a compilação e premir Publicar.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Uma reversão é para especialistas: assinale "Sei o que isto altera" e escreva novamente o nome da etiqueta.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Abre a compilação tal como o alojamento a servirá, a partir da pasta do destino. A ligação funciona para si durante uma hora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Mostrado nas listas, por exemplo "Site público no GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>A página do próprio site para endereços que não existem.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>O destino ainda não inicia sessão com esta chave: escolha "Uma chave de implementação criada para este destino" nas respetivas definições.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Assinale primeiro "Verifiquei as alterações".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Uma GitHub App</translation>
     </message>

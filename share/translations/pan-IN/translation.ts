@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ਹਾਂ, ਹਾਲੇ ਪ੍ਰਕਾਸ਼ਿਤ ਨਹੀਂ</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ਇੱਕ ਬਿਲਡ %site ਦਾ ਹਰ ਪੰਨਾ ਉਸੇ ਤਰ੍ਹਾਂ ਲਿਆਉਂਦਾ ਹੈ ਜਿਵੇਂ ਸਾਈਨ ਇਨ ਨਾ ਕੀਤਾ ਵਿਜ਼ਿਟਰ ਉਸ ਨੂੰ ਦੇਖਦਾ ਹੈ, ਲਿੰਕ ਮੁੜ ਲਿਖਦਾ ਹੈ, ਫਾਇਲਾਂ ਕਾਪੀ ਕਰਦਾ ਹੈ ਅਤੇ ਨਤੀਜਾ ਟੀਚੇ ਦੇ ਫੋਲਡਰ ਵਿੱਚ ਲਿਖਦਾ ਹੈ। ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਬਿਲਡ ਜਾਂਚ ਕੇ ਪ੍ਰਕਾਸ਼ਿਤ ਕਰੋ ਨਹੀਂ ਦਬਾਉਂਦੇ, ਕੁਝ ਵੀ ਪ੍ਰਕਾਸ਼ਿਤ ਨਹੀਂ ਹੁੰਦਾ।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ਵਾਪਸੀ ਮਾਹਰਾਂ ਲਈ ਹੈ: "ਮੈਨੂੰ ਪਤਾ ਹੈ ਕਿ ਇਹ ਕੀ ਬਦਲਦਾ ਹੈ" ਉੱਤੇ ਨਿਸ਼ਾਨ ਲਾਓ ਅਤੇ ਟੈਗ ਦਾ ਨਾਂ ਦੁਬਾਰਾ ਲਿਖੋ।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ਬਿਲਡ ਨੂੰ ਟੀਚੇ ਦੇ ਫੋਲਡਰ ਤੋਂ ਉਸੇ ਤਰ੍ਹਾਂ ਖੋਲ੍ਹਦਾ ਹੈ ਜਿਵੇਂ ਹੋਸਟ ਇਸ ਨੂੰ ਦੇਵੇਗਾ। ਲਿੰਕ ਤੁਹਾਡੇ ਲਈ ਇੱਕ ਘੰਟਾ ਕੰਮ ਕਰਦਾ ਹੈ।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ਸੂਚੀਆਂ ਵਿੱਚ ਦਿਖਾਇਆ ਜਾਂਦਾ ਹੈ, ਉਦਾਹਰਨ ਲਈ "GitHub Pages ਉੱਤੇ ਜਨਤਕ ਸਾਈਟ"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>ਮੌਜੂਦ ਨਾ ਹੋਣ ਵਾਲੇ ਪਤਿਆਂ ਲਈ ਸਾਈਟ ਦਾ ਆਪਣਾ ਪੰਨਾ।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ਟੀਚਾ ਹਾਲੇ ਇਸ ਕੁੰਜੀ ਨਾਲ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰਦਾ: ਇਸ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ "ਇਸ ਟੀਚੇ ਲਈ ਬਣਾਈ ਗਈ ਡਿਪਲੌਏ ਕੁੰਜੀ" ਚੁਣੋ।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ਪਹਿਲਾਂ "ਮੈਂ ਬਦਲਾਅ ਜਾਂਚ ਲਏ ਹਨ" ਉੱਤੇ ਨਿਸ਼ਾਨ ਲਾਓ।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>ਇੱਕ GitHub App</translation>
     </message>

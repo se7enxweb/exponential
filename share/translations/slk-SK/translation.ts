@@ -82859,34 +82859,6 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>áno, zatiaľ nepublikované</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Zostavenie načíta každú stránku %site tak, ako ju vidí neprihlásený návštevník, prepíše odkazy, skopíruje súbory a zapíše výsledok do priečinka cieľa. Nič sa nepublikuje, kým zostavenie neskontrolujete a nestlačíte Publikovať.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Vrátenie je pre expertov: zaškrtnite „Viem, čo to zmení“ a znova zadajte názov značky.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Otvorí zostavenie tak, ako ho bude poskytovať hosting, z priečinka cieľa. Odkaz vám funguje hodinu.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Zobrazuje sa v zoznamoch, napríklad „Verejná stránka na GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Vlastná stránka webu pre adresy, ktoré neexistujú.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Cieľ sa s týmto kľúčom ešte neprihlasuje: v jeho nastaveniach vyberte „Kľúč nasadenia vytvorený pre tento cieľ“.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Najprv zaškrtnite „Zmeny som skontroloval(a)“.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

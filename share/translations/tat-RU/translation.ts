@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>әйе, әле бастырылмаган</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Җыелма %site сайтының һәр битен кермәгән кунак күргәнчә ала, сылтамаларны яңадан яза, файлларны күчерә һәм нәтиҗәне максатның папкасына яза. Сез җыелманы тикшереп Бастыру төймәсенә баскач кына нәрсәдер бастырыла.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Кире кайтару белгечләр өчен: "Мин моның нәрсәне үзгәртәсен беләм" билгесен куегыз һәм тамганың исемен кабат языгыз.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Җыелманы максатның папкасыннан хостинг бирәчәк рәвештә ача. Сылтама Сезнең өчен бер сәгать эшли.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Исемлекләрдә күрсәтелә, мәсәлән "GitHub Pages тагы ачык сайт".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Булмаган адреслар өчен сайтның үз бите.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Максат әлегә бу ачкыч белән керми: аның көйләүләрендә "Бу максат өчен ясалган урнаштыру ачкычы" сайлагыз.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Башта "Мин үзгәрешләрне тикшердем" билгесен куегыз.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App кушымтасы</translation>
     </message>

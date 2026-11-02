@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಹೌದು, ಇನ್ನೂ ಪ್ರಕಟಿಸಿಲ್ಲ</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ಬಿಲ್ಡ್ %site ನ ಪ್ರತಿ ಪುಟವನ್ನು ಸೈನ್ ಇನ್ ಮಾಡದ ಸಂದರ್ಶಕ ನೋಡುವಂತೆ ತರುತ್ತದೆ, ಲಿಂಕ್‌ಗಳನ್ನು ಪುನಃ ಬರೆಯುತ್ತದೆ, ಫೈಲ್‌ಗಳನ್ನು ನಕಲಿಸುತ್ತದೆ ಮತ್ತು ಫಲಿತಾಂಶವನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ಗೆ ಬರೆಯುತ್ತದೆ. ನೀವು ಬಿಲ್ಡ್ ಪರಿಶೀಲಿಸಿ ಪ್ರಕಟಿಸು ಒತ್ತುವವರೆಗೆ ಏನನ್ನೂ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಪರಿಣತರಿಗೆ ಮಾತ್ರ: "ಇದು ಏನನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ" ಗುರುತು ಮಾಡಿ ಮತ್ತು ಟ್ಯಾಗ್‌ನ ಹೆಸರನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ಹೋಸ್ಟ್ ಒದಗಿಸುವಂತೆಯೇ ಬಿಲ್ಡ್ ಅನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ನಿಂದ ತೆರೆಯುತ್ತದೆ. ಲಿಂಕ್ ನಿಮಗೆ ಒಂದು ಗಂಟೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ಪಟ್ಟಿಗಳಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ, ಉದಾಹರಣೆಗೆ "GitHub Pages ನಲ್ಲಿ ಸಾರ್ವಜನಿಕ ಸೈಟ್".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲದ ವಿಳಾಸಗಳಿಗಾಗಿ ಸೈಟ್‌ನ ಸ್ವಂತ ಪುಟ.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ಗುರಿ ಇನ್ನೂ ಈ ಕೀಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡುವುದಿಲ್ಲ: ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ "ಈ ಗುರಿಗಾಗಿ ರಚಿಸಿದ ಡಿಪ್ಲಾಯ್ ಕೀ" ಆಯ್ಕೆಮಾಡಿ.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ಮೊದಲು "ನಾನು ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿದ್ದೇನೆ" ಗುರುತು ಮಾಡಿ.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>ಒಂದು GitHub App</translation>
     </message>

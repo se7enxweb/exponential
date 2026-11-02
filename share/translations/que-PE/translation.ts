@@ -82829,34 +82829,6 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <translation>arí, manaraq lluqsichisqa</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Huk hatarichisqaqa %site nisqapa sapanka raphinta apamun mana yaykusqa watukuq rikusqanman hina, t'inkikunata musuqmanta qillqan, willañiqikunata kikinchan, lluqsisqantataq chayanapa karpetanman qillqan. Manam imapas lluqsichisqachu hatarichisqata qhawanaykikama, Lluqsichiy nisqata ñit'inaykikamapas.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Kutichiyqa yachaqkunapaqmi: "Yachanim kay ima tikrasqanta" nisqata akllay, unanchaypa sutintataq hukmanta qillqay.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Hatarichisqata wasichaq qunqanman hina kichan, chayanapa karpetanmanta. T'inkiqa huk horalla qampaq llamk'an.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Sutinchaykunapi rikuchisqa, ahinataq "GitHub Pages nisqapi llapanpaq web".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Webpa kikin raphin mana kaq tiyanakunapaq.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Chayanaqa manaraq kay llavewan yaykunchu: allichaykunanpi "Kay chayanapaq rurasqa churanapaq llave" nisqata akllay.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Ñawpaqta "Tikraykunata qhawarqanim" nisqata akllay.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Huk GitHub App</translation>
     </message>

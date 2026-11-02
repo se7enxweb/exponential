@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>хӀаъ, хӀинца а арахецна дац</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Гулдаро %site-н хӀора агӀо чу ца велла хьаьшша гуш санна схьаэцу, хьажоргаш юха язйо, файлаш копи йо, жамӀ Ӏалашонан папке дӀаяздо. Аша гулдар таллалц а, "Арахеца" тӀетаӀийталц а цхьа а хӀума арахоьцуш дац.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Юхадерзор говзанчашна ду: "Ас хаьа хӀокхо хӀун хуьйцу" билгалде, тегин цӀе юха язъе.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Гулдар хоста лур долчу кепехь Ӏалашонан папкера схьадиллу. Хьажорг шуна цхьана сохьтана болх беш ю.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>МогӀамашкахь гойту, масала "GitHub Pages чохь юкъара сайт".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Йоцучу адресашна сайтан шен агӀо.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ӏалашо хӀинца а хӀокху догӀаца чу ца гӀо: цуьнан нисдаршкахь "ХӀокху Ӏалашонна кхоьллина деплойн догӀа" харжа.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Хьалха "Ас хийцамаш талла бина" билгалде.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Цхьа GitHub App</translation>
     </message>

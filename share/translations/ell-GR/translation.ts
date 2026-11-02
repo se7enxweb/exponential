@@ -82859,34 +82859,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ναι, δεν έχει δημοσιευτεί ακόμη</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Μια δόμηση λαμβάνει κάθε σελίδα του %site όπως τη βλέπει ένας επισκέπτης που δεν έχει συνδεθεί, ξαναγράφει τους συνδέσμους, αντιγράφει τα αρχεία και γράφει το αποτέλεσμα στον φάκελο του προορισμού. Τίποτα δεν δημοσιεύεται μέχρι να ελέγξετε τη δόμηση και να πατήσετε Δημοσίευση.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Η αναίρεση είναι για έμπειρους χρήστες: επιλέξτε "Ξέρω τι αλλάζει αυτό" και πληκτρολογήστε ξανά το όνομα της σήμανσης.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ανοίγει τη δόμηση όπως θα την εξυπηρετήσει ο διακομιστής, από τον φάκελο του προορισμού. Ο σύνδεσμος λειτουργεί για εσάς για μία ώρα.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Εμφανίζεται σε λίστες, για παράδειγμα "Δημόσιος ιστότοπος στο GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Η σελίδα του ίδιου του ιστότοπου για διευθύνσεις που δεν υπάρχουν.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ο προορισμός δεν συνδέεται ακόμη με αυτό το κλειδί: επιλέξτε "Ένα κλειδί ανάπτυξης δημιουργημένο για αυτόν τον προορισμό" στις ρυθμίσεις του.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Επιλέξτε πρώτα "Έλεγξα τις αλλαγές".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Μια GitHub App</translation>
     </message>

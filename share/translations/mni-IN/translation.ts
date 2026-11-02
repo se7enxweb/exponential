@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>হোই, হৌজিক ফাওবা প্রকাশ তৌদ্রি</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>বিল্ড অমনা %site গী পেজ খুদিংমক সাইন ইন তৌদবা ভিজিটর অমনা উবগুম্না পুরকই, লিঙ্কশিং অনৌবা ওইনা ইই, ফাইলশিং কোপি তৌই অমসুং মহৈ অদু টার্গেটকী ফোল্দরদা ইই. নহাক্না বিল্ড চেক তৌরগা প্রকাশ তৌবা নম্বা মতম ফাওবা করিসু প্রকাশ তৌরোই.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>রোলবেক অসি এক্সপার্টশিংগীদমকনি: "মসিনা করি হোংদোকপগে হায়বা ঈহাক্না খঙই" টিক তৌবিয়ু অমসুং টেগকী মমিং অমুক হন্না টাইপ তৌবিয়ু.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>বিল্ড অদু হোস্টনা পীগদবা মওং অদুম্না টার্গেটকী ফোল্দরদগী হাংদোকই. লিঙ্ক অসি নহাক্কীদমক পুং অমা থবক তৌই.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>লিস্টশিংদা উৎই, খুদম ওইনা "GitHub Pages তা লৈবা পব্লিক সাইট".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>লৈতবা এড্রেসশিংগীদমক সাইটকী মশাগী পেজ.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>টার্গেট অসিনা হৌজিক ফাওবা কী অসিনা সাইন ইন তৌদ্রি: মগী সেটিংশিংদা "টার্গেট অসিগীদমক শেমখিবা ডিপ্লোয় কী" খনবিয়ু.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>অহানবা "অহোংবশিং অদু ঈহাক্না চেক তৌরে" টিক তৌবিয়ু.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App অমা</translation>
     </message>

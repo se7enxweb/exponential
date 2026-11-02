@@ -83509,34 +83509,6 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>ja, ikke publiceret endnu</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Et build henter hver side af %site, som en besøgende, der ikke er logget ind, ser den, omskriver linkene, kopierer filerne og skriver resultatet til målets mappe. Intet publiceres, før du har kontrolleret buildet og trykket på Publicer.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>En tilbagerulning er for eksperter: sæt flueben ved "Jeg ved, hvad dette ændrer", og skriv mærkets navn igen.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Åbner buildet, som værten vil levere det, fra målets mappe. Linket virker for dig i en time.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Vises i lister, for eksempel "Offentligt site på GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Sitets egen side for adresser, der ikke findes.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Målet logger endnu ikke ind med denne nøgle: vælg "En udrulningsnøgle oprettet til dette mål" i dets indstillinger.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Sæt først flueben ved "Jeg har kontrolleret ændringerne".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>En GitHub App</translation>
     </message>

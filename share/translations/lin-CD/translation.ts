@@ -82829,34 +82829,6 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>ɛɛ, ebimisami naino te</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Botongi ezwaka lokasa nyonso ya %site ndenge mopaya oyo akɔti te amonaka yango, ekomaka lisusu ba-lien, ekopiaka ba-fichier mpe ekomaka mbano na dossier ya esika ya kotinda. Eloko moko te ebimisamaka liboso ete otala botongi mpe ofinola "Bimisá".</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Bozongisi ezali mpo na bato ya mayele: pona "Nayebi oyo yango ebongoli" mpe komá lisusu nkómbó ya elembo.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Efungolaka botongi ndenge hôte ekopesa yango, uta na dossier ya esika ya kotinda. Lien esalaka mpo na yo ngonga moko.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Emonisami na ba-liste, ndakisa "Site ya polele na GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Lokasa ya site mpo na ba-adresse oyo ezali te.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Esika ya kotinda ekɔtaka naino na fungola oyo te: pona "Fungola ya botindi oyo esalemi mpo na esika ya kotinda oyo" na bibongiseli na yango.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Pona liboso "Natali mbongwana".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App moko</translation>
     </message>

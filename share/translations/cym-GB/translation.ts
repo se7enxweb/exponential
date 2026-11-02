@@ -82829,34 +82829,6 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>ie, heb ei gyhoeddi eto</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Mae adeiladwaith yn nôl pob tudalen o %site fel y'i gwelir gan ymwelydd nad yw wedi mewngofnodi, yn ailysgrifennu'r dolenni, yn copïo'r ffeiliau ac yn ysgrifennu'r canlyniad i ffolder y targed. Ni chyhoeddir dim nes i chi wirio'r adeiladwaith a phwyso Cyhoeddi.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Mae dychweliad ar gyfer arbenigwyr: ticiwch "Rwy'n gwybod beth mae hyn yn ei newid" a theipiwch enw'r nod eto.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Mae'n agor yr adeiladwaith fel y bydd y gwesteiwr yn ei weini, o ffolder y targed. Mae'r ddolen yn gweithio i chi am awr.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Yn cael ei ddangos mewn rhestrau, er enghraifft "Gwefan gyhoeddus ar GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Tudalen y wefan ei hun ar gyfer cyfeiriadau nad ydynt yn bodoli.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Nid yw'r targed yn mewngofnodi gyda'r allwedd hon eto: dewiswch "Allwedd defnyddio a grëwyd ar gyfer y targed hwn" yn ei osodiadau.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Ticiwch "Rwyf wedi gwirio'r newidiadau" yn gyntaf.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

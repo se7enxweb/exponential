@@ -82829,34 +82829,6 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <translation>gea, anc betg publitgà</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ina construcziun chargia mintga pagina da %site uschia sco ch'in visitader betg annunzià la vesa, scriva da nov las colliaziuns, copiescha las datotecas e scriva il resultat en l'ordinatur da la destinaziun. Nagut na vegn publitgà avant che Vus controllais la construcziun e smatgais Publitgar.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ina revocaziun è per experts: marcai «Jau sai tge che quai mida» ed endatai anc ina giada il num da la marca.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Avra la construcziun uschia sco ch'il purschider vegn a la furnir, da l'ordinatur da la destinaziun. La colliaziun funcziuna per Vus durant in'ura.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Mussà en glistas, per exempel «Website publica sin GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>L'atgna pagina da la website per adressas che n'existan betg.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La destinaziun na s'annunzia anc betg cun questa clav: tschernai «Ina clav da distribuziun creada per questa destinaziun» en ses parameters.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marcai l'emprim «Jau hai controllà las midadas».</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Ina GitHub App</translation>
     </message>

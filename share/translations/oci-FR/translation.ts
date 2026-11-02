@@ -82829,34 +82829,6 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>òc, pas encara publicat</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Una construccion recupèra cada pagina de %site coma la vei un visitaire pas connectat, reescriu los ligams, còpia los fichièrs e escriu lo resultat dins lo dossièr de la cibla. Res es pas publicat abans que verifiquètz la construccion e que quichètz Publicar.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Un retorn en arrièr es per los expèrts: marcatz "Sabi çò que cambia aquò" e tornatz picar lo nom de l'etiqueta.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Dobrís la construccion coma l'òste la servirà, a partir del dossièr de la cibla. Lo ligam fonciona per vos pendent una ora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Afichat dins las listas, per exemple "Site public sus GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>La pagina pròpria del site per las adreças que existisson pas.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La cibla se connècta pas encara amb aquesta clau: causissètz "Una clau de desplegament creada per aquesta cibla" dins sos paramètres.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marcatz d'en primièr "Ai verificat los cambiaments".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Una GitHub App</translation>
     </message>

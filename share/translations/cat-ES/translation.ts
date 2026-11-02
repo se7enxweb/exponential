@@ -82859,34 +82859,6 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>sí, encara no publicat</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Una compilació obté cada pàgina de %site tal com la veu un visitant que no ha iniciat sessió, reescriu els enllaços, copia els fitxers i escriu el resultat a la carpeta de la destinació. No es publica res fins que revises la compilació i prems «Publica».</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Desfer és per a experts: marca «Sé què canvia això» i torna a escriure el nom de l'etiqueta.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Obre la compilació tal com la servirà el servidor, des de la carpeta de la destinació. L'enllaç et funciona durant una hora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Es mostra a les llistes, per exemple «Lloc públic a GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>La pàgina pròpia del lloc per a les adreces que no existeixen.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La destinació encara no accedeix amb aquesta clau: tria «Una clau de desplegament creada per a aquesta destinació» a la seva configuració.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marca primer «He revisat els canvis».</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Una GitHub App</translation>
     </message>

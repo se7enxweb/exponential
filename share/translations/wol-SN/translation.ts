@@ -82829,34 +82829,6 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>waaw, siiwaluñu ko ba léegi</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Tabax dafay yóbbu xët bu nekk bu %site ni ko ganaa bu duggul di gise, di bindaat lëkkalekaay yi, di duppi fisie yi te di bind njureel gi ci dosieu jëmuwaay bi. Dara du siiwalu ba nga saytu tabax bi te bës ci Siiwal.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Dellu ginnaaw ngir boroom xam-xam la: tànnal "Xam naa li lii di soppi" te bindaat turu màndarga mi.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Dafay ubbi tabax bi ni host bi koy joxe, ci dosieu jëmuwaay bi. Lëkkalekaay bi dafay dox ci yaw benn waxtu.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Dañu koy wone ci lim yi, misaal "Sit bu siiwu ci GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Xët bu sit bi ci boppam ngir adrees yu amul.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Jëmuwaay bi duggagul ak caabi bii: tànnal "Caabi yónnee bu ñu defar ngir jëmuwaay bii" ci tànneefam.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Tànnal "Saytu naa coppite yi" njëkk.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Benn GitHub App</translation>
     </message>

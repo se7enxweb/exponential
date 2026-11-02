@@ -82859,34 +82859,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>так, ще не опубліковано</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Збірка отримує кожну сторінку %site так, як її бачить відвідувач без входу, переписує посилання, копіює файли й записує результат до папки цілі. Нічого не публікується, доки ви не перевірите збірку й не натиснете «Опублікувати».</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Відкат — для досвідчених: позначте «Я знаю, що це змінює» і ще раз введіть назву тегу.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Відкриває збірку з папки цілі так, як її віддаватиме хостинг. Посилання працює для вас протягом години.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Показується у списках, наприклад «Публічний сайт на GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Власна сторінка сайту для адрес, яких не існує.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ціль ще не входить цим ключем: виберіть «Ключ розгортання, створений для цієї цілі» в її налаштуваннях.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Спершу позначте «Зміни перевірено».</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Застосунок GitHub App</translation>
     </message>

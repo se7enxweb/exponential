@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ߐߥߐ߸ ߊ߬ ߡߊ߫ ߓߌߟߊ߫ ߞߍߣߍ ߞߊ߲ ߝߟߐ</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ߟߊߘߊ߲ߠߌ ߦߋ߫ %site ߞߐߜߍ ߓߍ߯ ߟߊߛߊ߬ ߟߊ߫ ߓߐ߲ߓߐ߲ߓߊ߯ ߡߍ߲ ߡߊ߫ ߘߏ߲߬ ߊ߬ ߦߋ߫ ߊ߬ ߦߋ߫ ߞߏ߫ ߡߍ߲ ߠߊ߫߸ ߊ߬ ߦߋ߫ ߛߌߙߌߟߊ߲ ߟߎ߬ ߛߓߍ߫ ߕߎ߲߯߸ ߊ߬ ߦߋ߫ ߝߌߛߌߦߋ ߟߎ߬ ߞߏߔߌ ߞߍ߫ ߊ߬ ߣߌ߫ ߞߐߝߟߍ ߛߓߍ߫ ߕߊ߯ߦߙߐ ߘߏߛߌߦߋ ߘߐ߫. ߝߏߦߌ߫ ߕߍ߫ ߓߌߟߊ ߞߍߣߍ ߞߊ߲ ߝߏ߫ ߌ ߞߊ߬ ߟߊߘߊ߲ߠߌ ߝߛߍ߬ߝߛߍ߬ ߞߊ߬ ߓߌߟߊ ߞߍߣߍ ߞߊ߲ ߘߌ߲߬.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ߞߐ߫ ߟߊߛߋߟߌ ߦߋ߫ ߟߐ߲ߠߌߟߊ ߟߎ߬ ߟߊ߫ ߘߋ߬: «ߒ ߦߋ߫ ߊ߬ ߟߐ߲߫ ߣߌ߲߬ ߦߋ߫ ߡߍ߲ ߦߟߌߡߊ߫ ߟߊ߫» ߛߎߥߊߘߋ߫ ߞߊ߬ ߕߐߜ߳ߐ ߕߐ߮ ߛߓߍ߫ ߕߎ߲߯.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ߊ߬ ߦߋ߫ ߟߊߘߊ߲ߠߌ ߟߊߞߊ߬ ߟߊ߫ ߌ ߞߏ߫ ߤߐߛߌߕߌ ߘߌ߫ ߊ߬ ߘߌ߫ ߞߏ߫ ߡߍ߲ ߠߊ߫߸ ߕߊ߯ߦߙߐ ߘߏߛߌߦߋ ߘߐ߫. ߛߌߙߌߟߊ߲ ߦߋ߫ ߓߊߙߊ ߞߍ߫ ߟߊ߫ ߌ ߦߋ߫ ߕߎ߬ߡߊ߬ߙߋ߲߬ ߞߋߟߋ߲ ߘߐ߫.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ߊ߬ ߦߌ߬ߘߊ߬ߣߍ߲߫ ߟߌߛߌ ߟߎ߬ ߘߐ߫߸ ߡߌ߬ߘߊ߬ߟߊ߫ «ߛߌߕߌ ߞߍߣߍ GitHub Pages ߞߊ߲߬».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>ߛߌߕߌ ߖߘߍ߬ ߟߊ߫ ߞߐߜߍ ߊߘߌߙߍߛߌ ߡߍ߲ ߠߎ߬ ߕߍ߫ ߦߋ߲߬ ߏ߬ ߟߎ߬ ߦߋ߫.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ߕߊ߯ߦߙߐ ߕߍ߫ ߘߏ߲߬ ߠߊ߫ ߞߌߟߍ ߣߌ߲߬ ߝߍ߬ ߝߟߐ: «ߓߌߟߊߟߌ ߞߌߟߍ ߡߍ߲ ߟߊߘߊ߲ߣߍ߲ ߕߊ߯ߦߙߐ ߣߌ߲߬ ߦߋ߫» ߛߎߥߊ߲ߘߌ߫ ߊ߬ ߟߊߓߍ߲ ߟߎ߬ ߘߐ߫.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>«ߒ ߓߘߊ߫ ߦߍߟߍߡߊߟߌߟߎ ߝߛߍ߬ߝߛߍ߬» ߛߎߥߊߘߋ߫ ߝߟߐ߫.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App ߞߋߟߋ߲</translation>
     </message>

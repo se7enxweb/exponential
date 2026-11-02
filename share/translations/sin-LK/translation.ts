@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ඔව්, තවම ප්‍රකාශනය කර නැත</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ගොඩනැගීමක් %site හි සෑම පිටුවක්ම පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයට ලබා ගනී, සබැඳි නැවත ලියයි, ගොනු පිටපත් කරයි සහ ප්‍රතිඵලය ඉලක්කයේ ෆෝල්ඩරයට ලියයි. ඔබ ගොඩනැගීම පරීක්ෂා කර "ප්‍රකාශනය කරන්න" ඔබන තෙක් කිසිවක් ප්‍රකාශනය නොවේ.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ආපසු හැරවීම ප්‍රවීණයන් සඳහා ය: "මෙය වෙනස් කරන දේ මම දනිමි" සලකුණු කර ටැගයේ නම නැවත ටයිප් කරන්න.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>සත්කාරකය සපයන ආකාරයටම ඉලක්කයේ ෆෝල්ඩරයෙන් ගොඩනැගීම විවෘත කරයි. සබැඳිය ඔබට පැයක් ක්‍රියා කරයි.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ලැයිස්තුවල පෙන්වයි, උදාහරණයක් ලෙස "GitHub Pages හි පොදු අඩවිය".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>නොපවතින ලිපින සඳහා අඩවියේම පිටුව.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ඉලක්කය තවම මෙම යතුරෙන් පිවිසෙන්නේ නැත: එහි සැකසුම්වල "මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්" තෝරන්න.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>පළමුව "මම වෙනස්කම් පරීක්ෂා කළෙමි" සලකුණු කරන්න.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App එකක්</translation>
     </message>

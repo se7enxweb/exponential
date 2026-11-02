@@ -82859,34 +82859,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>да, още не е публикувано</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Изграждането изтегля всяка страница на %site така, както я вижда невлязъл посетител, пренаписва връзките, копира файловете и записва резултата в папката на целта. Нищо не се публикува, докато не проверите изграждането и не натиснете „Публикувай“.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Връщането е за експерти: отметнете „Знам какво променя това“ и въведете отново името на етикета.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Отваря изграждането така, както хостът ще го обслужва, от папката на целта. Връзката работи за вас един час.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Показва се в списъци, например „Публичен сайт в GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Собствената страница на сайта за адреси, които не съществуват.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Целта още не влиза с този ключ: изберете „Ключ за внедряване, създаден за тази цел“ в настройките ѝ.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Първо отметнете „Проверих промените“.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

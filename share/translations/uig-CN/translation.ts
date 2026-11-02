@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ھەئە، تېخى ئېلان قىلىنمىدى</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ياسالما %site نىڭ ھەر بىر بېتىنى كىرمىگەن زىيارەتچى كۆرگەندەك ئالىدۇ، ئۇلانمىلارنى قايتا يازىدۇ، ھۆججەتلەرنى كۆچۈرىدۇ ۋە نەتىجىنى نىشاننىڭ قىسقۇچىغا يازىدۇ. سىز ياسالمىنى تەكشۈرۈپ «ئېلان قىل» نى باسمىغۇچە ھېچنېمە ئېلان قىلىنمايدۇ.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>قايتۇرۇش مۇتەخەسسىسلەر ئۈچۈن: «بۇنىڭ نېمىنى ئۆزگەرتىدىغانلىقىنى بىلىمەن» نى بەلگىلەڭ ۋە بەلگىنىڭ نامىنى قايتا كىرگۈزۈڭ.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ياسالمىنى نىشاننىڭ قىسقۇچىدىن ساھىبخانا تەمىنلەيدىغاندەك ئاچىدۇ. ئۇلانما سىز ئۈچۈن بىر سائەت ئىشلەيدۇ.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>تىزىملىكلەردە كۆرسىتىلىدۇ، مەسىلەن «GitHub Pages دىكى ئاممىۋى تور بېكەت».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>مەۋجۇت بولمىغان ئادرېسلار ئۈچۈن تور بېكەتنىڭ ئۆز بېتى.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>نىشان تېخى بۇ ئاچقۇچ بىلەن كىرمەيدۇ: ئۇنىڭ تەڭشەكلىرىدە «بۇ نىشان ئۈچۈن ياسالغان ئورۇنلاشتۇرۇش ئاچقۇچى» نى تاللاڭ.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ئالدى بىلەن «ئۆزگىرىشلەرنى تەكشۈردۈم» نى بەلگىلەڭ.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>بىر GitHub App</translation>
     </message>

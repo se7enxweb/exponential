@@ -84041,34 +84041,6 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>tak, jeszcze nieopublikowana</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Kompilacja pobiera każdą stronę witryny %site tak, jak widzi ją niezalogowany odwiedzający, przepisuje odnośniki, kopiuje pliki i zapisuje wynik w folderze celu. Nic nie zostaje opublikowane, dopóki nie sprawdzisz kompilacji i nie klikniesz Opublikuj.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Wycofanie jest dla ekspertów: zaznacz „Wiem, co to zmienia” i wpisz ponownie nazwę znacznika.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Otwiera kompilację tak, jak będzie ją serwował hosting, z folderu celu. Odnośnik działa dla Ciebie przez godzinę.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Wyświetlana na listach, na przykład „Publiczna witryna w GitHub Pages”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Własna strona witryny dla adresów, które nie istnieją.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Cel nie loguje się jeszcze tym kluczem: wybierz w jego ustawieniach „Klucz wdrożeniowy utworzony dla tego celu”.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Najpierw zaznacz „Zmiany są sprawdzone”.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Aplikacja GitHub App</translation>
     </message>

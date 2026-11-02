@@ -82829,34 +82829,6 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <translation>yego, ntiratangazwa</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Iyubaka rizana buri paji ya %site nk'uko umushyitsi utinjiye ayibona, rikandika amahuza bundi bushya, rigakoporora amafayili kandi rikandika ibyavuyemo mu bubiko bw'intego. Nta kintu gitangazwa mbere y'uko ugenzura iyubaka ugakanda Tangaza.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Gusubiza inyuma ni iby'inzobere: shyira akamenyetso kuri "Nzi icyo ibi bihindura" maze wongere wandike izina ry'ikimenyetso.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ifungura iyubaka uko seriveri yakira izaritanga, rivuye mu bubiko bw'intego. Ihuza rikora kuri wowe mu gihe cy'isaha imwe.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Bigaragara ku rutonde, urugero "Urubuga rusange kuri GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Paji y'urubuga ubwarwo ku maderesi atabaho.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Intego ntiraninjira ikoresheje uru rufunguzo: hitamo "Urufunguzo rwo kohereza rwakorewe iyi ntego" mu igenamiterere ryayo.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Banza ushyire akamenyetso kuri "Nagenzuye impinduka".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App imwe</translation>
     </message>

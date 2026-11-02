@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ใช่ ยังไม่ได้เผยแพร่</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>บิลด์จะดึงทุกหน้าของ %site ตามที่ผู้เยี่ยมชมที่ไม่ได้ลงชื่อเข้าใช้เห็น เขียนลิงก์ใหม่ คัดลอกไฟล์ และเขียนผลลัพธ์ลงในโฟลเดอร์ของเป้าหมาย จะไม่มีสิ่งใดถูกเผยแพร่จนกว่าคุณจะตรวจสอบบิลด์และกด เผยแพร่</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>การย้อนกลับเหมาะสำหรับผู้เชี่ยวชาญ: ทำเครื่องหมาย "ฉันรู้ว่าสิ่งนี้เปลี่ยนอะไร" และพิมพ์ชื่อของแท็กอีกครั้ง</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>เปิดบิลด์ตามที่โฮสต์จะให้บริการ จากโฟลเดอร์ของเป้าหมาย ลิงก์ใช้ได้สำหรับคุณเป็นเวลาหนึ่งชั่วโมง</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>แสดงในรายการ เช่น "ไซต์สาธารณะบน GitHub Pages"</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>หน้าของไซต์เองสำหรับที่อยู่ที่ไม่มีอยู่</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>เป้าหมายยังไม่ลงชื่อเข้าใช้ด้วยคีย์นี้: เลือก "คีย์ดีพลอยที่สร้างสำหรับเป้าหมายนี้" ในการตั้งค่าของเป้าหมาย</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ทำเครื่องหมาย "ฉันตรวจสอบการเปลี่ยนแปลงแล้ว" ก่อน</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App หนึ่งตัว</translation>
     </message>

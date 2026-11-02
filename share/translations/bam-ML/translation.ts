@@ -82829,34 +82829,6 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <translation>ɔwɔ, a ma bila kɛnɛ kan fɔlɔ</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Dilanni bɛ %site ka ɲɛ bɛɛ ta i n'a fɔ lajɛlikɛla min ma don b'a ye cogo min na, ka siriw sɛbɛn kokura, ka fisiyew kopi ani ka jaabi sɛbɛn taayɔrɔ ka kɛsu kɔnɔ. Foyi tɛ bila kɛnɛ kan fɔ i ka dilanni lajɛ ka Bila kɛnɛ kan digi.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Segin kɔ ye dɔnnikɛlaw ta ye: "N b'a dɔn nin bɛ min yɛlɛma" sugandi ka taamasiyɛn tɔgɔ sɛbɛn tugun.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Dilanni bɛ da wuli i n'a fɔ jatigi bɛna a di cogo min na, ka bɔ taayɔrɔ ka kɛsu la. Siri bɛ baara kɛ i ye lɛrɛ kelen kɔnɔ.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>A bɛ jira lisiw kɔnɔ, i n'a fɔ "Siti kɛnɛ kan GitHub Pages kan".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Siti yɛrɛ ka ɲɛ adarɛsi minnu tɛ yen olu kama.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Taayɔrɔ tɛ don ni nin kile ye fɔlɔ: "Bilali kile min dilanna nin taayɔrɔ in kama" sugandi a ka labɛnw kɔnɔ.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>"N ye yɛlɛmaw lajɛ" sugandi fɔlɔ.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App dɔ</translation>
     </message>

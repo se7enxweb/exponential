@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>иә, әлі жарияланбаған</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Құрастыру %site сайтының әр бетін жүйеге кірмеген келушіге көрінетіндей етіп жүктеп алады, сілтемелерді қайта жазады, файлдарды көшіреді және нәтижені мақсаттың қалтасына жазады. Құрастыруды тексеріп, «Жариялау» батырмасын баспайынша ештеңе жарияланбайды.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Кері қайтару тәжірибелі пайдаланушыларға арналған: «Бұл нені өзгертетінін білемін» белгісін қойып, тегтің атауын қайта теріңіз.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Құрастыруды мақсаттың қалтасынан хост беретіндей етіп ашады. Сілтеме сіз үшін бір сағат жұмыс істейді.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Тізімдерде көрсетіледі, мысалы «GitHub Pages-тегі ашық сайт».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Жоқ мекенжайларға арналған сайттың өз беті.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Мақсат әлі бұл кілтпен кірмейді: оның баптауларында «Осы мақсат үшін жасалған орналастыру кілті» тармағын таңдаңыз.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Алдымен «Өзгерістерді тексердім» белгісін қойыңыз.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App қолданбасы</translation>
     </message>

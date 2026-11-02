@@ -82861,34 +82861,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>כן, עדיין לא פורסם</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>בנייה מאחזרת כל דף של %site כפי שמבקר שאינו מחובר רואה אותו, משכתבת את הקישורים, מעתיקה את הקבצים וכותבת את התוצאה לתיקיית היעד. דבר אינו מתפרסם עד שבודקים את הבנייה ולוחצים על פרסום.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>החזרה לאחור מיועדת למומחים: יש לסמן "אני יודע מה זה משנה" ולהקליד שוב את שם התג.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>פותח את הבנייה כפי שהמארח יגיש אותה, מתיקיית היעד. הקישור עובד עבורך במשך שעה.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>מוצג ברשימות, לדוגמה "האתר הציבורי ב-GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>הדף של האתר עצמו עבור כתובות שאינן קיימות.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>היעד עדיין אינו מתחבר עם מפתח זה: יש לבחור "מפתח פריסה שנוצר עבור יעד זה" בהגדרות שלו.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>יש לסמן תחילה "בדקתי את השינויים".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

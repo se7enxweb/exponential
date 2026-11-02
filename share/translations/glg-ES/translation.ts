@@ -82829,34 +82829,6 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>si, aínda non publicado</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Unha compilación obtén cada páxina de %site tal como a ve un visitante sen sesión iniciada, reescribe as ligazóns, copia os ficheiros e escribe o resultado no cartafol do destino. Non se publica nada ata que revise a compilación e prema Publicar.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Unha reversión é para expertos: marque "Sei o que cambia isto" e escriba de novo o nome da etiqueta.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Abre a compilación tal como a servirá o aloxamento, desde o cartafol do destino. A ligazón funciona para vostede durante unha hora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Móstrase nas listas, por exemplo "Sitio público en GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>A páxina propia do sitio para enderezos que non existen.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>O destino aínda non inicia sesión con esta chave: escolla "Unha chave de despregamento creada para este destino" na súa configuración.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marque primeiro "Revisei os cambios".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Unha GitHub App</translation>
     </message>

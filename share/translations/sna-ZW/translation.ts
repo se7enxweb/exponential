@@ -82829,34 +82829,6 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <translation>hongu, hazvisati zvaburitswa</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Chivakwa chinotora peji rega rega re %site sezvarinoonekwa nemushanyi asina kupinda, chinonyora patsva zvinongedzo, chinokopa mafaira uye chinonyora mhedzisiro mufolda yechinangwa. Hapana chinoburitswa kusvikira matarisa chivakwa uye madzvanya Buritsa.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Kudzosera shure ndekwenyanzvi: sarudzai "Ndinoziva zvinochinjwa nechinhu ichi" uye nyorai zita remucherechedzo zvakare.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Inovhura chivakwa sezvachichapihwa nemuchengeti, kubva mufolda yechinangwa. Chinongedzo chinokushandirai kweawa imwe.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Zvinoratidzwa mumarondedzero, semuenzaniso "Saiti yeruzhinji paGitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Peji resaiti pacharo rekero dzisipo.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Chinangwa hachisati chapinda nekiyi iyi: sarudzai "Kiyi yekuendesa yakagadzirirwa chinangwa ichi" mumarongero acho.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Sarudzai "Ndatarisa shanduko" kutanga.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App imwe</translation>
     </message>

@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>آ، وُنی شایع نہٕ کوٚرمُت</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>بِلڈ چھُ %site ہُنٛد پرٛتھ صَفحہ تِتھہٕ پٲٹھۍ اَنان یِتھہٕ پٲٹھۍ سایِن اِن نہٕ کوٚرمُت مہمان وُچھان چھُ، لِنک دوبارٕ لیکھان، فایِلہٕ نَقل کران تہٕ نَتیجہ ہَدَفٕکِس فولڈَرس منٛز لیکھان۔ ییٚلہِ تام توٚہہ بِلڈ جانچِتھ شایع کٔرِو دَبٲوِو، کہِنہٕ چھُ نہٕ شایع گژھان۔</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>واپسی چھےٚ ماہِرَن خاطرٕ: "مےٚ چھُ پَتہٕ یہ کیا بَدلاوان چھُ" نِشانہٕ کٔرِو تہٕ ٹیگ ہُنٛد ناو دوبارٕ ٹایپ کٔرِو۔</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>بِلڈ چھُ ہَدَفٕکِس فولڈَرس منٛزٕ تِتھے کھولان یِتھہٕ پٲٹھۍ ہوسٹ دِیہِ۔ لِنک چھُ توٚہہ خاطرٕ اکھ گَنٛٹہٕ کٲم کران۔</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>فِہرِستَن منٛز ہاونہٕ یِوان، مِثالے "GitHub Pages پیٹھ عام سایِٹ"۔</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>سایِٹ ہُنٛد پَنُن صَفحہ تِمَن پَتَن خاطرٕ یِم موجوٗد چھِ نہٕ۔</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ہَدَف چھُ نہٕ وُنی یَتھ کی سان سایِن اِن کران: تَمِچَن ترتیباتَن منٛز "یَتھ ہَدَفس خاطرٕ بنَومٕژ ڈِپلائے کی" ژارِو۔</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>گوڈٕ "مےٚ چھےٚ تَبدیٖلیہِ جانچمٕژ" نِشانہٕ کٔرِو۔</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>اکھ GitHub App</translation>
     </message>

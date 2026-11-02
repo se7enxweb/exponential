@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ཨིན། ད་ལྟོ་ཚུན་དཔེ་སྐྲུན་མ་འབད།</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>བཟོ་བསྐྲུན་ཅིག་གིས་ %site གི་ཤོག་ལེབ་རེ་རེ་ ནང་མ་འཛུལ་བའི་འབྱོར་མི་ཅིག་གིས་མཐོང་དོ་བཟུམ་སྦེ་ལེན་ཏེ་ འབྲེལ་ཐག་ཚུ་ལོག་འབྲི་ ཡིག་སྣོད་ཚུ་འདྲ་བཤུས་རྐྱབ་ཞིནམ་ལས་ གྲུབ་འབྲས་འདི་ དམིགས་ཡུལ་གྱི་སྣོད་ཐུམ་ནང་འབྲིཝ་ཨིན། ཁྱོད་ཀྱིས་བཟོ་བསྐྲུན་འདི་བརྟག་ཞིབ་འབད་དེ་ དཔེ་སྐྲུན་ཨེབ་ཚུན་ཚོད་ ག་ནི་ཡང་དཔེ་སྐྲུན་མི་འབད།</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>རྒྱབ་ལོག་འདི་ མཁས་མཆོག་ཚུ་གི་དོན་ལུ་ཨིན། "འདི་གིས་ག་ཅི་བསྒྱུར་ནི་ཨིན་ན་ང་གིས་ཤེས།" ལུ་རྟགས་བཀལ་ཞིནམ་ལས་ རྟགས་བཀལ་གྱི་མིང་འདི་ ལོག་སྟེ་ཡིག་དཔར་རྐྱབ།</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>བཟོ་བསྐྲུན་འདི་ བདག་འཛིན་པ་གིས་བྱིན་ནི་བཟུམ་སྦེ་ དམིགས་ཡུལ་གྱི་སྣོད་ཐུམ་ལས་ཁ་ཕྱེཝ་ཨིན། འབྲེལ་ཐག་འདི་ ཁྱོད་ཀྱི་དོན་ལུ་ ཆུ་ཚོད་གཅིག་ལཱ་འབདཝ་ཨིན།</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ཐོ་ཡིག་ནང་སྟོནམ་ཨིན། དཔེར་ན་ "GitHub Pages ཁ་གི་སྤྱི་ཚོགས་དྲྭ་ཚིགས།"</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>མེད་པའི་ཁ་བྱང་ཚུ་གི་དོན་ལུ་ དྲྭ་ཚིགས་རང་སོའི་ཤོག་ལེབ།</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>དམིགས་ཡུལ་འདི་ ད་ལྟོ་ཚུན་ ལྡེ་མིག་འདི་གིས་ནང་འཛུལ་མི་འབད། དེ་གི་སྒྲིག་བཀོད་ནང་ "དམིགས་ཡུལ་འདི་གི་དོན་ལུ་བཟོ་མི་བཀྲམ་སྤེལ་ལྡེ་མིག" གདམ་ཁ་རྐྱབ།</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ཧེ་མ་ "ང་གིས་བསྒྱུར་བཅོས་ཚུ་བརྟག་ཞིབ་འབད་ཡི།" ལུ་རྟགས་བཀལ།</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App ཅིག</translation>
     </message>

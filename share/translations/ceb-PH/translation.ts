@@ -82829,34 +82829,6 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>oo, wala pa ma-publish</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ang build mokuha sa matag panid sa %site sama sa makita sa bisita nga wala naka-sign in, mosulat pag-usab sa mga link, mokopya sa mga file ug mosulat sa resulta sa folder sa tumong. Walay ma-publish hangtod nga susihon nimo ang build ug pindoton ang I-publish.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ang pagbalik alang sa mga eksperto: i-tsek ang "Nahibalo ko kon unsa ang usbon niini" ug i-type pag-usab ang ngalan sa tag.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ablihan ang build sama sa paghatag niini sa host, gikan sa folder sa tumong. Molihok ang link alang kanimo sulod sa usa ka oras.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Gipakita sa mga lista, pananglitan "Publiko nga site sa GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Ang kaugalingong panid sa site alang sa mga address nga wala maglungtad.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Wala pa mo-sign in ang tumong gamit kining yawe: pilia ang "Usa ka deploy key nga gihimo alang niining tumong" sa mga setting niini.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>I-tsek una ang "Gisusi nako ang mga kausaban".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Usa ka GitHub App</translation>
     </message>

@@ -82838,34 +82838,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אין, עד כען לא אתפרסם</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>בניינא מייתי כל דפא ד %site היכמא דחזי ליה עאלא דלא עאל, כתיב תוב אסורא, מעתיק פנקיתא וכתיב פירא לתיקא דנישא. מידעם לא מתפרסם עד דתבדוק בניינא ותדחוק על פרסא.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>הדרתא לחכימי היא: סמן "ידענא מאי דהדא משחלפא" וכתוב תוב שמא דסימנא.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>פתח בניינא היכמא דמתחמא ישמש ליה, מן תיקא דנישא. אסורא עביד לך שעתא חדא.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>מתחזי ברשימי, למשל "אתרא גליא על GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>דפא דאתרא גופיה למונעי דליתנהון.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>נישא עד כען לא עאל בהדין קלידא: בחר "קלידא דשדורא דאתעביד להדין נישא" בטויבי דיליה.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>סמן קדמאה "בדקית שוחלפא".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>חד GitHub App</translation>
     </message>

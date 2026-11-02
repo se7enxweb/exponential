@@ -82837,34 +82837,6 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <translation>enya, teu acan diterbitkeun</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Wangunan nyandak unggal kaca %site sakumaha katingal ku sémah nu teu acan asup, nyerat deui tutumbu, nyalin berkas sareng nyerat hasilna kana map udagan. Teu aya nu diterbitkeun dugi ka anjeun mariksa wangunan sareng mencét Terbitkeun.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Mulangkeun téh pikeun ahli: céntang "Abdi terang naon nu dirobih ku ieu" teras ketik deui nami tanda.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Muka wangunan sakumaha bakal disayogikeun ku host, tina map udagan. Tutumbuna tiasa dianggo ku anjeun salami sajam.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Dipidangkeun dina daptar, contona "Situs publik di GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Kaca situs sorangan pikeun alamat nu teu aya.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Udagan teu acan asup ku konci ieu: pilih "Konci deploy nu dijieun pikeun udagan ieu" dina setélanana.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Céntang heula "Abdi parantos mariksa parobahan".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Hiji GitHub App</translation>
     </message>

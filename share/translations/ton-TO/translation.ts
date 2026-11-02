@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ʻio, teʻeki pulusi</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ʻOku toʻo ʻe ha langa ʻa e peesi kotoa ʻo e %site ʻo hangē ko ia ʻoku sio ki ai ha taha ʻaʻahi ʻoku ʻikai hū ki loto, toe tohi ʻa e ngaahi hokotaki, hiki tatau ʻa e ngaahi faile pea tohi ʻa e olá ki he folota ʻo e taumuʻá. ʻOku ʻikai pulusi ha meʻa kae ʻoua kuo ke siviʻi ʻa e langá pea lomiʻi ʻa e Pulusi.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ko e fakafoki ki he kau mataotao: fakaʻilongaʻi ʻa e "ʻOku ou ʻilo ʻa e meʻa ʻoku liliu ʻe he meʻá ni" pea toe tohi ʻa e hingoa ʻo e fakaʻilongá.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ʻOku fakaava ʻa e langá ʻo hangē ko ia ʻe tufaki ʻe he hōsí, mei he folota ʻo e taumuʻá. ʻOku ngāue ʻa e hokotakí kiate koe ʻi ha houa ʻe taha.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Fakahā ʻi he ngaahi lisi, hangē ko e "Uepisaiti fakapuleʻanga ʻi he GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Ko e peesi pē ʻa e uepisaití ki he ngaahi tuʻasila ʻoku ʻikai ʻi ai.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ʻOku teʻeki hū ʻa e taumuʻá ʻaki ʻa e kī ko ʻeni: fili ʻa e "Ko ha kī fakamafola naʻe faʻu ki he taumuʻa ko ʻeni" ʻi hono ngaahi fokotuʻutuʻu.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Fakaʻilongaʻi ʻuluaki ʻa e "Kuó u siviʻi ʻa e ngaahi liliu".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Ha GitHub App</translation>
     </message>

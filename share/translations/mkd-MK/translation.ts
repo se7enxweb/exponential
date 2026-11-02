@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>да, сè уште не е објавено</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Изградбата ја презема секоја страница од %site како што ја гледа посетител кој не е најавен, ги препишува врските, ги копира датотеките и го запишува резултатот во папката на целта. Ништо не се објавува додека не ја проверите изградбата и не притиснете Објави.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Враќањето назад е за експерти: штиклирајте „Знам што менува ова“ и повторно внесете го името на ознаката.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ја отвора изградбата како што ќе ја служи хостот, од папката на целта. Врската работи за Вас еден час.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Се прикажува во списоци, на пример „Јавен сајт на GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Сопствената страница на сајтот за адреси што не постојат.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Целта сè уште не се најавува со овој клуч: изберете „Клуч за распоредување создаден за оваа цел“ во нејзините поставки.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Прво штиклирајте „Ги проверив промените“.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

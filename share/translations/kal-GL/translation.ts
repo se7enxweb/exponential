@@ -82859,34 +82859,6 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>aap, suli saqqummiunneqanngilaq</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Sanaaq %site-ip quppernerinik tamanik pulartup iserfigisimanngitsup takusartagaattut aallersisarpoq, innersuussutinik allanngortitsilluni, fiilinik assiliilluni inernerlu saqqummiuffiup mappianut allattarlugu. Sanaaq misissorlugu Saqqummiuguk tooreqqaanngikkukku saqqummiussisoqassanngilaq.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Utertitsineq ilisimasalinnut kisiannut: »Ilisimavara una suna allanngortinneraa« nalunaaqutsiguk taaguullu aqqa ilaqqiguk.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Sanaaq angerlarsimaffiup tunniussinissaatut saqqummiuffiup mappianit ammarpaa. Innersuussut nalunaaquttap akunnera ataaseq illit atorsinnaavat.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Allattorsimaffinni takutinneqartarpoq, assersuutigalugu »Nittartagaq tamanut ammasoq GitHub Pages-imi«.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Nittartakkap quppernera nammineq najukkanut atuanngitsunut.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Saqqummiuffik suli matuersaammik matuminnga iserneq ajorpoq: aaqqissuussinerini »Ikkussinermut matuersaat saqqummiuffimmut matumunnga pilersitaq« toqqaruk.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Siullermik »Allannguutit misissorpakka« nalunaaqutsiguk.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App atuagassiaq</translation>
     </message>

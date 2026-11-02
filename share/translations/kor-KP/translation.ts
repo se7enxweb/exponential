@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>예, 아직 게시되지 않음</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>빌드는 로그인하지 않은 방문자가 보는 그대로 %site의 모든 페지를 가져오고 련결을 다시 쓰며 화일들을 복사한 다음 결과를 대상의 등록부에 기록합니다. 빌드를 확인하고 게시를 누를 때까지 아무것도 게시되지 않습니다.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>되돌림은 전문가용입니다. "이것이 무엇을 바꾸는지 알고있습니다"에 표시하고 꼬리표 이름을 다시 입력하십시오.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>호스트가 제공할 모양 그대로 대상의 등록부에서 빌드를 엽니다. 이 련결은 한시간동안 쓸수 있습니다.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>목록에 표시됩니다. 실례로 "GitHub Pages의 공개 싸이트".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>존재하지 않는 주소를 위한 싸이트 자체의 페지.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>대상이 아직 이 열쇠로 로그인하지 않습니다. 대상의 설정에서 "이 대상을 위해 만든 배포열쇠"를 선택하십시오.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>먼저 "변경내용을 확인하였습니다"에 표시하십시오.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

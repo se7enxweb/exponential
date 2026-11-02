@@ -82829,34 +82829,6 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>ja, noch net publisearre</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>In bou hellet elke side fan %site op sa't in besiker dy't net oanmeld is him sjocht, skriuwt de keppelingen om, kopiearret de bestannen en skriuwt it resultaat nei de map fan it doel. Der wurdt neat publisearre oant jo de bou kontrolearje en op Publisearje drukke.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>In weromnimming is foar saakkundigen: finkje „Ik wit wat dit feroaret“ oan en typ de namme fan it merk nochris.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Iepenet de bou sa't de host him leverje sil, út de map fan it doel. De keppeling wurket in oere foar jo.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Toand yn listen, bygelyks „Publike website op GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>De eigen side fan de website foar adressen dy't net besteane.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>It doel meldet noch net oan mei dizze kaai: kies „In deploy-kaai makke foar dit doel“ yn de ynstellingen.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Finkje earst „Ik haw de wizigingen kontrolearre“ oan.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>In GitHub App</translation>
     </message>

@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ဟုတ်၊ မထုတ်ဝေရသေး</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>တည်ဆောက်မှုတစ်ခုသည် %site ၏ စာမျက်နှာတိုင်းကို ဝင်ရောက်မထားသော ဧည့်သည်မြင်သည့်အတိုင်း ရယူပြီး လင့်ခ်များကို ပြန်ရေး၊ ဖိုင်များကို ကူးယူကာ ရလဒ်ကို ပစ်မှတ်၏ ဖိုင်တွဲထဲ ရေးသားသည်။ သင် တည်ဆောက်မှုကို စစ်ဆေးပြီး ထုတ်ဝေရန် ကို မနှိပ်မချင်း မည်သည့်အရာမျှ ထုတ်ဝေမည် မဟုတ်ပါ။</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ပြန်လှည့်မှုသည် ကျွမ်းကျင်သူများအတွက် ဖြစ်သည်: "ဤအရာက ဘာကို ပြောင်းလဲသည်ကို ကျွန်ုပ်သိသည်" ကို အမှန်ခြစ်ပြီး တဂ်အမည်ကို ထပ်ရိုက်ပါ။</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ဟို့စ်က ပေးပို့မည့်အတိုင်း တည်ဆောက်မှုကို ပစ်မှတ်၏ ဖိုင်တွဲမှ ဖွင့်သည်။ လင့်ခ်သည် သင့်အတွက် တစ်နာရီ အလုပ်လုပ်သည်။</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>စာရင်းများတွင် ပြသည်၊ ဥပမာ "GitHub Pages ပေါ်ရှိ အများသုံးဆိုက်"။</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>မရှိသော လိပ်စာများအတွက် ဆိုက်၏ ကိုယ်ပိုင်စာမျက်နှာ။</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ပစ်မှတ်သည် ဤကီးဖြင့် မဝင်ရောက်ရသေးပါ: ၎င်း၏ ဆက်တင်များတွင် "ဤပစ်မှတ်အတွက် ပြုလုပ်ထားသော deploy ကီး" ကို ရွေးပါ။</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>"ပြောင်းလဲမှုများကို ကျွန်ုပ် စစ်ဆေးပြီးပါပြီ" ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App တစ်ခု</translation>
     </message>

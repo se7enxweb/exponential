@@ -82827,34 +82827,6 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>ndiyo, bado haijachapishwa</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Muundo huleta kila ukurasa wa %site kama anavyouona mgeni ambaye hajaingia, huandika upya viungo, hunakili faili na huandika matokeo kwenye folda ya lengo. Hakuna kinachochapishwa hadi ukague muundo na ubonyeze Chapisha.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Urudishaji nyuma ni kwa wataalamu: weka alama kwenye "Ninajua hii inabadilisha nini" na uandike tena jina la lebo.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Hufungua muundo jinsi mwenyeji atakavyouhudumia, kutoka folda ya lengo. Kiungo kinakufanyia kazi kwa saa moja.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Huonyeshwa katika orodha, kwa mfano "Tovuti ya umma kwenye GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Ukurasa wa tovuti yenyewe kwa anwani ambazo hazipo.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Lengo bado haliingii kwa ufunguo huu: chagua "Ufunguo wa kusambaza ulioundwa kwa lengo hili" katika mipangilio yake.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Weka alama kwanza kwenye "Nimekagua mabadiliko".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App moja</translation>
     </message>

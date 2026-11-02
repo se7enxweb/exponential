@@ -82829,34 +82829,6 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>ha, hali nashr qilinmagan</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Yig‘ma %site saytining har bir sahifasini tizimga kirmagan tashrifchi ko‘rganidek yuklab oladi, havolalarni qayta yozadi, fayllarni nusxalaydi va natijani maqsad papkasiga yozadi. Siz yig‘mani tekshirib, Nashr qilish tugmasini bosmaguningizcha hech narsa nashr qilinmaydi.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Orqaga qaytarish mutaxassislar uchun: "Bu nimani o‘zgartirishini bilaman" belgisini qo‘ying va teg nomini qayta kiriting.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Yig‘mani maqsad papkasidan, xost uni qanday bersa, shunday ochadi. Havola siz uchun bir soat ishlaydi.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ro‘yxatlarda ko‘rsatiladi, masalan "GitHub Pages’dagi ochiq sayt".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Mavjud bo‘lmagan manzillar uchun saytning o‘z sahifasi.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Maqsad hali bu kalit bilan kirmaydi: uning sozlamalarida "Shu maqsad uchun yaratilgan joylashtirish kaliti" ni tanlang.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Avval "O‘zgarishlarni tekshirdim" belgisini qo‘ying.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

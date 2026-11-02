@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>आम्, अद्यापि न प्रकाशितम्</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>निर्माणं %site इत्यस्य प्रत्येकं पृष्ठं यथा अप्रविष्टः आगन्तुकः पश्यति तथा आनयति, सम्पर्कसूत्राणि पुनर्लिखति, सञ्चिकाः प्रतिलिपीकरोति, परिणामं च लक्ष्यस्य सञ्चिकाधान्यां लिखति। यावत् भवान् निर्माणं न परीक्षते "प्रकाशयतु" इति च न नुदति तावत् किमपि न प्रकाश्यते।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>प्रत्यावर्तनं विशेषज्ञेभ्यः: "अहं जानामि यत् इदं किं परिवर्तयति" इति चिह्नयतु टैग्-नाम पुनः लिखतु च।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>लक्ष्यस्य सञ्चिकाधानीतः निर्माणं यथा आतिथेयः सेविष्यते तथा उद्घाटयति। सम्पर्कसूत्रं भवतः कृते एकां होरां कार्यं करोति।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>सूचीषु दर्शितम्, यथा "GitHub Pages इत्यत्र सार्वजनिकं जालस्थलम्"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>अविद्यमानसङ्केतेभ्यः जालस्थलस्य स्वकीयं पृष्ठम्।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्यम् अद्यापि अनया कुञ्जिकया न प्रविशति: तस्य विन्यासेषु "अस्य लक्ष्यस्य कृते रचिता नियोजनकुञ्जिका" चिनोतु।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>प्रथमं "मया परिवर्तनानि परीक्षितानि" इति चिह्नयतु।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>एकं GitHub App</translation>
     </message>

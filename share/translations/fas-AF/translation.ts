@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>بله، هنوز منتشر نشده</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>یک ساخت هر صفحهٔ %site را همان‌گونه که بازدیدکنندهٔ واردنشده می‌بیند دریافت می‌کند، پیوندها را بازنویسی می‌کند، فایل‌ها را کپی می‌کند و نتیجه را در پوشهٔ مقصد می‌نویسد. تا وقتی ساخت را بررسی نکنید و «انتشار» را نزنید، چیزی منتشر نمی‌شود.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>بازگردانی برای کاربران متخصص است: گزینهٔ «می‌دانم این چه چیزی را تغییر می‌دهد» را علامت بزنید و نام برچسب را دوباره وارد کنید.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ساخت را همان‌گونه که میزبان ارائه خواهد کرد، از پوشهٔ مقصد باز می‌کند. پیوند برای شما یک ساعت کار می‌کند.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>در فهرست‌ها نمایش داده می‌شود، برای نمونه «سایت عمومی در GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>صفحهٔ خود سایت برای نشانی‌هایی که وجود ندارند.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>مقصد هنوز با این کلید وارد نمی‌شود: در تنظیمات آن «کلید استقراری که برای این مقصد ساخته شده» را انتخاب کنید.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>اول گزینهٔ «تغییرات را بررسی کرده‌ام» را علامت بزنید.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>یک GitHub App</translation>
     </message>

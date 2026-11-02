@@ -82859,34 +82859,6 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>igen, még nincs közzétéve</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Az összeállítás a(z) %site minden oldalát úgy tölti le, ahogy egy be nem jelentkezett látogató látja, átírja a hivatkozásokat, átmásolja a fájlokat, és az eredményt a cél mappájába írja. Semmi sem kerül közzétételre, amíg Ön nem ellenőrzi az összeállítást, és meg nem nyomja a Közzététel gombot.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>A visszavonás szakértőknek való: jelölje be a „Tudom, mit változtat ez” lehetőséget, és írja be újra a címke nevét.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Megnyitja az összeállítást úgy, ahogy a tárhely ki fogja szolgálni, a cél mappájából. A hivatkozás egy óráig működik az Ön számára.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Listákban jelenik meg, például „Nyilvános webhely a GitHub Pages szolgáltatáson”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>A webhely saját oldala a nem létező címekhez.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>A cél még nem ezzel a kulccsal jelentkezik be: válassza az „Ehhez a célhoz készült telepítési kulcs” lehetőséget a beállításaiban.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Előbb jelölje be az „Ellenőriztem a változásokat” lehetőséget.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Egy GitHub App</translation>
     </message>

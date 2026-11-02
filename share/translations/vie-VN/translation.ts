@@ -82829,34 +82829,6 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>có, chưa xuất bản</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Một bản dựng tải mọi trang của %site như khách truy cập chưa đăng nhập nhìn thấy, viết lại các liên kết, sao chép các tệp và ghi kết quả vào thư mục của đích. Không có gì được xuất bản cho đến khi bạn kiểm tra bản dựng và nhấn Xuất bản.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Hoàn tác dành cho chuyên gia: đánh dấu "Tôi biết điều này thay đổi gì" và nhập lại tên của thẻ.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Mở bản dựng như máy chủ lưu trữ sẽ phục vụ, từ thư mục của đích. Liên kết hoạt động với bạn trong một giờ.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Hiển thị trong danh sách, ví dụ "Trang web công khai trên GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Trang riêng của trang web cho các địa chỉ không tồn tại.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Đích chưa đăng nhập bằng khóa này: hãy chọn "Một khóa triển khai được tạo cho đích này" trong thiết lập của nó.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Hãy đánh dấu "Tôi đã kiểm tra các thay đổi" trước.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Một GitHub App</translation>
     </message>

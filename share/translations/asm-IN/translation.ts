@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>হয়, এতিয়াও প্ৰকাশ কৰা হোৱা নাই</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>এটা বিল্ডে %site ৰ প্ৰতিটো পৃষ্ঠা ছাইন ইন নকৰা দৰ্শনাৰ্থীয়ে দেখাৰ দৰে আনে, লিংকবোৰ পুনৰ লিখে, ফাইলবোৰ কপি কৰে আৰু ফলাফল লক্ষ্যৰ ফোল্ডাৰত লিখে। আপুনি বিল্ড পৰীক্ষা কৰি প্ৰকাশ কৰক টিপা নহালৈকে একো প্ৰকাশ কৰা নহয়।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>উভতাই নিয়া বিশেষজ্ঞৰ বাবে: "মই জানো ই কি সলনি কৰে" টিক দিয়ক আৰু টেগৰ নামটো পুনৰ টাইপ কৰক।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>হোষ্টে পৰিৱেশন কৰাৰ দৰে লক্ষ্যৰ ফোল্ডাৰৰ পৰা বিল্ডটো খোলে। লিংকটো আপোনাৰ বাবে এঘণ্টা কাম কৰে।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>তালিকাত দেখুওৱা হয়, উদাহৰণস্বৰূপে "GitHub Pages-ত ৰাজহুৱা ছাইট"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>নথকা ঠিকনাৰ বাবে ছাইটৰ নিজা পৃষ্ঠা।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>লক্ষ্যটোৱে এতিয়াও এই কি-ৰে ছাইন ইন নকৰে: ইয়াৰ ছেটিংছত "এই লক্ষ্যৰ বাবে সৃষ্টি কৰা এটা ডিপ্লয় কি" বাছক।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>প্ৰথমে "মই পৰিৱৰ্তনসমূহ পৰীক্ষা কৰিছো" টিক দিয়ক।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>এটা GitHub App</translation>
     </message>

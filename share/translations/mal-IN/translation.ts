@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>അതെ, ഇതുവരെ പ്രസിദ്ധീകരിച്ചിട്ടില്ല</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ഒരു ബിൽഡ് %site-ന്റെ ഓരോ പേജും സൈൻ ഇൻ ചെയ്യാത്ത സന്ദർശകൻ കാണുന്നതുപോലെ കൊണ്ടുവരുന്നു, ലിങ്കുകൾ മാറ്റിയെഴുതുന്നു, ഫയലുകൾ പകർത്തുന്നു, ഫലം ലക്ഷ്യത്തിന്റെ ഫോൾഡറിൽ എഴുതുന്നു. നിങ്ങൾ ബിൽഡ് പരിശോധിച്ച് പ്രസിദ്ധീകരിക്കുക അമർത്തുന്നതുവരെ ഒന്നും പ്രസിദ്ധീകരിക്കില്ല.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>റോൾബാക്ക് വിദഗ്ധർക്കുള്ളതാണ്: "ഇത് എന്ത് മാറ്റുമെന്ന് എനിക്കറിയാം" ടിക്ക് ചെയ്ത് ടാഗിന്റെ പേര് വീണ്ടും ടൈപ്പ് ചെയ്യുക.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ഹോസ്റ്റ് നൽകുന്നതുപോലെ ലക്ഷ്യത്തിന്റെ ഫോൾഡറിൽ നിന്ന് ബിൽഡ് തുറക്കുന്നു. ലിങ്ക് നിങ്ങൾക്ക് ഒരു മണിക്കൂർ പ്രവർത്തിക്കും.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>പട്ടികകളിൽ കാണിക്കുന്നു, ഉദാഹരണത്തിന് "GitHub Pages-ലെ പൊതു സൈറ്റ്".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>നിലവിലില്ലാത്ത വിലാസങ്ങൾക്കുള്ള സൈറ്റിന്റെ സ്വന്തം പേജ്.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ലക്ഷ്യം ഇതുവരെ ഈ കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുന്നില്ല: അതിന്റെ ക്രമീകരണങ്ങളിൽ "ഈ ലക്ഷ്യത്തിനായി സൃഷ്ടിച്ച ഡിപ്ലോയ് കീ" തിരഞ്ഞെടുക്കുക.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ആദ്യം "ഞാൻ മാറ്റങ്ങൾ പരിശോധിച്ചു" ടിക്ക് ചെയ്യുക.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>ഒരു GitHub App</translation>
     </message>

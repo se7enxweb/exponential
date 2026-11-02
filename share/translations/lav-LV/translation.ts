@@ -82859,34 +82859,6 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <translation>jā, vēl nav publicēts</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Būvējums ielādē katru %site lapu tā, kā to redz nepieteicies apmeklētājs, pārraksta saites, kopē failus un raksta rezultātu mērķa mapē. Nekas netiek publicēts, kamēr nepārbaudāt būvējumu un nenospiežat “Publicēt”.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Atsaukšana ir paredzēta ekspertiem: atzīmējiet “Es zinu, ko tas maina” un vēlreiz ierakstiet birkas nosaukumu.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Atver būvējumu tā, kā to pasniegs resursdators, no mērķa mapes. Saite jums darbojas vienu stundu.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Tiek rādīts sarakstos, piemēram, “Publiskā vietne GitHub Pages”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Vietnes lapa adresēm, kas neeksistē.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Mērķis vēl nepiesakās ar šo atslēgu: tā iestatījumos izvēlieties “Šim mērķim izveidota izvietošanas atslēga”.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Vispirms atzīmējiet “Izmaiņas ir pārbaudītas”.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

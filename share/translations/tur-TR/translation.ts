@@ -82834,34 +82834,6 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>evet, henüz yayımlanmadı</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Bir derleme, %site sitesinin her sayfasını oturum açmamış bir ziyaretçinin gördüğü gibi alır, bağlantıları yeniden yazar, dosyaları kopyalar ve sonucu hedefin klasörüne yazar. Siz derlemeyi kontrol edip Yayımla düğmesine basana kadar hiçbir şey yayımlanmaz.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Geri alma uzmanlar içindir: "Bunun neyi değiştirdiğini biliyorum" kutusunu işaretleyin ve etiketin adını yeniden yazın.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Derlemeyi, barındırma hizmetinin sunacağı şekilde hedefin klasöründen açar. Bağlantı sizin için bir saat çalışır.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Listelerde gösterilir, örneğin "GitHub Pages'teki herkese açık site".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Sitenin, var olmayan adresler için kendi sayfası.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Hedef henüz bu anahtarla oturum açmıyor: ayarlarında "Bu hedef için oluşturulan bir dağıtım anahtarı" seçeneğini seçin.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Önce "Değişiklikleri kontrol ettim" kutusunu işaretleyin.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Bir GitHub App</translation>
     </message>

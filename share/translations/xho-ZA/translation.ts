@@ -82827,34 +82827,6 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <translation>ewe, ayikashicilelwa</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ulwakhiwo lulanda iphepha ngalinye le-%site njengoko libonwa ngundwendwe olungangenanga, lubhala kwakhona amakhonkco, lukopa iifayile kwaye lubhala isiphumo kwifolda yethagethi. Akukho nto ishicilelwayo de nihlole ulwakhiwo nize nicofe u-Shicilela.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ukubuyisela umva kwezazi: phawulani "Ndiyazi ukuba oku kutshintsha ntoni" nize nichwetheze igama lethegi kwakhona.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ivula ulwakhiwo njengoko umamkeli eya kulunikezela, kwifolda yethagethi. Ikhonkco liyasebenza kuni iyure enye.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Kuboniswa kuluhlu, umzekelo "Isayithi yoluntu kwi-GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Iphepha lesayithi ngokwayo leedilesi ezingekhoyo.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ithagethi ayikangeni ngesi sitshixo: khethani "Isitshixo sokuthumela esenzelwe le thagethi" kwizicwangciso zayo.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Phawulani "Ndiluhlolile utshintsho" kuqala.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>I-GitHub App</translation>
     </message>

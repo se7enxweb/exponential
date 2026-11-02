@@ -84825,34 +84825,6 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>sim, ainda não publicado</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Um build busca cada página de %site como um visitante sem login a vê, reescreve os links, copia os arquivos e grava o resultado na pasta do destino. Nada é publicado até que você verifique o build e clique em Publicar.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Uma reversão é para especialistas: marque "Sei o que isto altera" e digite o nome da etiqueta novamente.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Abre o build como a hospedagem o servirá, a partir da pasta do destino. O link funciona para você por uma hora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Exibido em listas, por exemplo "Site público no GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>A página do próprio site para endereços que não existem.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>O destino ainda não faz login com esta chave: escolha "Uma chave de implantação criada para este destino" nas configurações dele.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marque "Verifiquei as alterações" primeiro.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Um GitHub App</translation>
     </message>

@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ⵢⴰⵀ, ⵓⵔ ⵙⵓⵍ ⵉⵜⵜⵓⵙⵙⵓⴼⵖ</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ⴰⵙⴽⵓ ⵉⵜⵜⴰⵡⵉ ⴷ ⴽⵓ ⵜⴰⵙⵏⴰ ⵏ %site ⴰⵎⵎ ⵎⴰ ⵜⵜ ⵉⵥⵕⵕⴰ ⵓⵏⴱⴳⵉ ⵓⵔ ⵉⴽⵛⵉⵎⵏ, ⵉⵜⵜⴰⵔⴰ ⵉⵥⴷⴰⵢⵏ ⴷⴰⵖ, ⵉⵙⵙⵏⵖⴰⵍ ⵉⴼⵓⵢⵍⴰ ⴷ ⵉⵜⵜⴰⵔⴰ ⴰⵢⵏⵏⴰⵢ ⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵏⵊⴰⵕⵜ. ⵓⵍⴰ ⵢⴰⵜ ⵓⵔ ⵜⵜⵓⵙⵙⵓⴼⵖ ⴰⵔ ⴷ ⵜⵙⵏⵇⴷⴷ ⴰⵙⴽⵓ ⵜⴽⵍⵉⴽⵉⴷ ⵖⴼ ⵙⵙⵓⴼⵖ.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ⴰⵔⴰⵔ ⵙ ⴷⴼⴼⵉⵔ ⵉ ⵉⵎⵓⵙⵏⴰⵡⵏ: ⵔⵛⵎ "ⵙⵙⵏⵖ ⵎⴰⵢⴷ ⵉⵙⵏⴼⵍ ⵓⵢⴰ" ⵜⴰⵔⵓⴷ ⵉⵙⵎ ⵏ ⵜⵎⴰⵜⴰⵔⵜ ⴷⴰⵖ.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ⵉⵕⵥⵥⵎ ⴰⵙⴽⵓ ⴰⵎⵎ ⵎⴰ ⵜ ⵔⴰⴷ ⵢⴰⴽⴽ ⵓⵎⵙⵏⴰⵖ, ⵙⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵜⵏⵊⴰⵕⵜ. ⴰⵥⴷⴰⵢ ⵉⵜⵜⵎⵓⵔⵔⴰⵢ ⵉ ⴽⵢⵢⵉ ⵢⴰⵜ ⵜⵙⵔⴰⴳⵜ.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>ⵉⵜⵜⵓⵙⴽⴰⵏ ⴳ ⵜⵍⴳⴰⵎⵉⵏ, ⵙ ⵓⵎⴷⵢⴰ "ⴰⵙⵎⵍ ⴰⵎⴰⴳⴷⴰⵢ ⴳ GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>ⵜⴰⵙⵏⴰ ⵏ ⵓⵙⵎⵍ ⵙ ⵉⵎⴰⵏ ⵏⵏⵙ ⵉ ⵜⵏⵙⵉⵡⵉⵏ ⵓⵔ ⵉⵍⵍⵉⵏ.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ⵜⴰⵏⵊⴰⵕⵜ ⵓⵔ ⵙⵓⵍ ⵜⴽⵛⵉⵎ ⵙ ⵜⵙⴰⵔⵓⵜ ⴰ: ⵙⵜⵉ "ⵜⴰⵙⴰⵔⵓⵜ ⵏ ⵓⵙⵙⵔⵙ ⵉⵜⵜⵓⵙⴽⴰⵔⵏ ⵉ ⵜⵏⵊⴰⵕⵜ ⴰ" ⴳ ⵜⵙⵖⴰⵍ ⵏⵏⵙ.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ⵔⵛⵎ "ⵙⵏⵇⴷⵖ ⵉⵙⵏⴼⵍⵏ" ⵣⴷⴰⵜ.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>ⵢⴰⵏ GitHub App</translation>
     </message>

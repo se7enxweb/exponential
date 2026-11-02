@@ -82862,34 +82862,6 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>ita, nondum publicatum</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Constructio omnem paginam %site affert ut visitator non inscriptus eam videt, nexus rescribit, fasciculos exscribit et exitum in capsam scopi scribit. Nihil publicatur donec constructionem probaveris et "Publicare" presseris.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Revocatio peritis est: nota "Scio quid hoc mutet" et nomen pittacii iterum scribe.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Constructionem aperit ut hospes eam praebebit, ex capsa scopi. Nexus tibi per horam valet.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>In indicibus ostenditur, exempli gratia "Situs publicus in GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Pagina propria situs pro inscriptionibus quae non exstant.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Scopus nondum hac clave intrat: in optionibus eius elige "Clavis deponendi huic scopo facta".</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Primum nota "Mutationes probavi".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Applicatio GitHub App</translation>
     </message>

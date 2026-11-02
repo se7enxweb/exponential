@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ہاں، ابھی شائع نہیں ہوا</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>بلڈ %site کا ہر صفحہ اس طرح حاصل کرتا ہے جیسے سائن ان نہ کیا ہوا وزیٹر اسے دیکھتا ہے، لنکس دوبارہ لکھتا ہے، فائلیں کاپی کرتا ہے اور نتیجہ ہدف کے فولڈر میں لکھتا ہے۔ جب تک آپ بلڈ چیک کر کے شائع کریں نہ دبائیں، کچھ شائع نہیں ہوتا۔</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>واپسی ماہرین کے لیے ہے: "مجھے معلوم ہے کہ اس سے کیا بدلتا ہے" پر نشان لگائیں اور ٹیگ کا نام دوبارہ ٹائپ کریں۔</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>بلڈ کو ہدف کے فولڈر سے اسی طرح کھولتا ہے جیسے ہوسٹ اسے پیش کرے گا۔ یہ لنک آپ کے لیے ایک گھنٹے تک کام کرتا ہے۔</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>فہرستوں میں دکھایا جاتا ہے، مثلاً "GitHub Pages پر عوامی سائٹ"۔</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>غیر موجود ایڈریسز کے لیے سائٹ کا اپنا صفحہ۔</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ہدف ابھی اس کی سے سائن ان نہیں کرتا: اس کی ترتیبات میں "اس ہدف کے لیے بنائی گئی ڈیپلائے کی" منتخب کریں۔</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>پہلے "میں نے تبدیلیاں چیک کر لی ہیں" پر نشان لگائیں۔</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>ایک GitHub App</translation>
     </message>

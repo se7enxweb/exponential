@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>是，尚未發佈</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>建置會以未登入訪客看到的樣子擷取 %site 的每個頁面，改寫連結，複製檔案，並將結果寫入目標的資料夾。在您檢查建置並按下「發佈」之前，不會發佈任何內容。</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>回復僅供專家使用：勾選「我知道這會變更什麼」，並再次輸入標籤名稱。</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>從目標的資料夾，依主機提供的方式開啟建置。此連結對您有效一小時。</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>顯示在清單中，例如「GitHub Pages 上的公開網站」。</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>網站本身用於不存在位址的頁面。</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>目標尚未使用此金鑰登入：請在其設定中選擇「為此目標建立的部署金鑰」。</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>請先勾選「我已檢查這些變更」。</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>一個 GitHub App</translation>
     </message>

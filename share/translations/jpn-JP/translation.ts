@@ -82859,34 +82859,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>はい、まだ未公開</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ビルドは、サインインしていない訪問者に見えるとおりに %site のすべてのページを取得し、リンクを書き換え、ファイルをコピーして、結果を公開先のフォルダーに書き込みます。ビルドを確認して「公開」を押すまで、何も公開されません。</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ロールバックは上級者向けです: 「この操作で何が変わるか理解しています」にチェックを入れ、タグ名をもう一度入力してください。</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>ホストが配信するとおりに、公開先のフォルダーからビルドを開きます。このリンクは 1 時間有効です。</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>一覧に表示されます。例: 「GitHub Pages 上の公開サイト」。</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>存在しないアドレス用のサイト独自のページ。</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>公開先はまだこのキーでサインインしていません: 設定で「この公開先用に作成したデプロイキー」を選択してください。</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>先に「変更点を確認しました」にチェックを入れてください。</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

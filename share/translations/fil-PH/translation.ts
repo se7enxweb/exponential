@@ -82829,34 +82829,6 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <translation>oo, hindi pa na-publish</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Kinukuha ng build ang bawat pahina ng %site ayon sa nakikita ng bisitang hindi naka-sign in, isinusulat muli ang mga link, kinokopya ang mga file at isinusulat ang resulta sa folder ng destinasyon. Walang naipa-publish hangga't hindi mo sinusuri ang build at pinipindot ang I-publish.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Para sa mga eksperto ang pagbabalik: lagyan ng tsek ang "Alam ko kung ano ang binabago nito" at i-type muli ang pangalan ng tag.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Binubuksan ang build ayon sa paghahatid ng host, mula sa folder ng destinasyon. Gumagana para sa iyo ang link sa loob ng isang oras.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ipinapakita sa mga listahan, halimbawa "Pampublikong site sa GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Ang sariling pahina ng site para sa mga address na hindi umiiral.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Hindi pa nagsa-sign in ang destinasyon gamit ang key na ito: piliin ang "Isang deploy key na ginawa para sa destinasyong ito" sa mga setting nito.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Lagyan muna ng tsek ang "Nasuri ko na ang mga pagbabago".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Isang GitHub App</translation>
     </message>

@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>так, яшчэ не апублікавана</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Зборка атрымлівае кожную старонку %site такой, якой яе бачыць наведвальнік без уваходу, перапісвае спасылкі, капіюе файлы і запісвае вынік у папку мэты. Нічога не публікуецца, пакуль вы не праверыце зборку і не націснеце «Апублікаваць».</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Адкат — для экспертаў: адзначце «Я ведаю, што гэта змяняе» і яшчэ раз увядзіце назву тэга.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Адкрывае зборку з папкі мэты так, як яе будзе аддаваць хост. Спасылка працуе для вас на працягу гадзіны.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Паказваецца ў спісах, напрыклад «Публічны сайт на GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Уласная старонка сайта для адрасоў, якіх не існуе.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Мэта яшчэ не ўваходзіць з гэтым ключом: выберыце «Ключ разгортвання, створаны для гэтай мэты» ў яе наладах.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Спачатку адзначце «Змены правераны».</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Дадатак GitHub App</translation>
     </message>

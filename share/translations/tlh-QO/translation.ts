@@ -82862,34 +82862,6 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>HISlaH, &apos;anglu&apos;be&apos; &apos;ach</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>chenmoHghach %site Hoch nav suq, 'elbe'bogh SuchwI' leghbogh rur, rarwI'mey ghItlhqa', ghItlhmey velqa'moH, ghoch ghItlh pa'Daq ghItlh. chenmoHghach DanuDpa' 'ej HochvaD yI'ang DaghoDpa' pagh 'anglu'.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>cheghmoHghach po'wI'pu'vaD: "vam choHmey vISov" yIwIv 'ej per pong yIghItlhqa'.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>jabwI' jabbogh rur chenmoHghach poSmoH, ghoch ghItlh pa' vo'. wa' rep rarwI' Qap SoHvaD.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>tetlhmeyDaq 'anglu', ghoch rur "GitHub Pages Daq Hoch yoS".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>yoS nav'e', SoQmey tu'lu'be'bogh.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ngoQvam lo'taHvIS ghoch 'elbe' 'ach: DuHmeyDaj Daq "ghochvaD chenmoHlu'pu'bogh lab ngoQ" yIwIv.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>wa'DIch "choHmey vInuDpu'" yIwIv.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>wa' GitHub App</translation>
     </message>

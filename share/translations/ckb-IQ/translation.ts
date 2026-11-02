@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>بەڵێ، هێشتا بڵاو نەکراوەتەوە</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>بنیاتنانێک هەموو پەڕەیەکی %site دەهێنێت وەک ئەوەی سەردانکەرێکی نەچووەژوورەوە دەیبینێت، بەستەرەکان دووبارە دەنووسێتەوە، فایلەکان کۆپی دەکات و ئەنجامەکە دەنووسێت بۆ بوخچەی ئامانجەکە. هیچ شتێک بڵاو ناکرێتەوە تا بنیاتنانەکە نەپشکنن و بڵاوکردنەوە دانەگرن.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>گەڕاندنەوە بۆ شارەزایانە: "دەزانم ئەمە چی دەگۆڕێت" دیاری بکەن و ناوی تاگەکە دووبارە بنووسنەوە.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>بنیاتنانەکە دەکاتەوە وەک ئەوەی خانەخوێ پێشکەشی دەکات، لە بوخچەی ئامانجەکەوە. بەستەرەکە بۆ ماوەی کاتژمێرێک بۆ ئێوە کار دەکات.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>لە لیستەکاندا پیشان دەدرێت، بۆ نموونە "ماڵپەڕی گشتی لەسەر GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>پەڕەی تایبەتی ماڵپەڕەکە بۆ ئەو ناونیشانانەی بوونیان نییە.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ئامانجەکە هێشتا بەم کلیلە ناچێتە ژوورەوە: لە ڕێکخستنەکانیدا "کلیلی دیپلۆیی دروستکراو بۆ ئەم ئامانجە" هەڵبژێرن.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>سەرەتا "گۆڕانکارییەکانم پشکنیوە" دیاری بکەن.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub Appێک</translation>
     </message>

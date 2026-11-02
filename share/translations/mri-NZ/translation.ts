@@ -82829,34 +82829,6 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <translation>āe, kāore anō kia whakaputaina</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ka tiki tētahi hanganga i ia whārangi o %site kia rite ki tā tētahi manuhiri kāore anō kia takiuru e kite ai, ka tuhi anō i ngā hono, ka tārua i ngā kōnae, ā, ka tuhi i te hua ki te kōpaki o te whāinga. Kāore he mea e whakaputaina kia arotakehia rā anō e koe te hanganga, ka pēhi i a Whakaputa.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Mā ngā tohunga anake te whakahokinga: tohua te "E mōhio ana ahau ki ngā mea ka panonitia e tēnei", ā, patohia anō te ingoa o te tūtohu.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ka huaki i te hanganga kia rite ki tā te kaihautū e tuku ai, mai i te kōpaki o te whāinga. Ka mahi te hono mōu mō te hāora kotahi.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ka whakaaturia ki ngā rārangi, hei tauira "He pae tūmatanui ki GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Te whārangi ake o te pae mō ngā wāhitau kāore i te tīari.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Kāore anō te whāinga e takiuru ana ki tēnei kī: kōwhiria te "He kī tuku i hangaia mō tēnei whāinga" i ōna tautuhinga.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Tohua te "Kua arotakehia e ahau ngā panonitanga" i te tuatahi.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>He GitHub App</translation>
     </message>

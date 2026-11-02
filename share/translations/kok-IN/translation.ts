@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>होय, अजून प्रकाशीत जावंक ना</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>बिल्ड %site चें दरेक पान लॉगिन करूंक नाशिल्ल्या भेटकाराक दिसता तशें हाडटा, लिंका परत बरयता, फायली प्रत करता आनी परिणाम लक्ष्याच्या फोल्डरांत बरयता. तुमी बिल्ड तपासून प्रकाशीत करात दामसो मेरेन कांयच प्रकाशीत जायना.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>फाटीं घेवप तज्ञां खातीर: "हें कितें बदलता तें म्हाका खबर आसा" हाचेर खूण करात आनी टॅगाचें नांव परत टायप करात.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>होस्ट दितलो तसो बिल्ड लक्ष्याच्या फोल्डरांतल्यान उगडटा. लिंक तुमचे खातीर एक वर काम करता.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>वळेरींनी दाखयता, देखीक "GitHub Pages चेर सार्वजनिक सायट".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>अस्तित्वांत नाशिल्ल्या पत्त्यां खातीर सायटीचें स्वताचें पान.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्य अजून ह्या कीन लॉगिन करिना: ताच्या सेटिंग्जींनी "ह्या लक्ष्या खातीर केल्ली डिप्लॉय की" वेंचात.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>पयलीं "हांवें बदल तपासले" हाचेर खूण करात.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>एक GitHub App</translation>
     </message>

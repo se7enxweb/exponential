@@ -82859,34 +82859,6 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>taip, dar nepublikuota</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Rinkinys gauna kiekvieną %site puslapį taip, kaip jį mato neprisijungęs lankytojas, perrašo nuorodas, nukopijuoja failus ir įrašo rezultatą į paskirties aplanką. Niekas nepublikuojama, kol nepatikrinate rinkinio ir nespustelite „Publikuoti“.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Atšaukimas skirtas ekspertams: pažymėkite „Žinau, ką tai pakeičia“ ir dar kartą įveskite žymos pavadinimą.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Atveria rinkinį taip, kaip jį pateiks serveris, iš paskirties aplanko. Nuoroda jums veikia vieną valandą.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Rodoma sąrašuose, pavyzdžiui, „Vieša svetainė GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Svetainės puslapis neegzistuojantiems adresams.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Paskirtis dar neprisijungia šiuo raktu: jos nustatymuose pasirinkite „Šiai paskirčiai sukurtas diegimo raktas“.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Pirmiausia pažymėkite „Patikrinau pakeitimus“.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

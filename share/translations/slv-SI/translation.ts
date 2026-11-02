@@ -82859,34 +82859,6 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>da, še ni objavljeno</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Gradnja pridobi vsako stran %site, kot jo vidi neprijavljen obiskovalec, prepiše povezave, kopira datoteke in rezultat zapiše v mapo cilja. Nič ni objavljeno, dokler gradnje ne preverite in ne pritisnete Objavi.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Razveljavitev je za strokovnjake: označite »Vem, kaj to spremeni« in znova vnesite ime oznake.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Odpre gradnjo, kot jo bo stregel gostitelj, iz mape cilja. Povezava za vas deluje eno uro.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Prikazano na seznamih, na primer »Javno spletno mesto na GitHub Pages«.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Lastna stran spletnega mesta za naslove, ki ne obstajajo.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Cilj se s tem ključem še ne prijavlja: v njegovih nastavitvah izberite »Ključ za uvajanje, ustvarjen za ta cilj«.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Najprej označite »Spremembe so preverjene«.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Aplikacija GitHub App</translation>
     </message>

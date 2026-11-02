@@ -82829,34 +82829,6 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <translation>tha, gun fhoillseachadh fhathast</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Gheibh togail gach duilleag de %site mar a chì aoigh nach do chlàraich a-steach i, sgrìobhaidh i na ceanglaichean às ùr, nì i lethbhreac dhe na faidhlichean agus sgrìobhaidh i an toradh gu pasgan an amais. Cha tèid càil fhoillseachadh gus an sgrùd sibh an togail agus am brùth sibh Foillsich.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Tha toirt air ais do dh'eòlaichean: cuiribh cromag ri “Tha fios agam dè dh'atharraicheas seo” agus sgrìobhaibh ainm an taga a-rithist.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Fosglaidh e an togail mar a fhrithealas an t-òstair i, bho phasgan an amais. Obraichidh an ceangal dhuibh fad uair a thìde.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ga shealltainn ann an liostaichean, mar eisimpleir “Làrach phoblach air GitHub Pages”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Duilleag na làraich fhèin airson seòlaidhean nach eil ann.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Chan eil an t-amas a' clàradh a-steach leis an iuchair seo fhathast: taghaibh “Iuchair cur-an-sàs a chaidh a chruthachadh dhan amas seo” sna roghainnean aige.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Cuiribh cromag ri “Sgrùd mi na h-atharraichean” an toiseach.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

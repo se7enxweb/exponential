@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>יאָ, נאָך ניט פֿאַרעפֿנטלעכט</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>אַן אויפֿבוי ברענגט יעדע זײַט פֿון %site אַזוי ווי אַ באַזוכער וואָס איז ניט אַרײַנגעלאָגירט זעט זי, שרײַבט איבער די לינקען, קאָפּירט די טעקעס און שרײַבט דעם רעזולטאַט אין דער מאַפּע פֿונעם ציל. גאָרנישט ווערט פֿאַרעפֿנטלעכט ביז איר קאָנטראָלירט דעם אויפֿבוי און דריקט פֿאַרעפֿנטלעכן.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>אַ צוריקדרייונג איז פֿאַר מומחים: צייכנט אָן "איך ווייס וואָס דאָס ענדערט" און שרײַבט נאָך אַ מאָל דעם נאָמען פֿונעם צייכן.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>עפֿנט דעם אויפֿבוי ווי דער האָסט וועט אים באַדינען, פֿון דער מאַפּע פֿונעם ציל. דער לינק אַרבעט פֿאַר אײַך אַ שעה.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>געוויזן אין רשימות, למשל "עפֿנטלעך וועבזײַטל אויף GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>דעם וועבזײַטלס אייגענע זײַט פֿאַר אַדרעסן וואָס עקזיסטירן ניט.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>דער ציל לאָגירט זיך נאָך ניט אַרײַן מיט דעם שליסל: קלײַבט אויס "אַ דיפּלוי־שליסל געמאַכט פֿאַר דעם ציל" אין זײַנע באַשטימונגען.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>צייכנט פֿריִער אָן "איך האָב קאָנטראָלירט די ענדערונגען".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>אַ GitHub App</translation>
     </message>

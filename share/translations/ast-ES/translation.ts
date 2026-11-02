@@ -82829,34 +82829,6 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>sí, entá ensin espublizar</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Una compilación descarga cada páxina de %site como la ve un visitante que nun anició sesión, reescribe los enllaces, copia los ficheros y escribe'l resultáu na carpeta del destín. Nun s'espubliza nada hasta que compruebes la compilación y calques Espublizar.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Una reversión ye pa espertos: marca «Sé lo que camuda esto» y teclia otra vegada'l nome de la etiqueta.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Abre la compilación como la va servir l'agospiamientu, dende la carpeta del destín. L'enllaz funciona pa ti mientres una hora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Amuésase nes llistes, por exemplu «Sitiu públicu en GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>La páxina propia del sitiu pa direiciones que nun esisten.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>El destín entá nun anicia sesión con esta clave: escueyi «Una clave de despliegue creada pa esti destín» nos sos axustes.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marca primero «Comprobé los cambeos».</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Una GitHub App</translation>
     </message>

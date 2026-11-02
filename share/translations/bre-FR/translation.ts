@@ -82829,34 +82829,6 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <translation>ya, n&apos;eo ket embannet c&apos;hoazh</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ur savadur a zegas pep pajenn eus %site evel ma wel anezhi ur gweladenner n'eo ket kennasket, a adskriv al liammoù, a eilskriv ar restroù hag a skriv an disoc'h e teuliad ar pal. Netra n'eo embannet a-raok ma vo gwiriet ar savadur ganeoc'h ha pouezet war Embann.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>An distro a zo evit an arbennigourien: askit "Gouzout a ran petra a cheñch an dra-se" ha skrivit anv ar merk en-dro.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Digeriñ a ra ar savadur evel ma vo kinniget gant an herberc'hier, eus teuliad ar pal. Mont a ra al liamm en-dro evidoc'h e-pad un eurvezh.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Diskouezet el listennoù, da skouer "Lec'hienn foran war GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Pajenn al lec'hienn e-unan evit ar chomlec'hioù n'eus ket anezho.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ar pal ne gennask ket gant an alc'hwez-mañ c'hoazh: dibabit "Un alc'hwez deploy krouet evit ar pal-mañ" en e arventennoù.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Askit "Gwiriet em eus ar c'hemmoù" da gentañ.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Un GitHub App</translation>
     </message>

@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>bẹ́ẹ̀ ni, a kò tíì tẹ̀ ẹ́ jáde</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ìkọ́ kan ń mú gbogbo ojú ìwé %site wá bí àlejò tí kò wọlé ṣe ń rí i, ó ń tún àwọn ìjápọ̀ kọ, ó ń ṣe ẹ̀dà àwọn fáìlì, ó sì ń kọ èsì rẹ̀ sí fóldà ibi àfojúsùn. A kò ní tẹ ohunkóhun jáde títí tí o bá ṣàyẹ̀wò ìkọ́ náà tí o sì tẹ Tẹ̀jáde.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Ìyípadà sẹ́yìn wà fún àwọn amòye: sàmì sí "Mo mọ ohun tí èyí ń yí padà" kí o sì tún tẹ orúkọ àmì náà.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ó ń ṣí ìkọ́ náà bí agbàlejò yóò ṣe pèsè rẹ̀, láti fóldà ibi àfojúsùn. Ìjápọ̀ náà yóò ṣiṣẹ́ fún ọ fún wákàtí kan.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>A ń fihàn nínú àwọn àkójọ, fún àpẹẹrẹ "Sáìtì gbangba lórí GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Ojú ìwé tí sáìtì náà ní fún àwọn àdírẹ́sì tí kò sí.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ibi àfojúsùn náà kò tíì wọlé pẹ̀lú kọ́kọ́rọ́ yìí: yan "Kọ́kọ́rọ́ ìfiránṣẹ́ tí a ṣẹ̀dá fún ibi àfojúsùn yìí" nínú àwọn ètò rẹ̀.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Kọ́kọ́ sàmì sí "Mo ti ṣàyẹ̀wò àwọn àyípadà".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App kan</translation>
     </message>

@@ -82859,34 +82859,6 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>jo, hyšći njewózjawjone</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Twarjenje wótwołujo kuždy bok sedła %site, ako jen wóglědowaŕ bźez pśizjawjenja wiźi, pśepišo wótkaze, kopěrujo dataje a pišo wuslědk do zarědnika cila. Nic se njewózjawijo, až njejsćo twarjenje skontrolěrował a na Wózjawiś tłocył.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Slědkwześe jo za ekspertow: markěrujśo „Wěm, co to změnijo“ a zapódajśo mě taga hyšći raz.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Wócynijo twarjenje tak, ako jo hosting buźo dodawaś, ze zarědnika cila. Wótkaz funkcioněrujo za was jadnu góźinu.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Pokazujo se w lisćinach, na pśikład „Zjawne sedło na GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Swójski bok sedła za adrese, kótarež njeeksistěruju.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Cil se hyšći z toś tym klucom njepśizjawja: wubjeŕśo w jogo nastajenjach „Deploy-kluc napórany za toś ten cil“.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Markěrujśo nejpjerwjej „Změny su skontrolěrowane“.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Aplikacija GitHub App</translation>
     </message>

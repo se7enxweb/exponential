@@ -84087,34 +84087,6 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>ja, ikke publisert ennå</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Et bygg henter hver side av %site slik en besøkende som ikke er logget inn ser den, skriver om lenkene, kopierer filene og skriver resultatet til målets mappe. Ingenting publiseres før du kontrollerer bygget og trykker Publiser.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>En tilbakerulling er for eksperter: kryss av for «Jeg vet hva dette endrer» og skriv inn navnet på etiketten igjen.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Åpner bygget slik verten vil levere det, fra målets mappe. Lenken fungerer for deg i én time.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Vises i lister, for eksempel «Offentlig nettsted på GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Nettstedets egen side for adresser som ikke finnes.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Målet logger ennå ikke inn med denne nøkkelen: velg «En deploy-nøkkel laget for dette målet» i innstillingene.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Kryss av for «Jeg har kontrollert endringene» først.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>En GitHub App</translation>
     </message>

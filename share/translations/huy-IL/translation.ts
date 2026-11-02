@@ -82838,34 +82838,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אין, עד כען לא אתפרס</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>בניינא מייתי כל דפא דְ%site היכדין דחזי ליה מבקרא דלא עאל, כתב תוב אסוריא, מעתיק פנקייתא וכתב פלטא לתיקא דנישא. מדעם לא מתפרס עד דבדקת בניינא ודחקת פרסא.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>אהדרתא לחכימי היא: סמן “ידע אנא מה דהדא משניא” וכתוב שמא דסימנא תוב.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>פתח בניינא היכדין דמתחמא ישמש ליה, מן תיקא דנישא. אסורא עביד לך שעתא חדא.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>מתחזי ברשימתא, למשל “אתרא גליא ב־GitHub Pages”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>דפא דאתרא גופיה למונעי דליתנון.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>נישא עד כען לא עאל בהדין קלידא: בחר “קלידא דשדרא דאתעביד להדין נישא” בטויבוהי.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>סמן “בדקית שנויין” קדמאה.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>חד GitHub App</translation>
     </message>

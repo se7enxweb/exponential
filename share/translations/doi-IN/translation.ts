@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>हां, अजें प्रकाशत नेईं</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>इक बिल्ड %site दे हर सफे गी उ'आं लैंदा ऐ जि'यां साइन इन नेईं कीते दा आगंतुक उसगी दिक्खदा ऐ, लिंक दुबारा लिखदा ऐ, फाइलां कापी करदा ऐ ते नतीजा लक्ष्य दे फोल्डर च लिखदा ऐ। जदूं तकर तुस बिल्ड जांचियै प्रकाशत करो नेईं दबांदे, किश बी प्रकाशत नेईं होंदा।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>वापसी माहिरें आस्तै ऐ: "मिगी पता ऐ जे एह् केह् बदलदा ऐ" पर निशान लाओ ते टैग दा नां फिरी टाइप करो।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>बिल्ड गी उ'आं खोह्लदा ऐ जि'यां होस्ट उसगी परोसग, लक्ष्य दे फोल्डर थमां। लिंक तुंदे आस्तै इक घैंटे तगर कम्म करदा ऐ।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>सूचियें च दस्सेआ जंदा ऐ, मसाल आस्तै "GitHub Pages पर सार्वजनिक साइट"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>नेईं होने आह्ले पतें आस्तै साइट दा अपना सफा।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्य अजें इस कुंजी कन्नै साइन इन नेईं करदा: उसदी सेटिंगें च "इस लक्ष्य आस्तै बनाई गेदी डिप्लॉय कुंजी" चुनो।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>पैह्लें "मैं बदलाव जांची लैते न" पर निशान लाओ।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>इक GitHub App</translation>
     </message>

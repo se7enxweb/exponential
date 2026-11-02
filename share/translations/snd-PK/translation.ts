@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ها، اڃا شايع ناهي ٿيو</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>هڪ بلڊ %site جو هر صفحو ائين آڻي ٿو جيئن سائن ان نه ٿيل گهمندڙ ان کي ڏسي ٿو، لنڪس ٻيهر لکي ٿو، فائلون ڪاپي ڪري ٿو ۽ نتيجو ٽارگيٽ جي فولڊر ۾ لکي ٿو. جيستائين توهان بلڊ جانچي شايع ڪريو نه دٻايو، ڪجهه به شايع نٿو ٿئي.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>واپسي ماهرن لاءِ آهي: "مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو" تي نشان لڳايو ۽ ٽيگ جو نالو ٻيهر لکو.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>بلڊ کي ائين کولي ٿو جيئن هوسٽ ان کي پيش ڪندو، ٽارگيٽ جي فولڊر مان. لنڪ توهان لاءِ هڪ ڪلاڪ ڪم ڪري ٿي.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>فهرستن ۾ ڏيکاريو ويندو آهي، مثال طور "GitHub Pages تي عوامي سائيٽ".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>اڻ موجود پتن لاءِ سائيٽ جو پنهنجو صفحو.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>ٽارگيٽ اڃا هن ڪنجي سان سائن ان نٿو ٿئي: ان جي سيٽنگن ۾ "هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي" چونڊيو.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>پهريان "مون تبديليون جانچي ورتيون آهن" تي نشان لڳايو.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>هڪ GitHub App</translation>
     </message>

@@ -82859,34 +82859,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>हाँ, अभी प्रकाशित नहीं</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>बिल्ड %site के हर पृष्ठ को वैसे ही लाता है जैसे साइन इन न किया हुआ आगंतुक उसे देखता है, लिंक दोबारा लिखता है, फ़ाइलें कॉपी करता है और परिणाम को लक्ष्य के फ़ोल्डर में लिखता है। जब तक आप बिल्ड की जाँच करके प्रकाशित करें नहीं दबाते, तब तक कुछ भी प्रकाशित नहीं होता।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>वापसी विशेषज्ञों के लिए है: “मैं जानता हूँ कि इससे क्या बदलेगा” पर टिक करें और टैग का नाम फिर से टाइप करें।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>बिल्ड को लक्ष्य के फ़ोल्डर से वैसे ही खोलता है जैसे होस्ट उसे परोसेगा। यह लिंक आपके लिए एक घंटे तक काम करता है।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>सूचियों में दिखाया जाता है, उदाहरण के लिए “GitHub Pages पर सार्वजनिक साइट”।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>मौजूद न होने वाले पतों के लिए साइट का अपना पृष्ठ।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>लक्ष्य अभी इस कुंजी से साइन इन नहीं करता: उसकी सेटिंग्स में “इस लक्ष्य के लिए बनाई गई डिप्लॉय कुंजी” चुनें।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>पहले “मैंने बदलावों की जाँच कर ली है” पर टिक करें।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>एक GitHub App</translation>
     </message>

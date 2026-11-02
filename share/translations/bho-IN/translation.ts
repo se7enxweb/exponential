@@ -82837,34 +82837,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>हँ, अबहीं प्रकाशित नइखे</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>एगो बिल्ड %site के हर पन्ना ओइसहीं ले आवेला जइसे साइन इन ना कइल आगंतुक देखेला, लिंक दोबारा लिखेला, फाइल कॉपी करेला आ नतीजा गंतव्य के फ़ोल्डर में लिखेला। जबले रउआ बिल्ड जाँच के प्रकाशित करीं ना दबाइब, तबले कुछुओ प्रकाशित ना होला।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>रोलबैक जानकार लोग खातिर बा: "हमरा पता बा कि एकरा से का बदली" पर टिक करीं आ टैग के नाँव फेर से लिखीं।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>बिल्ड के ओइसहीं खोलेला जइसे होस्ट परोसी, गंतव्य के फ़ोल्डर से। लिंक रउआ खातिर एक घंटा काम करेला।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>सूची में देखावल जाला, जइसे "GitHub Pages पर सार्वजनिक साइट"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>जवन पता मौजूद नइखे, ओह खातिर साइट के आपन पन्ना।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>गंतव्य अबहीं एह की से साइन इन ना करेला: ओकर सेटिंग में "एह गंतव्य खातिर बनावल डिप्लॉय की" चुनीं।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>पहिले "हम बदलाव जाँच लेले बानी" पर टिक करीं।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>एगो GitHub App</translation>
     </message>

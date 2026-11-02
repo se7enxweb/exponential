@@ -82859,34 +82859,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>да, ещё не опубликовано</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Сборка загружает каждую страницу %site так, как её видит посетитель без входа, переписывает ссылки, копирует файлы и записывает результат в папку цели. Ничего не публикуется, пока вы не проверите сборку и не нажмёте «Опубликовать».</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Откат — для опытных: отметьте «Я знаю, что это меняет» и введите имя тега ещё раз.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Открывает сборку из папки цели так, как её будет отдавать хостинг. Ссылка работает для вас в течение часа.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Отображается в списках, например «Публичный сайт на GitHub Pages».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Собственная страница сайта для несуществующих адресов.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Цель ещё не входит с этим ключом: выберите «Ключ развёртывания, созданный для этой цели» в её настройках.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Сначала отметьте «Я проверил(а) изменения».</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Приложение GitHub App</translation>
     </message>

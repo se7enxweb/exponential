@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>হ্যাঁ, এখনও প্রকাশিত হয়নি</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>একটি বিল্ড %site-এর প্রতিটি পৃষ্ঠা সাইন ইন না করা দর্শক যেভাবে দেখেন সেভাবে আনে, লিংকগুলো নতুন করে লেখে, ফাইলগুলো কপি করে এবং ফলাফল গন্তব্যের ফোল্ডারে লেখে। আপনি বিল্ড যাচাই করে প্রকাশ করুন বোতাম না চাপা পর্যন্ত কিছুই প্রকাশিত হয় না।</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>রোলব্যাক বিশেষজ্ঞদের জন্য: "আমি জানি এটি কী পরিবর্তন করে" টিক দিন এবং ট্যাগের নাম আবার লিখুন।</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>হোস্ট যেভাবে পরিবেশন করবে সেভাবে গন্তব্যের ফোল্ডার থেকে বিল্ডটি খোলে। লিংকটি আপনার জন্য এক ঘণ্টা কাজ করে।</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>তালিকায় দেখানো হয়, যেমন "GitHub Pages-এ পাবলিক সাইট"।</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>অস্তিত্বহীন ঠিকানার জন্য সাইটের নিজস্ব পৃষ্ঠা।</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>গন্তব্যটি এখনও এই কী দিয়ে সাইন ইন করে না: এর সেটিংসে "এই গন্তব্যের জন্য তৈরি একটি ডিপ্লয় কী" বেছে নিন।</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>প্রথমে "আমি পরিবর্তনগুলো যাচাই করেছি" টিক দিন।</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>একটি GitHub App</translation>
     </message>

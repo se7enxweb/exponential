@@ -87088,34 +87088,6 @@ Gracias por la retroalimentación</translation>
         <translation>sí, todavía no publicado</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Una compilación obtiene cada página de %site tal como la ve un visitante sin sesión iniciada, reescribe los enlaces, copia los archivos y escribe el resultado en la carpeta del destino. No se publica nada hasta que revises la compilación y pulses Publicar.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Una reversión es para expertos: marca "Sé lo que esto cambia" y vuelve a escribir el nombre de la etiqueta.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Abre la compilación tal como la servirá el servidor, desde la carpeta del destino. El enlace funciona para ti durante una hora.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Se muestra en las listas, por ejemplo "Sitio público en GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>La página propia del sitio para direcciones que no existen.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>El destino todavía no accede con esta clave: elige "Una clave de despliegue creada para este destino" en su configuración.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Marca primero "Revisé los cambios".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Una GitHub App</translation>
     </message>

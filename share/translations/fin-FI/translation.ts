@@ -82859,34 +82859,6 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>kyllä, ei vielä julkaistu</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Koonti noutaa sivuston %site jokaisen sivun sellaisena kuin kirjautumaton vierailija sen näkee, kirjoittaa linkit uudelleen, kopioi tiedostot ja kirjoittaa tuloksen kohteen kansioon. Mitään ei julkaista ennen kuin tarkistat koonnin ja painat Julkaise.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Peruminen on asiantuntijoille: valitse ”Tiedän, mitä tämä muuttaa” ja kirjoita tunnisteen nimi uudelleen.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Avaa koonnin sellaisena kuin palvelu sen tarjoilee, kohteen kansiosta. Linkki toimii sinulle tunnin ajan.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Näytetään luetteloissa, esimerkiksi ”Julkinen sivusto GitHub Pagesissa”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Sivuston oma sivu osoitteille, joita ei ole olemassa.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Kohde ei vielä kirjaudu tällä avaimella: valitse sen asetuksista ”Tälle kohteelle luotu käyttöönottoavain”.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Valitse ensin ”Olen tarkistanut muutokset”.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App -sovellus</translation>
     </message>

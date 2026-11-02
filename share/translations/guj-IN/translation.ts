@@ -82827,34 +82827,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>હા, હજી પ્રકાશિત નથી</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>બિલ્ડ %site નું દરેક પૃષ્ઠ સાઇન ઇન ન કરેલા મુલાકાતીને દેખાય તે રીતે મેળવે છે, લિંક ફરીથી લખે છે, ફાઇલોની નકલ કરે છે અને પરિણામ લક્ષ્યના ફોલ્ડરમાં લખે છે. તમે બિલ્ડ તપાસીને પ્રકાશિત કરો દબાવો નહીં ત્યાં સુધી કંઈ પ્રકાશિત થતું નથી.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>રોલબૅક નિષ્ણાતો માટે છે: "આ શું બદલે છે તે હું જાણું છું" પર ટિક કરો અને ટૅગનું નામ ફરીથી લખો.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>હોસ્ટ જે રીતે આપશે તે રીતે બિલ્ડને લક્ષ્યના ફોલ્ડરમાંથી ખોલે છે. લિંક તમારા માટે એક કલાક સુધી કામ કરે છે.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>સૂચિઓમાં બતાવાય છે, ઉદાહરણ તરીકે "GitHub Pages પર જાહેર સાઇટ".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>ન હોય તેવાં સરનામાં માટે સાઇટનું પોતાનું પૃષ્ઠ.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>લક્ષ્ય હજી આ કી વડે સાઇન ઇન કરતું નથી: તેની સેટિંગ્સમાં "આ લક્ષ્ય માટે બનાવેલી ડિપ્લોય કી" પસંદ કરો.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>પહેલાં "મેં ફેરફારો તપાસ્યા છે" પર ટિક કરો.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>એક GitHub App</translation>
     </message>

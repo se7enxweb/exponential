@@ -82829,34 +82829,6 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <translation>yee, tekinnafulumizibwa</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ekizimbe kiggyayo buli lupapula lwa %site nga omugenyi atayingidde bw'alulaba, kiddamu okuwandiika linki, kikoppa fayiro era kiwandiika ekivuddemu mu ffolda y'ekigendererwa. Tewali kifulumizibwa okutuusa lw'okebera ekizimbe n'onyiga Fulumya.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Okuzzaayo kwa bakugu: londa "Mmanyi kino kye kikyusa" era wandiika erinnya lya tagi omulundi omulala.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Kiggulawo ekizimbe nga host bw'egenda okukiweereza, okuva mu ffolda y'ekigendererwa. Linki ekukolera essaawa emu.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Kirabikira ku nkalala, okugeza "Omukutu ogw'olukale ku GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Olupapula lw'omukutu lwennyini olw'endagiriro ezitaliiwo.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ekigendererwa tekinnayingira na kisumuluzo kino: londa "Ekisumuluzo kya deploy ekyakolebwa ku kigendererwa kino" mu ntegeka zaakyo.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Sooka olonde "Nkebedde enkyukakyuka".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App emu</translation>
     </message>

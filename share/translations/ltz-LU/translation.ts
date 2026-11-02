@@ -82829,34 +82829,6 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>jo, nach net publizéiert</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>E Build rifft all Säit vun %site of, esou wéi e Besucher, deen net ugemellt ass, se gesäit, schreift d'Linken ëm, kopéiert d'Fichieren a schreift d'Resultat an den Dossier vum Zil. Näischt gëtt publizéiert, ier Dir de Build kontrolléiert an op Publizéieren dréckt.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Eng Zréckrollung ass fir Experten: kräizt „Ech weess, wat dat ännert“ un a tippt den Numm vum Tag nach eng Kéier.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Mécht de Build op, esou wéi den Host en servéiere wäert, aus dem Dossier vum Zil. De Link funktionéiert fir Iech eng Stonn laang.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>An de Lëschte gewisen, zum Beispill „Ëffentleche Site op GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Déi eege Säit vum Site fir Adressen, déi net existéieren.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>D'Zil mellt sech nach net mat dësem Schlëssel un: wielt „En Deploy-Key, dee fir dëst Zil gemaach gouf“ a sengen Astellungen.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Kräizt fir d'éischt „Ech hunn d'Ännerunge kontrolléiert“ un.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Eng GitHub App</translation>
     </message>

@@ -89799,34 +89799,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>ja, noch nicht veröffentlicht</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Ein Build ruft jede Seite von %site so ab, wie ein nicht angemeldeter Besucher sie sieht, schreibt die Links um, kopiert die Dateien und schreibt das Ergebnis in den Ordner des Ziels. Nichts wird veröffentlicht, bevor Sie den Build prüfen und auf „Veröffentlichen“ klicken.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Eine Rücknahme ist etwas für Experten: Kreuzen Sie „Ich weiß, was das ändert“ an und geben Sie den Namen des Tags erneut ein.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Öffnet den Build so, wie der Host ihn ausliefern wird, aus dem Ordner des Ziels. Der Link funktioniert für Sie eine Stunde lang.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Wird in Listen angezeigt, zum Beispiel „Öffentliche Website auf GitHub Pages“.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Die eigene Seite der Website für Adressen, die nicht existieren.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Das Ziel meldet sich noch nicht mit diesem Schlüssel an: Wählen Sie in seinen Einstellungen „Ein für dieses Ziel erstellter Deploy-Key“.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Kreuzen Sie zuerst „Ich habe die Änderungen geprüft“ an.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Eine GitHub App</translation>
     </message>

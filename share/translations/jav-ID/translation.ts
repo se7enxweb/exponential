@@ -82837,34 +82837,6 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>ya, durung diterbitake</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Sawijining build njupuk saben kaca %site kaya sing dideleng dening pengunjung sing durung mlebu, nulis ulang pranala, nyalin berkas lan nulis asile menyang folder tujuan. Ora ana sing diterbitake nganti panjenengan mriksa build lan mencet Terbitake.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Pambalekan iku kanggo ahli: centhang "Aku ngerti apa sing diowahi" lan ketik jeneng tag maneh.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Mbukak build kaya sing bakal disajekake host, saka folder tujuan. Pranala iki mlaku kanggo panjenengan sajrone sejam.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Ditampilake ing dhaptar, contone "Situs publik ing GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Kaca situs dhewe kanggo alamat sing ora ana.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Tujuan durung mlebu nganggo kunci iki: pilih "Kunci deploy sing digawe kanggo tujuan iki" ing setelane.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Centhang "Aku wis mriksa owah-owahane" dhisik.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Sawijining GitHub App</translation>
     </message>

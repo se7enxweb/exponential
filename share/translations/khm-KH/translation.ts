@@ -82829,34 +82829,6 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>បាទ/ចាស មិនទាន់បោះពុម្ពផ្សាយ</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ការស្ថាបនាទាញយកទំព័រនីមួយៗនៃ %site ដូចដែលអ្នកទស្សនាដែលមិនបានចូលមើលឃើញ សរសេរតំណឡើងវិញ ចម្លងឯកសារ ហើយសរសេរលទ្ធផលទៅថតរបស់គោលដៅ។ គ្មានអ្វីត្រូវបានបោះពុម្ពផ្សាយទេ រហូតដល់អ្នកពិនិត្យការស្ថាបនា ហើយចុច បោះពុម្ពផ្សាយ។</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>ការត្រឡប់វិញគឺសម្រាប់អ្នកជំនាញ៖ ធីក "ខ្ញុំដឹងថាវាផ្លាស់ប្ដូរអ្វី" ហើយវាយឈ្មោះស្លាកម្ដងទៀត។</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>បើកការស្ថាបនាដូចដែលម៉ាស៊ីននឹងបម្រើវា ពីថតរបស់គោលដៅ។ តំណដំណើរការសម្រាប់អ្នករយៈពេលមួយម៉ោង។</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>បង្ហាញក្នុងបញ្ជី ឧទាហរណ៍ "គេហទំព័រសាធារណៈនៅលើ GitHub Pages"។</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>ទំព័រផ្ទាល់របស់គេហទំព័រសម្រាប់អាសយដ្ឋានដែលមិនមាន។</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>គោលដៅមិនទាន់ចូលជាមួយសោនេះនៅឡើយទេ៖ ជ្រើសរើស "សោដាក់ពង្រាយដែលបានបង្កើតសម្រាប់គោលដៅនេះ" ក្នុងការកំណត់របស់វា។</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>ធីក "ខ្ញុំបានពិនិត្យការផ្លាស់ប្ដូរហើយ" ជាមុនសិន។</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App មួយ</translation>
     </message>

@@ -84269,34 +84269,6 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>oui, pas encore publiée</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Une génération récupère chaque page de %site telle que la voit un visiteur non connecté, réécrit les liens, copie les fichiers et écrit le résultat dans le dossier de la cible. Rien n’est publié tant que vous n’avez pas vérifié la génération et cliqué sur Publier.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Un retour arrière est réservé aux experts : cochez « Je sais ce que cela change » et saisissez à nouveau le nom de l’étiquette.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Ouvre la génération telle que l’hébergeur la servira, depuis le dossier de la cible. Le lien fonctionne pour vous pendant une heure.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Affiché dans les listes, par exemple « Site public sur GitHub Pages ».</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>La page du site pour les adresses qui n’existent pas.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>La cible ne se connecte pas encore avec cette clé : choisissez « Une clé de déploiement créée pour cette cible » dans ses réglages.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Cochez d’abord « J’ai vérifié les modifications ».</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Une GitHub App</translation>
     </message>

@@ -82829,34 +82829,6 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <translation>juo, ii vel almmuhuvvon</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Huksen viežžá %site juohke siiddu nugo sisačálekeahtes galledeaddji dan oaidná, čállá liŋkkaid ođđasit, kopiere fiillaid ja čállá boađusa ulbmila máhppii. Mihkkege ii almmuhuvvo ovdal go don dárkkistat huksema ja deaddilat Almmut.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Máhcaheapmi lea áššedovdiide: merke "Mun dieđán maid dát rievdada" ja čále merka nama fas.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Rahpá huksema nugo guossoheaddji dan fállá, ulbmila máhpas. Liŋka doaibmá dutnje diimmu.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Čájehuvvo listtuin, ovdamearkka dihte "Almmolaš neahttabáiki GitHub Pages:is".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Neahttabáikki iežas siidu čujuhusaide mat eai gávdno.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ulbmil ii vel čálihuva sisa dáinna čoavdagiin: vállje "Almmuhančoavdda mii lea ráhkaduvvon dán ulbmilii" dan ásahusain.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Merke vuos "Mun lean dárkkistan rievdadusaid".</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub App</translation>
     </message>

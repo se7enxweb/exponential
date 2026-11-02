@@ -82827,34 +82827,6 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>erê, hîn nehatiye weşandin</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Avakirinek her rûpela %site wekî ku mêvanekî ku neketiye hundir dibîne tîne, girêdanan ji nû ve dinivîse, pelan kopî dike û encamê di peldanka armancê de dinivîse. Heta ku tu avakirinê kontrol nekî û li Biweşîne nexî, tiştek nayê weşandin.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Paşvekişandin ji bo pisporan e: "Ez dizanim ev çi diguherîne" nîşan bike û navê etîketê dîsa binivîse.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Avakirinê wekî ku mêvandar dê pêşkêş bike, ji peldanka armancê vedike. Girêdan ji bo te saetekê dixebite.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Di lîsteyan de tê nîşandan, mînak "Malpera giştî li ser GitHub Pages".</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Rûpela malperê ya xwe ji bo navnîşanên ku tune ne.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Armanc hîn bi vê miftê nakeve hundir: di mîhengên wê de "Mifteyeke bicihkirinê ku ji bo vê armancê hatiye çêkirin" hilbijêre.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Pêşî "Min guhertin kontrol kirin" nîşan bike.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>GitHub Appek</translation>
     </message>

@@ -82859,34 +82859,6 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>tá, níl sé foilsithe fós</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Faigheann tógáil gach leathanach de %site mar a fheiceann cuairteoir nach bhfuil sínithe isteach é, athscríobhann sí na naisc, cóipeálann sí na comhaid agus scríobhann sí an toradh chuig fillteán na sprice. Ní fhoilsítear aon rud go dtí go seiceálann tú an tógáil agus go mbrúnn tú Foilsigh.</translation>
-    </message>
-    <message>
-        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
-        <translation>Is do shaineolaithe an cealú: cuir tic le “Tá a fhios agam cad a athraíonn sé seo” agus clóscríobh ainm na clibe arís.</translation>
-    </message>
-    <message>
-        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
-        <translation>Osclaíonn sé an tógáil mar a fhreastalóidh an t-óstach í, ó fhillteán na sprice. Oibríonn an nasc duit ar feadh uair an chloig.</translation>
-    </message>
-    <message>
-        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
-        <translation>Taispeántar i liostaí é, mar shampla “Suíomh poiblí ar GitHub Pages”.</translation>
-    </message>
-    <message>
-        <source>The site's own page for addresses that do not exist.</source>
-        <translation>Leathanach an tsuímh féin do sheoltaí nach bhfuil ann.</translation>
-    </message>
-    <message>
-        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
-        <translation>Ní shíníonn an sprioc isteach leis an eochair seo fós: roghnaigh “Eochair imscartha a cruthaíodh don sprioc seo” ina socruithe.</translation>
-    </message>
-    <message>
-        <source>Tick "I have checked the changes" first.</source>
-        <translation>Cuir tic le “Sheiceáil mé na hathruithe” ar dtús.</translation>
-    </message>
-    <message>
         <source>A GitHub App</source>
         <translation>Feidhmchlár GitHub App</translation>
     </message>
