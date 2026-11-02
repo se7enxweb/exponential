@@ -24584,7 +24584,7 @@ b7086d6b660a5b747eed2eee477e8540  kernel/classes/staticpublish/expstaticnotifier
 dc0ae2c44d17b0a4794af4fc85e90ec3  kernel/classes/staticpublish/expstaticprogress.php
 08a3047d5c95e895e1a47d85cadaf5a1  kernel/classes/staticpublish/expstaticpublisher.php
 b52dab83854efdfa227012910914a7ce  kernel/classes/staticpublish/expstaticpublishqueue.php
-c5f8fcf62074d4990d9743bafb2bffb7  kernel/classes/staticpublish/expstaticredirects.php
+023905b173350737664a76dd0cf4a06c  kernel/classes/staticpublish/expstaticredirects.php
 17bc4727d62fea39fce8e18b7367577b  kernel/classes/staticpublish/expstaticrepository.php
 763c03bddfc298061737832461b87657  kernel/classes/staticpublish/expstaticschedule.php
 1cd7168dc5da5ed69ca6b888fb747f21  kernel/classes/staticpublish/expstaticsearchindex.php
@@ -28751,7 +28751,7 @@ ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expSt
 87d9e9e8a8eba07e15f47b2d69a101f4  tests/tests/kernel/classes/staticpublish/expStaticNotifierTest.php
 adb80e7b78eabc0a7df0252fe4fa55ea  tests/tests/kernel/classes/staticpublish/expStaticPostProcessorTest.php
 e509294f8d2cc6e9e9595ee8ffd911a0  tests/tests/kernel/classes/staticpublish/expStaticPublishSqliteTest.php
-a41ad48d5208789ab796f8f4aaf17755  tests/tests/kernel/classes/staticpublish/expStaticRedirectsTest.php
+2805ee4d882c63a3c779128c63066c5a  tests/tests/kernel/classes/staticpublish/expStaticRedirectsTest.php
 b34f4973d7f792b39f06887cb6785369  tests/tests/kernel/classes/staticpublish/expStaticScheduleTest.php
 428973ac81ebd8eddfeabbd1663f927c  tests/tests/kernel/classes/staticpublish/expStaticSearchIndexTest.php
 d1808405ac31f5912840ac6e79c4756b  tests/tests/kernel/classes/staticpublish/expStaticStatusDatabaseTest.php

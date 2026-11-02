@@ -145,7 +145,7 @@ class expStaticRedirects
     public static function stub( $link, $canonical = '' )
     {
         $h = htmlspecialchars( (string)$link, ENT_QUOTES, 'UTF-8' );
-        return "<!DOCTYPE html>\n<html><head><meta charset=\"utf-8\"><title>Moved</title>\n"
+        return "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Moved</title>\n"
              . "<meta http-equiv=\"refresh\" content=\"0; url=$h\">\n<meta name=\"robots\" content=\"noindex\">\n"
              . ( $canonical !== '' ? '<link rel="canonical" href="' . htmlspecialchars( (string)$canonical, ENT_QUOTES, 'UTF-8' ) . "\">\n" : '' )
              . "</head><body><p>This page has moved: <a href=\"$h\">$h</a></p></body></html>\n";

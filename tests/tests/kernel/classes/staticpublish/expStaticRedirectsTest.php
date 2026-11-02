@@ -69,6 +69,8 @@ class expStaticRedirectsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '<meta http-equiv="refresh" content="0; url=../news/item-1/">', $html );
         $this->assertStringContainsString( '<link rel="canonical" href="https://o.github.io/r/news/item-1/">', $html );
         $this->assertStringContainsString( '<meta name="robots" content="noindex">', $html );
+        // the stub's own text is English: screen readers need the language (accessibility check of the demo build)
+        $this->assertStringContainsString( '<html lang="en">', $html );
         $this->assertStringNotContainsString( 'canonical', expStaticRedirects::stub( 'x/' ) );
         $this->assertStringContainsString( 'url=a&quot;b', expStaticRedirects::stub( 'a"b' ) );
     }
