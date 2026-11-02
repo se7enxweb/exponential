@@ -5746,7 +5746,7 @@ db6b0fa24b81d74990eebc0ea8912e8a  doc/eng-us/examples/migration-steps/image.md
 5e64ea60116a94932d636a67b9774e16  doc/eng-us/examples/migration-steps/layout_block.md
 e8ab83e1e1432c97b384109b507b41b5  doc/eng-us/examples/migration-steps/layout_rule.md
 f92c448e1eb9233fd0f0835403b8391e  doc/eng-us/examples/migration-steps/location.md
-10307618b653161bdc4ffbf571abca20  doc/eng-us/examples/migration-steps/mail.md
+7b6d7861dc56ca9f13dc9b5a8765570f  doc/eng-us/examples/migration-steps/mail.md
 7b391b91b53337dbac1af0ed8421076d  doc/eng-us/examples/migration-steps/object_state_group.md
 a4fb80daf701a0ade445552da82fee6c  doc/eng-us/examples/migration-steps/reference.md
 7f3a179b8467aad382674eb0832b1a2c  doc/eng-us/examples/migration-steps/role.md
@@ -7010,7 +7010,7 @@ a835408dd1e034404e4130c286077410  doc/eng-us/guides/migrations-rollback-and-capt
 5ba8a8323691863d99e293145cb92148  doc/eng-us/guides/migrations-sql-and-settings.md
 227e24b58a3d5c9e4001b020a01367c3  doc/eng-us/guides/migrations-troubleshooting.md
 d30b0ccef46c35f44f6750f1e60a0fc0  doc/eng-us/guides/migrations-tutorial.md
-1be78c0d74b4ef6313cfa94df8d2c3cf  doc/eng-us/guides/migrations-yaml-steps.md
+d78d76d6f51c0edadc69d2f459540896  doc/eng-us/guides/migrations-yaml-steps.md
 8681e3342fed01dfee71f2772ef3c1b4  doc/eng-us/guides/migrations.md
 e565fb4c364a70e397ad6e26fb0e18c3  doc/eng-us/guides/missing-files.md
 c16f7bb9ba5be0218ef063840c48580c  doc/eng-us/guides/notifications-administrator.md
@@ -13258,7 +13258,7 @@ ef666b3ee71630e84153acebec27299a  doc/ger-de/.examples/descriptions/24-migration
 086b0b0ba9d683190c53d9b95f9af7bf  doc/ger-de/.examples/descriptions/25-static-publishing-github-2026-11-01.json
 205eb4e7bca68824938917c424c553bd  doc/ger-de/.examples/descriptions/26-migration-tag-alias-trash-file-steps-2026-11-04.json
 019f529de116c668408316969794d1fd  doc/ger-de/.examples/descriptions/27-migration-cache-search-autoload-steps-2026-11-05.json
-70650094ba6b492922d19508bacd3bd4  doc/ger-de/.examples/descriptions/28-migration-layout-http-mail-command-steps-2026-11-06.json
+cd19ada390506ff38ac89db231ed7bdf  doc/ger-de/.examples/descriptions/28-migration-layout-http-mail-command-steps-2026-11-06.json
 df0dde6e2855e6e507dcf60b83398652  doc/ger-de/.examples/descriptions/29-migration-sql-settings-steps-2026-11-07.json
 af366e64a9465d3110503cab5c8d899a  doc/ger-de/.examples/descriptions/30-migration-graphql-2026-11-08.json
 1665213c916dd8f2357ee604d8a1d0b0  doc/ger-de/.examples/descriptions/30-static-publishing-extras-2026-11-01.json
@@ -13354,7 +13354,7 @@ bb60c3e2c793e9b30a9768ec74cce73b  doc/ger-de/anleitungen/migrationen-php.md
 4595a3cf1448cac92f6b44060b3e935e  doc/ger-de/anleitungen/migrationen-rueckgaengig-und-captions.md
 21c27f1bba7e8291896297e5c3f5f213  doc/ger-de/anleitungen/migrationen-sql-und-einstellungen.md
 821b6e4a47e36c8fa269b0dd1b394c16  doc/ger-de/anleitungen/migrationen-tutorial.md
-af627c78de1d3dfc407aaf30c265131d  doc/ger-de/anleitungen/migrationen-yaml-schritte.md
+b8e1ffc2b3e5df264e18eb007d289e48  doc/ger-de/anleitungen/migrationen-yaml-schritte.md
 6f5099620267732e42deef55a035638e  doc/ger-de/anleitungen/migrationen.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 a0976fe58065ceb997a8d1fac6b00996  doc/ger-de/anleitungen/objektzustaende.md
@@ -15574,7 +15574,7 @@ e6edff9a6bb343159564af3617d63b3b  doc/ger-de/beispiele/migrationsschritte/langua
 36850f6d8ce93f850553dafa9062db0a  doc/ger-de/beispiele/migrationsschritte/layout_block.md
 c73d24d7fdc06f33d5d25c01ff5e120e  doc/ger-de/beispiele/migrationsschritte/layout_rule.md
 cdc7a77b01fcca91f3abac31678b016a  doc/ger-de/beispiele/migrationsschritte/location.md
-e181ffa1702893165b7bd50ac40319a6  doc/ger-de/beispiele/migrationsschritte/mail.md
+11c794f30c519b1c056f969b6e625eda  doc/ger-de/beispiele/migrationsschritte/mail.md
 76324ed9c37442f1d02721ed99382a97  doc/ger-de/beispiele/migrationsschritte/object_state_group.md
 9b4ce2a2cab3c043e82bddc5463d0de4  doc/ger-de/beispiele/migrationsschritte/reference.md
 163547063a16a8a29a886efa00551589  doc/ger-de/beispiele/migrationsschritte/role.md
@@ -24474,7 +24474,7 @@ dd73ed2b3bd2086b451e3c1df58c8b7d  kernel/classes/migration/steps/expmigrationste
 9fa1872e36c81d2bc6e83f21c41f6acd  kernel/classes/migration/steps/expmigrationsteplayoutblock.php
 6df67017b70f98bc72fd4239487c840e  kernel/classes/migration/steps/expmigrationsteplayoutrule.php
 f2f4e7319a4de0ee5be23d7ffc965549  kernel/classes/migration/steps/expmigrationsteplocation.php
-d3202092103fa7d0dbf17fc1bd96d9dc  kernel/classes/migration/steps/expmigrationstepmail.php
+b18e8ff305fdcf330721a4efe3d2dd47  kernel/classes/migration/steps/expmigrationstepmail.php
 d5fa7417775a71b1eb0c5163bc45909e  kernel/classes/migration/steps/expmigrationstepobjectstategroup.php
 5c5595bfff63cecdb3d41199e006c368  kernel/classes/migration/steps/expmigrationstepreference.php
 f7ce35d79dae8426a8ef52f3d8b8a3db  kernel/classes/migration/steps/expmigrationsteprole.php
@@ -28517,7 +28517,7 @@ f2e97f0af2c5b35dcbd80445cd2a3d6f  tests/tests/kernel/classes/migration/expMigrat
 0c11bacfaa04f75d917037d427ea4b1a  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsDatabaseTest.php
 1f9614ea01738edf4264571d430cd6f8  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsEngineChecks.php
 dd536ce4dc5c21990af84ba12ad56c80  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsSqliteTest.php
-f53f25a582dfaf2677b1f740b4c6f3dd  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsTest.php
+1d4ac02cc211d27ccf82a6b75181c503  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsTest.php
 0791c122c7d6e8a0e7868ea65c473783  tests/tests/kernel/classes/migration/expMigrationLegacyRecordFixture.php
 d9328c2422dc9b95f59ec537cc219eb9  tests/tests/kernel/classes/migration/expMigrationLocatorTest.php
 6c230ac298bd8cc1ca97a3fdd3f88755  tests/tests/kernel/classes/migration/expMigrationLongRunTest.php

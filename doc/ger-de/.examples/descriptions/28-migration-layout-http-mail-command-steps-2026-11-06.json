@@ -267,6 +267,10 @@
         "en": "a transport of site.ini [MailSettings] TransportAlias (file, sendmail, smtp) for this mail only",
         "de": "ein Transport aus site.ini [MailSettings] TransportAlias (file, sendmail, smtp) nur für diese E-Mail"
     },
+    "step:mail category": {
+        "en": "the mail category of mailpreferences.ini; an optional one reaches only the recipients whose preferences allow it",
+        "de": "die E-Mail-Kategorie aus mailpreferences.ini; eine optionale erreicht nur die Empfänger, deren Einstellungen es erlauben"
+    },
     "step:mail value recipients": {
         "en": "how many addresses it went to",
         "de": "an wie viele Adressen sie ging"

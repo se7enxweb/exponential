@@ -382,7 +382,9 @@ back: a migration with one needs `down:` (which can send the request that undoes
 
 Secrets are named, never written in the migration or its log; a URL with a user or password is refused, no redirect
 is followed, and the log and the audit show the URL without its query. A mail goes through the mail transport of the
-installation (`transport: file` writes it below `var/log/mail` instead), so the mail gate and the mail settings apply.
+installation (`transport: file` writes it below `var/log/mail` instead), so the mail gate and the mail settings apply;
+it carries the mail category `admin` (essential, sent as before) unless `category:` names another, and an optional
+category reaches only the recipients whose mail preferences allow it.
 `command` runs only the `exp:*` commands of `migration.ini [StepSettings] CommandAllowList[]` (a name, or a name
 ending in `*` for a group), never `exp:migration:*` or `exp:upgrade*`, and hands the command and its arguments to PHP
 as a list: there is no shell, so a `;` or a `$` in an argument is a character.
