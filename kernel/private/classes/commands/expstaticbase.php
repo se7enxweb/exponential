@@ -30,7 +30,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     {
         return array(
             'exp:static:targets' => '[format:][export:]',
-            'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:]',
+            'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:][siteaccess:]',
             'exp:static:diff' => '[format:][verify][check-links][mount:*]',
             'exp:static:serve' => '[port:][host:][base-path:][format:]',
             'exp:static:publish' => '[build][nodes:*][message:][no-push][format:][login:][run-id:][progress:]',
@@ -71,8 +71,8 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'format' => 'text (default) or json (the machine output exp-static/1)',
             'export' => 'print these targets (ids separated by commas, or all) as an INI migration and change nothing',
             'full' => 'Crawl the whole site (the default without --paths or --nodes); not with --paths or --nodes',
-            'paths' => 'Build only these pages, by their path in the site (/about-us; a comma list or repeated); the rest of the last build stays',
-            'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays',
+            'paths' => 'Build only these pages, by their path in the copy (/about-us, /ger/about-us for a siteaccess in a folder; a comma list or repeated); the rest of the last build stays',
+            'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated), in each siteaccess of the target; the rest of the last build stays',
             'dry-run' => 'Build into the staging folder, report what would change and leave the target folder as it is',
             'report' => 'Also write the report (exp-static/1, JSON) to this file',
             'crawl-url' => 'Fetch the pages from this address instead of the target\'s CrawlURL or the siteaccess\'s SiteURL (http://127.0.0.1:8080)',
@@ -104,6 +104,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'login' => 'Run as this user (the administration starts its jobs so); recorded as who ran it',
             'run-id' => 'The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job\'s id)',
             'progress' => 'Also append the progress, one JSON object per line, to this file (the administration follows it)',
+            'siteaccess' => 'Build only this one of the target\'s siteaccesses (a target of several, SiteAccessList[]); the others\' pages of the last build stay',
         );
     }
 
@@ -385,7 +386,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
         $c = $report['counts'];
         $lines[] = '';
         $lines[] = sprintf( 'Static publishing: %s of %s (%s, %s), run %s in %.1fs', $report['mode'] === 'dry-run' ? 'dry run' : 'build',
-                            $report['target'], $report['siteaccess'], $report['scope'], $report['run_id'], $report['duration_ms'] / 1000 );
+                            $report['target'], !empty( $report['siteaccesses'] ) ? implode( ', ', (array)$report['siteaccesses'] ) : $report['siteaccess'], $report['scope'], $report['run_id'], $report['duration_ms'] / 1000 );
         $lines[] = sprintf( '  Pages:  %d exported, %d refused, %d skipped, %d excluded', $c['pages'], $c['pages_refused'], $c['pages_skipped'], $c['pages_excluded'] );
         $lines[] = sprintf( '  Files:  %d named by the pages, %d of the storage, %d extras, %d could not be collected', $c['files'], $c['storage'], $c['extras'], $c['files_failed'] )
                  . ( !empty( $c['storage_missing'] ) ? sprintf( ' (%d image file(s) the image table lists are missing from the storage)', $c['storage_missing'] ) : '' );

@@ -23,6 +23,8 @@
  *        you" for publish, rollback, save, the key and the switch and never for seeing or building, the dashboard
  *        block and its fetch function, the context help of every view, the two designs' templates and scripts the
  *        same, the link box on Setup > Cache, the manual
+ *  SA-08 several siteaccesses in the wizard: the ticked ones into SiteAccess (one) or SiteAccessList[] with
+ *        DefaultSiteAccess (several), the review form posted back keeps them, the lines written, the list shown
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -382,5 +384,42 @@ class expStaticAdminTest extends PHPUnit\Framework\TestCase
                 $lines[] = rtrim( $line );
         }
         return $lines;
+    }
+
+    /** SA-08 */
+    public function testSeveralSiteAccessesInTheWizard()
+    {
+        // one ticked: written as SiteAccess, as a target of one always was
+        $one = expStaticAdmin::settingsFromPost( array( 'Target' => array( 'SiteAccessList' => array( '', 'site' ), 'DefaultSiteAccess' => '' ) ), 'x' );
+        $this->assertSame( array( 'SiteAccess' => 'site', 'SiteAccessList' => array(), 'DefaultSiteAccess' => '' ),
+                           array_intersect_key( $one, array_flip( array( 'SiteAccess', 'SiteAccessList', 'DefaultSiteAccess' ) ) ) );
+        // several, with the one at the root
+        $post = array( 'Target' => array( 'SiteAccessList' => array( '', 'site', 'bold', 'bold_ger', 'bold' ), 'DefaultSiteAccess' => 'bold' ) );
+        $several = expStaticAdmin::settingsFromPost( $post, 'x' );
+        $this->assertSame( '', $several['SiteAccess'] );
+        $this->assertSame( array( 'site', 'bold', 'bold_ger' ), $several['SiteAccessList'] );
+        $this->assertSame( 'bold', $several['DefaultSiteAccess'] );
+        $this->assertSame( '', expStaticAdmin::settingsFromPost( array( 'Target' => array( 'SiteAccessList' => array( 'site', 'bold' ), 'DefaultSiteAccess' => 'classic' ) ), 'x' )['DefaultSiteAccess'],
+                           'a default that is not ticked is none' );
+        // the review form posts every setting back: SiteAccess=site with an empty list stays site
+        $back = expStaticAdmin::settingsFromPost( array( 'Target' => array( 'SiteAccess' => 'site', 'SiteAccessList' => array( '' ), 'DefaultSiteAccess' => '' ) ), 'x' );
+        $this->assertSame( 'site', $back['SiteAccess'] );
+        $this->assertSame( array(), expStaticAdmin::settingsFromPost( array( 'Target' => array( 'SiteAccessList' => array( '' ) ) ), 'x' )['SiteAccessList'] );
+
+        $context = array( 'siteaccesses' => array( 'site', 'bold', 'bold_ger', 'admin' ), 'admin' => array( 'admin' ),
+                          'urls' => array( 'site' => 'www.example.com', 'bold' => 'www.example.com/bold', 'bold_ger' => 'www.example.com/bold_ger', 'admin' => 'www.example.com/admin' ),
+                          'prefixes' => array( 'site' => 'site', 'bold' => 'bold', 'bold_ger' => 'bold_ger', 'admin' => 'admin' ) );
+        $settings = $several + array( 'Remote' => '', 'Credential' => 'none' ) + expStaticTarget::DEFAULTS;
+        $this->assertSame( array(), expStaticAdmin::check( 'three', $settings, $context, array(), true )['errors'] );
+        $this->assertSame( array( array( 'name' => 'bold', 'folder' => '/', 'default' => true ), array( 'name' => 'site', 'folder' => '/site/', 'default' => false ),
+                                  array( 'name' => 'bold_ger', 'folder' => '/bold_ger/', 'default' => false ) ),
+                           expStaticAdmin::memberList( new expStaticTarget( 'three', $settings ), $context ) );
+
+        mkdir( $this->dir . '/settings/override', 0775, true );
+        $scope = new expIniScope( 'global', expIniScope::KIND_GLOBAL, 'settings/override', $this->dir . '/', 'Global override (settings/override)' );
+        $content = expStaticAdmin::editor( 'three', $settings, false, $scope )->content();
+        $this->assertStringContainsString( "SiteAccess=\nSiteAccessList[]\nSiteAccessList[]=site\nSiteAccessList[]=bold\nSiteAccessList[]=bold_ger\nDefaultSiteAccess=bold\n", $content );
+        $single = expStaticAdmin::editor( 'one', $one + expStaticTarget::DEFAULTS, false, $scope )->content();
+        $this->assertStringContainsString( "[Target_one]\nName=\nSiteAccess=site\nKind=", $single, 'a target of one: no list, no default' );
     }
 }

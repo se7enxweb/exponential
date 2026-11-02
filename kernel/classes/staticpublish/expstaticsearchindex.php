@@ -18,7 +18,8 @@
  *                                  the title, the terms and the teaser
  *   static-search/index-<lang>.json  one per language (<html lang>, or "und"): schema exp-static-search/1,
  *                                  pages: [ { t: title, u: address relative to the build's root, d: teaser,
- *                                  k: terms } ]
+ *                                  k: terms, s: the siteaccess in a copy of several } ]; the page then offers
+ *                                  to search one site or all of them (?site=<siteaccess>)
  *
  * Each index is kept below a size (default 2 MB, [StaticPublishSettings] SearchMaxBytes): over it, the terms of every
  * page are shortened first, then the teasers, then the last pages are left out (reported).
@@ -59,14 +60,18 @@ class expStaticSearchIndex
      *
      * @param string $html the page as written
      * @param string $url its address relative to the build's root ('' for the front page, about-us/)
+     * @param string $site the siteaccess of the page in a copy of several ('' for a copy of one)
      * @return bool false for a page that has nothing to find (no title and no text, or noindex)
      */
-    public function add( $html, $url )
+    public function add( $html, $url, $site = '' )
     {
         $page = self::extract( $html );
         if ( $page === null )
             return false;
-        $this->entries[$page['lang']][] = array( 't' => $page['title'], 'u' => (string)$url, 'd' => $page['teaser'], 'k' => $page['terms'] );
+        $entry = array( 't' => $page['title'], 'u' => (string)$url, 'd' => $page['teaser'], 'k' => $page['terms'] );
+        if ( (string)$site !== '' )
+            $entry['s'] = (string)$site;
+        $this->entries[$page['lang']][] = $entry;
         return true;
     }
 
@@ -162,8 +167,11 @@ class expStaticSearchIndex
         foreach ( $data['pages'] as $entry )
             if ( is_array( $entry ) && isset( $entry['u'] ) && !isset( $have[(string)$entry['u']] ) )
             {
-                $this->entries[$lang][] = array( 't' => (string)( isset( $entry['t'] ) ? $entry['t'] : '' ), 'u' => (string)$entry['u'],
-                                                 'd' => (string)( isset( $entry['d'] ) ? $entry['d'] : '' ), 'k' => (string)( isset( $entry['k'] ) ? $entry['k'] : '' ) );
+                $keptEntry = array( 't' => (string)( isset( $entry['t'] ) ? $entry['t'] : '' ), 'u' => (string)$entry['u'],
+                                     'd' => (string)( isset( $entry['d'] ) ? $entry['d'] : '' ), 'k' => (string)( isset( $entry['k'] ) ? $entry['k'] : '' ) );
+                if ( isset( $entry['s'] ) && (string)$entry['s'] !== '' )
+                    $keptEntry['s'] = (string)$entry['s'];
+                $this->entries[$lang][] = $keptEntry;
                 $kept++;
             }
         return $kept;
@@ -240,13 +248,17 @@ class expStaticSearchIndex
      * The search page. Its links are relative to the root of the build, where it lives.
      *
      * @param array $languages the languages with an index (the first is the default)
-     * @param array $texts title, label, button, nothing (no result), results (%count), noscript, lang (of the page)
+     * @param array $texts title, label, button, nothing (no result), results (%count), noscript, lang (of the page), where
+     *                     (the label of the choice of site), all (searching every site)
+     * @param array $sites a copy of several siteaccesses: siteaccess => its folder (/ or /ger/); the page offers to
+     *                     search one of them or all (?site=<siteaccess>), and searches every language's index
      * @return string
      */
-    public static function page( array $languages, array $texts = array() )
+    public static function page( array $languages, array $texts = array(), array $sites = array() )
     {
         $texts += array( 'title' => 'Search', 'label' => 'Search this site', 'button' => 'Search', 'nothing' => 'Nothing found.',
-                         'results' => '%count results', 'noscript' => 'The search needs JavaScript.', 'home' => 'Front page', 'lang' => '' );
+                         'results' => '%count results', 'noscript' => 'The search needs JavaScript.', 'home' => 'Front page', 'lang' => '',
+                         'where' => 'Where', 'all' => 'All sites' );
         $h = function ( $s ) { return htmlspecialchars( (string)$s, ENT_QUOTES, 'UTF-8' ); };
         $lang = $texts['lang'] !== '' ? $texts['lang'] : ( $languages ? (string)$languages[0] : 'en' );
         if ( $lang === 'und' )
@@ -254,17 +266,27 @@ class expStaticSearchIndex
         $indexes = array();
         foreach ( $languages as $l )
             $indexes[(string)$l] = self::indexFile( $l );
+        $choice = '';
+        if ( $sites )
+        {
+            $choice = " <label for=\"exp-static-site\">" . $h( $texts['where'] ) . "</label> <select id=\"exp-static-site\" name=\"site\"><option value=\"\">"
+                    . $h( $texts['all'] ) . "</option>";
+            foreach ( $sites as $site => $folder )
+                $choice .= "<option value=\"" . $h( $site ) . "\">" . $h( $site . ' (' . $folder . ')' ) . "</option>";
+            $choice .= "</select>";
+        }
         return "<!DOCTYPE html>\n<html lang=\"" . $h( $lang ) . "\"><head><meta charset=\"utf-8\"><title>" . $h( $texts['title'] ) . "</title>\n"
              . "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta name=\"robots\" content=\"noindex\">\n"
              . "<link rel=\"stylesheet\" href=\"static-search/search.css\"></head>\n"
              . "<body class=\"exp-static-search\"><main>\n<h1>" . $h( $texts['title'] ) . "</h1>\n"
              . "<form role=\"search\" method=\"get\" action=\"search.html\"><label for=\"exp-static-q\">" . $h( $texts['label'] ) . "</label>\n"
-             . "<input type=\"search\" id=\"exp-static-q\" name=\"SearchText\" autocomplete=\"off\"> <button type=\"submit\">" . $h( $texts['button'] ) . "</button></form>\n"
+             . "<input type=\"search\" id=\"exp-static-q\" name=\"SearchText\" autocomplete=\"off\">" . $choice . " <button type=\"submit\">" . $h( $texts['button'] ) . "</button></form>\n"
              . "<p id=\"exp-static-count\" role=\"status\" aria-live=\"polite\"></p><ol id=\"exp-static-results\"></ol>\n"
              . "<noscript><p>" . $h( $texts['noscript'] ) . "</p></noscript>\n"
              . "<p><a href=\"./\">" . $h( $texts['home'] ) . "</a></p></main>\n"
              . "<script id=\"exp-static-search-config\" type=\"application/json\">"
-             . str_replace( '</', '<\/', (string)json_encode( array( 'indexes' => (object)$indexes, 'nothing' => $texts['nothing'], 'results' => $texts['results'] ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) )
+             . str_replace( '</', '<\/', (string)json_encode( array( 'indexes' => (object)$indexes, 'nothing' => $texts['nothing'], 'results' => $texts['results'] )
+                                                              + ( $sites ? array( 'sites' => array_keys( $sites ) ) : array() ), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) )
              . "</script>\n<script src=\"" . self::SCRIPT . "\" defer></script>\n</body></html>\n";
     }
 
@@ -294,13 +316,21 @@ class expStaticSearchIndex
   if (!query) { return; }
   var lang = (document.documentElement.lang || '').toLowerCase();
   var indexes = config.indexes || {};
-  var file = indexes[lang] || indexes[lang.split('-')[0]] || indexes[Object.keys(indexes)[0]];
-  if (!file) { count.textContent = config.nothing; return; }
+  // a copy of several sites: every language's index, the pages of the site chosen (?site=) or of all
+  var site = (params.get('site') || '').trim();
+  var select = document.getElementById('exp-static-site');
+  if (select) { select.value = site; }
+  var files = config.sites ? Object.keys(indexes).map(function (k) { return indexes[k]; })
+    : [indexes[lang] || indexes[lang.split('-')[0]] || indexes[Object.keys(indexes)[0]]].filter(Boolean);
+  if (!files.length) { count.textContent = config.nothing; return; }
   function words(s) { return s.toLocaleLowerCase().split(/[^\p{L}\p{N}]+/u).filter(function (w) { return w.length > 1; }); }
-  fetch(file).then(function (r) { return r.json(); }).then(function (index) {
+  Promise.all(files.map(function (f) { return fetch(f).then(function (r) { return r.json(); }); })).then(function (list) {
     var wanted = words(query);
     var hits = [];
-    (index.pages || []).forEach(function (p) {
+    var pages = [];
+    list.forEach(function (index) { pages = pages.concat(index.pages || []); });
+    pages.forEach(function (p) {
+      if (site && p.s !== site) { return; }
       var title = (p.t || '').toLocaleLowerCase(), terms = ' ' + (p.k || '') + ' ', teaser = (p.d || '').toLocaleLowerCase();
       var score = 0, all = true;
       wanted.forEach(function (w) {
