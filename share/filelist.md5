@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-dfa11244bdbc536a8a0076f7d9e901d9  autoload/ezp_kernel.php
+2b226750b72679e789adc8e5ca53abcd  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -2295,7 +2295,7 @@ ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 2740d834e1c8ecb2a05b6ce65ea4ca3d  design/standard/javascript/exp_passkey.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
-5c5a2fac8ac63b43eabb82a5ec4e59f2  design/standard/javascript/expdebugbar.js
+948f9f23b0a95cb0d2a81fb8e65b7c8a  design/standard/javascript/expdebugbar.js
 c9d4a91276689383a1be79bb68937c1d  design/standard/javascript/ezasynchronouspublishing.js
 c1f77f113c9e98c8d69676a294815077  design/standard/javascript/ezmedia_silverlight.js
 142a80e6cb7f65c46da1433c340db74d  design/standard/javascript/ezmultioption/ezmultioption.js
@@ -2320,8 +2320,8 @@ bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 480210c74d385593961fa435116fa328  design/standard/stylesheets/debug.css
 c46ad217a065dc148fedf226794fda26  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
-66c465fbc3cde32f2e5689f498ec7ace  design/standard/stylesheets/expdebugbar-toolbar.css
-c6659fb2be985356a0c54c3caea51cba  design/standard/stylesheets/expdebugbar.css
+471f94c530839b08bada7a19bffeb1b2  design/standard/stylesheets/expdebugbar-toolbar.css
+348084493f9632ec4020e8ff19e84873  design/standard/stylesheets/expdebugbar.css
 6be40b2658f59872433cc8104f2deebd  design/standard/stylesheets/ezmedia_silverlight.css
 c815977883ff0447b636e3b2206828a4  design/standard/stylesheets/loginpagelayout.css
 3d104d2130898dcab66b2586407bb602  design/standard/stylesheets/mailpreferences.css
@@ -3447,7 +3447,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b23ae6aef577b7860d1172a9314270fa  doc/changelogs/6.0/6.0.15.md
+ee5f8e132c2dfdf34293ceffabaebdf7  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3592,7 +3592,7 @@ f8dec2dfb81fbb16a107d0bde08c230b  doc/eng-us/bc/6.0/cli_cronjob_view_abstraction
 f504dbb0bd1d30709cde9b7def0b1c52  doc/eng-us/bc/6.0/content-export-menu.md
 cc90672fddc8e975d7107993d9b1cb59  doc/eng-us/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/eng-us/bc/6.0/content-object-fallback-locale.md
-e68dc45d4eb39d75dbddc54db9116504  doc/eng-us/bc/6.0/debug-bar.md
+ab5777a3b87d9673431a5cc6112539ba  doc/eng-us/bc/6.0/debug-bar.md
 dd5a75132053a4ed2a80e386eebe7f04  doc/eng-us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/eng-us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
@@ -23899,6 +23899,7 @@ e65e5cf2758771560e63ed95a0b41c9b  kernel/classes/debugbar/expdebugbarregistry.ph
 8e7a15af054fef39e3bea4da52122c7d  kernel/classes/debugbar/expdebugbarserverfunctions.php
 da343c61d8fc793d750c8ef727afe8ba  kernel/classes/debugbar/expdebugbarsettings.php
 bd109a993ddd142e8f2017620dbdb4df  kernel/classes/debugbar/expdebugbarsummary.php
+1fc13d58dc44c75e04479f097478685d  kernel/classes/debugbar/expdebugbaruser.php
 717cd5319155a524b29de28659444487  kernel/classes/debugbar/exprenderstats.php
 a59e7722d7d542f3fd37517175faf889  kernel/classes/expadminpagination.php
 b98d6d508d9e1ad1f595ec2d5a4622cb  kernel/classes/expanonymouspublicpolicies.php
@@ -24057,7 +24058,7 @@ f99b1e345653f0caba1809e9b737d42f  kernel/classes/ezinformationcollectionattribut
 c6844e36117aebf288f0145b6bf94708  kernel/classes/eznamepatternresolver.php
 fd091f39485c1e29edd471a79cca0e1e  kernel/classes/eznavigationpart.php
 e8eb44928d46bd9be28961b1ab6d7912  kernel/classes/eznodeassignment.php
-d62087f67521c0d213ee3a22f2e84063  kernel/classes/eznodeviewfunctions.php
+84228d9bcdacc37c1d4474c970c419d2  kernel/classes/eznodeviewfunctions.php
 673e8dead2afd05ca5acaed25955c5f0  kernel/classes/ezorder.php
 d389d2d52fb106402e2e3cfce0ae74ac  kernel/classes/ezorderitem.php
 64789c25eb9529192564b481dcca75ad  kernel/classes/ezorderstatus.php
@@ -26090,7 +26091,7 @@ fecb5bd298387ea48398d60640158ab3  lib/eztemplate/classes/eztemplatetypeoperator.
 0bf7054981a58617d93a74c829b2663d  lib/eztemplate/classes/eztemplateunitoperator.php
 b5a1eb2005674c257dff73cc772b37fa  lib/eztemplate/classes/eztemplatevariableelement.php
 dbb08bb0e7dd7f3871eccab2fe96c691  lib/eztemplate/classes/eztemplatewhilefunction.php
-53924fce2dd37b69b58917707f4d325e  lib/ezutils/classes/expdebugbarreport.php
+a87eadf6209d692fd4d3671716c7df5f  lib/ezutils/classes/expdebugbarreport.php
 85ec8b5baf7762c9e1788c1806fd1955  lib/ezutils/classes/expinfo.php
 6b10748123dbb1ee64e43d89ca7962a4  lib/ezutils/classes/ezcachehelper.php
 ec0113527fb59183b48344a81e9e5e62  lib/ezutils/classes/ezcli.php
@@ -27298,7 +27299,7 @@ cd7860e85610a9dacf3a212d0d723a7b  share/translations/dzo-BT/translation.ts
 27c0828353fe98bea13c97a1d808551c  share/translations/ell-GR/GUIDE.md
 ce0cca729205ad3364f2c5e3d26cc269  share/translations/ell-GR/translation.ts
 890208761510e1fafb15677dee05bb69  share/translations/eng-AU/translation.ts
-23938bbc8d0967c52188253adf620e5c  share/translations/eng-US/translation.ts
+c0f0a81a52f92b186efdc8299894a1fa  share/translations/eng-US/translation.ts
 c4aefd9911e5b7b7646f05df605f6902  share/translations/epo-EO/GUIDE.md
 c8039436d18f1d44e40b3b2ccc6dcbe6  share/translations/epo-EO/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
@@ -27330,7 +27331,7 @@ fff1b58482cd93dab85d5bb93e23ff79  share/translations/ful-SN/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-51c323a82896024c0e8d99c07e5bcf63  share/translations/ger-DE/translation.ts
+20f8956744eb8f14d72ce84637363253  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 3625ddd9966d6573ba91b170bce88a27  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md
@@ -27525,7 +27526,7 @@ a9e52813891af1fa71dbfe8f6cfda94c  share/translations/uig-CN/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 663dd45a356aa4ac6759c6d308c7feb0  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-6509cbb077fd5ef3453f4e4d5c28674a  share/translations/untranslated/translation.ts
+90d29c2534e66608a3d138a003074b86  share/translations/untranslated/translation.ts
 50c0423066d265dc70107a85555ec431  share/translations/urd-PK/GUIDE.md
 9b864d3d9b715ba4bcf418ab0e42cab9  share/translations/urd-PK/translation.ts
 9e9e7eefce4bcdac8cdf37ea44206f6e  share/translations/uzb-UZ/GUIDE.md
@@ -27603,7 +27604,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-4dd26d53e4dd98b2a979044ee571a71b  tests/test-map.json
+f25da5566f3ef373bf901088d146ab2c  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -28058,6 +28059,7 @@ e7046a7b2fa81a816312f355e49bc12f  tests/tests/kernel/classes/debugbar/expDebugBa
 c2015e9a7c16465a385e07c0b2d5f198  tests/tests/kernel/classes/debugbar/expDebugBarQueryCacheTest.php
 913d53b83bc4e3183a697a34ce72292c  tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php
 3a346f5a7b9d4a168c7e1aa1b488f325  tests/tests/kernel/classes/debugbar/expDebugBarSummaryPhpVersionTest.php
+4644b2eb686813cdedd5dbd8552534cc  tests/tests/kernel/classes/debugbar/expDebugBarUserTest.php
 0b2683814861305e830fb4cd770b688d  tests/tests/kernel/classes/debugbar/expDebugBarWaveTogetherTest.php
 767723d71b9b739f92932f0ef3356b24  tests/tests/kernel/classes/debugbar/expRenderStatsCacheBlockTest.php
 696032021d3ae3808d114e55e104f470  tests/tests/kernel/classes/debugbar/expRenderStatsCollectTest.php
