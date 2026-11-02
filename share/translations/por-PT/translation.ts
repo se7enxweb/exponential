@@ -83434,5 +83434,29 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O texto mantém-se. Imagens, formulários e ligações para outros sites nunca são removidos.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Acessos ao site a publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acesso ao site (siteaccess)</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na raiz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nenhum acesso na raiz: cada um está na sua pasta, e a raiz liga para eles</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Acessos ao site</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Assinale um acesso ao site, ou vários que partilham um anfitrião pelo seu prefixo de URI. O da raiz é servido aí, os outros na pasta do seu prefixo (/ger/); as ligações entre eles ficam na cópia. Os acessos de administração nunca são oferecidos.</translation>
+    </message>
 </context>
 </TS>

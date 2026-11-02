@@ -83409,5 +83409,29 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Metinleri kalır. Görseller, formlar ve diğer sitelere giden bağlantılar asla kaldırılmaz.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Yayımlanacak site erişimleri</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site erişimi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Kökte</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kökte site erişimi yok: her biri kendi klasöründe, kök de onlara bağlantı verir</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Site erişimleri</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Bir site erişimini ya da URI önekleriyle bir sunucuyu paylaşan birkaçını işaretleyin. Kökteki orada sunulur, diğerleri öneklerinin klasöründe (/ger/); aralarındaki bağlantılar kopyada kalır. Yönetim site erişimleri asla sunulmaz.</translation>
+    </message>
 </context>
 </TS>

@@ -83434,5 +83434,29 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>A szövegük megmarad. A képek, űrlapok és más webhelyekre mutató hivatkozások soha nem kerülnek eltávolításra.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Közzéteendő webhely-hozzáférések</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>A gyökérben</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nincs webhely-hozzáférés a gyökérben: mindegyik a saját mappájában van, a gyökér pedig hivatkozik rájuk</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Webhely-hozzáférések</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Jelöljön be egy webhely-hozzáférést, vagy többet, amelyek URI-előtagjuk révén egy kiszolgálón osztoznak. A gyökérben lévőt ott szolgálja ki, a többit előtagjuk mappájában (/ger/); a köztük lévő hivatkozások a másolatban maradnak. Adminisztrációs hozzáférések soha nem jelennek meg.</translation>
+    </message>
 </context>
 </TS>

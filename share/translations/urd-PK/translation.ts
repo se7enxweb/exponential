@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ان کا متن باقی رہتا ہے۔ تصاویر، فارم اور دوسری سائٹوں کے لنک کبھی نہیں ہٹائے جاتے۔</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>شائع کرنے کے لیے سائٹ ایکسیسز</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سائٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>روٹ پر</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>روٹ پر کوئی سائٹ ایکسیس نہیں: ہر ایک اپنے فولڈر میں ہے، اور روٹ ان کے لنک دیتا ہے</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>سائٹ ایکسیسز</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ایک سائٹ ایکسیس منتخب کریں، یا کئی جو اپنے URI سابقے سے ایک ہوسٹ بانٹتے ہیں۔ روٹ والا وہیں پیش کیا جاتا ہے، باقی اپنے سابقے کے فولڈر میں (/ger/)؛ ان کے درمیان لنک نقل ہی میں رہتے ہیں۔ انتظامیہ کے سائٹ ایکسیس کبھی پیش نہیں کیے جاتے۔</translation>
+    </message>
 </context>
 </TS>

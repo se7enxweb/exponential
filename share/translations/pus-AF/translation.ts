@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>د هغوی متن پاتې کېږي. انځورونه، فورمې او نورو سایټونو ته لینکونه هېڅکله نه لرې کېږي.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>د خپرولو لپاره د سایټ لاسرسي</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>د سایټ لاسرسی</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>په ریښه کې</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>په ریښه کې هېڅ سایټ لاسرسی نشته: هر یو په خپل فولډر کې دی، او ریښه هغوی ته لینک ورکوي</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>د سایټ لاسرسي</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>یو سایټ لاسرسی، یا څو چې د خپل URI مختاړي له لارې یو کوربه شریکوي وټاکئ. هغه چې په ریښه کې دی هلته وړاندې کېږي، نور د خپل مختاړي په فولډر کې (/ger/)؛ د هغوی ترمنځ لینکونه په کاپي کې پاتې کېږي. د ادارې لاسرسي هېڅکله نه وړاندې کېږي.</translation>
+    </message>
 </context>
 </TS>

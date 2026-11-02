@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ຂໍ້ຄວາມຂອງມັນຍັງຢູ່. ຮູບພາບ, ແບບຟອມ ແລະ ລິ້ງໄປຫາເວັບໄຊອື່ນ ບໍ່ເຄີຍຖືກລຶບ.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ການເຂົ້າເຖິງໄຊທີ່ຈະເຜີຍແຜ່</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ທີ່ຮາກ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ບໍ່ມີການເຂົ້າເຖິງໄຊທີ່ຮາກ: ແຕ່ລະອັນຢູ່ໃນໂຟນເດີຂອງມັນ ແລະຮາກເຊື່ອມໂຍງໄປຫາພວກມັນ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ໝາຍການເຂົ້າເຖິງໄຊໜຶ່ງ ຫຼືຫຼາຍອັນທີ່ໃຊ້ໂຮສດຽວກັນຜ່ານຄຳນຳໜ້າ URI. ອັນທີ່ຢູ່ຮາກຈະໃຫ້ບໍລິການຢູ່ທີ່ນັ້ນ ອັນອື່ນຢູ່ໃນໂຟນເດີຂອງຄຳນຳໜ້າ (/ger/); ລິ້ງລະຫວ່າງພວກມັນຢູ່ໃນສຳເນົາ. ບໍ່ເຄີຍສະເໜີການເຂົ້າເຖິງການບໍລິຫານ.</translation>
+    </message>
 </context>
 </TS>

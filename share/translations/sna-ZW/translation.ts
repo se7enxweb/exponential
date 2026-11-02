@@ -83404,5 +83404,29 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Mavara azvo anosara. Mifananidzo, mafomu nezvinongedzo zvinoenda kune dzimwe saiti hazvimbobviswi.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nzira dzekupinda pasaiti dzinoburitswa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nzira yekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Pamudzi</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Hapana nzira yekupinda pamudzi: imwe neimwe iri mufoda yayo, uye mudzi unobatanidza kwadziri</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nzira dzekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Sarudza nzira imwe yekupinda pasaiti, kana dzakawanda dzinogovana muenzi mumwe kuburikidza neURI prefix yadzo. Iyo iri pamudzi inopiwa ipapo, dzimwe mufoda yeprefix yadzo (/ger/); zvinongedzo pakati padzo zvinogara mukopi. Nzira dzekutonga hadzimbopiwi.</translation>
+    </message>
 </context>
 </TS>

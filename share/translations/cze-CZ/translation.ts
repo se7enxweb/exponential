@@ -84690,5 +84690,29 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jejich text zůstane. Obrázky, formuláře a odkazy na jiné weby se nikdy neodstraňují.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Přístupy k webu k publikování</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Přístup k webu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>V kořeni</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Žádný přístup v kořeni: každý je ve své složce a kořen na ně odkazuje</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Přístupy k webu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Zaškrtněte jeden přístup k webu nebo několik, které sdílejí jednoho hostitele podle prefixu URI. Ten v kořeni se obsluhuje tam, ostatní ve složce svého prefixu (/ger/); odkazy mezi nimi zůstávají v kopii. Administrační přístupy se nikdy nenabízejí.</translation>
+    </message>
 </context>
 </TS>

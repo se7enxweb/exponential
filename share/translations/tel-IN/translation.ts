@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>వాటి పాఠ్యం అలాగే ఉంటుంది. చిత్రాలు, ఫారమ్‌లు మరియు ఇతర సైట్‌లకు లింకులు ఎప్పుడూ తీసివేయబడవు.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ప్రచురించాల్సిన సైట్‌యాక్సెస్‌లు</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>రూట్‌లో</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>రూట్‌లో ఏ సైట్‌యాక్సెస్ లేదు: ప్రతిదీ తన ఫోల్డర్‌లో ఉంటుంది, రూట్ వాటికి లింక్ ఇస్తుంది</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>సైట్‌యాక్సెస్‌లు</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ఒక సైట్‌యాక్సెస్‌ను, లేదా తమ URI ఉపసర్గ ద్వారా ఒకే హోస్ట్‌ను పంచుకునే అనేకాన్ని ఎంచుకోండి. రూట్‌లోనిది అక్కడే అందించబడుతుంది, మిగతావి తమ ఉపసర్గ ఫోల్డర్‌లో (/ger/); వాటి మధ్య లింకులు ప్రతిలోనే ఉంటాయి. నిర్వహణ సైట్‌యాక్సెస్‌లు ఎప్పుడూ అందించబడవు.</translation>
+    </message>
 </context>
 </TS>

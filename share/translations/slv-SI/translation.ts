@@ -83434,5 +83434,29 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Njihovo besedilo ostane. Slike, obrazci in povezave na druga spletišča se nikoli ne odstranijo.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Dostopi do spletnega mesta za objavo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Dostop do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>V korenu</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>V korenu ni dostopa: vsak je v svoji mapi, koren pa vodi do njih</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Dostopi do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Označite en dostop do spletnega mesta ali več, ki si po svoji predponi URI delijo enega gostitelja. Tisti v korenu se streže tam, ostali v mapi svoje predpone (/ger/); povezave med njimi ostanejo v kopiji. Skrbniški dostopi se nikoli ne ponudijo.</translation>
+    </message>
 </context>
 </TS>

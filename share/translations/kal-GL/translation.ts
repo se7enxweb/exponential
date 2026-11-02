@@ -83434,5 +83434,29 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Allagaat qimaannarneqassapput. Assit, immersugassat nittartakkanullu allanut innersuussutit peerneqarneq ajorput.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nittartakkamut isaariaatit saqqummersitassat</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nittartakkamut isaariaq</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Aallaqqaasiani</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Aallaqqaasiani isaariaqanngilaq: tamarmik toqqaavimminiipput, aallaqqaasialu taakkununnga innersuussivoq</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nittartakkamut isaariaatit</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Nittartakkamut isaariaq ataaseq, imaluunniit URI-mi siuliisa aqqutigalugu host ataaseq atussagaat arlallit nalunaaqutsikkit. Aallaqqaasianiittoq tassani pissarsiarineqartarpoq, allat siuliisa toqqaaviani (/ger/); akornanni innersuussutit assilinermi inissisimaannartarput. Aqutsinermut isaariaatit neqeroorutigineqartanngillat.</translation>
+    </message>
 </context>
 </TS>

@@ -83404,5 +83404,29 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Fanaidh an teacsa aca. Cha tèid dealbhan, foirmean is ceanglaichean gu làraichean eile a thoirt air falbh idir.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Inntrigidhean làraich ri fhoillseachadh</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Inntrigeadh làraich</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Aig a' bhun</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Chan eil inntrigeadh sam bith aig a' bhun: tha gach fear na phasgan fhèin, agus tha am bun a' ceangal riutha</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Inntrigidhean làraich</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Cuir strìochag ri aon inntrigeadh làraich, no grunn a tha a' co-roinn aon òstair tron ro-leasachan URI aca. Thèid am fear aig a' bhun a fhrithealadh an sin, càch ann am pasgan an ro-leasachain (/ger/); fanaidh na ceanglaichean eatarra san lethbhreac. Cha tèid inntrigidhean rianachd a thairgsinn gu bràth.</translation>
+    </message>
 </context>
 </TS>

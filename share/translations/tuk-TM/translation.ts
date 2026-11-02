@@ -83404,5 +83404,29 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Olaryň teksti galýar. Suratlar, formalar we beýleki saýtlara salgylar hiç haçan aýrylmaýar.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Neşir ediljek saýta giriş nokatlary</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Kökde</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kökde saýta giriş nokady ýok: her biri öz bukjasynda, kök bolsa olara salgylanýar</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Saýta giriş nokatlary</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Bir giriş nokadyny ýa-da URI prefiksi arkaly bir hosty paýlaşýan birnäçesini belläň. Kökdäkisi şol ýerde hödürlenýär, beýlekileri öz prefiksiniň bukjasynda (/ger/); olaryň arasyndaky salgylanmalar nusgada galýar. Dolandyryş giriş nokatlary hiç haçan hödürlenmeýär.</translation>
+    </message>
 </context>
 </TS>

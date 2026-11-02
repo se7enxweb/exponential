@@ -83412,5 +83412,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ओकर पाठ रह जाला। फोटो, फॉर्म आ दोसर साइट के लिंक कबो ना हटावल जाला।</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>प्रकाशित करे खातिर साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>रूट पर</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>रूट पर कवनो साइट एक्सेस नइखे: हर एक आपन फोल्डर में बा, आ रूट ओह सब के लिंक देला</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>एगो साइट एक्सेस चुनीं, भा कई गो जे अपना URI उपसर्ग से एगो होस्ट बाँटेला। रूट वाला ओहिजे परोसल जाला, बाकी अपना उपसर्ग के फोल्डर में (/ger/); ओह सब के बीच के लिंक कॉपी में रहेला। प्रशासन के साइट एक्सेस कबो ना देखावल जाला।</translation>
+    </message>
 </context>
 </TS>

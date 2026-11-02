@@ -83434,5 +83434,29 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Hul teks bly. Beelde, vorms en skakels na ander werwe word nooit verwyder nie.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Werftoegange om te publiseer</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Werftoegang</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>By die wortel</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Geen werftoegang by die wortel nie: elkeen is in sy gids, en die wortel skakel na hulle</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Werftoegange</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Merk een werftoegang, of verskeie wat een gasheer deur hul URI-voorvoegsel deel. Die een by die wortel word daar bedien, die ander in die gids van hul voorvoegsel (/ger/); skakels tussen hulle bly in die kopie. Administrasie-werftoegange word nooit aangebied nie.</translation>
+    </message>
 </context>
 </TS>

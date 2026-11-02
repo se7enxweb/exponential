@@ -83404,5 +83404,29 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O zestenn a chom. Ar skeudennoù, ar furmskridoù hag al liammoù d'al lec'hiennoù all n'int biken lamet.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Haeziñ al lec'hienn da embann</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>E-barzh ar c'hrizienn</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Haeziñ ebet er c'hrizienn: pep hini a zo en e deuliad, hag ar c'hrizienn a ere outo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Merkit un haeziñ al lec'hienn, pe meur a hini a rann un herberc'hier dre o rakger URI. An hini er c'hrizienn a vez servijet eno, ar re all e teuliad o rakger (/ger/); al liammoù etrezo a chom er gopienn. Biken ne vez kinniget an haeziñ melestradurezh.</translation>
+    </message>
 </context>
 </TS>

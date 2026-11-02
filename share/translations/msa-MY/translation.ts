@@ -83404,5 +83404,29 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksnya kekal. Imej, borang dan pautan ke laman lain tidak sekali-kali dibuang.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Akses laman untuk diterbitkan</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Akses laman</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Di akar</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Tiada akses laman di akar: setiap satu dalam foldernya, dan akar memaut kepadanya</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Akses laman</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Tandakan satu akses laman, atau beberapa yang berkongsi satu hos melalui awalan URI masing-masing. Yang di akar dihidangkan di situ, yang lain dalam folder awalannya (/ger/); pautan antaranya kekal dalam salinan. Akses laman pentadbiran tidak pernah ditawarkan.</translation>
+    </message>
 </context>
 </TS>

@@ -83434,5 +83434,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Texti þeirra stendur eftir. Myndir, eyðublöð og tenglar á aðra vefi eru aldrei fjarlægð.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Vefaðgangar til að birta</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vefaðgangur</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Í rótinni</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Enginn vefaðgangur í rótinni: hver er í sinni möppu og rótin tengir í þá</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Vefaðgangar</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Hakaðu við einn vefaðgang, eða fleiri sem deila einum hýsli með URI-forskeyti sínu. Sá í rótinni er birtur þar, hinir í möppu forskeytis síns (/ger/); tenglar milli þeirra haldast í afritinu. Stjórnunarvefaðgangar eru aldrei í boði.</translation>
+    </message>
 </context>
 </TS>

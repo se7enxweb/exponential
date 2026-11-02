@@ -83404,5 +83404,29 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ka noho tonu tō rātou kuputuhi. Kāore rawa e tangohia ngā whakaahua, ngā puka me ngā hononga ki ētahi atu pae.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ngā urunga pae hei whakaputa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Urunga pae</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>I te pūtake</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kāore he urunga pae i te pūtake: kei tōna kōpaki ia urunga, ā, ka hono te pūtake ki a rātou</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ngā urunga pae</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Tohua kia kotahi te urunga pae, kia maha rānei e tiri ana i te kaihautū kotahi mā tō rātou kuhimua URI. Ko te mea i te pūtake ka tukuna ki reira, ko ētahi atu ki te kōpaki o tō rātou kuhimua (/ger/); ka noho ngā hononga i waenga i a rātou ki te tārua. Kāore rawa e tukuna ngā urunga whakahaere.</translation>
+    </message>
 </context>
 </TS>

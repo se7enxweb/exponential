@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>बेफोरनि लिरनायआ थायो। सावगारि, फर्म आरो गुबुन साइटनि लिंकफोरखौ माबेसेबां होखारा।</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>फोसावनो साइट-प्रबेशफोर</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट-प्रबेश</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>रुटआव</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>रुटआव जेबो साइट-प्रबेश गैया: मोनफ्रोमबो बेसोरनि फल्डाराव, आरो रुटा बेफोरखौ लिंक होयो</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>साइट-प्रबेशफोर</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>मोनसे साइट-प्रबेश, एबा URI उपसर्गजों मोनसे होस्ट रानना लानाय गोबां सायख। रुटआव थानायखौ बेयाव होनाय जायो, गुबुनफोरखौ बेसोरनि उपसर्गनि फल्डाराव (/ger/); बेसोरनि गेजेरनि लिंकफोरा कपियाव थायो। प्रशासननि साइट-प्रबेश जेब्लाबो दिन्थिनाय जाया।</translation>
+    </message>
 </context>
 </TS>

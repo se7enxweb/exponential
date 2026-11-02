@@ -83434,5 +83434,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>リンクのテキストは残ります。画像、フォーム、他のサイトへのリンクは削除されません。</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>公開するサイトアクセス</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ルートに</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ルートにサイトアクセスなし: それぞれ自分のフォルダーにあり、ルートからそれぞれにリンクします</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>サイトアクセスを1つ、または URI プレフィックスで1つのホストを共有する複数を選びます。ルートのものはルートで配信され、ほかはそのプレフィックスのフォルダー (/ger/) に置かれます。相互のリンクはコピー内にとどまります。管理用のサイトアクセスは表示されません。</translation>
+    </message>
 </context>
 </TS>

@@ -83436,5 +83436,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>הטקסט שלהם נשאר. תמונות, טפסים וקישורים לאתרים אחרים לעולם אינם מוסרים.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>גישות אתר לפרסום</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>בשורש</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>אין גישת אתר בשורש: כל אחת בתיקייה שלה, והשורש מקשר אליהן</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>גישות אתר</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>סמנו גישת אתר אחת, או כמה שחולקות מארח אחד לפי קידומת ה-URI שלהן. זו שבשורש מוגשת שם, האחרות בתיקיית הקידומת שלהן (/ger/); הקישורים ביניהן נשארים בעותק. גישות ניהול לעולם אינן מוצעות.</translation>
+    </message>
 </context>
 </TS>

@@ -83402,5 +83402,29 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Rubutunsu yana nan. Ba a taɓa cire hotuna, fom da mahaɗa zuwa wasu shafuka ba.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Hanyoyin shiga shafi da za a wallafa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>A tushe</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Babu hanyar shiga a tushe: kowanne yana cikin babban fayil ɗinsa, kuma tushen yana haɗawa da su</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Hanyoyin shiga shafi</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Zaɓi hanyar shiga shafi ɗaya, ko da yawa da ke raba mai masauki ɗaya ta hanyar prefix ɗin URI ɗinsu. Wanda ke tushe ana ba da shi a can, sauran a cikin babban fayil na prefix ɗinsu (/ger/); hanyoyin haɗi tsakaninsu suna nan a cikin kwafin. Ba a taɓa ba da hanyoyin shiga na gudanarwa ba.</translation>
+    </message>
 </context>
 </TS>

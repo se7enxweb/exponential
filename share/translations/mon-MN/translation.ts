@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Тэдний бичвэр үлдэнэ. Зураг, маягт болон бусад сайт руу хөтлөх холбоосыг хэзээ ч устгахгүй.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Нийтлэх сайтын хандалтууд</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтын хандалт</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Үндсэнд</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Үндсэнд сайтын хандалт байхгүй: тус бүр өөрийн хавтсанд, үндэс тэдгээр рүү холбоно</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтын хандалтууд</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Нэг сайтын хандалт, эсвэл URI угтвараараа нэг хост хуваалцдаг хэд хэдийг тэмдэглэнэ үү. Үндсэнд байгаа нь тэнд үйлчлэгдэнэ, бусад нь угтварынхаа хавтсанд (/ger/); тэдгээрийн хоорондох холбоосууд хуулбар дотор үлдэнэ. Удирдлагын хандалтыг хэзээ ч санал болгодоггүй.</translation>
+    </message>
 </context>
 </TS>

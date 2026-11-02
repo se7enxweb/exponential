@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>उंदा पाठ बने दा रौंह्‌दा ऐ। तस्वीरां, फार्म ते दूइयें साइटें दे लिंक कदें बी नेईं हटाए जंदे।</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>छापने आस्तै साइटएक्सेस</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइटएक्सेस</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>रूट पर</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>रूट पर कोई साइटएक्सेस नेईं: हर इक अपने फोल्डर च ऐ, ते रूट उंदे लिंक दिंदा ऐ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>साइटएक्सेस</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>इक साइटएक्सेस चुनो, जां केईं जेहड़े अपने URI उपसर्ग कन्नै इक होस्ट बंडदे न। रूट आह्ला उत्थें परोसेआ जंदा ऐ, बाकी अपने उपसर्ग दे फोल्डर च (/ger/); उंदे बिच्चे दे लिंक कापी च रौंह्दे न। प्रशासन दे साइटएक्सेस कदें नेईं दस्से जंदे।</translation>
+    </message>
 </context>
 </TS>

@@ -83402,5 +83402,29 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Isicatshulwa sawo siyahlala. Imifanekiso, iifomu namakhonkco aya kwezinye iisayithi akaze asuswe.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ukufikelela kwisayithi okuza kupapashwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ukufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Engcanjini</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Akukho kufikelela engcanjini: nganye ikwifolda yayo, kwaye ingcambu iyadibanisa nazo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ukufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Phawula ukufikelela kwisayithi okunye, okanye okuninzi okwabelana ngomamkeli omnye ngesimaphambili sabo se-URI. Okusengcanjini kunikezelwa apho, okunye kwifolda yesimaphambili sako (/ger/); amakhonkco aphakathi kwabo ahlala kwikopi. Ukufikelela kolawulo akuze kunikezelwe.</translation>
+    </message>
 </context>
 </TS>

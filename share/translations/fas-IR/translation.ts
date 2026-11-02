@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>متن آن‌ها باقی می‌ماند. تصویرها، فرم‌ها و پیوندها به سایت‌های دیگر هرگز حذف نمی‌شوند.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>دسترسی‌های سایت برای انتشار</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دسترسی سایت</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>در ریشه</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>هیچ دسترسی سایتی در ریشه نیست: هرکدام در پوشهٔ خود است و ریشه به آن‌ها پیوند می‌دهد</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>دسترسی‌های سایت</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>یک دسترسی سایت، یا چند دسترسی را که با پیشوند URI یک میزبان را به اشتراک می‌گذارند علامت بزنید. آنکه در ریشه است همان‌جا ارائه می‌شود، بقیه در پوشهٔ پیشوند خود (/ger/)؛ پیوندهای میان آن‌ها در نسخه می‌مانند. دسترسی‌های مدیریت هرگز پیشنهاد نمی‌شوند.</translation>
+    </message>
 </context>
 </TS>

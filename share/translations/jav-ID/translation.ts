@@ -83412,5 +83412,29 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksé tetep ana. Gambar, formulir lan pranala menyang situs liya ora tau dibusak.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Akses situs sing arep diterbitake</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ing oyod</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ora ana akses situs ing oyod: saben siji ana ing foldere, lan oyod nyambung menyang kabeh</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Centhang siji akses situs, utawa sawetara sing nuduhake siji host liwat prefiks URI-ne. Sing ing oyod disajekake ing kana, liyane ing folder prefikse (/ger/); pranala ing antarane tetep ana ing salinan. Akses situs administrasi ora tau ditawakake.</translation>
+    </message>
 </context>
 </TS>

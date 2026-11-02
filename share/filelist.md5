@@ -907,6 +907,7 @@ f1d17af492393a54d00f0fc4f5ada8f0  design/admin/templates/staticpublish/parts/git
 4e85824183ba0bc5662f03e0efd6f742  design/admin/templates/staticpublish/parts/job.tpl
 e924bd63036012dc73222cda54185c3c  design/admin/templates/staticpublish/parts/report.tpl
 2ad89b6474369624bef08c8d9296122c  design/admin/templates/staticpublish/parts/run_state.tpl
+ed64c38c12b1ec0e98a4ce752732d8e3  design/admin/templates/staticpublish/parts/siteaccesses.tpl
 860c46f4da8aac42d1883d0cfd9c0313  design/admin/templates/staticpublish/parts/tabs.tpl
 10b4a4217ea8cbb6c1e16e30a5189c7f  design/admin/templates/staticpublish/preview.tpl
 fed69cc052d39d1e6f1efd04a4aacc8d  design/admin/templates/staticpublish/target.tpl
@@ -1756,6 +1757,7 @@ f1d17af492393a54d00f0fc4f5ada8f0  design/admin4/templates/staticpublish/parts/gi
 4e85824183ba0bc5662f03e0efd6f742  design/admin4/templates/staticpublish/parts/job.tpl
 e924bd63036012dc73222cda54185c3c  design/admin4/templates/staticpublish/parts/report.tpl
 2ad89b6474369624bef08c8d9296122c  design/admin4/templates/staticpublish/parts/run_state.tpl
+ed64c38c12b1ec0e98a4ce752732d8e3  design/admin4/templates/staticpublish/parts/siteaccesses.tpl
 860c46f4da8aac42d1883d0cfd9c0313  design/admin4/templates/staticpublish/parts/tabs.tpl
 10b4a4217ea8cbb6c1e16e30a5189c7f  design/admin4/templates/staticpublish/preview.tpl
 fed69cc052d39d1e6f1efd04a4aacc8d  design/admin4/templates/staticpublish/target.tpl

@@ -83404,5 +83404,29 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Mijanona ny lahatsorany. Tsy esorina mihitsy ny sary, ny taratasy fenoina ary ny rohy mankany amin'ny tranonkala hafa.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Fidirana amin'ny tranonkala havoaka</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Eo amin'ny fototra</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Tsy misy fidirana eo amin'ny fototra: samy ao amin'ny lahatahiriny avy, ary ny fototra mampifandray azy ireo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Mariho fidirana iray, na maromaro mizara mpampiantrano iray amin'ny alalan'ny tovona URI-ny. Ny ao amin'ny fototra dia atolotra ao, ny hafa ao amin'ny lahatahirin'ny tovony (/ger/); mijanona ao anaty dika ny rohy eo anelanelany. Tsy atolotra mihitsy ny fidirana fitantanana.</translation>
+    </message>
 </context>
 </TS>

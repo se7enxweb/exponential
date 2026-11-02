@@ -84629,5 +84629,29 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Hun tekst blijft staan. Afbeeldingen, formulieren en links naar andere sites worden nooit verwijderd.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccessen om te publiceren</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>In de root</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Geen siteaccess in de root: elk staat in zijn map, en de root linkt naar ze</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccessen</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Vink één siteaccess aan, of meerdere die één host delen via hun URI-prefix. Die in de root wordt daar geserveerd, de andere in de map van hun prefix (/ger/); links tussen hen blijven in de kopie. Beheer-siteaccessen worden nooit aangeboden.</translation>
+    </message>
 </context>
 </TS>

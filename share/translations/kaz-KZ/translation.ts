@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Олардың мәтіні қалады. Суреттер, формалар және басқа сайттарға сілтемелер ешқашан жойылмайды.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Жариялайтын сайтқа кіру нүктелері</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтқа кіру нүктесі</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Түбірде</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Түбірде сайтқа кіру нүктесі жоқ: әрқайсысы өз қалтасында, ал түбір оларға сілтеме береді</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтқа кіру нүктелері</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Бір кіру нүктесін немесе URI префиксі арқылы бір хостты бөлісетін бірнешеуін белгілеңіз. Түбірдегісі сонда беріледі, қалғандары өз префиксінің қалтасында (/ger/); олардың арасындағы сілтемелер көшірмеде қалады. Әкімшілік кіру нүктелері ешқашан ұсынылмайды.</translation>
+    </message>
 </context>
 </TS>

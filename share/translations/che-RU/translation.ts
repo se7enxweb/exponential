@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Церан текст йисина йуьсу. Суьрташ, формаш а кхечу сайташка хьажорагаш а цкъа а дӀа ца йоху.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Арахеца сайте тӀекхачарш</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Орамехь</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Орамехь сайте тӀекхачар дац: хӀора а шен папкехь ю, орамо уьш хьажийна</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайте тӀекхачарш</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Билгалде цхьа сайте тӀекхачар, я шайн URI-префиксаца цхьа хост декъа масех. Орамехьниг цигахь латтайо, кхинарш шайн префиксан папкехь (/ger/); царна юккъера хьажоргаш копехь йисина. Администрацин тӀекхачарш цкъа а ца гойту.</translation>
+    </message>
 </context>
 </TS>

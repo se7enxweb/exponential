@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>連結文字保留。圖片、表單和指向其他網站的連結絕不移除。</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>要發布的網站存取</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>在根目錄</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>根目錄沒有網站存取：每個都在自己的資料夾中，根目錄連結到它們</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>勾選一個網站存取，或多個透過 URI 前綴共用同一主機的網站存取。根目錄的那個在根目錄提供，其他的在其前綴的資料夾中 (/ger/)；它們之間的連結保留在副本中。從不提供管理網站存取。</translation>
+    </message>
 </context>
 </TS>

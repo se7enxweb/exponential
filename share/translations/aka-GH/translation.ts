@@ -83404,5 +83404,29 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Wɔn nsɛm no bɛtena hɔ. Wɔnnyi mfoni, krataa a wɔhyɛ ma ne link a ɛkɔ beaeɛ foforɔ da.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Wɛbsaet kwan a wɔbɛtintim</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Wɛbsaet kwan</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Wɔ ntini ho</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Wɛbsaet kwan biara nni ntini ho: emu biara wɔ ne foda mu, na ntini no de link kɔ wɔn nkyɛn</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Wɛbsaet kwan</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Paw wɛbsaet kwan baako, anaa pii a wɔkyɛ host baako denam wɔn URI ahyɛaseɛ so. Deɛ ɛwɔ ntini ho no wɔde ma wɔ hɔ, afoforɔ no wɔ wɔn ahyɛaseɛ foda mu (/ger/); link a ɛda wɔn ntam tena nsusuansoɔ no mu. Wɔmfa adwumayɛfoɔ wɛbsaet kwan mma da.</translation>
+    </message>
 </context>
 </TS>

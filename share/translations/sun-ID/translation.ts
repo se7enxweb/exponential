@@ -83412,5 +83412,29 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Téksna tetep aya. Gambar, formulir jeung tutumbu ka situs séjén henteu pernah dihapus.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Aksés situs anu rék dipedalkeun</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aksés situs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Di akar</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Teu aya aksés situs di akar: unggal hiji aya dina poléderna, jeung akar numbu ka sadayana</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Aksés situs</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Centang hiji aksés situs, atawa sababaraha anu babagi hiji host ngaliwatan awalan URI-na. Anu di akar disayogikeun di dinya, nu séjén dina poléder awalanana (/ger/); tutumbu di antarana tetep dina salinan. Aksés situs administrasi teu pernah ditawarkeun.</translation>
+    </message>
 </context>
 </TS>

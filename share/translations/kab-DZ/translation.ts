@@ -83404,5 +83404,29 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Aḍris-nsen ad yeqqim. Tugniwin, tiferkiwin d yiseɣwan ɣer yismal nniḍen ur ttwakksen ara akk.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Inekcumen ɣer usmel ara d-yettwasuffɣen</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Deg uẓar</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ulac anekcum deg uẓar: yal yiwen deg ukaram-is, uẓar yettak-d iseɣwan ɣur-sen</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Inekcumen ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Creḍ yiwen n unekcum ɣer usmel, neɣ aṭas yebḍan yiwen n usenneftaɣ s uzwir-nsen URI. Win yellan deg uẓar ad yettwasenfer dinna, wiyaḍ deg ukaram n uzwir-nsen (/ger/); iseɣwan gar-asen ad qqimen deg unɣal. Inekcumen n tdbelt ur d-ttwasumren ara akk.</translation>
+    </message>
 </context>
 </TS>

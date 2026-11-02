@@ -83404,5 +83404,29 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Haien testua geratzen da. Irudiak, inprimakiak eta beste guneetarako estekak ez dira inoiz kentzen.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Argitaratzeko gune-sarbideak</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gune-sarbidea</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Erroan</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ez dago gune-sarbiderik erroan: bakoitza bere karpetan dago, eta erroak haietara estekatzen du</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gune-sarbideak</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Markatu gune-sarbide bat, edo URI aurrizkiaren bidez ostalari bera partekatzen duten batzuk. Erroan dagoena han zerbitzatzen da, besteak beren aurrizkiaren karpetan (/ger/); haien arteko estekak kopian geratzen dira. Administrazioko gune-sarbideak ez dira inoiz eskaintzen.</translation>
+    </message>
 </context>
 </TS>

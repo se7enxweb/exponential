@@ -84811,5 +84811,29 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Il loro testo resta. Immagini, moduli e link ad altri siti non vengono mai rimossi.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccess da pubblicare</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Alla radice</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nessun siteaccess alla radice: ognuno è nella sua cartella, e la radice rimanda a loro</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Seleziona un siteaccess, o più siteaccess che condividono un host tramite il loro prefisso URI. Quello alla radice è servito lì, gli altri nella cartella del loro prefisso (/ger/); i collegamenti tra loro restano nella copia. I siteaccess di amministrazione non sono mai proposti.</translation>
+    </message>
 </context>
 </TS>

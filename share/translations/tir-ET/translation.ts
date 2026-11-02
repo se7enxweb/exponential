@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ጽሑፎም ይተርፍ። ስእልታት፣ ቅጥዕታትን ናብ ካልኦት መርበባት ዝወስዱ መላግቦታትን ፈጺሞም ኣይእለዩን።</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ዝሕተማ ምእታዋት መርበብ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ኣብ ሱር</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ኣብ ሱር ዝኾነ ምእታው የለን፡ ነፍሲ ወከፉ ኣብ ናቱ ማህደር እዩ፡ ሱር ድማ ናብኦም የራኽብ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ምእታዋት መርበብ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ሓደ ምእታው መርበብ፡ ወይ ብURI ቅድመ-ቅጥያኦም ሓደ ኣሳናዳኢ ዝማቐሉ ብዙሓት ምረጽ። እቲ ኣብ ሱር ዘሎ ኣብኡ ይቐርብ፡ እቶም ካልኦት ኣብ ማህደር ቅድመ-ቅጥያኦም (/ger/)፤ ኣብ መንጎኦም ዘለዉ መራኸቢታት ኣብቲ ቅዳሕ ይተርፉ። ናይ ምምሕዳር ምእታዋት ፈጺሞም ኣይቐርቡን።</translation>
+    </message>
 </context>
 </TS>

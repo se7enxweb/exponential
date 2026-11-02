@@ -83402,5 +83402,29 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Nivîsa wan dimîne. Wêne, form û girêdanên ber bi malperên din tu carî nayên rakirin.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Gihîştinên malperê yên ku bên weşandin</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Li kokê</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Li kokê tu gihîştin tune: her yek di peldanka xwe de ye, û kok girêdanê dide wan</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gihîştinên malperê</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Gihîştineke malperê nîşan bike, an çendên ku bi pêşgira xwe ya URI yek mazûvanî parve dikin. Ya li kokê li wir tê pêşkêşkirin, yên din di peldanka pêşgira xwe de (/ger/); girêdanên di navbera wan de di kopiyê de dimînin. Gihîştinên rêveberiyê qet nayên pêşkêşkirin.</translation>
+    </message>
 </context>
 </TS>

@@ -90374,5 +90374,29 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ihr Text bleibt stehen. Bilder, Formulare und Links auf andere Websites werden nie entfernt.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Zu veröffentlichende Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Im Stamm</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kein Siteaccess im Stamm: jeder liegt in seinem Ordner, und der Stamm verlinkt auf sie</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Haken Sie einen Siteaccess an, oder mehrere, die sich über ihr URI-Präfix einen Host teilen. Der im Stamm wird dort ausgeliefert, die anderen im Ordner ihres Präfixes (/ger/); Links zwischen ihnen bleiben in der Kopie. Administrations-Siteaccesses werden nie angeboten.</translation>
+    </message>
 </context>
 </TS>

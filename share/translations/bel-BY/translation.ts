@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Іх тэкст застаецца. Выявы, формы і спасылкі на іншыя сайты ніколі не выдаляюцца.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Доступы да сайта для публікацыі</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ да сайта</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>У корані</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Няма доступу да сайта ў корані: кожны ў сваёй папцы, а корань спасылаецца на іх</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Доступы да сайта</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Адзначце адзін доступ да сайта або некалькі, што дзеляць адзін хост праз свой URI-прэфікс. Той, што ў корані, абслугоўваецца там, астатнія — у папцы свайго прэфікса (/ger/); спасылкі паміж імі застаюцца ў копіі. Адміністрацыйныя доступы ніколі не прапануюцца.</translation>
+    </message>
 </context>
 </TS>

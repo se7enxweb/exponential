@@ -83404,5 +83404,29 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Binndi maɓɓe ina heddoo. Nate, formulaaruuji e jokkorɗe yahooje e lowe goɗɗe momtataake abada.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccess yaltinteeɗi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>E daɗol</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Alaa siteaccess e daɗol: kala gooto ina e follere mum, daɗol ngol jokkondiri e majji</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Labo siteaccess gooto, walla ɗuuɗɗi lomtondirooji host gooto e jaɓɓorde URI maɓɓe. Ngol woni e daɗol ngol hokkete ton, goɗɗi ɗi ina e follere jaɓɓorde maɓɓe (/ger/); jokkole hakkunde maɓɓe ina heddoo e kopi oo. Siteaccess jiiloowo hokkatake abada.</translation>
+    </message>
 </context>
 </TS>

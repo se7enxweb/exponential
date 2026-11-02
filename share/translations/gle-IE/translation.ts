@@ -83434,5 +83434,29 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Fanann a dtéacs. Ní bhaintear íomhánna, foirmeacha ná naisc chuig suíomhanna eile choíche.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Rochtainí suímh le foilsiú</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Rochtain suímh</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ag an bhfréamh</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Níl rochtain ar bith ag an bhfréamh: tá gach ceann ina fhillteán féin, agus nascann an fhréamh leo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Rochtainí suímh</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Cuir tic le rochtain suímh amháin, nó le roinnt a roinneann óstach amháin trína réimír URI. Freastalaítear an ceann ag an bhfréamh ansin, na cinn eile i bhfillteán a réimíre (/ger/); fanann na naisc eatarthu sa chóip. Ní thairgtear rochtainí riaracháin riamh.</translation>
+    </message>
 </context>
 </TS>

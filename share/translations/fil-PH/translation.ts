@@ -83404,5 +83404,29 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Nananatili ang kanilang teksto. Hindi kailanman inaalis ang mga larawan, form at link sa ibang site.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Mga siteaccess na ilalathala</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Sa ugat</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Walang siteaccess sa ugat: bawat isa ay nasa sariling folder, at ang ugat ay nagli-link sa kanila</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mga siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Markahan ang isang siteaccess, o ilan na nagbabahagi ng isang host sa pamamagitan ng kanilang URI prefix. Ang nasa ugat ay inihahain doon, ang iba sa folder ng kanilang prefix (/ger/); nananatili sa kopya ang mga link sa pagitan nila. Hindi kailanman iniaalok ang mga siteaccess ng administrasyon.</translation>
+    </message>
 </context>
 </TS>

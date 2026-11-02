@@ -84457,5 +84457,29 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Njihov tekst ostaje. Slike, obrasci i poveznice na druge stranice nikad se ne uklanjaju.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Pristupi web-mjestu za objavu</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pristup web-mjestu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>U korijenu</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nijedan pristup u korijenu: svaki je u svojoj mapi, a korijen vodi na njih</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Pristupi web-mjestu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Označite jedan pristup web-mjestu ili više njih koji dijele jedan host prema URI prefiksu. Onaj u korijenu poslužuje se ondje, ostali u mapi svog prefiksa (/ger/); poveznice među njima ostaju u kopiji. Administratorski pristupi nikad se ne nude.</translation>
+    </message>
 </context>
 </TS>

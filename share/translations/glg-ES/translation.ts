@@ -83404,5 +83404,29 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O seu texto mantense. As imaxes, os formularios e as ligazóns a outros sitios nunca se quitan.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accesos ao sitio para publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acceso ao sitio</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na raíz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ningún acceso na raíz: cada un está no seu cartafol, e a raíz liga con eles</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesos ao sitio</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marca un acceso ao sitio, ou varios que comparten un servidor polo seu prefixo de URI. O da raíz sérvese alí, os demais no cartafol do seu prefixo (/ger/); as ligazóns entre eles quedan na copia. Nunca se ofrecen os accesos de administración.</translation>
+    </message>
 </context>
 </TS>

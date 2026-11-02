@@ -50,7 +50,7 @@
         {if $t.job}<p><span class="a4-status is-running"><span class="a4-dot" aria-hidden="true"></span><a href={concat( 'staticpublish/log/', $t.job.id )|ezurl}>{'A job is going on, started by %user'|i18n( 'design/admin/staticpublish',, hash( '%user', $t.job.user ) )|wash}</a></span></p>{/if}
         {foreach $t.errors as $error}<p class="a4-bad-text">{$error|wash}</p>{/foreach}
         <dl class="a4-facts">
-            <div><dt>{'Site'|i18n( 'design/admin/staticpublish' )}</dt><dd>{$t.siteaccess|wash}</dd></div>
+            <div><dt>{'Siteaccesses'|i18n( 'design/admin/staticpublish' )}</dt><dd>{include uri='design:staticpublish/parts/siteaccesses.tpl' members=$t.siteaccesses}</dd></div>
             <div><dt>{'Last publish'|i18n( 'design/admin/staticpublish' )}</dt>
                 <dd>{if $t.last_run}<a href={concat( 'staticpublish/log/', $t.last_run.run_id )|ezurl}>{$t.last_run.started_at|l10n( 'shortdatetime' )}</a> {include uri='design:staticpublish/parts/run_state.tpl' run=$t.last_run}{else}<span class="a4-muted">{'never'|i18n( 'design/admin/staticpublish' )}</span>{/if}</dd></div>
             <div><dt>{'Stale pages'|i18n( 'design/admin/staticpublish' )}</dt><dd>{if $t.stale}<span class="a4-badge is-warn">{$t.stale|wash}</span>{else}0{/if}</dd></div>

@@ -1,4 +1,5 @@
-{* The pages of one target as tabs. Variables: target (expStaticAdmin::overview(): id, permissions), view (the current
+{* The pages of one target as tabs, and the siteaccesses it publishes. Variables: target (expStaticAdmin::overview(): id,
+   permissions, siteaccesses), view (the current
    one). *}
 <nav class="a4-section" aria-label="{'Pages of the target'|i18n( 'design/admin/staticpublish' )|wash}">
 <ul class="a4-tabs">
@@ -13,3 +14,4 @@
 {/foreach}
 </ul>
 </nav>
+{if $target.siteaccesses|count}<div class="a4-section"><span class="a4-meta">{'Siteaccesses'|i18n( 'design/admin/staticpublish' )}:</span> {include uri='design:staticpublish/parts/siteaccesses.tpl' members=$target.siteaccesses}</div>{/if}

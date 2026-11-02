@@ -83402,5 +83402,29 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ederede ha na-anọgide. A naghị ewepụ foto, fọm na njikọ na saịtị ndị ọzọ ma ọlị.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nnweta saịtị a ga-ebipụta</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nnweta saịtị</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na mgbọrọgwụ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Enweghị nnweta saịtị na mgbọrọgwụ: nke ọ bụla dị na nchekwa ya, mgbọrọgwụ na-ejikọ ha</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nnweta saịtị</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kaa otu nnweta saịtị, ma ọ bụ ọtụtụ ndị na-ekerịta otu ọbịa site na prefix URI ha. A na-enye nke dị na mgbọrọgwụ ebe ahụ, ndị ọzọ na nchekwa prefix ha (/ger/); njikọ dị n'etiti ha na-anọ na mbipụta ahụ. A naghị enye nnweta nchịkwa ma ọlị.</translation>
+    </message>
 </context>
 </TS>

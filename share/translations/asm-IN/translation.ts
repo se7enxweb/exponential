@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>সেইবোৰৰ পাঠ থাকি যায়। ছবি, ফৰ্ম আৰু অন্য ছাইটলৈ যোৱা লিংক কেতিয়াও আঁতৰোৱা নহয়।</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>প্ৰকাশ কৰিবলগীয়া ছাইট প্ৰৱেশসমূহ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ছাইট প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>মূলত</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>মূলত কোনো ছাইট প্ৰৱেশ নাই: প্ৰতিটো নিজৰ ফ'ল্ডাৰত, আৰু মূলে সেইবোৰলৈ লিংক কৰে</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ছাইট প্ৰৱেশসমূহ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>এটা ছাইট প্ৰৱেশ, বা URI উপসৰ্গৰ দ্বাৰা এটা হ'ষ্ট ভাগ কৰা কেইবাটাও বাছক। মূলত থকাটো তাতেই পৰিবেশন কৰা হয়, আনবোৰ সিহঁতৰ উপসৰ্গৰ ফ'ল্ডাৰত (/ger/); সিহঁতৰ মাজৰ লিংকসমূহ কপিটোতে থাকে। প্ৰশাসনৰ ছাইট প্ৰৱেশ কেতিয়াও দেখুওৱা নহয়।</translation>
+    </message>
 </context>
 </TS>

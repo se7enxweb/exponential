@@ -83437,5 +83437,29 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ghItlhchaj ratlh. mIllogh, mu'tlhegh, latlh Daqmey rarwI' je not teqlu'.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>yoS lojmItmey nanejbogh</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>DaH tIqDaq</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>tIqDaq yoS lojmIt tu'lu'be': Hoch ghom'a' ghaH, tIq rar</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>yoS lojmItmey</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>yoS lojmIt wa' yIwIv, pagh law' URI moHaq ghaj host wa' 'ejDo'. tIqDaq lojmIt pa' lo'lu', latlh moHaq ghom'a'Daq (/ger/); chaH rarmeyvetlh qa'Daq ratlh. loH lojmItmey not nob.</translation>
+    </message>
 </context>
 </TS>

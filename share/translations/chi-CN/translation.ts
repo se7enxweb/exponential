@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>链接文字保留。图片、表单和指向其他网站的链接从不删除。</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>要发布的站点访问</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>站点访问</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>在根目录</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>根目录没有站点访问：每个都在自己的文件夹中，根目录链接到它们</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>站点访问</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>勾选一个站点访问，或多个通过 URI 前缀共享同一主机的站点访问。根目录的那个在根目录提供，其他的在其前缀的文件夹中 (/ger/)；它们之间的链接保留在副本中。从不提供管理站点访问。</translation>
+    </message>
 </context>
 </TS>

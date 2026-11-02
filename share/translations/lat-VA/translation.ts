@@ -83437,5 +83437,29 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Textus eorum manet. Imagines, formulae et nexus ad alias sedes numquam removentur.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Aditus situs edendi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>In radice</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nullus aditus in radice: quisque in sua capsa est, et radix ad eos nectit</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Nota unum aditum situs, vel plures qui unum hospitem per praefixum URI communicant. Qui in radice est ibi praebetur, ceteri in capsa praefixi sui (/ger/); nexus inter eos in exemplari manent. Aditus administrationis numquam offeruntur.</translation>
+    </message>
 </context>
 </TS>

@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ସେଗୁଡ଼ିକର ପାଠ୍ୟ ରହିଥାଏ। ଚିତ୍ର, ଫର୍ମ ଓ ଅନ୍ୟ ସାଇଟର ଲିଙ୍କ କେବେ ହଟାଯାଏ ନାହିଁ।</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ପ୍ରକାଶ କରିବାକୁ ଥିବା ସାଇଟ୍ ଆକ୍ସେସ୍</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ସାଇଟ୍ ଆକ୍ସେସ୍</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ମୂଳରେ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ମୂଳରେ କୌଣସି ସାଇଟ୍ ଆକ୍ସେସ୍ ନାହିଁ: ପ୍ରତ୍ୟେକ ନିଜ ଫୋଲ୍ଡରରେ ଅଛି, ଏବଂ ମୂଳ ସେଗୁଡ଼ିକୁ ଲିଙ୍କ ଦିଏ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ସାଇଟ୍ ଆକ୍ସେସ୍</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ଗୋଟିଏ ସାଇଟ୍ ଆକ୍ସେସ୍, କିମ୍ବା ନିଜ URI ଉପସର୍ଗ ଦ୍ୱାରା ଗୋଟିଏ ହୋଷ୍ଟ ଅଂଶୀଦାର କରୁଥିବା ଅନେକ ବାଛନ୍ତୁ। ମୂଳରେ ଥିବାଟି ସେଠାରେ ପରିବେଷିତ ହୁଏ, ଅନ୍ୟଗୁଡ଼ିକ ନିଜ ଉପସର୍ଗର ଫୋଲ୍ଡରରେ (/ger/); ସେଗୁଡ଼ିକ ମଧ୍ୟରେ ଲିଙ୍କ କପିରେ ରହେ। ପ୍ରଶାସନର ସାଇଟ୍ ଆକ୍ସେସ୍ କେବେ ଦେଖାଯାଏ ନାହିଁ।</translation>
+    </message>
 </context>
 </TS>

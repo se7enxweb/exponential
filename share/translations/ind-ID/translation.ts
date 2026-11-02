@@ -83404,5 +83404,29 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksnya tetap ada. Gambar, formulir, dan tautan ke situs lain tidak pernah dihapus.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Akses situs yang diterbitkan</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Di akar</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Tidak ada akses situs di akar: masing-masing ada di foldernya, dan akar menautkan ke semuanya</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Centang satu akses situs, atau beberapa yang berbagi satu host lewat prefiks URI-nya. Yang di akar disajikan di sana, yang lain di folder prefiksnya (/ger/); tautan di antaranya tetap di dalam salinan. Akses situs administrasi tidak pernah ditawarkan.</translation>
+    </message>
 </context>
 </TS>

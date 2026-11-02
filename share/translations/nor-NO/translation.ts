@@ -84662,5 +84662,29 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksten deres blir stående. Bilder, skjemaer og lenker til andre nettsteder fjernes aldri.</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nettstedstilganger som skal publiseres</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nettstedstilgang</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>I roten</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ingen nettstedstilgang i roten: hver ligger i sin mappe, og roten lenker til dem</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nettstedstilganger</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kryss av én nettstedstilgang, eller flere som deler én vert via URI-prefikset sitt. Den i roten serveres der, de andre i mappen for prefikset sitt (/ger/); lenker mellom dem blir i kopien. Administrasjonstilganger tilbys aldri.</translation>
+    </message>
 </context>
 </TS>

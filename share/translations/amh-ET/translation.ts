@@ -83402,5 +83402,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ጽሑፋቸው ይቀራል። ምስሎች፣ ቅጾች እና ወደ ሌሎች ጣቢያዎች የሚወስዱ አገናኞች በፍጹም አይወገዱም።</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>የሚታተሙ የጣቢያ መዳረሻዎች</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>በስሩ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>በስሩ ምንም የጣቢያ መዳረሻ የለም፤ እያንዳንዱ በአቃፊው ውስጥ ነው፣ ስሩም ወደ እነሱ ያገናኛል</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>የጣቢያ መዳረሻዎች</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>አንድ የጣቢያ መዳረሻ ወይም በURI ቅድመ ቅጥያቸው አንድ አስተናጋጅ የሚጋሩ ብዙዎችን ምልክት ያድርጉ። በስሩ ያለው እዚያ ይቀርባል፣ ሌሎቹ በቅድመ ቅጥያቸው አቃፊ (/ger/) ውስጥ፤ በመካከላቸው ያሉ አገናኞች በቅጂው ውስጥ ይቆያሉ። የአስተዳደር የጣቢያ መዳረሻዎች በፍጹም አይቀርቡም።</translation>
+    </message>
 </context>
 </TS>

@@ -83404,5 +83404,29 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ᱚᱱᱟ ᱠᱚᱨᱟᱜ ᱚᱞ ᱛᱟᱦᱮᱸᱱᱟ ᱾ ᱪᱤᱛᱟᱹᱨ, ᱯᱷᱚᱨᱚᱢ ᱟᱨ ᱮᱴᱟᱜ ᱥᱟᱭᱤᱴ ᱠᱚᱨᱟᱜ ᱞᱤᱝᱠ ᱫᱚ ᱡᱟᱦᱟᱸ ᱦᱚᱸ ᱵᱟᱝ ᱚᱪᱚᱜᱚᱜᱼᱟ ᱾</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ᱪᱷᱟᱯᱟ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ᱨᱮᱦᱮᱫ ᱨᱮ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ᱨᱮᱦᱮᱫ ᱨᱮ ᱡᱟᱦᱟᱸ ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ ᱵᱟᱹᱱᱩᱜᱼᱟ: ᱡᱚᱛᱚ ᱜᱚᱴᱟᱝ ᱟᱡᱟᱜ ᱯᱚᱴᱚᱢ ᱨᱮ ᱢᱮᱱᱟᱜ-ᱟ, ᱟᱨ ᱨᱮᱦᱮᱫ ᱚᱱᱟ ᱠᱚ ᱛᱮ ᱡᱚᱱᱚᱲ ᱮᱫᱟ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ᱢᱤᱫᱴᱟᱹᱝ ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ, ᱟᱨᱵᱟᱝ ᱟᱡᱟᱜ URI ᱢᱟᱲᱟᱝ ᱥᱟᱵᱟᱫ ᱛᱮ ᱢᱤᱫ ᱦᱚᱥᱴ ᱦᱟᱹᱴᱤᱧ ᱟᱠᱟᱫ ᱟᱭᱢᱟ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾ ᱨᱮᱦᱮᱫ ᱨᱮᱭᱟᱜ ᱚᱱᱰᱮ ᱮᱢᱚᱜ-ᱟ, ᱮᱴᱟᱜ ᱠᱚ ᱟᱡᱟᱜ ᱢᱟᱲᱟᱝ ᱥᱟᱵᱟᱫ ᱯᱚᱴᱚᱢ ᱨᱮ (/ger/); ᱩᱱᱠᱩ ᱛᱟᱞᱟ ᱨᱮᱭᱟᱜ ᱡᱚᱱᱚᱲ ᱠᱚ ᱱᱚᱠᱚᱞ ᱨᱮ ᱛᱟᱦᱮᱸᱱᱟ᱾ ᱥᱟᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱥᱟᱵᱷᱤᱥ ᱠᱚ ᱫᱚ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱩᱫᱩᱜᱚᱜ-ᱟ᱾</translation>
+    </message>
 </context>
 </TS>
