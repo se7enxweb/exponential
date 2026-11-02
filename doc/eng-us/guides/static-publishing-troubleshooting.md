@@ -39,6 +39,7 @@ every publish with its push state.
 | `refused: the response set the session cookie` | The page starts a session for anonymous visitors (a form, a basket, a registration); exclude it with `ExcludePaths[]` or change it |
 | `came with debug output`, `refused: debug output from the server` | The server that answered did not take the build's signed `X-Exp-Static-Build` header (see below): fetch from this installation's own server, and reload PHP-FPM and restart Velocity after an update |
 | Pages `skipped` | They only exist with a query string, or their path cannot be a file name on every system |
+| An address shows the page it redirects to, or a page "has moved" | An address that redirects (`/authors` to `/`) becomes a small stub that sends on, never a copy of the target (`redirects_followed` in `--format=json`); a loop or a chain of more than 5 redirects gets no stub and is listed under `skipped`. Fix the redirect on the site, or exclude the address with `ExcludePaths[]` |
 | Files `could not be collected` | The site does not hand them to an anonymous visitor; their links go to the live site (`files_failed` in `--format=json`) |
 | `another process works on the target` | A build, publish, rollback or push of that target is running; wait for it |
 | A build is very large | `Assets=referenced` copies only what pages name; exclude sections that need not be public |

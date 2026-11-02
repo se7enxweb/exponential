@@ -47,6 +47,7 @@ once so that every process keeps working, and how to check that the database can
 | `exponential.db-wal` | the write-ahead log | every process that writes |
 | `exponential.db-shm` | the shared-memory index of the WAL | **every process, readers too** |
 | `exponential.db.writer-lock` | the driver's write queue | any process (read-only is enough for `flock()`) |
+| `exponential.db.writer-queue` | tells a writer that others are waiting | any process (read-only is enough for `flock()`) |
 
 SQLite creates and removes `-wal` and `-shm` itself, so the **directory** must be writable by every process as well.
 The driver creates `var/storage/sqlite3/` with mode `0775`, but it does not set the mode or owner of the files: they

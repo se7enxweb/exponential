@@ -158,7 +158,7 @@ class expStaticBuild
      * Builds.
      *
      * @return array the report (schema exp-static/1): mode, target, siteaccess (the one at the root, or the first),
-     *         siteaccesses, run_id, directory, counts, diff, pages, refused, files_failed, link_check, limits, applied,
+     *         siteaccesses, run_id, directory, counts, diff, pages, refused, skipped, redirects_followed, files_failed, link_check, limits, applied,
      *         errors, warnings, exit
      */
     public function run()
@@ -180,7 +180,7 @@ class expStaticBuild
             'links' => array( 'mode' => $this->target->linkMode(), 'base_path' => $this->target->basePath(), 'public_url' => $this->target->publicUrl() ),
             'counts' => array( 'pages' => 0, 'pages_refused' => 0, 'pages_skipped' => 0, 'pages_excluded' => 0, 'files' => 0,
                                'storage' => 0, 'storage_missing' => 0, 'files_failed' => 0, 'extras' => 0, 'links_rewritten' => 0, 'links_live' => 0,
-                               'links_external' => 0, 'links_removed_outside' => 0, 'links_removed_admin' => 0, 'links_unavailable' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0,
+                               'links_external' => 0, 'links_removed_outside' => 0, 'links_removed_admin' => 0, 'links_unavailable' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0, 'redirects_followed' => 0,
                                'fingerprinted' => 0, 'precompressed' => 0 ),
             'degraded' => array(),
             'search' => null,
@@ -188,6 +188,7 @@ class expStaticBuild
             'pages' => array(),
             'refused' => array(),
             'skipped' => array(),
+            'redirects_followed' => array(),
             'files_failed' => array(),
             'link_check' => null,
             'limits' => array(),
@@ -271,6 +272,8 @@ class expStaticBuild
         if ( $this->options['fetcher'] !== null )
             $options['fetcher'] = $this->options['fetcher'];
         $options['headers'] = array( $this, 'requestHeaders' );
+        // a redirect becomes a stub page of its own (writeCrawlRedirects()), never a copy of the page it sends to
+        $options['record_redirects'] = true;
         return $options;
     }
 
@@ -450,6 +453,8 @@ class expStaticBuild
         }
         $emit = $this->emit;
         $brokenOnSite = 0;
+        $crawlRedirects = array();
+        $redirectStubs = array();
         foreach ( $crawled as $member )
         {
             if ( $asked && !$memberPaths[$member['siteaccess']] )
@@ -475,7 +480,11 @@ class expStaticBuild
             $runner->run();
             $crawler = $runner->lastCrawler();
             if ( $crawler !== null )
+            {
                 $brokenOnSite += count( $crawler->problems() );
+                // every siteaccess crawled: its redirects are full addresses, the rewriter knows its folder
+                $crawlRedirects += $crawler->redirects();
+            }
         }
         $this->crawlSiteAccess = null;
         $this->report['counts']['site_broken_links'] = $brokenOnSite;
@@ -502,11 +511,11 @@ class expStaticBuild
         // 2. the links and the files
         $old = expStaticManifest::load( $targetDir );
         $collector = null;
-        $held = function ( $page, $query ) use ( &$pages, $partial, $old )
+        $held = function ( $page, $query ) use ( &$pages, &$redirectStubs, $partial, $old )
         {
             if ( $query !== '' )
                 return false;
-            if ( isset( $pages[$page] ) )
+            if ( isset( $pages[$page] ) || isset( $redirectStubs[$page] ) )
                 return true;
             $file = expStaticLinkRewriter::pageFile( $page );
             return $partial && $old !== null && $file !== null && $old->has( $file ) && $old->get( $file )['kind'] === 'page';
@@ -532,6 +541,8 @@ class expStaticBuild
             };
         }
         $rewriter = new expStaticLinkRewriter( $rewriterOptions );
+        // before any page is rewritten: a link to a redirecting address goes to its stub in the copy
+        $redirectStubs = $this->planCrawlRedirects( $crawlRedirects, $rewriter, $held, $pages );
         $collector = new expStaticAssetCollector( array( 'root' => $this->options['root'], 'output' => $staging, 'origin' => $originUrl,
                                                          'fetch' => array( $this, 'request' ), 'rewriter' => $rewriter, 'emit' => $this->emit,
                                                          'max_file_bytes' => $this->limit( 'max_file_bytes', 'MaxFileBytes', 100000000 ) ) );
@@ -644,6 +655,7 @@ class expStaticBuild
         // several siteaccesses and none at the root: the root is a page that links to each
         if ( count( $members ) > 1 && $first['prefix'] !== '' )
             $this->writeRootIndex( $staging, $manifest, $members, $pages );
+        $this->writeCrawlRedirects( $staging, $manifest, $redirectStubs );
         $this->writeExtras( $staging, $manifest, $notFound, $rewriterOptions, $sitemap );
         if ( $search !== null )
             $this->writeSearch( $staging, $manifest, $search, $partial ? $targetDir : null, count( $members ) > 1 ? $members : array() );
@@ -992,6 +1004,112 @@ class expStaticBuild
             return;
         if ( $this->write( $staging . '/index.html', $html ) )
             $manifest->add( 'index.html', 'extra', hash( 'sha256', $html ), strlen( $html ) );
+    }
+
+    /**
+     * What becomes of each address that answered the crawl with a redirect: a stub page of its own that sends the
+     * visitor on (expStaticRedirects::stub()), never a copy of the page it sends to. The stub points at
+     *
+     *   page   the copy's page, when the copy holds the address the redirect (or the chain of them) ends on
+     *   live   the address itself on the live site (LiveURL) when it is a page the copy does not hold, or as it is
+     *          when it is on another host
+     *   front  the copy's front page, when OutsideLinks=unlink (or AdminLinks=unlink for an administration page)
+     *          takes the link to an address outside the copy out: a stub with nowhere to go would be a dead end
+     *
+     * No stub is written for a loop, a chain longer than expPreloadRunner::MAX_REDIRECTS, an answer without a
+     * Location, an address that is no file name, or a redirect to the address's own file (/a to /a/); those are in
+     * "skipped".
+     *
+     * @param array $redirects expPreloadRunner::redirects()
+     * @param expStaticLinkRewriter $rewriter
+     * @param callable $held callable( $page, $query ) => bool: the copy holds the page
+     * @param array $pages the pages exported (page path => page)
+     * @return array page path of the stub => array( file, link, canonical, status, to, kind )
+     */
+    private function planCrawlRedirects( array $redirects, expStaticLinkRewriter $rewriter, callable $held, array $pages )
+    {
+        $plan = array();
+        foreach ( $redirects as $from => $redirect )
+        {
+            $fromC = $rewriter->classify( $from, '/' );
+            $page = $fromC['kind'] === 'page' ? $fromC['page'] : null;
+            $file = $page !== null && $fromC['query'] === '' ? expStaticLinkRewriter::pageFile( $page ) : null;
+            $chain = expStaticRedirects::resolveChain( $redirects, $from, expPreloadRunner::MAX_REDIRECTS );
+            $reason = null;
+            $to = $link = $canonical = $kind = '';
+            if ( $file === null || isset( $pages[$page] ) )
+                $reason = 'a redirect from an address that cannot be a page of the copy';
+            else if ( $chain['error'] !== '' )
+                $reason = 'a redirect ' . $chain['error'];
+            if ( $reason === null )
+            {
+                $to = $chain['to'];
+                $c = $rewriter->classify( $to, $fromC['path'] );
+                $targetFile = $c['kind'] === 'page' && $c['query'] === '' ? expStaticLinkRewriter::pageFile( $c['page'] ) : null;
+                $kind = $targetFile !== null && call_user_func( $held, $c['page'], '' ) ? 'page' : 'live';
+                if ( $kind === 'page' && $targetFile === $file )
+                    $reason = 'a redirect to its own address';
+                else if ( $kind === 'page' )
+                {
+                    $link = $rewriter->link( expStaticLinkRewriter::pageUrl( $targetFile ), $file );
+                    $canonical = $rewriter->link( expStaticLinkRewriter::pageUrl( $targetFile ), $file, true );
+                }
+                else
+                {
+                    $link = $c['kind'] === 'external' ? $to : $rewriter->rewriteUrl( $to, $fromC['path'], $file, false, true );
+                    $canonical = $link;
+                    if ( $link === null )
+                    {
+                        // the link out is taken out: to the front page of the copy, or no stub when it has none
+                        $kind = 'front';
+                        if ( !isset( $pages['/'] ) || $file === 'index.html' )
+                            $reason = 'a redirect out of the copy (OutsideLinks or AdminLinks=unlink) in a copy without a front page';
+                        else
+                        {
+                            $link = $rewriter->link( '', $file );
+                            $canonical = $rewriter->link( '', $file, true );
+                        }
+                    }
+                }
+            }
+            if ( $reason !== null )
+            {
+                $this->report['counts']['pages_skipped']++;
+                $this->report['skipped'][] = array( 'path' => $page !== null ? $page : $from, 'reason' => $reason );
+                continue;
+            }
+            $plan[$page] = array( 'file' => $file, 'link' => (string)$link, 'canonical' => preg_match( '#^https?://#i', (string)$canonical ) ? (string)$canonical : '',
+                                  'status' => (int)$redirect['status'], 'to' => $to, 'kind' => $kind );
+        }
+        ksort( $plan, SORT_STRING );
+        return $plan;
+    }
+
+    /** The stub pages of the addresses that answered the crawl with a redirect (planCrawlRedirects()). */
+    private function writeCrawlRedirects( $staging, expStaticManifest $manifest, array $plan )
+    {
+        $written = 0;
+        foreach ( $plan as $from => $stub )
+        {
+            if ( $manifest->has( $stub['file'] ) )
+            {
+                $this->report['counts']['pages_skipped']++;
+                $this->report['skipped'][] = array( 'path' => $from, 'reason' => 'a redirect where the copy has a file of its own' );
+                continue;
+            }
+            $html = expStaticRedirects::stub( $stub['link'], $stub['canonical'] );
+            if ( !$this->write( $staging . '/' . $stub['file'], $html ) )
+            {
+                $this->error( 'Cannot write ' . $stub['file'] );
+                continue;
+            }
+            $manifest->add( $stub['file'], 'extra', hash( 'sha256', $html ), strlen( $html ), array( 'url' => $from ) );
+            $this->report['redirects_followed'][] = array( 'path' => $from, 'status' => $stub['status'], 'to' => $stub['to'], 'kind' => $stub['kind'], 'file' => $stub['file'] );
+            $written++;
+        }
+        $this->report['counts']['redirects_followed'] = $written;
+        if ( $plan )
+            $this->say( 'phase-item', sprintf( 'Redirects: %d stub(s) for addresses that answered with a redirect', $written ) );
     }
 
     /**

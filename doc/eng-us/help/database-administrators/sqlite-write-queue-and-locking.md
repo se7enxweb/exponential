@@ -40,7 +40,12 @@ with "database is locked" however long the busy timeout was.
 1. It opens, once per connection and again in every forked process, a lock file next to the database:
    `<database file>.writer-lock`, for example `var/storage/sqlite3/exponential.db.writer-lock`.
 2. It takes an exclusive `flock()` on that file, retrying every 1 to 15 ms; writers that have waited more than a
-   second try more often, which serves them roughly in arrival order.
+   second try more often, which serves them roughly in arrival order. While it waits it holds a shared `flock()` on
+   a second file, `<database file>.writer-queue`, which tells the others that a writer is waiting.
+   A writer that finds the lock free while others wait leaves it to them for 30 ms before its own first try. Without
+   that, a loop that commits and begins again at once (the `indexcontent` cronjob part, a content job's batches)
+   took the lock back within a fraction of a millisecond of every commit and kept it for minutes, and a page's save
+   behind it failed with "database is busy" after its whole wait.
 3. With the lock held it runs `BEGIN IMMEDIATE`, which takes SQLite's write lock at the start, where the busy
    timeout applies. Writers outside the queue (a single statement, another program) are waited for by SQLite's busy
    handler within the time left.
