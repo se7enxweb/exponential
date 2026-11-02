@@ -68626,6 +68626,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>இந்தக் கோரிக்கை: பக்கத் தற்காலிகச் சேமிப்பிலிருந்து %ms ms இல் வழங்கப்பட்டது.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>பயனர்</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>பயனர் ஐடி</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>தற்காலிக சேமிப்பு சுயவிவரம்</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>இந்தக் காட்சி</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>காட்சி தற்காலிகச் சேமிப்பு</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>பயனர் வாரியாக (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>பயனரின் தற்காலிக சேமிப்பு சுயவிவரம்: ஒரே சுயவிவரம் உள்ள பயனர்கள் காட்சி தற்காலிக சேமிப்புக் கோப்புகளைப் பகிர்கின்றனர்</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>உள்நுழைந்துள்ளார்</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>அமர்வு</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>பயனரைச் சார்ந்த உள்ளடக்கக் காட்சி தற்காலிக சேமிப்பு விசையின் பகுதிகள், விசை எடுத்துக்கொள்ளும் அதே வடிவில், இந்தப் பக்கத்தின் ViewCacheTweaks படி. ஒரே சுயவிவரம் உள்ள பயனர்கள் காட்சிகளின் தற்காலிக சேமிப்புக் கோப்புகளைப் பகிர்கின்றனர், ஒரு காட்சியின் சொந்தப் பகுதிகள் (விருப்பங்கள், கேட்பான்களின் விசைகள்) வேறுபட்டால் தவிர: அவற்றுக்கு இந்தப் பக்கத்துக்கு மட்டும் தனிச் சுயவிவரம் உண்டு.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>சுயவிவரம்</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>இந்தக் காட்சி (கணு %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: உள்நுழைந்த ஒவ்வொரு பயனருக்கும் சொந்தத் தற்காலிக சேமிப்புக் கோப்புகள் உள்ளன.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>நடைமுறையில் உள்ள ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>பகுதி</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>மதிப்பு</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>எந்தப் பகுதியும் பயனரைச் சார்ந்திருக்கவில்லை (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>இந்தக் காட்சி</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>உரையாக நகலெடு</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>பங்குகள்</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>பங்கு ஒதுக்கீடுகள் எதையும் படிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>பங்கு ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>பங்கு</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>வரம்பு</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>ஒதுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>பயனர்</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>குழு %name (பொருள் %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>நகலெடுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>நகலெடுக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ஒரு கேட்பானால் விடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>அநாமதேய பார்வையாளர்கள்</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>உங்களுடையதைப் போன்றது</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>வேறுபட்டது</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>அதே ViewCacheTweaks கீழ் அநாமதேய பார்வையாளர்கள் பெறும் சுயவிவரம், இயல்புநிலை விருப்பங்களுடன், காட்சியின் பகுதிகள் இல்லாமல்: அமர்வைப் படிக்கும் கேட்பானிடம் அவற்றைக் கேட்க முடியாது.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>விருப்பங்கள்</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>எந்தக் காட்சி முறையும் பயனர் விருப்பங்களைச் சார்ந்திருக்கவில்லை (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>இந்தக் காட்சி முறைகளின் காட்சிகள் சார்ந்திருக்கும் விருப்பங்கள் (CachedViewPreferences), பயனரின் மதிப்பு அல்லது இயல்புநிலையுடன். அவை சுயவிவரத்தில் userpreferences ஆக உள்ளன, எல்லாக் காட்சி முறைகளுடையதும் ஒன்றாக.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>பார்வை பயன்முறை</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>விருப்பம்</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>இயல்புநிலை</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>கொள்கைகள்</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>பங்குகளின் கொள்கைகளைக் காட்டு (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>இந்தப் பகுதி திறக்கப்படும்போது கொள்கைகள் சேவையகத்திலிருந்து ஒரு நேரத்தில் ஒரு பக்கமாக ஏற்றப்படும், மேலும் தொகுதி மற்றும் செயல்பாடு வாரியாக வடிகட்டலாம்.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>செயல்கூறு</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>அனைத்து தொகுதிக்கூறுகளும்</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>எல்லாச் செயல்பாடுகளும்</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>கட்டுப்பாடுகள்</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>மேலும் காட்டு</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>இந்தப் பங்குகளுக்குக் கொள்கைகள் இல்லை.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>வடிகட்டியுடன் எந்தக் கொள்கையும் பொருந்தவில்லை.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching கொள்கைகளில் %shown (மொத்தம் %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

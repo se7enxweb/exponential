@@ -28,6 +28,7 @@ Fassung derselben Arbeit ist [Eine Website bauen, ohne Code zu schreiben](../erw
 6. [Das Gästebuch: Besucher schreiben Inhalte](das-gaestebuch.md)
 7. [Gästebucheinträge mit einem Workflow freigeben](gaestebucheintraege-freigeben.md)
 8. [Die Linkseite: Kategorien, Linkobjekte und ein Baummenü](die-linkseite.md)
+9. [Ihre erste statische Website in 15 Minuten: die Vereinswebsite auf GitHub Pages](ihre-erste-statische-website-in-15-minuten.md)
 
 ## Quelle und Lizenz
 

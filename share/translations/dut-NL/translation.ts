@@ -68396,6 +68396,226 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Dit verzoek: in %ms ms geleverd uit de paginacache.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Gebruiker</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Gebruikers-ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Cacheprofiel</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Deze weergave</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Weergavecache</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>per gebruiker (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Cacheprofiel van de gebruiker: gebruikers met hetzelfde profiel delen de cachebestanden van weergaven</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Inloggen</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Ingelogd</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sessie</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>De delen van de cachesleutel van de contentweergave die van de gebruiker afhangen, precies zoals de sleutel ze opneemt, onder de ViewCacheTweaks van deze pagina. Gebruikers met hetzelfde profiel delen de cachebestanden van de weergaven, tenzij de delen van een weergave zelf verschillen (voorkeuren, sleutels van listeners): die hebben een eigen profiel, alleen voor deze pagina.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profiel</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Deze weergave (node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: elke ingelogde gebruiker heeft eigen cachebestanden.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Actieve ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Deel</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Geen enkel deel hangt van de gebruiker af (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>deze weergave</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopiëren als tekst</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollen</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Er konden geen roltoewijzingen worden gelezen.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rol-ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rol</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Beperking</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Toegewezen aan</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>de gebruiker</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>groep %name (object %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Gekopieerd</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kopiëren mislukt.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>weggelaten door een listener</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonieme bezoekers</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>gelijk aan het uwe</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>verschillend</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Het profiel dat anonieme bezoekers krijgen onder dezelfde ViewCacheTweaks, met de standaardvoorkeuren, zonder de delen van de weergave: een listener die de sessie leest, kan daar niet naar gevraagd worden.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Voorkeuren</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Geen enkele weergavemodus hangt af van gebruikersvoorkeuren (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>De voorkeuren waarvan de weergaven van deze weergavemodi afhangen (CachedViewPreferences), met de waarde van de gebruiker of de standaardwaarde. Ze staan in het profiel als userpreferences, die van alle weergavemodi samen.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Weergavemodus</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Voorkeur</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standaard</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Beleidsregels</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Policy's van de rollen tonen (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>De policy's worden van de server geladen wanneer deze sectie wordt geopend, pagina voor pagina, en kunnen worden gefilterd op module en functie.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Functie</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Alle modules</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Alle functies</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Beperkingen</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Meer tonen</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Deze rollen hebben geen policy's.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Geen policy komt overeen met het filter.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown van %matching policy's (%total in totaal)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

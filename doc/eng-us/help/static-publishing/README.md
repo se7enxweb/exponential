@@ -29,7 +29,11 @@ publish. Every publish is kept, so you can always go back to an earlier one.
 
 ## Start here
 
-- New to it? Follow the tutorial [Host static sites on GitHub Pages](../../guides/host-static-sites-on-github-pages.md):
+- **Make a free site now**: [Make a free website in 15 minutes](make-a-free-website-in-15-minutes.md). First time
+  on GitHub? [Create a GitHub account and repository](create-a-github-account-and-repository.md).
+- **Know what it is and whether it fits**: [What static publishing is](what-static-publishing-is.md),
+  [Is static right for my site?](is-static-right-for-my-site.md) and the [FAQ](faq.md).
+- **Set it up properly**: the tutorial [Host static sites on GitHub Pages](../../guides/host-static-sites-on-github-pages.md):
   from an existing site to a live `github.io` address.
 - What it is and what it adds to the static cache: [Static publishing](../../features/6.0/static-publishing.md).
 - Developers and CI: start from the template repository [exponential-static-site-starter](https://github.com/se7enxweb/exponential-static-site-starter), which
@@ -84,6 +88,10 @@ Every page has a **Help** button that opens the page of this manual about it.
   [form endpoint](../../specifications/6.0/static-publishing-form-endpoint.md).
 - Without pressing a button: [Publish automatically](publish-automatically.md) and
   [Notifications and webhooks](notifications-and-webhooks.md).
+- Links, files and privacy: [Links and base path](links-and-base-path.md),
+  [Images, files and downloads](images-files-and-downloads.md), [Keep private content private](keep-private-content-private.md).
+- Not on GitHub: [Other git hosts: GitLab, Gitea and your own server](other-git-hosts-gitlab-gitea-and-your-own-server.md).
+- Something went wrong: [When a publish fails](when-a-publish-fails.md).
 - From the page itself: [The website sidebar panel](the-website-sidebar-panel.md) shows whether a page is stale and
   publishes just that page.
 

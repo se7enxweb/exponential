@@ -121,8 +121,8 @@ etwas falsch, listet es die Einträge auf, die beim Anbieter der Domain zu setze
 
 ## 8. Wann veröffentlicht wird
 
-Von Hand hier und auf der Konsole. Das Veröffentlichen, wenn Inhalte veröffentlicht werden, und nach Zeitplan,
-Benachrichtigungen und der Webhook werden jetzt gespeichert und treten mit einem späteren Release in Kraft.
+Immer von Hand hier und auf der Konsole; dazu, wenn Inhalte veröffentlicht werden, und nach Zeitplan, beides durch den
+Cronjob-Teil `staticpublish`, danach mit Benachrichtigungen und Webhook ([Automatisch veröffentlichen](automatisch-veroeffentlichen.md)).
 
 ## 9. Prüfen und speichern
 

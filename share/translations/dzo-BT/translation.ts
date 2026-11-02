@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ཞུ་བ་འདི: ཤོག་ལེབ་ཀེཤ་ལས་ %ms ms ནང་ཞབས་ཏོག་འབད་ཡོདཔ།</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ལག་ལེན་པ།</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ལག་ལེན་པའི་ ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>ཀེཤ་ཁ་གསལ</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>མཐོང་སྣང་འདི</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>མཐོང་སྣང་ཀེཤ།</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ལག་ལེན་པ་རེ་རེ་ལུ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ལག་ལེན་པའི་ཀེཤ་ཁ་གསལ: ཁ་གསལ་གཅིག་པ་ཡོད་མི་ལག་ལེན་པ་ཚུ་གིས་ མཐོང་སྣང་ཀེཤ་ཡིག་སྣོད་ཚུ་མཉམ་སྤྱོད་འབདཝ་ཨིན</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ཨིན།</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>མེན།</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ནང་འཛུལ་མིང་</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ནང་བསྐྱོད་འབད་ཡི</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ལཱ་ཚོགས།</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ནང་དོན་མཐོང་སྣང་ཀེཤ་ལྡེ་མིག་གི་ ལག་ལེན་པ་ལུ་རག་ལས་མི་ཆ་ཤས་ཚུ་ ལྡེ་མིག་གིས་ལེན་དོ་བཟུམ་སྦེ་ ཤོག་ལེབ་འདི་གི་ ViewCacheTweaks འོག་ལུ། ཁ་གསལ་གཅིག་པ་ཡོད་མི་ལག་ལེན་པ་ཚུ་གིས་ མཐོང་སྣང་གི་ཀེཤ་ཡིག་སྣོད་ཚུ་མཉམ་སྤྱོད་འབདཝ་ཨིན་ མཐོང་སྣང་རང་གི་ཆ་ཤས་ཚུ་ (དགའ་འདེམས་ ཉན་མཁན་གྱི་ལྡེ་མིག) མ་འདྲཝ་ཅིན་མ་གཏོགས: དེ་ཚུ་ལུ་ ཤོག་ལེབ་འདི་རྐྱངམ་ཅིག་གི་དོན་ལུ་ རང་སོའི་ཁ་གསལ་ཡོདཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>རང་ངོ་སྤྲོད།</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>མཐོང་སྣང་འདི (མཐུད་མཚམས %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ནང་བསྐྱོད་འབད་མི་ལག་ལེན་པ་རེ་རེ་ལུ་ རང་སོའི་ཀེཤ་ཡིག་སྣོད་ཡོདཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ལག་ལེན་འཐབ་དོ་པའི་ ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ཆ་ཤས།</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>གྲངས་ཐང་།</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ཆ་ཤས་ག་ཅི་ཡང་ ལག་ལེན་པ་ལུ་རག་མ་ལས (ViewCacheTweaks)།</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>མཐོང་སྣང་འདི་</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ཚིག་ཡིག་སྦེ་འདྲ་བཤུས་རྐྱབ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>འགན་ཁུར།</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ལཱ་འགན་བཀོད་སྒྲིག་ག་ཅི་ཡང་ལྷག་མ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ལཱ་འགན་ ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>འགན་ཁུར།</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ཚད་བཀག</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>བཀོད་སྒྲིག་འབད་ས</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ལག་ལེན་པ</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>སྡེ་ཚན %name (དངོས་པོ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>འདྲ་བཤུས་འབད་ཡི།</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>འདྲ་བཤུས་རྐྱབ་མ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ཉན་མཁན་གྱིས་བཀོག་ཡོདཔ</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>མིང་མེད་ལྟ་མི།</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ཁྱོད་ཀྱི་དང་གཅིག་པ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>མ་འདྲཝ</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>མིང་མེད་འཚམས་འདྲི་པ་ཚུ་གིས་ ViewCacheTweaks གཅིག་པའི་འོག་ལུ་ སྔོན་སྒྲིག་དགའ་འདེམས་དང་གཅིག་ཁར་ མཐོང་སྣང་གི་ཆ་ཤས་མེད་པར་ཐོབ་མི་ཁ་གསལ: ལཱ་ཡུན་ལྷག་མི་ཉན་མཁན་ལུ་ དེ་ཚུ་དྲི་མ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>དགའ་འདེམས་ཚུ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>མཐོང་སྣང་ཐབས་ལམ་ག་ཅི་ཡང་ ལག་ལེན་པའི་དགའ་འདེམས་ལུ་རག་མ་ལས (site.ini [ContentSettings] CachedViewPreferences)།</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>མཐོང་སྣང་ཐབས་ལམ་འདི་ཚུ་གི་མཐོང་སྣང་ཚུ་རག་ལས་མི་དགའ་འདེམས་ཚུ (CachedViewPreferences) ལག་ལེན་པའི་གནས་གོང་ ཡང་ན་ སྔོན་སྒྲིག་དང་གཅིག་ཁར། དེ་ཚུ་ ཁ་གསལ་ནང་ userpreferences སྦེ་ མཐོང་སྣང་ཐབས་ལམ་ག་ར་གི་མཉམ་དུ་ཡོདཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>མཐོང་སྣང་གི་ཐབས་ལམ།</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>དགའ་འདེམས</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>སྔོན་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>སྲིད་བྱུས།</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>ལཱ་འགན་གྱི་སྲིད་བྱུས་ཚུ་སྟོན (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>དབྱེ་ཚན་འདི་ཁ་ཕྱེ་བའི་སྐབས་ སྲིད་བྱུས་ཚུ་ སར་བར་ལས་ ཤོག་ལེབ་རེ་རེ་བཞིན་མངོན་གསལ་འབདཝ་ཨིན་ དེ་ཚུ་ མོ་ཌུལ་དང་ ལས་འགན་གྱི་ཐོག་ལས་ཚགས་མ་བཙག་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ལས་ཀ།</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ཚན་པ་ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ལས་འགན་ག་ར</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ཚད་བཀག</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ཧེང་བཀལ་སྟོན</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ལཱ་འགན་འདི་ཚུ་ལུ་ སྲིད་བྱུས་མེད།</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>སྲིད་བྱུས་ག་ཅི་ཡང་ ཚགས་མ་དང་མ་མཐུན།</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching སྲིད་བྱུས (བསྡོམས %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

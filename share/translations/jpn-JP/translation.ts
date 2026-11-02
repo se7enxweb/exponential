@@ -68567,6 +68567,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>このリクエスト: ページキャッシュから %ms ms で配信されました。</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ユーザー</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ユーザー ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>キャッシュプロファイル</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>このビュー</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ビューキャッシュ</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ユーザーごと (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ユーザーのキャッシュプロファイル：同じプロファイルのユーザーはビューキャッシュのファイルを共有します</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ユーザー名</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ログイン中</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>セッション</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>コンテンツビューキャッシュのキーのうちユーザーに依存する部分を、このページの ViewCacheTweaks のもとでキーが取るとおりに示します。同じプロファイルのユーザーはビューのキャッシュファイルを共有しますが、ビュー自体の部分（プリファレンス、リスナーのキー）が異なる場合は、このページに限り独自のプロファイルを持ちます。</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>プロファイル</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>このビュー（ノード %node）</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user：ログインしているユーザーはそれぞれ独自のキャッシュファイルを持ちます。</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>有効な ViewCacheTweaks：%tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>パート</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>値</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ユーザーに依存する部分はありません（ViewCacheTweaks）。</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>このビュー</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>テキストとしてコピー</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ロール</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ロールの割り当てを読み込めませんでした。</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ロール ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ロール</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>制限</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>割り当て先</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ユーザー</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>グループ %name（オブジェクト %id）</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>コピーしました</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>コピーできませんでした。</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>リスナーにより除外</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>匿名の訪問者</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>あなたと同じ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>異なる</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>同じ ViewCacheTweaks のもとで匿名の訪問者が得るプロファイル（デフォルトのプリファレンス、ビューの部分なし）：セッションを読むリスナーにはそれらを問い合わせられません。</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>プリファレンス</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ユーザープリファレンスに依存するビューモードはありません（site.ini [ContentSettings] CachedViewPreferences）。</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>これらのビューモードのビューが依存するプリファレンス（CachedViewPreferences）と、ユーザーの値またはデフォルト値。プロファイルには userpreferences として、すべてのビューモードの分がまとめて含まれます。</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>表示モード</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>プリファレンス項目</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>既定</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>ポリシー</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>ロールのポリシーを表示（%count）</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ポリシーはこのセクションを開いたときにサーバーから 1 ページずつ読み込まれ、モジュールとファンクションで絞り込めます。</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>機能</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>すべてのモジュール</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>すべてのファンクション</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>制限</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>さらに表示</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>これらのロールにはポリシーがありません。</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>フィルターに一致するポリシーはありません。</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching 件のポリシー（全 %total 件）</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

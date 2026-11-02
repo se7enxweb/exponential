@@ -67176,6 +67176,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>این درخواست: در %ms میلی‌ثانیه از حافظهٔ پنهان صفحه ارائه شد.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>کاربر</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>شناسهٔ کاربر</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>پروفایل کش</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>این نما</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>حافظهٔ پنهان نما</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>برای هر کاربر (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>پروفایل کش کاربر: کاربران با پروفایل یکسان فایل‌های کش نما را به اشتراک می‌گذارند</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>نام کاربری</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>وارد شده</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>نشست</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>بخش‌هایی از کلید کش نمای محتوا که به کاربر بستگی دارند، دقیقاً همان‌طور که کلید آن‌ها را می‌گیرد، تحت ViewCacheTweaks این صفحه. کاربران با پروفایل یکسان فایل‌های کش نماها را به اشتراک می‌گذارند، مگر اینکه بخش‌های خود یک نما متفاوت باشند (ترجیحات، کلیدهای شنونده‌ها): آن‌ها پروفایل خاص خود را دارند، فقط برای این صفحه.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>پروفایل</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>این نما (گره %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: هر کاربر واردشده فایل‌های کش مخصوص خود را دارد.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks فعال: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>قسمت</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>مقدار</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>هیچ بخشی به کاربر بستگی ندارد (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>این نما</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>کپی به‌صورت متن</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>نقش‌ها</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>هیچ تخصیص نقشی خوانده نشد.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>شناسه نقش</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>نقش</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>محدودیت</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>تخصیص‌یافته به</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>کاربر</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>گروه %name (شیء %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>کپی شد</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>کپی ممکن نشد.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>حذف‌شده توسط یک شنونده</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>بازدیدکنندگان ناشناس</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>مانند مال شما</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>متفاوت</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>پروفایلی که بازدیدکنندگان ناشناس تحت همان ViewCacheTweaks دریافت می‌کنند، با ترجیحات پیش‌فرض، بدون بخش‌های نما: نمی‌توان آن‌ها را از شنونده‌ای که نشست را می‌خواند پرسید.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ترجیحات</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>هیچ حالت نمایشی به ترجیحات کاربر بستگی ندارد (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ترجیحاتی که نماهای این حالت‌های نمایش به آن‌ها بستگی دارند (CachedViewPreferences)، با مقدار کاربر یا مقدار پیش‌فرض. آن‌ها در پروفایل به‌صورت userpreferences هستند، مربوط به همه حالت‌های نمایش با هم.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>حالت نما</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ترجیح</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>پیش‌فرض</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>خط‌مشی‌ها</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>نمایش سیاست‌های نقش‌ها (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>سیاست‌ها هنگام باز شدن این بخش از سرور بارگیری می‌شوند، هر بار یک صفحه، و می‌توان آن‌ها را بر اساس ماژول و تابع فیلتر کرد.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>تابع</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>همهٔ ماژول‌ها</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>همه توابع</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>محدودیت‌ها</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>نمایش بیشتر</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>این نقش‌ها هیچ سیاستی ندارند.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>هیچ سیاستی با فیلتر مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown از %matching سیاست (%total در کل)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

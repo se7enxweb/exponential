@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>እዚ ሕቶ፦ ካብ ካሽ ገጽ ኣብ %ms ms ቀሪቡ።</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>ፕሮፋይል ካሽ</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>እዚ ምርኢት</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ካሽ ትርኢት</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ንነፍሲ ወከፍ ተጠቃሚ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ፕሮፋይል ካሽ ተጠቃሚ: ሓደ ዓይነት ፕሮፋይል ዘለዎም ተጠቀምቲ ፋይላት ካሽ ምርኢት ይካፈሉ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>እወ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ኣይፋል</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ስም መእተዊ</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ኣቲዩ ዘሎ</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ክፍለ ግዜ</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ኣብ ተጠቃሚ ዝምርኮሱ ክፋላት መፍትሕ ካሽ ምርኢት ትሕዝቶ፣ መፍትሕ ብኸመይ ከም ዝወስዶም ብትኽክል፣ ብመሰረት ViewCacheTweaks ናይዚ ገጽ። ሓደ ዓይነት ፕሮፋይል ዘለዎም ተጠቀምቲ ፋይላት ካሽ ናይ ምርኢታት ይካፈሉ፣ ክፋላት ናይ ባዕሉ ምርኢት እንተዘይተፈልዩ (ምርጫታት፣ መፍትሓት ሰማዕቲ)፦ እዚኣቶም ንዚ ገጽ ጥራይ ናይ ገዛእ ርእሶም ፕሮፋይል ኣለዎም።</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>ፕሮፋይል</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>እዚ ምርኢት (ኖድ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ነፍሲ ወከፍ ዝኣተወ ተጠቃሚ ናይ ገዛእ ርእሱ ፋይላት ካሽ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ኣብ ስራሕ ዘለዉ ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ክፋል</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ዋጋ</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ኣብ ተጠቃሚ ዝምርኮስ ክፋል የለን (ViewCacheTweaks)።</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>እዚ ምርኢት</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ከም ጽሑፍ ቅዳሕ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ተራታት</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ምምዳብ ተራ ክንበብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>መለለዪ ተራ</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ተራ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ገደብ</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>ዝተመደበሉ</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ንተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ጉጅለ %name (ኦብጀክት %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>ተቐዲሑ</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>ክቕዳሕ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ብሰማዒ ተገዲፉ</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>ስም ዘይብሎም በጻሕቲ</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ከም ናትካ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ዝተፈለየ</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>ዘይፍለጡ በጻሕቲ ብተመሳሳሊ ViewCacheTweaks፣ ብነባሪ ምርጫታት፣ ብዘይ ክፋላት ምርኢት ዝረኽብዎ ፕሮፋይል፦ ሰማዒ ሰሽን ዘንብብ ብዛዕባኦም ክሕተት ኣይከኣልን።</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ምርጫታት</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ዝኾነ ኣገባብ ምርኢት ኣብ ምርጫታት ተጠቃሚ ኣይምርኮስን (site.ini [ContentSettings] CachedViewPreferences)።</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>እቶም ምርኢታት ናይዞም ኣገባባት ምርኢት ዝምርኮሱሎም ምርጫታት (CachedViewPreferences)፣ ምስ ዋጋ ተጠቃሚ ወይ ነባሪ። ኣብ ፕሮፋይል ከም userpreferences ኣለዉ፣ ናይ ኩሎም ኣገባባት ምርኢት ብሓባር።</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>ኣገባብ ርእይቶ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ምርጫ</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ነባሪ</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>ፖሊሲታት</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>ፖሊሲታት ተራታት ኣርኢ (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ፖሊሲታት እዚ ክፋል ምስ ተኸፍተ ካብ ሰርቨር ሓደ ገጽ ብሓደ ገጽ ይጽዓኑ፣ ብሞጁልን ፋንክሽንን ድማ ክጻረዩ ይኽእሉ።</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ተግባር</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ኩሎም ሞጁላት</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ኩሎም ፋንክሽናት</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ገደባት</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ተወሳኺ ኣርኢ</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>እዞም ተራታት ፖሊሲ የብሎምን።</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ምስቲ መጻረዪ ዝሰማማዕ ፖሊሲ የለን።</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ካብ %matching ፖሊሲታት (ብድምር %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

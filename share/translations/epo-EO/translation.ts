@@ -68628,6 +68628,226 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ĉi tiu peto: servita el la paĝa kaŝmemoro en %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Uzanto</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Uzanto-ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Kaŝmemora profilo</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ĉi tiu vido</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Vida kaŝmemoro</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>po uzanto (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Kaŝmemora profilo de la uzanto: uzantoj kun la sama profilo kunhavas la vidajn kaŝmemorajn dosierojn</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jes</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Uzantnomo</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Ensalutinta</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Seanco</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>La partoj de la kaŝmemora ŝlosilo de enhavvido, kiuj dependas de la uzanto, ĝuste kiel la ŝlosilo prenas ilin, laŭ la ViewCacheTweaks de ĉi tiu paĝo. Uzantoj kun la sama profilo kunhavas la kaŝmemorajn dosierojn de la vidoj, krom se la partoj de vido mem diferencas (preferoj, ŝlosiloj de aŭskultantoj): tiuj havas propran profilon, nur por ĉi tiu paĝo.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profilo</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ĉi tiu vido (nodo %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ĉiu ensalutinta uzanto havas proprajn kaŝmemorajn dosierojn.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Aktivaj ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Parto</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoro</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Neniu parto dependas de la uzanto (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ĉi tiu vido</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopii kiel tekston</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roloj</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Neniuj rolasignoj legeblis.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rola ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rolo</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Limigo</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Asignita al</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>la uzanto</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupo %name (objekto %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopiita</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ne eblis kopii.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>forlasita de aŭskultanto</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonimaj vizitantoj</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>sama kiel via</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>malsama</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>La profilo, kiun anonimaj vizitantoj ricevas laŭ la samaj ViewCacheTweaks, kun la defaŭltaj preferoj, sen la partoj de la vido: aŭskultanto, kiu legas la seancon, ne povas esti demandata pri ili.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferoj</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Neniu vidreĝimo dependas de uzantaj preferoj (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>La preferoj, de kiuj dependas la vidoj de ĉi tiuj vidreĝimoj (CachedViewPreferences), kun la valoro de la uzanto aŭ la defaŭlto. Ili estas en la profilo kiel userpreferences, tiuj de ĉiuj vidreĝimoj kune.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Vida reĝimo</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Prefero</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Defaŭlta</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politikoj</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Montri la politikojn de la roloj (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>La politikoj ŝargiĝas de la servilo, kiam ĉi tiu sekcio malfermiĝas, po unu paĝo, kaj filtreblas laŭ modulo kaj funkcio.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funkcio</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Ĉiuj moduloj</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Ĉiuj funkcioj</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Limigoj</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Montri pli</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Ĉi tiuj roloj havas neniujn politikojn.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Neniu politiko kongruas kun la filtrilo.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown el %matching politikoj (%total entute)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

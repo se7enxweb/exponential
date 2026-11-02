@@ -68567,6 +68567,226 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Kjo kërkesë: shërbyer nga memoria e përkohshme e faqeve në %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Përdoruesi</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID-ja e përdoruesit</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profili i cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Kjo pamje</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Memoria e përkohshme e pamjeve</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>për përdorues (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profili i cache i përdoruesit: përdoruesit me të njëjtin profil ndajnë skedarët e cache të pamjeve</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Emri i përdoruesit</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>I identifikuar</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Seanca</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Pjesët e çelësit të cache të pamjeve të përmbajtjes që varen nga përdoruesi, saktësisht siç i merr çelësi, sipas ViewCacheTweaks të kësaj faqeje. Përdoruesit me të njëjtin profil ndajnë skedarët e cache të pamjeve, përveç nëse ndryshojnë pjesët e vetë pamjes (preferencat, çelësat e dëgjuesve): ato kanë profilin e tyre, vetëm për këtë faqe.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profili</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Kjo pamje (nyja %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: çdo përdorues i identifikuar ka skedarët e vet të cache.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks në fuqi: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Pjesa</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vlera</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Asnjë pjesë nuk varet nga përdoruesi (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>kjo pamje</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopjo si tekst</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rolet</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Nuk u lexua dot asnjë caktim rolesh.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID e rolit</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Roli</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Kufizimi</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Caktuar për</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>përdoruesin</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupi %name (objekti %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>U kopjua</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Nuk u kopjua dot.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>lënë jashtë nga një dëgjues</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Vizitorët anonimë</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>njësoj si i juaji</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ndryshe</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profili që marrin vizitorët anonimë me të njëjtat ViewCacheTweaks, me preferencat e parazgjedhura, pa pjesët e pamjes: një dëgjuesi që lexon sesionin nuk mund t'i kërkohen ato.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferencat</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Asnjë mënyrë pamjeje nuk varet nga preferencat e përdoruesit (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Preferencat nga të cilat varen pamjet e këtyre mënyrave të pamjes (CachedViewPreferences), me vlerën e përdoruesit ose të parazgjedhurën. Ato janë në profil si userpreferences, ato të të gjitha mënyrave të pamjes bashkë.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Mënyra e shfaqjes</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Preferenca</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>I parazgjedhur</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politikat</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Shfaq politikat e roleve (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politikat ngarkohen nga serveri kur hapet ky seksion, një faqe në një herë, dhe mund të filtrohen sipas modulit dhe funksionit.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funksioni</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Të gjitha modulet</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Të gjitha funksionet</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Kufizimet</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Shfaq më shumë</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Këto role nuk kanë politika.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Asnjë politikë nuk përputhet me filtrin.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown nga %matching politika (%total gjithsej)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

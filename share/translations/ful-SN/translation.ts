@@ -68628,6 +68628,226 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ñaagnde ndee: rokkaama e cache kelle e nder %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Kuutoro</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID kuutoro</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Porfiil kaas</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ndee yiyannde</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Cache yiyannde</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>kala huutoroowo (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Porfiil kaas huutoroowo: huutorooɓe jogiiɓe porfiil gooto ina renndoo e fiše kaas yiyannde</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>eey</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>alaa</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Innde naatgol</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Naatii</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Jokkere</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Geɗe coktirgal kaas yiyannde loowdi ɗe njowitii e huutoroowo, no coktirgal ngal jogortoo ɗe non, e les ViewCacheTweaks hello ngoo. Huutorooɓe jogiiɓe porfiil gooto ina renndoo e fiše kaas yiyannde, si geɗe yiyannde nde e hoore mum ceertaani (cuɓe, coktirɗe heɗotooɓe): ɗeen ina njogii porfiil mum en, ngam hello ngoo tan.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ndee yiyannde (nokku %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: kala huutoroowo naatiiɗo ina jogii fiše kaas mum.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks golloowi: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Dammugal</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Keewal</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Alaa geɗal njowitiingal e huutoroowo (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ndee yiyannde</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Natto no binndol</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Darnde</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Toɗɗagol darnde fof waawaa janngeede.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID darnde</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Darnde</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Keerol</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Toɗɗaa e</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>huutoroowo</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>fedde %name (huunde %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Nattaama</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Waawaa nattaade.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ɗaccaa ko heɗotooɗo</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Yaaroobe anndaaɓe</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>wano maa</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ceertuɗo</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Porfiil mo koɗɓe ɓe anndaaka keɓata e les ViewCacheTweaks gooto, e cuɓe woowaaɗe, tawa alaa geɗe yiyannde: heɗotooɗo janngoowo jokkere nde waawaa naamneede ɗe.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Cuɓe</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Alaa mbaydi yiyannde njowitiinde e cuɓe huutoroowo (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Cuɓe ɗe yiyannde ɗee mbaydi yiyannde njowitii (CachedViewPreferences), e njaru huutoroowo walla ndu woowaandu. Ɗe ngoni e porfiil hono userpreferences, ɗe mbaydi yiyannde fof kawriti.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Mbaadi yiyde</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Cuɓol</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Ko woowaa</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Doosgolji</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Hollu dawaale darnde ɗee (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Dawaale ɗee ina loowee e sarwoor tuma nde pecceere ndee udditaa, hello gooto e nder sahaa, ina waawi sefeede e mojuul e golle.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Module fof</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Golle fof</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Keerol</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Hollu ko ɓuri</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Ɗee darnde alaa dawaale.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Alaa dawol yahdungol e sefirde nde.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown e %matching dawaale (%total fof)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

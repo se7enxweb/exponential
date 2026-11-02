@@ -68636,6 +68636,226 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Dis request: page cache serve am in %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Di user</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Di user ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Di cache profile</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Dis view</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Di view cache</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>for each user (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Di user cache profile: users wey get di same profile dey share di view cache files</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yes o</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no o</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Login name</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Don log in</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Di session</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Di parts of di content view cache key wey depend on di user, exactly as di key take dem, under di ViewCacheTweaks of dis page. Users wey get di same profile dey share di cache files of di views, unless di parts of one view self no be di same (preferences, keys of listeners): dose ones get dia own profile, for dis page only.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Di profile</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Dis view (node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: every user wey don log in get dia own cache files.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks wey dey work: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Di part</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Di value</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>No part dey depend on di user (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>dis view</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Copy am as text</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Di roles</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>We no fit read any role assignment.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Di role ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Di role</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Di limitation</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Dem give am to</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>di user</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>di group %name (object %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Don copy</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>E no fit copy.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>one listener comot am</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Visitors wey no get name</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>na di same as your own</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>e no be di same</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Di profile wey visitors wey no get name dey get under di same ViewCacheTweaks, wit di default preferences, without di parts of di view: nobody fit ask listener wey dey read di session for dem.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Di preferences</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>No view mode dey depend on user preferences (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Di preferences wey di views of dis view modes dey depend on (CachedViewPreferences), wit di user value or di default. Dem dey inside di profile as userpreferences, di ones of every view mode togeda.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Di view mode</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Di preference</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Di default</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Di policies</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Show di policies of di roles (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Di policies dey load from di server when you open dis section, one page at a time, and you fit filter dem by module and function.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Di function</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>All di modules</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>All di functions</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Di limitations</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Show plenty more</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Dis roles no get any policy.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>No policy match di filter.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown out of %matching policies (%total for all)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

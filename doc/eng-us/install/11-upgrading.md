@@ -434,6 +434,8 @@ The changes people meet most often when they reach 6.0.15:
 - **Legacy extensions** were brought to one standard between 22 September and 2 October 2026:
   [Behaviour changes of the legacy extensions](../bc/6.0/extensions-behaviour-changes.md).
 - **Static cache defaults** changed: [Static cache defaults](../bc/6.0/static-cache-defaults.md).
+- **Static publishing** is new (November 2026): off until you switch it on; the upgrade step `6.0.15-static-publish-tables` makes the
+  tables `exp_static_run` and `exp_static_page`. [Static publishing](../bc/6.0/static-publishing.md).
 - **Velocity**, if you run it: [Velocity engine upgrade notes](../bc/6.0/velocity-engine-upgrade-notes.md) and
   [on-disk layout](../bc/6.0/velocity-ondisk-layout.md).
 

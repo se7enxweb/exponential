@@ -26,6 +26,7 @@
     },
     "*": {
         "ID %id": "the abbreviation ID before the number, kept as it is",
+        "VC %profile": "chip of the debug bar's User tab: the abbreviation VC (view cache) and the cache profile's fingerprint",
         "down()": "the method a migration takes itself back with, kept as code",
         "datatable.ini": "file name, kept as code",
         "secrets.ini": "file name, kept as code",

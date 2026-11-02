@@ -68628,6 +68628,226 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Esta petición: servida desde a caché de páxinas en %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Usuario</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID de usuario</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Perfil de caché</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Esta vista</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Caché de vistas</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>por usuario (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Perfil de caché do usuario: os usuarios co mesmo perfil comparten os ficheiros da caché de vistas</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>si</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Nome de usuario</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Sesión iniciada</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesión</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>As partes da chave da caché de vistas de contido que dependen do usuario, tal como as toma a chave, segundo os ViewCacheTweaks desta páxina. Os usuarios co mesmo perfil comparten os ficheiros de caché das vistas, agás que difiran as partes da propia vista (preferencias, chaves dos listeners): esas teñen un perfil propio, só para esta páxina.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Perfil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Esta vista (nodo %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: cada usuario con sesión iniciada ten os seus propios ficheiros de caché.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks en vigor: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Parte</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ningunha parte depende do usuario (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>esta vista</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Copiar como texto</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roles</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Non se puido ler ningunha asignación de rol.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID do rol</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rol</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Limitación</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Asignado a</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>o usuario</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupo %name (obxecto %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copiado</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Non se puido copiar.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>omitido por un listener</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Visitantes anónimos</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>igual ao teu</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>diferente</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>O perfil que reciben os visitantes anónimos cos mesmos ViewCacheTweaks, coas preferencias predeterminadas, sen as partes da vista: a un listener que le a sesión non se lle poden pedir.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferencias</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ningún modo de vista depende das preferencias do usuario (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>As preferencias das que dependen as vistas destes modos de vista (CachedViewPreferences), co valor do usuario ou o predeterminado. Están no perfil como userpreferences, as de todos os modos de vista xuntas.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Modo de vista</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Preferencia</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Predeterminado</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Políticas</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Mostrar as políticas dos roles (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>As políticas cárganse do servidor ao abrir esta sección, unha páxina de cada vez, e pódense filtrar por módulo e función.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Función</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Todos os módulos</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Todas as funcións</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Limitacións</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Mostrar máis</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Estes roles non teñen políticas.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ningunha política coincide co filtro.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown de %matching políticas (%total en total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

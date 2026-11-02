@@ -68628,6 +68628,226 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Questa dumonda: furnida da la memoria intermediara da paginas en %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Utilisader</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID da l'utilisader</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Profil da cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Questa vista</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Memoria intermediara da las vistas</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>per utilisader (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Profil da cache da l'utilisader: utilisaders cun il medem profil partan las datotecas da cache da las vistas</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>gea</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Num d'utilisader</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Annunzià</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesida</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Las parts da la clav da cache da la vista da cuntegn che dependan da l'utilisader, exactamain sco che la clav las prenda, tenor las ViewCacheTweaks da questa pagina. Utilisaders cun il medem profil partan las datotecas da cache da las vistas, nun che las parts d'ina vista sezza differeschian (preferenzas, clavs da listeners): quellas han in agen profil, mo per questa pagina.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Questa vista (nod %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: mintga utilisader annunzià ha atgnas datotecas da cache.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks activas: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Part</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valur</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Nagina part na dependa da l'utilisader (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>questa vista</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Copiar sco text</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Rollas</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Impussibel da leger attribuziuns da rollas.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID da la rolla</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rolla</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Restricziun</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Attribuì a</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>l'utilisader</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>gruppa %name (object %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Copià</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Impussibel da copiar.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>laschà davent d'in listener</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Visitaders anonims</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>il medem sco il voss</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>auter</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Il profil che visitaders anonims survegnan sut las medemas ViewCacheTweaks, cun las preferenzas da standard, senza las parts da la vista: in listener che legia la sessiun na po betg vegnir dumandà per quellas.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Preferenzas</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Nagin modus da vista na dependa da preferenzas da l'utilisader (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Las preferenzas da las qualas dependan las vistas da quests modus da vista (CachedViewPreferences), cun la valur da l'utilisader u cun la valur da standard. Ellas èn en il profil sco userpreferences, quellas da tut ils modus da vista ensemen.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Modus da vista</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Preferenza</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Directivas</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Mussar las directivas da las rollas (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Las directivas vegnan chargiadas dal server cura che questa secziun vegn averta, ina pagina a la giada, e pon vegnir filtradas tenor modul e funcziun.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funcziun</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Tut ils moduls</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Tut las funcziuns</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Restricziuns</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Mussar dapli</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Questas rollas n'han naginas directivas.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Nagina directiva na correspunda al filter.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown da %matching directivas (%total en total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

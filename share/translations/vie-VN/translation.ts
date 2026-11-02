@@ -68628,6 +68628,226 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Yêu cầu này: được phục vụ từ bộ nhớ đệm trang trong %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Người dùng</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID người dùng</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Hồ sơ bộ nhớ đệm</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Khung nhìn này</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Bộ nhớ đệm chế độ xem</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>theo người dùng (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Hồ sơ bộ nhớ đệm của người dùng: người dùng có cùng hồ sơ dùng chung các tệp bộ nhớ đệm khung nhìn</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>có</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>không</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Tên đăng nhập</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Đã đăng nhập</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Phiên</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Các phần của khóa bộ nhớ đệm khung nhìn nội dung phụ thuộc vào người dùng, đúng như khóa lấy chúng, theo ViewCacheTweaks của trang này. Người dùng có cùng hồ sơ dùng chung các tệp bộ nhớ đệm của khung nhìn, trừ khi các phần của chính khung nhìn khác nhau (tùy chọn, khóa của listener): những khung nhìn đó có hồ sơ riêng, chỉ cho trang này.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Hồ sơ</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Khung nhìn này (nút %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: mỗi người dùng đã đăng nhập có các tệp bộ nhớ đệm riêng.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks đang áp dụng: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Phần</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Giá trị</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Không phần nào phụ thuộc vào người dùng (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>khung nhìn này</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Sao chép dạng văn bản</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Vai trò</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Không đọc được phân công vai trò nào.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID vai trò</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Vai trò</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Giới hạn</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Được gán cho</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>người dùng</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>nhóm %name (đối tượng %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Đã sao chép</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Không thể sao chép.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>bị một listener bỏ ra</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Khách truy cập ẩn danh</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>giống của bạn</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>khác</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Hồ sơ mà khách ẩn danh nhận được với cùng ViewCacheTweaks, với tùy chọn mặc định, không có các phần của khung nhìn: không thể hỏi listener đọc phiên về chúng.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Tùy chọn</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Không chế độ xem nào phụ thuộc vào tùy chọn người dùng (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Các tùy chọn mà khung nhìn của các chế độ xem này phụ thuộc (CachedViewPreferences), với giá trị của người dùng hoặc mặc định. Chúng nằm trong hồ sơ dưới dạng userpreferences, của mọi chế độ xem gộp lại.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Chế độ xem</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Tùy chọn</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Mặc định</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Chính sách</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Hiện chính sách của các vai trò (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Các chính sách được tải từ máy chủ khi mở phần này, từng trang một, và có thể lọc theo mô-đun và chức năng.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Chức năng</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Tất cả mô-đun</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Tất cả chức năng</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Giới hạn</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Hiện thêm</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Các vai trò này không có chính sách.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Không có chính sách nào khớp với bộ lọc.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching chính sách (tổng %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

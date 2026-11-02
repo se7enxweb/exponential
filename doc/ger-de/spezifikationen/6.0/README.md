@@ -16,6 +16,8 @@ Block, Schlüssel, Standard, Geltungsbereich) und endet mit „Verwandte Seiten�
 | [INI-Override-Verzeichnisse und Platzierungen](ini-override-platzierungen.md) | Wie `eZINI` Einstellungsdateien ordnet; Einstellungen je Siteaccess innerhalb von Extensions |
 | [Audit-Ereignismodell](audit-ereignismodell.md) | Ereignisnamen, Datensätze, Kanäle, Hash-Ketten, `audit.ini`, Erweiterungspunkte |
 | [Das Build-Format des statischen Veröffentlichens](statisches-veroeffentlichen-build-format.md) | Die Ordner, wohin Seiten und Dateien kommen, was herausgenommen wird, was eine Seite ablehnen lässt, das Umschreiben der Links, die Zusatzdateien, das Manifest `exp-static-manifest/1`, `exp-static/1`, die Linkprüfung |
+| [Das Manifest des statischen Veröffentlichens](statisches-veroeffentlichen-manifest.md) | `exp-static-manifest/1` im Detail: Dateien, Kodierung, Pfade, der Dateieintrag, wie Diff, Anwenden, Teil-Builds, Prüfen, die Seiten einer Veröffentlichung und die Rücknahme es nutzen |
+| [Der Formular-Endpunkt des statischen Veröffentlichens](statisches-veroeffentlichen-formular-endpunkt.md) | Der Endpunkt `staticpublish/form`, an den Formulare einer statischen Kopie senden: Herkunft, signiertes Token, Ratenbegrenzung |
 | [Das Migrationsdateiformat](migrationsdateiformat.md) | Dateinamen, der Kopf, die PHP-Klasse, die Prüfsumme, Reihenfolge, Zustände, die Aufzeichnungstabellen, die Statusdatei, das Laufprotokoll, `exp-migration/1` |
 | [Metadaten von Extensions](extension-metadaten.md) | `ezinfo.php`, `extension.xml`, `expInfo`, die Release-Regel |
 | [Installer-Protokolle und Startdaten](installer-protokolle-und-startdaten.md) | Startdatendateien, der Inhaltsbaum einer neuen Installation, Installer-Protokolle |
