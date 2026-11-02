@@ -6741,7 +6741,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
-86dfc90183ee24631a4712126ccee787  doc/eng-us/features/6.0/content-jobs.md
+b10b8f6d48a35a112fc60abd882b4869  doc/eng-us/features/6.0/content-jobs.md
 69bc192a5b87b894ac2d4269a1dca6ce  doc/eng-us/features/6.0/content-limitation-handlers.md
 ad56fd18bdd749e07ee822b325ad15e0  doc/eng-us/features/6.0/content-security-policy.md
 e37ff9e9d23c49c89dc1a5bdb3f64abb  doc/eng-us/features/6.0/country-groups.md
@@ -23892,7 +23892,7 @@ f6100ad56b2605115bd6fc6d7f482b25  kernel/classes/contentjob/expcontentjobstatesu
 074b1234375eb880b059753f99e98d54  kernel/classes/contentjob/expcontentjobstore.php
 46d27d5c301edd17acdfa8170b5e864d  kernel/classes/contentjob/expcontentjobtransfer.php
 2a9c346ee6c25e7c07d0c9515e7b2f44  kernel/classes/contentjob/expcontentjobtype.php
-28227d46a8c5bfa79ec9d35edb7cfd9c  kernel/classes/contentjob/expcontentjobworker.php
+0eef10bf7d08d62bf82a8b7c710b3472  kernel/classes/contentjob/expcontentjobworker.php
 e12509db7c16bfb4c891619dc0a983a2  kernel/classes/datatable/expdataconnection.php
 1f51eb85374c4cb868c25faa24284150  kernel/classes/datatable/expdataconnections.php
 892949e1a6bcf455e601d38633af6b48  kernel/classes/datatable/expdatatablecatalogue.php
@@ -26317,7 +26317,7 @@ f99a41a30ace913f63ff7525de52d0ff  settings/browse.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-ef6fd4ff7095c2070439463eec349f40  settings/content.ini
+925cccff5042d43e67f16dfdc43451f8  settings/content.ini
 5a57137294a415e06b0009c05e110036  settings/contentcheck.ini
 3f17f13b308164f04a7c3dad1613e464  settings/contentfinder.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
@@ -28114,6 +28114,7 @@ dca03bcce86d26850f7484091fc78e6b  tests/tests/kernel/classes/codetemplate/eZCode
 0ea8d71f1f4fc503912171d6000c0030  tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php
 791c0974a3ec97a8dffee1aa606b46fe  tests/tests/kernel/classes/commands/expVelocityHelpTextTest.php
 fb4afabd8a224fc7d5bc621763617be4  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
+8576454518714afd3196b1602a232008  tests/tests/kernel/classes/contentjob/expContentJobWorkerBatchSizeTest.php
 042369669760298efbb9f416cde4ab9d  tests/tests/kernel/classes/contentjobs/expContentJobCopyLinksTest.php
 d08208429f9bc154485f92e6d2c3fb30  tests/tests/kernel/classes/contentmodel/eZContentClassLiveTest.php
 47a3e49c49bb29932c590bf94eb54356  tests/tests/kernel/classes/contentmodel/eZContentFunctionCollectionLiveTest.php

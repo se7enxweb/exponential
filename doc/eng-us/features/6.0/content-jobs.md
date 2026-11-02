@@ -76,7 +76,7 @@ All keys are in `settings/content.ini`, block `ContentJobSettings`. Scope: insta
 |---|---|---|
 | `SynchronousLimit` | `50` | Below this many nodes "now" is offered first; `0` = always "job" |
 | `NowLimit` | `1000` | "Now" is refused above this; `0` = no ceiling |
-| `BatchSize` | `50` | Nodes per batch (one transaction each) |
+| `BatchSize` | `50` | Nodes per batch (one transaction each); on SQLite the next batch is halved while one holds the write lock over 2 s, and grows back to this when batches are quick |
 | `BatchPause` | `0` | Seconds between batches |
 | `QueuedGrace` / `QueuedTimeout` | `60` / `600` | Seconds before a queued job is started by cron / given up |
 | `MaxAttempts` | `5` | Worker restarts before a job fails; also the automatic resumes in a row of a job that failed for a busy database |
