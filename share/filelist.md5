@@ -3447,7 +3447,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-ee5f8e132c2dfdf34293ceffabaebdf7  doc/changelogs/6.0/6.0.15.md
+f9a24da1fc10c97ef9b14e96d326e918  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3592,7 +3592,7 @@ f8dec2dfb81fbb16a107d0bde08c230b  doc/eng-us/bc/6.0/cli_cronjob_view_abstraction
 f504dbb0bd1d30709cde9b7def0b1c52  doc/eng-us/bc/6.0/content-export-menu.md
 cc90672fddc8e975d7107993d9b1cb59  doc/eng-us/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/eng-us/bc/6.0/content-object-fallback-locale.md
-ab5777a3b87d9673431a5cc6112539ba  doc/eng-us/bc/6.0/debug-bar.md
+7d86e5d2ea5eb3dcfc90b8c958242a82  doc/eng-us/bc/6.0/debug-bar.md
 dd5a75132053a4ed2a80e386eebe7f04  doc/eng-us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/eng-us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
@@ -6747,7 +6747,7 @@ f58ef44439a83c0f3bd4e9ede1173901  doc/eng-us/features/6.0/cronjobs-console.md
 fe706ad129c921a5ec4d194fa6745051  doc/eng-us/features/6.0/editor-account-approval.md
 8bb25377c53c0d863e0b1ad669e226da  doc/eng-us/features/6.0/environment-settings.md
 c5efbdd362ad6370abdcf053a6f5cd9d  doc/eng-us/features/6.0/exp-adminui.md
-1475af7d4f1609ef6fd36e28e10cf44d  doc/eng-us/features/6.0/exp-debug-bar.md
+722a906a2015af162ace0a674c83ad2d  doc/eng-us/features/6.0/exp-debug-bar.md
 d9177e42ef957029c160b94a0b7e6363  doc/eng-us/features/6.0/exp-ini-command.md
 ac55ec9c4caa5425b7c20230440f9026  doc/eng-us/features/6.0/extension-list-and-downloads.md
 b35cf8140a2f26d5e3488661f148506d  doc/eng-us/features/6.0/extension-loading-order.md
@@ -11239,7 +11239,7 @@ c8b13b92e9b90ab579eadedea6635aa5  doc/eng-us/help/php-developers/security-in-php
 9bda36c70848dc6e03ffc867d27cea91  doc/eng-us/help/php-developers/static-state-traps.md
 9bb8497d245f5431f64868e4e145a0bf  doc/eng-us/help/php-developers/supported-php-versions.md
 dfe1719906a2ed1eb8f50b52c2164f07  doc/eng-us/help/php-developers/the-coding-standard.md
-08d33b1972bfabd46d142d660685fba4  doc/eng-us/help/php-developers/the-debug-bar-for-php-developers.md
+1d7a2d1fbbacdc0d1f31472f39f2b0fc  doc/eng-us/help/php-developers/the-debug-bar-for-php-developers.md
 3e66706cbebac52faa1cdafe347d712d  doc/eng-us/help/php-developers/the-engine-phar-for-php-developers.md
 d54b61f35504722feae6c3e9e3781c4a  doc/eng-us/help/php-developers/the-kernel-service-container.md
 19fb72bae7189bbcdb0508f883646789  doc/eng-us/help/php-developers/validating-input-and-casting.md
@@ -13373,7 +13373,7 @@ db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
 22387ed0bedfdd9b421e473547a4c3c1  doc/ger-de/bc/6.0/crontab-bei-der-installation.md
 ea07b67ad11528eeabcfb2c593d40818  doc/ger-de/bc/6.0/dateimodi.md
 82dae10ac5fe0c63f5922ecbf3165b4f  doc/ger-de/bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md
-ce08fc69194b693819f51692be4c9585  doc/ger-de/bc/6.0/debug-leiste.md
+ffdfd362d0c2c02235325d44b2581975  doc/ger-de/bc/6.0/debug-leiste.md
 1ca93780e39ff386b13ea6f6a76267b9  doc/ger-de/bc/6.0/demomodus.md
 639639dd0808e7a81326655b6b971a60  doc/ger-de/bc/6.0/e-mail-einstellungen.md
 c837b1b052fefd9478c4cb6452f2a62a  doc/ger-de/bc/6.0/einstellungen-fuer-seitengroessen.md
@@ -16359,7 +16359,7 @@ c4ac384cbe89a44c6a11a586759b5c84  doc/ger-de/funktionen/6.0/erweiterungen/sevenx
 aaf7124b4c84243459602e94e15c755e  doc/ger-de/funktionen/6.0/erweiterungen/xrowextract.md
 0a352feeafe3914509786f11718402cf  doc/ger-de/funktionen/6.0/erweiterungen/xrowmetadata.md
 35c5a1ba681656ba437b9f07265b606a  doc/ger-de/funktionen/6.0/exp-adminui.md
-b1a17245ed04b8323c1b3acf66144d0c  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
+3c8abf4cd5e2e1b9b045691d9ee69f90  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 562485087228bd9e87a72a2bad882695  doc/ger-de/funktionen/6.0/exp-ini-befehl.md
 0de4b3d8a279a43c0f19fcb08c3b54ec  doc/ger-de/funktionen/6.0/extension-liste-und-downloads.md
 2e31533efcf8f0f4f1dce7fa4d593a7b  doc/ger-de/funktionen/6.0/ezpm-paketmanager-cli.md
@@ -19547,7 +19547,7 @@ c8e2c829d3c170676e6264b7f41e4bc3  doc/ger-de/hilfe/php-entwickler/debugging-mit-
 2e41b807e11ce6d5fd50e76794331134  doc/ger-de/hilfe/php-entwickler/definitionen-persistenter-objekte-im-detail.md
 65b78d6b25e3e34ba29882987c7880c6  doc/ger-de/hilfe/php-entwickler/der-coding-standard.md
 bd194ecc9dec42cb21672485ba4515b3  doc/ger-de/hilfe/php-entwickler/der-kernel-service-container.md
-ccea96e06902786ae559fd16d1072331  doc/ger-de/hilfe/php-entwickler/die-debug-leiste-fuer-php-entwickler.md
+b45af90559c749e268e638eb287ed216  doc/ger-de/hilfe/php-entwickler/die-debug-leiste-fuer-php-entwickler.md
 1068b0b4fbd033b30e59a6bb6665a4be  doc/ger-de/hilfe/php-entwickler/ein-php-entwicklungs-checkout.md
 bf86a5465fe5ba9c7136ca094d27dc10  doc/ger-de/hilfe/php-entwickler/ein-rundgang-durch-den-quellbaum.md
 c11ba297d517eabce51c0352809cc8ae  doc/ger-de/hilfe/php-entwickler/eine-fetch-funktion-schreiben.md
