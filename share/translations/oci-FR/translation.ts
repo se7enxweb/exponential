@@ -14677,6 +14677,14 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guidas, recèrca e cossí senhalar una error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contengut recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Lo contengut mai novèl, çò qu'es retengut per verificacion e d'accions sus una seleccion.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>The form could not be read.</source>
         <translation>Lo formulari se poguèt pas legir.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tablèu de bòrd</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>unknown</source>
         <translation>desconegut</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count sus %pages pagina(s):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Un .gz (e .br) a costat de cada fichièr tèxt, pels ostes que los servisson.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Una pichona pagina per cada ancian adreça e alias d'una pagina, per que los ligams ancians contunhen de foncionar.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Totjorn escrich quand GitHub Actions liura lo site.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Un id SPDX coma CC-BY-4.0, o lo tèxt meteis.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Panièr</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Apèls al servidor</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Comentaris</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formularis que collectan d'informacions</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Fluxe de trabalh GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mens d'espaci blanc e pas cap de comentari dins las paginas.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licéncia del contengut</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Connexion</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimizar</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Autres formularis</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precomprimir</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Paginas de redireccion</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Paginas de redireccion: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Recèrca</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indèx de recèrca: %pages pagina(s) en %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Fuèlhs d'estil e scripts nomenats per l'impronta de lor contengut, per que los navegadors los pòscan gardar.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Las paginas modificadas, qualques minutas aprèp la darrièra modificacion (la part cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>La licéncia del contengut, del camp çai-jos.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Tot lo site, a las oras del planning (la part cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Aquelas partidas de las paginas an besonh d'un servidor; caduna a recebut un remplaçament. Verificatz-las abans de publicar.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Çò que fonciona pas estaticament</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Çò qu'es lo depaus, per qui lo dobrís sus l'òste.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>daissat de costat</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>lo tèxt de remplaçament</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>lo punt d'accès dels formularis del site en linha</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>lo site en linha</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>la pagina de recèrca de la còpia</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Lo formulari a pas pogut èsser enviat.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Mercé: lo formulari es estat enviat.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Lo formulari es pas estat acceptat: verificatz çò qu'avètz picat e tornatz-lo enviar.</translation>
     </message>
 </context>
 </TS>

@@ -14677,6 +14677,14 @@ Yuyay: q'ipikunaqa manam churasqata hurqusqa kanqachu.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Pusaqkuna, maskay chaymanta pantayta imayna willanaykipaq.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Musuq willakuykuna</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Aswan musuq willakuykuna, qhawarinapaq hark'asqa, akllasqapaq ruwaykunapas.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The form could not be read.</source>
         <translation>Formularioqa mana ñawinchakuyta atikurqanchu.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Llamk'ana panqa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>unknown</source>
         <translation>mana yachasqa</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages raphikunamanta %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Sapa qillqa willaypa ladunpi huk .gz (hinaspa .br), paykunata qukuq hostkunapaq.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Raphipa sapa ñawpaq kikinchayninpaq hinaspa ruwasqa sutinpaq huk huch'uy raphi, ñawpaq t'inkikuna llamk'ananpaq.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Sapa kutim qillqasqa kanqa GitHub Actions kawsaq webta chayachimuptin.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 hina huk SPDX id, icha qillqa kikin.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Chuspa</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Servidorman waqyaykuna</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Rimaykuna</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Willakuykunata huñuq formulariokuna</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions llamk'ay puriy</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Raphikunapi pisi chusaq cheqe, mana rimaykunayuq.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ukhunchapa licencian</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Yaykuy</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Huch'uyyachiy</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Huk formulariokuna</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Ñawpaqta ñit'iy</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Hukman apaq raphikuna</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Hukman apaq raphikuna: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Maskay</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Maskay yupana: %pages raphikuna %languages simipi.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Ukhunchanku hash sutiwan sutichasqa estilo raphikuna hinaspa scriptkuna, buscadorkuna waqaychanankupaq.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Tikrasqa raphikuna, qhipa tikraymanta pisi minutu qhipata (cronjob rakin staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ukhunchapa licencian, chaypi ruraypi kaymanta.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Llapan web, tiempo qillqapi (cronjob rakin staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Kay raphi rakikunaqa servidorta munanku; sapankanmi huk rantiyta chaskirqan. Lluqsichiyta ñawpaqmanta qhawariy.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Mana takyaq hinalla ruwaq</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Repositorio ima kasqanta, hostpi kicharuqpaq.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>saqisqa</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>rantiq qillqa</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>kawsaq webpa formulario tukukuy</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>kawsaq web</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kikinchasqapa maskana raphin</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulario mana apachisqachu karqan.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Añay: formulario apachisqa karqan.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulario mana chaskisqachu karqan: qillqasqaykita qhawariy hinaspa kutimpuni apachiy.</translation>
     </message>
 </context>
 </TS>

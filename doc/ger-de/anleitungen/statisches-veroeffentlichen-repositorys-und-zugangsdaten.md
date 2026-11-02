@@ -212,6 +212,14 @@ dieser Benutzer schreibt, würden den nächsten Build stören. Unter Windows lau
 Shell gestartet, Pfade verwenden `/`, und die Datei des Deploy-Keys wird mit den Rechten des aktuellen Benutzers
 geschrieben.
 
+## Ziele in eine andere Installation mitnehmen
+
+`./console exp:static:targets --export=all` (oder `--export=github-public,docs`) gibt die Ziele als INI-Migration
+aus: ihre Blöcke `[Target_<id>]` und `TargetList[]`. Legen Sie sie im Migrationsordner der anderen Installation ab
+(`YYYYMMDDHHMMSS_static_targets.ini`) oder in einem Site-Paket, und führen Sie sie dort aus. Ein Credential reist als
+Name seines Secrets (`token:github_pages_token`), nie als Wert: Legen Sie den Wert unter Setup > Secrets der anderen
+Installation ab. Die Migration schaltet das statische Veröffentlichen nicht ein.
+
 ## Fehlerbehebung
 
 | Symptom | Ursache und Abhilfe |

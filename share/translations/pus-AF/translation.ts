@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>لارښودونه، لټون او د تېروتنې د راپور ورکولو لاره.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>وروستۍ منځپانګه</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>تر ټولو نوې منځپانګه، هغه څه چې د بیاکتنې لپاره ساتل شوي، او پر یوې ټاکنې کړنې.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>فورمه ونه لوستل شوه.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ډشبورډ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>له %pages پاڼو څخه %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>د هرې متن فایل ترڅنګ یو .gz (او .br)، د هغو کوربانو لپاره چې دوی وړاندې کوي.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>د پاڼې د هرې زړې پتې او نوم لپاره یوه کوچنۍ پاڼه، څو زاړه لینکونه کار وکړي.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>تل لیکل کیږي کله چې GitHub Actions سایټ وسپاري.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>یو SPDX پېژند لکه CC-BY-4.0، یا پخپله متن.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ټوکرۍ</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>سرور ته غوښتنې</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>نظرونه</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>هغه فورمې چې معلومات راټولوي</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>د GitHub Actions کاري بهیر</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>په پاڼو کې لږ تش ځای او هېڅ نظر نشته.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>د منځپانګې جواز</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ننوتل</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>کوچنی کړئ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>نورې فورمې</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>مخکې فشار کړئ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ریډایرکټ پاڼې</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ریډایرکټ پاڼې: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>لټون</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>د لټون فهرست: په %languages کې %pages پاڼې.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>سټایل شیټونه او سکریپټونه چې د خپلې منځپانګې په هش نومول شوي، څو براوزرونه یې وساتي.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>بدلې شوې پاڼې، د وروستي بدلون څو دقیقې وروسته (د cronjob برخه staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>د منځپانګې جواز، له لاندې ساحې څخه.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ټوله سایټ، د مهالوېش په وختونو کې (د cronjob برخه staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>د پاڼو دا برخې سرور ته اړتیا لري؛ هره یوه بدیل ترلاسه کړ. مخکې له خپرولو یې وګورئ.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>هغه څه چې په ثابت ډول کار نه کوي</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ذخیره څه ده، د هغه چا لپاره چې په کوربه یې پرانیزي.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>پرېښودل شوی</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>بدیل متن</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>د ژوندي سایټ د فورمې پای ټکی</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ژوندی سایټ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>د کاپي د لټون پاڼه</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>فورمه ونه لېږل شوه.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>مننه: فورمه ولېږل شوه.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>فورمه ونه منل شوه: هغه څه وګورئ چې ټایپ کړي مو دي او بیا یې ولېږئ.</translation>
     </message>
 </context>
 </TS>

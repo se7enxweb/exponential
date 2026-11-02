@@ -11,6 +11,9 @@
  *        their push state set; strings cut to their column length
  *  SS-E3 pages: a manifest's pages replace a target's pages (files and extras are not pages), the other target's
  *        stay
+ *  SS-E4 the on-publish queue (expStaticPublishQueue): the pages of nodes marked stale, a node without a page queued,
+ *        due only after the debounce, done() clears what the build covered and keeps a later change; writePages()
+ *        keeps a change made after the build began
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -105,5 +108,50 @@ trait expStaticStatusEngineChecks
         $this->assertTrue( expStaticStatus::writePages( $db, 'site', $smaller ) );
         $this->assertSame( array( 'index.html' ), array_keys( expStaticStatus::pages( $db, 'site' ) ), 'the pages are replaced' );
         $this->assertCount( 1, expStaticStatus::pages( $db, 'other' ), 'the other target keeps its pages' );
+    }
+
+    /** SS-E4 */
+    protected function checkStatusQueue( $db )
+    {
+        $t0 = 1793500000;
+        $manifest = new expStaticManifest( array( 'run_id' => 'q1', 'built_at' => gmdate( 'c', $t0 ) ) );
+        $manifest->add( 'index.html', 'page', str_repeat( '1', 64 ), 100, array( 'node' => 2 ) );
+        $manifest->add( 'news/index.html', 'page', str_repeat( '2', 64 ), 200, array( 'node' => 60 ) );
+        $this->assertTrue( expStaticStatus::writePages( $db, 'queue', $manifest ) );
+        $this->assertNull( expStaticPublishQueue::due( $db, 'queue', 120, $t0 + 1000 ), 'nothing is stale' );
+        $this->assertSame( 0, expStaticPublishQueue::nodes( array( 2 ), $db, array(), $t0 ), 'no target publishes on content publish' );
+
+        // a publish of node 60 (its page) and node 61 (a new page): marked for the target
+        $this->assertSame( 2, expStaticPublishQueue::nodes( array( 60, 61, 60 ), $db, array( 'queue' ), $t0 + 100 ) );
+        $stale = expStaticPublishQueue::stale( $db, 'queue' );
+        $this->assertSame( array( '.queue/61', 'news/index.html' ), array_keys( $stale ) );
+        $this->assertSame( $t0 + 100, $stale['news/index.html']['stale'] );
+        $this->assertSame( str_repeat( '2', 64 ), $stale['news/index.html']['hash'], 'the row keeps its data' );
+        $this->assertSame( 0, expStaticStatus::pages( $db, 'queue' )['index.html']['stale'] );
+        $this->assertSame( 0, count( expStaticPublishQueue::stale( $db, 'other' ) ), 'another target is not touched' );
+
+        // debounced: due only 120 seconds after the last change
+        $this->assertNull( expStaticPublishQueue::due( $db, 'queue', 120, $t0 + 150 ) );
+        $this->assertSame( array( 'nodes' => array( 60, 61 ), 'full' => false, 'last' => $t0 + 100 ), expStaticPublishQueue::due( $db, 'queue', 120, $t0 + 220 ) );
+        $this->assertSame( 1, expStaticPublishQueue::nodes( array( 2 ), $db, array( 'queue' ), $t0 + 200 ) );
+        $this->assertNull( expStaticPublishQueue::due( $db, 'queue', 120, $t0 + 220 ), 'a later change postpones it' );
+
+        // a build started at t0+250; node 2 changes again while it runs
+        $this->assertSame( 1, expStaticPublishQueue::nodes( array( 2 ), $db, array( 'queue' ), $t0 + 260 ) );
+        $this->assertSame( 2, expStaticPublishQueue::done( $db, 'queue', $t0 + 250 ) );
+        $this->assertSame( array( 'index.html' ), array_keys( expStaticPublishQueue::stale( $db, 'queue' ) ), 'the change during the build stays' );
+        $this->assertArrayNotHasKey( '.queue/61', expStaticStatus::pages( $db, 'queue' ) );
+
+        // the pages written by a publish that began before that change keep its mark; a queued node too
+        $this->assertSame( 1, expStaticPublishQueue::nodes( array( 70 ), $db, array( 'queue' ), $t0 + 270 ) );
+        $next = new expStaticManifest( array( 'run_id' => 'q2', 'built_at' => gmdate( 'c', $t0 + 250 ) ) );
+        $next->add( 'index.html', 'page', str_repeat( '3', 64 ), 100, array( 'node' => 2 ) );
+        $next->add( 'news/index.html', 'page', str_repeat( '4', 64 ), 200, array( 'node' => 60 ) );
+        $this->assertTrue( expStaticStatus::writePages( $db, 'queue', $next ) );
+        $pages = expStaticStatus::pages( $db, 'queue' );
+        $this->assertSame( array( '.queue/70', 'index.html', 'news/index.html' ), array_keys( $pages ) );
+        $this->assertSame( $t0 + 260, $pages['index.html']['stale'] );
+        $this->assertSame( str_repeat( '3', 64 ), $pages['index.html']['hash'] );
+        $this->assertSame( 0, $pages['news/index.html']['stale'] );
     }
 }

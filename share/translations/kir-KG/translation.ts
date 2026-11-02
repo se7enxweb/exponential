@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>Колдонмолор, издөө жана катаны кантип билдирүү керек.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Жаңы мазмун</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Эң жаңы мазмун, текшерүүгө кармалгандар жана тандалгандарга аракеттер.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>Форманы окуу мүмкүн болгон жок.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Башкаруу панели</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>белгисиз</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages беттен %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Ар бир текст файлдын жанында .gz (жана .br), аларды тейлеген хосттор үчүн.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Беттин ар бир эски дареги жана лакап аты үчүн кичинекей бет, эски шилтемелер иштей бериши үчүн.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions сайтты жеткирген сайын ар дайым жазылат.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 сыяктуу SPDX id же тексттин өзү.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Себет</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Серверге чалуулар</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Комментарийлер</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Маалымат чогулткан формалар</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Беттерде боштук аз жана комментарийлер жок.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Мазмундун лицензиясы</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Кирүү</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Кичирейтүү</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Башка формалар</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Алдын ала кысуу</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Багыттоо беттери</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Багыттоо беттери: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Издөө</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Издөө индекси: %languages тилинде %pages бет.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Мазмунунун хэши менен аталган стиль таблицалары жана скрипттер, браузерлер аларды сактай алышы үчүн.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Өзгөргөн беттер, акыркы өзгөрүүдөн бир нече мүнөттөн кийин (cronjob'тун staticpublish бөлүгү).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Мазмундун лицензиясы, төмөнкү талаадан.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Бүт сайт, графиктин убактысында (cronjob'тун staticpublish бөлүгү).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Беттердин бул бөлүктөрүнө сервер керек; ар бирине камдык берилди. Жарыялоодон мурун текшериңиз.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Статикалык иштебегендер</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Репозиторий деген эмне, аны хостто ачкан адам үчүн.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>калтырылган</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>камдык текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>иштеп жаткан сайттын форма акыркы чекити</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>иштеп жаткан сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>көчүрмөнүн издөө бети</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Форманы жөнөтүү мүмкүн болгон жок.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Рахмат: форма жөнөтүлдү.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Форма кабыл алынган жок: киргизгениңизди текшерип, кайра жөнөтүңүз.</translation>
     </message>
 </context>
 </TS>

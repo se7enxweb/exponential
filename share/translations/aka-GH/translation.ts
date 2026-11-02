@@ -14677,6 +14677,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Akwankyerɛ, nhwehwɛmu ne sɛdeɛ wɔbɛbɔ mfomsoɔ ho amanneɛ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nsɛm a ɛyɛ foforɔ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nsɛm foforɔ, deɛ wɔakura ama nhwehwɛmu, ne adeyɛ wɔ nneɛma a wɔapaw so.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>The form could not be read.</source>
         <translation>Wɔantumi ankenkan form no.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Adwumayɛbea</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>unknown</source>
         <translation>wɔnnim</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count wɔ nkrataafa %pages so:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Ɔkame .gz (ne .br) a ɛbɛn kyerɛwtohɔ krataa biara, ma nsɛmma a wɔde som no.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Krataafa ketewa ma ahyɛnsode ne din foforo biara a ɛwɔ krataafa bi so, na ntɛm ntam nkɔntɔn no ate so ayɛ adwuma.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Wɔkyerɛw no daa bere a GitHub Actions de saet no ba.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id te sɛ CC-BY-4.0, anaa ɛno ankasa kyerɛwtohɔ no.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kɛntɛn</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Frɛ a wɔfrɛ sɛfa no</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Nsɛm a wɔka</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Nkrataa a ɛboaboa nsɛm ano</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions adwuma kwan</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mpaemu kakraa ne nsɛm a wɔka a ɛnni nkrataafa no mu.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Nsɛm no ho kwan</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Hyɛ mu</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Tew so</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Nkrataa foforo</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Di kan twe so</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Nkrataafa a wɔde kɔ baabi foforo</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Nkrataafa a wɔde kɔ baabi foforo: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hwehwɛ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Nhwehwɛmu nkyerɛase: nkrataafa %pages wɔ %languages mu.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Nkrataa a wɔhyehyɛ ne nkyerɛwee a wɔfrɛ wɔn din sɛ wɔn nsɛm hash, na ɔkwantu nhwɛ no tumi kora so.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Nkrataafa a ayɛ nsakrae no, simma kakra wɔ nsakrae a etwa toɔ no akyi (cronjob fã staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Nsɛm no ho kwan, firi baabi a ɛwɔ ase no.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Saet no nyinaa, wɔ bere a wɔahyehyɛ no so (cronjob fã staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Nkrataafa yi mu nsɛm hia sɛfa; biara anya nsiesie. Hwɛ ho ansa na woatintim.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Nea ɛnyɛ adwuma wɔ static mu</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Nea nkoraeɛ no yɛ, ma obi a obebue wɔ host no so.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>wɔagyaw</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>nsiesie kyerɛwtohɔ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>live saet no form ano</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>live saet no</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kopi no nhwehwɛmu krataafa</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Entumi mmoa form no.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Yɛda wo ase: wɔde form no akɔ.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Wɔannye form no: hwɛ nea wokyerɛw no na fa san kɔ.</translation>
     </message>
 </context>
 </TS>

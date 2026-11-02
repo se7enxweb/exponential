@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>নির্দেশিকা, অনুসন্ধান এবং ত্রুটি কীভাবে রিপোর্ট করবেন।</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>সাম্প্রতিক কনটেন্ট</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>নতুন কনটেন্ট, পর্যালোচনার জন্য যা আটকে রাখা আছে, এবং একটি নির্বাচনের উপর কার্যক্রম।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>ফর্মটি পড়া যায়নি।</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ড্যাশবোর্ড</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>অজানা</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count টি, %pages টি পৃষ্ঠায়:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>প্রতিটি টেক্সট ফাইলের পাশে একটি .gz (এবং .br) ফাইল, যেসব হোস্ট সেগুলো পরিবেশন করে তাদের জন্য।</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>পৃষ্ঠার প্রতিটি পুরনো ঠিকানা ও উপনামের জন্য একটি ছোট পৃষ্ঠা, যাতে পুরনো লিংক কাজ করতে থাকে।</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions সাইট সরবরাহ করলে সবসময় লেখা হয়।</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 এর মতো একটি SPDX আইডি, বা পাঠ্যটি নিজেই।</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>বাস্কেট</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>সার্ভারে কল</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>মন্তব্য</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>তথ্য সংগ্রহকারী ফর্ম</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ওয়ার্কফ্লো</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>পৃষ্ঠাগুলোতে কম ফাঁকা স্থান এবং কোনো মন্তব্য নয়।</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>কনটেন্টের লাইসেন্স</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>লগইন</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>মিনিফাই</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>অন্যান্য ফর্ম</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>আগে থেকে কমপ্রেস করুন</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>রিডাইরেক্ট পৃষ্ঠা</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>রিডাইরেক্ট পৃষ্ঠা: %count।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>অনুসন্ধান</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>অনুসন্ধান সূচক: %languages ভাষায় %pages টি পৃষ্ঠা।</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>কনটেন্টের হ্যাশ অনুযায়ী নামকরণ করা স্টাইল শিট ও স্ক্রিপ্ট, যাতে ব্রাউজার সেগুলো রাখতে পারে।</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>পরিবর্তিত পৃষ্ঠাগুলো, শেষ পরিবর্তনের কয়েক মিনিট পরে (cronjob অংশ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>কনটেন্টের লাইসেন্স, নিচের ক্ষেত্র থেকে।</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>পুরো সাইট, সময়সূচির সময়ে (cronjob অংশ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>পৃষ্ঠার এই অংশগুলোর জন্য সার্ভার প্রয়োজন; প্রতিটির একটি বিকল্প আছে। প্রকাশের আগে সেগুলো পরীক্ষা করুন।</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>যা স্ট্যাটিকভাবে কাজ করে না</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>রিপোজিটরিটি কী, হোস্টে যিনি এটি খুলবেন তাঁর জন্য।</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>বাদ দেওয়া হয়েছে</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>বিকল্প পাঠ্য</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>লাইভ সাইটের ফর্ম এন্ডপয়েন্ট</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>লাইভ সাইট</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>কপির অনুসন্ধান পৃষ্ঠা</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ফর্মটি পাঠানো যায়নি।</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ধন্যবাদ: ফর্মটি পাঠানো হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ফর্মটি গ্রহণ করা হয়নি: আপনি যা লিখেছেন তা পরীক্ষা করে আবার পাঠান।</translation>
     </message>
 </context>
 </TS>

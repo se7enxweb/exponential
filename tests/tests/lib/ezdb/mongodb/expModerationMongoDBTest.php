@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup > Recent content on MongoDB through the kernel's driver (expMongoDB): a database of its own,
+ * Dashboard > Recent content on MongoDB through the kernel's driver (expMongoDB): a database of its own,
  * exp_test_moderation_<pid>_<random>, with every collection of the kernel schema and the clean data, dropped after
  * the test (expModerationEngineChecks, ME-1 to ME-6). Also the object states on MongoDB: the review hold's group is
  * found by its identifier (not the first group) and its states by theirs.

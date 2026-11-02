@@ -14677,6 +14677,14 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Mga gabay, paghahanap at kung paano mag-ulat ng error.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Bagong nilalaman</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ang pinakabagong nilalaman, ang pinipigil para sa pagsusuri, at mga aksyon sa isang pinili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>The form could not be read.</source>
         <translation>Hindi mabasa ang form.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dashboard</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>unknown</source>
         <translation>hindi alam</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count sa %pages pahina:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Isang .gz (at .br) sa tabi ng bawat text file, para sa mga host na nagseserbisyo nito.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Isang maliit na pahina para sa bawat lumang address at alias ng isang pahina, para patuloy na gumana ang mga lumang link.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Palaging isinusulat kapag inihahatid ng GitHub Actions ang site.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Isang SPDX id gaya ng CC-BY-4.0, o ang mismong teksto.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Basket</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Mga tawag sa server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Mga komento</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Mga form na kumukuha ng impormasyon</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mas kaunting white space at walang komento sa mga pahina.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisensya ng nilalaman</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Mag-login</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>I-minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Iba pang mga form</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>I-precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Mga pahina ng redirect</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Mga pahina ng redirect: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Maghanap</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Index ng paghahanap: %pages pahina sa %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Mga style sheet at script na pinangalanan ayon sa hash ng nilalaman nila, para mapanatili ng mga browser.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ang mga binagong pahina, ilang minuto pagkatapos ng huling pagbabago (ang bahagi ng cronjob na staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ang lisensya ng nilalaman, mula sa field sa ibaba.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Ang buong site, sa mga oras ng iskedyul (ang bahagi ng cronjob na staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Kailangan ng server ang mga bahaging ito ng mga pahina; bawat isa ay nagkaroon ng fallback. Suriin ang mga ito bago mag-publish.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ang hindi gumagana nang static</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Kung ano ang repository, para sa sinumang magbubukas nito sa host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>hindi isinama</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ang fallback na teksto</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ang form endpoint ng live na site</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ang live na site</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ang search page ng kopya</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Hindi maipadala ang form.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Salamat: naipadala ang form.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Hindi tinanggap ang form: suriin ang inilagay mo at ipadala ulit.</translation>
     </message>
 </context>
 </TS>

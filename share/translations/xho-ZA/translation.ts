@@ -14675,6 +14675,14 @@ Qaphela: Amapakethe akazi kukhutshwa.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Izikhokelo, ukukhangela kunye nendlela yokuxela impazamo.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Umxholo wakutshanje</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Umxholo omtsha, oko kubanjelwe uphononongo, nezenzo kwizinto ezikhethiweyo.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>The form could not be read.</source>
         <translation>Ifomu ayikwazanga ukufundwa.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ideshibhodi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>unknown</source>
         <translation>ayaziwa</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count kwiphepha ezi-%pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>I-.gz (kunye ne-.br)ecaleni kwefayile nganye yombhalo, kwizindlu ezizinikezelayo.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Iphepha elincinci kwidilesi nganye endala nesiteketiso sephepha, ukuze amakhonkco amadala aqhubeke esebenza.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Ihlala ibhalwa xa i-GitHub Actions ibonelela ngesayithi.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>I-id ye-SPDX efana ne-CC-BY-4.0, okanye umbhalo ngokwawo.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Ibhasikithi</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Iminxeba eya kwiseva</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Izimvo</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Iifomu eziqokelela ulwazi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Ukuhamba komsebenzi we-GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Isithuba esincinci kwaye akukho zimvo kumaphepha.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ilayisensi yomxholo</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ngena</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Ezinye iifomu</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Amaphepha okuhlehlisa</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Amaphepha okuhlehlisa: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Khangela</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Isalathiso sokukhangela: amaphepha ayi-%pages kwi-%languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Amaphepha esimbo kunye nezikripthi ezibizwe ngehash yomxholo wazo, ukuze iibrawuza ziziqwalasele.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Amaphepha atshintshiweyo, imizuzu embalwa emva koguqulo lokugqibela (inxalenye ye-cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ilayisensi yomxholo, ukusuka kwintsimi engezantsi.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Isayithi yonke, ngamaxesha eshedyuli (inxalenye ye-cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ezi ngxalenye zamaphepha zifuna iseva; nganye ifumene enye endaweni. Zihlole phambi kokushicilela.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Okungasebenzi ngokwesiqhelo</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ukuba yintoni indawo yokugcina, kunabani na ovula kwindlu.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>kushiyiwe</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>umbhalo ongenisayo</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>indawo yokuphela yeefomu zesayithi ephilayo</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>isayithi ephilayo</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>iphepha lokukhangela lekopi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Ifomu ayikwazanga ukuthunyelwa.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Enkosi: ifomu ithunyelwe.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Ifomu ayamkelwanga: khangela oyifake uphinde uyithumele.</translation>
     </message>
 </context>
 </TS>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The moderation module: Setup > Recent content (doc/eng-us/features/6.0/moderation.md). The most recently created and
+ * The moderation module: Dashboard > Recent content (doc/eng-us/features/6.0/moderation.md). The most recently created and
  * modified content, newest first, with its status, the review hold, the draft or pending version and its scheduled
  * publication, the creator and (with moderation/personaldata) the address and the browser the submission came from;
  * filters, sorting, page sizes remembered per user, and actions on a selection: release the hold, hold (with a reason),
@@ -25,7 +25,7 @@ $ViewList = array();
 // The list. The filters and the page are view parameters; the filter form is sent with GET and answered with a
 // redirect to them.
 $ViewList['recent'] = array(
-    'default_navigation_part' => 'ezsetupnavigationpart',
+    'default_navigation_part' => 'ezmynavigationpart',
     'script' => 'recent.php',
     'functions' => array( 'read' ),
     'params' => array(),
@@ -36,7 +36,7 @@ $ViewList['recent'] = array(
 // An action on the selection: POST only. ApplyButton from the list; a destructive action (trash, delete) first shows
 // its confirmation, whose ConfirmDestructiveButton asks "Verify it's you".
 $ViewList['action'] = array(
-    'default_navigation_part' => 'ezsetupnavigationpart',
+    'default_navigation_part' => 'ezmynavigationpart',
     'script' => 'action.php',
     'functions' => array( 'act' ),
     'single_post_actions' => array( 'ApplyButton' => 'Apply', 'ConfirmDestructiveButton' => 'Confirm', 'CancelButton' => 'Cancel' ),
@@ -44,14 +44,14 @@ $ViewList['action'] = array(
 
 // The result per object of an action run as a content job
 $ViewList['report'] = array(
-    'default_navigation_part' => 'ezsetupnavigationpart',
+    'default_navigation_part' => 'ezmynavigationpart',
     'script' => 'report.php',
     'functions' => array( 'act' ),
     'params' => array( 'JobID' ),
     'unordered_params' => array() );
 
 $FunctionList = array();
-// See Setup > Recent content: every object's name, class, status, hold, section and creator
+// See Dashboard > Recent content: every object's name, class, status, hold, section and creator
 $FunctionList['read'] = array();
 // Run its actions on a selection; each object's own policies still decide
 $FunctionList['act'] = array();

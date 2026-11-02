@@ -29,7 +29,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     public static function contract()
     {
         return array(
-            'exp:static:targets' => '[format:]',
+            'exp:static:targets' => '[format:][export:]',
             'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:]',
             'exp:static:diff' => '[format:][verify][check-links][mount:*]',
             'exp:static:serve' => '[port:][host:][base-path:][format:]',
@@ -69,6 +69,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     {
         return array(
             'format' => 'text (default) or json (the machine output exp-static/1)',
+            'export' => 'print these targets (ids separated by commas, or all) as an INI migration and change nothing',
             'full' => 'Crawl the whole site (the default without --paths or --nodes); not with --paths or --nodes',
             'paths' => 'Build only these pages, by their path in the site (/about-us; a comma list or repeated); the rest of the last build stays',
             'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays',
@@ -116,7 +117,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
      */
     protected function publisher( \expStaticTarget $target, $db, array $options = array() )
     {
-        return new \expStaticPublisher( $target, $options + array( 'root' => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : (string)getcwd(), 'db' => $db ) );
+        return new \expStaticPublisher( $target, $options + array( 'root' => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : (string)getcwd(), 'db' => $db, 'notify' => true ) );
     }
 
     /** @var string the file of --progress, '' without it */

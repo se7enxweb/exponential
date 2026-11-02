@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>ਗਾਈਡਾਂ, ਖੋਜ ਅਤੇ ਗਲਤੀ ਦੀ ਰਿਪੋਰਟ ਕਿਵੇਂ ਕਰਨੀ ਹੈ।</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ਤਾਜ਼ਾ ਸਮੱਗਰੀ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ਸਭ ਤੋਂ ਨਵੀਂ ਸਮੱਗਰੀ, ਜੋ ਸਮੀਖਿਆ ਲਈ ਰੋਕੀ ਗਈ ਹੈ, ਅਤੇ ਚੋਣ ਉੱਤੇ ਕਾਰਵਾਈਆਂ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>ਫਾਰਮ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ਡੈਸ਼ਬੋਰਡ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>ਅਣਜਾਣ</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages ਪੰਨਿਆਂ ਵਿੱਚੋਂ %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ਹਰ ਟੈਕਸਟ ਫਾਈਲ ਦੇ ਕੋਲ ਇੱਕ .gz (ਅਤੇ .br), ਉਹਨਾਂ ਹੋਸਟਾਂ ਲਈ ਜੋ ਇਹਨਾਂ ਨੂੰ ਪਰੋਸਦੇ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ਪੰਨੇ ਦੇ ਹਰ ਪੁਰਾਣੇ ਪਤੇ ਅਤੇ ਉਪਨਾਮ ਲਈ ਇੱਕ ਛੋਟਾ ਪੰਨਾ, ਤਾਂ ਜੋ ਪੁਰਾਣੇ ਲਿੰਕ ਚੱਲਦੇ ਰਹਿਣ।</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ਜਦੋਂ GitHub Actions ਸਾਈਟ ਪਹੁੰਚਾਉਂਦਾ ਹੈ ਤਾਂ ਹਮੇਸ਼ਾ ਲਿਖਿਆ ਜਾਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ਵਰਗੀ ਇੱਕ SPDX ਆਈਡੀ, ਜਾਂ ਟੈਕਸਟ ਆਪ।</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ਟੋਕਰੀ</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ਸਰਵਰ ਨੂੰ ਕਾਲਾਂ</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ਟਿੱਪਣੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ਜਾਣਕਾਰੀ ਇਕੱਠੀ ਕਰਨ ਵਾਲੇ ਫਾਰਮ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ਵਰਕਫਲੋ</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ਪੰਨਿਆਂ ਵਿੱਚ ਘੱਟ ਖਾਲੀ ਥਾਂ ਅਤੇ ਕੋਈ ਟਿੱਪਣੀ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ਸਮੱਗਰੀ ਦਾ ਲਾਇਸੰਸ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ਲਾਗਇਨ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>ਮਿਨੀਫਾਈ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ਹੋਰ ਫਾਰਮ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>ਪਹਿਲਾਂ ਹੀ ਸੰਕੁਚਿਤ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ਰੀਡਾਇਰੈਕਟ ਪੰਨੇ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ਰੀਡਾਇਰੈਕਟ ਪੰਨੇ: %count।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ਖੋਜ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ਖੋਜ ਸੂਚੀ: %languages ਵਿੱਚ %pages ਪੰਨੇ।</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ਸਮੱਗਰੀ ਦੇ ਹੈਸ਼ ਨਾਲ ਨਾਮ ਦਿੱਤੀਆਂ ਸਟਾਈਲ ਸ਼ੀਟਾਂ ਅਤੇ ਸਕ੍ਰਿਪਟਾਂ, ਤਾਂ ਜੋ ਬ੍ਰਾਊਜ਼ਰ ਉਹਨਾਂ ਨੂੰ ਰੱਖ ਸਕਣ।</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ਬਦਲੇ ਹੋਏ ਪੰਨੇ, ਆਖਰੀ ਤਬਦੀਲੀ ਤੋਂ ਕੁਝ ਮਿੰਟ ਬਾਅਦ (ਕ੍ਰੋਨਜੌਬ ਹਿੱਸਾ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ਸਮੱਗਰੀ ਦਾ ਲਾਇਸੰਸ, ਹੇਠਾਂ ਦਿੱਤੇ ਖੇਤਰ ਤੋਂ।</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ਪੂਰੀ ਸਾਈਟ, ਸਮਾਂ-ਸਾਰਣੀ ਦੇ ਸਮਿਆਂ 'ਤੇ (ਕ੍ਰੋਨਜੌਬ ਹਿੱਸਾ staticpublish)।</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ਪੰਨਿਆਂ ਦੇ ਇਹਨਾਂ ਹਿੱਸਿਆਂ ਨੂੰ ਸਰਵਰ ਚਾਹੀਦਾ ਹੈ; ਹਰ ਇੱਕ ਨੂੰ ਬਦਲ ਮਿਲਿਆ ਹੈ। ਪ੍ਰਕਾਸ਼ਿਤ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਇਹਨਾਂ ਨੂੰ ਜਾਂਚੋ।</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ਸਥਿਰ ਰੂਪ ਵਿੱਚ ਕੀ ਕੰਮ ਨਹੀਂ ਕਰਦਾ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ਰਿਪੋਜ਼ਟਰੀ ਕੀ ਹੈ, ਹੋਸਟ 'ਤੇ ਇਸਨੂੰ ਖੋਲ੍ਹਣ ਵਾਲੇ ਲਈ।</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ਛੱਡਿਆ ਗਿਆ</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ਬਦਲਵਾਂ ਟੈਕਸਟ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ਲਾਈਵ ਸਾਈਟ ਦਾ ਫਾਰਮ ਐਂਡਪੁਆਇੰਟ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ਲਾਈਵ ਸਾਈਟ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ਕਾਪੀ ਦਾ ਖੋਜ ਪੰਨਾ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ਫਾਰਮ ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ਧੰਨਵਾਦ: ਫਾਰਮ ਭੇਜ ਦਿੱਤਾ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ਫਾਰਮ ਸਵੀਕਾਰ ਨਹੀਂ ਹੋਇਆ: ਤੁਸੀਂ ਜੋ ਭਰਿਆ ਉਸਨੂੰ ਜਾਂਚੋ ਅਤੇ ਦੁਬਾਰਾ ਭੇਜੋ।</translation>
     </message>
 </context>
 </TS>

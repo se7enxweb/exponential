@@ -2,21 +2,25 @@
 title: staticpublish.php cronjob
 audience: developer, admin
 category: examples
-summary: "Static publishing: push the targets whose publish could not be pushed again (runs with push state pending)."
+summary: "Static publishing: push again what could not be pushed, publish the pages changed by a content publish (debounced) and the targets whose schedule is due."
 keywords: staticpublish.php, staticpublish, cronjob, runcronjobs, part
 type: generated
 generated: exp:help:examples
 ---
 # The staticpublish.php cronjob
 
-Static publishing: push the targets whose publish could not be pushed again (runs with push state pending).
+Static publishing: push again what could not be pushed, publish the pages changed by a content publish (debounced) and the targets whose schedule is due.
 
 Entry point `cronjobs/staticpublish.php`, code in `kernel/private/classes/cronjobs/staticpublish.php`.
 
 > The cronjob part staticpublish (cronjobs/staticpublish.php; \[CronjobPart-staticpublish\] in cronjob.ini): pushes the  
 > static publishing targets whose runs could not be pushed (exp\_static\_run.push\_state pending) again  
-> (expStaticPublisher::retry(): the branch with every commit and the target's tags, never forced). Does nothing  
-> while static publishing is switched off or no run waits.  
+> (expStaticPublisher::retry(): the branch with every commit and the target's tags, never forced); then, for the  
+> targets with Triggers\[\]=publish, builds the pages a content publish marked stale (expStaticPublishQueue, once  
+> \[StaticPublishSettings\] PublishDebounce seconds passed since the last change; a full build above 200 nodes) and  
+> publishes them; then builds in full and publishes the targets with Triggers\[\]=schedule whose Schedule matched  
+> since their last scheduled run (expStaticSchedule; remembered in <WorkDir>/.schedule.json). Does nothing while  
+> static publishing is switched off or nothing waits.  
 
 ## When it runs
 

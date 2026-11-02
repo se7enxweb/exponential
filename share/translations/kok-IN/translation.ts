@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>मार्गदर्शिका, सोद आनी त्रुटीची तक्रार कशी करची.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>हालींचो आशय</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>सगळ्यांत नवो आशय, परिक्षणाखातीर कितें आडायलां, आनी निवडीचेर कृती.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>फॉर्म वाचूंक मेळ्ळो ना.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>डॅशबोर्ड</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>अज्ञात</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages पानांपैकी %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>दरेका मजकूर फायलीचे सायीर .gz (आनी .br), तें दिवपी होस्टांक.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>पानाच्या दरेका जुन्या पत्त्यासाठी आनी उपनामासाठी एक ल्हान पान, जाका लागून जुने दुवे चालूच रावतात.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions सायट पावयता तेन्ना सदांच बरयतात.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 सारखो SPDX आयडी, वा मजकूर स्वता.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>टोपली</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>सर्व्हराक कॉल</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>टिप्पण्यो</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>म्हायती गोळा करपी फॉर्म</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions वर्कफ्लो</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>पानांनी उणी रिकामी जागा आनी टिप्पण्यो ना.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>मजकुराचो परवानो</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>लॉगिन</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>मिनिफाय</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>हेर फॉर्म</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>पयलीच संकुचित करात</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>रीडायरेक्ट पानां</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>रीडायरेक्ट पानां: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>सोद</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>सोद सूची: %languages भाशांनी %pages पान(ां).</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>मजकुराच्या हॅशान नांव दिल्लीं स्टायल शीट आनी स्क्रिप्ट, जाका लागून ब्राउजर तीं सांबाळून दवरूं येतात.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>बदल जाल्लीं पानां, शेवटच्या बदलाउपरांत थोडे मिनूट उपरांत (क्रोनजॉब भाग staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>मजकुराचो परवानो, सकयल्या फिल्डांतल्यान.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>सगळी सायट, वेळापत्रकाच्या वेळार (क्रोनजॉब भाग staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>पानांच्या ह्या भागांक सर्व्हर जाय; दरेकल्याक एक पर्याय दिल्लो आसा. प्रकाशीत करपाआदीं तपासात.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>स्थिरपणान कितें चालना</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>रिपॉझिटरी कितें, तें होस्टार उगडपी मनशाक.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>सोडून दिल्लें</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>पर्यायी मजकूर</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>लायव्ह सायटीचो फॉर्म एंडपॉइंट</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>लायव्ह सायट</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>प्रतीचें सोदाचें पान</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>फॉर्म धाडूंक जालो ना.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>उपकार: फॉर्म धाडला.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>फॉर्म मान्य जालो ना: तुमी घाल्लें तपासात आनी परत धाडात.</translation>
     </message>
 </context>
 </TS>

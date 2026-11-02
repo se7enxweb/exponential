@@ -14616,6 +14616,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>Водичи, претрага и како пријавити грешку.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Нови садржај</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Најновији садржај, оно што је задржано ради прегледа, и радње над избором.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81311,6 +81319,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>Образац није могуће прочитати.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Контролна табла</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83049,6 +83061,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>непознато</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count на %pages страница:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Датотека .gz (и .br) поред сваке текстуалне датотеке, за хостове који их служе.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Мала страница за сваку стару адресу и алијас странице, да стари линкови наставе да раде.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Увек се пише када GitHub Actions испоручује сајт.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX ознака као што је CC-BY-4.0, или сам текст.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Корпа</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Позиви серверу</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Коментари</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Обрасци који прикупљају информације</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Мање белина и без коментара на страницама.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Лиценца садржаја</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Пријава</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Остали обрасци</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Претходно сажимање</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Странице преусмеравања</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Странице преусмеравања: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Претрага</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Индекс претраге: %pages страница на језицима: %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Стилови и скрипте именовани хеш вредношћу садржаја, да их прегледачи могу чувати.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Измењене странице, неколико минута после последње измене (cronjob део staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Лиценца садржаја, из поља испод.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Цео сајт, у време распореда (cronjob део staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ови делови страница траже сервер; сваки је добио резервну варијанту. Проверите их пре објаве.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Шта не ради статички</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Шта је репозиторијум, за онога ко га отвори на хосту.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>изостављено</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>резервни текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>адреса за пријем образаца сајта уживо</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>сајт уживо</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>страница претраге копије</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Образац није могао да се пошаље.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Хвала: образац је послат.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Образац није прихваћен: проверите шта сте унели и пошаљите га поново.</translation>
     </message>
 </context>
 </TS>

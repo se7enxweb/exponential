@@ -423,6 +423,7 @@
         "Webhook": "Czech uses the English term Webhook"
     },
     "dan-DK": {
+        "Minify": "technical term kept in English",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
         "%count SQL": "placeholder and the acronym SQL",
@@ -671,6 +672,7 @@
         "Webhook": "Danish uses the English term Webhook"
     },
     "dut-NL": {
+        "Minify": "technical term kept in English",
         "#level1 - #level2": "code, file or setting name",
         "#levelIndex1:#levelIndex2": "code, file or setting name",
         "%child_count item": "placeholders plus words Dutch spells the same",
@@ -3093,6 +3095,8 @@
         "WebDAV": "protocol name"
     },
     "swa-KE": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%device, %width × %height px": "units or placeholders without words to translate",
@@ -3382,6 +3386,9 @@
         "Webhook": "Swedish uses the English term webhook"
     },
     "tlh-QO": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "%ms ms": "SI unit symbol for milliseconds after a number placeholder",
         "%name - Exponential Layouts": "placeholder and product name only",
         ".gitignore": "file name, kept as code",
@@ -3615,6 +3622,7 @@
         "xmlUrl": "OPML attribute name, code identifier"
     },
     "hin-IN": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count SQL": "placeholder and the acronym SQL",
@@ -4172,6 +4180,7 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "gle-IE": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count s": "units or placeholders without words to translate",
@@ -4264,6 +4273,7 @@
         "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same"
     },
     "isl-IS": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%device, %width × %height px": "units or placeholders without words to translate",
@@ -4339,6 +4349,7 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "kal-GL": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count min": "units or placeholders without words to translate",
         "%count s": "units or placeholders without words to translate",
@@ -4641,6 +4652,8 @@
         "Webhook": "Hungarian uses the English term Webhook"
     },
     "mlt-MT": {
+        "Basket": "same word used in Maltese",
+        "Login": "same word used in Maltese",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count h": "units or placeholders without words to translate",
@@ -5195,6 +5208,7 @@
         "Webhook": "Slovak uses the English term Webhook"
     },
     "slv-SI": {
+        "Minify": "technical term kept in English",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count d": "units or placeholders without words to translate",
         "%count h": "units or placeholders without words to translate",
@@ -5858,6 +5872,8 @@
         "extra": "Same word in Catalan"
     },
     "srp-RS": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
         "#level1 - #level2": "placeholders only",
         "#levelIndex1:#levelIndex2": "placeholders only",
         "%count SQL": "placeholder and abbreviation SQL",
@@ -5964,6 +5980,8 @@
         "xmlUrl": "code identifier"
     },
     "ser-SR": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
         "Font": "font is the usual Serbian term",
         "Original": "Serbian (Latin) word spelled the same",
         "#level1 - #level2": "placeholders only",
@@ -6788,6 +6806,8 @@
         "WebDAV": "protocol name"
     },
     "urd-PK": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7006,6 +7026,8 @@
         "WebDAV": "protocol name"
     },
     "tel-IN": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7113,6 +7135,8 @@
         "JSON: %url": "format name and placeholder only"
     },
     "tam-IN": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7236,6 +7260,7 @@
         "JSON: %url": "format name and placeholder only"
     },
     "hau-NG": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
@@ -7418,6 +7443,7 @@
         "Webhook": "Hausa technical usage keeps the English term Webhook"
     },
     "guj-IN": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7540,6 +7566,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
     },
     "kan-IN": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7764,6 +7791,8 @@
         "JSON: %url": "format name plus placeholder only"
     },
     "yor-NG": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "%1 × %2 pixels": "loanword, no reliable native term yet; kept until a native speaker review",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
@@ -8273,6 +8302,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
     },
     "ibo-NG": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Opacity (%)": "loanword, no reliable native term yet; kept until a native speaker review",
         "Ellipse": "loanword, no reliable native term yet; kept until a native speaker review",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
@@ -8478,6 +8508,8 @@
         "Webhook": "Igbo technical text uses the English term webhook"
     },
     "zul-ZA": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
@@ -8624,6 +8656,9 @@
         "WebDAV": "protocol name"
     },
     "som-SO": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "%1 × %2 pixels": "loanword, no reliable native term yet; kept until a native speaker review",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
@@ -8820,6 +8855,8 @@
         "Webhook": "Somali uses the English technical term Webhook"
     },
     "xho-ZA": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
@@ -9136,6 +9173,8 @@
         "Webhook": "Chinese developer usage keeps the English term Webhook"
     },
     "yid-US": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym ID plus placeholder",
         "iPhone": "Apple product name",
         "iPad": "Apple product name",
@@ -9476,6 +9515,8 @@
         "Webhook": "Indonesian uses the English term webhook"
     },
     "tha-TH": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -9671,6 +9712,7 @@
         "Div": "HTML element name"
     },
     "kat-GE": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -9766,6 +9808,9 @@
         "Div": "HTML element name"
     },
     "sna-ZW": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym ID plus placeholder",
         "Link": "glossary: link is kept as the loanword link",
         "iPhone": "product name",
@@ -9901,6 +9946,7 @@
         "Webhook": "Shona uses the English technical term Webhook"
     },
     "kaz-KZ": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym ID with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -10307,6 +10353,8 @@
         "Webhook": "Javanese uses the English term webhook"
     },
     "sun-ID": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "OK": "OK is kept in Sundanese (allowlisted)",
         "ID %id": "acronym ID with a placeholder",
         "Item": "item is the glossary term for a list entry, spelled the same in Sundanese",
@@ -10730,6 +10778,13 @@
         "Div": "HTML element name"
     },
     "pcm-NG": {
+        "GitHub Actions workflow": "product name plus common loanword",
+        "Login": "technical term kept in English",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
+        "Redirect pages": "technical term kept in English",
+        "Redirect pages: %count.": "technical term kept in English",
+        "left out": "same phrase used in Nigerian Pidgin",
         "Node ID: %node_id Visibility: %visibility": "labels and placeholders",
         "%group_name [Content object state group]": "placeholder with terms kept in English",
         "Edit": "the word Nigerian Pidgin uses",
@@ -15426,6 +15481,7 @@
         "Webhooks": "technical term kept in Latin script, as the catalogue keeps API and GraphQL"
     },
     "huy-IL": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "abbreviation and placeholder only",
         "iPhone": "product name",
         "iPad": "product name",
@@ -15513,6 +15569,7 @@
         "Webhook": "Technical term kept in Latin script, as the catalogue keeps other protocol names"
     },
     "gla-GB": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym ID and placeholder only",
         "iPhone": "product name",
         "iPad": "product name",
@@ -15748,6 +15805,7 @@
         "Div": "HTML element name"
     },
     "fil-PH": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Node ID: %node_id Visibility: %visibility": "placeholders and technical labels only",
         "File": "glossary loanword",
         "Identifier": "glossary loanword",
@@ -16402,6 +16460,9 @@
         "Id": "Abbreviation Id is used as is in the Chechen interface"
     },
     "snd-PK": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -16871,6 +16932,7 @@
         "Webhook": "Burmese technical UI keeps the English term Webhook"
     },
     "haw-US": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym and placeholder",
         "Siteaccess": "setting name",
         "%locale [Locale]": "placeholder with the locale setting name",
@@ -16994,6 +17056,7 @@
         "Webhook": "Hawaiian has no established term; the English technical term Webhook is used"
     },
     "hye-AM": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -17346,6 +17409,7 @@
         "Webhook": "Lingala IT usage keeps the English term Webhook"
     },
     "ful-SN": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym with placeholder",
         "Siteaccess": "setting name, allowlisted",
         "Locale": "technical term kept as in the guide",
@@ -17799,6 +17863,9 @@
         "Manifest": "Azerbaijani uses the same word manifest"
     },
     "sin-LK": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym ID plus placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -18067,6 +18134,7 @@
         "git host": "The Twi catalogue uses the English term host; git is a product name"
     },
     "asm-IN": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -18166,6 +18234,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires"
     },
     "kik-KE": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym ID plus placeholder",
         "%locale [Locale]": "placeholder plus the technical term Locale",
         "iPhone": "product name",
@@ -18278,6 +18347,7 @@
         "Webhook": "Kikuyu technical writing uses the English term Webhook"
     },
     "khm-KH": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym ID and placeholder",
         "iPhone": "device product name",
         "iPad": "device product name",
@@ -18373,6 +18443,8 @@
         "Webhook": "Khmer technical writing uses the English term Webhook"
     },
     "uig-CN": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "device product name",
         "iPad": "device product name",
@@ -18458,6 +18530,7 @@
         "Div": "HTML element name"
     },
     "kin-RW": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym and placeholder",
         "Metadata": "technical loan word kept in Kinyarwanda IT writing",
         "iPhone": "device product name",
@@ -18567,6 +18640,9 @@
         "Webhook": "Kinyarwanda technical writing uses the English term Webhook"
     },
     "ceb-PH": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
+        "Login": "technical term kept in English",
+        "Minify": "technical term kept in English",
         "File": "loan word, product name or placeholder text spelled the same in Cebuano",
         "container": "loan word written the same in Cebuano",
         "Container": "loan word written the same in Cebuano",
@@ -18932,6 +19008,8 @@
         "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires"
     },
     "tir-ET": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym ID plus placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -19235,6 +19313,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged"
     },
     "kir-KG": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "OK": "OK button, glossary keeps OK",
         "ID %id": "abbreviation ID plus placeholder",
         "iPhone": "device product name",
@@ -19601,6 +19680,8 @@
         "Webhook": "Webhook has no Luganda equivalent; the technical term is used as is"
     },
     "wol-SN": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "OK": "glossary: OK stays OK",
         "ID %id": "abbreviation ID plus placeholder",
         "iPhone": "product name",
@@ -20295,6 +20376,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged"
     },
     "ltz-LU": {
+        "Login": "same word used in Luxembourgish",
         "Container": "loanword spelled the same",
         "OK": "acronym",
         "ID %id": "acronym with placeholder",
@@ -20488,6 +20570,9 @@
         "Webhook": "Webhook is the established technical term in Luxembourgish"
     },
     "run-BI": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym ID with placeholder",
         "%locale [Locale]": "placeholder and the term Locale",
         "iPhone": "product name",
@@ -21328,6 +21413,7 @@
         "Div": "HTML element name"
     },
     "kas-IN": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "ID label with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -21435,6 +21521,7 @@
         "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged"
     },
     "brx-IN": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym ID with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -21534,6 +21621,9 @@
         "Div": "HTML element name"
     },
     "sat-IN": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "abbreviation ID with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -21644,6 +21734,8 @@
         "Div": "HTML element name"
     },
     "san-IN": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym ID plus placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -22315,6 +22407,7 @@
         "Webhook": "Bambara has no own term; the technical loanword webhook is used"
     },
     "ewe-GH": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "OK": "button OK, same in Ewe",
         "ID %id": "ID label with placeholder",
         "iPhone": "product name",
@@ -22605,6 +22698,7 @@
         "Div": "HTML element name (div), code"
     },
     "roh-CH": {
+        "Login": "same word used in Romansh",
         "%1 × %2 pixels": "Romansh plural spelled the same",
         "%1 objects": "Romansh plural spelled the same",
         "Objects": "same word in Romansh plural",
@@ -22834,6 +22928,7 @@
         "public": "Romansh adjective public (masculine, for the repository) is spelled the same as English"
     },
     "hsb-DE": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym ID plus placeholder",
         "Status": "word is spelled the same in Upper Sorbian",
         "iPhone": "device product name",
@@ -22960,6 +23055,7 @@
         "Webhook": "Upper Sorbian uses the English term Webhook"
     },
     "fry-NL": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "Type": "Frisian spells type the same",
         "OK": "OK button label",
         "ID %id": "acronym and placeholder",
@@ -23126,6 +23222,7 @@
         "Webhook": "Frisian uses the English technical term Webhook"
     },
     "fao-FO": {
+        "GitHub Actions workflow": "the name of the GitHub product, kept in English",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -23230,6 +23327,9 @@
         "Id": "the abbreviation Id is used as is in Faroese"
     },
     "sme-NO": {
+        "GitHub Actions workflow": "product name kept",
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "OK": "OK button, same in Sami",
         "ID %id": "acronym plus placeholder",
         "iPhone": "product name",
@@ -23552,6 +23652,8 @@
         "Webhook": "Kabyle technical usage keeps the English term Webhook"
     },
     "zgh-MA": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "acronym ID and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -23888,6 +23990,8 @@
         "Webhook": "technical term with no Quechua equivalent, kept as the loanword"
     },
     "ton-TO": {
+        "Minify": "technical term kept in English",
+        "Precompress": "technical term kept in English",
         "ID %id": "ID abbreviation and placeholder",
         "iPhone": "product name",
         "iPad": "product name",

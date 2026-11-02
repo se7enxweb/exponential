@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>指南、搜尋，以及如何回報錯誤。</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>最新內容</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>最新的內容、暫扣待審的內容，以及對所選內容的操作。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>無法讀取表單。</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>儀表板</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>未知</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count，共 %pages 頁：</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>每個文字檔旁邊的 .gz（和 .br）檔案，供提供這些檔案的主機使用。</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>為頁面的每個舊位址和別名產生一個小頁面，讓舊連結繼續有效。</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions 交付網站時一律寫入。</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX 識別碼，如 CC-BY-4.0，或文字本身。</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>購物籃</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>對伺服器的呼叫</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>留言</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>收集資訊的表單</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions 工作流程</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>頁面中更少的空白，且沒有註解。</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>內容授權</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>登入</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>壓縮精簡</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>其他表單</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>預先壓縮</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>重新導向頁面</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>重新導向頁面：%count。</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜尋</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>搜尋索引：%languages 中的 %pages 頁。</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>依內容雜湊值命名的樣式表和指令碼，讓瀏覽器可以長期快取。</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>已變更的頁面，在最後一次變更幾分鐘後（cronjob 部分 staticpublish）。</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>內容授權，來自下方欄位。</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>整個網站，依排程的時間（cronjob 部分 staticpublish）。</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>頁面的這些部分需要伺服器；每個都有備援方案。發佈前請檢查。</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>靜態方式下無法運作的內容</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>儲存庫是什麼，供在主機上開啟它的人閱讀。</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>省略</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>備援文字</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>線上網站的表單端點</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>線上網站</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>副本的搜尋頁面</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>無法傳送表單。</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>謝謝：表單已傳送。</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>表單未被接受：請檢查您輸入的內容並重新傳送。</translation>
     </message>
 </context>
 </TS>

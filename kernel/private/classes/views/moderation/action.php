@@ -1,6 +1,6 @@
 <?php
 /**
- * The moderation/action view: an action of Setup > Recent content on the selected objects (expModerationAction).
+ * The moderation/action view: an action of Dashboard > Recent content on the selected objects (expModerationAction).
  *
  *   ApplyButton               from the list: the action, the selected ids (ObjectIDList[]) and what the action needs
  *                             (Reason, SectionID, StateID). A destructive action (trash, delete) shows its confirmation;
@@ -49,7 +49,7 @@ class Action extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'counts', \expModerationAction::counts( array() ) );
         $tpl->setVariable( 'errors', array_map( array( __CLASS__, 'formError' ), $form['errors'] ) );
         $tpl->setVariable( 'extra', self::extraText( $form ) );
-        $path = array( array( 'url' => 'setup/menu', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Setup' ) ),
+        $path = array( array( 'url' => 'content/dashboard', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Dashboard' ) ),
                        array( 'url' => $return, 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Recent content' ) ) );
 
         if ( $form['errors'] )

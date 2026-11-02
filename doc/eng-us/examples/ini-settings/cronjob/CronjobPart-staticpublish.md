@@ -12,8 +12,9 @@ generated: exp:help:examples
 The block `[CronjobPart-staticpublish]` of `settings/cronjob.ini`, with 1 setting(s).
 
 > Static publishing (staticcache.ini \[StaticPublishSettings\]): the targets whose publish could not be pushed,  
-> pushed again, never forced: php runcronjobs.php staticpublish. In no default part: add it to one the site  
-> runs, e.g. every 15 minutes.  
+> pushed again, never forced; the pages changed by a content publish (Triggers\[\]=publish), published after  
+> PublishDebounce; the targets whose Schedule is due (Triggers\[\]=schedule): php runcronjobs.php staticpublish.  
+> In no default part: add it to one the site runs, every few minutes for publishing on content publish.  
 
 Never edit `settings/cronjob.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 

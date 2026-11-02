@@ -228,6 +228,26 @@ Help: [Connect to GitHub](../../help/static-publishing/connect-to-github-token-k
 [Use your own domain](../../help/static-publishing/use-your-own-domain.md),
 [GitHub Pages limits and terms](../../help/static-publishing/github-pages-limits-and-terms.md).
 
+## What needs a server
+
+A static host cannot search, take a form or sign anybody in. Each build finds these parts (`expStaticDegrader`) and
+gives them a fallback; the report of the build lists them as `degraded`:
+
+- **Search** (`Search=enabled`): the site's search forms go to `search.html`, which searches an index per language in
+  the browser (`expStaticSearchIndex`).
+- **Information collectors** (`Forms=endpoint`): they post to the form endpoint `staticpublish/form` of the live site,
+  which checks the origin, a token signed at build time and a rate limit, then hands the post to the normal
+  information collection. With `Forms=hide` they show a short text with a link to the live page.
+- **Comments, the basket, the login**: the short text, or left out.
+- **Redirect pages** (`Extras[]=redirects`) for old addresses, custom aliases and URL wildcards without `*`.
+- **Post-processing**: `minify`, `precompress`, `fingerprint`.
+
+A target can publish itself: `Triggers[]=publish` (pages marked stale on content publish, built after
+`PublishDebounce`) and `Triggers[]=schedule` (`Schedule`), both in the cronjob part `staticpublish`, with the e-mail of
+`Notify[]` and a signed `Webhook` afterwards. Details: [Dynamic features](../../guides/static-publishing-dynamic-features.md),
+[The form endpoint](../../specifications/6.0/static-publishing-form-endpoint.md). The audit records
+`system.staticpublish.build` and `system.staticpublish.form` too.
+
 ## Privacy
 
 - Builds run as the anonymous user: the crawl sends no cookie, and the database checks (which storage images may be

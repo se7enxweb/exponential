@@ -3,13 +3,13 @@ title: staticcache.ini [Target_example]
 audience: developer, admin
 category: examples
 summary: "The settings of [Target_example] in staticcache.ini: Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links ..."
-keywords: staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook
+keywords: staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [Target_example]
 
-The block `[Target_example]` of `settings/staticcache.ini`, with 27 setting(s).
+The block `[Target_example]` of `settings/staticcache.ini`, with 28 setting(s).
 
 Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -284,8 +284,11 @@ Assets=referenced-and-storage
 > The files written besides the pages: nojekyll (.nojekyll, so GitHub Pages  
 > publishes the files as they are), 404 (404.html from the site's own 404  
 > page), robots (robots.txt), sitemap (sitemap.xml, needs PublicURL),  
-> manifest (.static-publish/manifest.json; always written). CNAME is written  
-> whenever CustomDomain is set.  
+> manifest (.static-publish/manifest.json; always written), redirects (a  
+> small page for every old address and custom alias of a page, and for URL  
+> wildcards without \*), readme (README.md), license (LICENSE, from License  
+> below), workflow (the GitHub Actions workflow). CNAME is written whenever  
+> CustomDomain is set.  
 
 Default: a list of 5: `nojekyll`, `404`, `robots`, `sitemap`, `manifest`.
 
@@ -306,7 +309,10 @@ Extras[]=manifest
 ## PostProcess
 
 > What is done to every page: strip (always) removes debug output, form  
-> tokens, session ids and Content Security Policy nonces.  
+> tokens, session ids and Content Security Policy nonces. Optional: minify  
+> (less white space, no comments), precompress (.gz, and .br with PHP's  
+> brotli extension, next to every text file), fingerprint (style sheets and  
+> scripts named by the hash of their content, site.3f2a9c1b.css).  
 
 Default: a list of 1: `strip`.
 
@@ -322,7 +328,8 @@ PostProcess[]=strip
 
 ## Search
 
-> A search page for the static copy: enabled or disabled.  
+> A search page for the static copy (search.html, an index per language and  
+> a small script; the site's search forms go there): enabled or disabled.  
 
 Default: `disabled`.
 
@@ -336,7 +343,10 @@ Search=disabled
 
 ## Forms
 
-> What happens to forms: hide, or endpoint (they post to the live site).  
+> What happens to information collectors (forms): hide (the fallback text,  
+> FormFallbackText), or endpoint (they post to the form endpoint of the live  
+> site; needs PublicURL or CustomDomain). Comment, basket and login forms  
+> are never sent from a static copy.  
 
 Default: `hide`.
 
@@ -381,7 +391,9 @@ ExcludeSections[]
 
 ## Triggers
 
-> What may start a build: manual, publish, schedule, cli.  
+> What may start a build: manual, publish (the cronjob part staticpublish  
+> publishes the changed pages after a content publish), schedule (the same  
+> cronjob part publishes in full at the times of Schedule), cli.  
 
 Default: a list of 2: `manual`, `cli`.
 
@@ -398,7 +410,8 @@ Triggers[]=cli
 
 ## Schedule
 
-> When a scheduled build runs (a cron expression), for Triggers\[\]=schedule.  
+> When a scheduled build runs (a cron expression, the server's time zone:  
+> 0 3 \* \* \*, or @daily), for Triggers\[\]=schedule.  
 
 Default: empty.
 
@@ -412,7 +425,8 @@ Schedule=
 
 ## Notify
 
-> When to send a notice: failure, success.  
+> When to send a notice by e-mail (\[StaticPublishSettings\] NotifyEmail):  
+> failure, success.  
 
 Default: a list of 1: `failure`.
 
@@ -428,7 +442,8 @@ Notify[]=failure
 
 ## Webhook
 
-> An address that is sent a notice of every build (POST, JSON).  
+> An https address that is sent a notice of every publish and rollback  
+> (POST, JSON, schema exp-static-webhook/1).  
 
 Default: empty.
 
@@ -437,6 +452,21 @@ Default: empty.
 # settings/override/staticcache.ini.append.php
 [Target_example]
 Webhook=
+*/ ?>
+```
+
+## License
+
+> The license of the content for Extras\[\]=license: an SPDX id (CC-BY-4.0)  
+> or the text itself.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+License=
 */ ?>
 ```
 

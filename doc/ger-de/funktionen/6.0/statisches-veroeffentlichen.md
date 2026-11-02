@@ -245,6 +245,27 @@ Hilfe: [Mit GitHub verbinden](../../hilfe/statisches-veroeffentlichen/mit-github
 [Eigene Domain verwenden](../../hilfe/statisches-veroeffentlichen/eigene-domain-verwenden.md),
 [Grenzen und Bedingungen von GitHub Pages](../../hilfe/statisches-veroeffentlichen/grenzen-und-bedingungen-von-github-pages.md).
 
+## Was einen Server braucht
+
+Ein statischer Host kann nicht suchen, kein Formular annehmen und niemanden anmelden. Jeder Build findet diese Teile
+(`expStaticDegrader`) und gibt ihnen einen Ersatz; der Bericht des Builds listet sie als `degraded`:
+
+- **Suche** (`Search=enabled`): Die Suchformulare der Site gehen zu `search.html`, das im Browser einen Index je
+  Sprache durchsucht (`expStaticSearchIndex`).
+- **Informationssammler** (`Forms=endpoint`): Sie senden an den Formular-Endpunkt `staticpublish/form` der Live-Site,
+  der Ursprung, ein beim Build signiertes Token und eine Ratenbegrenzung prüft und den Post dann an die normale
+  Informationssammlung übergibt. Mit `Forms=hide` zeigen sie einen kurzen Text mit einem Link zur Live-Seite.
+- **Kommentare, Warenkorb, Anmeldung**: der kurze Text, oder sie fallen weg.
+- **Weiterleitungsseiten** (`Extras[]=redirects`) für alte Adressen, eigene Aliase und URL-Platzhalter ohne `*`.
+- **Nachbearbeitung**: `minify`, `precompress`, `fingerprint`.
+
+Ein Ziel kann sich selbst veröffentlichen: `Triggers[]=publish` (Seiten beim Veröffentlichen von Inhalten als veraltet
+markiert, nach `PublishDebounce` gebaut) und `Triggers[]=schedule` (`Schedule`), beides im Cronjob-Teil
+`staticpublish`, danach mit der E-Mail von `Notify[]` und einem signierten `Webhook`. Einzelheiten:
+[Dynamische Funktionen](../../anleitungen/statisches-veroeffentlichen-dynamische-funktionen.md),
+[Der Formular-Endpunkt](../../spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md). Das Audit zeichnet
+auch `system.staticpublish.build` und `system.staticpublish.form` auf.
+
 ## Datenschutz
 
 - Builds laufen als anonymer Benutzer: Das Durchlaufen sendet kein Cookie, und die Prüfungen in der Datenbank (welche

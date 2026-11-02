@@ -5,7 +5,7 @@
  * target's folder as its git repository and a local bare repository as its remote (receive.denyNonFastForwards and
  * receive.denyDeletes on, so a forced push or a moved tag would be refused there). Skipped without git or SQLite3.
  *
- *  SP-01 the tables: the upgrade step and the record (expStaticStatusEngineChecks on SQLite)
+ *  SP-01 the tables: the upgrade step, the record and the on-publish queue (expStaticStatusEngineChecks on SQLite)
  *  SP-02 build and publish: one commit of only the build's files, tag static/<target>/1, branch and tag in the remote,
  *        a run row (done, pushed, counts) and the pages; the local manifest of the build before stays out of git
  *  SP-03 a second publish after the site changed: a page removed and one changed, committed as such, tag 2; a third
@@ -170,6 +170,7 @@ class expStaticPublishSqliteTest extends PHPUnit\Framework\TestCase
     {
         $this->checkStatusTables( $this->db );
         $this->checkStatusWriteAndRead( $this->db );
+        $this->checkStatusQueue( $this->db );
     }
 
     /** SP-02 to SP-05 */
@@ -279,7 +280,11 @@ class expStaticPublishSqliteTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $after, $this->tagObjects( $bare ), 'the remote has the same tags' );
         $this->assertSame( '4', (string)count( $after ) );
         $runs = expStaticStatus::runs( $this->db, 'test-site', 0 );
-        $this->assertSame( array( 'rollback', 'done', 'pushed' ), array( $runs[0]['kind'], $runs[0]['state'], $runs[0]['push_state'] ) );
+        // the newest run; a publish in the same second may be listed first (runs are ordered by the second they started)
+        $rollbackRun = array_values( array_filter( $runs, function ( $run ) use ( $rolled ) { return $run['run_id'] === $rolled['run_id']; } ) );
+        $this->assertCount( 1, $rollbackRun );
+        $this->assertSame( $runs[0]['started_at'], $rollbackRun[0]['started_at'], 'the rollback is the newest run' );
+        $this->assertSame( array( 'rollback', 'done', 'pushed' ), array( $rollbackRun[0]['kind'], $rollbackRun[0]['state'], $rollbackRun[0]['push_state'] ) );
         $this->assertSame( 'system.staticpublish.rollback', end( $this->audits )[0] );
         $this->assertSame( 'static/test-site/1', end( $this->audits )[1]['x']['from_tag'] );
         $this->assertArrayHasKey( 'news/item-1/index.html', expStaticStatus::pages( $this->db, 'test-site' ) );

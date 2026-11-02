@@ -31,7 +31,7 @@ Eine Richtlinie auf `moderation/*` (jede Funktion) erlaubt sie ebenfalls; Einsch
 
 | Schlüssel | Wert |
 |---|---|
-| Navigationsbereich | `ezsetupnavigationpart` |
+| Navigationsbereich | `ezmynavigationpart` |
 
 ## Beispiel
 

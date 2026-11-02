@@ -94,6 +94,14 @@ $ViewList['keys'] = array(
     'params' => array( 'TargetID' ),
     'unordered_params' => array() );
 
+// The form endpoint (expStaticFormEndpoint): the information collectors of a static copy post here, from the
+// target's public address, with a token signed by the build. Anyone may post (site.ini PolicyOmitList[]); the view
+// checks the origin, the token and the rate itself and hands the post to content/action.
+$ViewList['form'] = array(
+    'script' => 'form.php',
+    'params' => array(),
+    'unordered_params' => array() );
+
 $Target = array(
     'name' => 'Target',
     'values' => array(),

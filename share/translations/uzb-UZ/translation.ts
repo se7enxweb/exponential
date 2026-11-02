@@ -14677,6 +14677,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Qoʻllanmalar, qidiruv va xatoni qanday xabar qilish.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Yangi kontent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eng yangi kontent, tekshiruv uchun ushlab turilganlar va tanlov ustida amallar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>The form could not be read.</source>
         <translation>Formani oʻqib boʻlmadi.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Boshqaruv paneli</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>unknown</source>
         <translation>noma’lum</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages sahifada %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Har bir matn faylining yonida .gz (va .br), ularni beradigan hostlar uchun.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Sahifaning har bir eski manzili va taxallusi uchun kichik sahifa, eski havolalar ishlashda davom etishi uchun.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions saytni yetkazganda doim yoziladi.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 kabi SPDX identifikatori yoki matnning o‘zi.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Savat</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Serverga murojaatlar</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Izohlar</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Ma’lumot yig‘adigan formalar</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ish jarayoni</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Sahifalarda kamroq bo‘sh joy va izohlarsiz.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Kontent litsenziyasi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Kirish</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minifikatsiya</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Boshqa formalar</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Oldindan siqish</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Yo‘naltirish sahifalari</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Yo‘naltirish sahifalari: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Qidiruv</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Qidiruv indeksi: %languages tillarida %pages sahifa.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Brauzerlar saqlashi uchun mazmuni xeshi bilan nomlangan uslub jadvallari va skriptlar.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>O‘zgargan sahifalar, oxirgi o‘zgarishdan bir necha daqiqa o‘tgach (cronjob qismi staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Kontent litsenziyasi, quyidagi maydondan.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Butun sayt, jadval vaqtlarida (cronjob qismi staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Sahifalarning bu qismlariga server kerak; har biriga zaxira berildi. Nashr qilishdan oldin ularni tekshiring.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Statik ishlamaydigan narsalar</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Repozitoriy nima ekani, uni hostda ochadigan kishi uchun.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>tashlab ketilgan</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>zaxira matn</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>jonli saytning forma qabul qilish manzili</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>jonli sayt</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>nusxaning qidiruv sahifasi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formani yuborib bo‘lmadi.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Rahmat: forma yuborildi.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Forma qabul qilinmadi: kiritganingizni tekshiring va qayta yuboring.</translation>
     </message>
 </context>
 </TS>

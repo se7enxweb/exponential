@@ -14677,6 +14677,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <source>Guides, search and how to report an error.</source>
         <translation>Nā alakaʻi, ka ʻimi a me ka haʻi ʻana i kekahi hewa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ka ʻike hou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ka ʻike hou loa, ka mea i kāohi ʻia no ka loiloi, a me nā hana ma kekahi koho ʻana.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>The form could not be read.</source>
         <translation>ʻAʻole i hiki ke heluhelu i ka palapala.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Papa nānā</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>unknown</source>
         <translation>ʻike ʻole ʻia</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ma nā ʻaoʻao ʻo %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>He .gz (a me .br) ma ka ʻaoʻao o kēlā me kēia waihona kikokikona, no nā hoʻokipa e hāʻawi ana iā lākou.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>He ʻaoʻao liʻiliʻi no kēlā me kēia helu wahi kahiko a me ka inoa ʻē o ka ʻaoʻao, i mau ke hana ʻana o nā loulou kahiko.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Kākau ʻia i kēlā manawa a pau ke hāʻawi ʻo GitHub Actions i ka pūnaewele.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>He id SPDX e like me CC-BY-4.0, a i ʻole ka kikokikona ponoʻī.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Hīnaʻi</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Nā kelepona i ke kikowaena</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Nā manaʻo</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Nā palapala e hōʻiliʻili i ka ʻike</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Emi ka hakahaka a ʻaʻohe manaʻo i nā ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Laikini o ka maʻiʻo</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Komo</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Hōʻemi</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Nā palapala ʻē aʻe</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Hoʻopaʻa mua</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Nā ʻaoʻao hoʻohuli</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Nā ʻaoʻao hoʻohuli: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Huli</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Papa kuhikuhi huli: %pages ʻaoʻao ma %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Nā pepa kāhaka a me nā palapala kuhikuhi i kapa ʻia me ka hash o ko lākou maʻiʻo, i mālama ʻia e nā polokalamu kele.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Nā ʻaoʻao i hoʻololi ʻia, kekahi mau minuke ma hope o ka hoʻololi hope loa (ka ʻāpana cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ka laikini o ka maʻiʻo, mai ke kahua ma lalo.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ʻO ka pūnaewele holoʻokoʻa, i nā manawa o ka papa hana (ka ʻāpana cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Pono kēia mau ʻāpana o nā ʻaoʻao i kikowaena; ua loaʻa i kēlā me kēia he mea pani. E nānā iā lākou ma mua o ka hoʻopuka ʻana.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ʻAʻole hana i ke ʻano paʻa</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>He aha ka waihona, no ka mea e wehe ana ma ka hoʻokipa.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>haʻalele ʻia</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ka kikokikona pani</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ka wahi hoʻokō palapala o ka pūnaewele ola</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ka pūnaewele ola</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ka ʻaoʻao huli o ke kope</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ʻAʻole hiki ke hoʻouna ʻia ka palapala.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Mahalo: ua hoʻouna ʻia ka palapala.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ʻAʻole i ʻae ʻia ka palapala: e nānā i kāu i kikokiko ai a hoʻouna hou.</translation>
     </message>
 </context>
 </TS>

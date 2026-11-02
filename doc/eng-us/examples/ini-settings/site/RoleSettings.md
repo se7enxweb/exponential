@@ -185,8 +185,10 @@ PermissionSQLOptimization=enabled
 > (content types, size, rate limits, masked log lines).  
 > The preview of a draft through a share link: the signed, expiring token is the permission  
 > (expContentPreviewLink); without a valid one the page says the link does not work.  
+> The form endpoint of static publishing: the visitors of a static copy post its forms here, signed in or not;  
+> staticpublish/form checks the origin, the token signed at build time and the rate itself (expStaticFormEndpoint).  
 
-Default: a list of 24: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
+Default: a list of 25: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -214,7 +216,7 @@ PolicyOmitList[]=mailpreferences/unsubscribe
 PolicyOmitList[]=mailpreferences/confirm
 PolicyOmitList[]=mailpreferences/request
 PolicyOmitList[]=mailpreferences/export
-# ... 4 more in the shipped file
+# ... 5 more in the shipped file
 */ ?>
 ```
 

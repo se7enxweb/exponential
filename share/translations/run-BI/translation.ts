@@ -14677,6 +14677,14 @@ Ikitonderwa: Amapaki ntazokurwamwo.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ubuyobozi, ugushakisha n'ingene bavuga ikosa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ibirimwo bishasha</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ibirimwo bishasha cane, ivyafashwe ngo vyihwezwe, n'ibikorwa ku vyatowe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>The form could not be read.</source>
         <translation>Ifishi ntiyashoboye gusomwa.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Ikibaho</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>unknown</source>
         <translation>ntibizwi</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count kuri %pages urupapuro:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Dosiye .gz (na .br) iruhande ya buri dosiye y'inyandiko, ku bakiriye babitanga.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Urupapuroruto kuri buri aderesi n'izina ry'irindi ya kera y'urupapuro, kugira ngo amahuza ya kera akomeze gukora.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Iyandikwa buri gihe iyo GitHub Actions itanze urubuga.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id nka CC-BY-4.0, canke inyandiko ubwayo.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Agaseke</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Guhamagara seriveri</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Ibitekerezo</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Impapuro z'ibibazo zikusanya amakuru</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Ibisigisigi bike n'ibitekerezo bidahari mu mapaji.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Uruhusa rw'ibikubiyemo</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Kwinjira</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Izindi mpapuro z'ibibazo</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Impapuro zirungika</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Impapuro zirungika: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Kurondera</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Urutonde rwo kurondera: %pages urupapuro muri %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Impapuro z'imyambarire n'inyandiko zitwa n'ihash y'ibizirimwo, kugira ngo ibisokozo bishobore kubibika.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Impapuro zahinduwe, iminota mikeya nyuma y'impinduka ya nyuma (igice cya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Uruhusa rw'ibikubiyemo, ruva mu gisate kiri hepfo.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Urubuga rwose, mu masaha y'igenekerezo (igice cya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ibi bice vy'impapuro bikenera seriveri; buri gice cahawe ikindi gisubira. Bisuzume imbere yo gusohora.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ibitagikora mu buryo budahinduka</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ico icegeranyo ari co, ku wese akifunguriye ku mukiriye.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>byasizwe</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>inyandiko isubirwaho</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>aho impapuro z'ibibazo zirungikwa ku rubuga ruriho</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>urubuga ruriho</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>urupapuro rwo kurondera rw'ikopi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Urupapuro ntirwashoboye kurungikwa.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Urakoze: urupapuro rwarungitswe.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Urupapuro ntirwemewe: suzuma ivyo wanditse maze wongere ururungike.</translation>
     </message>
 </context>
 </TS>

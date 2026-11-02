@@ -15119,6 +15119,14 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guider, sökning och hur du rapporterar ett fel.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innehåll</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Det nyaste innehållet, det som hålls kvar för granskning, och åtgärder för ett urval.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82584,6 +82592,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The form could not be read.</source>
         <translation>Formuläret kunde inte läsas.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Instrumentpanel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -84322,6 +84334,146 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>unknown</source>
         <translation>okänd</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count på %pages sidor:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>En .gz (och .br) bredvid varje textfil, för värdar som levererar dem.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>En liten sida för varje gammal adress och alias för en sida, så att gamla länkar fortsätter fungera.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Skrivs alltid när GitHub Actions levererar webbplatsen.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Ett SPDX-id som CC-BY-4.0, eller själva texten.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Varukorg</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Anrop till servern</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentarer</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulär som samlar in information</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions-arbetsflöde</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mindre blanksteg och inga kommentarer i sidorna.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Innehållets licens</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Inloggning</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minifiera</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Andra formulär</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Förkomprimera</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Omdirigeringssidor</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Omdirigeringssidor: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Sökindex: %pages sidor på %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stilmallar och skript som namnges efter hashen av sitt innehåll, så att webbläsare får behålla dem.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>De ändrade sidorna, några minuter efter den senaste ändringen (cronjob-delen staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Innehållets licens, från fältet nedan.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Hela webbplatsen, vid schemats tidpunkter (cronjob-delen staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>De här delarna av sidorna behöver en server; var och en fick en reserv. Kontrollera dem innan du publicerar.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Vad som inte fungerar statiskt</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Vad arkivet är, för den som öppnar det på värden.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>utelämnat</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>reservtexten</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>live-webbplatsens formulärslutpunkt</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>live-webbplatsen</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kopians söksida</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formuläret kunde inte skickas.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Tack: formuläret skickades.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formuläret godtogs inte: kontrollera vad du angav och skicka det igen.</translation>
     </message>
 </context>
 </TS>

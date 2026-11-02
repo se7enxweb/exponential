@@ -19,7 +19,7 @@ Never edit `settings/content.ini` itself: an update replaces it. Put the setting
 
 ## JobThreshold
 
-> Setup > Recent content (the module moderation, doc/eng-us/features/6.0/moderation.md): the most recently created  
+> Dashboard > Recent content (the module moderation, doc/eng-us/features/6.0/moderation.md): the most recently created  
 > and modified content with its status, the review hold, who submitted it and from where, and actions on a selection.  
 > The page sizes are admininterface.ini \[PaginationSettings\] ItemsPerPageList\_moderation\_recent\[\].  
 >

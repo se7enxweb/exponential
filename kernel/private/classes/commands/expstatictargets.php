@@ -29,16 +29,36 @@ class Expstatictargets extends ExpstaticBase
                              "exit 1 when a target has an error.\n" .
                              "\n" .
                              "./console exp:static:targets\n" .
-                             "./console exp:static:targets --format=json",
+                             "./console exp:static:targets --format=json\n" .
+                             "./console exp:static:targets --export=all > migrations/20261101120000_static_targets.ini\n" .
+                             "\n" .
+                             "--export prints targets as an INI migration (also for a site package): their [Target_<id>] blocks and\n" .
+                             "TargetList[]. Credentials travel as their secret names, never their values.",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[format:]', '', array(
+        return (array)$this->startup( '[format:][export:]', '', array(
             'format' => 'text (default) or json (the machine output exp-static/1)',
+            'export' => 'print these targets (ids separated by commas, or all) as an INI migration and change nothing',
         ) );
     }
 
     public function run()
     {
         $options = $this->begin();
+        if ( isset( $options['export'] ) && $options['export'] )
+        {
+            $wanted = array_filter( array_map( 'trim', explode( ',', (string)$options['export'] ) ), 'strlen' );
+            $targets = array();
+            foreach ( \expStaticTarget::all() as $id => $target )
+                if ( in_array( 'all', $wanted, true ) || in_array( (string)$id, $wanted, true ) )
+                    $targets[(string)$id] = $target;
+            foreach ( $wanted as $id )
+                if ( $id !== 'all' && !isset( $targets[$id] ) )
+                    $this->usage( "--export: no target $id in staticcache.ini [StaticPublishSettings] TargetList[]" );
+            if ( !$targets )
+                $this->usage( '--export: there is no target to export' );
+            $this->cli()->output( rtrim( \expStaticTarget::migrationIni( array_values( $targets ) ) ) );
+            return;
+        }
         $format = $this->format( $options );
         $context = \expStaticTarget::siteAccessContext();
         $ini = \eZINI::instance( 'staticcache.ini' );

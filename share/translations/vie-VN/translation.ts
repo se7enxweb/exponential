@@ -14677,6 +14677,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Hướng dẫn, tìm kiếm và cách báo lỗi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nội dung mới nhất, những gì đang bị giữ lại để duyệt, và các hành động trên các mục được chọn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>The form could not be read.</source>
         <translation>Không đọc được biểu mẫu.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Bảng điều khiển</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>unknown</source>
         <translation>không rõ</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count trên %pages trang:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Một tệp .gz (và .br) bên cạnh mỗi tệp văn bản, dành cho các máy chủ phục vụ chúng.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Một trang nhỏ cho mỗi địa chỉ cũ và bí danh của trang, để các liên kết cũ vẫn hoạt động.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Luôn được ghi khi GitHub Actions phân phối trang web.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Một mã SPDX như CC-BY-4.0, hoặc chính văn bản đó.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Giỏ hàng</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Lệnh gọi đến máy chủ</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Bình luận</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Biểu mẫu thu thập thông tin</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Quy trình GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Ít khoảng trắng hơn và không có bình luận trong các trang.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Giấy phép của nội dung</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Đăng nhập</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Thu nhỏ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Biểu mẫu khác</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Nén trước</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Trang chuyển hướng</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Trang chuyển hướng: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Tìm kiếm</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Chỉ mục tìm kiếm: %pages trang trong %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Tệp kiểu và tập lệnh được đặt tên theo băm nội dung của chúng, để trình duyệt có thể giữ lại.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Các trang đã thay đổi, vài phút sau lần thay đổi cuối (phần cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Giấy phép của nội dung, lấy từ trường bên dưới.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Toàn bộ trang web, vào các thời điểm của lịch (phần cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Những phần này của trang cần máy chủ; mỗi phần có một phương án dự phòng. Hãy kiểm tra chúng trước khi xuất bản.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Những gì không hoạt động ở dạng tĩnh</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Kho lưu trữ là gì, dành cho ai mở nó trên máy chủ.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>bỏ qua</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>văn bản dự phòng</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>điểm cuối biểu mẫu của trang web thật</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>trang web thật</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>trang tìm kiếm của bản sao</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Không thể gửi biểu mẫu.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Cảm ơn: biểu mẫu đã được gửi.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Biểu mẫu không được chấp nhận: hãy kiểm tra nội dung đã nhập và gửi lại.</translation>
     </message>
 </context>
 </TS>

@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>رہنما، لبھت تے غلطی دی رپورٹ کرن دا طریقہ۔</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>نواں مواد</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>سبھ توں نواں مواد، جو جانچ لئی روکیا گیا اے، تے کسے چوݨ تے کم۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>فارم پڑھیا نئیں جا سکیا۔</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ڈیش بورڈ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages صفحیاں وچوں %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ہر ٹیکسٹ فائل دے کول اک .gz (تے .br)، اوہناں ہوسٹاں لئی جو اوہناں نوں پیش کردے نیں۔</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>صفحے دے ہر پرانے پتے تے عرف لئی اک نکا جیہا صفحہ، تاں جے پرانے لنک چلدے رہن۔</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>جدوں GitHub Actions سائٹ پہنچاندا اے تاں ہمیشہ لکھیا جاندا اے۔</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ورگی اک SPDX آئی ڈی، یا ٹیکسٹ آپ۔</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ٹوکری</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>سرور ول کالاں</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>تبصرے</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>معلومات اکٹھیاں کرن والے فارم</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ورک فلو</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>صفحیاں وچ گھٹ خالی تھاں تے کوئی تبصرہ نہیں۔</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>مواد دا لائسنس</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>لاگ ان</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>مِنِی فائی</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ہور فارم</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>پہلاں ای سنگوڑو</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ری ڈائریکٹ صفحے</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ری ڈائریکٹ صفحے: %count۔</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>تلاش</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>تلاش انڈیکس: %languages وچ %pages صفحے۔</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>مواد دے ہیش نال ناں دتے گئے سٹائل شیٹ تے سکرپٹ، تاں جے براؤزر اوہناں نوں رکھ سکن۔</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>بدلے ہوئے صفحے، آخری تبدیلی توں کجھ منٹ بعد (کرون جاب حصہ staticpublish)۔</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>مواد دا لائسنس، تھلے دتے خانے توں۔</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ساری سائٹ، شیڈول دے ویلیاں تے (کرون جاب حصہ staticpublish)۔</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>صفحیاں دے ایہہ حصے نوں سرور چاہیدا اے؛ ہر اک نوں بدل ملیا اے۔ شائع کرن توں پہلاں اوہناں نوں چیک کرو۔</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>جو ساکن طور تے نہیں چلدا</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ریپوزٹری کی اے، اوس لئی جو ہوسٹ تے کھولدا اے۔</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>چھڈیا گیا</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>متبادل ٹیکسٹ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>لائیو سائٹ دا فارم اینڈ پوائنٹ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>لائیو سائٹ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>کاپی دا تلاش دا صفحہ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>فارم بھیجیا نہیں جا سکیا۔</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>شکریہ: فارم بھیج دتا گیا۔</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>فارم قبول نہیں ہویا: جو تسیں بھریا اوہنوں چیک کرو تے دوبارہ بھیجو۔</translation>
     </message>
 </context>
 </TS>

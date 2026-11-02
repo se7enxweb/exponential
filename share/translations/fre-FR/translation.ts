@@ -15119,6 +15119,14 @@ Remarque : les paquetages ne seront pas désinstallés.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Guides, recherche et comment signaler une erreur.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contenus récents</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Les contenus les plus récents, ce qui est retenu pour vérification, et des actions sur une sélection.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82721,6 +82729,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The form could not be read.</source>
         <translation>Le formulaire n&apos;a pas pu être lu.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tableau de bord</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -84459,6 +84471,146 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>unknown</source>
         <translation>inconnu</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count sur %pages page(s) :</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Un .gz (et .br) à côté de chaque fichier texte, pour les hébergeurs qui les servent.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Une petite page pour chaque ancienne adresse et alias d'une page, afin que les anciens liens continuent de fonctionner.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Toujours écrit lorsque GitHub Actions livre le site.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Un identifiant SPDX tel que CC-BY-4.0, ou le texte lui-même.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Panier</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Appels au serveur</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Commentaires</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulaires qui collectent des informations</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Moins d'espaces blancs et aucun commentaire dans les pages.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licence du contenu</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Connexion</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minifier</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Autres formulaires</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Précompresser</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Pages de redirection</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Pages de redirection : %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Rechercher</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Index de recherche : %pages page(s) en %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Feuilles de style et scripts nommés d'après le hachage de leur contenu, que les navigateurs peuvent donc conserver.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Les pages modifiées, quelques minutes après la dernière modification (la partie cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>La licence du contenu, issue du champ ci-dessous.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Le site entier, aux heures du calendrier (la partie cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ces parties des pages nécessitent un serveur ; chacune a reçu une solution de repli. Vérifiez-les avant de publier.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ce qui ne fonctionne pas en statique</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ce qu'est le dépôt, pour qui l'ouvre sur l'hébergeur.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>omis</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>le texte de repli</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>le point d'entrée du formulaire du site en ligne</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>le site en ligne</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>la page de recherche de la copie</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Le formulaire n'a pas pu être envoyé.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Merci : le formulaire a été envoyé.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Le formulaire n'a pas été accepté : vérifiez votre saisie et envoyez-le à nouveau.</translation>
     </message>
 </context>
 </TS>

@@ -14675,6 +14675,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Jagorori, nema da yadda ake bayar da rahoton kuskure.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Sababbin abubuwa, abin da aka riƙe don dubawa, da ayyuka kan abubuwan da aka zaɓa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The form could not be read.</source>
         <translation>Ba a iya karanta fom ɗin ba.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Allon sarrafawa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>unknown</source>
         <translation>ba a sani ba</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count a shafuka %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (da .br) kusa da kowane fayil na rubutu, don masu masauki da ke bayar da su.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Karamin shafi ga kowane tsohon adireshi da laƙabin shafi, don tsofaffin hanyoyin haɗi su ci gaba da aiki.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Ana rubuta shi koyaushe idan GitHub Actions ya isar da shafin.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id kamar CC-BY-4.0, ko rubutun kansa.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kwando</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Kiran uwar garke</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Sharhi</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Fom ɗin da ke tattara bayanai</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Ƙarancin sarari mara komai da babu sharhi a shafukan.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lasisin abun ciki</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Shiga</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Rage girma</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Sauran fom</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Matsa tun da farko</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Shafukan turawa</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Shafukan turawa: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Bincike</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Jerin bincike: shafuka %pages cikin %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Shafukan salo da rubutun da aka sanya wa suna da hash na abin da ke cikinsu, don masu bincike su iya adana su.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Shafukan da aka canza, 'yan mintuna bayan canjin ƙarshe (sashen cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lasisin abun ciki, daga filin da ke ƙasa.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Dukan shafin, a lokutan jadawalin (sashen cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Waɗannan sassan shafukan suna buƙatar uwar garke; kowanne ya sami madadi. Duba su kafin ka wallafa.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Abin da ba ya aiki a tsaye</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Abin da ma'ajiyar take, ga duk wanda ya buɗe ta a kan mai masauki.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>an bar shi</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>rubutun madadi</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>wurin karɓar fom na shafin kai tsaye</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>shafin kai tsaye</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>shafin bincike na kwafin</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Ba a iya aika fom ɗin ba.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Na gode: an aika fom ɗin.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Ba a karɓi fom ɗin ba: duba abin da ka shigar ka sake aikawa.</translation>
     </message>
 </context>
 </TS>

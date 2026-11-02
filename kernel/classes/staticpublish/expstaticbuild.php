@@ -44,6 +44,9 @@ class expStaticBuild
     private $runId;
     private $context = array();
 
+    /** old file => new file of the style sheets and scripts PostProcess[]=fingerprint renamed */
+    private $fingerprints = array();
+
     /**
      * @param expStaticTarget $target
      * @param array $options emit (callable( $type, $message, $data )), dry_run, full, paths (page paths), nodes
@@ -52,7 +55,9 @@ class expStaticBuild
      *        node_lookup (callable( $pagePath ) => array( node, modified, section )|null), fetcher (a request
      *        callable for the crawl and the files, as expPreloadRunner's), base_path (the siteaccess prefix of the
      *        crawl, instead of the one site.ini gives), context (expStaticTarget::siteAccessContext()), run_id,
-     *        keep_staging, max_site_bytes, max_file_bytes, session_names
+     *        keep_staging, max_site_bytes, max_file_bytes, session_names, redirect_rows (expStaticRedirects::rows()
+     *        instead of the database's), form_endpoint (bool: the live site takes forms; default [StaticPublishSettings]
+     *        FormEndpoint), audit (callable( $name, $data ) instead of expAudit; false for none)
      */
     public function __construct( expStaticTarget $target, array $options = array() )
     {
@@ -62,6 +67,7 @@ class expStaticBuild
             'max_pages' => 0, 'root' => (string)getcwd(), 'var_dir' => null, 'work_dir' => null, 'db' => null, 'can_read' => null,
             'node_lookup' => null, 'fetcher' => null, 'base_path' => null, 'context' => null, 'run_id' => '',
             'keep_staging' => false, 'max_site_bytes' => null, 'max_file_bytes' => null, 'session_names' => array(),
+            'redirect_rows' => null, 'form_endpoint' => null, 'audit' => null,
         );
         $this->emit = $this->options['emit'];
         $this->runId = $this->options['run_id'] !== '' ? (string)$this->options['run_id'] : self::newRunId();
@@ -152,7 +158,10 @@ class expStaticBuild
             'links' => array( 'mode' => $this->target->linkMode(), 'base_path' => $this->target->basePath(), 'public_url' => $this->target->publicUrl() ),
             'counts' => array( 'pages' => 0, 'pages_refused' => 0, 'pages_skipped' => 0, 'pages_excluded' => 0, 'files' => 0,
                                'storage' => 0, 'storage_missing' => 0, 'files_failed' => 0, 'extras' => 0, 'links_rewritten' => 0, 'links_live' => 0,
-                               'links_external' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array() ),
+                               'links_external' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0,
+                               'fingerprinted' => 0, 'precompressed' => 0 ),
+            'degraded' => array(),
+            'search' => null,
             'diff' => null,
             'pages' => array(),
             'refused' => array(),
@@ -209,6 +218,19 @@ class expStaticBuild
         $this->report['exit'] = (int)$exit;
         $this->report['errors'] = array_values( array_unique( $this->report['errors'] ) );
         $this->report['warnings'] = array_values( array_unique( $this->report['warnings'] ) );
+        // the audit event system.staticpublish.build: every build but a dry run
+        if ( !$this->options['dry_run'] && $this->options['audit'] !== false )
+        {
+            $data = array( 'object' => array( 'type' => 'static_target', 'id' => $this->target->id() ), 'verb' => 'build',
+                           'result' => $exit ? 'failure' : 'success', 'reason' => $exit ? (string)reset( $this->report['errors'] ) : '',
+                           'x' => array( 'run_id' => $this->runId, 'scope' => $this->report['scope'], 'pages' => $this->report['counts']['pages'],
+                                         'bytes' => $this->report['counts']['bytes'], 'refused' => $this->report['counts']['pages_refused'],
+                                         'degraded' => array_keys( $this->report['degraded'] ) ) );
+            if ( is_callable( $this->options['audit'] ) )
+                call_user_func( $this->options['audit'], 'system.staticpublish.build', $data );
+            else
+                expStaticPublisher::audit( 'system.staticpublish.build', $data );
+        }
         return $this->report;
     }
 
@@ -392,9 +414,20 @@ class expStaticBuild
         ) );
         $rewriter->reset();
         $sitemap = array();
+        $degrader = $this->degrader( $rewriter, $liveUrl, $sitePath );
+        $search = $target->setting( 'Search' ) === 'enabled' ? new expStaticSearchIndex( (int)$this->staticSetting( 'SearchMaxBytes', (string)expStaticSearchIndex::MAX_BYTES ) ) : null;
+        $minify = in_array( 'minify', (array)$target->setting( 'PostProcess' ), true );
+        $nodePages = array();
         foreach ( $pages as $relative => $page )
         {
             $html = $rewriter->rewriteHtml( (string)file_get_contents( $page['raw'] ), $page['path'], $page['file'] );
+            $html = $degrader->apply( $html, $relative, $page['file'] );
+            if ( $minify )
+                $html = expStaticPostProcessor::minify( $html );
+            if ( $search !== null )
+                $search->add( $html, expStaticLinkRewriter::pageUrl( $page['file'] ) );
+            if ( $page['node'] !== null && !isset( $nodePages[(int)$page['node']] ) )
+                $nodePages[(int)$page['node']] = $relative;
             if ( !$this->write( $staging . '/' . $page['file'], $html ) )
             {
                 $this->error( 'Cannot write ' . $page['file'] );
@@ -419,9 +452,34 @@ class expStaticBuild
         if ( $this->report['files_failed'] )
             $this->warning( sprintf( '%d file(s) named by the pages could not be collected; their links go to the live site (see "files_failed").', count( $this->report['files_failed'] ) ) );
 
+        $this->report['degraded'] = $degrader->report();
+        foreach ( $this->report['degraded'] as $feature => $entry )
+            if ( isset( $entry['handled'][expStaticDegrader::FALLBACK] ) || isset( $entry['handled'][expStaticDegrader::LIVE] ) || isset( $entry['handled'][expStaticDegrader::REMOVED] ) )
+                $this->say( 'phase-item', sprintf( 'Static:  %s on %d page(s): %s', $feature, $entry['pages'], implode( ', ', array_keys( $entry['handled'] ) ) ) );
+
+        if ( in_array( 'fingerprint', (array)$target->setting( 'PostProcess' ), true ) )
+        {
+            if ( $partial )
+                $this->warning( 'PostProcess[]=fingerprint renames files in a full build only; this partial build keeps the names it has.' );
+            else
+                $this->fingerprint( $staging, $manifest );
+        }
         $this->writeExtras( $staging, $manifest, $notFound, $rewriterOptions, $sitemap );
+        if ( $search !== null )
+            $this->writeSearch( $staging, $manifest, $search, $partial ? $targetDir : null );
+        if ( $target->hasExtra( 'redirects' ) )
+        {
+            if ( $partial )
+                $this->say( 'phase-item', 'Redirects: kept from the last full build' );
+            else
+                $this->writeRedirects( $staging, $manifest, $rewriter, $nodePages, $pages );
+        }
         if ( $partial && $old !== null )
             $manifest->keepFrom( $old );
+        if ( $target->hasExtra( 'readme' ) || $target->hasExtra( 'license' ) )
+            $this->writeRepositoryFiles( $staging, $manifest );
+        if ( in_array( 'precompress', (array)$target->setting( 'PostProcess' ), true ) )
+            $this->precompress( $staging, $manifest );
 
         $this->report['counts']['pages'] = $manifest->count( 'page' );
         $this->report['counts']['files'] = $manifest->count( 'file' );
@@ -554,6 +612,8 @@ class expStaticBuild
             $extras['404.html'] = $notFound !== null
                                 ? $rewriter->rewriteHtml( $notFound['html'], $notFound['path'], '404.html' )
                                 : expStaticExtras::fallbackNotFound( $target->basePath() );
+            if ( $this->fingerprints )
+                $extras['404.html'] = expStaticPostProcessor::renameReferences( $extras['404.html'], '404.html', $this->fingerprints, $target->basePath(), $target->publicUrl() );
         }
         $publicUrl = $target->publicUrl();
         $writeSitemap = $target->hasExtra( 'sitemap' ) && $publicUrl !== '';
@@ -576,6 +636,219 @@ class expStaticBuild
             if ( $this->write( $staging . '/' . $file, $content ) )
                 $manifest->add( $file, 'extra', hash( 'sha256', $content ), strlen( $content ) );
         }
+    }
+
+    /** @return string a [StaticPublishSettings] value, or the default */
+    private function staticSetting( $name, $default )
+    {
+        $ini = eZINI::instance( 'staticcache.ini' );
+        return $ini->hasVariable( 'StaticPublishSettings', $name ) ? (string)$ini->variable( 'StaticPublishSettings', $name ) : (string)$default;
+    }
+
+    /** The degrader of this build: the search page, the form endpoint on the live site, the fallback text. */
+    private function degrader( expStaticLinkRewriter $rewriter, $liveUrl, $sitePath )
+    {
+        $target = $this->target;
+        $endpointOn = $this->options['form_endpoint'] !== null ? (bool)$this->options['form_endpoint']
+                    : $this->staticSetting( 'FormEndpoint', 'enabled' ) === 'enabled';
+        $forms = $target->setting( 'Forms' );
+        $endpoint = '';
+        if ( $forms === 'endpoint' )
+        {
+            if ( !$endpointOn )
+                $this->warning( 'Forms=endpoint, but [StaticPublishSettings] FormEndpoint is disabled: the forms are replaced by the fallback text.' );
+            else if ( $liveUrl === '' )
+                $this->warning( 'Forms=endpoint needs the address of the live site (LiveURL, or the SiteURL of the siteaccess): the forms are replaced by the fallback text.' );
+            else if ( $target->publicUrl() === '' )
+                $this->warning( 'Forms=endpoint needs PublicURL (or CustomDomain): the endpoint takes posts only from the copy\'s address. The forms are replaced by the fallback text.' );
+            else
+                $endpoint = rtrim( $liveUrl, '/' ) . rtrim( (string)$sitePath, '/' ) . '/staticpublish/form';
+        }
+        $targetId = $target->id();
+        $issued = time();
+        return new expStaticDegrader( array(
+            'target' => $targetId, 'search' => $target->setting( 'Search' ) === 'enabled', 'forms' => $forms, 'endpoint' => $endpoint,
+            'live_url' => $liveUrl !== '' ? rtrim( $liveUrl, '/' ) . rtrim( (string)$sitePath, '/' ) : '',
+            'token' => function ( $objectId ) use ( $targetId, $issued ) { return expStaticFormToken::sign( $targetId, $objectId, $issued ); },
+            'link' => function ( $file, $fromFile ) use ( $rewriter ) { return $rewriter->link( $file, $fromFile ); },
+            'fallback_text' => $this->staticSetting( 'FormFallbackText', expStaticDegrader::FALLBACK_TEXT ),
+            'fallback_link' => $this->staticSetting( 'FormFallbackLink', expStaticDegrader::FALLBACK_LINK ),
+        ) );
+    }
+
+    /** The search page, its script and style sheet, and an index per language (a partial build keeps the other pages' entries). */
+    private function writeSearch( $staging, expStaticManifest $manifest, expStaticSearchIndex $search, $keepFrom )
+    {
+        if ( $keepFrom !== null )
+            foreach ( glob( $keepFrom . '/' . expStaticSearchIndex::DIRECTORY . '/index-*.json' ) ?: array() as $file )
+                $search->keep( (string)file_get_contents( $file ) );
+        $files = array();
+        $dropped = 0;
+        foreach ( $search->files() as $file => $index )
+        {
+            $files[$file] = $index['content'];
+            $dropped += $index['dropped'];
+        }
+        $files[expStaticSearchIndex::PAGE] = expStaticSearchIndex::page( $search->languages(), array( 'lang' => '' ) );
+        $files[expStaticSearchIndex::SCRIPT] = expStaticSearchIndex::script();
+        $files[expStaticSearchIndex::DIRECTORY . '/search.css'] = expStaticSearchIndex::styleSheet();
+        foreach ( $files as $file => $content )
+        {
+            if ( $file === expStaticSearchIndex::PAGE && $manifest->has( $file ) )
+                $this->warning( 'The site has a page search.html of its own; the search page replaces it.' );
+            if ( $this->write( $staging . '/' . $file, $content ) )
+                $manifest->add( $file, 'extra', hash( 'sha256', $content ), strlen( $content ) );
+        }
+        $this->report['search'] = array( 'languages' => $search->languages(), 'pages' => $search->count() - $dropped, 'dropped' => $dropped );
+        if ( $dropped )
+            $this->warning( sprintf( 'The search index is larger than [StaticPublishSettings] SearchMaxBytes: %d page(s) are not in it.', $dropped ) );
+        $this->say( 'phase-item', sprintf( 'Search:  %d page(s), %s', $search->count() - $dropped, implode( ', ', $search->languages() ) ?: '-' ) );
+    }
+
+    /** The redirect stubs of the old and extra addresses of the pages built. */
+    private function writeRedirects( $staging, expStaticManifest $manifest, expStaticLinkRewriter $rewriter, array $nodePages, array $pages )
+    {
+        $rows = $this->options['redirect_rows'];
+        if ( $rows === null )
+        {
+            if ( $this->options['db'] === null )
+            {
+                $this->warning( 'Extras[]=redirects: without a database there are no URL aliases to read; no stub is written.' );
+                return;
+            }
+            $rows = expStaticRedirects::rows( $this->options['db'] );
+        }
+        $pagePaths = array();
+        foreach ( array_keys( $pages ) as $relative )
+            $pagePaths[(string)$relative] = true;
+        $stubs = expStaticRedirects::stubs( (array)$rows, $nodePages, function ( $file ) use ( $manifest ) { return $manifest->has( $file ); }, $pagePaths );
+        $publicUrl = $this->target->publicUrl();
+        $written = 0;
+        foreach ( $stubs as $from => $stub )
+        {
+            $to = isset( $pages[$stub['to']] ) ? expStaticLinkRewriter::pageUrl( $pages[$stub['to']]['file'] ) : null;
+            if ( $to === null )
+                continue;
+            $html = expStaticRedirects::stub( $rewriter->link( $to, $stub['file'] ), $publicUrl !== '' ? rtrim( $publicUrl, '/' ) . '/' . $to : '' );
+            if ( $this->write( $staging . '/' . $stub['file'], $html ) )
+            {
+                $manifest->add( $stub['file'], 'extra', hash( 'sha256', $html ), strlen( $html ), array( 'url' => $from ) );
+                $written++;
+            }
+        }
+        $this->report['counts']['redirects'] = $written;
+        $this->say( 'phase-item', sprintf( 'Redirects: %d stub(s) for old and extra addresses', $written ) );
+    }
+
+    /** README.md and LICENSE, as the target asks. */
+    private function writeRepositoryFiles( $staging, expStaticManifest $manifest )
+    {
+        $target = $this->target;
+        $files = array();
+        $license = (string)$target->setting( 'License' );
+        $holder = '';
+        try
+        {
+            $holder = (string)eZINI::instance()->variable( 'SiteSettings', 'SiteName' );
+        }
+        catch ( Throwable $e )
+        {
+        }
+        if ( $target->hasExtra( 'license' ) )
+        {
+            $text = expStaticExtras::license( $license, $holder );
+            if ( $text !== null )
+                $files['LICENSE'] = $text;
+        }
+        if ( $target->hasExtra( 'readme' ) )
+            $files['README.md'] = expStaticExtras::readme( array( 'name' => $target->name(), 'target' => $target->id(), 'public_url' => $target->publicUrl(),
+                                                                  'pages' => $manifest->count( 'page' ), 'files' => count( $manifest->entries() ),
+                                                                  'built_at' => gmdate( 'c' ), 'license' => isset( $files['LICENSE'] ) ? $license : '' ) );
+        foreach ( $files as $file => $content )
+        {
+            if ( $manifest->has( $file ) && $manifest->get( $file )['kind'] !== 'extra' )
+                $this->warning( "The site has a page or file $file of its own; the extra replaces it." );
+            if ( $this->write( $staging . '/' . $file, $content ) )
+                $manifest->add( $file, 'extra', hash( 'sha256', $content ), strlen( $content ) );
+        }
+    }
+
+    /** The style sheets and scripts renamed with the hash of their content, and every reference to them. */
+    private function fingerprint( $staging, expStaticManifest $manifest )
+    {
+        $target = $this->target;
+        $basePath = $target->linkMode() === expStaticLinkRewriter::MODE_BASE_PATH ? $target->basePath() : '/';
+        $publicUrl = $target->publicUrl();
+        $candidates = array();
+        $documents = array();
+        foreach ( $manifest->entries() as $path => $entry )
+        {
+            $extension = strtolower( (string)pathinfo( $path, PATHINFO_EXTENSION ) );
+            if ( $entry['kind'] === 'page' || $extension === 'css' )
+                $documents[$path] = (string)file_get_contents( $staging . '/' . $path );
+            if ( $entry['kind'] === 'file' && in_array( $extension, expStaticPostProcessor::FINGERPRINTED, true ) )
+                $candidates[$path] = (string)file_get_contents( $staging . '/' . $path );
+        }
+        if ( !$candidates )
+            return;
+        // the names from the content with its references renamed; again until they no longer change (@import chains)
+        $map = array();
+        for ( $pass = 0; $pass < 4; $pass++ )
+        {
+            $next = array();
+            foreach ( $candidates as $path => $content )
+            {
+                $final = strtolower( (string)pathinfo( $path, PATHINFO_EXTENSION ) ) === 'css'
+                       ? expStaticPostProcessor::renameReferences( $content, $path, $map, $basePath, $publicUrl ) : $content;
+                $next[$path] = expStaticPostProcessor::fingerprintName( $path, $final );
+            }
+            if ( $next === $map )
+                break;
+            $map = $next;
+        }
+        foreach ( $documents as $path => $content )
+        {
+            $new = expStaticPostProcessor::renameReferences( $content, $path, $map, $basePath, $publicUrl );
+            $entry = $manifest->get( $path );
+            $to = isset( $map[$path] ) ? $map[$path] : $path;
+            if ( $to !== $path )
+            {
+                unlink( $staging . '/' . $path );
+                $manifest->remove( $path );
+            }
+            $this->write( $staging . '/' . $to, $new );
+            $manifest->add( $to, $entry['kind'], hash( 'sha256', $new ), strlen( $new ), array_diff_key( $entry, array_flip( array( 'kind', 'sha256', 'size' ) ) ) );
+        }
+        foreach ( $map as $path => $to )
+            if ( !isset( $documents[$path] ) && $to !== $path )
+            {
+                $entry = $manifest->get( $path );
+                rename( $staging . '/' . $path, $staging . '/' . $to );
+                $manifest->remove( $path );
+                $manifest->add( $to, $entry['kind'], $entry['sha256'], $entry['size'], array_diff_key( $entry, array_flip( array( 'kind', 'sha256', 'size' ) ) ) );
+            }
+        $this->fingerprints = $map;
+        $this->report['counts']['fingerprinted'] = count( $map );
+        $this->say( 'phase-item', sprintf( 'Fingerprint: %d style sheet(s) and script(s) renamed by their content', count( $map ) ) );
+    }
+
+    /** The .gz (and .br) of every page, style sheet, script and text file of the build. */
+    private function precompress( $staging, expStaticManifest $manifest )
+    {
+        $written = 0;
+        foreach ( $manifest->entries() as $path => $entry )
+        {
+            if ( !is_file( $staging . '/' . $path ) || preg_match( '#\.(gz|br)$#', $path ) )
+                continue;
+            foreach ( expStaticPostProcessor::precompress( $path, (string)file_get_contents( $staging . '/' . $path ) ) as $file => $content )
+                if ( $this->write( $staging . '/' . $file, $content ) )
+                {
+                    $manifest->add( $file, 'extra', hash( 'sha256', $content ), strlen( $content ) );
+                    $written++;
+                }
+        }
+        $this->report['counts']['precompressed'] = $written;
+        $this->say( 'phase-item', sprintf( 'Precompress: %d file(s) written as .gz%s', $written, function_exists( 'brotli_compress' ) ? ' and .br' : '' ) );
     }
 
     /** The size limits of the host (GitHub Pages: 1 GB a site, 100 MB a file); warnings above 90 %. */

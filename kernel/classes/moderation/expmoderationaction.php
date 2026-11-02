@@ -8,7 +8,7 @@
  */
 
 /**
- * The actions of Setup > Recent content on a selection of objects (doc/eng-us/features/6.0/moderation.md). Each runs
+ * The actions of Dashboard > Recent content on a selection of objects (doc/eng-us/features/6.0/moderation.md). Each runs
  * the kernel's own operation per object, as the current user, after that user's own policy for that object:
  *
  *   release  release the review hold (state/assign of not_held) and reveal what the auto-hold hid (content/hide)

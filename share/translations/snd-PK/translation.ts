@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>گائيڊ، ڳولا ۽ غلطي جي رپورٽ ڪرڻ جو طريقو.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>تازو مواد</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>سڀ کان تازو مواد، جيڪو جائزي لاءِ روڪيو ويو آهي، ۽ ڪنهن چونڊ تي عمل.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>فارم پڙهي نه سگهيو.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ڊيش بورڊ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>اڻڄاتل</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages صفحن تي %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>هر ٽيڪسٽ فائل سان گڏ .gz (۽ .br) فائل، انهن هوسٽن لاءِ جيڪي انهن کي ڏين ٿا.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>صفحي جي هر پراڻي پتي ۽ عرف لاءِ هڪ ننڍو صفحو، ته جيئن پراڻا لنڪ ڪم ڪندا رهن.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>جڏهن GitHub Actions سائيٽ پهچائي ٿو ته هميشه لکيو ويندو آهي.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id جهڙوڪ CC-BY-4.0، يا پاڻ متن.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ٽوڪري</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>سرور ڏانهن ڪالون</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>تبصرا</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>فارم جيڪي معلومات گڏ ڪن ٿا</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>صفحن ۾ گهٽ خالي جاءِ ۽ ڪي تبصرا نه.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>مواد جو لائسنس</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>لاگ ان</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ٻيا فارم</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ريڊائريڪٽ صفحا</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ريڊائريڪٽ صفحا: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ڳولا</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ڳولا جو انڊيڪس: %languages ۾ %pages صفحا.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>اسٽائل شيٽ ۽ اسڪرپٽ جن جا نالا انهن جي مواد جي هيش مطابق آهن، ته جيئن برائوزر انهن کي رکي سگهن.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>تبديل ٿيل صفحا، آخري تبديليءَ کان ڪجهه منٽ پوءِ (cronjob جو حصو staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>مواد جو لائسنس، هيٺين خاني مان.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>سڄي سائيٽ، شيڊيول جي وقتن تي (cronjob جو حصو staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>صفحن جي انهن حصن کي سرور گهرجي؛ هر هڪ کي متبادل ڏنو ويو آهي. شايع ڪرڻ کان اڳ انهن کي چيڪ ڪريو.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>جيڪو جامد طور ڪم نٿو ڪري</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ريپوزيٽري ڇا آهي، انهيءَ لاءِ جيڪو هوسٽ تي کولي.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ڇڏيل</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>متبادل متن</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>لائيو سائيٽ جو فارم اينڊ پوائنٽ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>لائيو سائيٽ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ڪاپيءَ جو ڳولا صفحو</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>فارم موڪلي نه سگهيو.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>مهرباني: فارم موڪليو ويو.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>فارم قبول نه ٿيو: جيڪو داخل ڪيو اٿوَ سو چيڪ ڪريو ۽ ٻيهر موڪليو.</translation>
     </message>
 </context>
 </TS>

@@ -14616,6 +14616,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Útmutatók, keresés és hibabejelentés módja.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Friss tartalom</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>A legújabb tartalom, az ellenőrzésre visszatartott tartalom és műveletek a kijelölésen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81311,6 +81319,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The form could not be read.</source>
         <translation>Az űrlap nem olvasható be.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Irányítópult</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83049,6 +83061,146 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>unknown</source>
         <translation>ismeretlen</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages oldalból %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Minden szövegfájl mellett egy .gz (és .br), az ezeket kiszolgáló tárhelyekhez.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Egy kis oldal egy oldal minden régi címéhez és álnevéhez, hogy a régi hivatkozások továbbra is működjenek.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Mindig megírásra kerül, amikor a GitHub Actions kézbesíti a webhelyet.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX-azonosító, például CC-BY-4.0, vagy maga a szöveg.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kosár</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Hívások a szerverhez</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Megjegyzések</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Információt gyűjtő űrlapok</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions munkafolyamat</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Kevesebb szóköz és nincsenek megjegyzések az oldalakban.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>A tartalom licence</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Bejelentkezés</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimalizálás</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Egyéb űrlapok</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Előtömörítés</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Átirányítóoldalak</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Átirányítóoldalak: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Keresés</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Keresési index: %pages oldal %languages nyelven.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>A tartalmuk hash-e alapján elnevezett stíluslapok és szkriptek, hogy a böngészők megtarthassák őket.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>A módosított oldalak, néhány perccel az utolsó módosítás után (a cronjob staticpublish része).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>A tartalom licence, az alábbi mezőből.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>A teljes webhely, az ütemezés időpontjaiban (a cronjob staticpublish része).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Az oldalak ezen részeihez szerver kell; mindegyik kapott egy tartalékot. Ellenőrizze őket közzététel előtt.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ami statikusan nem működik</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Mi a tároló, annak, aki a tárhelyen megnyitja.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>kihagyva</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>a tartalék szöveg</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>az élő webhely űrlapvégpontja</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>az élő webhely</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>a másolat keresőoldala</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Az űrlapot nem sikerült elküldeni.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Köszönjük: az űrlap elküldve.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Az űrlap nem lett elfogadva: ellenőrizze a megadottakat, és küldje el újra.</translation>
     </message>
 </context>
 </TS>

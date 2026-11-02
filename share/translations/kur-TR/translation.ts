@@ -14675,6 +14675,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Rêber, lêgerîn û çawa çewtiyekê ragihînin.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Naveroka nû</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Naveroka herî nû, tiştên ku ji bo nirxandinê hatine ragirtin, û kiryarên li ser hilbijartinekê.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>The form could not be read.</source>
         <translation>Form nehat xwendin.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Panela kontrolê</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>unknown</source>
         <translation>nenas</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ji %pages rûpelan:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Li kêleka her pelê nivîsê .gz (û .br), ji bo mêvandarên ku wan peyda dikin.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ji bo her navnîşan û nasnavê kevn yê rûpelekê rûpelek biçûk, da ku girêdanên kevn bixebitin.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Her dem dema GitHub Actions malperê radest dike tê nivîsandin.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Naskirinek SPDX ya wekî CC-BY-4.0, an jî nivîsa wê bi xwe.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Selik</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Bangên ji bo serverê</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Şîrove</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formên ku agahiyan berhev dikin</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Herikîna xebatê ya GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Valahiya kêmtir û tu şîroveyek di rûpelan de nîne.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lîsansa naverokê</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Têketin</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Biçûkkirin</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formên din</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Pêşpakkirin</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Rûpelên beralîkirinê</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Rûpelên beralîkirinê: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Lêgerîn</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Pêrista lêgerînê: %pages rûpel di %languages de.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Şêwe û skrîptên ku bi hashê naveroka xwe hatine binavkirin, da ku gerok bikaribin wan bihêlin.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Rûpelên guhertî, çend deqe piştî guhertina dawî (beşa cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lîsansa naverokê, ji qada li jêr.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Tevahiya malperê, di demên bernameyê de (beşa cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Van beşên rûpelan serverekê hewce dikin; her yekê alternatîfek girt. Berî weşandinê wan kontrol bikin.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Çi bi awayekî statîk nexebite</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Depo çi ye, ji bo kesê ku wê li ser mêvandar vedike.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>hatiye hiştin</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>nivîsa alternatîf</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>xala dawî ya formê ya malpera zindî</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>malpera zindî</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>rûpela lêgerînê ya kopiyê</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Form nehat şandin.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Spas: form hat şandin.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Form nehat pejirandin: ya ku we nivîsî kontrol bikin û dîsa bişînin.</translation>
     </message>
 </context>
 </TS>

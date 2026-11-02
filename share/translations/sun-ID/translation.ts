@@ -14677,6 +14677,14 @@ Catetan: Pakét moal dicabut pamasanganana.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Pituduh, pamaluruhan, sareng kumaha cara ngalaporkeun kasalahan.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Eusi panganyarna</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eusi panganyarna, naon nu ditahan pikeun dipariksa, jeung aksi dina pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81289,6 +81297,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>The form could not be read.</source>
         <translation>Formulirna teu bisa dibaca.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Dasbor</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83027,6 +83039,146 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>unknown</source>
         <translation>teu dipikanyaho</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count dina %pages kaca:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Hiji .gz (jeung .br) di gigireun unggal koropak téks, pikeun host anu nyayogikeunana.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Kaca leutik pikeun unggal alamat heubeul jeung alias kaca, supados tumbu heubeul tetep jalan.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Salawasna ditulis nalika GitHub Actions ngirimkeun situs.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ID SPDX saperti CC-BY-4.0, atawa téksna sorangan.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Karanjang</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Pamanggih ka server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Koméntar</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulir anu ngumpulkeun inpormasi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Kirang rohangan kosong sarta euweuh koméntar dina kaca.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisénsi eusi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Asup</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formulir séjén</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Kaca alihan</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Kaca alihan: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Panéangan</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indéks panéangan: %pages kaca dina %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Lembar gaya jeung skrip anu dingaranan ku hash eusina, supados panyungsi tiasa nyimpenna.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Kaca anu robah, sababaraha menit saatos parobahan terakhir (bagian cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lisénsi eusi, tina kolom di handap.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Sakabéh situs, dina waktos jadwal (bagian cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Bagian kaca ieu butuh server; unggal bagian meunang cadangan. Pariksa heula sateuacan diterbitkeun.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Naon anu henteu jalan sacara statik</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Naon repositorina, pikeun saha waé anu muka di host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ditinggalkeun</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>téks cadangan</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>titik tungtung formulir situs langsung</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>situs langsung</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kaca panéangan salinan</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulir teu bisa dikirim.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Hatur nuhun: formulir geus dikirim.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulir teu katarima: pariksa naon anu diasupkeun terus kirim deui.</translation>
     </message>
 </context>
 </TS>

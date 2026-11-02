@@ -14616,6 +14616,14 @@ Pokazka: pakety se njewótinstalěruju.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Nawody, pytanje a kak zmólku k wěsći daśo.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nowe wopśimjeśe</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nejnowše wopśimjeśe, což jo za pśespytowanje zaźaržane, a akcije za wuběrk.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81311,6 +81319,10 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The form could not be read.</source>
         <translation>Formular njedajo se cytaś.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pśeglědowa tafla</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83049,6 +83061,146 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>unknown</source>
         <translation>njeznaty</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count na %pages boku/bokach:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Dataja .gz (a .br) pśi kuždej tekstowej dataji, za serwery, kótarež je słuže.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Mały bok za kuždu staru adresu a alias boka, aby se stare wótkazy dalej fungěrowali.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Pišo se pśecej, gaž GitHub Actions sedło dodawa.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX-ID kaž CC-BY-4.0 abo tekst sam.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kórb</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Wołanja serwera</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentary</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulary, kótarež informacije zbiraju</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Źěłowy běg GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mjenjej prozneje městna a žedne komentary w bokach.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licenca wopśimjeśa</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Pśizjawiś</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Zmjeńšyś</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Druge formulary</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Wnaprědk kompriměrowaś</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Pśesměrowańske boki</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Pśesměrowańske boki: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pytaś</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Pytański indeks: %pages bokow w %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stylowe lisćiny a skripty pomjenjone pó haši jich wopśimjeśa, aby brawzery mógli je wobchowaś.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Změnjone boki, někotare minuty pó slědnej změnje (dźěl cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Licenca wopśimjeśa z pola dołojce.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Cełe sedło w casach plana (dźěl cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Toś te dźěle bokow serwer trjebaju; kuždy jo dostał nadomestk. Pśeglědajśo je pśed wózjawjenim.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Což statiski njefunkcioněrujo</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Což repozitorium jo, za tego, kenž jo na serwerje wócynja.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>wuwostajone</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>nadomestny tekst</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>kóńcny punkt formularow žywego sedła</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>žywe sedło</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>pytański bok kopije</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formular njejo se wótpósłaś mógał.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Źěkujomy se: formular jo se wótpósłał.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formular njejo se pśiwzeł: pśeglědajśo, což sćo zapisał, a pósćelśo jen znowego.</translation>
     </message>
 </context>
 </TS>

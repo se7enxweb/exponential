@@ -49,7 +49,7 @@ Jedes Modul des Kernels und der mitgelieferten Erweiterungen, aus seiner `module
 | [setup](setup/README.md) | 45 | `kernel/setup/module.php` |
 | [shop](shop/README.md) | 36 | `kernel/shop/module.php` |
 | [state](state/README.md) | 6 | `kernel/state/module.php` |
-| [staticpublish](staticpublish/README.md) | 9 | `kernel/staticpublish/module.php` |
+| [staticpublish](staticpublish/README.md) | 10 | `kernel/staticpublish/module.php` |
 | [switchlanguage](switchlanguage/README.md) | 1 | `kernel/private/modules/switchlanguage/module.php` |
 | [trigger](trigger/README.md) | 1 | `kernel/trigger/module.php` |
 | [uiswitch](uiswitch/README.md) | 2 | `kernel/uiswitch/module.php` |

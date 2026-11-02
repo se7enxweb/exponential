@@ -14677,6 +14677,14 @@ Azen: ikemmusen ur ttwakksen ara asebded-nsen.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Imniren, anadi d wamek ara tselɣuḍ tuccḍa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Agbur amaynut</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Agbur amaynut, ayen yettwaṭṭfen i weselken, d tigawin ɣef tefrant.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>The form could not be read.</source>
         <translation>Tiferkit ur tettwaɣra ara.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Tafelwit n tadbelt</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>unknown</source>
         <translation>arussin</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count deg %pages n isebtar:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (d .br) ɣer yal afaylu aḍris, i yimawen i ten-yessuturen.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Asebter amecṭuḥ i yal tansa taqdimt d yal isem i d-yettwabdar n usebter, akken ad ddun yiseɣwan iqburen.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Yettwaru yal tikkelt ma yessaweḍ GitHub Actions asmel.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Asulay SPDX am CC-BY-4.0, neɣ aḍris-nni s timmad-is.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Tabaḍnit</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Isiwlen ɣer uqeddac</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Iwenniten</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Tiferkiwin ttnaǧmaɛent talɣut</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Aseddak n umahil GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Ugar n tallunt tilemt d war iwenniten deg isebtar.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Turagt n ugbur</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Tuqqna</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Senqes</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Tiferkiwin-nniḍen</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Ḥebbeṣ send</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Isebtar n uwelleh</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Isebtar n uwelleh: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Nadi</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Amatar n unadi: %pages n isebtar deg %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Isebtar n yilugan d yiskripten yettwasemman s uhac n ugbur-nsen, akken ad ten-ḥerzen yimsewweḍ.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Isebtar yettwabeddlen, kra n tisdatin deffir abeddel aneggaru (aḥric cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Turagt n ugbur, seg urti ukessar.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Asmel meṛṛa, deg wakud n usenfar (aḥric cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ibeddi-agi n isebtar ḥwaǧen aqeddac; yal yiwen yewwi-d abeddel. Wali-ten send ad d-tessuffɣeḍ.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ayen ur nteddu ara s wudem anmmasan</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>D acu-t uḥric, i win i t-ifetḥen deg uqeddac.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>yettwazgel</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>aḍris n usumer</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>tagara n tferkit n usmel usrid</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>asmel usrid</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>asebter n unadi n unɣal</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Ur yezmir ara usuffeɣ n tferkit.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Tanemmirt: tettwazen tferkit.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Tferkit ur tettwaqbel ara: wali ayen i d-teskecmeḍ rnu azen tikkelt-nniḍen.</translation>
     </message>
 </context>
 </TS>

@@ -76,6 +76,11 @@ Every page has a **Help** button that opens the page of this manual about it.
   and [GitHub Pages limits and terms](github-pages-limits-and-terms.md).
 - Repositories, tokens and pushes: [Targets and credentials](../../guides/static-publishing-targets-and-credentials.md)
 - The format of a build: [The build format](../../specifications/6.0/static-publishing-build-format.md)
+- Search, forms and comments: [Search, forms and comments on a static site](search-forms-and-comments-on-a-static-site.md),
+  [Languages on a static site](languages-on-a-static-site.md), [SEO on a static site](seo-on-a-static-site.md) and the
+  [form endpoint](../../specifications/6.0/static-publishing-form-endpoint.md).
+- Without pressing a button: [Publish automatically](publish-automatically.md) and
+  [Notifications and webhooks](notifications-and-webhooks.md).
 
 ## Next step
 

@@ -14677,6 +14677,14 @@ Qeyd: Paketlərin quraşdırılması silinməyəcək.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Təlimatlar, axtarış və xətanın necə bildiriləcəyi.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Son məzmun</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ən yeni məzmun, yoxlama üçün saxlanılanlar və seçim üzərində əməliyyatlar.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>The form could not be read.</source>
         <translation>Forma oxuna bilmədi.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>İdarə paneli</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>unknown</source>
         <translation>naməlum</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count, %pages səhifədə:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Hər mətn faylının yanında .gz (və .br) faylı, onları təqdim edən hostlar üçün.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Səhifənin hər köhnə ünvanı və ləqəbi üçün kiçik bir səhifə, köhnə keçidlər işləməyə davam etsin deyə.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions saytı çatdırdıqda həmişə yazılır.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 kimi SPDX identifikatoru və ya mətnin özü.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Səbət</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Serverə çağırışlar</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Şərhlər</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Məlumat toplayan formalar</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions iş axını</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Səhifələrdə daha az boşluq və şərh yoxdur.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Məzmunun lisenziyası</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Giriş</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Kiçilt</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Digər formalar</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Əvvəlcədən sıxma</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Yönləndirmə səhifələri</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Yönləndirmə səhifələri: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Axtarış</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Axtarış indeksi: %languages dilində %pages səhifə.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Məzmununun heşi ilə adlandırılmış üslub cədvəlləri və skriptlər, brauzerlər onları saxlaya bilsin deyə.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Dəyişən səhifələr, son dəyişiklikdən bir neçə dəqiqə sonra (cronjob hissəsi staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Məzmunun lisenziyası, aşağıdakı sahədən.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Bütün sayt, cədvəlin vaxtlarında (cronjob hissəsi staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Səhifələrin bu hissələri server tələb edir; hər birinə ehtiyat həll verilib. Dərc etməzdən əvvəl onları yoxlayın.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Statik işləməyənlər</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Anbarın nə olduğu, onu hostda açan üçün.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>buraxılıb</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ehtiyat mətn</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>canlı saytın forma son nöqtəsi</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>canlı sayt</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>surətin axtarış səhifəsi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Forma göndərilə bilmədi.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Təşəkkür edirik: forma göndərildi.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Forma qəbul edilmədi: daxil etdiyinizi yoxlayın və yenidən göndərin.</translation>
     </message>
 </context>
 </TS>

@@ -662,7 +662,7 @@ Exponential Intelligence, Passwort ändern und Profil bearbeiten zuletzt, wie im
 
 | Gruppe | Links (`MegaMenuLinks[]`) |
 |---|---|
-| Übersicht | `overview-dashboard` (Dashboard); das Hilfe-Center (`overview-help_center`) kommt hinzu, sobald die Hilfe ihren Link zu `[Leftmenu_my]` hinzufügt |
+| Übersicht | `overview-dashboard` (Dashboard), `overview-recent_content` (Neue Inhalte, für Moderatoren); das Hilfe-Center (`overview-help_center`) kommt hinzu, sobald die Hilfe ihren Link zu `[Leftmenu_my]` hinzufügt |
 | Ihre Arbeit | `work-my_drafts`, `work-my_pending`, `work-collaboration`, `work-my_bookmarks` |
 | Aktivität und Audit | `activity-console` (Audit-Protokoll), `activity-expai_events` (KI-Ereignisse) |
 | Exponential Intelligence | `ei-expai`, `ei-expai_vector`, `ei-expai_chain`, `ei-expai_alttext`, `ei-expai_log`, `ei-expai_help` |

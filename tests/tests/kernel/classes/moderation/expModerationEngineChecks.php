@@ -1,6 +1,6 @@
 <?php
 /**
- * The checks of Setup > Recent content (expModerationList) on a database with the kernel schema and the clean data,
+ * The checks of Dashboard > Recent content (expModerationList) on a database with the kernel schema and the clean data,
  * shared by the engine tests: SQLite in the process (expModerationSqliteTest), MySQL/MariaDB and PostgreSQL
  * (expModerationDatabaseTest) and MongoDB (expModerationMongoDBTest).
  *

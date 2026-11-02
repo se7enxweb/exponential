@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>መምርሕታት፣ ምድላይን ጌጋ ብኸመይ ከም እትሕብሩን።</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ሓድሽ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>እቲ ሓድሽ ትሕዝቶ፡ ንግምገማ ዝተታሕዘ፡ ከምኡ'ውን ኣብ ምርጫ ዝግበሩ ተግባራት።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>እቲ ቅጥዒ ክንበብ ኣይከኣለን።</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ሰሌዳ ምቁጽጻር</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>ዘይፍለጥ</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ኣብ %pages ገጻት:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ጎኒ ነፍሲ ወከፍ ናይ ጽሑፍ ፋይል .gz (ከምኡውን .br)፣ ንዚህብዎም ሆስትታት።</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ንነፍሲ ወከፍ ናይ ቀደም ኣድራሻን ተለዋዋጢ ስምን ገጽ ንእሽቶ ገጽ፣ ቀደምቲ ሊንክታት ክሰርሑ።</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions ነቲ ሳይት ኣብ ዘቕርበሉ ጊዜ ኩሉ ጊዜ ይጽሓፍ።</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX መለለዪ ከም CC-BY-4.0፣ ወይ እቲ ጽሑፍ ባዕሉ።</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ቅርጫት</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ናብ ሰርቨር ዝግበሩ ጻውዒታት</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ርእይቶታት</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ሓበሬታ ዝእክቡ ቅጥዕታት</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ዕዮ ፍሰት</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ኣብ ገጻት ዝተሓተ ባዶ ቦታን ርእይቶ ኣልቦን።</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ፍቓድ ትሕዝቶ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ምእታው</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ካልኦት ቅጥዕታት</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ዝመርሑ ገጻት</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ዝመርሑ ገጻት: %count።</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ድለይ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ናይ ድለይ ኢንዴክስ: ኣብ %languages %pages ገጻት።</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ብሃሽ ትሕዝቶኦም ዝተሰመዩ ስታይልሺታትን ስክሪፕትታትን፣ ብሮውዘራት ክዕቅብዎም።</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ዝተቐየሩ ገጻት፣ ድሕሪ እቲ ናይ መወዳእታ ለውጢ ውሑዳት ደቓይቕ (ናይ cronjob ክፋል staticpublish)።</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ፍቓድ ትሕዝቶ፣ ካብታ ትሕቲ ዘላ መሕለፊ።</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ብምሉኡ ሳይት፣ ኣብ ግዜታት መዘክር (ናይ cronjob ክፋል staticpublish)።</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>እዞም ክፍልታት ገጻት ሰርቨር የድልዩ፤ ነፍሲ ወከፍ ተለዋዋጢ ረኺቡ። ቅድሚ ምሕታምኩም ርኣይዎም።</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ብስታቲክ ዘይሰርሕ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>እቲ ማዕከን እንታይ ከምዝኾነ፣ ኣብ ሆስት ንዝኸፍቶ።</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ተሓዲጉ</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ተለዋዋጢ ጽሑፍ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ናይ ህያው ሳይት ናይ ቅጥዒ መቐበልታ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ህያው ሳይት</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ናይ እቲ ቅዳሕ ገጽ ድለይ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>እቲ ቅጥዒ ክስደድ ኣይተኻኣለን።</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>የቐንየልና: እቲ ቅጥዒ ተሰዲዱ።</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>እቲ ቅጥዒ ኣይተሰማዐን: ዘእተኹምዎ ርኣዩ ከም ብሓድሽ ስደዱ።</translation>
     </message>
 </context>
 </TS>

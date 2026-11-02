@@ -14675,6 +14675,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>வழிகாட்டிகள், தேடல் மற்றும் பிழையை அறிவிப்பது எப்படி.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>சமீபத்திய உள்ளடக்கம்</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>புதிய உள்ளடக்கம், மதிப்பாய்வுக்காக நிறுத்திவைக்கப்பட்டவை, ஒரு தேர்வின் மீதான செயல்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81279,6 +81287,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>படிவத்தைப் படிக்க முடியவில்லை.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>டாஷ்போர்டு</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83017,6 +83029,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>தெரியாது</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages பக்கங்களில் %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>உரைக் கோப்பு ஒவ்வொன்றின் அருகிலும் ஒரு .gz (மற்றும் .br), அவற்றை வழங்கும் ஹோஸ்ட்களுக்காக.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ஒரு பக்கத்தின் ஒவ்வொரு பழைய முகவரி மற்றும் மாற்றுப்பெயருக்கும் ஒரு சிறிய பக்கம், பழைய இணைப்புகள் தொடர்ந்து செயல்பட.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions தளத்தை வழங்கும்போது எப்போதும் எழுதப்படும்.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 போன்ற SPDX அடையாளம், அல்லது உரையே.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>கூடை</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>சேவையகத்திற்கான அழைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>கருத்துகள்</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>தகவல்களைச் சேகரிக்கும் படிவங்கள்</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions பணிப்பாய்வு</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>பக்கங்களில் குறைவான வெற்றிடமும் கருத்துகள் இன்மையும்.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>உள்ளடக்கத்தின் உரிமம்</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>உள்நுழை</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>பிற படிவங்கள்</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>திசைதிருப்பல் பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>திசைதிருப்பல் பக்கங்கள்: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>தேடு</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>தேடல் குறியீடு: %languages மொழிகளில் %pages பக்கங்கள்.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>உள்ளடக்கத்தின் ஹாஷ் மூலம் பெயரிடப்பட்ட பாணித்தாள்களும் ஸ்கிரிப்ட்களும், உலாவிகள் அவற்றை வைத்துக்கொள்ள.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>மாற்றப்பட்ட பக்கங்கள், கடைசி மாற்றத்துக்குச் சில நிமிடங்களுக்குப் பிறகு (cronjob பகுதி staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>உள்ளடக்கத்தின் உரிமம், கீழே உள்ள புலத்திலிருந்து.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>முழுத் தளமும், அட்டவணையின் நேரங்களில் (cronjob பகுதி staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>பக்கங்களின் இந்தப் பகுதிகளுக்குச் சேவையகம் தேவை; ஒவ்வொன்றுக்கும் மாற்று வழங்கப்பட்டுள்ளது. வெளியிடும் முன் அவற்றைச் சரிபார்க்கவும்.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>நிலையாகச் செயல்படாதவை</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ஹோஸ்டில் திறப்பவருக்கு, களஞ்சியம் என்ன என்பது.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>விடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>மாற்று உரை</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>நேரடித் தளத்தின் படிவ முனையம்</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>நேரடித் தளம்</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>நகலின் தேடல் பக்கம்</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>படிவத்தை அனுப்ப முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>நன்றி: படிவம் அனுப்பப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>படிவம் ஏற்கப்படவில்லை: நீங்கள் உள்ளிட்டதைச் சரிபார்த்து மீண்டும் அனுப்பவும்.</translation>
     </message>
 </context>
 </TS>

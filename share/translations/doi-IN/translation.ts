@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>गाइड, खोज ते गलती दी रिपोर्ट किʼयां करनी ऐ।</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>हाल दी सामग्री</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>नमीं सामग्री, समीक्षा आस्तै केह् रोकेआ गेदा ऐ, ते चोन पर कार्रवाइयां।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>फार्म नेईं पढ़ेआ जाई सकेआ।</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>डैशबोर्ड</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>अनजान</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count, %pages सफे च:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>हर टैक्स्ट फाइल दे कोल इक .gz (ते .br) फाइल, उंʼदे आस्ते जेह्ड़े होस्ट उसी परोसदे न।</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>सफे दे हर पुराने पते ते उपनाम आस्ते इक नानी जेही सफा, तां जे पुराने लिंक कम्म करदे रौह्न।</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>जिसलै GitHub Actions साइट पजांदा ऐ तां हमेशा लिखेआ जंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 जनेही इक SPDX आईडी, जां खुद पाठ।</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>टोकरी</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>सर्वर गी कॉल</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>टिप्पणियां</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>जानकारी कट्ठी करने आले फार्म</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions वर्कफ़्लो</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>सफेआं च घट्ट खाली थाह्र ते कोई टिप्पणी नेईं।</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>सामग्री दा लाइसेंस</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>लॉगिन</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>नानां करो</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>होर फार्म</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>पैह्‌लें संकुचित करो</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>रीडायरेक्ट सफे</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>रीडायरेक्ट सफे: %count।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>खोज</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>खोज सूची: %languages च %pages सफे।</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>स्टाइल शीट ते स्क्रिप्ट जिंʼदा नां उंʼदी सामग्री दे हैश कन्नै रक्खेआ गेदा ऐ, तां जे ब्राउज़र उनेंगी रक्खी सकन।</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>बदले दे सफे, आखरी बदलाऽ दे किश मिंट बाद (cronjob हिस्सा staticpublish)।</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>सामग्री दा लाइसेंस, थल्ले आली फील्ड थमां।</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>सारी साइट, समें-सारणी दे समें पर (cronjob हिस्सा staticpublish)।</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>सफेआं दे इʼनें हिस्सें गी सर्वर दी लोड़ ऐ; हर इक गी बदल मिल्ला ऐ। प्रकाशत करने थमां पैह्‌लें उनेंगी जांचो।</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>जेह्ड़ा स्थिर रूप च कम्म नेईं करदा</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>रिपॉजिटरी केह् ऐ, उसी जेह्ड़ा होस्ट पर खोह्लदा ऐ।</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>छोड़ेआ गेदा</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>विकल्प पाठ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>लाइव साइट दा फार्म एंडपॉइंट</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>लाइव साइट</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>कॉपी दा खोज सफा</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>फार्म भेजेआ नेईं जाई सकेआ।</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>धन्नवाद: फार्म भेजेआ गेआ।</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>फार्म स्वीकार नेईं होआ: जे किश भरेआ हा उसी जांचो ते फिरी भेजो।</translation>
     </message>
 </context>
 </TS>

@@ -3,13 +3,13 @@ title: "Neue Inhalte"
 audience: editor, admin
 category: content
 order: 40
-summary: Setup > Neue Inhalte - die neuesten Inhalte der ganzen Site, die neuesten zuerst, mit dem, was zur Prüfung zurückgehalten ist, Entwürfen, die auf ein Datum warten, und wer was von wo eingereicht hat; Filter, Seitengrößen bis 1000 und Aktionen auf einer Auswahl (freigeben, zurückhalten, verbergen, anzeigen, Papierkorb, löschen, Sektion, Status).
+summary: Dashboard > Neue Inhalte - die neuesten Inhalte der ganzen Site, die neuesten zuerst, mit dem, was zur Prüfung zurückgehalten ist, Entwürfen, die auf ein Datum warten, und wer was von wo eingereicht hat; Filter, Seitengrößen bis 1000 und Aktionen auf einer Auswahl (freigeben, zurückhalten, verbergen, anzeigen, Papierkorb, löschen, Sektion, Status).
 keywords: Neue Inhalte, Moderation, moderieren, zur Prüfung zurückgehalten, Zurückhaltung, automatisch zurückhalten, Kommentare, Einsendungen, Spam, freigeben, verbergen, anzeigen, Papierkorb, löschen, Sammelaktion, Auswahl, IP-Adresse, Browser, Dashboard, recent content, moderation, held for review, review hold, auto-hold, moderation/read, moderation/act, moderation/personaldata
 type: help
 ---
 # Neue Inhalte
 
-**Setup > Neue Inhalte** (in der Gruppe *Inhaltsmodell*) zeigt die neuesten Inhalte der ganzen Site, die neuesten
+**Dashboard > Neue Inhalte** (der zweite Link des Dashboard-Menüs, nach *Dashboard*) zeigt die neuesten Inhalte der ganzen Site, die neuesten
 zuerst: was Besucher eingereicht haben, was **zur Prüfung zurückgehalten** ist, Entwürfe, die nie veröffentlicht wurden,
 und Versionen, die auf eine Freigabe oder ein Datum warten. Moderatoren geben dort eine ganze Auswahl auf einmal frei
 oder entfernen sie.

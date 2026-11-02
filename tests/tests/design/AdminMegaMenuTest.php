@@ -1112,7 +1112,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $mega = $ini['Leftmenu_my_mega'];
         $choice = $mega['MegaMenuLinks'];
         $this->assertMatchesRegularExpression( '/^MegaMenuLinks\[\]$/m', self::sectionText( 'Leftmenu_my_mega' ), 'the list is reset before it is set' );
-        $this->assertLessThanOrEqual( 18, count( $choice ), 'at most 18 links' );
+        $this->assertLessThanOrEqual( 19, count( $choice ), 'at most 19 links (parts/a4_mega_menu.tpl draws no more)' );
         $this->assertGreaterThanOrEqual( 16, count( $choice ), 'almost every function of the tab' );
         $this->assertSame( array_values( array_unique( $choice ) ), $choice );
 
@@ -1160,6 +1160,7 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         $this->assertLessThan( array_search( 'ei-expai', $choice ), array_search( 'activity-console', $choice ) );
         $this->assertSame( array( 'account-change_password', 'account-edit_profile' ), array_slice( $choice, -2 ) );
         $this->assertSame( 'overview-dashboard', $choice[0], 'the tab\'s own page first' );
+        $this->assertSame( 'overview-recent_content', $choice[1], 'Recent content second' );
     }
 
     /** MM-10 */

@@ -1,6 +1,6 @@
 <?php
 /**
- * The moderation/recent view (Setup > Recent content): the most recently created or modified objects, a page at a
+ * The moderation/recent view (Dashboard > Recent content): the most recently created or modified objects, a page at a
  * time (expModerationList), with the filters, the sorting, the page sizes (remembered per user, the preference
  * admin_moderation_limit) and, with moderation/act, the selection and the actions (posted to moderation/action). The
  * address and the browser of a submission are read from the audit index for users with moderation/personaldata only.
@@ -117,7 +117,7 @@ class Recent extends \Exponential\Runnable\ModuleView
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:moderation/recent.tpl' );
-        $Result['path'] = array( array( 'url' => 'setup/menu', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Setup' ) ),
+        $Result['path'] = array( array( 'url' => 'content/dashboard', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Dashboard' ) ),
                                  array( 'url' => false, 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Recent content' ) ) );
         return $Result;
     }

@@ -3,13 +3,13 @@ title: staticcache.ini [StaticPublishSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail ..."
-keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail, JobHistory, GitHubAPI, GitHubAPIURL, GitHubAppId, GitHubAppKey, GitHubOAuthClientId
+keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail, JobHistory, GitHubAPI, GitHubAPIURL, GitHubAppId, GitHubAppKey, GitHubOAuthClientId, FormEndpoint, FormTokenDays, FormRateLimit, FormRateWindow, FormFallbackText, FormFallbackLink, SearchMaxBytes, PublishDebounce, NotifyEmail, WebhookSecret
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [StaticPublishSettings]
 
-The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 14 setting(s).
+The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 24 setting(s).
 
 Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -233,6 +233,156 @@ Default: empty.
 # settings/override/staticcache.ini.append.php
 [StaticPublishSettings]
 GitHubOAuthClientId=
+*/ ?>
+```
+
+## FormEndpoint
+
+> The form endpoint (staticpublish/form): the information collectors of the  
+> targets with Forms=endpoint post to this installation, which hands them to  
+> the normal information collection. Only posts from a target's PublicURL or  
+> CustomDomain with a token signed by a build are taken. enabled or disabled  
+> (the copies show the fallback text instead).  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+FormEndpoint=enabled
+*/ ?>
+```
+
+## FormTokenDays
+
+> How long the token a build writes into a form stays valid, in days. A new  
+> publish writes new tokens.  
+
+Default: `400`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+FormTokenDays=400
+*/ ?>
+```
+
+## FormRateLimit
+
+> How many posts one address may send to one target in FormRateWindow  
+> seconds before it is asked to wait (429).  
+
+Default: `5`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+FormRateLimit=5
+*/ ?>
+```
+
+## FormRateWindow
+
+Default: `600`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+FormRateWindow=600
+*/ ?>
+```
+
+## FormFallbackText
+
+> The text that replaces a form a static copy cannot send (comments, the  
+> basket, a collector with Forms=hide), and the text of its link to the same  
+> page on the live site.  
+
+Default: `This form works on the live site only.`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+FormFallbackText=This form works on the live site only.
+*/ ?>
+```
+
+## FormFallbackLink
+
+Default: `Open this page there`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+FormFallbackLink=Open this page there
+*/ ?>
+```
+
+## SearchMaxBytes
+
+> The most bytes of one language's search index (Search=enabled): over it,  
+> the index keeps fewer words per page, then no teasers, then fewer pages.  
+
+Default: `2000000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+SearchMaxBytes=2000000
+*/ ?>
+```
+
+## PublishDebounce
+
+> Publishing on content publish (Triggers\[\]=publish): the cronjob part  
+> staticpublish builds the changed pages of a target this many seconds after  
+> the last change, so a series of edits makes one publish.  
+
+Default: `120`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+PublishDebounce=120
+*/ ?>
+```
+
+## NotifyEmail
+
+> Where the notices of the targets' Notify\[\] go; empty: site.ini  
+> \[MailSettings\] AdminEmail.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+NotifyEmail=
+*/ ?>
+```
+
+## WebhookSecret
+
+> The name of a secret (Setup > Secrets) whose value signs every webhook  
+> (header X-Exp-Static-Signature: sha256=<HMAC of the body>). Empty: not  
+> signed. Only the name is here; never the value.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+WebhookSecret=
 */ ?>
 ```
 

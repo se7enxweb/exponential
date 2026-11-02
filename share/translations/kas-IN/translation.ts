@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>رہنما، ژھارُن تہٕ خرٲبی رِپورٹ کَرنُک طَریقہٕ۔</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>نَوِ مَواد</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>سارِوٕے کھوتہٕ نَوِ مَواد، یُس جایزٕ خٲطرٕ رُکاونہٕ آمُت چھُ، تہٕ کُنہِ ژارِ پیٹھ عَمَل.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>فارَم ہیوٚک نہٕ پٔرِتھ.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ڈیش بورڈ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>نامعلوٗم</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages صفحن مَنٛز %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ہر ٹیکسٹ فایل ہُنٛد پکھ .gz (تہٕ .br)، تمو ہوسٹن کِس خاطرٕ یم تِم پیش کَرن۔</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>صفحہ ہُنٛد ہر پرانٕ پَتہ تہٕ عُرفیَت خاطرٕ اکھ ہیوٚل صفحہ، تاکہ پرانٕ لنک کَم کَرنہ رٔہن۔</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ہمیشہٕ لیکھنہٕ یِوان، یِتھ وَقتہٕ GitHub Actions سایِٹ پہنچاوان چھہ۔</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ہِش SPDX id، یا مَتن پَکھ پانہٕ۔</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ٹوکری</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>سرور تہِ کال</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>تبصرہ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>مَعلومات جَمع کَرن وٲلۍ فارم</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>صفحن مَنٛز کم خٲلی جاے تہٕ تبصرہ نَہ۔</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>مواد ہُند لایسنس</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>لاگ اِن</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>چھوٗٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>دِگر فارم</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>پیشگی کمپریس</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ری ڈائریکٹ صفحہ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ری ڈائریکٹ صفحہ: %count۔</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ژھانڈ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ژھانڈنُک اِنڈیکس: %languages مَنٛز %pages صفحہ۔</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>اسٹائل شیٹ تہٕ اسکرپٹ یم پَنَن مواد ہٕنزِ ہیشہٕ نِش ناو دنہٕ آمتۍ چھِ، تاکہ براوزر تِم رکھ سَگن۔</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>بَدلاونہٕ آمتۍ صفحہ، آخری بدلاوہٕ پتہ کینہہ منٹ (cronjob حصہ staticpublish)۔</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>مواد ہُند لایسنس، تلہٕ والہٕ فیلڈہٕ پیٹھ۔</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>پوٚرٕ سایِٹ، شیڈیول ہٕنز وقتن پیٹھ (cronjob حصہ staticpublish)۔</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>صفحن ہِن یِم حصہ چھِ سرور ہیچھان؛ ہرِ اکِس آو بدل۔ شایع کرنہٕ برونٛہہ تِم زانچِو۔</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>یُس سٹیٹک طور کَم نہ کران چھُ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ریپوزِٹری کیا چھ، تمہِ خاطرٕ یُس تَمہِ ہوسٹ پیٹھ کھولان چھُ۔</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>چھوڑنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>بَدل مَتن</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>لایِو سایِٹ ہُند فارم اینڈپوائنٹ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>لایِو سایِٹ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>کاپی ہُند ژھانڈنُک صَفحہ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>فارم گَو نہ سوزنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>شُکریہ: فارم آو سوزنہٕ۔</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>فارم گوو نہ قبول: یُس تُہؤ دِیُت تمہ زانچِو تہٕ دوبارہ سوزِو۔</translation>
     </message>
 </context>
 </TS>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The moderation/report view: the result per object (done, refused, failed, and why) of an action of Setup > Recent
+ * The moderation/report view: the result per object (done, refused, failed, and why) of an action of Dashboard > Recent
  * content that ran as the content job 'moderation'. Its owner, and users with content/jobs, see it; the job's progress
  * page (content/job/<id>) opens it when the job is done. Policy moderation/act.
  *
@@ -47,7 +47,7 @@ class Report extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'extra', '' );
 
         return array( 'content' => $tpl->fetch( 'design:moderation/report.tpl' ),
-                      'path' => array( array( 'url' => 'setup/menu', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Setup' ) ),
+                      'path' => array( array( 'url' => 'content/dashboard', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Dashboard' ) ),
                                        array( 'url' => 'moderation/recent', 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Recent content' ) ),
                                        array( 'url' => false, 'text' => \ezpI18n::tr( 'design/admin/moderation', 'Result' ) ) ) );
     }

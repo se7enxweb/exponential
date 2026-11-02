@@ -40,14 +40,17 @@ class expStaticPublisher
      *        $message )), push (bool|null: null takes [StaticPublishSettings] Push), credentials (expStaticCredentials,
      *        default from the target's Credential), build (array: options of expStaticBuild), commit_name,
      *        commit_email, git_manager, lookup (secret lookup for the credentials, tests), audit (callable( $name, $data ) instead of
-     *        expAudit, tests), run_id (the id of the run instead of a new one: the administration's job id)
+     *        expAudit, tests), run_id (the id of the run instead of a new one: the administration's job id), notify (true:
+     *        the e-mail and webhook of the target's Notify[] and Webhook after a publish or rollback, expStaticNotifier;
+     *        an expStaticNotifier to use; false, the default, sends nothing)
      */
     public function __construct( expStaticTarget $target, array $options = array() )
     {
         $this->target = $target;
         $this->options = $options + array( 'root' => (string)getcwd(), 'var_dir' => null, 'work_dir' => null, 'db' => null, 'by' => '',
                                            'emit' => null, 'push' => null, 'credentials' => null, 'build' => array(), 'commit_name' => null,
-                                           'commit_email' => null, 'git_manager' => true, 'lookup' => null, 'audit' => null, 'run_id' => '' );
+                                           'commit_email' => null, 'git_manager' => true, 'lookup' => null, 'audit' => null, 'run_id' => '',
+                                           'notify' => false );
     }
 
     /** @return string a [StaticPublishSettings] value, or the default */
@@ -370,6 +373,26 @@ class expStaticPublisher
             'x' => array( 'run_id' => $report['run_id'], 'state' => $report['state'], 'commit' => $report['commit_id'], 'tag' => $report['tag_name'],
                           'push_state' => $report['push_state'], 'remote' => $report['remote'], 'credential' => $report['credential'],
                           'from_tag' => isset( $report['from_tag'] ) ? $report['from_tag'] : '' ) + $report['counts'] ) );
+        $this->notify( $report );
+    }
+
+    /** The e-mail and webhook of the target after a run, when the notify option asks for them; never a credential. */
+    protected function notify( array $report )
+    {
+        if ( !$this->options['notify'] )
+            return;
+        $notifier = $this->options['notify'] instanceof expStaticNotifier ? $this->options['notify'] : new expStaticNotifier();
+        $credentials = $this->credentials();
+        foreach ( array( 'messages', 'errors', 'warnings' ) as $key )
+            $report[$key] = array_values( array_map( array( $credentials, 'redact' ), (array)$report[$key] ) );
+        try
+        {
+            $notifier->notify( $this->target, $report );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( 'Static publishing: the notice could not be sent: ' . $e->getMessage(), __METHOD__ );
+        }
     }
 
     /** An audit event of this publisher: to the audit option's callable, else to the audit. */

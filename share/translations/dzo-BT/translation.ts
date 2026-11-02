@@ -14677,6 +14677,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Guides, search and how to report an error.</source>
         <translation>ལམ་སྟོན། འཚོལ་ཞིབ་དང་ འཛོལ་བ་ག་དེ་སྦེ་སྙན་ཞུ་འབད་དགོཔ་ཨིན་ན།</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ནང་དོན་གསརཔ།</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ནང་དོན་གསར་ཤོས་ བསྐྱར་ཞིབ་ཀྱི་དོན་ལུ་བཀག་བཞག་མི་ དེ་ལས་སེལ་འཐུ་ཅིག་གུ་བྱ་བ་ཚུ།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form could not be read.</source>
         <translation>འབྲི་ཤོག་ལྷག་མ་ཚུགས་པས།</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>ལཱ་གི་ངོས།</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>unknown</source>
         <translation>མ་ཤེས།</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>ཤོག་ལེབ་ %pages ནང་ %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ཚིག་ཡིག་ཡིག་སྣོད་རེ་རེའི་ཁ་བསྒྲིགས་ལུ་ .gz (དང་ .br) ཡིག་སྣོད་གཅིག དེ་ཚུ་བྱིན་མི་ཧོསཊ་ཚུ་གི་དོན་ལུ།</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ཤོག་ལེབ་གི་ཁ་བྱང་རྙིང་པ་དང་མིང་གཞན་རེ་རེའི་དོན་ལུ་ཤོག་ལེབ་ཆུ་ཆུ་གཅིག རྙིང་པའི་འབྲེལ་ཐག་ཚུ་ལཱ་འབད་བཞུགས་ནིའི་དོན་ལུ།</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions གིས་དྲྭ་ཚིགས་བྱིན་པའི་སྐབས་ རྒྱུན་དུ་ཡིག་ཚུགས་འབད་དོ།</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 བཟུམ་མའི་ SPDX id ཅིག ཡང་ན་ ཚིག་ཡིག་རང་ཉིད།</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ཐགས་སྒམ།</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>སར་བར་ལུ་འབོད་བརྡ།</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>བསམ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ཆ་འཕྲིན་བསྡུ་མི་འབྲི་ཤོག</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ལས་རིམ།</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ཤོག་ལེབ་ནང་སྟོངམ་ཉུང་ཚད་དང་བསམ་བཀོད་མེད།</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ནང་དོན་གྱི་ཆོག་ཐམ།</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>ཆུང་ཅུང་བཟོ།</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>འབྲི་ཤོག་གཞན།</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>སྔོན་ལས་བསྡུ།</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>བསྐྱར་གཏོང་ཤོག་ལེབ།</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>བསྐྱར་གཏོང་ཤོག་ལེབ། %count།</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>འཚོལ།</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>འཚོལ་ཞིབ་ཐོ་གཞུང་། %languages ནང་ཤོག་ལེབ་ %pages།</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ནང་དོན་གྱི་ hash གིས་མིང་བཏགས་མི་བཟོ་རྣམ་ཤོག་ལེབ་དང་ཡིག་རྒྱུན། བརྡ་འཚོལ་ཆས་ཚུ་གིས་སྲུང་བཞག་འབད་ཚུགསཔ་ཨིན་ནིའི་དོན་ལུ།</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>འགྱུར་བ་བཏང་མི་ཤོག་ལེབ། མཇུག་གི་འགྱུར་བ་གི་ཐུན་མི་ནི་ཅུང་ཚད་ཅིག་ཤུལ་ལུ། (cronjob ཆ་ཤས་ staticpublish)།</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ནང་དོན་གྱི་ཆོག་ཐམ། འོག་གི་ཐིག་ལས།</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>དྲྭ་ཚིགས་ཆ་མཉམ། ལས་རིམ་གྱི་ཆུ་ཚོད་ལུ། (cronjob ཆ་ཤས་ staticpublish)།</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ཤོག་ལེབ་གི་ཆ་ཤས་འདི་ཚུ་ལུ་སར་བར་དགོཔ་ཨིན། རེ་རེ་ལུ་ཚབ་གཅིག་ཐོབ་ཡོདཔ། དཔེ་སྐྲུན་མ་འབད་བའི་ཧེ་མར་ཞིབ་དཔྱད་འབད།</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ངེས་པར་ལུ་ལཱ་མི་འབད་མི།</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>མཛོད་ཁང་དེ་ག་ཅི་ཨིན་ན། ཧོསཊ་ལུ་ཁ་ཕྱེ་མི་ལུ།</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ཕྱིར་བཞག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ཚབ་ཚིག་ཡིག།</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ཐད་ཀར་དྲྭ་ཚིགས་ཀྱི་འབྲི་ཤོག་མཇུག་ཚད།</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ཐད་ཀར་དྲྭ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>འདྲ་བཤུས་ཀྱི་འཚོལ་ཞིབ་ཤོག་ལེབ།</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>འབྲི་ཤོག་འདི་གཏང་མ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ཐུགས་རྗེ་ཆེ། འབྲི་ཤོག་གཏང་ཡི།</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>འབྲི་ཤོག་འདི་ངོས་ལེན་མ་འབད། ཁྱོད་ཀྱིས་བྲིས་མི་ལུ་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ལོག་གཏང་།</translation>
     </message>
 </context>
 </TS>

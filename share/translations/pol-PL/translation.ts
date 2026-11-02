@@ -15099,6 +15099,14 @@ Uwaga: pakiety nie zostaną odinstalowane.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Poradniki, wyszukiwanie i sposób zgłaszania błędów.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nowe treści</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnowsze treści, to, co jest wstrzymane do sprawdzenia, oraz akcje na zaznaczonych pozycjach.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -82493,6 +82501,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The form could not be read.</source>
         <translation>Nie udało się odczytać formularza.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Pulpit</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -84231,6 +84243,146 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>unknown</source>
         <translation>nieznany</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count na %pages str.:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Plik .gz (i .br) obok każdego pliku tekstowego, dla hostów, które je serwują.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Mała strona dla każdego starego adresu i aliasu strony, aby stare odnośniki nadal działały.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Zapisywany zawsze, gdy GitHub Actions dostarcza witrynę.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Identyfikator SPDX, taki jak CC-BY-4.0, lub sam tekst.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Koszyk</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Wywołania serwera</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentarze</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formularze zbierające informacje</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Przepływ pracy GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mniej białych znaków i brak komentarzy na stronach.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licencja treści</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Logowanie</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimalizuj</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Inne formularze</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Wstępna kompresja</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Strony przekierowań</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Strony przekierowań: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wyszukiwanie</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indeks wyszukiwania: %pages str. w %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Arkusze stylów i skrypty nazwane skrótem swojej zawartości, aby przeglądarki mogły je zachować.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Zmienione strony, kilka minut po ostatniej zmianie (część cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Licencja treści z poniższego pola.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Cała witryna, w terminach harmonogramu (część cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Te części stron wymagają serwera; każda ma rozwiązanie zastępcze. Sprawdź je przed publikacją.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Co nie działa statycznie</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Czym jest repozytorium, dla osoby, która otwiera je na hoście.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>pominięte</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>tekst zastępczy</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>punkt końcowy formularzy witryny produkcyjnej</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>witryna produkcyjna</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>strona wyszukiwania kopii</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Nie udało się wysłać formularza.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Dziękujemy: formularz został wysłany.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formularz nie został przyjęty: sprawdź wpisane dane i wyślij go ponownie.</translation>
     </message>
 </context>
 </TS>

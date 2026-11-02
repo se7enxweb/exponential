@@ -10,12 +10,13 @@ generated: exp:help:examples
 ---
 # The staticpublish module
 
-Name `Static publishing`, defined in `kernel/staticpublish/module.php`. 9 views.
+Name `Static publishing`, defined in `kernel/staticpublish/module.php`. 10 views.
 
 | View | Address | Policy functions |
 |---|---|---|
 | [build](build.md) | `/staticpublish/build/<TargetID>` | build |
 | [dashboard](dashboard.md) | `/staticpublish/dashboard` | read |
+| [form](form.md) | `/staticpublish/form` | (module) |
 | [history](history.md) | `/staticpublish/history/<TargetID>` | read |
 | [keys](keys.md) | `/staticpublish/keys/<TargetID>` | setup |
 | [log](log.md) | `/staticpublish/log/<RunID>` | read |

@@ -14616,6 +14616,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ceļveži, meklēšana un kā ziņot par kļūdu.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Jaunākais saturs</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Jaunākais saturs, pārskatīšanai aizturētais un darbības ar atlasi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81311,6 +81319,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The form could not be read.</source>
         <translation>Veidlapu nevarēja nolasīt.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Informācijas panelis</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83049,6 +83061,146 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>unknown</source>
         <translation>nezināms</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count no %pages lapām:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Pie katras teksta datnes .gz (un .br) datne, resursdatoriem, kas tās piegādā.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Neliela lapa katrai vecai lapas adresei un aliasam, lai vecās saites turpinātu darboties.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Vienmēr tiek rakstīts, kad GitHub Actions piegādā vietni.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX ID, piemēram, CC-BY-4.0, vai pats teksts.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Grozs</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Izsaukumi serverim</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentāri</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Veidlapas, kas vāc informāciju</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions darbplūsma</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mazāk tukšumu un bez komentāriem lapās.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Satura licence</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Pieteikšanās</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minificēt</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Citas veidlapas</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Iepriekšēja saspiešana</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Pāradresācijas lapas</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Pāradresācijas lapas: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Meklēt</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Meklēšanas indekss: %pages lapas (%languages).</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stila lapas un skripti, kas nosaukti pēc sava satura jaucējkoda, lai pārlūki tos varētu paturēt.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Mainītās lapas dažas minūtes pēc pēdējām izmaiņām (cronjob daļa staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Satura licence no lauka zemāk.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Visa vietne grafika laikos (cronjob daļa staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Šīm lapu daļām vajadzīgs serveris; katrai ir rezerves risinājums. Pārbaudiet tās pirms publicēšanas.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Kas statiski nedarbojas</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Kas ir repozitorijs, tam, kas to atver resursdatorā.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>izlaists</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>rezerves teksts</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>tiešsaistes vietnes veidlapu galapunkts</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>tiešsaistes vietne</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kopijas meklēšanas lapa</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Veidlapu nevarēja nosūtīt.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Paldies, veidlapa nosūtīta.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Veidlapa netika pieņemta: pārbaudiet ievadīto un nosūtiet vēlreiz.</translation>
     </message>
 </context>
 </TS>

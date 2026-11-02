@@ -322,7 +322,11 @@
                 {case match='sitemap'}<strong>sitemap.xml</strong><span class="a4-help">{'The list of pages for search engines; needs the public address.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
                 {case match='manifest'}<strong>{'Manifest'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'What each file is; always written.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
                 {case match='cname'}<strong>CNAME</strong><span class="a4-help">{'Written whenever a custom domain is set.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
-                {case}<strong>{$extra|wash}</strong><span class="a4-help">{'Comes with a later release.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='redirects'}<strong>{'Redirect pages'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'A small page for every old address and alias of a page, so old links keep working.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='readme'}<strong>README.md</strong><span class="a4-help">{'What the repository is, for whoever opens it on the host.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='license'}<strong>LICENSE</strong><span class="a4-help">{'The license of the content, from the field below.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='workflow'}<strong>{'GitHub Actions workflow'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'Always written when GitHub Actions delivers the site.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case}<strong>{$extra|wash}</strong>{/case}
                 {/switch}</span></label>
             {/foreach}
         </fieldset>
@@ -331,7 +335,12 @@
             <input type="hidden" name="Target[PostProcess][]" value="strip" />
             <label class="a4-check"><input type="checkbox" checked="checked" disabled="disabled" /> <span><strong>{'Strip'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'Debug output, form tokens, session ids and nonces are always taken out.'|i18n( 'design/admin/staticpublish' )}</span></span></label>
             {foreach $post_process as $step}{if ne( $step, 'strip' )}
-            <label class="a4-check"><input type="checkbox" name="Target[PostProcess][]" value="{$step|wash}"{if $settings.PostProcess|contains( $step )} checked="checked"{/if} /> <span><strong>{$step|wash}</strong><span class="a4-help">{'Comes with a later release.'|i18n( 'design/admin/staticpublish' )}</span></span></label>
+            <label class="a4-check"><input type="checkbox" name="Target[PostProcess][]" value="{$step|wash}"{if $settings.PostProcess|contains( $step )} checked="checked"{/if} /> <span>{switch match=$step}
+                {case match='minify'}<strong>{'Minify'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'Less white space and no comments in the pages.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='precompress'}<strong>{'Precompress'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'A .gz (and .br) next to each text file, for hosts that serve them.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='fingerprint'}<strong>{'Fingerprint'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'Style sheets and scripts named by the hash of their content, so browsers may keep them.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case}<strong>{$step|wash}</strong>{/case}
+                {/switch}</span></label>
             {/if}{/foreach}
         </fieldset>
         <div class="a4-grid">
@@ -353,6 +362,11 @@
                 <label class="a4-label" for="sp-maxpages">{'Most pages'|i18n( 'design/admin/staticpublish' )}</label>
                 <input class="a4-input" id="sp-maxpages" name="Target[MaxPages]" value="{$settings.MaxPages|wash}" inputmode="numeric" maxlength="5" />
             </div>
+        </div>
+        <div class="a4-field">
+            <label class="a4-label" for="sp-license">{'License of the content'|i18n( 'design/admin/staticpublish' )}</label>
+            <input class="a4-input" id="sp-license" name="Target[License]" value="{$settings.License|wash}" maxlength="300" spellcheck="false" />
+            <span class="a4-help">{'An SPDX id such as CC-BY-4.0, or the text itself.'|i18n( 'design/admin/staticpublish' )}</span>
         </div>
         <div class="a4-field">
             <label class="a4-label" for="sp-exclude">{'Leave out these pages'|i18n( 'design/admin/staticpublish' )}</label>
@@ -393,8 +407,8 @@
                 <span>{switch match=$trigger}
                 {case match='manual'}<strong>{'By hand, here'|i18n( 'design/admin/staticpublish' )}</strong>{/case}
                 {case match='cli'}<strong>{'On the console'|i18n( 'design/admin/staticpublish' )}</strong>{/case}
-                {case match='publish'}<strong>{'When content is published'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'Comes with a later release.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
-                {case match='schedule'}<strong>{'On a schedule'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'Comes with a later release.'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='publish'}<strong>{'When content is published'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'The changed pages, a few minutes after the last change (the cronjob part staticpublish).'|i18n( 'design/admin/staticpublish' )}</span>{/case}
+                {case match='schedule'}<strong>{'On a schedule'|i18n( 'design/admin/staticpublish' )}</strong><span class="a4-help">{'The whole site, at the times of the schedule (the cronjob part staticpublish).'|i18n( 'design/admin/staticpublish' )}</span>{/case}
                 {case}{$trigger|wash}{/case}
                 {/switch}</span></label>
             {/foreach}

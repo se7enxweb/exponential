@@ -14677,6 +14677,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Ngā aratohu, te rapu me te āhua o te pūrongo i tētahi hapa.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ihirangi hou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Te ihirangi hou rawa, ngā mea kua puritia mō te arotake, me ngā mahi ki tētahi tīpakonga.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/setup/menu</name>
@@ -81281,6 +81289,10 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>The form could not be read.</source>
         <translation>Kāore i taea te pānui i te puka.</translation>
     </message>
+    <message>
+        <source>Dashboard</source>
+        <translation>Papatohu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/moderation</name>
@@ -83019,6 +83031,146 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>unknown</source>
         <translation>kāore e mōhiotia</translation>
+    </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count i runga i ngā whārangi %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>He kōpaki .gz (me .br) i te taha o ia kōpaki tuhinga, mō ngā kaihāpai e tuku ana.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>He whārangi iti mō ia wāhitau tawhito me te ingoa tūmataiti o tētahi whārangi, kia mahi tonu ngā hononga tawhito.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Ka tuhia i ngā wā katoa ka tukuna te pae e GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>He tohu SPDX pērā i CC-BY-4.0, he tuhinga rānei.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kete</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Ngā karanga ki te tūmau</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Ngā kōrero</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Ngā puka e kohi mōhiohio ana</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Te rerenga mahi GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>He iti ake te mokowā putua, kāore he kōrero i ngā whārangi.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Raihana o te ihirangi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Takiuru</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Whakaiti</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Ētahi atu puka</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Whakawehe i mua</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Ngā whārangi whakaaro-ke</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Ngā whārangi whakaaro-ke: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Rapu</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Taurangi rapu: %pages whārangi i te %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Ngā rau āhua me ngā tuhinga mahi i whakaingoatia ki te hash o ō rātou ihirangi, kia mau ai ngā pūtirotiro.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ngā whārangi kua whakarereketia, e rua meneti i muri i te whakarerekētanga whakamutunga (te wāhanga cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Te raihana o te ihirangi, mai i te āpure kei raro nei.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Te pae katoa, i ngā wā o te wātaka (te wāhanga cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>E hiahia ana ēnei wāhanga o ngā whārangi ki tētahi tūmau; kua whiwhi ia tahi i tētahi atu huarahi. Tirohia i mua i te whakaputa.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ngā mea e kore e mahi ā-tuturu</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>He aha te putunga, mō te tangata e whakatuwhera ana i te kaihāpai.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>kua waihohia</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>te tuhinga rā</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>te pito puka o te pae ora</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>te pae ora</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>te whārangi rapu o te kape</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Kāore i taea te tuku i te puka.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Mauruuru: kua tukuna te puka.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Kāore i whakaaetia te puka: tirohia ō tuhinga ka tuku anō.</translation>
     </message>
 </context>
 </TS>

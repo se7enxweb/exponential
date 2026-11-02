@@ -1,4 +1,4 @@
-{* The moderation/recent view (Setup > Recent content): the most recently created or modified objects, a page at a time,
+{* The moderation/recent view (Dashboard > Recent content): the most recently created or modified objects, a page at a time,
    with the filters (a GET form the view turns into view parameters), sortable column heads, the page sizes (the
    preference admin_moderation_limit) and, with moderation/act, a checkbox per row and the actions on the selection
    (posted to moderation/action). The address and the browser come from the audit and are shown with
