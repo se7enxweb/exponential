@@ -68626,6 +68626,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ይህ ጥያቄ፦ ከገጽ መሸጎጫው በ %ms ms ውስጥ የቀረበ።</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ተጠቃሚ</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>የተጠቃሚ መታወቂያ</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>የመሸጎጫ መገለጫ</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ይህ እይታ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>የእይታ መሸጎጫ</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>በተጠቃሚ (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>የተጠቃሚው የመሸጎጫ መገለጫ፦ ተመሳሳይ መገለጫ ያላቸው ተጠቃሚዎች የእይታ መሸጎጫ ፋይሎችን ይጋራሉ</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>መግቢያ</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ገብቷል</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ክፍለ ጊዜ</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>በዚህ ገጽ ViewCacheTweaks ስር በተጠቃሚው ላይ የሚመሰረቱ የይዘት እይታ መሸጎጫ ቁልፍ ክፍሎች፣ ቁልፉ በሚወስዳቸው መልኩ። ተመሳሳይ መገለጫ ያላቸው ተጠቃሚዎች የእይታዎችን መሸጎጫ ፋይሎች ይጋራሉ፣ የአንድ እይታ ራሱ ክፍሎች ካልተለያዩ በስተቀር (ምርጫዎች፣ የአድማጮች ቁልፎች)፦ እነዚያ ለዚህ ገጽ ብቻ የራሳቸው መገለጫ አላቸው።</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>መገለጫ</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ይህ እይታ (መስቀለኛ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user፦ እያንዳንዱ የገባ ተጠቃሚ የራሱ የመሸጎጫ ፋይሎች አሉት።</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ተግባራዊ ViewCacheTweaks፦ %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ክፍል</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>እሴት</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>በተጠቃሚው ላይ የሚመሰረት ክፍል የለም (ViewCacheTweaks)።</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ይህ እይታ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>እንደ ጽሑፍ ቅዳ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>ሚናዎች</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>ምንም የሚና ምደባዎች ሊነበቡ አልቻሉም።</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>የሚና መለያ</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>ሚና</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>ገደብ</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>የተመደበለት</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ተጠቃሚው</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ቡድን %name (ነገር %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>ተቀድቷል</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>መቅዳት አልተቻለም።</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>በአድማጭ የተተወ</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>ስም-አልባ ጎብኚዎች</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ከእርስዎ ጋር ተመሳሳይ</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>የተለየ</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>ስም-አልባ ጎብኚዎች በተመሳሳይ ViewCacheTweaks ስር የሚያገኙት መገለጫ፣ በነባሪ ምርጫዎች፣ ያለ እይታው ክፍሎች፦ ክፍለ-ጊዜውን የሚያነብ አድማጭ ስለእነሱ ሊጠየቅ አይችልም።</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ምርጫዎች</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ምንም የእይታ ሁነታ በተጠቃሚ ምርጫዎች ላይ አይመሰረትም (site.ini [ContentSettings] CachedViewPreferences)።</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>የእነዚህ የእይታ ሁነታዎች እይታዎች የሚመሰረቱባቸው ምርጫዎች (CachedViewPreferences)፣ ከተጠቃሚው እሴት ወይም ከነባሪው ጋር። በመገለጫው ውስጥ እንደ userpreferences ይገኛሉ፣ የሁሉም የእይታ ሁነታዎች በአንድ ላይ።</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>የእይታ ሁነታ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ምርጫ</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ነባሪ</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>ፖሊሲዎች</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>የሚናዎቹን ፖሊሲዎች አሳይ (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ፖሊሲዎቹ ይህ ክፍል ሲከፈት ከአገልጋዩ ይጫናሉ፣ አንድ ገጽ በአንድ ጊዜ፣ እና በሞጁል እና በተግባር ሊጣሩ ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ተግባር</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ሁሉም ሞጁሎች</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ሁሉም ተግባራት</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>ገደቦች</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ተጨማሪ አሳይ</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>እነዚህ ሚናዎች ፖሊሲዎች የላቸውም።</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ከማጣሪያው ጋር የሚዛመድ ፖሊሲ የለም።</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown ከ %matching ፖሊሲዎች (በአጠቃላይ %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -67176,6 +67176,226 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Bu istek: sayfa önbelleğinden %ms ms içinde sunuldu.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Kullanıcı</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Kullanıcı kimliği</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Önbellek profili</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Bu görünüm</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Görünüm önbelleği</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>kullanıcı başına (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Kullanıcının önbellek profili: aynı profile sahip kullanıcılar görünüm önbelleği dosyalarını paylaşır</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>evet</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hayır</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Oturum açma adı</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Oturum açık</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Oturum</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>İçerik görünümü önbellek anahtarının kullanıcıya bağlı parçaları, anahtarın onları aldığı biçimde, bu sayfanın ViewCacheTweaks ayarları altında. Aynı profile sahip kullanıcılar görünümlerin önbellek dosyalarını paylaşır; ancak bir görünümün kendi parçaları farklıysa (tercihler, dinleyicilerin anahtarları) bunların yalnızca bu sayfa için kendi profili vardır.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Bu görünüm (düğüm %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: oturum açan her kullanıcının kendi önbellek dosyaları vardır.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Geçerli ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Hiçbir parça kullanıcıya bağlı değil (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>bu görünüm</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Metin olarak kopyala</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Roller</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Hiçbir rol ataması okunamadı.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Rol kimliği</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Rol</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Sınırlama</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Atandığı</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>kullanıcı</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grup %name (nesne %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kopyalandı</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kopyalanamadı.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>bir dinleyici tarafından dışarıda bırakıldı</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonim ziyaretçiler</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>sizinkiyle aynı</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>farklı</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Anonim ziyaretçilerin aynı ViewCacheTweaks altında, varsayılan tercihlerle, görünümün parçaları olmadan aldığı profil: oturumu okuyan bir dinleyiciye bunlar sorulamaz.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Tercihler</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Hiçbir görünüm modu kullanıcı tercihlerine bağlı değil (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Bu görünüm modlarının görünümlerinin bağlı olduğu tercihler (CachedViewPreferences), kullanıcının değeri veya varsayılan ile. Profilde userpreferences olarak, tüm görünüm modlarınınki birlikte yer alır.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Görünüm modu</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Tercih</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Varsayılan</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>İlkeler</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Rollerin ilkelerini göster (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>İlkeler bu bölüm açıldığında sunucudan her seferinde bir sayfa olarak yüklenir ve modüle ve fonksiyona göre filtrelenebilir.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>İşlev</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Tüm modüller</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Tüm fonksiyonlar</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Sınırlamalar</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Daha fazla göster</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Bu rollerin ilkesi yok.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Filtreyle eşleşen ilke yok.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown / %matching ilke (toplam %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

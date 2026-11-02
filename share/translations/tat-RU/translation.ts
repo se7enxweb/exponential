@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Бу сорау: бит кэшеннән %ms мс эчендә күрсәтелде.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Кулланучы</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Кулланучы ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Кэш профиле</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Бу күренеш</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Күренеш кэшы</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>һәр кулланучыга (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Кулланучының кэш профиле: бер үк профильле кулланучылар күренеш кэшы файлларын уртак куллана</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>әйе</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>юк</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Кулланучы исеме</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Кергән</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Сеанс</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Эчтәлек күренеше кэш ачкычының кулланучыга бәйле өлешләре, ачкыч аларны ничек алса, нәкъ шулай, бу битнең ViewCacheTweaks нигезендә. Бер үк профильле кулланучылар күренешләрнең кэш файлларын уртак куллана, күренешнең үз өлешләре аерылган очраклардан тыш (өстенлекләр, тыңлаучылар ачкычлары): андыйларның үз профиле бар, бары тик бу бит өчен.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Профиль</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Бу күренеш (төен %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: кергән һәр кулланучының үз кэш файллары бар.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Гамәлдәге ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Өлеш</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Кыйммәт</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Бер өлеш тә кулланучыга бәйле түгел (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>бу күренеш</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Текст итеп күчереп алу</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Рольләр</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Рольләр билгеләнешен укып булмады.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Роль ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Роль</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Чикләү</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Кемгә билгеләнгән</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>кулланучыга</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>%name төркеменә (объект %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Күчермәсе ясалды</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Күчереп алып булмады.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>тыңлаучы тарафыннан төшереп калдырылган</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Аноним килүчеләр</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>сезнеке белән бер үк</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>башка</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Аноним килүчеләр шул ук ViewCacheTweaks белән, килешенгән өстенлекләр белән, күренеш өлешләреннән башка ала торган профиль: сессияне укучы тыңлаучыдан алар турында сорап булмый.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Өстенлекләр</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Бер күренеш режимы да кулланучы өстенлекләренә бәйле түгел (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Бу күренеш режимнарының күренешләре бәйле булган өстенлекләр (CachedViewPreferences), кулланучы кыйммәте яки килешенгән кыйммәт белән. Алар профильдә userpreferences буларак, барлык күренеш режимнарыныкы бергә.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Карау режимы</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Өстенлек</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Гадәттәге</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Сәясәтләр</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Рольләрнең сәясәтләрен күрсәтү (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Сәясәтләр бу бүлек ачылганда сервердан йөкләнә, бер тапкыр бер бит, һәм аларны модуль һәм функция буенча фильтрларга мөмкин.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Функция</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Барлык модульләр</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Барлык функцияләр</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Чикләүләр</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Күбрәк күрсәтү</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Бу рольләрнең сәясәтләре юк.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Фильтрга туры килгән сәясәт юк.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching сәясәттән %shown (барлыгы %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

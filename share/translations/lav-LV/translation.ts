@@ -68567,6 +68567,226 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Šis pieprasījums: apkalpots no lapu kešatmiņas %ms ms laikā.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Lietotājs</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Lietotāja ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Kešatmiņas profils</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Šis skats</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Skatu kešatmiņa</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>katram lietotājam (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Lietotāja kešatmiņas profils: lietotāji ar vienādu profilu koplieto skatu kešatmiņas failus</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jā</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nē</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Lietotājvārds</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Pieteicies</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Sesija</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Satura skata kešatmiņas atslēgas daļas, kas atkarīgas no lietotāja, tieši tā, kā atslēga tās ņem, saskaņā ar šīs lapas ViewCacheTweaks. Lietotāji ar vienādu profilu koplieto skatu kešatmiņas failus, ja vien neatšķiras paša skata daļas (iestatījumi, klausītāju atslēgas): tiem ir savs profils, tikai šai lapai.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Profils</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Šis skats (mezgls %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: katram pieteikušamies lietotājam ir savi kešatmiņas faili.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Spēkā esošie ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Daļa</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vērtība</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Neviena daļa nav atkarīga no lietotāja (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>šis skats</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopēt kā tekstu</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Lomas</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Neizdevās nolasīt lomu piešķīrumus.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Lomas ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Loma</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Ierobežojums</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Piešķirts</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>lietotājam</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>grupa %name (objekts %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Nokopēts</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Neizdevās nokopēt.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>klausītājs izlaida</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Anonīmi apmeklētāji</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>tāds pats kā jums</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>atšķirīgs</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profils, ko anonīmie apmeklētāji saņem ar tiem pašiem ViewCacheTweaks, ar noklusējuma iestatījumiem, bez skata daļām: klausītājam, kas lasa sesiju, par tām nevar pajautāt.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Iestatījumi</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Neviens skata režīms nav atkarīgs no lietotāja iestatījumiem (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Iestatījumi, no kuriem atkarīgi šo skata režīmu skati (CachedViewPreferences), ar lietotāja vērtību vai noklusējumu. Profilā tie ir kā userpreferences, visu skata režīmu kopā.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Skata režīms</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Iestatījums</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Noklusējums</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politikas</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Rādīt lomu politikas (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politikas tiek ielādētas no servera, kad šī sadaļa tiek atvērta, pa vienai lapai, un tās var filtrēt pēc moduļa un funkcijas.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funkcija</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Visi moduļi</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Visas funkcijas</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Ierobežojumi</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Rādīt vairāk</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Šīm lomām nav politiku.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Neviena politika neatbilst filtram.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown no %matching politikām (kopā %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

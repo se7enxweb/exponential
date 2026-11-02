@@ -283,6 +283,93 @@ class eZNodeviewfunctions
         return $Result;
     }
 
+    /**
+     * The ViewCacheTweaks of a node (site.ini [ContentSettings] ViewCacheTweaks[<node id>], else ViewCacheTweaks[global]),
+     * '' when none is set.
+     *
+     * @param int|null $nodeID null: the global tweaks only
+     * @return string
+     */
+    static function viewCacheTweak( $nodeID = null )
+    {
+        $ini = eZINI::instance();
+        if ( !$ini->hasVariable( 'ContentSettings', 'ViewCacheTweaks' ) )
+        {
+            return '';
+        }
+        $viewCacheTweaks = $ini->variable( 'ContentSettings', 'ViewCacheTweaks' );
+        if ( $nodeID !== null && isset( $viewCacheTweaks[$nodeID] ) )
+        {
+            return (string)$viewCacheTweaks[$nodeID];
+        }
+        return isset( $viewCacheTweaks['global'] ) ? (string)$viewCacheTweaks['global'] : '';
+    }
+
+    /**
+     * The parts of a content view cache key that depend on the user, as generateViewCacheFile() puts them in the key:
+     * userroles (role ids), userlimitedlist (values of limited assignments), discountlist and, when the user chose
+     * another interface (expUISwitch), uiswitch. A ViewCacheTweak ignore_userroles, ignore_userlimitedlist or
+     * ignore_discountlist leaves its part out. Two users with the same parts share the cache files of every view, as
+     * far as the parts of the view itself (preferences of CachedViewPreferences, keys of content/view/cachekeys
+     * listeners) do not differ.
+     *
+     * @param eZUser $user
+     * @param string $viewCacheTweak
+     * @return array name => string
+     */
+    static function userCacheKeys( $user, $viewCacheTweak = '' )
+    {
+        $keys = array();
+        if ( strpos( $viewCacheTweak, 'ignore_userroles' ) === false )
+        {
+            $keys['userroles'] = implode( '.', $user->roleIDList() ?? [] );
+        }
+
+        if ( strpos( $viewCacheTweak, 'ignore_userlimitedlist' ) === false )
+        {
+            $keys['userlimitedlist'] = implode( '.', $user->limitValueList() ?? [] );
+        }
+
+        if ( strpos( $viewCacheTweak, 'ignore_discountlist' ) === false )
+        {
+            $keys['discountlist'] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) ?? [] );
+        }
+
+        // the signed-in user's interface choices (expUISwitch: another interface language, ...); only when one is
+        // applied, so every other cache file keeps its name
+        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
+        {
+            $keys['uiswitch'] = (string)$GLOBALS['expUISwitchVariantKey'];
+        }
+        return $keys;
+    }
+
+    /**
+     * The part userpreferences of a view cache key: for each preference of a CachedViewPreferences list
+     * ("name=default;name2"), "p:name=value;" with the user's value, else with the default; a preference with neither
+     * adds nothing.
+     *
+     * @param string $preferenceList a value of site.ini [ContentSettings] CachedViewPreferences[]
+     * @param array $values the user's preferences (eZPreferences::values()), name => value
+     * @return string
+     */
+    static function userPreferencesKey( $preferenceList, array $values )
+    {
+        $pString = '';
+        foreach ( explode( ';', (string)$preferenceList ) as $pref )
+        {
+            $pref = explode( '=', $pref );
+            if ( isset( $pref[0] ) )
+            {
+                if ( isset( $values[$pref[0]] ) )
+                    $pString .= 'p:' . $pref[0] . '='. $values[$pref[0]]. ';';
+                else if ( isset( $pref[1] ) )
+                    $pString .= 'p:' . $pref[0] . '='. $pref[1]. ';';
+            }
+        }
+        return $pString;
+    }
+
     static function generateViewCacheFile( $user, $nodeID, $offset, $layout, $language, $viewMode, $viewParameters = false, $cachedViewPreferences = false, $viewCacheTweak = '' )
     {
         $cacheNameExtra = '';
@@ -293,17 +380,9 @@ class eZNodeviewfunctions
             $language = false;
         }
 
-        if ( !$viewCacheTweak && $ini->hasVariable( 'ContentSettings', 'ViewCacheTweaks' ) )
+        if ( !$viewCacheTweak )
         {
-            $viewCacheTweaks = $ini->variable( 'ContentSettings', 'ViewCacheTweaks' );
-            if ( isset( $viewCacheTweaks[$nodeID] ) )
-            {
-                $viewCacheTweak = $viewCacheTweaks[$nodeID];
-            }
-            else if ( isset( $viewCacheTweaks['global'] ) )
-            {
-                $viewCacheTweak = $viewCacheTweaks['global'];
-            }
+            $viewCacheTweak = self::viewCacheTweak( $nodeID );
         }
 
         // should we use current siteaccess or let several siteaccesse share cache?
@@ -323,28 +402,21 @@ class eZNodeviewfunctions
                                  'offset' => $offset,
                                  'layout' => $layout );
 
-        // several user related cache tweaks
-        if ( strpos( $viewCacheTweak, 'ignore_userroles' ) === false )
+        // several user related cache tweaks (userCacheKeys(): the same parts the debug bar shows as the user's cache
+        // profile); kept in their places, so the file names stay as they were
+        $userKeys = self::userCacheKeys( $user, $viewCacheTweak );
+        foreach ( array( 'userroles', 'userlimitedlist', 'discountlist' ) as $key )
         {
-            $cacheHashArray['userroles'] = implode( '.', $user->roleIDList() ?? [] );
-        }
-
-        if ( strpos( $viewCacheTweak, 'ignore_userlimitedlist' ) === false )
-        {
-            $cacheHashArray['userlimitedlist'] = implode( '.', $user->limitValueList() ?? [] );
-        }
-
-        if ( strpos( $viewCacheTweak, 'ignore_discountlist' ) === false )
-        {
-            $cacheHashArray['discountlist'] = implode( '.', eZUserDiscountRule::fetchIDListByUserID( $user->attribute( 'contentobject_id' ) ) ?? [] );
+            if ( array_key_exists( $key, $userKeys ) )
+            {
+                $cacheHashArray[$key] = $userKeys[$key];
+            }
         }
 
         $cacheHashArray['access_path'] = eZSys::indexFile();
 
-        // the signed-in user's interface choices (expUISwitch: another interface language, ...); only when one is
-        // applied, so every other cache file keeps its name
-        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
-            $cacheHashArray['uiswitch'] = (string)$GLOBALS['expUISwitchVariantKey'];
+        if ( array_key_exists( 'uiswitch', $userKeys ) )
+            $cacheHashArray['uiswitch'] = $userKeys['uiswitch'];
 
         // Add access type to cache hash if current access is uri type (so uri and host doesn't share cache)
         if ( strpos( $viewCacheTweak, 'ignore_siteaccess_type' ) === false && $GLOBALS['eZCurrentAccess']['type'] === eZSiteAccess::TYPE_URI )
@@ -390,22 +462,8 @@ class eZNodeviewfunctions
 
         if ( strpos( $viewCacheTweak, 'ignore_userpreferences' ) === false && isset ( $depPreferences[$viewMode] ) )
         {
-            $depPreferences = explode( ';', $depPreferences[$viewMode] );
-            $pString = '';
             // Fetch preferences for the specified user
-            $preferences = eZPreferences::values( $user );
-            foreach( $depPreferences as $pref )
-            {
-                $pref = explode( '=', $pref );
-                if ( isset( $pref[0] ) )
-                {
-                    if ( isset( $preferences[$pref[0]] ) )
-                        $pString .= 'p:' . $pref[0] . '='. $preferences[$pref[0]]. ';';
-                    else if ( isset( $pref[1] ) )
-                        $pString .= 'p:' . $pref[0] . '='. $pref[1]. ';';
-                }
-            }
-            $cacheHashArray['userpreferences'] = $pString;
+            $cacheHashArray['userpreferences'] = self::userPreferencesKey( $depPreferences[$viewMode], eZPreferences::values( $user ) );
         }
 
         // An extension adds keys (a permission the roles do not show) or leaves some out (a class whose pages are the

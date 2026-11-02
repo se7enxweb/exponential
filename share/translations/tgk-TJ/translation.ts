@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Ин дархост: аз кэши саҳифа дар %ms мс хизмат карда шуд.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Корбар</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID-и корбар</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Профили кэш</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Ин намуд</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Кэши намуд</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>барои ҳар корбар (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Профили кэши корбар: корбарони дорои профили якхела файлҳои кэши намудро муштарак истифода мебаранд</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ҳа</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Логин</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Воридшуда</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Ҷаласа</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Қисмҳои калиди кэши намуди мундариҷа, ки ба корбар вобастаанд, айнан ҳамон тавре ки калид онҳоро мегирад, дар доираи танзимоти ViewCacheTweaks ин саҳифа. Корбарони дорои профили якхела файлҳои кэши намудҳоро муштарак истифода мебаранд, агар қисмҳои худи намуд фарқ накунанд (афзалиятҳо, калидҳои шунавандаҳо): онҳо профили худро доранд, танҳо барои ин саҳифа.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Профил</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Ин намуд (гиреҳ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ҳар корбари воридшуда файлҳои кэши худро дорад.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks амалкунанда: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Қисм</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Қимат</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ягон қисм ба корбар вобаста нест (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ин намуд</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Ҳамчун матн нусха бардоштан</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Нақшҳо</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ягон таъиноти нақш хонда нашуд.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID нақш</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Нақш</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Маҳдудият</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Таъин шудааст ба</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>корбар</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>гурӯҳи %name (объекти %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Нусхабардорӣ шуд</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Нусха бардоштан нашуд.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>аз ҷониби шунаванда хориҷ шуд</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Меҳмонони беном</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ба мисли шумо</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>гуногун</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Профиле, ки меҳмонони беном дар доираи ҳамон ViewCacheTweaks мегиранд, бо афзалиятҳои пешфарз, бе қисмҳои намуд: аз шунавандае, ки ҷаласаро мехонад, дар бораи онҳо пурсидан мумкин нест.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Афзалиятҳо</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ягон реҷаи намуд ба афзалиятҳои корбар вобаста нест (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Афзалиятҳое, ки намудҳои ин реҷаҳои намуд ба онҳо вобастаанд (CachedViewPreferences), бо қимати корбар ё пешфарз. Онҳо дар профил ҳамчун userpreferences ҳастанд, аз они ҳамаи реҷаҳои намуд якҷоя.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Реҷаи намуд</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Афзалият</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Пешфарз</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Сиёсатҳо</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Намоиши сиёсатҳои нақшҳо (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Сиёсатҳо ҳангоми кушодани ин бахш аз сервер бор карда мешаванд, як саҳифа дар як вақт, ва онҳоро аз рӯи модул ва функсия филтр кардан мумкин аст.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Функсия</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Ҳамаи модулҳо</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Ҳамаи функсияҳо</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Маҳдудиятҳо</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Бештар нишон додан</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Ин нақшҳо сиёсат надоранд.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ягон сиёсат ба филтр мувофиқ нест.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown аз %matching сиёсат (ҳамагӣ %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -61,6 +61,7 @@
     <div class="a4-card-foot a4-actions">
         <button type="submit" class="a4-btn" name="EditButton" value="1">{'Change'|i18n( 'design/admin/staticpublish' )}</button>
         <button type="submit" class="a4-btn a4-btn-primary" name="SaveButton" value="1">{'Save'|i18n( 'design/admin/staticpublish' )}</button>
+        <a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a>
     </div>
 </section>
 </form>
@@ -116,7 +117,7 @@
             <span class="a4-help">{'The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.'|i18n( 'design/admin/staticpublish' )}</span>
         </fieldset>
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="1" hidden="hidden"><button type="button" class="a4-btn a4-btn-primary" data-sp-next="2">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="1" hidden="hidden"><button type="button" class="a4-btn a4-btn-primary" data-sp-next="2">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 2. the host *}
@@ -142,7 +143,7 @@
         <p class="a4-warn-text">{'The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository\'s settings.'|i18n( 'design/admin/staticpublish',, hash( '%problem', $github.problem ) )|wash}</p>
         {/if}
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="2" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="1">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="3">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="2" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="1">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="3">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 3. the credential *}
@@ -173,7 +174,7 @@
         <p class="a4-help">{'A deploy key is kept as the secret %secret.'|i18n( 'design/admin/staticpublish',, hash( '%secret', $key_secret ) )|wash}{if and( $key, $key.exists )} {'This target has one.'|i18n( 'design/admin/staticpublish' )}{/if}</p>
         <p class="a4-help"><a href={'exphelp/viewer/help/static-publishing/connect-to-github-token-key-or-app.md'|ezurl}>{'Which to choose: token, deploy key or GitHub App'|i18n( 'design/admin/staticpublish' )}</a></p>
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="3" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="2">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="4">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="3" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="2">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="4">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 4. the repository *}
@@ -235,7 +236,7 @@
             {/if}
         </div>
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="4" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="3">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="5">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="4" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="3">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="5">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 5. links and base path *}
@@ -267,7 +268,7 @@
             <p><code class="a4-code" id="sp-link-example">{if eq( $settings.Links, 'base-path' )}{$link_base|wash}{else}{$link_relative|wash}{/if}</code></p>
         </div>
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="5" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="4">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="6">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="5" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="4">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="6">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 6. the custom domain *}
@@ -295,7 +296,7 @@
             {/if}
         </div>
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="6" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="5">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="7">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="6" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="5">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="7">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 7. what is written *}
@@ -408,7 +409,7 @@
             </div>
         </div>
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="7" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="6">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="8">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="7" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="6">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="8">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 8. triggers *}
@@ -449,7 +450,7 @@
             {/foreach}
         </fieldset>
     </div>
-    <div class="a4-card-foot a4-actions" data-sp-nav="8" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="7">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="9">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
+    <div class="a4-card-foot a4-actions" data-sp-nav="8" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="7">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="9">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>
 </section>
 
 {* 9. review *}

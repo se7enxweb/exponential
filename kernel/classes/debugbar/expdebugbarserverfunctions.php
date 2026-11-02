@@ -12,9 +12,12 @@
  *   expdebugbar::iptest                     address[, list]
  *   expdebugbar::log[::<limit>]             the newest log entries
  *   expdebugbar::summary                    the summary of this request
+ *   expdebugbar::policies[::<module>[::<function>[::<offset>]]]
+ *                                           a page of the policies of the user's roles (User tab), "-" for any
  *   expdebugbar::panelheight                POST height: the open panel's height, kept in the user preference
  *                                           expdebugbar_panel_height
  *
+ * policies goes to whoever sees the User tab: setup/setup, or an anonymous visitor with debug output for the request.
  * Only summary needs debug output for this request (the people who see the report). settings, log and iptest need
  * setup/setup, the cache list and clearing caches need setup/managecache, and nothing about the configuration (values,
  * file paths, IP and user lists, the change log) goes to anybody else. Every write is a POST with the form token.
@@ -438,6 +441,49 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     {
         self::requireRead();
         return expDebugBarSummary::collect();
+    }
+
+    /**
+     * expdebugbar::policies[::<module>[::<function>[::<offset>]]]: a page of the policies of the current user's roles
+     * (expDebugBarUser::policies()), for the User tab, which asks only when its Policies section is opened. The filter
+     * is in the path, as view parameters: "-" (or nothing) for every module or function. For whoever sees the User tab
+     * (expDebugBarUser::mayView()): a user with setup/setup, or an anonymous visitor who gets the debug output.
+     *
+     * @return array see expDebugBarUser::policyPage()
+     */
+    public static function policies( $args )
+    {
+        self::requireUserTab();
+        $args = array_values( (array)$args );
+        $module = self::policyFilterArg( $args, 0 );
+        $function = self::policyFilterArg( $args, 1 );
+        $offset = isset( $args[2] ) && ctype_digit( (string)$args[2] ) ? (int)$args[2] : 0;
+        return expDebugBarUser::policies( eZUser::currentUser(), $module, $function, $offset );
+    }
+
+    /** @throws InvalidArgumentException unless the current request may see the User tab (expDebugBarUser::mayView()) */
+    public static function requireUserTab()
+    {
+        $user = eZUser::currentUser();
+        $loggedIn = $user instanceof eZUser && $user->isRegistered();
+        if ( expDebugBarUser::mayView( self::canWrite(), $loggedIn, eZDebug::isDebugEnabled() ) )
+            return;
+        throw new InvalidArgumentException( 'The role policies need the policy setup/setup, or debug output for an anonymous visitor' );
+    }
+
+    /**
+     * A module or function name of the policy filter from the path: null for every one ("-" or nothing).
+     *
+     * @throws InvalidArgumentException for anything but letters, digits, _ and *
+     */
+    protected static function policyFilterArg( array $args, $index )
+    {
+        $value = isset( $args[$index] ) ? trim( (string)$args[$index] ) : '';
+        if ( $value === '' || $value === '-' )
+            return null;
+        if ( !preg_match( '/^[A-Za-z0-9_*]{1,64}$/', $value ) )
+            throw new InvalidArgumentException( 'A module or function name has letters, digits, _ or * only' );
+        return $value;
     }
 
     /**

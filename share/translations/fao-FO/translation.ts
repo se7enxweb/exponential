@@ -68628,6 +68628,226 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Henda umbønin: veitt úr síðuskjótgoymsluni á %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Brúkari</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Brúkara-ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Cache-profilur</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Henda vísing</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Sýnisskjótgoymsla</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>fyri hvønn brúkara (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Cache-profilur hjá brúkaranum: brúkarar við sama profili deila cache-fílunum hjá vísingunum</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Brúkaranavn</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Innritaður</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Seta</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Teir partarnir av cache-lyklinum hjá innihaldsvísingini, sum eru tengdir at brúkaranum, júst sum lykilin tekur teir, undir ViewCacheTweaks hjá hesi síðuni. Brúkarar við sama profili deila cache-fílunum hjá vísingunum, uttan so at partarnir av sjálvari vísingini eru ymiskir (stillingar, lyklar hjá lurtarum): tær hava sín egna profil, bert fyri hesa síðuna.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Vangamynd</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Henda vísing (knútur %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: hvør innritaður brúkari hevur sínar egnu cache-fílur.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Virkin ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Partur</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Virði</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Eingin partur er tengdur at brúkaranum (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>henda vísing</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Avrita sum tekst</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Leiklutir</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Ongar leiklutatillutanir kundu lesast.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Leiklutar-ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Leiklutur</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Avmarking</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Tillutað</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>brúkaranum</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>bólkur %name (lutur %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Avritað</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Kundi ikki avrita.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>útihildin av einum lurtara</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Dulnevndir vitjandi</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>sum tín</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>ymisk</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Profilurin, sum dulnevndir vitjandi fáa undir somu ViewCacheTweaks, við sjálvvirkandi stillingunum, uttan partarnar av vísingini: ein lurtari, sum lesur setuna, kann ikki spyrjast um teir.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Stillingar</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Eingin vísingarháttur er tengdur at brúkarastillingum (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Stillingarnar, sum vísingarnar hjá hesum vísingarháttum eru tengdar at (CachedViewPreferences), við virðinum hjá brúkaranum ella sjálvvirðinum. Tær eru í profilinum sum userpreferences, allir vísingarhættir saman.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Sýnisháttur</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Stilling</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Forsett</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politikkar</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Vís politikkirnar hjá leiklutunum (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Politikkirnir verða innlisnir frá ambætaranum, tá ið hesin parturin verður latin upp, eina síðu í senn, og kunnu filtrerast eftir modul og funktión.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Funktión</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Øll modul</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Allar funktiónir</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Avmarkingar</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Vís meira</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Hesir leiklutir hava ongar politikkir.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Eingin politikkur samsvarar filtrinum.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown av %matching politikkum (%total í alt)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

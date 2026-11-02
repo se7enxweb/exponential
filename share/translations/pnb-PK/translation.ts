@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ایہہ درخواست: صفحہ کیش توں %ms ms وچ مہیا کیتی گئی۔</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ورتݨ والا</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ورتݨ والا ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>کیش پروفائل</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ایہہ ویو</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>ویو کیش</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ہر ورتوں والے لئی (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ورتوں والے دا کیش پروفائل: اکو جہے پروفائل والے ورتوں والے ویو کیش فائلاں سانجھیاں کردے نیں</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ہاں</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نہیں</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>لاگ ان ناں</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>لاگ ان</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>سیشن</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>مواد ویو کیش کنجی دے اوہ حصے جیہڑے ورتوں والے تے منحصر نیں، بالکل اوویں جیویں کنجی اوہناں نوں لیندی اے، ایس صفحے دے ViewCacheTweaks تحت۔ اکو جہے پروفائل والے ورتوں والے ویوز دیاں کیش فائلاں سانجھیاں کردے نیں، جدوں تک کسے ویو دے اپنے حصے وکھرے نہ ہون (ترجیحاں، لسنراں دیاں کنجیاں): اوہناں دا اپنا پروفائل ہوندا اے، صرف ایس صفحے لئی۔</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>پروفائل</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ایہہ ویو (نوڈ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ہر لاگ ان ورتوں والے دیاں اپنیاں کیش فائلاں نیں۔</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>لاگو ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>حصہ</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>مُل</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>کوئی حصہ ورتوں والے تے منحصر نہیں (ViewCacheTweaks)۔</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ایہہ ویو</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>لکھت وانگ کاپی کرو</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>کردار</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>کوئی رول تفویض پڑھی نہیں جا سکی۔</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>رول ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>کردار</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>حد</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>تفویض کیتا گیا</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ورتوں والا</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>گروپ %name (آبجیکٹ %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>نقل ہو گیا</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>کاپی نہیں ہو سکیا۔</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>لسنر نے چھڈ دتا</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>گمنام ویزیٹر</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>تہاڈے ورگا</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>وکھرا</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>اوہ پروفائل جیہڑا گمنام ویکھن والیاں نوں اوسے ViewCacheTweaks تحت ملدا اے، ڈیفالٹ ترجیحاں نال، ویو دے حصیاں توں بغیر: سیشن پڑھن والے لسنر توں اوہناں بارے نہیں پچھیا جا سکدا۔</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>ترجیحاں</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>کوئی ویو موڈ ورتوں والے دیاں ترجیحاں تے منحصر نہیں (site.ini [ContentSettings] CachedViewPreferences)۔</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>اوہ ترجیحاں جنہاں تے ایہناں ویو موڈاں دے ویوز منحصر نیں (CachedViewPreferences)، ورتوں والے دی قدر یا ڈیفالٹ نال۔ ایہہ پروفائل وچ userpreferences دے طور تے نیں، سارے ویو موڈاں دیاں اکٹھیاں۔</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>ویکھݨ دا موڈ</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>ترجیح</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ڈیفالٹ</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>پالیسیاں</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>رولاں دیاں پالیسیاں وکھاؤ (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ایہہ حصہ کھولن تے پالیسیاں سرور توں لوڈ ہوندیاں نیں، اک ویلے اک صفحہ، تے ماڈیول تے فنکشن نال فلٹر کیتیاں جا سکدیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>فنکشن</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>سارے ماڈیول</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>سارے فنکشن</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>حداں</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>ہور وکھاؤ</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ایہناں رولاں دیاں کوئی پالیسیاں نہیں۔</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>کوئی پالیسی فلٹر نال میل نہیں کھاندی۔</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching وچوں %shown پالیسیاں (کُل %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

@@ -238,6 +238,7 @@ and turns the level up **below** its values, see
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | debug output for the request (the report itself; a visitor gets no IP list entry in it) |
 | `panelheight` | POST `height` (pixels, `0` for the default) | a logged-in user (never an anonymous visitor) with debug output for the request: stores the user preference `expdebugbar_panel_height` (see [The panel's height](#the-panels-height)) |
+| `policies[::<module>[::<function>[::<offset>]]]` | GET; the filter in the path, `-` for any (`expdebugbar::policies::content::read::0`) | setup/setup, or an anonymous visitor with debug output for the request: a page of the policies of the user's roles (see [User: policies](#policies)) |
 
 Every POST must carry the form token (`ezxform_token`, or the header `X-CSRF-Token`); the `settings` answer has
 it. Someone who only sees the debug report gets the settings without the IP and user lists, the log or the
@@ -288,6 +289,8 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `expDebugBarIPListTest` | addresses and CIDR of both families, IPv4-mapped clients, entries with labels and expiries, writing entries, the match, the warnings, the suggestions. Needs no kernel |
 | `expDebugBarSettingsTest` | the registry and discovery, the values in effect against `expIniLocator::where()`, writes of every type and op with the log and undo, dry runs, refusals, a siteaccess scope, presets as a group, the lock-out and open checks, eZDebug's IP check and its fallback, the summary, the server functions (registration, answers, POST, token and policy, what a visitor without policy sees) |
 | `RadSurveyDebugBarTest` | the two registries, the total, the bar's figures, the new problem kinds |
+| `expDebugBarUserTest` | the User tab: the user's parts of the view cache key and each ignore tweak, the preferences key against the code it replaced, the preferences of every view mode (one name with two defaults), the fingerprint, the profile from a view's key (parts a listener left out or changed, pr_user), anonymous visitors, the chip, the tab escaped, the copy text. No database |
+| `expDebugBarUserPoliciesTest` | the User tab's policies: who may see them, a page sorted by role, module and function, the filter with policies of every module or function (*), 600 policies of 300 roles in pages, the closed section in the tab, the path arguments, the script's request and its words. No database |
 
 `expDebugBarSettingsTest` starts the kernel once on the admin siteaccess with the installation's own database, as
 the subitems column tests do; no test database is created. Its writes go to a probe block
@@ -468,6 +471,7 @@ the report's own defaults.
 | Included files | the included PHP files (`DisplayIncludedFiles`), or their number and how to list them |
 | Memory | the classic "Main resources" table, memory now, peak, limit and share, and the five steps that took the most |
 | Rendering | how the page was rendered: the controller, the content view cache and its key, the compiled templates (see [below](#rendering-controller-content-view-cache-and-compiled-templates)); only for `setup/setup` |
+| User | the user, their cache profile (the parts of the content view cache key that depend on them), their preferences, role assignments and, on demand, the policies of those roles (see [below](#user-roles-and-cache-profile)); for `setup/setup`, and for an anonymous visitor who gets the debug output |
 | (extensions) | a tab per panel an extension registers, after Memory (see [Panels of extensions](#panels-of-extensions)) |
 | Server | where the request entered and which process rendered the report (Exponential Velocity, PHP-FPM, mod_php, the command line ...), in one sentence (see [below](#server-where-the-request-entered-and-what-rendered-it)), the facts behind it, OPcache status, and Velocity's response cache; called Velocity until 16 October 2026, its section id is still `exp-debug-panel-velocity` |
 | Other | reports appended by extensions with `eZDebug::appendBottomReport()` that belong to no tab (only when there are any) |
@@ -562,6 +566,63 @@ parameters `$placement` and `$keys`) and stores through `eZTemplateCacheBlock::s
 time; custom code that calls `handle()` or `storeCache()` as before keeps working.
 
 Tests: `expRenderStatsTest`, `expRenderStatsCacheBlockTest` and `expRenderStatsTreeTest` (no database).
+
+### User: roles and cache profile
+
+Whether two users get the same content view cache files, and if not, why. The chip **`VC 3f9ac21e`** in the status
+bar is the user's **cache profile**: a fingerprint (8 hex digits) of the parts of the view cache key that depend on
+the user. Two users with the same profile share the cache files of the views under the same ViewCacheTweaks; compare
+the chips of two browsers, or copy both profiles as text. A second fingerprint after it (`VC 3f9ac21e · 7b0d12aa`)
+covers the keys a `content/view/cachekeys` listener added for the view of this page; ` · pr_user` says every
+logged-in user has files of their own.
+
+The parts, as `eZNodeviewfunctions::generateViewCacheFile()` puts them in the key, from the same functions:
+
+| Part | From |
+|---|---|
+| `userroles` | the role ids of the user and their groups (`eZNodeviewfunctions::userCacheKeys()`) |
+| `userlimitedlist` | the values of limited assignments (subtrees, sections) |
+| `discountlist` | the user's discount rules |
+| `uiswitch` | an interface the signed-in user chose (expUISwitch) |
+| `userpreferences` | the preferences of `site.ini [ContentSettings] CachedViewPreferences[]`, of every view mode: per view mode the part its key takes (`eZNodeviewfunctions::userPreferencesKey()`), so the same profile means the same part in every view mode |
+| `pr_user` | the user id, with the tweak `pr_user` (it is in the file name) |
+
+A `ViewCacheTweaks` entry (`ignore_userroles`, `ignore_userlimitedlist`, `ignore_discountlist`,
+`ignore_userpreferences`) leaves its part out: the tweaks of the node of this page, the global ones on a page without
+a content view. With a content view on the page its key decides: a part a listener left out is shown as such and not
+counted, a part it changed counts with the key's value, marked *listener*.
+
+The tab shows the user (id, login, logged in, siteaccess, session), the profile with every part, a button that copies
+it as text (`name=value` per line), the preferences per view mode with the user's value and the default, and the role
+assignments: role id and name, the assignment's limitation, and whether it is assigned to the user or to a group (by
+name and object id). A logged-in user also sees the profile of **anonymous visitors**, *same as yours* or
+*different*: the anonymous user's parts under the same tweaks, with the default preferences (an anonymous visitor's
+are in their session), without the keys of listeners, which may read the session and cannot be asked for them.
+
+For `setup/setup`, as the Rendering tab, since the parts carry role and limitation ids; and for an anonymous visitor
+who gets the debug output (`DebugByIP` ...), whose ids are those of every anonymous visitor: they see the anonymous
+user's roles, groups and limitation values, and on a page with a content view the values of the keys of listeners.
+The Rendering tab stays `setup/setup` only. The data comes from `expDebugBarUser`
+(`kernel/classes/debugbar/expdebugbaruser.php`); it reads the role assignments with one query and the preferences
+with `eZPreferences::values()`, only when the bar is rendered for such a user.
+
+#### Policies
+
+Below the role assignments the closed section **Policies** lists the policies of those roles: role, module, function
+and the policy's limitations with their values (`Subtree: /1/2/42/; Class: 1, 16`). It costs nothing until it is
+opened: only then does the script ask `expdebugbar::policies` (see [Server functions](#server-functions)), a page of
+100 policies at a time, sorted by role, module and function; **Show more** fetches the next page. Two selects filter
+by module and by function; a policy of every module or every function (`*`) stays in each filter, since it grants
+that as well. The filter and the page travel in the path (`expdebugbar::policies::content::read::100`, `-` for any),
+not in the query string. The bar's filter box finds rows in the loaded list as in every other table.
+
+The server reads the policies of the roles in the assignments through the persistent objects of `ezpolicy`,
+`ezpolicy_limitation` and `ezpolicy_limitation_value`, three queries per 500 ids, so a user with hundreds of roles
+works on every database. The same people may ask as see the User tab (`expDebugBarUser::mayView()`): a user with
+`setup/setup`, or an anonymous visitor who gets the debug output for the request; anybody else gets an error, a
+logged-in user without `setup/setup` too, even with `DebugByUser`.
+
+Tests: `expDebugBarUserTest` and `expDebugBarUserPoliciesTest` (no database).
 
 ### Panels of extensions
 

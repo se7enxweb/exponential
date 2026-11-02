@@ -68628,6 +68628,226 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Kay mañay: raphi utqay waqaychamanta %ms ms-pi qusqa.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Apaykachaq</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>Apaykachaq ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Waqaycha rikch'ay</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Kay qhaway</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Qhaway utqay waqaycha</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>sapa apaykachaqpaq (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Apaykachaqpa waqaycha rikch'aynin: kikin rikch'ayniyuq apaykachaqkuna qhaway waqaycha willañiqikunata rakinakunku</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>arí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>mana</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Apaykachaqpa sutin</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Yaykusqa</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Tinkuy</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Kay p'anqapa ViewCacheTweaks nisqanpi, apaykachaqmanta hap'ipakuq qhaway waqaycha llavepa t'aqankuna, llave imayna hap'isqanman hina. Kikin rikch'ayniyuq apaykachaqkunaqa qhawaykunapa waqaycha willañiqinkunata rakinakunku, huk qhawaypa kikin t'aqankuna mana hukniray kaptinqa (akllanakuna, uyariqkunapa llavenkuna): chaykunaqa paykunapa rikch'ayniyuqmi, kay p'anqallapaq.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Rikch'ay</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Kay qhaway (nodo %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: sapa yaykusqa apaykachaqmi paypa waqaycha willañiqinkunayuq.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>Llamk'achkaq ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>K'itu</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Chani</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Mana ima t'aqapas apaykachaqmanta hap'ipakunchu (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>kay qhaway</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Qillqa hina iskaychay</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Ruwanakuna</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Mana ima llamk'ay quykunatapas ñawinchayta atikurqanchu.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>Llamk'aypa ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Ruwana</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Saywa</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Kaqman quqsa</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>apaykachaq</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>huñu %name (objeto %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kikinchasqa</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Mana iskaychayta atikurqanchu.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>huk uyariqmi qharqurqan</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Mana sutiyuq watukuqkuna</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>qampa hina kikin</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>hukniray</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Mana sutiyuq watukuqkunapa chaskisqan rikch'ay kikin ViewCacheTweaks nisqapi, ñawpaqmanta churasqa akllanakunawan, qhawaypa t'aqankunannaq: tinkuyta ñawinchaq uyariqtaqa mana paykunamanta tapuyta atikunchu.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Akllanakuna</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Mana ima qhaway layapas apaykachaqpa akllanankunamanta hap'ipakunchu (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Kay qhaway layakunapa qhawayninkuna hap'ipakusqan akllanakuna (CachedViewPreferences), apaykachaqpa chaninwan utaq ñawpaqmanta churasqawan. Rikch'aypi kachkanku userpreferences hina, llapa qhaway layakunapa kuska.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Qhaway laya</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Akllana</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Ñawpaqmanta</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Kamachikuykuna</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Llamk'aykunapa kamachiyninkunata rikuchiy (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Kamachiykunaqa servidormanta apakamun kay t'aqa kicharikuptin, sapa kuti huk p'anqa, hinaspa modulowan funcionwan suysuyta atikun.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Ruray</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Tukuy mudulukuna</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Llapa funcionkuna</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Saywakuna</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Astawan rikuchiy</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Kay llamk'aykunaqa mana kamachiyniyuqchu.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Mana ima kamachiypas suysuyman tupanchu.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown %matching kamachiykunamanta (llapanpi %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

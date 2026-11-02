@@ -67176,6 +67176,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>دغه غوښتنه: په %ms ms کې د پاڼو له کش څخه وړاندې شوه.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>کارن</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>د کارن پېژند</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>د کیش پروفایل</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>دا لید</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>د لید کش</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>د هر کارن لپاره (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>د کارن د کیش پروفایل: هغه کارنان چې ورته پروفایل لري د لید کیش فایلونه شریکوي</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>کارن‌نوم</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ننوتی</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>ناسته</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>د منځپانګې د لید د کیش کیلي هغه برخې چې په کارن پورې اړه لري، سم هغسې لکه کیلي یې چې اخلي، د دې پاڼې د ViewCacheTweaks لاندې. هغه کارنان چې ورته پروفایل لري د لیدونو د کیش فایلونه شریکوي، مګر دا چې د لید خپلې برخې (غوره توبونه، د listener کیلي ګانې) توپیر ولري: هغوی خپل پروفایل لري، یوازې د دې پاڼې لپاره.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>پروفایل</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>دا لید (نوډ %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: هر ننوتی کارن خپل د کیش فایلونه لري.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>فعال ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>برخه</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ارزښت</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>هیڅ برخه په کارن پورې اړه نه لري (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>دا لید</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>د متن په توګه کاپي کړئ</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>رولونه</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>د رول هیڅ ټاکنه ونه لوستل شوه.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>د رول ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>رول</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>محدودیت</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>ټاکل شوی</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>کارن</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ډله %name (څیز %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>کاپي شو</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>کاپي نه شو.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>د listener له خوا پرېښودل شوی</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>ناپېژندل شوي لیدونکي</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ستاسو په څېر</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>توپیر لري</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>هغه پروفایل چې ناپېژندل شوي لیدونکي یې د ورته ViewCacheTweaks لاندې، د ډیفالټ غوره توبونو سره، د لید له برخو پرته ترلاسه کوي: له هغه listener څخه چې ناسته لولي دا نه شي پوښتل کېدای.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>غوره توبونه</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>هیڅ د لید حالت د کارن په غوره توبونو پورې اړه نه لري (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>هغه غوره توبونه چې د دې لید حالتونو لیدونه پرې اړه لري (CachedViewPreferences)، د کارن له ارزښت یا ډیفالټ سره. دوی په پروفایل کې د userpreferences په توګه دي، د ټولو لید حالتونو یوځای.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>د لید حالت</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>غوره توب</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>تلواله</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>تګلارې</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>د رولونو پالیسۍ وښایاست (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>پالیسۍ له سرور څخه هغه وخت پورته کېږي چې دا برخه پرانیستل شي، یو وار یوه پاڼه، او د ماډیول او فنکشن له مخې فلټر کېدای شي.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>فنکشن</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>ټول ماډیولونه</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>ټول فنکشنونه</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>محدودیتونه</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>نور وښایاست</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>دا رولونه هیڅ پالیسي نه لري.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>هیڅ پالیسي له فلټر سره سمون نه خوري.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>له %matching پالیسیو څخه %shown (ټول %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

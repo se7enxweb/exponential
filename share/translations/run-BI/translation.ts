@@ -68628,6 +68628,226 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Iki gisabisho: vyatanzwe n'ububiko bw'igihe gito bw'impapuro mu %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Umukoresha</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ID y'umukoresha</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Umwirondoro wa cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Iyi ndoro</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Ububiko bw'igihe gito bw'ivyerekanwa</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>kuri buri mukoresha (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Umwirondoro wa cache w'umukoresha: abakoresha bafise umwirondoro umwe basangira amadosiye ya cache y'indoro</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ego</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>oya</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Izina ryo kwinjira</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Yinjiye</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Igihe co kwinjira</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Ibihimba vy'urufunguzo rwa cache y'indoro z'ibirimwo bivana n'umukoresha, nk'uko urufunguzo rubifata, hakurikijwe ViewCacheTweaks z'uru rupapuro. Abakoresha bafise umwirondoro umwe basangira amadosiye ya cache y'indoro, kiretse ibihimba vy'indoro ubwayo bitandukanye (ivyo bakunda, imfunguzo z'abumviriza): ivyo bifise umwirondoro wabyo, kuri uru rupapuro gusa.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Umwirondoro</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Iyi ndoro (ipfundo %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: umukoresha wese yinjiye afise amadosiye ya cache yiwe.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ViewCacheTweaks zikora: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Igice</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Agaciro</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Nta gihimba kivana n'umukoresha (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>iyi ndoro</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopora nk'inyandiko</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Uruhara</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Nta mashingwa y'uruhara yashoboye gusomwa.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>ID y'uruhara</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Uruhara</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Imbibe</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Yashinzwe</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>umukoresha</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>umugwi %name (ikintu %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Vyakoporowe</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Ntivyashobotse gukopora.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>vyakuweho n'umwumviriza</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Abashitsi batazwi</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>bimwe n'ivyawe</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>bitandukanye</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Umwirondoro abashitsi batazwi baronka munsi ya ViewCacheTweaks zimwe, n'ivyo bakunda vy'ibanze, ata bihimba vy'indoro: umwumviriza asoma isesiyo ntashobora kubibazwa.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Ivyo ukunda</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Nta buryo bw'indoro buvana n'ivyo umukoresha akunda (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Ivyo ukunda indoro z'ubu buryo bw'indoro zivana navyo (CachedViewPreferences), n'agaciro k'umukoresha canke ak'ibanze. Biri mu mwirondoro nka userpreferences, ivy'uburyo bwose bw'indoro hamwe.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Uburyo bwo kuraba</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Ico ukunda</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Isanzwe</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Politike</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Erekana amategeko y'impara (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Amategeko azanwa kuva kuri seriveri iyo iki gice cuguruwe, urupapuro rumwe rumwe, kandi ashobora gutoranywa hakurikijwe moderi n'igikorwa.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Igikorwa</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Modile zose</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Ibikorwa vyose</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Imbibe</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Erekana ibindi</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Izi mpara nta mategeko zifise.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Nta tegeko rihuye n'akayunguruzo.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown kuri %matching y'amategeko (%total yose hamwe)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

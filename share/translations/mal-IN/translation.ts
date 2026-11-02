@@ -68626,6 +68626,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>ഈ അഭ്യർത്ഥന: പേജ് കാഷെയിൽ നിന്ന് %ms ms കൊണ്ട് നൽകി.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>ഉപയോക്താവ്</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>ഉപയോക്തൃ ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>കാഷെ പ്രൊഫൈൽ</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>ഈ വ്യൂ</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>വ്യൂ കാഷെ</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ഓരോ ഉപയോക്താവിനും (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>ഉപയോക്താവിന്റെ കാഷെ പ്രൊഫൈൽ: ഒരേ പ്രൊഫൈലുള്ള ഉപയോക്താക്കൾ വ്യൂ കാഷെ ഫയലുകൾ പങ്കിടുന്നു</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ലോഗിൻ</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>ലോഗിൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>സെഷൻ</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>ഉപയോക്താവിനെ ആശ്രയിക്കുന്ന ഉള്ളടക്ക വ്യൂ കാഷെ കീയുടെ ഭാഗങ്ങൾ, കീ അവയെ എടുക്കുന്നതുപോലെ തന്നെ, ഈ പേജിന്റെ ViewCacheTweaks പ്രകാരം. ഒരേ പ്രൊഫൈലുള്ള ഉപയോക്താക്കൾ വ്യൂകളുടെ കാഷെ ഫയലുകൾ പങ്കിടുന്നു, ഒരു വ്യൂവിന്റെ സ്വന്തം ഭാഗങ്ങൾ വ്യത്യസ്തമല്ലെങ്കിൽ (മുൻഗണനകൾ, ലിസണറുകളുടെ കീകൾ): അവയ്ക്ക് സ്വന്തം പ്രൊഫൈൽ ഉണ്ട്, ഈ പേജിന് മാത്രം.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>പ്രൊഫൈൽ</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>ഈ വ്യൂ (നോഡ് %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: ലോഗിൻ ചെയ്ത ഓരോ ഉപയോക്താവിനും സ്വന്തം കാഷെ ഫയലുകൾ ഉണ്ട്.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>പ്രാബല്യത്തിലുള്ള ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ഭാഗം</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>മൂല്യം</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>ഒരു ഭാഗവും ഉപയോക്താവിനെ ആശ്രയിക്കുന്നില്ല (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>ഈ വ്യൂ</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>ടെക്സ്റ്റായി പകർത്തുക</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>റോളുകൾ</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>റോൾ അസൈൻമെന്റുകളൊന്നും വായിക്കാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>റോൾ ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>റോൾ</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>പരിമിതി</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>നിയോഗിച്ചത്</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>ഉപയോക്താവിന്</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>ഗ്രൂപ്പ് %name (ഒബ്ജക്റ്റ് %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>പകർത്തി</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>പകർത്താനായില്ല.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>ഒരു ലിസണർ ഒഴിവാക്കി</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>അജ്ഞാത സന്ദർശകർ</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>നിങ്ങളുടേതിന് സമാനം</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>വ്യത്യസ്തം</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>അതേ ViewCacheTweaks പ്രകാരം അജ്ഞാത സന്ദർശകർക്ക് ലഭിക്കുന്ന പ്രൊഫൈൽ, സ്ഥിര മുൻഗണനകളോടെ, വ്യൂവിന്റെ ഭാഗങ്ങളില്ലാതെ: സെഷൻ വായിക്കുന്ന ലിസണറോട് അവയെക്കുറിച്ച് ചോദിക്കാനാവില്ല.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>മുൻഗണനകൾ</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>ഒരു വ്യൂ മോഡും ഉപയോക്തൃ മുൻഗണനകളെ ആശ്രയിക്കുന്നില്ല (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>ഈ വ്യൂ മോഡുകളുടെ വ്യൂകൾ ആശ്രയിക്കുന്ന മുൻഗണനകൾ (CachedViewPreferences), ഉപയോക്താവിന്റെ മൂല്യമോ സ്ഥിരമൂല്യമോ സഹിതം. എല്ലാ വ്യൂ മോഡുകളുടേതും ഒരുമിച്ച് userpreferences ആയി അവ പ്രൊഫൈലിലുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>കാഴ്ച മോഡ്</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>മുൻഗണന</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>സ്ഥിരസ്ഥിതി</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>പോളിസികൾ</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>റോളുകളുടെ പോളിസികൾ കാണിക്കുക (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>ഈ വിഭാഗം തുറക്കുമ്പോൾ പോളിസികൾ സെർവറിൽ നിന്ന് ഓരോ പേജായി ലോഡ് ചെയ്യുന്നു, മൊഡ്യൂളും ഫംഗ്ഷനും അനുസരിച്ച് ഫിൽട്ടർ ചെയ്യാം.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ഫംഗ്ഷൻ</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>എല്ലാ മോഡ്യൂളുകളും</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>എല്ലാ ഫംഗ്ഷനുകളും</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>പരിമിതികൾ</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>കൂടുതൽ കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>ഈ റോളുകൾക്ക് പോളിസികളില്ല.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>ഫിൽട്ടറുമായി പൊരുത്തപ്പെടുന്ന പോളിസി ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%matching പോളിസികളിൽ %shown (ആകെ %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

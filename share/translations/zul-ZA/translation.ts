@@ -68626,6 +68626,226 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>Lesi sicelo: ihlinzekwe isuka enqolobaneni yamakhasi, ithathe %ms ms.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>Umsebenzisi</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>I-ID yomsebenzisi</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>Iphrofayela ye-cache</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>Lokhu kubuka</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>Buka inqolobane</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>ngomsebenzisi ngamunye (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>Iphrofayela ye-cache yomsebenzisi: abasebenzisi abanephrofayela efanayo babelana ngamafayela e-cache okubuka</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yebo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>cha</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ukungena</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>Ungene ngemvume</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>Iseshini</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>Izingxenye zokhiye we-cache wokubuka okuqukethwe ezincike kumsebenzisi, ngqo njengoba ukhiye uzithatha, ngaphansi kwe-ViewCacheTweaks yaleli khasi. Abasebenzisi abanephrofayela efanayo babelana ngamafayela e-cache okubuka, ngaphandle uma izingxenye zokubuka ngokwakho zihlukile (okuncamelayo, okhiye bama-listener): lezo zinephrofayela yazo, kuleli khasi kuphela.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>Iphrofayela</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>Lokhu kubuka (i-node %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: umsebenzisi ngamunye ongenile unamafayela akhe e-cache.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>I-ViewCacheTweaks esebenzayo: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Ingxenye</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Inani</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>Ayikho ingxenye encike kumsebenzisi (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>lokhu kubuka</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>Kopisha njengombhalo</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>Izindima</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>Azikho izabelo zezindima ezikwazile ukufundwa.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>I-ID yendima</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>Indima</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>Isihlukaniso</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>Kwabelwe</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>umsebenzisi</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>iqembu %name (into %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>Kukopishiwe</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>Akukwazanga ukukopisha.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>kushiywe yi-listener</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>Izivakashi ezingaziwa</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>kufana nokwakho</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>kuhlukile</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>Iphrofayela izivakashi ezingaziwa ezithola ngaphansi kwe-ViewCacheTweaks efanayo, nokuncamelayo okuzenzakalelayo, ngaphandle kwezingxenye zokubuka: i-listener efunda iseshini ayikwazi ukubuzwa ngazo.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>Okuncamelayo</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>Ayikho imodi yokubuka encike kokuncamelayo komsebenzisi (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>Okuncamelayo ukubuka kwalezi zimodi zokubuka okuncike kukho (CachedViewPreferences), nenani lomsebenzisi noma elizenzakalelayo. Kusephrofayeleni njenge-userpreferences, okwazo zonke izimodi zokubuka ndawonye.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>Imodi yokubuka</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>Okuncanyelwayo</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Okuzenzakalelayo</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>Izinqubomgomo</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>Bonisa izinqubomgomo zezindima (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>Izinqubomgomo zilayishwa kuseva lapho lesi sigaba sivulwa, ikhasi elilodwa ngesikhathi, futhi zingahlungwa ngemojula nangomsebenzi.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>Umsebenzi</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>Yonke imojuli</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>Yonke imisebenzi</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>Imikhawulo</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>Bonisa okuningi</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>Lezi zindima azinazo izinqubomgomo.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>Ayikho inqubomgomo ehambisana nesihlungi.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>%shown kwezi %matching izinqubomgomo (%total sezizonke)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

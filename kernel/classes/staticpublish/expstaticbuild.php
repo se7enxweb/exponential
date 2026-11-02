@@ -169,7 +169,7 @@ class expStaticBuild
             'links' => array( 'mode' => $this->target->linkMode(), 'base_path' => $this->target->basePath(), 'public_url' => $this->target->publicUrl() ),
             'counts' => array( 'pages' => 0, 'pages_refused' => 0, 'pages_skipped' => 0, 'pages_excluded' => 0, 'files' => 0,
                                'storage' => 0, 'storage_missing' => 0, 'files_failed' => 0, 'extras' => 0, 'links_rewritten' => 0, 'links_live' => 0,
-                               'links_external' => 0, 'links_removed_outside' => 0, 'links_removed_admin' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0,
+                               'links_external' => 0, 'links_removed_outside' => 0, 'links_removed_admin' => 0, 'links_unavailable' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0,
                                'fingerprinted' => 0, 'precompressed' => 0 ),
             'degraded' => array(),
             'search' => null,
@@ -428,23 +428,27 @@ class expStaticBuild
         $rewriterOptions = array( 'origins' => $origins, 'site_path' => $sitePath, 'mode' => $target->linkMode(), 'base_path' => $target->basePath(),
                                   'public_url' => $target->publicUrl(), 'live_url' => $liveUrl, 'pages' => $held, 'files' => $files,
                                   'outside_links' => $target->setting( 'OutsideLinks' ), 'admin_links' => $target->setting( 'AdminLinks' ),
-                                  'admin_paths' => self::adminPaths( $this->context, $origins, $sitePath ), 'origin_site_paths' => $originSitePaths );
+                                  'admin_paths' => self::adminPaths( $this->context, $origins, $sitePath ), 'origin_site_paths' => $originSitePaths,
+                                  'unavailable_css' => expStaticLinkRewriter::UNAVAILABLE_CSS );
         $rewriter = new expStaticLinkRewriter( $rewriterOptions );
         $collector = new expStaticAssetCollector( array( 'root' => $this->options['root'], 'output' => $staging, 'origin' => $originUrl,
                                                          'fetch' => array( $this, 'request' ), 'rewriter' => $rewriter, 'emit' => $this->emit,
                                                          'max_file_bytes' => $this->limit( 'max_file_bytes', 'MaxFileBytes', 100000000 ) ) );
         $wanted = array();
+        $unavailable = 0; // placeholder links: the pages that have one link the style sheet UNAVAILABLE_CSS
         foreach ( $pages as $page )
         {
             $rewriter->reset();
             $rewriter->rewriteHtml( (string)file_get_contents( $page['raw'] ), $page['path'], $page['file'] );
             $wanted += $rewriter->foundFiles();
+            $unavailable += $rewriter->counts()['unavailable'];
         }
         if ( $notFound !== null )
         {
             $rewriter->reset();
             $rewriter->rewriteHtml( $notFound['html'], $notFound['path'], '404.html' );
             $wanted += $rewriter->foundFiles();
+            $unavailable += $rewriter->counts()['unavailable'];
         }
         $this->say( 'phase-item', sprintf( 'Files:  %d named by the pages', count( $wanted ) ) );
         $collector->collect( $wanted, 'file' );
@@ -515,6 +519,18 @@ class expStaticBuild
         foreach ( $this->report['degraded'] as $feature => $entry )
             if ( isset( $entry['handled'][expStaticDegrader::FALLBACK] ) || isset( $entry['handled'][expStaticDegrader::LIVE] ) || isset( $entry['handled'][expStaticDegrader::REMOVED] ) )
                 $this->say( 'phase-item', sprintf( 'Static:  %s on %d page(s): %s', $feature, $entry['pages'], implode( ', ', array_keys( $entry['handled'] ) ) ) );
+
+        if ( $unavailable > 0 )
+        {
+            // a file of the build (not an extra): PostProcess[]=fingerprint renames it and the links of the pages
+            $css = expStaticLinkRewriter::unavailableStyleSheet();
+            $file = expStaticLinkRewriter::UNAVAILABLE_CSS;
+            if ( $manifest->has( $file ) )
+                $this->warning( "The site has a file $file of its own; the style sheet of the links taken out replaces it." );
+            if ( $this->write( $staging . '/' . $file, $css ) )
+                $manifest->add( $file, 'file', hash( 'sha256', $css ), strlen( $css ) );
+        }
+        $this->report['counts']['links_unavailable'] = $unavailable;
 
         if ( in_array( 'fingerprint', (array)$target->setting( 'PostProcess' ), true ) )
         {

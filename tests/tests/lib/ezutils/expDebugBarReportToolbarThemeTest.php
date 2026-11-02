@@ -132,7 +132,7 @@ class expDebugBarReportToolbarThemeTest extends PHPUnit\Framework\TestCase
         // the figures come from the chips' rows, collected only for the toolbar theme
         $source = file_get_contents( $this->root . '/lib/ezutils/classes/expdebugbarreport.php' );
         $this->assertMatchesRegularExpression( "#\\\$metrics = array\(\);\s+if \( \\\$theme === 'toolbar' \)#", $source );
-        $this->assertSame( 12, preg_match_all( '#self::panelStart\( [^;]+, \$tabs, \$metrics \);#', $source ), 'every panel' );
+        $this->assertSame( 13, preg_match_all( '#self::panelStart\( [^;]+, \$tabs, \$metrics \);#', $source ), 'every panel' );
 
         $chips = ( new ReflectionMethod( 'expDebugBarReport', 'summaryChips' ) )->invoke( null, self::summary(), 'toolbar' );
         $keys = array_column( $chips, 1 );

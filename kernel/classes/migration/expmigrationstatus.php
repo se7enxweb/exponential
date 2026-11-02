@@ -54,6 +54,8 @@ class expMigrationStatus
         $report['errors'] = array_merge( $errors, $report['errors'] );
         $report['warnings'] = array_merge( $warnings, $report['warnings'] );
         $report['table'] = $ready;
+        // the kernel version: a deploy (expMigrationRemoteDeploy) compares the source's with every remote's
+        $report['version'] = class_exists( 'ExponentialSDK' ) ? (string)ExponentialSDK::version() : '';
         if ( !$ready )
             $report['warnings'][] = 'the tables ' . expMigrationRecord::TABLE . ' and ' . expMigrationRecord::RUN_TABLE
                                   . ' do not exist yet: ./console exp:upgrade --apply makes them (step 6.0.15-migration-tables)';

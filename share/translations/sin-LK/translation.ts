@@ -68628,6 +68628,226 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This request: served from the page cache in %ms ms.</source>
         <translation>මෙම ඉල්ලීම: පිටු හැඹිලියෙන් %ms ms කින් සපයන ලදී.</translation>
     </message>
+    <message>
+        <source>User</source>
+        <translation>පරිශීලකයා</translation>
+    </message>
+    <message>
+        <source>VC %profile</source>
+        <translation>VC %profile</translation>
+    </message>
+    <message>
+        <source>User ID</source>
+        <translation>පරිශීලක ID</translation>
+    </message>
+    <message>
+        <source>Cache profile</source>
+        <translation>හැඹිලි පැතිකඩ</translation>
+    </message>
+    <message>
+        <source>This view</source>
+        <translation>මෙම දසුන</translation>
+    </message>
+    <message>
+        <source>View cache</source>
+        <translation>දසුන් හැඹිලිය</translation>
+    </message>
+    <message>
+        <source>per user (pr_user)</source>
+        <translation>එක් එක් පරිශීලකයාට (pr_user)</translation>
+    </message>
+    <message>
+        <source>Cache profile of the user: users with the same profile share the view cache files</source>
+        <translation>පරිශීලකයාගේ හැඹිලි පැතිකඩ: එකම පැතිකඩ ඇති පරිශීලකයින් දසුන් හැඹිලි ගොනු බෙදා ගනී</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ඔව්</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>පිවිසුම් නාමය</translation>
+    </message>
+    <message>
+        <source>Logged in</source>
+        <translation>පිවිසී ඇත</translation>
+    </message>
+    <message>
+        <source>Session</source>
+        <translation>සැසිය</translation>
+    </message>
+    <message>
+        <source>The parts of the content view cache key that depend on the user, exactly as the key takes them, under the ViewCacheTweaks of this page. Users with the same profile share the cache files of the views, unless the parts of a view itself differ (preferences, keys of listeners): those have a profile of their own, for this page only.</source>
+        <translation>පරිශීලකයා මත රඳා පවතින අන්තර්ගත දසුන් හැඹිලි යතුරේ කොටස්, යතුර ඒවා ගන්නා ආකාරයටම, මෙම පිටුවේ ViewCacheTweaks යටතේ. එකම පැතිකඩ ඇති පරිශීලකයින් දසුන්වල හැඹිලි ගොනු බෙදා ගනී, දසුනකම කොටස් වෙනස් නොවන්නේ නම් (මනාපයන්, සවන්දෙන්නන්ගේ යතුරු): ඒවාට මෙම පිටුවට පමණක් තමන්ගේම පැතිකඩක් ඇත.</translation>
+    </message>
+    <message>
+        <source>Profile</source>
+        <translation>පැතිකඩ</translation>
+    </message>
+    <message>
+        <source>This view (node %node)</source>
+        <translation>මෙම දසුන (නෝඩය %node)</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks pr_user: every logged-in user has cache files of their own.</source>
+        <translation>ViewCacheTweaks pr_user: පිවිසී ඇති සෑම පරිශීලකයෙකුටම තමන්ගේම හැඹිලි ගොනු ඇත.</translation>
+    </message>
+    <message>
+        <source>ViewCacheTweaks in effect: %tweaks</source>
+        <translation>ක්‍රියාත්මක ViewCacheTweaks: %tweaks</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>කොටස</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>අගය</translation>
+    </message>
+    <message>
+        <source>No part depends on the user (ViewCacheTweaks).</source>
+        <translation>කිසිදු කොටසක් පරිශීලකයා මත රඳා නොපවතී (ViewCacheTweaks).</translation>
+    </message>
+    <message>
+        <source>this view</source>
+        <translation>මෙම දසුන</translation>
+    </message>
+    <message>
+        <source>Copy as text</source>
+        <translation>පෙළ ලෙස පිටපත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Roles</source>
+        <translation>භූමිකා</translation>
+    </message>
+    <message>
+        <source>No role assignments could be read.</source>
+        <translation>භූමිකා පැවරීම් කියවිය නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Role ID</source>
+        <translation>භූමිකා ID</translation>
+    </message>
+    <message>
+        <source>Role</source>
+        <translation>භූමිකාව</translation>
+    </message>
+    <message>
+        <source>Limitation</source>
+        <translation>සීමාව</translation>
+    </message>
+    <message>
+        <source>Assigned to</source>
+        <translation>පවරා ඇත්තේ</translation>
+    </message>
+    <message>
+        <source>the user</source>
+        <translation>පරිශීලකයාට</translation>
+    </message>
+    <message>
+        <source>group %name (object %id)</source>
+        <translation>කණ්ඩායම %name (වස්තුව %id)</translation>
+    </message>
+    <message>
+        <source>Copied</source>
+        <translation>පිටපත් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Could not copy.</source>
+        <translation>පිටපත් කළ නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>left out by a listener</source>
+        <translation>සවන්දෙන්නෙකු විසින් ඉවත් කරන ලදී</translation>
+    </message>
+    <message>
+        <source>Anonymous visitors</source>
+        <translation>නිර්නාමික අමුත්තන්</translation>
+    </message>
+    <message>
+        <source>same as yours</source>
+        <translation>ඔබගේ හා සමානයි</translation>
+    </message>
+    <message>
+        <source>different</source>
+        <translation>වෙනස්</translation>
+    </message>
+    <message>
+        <source>The profile anonymous visitors get under the same ViewCacheTweaks, with the default preferences, without the parts of the view: a listener that reads the session cannot be asked for them.</source>
+        <translation>එකම ViewCacheTweaks යටතේ, පෙරනිමි මනාපයන් සමඟ, දසුනේ කොටස් නොමැතිව නිර්නාමික අමුත්තන්ට ලැබෙන පැතිකඩ: සැසිය කියවන සවන්දෙන්නෙකුගෙන් ඒවා ඉල්ලිය නොහැක.</translation>
+    </message>
+    <message>
+        <source>Preferences</source>
+        <translation>මනාපයන්</translation>
+    </message>
+    <message>
+        <source>No view mode depends on user preferences (site.ini [ContentSettings] CachedViewPreferences).</source>
+        <translation>කිසිදු දසුන් ප්‍රකාරයක් පරිශීලක මනාපයන් මත රඳා නොපවතී (site.ini [ContentSettings] CachedViewPreferences).</translation>
+    </message>
+    <message>
+        <source>The preferences the views of these view modes depend on (CachedViewPreferences), with the user's value or the default. They are in the profile as userpreferences, those of every view mode together.</source>
+        <translation>මෙම දසුන් ප්‍රකාරවල දසුන් රඳා පවතින මනාපයන් (CachedViewPreferences), පරිශීලකයාගේ අගය හෝ පෙරනිමිය සමඟ. ඒවා පැතිකඩෙහි userpreferences ලෙස ඇත, සියලු දසුන් ප්‍රකාරවල ඒවා එකට.</translation>
+    </message>
+    <message>
+        <source>View mode</source>
+        <translation>දසුන් ප්‍රකාරය</translation>
+    </message>
+    <message>
+        <source>Preference</source>
+        <translation>මනාපය</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>පෙරනිමි</translation>
+    </message>
+    <message>
+        <source>Policies</source>
+        <translation>ප්‍රතිපත්ති</translation>
+    </message>
+    <message>
+        <source>Show the policies of the roles (%count)</source>
+        <translation>භූමිකාවල ප්‍රතිපත්ති පෙන්වන්න (%count)</translation>
+    </message>
+    <message>
+        <source>The policies are loaded from the server when this section is opened, a page at a time, and can be filtered by module and function.</source>
+        <translation>මෙම කොටස විවෘත කළ විට ප්‍රතිපත්ති සේවාදායකයෙන් වරකට එක් පිටුවක් බැගින් පූරණය වන අතර මොඩියුලය සහ ශ්‍රිතය අනුව පෙරහන් කළ හැක.</translation>
+    </message>
+    <message>
+        <source>Function</source>
+        <translation>ශ්‍රිතය</translation>
+    </message>
+    <message>
+        <source>All modules</source>
+        <translation>සියලු මොඩියුල</translation>
+    </message>
+    <message>
+        <source>All functions</source>
+        <translation>සියලු ශ්‍රිත</translation>
+    </message>
+    <message>
+        <source>Limitations</source>
+        <translation>සීමා</translation>
+    </message>
+    <message>
+        <source>Show more</source>
+        <translation>තවත් පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>These roles have no policies.</source>
+        <translation>මෙම භූමිකාවලට ප්‍රතිපත්ති නැත.</translation>
+    </message>
+    <message>
+        <source>No policy matches the filter.</source>
+        <translation>පෙරහනට ගැළපෙන ප්‍රතිපත්තියක් නැත.</translation>
+    </message>
+    <message>
+        <source>%shown of %matching policies (%total in all)</source>
+        <translation>ප්‍රතිපත්ති %matching න් %shown (මුළු %total)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>

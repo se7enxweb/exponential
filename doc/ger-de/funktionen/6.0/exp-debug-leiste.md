@@ -30,7 +30,7 @@ Leiste ist unten angeheftet.
   daneben zählt nur, was die Datenbank erreicht hat. Jeder Wert öffnet seinen Reiter. Der Titel „Exp Debug“ und das Logo
   sitzen am rechten Ende, die Zusammenfassung der Seite links.
 - **Der Bereich** über der Leiste (standardmäßig 60 % des Fensters, eigenständig scrollend) hat die Reiter Meldungen,
-  Einstellungen, Cache, Zeiten, SQL, Templates, Eingebundene Dateien, Speicher und Velocity. Jeder Abschnitt des
+  Einstellungen, Cache, Zeiten, SQL, Templates, Eingebundene Dateien, Speicher, Rendering, Benutzer und Server. Jeder Abschnitt des
   klassischen Berichts ist mit seiner alten ID weiterhin da.
 - **Den Bereich in der Größe ändern**: Ziehen Sie den Streifen an der Oberkante des Bereichs (Maus, Stift oder Touch),
   oder fokussieren Sie ihn und verwenden Sie die Pfeiltasten (16 px, mit Umschalt 64 px; Pos1 und Ende für die kleinste
@@ -61,6 +61,12 @@ sie und vier Voreinstellungen (Template work, SQL tuning, Everything, Off). Exte
 
 Der Reiter **Cache** führt die Caches auf und leert sie über die Cache-Verwaltung, mit dem Zeitpunkt, an dem jeder zuletzt
 geleert wurde (oder „nie“).
+
+Der Reiter **Benutzer** (Chip `VC <Profil>`) zeigt das Cache-Profil des Benutzers, den Fingerabdruck der Teile des
+Schlüssels im Ansichts-Cache von Inhalten, die vom Benutzer abhängen, sodass zwei Benutzer erkennen, ob sie sich die
+gecachten Ansichten teilen; seine Präferenzen und Rollenzuweisungen; und in einem Abschnitt, der erst beim Öffnen geladen
+wird, die Richtlinien dieser Rollen, seitenweise und nach Modul und Funktion filterbar. Für `setup/setup` und für einen
+anonymen Besucher, der die Debug-Ausgabe erhält ([Details](../../bc/6.0/debug-leiste.md#benutzer-rollen-und-cache-profil)).
 
 ## Wer sie verwenden darf
 
