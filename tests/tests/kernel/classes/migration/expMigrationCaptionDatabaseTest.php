@@ -25,9 +25,11 @@ class expMigrationCaptionDatabaseTest extends ezpDatabaseTestCase
     {
         parent::setUp();
         $engine = expKernelTableSchema::type( eZDB::instance() );
-        if ( !in_array( $engine, array( 'mysql', 'postgresql' ), true ) )
-            $this->markTestSkipped( "not a MySQL or PostgreSQL database: $engine" );
-        $this->requireTools( $engine === 'mysql' ? array( 'mysqldump', 'mysql' ) : array( 'pg_dump', 'psql' ) );
+        if ( !in_array( $engine, array( 'mysql', 'postgresql', 'oracle' ), true ) )
+            $this->markTestSkipped( "not a MySQL, PostgreSQL or Oracle database: $engine" );
+        // Oracle has no built-in dump: CE-3 needs no tool
+        if ( $engine !== 'oracle' )
+            $this->requireTools( $engine === 'mysql' ? array( 'mysqldump', 'mysql' ) : array( 'pg_dump', 'psql' ) );
         $this->runnerBegin( eZDB::instance() );
     }
 

@@ -9,7 +9,8 @@
  *       fixtures in fixtures/runner): both applied in order, the record, the run row, the run log; a second run has
  *       nothing to do
  *  RE-2 transactions: a migration that creates a table, writes a row and fails. PostgreSQL and SQLite undo all of it;
- *       MySQL/MariaDB keep the table and the row (a schema change commits at once); MongoDB keeps both (no
+ *       MySQL/MariaDB keep the table and the row (a schema change commits at once); Oracle keeps the table and
+ *       undoes the row (the schema change commits by itself, the transaction goes on); MongoDB keeps both (no
  *       transactions). The record says failed.
  *  RE-3 rollback: down() of both, the last first; the folder and the table are gone, the record is empty again
  *
@@ -282,7 +283,12 @@ trait expMigrationRunnerEngineChecks
                 break;
             case expMigrationContext::TRANSACTION_DATA:
                 $this->assertTrue( $exists, "$engine: CREATE TABLE committed at once and stays" );
-                $this->assertSame( 1, self::runnerCount( $db, 'exp_test_wp3_fail' ), "$engine: the row after the implicit commit stays too" );
+                // MySQL/MariaDB is back in autocommit after the implicit commit, so the row written next stays; on
+                // Oracle the DDL commits by itself and the session's transaction goes on, so the row is rolled back
+                if ( $engine === 'oracle' )
+                    $this->assertSame( 0, self::runnerCount( $db, 'exp_test_wp3_fail' ), "$engine: the row written after CREATE TABLE is rolled back" );
+                else
+                    $this->assertSame( 1, self::runnerCount( $db, 'exp_test_wp3_fail' ), "$engine: the row after the implicit commit stays too" );
                 $this->assertContains( "rolled back what could be: $engine keeps schema changes made before the failure", $entry['messages'] );
                 break;
             default:
