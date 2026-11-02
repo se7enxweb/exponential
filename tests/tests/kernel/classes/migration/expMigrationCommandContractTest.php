@@ -40,6 +40,7 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:][staged][continue:][rollback:][login:][run-id:][progress:]',
         'exp:migration:remote:list' => '[remotes:*][format:]',
         'exp:migration:remote:status' => '[remotes:*][format:][parallel:][timeout:][history:]',
+        'exp:migration:heal' => '[fix:*][stale-lock-age:][apply][dry-run][format:]',
         'exp:migration:convert' => '[apply][dry-run][format:][source:][author:]',
         'exp:migration:repo:split' => '[apply][dry-run][format:][directory:][branch:][to:][remote:]',
     );
@@ -75,6 +76,7 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:deploy' => 'expmigrationdeploy',
         'exp:migration:remote:list' => 'expmigrationremotelist',
         'exp:migration:remote:status' => 'expmigrationremotestatus',
+        'exp:migration:heal' => 'expmigrationheal',
         'exp:migration:convert' => 'expmigrationconvert',
         'exp:migration:repo:split' => 'expmigrationreposplit',
     );

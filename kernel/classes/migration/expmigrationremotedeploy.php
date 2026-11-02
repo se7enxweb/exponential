@@ -12,21 +12,29 @@
  * sync (exp:migration:deploy):
  *
  *   1. prepare     every remote's settings and credential are checked; one problem stops the deploy
- *   2. preflight   in parallel on every remote: reachable, its migration status read (exp:migration:status
- *                  --format=json), the run lock free, no failed migration, the same kernel version, no migration
- *                  changed after it was applied there; the files to send are planned (a migration whose file the
- *                  remote has with the same checksum is not sent). Any problem on any remote stops the deploy before
- *                  anything changes. A dry run (the default) ends here.
+ *   2. preflight   in parallel on every remote: first the fixes of [RemoteSettings] SelfHeal[] (exp:migration:heal:
+ *                  a stale run lock, missing migration folders, file modes; each reported in the remote's fixes), then
+ *                  reachable, its migration status read (exp:migration:status --format=json), the run lock free, no
+ *                  failed migration, the same kernel version, the PHP version ([RemoteSettings] PhpCheck) and the
+ *                  versions of the extensions ([RemoteSettings] ExtensionCheck) as here, enough free disk space for the
+ *                  transfer plus [RemoteSettings] DiskMargin, no migration changed after it was applied there; the files
+ *                  to send are planned (a migration whose file the remote has with the same checksum is not sent). Any
+ *                  problem on any remote stops the deploy before anything changes. A dry run (the default) ends here.
  *   3. transfer    the planned files to every remote in parallel (ssh/scp, sftp, rsync, ftp/ftps, local); a dropped
  *                  connection is retried ([RemoteSettings] Retries, rsync resumes a broken transfer)
  *   4. verify      in parallel on every remote: a dry run of exp:migration:migrate must see every sent migration with
  *                  the source's checksum, and captions must be on (the rollback needs the caption taken before the
  *                  run); FTP remotes: every file is read back and compared. A failure stops the deploy before any
  *                  remote is switched; --transfer-only ends here.
- *   5. switch      exp:migration:migrate --apply --run-id=<deploy id> on every remote in parallel, one shared id
+ *   5. switch      exp:migration:migrate --apply --run-id=<deploy id> on every remote in parallel, one shared id;
+ *                  with SelfHeal[]=caches the caches are cleared there afterwards (exp:migration:heal --fix=caches)
  *   6. all or nothing: when one remote fails, every remote that applied is taken back to the caption taken before
  *                  the run (exp:migration:rollback <deploy id> --apply); the failed remote restored itself. A remote
  *                  that cannot be taken back is reported and the deploy is marked out-of-sync with every remote's state.
+ *
+ * FTP remotes run nothing over FTP. With Trigger (and TriggerSecret) they are run through their signed HTTP trigger
+ * (expMigrationTrigger, the view migration/trigger there): status, dry run, run, rollback and fixes like any other
+ * remote. Without it they only take files (--transfer-only).
  *
  * Staged (the option staged, exp:migration:deploy --staged, the administration's "Staged"): the remotes are put in
  * stages by their environment ([RemoteSettings] StageOrder[]: dev before stage before beta before production ...).
@@ -55,6 +63,10 @@ class expMigrationRemoteDeploy
     const STATUS = 'bin/php/expmigrationstatus.php';
     const MIGRATE = 'bin/php/expmigrationmigrate.php';
     const ROLLBACK = 'bin/php/expmigrationrollback.php';
+    const HEAL = 'bin/php/expmigrationheal.php';
+
+    /** The free disk space a remote must have beyond the transfer when [RemoteSettings] DiskMargin is not set: 50 MB */
+    const DISK_MARGIN = 52428800;
 
     /** @var expMigrationRemote[] */
     protected $remotes;
@@ -94,7 +106,9 @@ class expMigrationRemoteDeploy
      *        lookup, tests), store (bool), audit (callable( name, data ), default expUpgrade::audit), say (callable(
      *        line ) for progress), user (who deploys, for the audit), staged (bool), stage_order (environments),
      *        progress (callable( event, data ), expMigrationProgress::writer()), notify (callable( report ) at the
-     *        end), db (a connection for expMigrationDeployRecord, null for none)
+     *        end), db (a connection for expMigrationDeployRecord, null for none), heal (the fixes of SelfHeal[]),
+     *        stale_lock_age (seconds), disk_margin (bytes), php_check (major, minor, warn, off), extension_check
+     *        (migrations, all, warn, off), host (this installation's hostInfo(), default read from root)
      */
     public function __construct( array $remotes, array $options = array() )
     {
@@ -102,7 +116,9 @@ class expMigrationRemoteDeploy
         $this->options = $options + array( 'apply' => false, 'transfer_only' => false, 'only' => array(), 'parallel' => 4, 'timeout' => 900,
                                            'retries' => 2, 'root' => getcwd(), 'work_dir' => null, 'local' => null, 'version' => '',
                                            'deploy_id' => null, 'lookup' => null, 'store' => true, 'audit' => null, 'say' => null, 'user' => '',
-                                           'staged' => false, 'stage_order' => self::STAGE_ORDER, 'progress' => null, 'notify' => null, 'db' => null );
+                                           'staged' => false, 'stage_order' => self::STAGE_ORDER, 'progress' => null, 'notify' => null, 'db' => null,
+                                           'heal' => array(), 'stale_lock_age' => expMigrationHeal::STALE_LOCK_AGE, 'disk_margin' => self::DISK_MARGIN,
+                                           'php_check' => 'major', 'extension_check' => 'migrations', 'host' => null );
         $this->options['root'] = rtrim( str_replace( '\\', '/', (string)$this->options['root'] ), '/' );
         if ( $this->options['work_dir'] === null )
             $this->options['work_dir'] = self::workDirectory();
@@ -262,7 +278,8 @@ class expMigrationRemoteDeploy
         foreach ( $this->remotes as $id => $remote )
             $remotes[$id] = array( 'remote' => $remote->toArray(), 'state' => 'selected', 'problems' => array(), 'version' => '', 'pending' => array(),
                                    'send' => array(), 'applied' => array(), 'caption' => '', 'restore' => '', 'attempts' => array(), 'fixes' => array(),
-                                   'migrations' => array( 'done' => 0, 'pending' => 0, 'failed' => 0 ), 'lock' => null, 'last_run' => null );
+                                   'migrations' => array( 'done' => 0, 'pending' => 0, 'failed' => 0 ), 'lock' => null, 'last_run' => null,
+                                   'host' => null, 'send_bytes' => 0 );
         return array( 'schema' => self::REPORT, 'deploy_id' => $this->deployId(), 'mode' => $mode, 'state' => '', 'in_sync' => null,
                       'started_at' => date( 'c' ), 'finished_at' => null, 'user' => (string)$this->options['user'], 'version' => (string)$this->options['version'],
                       'remotes' => $remotes, 'phases' => array(), 'errors' => array(), 'warnings' => array(), 'exit' => expUpgrade::EXIT_OK,
@@ -407,7 +424,8 @@ class expMigrationRemoteDeploy
         {
             $this->report['remotes'][$id] = array( 'remote' => $remote->toArray(), 'state' => 'selected', 'problems' => array(), 'version' => '', 'pending' => array(),
                                                    'send' => array(), 'applied' => array(), 'caption' => '', 'restore' => '', 'attempts' => array(), 'fixes' => array(),
-                                                   'migrations' => array( 'done' => 0, 'pending' => 0, 'failed' => 0 ), 'lock' => null, 'last_run' => null );
+                                                   'migrations' => array( 'done' => 0, 'pending' => 0, 'failed' => 0 ), 'lock' => null, 'last_run' => null,
+                                   'host' => null, 'send_bytes' => 0 );
         }
         $this->emit( 'run', array( 'mode' => 'deploy', 'total' => 5, 'remotes' => array_map( 'strval', array_keys( $this->remotes ) ), 'stage' => $index + 1 ) );
         $lock = $this->lock();
@@ -602,12 +620,28 @@ class expMigrationRemoteDeploy
             }
             if ( $mustRun && !$remote->canRun() )
             {
-                $this->problem( $id, 'an FTP remote cannot run the migrations (no commands over FTP); use --transfer-only, or ssh, sftp or rsync', 'refused' );
+                $this->problem( $id, 'an FTP remote cannot run the migrations (no commands over FTP); use --transfer-only, give it the HTTP trigger (Trigger, TriggerSecret), or use ssh, sftp or rsync', 'refused' );
                 $ok = false;
             }
             if ( !is_dir( $keyDir ) )
                 @mkdir( $keyDir, eZDir::dirMode( 0700 ), true );
             $this->transports[$id] = new expMigrationRemoteTransport( $remote, $credential, $keyDir . '/' . $id );
+            if ( $remote->trigger() !== '' )
+            {
+                // the HTTP trigger signs with a secret of its own, read like a password
+                $key = new expMigrationRemoteCredential( 'password:' . $remote->triggerSecret(), array( 'work_dir' => $this->options['work_dir'],
+                                                                                                      'root' => $this->options['root'], 'lookup' => $this->options['lookup'] ) );
+                $why = $key->problem();
+                if ( $why === '' && strlen( (string)$key->secret() ) < 16 )
+                    $why = 'the secret ' . $remote->triggerSecret() . ' of the trigger is shorter than 16 characters';
+                if ( $why !== '' )
+                {
+                    $this->problem( $id, 'TriggerSecret: ' . $why, 'refused' );
+                    $ok = false;
+                }
+                else
+                    $this->transports[$id]->setTriggerKey( $key->secret() );
+            }
         }
         if ( !$ok )
             return false;
@@ -726,6 +760,7 @@ class expMigrationRemoteDeploy
      */
     protected function preflight( $local )
     {
+        $this->heal( array_values( array_diff( (array)$this->options['heal'], array( 'caches' ) ) ), 'prepared' );
         $jobs = array();
         foreach ( $this->remotes as $id => $remote )
         {
@@ -758,6 +793,7 @@ class expMigrationRemoteDeploy
             }
             $this->absorbStatus( $id, $status );
             $problems = self::statusProblems( $status, (string)$this->options['version'] );
+            $bytes = null;
             if ( $local !== null )
             {
                 $plan = self::plan( $local, $status );
@@ -766,7 +802,14 @@ class expMigrationRemoteDeploy
                 $problems = array_merge( $problems, $plan['problems'] );
                 foreach ( $plan['ahead'] as $ahead )
                     $this->report['warnings'][] = "$id has the migration $ahead, which this installation does not have";
+                $bytes = self::sendBytes( $local, $plan['send'] );
+                $this->report['remotes'][$id]['send_bytes'] = $bytes;
             }
+            $checks = self::hostProblems( isset( $status['host'] ) && is_array( $status['host'] ) ? $status['host'] : null, $this->sourceHost(), $bytes,
+                                          self::extensionsOf( $local ), $this->options );
+            $problems = array_merge( $problems, $checks['problems'] );
+            foreach ( $checks['warnings'] as $warning )
+                $this->report['warnings'][] = "$id: $warning";
             foreach ( $problems as $problem )
             {
                 $this->problem( $id, $problem, 'refused' );
@@ -785,6 +828,10 @@ class expMigrationRemoteDeploy
         $remote['version'] = isset( $status['version'] ) ? (string)$status['version'] : '';
         $remote['lock'] = isset( $status['lock'] ) ? $status['lock'] : null;
         $remote['last_run'] = isset( $status['runs'][0] ) ? $status['runs'][0] : null;
+        if ( isset( $status['host'] ) && is_array( $status['host'] ) )
+            $remote['host'] = array( 'php' => isset( $status['host']['php'] ) ? (string)$status['host']['php'] : '',
+                                     'disk_free' => isset( $status['host']['disk_free'] ) ? $status['host']['disk_free'] : null,
+                                     'extensions' => isset( $status['host']['extensions'] ) ? count( (array)$status['host']['extensions'] ) : 0 );
         $remote['states'] = array();
         foreach ( isset( $status['migrations'] ) ? (array)$status['migrations'] : array() as $entry )
             $remote['states'][$entry['source'] . ' ' . $entry['id']] = (string)$entry['state'];
@@ -990,7 +1037,12 @@ class expMigrationRemoteDeploy
         if ( isset( $dry['exit'] ) && (int)$dry['exit'] !== expUpgrade::EXIT_OK )
             foreach ( (array)( isset( $dry['errors'] ) && $dry['errors'] ? $dry['errors'] : array( 'the dry run failed (exit ' . (int)$dry['exit'] . ')' ) ) as $error )
                 $problems[] = 'dry run: ' . $error;
-        if ( !isset( $dry['captions']['pre'] ) || $dry['captions']['pre'] === 'off' )
+        // a remote with nothing to apply takes no caption (its dry run says off) and needs none: nothing to take back
+        $applies = false;
+        foreach ( isset( $dry['migrations'] ) ? (array)$dry['migrations'] : array() as $entry )
+            if ( isset( $entry['action'] ) && $entry['action'] === 'would-apply' )
+                $applies = true;
+        if ( $applies && ( !isset( $dry['captions']['pre'] ) || $dry['captions']['pre'] === 'off' ) )
             $problems[] = 'captions are off there ([CaptionSettings]): without the caption before the run it could not be taken back, so it is not switched';
         $seen = array();
         foreach ( isset( $dry['migrations'] ) ? (array)$dry['migrations'] : array() as $entry )
@@ -1053,7 +1105,194 @@ class expMigrationRemoteDeploy
             $this->say( "   $id: " . $remote['state'] . ' (' . count( $remote['applied'] ) . ' applied)' );
             unset( $remote );
         }
+        if ( $ok && in_array( 'caches', (array)$this->options['heal'], true ) )
+            $this->heal( array( 'caches' ), 'applied' );
         return $ok;
+    }
+
+    /**
+     * The fixes of SelfHeal[] on the remotes in a state (exp:migration:heal --apply): what was fixed goes in each
+     * remote's fixes, what was found and left in the warnings. A fix never stops the deploy; the checks after it do.
+     *
+     * @param string[] $fixes
+     * @param string $state only the remotes in this state
+     */
+    protected function heal( array $fixes, $state )
+    {
+        $fixes = expMigrationHeal::normalize( $fixes );
+        if ( !$fixes )
+            return;
+        $jobs = array();
+        foreach ( $this->remotes as $id => $remote )
+        {
+            if ( $this->report['remotes'][$id]['state'] !== $state || !$remote->canRun() )
+                continue;
+            $args = array( self::HEAL, '--apply', '--format=json', '--fix=' . implode( ',', $fixes ) );
+            if ( in_array( 'stale-lock', $fixes, true ) )
+                $args[] = '--stale-lock-age=' . max( 60, (int)$this->options['stale_lock_age'] );
+            $op = $this->transports[$id]->run( $args );
+            if ( $op !== null )
+                $jobs[$id] = array( $op );
+        }
+        $results = $jobs ? $this->runRetried( $jobs, 'heal-' . implode( '-', $fixes ) ) : array();
+        foreach ( $jobs as $id => $ops )
+        {
+            $report = self::parseReport( $results[$id]['stdout'] );
+            if ( $report === null || !isset( $report['fixes'] ) )
+            {
+                $this->report['warnings'][] = "$id: the self-healing (" . implode( ', ', $fixes ) . ') gave no report (exit ' . $results[$id]['exit'] . '): ' . $this->tail( $id, $results[$id] );
+                continue;
+            }
+            foreach ( (array)$report['fixes'] as $fix )
+            {
+                $this->report['remotes'][$id]['fixes'][] = 'heal ' . $this->credentials[$id]->redact( (string)$fix );
+                $this->say( "   $id: fixed " . $fix );
+            }
+            foreach ( array_merge( (array)$report['problems'], isset( $report['warnings'] ) ? (array)$report['warnings'] : array() ) as $problem )
+                $this->report['warnings'][] = "$id: " . $this->credentials[$id]->redact( (string)$problem );
+        }
+    }
+
+    /** @return array this installation's hostInfo() (option host, else read once) */
+    protected function sourceHost()
+    {
+        if ( $this->options['host'] === null )
+            $this->options['host'] = self::hostInfo( $this->options['root'] );
+        return (array)$this->options['host'];
+    }
+
+    /**
+     * What a status report says about its host, for a deploy's preflight: the PHP version, the free disk space of the
+     * installation's file system, and the active extensions with their versions (ezinfo.php or extension.xml).
+     *
+     * @param string $root
+     * @param string[]|null $extensions the active extensions (default eZExtension::activeExtensions())
+     * @return array php, disk_free (bytes, null when unknown), extensions (name => version, '' when it states none)
+     */
+    public static function hostInfo( $root, $extensions = null )
+    {
+        $free = @disk_free_space( (string)$root );
+        $versions = array();
+        if ( $extensions === null )
+            $extensions = class_exists( 'eZExtension' ) ? eZExtension::activeExtensions() : array();
+        foreach ( (array)$extensions as $extension )
+        {
+            $version = '';
+            try
+            {
+                $info = class_exists( 'ezpExtension' ) ? ezpExtension::getInstance( (string)$extension )->getInfo() : null;
+                foreach ( is_array( $info ) ? $info : array() as $key => $value )
+                    if ( is_string( $value ) && strtolower( (string)$key ) === 'version' )
+                        $version = trim( $value );
+            }
+            catch ( Throwable $e )
+            {
+                $version = '';
+            }
+            $versions[(string)$extension] = $version;
+        }
+        ksort( $versions );
+        return array( 'php' => PHP_VERSION, 'disk_free' => $free === false ? null : (int)$free, 'extensions' => $versions );
+    }
+
+    /**
+     * The extensions whose migrations a deploy sends (source extension:<name>). Pure.
+     *
+     * @param array[]|null $local
+     * @return string[]
+     */
+    public static function extensionsOf( $local )
+    {
+        $names = array();
+        foreach ( (array)$local as $definition )
+            if ( strpos( (string)$definition['source'], 'extension:' ) === 0 )
+                $names[substr( (string)$definition['source'], 10 )] = true;
+        return array_keys( $names );
+    }
+
+    /**
+     * The size of the files a remote is sent, in bytes.
+     *
+     * @param array[] $local
+     * @param string[] $send relative paths
+     * @return int
+     */
+    public static function sendBytes( array $local, array $send )
+    {
+        $paths = array();
+        foreach ( $local as $definition )
+            $paths += (array)$definition['paths'];
+        $bytes = 0;
+        foreach ( $send as $rel )
+            if ( isset( $paths[$rel] ) )
+                $bytes += (int)@filesize( $paths[$rel] );
+        return $bytes;
+    }
+
+    /**
+     * What stops a deploy, or is only worth a warning, in the host of a remote's status: free disk space against the
+     * transfer and the margin, the PHP version, the versions of the extensions. Pure.
+     *
+     * @param array|null $remote the remote's status host (hostInfo()); null: an older kernel that does not say
+     * @param array $source this installation's hostInfo()
+     * @param int|null $bytes the size of the transfer; null: no transfer (status), not checked
+     * @param string[] $sent the extensions whose migrations are sent
+     * @param array $settings disk_margin, php_check (major, minor, warn, off), extension_check (migrations, all, warn, off)
+     * @return array problems, warnings
+     */
+    public static function hostProblems( $remote, array $source, $bytes, array $sent, array $settings )
+    {
+        $settings += array( 'disk_margin' => self::DISK_MARGIN, 'php_check' => 'major', 'extension_check' => 'migrations' );
+        $problems = array();
+        $warnings = array();
+        if ( !is_array( $remote ) )
+            return array( 'problems' => array(), 'warnings' => array( 'its status does not say its PHP version, extensions and free disk space (an older kernel): not checked' ) );
+        $mb = function ( $value ) { return number_format( $value / 1048576, 1, '.', '' ) . ' MB'; };
+        if ( $bytes !== null && isset( $remote['disk_free'] ) && $remote['disk_free'] !== null )
+        {
+            $need = (int)$bytes + max( 0, (int)$settings['disk_margin'] );
+            if ( (int)$remote['disk_free'] < $need )
+                $problems[] = 'only ' . $mb( (int)$remote['disk_free'] ) . ' free there; the transfer needs ' . $mb( (int)$bytes ) . ' and the margin '
+                            . $mb( (int)$settings['disk_margin'] ) . ' ([RemoteSettings] DiskMargin)';
+        }
+        $php = isset( $remote['php'] ) ? (string)$remote['php'] : '';
+        $here = isset( $source['php'] ) ? (string)$source['php'] : '';
+        $check = (string)$settings['php_check'];
+        if ( $check !== 'off' && $php !== '' && $here !== '' )
+        {
+            $parts = $check === 'minor' ? 2 : 1;
+            $cut = function ( $version ) use ( $parts ) { return implode( '.', array_slice( explode( '.', $version ), 0, $parts ) ); };
+            if ( $cut( $php ) !== $cut( $here ) )
+            {
+                $text = "PHP there is $php, here $here ([RemoteSettings] PhpCheck=$check)";
+                if ( $check === 'warn' )
+                    $warnings[] = $text;
+                else
+                    $problems[] = $text . ': a migration may behave differently';
+            }
+        }
+        $check = (string)$settings['extension_check'];
+        if ( $check !== 'off' )
+        {
+            $there = isset( $remote['extensions'] ) && is_array( $remote['extensions'] ) ? $remote['extensions'] : array();
+            $mine = isset( $source['extensions'] ) && is_array( $source['extensions'] ) ? $source['extensions'] : array();
+            foreach ( $mine as $name => $version )
+            {
+                $needed = $check === 'all' || in_array( (string)$name, $sent, true );
+                if ( !array_key_exists( $name, $there ) )
+                    $text = "the extension $name is not active there";
+                else if ( (string)$there[$name] !== (string)$version )
+                    $text = "the extension $name is " . ( (string)$there[$name] !== '' ? $there[$name] : 'without a version' ) . ' there, here '
+                          . ( (string)$version !== '' ? $version : 'without a version' );
+                else
+                    continue;
+                if ( $needed && $check !== 'warn' )
+                    $problems[] = $text . ' ([RemoteSettings] ExtensionCheck=' . $check . ')';
+                else if ( $needed || $check === 'warn' )
+                    $warnings[] = $text;
+            }
+        }
+        return array( 'problems' => $problems, 'warnings' => $warnings );
     }
 
     /**

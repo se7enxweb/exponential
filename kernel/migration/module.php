@@ -130,6 +130,14 @@ $ViewList['editor'] = array(
     'params' => array( 'MigrationID' ),
     'unordered_params' => array() );
 
+// The signed HTTP trigger a deploy over FTP runs the migrations through (expMigrationTrigger, migration.ini
+// [TriggerSettings]): no session, no policy (site.ini AnonymousAccessList[], PolicyOmitList[]); the signature, the
+// source address and the nonce are the permission
+$ViewList['trigger'] = array(
+    'script' => 'trigger.php',
+    'params' => array(),
+    'unordered_params' => array() );
+
 $FunctionList = array();
 // See the migrations, their state, the runs and their logs, and the dry run
 $FunctionList['read'] = array();

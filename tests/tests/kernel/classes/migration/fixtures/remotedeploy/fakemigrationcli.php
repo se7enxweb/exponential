@@ -9,6 +9,10 @@
  *   var/fake-state.json            done migrations (id => checksum) and the captions (run id => done before the run)
  *   var/fake-captions-off          captions are off (the dry run reports captions pre "off")
  *   var/fake-lock                  a run holds the lock
+ *   var/fake-lock-stale            ... and its process is gone: exp:migration:heal --fix=stale-lock --apply removes it
+ *   var/fake-host.json             the host its status reports (php, disk_free, extensions); default this PHP,
+ *                                  plenty of space, no extension
+ *   var/fake-heal.log              one line per fix exp:migration:heal made
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -52,7 +56,9 @@ $lock = is_file( "$root/var/fake-lock" );
 
 if ( $command === 'expmigrationstatus' )
 {
-    $report += array( 'table' => true, 'version' => getenv( 'FAKE_VERSION' ) ?: '6.0.15', 'lock' => $lock ? array( 'pid' => 1 ) : null, 'runs' => array() );
+    $host = is_file( "$root/var/fake-host.json" ) ? json_decode( file_get_contents( "$root/var/fake-host.json" ), true ) : null;
+    $report += array( 'table' => true, 'version' => getenv( 'FAKE_VERSION' ) ?: '6.0.15', 'lock' => $lock ? array( 'pid' => 1 ) : null, 'runs' => array(),
+                      'host' => is_array( $host ) ? $host : array( 'php' => PHP_VERSION, 'disk_free' => 1 << 40, 'extensions' => array() ) );
     $report['migrations'] = $entries;
 }
 else if ( $command === 'expmigrationmigrate' )
@@ -112,6 +118,35 @@ else if ( $command === 'expmigrationrollback' )
         $state['done'] = $state['captions'][$target];
         $save();
     }
+}
+else if ( $command === 'expmigrationheal' )
+{
+    $fixes = array();
+    foreach ( $args as $arg )
+        if ( strpos( $arg, '--fix=' ) === 0 )
+            $fixes = explode( ',', substr( $arg, 6 ) );
+    $report['mode'] = 'heal';
+    $report['fixes'] = array();
+    $report['problems'] = array();
+    if ( in_array( 'stale-lock', $fixes, true ) && $lock )
+    {
+        if ( is_file( "$root/var/fake-lock-stale" ) )
+        {
+            if ( $apply )
+            {
+                unlink( "$root/var/fake-lock" );
+                unlink( "$root/var/fake-lock-stale" );
+            }
+            $report['fixes'][] = 'stale-lock: moved the lock of a run whose process is gone aside';
+        }
+        else
+            $report['problems'][] = 'stale-lock: the lock is held and left alone: its process still runs';
+    }
+    if ( in_array( 'caches', $fixes, true ) )
+        $report['fixes'][] = 'caches: cleared the caches tagged ini';
+    if ( $apply )
+        foreach ( $report['fixes'] as $fix )
+            file_put_contents( "$root/var/fake-heal.log", $fix . "\n", FILE_APPEND );
 }
 echo json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ), "\n";
 exit( $report['exit'] );

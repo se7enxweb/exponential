@@ -115,6 +115,12 @@ class expMigrationRemoteCredential
         return '';
     }
 
+    /** @return string|null the value read by problem() (the HTTP trigger signs with it), null before */
+    public function secret()
+    {
+        return $this->value;
+    }
+
     /** @return string|null */
     protected function read( $name )
     {

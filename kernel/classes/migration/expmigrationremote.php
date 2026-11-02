@@ -23,6 +23,10 @@
  *   Groups[]=production           the groups the remote belongs to: --remotes=production selects all of them
  *   HostKeyFingerprint=SHA256:..  optional: the host key the remote must show (else it is learnt on first contact)
  *   AllowRootUser=enabled         the remote's console scripts run as root there (--allow-root-user); default disabled
+ *   Trigger=https://.../migration/trigger   ftp and ftps only: the signed HTTP trigger of the remote
+ *                                 (expMigrationTrigger), through which the migrations are run there after the transfer
+ *   TriggerSecret=<name>          the secret the trigger's requests are signed with: a name of the secret store or
+ *                                 env:VARIABLE (the remote's [TriggerSettings] Secret holds the same value)
  *
  * A secret is never in the INI: a section with a Password, Key, Token or Secret setting is refused (validate()).
  *
@@ -79,7 +83,8 @@ class expMigrationRemote
      * [RemoteSettings] with the defaults of a missing setting.
      *
      * @param eZINI|null $ini
-     * @return array parallel, timeout, retries, store (bool: keep the reports), stage_order (environments)
+     * @return array heal (fixes), stale_lock_age, disk_margin (bytes), php_check, extension_check, parallel, timeout, retries, store
+     *               (bool: keep the reports), stage_order (environments)
      */
     public static function settings( $ini = null )
     {
@@ -91,7 +96,20 @@ class expMigrationRemote
         foreach ( (array)$get( 'StageOrder', array() ) as $environment )
             if ( ( $environment = trim( (string)$environment ) ) !== '' )
                 $order[] = $environment;
+        $choice = function ( $name, array $allowed, $default ) use ( $get ) {
+            $value = strtolower( trim( (string)$get( $name, $default ) ) );
+            return in_array( $value, $allowed, true ) ? $value : $default;
+        };
+        $margin = trim( (string)$get( 'DiskMargin', '50M' ) );
+        $units = array( '' => 1, 'k' => 1024, 'm' => 1048576, 'g' => 1073741824 );
+        $margin = preg_match( '/^([0-9]+)\s*([kmg]?)b?$/i', $margin, $m ) ? (int)$m[1] * $units[strtolower( $m[2] )] : expMigrationRemoteDeploy::DISK_MARGIN;
         return array(
+            // the fixes a deploy may make on a remote (exp:migration:heal): stale-lock, paths, modes, caches
+            'heal' => expMigrationHeal::normalize( (array)$get( 'SelfHeal', array() ) ),
+            'stale_lock_age' => max( 60, (int)$get( 'StaleLockAge', expMigrationHeal::STALE_LOCK_AGE ) ),
+            'disk_margin' => $margin,
+            'php_check' => $choice( 'PhpCheck', array( 'major', 'minor', 'warn', 'off' ), 'major' ),
+            'extension_check' => $choice( 'ExtensionCheck', array( 'migrations', 'all', 'warn', 'off' ), 'migrations' ),
             'parallel' => max( 1, (int)$get( 'Parallel', 4 ) ),
             'timeout' => max( 10, (int)$get( 'Timeout', 900 ) ),
             'retries' => max( 0, min( 10, (int)$get( 'Retries', 2 ) ) ),
@@ -218,10 +236,28 @@ class expMigrationRemote
         return trim( (string)$this->setting( 'HostKeyFingerprint' ) );
     }
 
-    /** @return bool whether the transport can run commands on the remote (all but ftp and ftps) */
+    /** @return bool whether the transport can run commands on the remote (all but ftp and ftps without a trigger) */
     public function canRun()
     {
-        return !in_array( $this->transport(), array( 'ftp', 'ftps' ), true );
+        return !$this->isFtp() || $this->trigger() !== '';
+    }
+
+    /** @return bool whether files go over FTP (ftp, ftps) */
+    public function isFtp()
+    {
+        return in_array( $this->transport(), array( 'ftp', 'ftps' ), true );
+    }
+
+    /** @return string the address of the remote's HTTP trigger (FTP remotes), '' for none */
+    public function trigger()
+    {
+        return $this->isFtp() ? trim( (string)$this->setting( 'Trigger' ) ) : '';
+    }
+
+    /** @return string the name of the secret the trigger's requests are signed with */
+    public function triggerSecret()
+    {
+        return trim( (string)$this->setting( 'TriggerSecret' ) );
     }
 
     /** @return string where the remote is, as the reports show it: transport://user@host:port/path */
@@ -273,6 +309,16 @@ class expMigrationRemote
             $problems[] = "$label: an FTP remote signs in with Credential=password:<secret name>";
         else if ( $transport === 'local' && $credential[0] !== 'none' )
             $problems[] = "$label: a local remote takes no credential (Credential=none)";
+        $trigger = trim( (string)$this->setting( 'Trigger' ) );
+        if ( $trigger !== '' )
+        {
+            if ( !$this->isFtp() )
+                $problems[] = "$label: Trigger is only for an FTP remote (ftp, ftps); the other transports run the migrations over ssh";
+            else if ( !expMigrationTrigger::validUrl( $trigger ) )
+                $problems[] = "$label: Trigger must be the https:// address of migration/trigger on the remote (http:// only to this host)";
+            if ( !preg_match( '/^(env:)?[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$/', $this->triggerSecret() ) )
+                $problems[] = "$label: TriggerSecret must name the secret the trigger is signed with (a name of the secret store, or env:VARIABLE), never the secret itself";
+        }
         $fingerprint = $this->hostKeyFingerprint();
         if ( $fingerprint !== '' && !preg_match( '/^SHA256:[A-Za-z0-9+\/]{43}=?$/', $fingerprint ) )
             $problems[] = "$label: HostKeyFingerprint must be SHA256:<base64> as ssh-keygen -l prints it";
@@ -290,6 +336,7 @@ class expMigrationRemote
             'credential' => $this->credential(),
             'groups' => $this->groups(),
             'can_run' => $this->canRun(),
+            'trigger' => $this->trigger(),
         );
     }
 }

@@ -144,7 +144,14 @@ class expMigrationRemoteProcess
                 continue;
             }
             $results[$key]['stdout'] = '';
-            $env = $op['env'] ? array_merge( self::environment(), $op['env'] ) : null;
+            if ( isset( $op['http'] ) )
+            {
+                // signed now, so that a request tried again carries a fresh signature (the trigger takes a nonce once);
+                // the signature and the body go to curl on its standard input, never on its command line
+                $op = array( 'argv' => array( 'curl', '-sS', '--connect-timeout', '20', '-K', '-' ), 'env' => array(), 'cwd' => null,
+                             'stdin' => expMigrationTrigger::curlConfig( $op['http']['url'], $op['http']['key'], $op['http']['body'] ) );
+            }
+            $env = !empty( $op['env'] ) ? array_merge( self::environment(), $op['env'] ) : null;
             $spec = array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) );
             $proc = @proc_open( $op['argv'], $spec, $pipes, isset( $op['cwd'] ) ? $op['cwd'] : null, $env );
             if ( !is_resource( $proc ) )
