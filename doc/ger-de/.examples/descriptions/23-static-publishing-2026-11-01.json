@@ -144,16 +144,16 @@
         "de": "Seiten, die nach der Sektion ihres Inhalts ausgelassen werden (Sektions-IDs)."
     },
     "ini:settings/staticcache.ini [Target_example] Extras": {
-        "en": "The files written besides the pages: nojekyll (.nojekyll, so GitHub Pages\npublishes the files as they are), 404 (404.html from the site's own 404\npage), robots (robots.txt), sitemap (sitemap.xml, needs PublicURL),\nmanifest (.static-publish/manifest.json; always written). CNAME is written\nwhenever CustomDomain is set.",
-        "de": "Die Dateien, die neben den Seiten geschrieben werden: nojekyll (.nojekyll, damit GitHub\nPages die Dateien so veröffentlicht, wie sie sind), 404 (404.html aus der eigenen\n404-Seite der Website), robots (robots.txt), sitemap (sitemap.xml, braucht PublicURL),\nmanifest (.static-publish/manifest.json; immer geschrieben). CNAME wird geschrieben,\nsobald CustomDomain gesetzt ist."
+        "en": "The files written besides the pages: nojekyll (.nojekyll, so GitHub Pages\npublishes the files as they are), 404 (404.html from the site's own 404\npage), robots (robots.txt), sitemap (sitemap.xml, needs PublicURL),\nmanifest (.static-publish/manifest.json; always written), redirects (a\nsmall page for every old address and custom alias of a page, and for URL\nwildcards without *), readme (README.md), license (LICENSE, from License\nbelow), workflow (the GitHub Actions workflow). CNAME is written whenever\nCustomDomain is set.",
+        "de": "Die Dateien, die neben den Seiten geschrieben werden: nojekyll (.nojekyll,\ndamit GitHub Pages die Dateien unverändert veröffentlicht), 404 (404.html aus\nder eigenen 404-Seite der Site), robots (robots.txt), sitemap (sitemap.xml,\nbraucht PublicURL), manifest (.static-publish/manifest.json; immer\ngeschrieben), redirects (eine kleine Seite für jede alte Adresse und jeden\neigenen Alias einer Seite und für URL-Platzhalter ohne *), readme\n(README.md), license (LICENSE, aus License unten), workflow (der Workflow von\nGitHub Actions). CNAME wird immer geschrieben, wenn CustomDomain gesetzt ist."
     },
     "ini:settings/staticcache.ini [Target_example] Folder": {
         "en": "The folder of the branch the site is in: empty for the root, or docs.",
         "de": "Der Ordner des Branches, in dem die Website liegt: leer für die Wurzel, oder docs."
     },
     "ini:settings/staticcache.ini [Target_example] Forms": {
-        "en": "What happens to forms: hide, or endpoint (they post to the live site).",
-        "de": "Was mit Formularen geschieht: hide, oder endpoint (sie senden an die Live-Website)."
+        "en": "What happens to information collectors (forms): hide (the fallback text,\nFormFallbackText), or endpoint (they post to the form endpoint of the live\nsite; needs PublicURL or CustomDomain). Comment, basket and login forms\nare never sent from a static copy.",
+        "de": "Was mit Informationssammlern (Formularen) geschieht: hide (der Ersatztext,\nFormFallbackText) oder endpoint (sie senden an den Formular-Endpunkt der\nLive-Site; braucht PublicURL oder CustomDomain). Kommentar-, Warenkorb- und\nAnmeldeformulare werden von einer statischen Kopie nie gesendet."
     },
     "ini:settings/staticcache.ini [Target_example] Kind": {
         "en": "Where the build goes: github-pages (GitHub Pages) or git (any git host).",
@@ -180,12 +180,12 @@
         "de": "Ein Ziel, als Vorlage: Kopieren Sie den Block als [Target_<id>] nach\nsettings/override/staticcache.ini.append.php und fügen Sie <id> zu TargetList[] hinzu.\nDieser Block wird nicht gebaut (TargetList[] nennt ihn nicht). Einstellungen, die einem\nZiel fehlen, nehmen die hier gezeigten Werte.\n\nDer Name, der in Listen und der Administration angezeigt wird."
     },
     "ini:settings/staticcache.ini [Target_example] Notify": {
-        "en": "When to send a notice: failure, success.",
-        "de": "Wann eine Nachricht gesendet wird: failure, success."
+        "en": "When to send a notice by e-mail ([StaticPublishSettings] NotifyEmail):\nfailure, success.",
+        "de": "Wann eine Benachrichtigung per E-Mail gesendet wird ([StaticPublishSettings]\nNotifyEmail): failure, success."
     },
     "ini:settings/staticcache.ini [Target_example] PostProcess": {
-        "en": "What is done to every page: strip (always) removes debug output, form\ntokens, session ids and Content Security Policy nonces.",
-        "de": "Was mit jeder Seite geschieht: strip (immer) entfernt Debug-Ausgabe, Formular-Token,\nSitzungskennungen und Nonces der Content Security Policy."
+        "en": "What is done to every page: strip (always) removes debug output, form\ntokens, session ids and Content Security Policy nonces. Optional: minify\n(less white space, no comments), precompress (.gz, and .br with PHP's\nbrotli extension, next to every text file), fingerprint (style sheets and\nscripts named by the hash of their content, site.3f2a9c1b.css).",
+        "de": "Was mit jeder Seite geschieht: strip (immer) entfernt Debug-Ausgaben,\nFormular-Tokens, Sitzungs-IDs und Nonces der Content Security Policy.\nWahlweise: minify (weniger Leerraum, keine Kommentare), precompress (.gz, und\n.br mit der Brotli-Erweiterung von PHP, neben jeder Textdatei), fingerprint\n(Stylesheets und Skripte nach dem Hash ihres Inhalts benannt,\nsite.3f2a9c1b.css)."
     },
     "ini:settings/staticcache.ini [Target_example] PublicURL": {
         "en": "The public address of the site (https://owner.github.io/my-site/), for the\nsitemap, robots.txt and the canonical and social card links. Empty: they\nare written like any other link and no sitemap is written.",
@@ -196,23 +196,23 @@
         "de": "Die Git-Adresse, in die der Build übertragen wird (ohne Passwort oder Token darin)."
     },
     "ini:settings/staticcache.ini [Target_example] Schedule": {
-        "en": "When a scheduled build runs (a cron expression), for Triggers[]=schedule.",
-        "de": "Wann ein geplanter Build läuft (ein Cron-Ausdruck), für Triggers[]=schedule."
+        "en": "When a scheduled build runs (a cron expression, the server's time zone:\n0 3 * * *, or @daily), for Triggers[]=schedule.",
+        "de": "Wann ein geplanter Build läuft (ein Cron-Ausdruck, in der Zeitzone des\nServers: 0 3 * * *, oder @daily), für Triggers[]=schedule."
     },
     "ini:settings/staticcache.ini [Target_example] Search": {
-        "en": "A search page for the static copy: enabled or disabled.",
-        "de": "Eine Suchseite für die statische Kopie: enabled oder disabled."
+        "en": "A search page for the static copy (search.html, an index per language and\na small script; the site's search forms go there): enabled or disabled.",
+        "de": "Eine Suchseite für die statische Kopie (search.html, ein Index je Sprache\nund ein kleines Skript; die Suchformulare der Site gehen dorthin): enabled\noder disabled."
     },
     "ini:settings/staticcache.ini [Target_example] SiteAccess": {
         "en": "The front siteaccess to publish. Administration and editing siteaccesses\n(those that require a login or use an administration design) are refused.",
         "de": "Der zu veröffentlichende Front-Siteaccess. Administrations- und Bearbeitungs-Siteaccesses\n(die eine Anmeldung verlangen oder ein Administrationsdesign nutzen) werden abgelehnt."
     },
     "ini:settings/staticcache.ini [Target_example] Triggers": {
-        "en": "What may start a build: manual, publish, schedule, cli.",
-        "de": "Was einen Build starten darf: manual, publish, schedule, cli."
+        "en": "What may start a build: manual, publish (the cronjob part staticpublish\npublishes the changed pages after a content publish), schedule (the same\ncronjob part publishes in full at the times of Schedule), cli.",
+        "de": "Was einen Build auslösen darf: manual, publish (der Cronjob-Teil\nstaticpublish veröffentlicht die geänderten Seiten nach einer\nVeröffentlichung von Inhalten), schedule (derselbe Cronjob-Teil\nveröffentlicht vollständig zu den Zeiten von Schedule), cli."
     },
     "ini:settings/staticcache.ini [Target_example] Webhook": {
-        "en": "An address that is sent a notice of every build (POST, JSON).",
-        "de": "Eine Adresse, an die eine Nachricht zu jedem Build gesendet wird (POST, JSON)."
+        "en": "An https address that is sent a notice of every publish and rollback\n(POST, JSON, schema exp-static-webhook/1).",
+        "de": "Eine https-Adresse, an die nach jeder Veröffentlichung und Rücknahme eine\nBenachrichtigung geht (POST, JSON, Schema exp-static-webhook/1)."
     }
 }

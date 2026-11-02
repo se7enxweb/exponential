@@ -292,14 +292,16 @@ class expStaticAdminTest extends PHPUnit\Framework\TestCase
         $policies = array();
         foreach ( $ViewList as $view => $def )
         {
-            $policies[$view] = $def['functions'];
+            $policies[$view] = isset( $def['functions'] ) ? $def['functions'] : array();
             $this->assertFileExists( self::$root . '/kernel/staticpublish/' . $def['script'] );
-            $this->assertSame( 'ezsetupnavigationpart', $def['default_navigation_part'] );
+            if ( $view !== 'form' ) // the form endpoint is no page of the administration
+                $this->assertSame( 'ezsetupnavigationpart', $def['default_navigation_part'] );
             $this->assertTrue( class_exists( 'Exponential\\View\\Kernel\\Staticpublish\\' . ucfirst( $view ) ), "the class of $view" );
         }
         $this->assertSame( array( 'dashboard' => array( 'read' ), 'target' => array( 'setup' ), 'build' => array( 'build' ), 'stream' => array( 'read' ),
                                   'preview' => array( 'read' ), 'serve' => array( 'read' ), 'history' => array( 'read' ), 'log' => array( 'read' ),
-                                  'keys' => array( 'setup' ) ), $policies );
+                                  'keys' => array( 'setup' ), 'form' => array() ), $policies );
+        $this->assertMatchesRegularExpression( '/^PolicyOmitList\[\]=staticpublish\/form$/m', file_get_contents( self::$root . '/settings/site.ini' ), 'anyone may post to the form endpoint' );
         $this->assertMatchesRegularExpression( '/^ModuleList\[\]=staticpublish$/m', file_get_contents( self::$root . '/settings/module.ini' ) );
         $menu = self::section( 'settings/menu.ini', 'Leftmenu_setup' );
         foreach ( array( 'Links[static_publishing]=staticpublish/dashboard', 'PolicyList_static_publishing[]=staticpublish/read',

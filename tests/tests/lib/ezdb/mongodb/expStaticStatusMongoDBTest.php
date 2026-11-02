@@ -100,5 +100,6 @@ class expStaticStatusMongoDBTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'mongodb', expKernelTableSchema::type( $this->db ) );
         $this->checkStatusTables( $this->db );
         $this->checkStatusWriteAndRead( $this->db );
+        $this->checkStatusQueue( $this->db );
     }
 }

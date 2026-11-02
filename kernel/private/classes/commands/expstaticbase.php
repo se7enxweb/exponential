@@ -116,7 +116,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
      */
     protected function publisher( \expStaticTarget $target, $db, array $options = array() )
     {
-        return new \expStaticPublisher( $target, $options + array( 'root' => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : (string)getcwd(), 'db' => $db ) );
+        return new \expStaticPublisher( $target, $options + array( 'root' => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : (string)getcwd(), 'db' => $db, 'notify' => true ) );
     }
 
     /** @var string the file of --progress, '' without it */

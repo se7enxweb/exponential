@@ -84,6 +84,11 @@ Jede Seite hat eine Schaltfläche **Hilfe**, die die Seite dieses Handbuchs dazu
 - Repositorys, Token und Pushes:
   [Repositorys und Zugangsdaten](../../anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md)
 - Das Format eines Builds: [Das Build-Format](../../spezifikationen/6.0/statisches-veroeffentlichen-build-format.md)
+- Suche, Formulare und Kommentare: [Suche, Formulare und Kommentare auf einer statischen Site](suche-formulare-und-kommentare-auf-einer-statischen-site.md),
+  [Sprachen auf einer statischen Site](sprachen-auf-einer-statischen-site.md), [SEO auf einer statischen Site](seo-auf-einer-statischen-site.md) und der
+  [Formular-Endpunkt](../../spezifikationen/6.0/statisches-veroeffentlichen-formular-endpunkt.md).
+- Ohne Knopfdruck: [Automatisch veröffentlichen](automatisch-veroeffentlichen.md) und
+  [Benachrichtigungen und Webhooks](benachrichtigungen-und-webhooks.md).
 
 ## Nächster Schritt
 

@@ -67,7 +67,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 | [rssimport.php](rssimport.md) | Fetch and import configured RSS feeds into the content tree | (default) |
 | [session_gc.php](session_gc.md) | Garbage-collect expired user sessions from the session store |  |
 | [staticcache_cleanup.php](staticcache_cleanup.md) | Remove expired and stale entries from the static page cache |  |
-| [staticpublish.php](staticpublish.md) | Static publishing: push the targets whose publish could not be pushed again (runs with push state pending) | staticpublish |
+| [staticpublish.php](staticpublish.md) | Static publishing: push again what could not be pushed, publish the pages changed by a content publish (debounced) and the targets whose schedule is due | staticpublish |
 | [subtreeexpirycleanup.php](subtreeexpirycleanup.md) | Clean up subtree expiry entries from the URL cache tables |  |
 | [trashpurge.php](trashpurge.md) | Permanently delete objects in the trash (all, or as old as [TrashSettings] KeepItemsForDays says) |  |
 | [unlock.php](unlock.md) | Release content objects stuck in a locked editing state | unlock |

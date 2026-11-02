@@ -5,7 +5,7 @@
  * target's folder as its git repository and a local bare repository as its remote (receive.denyNonFastForwards and
  * receive.denyDeletes on, so a forced push or a moved tag would be refused there). Skipped without git or SQLite3.
  *
- *  SP-01 the tables: the upgrade step and the record (expStaticStatusEngineChecks on SQLite)
+ *  SP-01 the tables: the upgrade step, the record and the on-publish queue (expStaticStatusEngineChecks on SQLite)
  *  SP-02 build and publish: one commit of only the build's files, tag static/<target>/1, branch and tag in the remote,
  *        a run row (done, pushed, counts) and the pages; the local manifest of the build before stays out of git
  *  SP-03 a second publish after the site changed: a page removed and one changed, committed as such, tag 2; a third
@@ -170,6 +170,7 @@ class expStaticPublishSqliteTest extends PHPUnit\Framework\TestCase
     {
         $this->checkStatusTables( $this->db );
         $this->checkStatusWriteAndRead( $this->db );
+        $this->checkStatusQueue( $this->db );
     }
 
     /** SP-02 to SP-05 */

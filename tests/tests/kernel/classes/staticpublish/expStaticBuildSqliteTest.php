@@ -14,6 +14,9 @@
  *  SB-05 a dry run reports and changes nothing; a partial build (--paths) keeps the rest of the build
  *  SB-06 base-path links
  *  SB-07 built from a CrawlURL, the site's links to its own SiteURL in full are followed and rewritten
+ *  SB-08 the extras: the degradation report (search page, form endpoint with a signed token, login removed), the search
+ *        index and page, redirect stubs from URL aliases, README and LICENSE, minify, fingerprint and precompress; the link
+ *        check finds nothing broken; the build is an audit event
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -151,7 +154,7 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $build = new expStaticBuild( $target, $options + array(
             'root' => $this->runnerDir() . '/root', 'var_dir' => 'var/test', 'work_dir' => $this->runnerDir() . '/out', 'db' => $this->db,
             'fetcher' => $this->fetcher(), 'base_path' => '', 'context' => self::CONTEXT, 'run_id' => '20261101-120000-abcdef',
-            'max_site_bytes' => 1000000, 'max_file_bytes' => 100000,
+            'max_site_bytes' => 1000000, 'max_file_bytes' => 100000, 'audit' => false,
         ) );
         return array( $build->run(), $build->targetDirectory() );
     }
@@ -337,6 +340,89 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'https://other.example.org/away', $home );
         // a page with a query is not exported: it goes to the live site, as before
         $this->assertStringContainsString( '<a href="item-1/">Again</a>', file_get_contents( "$dir/news/index.html" ) );
+        $this->assertSame( 0, $report['link_check']['broken_count'], json_encode( $report['link_check']['broken'] ) );
+    }
+
+    /** SB-08 */
+    public function testExtras()
+    {
+        $this->site();
+        $this->site['/'] = self::page( 'Home', '<h1>Home</h1><p>Welcome to the bicycle site.</p>'
+                                              . '<form action="/content/search" method="get"><input name="SearchText"><button>Search</button></form>' );
+        $this->site['/about-us'] = self::page( 'About', '<h1>About</h1><p>Write to us about bicycles.</p>'
+                                                      . '<form method="post" action="/content/action"><input type="hidden" name="ContentObjectID" value="1" />'
+                                                      . '<input type="hidden" name="ContentNodeID" value="2" /><textarea name="ContentObjectAttribute_data_text_9"></textarea>'
+                                                      . '<input type="submit" name="ActionCollectInformation" value="Send" /></form>'
+                                                      . '<form method="post" action="/user/login"><input name="Login"><input type="password" name="Password"></form>' );
+        expStaticFormToken::setKeyForTest( 'k' );
+        $events = array();
+        try
+        {
+            list( $report, $dir ) = $this->build(
+                array( 'Search' => 'enabled', 'Forms' => 'endpoint', 'LiveURL' => 'https://live.example.com', 'License' => 'CC-BY-4.0',
+                       'Extras' => array( 'nojekyll', '404', 'robots', 'sitemap', 'manifest', 'redirects', 'readme', 'license' ),
+                       'PostProcess' => array( 'strip', 'minify', 'fingerprint', 'precompress' ) ),
+                array( 'form_endpoint' => true,
+                       // node 2 (the front page) had another name once; a custom alias points at it too; a wildcard to /news
+                       'redirect_rows' => array( 'aliases' => array(
+                           array( 'id' => 90, 'parent' => 0, 'lang_mask' => 3, 'text' => 'old-home', 'action' => 'eznode:2', 'is_original' => 0, 'is_alias' => 0 ),
+                           array( 'id' => 91, 'parent' => 90, 'lang_mask' => 3, 'text' => 'deeper', 'action' => 'eznode:2', 'is_original' => 0, 'is_alias' => 0 ),
+                           array( 'id' => 92, 'parent' => 0, 'lang_mask' => 3, 'text' => 'start', 'action' => 'eznode:2', 'is_original' => 1, 'is_alias' => 1 ) ),
+                                                'wildcards' => array( array( 'source_url' => 'go/news', 'destination_url' => 'news' ) ) ),
+                       'audit' => function ( $name, $data ) use ( &$events ) { $events[] = array( $name, $data['result'], $data['x']['degraded'] ); } ) );
+        }
+        finally
+        {
+            expStaticFormToken::setKeyForTest( null );
+        }
+        $this->assertSame( 0, $report['exit'], json_encode( $report['errors'] ) );
+
+        // the degradation report
+        $this->assertSame( array( 'search-page' => 1 ), $report['degraded']['search']['handled'] );
+        $this->assertSame( array( 'endpoint' => 1 ), $report['degraded']['collect']['handled'] );
+        $this->assertSame( array( 'removed' => 1 ), $report['degraded']['login']['handled'] );
+        $this->assertSame( array( '/about-us' ), $report['degraded']['collect']['examples'] );
+        $this->assertSame( array( array( 'system.staticpublish.build', 'success', array_keys( $report['degraded'] ) ) ), $events );
+
+        $home = file_get_contents( "$dir/index.html" );
+        $this->assertStringContainsString( '<form action="search.html" method="get" data-exp-static="search">', $home );
+        $about = file_get_contents( "$dir/about-us/index.html" );
+        $this->assertStringContainsString( 'action="https://live.example.com/staticpublish/form"', $about );
+        $this->assertMatchesRegularExpression( '#name="ExpStaticToken" value="(v1\.\d+\.1\.[A-Za-z0-9_-]{43})"#', $about );
+        preg_match( '#name="ExpStaticToken" value="([^"]+)"#', $about, $m );
+        $this->assertSame( '', expStaticFormToken::problem( $m[1], 'test-site', '1', 400, null, 'k' ) );
+        $this->assertStringNotContainsString( 'action="https://live.example.com/user/login"', $about, 'the login form is taken out' );
+        $this->assertStringNotContainsString( "\n\n", $about, 'minified' );
+
+        // the search
+        $this->assertFileExists( "$dir/search.html" );
+        $this->assertFileExists( "$dir/static-search/search.js" );
+        $index = json_decode( file_get_contents( "$dir/static-search/index-und.json" ), true );
+        $this->assertSame( 'exp-static-search/1', $index['schema'] );
+        $this->assertContains( 'about-us/', array_column( $index['pages'], 'u' ) );
+        $this->assertSame( 4, $report['search']['pages'] );
+
+        // the redirect stubs
+        $this->assertSame( 4, $report['counts']['redirects'] );
+        $this->assertStringContainsString( 'content="0; url=../"', file_get_contents( "$dir/old-home/index.html" ) );
+        $this->assertStringContainsString( 'content="0; url=../../"', file_get_contents( "$dir/old-home/deeper/index.html" ) );
+        $this->assertStringContainsString( '<link rel="canonical" href="https://owner.github.io/repo/">', file_get_contents( "$dir/start/index.html" ) );
+        $this->assertStringContainsString( 'url=../../news/', file_get_contents( "$dir/go/news/index.html" ) );
+
+        // README, LICENSE, fingerprint, precompress
+        $this->assertStringContainsString( '- Website: https://owner.github.io/repo/', file_get_contents( "$dir/README.md" ) );
+        $this->assertStringContainsString( 'CC-BY-4.0', file_get_contents( "$dir/LICENSE" ) );
+        $this->assertFileDoesNotExist( "$dir/design/s/stylesheets/site.css" );
+        $sheets = glob( "$dir/design/s/stylesheets/site.*.css" );
+        $this->assertCount( 1, $sheets );
+        $this->assertStringContainsString( 'href="design/s/stylesheets/' . basename( $sheets[0] ) . '"', $home );
+        $this->assertCount( 1, glob( "$dir/var/test/cache/public/javascript/p_1.*.js" ) );
+        $this->assertMatchesRegularExpression( "#@import 'print\\.[0-9a-f]{8}\\.css';#", file_get_contents( $sheets[0] ) );
+        $this->assertGreaterThanOrEqual( 2, $report['counts']['fingerprinted'] );
+        $this->assertGreaterThan( 0, $report['counts']['precompressed'] );
+        $this->assertSame( file_get_contents( "$dir/about-us/index.html" ), gzdecode( file_get_contents( "$dir/about-us/index.html.gz" ) ) );
+        $this->assertSame( 'extra', expStaticManifest::load( $dir )->get( 'about-us/index.html.gz' )['kind'] );
+
         $this->assertSame( 0, $report['link_check']['broken_count'], json_encode( $report['link_check']['broken'] ) );
     }
 }

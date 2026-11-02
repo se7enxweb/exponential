@@ -128,6 +128,130 @@ class expStaticPostProcessor
         return $reasons;
     }
 
+    /** The files precompress() writes a .gz (and .br) for */
+    const COMPRESSIBLE = array( 'html', 'htm', 'css', 'js', 'mjs', 'json', 'xml', 'svg', 'txt', 'map', 'webmanifest' );
+
+    /** The smallest file precompress() compresses */
+    const COMPRESS_MIN_BYTES = 1024;
+
+    /** The files fingerprint() renames */
+    const FINGERPRINTED = array( 'css', 'js' );
+
+    /**
+     * PostProcess[]=minify: a page with less white space and no comments. Conservative: the content of <pre>,
+     * <textarea>, <script> and <style> is left alone, so are conditional comments; runs of white space become one
+     * (a line break when they held one), so inline text keeps its spaces.
+     *
+     * @param string $html
+     * @return string
+     */
+    public static function minify( $html )
+    {
+        $html = str_replace( "\x00", '', (string)$html );
+        $kept = array();
+        $text = preg_replace_callback( '#<(pre|textarea|script|style)\b[^>]*>.*?</\1\s*>|<!--\[if.*?<!\[endif\]-->#is', function ( $m ) use ( &$kept )
+        {
+            $kept[] = $m[0];
+            return "\x00" . ( count( $kept ) - 1 ) . "\x00";
+        }, $html );
+        if ( $text === null )
+            return $html;
+        $text = (string)preg_replace( '#<!--.*?-->#s', '', $text );
+        $text = (string)preg_replace_callback( '#\s{2,}#', function ( $m ) { return strpos( $m[0], "\n" ) !== false ? "\n" : ' '; }, $text );
+        return (string)preg_replace_callback( "#\x00(\d+)\x00#", function ( $m ) use ( $kept ) { return $kept[(int)$m[1]]; }, $text );
+    }
+
+    /**
+     * PostProcess[]=precompress: the .gz (and, when PHP has the brotli extension, the .br) of a file, for hosts that
+     * serve precompressed files (GitHub Pages compresses by itself; others, nginx's gzip_static, do not). Pure.
+     *
+     * @param string $path the file in the build
+     * @param string $content
+     * @return array file => content (empty for a file that is not compressed)
+     */
+    public static function precompress( $path, $content )
+    {
+        $extension = strtolower( (string)pathinfo( (string)$path, PATHINFO_EXTENSION ) );
+        if ( !in_array( $extension, self::COMPRESSIBLE, true ) || strlen( (string)$content ) < self::COMPRESS_MIN_BYTES )
+            return array();
+        $out = array();
+        $gz = gzencode( (string)$content, 9 );
+        if ( $gz !== false && strlen( $gz ) < strlen( (string)$content ) )
+            $out[$path . '.gz'] = $gz;
+        if ( function_exists( 'brotli_compress' ) )
+        {
+            $br = brotli_compress( (string)$content, 11 );
+            if ( is_string( $br ) && strlen( $br ) < strlen( (string)$content ) )
+                $out[$path . '.br'] = $br;
+        }
+        return $out;
+    }
+
+    /**
+     * PostProcess[]=fingerprint: the name of a style sheet or script with the hash of its content (site.css becomes
+     * site.3f2a9c1b.css), so a host may let browsers keep it forever; never a ?v= query. Pure.
+     *
+     * @param string $path
+     * @param string $content
+     * @return string|null null for a file that is not fingerprinted
+     */
+    public static function fingerprintName( $path, $content )
+    {
+        $path = (string)$path;
+        $extension = strtolower( (string)pathinfo( $path, PATHINFO_EXTENSION ) );
+        if ( !in_array( $extension, self::FINGERPRINTED, true ) )
+            return null;
+        return substr( $path, 0, -strlen( $extension ) - 1 ) . '.' . substr( hash( 'sha256', (string)$content ), 0, 8 ) . '.' . $extension;
+    }
+
+    /**
+     * The references of a page or style sheet to fingerprinted files, renamed. A reference is renamed only when it
+     * resolves (relative to the document, below the base path, or below the public address) to a file of the map.
+     * Pure.
+     *
+     * @param string $text the page or style sheet
+     * @param string $fromFile its file in the build
+     * @param array $map old file => new file (both relative to the build's root)
+     * @param string $basePath /repo/ or /
+     * @param string $publicUrl https://owner.github.io/repo/ or ''
+     * @return string
+     */
+    public static function renameReferences( $text, $fromFile, array $map, $basePath = '/', $publicUrl = '' )
+    {
+        if ( !$map )
+            return (string)$text;
+        $basenames = array();
+        foreach ( array_keys( $map ) as $old )
+            $basenames[basename( (string)$old )] = true;
+        $fromDir = strpos( (string)$fromFile, '/' ) === false ? '' : substr( (string)$fromFile, 0, strrpos( (string)$fromFile, '/' ) );
+        $basePath = '/' . trim( (string)$basePath, '/' ) . '/';
+        $basePath = $basePath === '//' ? '/' : $basePath;
+        $publicUrl = rtrim( (string)$publicUrl, '/' ) . '/';
+        return (string)preg_replace_callback( '#(["\'(=,\s])([^"\'()\s<>,]*?)([^"\'()\s<>,/]+\.(?:css|js))(?=[?\#"\')\s>,])#i',
+            function ( $m ) use ( $basenames, $map, $fromDir, $basePath, $publicUrl )
+            {
+                if ( !isset( $basenames[$m[3]] ) )
+                    return $m[0];
+                $ref = $m[2] . $m[3];
+                if ( $publicUrl !== '/' && stripos( $ref, $publicUrl ) === 0 )
+                    $path = substr( $ref, strlen( $publicUrl ) );
+                else if ( preg_match( '#^[a-z][a-z0-9+.-]*:|^//#i', $ref ) )
+                    return $m[0];
+                else if ( $ref[0] === '/' )
+                {
+                    if ( strpos( $ref, $basePath ) !== 0 )
+                        return $m[0];
+                    $path = substr( $ref, strlen( $basePath ) );
+                }
+                else
+                    $path = ltrim( expStaticLinkRewriter::removeDotSegments( '/' . ( $fromDir !== '' ? $fromDir . '/' : '' ) . $ref ), '/' );
+                $path = rawurldecode( ltrim( $path, '/' ) );
+                if ( !isset( $map[$path] ) )
+                    return $m[0];
+                return $m[1] . $m[2] . basename( (string)$map[$path] );
+            }, (string)$text );
+    }
+
     /**
      * The names of the cookies in a response's header lines (Set-Cookie).
      *

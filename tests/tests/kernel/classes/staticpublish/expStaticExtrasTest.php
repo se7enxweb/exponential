@@ -7,6 +7,7 @@
  *  EX-03 sitemap.xml: absolute addresses below the public address, sorted, lastmod as a date, escaped; none without
  *        a public address
  *  EX-04 the missing path and the plain 404 page
+ *  EX-05 README.md names the target, the public address, the counts and the license; LICENSE from an SPDX id or the text
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -54,5 +55,20 @@ class expStaticExtrasTest extends PHPUnit\Framework\TestCase
         $page = expStaticExtras::fallbackNotFound( '/repo/' );
         $this->assertStringContainsString( '<a href="/repo/">', $page );
         $this->assertStringContainsString( '<title>Page not found</title>', $page );
+    }
+
+    /** EX-05 */
+    public function testReadmeAndLicense()
+    {
+        $readme = expStaticExtras::readme( array( 'name' => "My\nsite", 'target' => 'pub', 'public_url' => 'https://o.github.io/r/', 'pages' => 4, 'files' => 9,
+                                                  'built_at' => '2026-11-01T03:00:00+00:00', 'license' => 'CC-BY-4.0' ) );
+        $this->assertStringStartsWith( "# My site\n", $readme );
+        foreach ( array( '- Website: https://o.github.io/r/', '- Pages: 4, files: 9', '- License of the content: CC-BY-4.0 (see LICENSE)', 'Exponential static publishing' ) as $line )
+            $this->assertStringContainsString( $line, $readme );
+        $this->assertStringStartsWith( "# pub\n", expStaticExtras::readme( array( 'target' => 'pub' ) ) );
+        $this->assertNull( expStaticExtras::license( ' ' ) );
+        $this->assertSame( "Copyright (C) 2026 Demo\n\nThe content of this website is licensed under CC-BY-4.0.\nThe full text: https://spdx.org/licenses/CC-BY-4.0.html\n",
+                           expStaticExtras::license( 'CC-BY-4.0', 'Demo', 2026 ) );
+        $this->assertSame( "All rights reserved.\nAsk first.\n", expStaticExtras::license( 'All rights reserved.\nAsk first.' ) );
     }
 }

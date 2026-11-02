@@ -58,6 +58,7 @@ class expStaticTarget
         'Schedule' => '',
         'Notify' => array( 'failure' ),
         'Webhook' => '',
+        'License' => '',
     );
 
     /** The settings that hold a list */
@@ -418,6 +419,17 @@ class expStaticTarget
         foreach ( $s['ExcludePaths'] as $path )
             if ( $path === '' || $path[0] !== '/' )
                 $errors[] = "ExcludePaths[]=$path must be a path of the site starting with / (* matches any part).";
+
+        if ( $s['Schedule'] !== '' && !expStaticSchedule::valid( $s['Schedule'] ) )
+            $errors[] = "Schedule={$s['Schedule']} is not a cron expression (five fields, for example 0 3 * * *, or @daily).";
+        if ( in_array( 'schedule', $s['Triggers'], true ) && $s['Schedule'] === '' )
+            $warnings[] = 'Triggers[]=schedule needs a Schedule: the target is not published on a schedule.';
+        if ( $s['Webhook'] !== '' && !expStaticNotifier::validWebhook( $s['Webhook'] ) )
+            $errors[] = "Webhook={$s['Webhook']} must be an https address (http only to localhost).";
+        if ( in_array( 'license', $s['Extras'], true ) && $s['License'] === '' )
+            $warnings[] = 'Extras[]=license needs License (an SPDX id such as CC-BY-4.0, or the text). No LICENSE file is written.';
+        if ( $s['Forms'] === 'endpoint' && $this->publicUrl() === '' )
+            $warnings[] = 'Forms=endpoint needs PublicURL (or CustomDomain): the form endpoint takes posts only from the address of the copy. The forms are hidden.';
 
         if ( !in_array( 'strip', $s['PostProcess'], true ) )
             $warnings[] = 'PostProcess[] does not name strip; it runs on every build all the same.';

@@ -15,8 +15,8 @@
  */
 class expStaticExtras
 {
-    /** The extras S1 writes, in the order they are written */
-    const WRITTEN = array( 'nojekyll', 'cname', '404', 'robots', 'sitemap' );
+    /** The extras a build writes, in the order they are written */
+    const WRITTEN = array( 'nojekyll', 'cname', '404', 'robots', 'sitemap', 'redirects', 'readme', 'license' );
 
     /**
      * .nojekyll: an empty file that tells GitHub Pages to publish the files as they are, without Jekyll (which leaves
@@ -105,6 +105,54 @@ class expStaticExtras
     public static function missingPath( $token )
     {
         return '/static-publish-not-found-' . preg_replace( '#[^a-z0-9-]#', '', strtolower( (string)$token ) );
+    }
+
+    /**
+     * README.md (Extras[]=readme): what the repository is, for whoever opens it on the host. Names no installation
+     * address but the public one, and never a credential.
+     *
+     * @param array $facts name (the target's name), target, public_url, pages, files, built_at, license (an SPDX id or '')
+     * @return string
+     */
+    public static function readme( array $facts )
+    {
+        $facts += array( 'name' => '', 'target' => '', 'public_url' => '', 'pages' => 0, 'files' => 0, 'built_at' => '', 'license' => '' );
+        $title = $facts['name'] !== '' ? $facts['name'] : $facts['target'];
+        $text = '# ' . str_replace( array( "\r", "\n" ), ' ', (string)$title ) . "\n\n"
+              . "This repository holds a static copy of a website, published with Exponential static publishing.\n"
+              . "The content is edited in Exponential; every file here is written by a build, so changes made here are\n"
+              . "replaced by the next publish.\n\n";
+        if ( $facts['public_url'] !== '' )
+            $text .= '- Website: ' . $facts['public_url'] . "\n";
+        $text .= sprintf( "- Pages: %d, files: %d\n", (int)$facts['pages'], (int)$facts['files'] );
+        if ( $facts['built_at'] !== '' )
+            $text .= '- Built: ' . $facts['built_at'] . "\n";
+        $text .= "- The build manifest: .static-publish/manifest.json\n";
+        if ( $facts['license'] !== '' )
+            $text .= '- License of the content: ' . $facts['license'] . " (see LICENSE)\n";
+        return $text . "\nMade with Exponential: https://github.com/se7enxweb/exponential\n";
+    }
+
+    /**
+     * LICENSE (Extras[]=license): the license of the content, as the target's License setting names it. An SPDX id
+     * (CC-BY-4.0) gives a short notice with the license's address; any other text is written as it is.
+     *
+     * @param string $license
+     * @param string $holder who holds the rights (the site's name)
+     * @param int|null $year
+     * @return string|null null without a license
+     */
+    public static function license( $license, $holder = '', $year = null )
+    {
+        $license = trim( (string)$license );
+        if ( $license === '' )
+            return null;
+        if ( !preg_match( '#^[A-Za-z0-9][A-Za-z0-9.+-]{1,63}$#', $license ) )
+            return rtrim( str_replace( '\n', "\n", $license ) ) . "\n";
+        $year = $year === null ? (int)gmdate( 'Y' ) : (int)$year;
+        return 'Copyright (C) ' . $year . ( trim( (string)$holder ) !== '' ? ' ' . trim( (string)$holder ) : '' ) . "\n\n"
+             . 'The content of this website is licensed under ' . $license . ".\n"
+             . 'The full text: https://spdx.org/licenses/' . $license . ".html\n";
     }
 
     /**

@@ -12,8 +12,10 @@ generated: exp:help:examples
 Der Block `[CronjobPart-staticpublish]` von `settings/cronjob.ini`, mit 1 Einstellung(en).
 
 > Statisches Veröffentlichen (staticcache.ini \[StaticPublishSettings\]): die Ziele, deren Veröffentlichung nicht gepusht  
-> werden konnte, erneut gepusht, nie erzwungen: php runcronjobs.php staticpublish. In keinem Standardteil: in einen  
-> Teil aufnehmen, den die Site ausführt, z. B. alle 15 Minuten.  
+> werden konnte, erneut gepusht, nie erzwungen; die durch eine Veröffentlichung von Inhalten geänderten Seiten  
+> (Triggers\[\]=publish), veröffentlicht nach PublishDebounce; die Ziele, deren Schedule fällig ist (Triggers\[\]=schedule):  
+> php runcronjobs.php staticpublish. In keinem Standardteil: in einen Teil aufnehmen, den die Site ausführt, für das  
+> Veröffentlichen beim Veröffentlichen von Inhalten alle paar Minuten.  
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

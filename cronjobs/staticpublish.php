@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Static publishing: push the targets whose publish could not be pushed again (runs with push state pending)
+ * @description Static publishing: push again what could not be pushed, publish the pages changed by a content publish (debounced) and the targets whose schedule is due
  *
  * Static publishing cronjob part ([CronjobPart-staticpublish])
  *

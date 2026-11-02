@@ -808,6 +808,11 @@ class eZContentCacheManager
             $staticCacheHandler->generateNodeListCache( $nodeList );
         }
 
+        // Static publishing: the pages of these nodes are stale for the targets that publish on content publish
+        // (nothing is read or written while static publishing is off or no target has Triggers[]=publish)
+        if ( class_exists( 'expStaticPublishQueue' ) ) // a worker started before this class was deployed has no autoload entry for it
+            expStaticPublishQueue::nodes( $nodeList );
+
         eZDebug::accumulatorStart( 'node_cleanup', '', 'Node cleanup' );
 
         eZContentObject::expireComplexViewModeCache();

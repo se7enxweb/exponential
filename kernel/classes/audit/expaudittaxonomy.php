@@ -238,6 +238,9 @@ class expAuditTaxonomy
         'system.staticpublish.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site rolled back' ),
         'system.staticpublish.credential' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static publishing credential changed' ),
         'system.staticpublish.target' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static publishing target changed' ),
+        // a build (not a dry run), and a post to the form endpoint taken or refused (origin, token, rate)
+        'system.staticpublish.build' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site built' ),
+        'system.staticpublish.form' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site form posted' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         // the Velocity watchdog (doc/eng-us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)
