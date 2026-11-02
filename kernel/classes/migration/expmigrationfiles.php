@@ -257,7 +257,7 @@ class expMigrationFiles
         if ( $before === $after )
             return null;
         $existed = $before !== null;
-        $mode = $existed ? ( fileperms( $file ) & 0777 ) : eZFile::fileMode( 0664 );
+        $mode = $existed ? ( fileperms( $file ) & 0777 ) : 0664;
         $backup = '';
         if ( $existed )
         {
@@ -265,7 +265,7 @@ class expMigrationFiles
             self::makeFolder( dirname( $copy ), 0700, $installation );
             if ( !@copy( $file, $copy ) || self::checksum( $copy ) !== $before )
                 throw new RuntimeException( "$path could not be backed up to " . self::relative( $copy, $installation ) . '; nothing written' );
-            @chmod( $copy, 0600 );
+            @chmod( $copy, eZFile::fileMode( 0600 ) );
             $backup = self::relative( $copy, $installation );
         }
         $change = array( 'path' => $path, 'existed' => $existed, 'before' => $before, 'after' => $after, 'mode' => sprintf( '%04o', $mode ),
@@ -314,8 +314,8 @@ class expMigrationFiles
         $copy = $installation . '/' . (string)$change['backup'];
         if ( (string)$change['backup'] === '' || self::checksum( $copy ) !== $change['before'] )
             throw new RuntimeException( "the backup of $path is missing or not the old file (SHA-256); nothing put back" );
-        $mode = isset( $change['mode'] ) && preg_match( '/^0?[0-7]{3,4}$/', (string)$change['mode'] ) ? octdec( (string)$change['mode'] ) : eZFile::fileMode( 0664 );
-        self::makeFolder( dirname( $file ), eZDir::dirMode( 0775 ), $installation );
+        $mode = isset( $change['mode'] ) && preg_match( '/^0?[0-7]{3,4}$/', (string)$change['mode'] ) ? octdec( (string)$change['mode'] ) : 0664;
+        self::makeFolder( dirname( $file ), 0775, $installation );
         self::writeAtomic( $file, (string)file_get_contents( $copy ), $mode, $installation );
         if ( self::checksum( $file ) !== $change['before'] )
             throw new RuntimeException( "$path is not the old file after it was put back (SHA-256)" );
@@ -351,14 +351,14 @@ class expMigrationFiles
     protected static function writeAtomic( $file, $content, $mode, $installation )
     {
         $dir = dirname( $file );
-        self::makeFolder( $dir, eZDir::dirMode( 0775 ), $installation );
+        self::makeFolder( $dir, 0775, $installation );
         $temp = $dir . '/.' . basename( $file ) . '.' . getmypid() . '.tmp';
         if ( @file_put_contents( $temp, $content ) !== strlen( $content ) )
         {
             @unlink( $temp );
             throw new RuntimeException( self::relative( $file, $installation ) . ' could not be written' );
         }
-        @chmod( $temp, $mode );
+        @chmod( $temp, eZFile::fileMode( $mode ) );
         self::ownLike( $temp, $dir );
         if ( !@rename( $temp, $file ) )
         {
@@ -390,9 +390,9 @@ class expMigrationFiles
         $parent = isset( $d ) ? $d : dirname( $dir );
         foreach ( array_reverse( $missing ) as $one )
         {
-            if ( !@mkdir( $one, $mode ) && !is_dir( $one ) )
+            if ( !@mkdir( $one, eZDir::dirMode( $mode ) ) && !is_dir( $one ) )
                 throw new RuntimeException( 'the folder ' . self::relative( $one, $installation ) . ' could not be made' );
-            @chmod( $one, $mode );
+            @chmod( $one, eZDir::dirMode( $mode ) );
             self::ownLike( $one, $parent );
         }
     }

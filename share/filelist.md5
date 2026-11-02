@@ -24429,7 +24429,7 @@ f5bdc3aba630bc81258d59d3ab1a92ea  kernel/classes/migration/expmigrationcheck.php
 daf7dacd3b9cdac96cbc963c9ba20fc0  kernel/classes/migration/expmigrationcondition.php
 d84b8d4716e8396b47500b1a6bee1acc  kernel/classes/migration/expmigrationcontext.php
 a7e8a4596e85e5feefff3e57647352eb  kernel/classes/migration/expmigrationdefinition.php
-3667b34d986b9a6ccc26576a5904005f  kernel/classes/migration/expmigrationfiles.php
+c89ec402a3c204c25d3c2111db5422aa  kernel/classes/migration/expmigrationfiles.php
 698a035a7dde2900d764fddd4d418cee  kernel/classes/migration/expmigrationgenerator.php
 5417d4c609c55b6300c7b2d81f4df1a1  kernel/classes/migration/expmigrationgraph.php
 5785b3dd52b6c1a68f2227c78e4b0ee4  kernel/classes/migration/expmigrationgraphqlextension.php
@@ -25072,7 +25072,7 @@ fb3a3a5f3af0553e8c2c1ac4c048f7b7  kernel/private/classes/commands/exphelpexample
 099dc77b3fcba4c0c532c01f59788c6a  kernel/private/classes/commands/explogs.php
 cecc6e167e074a05d9a0c7b9c85017a8  kernel/private/classes/commands/exploremipsumfill.php
 0fdd4c3ba5e52392568e7324aefa3713  kernel/private/classes/commands/explovestack.php
-c35301357ceea75b24d04ea445a04139  kernel/private/classes/commands/expmigrationbase.php
+6273643de55d654024702da7f7b53aae  kernel/private/classes/commands/expmigrationbase.php
 3cc4a3b31daa57c3c15e81674e9089f0  kernel/private/classes/commands/expmigrationcaption.php
 c6655a675fb8c4d26a8e5e1e4e24fa0a  kernel/private/classes/commands/expmigrationcheck.php
 e7fee7234c21436d3d553e9cca80e1c8  kernel/private/classes/commands/expmigrationdeploy.php
@@ -27569,7 +27569,7 @@ c89a2ee39137df31caa90773f3844ec5  share/translations/orm-ET/GUIDE.md
 26867a6032e744df9605eb5d1a081c84  share/translations/pan-IN/GUIDE.md
 03d4f0a69c582a3b6456b87cd9e46c85  share/translations/pan-IN/translation.ts
 3ae6dd158772b659d45b6da1da8c83f2  share/translations/pcm-NG/GUIDE.md
-bd736ca37797a8e03f889ae99eec7630  share/translations/pcm-NG/translation.ts
+a026492a9b700807dfdbf64abbe1a203  share/translations/pcm-NG/translation.ts
 2473b2c49ae8889186f8abca9e6ad043  share/translations/pnb-PK/GUIDE.md
 785c3c5a7fce88e95153f066ac9ac666  share/translations/pnb-PK/translation.ts
 225599684aa7710cda5a49538102f164  share/translations/pol-PL/GUIDE.md
@@ -28535,7 +28535,7 @@ cc4738f42a4e507b507690ced983d0aa  tests/tests/kernel/classes/migration/expMigrat
 df2891775fbe7ed2454048f98673e152  tests/tests/kernel/classes/migration/expMigrationCaptionFakes.php
 73d1596bcf3555216d9f028f3da14351  tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php
 f617f2f7957aa9bc8dc7d9e73bc47f02  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php
-ade5b28cacd420821fb00b14df351cb4  tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php
+1078ae56a6e9a8175964802434ce0089  tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php
 f317c6c5599454cb669cdb72f76edb25  tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php
 af7cfd6fdaccf80222488af9083577ec  tests/tests/kernel/classes/migration/expMigrationCommandEngineChecks.php
 af3623e16b241e1b9bcf3e52b085f013  tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php

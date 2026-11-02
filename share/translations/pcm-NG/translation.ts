@@ -81116,7 +81116,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Lower priority (1 to 19)</source>
-        <translation>Lower priority (1 to 19)</translation>
+        <translation>Lower priority (from 1 reach 19)</translation>
     </message>
     <message>
         <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
