@@ -132,15 +132,14 @@ class expMigrationGraphQLExtension implements expGraphQLSchemaExtension
      */
     public function statusType( expGraphQLTypes $types )
     {
-        $extension = $this;
-        return $types->register( 'MigrationStatus', function () use ( $types, $extension ) {
+        return $types->register( 'MigrationStatus', function () {
             $value = function ( $key ) { return expMigrationGraphQLExtension::valueOf( $key ); };
             $summary = function ( $key ) { return function ( array $s ) use ( $key ) { return $s['summary'][$key]; }; };
             $texts = Type::nonNull( Type::listOf( Type::nonNull( Type::string() ) ) );
             return new ObjectType( array(
                 'name' => 'MigrationStatus',
                 'description' => 'The state of the migrations of the installation, as ./console exp:migration:status tells it.',
-                'fields' => function () use ( $types, $extension, $value, $summary, $texts ) {
+                'fields' => function () use ( $value, $summary, $texts ) {
                     return array(
                         'pending' => array( 'type' => Type::nonNull( Type::int() ), 'description' => 'Migrations that wait to be applied.', 'resolve' => $summary( 'pending' ) ),
                         'failed' => array( 'type' => Type::nonNull( Type::int() ), 'resolve' => $summary( 'failed' ) ),
