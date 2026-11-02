@@ -7,6 +7,7 @@
  *  RS-1 RE-1 a PHP migration that creates a table and one that publishes a folder (expMigrationRunnerEngineChecks)
  *  RS-2 RE-2 transactions: everything a failed migration did is rolled back
  *  RS-3 RE-3 rollback with down()
+ *  RS-4 RE-4 batches() with a checkpoint: a failed run goes on from the last committed batch
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -54,5 +55,11 @@ class expMigrationRunnerSqliteTest extends PHPUnit\Framework\TestCase
     public function testTransactions()
     {
         $this->checkTransactions( $this->db );
+    }
+
+    /** RS-4 */
+    public function testBatches()
+    {
+        $this->checkBatches( $this->db );
     }
 }

@@ -2,14 +2,14 @@
 title: migration.ini [RunSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [RunSettings] in migration.ini: RunAsUser, StopOnFailure, Throttle, ClearCaches, Reindex"
-keywords: migration.ini, RunSettings, INI, setting, RunAsUser, StopOnFailure, Throttle, ClearCaches, Reindex
+summary: "The settings of [RunSettings] in migration.ini: RunAsUser, StopOnFailure, Throttle, MaxMigrations, MaxTime, Nice, ClearCaches, Reindex"
+keywords: migration.ini, RunSettings, INI, setting, RunAsUser, StopOnFailure, Throttle, MaxMigrations, MaxTime, Nice, ClearCaches, Reindex
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [RunSettings]
 
-The block `[RunSettings]` of `settings/migration.ini`, with 5 setting(s).
+The block `[RunSettings]` of `settings/migration.ini`, with 8 setting(s).
 
 Never edit `settings/migration.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -49,7 +49,9 @@ StopOnFailure=enabled
 
 ## Throttle
 
-> A pause between migrations, to keep a long run from loading the server. Empty: none.  
+> A pause between migrations, in seconds (0.5 is half a second, at most 60), to keep a long run from loading the  
+> server; PHP migrations that work in batches (expMigrationPhp::batches()) pause as long between their batches.  
+> Empty: none. --throttle=<seconds> of a run wins.  
 
 Default: empty.
 
@@ -58,6 +60,50 @@ Default: empty.
 # settings/override/migration.ini.append.php
 [RunSettings]
 Throttle=
+*/ ?>
+```
+
+## MaxMigrations
+
+> A long run in parts. MaxMigrations: apply at most this many migrations in one run; MaxTime: start no further migration  
+> after this many seconds (the one running is finished). The rest stay pending: the next run (or exp:migration:resume)  
+> goes on with them, and a PHP migration that works in batches goes on from its checkpoint. Empty: no limit.  
+> --max-migrations=<n> and --max-time=<seconds> of a run win.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RunSettings]
+MaxMigrations=
+*/ ?>
+```
+
+## MaxTime
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RunSettings]
+MaxTime=
+*/ ?>
+```
+
+## Nice
+
+> A lower priority for runs on the command line (and the administration's background runs), 1 to 19 as nice(1).  
+> Empty: unchanged. --nice=<n> of a run wins.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RunSettings]
+Nice=
 */ ?>
 ```
 

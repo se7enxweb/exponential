@@ -37,6 +37,9 @@
  *                                      container again (exp:services:compile)
  *   4  template, template-override, translation and design_base caches,
  *      one id per call
+ *  4a  pending migrations (--migrate, or [DeploySettings] Migrate=enabled):
+ *      bin/php/expmigrationmigrate.php --apply; a run that fails stops the
+ *      deploy before PHP-FPM or Velocity runs the new code
  *   5  engine archive                  bin/php/phar.php build: rebuilt only when a file
  *                                      in kernel/, lib/ or autoload/ changed, and
  *                                      every file parsed first
@@ -81,7 +84,8 @@ class expVelocityDeploy
      * @param array $options kernel, autoload, fpm, velocity (bool, default:
      *        kernel false, the others true), dry-run, rebuild-phar, packer,
      *        fpm-reload (bool: reload PHP-FPM even when its OPcache revalidates),
-     *        engine (string, passed on to the restart)
+     *        engine (string, passed on to the restart), migrate (bool, or null for
+     *        [DeploySettings] Migrate)
      * @param callable|null $printer function( array $step, int $number, int $count )
      */
     public function __construct( expVelocity $velocity, array $options = array(), $printer = null )
@@ -91,6 +95,7 @@ class expVelocityDeploy
             'kernel' => false, 'autoload' => true, 'fpm' => true, 'velocity' => true,
             'dry-run' => false, 'rebuild-phar' => false, 'packer' => false, 'engine' => '',
             'fpm-reload' => false, 'clear-content' => false, 'all-caches' => false,
+            'migrate' => null,
         );
         $this->printer = $printer;
         $this->root = rtrim( eZSys::rootDir(), '/' );
@@ -130,6 +135,9 @@ class expVelocityDeploy
         // --caches: the other caches a migration run touched (image, user_info_cache ...), by id or tag of ezcache
         foreach ( $this->extraCacheSteps() as $step )
             $steps[] = $step;
+
+        // --migrate: the pending migrations, with the new code on disk and before the web server runs it
+        $steps[] = $this->migrateStep();
 
         $steps[] = $this->archiveStep();
         $steps[] = $this->fpmStep();
@@ -633,6 +641,36 @@ class expVelocityDeploy
                 return array( true, $tail );
             },
         );
+    }
+
+    /**
+     * Whether a deploy runs the pending migrations: the option migrate when it is given (--migrate, --no-migrate),
+     * else velocity.ini [DeploySettings] Migrate (enabled; anything else, or no setting, is disabled). Pure apart
+     * from reading the setting.
+     *
+     * @param bool|null $option
+     * @param eZINI|null $ini velocity.ini
+     * @return bool
+     */
+    public static function migrateEnabled( $option, $ini = null )
+    {
+        if ( $option !== null )
+            return (bool)$option;
+        $ini = $ini ?: eZINI::instance( 'velocity.ini' );
+        return $ini->hasVariable( 'DeploySettings', 'Migrate' ) && trim( (string)$ini->variable( 'DeploySettings', 'Migrate' ) ) === 'enabled';
+    }
+
+    /**
+     * The step that runs the pending migrations (exp:migration:migrate --apply, with its captions, record, commit and
+     * push as on the command line). Its exit code decides: a migration that fails stops the deploy.
+     *
+     * @return array
+     */
+    protected function migrateStep()
+    {
+        $skip = self::migrateEnabled( $this->options['migrate'] ) ? ''
+              : ( $this->options['migrate'] === false ? 'skipped (--no-migrate)' : 'not asked ([DeploySettings] Migrate=disabled; --migrate runs them)' );
+        return $this->commandStep( 'migrate', 'pending migrations', array( 'bin/php/expmigrationmigrate.php', '--apply', '--allow-root-user' ), $skip );
     }
 
     /** The caches the deploy has steps of its own for (cachePlan() decides them; --caches only adds a reason). */

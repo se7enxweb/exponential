@@ -134,7 +134,10 @@ Zeit behält (`cp -p`, `rsync -t`), wird nicht erkannt; stellen Sie eine solche 
 `--caches=<Liste>` leert die genannten Caches (IDs oder Tags von ezcache, `tag:<Name>` für einen Tag), was immer sich
 geändert hat: Ein Migrationslauf meldet die Caches, die seine Schritte berührt haben, mit genau diesem Deployment
 (`./console exp:velocity deploy --caches=content,template-block --apply`), denn ein Lauf, der nur die Datenbank
-ändert, ändert keine Datei, die das Deployment sehen würde.
+ändert, ändert keine Datei, die das Deployment sehen würde. `--migrate` führt die ausstehenden Migrationen aus
+(`exp:migration:migrate --apply`), nach den Caches von Einstellungen und Templates und vor Engine-Archiv, PHP-FPM und
+Velocity; `[DeploySettings] Migrate=enabled` lässt jedes Deployment das tun, `--no-migrate` überspringt es
+([Migrationen: Pakete, Deploys und lange Läufe](../../anleitungen/migrationen-pakete-deploy-und-lange-laeufe.md#in-einem-deploy)).
 
 **Der erste fehlgeschlagene Schritt beendet den Lauf.** Eine Kernel-Datei, die sich nicht parsen lässt, lässt
 Schritt 5 fehlschlagen, bevor PHP-FPM oder Velocity berührt wurden; ein Neustart, der nicht hochkommt, lässt jeden

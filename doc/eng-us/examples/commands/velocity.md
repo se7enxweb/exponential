@@ -44,6 +44,8 @@ php bin/php/velocity.php --help
 | `--clear-content` |  | deploy: clear the content, exphttpcache, template-block and response caches even when no template, design file, setting or translation changed |
 | `--all-caches` |  | deploy: clear every cache, whatever changed since the last deploy |
 | `--caches` | required | deploy: clear these caches too, whatever changed (ids or tags of ezcache, comma-separated: the list a migration run reports) |
+| `--migrate` |  | deploy: run the pending migrations (exp:migration:migrate --apply) before PHP-FPM and Velocity run the new code, whatever [DeploySettings] Migrate says |
+| `--no-migrate` |  | deploy: do not run the pending migrations, whatever [DeploySettings] Migrate says |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
