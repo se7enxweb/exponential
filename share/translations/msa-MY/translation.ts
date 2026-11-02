@@ -83392,5 +83392,17 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Borang tidak diterima: semak apa yang anda masukkan dan hantar semula.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Buang pautan ke halaman yang tiada dalam salinan</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Buang pautan ke pentadbiran</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Teksnya kekal. Imej, borang dan pautan ke laman lain tidak sekali-kali dibuang.</translation>
+    </message>
 </context>
 </TS>

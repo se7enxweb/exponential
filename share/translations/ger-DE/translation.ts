@@ -90362,5 +90362,17 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Das Formular wurde nicht akzeptiert: Prüfen Sie Ihre Eingaben und senden Sie es erneut.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Links auf Seiten entfernen, die die Kopie nicht enthält</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Links in die Administration entfernen</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ihr Text bleibt stehen. Bilder, Formulare und Links auf andere Websites werden nie entfernt.</translation>
+    </message>
 </context>
 </TS>

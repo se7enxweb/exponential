@@ -83397,5 +83397,17 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Form kabul edilmedi: girdiğinizi kontrol edin ve yeniden gönderin.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Kopyada olmayan sayfalara giden bağlantıları kaldır</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Yönetime giden bağlantıları kaldır</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Metinleri kalır. Görseller, formlar ve diğer sitelere giden bağlantılar asla kaldırılmaz.</translation>
+    </message>
 </context>
 </TS>

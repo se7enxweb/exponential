@@ -83392,5 +83392,17 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Foomu teyakkirizibwa: kebera ky'owandiise onoonyeeyo osindike nate.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Ggyawo enkolagana ezigenda ku mpapula kkopi z'etalina</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Ggyawo enkolagana ezigenda mu bukulembeze</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ebiwandiiko byazo bisigalawo. Ebifaananyi, foomu n'enkolagana ezigenda ku mikutu emirala tebiggyibwawo n'akatono.</translation>
+    </message>
 </context>
 </TS>

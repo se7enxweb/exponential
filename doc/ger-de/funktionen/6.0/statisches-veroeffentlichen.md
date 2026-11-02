@@ -78,6 +78,8 @@ Linkprüfung dieses Builds fand unter 18.534 Links und Dateien keinen defekten, 
 | Eine Datei (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | ihr Pfad in der Kopie, relativ oder unterhalb des Basispfads; der Query-String einer Datei (`?x=1`) bleibt |
 | Ein Fragment (`#top`), `mailto:`, `tel:`, `data:`, ein anderer Host | unverändert |
 | Eine Seite oder Datei, die die Kopie nicht enthält (die Suche, die Anmeldung, die Aktion eines Formulars, eine Seite mit Query-String, ein Download, den die Website verweigert hat) | die Live-Website: `LiveURL`, standardmäßig `https://` und der Host der `SiteURL` des Siteaccess (nicht, wenn dieser Host `localhost` oder eine Loopback-Adresse wie `127.0.0.1` ist, wie auf einem Build-Server oder in CI: dann bleibt der Link, wie er ist, und der Build warnt) |
+| Ein Link (`<a href>`) auf eine Seite des Hosts der Website, die die Kopie nicht enthält, mit `OutsideLinks=unlink` | sein Text; eine `class` des Links bleibt an einem `<span>` um ihn. Ein Navigations-`<link>` (`alternate`, `search`, `next` ...) dorthin wird entfernt. Bilder, Stylesheets, Skripte und Formulare werden nie entfernt (Formulare folgen `Forms`) |
+| Ein Link in einen Siteaccess der Administration (`/admin/...`), mit `AdminLinks=unlink` | sein Text, wie oben; auf dem eigenen Host der Website oder `LiveURL`. Die Siteaccesses der Administration sind die, die die Zielprüfung kennt: eine Anmeldung ist nötig, ein Administrationsdesign oder ein Name wie `admin` oder `editor`; ihr Pfad ist `/<name>` und der Pfad ihrer `SiteURL` auf einem der Hosts der Website |
 | Canonical, `hreflang`-Alternativen, `og:url`, `og:image`, `twitter:image`, die Adressen strukturierter Daten (`application/ld+json`) | absolut, unterhalb von `PublicURL`, wenn es gesetzt ist |
 
 Relative Links funktionieren überall, wo der Ordner ausgeliefert wird, unter `/` und unterhalb jedes Pfads.
@@ -120,6 +122,8 @@ gebaut):
 | `CustomDomain` | leer | Wird in `CNAME` geschrieben; damit wird die Website an der Wurzel der Domain ausgeliefert |
 | `CrawlURL` | leer | Die Seiten von dieser Adresse statt von `SiteURL` abrufen |
 | `LiveURL` | leer | Wohin Links auf das gehen, was die Kopie nicht enthält; leer: `https://` und der Host der `SiteURL`, außer dieser Host ist `localhost` oder eine Loopback-Adresse (dann bleiben sie, wie sie sind) |
+| `OutsideLinks` | `keep` | `keep` (Links auf Seiten, die die Kopie nicht enthält, gehen zur Live-Website) oder `unlink` (sie werden zu ihrem Text) |
+| `AdminLinks` | `keep` | `keep` oder `unlink`, für Links in einen Siteaccess der Administration |
 | `MaxPages` | `10000` | Die meisten Seiten, die ein Build durchläuft (1 bis 20000) |
 | `MaxDepth` | leer | Wie viele Links von der Startseite entfernt das Durchlaufen geht; leer: `[CacheSettings] MaxCacheDepth` |
 | `Assets` | `referenced-and-storage` | `referenced`, oder zusätzlich jedes Speicherbild von Inhalten, die der anonyme Benutzer sehen darf |

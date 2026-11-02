@@ -83422,5 +83422,17 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formularimik akuerinninneq ajorpoq: allannerit misissoruk nassiullugulu.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Quppernernut assilinermiinngitsunut innersuussutit peerlugit</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Aqutsisoqarfimmut innersuussutit peerlugit</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Allagaat qimaannarneqassapput. Assit, immersugassat nittartakkanullu allanut innersuussutit peerneqarneq ajorput.</translation>
+    </message>
 </context>
 </TS>

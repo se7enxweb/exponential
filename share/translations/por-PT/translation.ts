@@ -83422,5 +83422,17 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>O formulário não foi aceite: verifique o que introduziu e envie-o novamente.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Remover ligações para páginas que a cópia não contém</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Remover ligações para a administração</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>O texto mantém-se. Imagens, formulários e ligações para outros sites nunca são removidos.</translation>
+    </message>
 </context>
 </TS>

@@ -83390,5 +83390,17 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Ba a karɓi fom ɗin ba: duba abin da ka shigar ka sake aikawa.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Cire mahaɗa zuwa shafukan da kwafin ba ya ƙunsa</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Cire mahaɗa zuwa gudanarwa</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Rubutunsu yana nan. Ba a taɓa cire hotuna, fom da mahaɗa zuwa wasu shafuka ba.</translation>
+    </message>
 </context>
 </TS>

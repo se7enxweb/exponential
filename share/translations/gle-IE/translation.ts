@@ -83422,5 +83422,17 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Níor glacadh leis an bhfoirm: seiceáil an méid a chuir tú isteach agus seol arís í.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Bain naisc chuig leathanaigh nach bhfuil sa chóip</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Bain naisc chuig an riarachán</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Fanann a dtéacs. Ní bhaintear íomhánna, foirmeacha ná naisc chuig suíomhanna eile choíche.</translation>
+    </message>
 </context>
 </TS>

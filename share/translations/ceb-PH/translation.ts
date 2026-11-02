@@ -83392,5 +83392,17 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Wala madawat ang porma: susiha ang imong gisulod ug ipadala pag-usab.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Kuhaa ang mga link sa mga panid nga wala sa kopya</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Kuhaa ang mga link ngadto sa administrasyon</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Magpabilin ang ilang teksto. Ang mga hulagway, porma ug link sa ubang site dili gyud kuhaon.</translation>
+    </message>
 </context>
 </TS>

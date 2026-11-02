@@ -84799,5 +84799,17 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Il modulo non è stato accettato: controlla quanto inserito e invialo di nuovo.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Rimuovi i link alle pagine che la copia non contiene</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Rimuovi i link all'amministrazione</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Il loro testo resta. Immagini, moduli e link ad altri siti non vengono mai rimossi.</translation>
+    </message>
 </context>
 </TS>

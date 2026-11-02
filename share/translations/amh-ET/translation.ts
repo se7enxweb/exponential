@@ -83390,5 +83390,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ቅጹ አልተቀበለም፦ ያስገባኸውን ፈትሸህ እንደገና ላክ።</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>ቅጂው ወደማይይዛቸው ገጾች የሚወስዱ አገናኞችን አስወግድ</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>ወደ አስተዳደሩ የሚወስዱ አገናኞችን አስወግድ</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>ጽሑፋቸው ይቀራል። ምስሎች፣ ቅጾች እና ወደ ሌሎች ጣቢያዎች የሚወስዱ አገናኞች በፍጹም አይወገዱም።</translation>
+    </message>
 </context>
 </TS>

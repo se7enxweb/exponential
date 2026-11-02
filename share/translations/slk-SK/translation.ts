@@ -83422,5 +83422,17 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulár nebol prijatý: skontrolujte, čo ste zadali, a odošlite ho znova.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Odstrániť odkazy na stránky, ktoré kópia neobsahuje</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Odstrániť odkazy do administrácie</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ich text zostane. Obrázky, formuláre a odkazy na iné weby sa nikdy neodstraňujú.</translation>
+    </message>
 </context>
 </TS>

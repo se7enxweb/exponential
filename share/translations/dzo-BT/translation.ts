@@ -83392,5 +83392,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>འབྲི་ཤོག་འདི་ངོས་ལེན་མ་འབད། ཁྱོད་ཀྱིས་བྲིས་མི་ལུ་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ལོག་གཏང་།</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>འདྲ་བཤུས་ནང་མེད་པའི་ཤོག་ལེབ་ཚུ་ལུ་འབྲེལ་མཐུད་ཚུ་བཏོན་གཏང་།</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>བདག་སྐྱོང་ལུ་འགྱོ་མི་འབྲེལ་མཐུད་ཚུ་བཏོན་གཏང་།</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>དེ་ཚུ་གི་ཡིག་འབྲུ་ལུས་འོང་། པར་དང་འབྲི་ཤོག་ དེ་ལས་ས་ཁོངས་གཞན་ཚུ་ལུ་འབྲེལ་མཐུད་ཚུ་ནམ་ཡང་མི་བཏོན།</translation>
+    </message>
 </context>
 </TS>

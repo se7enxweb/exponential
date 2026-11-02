@@ -83392,5 +83392,17 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Forma qabul qilinmadi: kiritganingizni tekshiring va qayta yuboring.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Nusxada yoʻq sahifalarga havolalarni olib tashlash</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Boshqaruvga havolalarni olib tashlash</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ularning matni qoladi. Rasmlar, shakllar va boshqa saytlarga havolalar hech qachon olib tashlanmaydi.</translation>
+    </message>
 </context>
 </TS>

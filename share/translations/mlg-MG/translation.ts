@@ -83392,5 +83392,17 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Tsy nekena ny taratasy fenoina: hamarino ny nampidirinao ary alefaso indray.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Esory ny rohy mankany amin'ny pejy tsy ao amin'ny dika</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Esory ny rohy mankany amin'ny fitantanana</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Mijanona ny lahatsorany. Tsy esorina mihitsy ny sary, ny taratasy fenoina ary ny rohy mankany amin'ny tranonkala hafa.</translation>
+    </message>
 </context>
 </TS>

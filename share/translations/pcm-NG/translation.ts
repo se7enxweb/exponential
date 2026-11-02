@@ -83400,5 +83400,17 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Dem no accept di form: check wetin you enter and send am again.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Comot link wey dey go page wey di copy no get</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Comot link wey dey go admin side</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Dia text go remain. Picture, form and link wey dey go oda site, we no dey ever comot dem.</translation>
+    </message>
 </context>
 </TS>

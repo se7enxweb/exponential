@@ -83392,5 +83392,17 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Oyðublaðið varð ikki góðkent: kanna tað, tú skrivaði, og send aftur.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Strika leinkjur til síður, sum avritið ikki hevur</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Strika leinkjur til umsitingina</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Teirra tekstur verður verandi. Myndir, formar og leinkjur til aðrar heimasíður verða ongantíð strikaðar.</translation>
+    </message>
 </context>
 </TS>

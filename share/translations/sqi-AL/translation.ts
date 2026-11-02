@@ -83422,5 +83422,17 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulari nuk u pranua: kontrollo çfarë shkruajte dhe dërgoje përsëri.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Hiq lidhjet drejt faqeve që kopja nuk i përmban</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Hiq lidhjet drejt administrimit</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Teksti i tyre mbetet. Figurat, formularët dhe lidhjet drejt sajteve të tjera nuk hiqen kurrë.</translation>
+    </message>
 </context>
 </TS>

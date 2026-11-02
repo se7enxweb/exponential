@@ -83390,5 +83390,17 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Foomka lama aqbalin: hubi wixii aad gelisay oo mar kale dir.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Ka saar xiriirada bogagga aan nuqulku haysan</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Ka saar xiriirada maamulka</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Qoraalkoodu wuu harayaa. Sawirada, foomamka iyo xiriirada goobaha kale weligood lama saaro.</translation>
+    </message>
 </context>
 </TS>

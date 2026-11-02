@@ -83392,5 +83392,17 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Inprimakia ez da onartu: egiaztatu sartutakoa eta bidali berriro.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Kendu kopiak ez dituen orrietarako estekak</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Kendu administraziorako estekak</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Haien testua geratzen da. Irudiak, inprimakiak eta beste guneetarako estekak ez dira inoiz kentzen.</translation>
+    </message>
 </context>
 </TS>

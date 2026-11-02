@@ -83390,5 +83390,17 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Anabataghị fọm ahụ: lelee ihe i tinyere ma zipu ya ọzọ.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Wepụ njikọ na ibe ndị na-adịghị na mbipụta ahụ</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Wepụ njikọ na-aga na nchịkwa</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ederede ha na-anọgide. A naghị ewepụ foto, fọm na njikọ na saịtị ndị ọzọ ma ọlị.</translation>
+    </message>
 </context>
 </TS>

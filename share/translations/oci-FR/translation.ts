@@ -83392,5 +83392,17 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Lo formulari es pas estat acceptat: verificatz çò qu'avètz picat e tornatz-lo enviar.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Levar los ligams cap a las paginas que la còpia conten pas</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Levar los ligams cap a l'administracion</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Lor tèxte demòra. Los imatges, los formularis e los ligams cap a d'autres sites son pas jamai levats.</translation>
+    </message>
 </context>
 </TS>

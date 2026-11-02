@@ -83392,5 +83392,17 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulaar bi nangu nañu ko: seetal li nga dugal te yónnee ko beneen yoon.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Far lëkkalekaay yi jëm ci xët yi kopi bi amul</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Far lëkkalekaay yi jëm ci saytukaay bi</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Seen mbind dina des. Nataal yi, formileer yi ak lëkkalekaay yi jëm ci yeneen dalu web duñu leen mukk far.</translation>
+    </message>
 </context>
 </TS>

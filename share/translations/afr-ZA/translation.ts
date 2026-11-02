@@ -83422,5 +83422,17 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Die vorm is nie aanvaar nie: kontroleer wat jy ingevoer het en stuur dit weer.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Verwyder skakels na bladsye wat die kopie nie bevat nie</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Verwyder skakels na die administrasie</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Hul teks bly. Beelde, vorms en skakels na ander werwe word nooit verwyder nie.</translation>
+    </message>
 </context>
 </TS>

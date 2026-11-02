@@ -83422,5 +83422,17 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Vormi ei võetud vastu: kontrolli sisestatut ja saada see uuesti.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Eemalda lingid lehtedele, mida koopias ei ole</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Eemalda lingid haldusesse</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Nende tekst jääb alles. Pilte, vorme ja linke teistele saitidele ei eemaldata kunagi.</translation>
+    </message>
 </context>
 </TS>

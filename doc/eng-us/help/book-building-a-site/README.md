@@ -27,6 +27,7 @@ the same work is [Building a site without writing code](../extension-development
 6. [The guestbook: visitors write content](the-guestbook.md)
 7. [Approving guestbook entries with a workflow](approving-guestbook-entries.md)
 8. [The links page: categories, link objects and a tree menu](the-links-page.md)
+9. [Your first static site in 15 minutes: the club site on GitHub Pages](your-first-static-site-in-15-minutes.md)
 
 ## Source and license
 

@@ -83390,5 +83390,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>表單未被接受：請檢查您輸入的內容並重新傳送。</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>移除指向副本中沒有的頁面的連結</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>移除指向管理介面的連結</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>連結文字保留。圖片、表單和指向其他網站的連結絕不移除。</translation>
+    </message>
 </context>
 </TS>

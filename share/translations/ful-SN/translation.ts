@@ -83392,5 +83392,17 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formilaar jaɓaaka: raarita ko winndaa ɗon, nelaa fahin.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Momtu jokkorɗe yahooje e hello ɗe kopi ndii alaa</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Momtu jokkorɗe yahooje e jiiloowo</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Binndi maɓɓe ina heddoo. Nate, formulaaruuji e jokkorɗe yahooje e lowe goɗɗe momtataake abada.</translation>
+    </message>
 </context>
 </TS>

@@ -83392,5 +83392,17 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>La formularo ne estis akceptita: kontrolu kion vi enigis kaj resendu ĝin.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Forigi ligilojn al paĝoj, kiujn la kopio ne enhavas</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Forigi ligilojn al la administrado</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ilia teksto restas. Bildoj, formularoj kaj ligiloj al aliaj retejoj neniam estas forigataj.</translation>
+    </message>
 </context>
 </TS>

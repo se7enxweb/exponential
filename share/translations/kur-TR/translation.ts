@@ -83390,5 +83390,17 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Form nehat pejirandin: ya ku we nivîsî kontrol bikin û dîsa bişînin.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Girêdanên ber bi rûpelên ku kopî nahewîne rake</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Girêdanên ber bi rêveberiyê rake</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Nivîsa wan dimîne. Wêne, form û girêdanên ber bi malperên din tu carî nayên rakirin.</translation>
+    </message>
 </context>
 </TS>

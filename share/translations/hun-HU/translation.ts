@@ -83422,5 +83422,17 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Az űrlap nem lett elfogadva: ellenőrizze a megadottakat, és küldje el újra.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>A másolatban nem szereplő oldalakra mutató hivatkozások eltávolítása</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Az adminisztrációba mutató hivatkozások eltávolítása</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>A szövegük megmarad. A képek, űrlapok és más webhelyekre mutató hivatkozások soha nem kerülnek eltávolításra.</translation>
+    </message>
 </context>
 </TS>

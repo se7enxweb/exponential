@@ -12,7 +12,9 @@ publishing to GitHub comes with a later part of static publishing; the feature p
 
 [Guides](README.md) · Related: [Static publishing](../features/6.0/static-publishing.md),
 [The build format](../specifications/6.0/static-publishing-build-format.md),
-[Static cache generator](../features/6.0/static-cache-generator.md)
+[Static cache generator](../features/6.0/static-cache-generator.md),
+[Overview for administrators](static-publishing.md), [CI and GitHub Actions](static-publishing-ci-and-github-actions.md),
+[Troubleshooting](static-publishing-troubleshooting.md)
 
 ## What you get
 
@@ -33,6 +35,7 @@ publishing to GitHub comes with a later part of static publishing; the feature p
 | Menus, layouts, blocks, galleries | The same, as they were rendered when you built |
 | Search, login, forms, comments, shop | Links to the live site (`LiveURL`) |
 | A page with a query string (`?page=2`) | A link to the live site |
+| Links to pages the copy leaves out, links into the administration (`/admin/...`) | Links to the live site, or only their text with `OutsideLinks=unlink` and `AdminLinks=unlink` (wizard step 7) |
 | A change an editor publishes | Visible after the next build and push |
 | Pages only signed-in users see | Never in the copy |
 

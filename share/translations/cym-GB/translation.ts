@@ -83392,5 +83392,17 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Ni dderbyniwyd y ffurflen: gwiriwch yr hyn a nodwyd gennych a'i hanfon eto.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Tynnu dolenni i dudalennau nad ydynt yn y copi</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Tynnu dolenni i'r weinyddiaeth</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Mae eu testun yn aros. Ni chaiff delweddau, ffurflenni na dolenni i wefannau eraill byth eu tynnu.</translation>
+    </message>
 </context>
 </TS>

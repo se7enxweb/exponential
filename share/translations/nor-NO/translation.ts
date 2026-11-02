@@ -84650,5 +84650,17 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Skjemaet ble ikke godtatt: kontroller det du skrev inn og send det på nytt.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Fjern lenker til sider som kopien ikke inneholder</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Fjern lenker til administrasjonen</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Teksten deres blir stående. Bilder, skjemaer og lenker til andre nettsteder fjernes aldri.</translation>
+    </message>
 </context>
 </TS>

@@ -83422,5 +83422,17 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Veidlapa netika pieņemta: pārbaudiet ievadīto un nosūtiet vēlreiz.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Noņemt saites uz lapām, kuru kopijā nav</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Noņemt saites uz administrēšanu</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>To teksts paliek. Attēli, veidlapas un saites uz citām vietnēm nekad netiek noņemtas.</translation>
+    </message>
 </context>
 </TS>

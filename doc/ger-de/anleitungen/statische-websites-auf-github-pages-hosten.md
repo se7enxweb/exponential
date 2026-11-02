@@ -15,7 +15,9 @@ Funktionsseite führt auf, was jeder Teil hinzufügt.
 
 [Anleitungen](README.md) · Verwandt: [Statisches Veröffentlichen](../funktionen/6.0/statisches-veroeffentlichen.md),
 [Das Build-Format](../spezifikationen/6.0/statisches-veroeffentlichen-build-format.md),
-[Generator für den statischen Cache](../funktionen/6.0/generator-fuer-den-statischen-cache.md)
+[Generator für den statischen Cache](../funktionen/6.0/generator-fuer-den-statischen-cache.md),
+[Überblick für Administratoren](statisches-veroeffentlichen.md), [CI und GitHub Actions](statisches-veroeffentlichen-ci-und-github-actions.md),
+[Fehlerbehebung](statisches-veroeffentlichen-fehlerbehebung.md)
 
 ## Was Sie bekommen
 
@@ -36,6 +38,7 @@ Funktionsseite führt auf, was jeder Teil hinzufügt.
 | Menüs, Layouts, Blöcke, Galerien | Dasselbe, so wie sie beim Build gerendert wurden |
 | Suche, Anmeldung, Formulare, Kommentare, Shop | Links zur Live-Website (`LiveURL`) |
 | Eine Seite mit Query-String (`?page=2`) | Ein Link zur Live-Website |
+| Links auf Seiten, die die Kopie auslässt, Links in die Administration (`/admin/...`) | Links zur Live-Website, oder nur ihr Text mit `OutsideLinks=unlink` und `AdminLinks=unlink` (Schritt 7 des Assistenten) |
 | Eine Änderung, die ein Redakteur veröffentlicht | Sichtbar nach dem nächsten Build und Push |
 | Seiten, die nur angemeldete Benutzer sehen | Nie in der Kopie |
 

@@ -83392,5 +83392,17 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulaire endimami te: tala oyo okomaki mpe tindá yango lisusu.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Longola ba lien oyo ekendaka na mikanda oyo kopi ezali na yango te</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Longola ba lien oyo ekendaka na boyangeli</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Makomi na yango etikalaka. Bilili, mikanda ya kotondisa mpe ba lien ya ba site mosusu elongolamaka soki moke te.</translation>
+    </message>
 </context>
 </TS>

@@ -83425,5 +83425,17 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Forma non accepta est: inspice quae inscripsisti et iterum mitte.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Remove nexus ad paginas quas exemplar non continet</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Remove nexus ad administrationem</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Textus eorum manet. Imagines, formulae et nexus ad alias sedes numquam removentur.</translation>
+    </message>
 </context>
 </TS>

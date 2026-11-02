@@ -83390,5 +83390,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ഫോം സ്വീകരിച്ചില്ല: നൽകിയത് പരിശോധിച്ച് വീണ്ടും അയയ്ക്കുക.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>പകർപ്പിൽ ഇല്ലാത്ത പേജുകളിലേക്കുള്ള ലിങ്കുകൾ നീക്കുക</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>അഡ്മിനിസ്ട്രേഷനിലേക്കുള്ള ലിങ്കുകൾ നീക്കുക</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>അവയുടെ വാചകം നിലനിൽക്കും. ചിത്രങ്ങൾ, ഫോമുകൾ, മറ്റ് സൈറ്റുകളിലേക്കുള്ള ലിങ്കുകൾ ഒരിക്കലും നീക്കില്ല.</translation>
+    </message>
 </context>
 </TS>

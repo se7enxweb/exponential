@@ -83392,5 +83392,17 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Womexɔ nuŋɔŋlɔgbalẽa o: dzro nu si ŋlɔ ɖe eme eye nàɖo egbɔ.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Ɖe kadodo siwo yi axa siwo mele kɔpi la me o la ɖa</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Ɖe kadodo siwo yi dɔdzikpɔla ƒe akpa la ɖa</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Woƒe nuŋɔŋlɔ susɔna. Womeɖea nɔnɔmetatawo, nuŋlɔɖiwo kple kadodo siwo yi nyatakakadzraɖoƒe bubuwo ɖa gbeɖe o.</translation>
+    </message>
 </context>
 </TS>

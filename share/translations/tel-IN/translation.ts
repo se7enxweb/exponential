@@ -83390,5 +83390,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ఫారమ్ అంగీకరించబడలేదు: మీరు నమోదు చేసినది తనిఖీ చేసి మళ్లీ పంపండి.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>నకలులో లేని పేజీలకు లింకులను తీసివేయి</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>నిర్వహణకు వెళ్లే లింకులను తీసివేయి</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>వాటి పాఠ్యం అలాగే ఉంటుంది. చిత్రాలు, ఫారమ్‌లు మరియు ఇతర సైట్‌లకు లింకులు ఎప్పుడూ తీసివేయబడవు.</translation>
+    </message>
 </context>
 </TS>

@@ -83392,5 +83392,17 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ʻAʻole i ʻae ʻia ka palapala: e nānā i kāu i kikokiko ai a hoʻouna hou.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Wehe i nā loulou i nā ʻaoʻao ʻaʻole i loko o ke kope</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Wehe i nā loulou i ka hoʻokele</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Noho mau ko lākou kikokikona. ʻAʻole loa e wehe ʻia nā kiʻi, nā palapala a me nā loulou i nā pūnaewele ʻē aʻe.</translation>
+    </message>
 </context>
 </TS>

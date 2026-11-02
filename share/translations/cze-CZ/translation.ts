@@ -84678,5 +84678,17 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formulář nebyl přijat: zkontrolujte, co jste zadali, a odešlete ho znovu.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Odstranit odkazy na stránky, které kopie neobsahuje</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Odstranit odkazy do administrace</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Jejich text zůstane. Obrázky, formuláře a odkazy na jiné weby se nikdy neodstraňují.</translation>
+    </message>
 </context>
 </TS>

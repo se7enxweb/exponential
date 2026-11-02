@@ -83392,5 +83392,17 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>O formulario non foi aceptado: revisa o que escribiches e envíao de novo.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Quitar as ligazóns a páxinas que a copia non contén</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Quitar as ligazóns á administración</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>O seu texto mantense. As imaxes, os formularios e as ligazóns a outros sitios nunca se quitan.</translation>
+    </message>
 </context>
 </TS>

@@ -84072,5 +84072,17 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formularen blev ikke accepteret: kontrollér, hvad du har indtastet, og send den igen.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Fjern links til sider, som kopien ikke indeholder</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Fjern links til administrationen</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Deres tekst bliver stående. Billeder, formularer og links til andre websteder fjernes aldrig.</translation>
+    </message>
 </context>
 </TS>

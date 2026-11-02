@@ -84832,5 +84832,17 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Le formulaire n'a pas été accepté : vérifiez votre saisie et envoyez-le à nouveau.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Retirer les liens vers les pages que la copie ne contient pas</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Retirer les liens vers l'administration</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Leur texte est conservé. Les images, les formulaires et les liens vers d'autres sites ne sont jamais retirés.</translation>
+    </message>
 </context>
 </TS>

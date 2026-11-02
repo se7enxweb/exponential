@@ -83425,5 +83425,17 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>chu'wI' mIw Dachu'be': yIlaD 'ej yIngeH.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>nobmeyHey DaH ghItlh 'ollaHbe'bogh tlhoS teq</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>loHwI' Daq rarwI' teq</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>ghItlhchaj ratlh. mIllogh, mu'tlhegh, latlh Daqmey rarwI' je not teqlu'.</translation>
+    </message>
 </context>
 </TS>

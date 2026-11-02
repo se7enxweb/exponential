@@ -83392,5 +83392,17 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Tferkit ur tettwaqbel ara: wali ayen i d-teskecmeḍ rnu azen tikkelt-nniḍen.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Kkes iseɣwan ɣer isebtar ur yellin ara deg unɣel</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Kkes iseɣwan ɣer tedbelt</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Aḍris-nsen ad yeqqim. Tugniwin, tiferkiwin d yiseɣwan ɣer yismal nniḍen ur ttwakksen ara akk.</translation>
+    </message>
 </context>
 </TS>

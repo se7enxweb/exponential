@@ -83422,5 +83422,17 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formularul nu a fost acceptat: verificați ce ați introdus și trimiteți-l din nou.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Elimină legăturile către pagini pe care copia nu le conține</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Elimină legăturile către administrare</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Textul lor rămâne. Imaginile, formularele și legăturile către alte site-uri nu sunt eliminate niciodată.</translation>
+    </message>
 </context>
 </TS>

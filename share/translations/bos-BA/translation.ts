@@ -83422,5 +83422,17 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Obrazac nije prihvaćen: provjerite šta ste unijeli i pošaljite ga ponovo.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Ukloni linkove na stranice koje kopija ne sadrži</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Ukloni linkove na administraciju</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Njihov tekst ostaje. Slike, obrasci i linkovi na druge stranice nikad se ne uklanjaju.</translation>
+    </message>
 </context>
 </TS>

@@ -83390,5 +83390,17 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>ફોર્મ સ્વીકારાયું નથી: તમે દાખલ કરેલું તપાસો અને ફરી મોકલો.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>નકલમાં ન હોય તેવા પાનાંની લિંક દૂર કરો</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>વહીવટમાં જતી લિંક દૂર કરો</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>તેમનો લખાણ રહે છે. ચિત્રો, ફોર્મ અને બીજી સાઇટની લિંક ક્યારેય દૂર થતી નથી.</translation>
+    </message>
 </context>
 </TS>

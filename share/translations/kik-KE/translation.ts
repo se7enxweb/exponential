@@ -83392,5 +83392,17 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Fomu ndĩnyiitwo: ringa ũrĩa wandĩkire na ũmĩtũme rĩngĩ.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Ehera ngwatanio cia mathangũ marĩa kobĩ ĩtarĩ namo</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Ehera ngwatanio cia gũthiĩ ũrũgamĩrĩri-inĩ</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Ndeto ciacio itigaraga. Mbica, fomu na ngwatanio cia thaiti ingĩ itiheragwo.</translation>
+    </message>
 </context>
 </TS>

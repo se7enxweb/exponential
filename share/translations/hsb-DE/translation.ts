@@ -83392,5 +83392,17 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>The form was not accepted: check what you entered and send it again.</source>
         <translation>Formular njebu akceptowany: přepruwujće, štož sće zapodał, a pósćelće jón znowa.</translation>
     </message>
+    <message>
+        <source>Remove links to pages the copy does not hold</source>
+        <translation>Wotkazy na strony wotstronić, kotrež kopija njewobsahuje</translation>
+    </message>
+    <message>
+        <source>Remove links into the administration</source>
+        <translation>Wotkazy do administracije wotstronić</translation>
+    </message>
+    <message>
+        <source>Their text stays. Images, forms and links to other sites are never removed.</source>
+        <translation>Jich tekst wostanje. Wobrazy, formulary a wotkazy na druhe sydła so ženje njewotstronjeja.</translation>
+    </message>
 </context>
 </TS>
