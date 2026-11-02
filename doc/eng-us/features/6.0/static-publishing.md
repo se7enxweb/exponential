@@ -15,8 +15,10 @@ screens under Setup > Static publishing. The GitHub setup is added to it when it
 
 ## What you get
 
-- **Targets** in `staticcache.ini`: each `[Target_<id>]` block names one front siteaccess, how its links are written
-  and where the copy is meant to go. An installation can have many targets.
+- **Targets** in `staticcache.ini`: each `[Target_<id>]` block names one front siteaccess, or several that share one
+  host by their URI prefix (`SiteAccessList[]`, one copy with the `DefaultSiteAccess` at its root and the others in
+  their folders: [Static publishing for multisite installations](../../guides/static-publishing-for-multisite-installations.md)),
+  how its links are written and where the copy is meant to go. An installation can have many targets.
 - **`exp:static:build <target>`**: crawls the siteaccess as the anonymous user, takes out what a public copy must
   not carry, rewrites the links, copies the files the pages need and writes the extras a static host expects.
 - **`exp:static:serve <target>`**: a local preview of the build, served below the target's base path the way GitHub
@@ -107,6 +109,8 @@ All settings are in `staticcache.ini`, next to the static cache's `[CacheSetting
 |---|---|---|
 | `Name` | the id | Shown in lists |
 | `SiteAccess` | | The front siteaccess to publish; administration and editing siteaccesses are refused |
+| `SiteAccessList[]` | empty | Several front siteaccesses in one copy, instead of `SiteAccess`: each but the default in the folder of its URI prefix (`/bold_ger/`); links between them stay in the copy. Each must be selected by a URI prefix (MatchOrder `uri`, or `host_uri` with a URI) |
+| `DefaultSiteAccess` | empty | The siteaccess of `SiteAccessList[]` at the root of the copy; empty: each in its folder, and the root a page that links to them |
 | `Links` | `relative` | `relative` or `base-path` |
 | `BasePath` | empty | The path the site is served below: `/<repository>/` for a GitHub project site, empty for a custom domain |
 | `PublicURL` | empty | The public address, for the sitemap, `robots.txt` and absolute canonical and social card links |

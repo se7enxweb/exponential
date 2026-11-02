@@ -33,6 +33,16 @@ Website-Pfads (das Siteaccess-Präfix und der Ordner der Installation, die nicht
 Seitenpfad ist der Pfad der Adresse ohne den Website-Pfad, ohne `/index.php` und ohne abschließenden Schrägstrich; die
 Startseite ist `/`.
 
+Ein Ziel mehrerer Siteaccesses (`SiteAccessList[]`) durchläuft jeden unter seinem eigenen Website-Pfad in einen Ordner.
+Der Seitenpfad eines anderen Siteaccess als des `DefaultSiteAccess` beginnt mit seinem Ordner, dem URI-Präfix, das ihn
+wählt: `/bold_ger/team` ist die Seite `/team` von `bold_ger` (`bold_ger/team/index.html`). Eine Adresse gehört dem
+Siteaccess, dessen Website-Pfad der längste ist, der sie enthält; so ist ein Link von einem Siteaccess der Kopie zu einem
+anderen eine Seite der Kopie, eine Adresse unter dem Präfix eines Siteaccess, den das Ziel nicht veröffentlicht, eine
+Seite, die die Kopie nicht enthält. Ohne `DefaultSiteAccess` liegt jeder Siteaccess in seinem Ordner, und `index.html`
+ist ein Extra, das auf jeden verlinkt. Jeder Siteaccess wird unter seinem URI-Präfix durchlaufen, auch der im Stamm
+(`/site`); ist site.ini `DefaultAccess` der im Stamm, ist eine Adresse im Stamm des Hosts ohne Präfix (`/about-us`)
+ebenfalls seine Seite.
+
 | Seitenpfad | Datei |
 |---|---|
 | `/` | `index.html` |
@@ -201,6 +211,12 @@ auf jedem System dieselben Bytes.
 | `url` | der Host-Pfad, von dem sie stammt (leer bei Zusatzdateien) |
 | `node` | der Knoten einer Seite, wenn bekannt, sonst `null` |
 | `modified` | die Änderungszeit des Inhaltsobjekts einer Seite (Unix-Zeit), wenn bekannt, sonst `null` |
+| `siteaccess` | nur im Build mehrerer Siteaccesses: der Siteaccess einer Seite |
+
+Die `meta` eines Builds mehrerer Siteaccesses enthält auch `siteaccesses`: je `name` und `folder` (`/` für den im
+Stamm, `/bold_ger/`), der im Stamm zuerst; `siteaccess` ist der im Stamm (sonst der erste). Der Suchindex eines solchen
+Builds versieht jeden Eintrag mit `s`, seinem Siteaccess, und die Suchseite bietet an, einen davon
+(`search.html?site=<siteaccess>`) oder alle zu durchsuchen.
 
 ## Die Maschinenausgabe: `exp-static/1`
 
@@ -212,7 +228,7 @@ dasselbe Objekt in eine Datei.
 |---|---|
 | `mode` | `build` oder `dry-run` |
 | `scope` | `full` oder `partial` |
-| `target`, `siteaccess`, `run_id`, `started_at`, `duration_ms`, `directory` | der Build |
+| `target`, `siteaccess`, `siteaccesses`, `run_id`, `started_at`, `duration_ms`, `directory` | der Build (`siteaccess`: der im Stamm, sonst der erste; `siteaccesses`: alle des Ziels) |
 | `links` | `mode`, `base_path`, `public_url` |
 | `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `links_unavailable`, `site_broken_links`, `bytes`, `stripped` (nach dem, was herausgenommen wurde) |
 | `diff` | `added`, `changed`, `removed`, `unchanged` (Anzahlen), `bytes_added`, `bytes_removed`, `files` (die Pfade, höchstens 500 von jedem) |

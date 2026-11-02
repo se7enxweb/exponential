@@ -42,7 +42,7 @@ cronjob part staticpublish tries again. Every publish is a row of exp_static_run
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--build` |  | Das Ziel zuerst bauen (wie exp:static:build); wird der Build nicht fertig, wird nichts committet |
-| `--nodes` | erforderlich | Nur die Seiten dieser Knoten bauen (Knoten-IDs; eine Kommaliste oder wiederholt); der Rest des letzten Builds bleibt |
+| `--nodes` | erforderlich | Nur die Seiten dieser Knoten bauen (Knoten-IDs; eine Kommaliste oder wiederholt), in jedem Siteaccess des Ziels; der Rest des letzten Builds bleibt |
 | `--message` | erforderlich | Die Commit-Nachricht (Standard: was veröffentlicht wurde, oder welche Veröffentlichung wiederhergestellt wird) |
 | `--no-push` |  | Committen und taggen, aber nicht pushen (exp:static:push pusht später) |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-static/1) |
