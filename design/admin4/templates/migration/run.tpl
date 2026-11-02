@@ -1,7 +1,7 @@
 {* The migration/run view: the form that runs the pending migrations in the background.
    Variables: report (expMigrationStatus::report()), pending (the pending and failed migrations, with kind), changed (the
-   migrations whose file changed after they were applied), form (chosen: ids, flags: names, force, reason), flags (the
-   names of the run flags), messages, problem, job (the run going on, or null), lock_text, login, can_run, can_rollback,
+   migrations whose file changed after they were applied), form (chosen: ids, flags: names, force, reason, long: the long-run fields), flags (the
+   names of the run flags), long_run (the long-run fields), long_run_defaults ([RunSettings] of each), messages, problem, job (the run going on, or null), lock_text, login, can_run, can_rollback,
    view. *}
 <div class="a4-page a4-setup-migration" id="exp-migration-run">
 
@@ -68,6 +68,27 @@
     </div>
 </section>
 {/if}
+
+<section class="a4-card a4-section" aria-labelledby="migration-run-long">
+    <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="migration-run-long">{'A long run in parts'|i18n( 'design/admin/migration' )}</h2>
+        <p class="a4-meta">{'Empty fields keep the settings of migration.ini [RunSettings].'|i18n( 'design/admin/migration' )}</p></div>
+    <div class="a4-card-body a4-grid">
+        {foreach $long_run as $name}
+        <div class="a4-field">
+            <label class="a4-label" for="migration-run-{$name|wash}">{switch match=$name}
+            {case match='max-migrations'}{'At most this many migrations'|i18n( 'design/admin/migration' )}{/case}
+            {case match='max-time'}{'No further migration after (seconds)'|i18n( 'design/admin/migration' )}{/case}
+            {case match='throttle'}{'Pause between migrations (seconds)'|i18n( 'design/admin/migration' )}{/case}
+            {case match='nice'}{'Lower priority (1 to 19)'|i18n( 'design/admin/migration' )}{/case}
+            {case}{$name|wash}{/case}
+            {/switch}</label>
+            <input class="a4-input" id="migration-run-{$name|wash}" name="LongRun[{$name|wash}]" type="number" inputmode="{if eq( $name, 'throttle' )}decimal{else}numeric{/if}"
+                   min="{if eq( $name, 'throttle' )}0{else}1{/if}"{if eq( $name, 'throttle' )} max="60" step="0.1"{elseif eq( $name, 'nice' )} max="19" step="1"{else} step="1"{/if}
+                   value="{$form.long[$name]|wash}" placeholder="{$long_run_defaults[$name]|wash}" />
+        </div>
+        {/foreach}
+    </div>
+</section>
 
 <section class="a4-card a4-section" aria-labelledby="migration-run-options">
     <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="migration-run-options">{'Before and after the run'|i18n( 'design/admin/migration' )}</h2>

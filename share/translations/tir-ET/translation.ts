@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ዝኾነ ምግዓዝ ኣይተጻሕፈን፦ %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>ብክፍልታት ዝተኸፋፈለ ነዊሕ ስራሕ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ባዶ ዓውድታት ቅጥዕታት migration.ini [RunSettings] ይሕዙ።</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>እቲ ዝለዓለ ብዝሒ ስደታት</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ድሕሪዚ ካልእ ስደት የለን (ሰከንድ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ኣብ ማእከል ስደታት ዕረፍቲ (ሰከንድ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ትሑት ቀዳምነት (ካብ 1 ክሳብ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ዓውዲ ነዊሕ ስራሕ ካብ 1 ዝጅምር ምሉእ ቁጽሪ እዩ (ዕረፍቲ: ካብ 0 ክሳብ 60 ሰከንድ፣ ቀዳምነት: ካብ 1 ክሳብ 19) ወይ ባዶ።</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ብ%time ባዕሉ ይዕጾ።</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ድሕሪዚ ባዕልኻ ዕጾ (ደቒቕ፣ ኣማራጺ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ደቓይቕ ካብ 1 ክሳብ 44640 (31 መዓልታት) ምሉእ ቁጽሪ እዩ ወይ ባዶ።</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ሕታም</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ዝሕተማ ምእታዋት መርበብ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ኣብ ሱር</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ኣብ ሱር ዝኾነ ምእታው የለን፡ ነፍሲ ወከፉ ኣብ ናቱ ማህደር እዩ፡ ሱር ድማ ናብኦም የራኽብ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ምእታዋት መርበብ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ሓደ ምእታው መርበብ፡ ወይ ብURI ቅድመ-ቅጥያኦም ሓደ ኣሳናዳኢ ዝማቐሉ ብዙሓት ምረጽ። እቲ ኣብ ሱር ዘሎ ኣብኡ ይቐርብ፡ እቶም ካልኦት ኣብ ማህደር ቅድመ-ቅጥያኦም (/ger/)፤ ኣብ መንጎኦም ዘለዉ መራኸቢታት ኣብቲ ቅዳሕ ይተርፉ። ናይ ምምሕዳር ምእታዋት ፈጺሞም ኣይቐርቡን።</translation>
     </message>
 </context>
 <context>

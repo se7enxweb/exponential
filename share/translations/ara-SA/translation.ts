@@ -81117,6 +81117,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>لم تتم كتابة أي ترحيل: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>تشغيل طويل على أجزاء</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>الحقول الفارغة تحتفظ بإعدادات migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>الحد الأقصى لعدد عمليات الترحيل</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>لا ترحيل آخر بعد (ثوانٍ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>فاصل بين عمليات الترحيل (ثوانٍ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>أولوية أقل (من 1 إلى 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>حقل التشغيل الطويل عدد صحيح يبدأ من 1 (الفاصل: ثوانٍ من 0 إلى 60، الأولوية: من 1 إلى 19)، أو فارغ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>يُغلق تلقائيًا في %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>يُغلق تلقائيًا بعد (دقائق، اختياري)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>الدقائق عدد صحيح من 1 إلى 44640 (31 يومًا)، أو فارغ.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84193,6 +84233,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>الإصدار</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>siteaccess المراد نشرها</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>في الجذر</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>لا يوجد siteaccess في الجذر: كل واحد في مجلده، والجذر يربط إليها</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>حدّد siteaccess واحدًا، أو عدة siteaccess تتشارك مضيفًا واحدًا عبر بادئة URI الخاصة بها. يُقدَّم الذي في الجذر هناك، والأخرى في مجلد بادئتها (/ger/)؛ وتبقى الروابط بينها داخل النسخة. لا تُعرض siteaccess الإدارة أبدًا.</translation>
     </message>
 </context>
 <context>

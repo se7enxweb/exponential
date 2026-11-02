@@ -46,9 +46,12 @@ class Expmigrationrecordstatus extends ExpmigrationrecordBase
         $this->tables( $db, $format );
         $user = $this->recordingUser( $options );
         $userId = (int)$user->attribute( 'contentobject_id' );
+        $closed = \expMigrationRecording::closeEnded( $db );
         $running = \expMigrationRecording::running( $db );
         $report = array( 'mode' => 'record-status', 'enabled' => \expMigrationRecorder::settings()['enabled'], 'user' => (string)$user->attribute( 'login' ),
                          'user_id' => $userId, 'running' => $running, 'recorded_now' => false, 'errors' => array(), 'warnings' => array() );
+        foreach ( $closed as $row )
+            $report['warnings'][] = 'the window of the recording ' . $row['recording_id'] . ' ended at ' . date( 'Y-m-d H:i', (int)$row['stopped_at'] ) . ': stopped';
         $fromFile = array_column( \expMigrationRecording::active(), 'recording_id' );
         $fromDb = array_column( $running, 'recording_id' );
         sort( $fromFile );

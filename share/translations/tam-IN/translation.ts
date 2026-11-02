@@ -81085,6 +81085,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>எந்த இடம்பெயர்வும் எழுதப்படவில்லை: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>பகுதிகளாக ஒரு நீண்ட இயக்கம்</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>காலியான புலங்கள் migration.ini [RunSettings] இன் அமைப்புகளை வைத்திருக்கும்.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>அதிகபட்சம் இத்தனை இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>இதற்குப் பிறகு மேலும் இடம்பெயர்வு இல்லை (விநாடிகள்)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>இடம்பெயர்வுகளுக்கு இடையே இடைநிறுத்தம் (விநாடிகள்)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>குறைந்த முன்னுரிமை (1 முதல் 19 வரை)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>நீண்ட இயக்கப் புலம் 1 இலிருந்து தொடங்கும் முழு எண் (இடைநிறுத்தம்: 0 முதல் 60 விநாடிகள், முன்னுரிமை: 1 முதல் 19), அல்லது காலி.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>இது %time அன்று தானாக மூடப்படும்.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>இதற்குப் பிறகு தானாக மூடு (நிமிடங்கள், விருப்பத்தேர்வு)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>நிமிடங்கள் 1 முதல் 44640 (31 நாட்கள்) வரையிலான முழு எண், அல்லது காலி.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84161,6 +84201,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>பதிப்பு</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>வெளியிட வேண்டிய தள அணுகல்கள்</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>தள அணுகல்</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>மூலத்தில்</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>மூலத்தில் தள அணுகல் இல்லை: ஒவ்வொன்றும் தன் கோப்புறையில் உள்ளது, மூலம் அவற்றுக்கு இணைப்பு தருகிறது</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>தள அணுகல்கள்</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ஒரு தள அணுகலை, அல்லது தங்கள் URI முன்னொட்டால் ஒரே ஹோஸ்டைப் பகிரும் பலவற்றைத் தேர்ந்தெடுக்கவும். மூலத்திலுள்ளது அங்கேயே வழங்கப்படும், மற்றவை தங்கள் முன்னொட்டின் கோப்புறையில் (/ger/); அவற்றுக்கிடையேயான இணைப்புகள் நகலிலேயே இருக்கும். நிர்வாக தள அணுகல்கள் ஒருபோதும் வழங்கப்படாது.</translation>
     </message>
 </context>
 <context>

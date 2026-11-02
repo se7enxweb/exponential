@@ -68,6 +68,9 @@ class expStaticManifest
             'node' => isset( $extra['node'] ) && $extra['node'] !== null ? (int)$extra['node'] : null,
             'modified' => isset( $extra['modified'] ) && $extra['modified'] !== null ? (int)$extra['modified'] : null,
         );
+        // a page of a copy of several siteaccesses names its siteaccess
+        if ( isset( $extra['siteaccess'] ) && (string)$extra['siteaccess'] !== '' )
+            $this->entries[$path]['siteaccess'] = (string)$extra['siteaccess'];
     }
 
     /**

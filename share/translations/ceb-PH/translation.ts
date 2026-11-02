@@ -81087,6 +81087,46 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Walay migration nga nasulat: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Taas nga dagan sa mga bahin</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ang mga walay sulod nga field magpabilin sa mga setting sa migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Hangtod kini kadaghang migrasyon</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Wala nay laing migrasyon human sa (segundo)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Paghunong tali sa mga migrasyon (segundo)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Mas ubos nga prayoridad (1 hangtod 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ang field sa taas nga dagan usa ka tibuok nga numero gikan sa 1 (ang paghunong: segundo gikan sa 0 hangtod 60, ang prayoridad: 1 hangtod 19), o walay sulod.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Kini mosira sa kaugalingon sa %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Sirad-an sa kaugalingon human sa (minuto, opsyonal)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Ang mga minuto usa ka tibuok nga numero gikan sa 1 hangtod 44640 (31 ka adlaw), o walay sulod.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>Version</source>
         <translation>Bersyon</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Mga siteaccess nga imantala</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access sa site</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Sa gamut</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Walay siteaccess sa gamut: ang matag usa anaa sa iyang folder, ug ang gamut nag-link kanila</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mga siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Markahi ang usa ka siteaccess, o daghan nga nag-ambit og usa ka host pinaagi sa ilang URI prefix. Ang anaa sa gamut gisilbi didto, ang uban sa folder sa ilang prefix (/ger/); ang mga link tali kanila magpabilin sa kopya. Ang mga siteaccess sa administrasyon dili gyud itanyag.</translation>
     </message>
 </context>
 <context>

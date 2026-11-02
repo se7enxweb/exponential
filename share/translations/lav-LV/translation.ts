@@ -81117,6 +81117,46 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <translation>Neviena migrācija netika uzrakstīta: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Ilga darbināšana pa daļām</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tukši lauki saglabā migration.ini [RunSettings] iestatījumus.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ne vairāk kā tik daudz migrāciju</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Pēc tam vairs nav migrāciju (sekundes)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauze starp migrācijām (sekundes)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Zemāka prioritāte (no 1 līdz 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ilgas darbināšanas lauks ir vesels skaitlis no 1 (pauze: sekundes no 0 līdz 60, prioritāte: no 1 līdz 19) vai tukšs.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Tas aizveras pats plkst. %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Aizvērt pašam pēc (minūtes, neobligāti)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minūtes ir vesels skaitlis no 1 līdz 44640 (31 diena) vai tukšs.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84193,6 +84233,30 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Version</source>
         <translation>Versija</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Publicējamās vietnes piekļuves</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Saknē</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Saknē nav vietnes piekļuves: katra ir savā mapē, un sakne uz tām norāda</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Vietnes piekļuves</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Atzīmējiet vienu vietnes piekļuvi vai vairākas, kas ar savu URI prefiksu dala vienu resursdatoru. Saknē esošā tiek pasniegta tur, pārējās sava prefiksa mapē (/ger/); saites starp tām paliek kopijā. Administrēšanas piekļuves nekad netiek piedāvātas.</translation>
     </message>
 </context>
 <context>

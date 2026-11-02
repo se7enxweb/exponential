@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>קיין מיגראַציע איז נישט געשריבן: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>א לאנגער לויף אין טיילן</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ליידיקע פעלדער האלטן די סעטינגס פון migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>העכסטנס אזוי פיל מיגראציעס</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>קיין ווײַטערדיקע מיגראציע נאך (סעקונדעס)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>פויזע צווישן מיגראציעס (סעקונדעס)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>נידעריקערע פרייאריטעט (1 ביז 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>א פעלד פאר א לאנגן לויף איז א גאנצע צאל פון 1 (די פויזע: סעקונדעס פון 0 ביז 60, די פרייאריטעט: 1 ביז 19), אדער ליידיק.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>עס פארמאכט זיך אליין ביי %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>פארמאכן זיך אליין נאך (מינוטן, אפציאנעל)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>די מינוטן זענען א גאנצע צאל פון 1 ביז 44640 (31 טעג), אדער ליידיק.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ווערסיע</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>וועבזייַטל־צוטריטן צו פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>בײַם וואָרצל</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>קיין צוטריט בײַם וואָרצל: יעדער איז אין זײַן טעקע, און דער וואָרצל פֿאַרבינדט צו זיי</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>וועבזייַטל־צוטריטן</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>צייכנט אָן איין וועבזייַטל־צוטריט, אָדער עטלעכע וואָס טיילן איין באַלעבאָס דורך זייער URI־פּרעפֿיקס. דער בײַם וואָרצל ווערט דאָרט סערווירט, די אַנדערע אין דער טעקע פֿון זייער פּרעפֿיקס (/ger/); לינקען צווישן זיי בלײַבן אין דער קאָפּיע. אַדמיניסטראַציע־צוטריטן ווערן קיינמאָל נישט פֿאָרגעלייגט.</translation>
     </message>
 </context>
 <context>

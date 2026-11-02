@@ -81117,6 +81117,46 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>No s'ha escrit cap migració: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Una execució llarga per parts</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Els camps buits mantenen els paràmetres de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Com a màxim aquestes migracions</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Cap migració més després de (segons)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa entre migracions (segons)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritat més baixa (de 1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un camp d'execució llarga és un nombre enter a partir d'1 (la pausa: segons de 0 a 60, la prioritat: d'1 a 19), o buit.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Es tanca sol a les %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Tanca sol al cap de (minuts, opcional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Els minuts són un nombre enter d'1 a 44640 (31 dies), o buit.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84193,6 +84233,30 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Version</source>
         <translation>Versió</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accessos al lloc per publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accés al lloc</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>A l'arrel</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Cap accés a l'arrel: cadascun és a la seva carpeta, i l'arrel hi enllaça</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accessos al lloc</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marqueu un accés al lloc, o diversos que comparteixen un amfitrió pel prefix d'URI. El de l'arrel se serveix allà, els altres a la carpeta del seu prefix (/ger/); els enllaços entre ells es queden a la còpia. Mai no s'ofereixen els accessos d'administració.</translation>
     </message>
 </context>
 <context>

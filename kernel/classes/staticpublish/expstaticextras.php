@@ -168,4 +168,24 @@ class expStaticExtras
              . "<body><h1>Page not found</h1><p>The page you asked for is not here. <a href=\""
              . htmlspecialchars( (string)$home, ENT_QUOTES, 'UTF-8' ) . "\">Go to the front page</a>.</p></body></html>\n";
     }
+
+    /**
+     * The root of a copy that holds several siteaccesses and none at its root (no DefaultSiteAccess): a page that
+     * links to the front page of each, in its folder. Pure.
+     *
+     * @param array[] $sites each: name (shown), link (relative to the root: ger/), lang (of the name, optional)
+     * @return string
+     */
+    public static function rootIndex( array $sites )
+    {
+        $h = function ( $s ) { return htmlspecialchars( (string)$s, ENT_QUOTES, 'UTF-8' ); };
+        $items = '';
+        foreach ( $sites as $site )
+            $items .= '<li><a href="' . $h( $site['link'] ) . '"' . ( !empty( $site['lang'] ) ? ' hreflang="' . $h( $site['lang'] ) . '"' : '' ) . '>'
+                    . $h( $site['name'] ) . "</a></li>\n";
+        return "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Sites</title>"
+             . "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta name=\"robots\" content=\"noindex, follow\">\n"
+             . "<style>:root{color-scheme:light dark}body{font:16px/1.5 system-ui,sans-serif;margin:0 auto;padding:1rem;max-width:42rem}</style></head>\n"
+             . "<body><main><h1>Sites</h1>\n<ul>\n" . $items . "</ul></main></body></html>\n";
+    }
 }

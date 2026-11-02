@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>کوئی مائیگریشن نئیں لکھی گئی: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>حصیاں وچ اک لمی رن</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>خالی خانے migration.ini [RunSettings] دیاں سیٹنگاں رکھدے نیں۔</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ودھ توں ودھ ایناں مائگریشناں</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>اینہاں توں بعد ہور مائگریشن نئیں (سیکنڈ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>مائگریشناں وچکار وقفہ (سیکنڈ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>گھٹ ترجیح (1 توں 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>لمی رن دا خانہ 1 توں شروع ہون والا پورا عدد اے (وقفہ: 0 توں 60 سیکنڈ، ترجیح: 1 توں 19)، یا خالی۔</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ایہہ %time تے آپے بند ہو جاندا اے۔</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>اینہاں توں بعد آپے بند کرو (منٹ، اختیاری)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>منٹ 1 توں 44640 (31 دن) تک پورا عدد نیں، یا خالی۔</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ورژن</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>چھاپن لئی سائٹ رسائیاں</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سائٹ رسائی</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>جڑ تے</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>جڑ تے کوئی سائٹ رسائی نئیں: ہر اک اپنے فولڈر وچ اے، تے جڑ اوہناں دے لنک دیندی اے</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>سائٹ رسائیاں</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>اک سائٹ رسائی چنو، یا کئی جیہڑیاں اپنے URI اگیتر نال اک ہوسٹ ونڈدیاں نیں۔ جڑ والی اوتھے ای دتی جاندی اے، باقی اپنے اگیتر دے فولڈر وچ (/ger/)؛ اوہناں وچکار لنک کاپی وچ ای رہندے نیں۔ انتظامیہ دیاں رسائیاں کدی نئیں وکھائیاں جاندیاں۔</translation>
     </message>
 </context>
 <context>

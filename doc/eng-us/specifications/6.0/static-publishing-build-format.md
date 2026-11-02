@@ -30,6 +30,15 @@ A page is a response of the crawl with status 2xx and type `text/html`, at an ad
 siteaccess prefix and the folder of the installation, which are not part of the page path). Its page path is the
 address's path without the site path, without `/index.php` and without a trailing slash; the front page is `/`.
 
+A target of several siteaccesses (`SiteAccessList[]`) crawls each below its own site path into one folder. The page
+path of a siteaccess other than the `DefaultSiteAccess` starts with its folder, the URI prefix that selects it:
+`/bold_ger/team` is the page `/team` of `bold_ger` (`bold_ger/team/index.html`). An address belongs to the siteaccess
+whose site path is the longest that holds it, so a link from one siteaccess of the copy to another is a page of the
+copy; an address below the prefix of a siteaccess the target does not publish is a page the copy does not hold.
+Each siteaccess is crawled below its URI prefix, the one at the root too (`/site`); when site.ini `DefaultAccess` is
+the one at the root, an address at the root of the host without a prefix (`/about-us`) is its page as well. Without a
+`DefaultSiteAccess` every siteaccess is in its folder and `index.html` is an extra that links to each.
+
 | Page path | File |
 |---|---|
 | `/` | `index.html` |
@@ -216,6 +225,12 @@ same build gives the same bytes on every system.
 | `url` | the host path it came from (empty for extras) |
 | `node` | the node of a page, when known, else `null` |
 | `modified` | the modification time of a page's content object (Unix time), when known, else `null` |
+| `siteaccess` | only in a build of several siteaccesses: the siteaccess of a page |
+
+The `meta` of a build of several siteaccesses also holds `siteaccesses`: each `name` and `folder` (`/` for the one at
+the root, `/bold_ger/`), the one at the root first; `siteaccess` is the one at the root (else the first). The search
+index of such a build tags each entry with `s`, its siteaccess, and the search page offers to search one of them
+(`search.html?site=<siteaccess>`) or all.
 
 ## The machine output: `exp-static/1`
 
@@ -227,7 +242,7 @@ object to a file.
 |---|---|
 | `mode` | `build` or `dry-run` |
 | `scope` | `full` or `partial` |
-| `target`, `siteaccess`, `run_id`, `started_at`, `duration_ms`, `directory` | the build |
+| `target`, `siteaccess`, `siteaccesses`, `run_id`, `started_at`, `duration_ms`, `directory` | the build (`siteaccess`: the one at the root, else the first; `siteaccesses`: all of the target) |
 | `links` | `mode`, `base_path`, `public_url` |
 | `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `links_unavailable`, `site_broken_links`, `bytes`, `stripped` (by what was taken out), `redirects` (stubs of `Extras[]=redirects`), `redirects_followed` (stubs of addresses that redirect) |
 | `diff` | `added`, `changed`, `removed`, `unchanged` (counts), `bytes_added`, `bytes_removed`, `files` (the paths, at most 500 of each) |

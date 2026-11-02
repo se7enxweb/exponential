@@ -81117,6 +81117,46 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <translation>Ühtegi migratsiooni ei kirjutatud: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Pikk käivitus osadena</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tühjad väljad säilitavad faili migration.ini [RunSettings] sätted.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Kuni nii palju migratsioone</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Rohkem migratsioone pärast (sekundit)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Paus migratsioonide vahel (sekundit)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Madalam prioriteet (1 kuni 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Pika käivituse väli on täisarv alates 1 (paus: sekundeid 0 kuni 60, prioriteet: 1 kuni 19) või tühi.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>See sulgub ise kell %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Sulge ise pärast (minutit, valikuline)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minutid on täisarv vahemikus 1 kuni 44640 (31 päeva) või tühi.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84193,6 +84233,30 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Version</source>
         <translation>Versioon</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Avaldatavad saidi juurdepääsud</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Juurkaustas</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Juurkaustas pole saidi juurdepääsu: igaüks on oma kaustas ja juurkaust viitab neile</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Saidi juurdepääsud</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Märgi üks saidi juurdepääs või mitu, mis jagavad URI-eesliite kaudu üht hosti. Juurkausta oma pakutakse seal, teised oma eesliite kaustas (/ger/); lingid nende vahel jäävad koopiasse. Halduse juurdepääse ei pakuta kunagi.</translation>
     </message>
 </context>
 <context>

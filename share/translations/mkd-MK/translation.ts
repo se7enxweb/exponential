@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Не е запишана миграција: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Долго извршување во делови</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Празните полиња ги задржуваат поставките од migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Најмногу толку миграции</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Повеќе миграции по (секунди)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Пауза меѓу миграциите (секунди)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Понизок приоритет (од 1 до 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Полето за долго извршување е цел број од 1 (паузата: секунди од 0 до 60, приоритетот: од 1 до 19) или празно.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Се затвора самo во %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Затвори сам по (минути, по избор)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Минутите се цел број од 1 до 44640 (31 ден) или празно.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Верзија</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Пристапи до сајтот за објавување</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Пристап до сајтот</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Во коренот</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Нема пристап во коренот: секој е во својата папка, а коренот води кон нив</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Пристапи до сајтот</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Означете еден пристап до сајтот или неколку што делат еден хост преку својот URI-префикс. Оној во коренот се служи таму, другите во папката на својот префикс (/ger/); врските меѓу нив остануваат во копијата. Администраторските пристапи никогаш не се нудат.</translation>
     </message>
 </context>
 <context>

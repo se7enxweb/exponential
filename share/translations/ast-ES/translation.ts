@@ -81087,6 +81087,46 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <translation>Nun s'escribió nenguna migración: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Una execución llarga per partes</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Los campos baleros caltienen los axustes de migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Como máximo estes migraciones</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ninguna migración más dempués de (segundos)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Posa ente migraciones (segundos)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioridá más baxa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un campu d'execución llarga ye un númberu enteru dende 1 (la posa: segundos de 0 a 60, la prioridá: 1 a 19), o baleru.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zárrase por sigo a les %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Zarrar por sigo dempués de (minutos, opcional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Los minutos son un númberu enteru de 1 a 44640 (31 díes), o baleru.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>Version</source>
         <translation>Versión</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accesos al sitiu a espublizar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accesu al sitiu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na raíz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nengún accesu al sitiu na raíz: caún ta na so carpeta, y la raíz enllaza con ellos</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesos al sitiu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marca un accesu al sitiu, o dellos que comparten un agospiador pol so prefixu d'URI. El de la raíz sírvese ehí, los otros na carpeta del so prefixu (/ger/); los enllaces ente ellos queden na copia. Enxamás s'ufren los accesos d'alministración.</translation>
     </message>
 </context>
 <context>

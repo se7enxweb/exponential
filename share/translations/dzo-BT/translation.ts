@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>གནས་སྤོ་ག་ནི་ཡང་མ་འབྲི་བས། %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>ཆ་ཤས་ཐོག་ལུ་ རིང་པོའི་ གཡོག་བཀོལ།</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>སྟོངམ་གྱི་ས་ཁོངས་ཚུ་གིས་ migration.ini [RunSettings] གི་སྒྲིག་བཀོད་ཚུ་ བཞག་དོ།</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>སྤོ་སྒྱུར་འདི་ཅམ་ལས་ མི་ལྷག།</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>དེའི་ཤུལ་ལུ་ སྤོ་སྒྱུར་ཅི་ཡང་མིན་འདུག (སྐར་ཆ།)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>སྤོ་སྒྱུར་ཚུ་གི་བར་ན་ ངལ་གསོ། (སྐར་ཆ།)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>གཙོ་རིམ་དམའ་བ། (1 ལས་ 19 ཚུན།)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>རིང་པོའི་གཡོག་བཀོལ་ས་ཁོངས་འདི་ 1 ལས་འགོ་བཙུགས་པའི་ཨང་གྲངས་ཨིན། (ངལ་གསོ: སྐར་ཆ་ 0 ལས་ 60 ཚུན། གཙོ་རིམ: 1 ལས་ 19 ཚུན།) ཡང་ན་ སྟོངམ།</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>དེ་ %time ལུ་ རང་བཞིན་གྱིས་ སྒོ་བསྡམ་འོང་།</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>འདི་ཅམ་གྱི་ཤུལ་ལུ་ རང་བཞིན་གྱིས་སྒོ་བསྡམས། (སྐར་མ། གདམ་ཁ།)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>སྐར་མ་འདི་ 1 ལས་ 44640 (ཉིནམ་ 31) ཚུན་གྱི་ཨང་གྲངས་ཨིན། ཡང་ན་ སྟོངམ།</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ཐོན་རིམ།</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>དཔར་བསྐྲུན་འབད་ནི་གི་དྲྭ་ཚིགས་འཛུལ་སྒོ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>དྲྭ་ཚིགས་འཛུལ་སྒོ།</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>རྩ་བ་ནང་།</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>རྩ་བ་ནང་དྲྭ་ཚིགས་འཛུལ་སྒོ་མེད། རེ་རེ་རང་གི་སྣོད་འཛིན་ནང་ཡོད་ཞིནམ་ལས་ རྩ་བ་གིས་དེ་ཚུ་ལུ་འབྲེལ་མཐུད་འབདཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>དྲྭ་ཚིགས་འཛུལ་སྒོ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>དྲྭ་ཚིགས་འཛུལ་སྒོ་གཅིག་ ཡང་ན་ URI སྔོན་ཚིག་ཐོག་ལས་ཧོསཊི་གཅིག་མཉམ་སྤྱོད་འབད་མི་ལེ་ཤ་གདམ་ཁ་རྐྱབ། རྩ་བ་ནང་ཡོད་མི་དེ་ཕར་སྤྲོདཔ་ཨིན། གཞན་ཚུ་རང་གི་སྔོན་ཚིག་གི་སྣོད་འཛིན་ནང་ (/ger/)། དེ་ཚུ་གི་བར་ན་ཡོད་པའི་འབྲེལ་མཐུད་འདྲ་བཤུས་ནང་སྡོདཔ་ཨིན། བདག་སྐྱོང་གི་དྲྭ་ཚིགས་འཛུལ་སྒོ་ནམ་ཡང་མི་བྱིན།</translation>
     </message>
 </context>
 <context>

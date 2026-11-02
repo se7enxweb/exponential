@@ -81117,6 +81117,46 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Žiadna migrácia nebola zapísaná: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Dlhé spustenie po častiach</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Prázdne polia ponechajú nastavenia z migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Najviac toľko migrácií</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Žiadna ďalšia migrácia po (sekundách)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauza medzi migráciami (sekundy)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Nižšia priorita (1 až 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Pole dlhého spustenia je celé číslo od 1 (pauza: sekundy od 0 do 60, priorita: 1 až 19) alebo prázdne.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zatvorí sa samo o %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Zatvoriť samo po (minútach, voliteľné)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minúty sú celé číslo od 1 do 44640 (31 dní) alebo prázdne.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84193,6 +84233,30 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Version</source>
         <translation>Verzia</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Prístupy k lokalite na publikovanie</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>V koreni</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Žiadny prístup v koreni: každý je vo svojom priečinku a koreň na ne odkazuje</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Prístupy k lokalite</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Označte jeden prístup k lokalite alebo viacero, ktoré zdieľajú jedného hostiteľa podľa prefixu URI. Ten v koreni sa obsluhuje tam, ostatné v priečinku svojho prefixu (/ger/); odkazy medzi nimi zostávajú v kópii. Administračné prístupy sa nikdy neponúkajú.</translation>
     </message>
 </context>
 <context>

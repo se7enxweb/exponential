@@ -81087,6 +81087,46 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Et gouf keng Migratioun geschriwwen: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Een laange Llet a Portiounen</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Eidel Felder behalen d'Astellunge vu migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Héichstens esou vill Migratiounen</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Keng weider Migratioun no (Sekonnen)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Paus tëscht Migratiounen (Sekonnen)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Méi niddreg Prioritéit (1 bis 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>E Feld fir de laange Lauf ass eng ganz Zuel ab 1 (d'Paus: Sekonnen vun 0 bis 60, d'Prioritéit: 1 bis 19) oder eidel.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Et mécht sech vu selwer um %time zou.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Vu selwer zoumaachen no (Minutten, optional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>D'Minutte sinn eng ganz Zuel vun 1 bis 44640 (31 Deeg) oder eidel.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Version</source>
         <translation>Versioun</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Site-Zougäng fir ze publizéieren</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site-Zougang</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>An der Wuerzel</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kee Site-Zougang an der Wuerzel: all eenzelen ass a sengem Dossier, an d'Wuerzel verlinkt op si</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Site-Zougäng</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kräizt ee Site-Zougang un, oder e puer, déi sech iwwer hire URI-Präfix ee Host deelen. Deen an der Wuerzel gëtt do geliwwert, déi aner am Dossier vun hirem Präfix (/ger/); Linken tëscht hinne bleiwen an der Kopie. Administratiouns-Zougäng ginn ni ugebueden.</translation>
     </message>
 </context>
 <context>

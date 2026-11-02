@@ -88057,6 +88057,46 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Es wurde keine Migration geschrieben: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Ein langer Lauf in Teilen</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Leere Felder behalten die Einstellungen aus migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Höchstens so viele Migrationen</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Keine weitere Migration nach (Sekunden)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pause zwischen Migrationen (Sekunden)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Niedrigere Priorität (1 bis 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ein Feld für den langen Lauf ist eine ganze Zahl ab 1 (die Pause: Sekunden von 0 bis 60, die Priorität: 1 bis 19) oder leer.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Es schließt sich von selbst um %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Von selbst schließen nach (Minuten, optional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Die Minuten sind eine ganze Zahl von 1 bis 44640 (31 Tage) oder leer.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation>Gegenstellen</translation>
     </message>
@@ -91133,6 +91173,30 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Version</source>
         <translation>Version</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Zu veröffentlichende Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Im Stamm</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kein Siteaccess im Stamm: jeder liegt in seinem Ordner, und der Stamm verlinkt auf sie</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Haken Sie einen Siteaccess an, oder mehrere, die sich über ihr URI-Präfix einen Host teilen. Der im Stamm wird dort ausgeliefert, die anderen im Ordner ihres Präfixes (/ger/); Links zwischen ihnen bleiben in der Kopie. Administrations-Siteaccesses werden nie angeboten.</translation>
     </message>
 </context>
 <context>

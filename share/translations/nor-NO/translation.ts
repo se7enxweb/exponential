@@ -82345,6 +82345,46 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Ingen migrering ble skrevet: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>En lang kjøring i deler</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tomme felt beholder innstillingene i migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Høyst så mange migreringer</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ingen flere migreringer etter (sekunder)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pause mellom migreringer (sekunder)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Lavere prioritet (1 til 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Et felt for lang kjøring er et helt tall fra 1 (pausen: sekunder fra 0 til 60, prioriteten: 1 til 19), eller tomt.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Det lukker seg selv kl. %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Lukk seg selv etter (minutter, valgfritt)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minuttene er et helt tall fra 1 til 44640 (31 dager), eller tomt.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -85421,6 +85461,30 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Version</source>
         <translation>Versjon</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nettstedstilganger som skal publiseres</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nettstedstilgang</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>I roten</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ingen nettstedstilgang i roten: hver ligger i sin mappe, og roten lenker til dem</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nettstedstilganger</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kryss av én nettstedstilgang, eller flere som deler én vert via URI-prefikset sitt. Den i roten serveres der, de andre i mappen for prefikset sitt (/ger/); lenker mellom dem blir i kopien. Administrasjonstilganger tilbys aldri.</translation>
     </message>
 </context>
 <context>

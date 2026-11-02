@@ -904,6 +904,7 @@ class expMigrationRunner
         $startedAt = time();
         $start = microtime( true );
         self::beginEvents( $migration );
+        $context->takeFileChanges();
         try
         {
             if ( $useTransaction )
@@ -941,7 +942,20 @@ class expMigrationRunner
             $entry['state'] = expMigration::FAILED;
             $entry['action'] = 'failed';
             $entry['messages'][] = $e->getMessage();
+            // the code and design files its steps wrote: a transaction does not undo them
+            foreach ( $context->takeFileChanges() as $change )
+            {
+                try
+                {
+                    $entry['messages'][] = expMigrationFiles::restore( $context->root(), $change );
+                }
+                catch ( Throwable $restoreError )
+                {
+                    $entry['messages'][] = 'not put back: ' . $restoreError->getMessage();
+                }
+            }
         }
+        $context->takeFileChanges();
         $entry['duration_ms'] = (int)round( ( microtime( true ) - $start ) * 1000 );
 
         if ( $maintenance === 'enabled' || $maintenance === 'adopted' )

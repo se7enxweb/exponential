@@ -81085,6 +81085,46 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <translation>Akukho fuduko lubhaliweyo: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Ukusebenza okude ngamacandelo</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Iindawo ezingenanto zigcina useto lwe-migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ubuninzi obuqingqiweyo bokufuduswa kwezi zizo</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Akukho kufuduswa kunye emva kwe (iisekhondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ikhefu phakathi kokufuduswa (iisekhondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Okuphambili okuphantsi (1 ukuya ku-19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Indawo yokusebenza okude linani elipheleleyo ukusuka kwi-1 (ikhefu: iisekhondi ukusuka kwi-0 ukuya kwi-60, okuphambili: 1 ukuya ku-19), okanye ayinanto.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ivala yodwa ngo-%time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Vala yodwa emva kwe (imizuzu, ikhethwa)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Imizuzu linani elipheleleyo ukusuka kwi-1 ukuya kwi-44640 (iintsuku ezingama-31), okanye ayinanto.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84161,6 +84201,30 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>Version</source>
         <translation>Inguqulo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ukufikelela kwisayithi okuza kupapashwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ukufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Engcanjini</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Akukho kufikelela engcanjini: nganye ikwifolda yayo, kwaye ingcambu iyadibanisa nazo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ukufikelela kwisayithi</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Phawula ukufikelela kwisayithi okunye, okanye okuninzi okwabelana ngomamkeli omnye ngesimaphambili sabo se-URI. Okusengcanjini kunikezelwa apho, okunye kwifolda yesimaphambili sako (/ger/); amakhonkco aphakathi kwabo ahlala kwikopi. Ukufikelela kolawulo akuze kunikezelwe.</translation>
     </message>
 </context>
 <context>

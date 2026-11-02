@@ -37,8 +37,15 @@ lässt sich aus der Liste öffnen. Ohne JavaScript stehen alle Schritte auf eine
 - **Id**: Kleinbuchstaben, Ziffern, `_` und `-`, zum Beispiel `github-public`. Sie benennt den Ordner des Ziels und
   seine Tags (`static/<id>/<n>`) und lässt sich später nicht ändern.
 - **Name**: in Listen angezeigt.
-- **Zu veröffentlichende Website**: einer der Front-Siteaccesses. Administrations- und Bearbeitungs-Siteaccesses werden nie
-  angeboten: Eine statische Kopie ist immer das, was ein nicht angemeldeter Besucher sieht.
+- **Zu veröffentlichende Siteaccesses**: die Front-Siteaccesses, jeder mit seiner Adresse und seinem Ordner (dem
+  URI-Präfix, das ihn wählt, `/bold_ger/`). Haken Sie einen an, oder mehrere, die sich über ihr URI-Präfix einen Host
+  teilen; **Im Stamm** wählt den, der im Stamm der Kopie ausgeliefert wird, die anderen kommen in ihre Ordner. Mit
+  **Kein Siteaccess im Stamm** liegt jeder in seinem Ordner, und der Stamm der Kopie ist eine Seite, die auf sie
+  verlinkt. Ein mit einem Siteaccess gespeichertes Ziel öffnet sich mit ihm angehakt und im Stamm und wird wie bisher
+  als `SiteAccess=` gespeichert; mehrere werden als `SiteAccessList[]` und `DefaultSiteAccess` gespeichert.
+  Administrations- und Bearbeitungs-Siteaccesses werden nie angeboten: Eine statische Kopie ist immer das, was ein
+  nicht angemeldeter Besucher sieht. Die Prüfung, das Dashboard und jede Seite eines Ziels listen seine Siteaccesses
+  mit ihren Ordnern ([Statisches Veröffentlichen für Multisite-Installationen](../../anleitungen/statisches-veroeffentlichen-fuer-multisite-installationen.md)).
 
 ## 2. Der Host
 

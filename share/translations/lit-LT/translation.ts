@@ -81117,6 +81117,46 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Migracija neįrašyta: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Ilgas vykdymas dalimis</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Tušti laukai išsaugo migration.ini [RunSettings] nustatymus.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Daugiausia tiek migracijų</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Daugiau jokios migracijos po (sekundžių)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pauzė tarp migracijų (sekundėmis)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Žemesnis prioritetas (nuo 1 iki 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ilgo vykdymo laukas yra sveikasis skaičius nuo 1 (pauzė: sekundės nuo 0 iki 60, prioritetas: nuo 1 iki 19) arba tuščias.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Jis užsidaro pats %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Užverti pačiam po (minučių, neprivaloma)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minutės yra sveikasis skaičius nuo 1 iki 44640 (31 diena) arba tuščias.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84193,6 +84233,30 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Version</source>
         <translation>Versija</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Skelbiamos svetainės prieigos</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prieiga prie svetainės (siteaccess)</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Šaknyje</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Šaknyje nėra prieigos: kiekviena savo aplanke, o šaknis į jas nukreipia</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Svetainės prieigos</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Pažymėkite vieną svetainės prieigą arba kelias, kurios pagal URI priešdėlį dalijasi vienu serveriu. Esanti šaknyje pateikiama ten, kitos – savo priešdėlio aplanke (/ger/); nuorodos tarp jų lieka kopijoje. Administravimo prieigos niekada nesiūlomos.</translation>
     </message>
 </context>
 <context>

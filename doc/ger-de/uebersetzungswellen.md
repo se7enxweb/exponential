@@ -35,10 +35,10 @@ eine Welle gemacht und geprüft wird. Die Sprachen, ihre Locales und ihre Übers
 
 | Was | Umfang |
 |---|---:|
-| Administration: Texte in `share/translations/untranslated/translation.ts`, in 11 Teilen | **20.533** (138.632 Wörter) |
+| Administration: Texte in `share/translations/untranslated/translation.ts`, in 11 Teilen | **20.549** (138.780 Wörter) |
 | Mitgelieferte Erweiterungen (`expimageeditor`, `ezjscore`, `ezoe`) | **567** Texte |
-| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.925** Seiten, 5.287.927 Wörter |
-| Hilfe: Tabellen der erzeugten Beispielseiten (`.examples/`) | **4.010** Einträge, 108.546 Wörter |
+| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.925** Seiten, 5.289.643 Wörter |
+| Hilfe: Tabellen der erzeugten Beispielseiten (`.examples/`) | **4.013** Einträge, 108.701 Wörter |
 | Übersetzungen der Administration, davon vollständig | **155**, 3 |
 | davon im täglichen Gebrauch (Administration, Erweiterungen und Hilfe des Alltags ≥ 97 %) | **2** |
 | Sprachen ohne Übersetzung der Administration ([Liste](#sprachen-ohne-übersetzung)), davon auf einem Branch in Arbeit | **22**, 0 |
@@ -210,10 +210,10 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 
 | Stufe | Abschnitte | Seiten | Wörter | Teile |
 |---|---|---:|---:|---:|
-| Alltag: Redakteure, Benutzer, Anleitungen für Administratoren | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 339 | 429.337 | 17 |
-| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 25 weitere | 3.775 | 3.000.122 | 119 |
-| Entwicklerreferenz | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` und 12 weitere | 1.811 | 1.858.468 | 72 |
-| Tabellen der erzeugten Beispiele | `examples` | 4.010 Einträge | 108.546 | 4 |
+| Alltag: Redakteure, Benutzer, Anleitungen für Administratoren | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 339 | 430.565 | 17 |
+| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 25 weitere | 3.775 | 3.000.348 | 119 |
+| Entwicklerreferenz | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` und 12 weitere | 1.811 | 1.858.730 | 72 |
+| Tabellen der erzeugten Beispiele | `examples` | 4.013 Einträge | 108.701 | 4 |
 
 <details><summary>Die 212 Teile der Hilfe</summary>
 
@@ -227,10 +227,10 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-non-technical-people` | daily | 48 | 28.376 | `help/non-technical-people/a-website-without-hosting-costs.md` … `help/non-technical-people/words/the-site-and-the-administration.md` |
 | `H-guides-01` | daily | 13 | 31.621 | `guides/README.md` … `guides/content-history.md` |
 | `H-guides-02` | daily | 13 | 30.210 | `guides/content-languages.md` … `guides/getting-started.md` |
-| `H-guides-03` | daily | 14 | 32.901 | `guides/graphql-recipes.md` … `guides/migrations-sql-and-settings.md` |
-| `H-guides-04` | daily | 13 | 32.680 | `guides/migrations-troubleshooting.md` … `guides/preloading-caches.md` |
+| `H-guides-03` | daily | 14 | 33.540 | `guides/graphql-recipes.md` … `guides/migrations-sql-and-settings.md` |
+| `H-guides-04` | daily | 13 | 32.738 | `guides/migrations-troubleshooting.md` … `guides/preloading-caches.md` |
 | `H-guides-05` | daily | 13 | 35.851 | `guides/remote-services-and-apps.md` … `guides/smarty-templates-migrating.md` |
-| `H-guides-06` | daily | 14 | 25.019 | `guides/smarty-templates-operator-reference.md` … `guides/static-publishing-history-and-rollback.md` |
+| `H-guides-06` | daily | 14 | 25.550 | `guides/smarty-templates-operator-reference.md` … `guides/static-publishing-history-and-rollback.md` |
 | `H-guides-07` | daily | 13 | 19.993 | `guides/static-publishing-limits-and-github-terms.md` … `guides/twig-templates-caching.md` |
 | `H-guides-08` | daily | 13 | 14.998 | `guides/twig-templates-compatibility.md` … `guides/twig-templates-security.md` |
 | `H-guides-09` | daily | 14 | 32.055 | `guides/twig-templates-troubleshooting.md` … `guides/your-devices-and-sessions.md` |
@@ -250,7 +250,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-features-06` | guides | 21 | 31.979 | `features/6.0/icon-themes-in-extensions.md` … `features/6.0/notifications.md` |
 | `H-features-07` | guides | 22 | 23.318 | `features/6.0/online-editor-tinymce8.md` … `features/6.0/publish-without-notification.md` |
 | `H-features-08` | guides | 22 | 26.751 | `features/6.0/quality-checks.md` … `features/6.0/secret-store.md` |
-| `H-features-09` | guides | 22 | 28.981 | `features/6.0/setup-files-and-config-php-commands.md` … `features/6.0/ui-switch-design.md` |
+| `H-features-09` | guides | 22 | 29.087 | `features/6.0/setup-files-and-config-php-commands.md` … `features/6.0/ui-switch-design.md` |
 | `H-features-10` | guides | 22 | 31.249 | `features/6.0/ui-switch-languages.md` … `features/6.0/website-sidebar.md` |
 | `H-help-adopters` | guides | 47 | 16.998 | `help/adopters/adopters-checklists.md` … `help/adopters/what-adoption-means.md` |
 | `H-help-advocates-01` | guides | 48 | 29.465 | `help/advocates/7x-and-the-foundation-for-advocates.md` … `help/advocates/proposing-a-contribution-sprint.md` |
@@ -328,7 +328,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-site-packages-02` | guides | 26 | 29.251 | `help/site-packages/cjw-multisite/the-demo-content-package.md` … `help/site-packages/requirements/the-requirements-checklist.md` |
 | `H-help-site-packages-03` | guides | 26 | 26.765 | `help/site-packages/requirements/thumbnails-and-screenshots.md` … `help/site-packages/your-own/versioning-your-own-packages.md` |
 | `H-help-sponsors` | guides | 11 | 5.286 | `help/sponsors/7x-the-first-sponsor.md` … `help/sponsors/what-sponsorship-funds.md` |
-| `H-help-static-publishing` | guides | 25 | 12.753 | `help/static-publishing/README.md` … `help/static-publishing/who-may-publish-roles-and-policies.md` |
+| `H-help-static-publishing` | guides | 25 | 12.873 | `help/static-publishing/README.md` … `help/static-publishing/who-may-publish-roles-and-policies.md` |
 | `H-help-students-01` | guides | 28 | 21.897 | `help/students/asking-for-help-and-study-groups.md` … `help/students/project-05-a-multilingual-site.md` |
 | `H-help-students-02` | guides | 28 | 22.743 | `help/students/project-06-search-that-finds-the-right-things.md` … `help/students/your-first-site-three-ways.md` |
 | `H-help-supporters` | guides | 12 | 5.721 | `help/supporters/advocacy.md` … `help/supporters/ways-to-support-exponential.md` |
@@ -389,7 +389,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-sqli-import` | reference | 6 | 6.974 | `help/sqli-import/README.md` … `help/sqli-import/upgrading-from-1x.md` |
 | `H-specifications-01` | reference | 13 | 16.782 | `specifications/6.0/README.md` … `specifications/6.0/help-standards.md` |
 | `H-specifications-02` | reference | 14 | 24.377 | `specifications/6.0/help-style-guide.md` … `specifications/6.0/platform-package-map.md` |
-| `H-specifications-03` | reference | 14 | 22.048 | `specifications/6.0/platform-sqlite-installer.md` … `specifications/6.0/xrowextract.md` |
+| `H-specifications-03` | reference | 14 | 22.310 | `specifications/6.0/platform-sqlite-installer.md` … `specifications/6.0/xrowextract.md` |
 | `H-standards-01` | reference | 18 | 34.531 | `standards/README.md` … `standards/patterns/area-extension-bcgooglesitemaps.md` |
 | `H-standards-02` | reference | 18 | 21.769 | `standards/patterns/area-extension-bcwebsitestatistics.md` … `standards/patterns/area-extension-explayouts-content-browser.md` |
 | `H-standards-03` | reference | 19 | 15.548 | `standards/patterns/area-extension-explayouts-core.md` … `standards/patterns/area-extension-ezautosave.md` |
@@ -430,7 +430,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `X01` | tables | 1.138 Einträge | 25.782 | `descriptions/01-command-accesscheck.json` … `descriptions/05-ini-settings-content-ini.json` |
 | `X02` | tables | 595 Einträge | 25.577 | `descriptions/06-ini-settings-debugbar-ini.json` … `descriptions/08-ini-settings-package-ini.json` |
 | `X03` | tables | 690 Einträge | 29.416 | `descriptions/09-ini-settings-site-ini.json` … `descriptions/12-shell-checkcalltimeref.json` |
-| `X04` | tables | 1.587 Einträge | 27.771 | `descriptions/13-command-exptemplateconvert.json` … `strings.json` |
+| `X04` | tables | 1.590 Einträge | 27.926 | `descriptions/13-command-exptemplateconvert.json` … `strings.json` |
 
 </details>
 
@@ -448,7 +448,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `A08` | 1.839 | 13.074 | `kernel/content` … `kernel/contentfinder` |
 | `A09` | 1.902 | 10.059 | `design/admin/audit` … `design/admin/mailpreferences` |
 | `A10` | 1.909 | 12.965 | `design/standard/mailpreferences` … `kernel/user/security/mail` |
-| `A11` | 1.248 | 7.812 | `design/admin/graphql` … `design/standard/migration/mail` |
+| `A11` | 1.264 | 7.960 | `design/admin/graphql` … `design/standard/migration/mail` |
 
 </details>
 
@@ -497,15 +497,15 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | # | Welle | Sprache | Arbeitspaket | Umfang (offen) | Schwierigkeit | Voraussetzungen |
 |---:|---|---|---|---|:-:|---|
 | 1 | `ger-DE/E` | Deutsch | Mitgelieferte Erweiterungen | 137 von 567 Texten | 2 | `GUIDE.md` |
-| 2 | `ara-SA/A11` | Arabisch | Administration, Teil A11 | 163 von 1.248 Texten | 4 | `GUIDE.md`, RTL |
-| 3 | `tur-TR/A11` | Türkisch | Administration, Teil A11 | 163 von 1.248 Texten | 2 | `GUIDE.md` |
-| 4 | `ukr-UA/A11` | Ukrainisch | Administration, Teil A11 | 163 von 1.248 Texten | 3 | `GUIDE.md` |
-| 5 | `rus-RU/A11` | Russisch | Administration, Teil A11 | 163 von 1.248 Texten | 3 | `GUIDE.md` |
-| 6 | `fas-IR/A11` | Persisch | Administration, Teil A11 | 163 von 1.248 Texten | 4 | `GUIDE.md`, RTL |
-| 7 | `pus-AF/A11` | Paschtu | Administration, Teil A11 | 163 von 1.248 Texten | 5 | `GUIDE.md`, RTL |
-| 8 | `kur-TR/A11` | Kurdisch (Kurmandschi) | Administration, Teil A11 | 163 von 1.248 Texten | 3 | `GUIDE.md` |
+| 2 | `ara-SA/A11` | Arabisch | Administration, Teil A11 | 165 von 1.264 Texten | 4 | `GUIDE.md`, RTL |
+| 3 | `tur-TR/A11` | Türkisch | Administration, Teil A11 | 165 von 1.264 Texten | 2 | `GUIDE.md` |
+| 4 | `ukr-UA/A11` | Ukrainisch | Administration, Teil A11 | 165 von 1.264 Texten | 3 | `GUIDE.md` |
+| 5 | `rus-RU/A11` | Russisch | Administration, Teil A11 | 165 von 1.264 Texten | 3 | `GUIDE.md` |
+| 6 | `fas-IR/A11` | Persisch | Administration, Teil A11 | 165 von 1.264 Texten | 4 | `GUIDE.md`, RTL |
+| 7 | `pus-AF/A11` | Paschtu | Administration, Teil A11 | 165 von 1.264 Texten | 5 | `GUIDE.md`, RTL |
+| 8 | `kur-TR/A11` | Kurdisch (Kurmandschi) | Administration, Teil A11 | 165 von 1.264 Texten | 3 | `GUIDE.md` |
 | 9 | `ger-DE/H-guides-05` | Deutsch | Hilfe `H-guides-05` | 13 Seiten, 10.397 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
-| 10 | `ger-DE/H-guides-06` | Deutsch | Hilfe `H-guides-06` | 14 Seiten, 21.267 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
+| 10 | `ger-DE/H-guides-06` | Deutsch | Hilfe `H-guides-06` | 14 Seiten, 21.207 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 11 | `ger-DE/H-guides-07` | Deutsch | Hilfe `H-guides-07` | 13 Seiten, 1.400 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 12 | `ger-DE/H-guides-08` | Deutsch | Hilfe `H-guides-08` | 13 Seiten, 6.150 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
 | 13 | `ger-DE/H-guides-09` | Deutsch | Hilfe `H-guides-09` | 14 Seiten, 2.565 Wörter | 2 | `GUIDE.md`, Wellen `S` und Administration |
@@ -560,7 +560,7 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 Die ganze Warteschlange und die Seiten einer Welle: `./console exp:i18n waves --list`, `./console exp:i18n waves --wave=<Welle>`.
 
 Erzeugt mit `./console exp:i18n waves`; `./console exp:i18n waves --check` und der Test `expI18nTranslationWavesTest` schlagen fehl, sobald ein Prozentwert nicht mehr stimmt oder ein Umfang um mehr als 3 % abweicht.
-<!-- exp:i18n waves data {"status":{"afr-ZA":[99,100,0,0],"aka-GH":[99,100,0,0],"amh-ET":[99,100,0,0],"ara-SA":[99,100,0,0],"arc-IQ":[99,100,0,0],"asm-IN":[99,100,0,0],"ast-ES":[99,100,0,0],"aze-AZ":[99,100,0,0],"bam-ML":[99,100,0,0],"bel-BY":[99,100,0,0],"ben-BD":[99,100,0,0],"bho-IN":[99,100,0,0],"bod-CN":[99,100,0,0],"bos-BA":[99,100,0,0],"bre-FR":[99,100,0,0],"brx-IN":[99,100,0,0],"bul-BG":[99,100,0,0],"cat-ES":[99,100,0,0],"ceb-PH":[99,100,0,0],"che-RU":[99,100,0,0],"chi-CN":[99,100,0,0],"chi-TW":[99,100,0,0],"ckb-IQ":[99,100,0,0],"cro-HR":[99,100,0,0],"cym-GB":[99,100,0,0],"cze-CZ":[99,100,0,0],"dan-DK":[99,100,0,0],"div-MV":[99,100,0,0],"doi-IN":[99,100,0,0],"dsb-DE":[99,100,0,0],"dut-NL":[99,100,0,0],"dzo-BT":[99,100,0,0],"ell-GR":[99,100,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[99,100,0,0],"esl-ES":[99,100,0,0],"esl-MX":[99,100,0,0],"est-EE":[99,100,0,0],"eus-ES":[99,100,0,0],"ewe-GH":[99,100,0,0],"fao-FO":[99,100,0,0],"fas-AF":[99,100,0,0],"fas-IR":[99,100,0,0],"fil-PH":[99,100,0,0],"fin-FI":[99,100,0,0],"fre-FR":[99,100,0,0],"fry-NL":[99,100,0,0],"ful-SN":[99,100,0,0],"ger-DE":[100,76,90,99],"gla-GB":[99,100,0,0],"gle-IE":[99,100,0,0],"glg-ES":[99,100,0,0],"guj-IN":[99,100,0,0],"hau-NG":[99,100,0,0],"haw-US":[99,100,0,0],"heb-IL":[99,100,0,0],"hin-IN":[99,100,0,0],"hsb-DE":[99,100,0,0],"hun-HU":[99,100,0,0],"huy-IL":[99,100,0,0],"hye-AM":[99,100,0,0],"ibo-NG":[99,100,0,0],"ind-ID":[99,100,0,0],"isl-IS":[99,100,0,0],"ita-IT":[99,100,0,0],"jav-ID":[99,100,0,0],"jpn-JP":[99,100,0,0],"kab-DZ":[99,100,0,0],"kal-GL":[99,100,0,0],"kan-IN":[99,100,0,0],"kas-IN":[99,100,0,0],"kat-GE":[99,100,0,0],"kaz-KZ":[99,100,0,0],"khm-KH":[99,100,0,0],"kik-KE":[99,100,0,0],"kin-RW":[99,100,0,0],"kir-KG":[99,100,0,0],"kok-IN":[99,100,0,0],"kor-KP":[99,100,0,0],"kor-KR":[99,100,0,0],"kur-TR":[99,100,0,0],"lao-LA":[99,100,0,0],"lat-VA":[99,100,0,0],"lav-LV":[99,100,0,0],"lin-CD":[99,100,0,0],"lit-LT":[99,100,0,0],"ltz-LU":[99,100,0,0],"lug-UG":[99,100,0,0],"mai-IN":[99,100,0,0],"mal-IN":[99,100,0,0],"mar-IN":[99,100,0,0],"mkd-MK":[99,100,0,0],"mlg-MG":[99,100,0,0],"mlt-MT":[99,100,0,0],"mni-IN":[99,100,0,0],"mon-MN":[99,100,0,0],"mri-NZ":[99,100,0,0],"msa-MY":[99,100,0,0],"mya-MM":[99,100,0,0],"nep-NP":[99,100,0,0],"nor-NO":[99,100,0,0],"nqo-GN":[99,100,0,0],"oci-FR":[99,100,0,0],"ori-IN":[99,100,0,0],"orm-ET":[99,100,0,0],"pan-IN":[99,100,0,0],"pcm-NG":[99,100,0,0],"pnb-PK":[99,100,0,0],"pol-PL":[99,100,0,0],"por-BR":[99,100,0,0],"por-PT":[99,100,0,0],"pus-AF":[99,100,0,0],"que-PE":[99,100,0,0],"roh-CH":[99,100,0,0],"ron-RO":[99,100,0,0],"run-BI":[99,100,0,0],"rus-RU":[99,100,0,0],"san-IN":[99,100,0,0],"sat-IN":[99,100,0,0],"ser-SR":[99,100,0,0],"sin-LK":[99,100,0,0],"slk-SK":[99,100,0,0],"slv-SI":[99,100,0,0],"sme-NO":[99,100,0,0],"sna-ZW":[99,100,0,0],"snd-PK":[99,100,0,0],"som-SO":[99,100,0,0],"sqi-AL":[99,100,0,0],"srp-RS":[99,100,0,0],"sun-ID":[99,100,0,0],"swa-KE":[99,100,0,0],"swe-SE":[99,100,0,0],"syr-IQ":[99,100,0,0],"tam-IN":[99,100,0,0],"tat-RU":[99,100,0,0],"tel-IN":[99,100,0,0],"tgk-TJ":[99,100,0,0],"tha-TH":[99,100,0,0],"tir-ET":[99,100,0,0],"tlh-QO":[99,100,0,0],"ton-TO":[99,100,0,0],"tuk-TM":[99,100,0,0],"tur-TR":[99,100,0,0],"uig-CN":[99,100,0,0],"ukr-UA":[99,100,0,0],"urd-PK":[99,100,0,0],"uzb-UZ":[99,100,0,0],"vie-VN":[99,100,0,0],"wol-SN":[99,100,0,0],"xho-ZA":[99,100,0,0],"yid-US":[99,100,0,0],"yor-NG":[99,100,0,0],"zgh-MA":[99,100,0,0],"zul-ZA":[99,100,0,0]},"sizes":{"messages":20533,"extensions":567,"parts":212,"daily_pages":339,"daily_words":429337,"guides_pages":3775,"guides_words":3000122,"reference_pages":1811,"reference_words":1858468,"tables_pages":0,"tables_words":108546},"waves":32803,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
+<!-- exp:i18n waves data {"status":{"afr-ZA":[99,100,0,0],"aka-GH":[99,100,0,0],"amh-ET":[99,100,0,0],"ara-SA":[99,100,0,0],"arc-IQ":[99,100,0,0],"asm-IN":[99,100,0,0],"ast-ES":[99,100,0,0],"aze-AZ":[99,100,0,0],"bam-ML":[99,100,0,0],"bel-BY":[99,100,0,0],"ben-BD":[99,100,0,0],"bho-IN":[99,100,0,0],"bod-CN":[99,100,0,0],"bos-BA":[99,100,0,0],"bre-FR":[99,100,0,0],"brx-IN":[99,100,0,0],"bul-BG":[99,100,0,0],"cat-ES":[99,100,0,0],"ceb-PH":[99,100,0,0],"che-RU":[99,100,0,0],"chi-CN":[99,100,0,0],"chi-TW":[99,100,0,0],"ckb-IQ":[99,100,0,0],"cro-HR":[99,100,0,0],"cym-GB":[99,100,0,0],"cze-CZ":[99,100,0,0],"dan-DK":[99,100,0,0],"div-MV":[99,100,0,0],"doi-IN":[99,100,0,0],"dsb-DE":[99,100,0,0],"dut-NL":[99,100,0,0],"dzo-BT":[99,100,0,0],"ell-GR":[99,100,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"epo-EO":[99,100,0,0],"esl-ES":[99,100,0,0],"esl-MX":[99,100,0,0],"est-EE":[99,100,0,0],"eus-ES":[99,100,0,0],"ewe-GH":[99,100,0,0],"fao-FO":[99,100,0,0],"fas-AF":[99,100,0,0],"fas-IR":[99,100,0,0],"fil-PH":[99,100,0,0],"fin-FI":[99,100,0,0],"fre-FR":[99,100,0,0],"fry-NL":[99,100,0,0],"ful-SN":[99,100,0,0],"ger-DE":[100,76,90,99],"gla-GB":[99,100,0,0],"gle-IE":[99,100,0,0],"glg-ES":[99,100,0,0],"guj-IN":[99,100,0,0],"hau-NG":[99,100,0,0],"haw-US":[99,100,0,0],"heb-IL":[99,100,0,0],"hin-IN":[99,100,0,0],"hsb-DE":[99,100,0,0],"hun-HU":[99,100,0,0],"huy-IL":[99,100,0,0],"hye-AM":[99,100,0,0],"ibo-NG":[99,100,0,0],"ind-ID":[99,100,0,0],"isl-IS":[99,100,0,0],"ita-IT":[99,100,0,0],"jav-ID":[99,100,0,0],"jpn-JP":[99,100,0,0],"kab-DZ":[99,100,0,0],"kal-GL":[99,100,0,0],"kan-IN":[99,100,0,0],"kas-IN":[99,100,0,0],"kat-GE":[99,100,0,0],"kaz-KZ":[99,100,0,0],"khm-KH":[99,100,0,0],"kik-KE":[99,100,0,0],"kin-RW":[99,100,0,0],"kir-KG":[99,100,0,0],"kok-IN":[99,100,0,0],"kor-KP":[99,100,0,0],"kor-KR":[99,100,0,0],"kur-TR":[99,100,0,0],"lao-LA":[99,100,0,0],"lat-VA":[99,100,0,0],"lav-LV":[99,100,0,0],"lin-CD":[99,100,0,0],"lit-LT":[99,100,0,0],"ltz-LU":[99,100,0,0],"lug-UG":[99,100,0,0],"mai-IN":[99,100,0,0],"mal-IN":[99,100,0,0],"mar-IN":[99,100,0,0],"mkd-MK":[99,100,0,0],"mlg-MG":[99,100,0,0],"mlt-MT":[99,100,0,0],"mni-IN":[99,100,0,0],"mon-MN":[99,100,0,0],"mri-NZ":[99,100,0,0],"msa-MY":[99,100,0,0],"mya-MM":[99,100,0,0],"nep-NP":[99,100,0,0],"nor-NO":[99,100,0,0],"nqo-GN":[99,100,0,0],"oci-FR":[99,100,0,0],"ori-IN":[99,100,0,0],"orm-ET":[99,100,0,0],"pan-IN":[99,100,0,0],"pcm-NG":[99,100,0,0],"pnb-PK":[99,100,0,0],"pol-PL":[99,100,0,0],"por-BR":[99,100,0,0],"por-PT":[99,100,0,0],"pus-AF":[99,100,0,0],"que-PE":[99,100,0,0],"roh-CH":[99,100,0,0],"ron-RO":[99,100,0,0],"run-BI":[99,100,0,0],"rus-RU":[99,100,0,0],"san-IN":[99,100,0,0],"sat-IN":[99,100,0,0],"ser-SR":[99,100,0,0],"sin-LK":[99,100,0,0],"slk-SK":[99,100,0,0],"slv-SI":[99,100,0,0],"sme-NO":[99,100,0,0],"sna-ZW":[99,100,0,0],"snd-PK":[99,100,0,0],"som-SO":[99,100,0,0],"sqi-AL":[99,100,0,0],"srp-RS":[99,100,0,0],"sun-ID":[99,100,0,0],"swa-KE":[99,100,0,0],"swe-SE":[99,100,0,0],"syr-IQ":[99,100,0,0],"tam-IN":[99,100,0,0],"tat-RU":[99,100,0,0],"tel-IN":[99,100,0,0],"tgk-TJ":[99,100,0,0],"tha-TH":[99,100,0,0],"tir-ET":[99,100,0,0],"tlh-QO":[99,100,0,0],"ton-TO":[99,100,0,0],"tuk-TM":[99,100,0,0],"tur-TR":[99,100,0,0],"uig-CN":[99,100,0,0],"ukr-UA":[99,100,0,0],"urd-PK":[99,100,0,0],"uzb-UZ":[99,100,0,0],"vie-VN":[99,100,0,0],"wol-SN":[99,100,0,0],"xho-ZA":[99,100,0,0],"yid-US":[99,100,0,0],"yor-NG":[99,100,0,0],"zgh-MA":[99,100,0,0],"zul-ZA":[99,100,0,0]},"sizes":{"messages":20549,"extensions":567,"parts":212,"daily_pages":339,"daily_words":430565,"guides_pages":3775,"guides_words":3000348,"reference_pages":1811,"reference_words":1858730,"tables_pages":0,"tables_words":108701},"waves":32803,"untranslated":["hat-HT","skr-PK","tsn-ZA","dyu-CI","nya-MW","nso-ZA","sot-ZA","mos-BF","azb-IR","kau-NG","vmw-MZ","kon-CD","luy-KE","tso-ZA","umb-AO","luo-KE","sag-CF","grn-PY","bal-PK","kln-KE","lua-CD","suk-TZ"]} -->
 <!-- generated: exp:i18n waves (end) -->
 
 ## Was die Wellen sind

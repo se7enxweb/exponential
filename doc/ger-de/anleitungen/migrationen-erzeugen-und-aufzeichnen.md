@@ -73,7 +73,8 @@ Ein Migrationslauf wird nicht aufgezeichnet: Seine Änderungen sind schon eine M
 
 Eine Sitzungsaufzeichnung hält fest, was Sie selbst einrichten. Das websiteweite Fenster ist für mehrere Personen,
 die gemeinsam auf einer Staging-Installation ein Release vorbereiten. Eine Änderung, während beide laufen, steht in
-beiden.
+beiden. Beide lassen sich für ein Zeitfenster öffnen, das sich selbst schließt (`--for=<Minuten>`, `--until=<Zeit>`;
+[Ein Aufzeichnungsfenster auf Zeit](migrationen-pakete-deploy-und-lange-laeufe.md#ein-aufzeichnungsfenster-auf-zeit)).
 
 Solange das websiteweite Fenster offen ist, sieht jeder Benutzer der Administration den Balken „Aufzeichnung…“, weil
 auch seine Änderungen aufgezeichnet werden; schließen können es nur Inhaber von `migration/edit`.

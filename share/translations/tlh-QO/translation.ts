@@ -81120,6 +81120,46 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghoS ghItlhlu'be': %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>tlhIngan Hol: ngoq ghom je pagh</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ghItlh chIm migration.ini [RunSettings] 'oH vIleghbe'.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>migration law' Hoch</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>migration pa' qaStaH (lup)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>migration bID ghoS (lup)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Sov chu' (1 19 Hoch)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ghItlh Hoch lupDujHom 1 qaStaHvIS 'ej pagh (bID: 0 60 lup, 'ej Sov 1 19) pagh ghItlh chIm.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>%time vo' Ho'DoS.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>pa' Ho'DoS vo' (rep, chIm)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>rep 1 44640 (jaj 31) pagh chIm.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84196,6 +84236,30 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Version</source>
         <translation>chovnatlh</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>yoS lojmItmey nanejbogh</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>DaH tIqDaq</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>tIqDaq yoS lojmIt tu'lu'be': Hoch ghom'a' ghaH, tIq rar</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>yoS lojmItmey</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>yoS lojmIt wa' yIwIv, pagh law' URI moHaq ghaj host wa' 'ejDo'. tIqDaq lojmIt pa' lo'lu', latlh moHaq ghom'a'Daq (/ger/); chaH rarmeyvetlh qa'Daq ratlh. loH lojmItmey not nob.</translation>
     </message>
 </context>
 <context>

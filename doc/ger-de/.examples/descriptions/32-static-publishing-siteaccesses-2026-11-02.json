@@ -1,0 +1,14 @@
+{
+    "command:expstaticbuild --siteaccess": {
+        "en": "Build only this one of the target's siteaccesses (a target of several, SiteAccessList[]); the others' pages of the last build stay",
+        "de": "Nur diesen der Siteaccesses des Ziels bauen (ein Ziel mehrerer, SiteAccessList[]); die Seiten der anderen aus dem letzten Build bleiben"
+    },
+    "ini:settings/staticcache.ini [Target_example] DefaultSiteAccess": {
+        "en": "The siteaccess of SiteAccessList[] served at the root of the copy. Empty:\nevery siteaccess is in its folder, and the root is a page that links to\neach. A target of one siteaccess always has it at the root.",
+        "de": "Der Siteaccess aus SiteAccessList[], der im Stamm der Kopie ausgeliefert\nwird. Leer: Jeder Siteaccess liegt in seinem Ordner, und der Stamm ist eine\nSeite, die auf jeden verlinkt. Ein Ziel mit einem Siteaccess hat ihn immer\nim Stamm."
+    },
+    "ini:settings/staticcache.ini [Target_example] SiteAccessList": {
+        "en": "Several front siteaccesses in one copy, instead of SiteAccess: sites that\nshare one host by their URI prefix (site.ini [SiteAccessSettings] MatchOrder\nwith uri, or host_uri with a URI), such as site, bold and bold_ger. Each\none but the default is written to the folder of its prefix (/bold_ger/...);\nthe links between them stay in the copy, and links to a siteaccess not\nlisted are links outside the copy (OutsideLinks). When it names any,\nSiteAccess is not read.",
+        "de": "Mehrere Front-Siteaccesses in einer Kopie, statt SiteAccess: Sites, die\nsich über ihr URI-Präfix einen Host teilen (site.ini [SiteAccessSettings]\nMatchOrder mit uri, oder host_uri mit einer URI), etwa site, bold und\nbold_ger. Jeder außer dem Standard wird in den Ordner seines Präfixes\ngeschrieben (/bold_ger/...); die Links zwischen ihnen bleiben in der Kopie,\nund Links zu einem nicht aufgeführten Siteaccess führen aus der Kopie\nhinaus (OutsideLinks). Nennt es welche, wird SiteAccess nicht gelesen."
+    }
+}

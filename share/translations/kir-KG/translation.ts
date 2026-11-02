@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Миграция жазылган жок: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Бөлүктөр менен узун иштетүү</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Бош талааларда migration.ini [RunSettings] жөндөөлөрү сакталат.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Эң көп дегенде ушунча миграция</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Мындан кийин миграция жок (секунд)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Миграциялардын ортосундагы тыныгуу (секунд)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Төмөнкү артыкчылык (1ден 19го чейин)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Узун иштетүү талаасы - 1ден баштап бүтүн сан (тыныгуу: 0дөн 60 секундга чейин, артыкчылык: 1ден 19го чейин) же бош.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ал %time убагында өзү жабылат.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Мындан кийин өзү жабылсын (мүнөт, милдеттүү эмес)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Мүнөттөр - 1ден 44640ка чейинки (31 күн) бүтүн сан же бош.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Версия</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Жарыялана турган сайтка кирүү чекиттери</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтка кирүү чекити</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Тамырда</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Тамырда сайтка кирүү чекити жок: ар бири өз папкасында, тамыр аларга шилтеме берет</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтка кирүү чекиттери</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Бир кирүү чекитин же URI префикси аркылуу бир хостту бөлүшкөн бир нечесин белгилеңиз. Тамырдагысы ошол жерде берилет, калгандары өз префиксинин папкасында (/ger/); алардын ортосундагы шилтемелер көчүрмөдө калат. Башкаруу кирүү чекиттери эч качан сунушталбайт.</translation>
     </message>
 </context>
 <context>

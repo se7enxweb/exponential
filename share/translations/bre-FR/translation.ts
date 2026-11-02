@@ -81087,6 +81087,46 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <translation>N'eus bet skrivet migradur ebet: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Ur redadenn hir e rannoù</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ar maesoù goullo a ziwall arventennoù migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Da bellañ ez eus kement a fiñvadurioù</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Fiñvadur ebet ken goude (eilennoù)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ehan etre ar fiñvadurioù (eilennoù)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Dreistmerzh izeloc'h (1 da 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ur maes redadenn hir zo un niver anterin adalek 1 (an ehan: eilennoù eus 0 da 60, an dreistmerzh: 1 da 19), pe goullo.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Serriñ a ra e-unan da %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Serriñ e-unan goude (munutennoù, diret)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Ar munutennoù zo un niver anterin eus 1 da 44640 (31 devezh), pe goullo.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Version</source>
         <translation>Handelv</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Haeziñ al lec'hienn da embann</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>E-barzh ar c'hrizienn</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Haeziñ ebet er c'hrizienn: pep hini a zo en e deuliad, hag ar c'hrizienn a ere outo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Haeziñ al lec'hienn</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Merkit un haeziñ al lec'hienn, pe meur a hini a rann un herberc'hier dre o rakger URI. An hini er c'hrizienn a vez servijet eno, ar re all e teuliad o rakger (/ger/); al liammoù etrezo a chom er gopienn. Biken ne vez kinniget an haeziñ melestradurezh.</translation>
     </message>
 </context>
 <context>

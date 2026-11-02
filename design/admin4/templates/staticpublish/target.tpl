@@ -49,7 +49,7 @@
     <div class="a4-card-body a4-stack">
         <dl class="a4-facts is-rows">
             <dt>{'Target'|i18n( 'design/admin/staticpublish' )}</dt><dd><code class="a4-code">{$id|wash}</code> {$settings.Name|wash}</dd>
-            <dt>{'Site'|i18n( 'design/admin/staticpublish' )}</dt><dd>{$settings.SiteAccess|wash}</dd>
+            <dt>{'Siteaccesses'|i18n( 'design/admin/staticpublish' )}</dt><dd>{include uri='design:staticpublish/parts/siteaccesses.tpl' members=$members}</dd>
             <dt>{'Repository'|i18n( 'design/admin/staticpublish' )}</dt><dd>{if $settings.Remote}<code class="a4-code">{$settings.Remote|wash}</code>{else}<span class="a4-muted">{'none: commits stay in the folder'|i18n( 'design/admin/staticpublish' )}</span>{/if}
                 &middot; {$settings.Branch|wash}{if $settings.Folder} /{$settings.Folder|wash}{/if}</dd>
             <dt>{'Credential'|i18n( 'design/admin/staticpublish' )}</dt><dd><code class="a4-code">{$settings.Credential|wash}</code> <span class="a4-meta">{'a name only; the value stays in Setup > Secrets'|i18n( 'design/admin/staticpublish' )}</span></dd>
@@ -104,17 +104,34 @@
             <span class="a4-help">{'Shown in lists, for example "Public site on GitHub Pages".'|i18n( 'design/admin/staticpublish' )}</span>
         </div>
         <fieldset class="a4-field">
-            <legend>{'Site to publish'|i18n( 'design/admin/staticpublish' )}</legend>
+            <legend>{'Siteaccesses to publish'|i18n( 'design/admin/staticpublish' )}</legend>
             {if $siteaccesses|count}
-            <ul class="a4-radios">
-            {foreach $siteaccesses as $sa}
-                <li><label><input type="radio" name="Target[SiteAccess]" value="{$sa.name|wash}"{if eq( $settings.SiteAccess, $sa.name )} checked="checked"{/if} /> <span>{$sa.name|wash}{if $sa.url} <span class="a4-meta">{$sa.url|wash}</span>{/if}</span></label></li>
-            {/foreach}
-            </ul>
+            <input type="hidden" name="Target[SiteAccessList][]" value="" />
+            <div class="a4-table-wrap" role="region" aria-label="{'Siteaccesses to publish'|i18n( 'design/admin/staticpublish' )|wash}" tabindex="0">
+            <table class="a4-table">
+                <thead><tr>
+                    <th scope="col">{'Publish'|i18n( 'design/admin/staticpublish' )}</th>
+                    <th scope="col">{'Siteaccess'|i18n( 'design/admin/staticpublish' )}</th>
+                    <th scope="col">{'Folder'|i18n( 'design/admin/staticpublish' )}</th>
+                    <th scope="col">{'At the root'|i18n( 'design/admin/staticpublish' )}</th>
+                </tr></thead>
+                <tbody>
+                {foreach $siteaccesses as $sa}
+                <tr>
+                    <td><input type="checkbox" id="sp-sa-{$sa.name|wash}" name="Target[SiteAccessList][]" value="{$sa.name|wash}"{if $chosen|contains( $sa.name )} checked="checked"{/if} /></td>
+                    <td><label for="sp-sa-{$sa.name|wash}"><strong>{$sa.name|wash}</strong>{if $sa.url} <span class="a4-meta">{$sa.url|wash}</span>{/if}</label></td>
+                    <td>{if $sa.folder}<code class="a4-code">{$sa.folder|wash}</code>{else}<span class="a4-muted" aria-hidden="true">&ndash;</span>{/if}</td>
+                    <td><input type="radio" name="Target[DefaultSiteAccess]" value="{$sa.name|wash}" aria-label="{'At the root'|i18n( 'design/admin/staticpublish' )|wash}: {$sa.name|wash}"{if eq( $chosen_default, $sa.name )} checked="checked"{/if} /></td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+            </div>
+            <label class="a4-check"><input type="radio" name="Target[DefaultSiteAccess]" value=""{if eq( $chosen_default, '' )} checked="checked"{/if} /> <span>{'No siteaccess at the root: each is in its folder, and the root links to them'|i18n( 'design/admin/staticpublish' )}</span></label>
             {else}
             <p class="a4-warn-text">{'This installation has no front siteaccess. Administration and editing siteaccesses are never published.'|i18n( 'design/admin/staticpublish' )}</p>
             {/if}
-            <span class="a4-help">{'The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.'|i18n( 'design/admin/staticpublish' )}</span>
+            <span class="a4-help">{'Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.'|i18n( 'design/admin/staticpublish' )}</span>
         </fieldset>
     </div>
     <div class="a4-card-foot a4-actions" data-sp-nav="1" hidden="hidden"><button type="button" class="a4-btn a4-btn-primary" data-sp-next="2">{'Next'|i18n( 'design/admin/staticpublish' )}</button><a class="a4-btn a4-btn-ghost" href={'staticpublish/dashboard'|ezurl}>{'Cancel'|i18n( 'design/admin/staticpublish' )}</a></div>

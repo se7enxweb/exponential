@@ -81095,6 +81095,46 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Ora ana migrasi sing ditulis: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Eksekusi dawa kanthi bertahap</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Kolom kosong njaga setelan migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Paling akeh migrasi semene</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Ora ana migrasi maneh sawise (detik)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Jeda antarane migrasi (detik)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritas luwih endhek (1 nganti 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Kolom eksekusi dawa yaiku angka bulat wiwit 1 (jeda: detik saka 0 nganti 60, prioritas: 1 nganti 19), utawa kosong.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Nutup dhewe ing %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Nutup dhewe sawise (menit, opsional)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Menit yaiku angka bulat saka 1 nganti 44640 (31 dina), utawa kosong.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84171,6 +84211,30 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>Version</source>
         <translation>Versi</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Akses situs sing arep diterbitake</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ing oyod</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ora ana akses situs ing oyod: saben siji ana ing foldere, lan oyod nyambung menyang kabeh</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Centhang siji akses situs, utawa sawetara sing nuduhake siji host liwat prefiks URI-ne. Sing ing oyod disajekake ing kana, liyane ing folder prefikse (/ger/); pranala ing antarane tetep ana ing salinan. Akses situs administrasi ora tau ditawakake.</translation>
     </message>
 </context>
 <context>

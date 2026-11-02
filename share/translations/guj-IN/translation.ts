@@ -81085,6 +81085,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>કોઈ માઇગ્રેશન લખાયું નથી: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>ભાગોમાં એક લાંબો રન</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ખાલી ક્ષેત્રો migration.ini [RunSettings] ની સેટિંગ્સ રાખે છે.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>વધુમાં વધુ આટલા માઇગ્રેશન</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>આ પછી વધુ માઇગ્રેશન નહીં (સેકંડ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>માઇગ્રેશન વચ્ચે વિરામ (સેકંડ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>નીચી અગ્રતા (1 થી 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>લાંબા રનનું ક્ષેત્ર 1 થી શરૂ થતી પૂર્ણ સંખ્યા છે (વિરામ: 0 થી 60 સેકંડ, અગ્રતા: 1 થી 19), અથવા ખાલી.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>તે %time એ જાતે બંધ થાય છે.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>આ પછી જાતે બંધ કરો (મિનિટ, વૈકલ્પિક)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>મિનિટ 1 થી 44640 (31 દિવસ) સુધીની પૂર્ણ સંખ્યા છે, અથવા ખાલી.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84161,6 +84201,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>આવૃત્તિ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>પ્રકાશિત કરવાના સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>રૂટ પર</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>રૂટ પર કોઈ સાઇટઍક્સેસ નથી: દરેક પોતાના ફોલ્ડરમાં છે, અને રૂટ તેમની લિંક આપે છે</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>એક સાઇટઍક્સેસ, અથવા તેમના URI ઉપસર્ગ દ્વારા એક હોસ્ટ વહેંચતા ઘણા પસંદ કરો. રૂટ પરનો ત્યાં જ પીરસાય છે, બાકીના તેમના ઉપસર્ગના ફોલ્ડરમાં (/ger/); તેમની વચ્ચેની લિંક નકલમાં જ રહે છે. વહીવટના સાઇટઍક્સેસ ક્યારેય ઓફર થતા નથી.</translation>
     </message>
 </context>
 <context>

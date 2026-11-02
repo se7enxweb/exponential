@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هیچ کۆچێک نەنووسرا: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>ڕاکردنێکی درێژ بە بەشەکان</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>خانە بەتاڵەکان ڕێکخستنەکانی migration.ini [RunSettings] دەپارێزن.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>زۆرترین ئەم ژمارە گواستنەوەیە</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>دوای ئەمە هیچ گواستنەوەیەک نییە (چرکە)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>وچان لە نێوان گواستنەوەکان (چرکە)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>پێشینەی نزمتر (1 بۆ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>خانەی ڕاکردنی درێژ ژمارەیەکی تەواوە لە 1 ەوە (وچان: چرکە لە 0 بۆ 60، پێشینە: 1 بۆ 19)، یان بەتاڵ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>لە %time خۆی دادەخرێت.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>دوای ئەمە خۆی دابخرێت (خولەک، ئارەزوومەندانە)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>خولەکەکان ژمارەیەکی تەواون لە 1 بۆ 44640 (31 ڕۆژ)، یان بەتاڵ.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>وەشان</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>دەستگەیشتنەکانی ماڵپەڕ بۆ بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دەستگەیشتنی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>لە ڕەگ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>هیچ دەستگەیشتنێک لە ڕەگ نییە: هەریەکە لە بوخچەی خۆیدایە، و ڕەگ بەستەری بۆیان هەیە</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>دەستگەیشتنەکانی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>یەک دەستگەیشتنی ماڵپەڕ نیشان بکە، یان چەند دانەیەک کە بە پێشگری URI یەک خانەخوێ هاوبەشن. ئەوەی لە ڕەگە لەوێ پێشکەش دەکرێت، ئەوانی تر لە بوخچەی پێشگرەکەیان (/ger/)؛ بەستەرەکانی نێوانیان لە کۆپییەکەدا دەمێننەوە. دەستگەیشتنەکانی بەڕێوەبردن هەرگیز پێشکەش ناکرێن.</translation>
     </message>
 </context>
 <context>

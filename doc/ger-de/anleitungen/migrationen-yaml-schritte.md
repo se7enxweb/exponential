@@ -46,6 +46,7 @@ jeden Schlüssel jedes Schritttyps nennt seine erzeugte Referenzseite
 | [`sql`](../beispiele/migrationsschritte/sql.md) | Anweisungen der Engine, im Schritt oder in Dateien neben der Migration | |
 | [`settings`](../beispiele/migrationsschritte/settings.md) | eine INI-Datei von `settings/override` oder eines Siteaccess, mit Sicherungskopie | |
 | [`graphql`](../beispiele/migrationsschritte/graphql.md) | eine Abfrage oder Mutation der GraphQL-API, im Prozess als Benutzer des Laufs | |
+| [`code_file`](../beispiele/migrationsschritte/code_file.md) | eine Code- oder Designdatei unterhalb der erlaubten Ordner, mit Sicherung und Prüfsummen ([Pakete, Deploys und lange Läufe](migrationen-pakete-deploy-und-lange-laeufe.md#code--und-designdateien)) | create, update, ensure, delete |
 
 Jeder Schritt geht über die eigene API des Kernels, so wie die Administration: Ein neues Objekt entsteht über seine
 Klasse (`eZContentClass::instantiate()`), eine neue Version über `createNewVersionIn()`, und beide veröffentlicht die
@@ -454,6 +455,7 @@ Eine Migration ohne `down:` lässt sich von selbst zurücknehmen, wenn jeder ihr
 | `tag` create | der Tag wird wieder entfernt, solange kein Objekt ihn nutzt |
 | `url_alias` create | die Adresse oder der Platzhalter wird wieder entfernt, solange sie dorthin führen, wohin der Schritt sie gesetzt hat |
 | `trash` move (über `object:`) / restore | das Objekt wird wiederhergestellt, wo es war / wieder in den Papierkorb verschoben |
+| `code_file` (jeder Modus) | die alte Datei wird zurückgelegt oder die neue entfernt, solange die Datei noch die ist, die die Migration geschrieben hat |
 | `reference`, `assert` | nichts zurückzunehmen |
 
 Jeder andere Schritt (ein Ändern, ein ensure, ein Löschen, ein Verschieben, eine Sektionszuweisung ...) kann nicht wissen, was vorher da war:

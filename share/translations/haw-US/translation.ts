@@ -81087,6 +81087,46 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>ʻAʻohe neʻe i kākau ʻia: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>He holo lōʻihi ma nā ʻāpana</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Mālama nā kahua hakahaka i nā hoʻonohonoho o migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ʻAʻole ʻoi aku ma mua o kēia nui o nā neʻe</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ʻAʻohe neʻe hou ma hope o (kekona)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Hoʻomaha ma waena o nā neʻe (kekona)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ka mea koʻikoʻi haʻahaʻa (1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>He helu piha ke kahua holo lōʻihi mai 1 (ka hoʻomaha: kekona mai 0 a 60, ka mea koʻikoʻi: 1 a 19), a i ʻole hakahaka.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Pani ʻo ia iā ia iho i ka %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Pani iā ia iho ma hope o (minuke, koho)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>He helu piha nā minuke mai 1 a 44640 (31 lā), a i ʻole hakahaka.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Version</source>
         <translation>Mana</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nā siteaccess e hoʻopuka ʻia</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ma ke kumu</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ʻAʻohe siteaccess ma ke kumu: aia kēlā me kēia i loko o kona waihona, a pili ke kumu iā lākou</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nā siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kaha i hoʻokahi siteaccess, a i ʻole kekahi mau mea e kaʻana like ana i hoʻokahi mea hoʻokipa ma o ko lākou URI prefix. Lawelawe ʻia ka mea ma ke kumu ma laila, nā mea ʻē aʻe ma ka waihona o ko lākou prefix (/ger/); noho nā loulou ma waena o lākou i loko o ke kope. ʻAʻole loa e hāʻawi ʻia nā siteaccess hoʻokele.</translation>
     </message>
 </context>
 <context>

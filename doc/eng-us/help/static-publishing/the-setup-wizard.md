@@ -34,8 +34,14 @@ from the list. Without JavaScript all steps show on one page.
 - **Id**: lower case letters, digits, `_` and `-`, for example `github-public`. It names the target's folder and its
   tags (`static/<id>/<n>`) and cannot be changed later.
 - **Name**: shown in lists.
-- **Site to publish**: one of the front siteaccesses. Administration and editing siteaccesses are never offered: a
-  static copy is always what a visitor who is not signed in sees.
+- **Siteaccesses to publish**: the front siteaccesses, each with its address and its folder (the URI prefix that
+  selects it, `/bold_ger/`). Tick one, or several that share one host by their URI prefix; **At the root** chooses
+  the one served at the root of the copy, the others go to their folders. With **No siteaccess at the root** each is
+  in its folder and the root of the copy is a page that links to them. A target saved with one siteaccess opens with
+  it ticked and at the root, and is saved as `SiteAccess=` as before; several are saved as `SiteAccessList[]` and
+  `DefaultSiteAccess`. Administration and editing siteaccesses are never offered: a static copy is always what a
+  visitor who is not signed in sees. The review, the dashboard and every page of a target list its siteaccesses with
+  their folders ([Static publishing for multisite installations](../../guides/static-publishing-for-multisite-installations.md)).
 
 ## 2. The host
 

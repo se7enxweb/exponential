@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ягон муҳоҷират навишта нашуд: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Иҷрои дароз бо қисмҳо</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Майдонҳои холӣ танзимоти migration.ini [RunSettings]-ро нигоҳ медоранд.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ҳадди аксар ин қадар муҳоҷират</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Баъд аз ин муҳоҷирати дигар нест (сония)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Танаффус байни муҳоҷиратҳо (сония)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Афзалияти пасттар (аз 1 то 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Майдони иҷрои дароз адади бутун аз 1 аст (танаффус: сония аз 0 то 60, афзалият: аз 1 то 19) ё холӣ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Он дар %time худаш баста мешавад.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Баъд аз ин худаш баста шавад (дақиқа, ихтиёрӣ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Дақиқаҳо адади бутун аз 1 то 44640 (31 рӯз) ё холӣ.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Версия</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Дастрасиҳои сомона барои нашр</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Дар реша</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Дар реша дастрасии сомона нест: ҳар яке дар ҷузвдони худ аст, ва реша ба онҳо пайванд медиҳад</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Дастрасиҳои сомона</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Як дастрасии сомона ё якчандтоеро, ки тавассути пешвандҳои URI як хостро тақсим мекунанд, қайд кунед. Он ки дар реша аст, дар он ҷо пешкаш мешавад, дигарон дар ҷузвдони пешванди худ (/ger/); пайвандҳои байни онҳо дар нусха мемонанд. Дастрасиҳои маъмурӣ ҳеҷ гоҳ пешниҳод намешаванд.</translation>
     </message>
 </context>
 <context>

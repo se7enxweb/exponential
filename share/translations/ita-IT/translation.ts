@@ -82494,6 +82494,46 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Nessuna migrazione è stata scritta: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Un'esecuzione lunga a parti</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>I campi vuoti mantengono le impostazioni di migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Al massimo questo numero di migrazioni</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nessuna ulteriore migrazione dopo (secondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa tra le migrazioni (secondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Priorità più bassa (da 1 a 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Un campo di esecuzione lunga è un numero intero a partire da 1 (la pausa: secondi da 0 a 60, la priorità: da 1 a 19), oppure vuoto.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Si chiude da sola alle %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Chiudi da sola dopo (minuti, facoltativo)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>I minuti sono un numero intero da 1 a 44640 (31 giorni), oppure vuoto.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -85570,6 +85610,30 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>Version</source>
         <translation>Versione</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccess da pubblicare</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Alla radice</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nessun siteaccess alla radice: ognuno è nella sua cartella, e la radice rimanda a loro</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Seleziona un siteaccess, o più siteaccess che condividono un host tramite il loro prefisso URI. Quello alla radice è servito lì, gli altri nella cartella del loro prefisso (/ger/); i collegamenti tra loro restano nella copia. I siteaccess di amministrazione non sono mai proposti.</translation>
     </message>
 </context>
 <context>

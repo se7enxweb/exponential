@@ -81087,6 +81087,46 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <translation>Nagina migraziun n'è vegnida scritta: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>In lung barat per parts</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ils champs vids mantegnan las configuraziuns da migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Il pli bler uschè blers migraziuns</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nagina ulteriura migraziun suenter (secundas)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Pausa tranter las migraziuns (secundas)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Prioritad pli bassa (1 fin 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>In champ dal barat lung è in numer entir a partir da 1 (la pausa: secundas da 0 fin 60, la prioritad: 1 fin 19), u vid.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>El sa serra sez a las %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Serrar sez suenter (minutas, opziunal)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Las minutas èn in numer entir da 1 fin 44640 (31 dis), u vid.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>Version</source>
         <translation>Versiun</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Access a la website da publitgar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>En la ragisch</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nagin access en la ragisch: mintgin è en ses ordinatur, e la ragisch colliescha cun els</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marcai in access a la website, u plirs che parteglian in host tras lur prefix URI. Quel en la ragisch vegn servì là, ils auters en l'ordinatur da lur prefix (/ger/); colliaziuns tranter els restan en la copia. Access d'administraziun na vegnan mai purschids.</translation>
     </message>
 </context>
 <context>

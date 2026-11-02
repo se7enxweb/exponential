@@ -81085,6 +81085,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Kò sí ìṣípòpadà tí a kọ: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Ìṣiṣẹ́ gígùn ní apá-apá</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Àwọn pápá òfo máa ń pa àwọn ètò migration.ini [RunSettings] mọ́.</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Pọ̀ jù bẹ́ẹ̀ lọ ni iye ìṣíkiri wọ̀nyí</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Kò sí ìṣíkiri mìíràn lẹ́yìn (ìṣẹ́jú-àáyá)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Ìsinmi láàárín àwọn ìṣíkiri (ìṣẹ́jú-àáyá)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Ìpìlẹ̀ tó kéré jù (1 sí 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Pápá ìṣiṣẹ́ gígùn jẹ́ nọ́ńbà odidi láti 1 (ìsinmi: ìṣẹ́jú-àáyá láti 0 sí 60, ìpìlẹ̀: 1 sí 19), tàbí òfo.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ó máa ń tìpa ara rẹ̀ ní %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Tìpa ara rẹ̀ lẹ́yìn (ìṣẹ́jú, àṣàyàn)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Àwọn ìṣẹ́jú jẹ́ nọ́ńbà odidi láti 1 sí 44640 (ọjọ́ 31), tàbí òfo.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84161,6 +84201,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>Ẹ̀dà</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Àwọn ìwọlé sáìtì láti tẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ní gbòǹgbò</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kò sí ìwọlé sáìtì ní gbòǹgbò: ọ̀kọ̀ọ̀kan wà nínú fódà rẹ̀, gbòǹgbò sì so mọ́ wọn</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Àwọn ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Sàmì sí ìwọlé sáìtì kan, tàbí ọ̀pọ̀ tí ó pín agbàlejò kan nípasẹ̀ ìṣáájú URI wọn. Èyí tí ó wà ní gbòǹgbò ni a ń pèsè níbẹ̀, àwọn yòókù nínú fódà ìṣáájú wọn (/ger/); àwọn ìjápọ̀ láàrin wọn wà nínú ẹ̀dà náà. A kì í fi ìwọlé ìṣàkóso hàn rárá.</translation>
     </message>
 </context>
 <context>

@@ -2,14 +2,14 @@
 title: staticcache.ini [Target_example]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [Target_example] in staticcache.ini: Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links ..."
-keywords: Einstellung, staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, OutsideLinks, AdminLinks, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
+summary: "Die Einstellungen von [Target_example] in staticcache.ini: Name, SiteAccess, SiteAccessList, DefaultSiteAccess, Kind, Remote, Branch, Folder ..."
+keywords: Einstellung, staticcache.ini, Target_example, INI, setting, Name, SiteAccess, SiteAccessList, DefaultSiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, OutsideLinks, AdminLinks, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [Target_example]
 
-Der Block `[Target_example]` von `settings/staticcache.ini`, mit 30 Einstellung(en).
+Der Block `[Target_example]` von `settings/staticcache.ini`, mit 32 Einstellung(en).
 
 Bearbeiten Sie `settings/staticcache.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -48,6 +48,44 @@ Standard: leer.
 # settings/override/staticcache.ini.append.php
 [Target_example]
 SiteAccess=
+*/ ?>
+```
+
+## SiteAccessList
+
+> Mehrere Front-Siteaccesses in einer Kopie, statt SiteAccess: Sites, die  
+> sich über ihr URI-Präfix einen Host teilen (site.ini \[SiteAccessSettings\]  
+> MatchOrder mit uri, oder host\_uri mit einer URI), etwa site, bold und  
+> bold\_ger. Jeder außer dem Standard wird in den Ordner seines Präfixes  
+> geschrieben (/bold\_ger/...); die Links zwischen ihnen bleiben in der Kopie,  
+> und Links zu einem nicht aufgeführten Siteaccess führen aus der Kopie  
+> hinaus (OutsideLinks). Nennt es welche, wird SiteAccess nicht gelesen.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# ein leeres "SiteAccessList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+SiteAccessList[]
+*/ ?>
+```
+
+## DefaultSiteAccess
+
+> Der Siteaccess aus SiteAccessList\[\], der im Stamm der Kopie ausgeliefert  
+> wird. Leer: Jeder Siteaccess liegt in seinem Ordner, und der Stamm ist eine  
+> Seite, die auf jeden verlinkt. Ein Ziel mit einem Siteaccess hat ihn immer  
+> im Stamm.  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+DefaultSiteAccess=
 */ ?>
 ```
 

@@ -81085,6 +81085,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>未寫入遷移:%reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>分段長時間執行</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>留空的欄位保留 migration.ini [RunSettings] 中的設定。</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>最多這麼多個遷移</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>在此之後不再啟動遷移（秒）</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>遷移之間的暫停（秒）</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>較低優先順序（1 到 19）</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>長時間執行欄位是從 1 開始的整數（暫停：0 到 60 秒，優先順序：1 到 19），或留空。</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>它將在 %time 自動關閉。</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>在此之後自動關閉（分鐘，選填）</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>分鐘數為 1 到 44640（31 天）的整數，或留空。</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84161,6 +84201,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>版本</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>要發布的網站存取</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>在根目錄</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>根目錄沒有網站存取：每個都在自己的資料夾中，根目錄連結到它們</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>勾選一個網站存取，或多個透過 URI 前綴共用同一主機的網站存取。根目錄的那個在根目錄提供，其他的在其前綴的資料夾中 (/ger/)；它們之間的連結保留在副本中。從不提供管理網站存取。</translation>
     </message>
 </context>
 <context>

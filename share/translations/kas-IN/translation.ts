@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>کانٛہہ مایگریشن آو نہٕ لیکھنہٕ: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>حصن منز اکھ لمبہ رن</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>خالی خانہ migration.ini [RunSettings] کس سیٹنگس ہیکھ رکھان۔</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>زیادہ کھوتہ زیادہ ایتھ تعداد مائگریشن</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>یمہ پتہ کینہہ مزید مائگریشن نہ (سیکنڈ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>مائگریشنن درمیان وقفہ (سیکنڈ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>کم ترجیح (1 تہ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>لمبہ رنک خانہ چھُ 1 پیٹھ شروع گمتس پوری عدد (وقفہ: 0 پیٹھ 60 سیکنڈ، ترجیح: 1 پیٹھ 19)، یا خالی۔</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>یہ بند گژھہ %time پیٹھ پننہ آپ۔</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>یمہ پتہ پننہ آپ بند کرُن (منٹ، اختیاری)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>منٹ چھ 1 پیٹھ 44640 (31 دۄہ) تام پوری عدد، یا خالی۔</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ؤرژَن</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>شایع کرنہٕ خٲطرٕ سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>روٗٹس پیٚٹھ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>روٗٹس پیٚٹھ چھُنہٕ کانٛہہ سایِٹ ایکسیس: پرٛتھ اَکھ چھُ پننِس فولڈرس منٛز، تہٕ روٗٹ چھُ تِمن لِنک دِوان</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>اَکھ سایِٹ ایکسیس ژارِو، یا واریاہ یِم پننہِ URI اگرٕ لفظٕ ذریعہٕ اَکھ ہوسٹ بٲگراوان چھِ۔ روٗٹس پیٚٹھ یُس چھُ سُہ چھُ تتی پیش کرنہٕ یِوان، باقی پننہِ اگرٕ لفظُک فولڈرس منٛز (/ger/)؛ تِہندِ درمیان لِنک چھِ کاپی منٛزٕے روزان۔ انتظامیہ ہٕنٛد سایِٹ ایکسیس چھِ نہٕ زانٛہہ پیش کرنہٕ یِوان۔</translation>
     </message>
 </context>
 <context>

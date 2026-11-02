@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>মাইগ্রেসন অমত্তা ইদ্রে: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>ꯀꯥꯟꯅꯕꯗꯥ ꯃꯈꯜ ꯃꯈꯜ ꯑꯣꯏꯅꯥ ꯂꯥꯎꯕ ꯔꯟ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ꯑꯣꯏꯗꯕ ꯐꯤꯜꯗꯁꯤꯅꯥ migration.ini [RunSettings] ꯒꯤ ꯁꯦꯠꯇꯤꯡ ꯉꯥꯛꯀꯅꯤ꯫</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ꯈꯨꯗꯝ ꯈꯔꯗꯨꯃꯛ ꯃꯁꯤꯒꯤ ꯃꯇꯧ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ꯃꯁꯤꯒꯤ ꯃꯇꯨꯡꯗꯥ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯑꯇꯣꯞꯄꯥ ꯂꯩꯇꯦ (ꯁꯦꯀꯟꯗ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯃꯔꯛꯇꯥ ꯊꯦꯡꯅꯕ (ꯁꯦꯀꯟꯗ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ꯅꯦꯝꯕ ꯃꯃꯊꯨ (1 ꯇꯧ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ꯂꯥꯎꯕ ꯔꯟꯒꯤ ꯐꯤꯜꯗ 1 ꯗꯒꯤ ꯍꯧꯔꯀꯄꯥ ꯃꯄꯨꯟ ꯃꯁꯤꯡ (ꯊꯦꯡꯅꯕ: ꯁꯦꯀꯟꯗ 0 ꯗꯒꯤ 60, ꯃꯃꯊꯨ: 1 ꯗꯒꯤ 19) ꯅꯠꯇ꯭ꯔꯒꯥ ꯑꯣꯏꯗꯕ꯫</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ꯃꯁꯤ %time ꯗꯥ ꯃꯁꯥꯃꯛꯇꯥ ꯀꯥꯟꯅꯩ꯫</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ꯃꯁꯤꯒꯤ ꯃꯇꯨꯡꯗꯥ ꯃꯁꯥꯃꯛꯇꯥ ꯀꯥꯟꯅꯧ (ꯃꯤꯅꯤꯠ, ꯑꯄꯥꯝꯕꯥ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ꯃꯤꯅꯤꯠ 1 ꯗꯒꯤ 44640 (ꯅꯨꯃꯤꯠ 31) ꯐꯥꯑꯣꯕ ꯃꯄꯨꯟ ꯃꯁꯤꯡ, ꯅꯠꯇ꯭ꯔꯒꯥ ꯑꯣꯏꯗꯕ꯫</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ভর্সন</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>পাউথোকপা সাইট একসেসশিং</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইট একসেস</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>রুটতা</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>রুটতা সাইট একসেস অমত্তা লৈতে: মখোয় খুদিংমক মখোয়গী ফোল্দরদা লৈ, অমসুং রুটনা মখোয়দা লিংক পীরি</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>সাইট একসেসশিং</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>সাইট একসেস অমা, নত্রগা মখোয়গী URI প্রিফিক্সনা হোস্ট অমা শেয়র তৌবা কয়া খনবীয়ু। রুটতা লৈবা অদু মফম অদুদা পীরি, অতোপ্পশিং মখোয়গী প্রিফিক্সকী ফোল্দরদা (/ger/); মখোয়গী মরক্তা লৈবা লিংকশিং কোপীদা লৈরি। প্রশাসনগী সাইট একসেসশিং কদাইদা পীদে।</translation>
     </message>
 </context>
 <context>

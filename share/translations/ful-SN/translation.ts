@@ -81087,6 +81087,46 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <translation>Alaa migration winndaa: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Dimndol ɓurdol e fedde-fedde</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Ɗerewol ɓolɗol e jogii teelte migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Ɓuri heewde noon migrasiyoŋ</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Migrasiyoŋ goɗɗo walaa caggal (sekondi)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Daaɗal hakkunde migrasiyoŋ (sekondi)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Dow-ɗum famɗo (1 haa 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Ɗerewol dimndol ɓurdol ko limngal timmungal ndeeɗoo 1 (daaɗal: sekondi 0 haa 60, dow-ɗum: 1 haa 19), malla ɓoɗɗol.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Ɗum maɓɓitaa mo ɗum ngol %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Maɓɓitaa mo ɗum caggal (miniti, sarti walaa)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Miniti ko limngal timmungal 1 haa 44640 (nennde 31), malla ɓoɗɗol.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Version</source>
         <translation>Yamre</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccess yaltinteeɗi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>E daɗol</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Alaa siteaccess e daɗol: kala gooto ina e follere mum, daɗol ngol jokkondiri e majji</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Labo siteaccess gooto, walla ɗuuɗɗi lomtondirooji host gooto e jaɓɓorde URI maɓɓe. Ngol woni e daɗol ngol hokkete ton, goɗɗi ɗi ina e follere jaɓɓorde maɓɓe (/ger/); jokkole hakkunde maɓɓe ina heddoo e kopi oo. Siteaccess jiiloowo hokkatake abada.</translation>
     </message>
 </context>
 <context>

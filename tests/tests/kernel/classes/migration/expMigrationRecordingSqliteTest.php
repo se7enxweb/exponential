@@ -7,6 +7,7 @@
  *       site-wide window, stop, plan and discard
  *  RS-2 RC-3 a user published as content: no personal data recorded
  *  RS-3 RC-4 a migration generated from what is there
+ *  RS-4 RC-5 a site-wide window of time that closes by itself
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -59,5 +60,11 @@ class expMigrationRecordingSqliteTest extends PHPUnit\Framework\TestCase
     public function testGenerateFromExisting()
     {
         $this->checkGenerateFromExisting( $this->db );
+    }
+
+    /** RS-4 */
+    public function testRecordingWindow()
+    {
+        $this->checkRecordingWindow( $this->db );
     }
 }

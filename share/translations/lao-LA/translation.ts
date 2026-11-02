@@ -81087,6 +81087,46 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ບໍ່ໄດ້ຂຽນການຍ້າຍ: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>ການແລ່ນຍາວເປັນສ່ວນໆ</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>ຊ່ອງຫວ່າງຈະຮັກສາການຕັ້ງຄ່າຂອງ migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>ການຍ້າຍຫຼາຍທີ່ສຸດເທົ່ານີ້</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>ບໍ່ມີການຍ້າຍອີກຫຼັງຈາກ (ວິນາທີ)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>ພັກລະຫວ່າງການຍ້າຍ (ວິນາທີ)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>ບູລິມະສິດຕ່ຳກວ່າ (1 ເຖິງ 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>ຊ່ອງການແລ່ນຍາວແມ່ນຈຳນວນເຕັມຈາກ 1 (ການພັກ: ວິນາທີຈາກ 0 ເຖິງ 60, ບູລິມະສິດ: 1 ເຖິງ 19) ຫຼືຫວ່າງ.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>ມັນປິດເອງເວລາ %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>ປິດເອງຫຼັງຈາກ (ນາທີ, ທາງເລືອກ)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>ນາທີແມ່ນຈຳນວນເຕັມຈາກ 1 ເຖິງ 44640 (31 ມື້) ຫຼືຫວ່າງ.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Version</source>
         <translation>ເວີຊັນ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ການເຂົ້າເຖິງໄຊທີ່ຈະເຜີຍແຜ່</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ທີ່ຮາກ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ບໍ່ມີການເຂົ້າເຖິງໄຊທີ່ຮາກ: ແຕ່ລະອັນຢູ່ໃນໂຟນເດີຂອງມັນ ແລະຮາກເຊື່ອມໂຍງໄປຫາພວກມັນ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ໝາຍການເຂົ້າເຖິງໄຊໜຶ່ງ ຫຼືຫຼາຍອັນທີ່ໃຊ້ໂຮສດຽວກັນຜ່ານຄຳນຳໜ້າ URI. ອັນທີ່ຢູ່ຮາກຈະໃຫ້ບໍລິການຢູ່ທີ່ນັ້ນ ອັນອື່ນຢູ່ໃນໂຟນເດີຂອງຄຳນຳໜ້າ (/ger/); ລິ້ງລະຫວ່າງພວກມັນຢູ່ໃນສຳເນົາ. ບໍ່ເຄີຍສະເໜີການເຂົ້າເຖິງການບໍລິຫານ.</translation>
     </message>
 </context>
 <context>

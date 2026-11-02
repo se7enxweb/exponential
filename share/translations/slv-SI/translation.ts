@@ -81117,6 +81117,46 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>Nobena migracija ni bila zapisana: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Dolg zagon po delih</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Prazna polja ohranijo nastavitve iz migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Največ toliko migracij</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Nobene nadaljnje migracije po (sekundah)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Premor med migracijami (sekunde)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Nižja prioriteta (od 1 do 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Polje dolgega zagona je celo število od 1 (premor: sekunde od 0 do 60, prioriteta: od 1 do 19) ali prazno.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Zapre se samo ob %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Samodejno zapri po (minutah, izbirno)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Minute so celo število od 1 do 44640 (31 dni) ali prazno.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84193,6 +84233,30 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Version</source>
         <translation>Različica</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Dostopi do spletnega mesta za objavo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Dostop do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>V korenu</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>V korenu ni dostopa: vsak je v svoji mapi, koren pa vodi do njih</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Dostopi do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Označite en dostop do spletnega mesta ali več, ki si po svoji predponi URI delijo enega gostitelja. Tisti v korenu se streže tam, ostali v mapi svoje predpone (/ger/); povezave med njimi ostanejo v kopiji. Skrbniški dostopi se nikoli ne ponudijo.</translation>
     </message>
 </context>
 <context>

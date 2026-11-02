@@ -81087,6 +81087,46 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>Ni ysgrifennwyd unrhyw fudo: %reason</translation>
     </message>
     <message>
+        <source>A long run in parts</source>
+        <translation>Rhediad hir mewn rhannau</translation>
+    </message>
+    <message>
+        <source>Empty fields keep the settings of migration.ini [RunSettings].</source>
+        <translation>Mae meysydd gwag yn cadw gosodiadau migration.ini [RunSettings].</translation>
+    </message>
+    <message>
+        <source>At most this many migrations</source>
+        <translation>Dim mwy na'r nifer hwn o fudo</translation>
+    </message>
+    <message>
+        <source>No further migration after (seconds)</source>
+        <translation>Dim mudo pellach ar ôl (eiliadau)</translation>
+    </message>
+    <message>
+        <source>Pause between migrations (seconds)</source>
+        <translation>Saib rhwng mudo (eiliadau)</translation>
+    </message>
+    <message>
+        <source>Lower priority (1 to 19)</source>
+        <translation>Blaenoriaeth is (1 i 19)</translation>
+    </message>
+    <message>
+        <source>A long-run field is a whole number from 1 (the pause: seconds from 0 to 60, the priority: 1 to 19), or empty.</source>
+        <translation>Mae maes rhediad hir yn rhif cyfan o 1 (y saib: eiliadau o 0 i 60, y flaenoriaeth: 1 i 19), neu'n wag.</translation>
+    </message>
+    <message>
+        <source>It closes by itself at %time.</source>
+        <translation>Mae'n cau ei hun am %time.</translation>
+    </message>
+    <message>
+        <source>Close by itself after (minutes, optional)</source>
+        <translation>Cau ei hun ar ôl (munudau, dewisol)</translation>
+    </message>
+    <message>
+        <source>The minutes are a whole number from 1 to 44640 (31 days), or empty.</source>
+        <translation>Mae'r munudau'n rhif cyfan o 1 i 44640 (31 diwrnod), neu'n wag.</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -84163,6 +84203,30 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Version</source>
         <translation>Fersiwn</translation>
+    </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Mynediadau i'r wefan i'w cyhoeddi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Mynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Wrth y gwraidd</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Dim mynediad wrth y gwraidd: mae pob un yn ei ffolder, ac mae'r gwraidd yn cysylltu â nhw</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mynediadau i'r wefan</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Ticiwch un mynediad i'r wefan, neu sawl un sy'n rhannu un gwesteiwr drwy eu rhagddodiad URI. Mae'r un wrth y gwraidd yn cael ei weini yno, y lleill yn ffolder eu rhagddodiad (/ger/); mae'r dolenni rhyngddynt yn aros yn y copi. Ni chynigir mynediadau gweinyddu byth.</translation>
     </message>
 </context>
 <context>
