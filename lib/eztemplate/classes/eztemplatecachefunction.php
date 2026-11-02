@@ -116,9 +116,10 @@ class eZTemplateCacheFunction
             $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $keysData, false, array(), 'cacheKeys' );
             $newNodes[] = eZTemplateNodeTool::createVariableNode( false, $subtreeExpiryData, false, array(), 'subtreeExpiry' );
 
-            // The UI switch variant (expUISwitch, e.g. another interface language) is read at run time and only
-            // joins the key when a switch is applied, so the keys of everybody else stay as they were.
-            $code = "\$cacheKeys = array( \$cacheKeys, $placementKeyStringText, $accessNameText . ( empty( \$GLOBALS['expUISwitchVariantKey'] ) ? '' : '-' . \$GLOBALS['expUISwitchVariantKey'] ) );\n";
+            // The access path (/site under URI matching) and the UI switch variant (expUISwitch, e.g. another
+            // interface language) are read at run time and only join the key when there is one, so the keys of
+            // everybody else stay as they were (eZTemplateCacheBlock::accessSuffix()).
+            $code = "\$cacheKeys = array( \$cacheKeys, $placementKeyStringText, $accessNameText . eZTemplateCacheBlock::accessSuffix() );\n";
             $cachePathText = "\$cachePath";
         }
         else
@@ -128,8 +129,9 @@ class eZTemplateCacheFunction
             $placementKeyStringText = eZPHPCreator::variableText( $placementKeyString, 0, 0, false );
             $accessNameText = eZPHPCreator::variableText( $accessName, 0, 0, false );
             $nodeIDText = var_export( $nodeID, true );
-            $code = "\$cachePath = empty( \$GLOBALS['expUISwitchVariantKey'] ) ? " . eZPHPCreator::variableText( $cachePath, 0, 0, false ) .
-                    " : eZTemplateCacheBlock::cachePath( eZTemplateCacheBlock::keyString( array( $placementKeyStringText, $accessNameText . '-' . \$GLOBALS['expUISwitchVariantKey'] ) ), $nodeIDText );\n";
+            $code = "\$cacheBlockAccessSuffix = eZTemplateCacheBlock::accessSuffix();\n" .
+                    "\$cachePath = \$cacheBlockAccessSuffix === '' ? " . eZPHPCreator::variableText( $cachePath, 0, 0, false ) .
+                    " : eZTemplateCacheBlock::cachePath( eZTemplateCacheBlock::keyString( array( $placementKeyStringText, $accessNameText . \$cacheBlockAccessSuffix ) ), $nodeIDText );\n";
             $cachePathText = "\$cachePath";
         }
 
@@ -243,13 +245,8 @@ class eZTemplateCacheFunction
     function processCached( $tpl, $functionChildren, $rootNamespace, $currentNamespace,
                             $placementString, $keys, $subtreeExpiry, $expiry, $ignoreContentExpiry )
     {
-        // Fetch the current siteaccess
-        $accessName = false;
-        if ( isset( $GLOBALS['eZCurrentAccess']['name'] ) )
-            $accessName = $GLOBALS['eZCurrentAccess']['name'];
-        // the UI switch variant, as in the compiled code
-        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
-            $accessName .= '-' . $GLOBALS['expUISwitchVariantKey'];
+        // the current siteaccess, its access path and the UI switch variant, as in the compiled code
+        $accessName = eZTemplateCacheBlock::accessKey();
         if ( $keys === null )
         {
             $keyArray = array( $placementString, $accessName );

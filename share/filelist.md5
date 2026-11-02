@@ -26153,8 +26153,8 @@ cec7bd47afdf599a4e1a46499a830cee  lib/ezsoap/classes/ezsoapheader.php
 37d4b554618795eecaaec4eb429b68bc  lib/eztemplate/classes/eztemplateattributeoperator.php
 58eed4aa55822d2eb20786ad49d3899e  lib/eztemplate/classes/eztemplateautoload.php
 52f507feeacafb8476198dd20e499c41  lib/eztemplate/classes/eztemplateblockfunction.php
-6561bf2374f22f5c98cc54755fb10bbd  lib/eztemplate/classes/eztemplatecacheblock.php
-b3382dbf66090dbda339c04cc96492c4  lib/eztemplate/classes/eztemplatecachefunction.php
+d3e633d1d2f63fba8e8b7abb64ddbd82  lib/eztemplate/classes/eztemplatecacheblock.php
+c076958b5e74122ad926927049c19582  lib/eztemplate/classes/eztemplatecachefunction.php
 dfefe96252b36f50979d0da6f7dad5f5  lib/eztemplate/classes/eztemplatecompiledloop.php
 03f8c39006c33d4af2bb605c5527f4fe  lib/eztemplate/classes/eztemplatecompiler.php
 aeeac874e149fe1afe1c8e79b205d856  lib/eztemplate/classes/eztemplatecontroloperator.php
@@ -26251,7 +26251,7 @@ a0ecfd2dab4fdc60419143e49560f2ae  lib/ezutils/classes/ezuri.php
 686a5aa5e5d1e9114224466eb066b8c3  lib/ezutils/classes/ezwizardbaseclassloader.php
 f24ab8314d823641178731362a172a11  lib/phpcompat.php
 c4a03e5f701b63398f3194a39b8e9ace  lib/smarty/classes/expsmartyblockfunction.php
-a5645b5082baecaa17e39ff4ed8d24fa  lib/smarty/classes/expsmartycacheblock.php
+b57a4ee58728a44384f8accf2a97f2ae  lib/smarty/classes/expsmartycacheblock.php
 277240c53f9ba1962aa24b4ddafc6af7  lib/smarty/classes/expsmartyconverter.php
 b12f25dbac689b3a7e394c256680eaa4  lib/smarty/classes/expsmartyextension.php
 6420ed4b14a423bd95a0201be2df3cb1  lib/smarty/classes/expsmartyfetchfunction.php
@@ -26296,7 +26296,7 @@ bd53147fc2838f03c10393415f0a486d  lib/twig/classes/exptwigfilesystemcache.php
 65b88b93a3610eb8a25404910a52ad7d  lib/twig/classes/exptwignativeoperators.php
 aad9b1fde3221e89aba46033f26825ba  lib/twig/classes/exptwigobjectproxy.php
 0c1cdea2ba137e7c61208fc91b4751fc  lib/twig/classes/exptwigoperator.php
-742682faa0d297db72f3460c75610f03  lib/twig/classes/exptwigrenderer.php
+107631310b2505138a691b8167c4c431  lib/twig/classes/exptwigrenderer.php
 5d894f6592c899384420c0a3f77ab1cf  lib/twig/classes/exptwigreverseconverter.php
 c0e5f940ec6756d1d07b5aee8c447757  lib/twig/classes/exptwigsecurity.php
 a0b2fe24d799c7ba1fe61953524c1a78  lib/twig/classes/exptwigtagnode.php
@@ -29393,6 +29393,7 @@ ae6e64544e6fb939af59a865ecb7aa1c  tests/tests/lib/ezsoap/eZSOAPMessageTest.php
 3980ca015824d81d920fca7557585564  tests/tests/lib/ezsoap/fixtures/soap_client_tls_subprocess.php
 42970190d7106baf14401e820271ba1d  tests/tests/lib/ezsoap/suite.php
 1048c0d6dab52f2435fd8f4089917bdd  tests/tests/lib/eztemplate/eZTemplateAttributeOperatorTest.php
+1f2cbf344c90e060d7673cd5391360d7  tests/tests/lib/eztemplate/eZTemplateCacheBlockAccessPathTest.php
 11571a2592ed97415cadf3cd3b52271d  tests/tests/lib/eztemplate/eZTemplateCompiledInterpretedParityTest.php
 86d5b7b448c070f3cdd141677761852b  tests/tests/lib/eztemplate/eZTemplateDebugCommentsTest.php
 84fef831b52a8ff43677450e02f16e4c  tests/tests/lib/eztemplate/eZTemplateEngineRenderTest.php
