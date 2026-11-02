@@ -2,14 +2,14 @@
 title: migration.ini [AdminSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [AdminSettings] in migration.ini: PhpCliPath, JobHistory, LogBytes"
-keywords: Einstellung, migration.ini, AdminSettings, INI, setting, PhpCliPath, JobHistory, LogBytes
+summary: "Die Einstellungen von [AdminSettings] in migration.ini: PhpCliPath, JobHistory, Background, QueueJobType, LogBytes"
+keywords: Einstellung, migration.ini, AdminSettings, INI, setting, PhpCliPath, JobHistory, Background, QueueJobType, LogBytes
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [AdminSettings]
 
-Der Block `[AdminSettings]` von `settings/migration.ini`, mit 3 Einstellung(en).
+Der Block `[AdminSettings]` von `settings/migration.ini`, mit 5 Einstellung(en).
 
 Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -46,6 +46,43 @@ Standard: `50`.
 # settings/override/migration.ini.append.php
 [AdminSettings]
 JobHistory=50
+*/ ?>
+```
+
+## Background
+
+> How a run started there goes to the background:  
+>   process  a console process of its own, started at once (the default)  
+>   queue    a job of expqueue (the extension), run by its worker, when expqueue is active, its tables are installed,  
+>            expqueue.ini has the job type below and a worker is running; else a process as above  
+> The job type, in the site's expqueue.ini.append.php:  
+>   \[JobType\_migration.run\]  
+>   Handler=expMigrationQueueHandler  
+>   Class=bulk  
+>   Timeout=86400  
+>   Description=A migration run started in Setup > Migrations  
+
+Standard: `process`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[AdminSettings]
+Background=process
+*/ ?>
+```
+
+## QueueJobType
+
+> The expqueue job type of Background=queue.  
+
+Standard: `migration.run`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[AdminSettings]
+QueueJobType=migration.run
 */ ?>
 ```
 

@@ -84,6 +84,8 @@ Every page has a **Help** button that opens the page of this manual about it.
   [form endpoint](../../specifications/6.0/static-publishing-form-endpoint.md).
 - Without pressing a button: [Publish automatically](publish-automatically.md) and
   [Notifications and webhooks](notifications-and-webhooks.md).
+- From the page itself: [The website sidebar panel](the-website-sidebar-panel.md) shows whether a page is stale and
+  publishes just that page.
 
 ## Next step
 

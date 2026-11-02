@@ -82,6 +82,9 @@ needs a step's change names the step in `requires`.
 | `extension:<name>` | `extension/<name>/migrations/` of every **active** extension | `ExtensionDirectory` |
 | `package:<name>` | `migrations/` of every installed package below `var/<storage>/packages/` | `ExtensionDirectory` |
 
+A package's migrations also run when the package is installed, and the kickstarter runs every pending migration
+after it created the sites: [Packages, deploys and long runs](migrations-packages-deploy-and-long-runs.md).
+
 Only the files directly in a folder are migrations; subfolders (the status files and run logs) are not searched. A
 file whose name does not start with `YYYYMMDDHHMMSS_` (a README, a `.gitkeep`) is skipped.
 `[MigrationSettings] Enabled=disabled` finds none at all. Every setting is listed in
@@ -222,6 +225,10 @@ login; `--login=<login>` takes another.
 | tag the commit | `--no-tag` | `Tag=disabled` |
 | push commit and tag | `--no-push` | `Push=disabled` |
 | stop at the first failure | | `[RunSettings] StopOnFailure=disabled` |
+| every pending migration in one run | `--max-migrations=<n>`, `--max-time=<seconds>` (the rest postponed) | `MaxMigrations`, `MaxTime` |
+| no pause, the normal priority | `--throttle=<seconds>`, `--nice=<n>` | `Throttle`, `Nice` |
+| a package's migrations run when it is installed | | `[InstallSettings] RunOnPackageInstall=disabled` |
+| a deploy runs no migration | `exp:velocity deploy --migrate` | `velocity.ini [DeploySettings] Migrate=enabled` |
 
 ## Every command
 
@@ -275,14 +282,15 @@ The pages: [Migrations in the administration](../help/migrations/in-the-administ
 ## Not in 6.0.15 yet
 
 The editor and the
-generators in the administration (generators other than the skeleton), recording, and `exp:velocity deploy --migrate`
-are planned and not part of this release.
+generators in the administration (generators other than the skeleton), parallel workers, the steps that change code
+and design files, and a site-wide recording window are planned and not part of this release.
 
 ## Related pages
 
 - [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
   [Frequently asked questions](../help/migrations/faq.md)
 - [The tutorial](migrations-tutorial.md), [PHP migrations](migrations-php.md),
+  [Packages, deploys and long runs](migrations-packages-deploy-and-long-runs.md),
   [Rollback and captions](migrations-rollback-and-captions.md),
   [The migrations repository](migrations-repositories.md)
 - [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),

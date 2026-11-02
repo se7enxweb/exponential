@@ -2,14 +2,14 @@
 title: velocity.ini [DeploySettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [DeploySettings] in velocity.ini: PhpFpmService, PhpFpmReload, WarmUpURL"
-keywords: velocity.ini, DeploySettings, INI, setting, PhpFpmService, PhpFpmReload, WarmUpURL
+summary: "The settings of [DeploySettings] in velocity.ini: PhpFpmService, PhpFpmReload, WarmUpURL, Migrate"
+keywords: velocity.ini, DeploySettings, INI, setting, PhpFpmService, PhpFpmReload, WarmUpURL, Migrate
 type: generated
 generated: exp:help:examples
 ---
 # velocity.ini [DeploySettings]
 
-The block `[DeploySettings]` of `settings/velocity.ini`, with 3 setting(s).
+The block `[DeploySettings]` of `settings/velocity.ini`, with 4 setting(s).
 
 Never edit `settings/velocity.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -99,6 +99,24 @@ Default: an empty list.
 [DeploySettings]
 # an empty "WarmUpURL[]" first replaces the shipped list; without it the items are added
 WarmUpURL[]
+*/ ?>
+```
+
+## Migrate
+
+> Whether a deploy runs the pending migrations (./console exp:migration:migrate  
+> --apply, with its captions, record, commit and push), after the caches of  
+> settings and templates and before PHP-FPM and Velocity run the new code. A  
+> migration that fails stops the deploy there. enabled: every deploy;  
+> disabled: only deploy --migrate. deploy --no-migrate skips them either way.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[DeploySettings]
+Migrate=disabled
 */ ?>
 ```
 

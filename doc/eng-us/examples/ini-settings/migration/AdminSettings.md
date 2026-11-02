@@ -2,14 +2,14 @@
 title: migration.ini [AdminSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [AdminSettings] in migration.ini: PhpCliPath, JobHistory, LogBytes"
-keywords: migration.ini, AdminSettings, INI, setting, PhpCliPath, JobHistory, LogBytes
+summary: "The settings of [AdminSettings] in migration.ini: PhpCliPath, JobHistory, Background, QueueJobType, LogBytes"
+keywords: migration.ini, AdminSettings, INI, setting, PhpCliPath, JobHistory, Background, QueueJobType, LogBytes
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [AdminSettings]
 
-The block `[AdminSettings]` of `settings/migration.ini`, with 3 setting(s).
+The block `[AdminSettings]` of `settings/migration.ini`, with 5 setting(s).
 
 Never edit `settings/migration.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -46,6 +46,43 @@ Default: `50`.
 # settings/override/migration.ini.append.php
 [AdminSettings]
 JobHistory=50
+*/ ?>
+```
+
+## Background
+
+> How a run started there goes to the background:  
+>   process  a console process of its own, started at once (the default)  
+>   queue    a job of expqueue (the extension), run by its worker, when expqueue is active, its tables are installed,  
+>            expqueue.ini has the job type below and a worker is running; else a process as above  
+> The job type, in the site's expqueue.ini.append.php:  
+>   \[JobType\_migration.run\]  
+>   Handler=expMigrationQueueHandler  
+>   Class=bulk  
+>   Timeout=86400  
+>   Description=A migration run started in Setup > Migrations  
+
+Default: `process`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[AdminSettings]
+Background=process
+*/ ?>
+```
+
+## QueueJobType
+
+> The expqueue job type of Background=queue.  
+
+Default: `migration.run`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[AdminSettings]
+QueueJobType=migration.run
 */ ?>
 ```
 

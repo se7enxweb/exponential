@@ -177,6 +177,8 @@ class expKickstarter
             expSetupLog::finish( 'installed', true );
             // still in maintenance: the help's content classes and the manuals made from the Markdown help
             $this->installHelpManuals();
+            // and the migrations of the site, its extensions and packages (migration.ini [InstallSettings] RunOnKickstart)
+            $migrationsFailed = !$this->runMigrations();
         }
         else
             expSetupLog::finish( 'stopped after ' . $this->stopStep . ' (nothing installed)' );
@@ -193,7 +195,7 @@ class expKickstarter
         }
 
         $this->showSummary();
-        $this->script->shutdown( 0 );
+        $this->script->shutdown( empty( $migrationsFailed ) ? 0 : 1 );
     }
 
     private function bootstrap()
@@ -896,6 +898,28 @@ class expKickstarter
      * exphelp.ini [ManualSettings] BuildOnInstall=disabled leaves it out. A queue that fails is reported and never fails
      * the installation: the site works without the manuals, and the command can be run later.
      */
+    /**
+     * Runs the pending migrations of the new installation: ./console exp:migration:migrate --apply in a process of its
+     * own (expMigrationInstall::afterKickstart()).
+     *
+     * @return bool false when the run failed
+     */
+    private function runMigrations()
+    {
+        $result = class_exists( 'expMigrationInstall' ) ? expMigrationInstall::afterKickstart( array( 'root' => getcwd() ) ) : null;
+        if ( $result === null )
+            return true;
+        expSetupLog::note( 'migrations: ' . $result['message'] );
+        if ( $result['ok'] )
+        {
+            $this->cli->output( 'Migrations: ' . $result['message'] );
+            return true;
+        }
+        $this->cli->output( 'Migrations: FAIL ' . $result['message'] );
+        $this->cli->output( 'The site is installed; after fixing the cause run ./console exp:migration:resume --apply (./console exp:migration:status shows what is pending)' );
+        return false;
+    }
+
     private function installHelpManuals()
     {
         $ini = eZINI::instance( 'exphelp.ini' );

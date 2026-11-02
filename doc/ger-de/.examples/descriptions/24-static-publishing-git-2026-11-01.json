@@ -19,6 +19,10 @@
         "en": "Build the target first (as exp:static:build); nothing is committed when the build does not finish",
         "de": "Das Ziel zuerst bauen (wie exp:static:build); wird der Build nicht fertig, wird nichts committet"
     },
+    "command:expstaticpublish --nodes": {
+        "en": "Build only the pages of these nodes first (node ids; a comma list or repeated), into the last build, then publish",
+        "de": "Zuerst nur die Seiten dieser Knoten bauen (Knoten-IDs; eine Liste mit Kommas oder wiederholt), in den letzten Build, dann veröffentlichen"
+    },
     "command:expstaticpublish --message": {
         "en": "The commit message (default: what was published, or which publish is restored)",
         "de": "Die Commit-Nachricht (Standard: was veröffentlicht wurde, oder welche Veröffentlichung wiederhergestellt wird)"

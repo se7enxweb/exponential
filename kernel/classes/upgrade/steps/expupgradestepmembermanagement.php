@@ -76,8 +76,11 @@ class expUpgradeStepMemberManagement extends expUpgradeScriptStep
             $changes = expMemberManagement::changes( $rule );
             if ( !$changes['create_role'] && !$changes['add'] && !$changes['assign'] )
                 continue;
-            expMemberManagement::apply( $rule );
+            $applied = expMemberManagement::apply( $rule );
             $done[] = "rule $name: applied";
+            // the new policies keep the review hold whole, else the step 6.0.15-review-hold drifts
+            foreach ( $applied['review_hold'] as $line )
+                $done[] = "rule $name: review hold: $line";
         }
         return $done;
     }

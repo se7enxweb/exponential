@@ -31,6 +31,12 @@
  * One job at a time: start() refuses while a job is running or the installation lock is held (exp:upgrade, a console
  * run). The run itself takes the lock, so two pages pressing Run at once still run once.
  *
+ * With migration.ini [AdminSettings] Background=queue the job is handed to expqueue instead (when it is active, its
+ * tables are installed, the job type [AdminSettings] QueueJobType is in expqueue.ini and a worker runs; otherwise it
+ * starts as a process as above): the job's files are the same, its <id>.json names the queue job (queue), and the
+ * worker runs the same command line (runQueued(), through expMigrationQueueHandler), so the pages follow it the same
+ * way. Until the worker starts it, the job counts as running (queued), so a second one is refused as before.
+ *
  * The user of a job is the signed-in user (--login, resolved by expMigrationContext::resolveUser() in the run): the
  * administration checks the policy migration/run or migration/rollback and "Verify it's you" before start() is called.
  *
@@ -55,8 +61,8 @@ class expMigrationJob
 
     /** The options with a value the administration may pass on, per kind. */
     const VALUES = array(
-        'migrate' => array( 'only', 'reason', 'environment' ),
-        'resume' => array( 'reason', 'environment' ),
+        'migrate' => array( 'only', 'reason', 'environment', 'max-migrations', 'max-time', 'throttle' ),
+        'resume' => array( 'reason', 'environment', 'max-migrations', 'max-time', 'throttle' ),
         'rollback' => array( 'confirm', 'parts', 'source', 'environment' ),
     );
 
@@ -228,6 +234,21 @@ class expMigrationJob
             return $refuse( self::REFUSED_DIRECTORY, $directory );
         @touch( $base . '.progress' );
 
+        // Background=queue: the worker of expqueue runs it (runQueued()); a queue that cannot take it now leaves it to
+        // a process of its own
+        $queueType = array_key_exists( 'queue', $settings ) ? (string)$settings['queue'] : self::queueType();
+        if ( $queueType !== '' )
+        {
+            $uuid = self::enqueue( $queueType, $id, $login );
+            if ( $uuid !== '' )
+            {
+                $job['queue'] = $uuid;
+                @file_put_contents( $base . '.json', json_encode( $job, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
+                self::prune( $directory );
+                return array( 'ok' => true, 'id' => $id, 'refused' => '', 'detail' => '' );
+            }
+        }
+
         $process = proc_open( self::commandLine( $php, $arguments, $root, $base ), array( 0 => array( 'pipe', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root );
         if ( !is_resource( $process ) )
             return $refuse( self::REFUSED_START );
@@ -273,6 +294,10 @@ class expMigrationJob
             return null;
         $job += array( 'kind' => '', 'target' => '', 'user' => '', 'siteaccess' => '', 'pid' => 0, 'started' => 0, 'progress' => $base . '.progress' );
         $job['running'] = self::alive( (int)$job['pid'] );
+        // handed to expqueue and not started by its worker yet: waiting counts as running
+        $job['queued'] = false;
+        if ( !$job['running'] && (int)$job['pid'] < 1 && !empty( $job['queue'] ) && !is_file( $base . '.out' ) )
+            $job['running'] = $job['queued'] = self::queueWaiting( (string)$job['queue'] );
         $job['ended'] = !$job['running'];
         $job['report'] = null;
         $job['exit'] = null;
@@ -402,6 +427,143 @@ class expMigrationJob
     {
         $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? (string)$GLOBALS['eZCurrentAccess']['name'] : '';
         return preg_match( '/^[A-Za-z0-9_-]+$/', $access ) ? $access : '';
+    }
+
+    /**
+     * The expqueue job type a job goes to: [AdminSettings] QueueJobType when Background=queue and expqueue can take
+     * it now (active, tables installed, the type in expqueue.ini, a worker running), else '' (a process of its own).
+     *
+     * @param eZINI|null $ini migration.ini
+     * @return string
+     */
+    public static function queueType( $ini = null )
+    {
+        $ini = $ini ?: eZINI::instance( 'migration.ini' );
+        $mode = $ini->hasVariable( 'AdminSettings', 'Background' ) ? trim( (string)$ini->variable( 'AdminSettings', 'Background' ) ) : 'process';
+        if ( $mode !== 'queue' )
+            return '';
+        $type = $ini->hasVariable( 'AdminSettings', 'QueueJobType' ) ? trim( (string)$ini->variable( 'AdminSettings', 'QueueJobType' ) ) : 'migration.run';
+        return self::queueProblem( $type ) === '' ? $type : '';
+    }
+
+    /**
+     * Why expqueue cannot take a job of the type now, '' when it can.
+     *
+     * @param string $type
+     * @return string
+     */
+    public static function queueProblem( $type )
+    {
+        if ( !class_exists( 'expQueue' ) || !class_exists( 'expQueueConfig' ) )
+            return 'expqueue is not active';
+        if ( (string)$type === '' )
+            return 'no [AdminSettings] QueueJobType';
+        try
+        {
+            if ( !expQueue::installed() )
+                return 'the tables of expqueue are not installed';
+            $definition = expQueueConfig::instance()->jobType( (string)$type );
+            if ( !$definition )
+                return "expqueue.ini has no [JobType_$type]";
+            if ( class_exists( 'expQueueWorker' ) && !expQueueWorker::live() )
+                return 'no queue worker is running';
+        }
+        catch ( Throwable $e )
+        {
+            return $e->getMessage();
+        }
+        return '';
+    }
+
+    /**
+     * Hands a job to expqueue, as the user of the job.
+     *
+     * @param string $type
+     * @param string $id the job's id
+     * @param string $login
+     * @return string the queue job's uuid, '' when it could not be queued
+     */
+    protected static function enqueue( $type, $id, $login )
+    {
+        try
+        {
+            $user = expMigrationContext::resolveUser( (string)$login );
+            $options = $user ? array( 'user_id' => (int)$user->attribute( 'contentobject_id' ) ) : array();
+            // @phpstan-ignore-next-line expqueue is an extension: its classes exist only where it is active
+            $queued = expQueue::enqueue( (string)$type, array( 'job' => (string)$id ), $options );
+            return is_object( $queued ) ? (string)$queued->attribute( 'uuid' ) : '';
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeWarning( 'the migration job could not be queued, it starts as a process: ' . $e->getMessage(), __METHOD__ );
+            return '';
+        }
+    }
+
+    /**
+     * Whether a queue job is still to run or running (not done, dead or cancelled).
+     *
+     * @param string $uuid
+     * @return bool
+     */
+    public static function queueWaiting( $uuid )
+    {
+        if ( !class_exists( 'expQueue' ) )
+            return false;
+        try
+        {
+            // @phpstan-ignore-next-line expqueue is an extension: its classes exist only where it is active
+            $queued = expQueue::fetch( (string)$uuid );
+            return is_object( $queued ) && !$queued->isFinal();
+        }
+        catch ( Throwable $e )
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Runs a queued job in this process's child and waits for it (the queue worker's side, expMigrationQueueHandler):
+     * the command line start() wrote, its output into the job's files, its pid into the job, as a job started as a
+     * process has them.
+     *
+     * @param string $id the job's id
+     * @param callable|null $heartbeat called about every second while the run goes on
+     * @param array $settings directory, php, root (tests)
+     * @return int the run's exit code (4 when it could not be started)
+     */
+    public static function runQueued( $id, $heartbeat = null, array $settings = array() )
+    {
+        if ( !expMigrationRecord::validRunId( (string)$id ) )
+            return expUpgrade::EXIT_USAGE;
+        $base = self::directory( isset( $settings['directory'] ) ? $settings['directory'] : null ) . '/' . $id;
+        $job = is_file( $base . '.json' ) ? json_decode( (string)@file_get_contents( $base . '.json' ), true ) : null;
+        if ( !is_array( $job ) || !isset( $job['arguments'] ) || !is_array( $job['arguments'] ) || !$job['arguments']
+             || !in_array( $job['arguments'][0], self::KINDS, true ) )
+            return expUpgrade::EXIT_USAGE;
+        $php = isset( $settings['php'] ) ? (string)$settings['php'] : self::phpBinary();
+        $root = isset( $settings['root'] ) ? (string)$settings['root'] : (string)eZSys::rootDir();
+        if ( $php === '' || !function_exists( 'proc_open' ) )
+            return expUpgrade::EXIT_INTERNAL;
+        $pipes = array();
+        $process = proc_open( array_merge( array( $php ), array_map( 'strval', $job['arguments'] ) ),
+                              array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', $base . '.out', 'w' ), 2 => array( 'file', $base . '.err', 'w' ) ),
+                              $pipes, $root );
+        if ( !is_resource( $process ) )
+            return expUpgrade::EXIT_INTERNAL;
+        $status = proc_get_status( $process );
+        $job['pid'] = (int)$status['pid'];
+        @file_put_contents( $base . '.pid', (string)$job['pid'] );
+        @file_put_contents( $base . '.json', json_encode( $job, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
+        while ( $status['running'] )
+        {
+            if ( is_callable( $heartbeat ) )
+                call_user_func( $heartbeat );
+            usleep( 500000 );
+            $status = proc_get_status( $process );
+        }
+        proc_close( $process );
+        return (int)$status['exitcode'];
     }
 
     /**

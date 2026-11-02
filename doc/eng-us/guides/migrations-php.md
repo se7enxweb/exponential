@@ -138,6 +138,10 @@ process. A migration that must commit by itself, for example a batch of thousand
 `transactional()` and is responsible for being safe to run again. Whatever a transaction cannot undo, the caption
 taken before the run can: after a failure it is restored by default.
 
+For such a batch, `$this->batches( $context, $fetch, $handle, $size )` commits every batch on its own and keeps how far
+it got in the migration's checkpoint, so the next run goes on from there:
+[PHP migrations in batches](migrations-packages-deploy-and-long-runs.md#php-migrations-in-batches).
+
 Order your own steps so that a failure halfway does the least harm: create a table before writing to it, write data
 before the schema change that depends on it on MySQL. Split a large change into several migrations.
 

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # velocity.ini
 
-Die ausgelieferten Einstellungen von `settings/velocity.ini`: 13 Blöcke, 133 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/velocity.ini`: 13 Blöcke, 134 Einstellungen.
 
 | Block | Einstellungen |
 |---|---|
@@ -23,7 +23,7 @@ Die ausgelieferten Einstellungen von `settings/velocity.ini`: 13 Blöcke, 133 Ei
 | [PHPSettings](PHPSettings.md) | 1 |
 | [ApplicationSettings](ApplicationSettings.md) | 2 |
 | [ControlSettings](ControlSettings.md) | 4 |
-| [DeploySettings](DeploySettings.md) | 3 |
+| [DeploySettings](DeploySettings.md) | 4 |
 | [WatchdogSettings](WatchdogSettings.md) | 6 |
 | [FrankenPHPSettings](FrankenPHPSettings.md) | 28 |
 | [PHPServerSettings](PHPServerSettings.md) | 8 |

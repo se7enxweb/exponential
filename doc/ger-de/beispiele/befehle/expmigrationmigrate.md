@@ -37,6 +37,7 @@ it was applied stops the run unless --force --reason=<text> accepts it.
 ./console exp:migration:migrate --apply
 ./console exp:migration:migrate --only=20261031120000_add_news_class --apply
 ./console exp:migration:migrate --path=extension/expnews/migrations --environment=staging --apply --no-push
+./console exp:migration:migrate --apply --max-migrations=20 --max-time=600 --throttle=0.5 --nice=10
 ```
 
 ## Optionen
@@ -60,6 +61,10 @@ it was applied stops the run unless --force --reason=<text> accepts it.
 | `--reason` | erforderlich | Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten) |
 | `--run-id` | erforderlich | Die Kennung des zu startenden Laufs (Standard eine neue: <Datum>-<Uhrzeit>-<6 Hex-Ziffern>); die Administration vergibt sie, bevor sie den Lauf startet |
 | `--progress` | erforderlich | Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht) |
+| `--max-migrations` | erforderlich | Apply at most this many migrations; the rest stay pending for the next run (default [RunSettings] MaxMigrations, empty: all) |
+| `--max-time` | erforderlich | Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime) |
+| `--throttle` | erforderlich | Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle) |
+| `--nice` | erforderlich | Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

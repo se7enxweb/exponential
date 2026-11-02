@@ -235,6 +235,33 @@ class expReviewHold
     }
 
     /**
+     * Limits every content/edit and content/publish policy that lacks it to review_hold/not_held. For code that adds
+     * such policies to a role after the review hold is in place (member management): without it the new policy edits
+     * held objects, and the review hold step reports drift. Nothing to do when the review hold is not installed.
+     * Idempotent.
+     *
+     * @return string[] what was done
+     */
+    public static function limitPolicies()
+    {
+        $free = self::group() ? self::state( self::STATE_FREE ) : null;
+        if ( !$free )
+            return array();
+        $done = array();
+        foreach ( self::policyPlan( self::roleData() )['limit'] as $entry )
+        {
+            $policy = eZPolicy::fetch( $entry[2] );
+            if ( !$policy instanceof eZPolicy )
+                continue;
+            $policy->appendLimitation( self::LIMITATION, array( (int)$free->attribute( 'id' ) ) );
+            $done[] = sprintf( 'limited content/%s of the role %s (%d, policy %d) to %s/%s', $entry[3], $entry[1], $entry[0], $entry[2], self::GROUP, self::STATE_FREE );
+        }
+        if ( $done )
+            eZRole::expireCache();
+        return $done;
+    }
+
+    /**
      * Makes the changes; idempotent.
      *
      * @param string|null $locale the language of the names (default: the top priority language)
@@ -288,14 +315,7 @@ class expReviewHold
             throw new RuntimeException( 'the states of ' . self::GROUP . ' are missing' );
         $ids = array( self::STATE_FREE => (int)$free->attribute( 'id' ), self::STATE_HELD => (int)$held->attribute( 'id' ) );
 
-        foreach ( self::policyPlan( self::roleData() )['limit'] as $entry )
-        {
-            $policy = eZPolicy::fetch( $entry[2] );
-            if ( !$policy instanceof eZPolicy )
-                continue;
-            $policy->appendLimitation( self::LIMITATION, array( $ids[self::STATE_FREE] ) );
-            $done[] = sprintf( 'limited content/%s of the role %s (%d, policy %d) to %s/%s', $entry[3], $entry[1], $entry[0], $entry[2], self::GROUP, self::STATE_FREE );
-        }
+        $done = array_merge( $done, self::limitPolicies() );
 
         if ( !eZRole::fetchByName( self::ROLE ) )
         {

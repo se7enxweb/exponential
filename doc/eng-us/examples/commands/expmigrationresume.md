@@ -53,6 +53,10 @@ failed first. The options of the run are those of exp:migration:migrate.
 | `--reason` | required | Why a changed migration is accepted (needed with --force; kept in the record and the audit log) |
 | `--run-id` | required | The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run |
 | `--progress` | required | Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on) |
+| `--max-migrations` | required | Apply at most this many migrations; the rest stay pending for the next run (default [RunSettings] MaxMigrations, empty: all) |
+| `--max-time` | required | Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime) |
+| `--throttle` | required | Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle) |
+| `--nice` | required | Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
