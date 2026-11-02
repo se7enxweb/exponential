@@ -83459,4 +83459,19 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Pažymėkite vieną svetainės prieigą arba kelias, kurios pagal URI priešdėlį dalijasi vienu serveriu. Esanti šaknyje pateikiama ten, kitos – savo priešdėlio aplanke (/ger/); nuorodos tarp jų lieka kopijoje. Administravimo prieigos niekada nesiūlomos.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statinis %target publikavimas svetainėje %site nepavyko</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statinis %target publikavimas svetainėje %site pavyko</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Šį laišką išsiuntė %site, nes to prašo statinio publikavimo tikslas %target.</translation>
+    </message>
+</context>
 </TS>

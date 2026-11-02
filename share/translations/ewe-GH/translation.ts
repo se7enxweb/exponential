@@ -83429,4 +83429,19 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <translation>Tia nyatakakaɖoƒe ƒe mɔnu ɖeka, alo geɖe siwo mama host ɖeka to woƒe URI ŋgɔdonya dzi. Esi le ke la me la wona le afima, bubuawo le woƒe ŋgɔdonya ƒe agbalẽdzraɖoƒe me (/ger/); kadodo siwo le wo dome la tsia kɔpi la me. Womenaa dziɖuɖu ƒe mɔnuwo gbeɖe o.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target ƒe static publishing mede edzi le %site o</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target ƒe static publishing de edzi le %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site ye ɖo mail sia ɖa elabena static publishing taɖodzinu %target bia.</translation>
+    </message>
+</context>
 </TS>

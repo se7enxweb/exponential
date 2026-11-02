@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هڪ سائيٽ رسائي چونڊيو، يا ڪيتريون جيڪي پنهنجي URI اڳياڙي ذريعي هڪ ميزبان ونڊين ٿيون. پاڙ واري اتي ئي ڏني وڃي ٿي، باقي پنهنجي اڳياڙي جي فولڊر ۾ (/ger/)؛ انهن وچ ۾ لنڪ نقل ۾ ئي رهن ٿا. انتظاميه جون رسائيون ڪڏهن به نه ڏيکاريون وڃن ٿيون.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site تي %target جي جامد اشاعت ناڪام ٿي</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site تي %target جي جامد اشاعت ڪامياب ٿي</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>هي ميل %site موڪلي آهي ڇاڪاڻ ته جامد اشاعت جو هدف %target ان جي گهر ڪري ٿو.</translation>
+    </message>
+</context>
 </TS>

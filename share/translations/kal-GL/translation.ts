@@ -83459,4 +83459,19 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Nittartakkamut isaariaq ataaseq, imaluunniit URI-mi siuliisa aqqutigalugu host ataaseq atussagaat arlallit nalunaaqutsikkit. Aallaqqaasianiittoq tassani pissarsiarineqartarpoq, allat siuliisa toqqaaviani (/ger/); akornanni innersuussutit assilinermi inissisimaannartarput. Aqutsinermut isaariaatit neqeroorutigineqartanngillat.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target-ip statiskimik saqqummersinneqarnera %site-mi iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target-ip statiskimik saqqummersinneqarnera %site-mi iluatsippoq</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>E-mail una %site-mit nassiunneqarpoq, statiskimik saqqummersitsinermi anguniagaq %target piumammat.</translation>
+    </message>
+</context>
 </TS>

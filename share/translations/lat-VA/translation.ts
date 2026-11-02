@@ -83462,4 +83462,19 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Nota unum aditum situs, vel plures qui unum hospitem per praefixum URI communicant. Qui in radice est ibi praebetur, ceteri in capsa praefixi sui (/ger/); nexus inter eos in exemplari manent. Aditus administrationis numquam offeruntur.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Editio statica %target in %site defecit</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Editio statica %target in %site successit</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Has litteras %site misit quia scopus editionis staticae %target eas postulat.</translation>
+    </message>
+</context>
 </TS>

@@ -84482,4 +84482,19 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Označite jedan pristup web-mjestu ili više njih koji dijele jedan host prema URI prefiksu. Onaj u korijenu poslužuje se ondje, ostali u mapi svog prefiksa (/ger/); poveznice među njima ostaju u kopiji. Administratorski pristupi nikad se ne nude.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statičko objavljivanje za %target nije uspjelo na %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statičko objavljivanje za %target uspjelo je na %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ovu poruku poslao je %site jer to traži cilj statičkog objavljivanja %target.</translation>
+    </message>
+</context>
 </TS>

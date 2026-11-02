@@ -83429,4 +83429,19 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <translation>Merke ovtta neahttabáikebeassama, dahje máŋga mat juogadit ovtta guossoheaddji iežaset URI-ovdalaččain. Dat mii lea ruohttasis bálvaluvvo doppe, earát iežaset ovdalačča máhpas (/ger/); liŋkkat gaskkaneaset bissot máŋggus. Hálddahuslaš beassamat eai goassege fállojuvvo.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statalaš almmuheapmi %target ii lihkostuvvan %site:s</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statalaš almmuheapmi %target lihkostuvai %site:s</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site sáddii dán e-poastta danin go statalaš almmuheami ulbmil %target bivdá dan.</translation>
+    </message>
+</context>
 </TS>

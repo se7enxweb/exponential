@@ -83459,4 +83459,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Означите један приступ сајту или више њих који деле један хост по свом URI префиксу. Онај у корену се ту служи, остали у фасцикли свог префикса (/ger/); везе међу њима остају у копији. Администраторски приступи се никад не нуде.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Статичко објављивање за %target није успело на %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Статичко објављивање за %target је успело на %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ову поруку је послао %site јер то тражи циљ статичког објављивања %target.</translation>
+    </message>
+</context>
 </TS>

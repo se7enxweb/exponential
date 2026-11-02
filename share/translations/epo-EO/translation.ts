@@ -83429,4 +83429,19 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <translation>Marku unu retejaliron, aŭ plurajn, kiuj dividas unu gastiganton per sia URI-prefikso. Tiu ĉe la radiko estas servata tie, la aliaj en la dosierujo de sia prefikso (/ger/); ligiloj inter ili restas en la kopio. Administraj retejaliroj neniam estas proponataj.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statika publikigo de %target malsukcesis ĉe %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statika publikigo de %target sukcesis ĉe %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ĉi tiun retleteron sendis %site, ĉar la celo de statika publikigo %target petas ĝin.</translation>
+    </message>
+</context>
 </TS>

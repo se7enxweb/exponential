@@ -83459,4 +83459,19 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>Označite en dostop do spletnega mesta ali več, ki si po svoji predponi URI delijo enega gostitelja. Tisti v korenu se streže tam, ostali v mapi svoje predpone (/ger/); povezave med njimi ostanejo v kopiji. Skrbniški dostopi se nikoli ne ponudijo.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statična objava cilja %target na %site ni uspela</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statična objava cilja %target na %site je uspela</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>To sporočilo je poslal %site, ker ga zahteva cilj statične objave %target.</translation>
+    </message>
+</context>
 </TS>

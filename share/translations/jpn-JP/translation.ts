@@ -83459,4 +83459,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>サイトアクセスを1つ、または URI プレフィックスで1つのホストを共有する複数を選びます。ルートのものはルートで配信され、ほかはそのプレフィックスのフォルダー (/ger/) に置かれます。相互のリンクはコピー内にとどまります。管理用のサイトアクセスは表示されません。</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site で %target の静的公開に失敗しました</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site で %target の静的公開に成功しました</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>このメールは、静的公開の公開先 %target が求めているため、%site から送信されました。</translation>
+    </message>
+</context>
 </TS>

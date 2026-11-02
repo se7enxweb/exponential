@@ -83429,4 +83429,19 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>Fink ien websidetagong oan, of meardere dy't ien host diele fia harren URI-foarheaksel. Dy yn de woartel wurdt dêr tsjinne, de oaren yn de map fan harren foarheaksel (/ger/); keppelings tusken harren bliuwe yn de kopy. Behear-websidetagongen wurde nea oanbean.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statysk publisearjen fan %target op %site is mislearre</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statysk publisearjen fan %target op %site is slagge</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Dizze mail is ferstjoerd troch %site om't it doel foar statysk publisearjen %target derom freget.</translation>
+    </message>
+</context>
 </TS>

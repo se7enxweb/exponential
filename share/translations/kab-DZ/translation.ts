@@ -83429,4 +83429,19 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <translation>Creḍ yiwen n unekcum ɣer usmel, neɣ aṭas yebḍan yiwen n usenneftaɣ s uzwir-nsen URI. Win yellan deg uẓar ad yettwasenfer dinna, wiyaḍ deg ukaram n uzwir-nsen (/ger/); iseɣwan gar-asen ad qqimen deg unɣal. Inekcumen n tdbelt ur d-ttwasumren ara akk.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Asuffeɣ udmis n %target ur yeddi ara deg %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Asuffeɣ udmis n %target yeddi deg %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Izen-a yettwazen sɣur %site acku iswi n usuffeɣ udmis %target yessuter-it.</translation>
+    </message>
+</context>
 </TS>

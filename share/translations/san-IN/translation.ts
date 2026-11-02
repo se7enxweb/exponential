@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>एकं जालस्थलप्रवेशं, अथवा स्वस्य URI-उपसर्गेण एकं आतिथेयं विभजमानान् अनेकान् चिनुत। मूले स्थितः तत्रैव परिवेष्यते, अन्ये स्वोपसर्गस्य सञ्चिकायाम् (/ger/); तेषां मध्ये सम्बन्धाः प्रतिलिप्याम् एव तिष्ठन्ति। प्रशासनस्य प्रवेशाः कदापि न प्रदर्श्यन्ते।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site इत्यत्र %target इत्यस्य स्थिरप्रकाशनं विफलम् अभवत्</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site इत्यत्र %target इत्यस्य स्थिरप्रकाशनं सफलम् अभवत्</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>स्थिरप्रकाशनलक्ष्यं %target इदं याचते इति कारणात् %site इदं पत्रं प्रेषितवान्।</translation>
+    </message>
+</context>
 </TS>

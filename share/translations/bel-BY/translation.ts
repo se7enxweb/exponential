@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Адзначце адзін доступ да сайта або некалькі, што дзеляць адзін хост праз свой URI-прэфікс. Той, што ў корані, абслугоўваецца там, астатнія — у папцы свайго прэфікса (/ger/); спасылкі паміж імі застаюцца ў копіі. Адміністрацыйныя доступы ніколі не прапануюцца.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Статычная публікацыя %target на %site не ўдалася</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Статычная публікацыя %target на %site прайшла паспяхова</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Гэты ліст даслаў %site, бо мэта статычнай публікацыі %target просіць пра гэта.</translation>
+    </message>
+</context>
 </TS>

@@ -83437,4 +83437,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>एउटा साइट पहुँच, वा आफ्नो URI उपसर्गद्वारा एउटा होस्ट साझा गर्ने धेरै छान्नुहोस्। मूलमा भएको त्यहीँ दिइन्छ, अरू आफ्नो उपसर्गको फोल्डरमा (/ger/); तिनीहरूबीचका लिङ्कहरू प्रतिलिपिमै रहन्छन्। प्रशासनका साइट पहुँचहरू कहिल्यै देखाइँदैनन्।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site मा %target को स्ट्याटिक प्रकाशन असफल भयो</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site मा %target को स्ट्याटिक प्रकाशन सफल भयो</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>स्ट्याटिक प्रकाशन लक्ष्य %target ले माग गरेकाले %site ले यो मेल पठाएको हो।</translation>
+    </message>
+</context>
 </TS>

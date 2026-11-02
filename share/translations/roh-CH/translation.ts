@@ -83429,4 +83429,19 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <translation>Marcai in access a la website, u plirs che parteglian in host tras lur prefix URI. Quel en la ragisch vegn servì là, ils auters en l'ordinatur da lur prefix (/ger/); colliaziuns tranter els restan en la copia. Access d'administraziun na vegnan mai purschids.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicaziun statica da %target n'è betg reussida sin %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicaziun statica da %target è reussida sin %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Quest e-mail è vegnì tramess da %site perquai che la destinaziun da publicaziun statica %target al dumonda.</translation>
+    </message>
+</context>
 </TS>

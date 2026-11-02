@@ -83459,4 +83459,19 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Marqueu un accés al lloc, o diversos que comparteixen un amfitrió pel prefix d'URI. El de l'arrel se serveix allà, els altres a la carpeta del seu prefix (/ger/); els enllaços entre ells es queden a la còpia. Mai no s'ofereixen els accessos d'administració.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicació estàtica de %target ha fallat a %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicació estàtica de %target ha anat bé a %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site ha enviat aquest correu perquè el destí de publicació estàtica %target ho demana.</translation>
+    </message>
+</context>
 </TS>

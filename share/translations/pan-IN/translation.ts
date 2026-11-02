@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ਇੱਕ ਸਾਈਟ ਐਕਸੈਸ ਚੁਣੋ, ਜਾਂ ਕਈ ਜੋ ਆਪਣੇ URI ਅਗੇਤਰ ਨਾਲ ਇੱਕ ਹੋਸਟ ਸਾਂਝਾ ਕਰਦੇ ਹਨ। ਰੂਟ ਵਾਲਾ ਉੱਥੇ ਹੀ ਪਰੋਸਿਆ ਜਾਂਦਾ ਹੈ, ਬਾਕੀ ਆਪਣੇ ਅਗੇਤਰ ਦੇ ਫੋਲਡਰ ਵਿੱਚ (/ger/); ਉਹਨਾਂ ਵਿਚਕਾਰ ਲਿੰਕ ਕਾਪੀ ਵਿੱਚ ਹੀ ਰਹਿੰਦੇ ਹਨ। ਪ੍ਰਸ਼ਾਸਨ ਦੀਆਂ ਸਾਈਟ ਐਕਸੈਸਾਂ ਕਦੇ ਨਹੀਂ ਦਿਖਾਈਆਂ ਜਾਂਦੀਆਂ।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site 'ਤੇ %target ਦਾ ਸਟੈਟਿਕ ਪ੍ਰਕਾਸ਼ਨ ਅਸਫਲ ਰਿਹਾ</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site 'ਤੇ %target ਦਾ ਸਟੈਟਿਕ ਪ੍ਰਕਾਸ਼ਨ ਸਫਲ ਰਿਹਾ</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ਇਹ ਮੇਲ %site ਨੇ ਭੇਜੀ ਹੈ ਕਿਉਂਕਿ ਸਟੈਟਿਕ ਪ੍ਰਕਾਸ਼ਨ ਟੀਚਾ %target ਇਸਦੀ ਮੰਗ ਕਰਦਾ ਹੈ।</translation>
+    </message>
+</context>
 </TS>

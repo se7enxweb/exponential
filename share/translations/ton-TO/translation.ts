@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Fakaʻilongaʻi ha hūʻanga uepisaiti ʻe taha, pe ha niʻihi ʻoku vahevahe ha talifekau ʻe taha ʻi honau kamataʻanga URI. Ko ia ʻoku ʻi he aka ʻoku tuku atu ai, ko e niʻihi kehé ʻi he fōlata ʻo honau kamataʻanga (/ger/); ʻoku nofo ʻa e ngaahi fehokotaki ʻi honau vahaʻa ʻi he tatau. ʻOku ʻikai ʻaupito ke ʻoatu ʻa e ngaahi hūʻanga pule.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Naʻe ʻikai lavameʻa ʻa e pulusi tuʻu maʻu ʻo %target ʻi %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Naʻe lavameʻa ʻa e pulusi tuʻu maʻu ʻo %target ʻi %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Naʻe fekau ʻa e meili ko ʻeni ʻe %site koeʻuhi ʻoku kole ia ʻe he taumuʻa pulusi tuʻu maʻu %target.</translation>
+    </message>
+</context>
 </TS>

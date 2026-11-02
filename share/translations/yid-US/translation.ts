@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>צייכנט אָן איין וועבזייַטל־צוטריט, אָדער עטלעכע וואָס טיילן איין באַלעבאָס דורך זייער URI־פּרעפֿיקס. דער בײַם וואָרצל ווערט דאָרט סערווירט, די אַנדערע אין דער טעקע פֿון זייער פּרעפֿיקס (/ger/); לינקען צווישן זיי בלײַבן אין דער קאָפּיע. אַדמיניסטראַציע־צוטריטן ווערן קיינמאָל נישט פֿאָרגעלייגט.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>סטאַטישע פּובליקירונג פֿון %target אויף %site איז דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>סטאַטישע פּובליקירונג פֿון %target אויף %site איז געלונגען</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>דער בריוו איז געשיקט געוואָרן פֿון %site ווײַל דער ציל פֿון סטאַטישער פּובליקירונג %target בעט עס.</translation>
+    </message>
+</context>
 </TS>

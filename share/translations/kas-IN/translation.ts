@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>اَکھ سایِٹ ایکسیس ژارِو، یا واریاہ یِم پننہِ URI اگرٕ لفظٕ ذریعہٕ اَکھ ہوسٹ بٲگراوان چھِ۔ روٗٹس پیٚٹھ یُس چھُ سُہ چھُ تتی پیش کرنہٕ یِوان، باقی پننہِ اگرٕ لفظُک فولڈرس منٛز (/ger/)؛ تِہندِ درمیان لِنک چھِ کاپی منٛزٕے روزان۔ انتظامیہ ہٕنٛد سایِٹ ایکسیس چھِ نہٕ زانٛہہ پیش کرنہٕ یِوان۔</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site پؠٹھ %target ہُند سٹیٹک شایع کرُن گوو ناکام</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site پؠٹھ %target ہُند سٹیٹک شایع کرُن گوو کامیاب</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>یہ میل سوز %site، کیازِ سٹیٹک شایع کرنُک ہدف %target چھُ امہِ ہِنٛز مانگ کران۔</translation>
+    </message>
+</context>
 </TS>

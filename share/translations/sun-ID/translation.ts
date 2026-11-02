@@ -83437,4 +83437,19 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <translation>Centang hiji aksés situs, atawa sababaraha anu babagi hiji host ngaliwatan awalan URI-na. Anu di akar disayogikeun di dinya, nu séjén dina poléder awalanana (/ger/); tutumbu di antarana tetep dina salinan. Aksés situs administrasi teu pernah ditawarkeun.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publikasi statis %target gagal di %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publikasi statis %target hasil di %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Surélék ieu dikirim ku %site sabab udagan publikasi statis %target mentana.</translation>
+    </message>
+</context>
 </TS>

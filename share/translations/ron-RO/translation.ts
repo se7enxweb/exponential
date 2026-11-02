@@ -83459,4 +83459,19 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Bifați un acces la site sau mai multe care împart o gazdă prin prefixul URI. Cel de la rădăcină e servit acolo, celelalte în dosarul prefixului lor (/ger/); legăturile dintre ele rămân în copie. Accesele de administrare nu sunt oferite niciodată.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publicarea statică a %target a eșuat pe %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publicarea statică a %target a reușit pe %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Acest e-mail a fost trimis de %site deoarece ținta de publicare statică %target îl solicită.</translation>
+    </message>
+</context>
 </TS>

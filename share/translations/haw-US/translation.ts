@@ -83429,4 +83429,19 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Kaha i hoʻokahi siteaccess, a i ʻole kekahi mau mea e kaʻana like ana i hoʻokahi mea hoʻokipa ma o ko lākou URI prefix. Lawelawe ʻia ka mea ma ke kumu ma laila, nā mea ʻē aʻe ma ka waihona o ko lākou prefix (/ger/); noho nā loulou ma waena o lākou i loko o ke kope. ʻAʻole loa e hāʻawi ʻia nā siteaccess hoʻokele.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Ua hāʻule ka hoʻopuka paʻa o %target ma %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Ua kūleʻa ka hoʻopuka paʻa o %target ma %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ua hoʻouna ʻia kēia leka e %site no ka mea ua noi ka pahuhopu hoʻopuka paʻa %target iā ia.</translation>
+    </message>
+</context>
 </TS>

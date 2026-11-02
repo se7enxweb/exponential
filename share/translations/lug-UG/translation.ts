@@ -83429,4 +83429,19 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <translation>Londa omulyango gumu, oba egisinga egigabana omukyaza omu okuyita mu URI prefix yaagyo. Ogwo oguli ku kikolo guweebwa eyo, egirala mu fayiro ya prefix yaagyo (/ger/); enkolagana wakati waagyo esigala mu kkopi. Emiryango gy'obukulembeze tegiweebwa n'akatono.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Okufulumya okw'enkalakkalira okwa %target kulemereddwa ku %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Okufulumya okw'enkalakkalira okwa %target kuwangudde ku %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ebbaluwa eno eweerezeddwa %site kubanga ekigendererwa ky'okufulumya okw'enkalakkalira %target kikisaba.</translation>
+    </message>
+</context>
 </TS>

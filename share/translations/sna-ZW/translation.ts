@@ -83429,4 +83429,19 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <translation>Sarudza nzira imwe yekupinda pasaiti, kana dzakawanda dzinogovana muenzi mumwe kuburikidza neURI prefix yadzo. Iyo iri pamudzi inopiwa ipapo, dzimwe mufoda yeprefix yadzo (/ger/); zvinongedzo pakati padzo zvinogara mukopi. Nzira dzekutonga hadzimbopiwi.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kuburitsa kwakamira kwe%target kwakundikana pa%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kuburitsa kwakamira kwe%target kwabudirira pa%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tsamba iri rakatumirwa ne%site nekuti chinangwa chekuburitsa kwakamira %target chinorikumbira.</translation>
+    </message>
+</context>
 </TS>

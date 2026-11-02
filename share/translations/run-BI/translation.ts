@@ -83429,4 +83429,19 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <translation>Hitamwo uburyo bumwe bwo gushika ku rubuga, canke bwinshi busangiye umushitsi umwe biciye ku ntango ya URI. Uburi mu mizi butangirwa ngaho, ubundi mu bubiko bw'intango yabwo (/ger/); amahuza hagati yabwo aguma mu kopi. Uburyo bw'ubuyobozi ntibutangwa na rimwe.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Gusohora guhamye kwa %target kwanse kuri %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Gusohora guhamye kwa %target kwagenze neza kuri %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Iyi mesaje yarungitswe na %site kubera ko intumbero yo gusohora guhamye %target iyisaba.</translation>
+    </message>
+</context>
 </TS>

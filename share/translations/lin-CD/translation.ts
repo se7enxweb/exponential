@@ -83429,4 +83429,19 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Pona siteaccess moko, to mingi oyo ekabolaka host moko na nzela ya prefix na bango ya URI. Oyo ezali na mosisa epesamaka kuna, mosusu na dosie ya prefix na yango (/ger/); bikangisi kati na bango etikalaka na kopi. Ba-siteaccess ya boyangeli epesamaka ata mokolo moko te.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kobimisa static ya %target elongi te na %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kobimisa static ya %target elongi na %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site etindi mail oyo mpo ete mokano ya kobimisa static %target esengi yango.</translation>
+    </message>
+</context>
 </TS>

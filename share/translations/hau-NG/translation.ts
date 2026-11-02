@@ -83427,4 +83427,19 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Zaɓi hanyar shiga shafi ɗaya, ko da yawa da ke raba mai masauki ɗaya ta hanyar prefix ɗin URI ɗinsu. Wanda ke tushe ana ba da shi a can, sauran a cikin babban fayil na prefix ɗinsu (/ger/); hanyoyin haɗi tsakaninsu suna nan a cikin kwafin. Ba a taɓa ba da hanyoyin shiga na gudanarwa ba.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Wallafa static na %target ya kasa a %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Wallafa static na %target ya yi nasara a %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site ne ya aiko da wannan saƙo saboda makasudin wallafa static %target yana buƙatarsa.</translation>
+    </message>
+</context>
 </TS>

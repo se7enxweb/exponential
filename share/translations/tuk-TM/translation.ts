@@ -83429,4 +83429,19 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <translation>Bir giriş nokadyny ýa-da URI prefiksi arkaly bir hosty paýlaşýan birnäçesini belläň. Kökdäkisi şol ýerde hödürlenýär, beýlekileri öz prefiksiniň bukjasynda (/ger/); olaryň arasyndaky salgylanmalar nusgada galýar. Dolandyryş giriş nokatlary hiç haçan hödürlenmeýär.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site saýtynda %target üçin statik neşir başa barmady</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site saýtynda %target üçin statik neşir üstünlikli boldy</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Bu haty %site iberdi, sebäbi statik neşir maksady %target muny soraýar.</translation>
+    </message>
+</context>
 </TS>

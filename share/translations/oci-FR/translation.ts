@@ -83429,4 +83429,19 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Marcatz un accès al site, o mantun que partejan un òste per lor prefixe d'URI. Lo de la raiç i es servit, los autres dins lo dorsièr de lor prefixe (/ger/) ; los ligams entre eles demòran dins la còpia. Los accèsses d'administracion son pas jamai prepausats.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicacion estatica de %target a fracassat sus %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicacion estatica de %target a capitat sus %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Aqueste corrièl es estat mandat per %site perque la cibla de publicacion estatica %target lo demanda.</translation>
+    </message>
+</context>
 </TS>

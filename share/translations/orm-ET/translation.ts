@@ -83429,4 +83429,19 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <translation>Seensa marsariitii tokko, ykn kanneen maxxantuu URI isaaniitiin keessummeessaa tokko qooddatan hedduu mallattoo godhi. Kan hidda irra jiru achitti dhiyaata, kanneen biroo kuusaa maxxantuu isaanii keessatti (/ger/); hidhaminsi gidduu isaanii garagalcha keessatti hafa. Seensawwan bulchiinsaa gonkumaa hin dhiyaatan.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Maxxansi dhaabbataa %target %site irratti hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Maxxansi dhaabbataa %target %site irratti milkaa'eera</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ergaan kun %site irraa ergame sababni isaas galmi maxxansa dhaabbataa %target waan gaafatuuf.</translation>
+    </message>
+</context>
 </TS>

@@ -83429,4 +83429,19 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <translation>Tohua kia kotahi te urunga pae, kia maha rānei e tiri ana i te kaihautū kotahi mā tō rātou kuhimua URI. Ko te mea i te pūtake ka tukuna ki reira, ko ētahi atu ki te kōpaki o tō rātou kuhimua (/ger/); ka noho ngā hononga i waenga i a rātou ki te tārua. Kāore rawa e tukuna ngā urunga whakahaere.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>I rahua te whakaputa pateko o %target i %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>I angitu te whakaputa pateko o %target i %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>I tukuna tēnei īmēra e %site nā te mea e tono ana te whāinga whakaputa pateko %target.</translation>
+    </message>
+</context>
 </TS>

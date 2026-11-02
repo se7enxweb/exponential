@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>එක් අඩවි ප්‍රවේශයක්, හෝ තම URI උපසර්ගයෙන් එක් ධාරකයක් බෙදාගන්නා කිහිපයක් තෝරන්න. මූලයේ ඇති එක එහිම සපයනු ලැබේ, අනෙක්වා තම උපසර්ගයේ ෆෝල්ඩරයේ (/ger/); ඒවා අතර සබැඳි පිටපතේම රැඳේ. පරිපාලන අඩවි ප්‍රවේශ කිසිවිටෙක පිරිනමනු නොලැබේ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site හි %target හි ස්ථිතික ප්‍රකාශනය අසාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site හි %target හි ස්ථිතික ප්‍රකාශනය සාර්ථක විය</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ස්ථිතික ප්‍රකාශන ඉලක්කය %target එය ඉල්ලන නිසා %site මෙම තැපෑල යැවීය.</translation>
+    </message>
+</context>
 </TS>

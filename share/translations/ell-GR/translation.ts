@@ -83459,4 +83459,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Επιλέξτε μία πρόσβαση ιστότοπου, ή πολλές που μοιράζονται έναν κεντρικό υπολογιστή μέσω του προθέματος URI. Αυτή στη ρίζα εξυπηρετείται εκεί, οι άλλες στον φάκελο του προθέματός τους (/ger/)· οι σύνδεσμοι μεταξύ τους μένουν στο αντίγραφο. Οι προσβάσεις διαχείρισης δεν προσφέρονται ποτέ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Η στατική δημοσίευση του %target απέτυχε στο %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Η στατική δημοσίευση του %target ολοκληρώθηκε με επιτυχία στο %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Αυτό το μήνυμα στάλθηκε από το %site επειδή το ζητά ο στόχος στατικής δημοσίευσης %target.</translation>
+    </message>
+</context>
 </TS>

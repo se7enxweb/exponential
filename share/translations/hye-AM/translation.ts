@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Նշեք կայքի մեկ մուտքի կետ կամ մի քանիսը, որոնք իրենց URI նախածանցով կիսում են մեկ հոսթ։ Արմատում գտնվողը մատուցվում է այնտեղ, մյուսները՝ իրենց նախածանցի թղթապանակում (/ger/). դրանց միջև հղումները մնում են պատճենում։ Կառավարման մուտքի կետերը երբեք չեն առաջարկվում։</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target-ի ստատիկ հրապարակումը ձախողվեց %site-ում</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target-ի ստատիկ հրապարակումը հաջողվեց %site-ում</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Այս նամակն ուղարկել է %site-ը, քանի որ ստատիկ հրապարակման թիրախ %target-ը դա է խնդրում։</translation>
+    </message>
+</context>
 </TS>

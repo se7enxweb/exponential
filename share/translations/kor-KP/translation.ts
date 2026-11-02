@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>싸이트접근 하나 또는 URI 앞붙이로 한 주콤퓨터를 공유하는 여러개를 선택하십시오. 뿌리에 있는것은 거기서 봉사되고 나머지는 앞붙이 등록부 (/ger/)에 있습니다. 그것들사이의 련결은 사본안에 남습니다. 관리 싸이트접근은 절대로 제공되지 않습니다.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site에서 %target의 정적게시가 실패하였습니다</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site에서 %target의 정적게시가 성공하였습니다</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>정적게시 대상 %target이 요구하므로 %site에서 이 편지를 보냈습니다.</translation>
+    </message>
+</context>
 </TS>

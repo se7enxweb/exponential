@@ -83427,4 +83427,19 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <translation>Maka ukufinyelela kwesayithi okukodwa, noma okuningi okwabelana ngomsingathi oyedwa ngesiqalo sakho se-URI. Okusempandeni kunikezwa lapho, okunye kufolda yesiqalo sakho (/ger/); izixhumanisi phakathi kwakho zihlala ekhophini. Ukufinyelela kokuphatha akukaze kunikezwe.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Ukushicilelwa okungashintshi kwe-%target kwehlulekile ku-%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Ukushicilelwa okungashintshi kwe-%target kuphumelele ku-%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Le imeyili ithunyelwe ngu-%site ngoba inhloso yokushicilela okungashintshi %target iyayicela.</translation>
+    </message>
+</context>
 </TS>

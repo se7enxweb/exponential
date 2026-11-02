@@ -83459,4 +83459,19 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Označte jeden prístup k lokalite alebo viacero, ktoré zdieľajú jedného hostiteľa podľa prefixu URI. Ten v koreni sa obsluhuje tam, ostatné v priečinku svojho prefixu (/ger/); odkazy medzi nimi zostávajú v kópii. Administračné prístupy sa nikdy neponúkajú.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statické publikovanie cieľa %target na %site zlyhalo</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statické publikovanie cieľa %target na %site prebehlo úspešne</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tento e-mail odoslal web %site, pretože oň žiada cieľ statického publikovania %target.</translation>
+    </message>
+</context>
 </TS>

@@ -85425,4 +85425,19 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <translation>Marque um acesso ao site, ou vários que compartilham um host pelo prefixo de URI. O da raiz é servido ali, os outros na pasta do seu prefixo (/ger/); os links entre eles ficam na cópia. Os acessos de administração nunca são oferecidos.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>A publicação estática de %target falhou em %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>A publicação estática de %target foi concluída em %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Este e-mail foi enviado por %site porque o destino de publicação estática %target o solicita.</translation>
+    </message>
+</context>
 </TS>

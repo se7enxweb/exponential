@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>એક સાઇટઍક્સેસ, અથવા તેમના URI ઉપસર્ગ દ્વારા એક હોસ્ટ વહેંચતા ઘણા પસંદ કરો. રૂટ પરનો ત્યાં જ પીરસાય છે, બાકીના તેમના ઉપસર્ગના ફોલ્ડરમાં (/ger/); તેમની વચ્ચેની લિંક નકલમાં જ રહે છે. વહીવટના સાઇટઍક્સેસ ક્યારેય ઓફર થતા નથી.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site પર %target નું સ્ટેટિક પ્રકાશન નિષ્ફળ ગયું</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site પર %target નું સ્ટેટિક પ્રકાશન સફળ થયું</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>સ્ટેટિક પ્રકાશન લક્ષ્ય %target તેની માંગ કરે છે તેથી %site એ આ મેઇલ મોકલ્યો છે.</translation>
+    </message>
+</context>
 </TS>

@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ஒரு தள அணுகலை, அல்லது தங்கள் URI முன்னொட்டால் ஒரே ஹோஸ்டைப் பகிரும் பலவற்றைத் தேர்ந்தெடுக்கவும். மூலத்திலுள்ளது அங்கேயே வழங்கப்படும், மற்றவை தங்கள் முன்னொட்டின் கோப்புறையில் (/ger/); அவற்றுக்கிடையேயான இணைப்புகள் நகலிலேயே இருக்கும். நிர்வாக தள அணுகல்கள் ஒருபோதும் வழங்கப்படாது.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site இல் %target இன் நிலையான வெளியீடு தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site இல் %target இன் நிலையான வெளியீடு வெற்றியடைந்தது</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>நிலையான வெளியீட்டு இலக்கு %target இதைக் கேட்பதால் %site இந்த அஞ்சலை அனுப்பியது.</translation>
+    </message>
+</context>
 </TS>

@@ -83429,4 +83429,19 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Woznamjeńće jedyn přistup k sydłu abo wjacore, kotrež dźěla sej jedyn host přez swój URI-prefiks. Tón w korjenju so tam słuži, druhe w rjadowaku jich prefiksa (/ger/); wotkazy mjez nimi wostanu w kopiji. Administraciske přistupy so ženje njeskića.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiske wozjewjenje %target na %site njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiske wozjewjenje %target na %site je so poradźiło</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tutu e-mejlku je %site pósłał, dokelž cil statiskeho wozjewjenja %target wo nju prosy.</translation>
+    </message>
+</context>
 </TS>

@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ሓደ ምእታው መርበብ፡ ወይ ብURI ቅድመ-ቅጥያኦም ሓደ ኣሳናዳኢ ዝማቐሉ ብዙሓት ምረጽ። እቲ ኣብ ሱር ዘሎ ኣብኡ ይቐርብ፡ እቶም ካልኦት ኣብ ማህደር ቅድመ-ቅጥያኦም (/ger/)፤ ኣብ መንጎኦም ዘለዉ መራኸቢታት ኣብቲ ቅዳሕ ይተርፉ። ናይ ምምሕዳር ምእታዋት ፈጺሞም ኣይቐርቡን።</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>ቀዋሚ ሕትመት %target ኣብ %site ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>ቀዋሚ ሕትመት %target ኣብ %site ተዓዊቱ</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>እዚ ኢመይል ብ%site ተላኢኹ ምኽንያቱ ዕላማ ቀዋሚ ሕትመት %target ስለ ዝሓተቶ እዩ።</translation>
+    </message>
+</context>
 </TS>

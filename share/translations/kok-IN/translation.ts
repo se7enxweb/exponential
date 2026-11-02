@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>एक साइटअॅक्सेस, वा आपल्या URI उपसर्गान एक होस्ट वांटून घेवपी कितलेशेच वेंचात। मुळांतलो थंयच दिला वता, उरिल्ले आपल्या उपसर्गाच्या फोल्डरांत (/ger/); तांचे मदले लिंक प्रतींतूच उरतात। प्रशासनाचे साइटअॅक्सेस केन्नाच दाखयनात।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site चेर %target चें स्टॅटिक प्रकाशन अपेसी जालें</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site चेर %target चें स्टॅटिक प्रकाशन येसस्वी जालें</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>स्टॅटिक प्रकाशनाचें लक्ष्य %target हें मागता म्हूण %site हाणें हो मेल धाडला.</translation>
+    </message>
+</context>
 </TS>

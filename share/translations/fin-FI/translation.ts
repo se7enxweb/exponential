@@ -83459,4 +83459,19 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Valitse yksi sivustoyhteys tai useampi, jotka jakavat saman palvelimen URI-etuliitteensä avulla. Juuressa oleva tarjoillaan siellä, muut etuliitteensä kansiossa (/ger/); linkit niiden välillä pysyvät kopiossa. Hallinnan sivustoyhteyksiä ei koskaan tarjota.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kohteen %target staattinen julkaisu epäonnistui sivustolla %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kohteen %target staattinen julkaisu onnistui sivustolla %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tämän viestin lähetti %site, koska staattisen julkaisun kohde %target pyytää sitä.</translation>
+    </message>
+</context>
 </TS>

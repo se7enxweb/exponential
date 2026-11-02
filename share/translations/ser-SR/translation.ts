@@ -83459,4 +83459,19 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <translation>Označite jedan pristup sajtu ili više njih koji dele jedan host po svom URI prefiksu. Onaj u korenu se tamo služi, ostali u fascikli svog prefiksa (/ger/); veze među njima ostaju u kopiji. Administratorski pristupi se nikad ne nude.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statičko objavljivanje za %target nije uspelo na %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statičko objavljivanje za %target je uspelo na %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ovu poruku je poslao %site jer to traži cilj statičkog objavljivanja %target.</translation>
+    </message>
+</context>
 </TS>

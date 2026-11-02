@@ -83459,4 +83459,19 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Merk een werftoegang, of verskeie wat een gasheer deur hul URI-voorvoegsel deel. Die een by die wortel word daar bedien, die ander in die gids van hul voorvoegsel (/ger/); skakels tussen hulle bly in die kopie. Administrasie-werftoegange word nooit aangebied nie.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiese publisering van %target het op %site misluk</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiese publisering van %target het op %site geslaag</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Hierdie e-pos is deur %site gestuur omdat die statiese publiseringsteiken %target daarvoor vra.</translation>
+    </message>
+</context>
 </TS>

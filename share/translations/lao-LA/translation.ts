@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ໝາຍການເຂົ້າເຖິງໄຊໜຶ່ງ ຫຼືຫຼາຍອັນທີ່ໃຊ້ໂຮສດຽວກັນຜ່ານຄຳນຳໜ້າ URI. ອັນທີ່ຢູ່ຮາກຈະໃຫ້ບໍລິການຢູ່ທີ່ນັ້ນ ອັນອື່ນຢູ່ໃນໂຟນເດີຂອງຄຳນຳໜ້າ (/ger/); ລິ້ງລະຫວ່າງພວກມັນຢູ່ໃນສຳເນົາ. ບໍ່ເຄີຍສະເໜີການເຂົ້າເຖິງການບໍລິຫານ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>ການເຜີຍແຜ່ແບບຄົງທີ່ຂອງ %target ລົ້ມເຫຼວໃນ %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>ການເຜີຍແຜ່ແບບຄົງທີ່ຂອງ %target ສຳເລັດໃນ %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ອີເມວນີ້ຖືກສົ່ງໂດຍ %site ເພາະເປົ້າໝາຍການເຜີຍແຜ່ແບບຄົງທີ່ %target ຮ້ອງຂໍ.</translation>
+    </message>
+</context>
 </TS>

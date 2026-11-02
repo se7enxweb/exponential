@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ဆိုက်ဝင်ရောက်မှုတစ်ခု သို့မဟုတ် URI ရှေ့ဆက်ဖြင့် ဟို့စ်တစ်ခုကို မျှဝေသုံးသော အများကို အမှန်ခြစ်ပါ။ အမြစ်ရှိ တစ်ခုကို ထိုနေရာတွင် ပေးပြီး အခြားများကို ၎င်းတို့၏ရှေ့ဆက်ဖိုင်တွဲ (/ger/) တွင် ထားသည်။ ၎င်းတို့ကြားရှိ လင့်ခ်များသည် မိတ္တူထဲတွင် ကျန်ရှိသည်။ စီမံခန့်ခွဲမှု ဆိုက်ဝင်ရောက်မှုများကို ဘယ်တော့မှ မပြပါ။</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site တွင် %target ၏ static ထုတ်ဝေမှု မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site တွင် %target ၏ static ထုတ်ဝေမှု အောင်မြင်ပါသည်</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>static ထုတ်ဝေမှု ပစ်မှတ် %target က တောင်းဆိုသောကြောင့် %site မှ ဤမေးလ်ကို ပို့ပါသည်။</translation>
+    </message>
+</context>
 </TS>

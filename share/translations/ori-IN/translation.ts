@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ଗୋଟିଏ ସାଇଟ୍ ଆକ୍ସେସ୍, କିମ୍ବା ନିଜ URI ଉପସର୍ଗ ଦ୍ୱାରା ଗୋଟିଏ ହୋଷ୍ଟ ଅଂଶୀଦାର କରୁଥିବା ଅନେକ ବାଛନ୍ତୁ। ମୂଳରେ ଥିବାଟି ସେଠାରେ ପରିବେଷିତ ହୁଏ, ଅନ୍ୟଗୁଡ଼ିକ ନିଜ ଉପସର୍ଗର ଫୋଲ୍ଡରରେ (/ger/); ସେଗୁଡ଼ିକ ମଧ୍ୟରେ ଲିଙ୍କ କପିରେ ରହେ। ପ୍ରଶାସନର ସାଇଟ୍ ଆକ୍ସେସ୍ କେବେ ଦେଖାଯାଏ ନାହିଁ।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site ରେ %target ର ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ବିଫଳ ହେଲା</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site ରେ %target ର ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ସଫଳ ହେଲା</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ଲକ୍ଷ୍ୟ %target ଏହା ଚାହୁଁଥିବାରୁ %site ଏହି ମେଲ୍ ପଠାଇଛି।</translation>
+    </message>
+</context>
 </TS>

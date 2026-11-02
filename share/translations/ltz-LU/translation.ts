@@ -83429,4 +83429,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Kräizt ee Site-Zougang un, oder e puer, déi sech iwwer hire URI-Präfix ee Host deelen. Deen an der Wuerzel gëtt do geliwwert, déi aner am Dossier vun hirem Präfix (/ger/); Linken tëscht hinne bleiwen an der Kopie. Administratiouns-Zougäng ginn ni ugebueden.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statesch Verëffentlechung vun %target op %site ass feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statesch Verëffentlechung vun %target op %site huet geklappt</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Dës Mail gouf vun %site geschéckt, well d'Zil fir statesch Verëffentlechung %target dat freet.</translation>
+    </message>
+</context>
 </TS>

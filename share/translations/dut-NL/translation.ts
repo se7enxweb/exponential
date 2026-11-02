@@ -84654,4 +84654,19 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Vink één siteaccess aan, of meerdere die één host delen via hun URI-prefix. Die in de root wordt daar geserveerd, de andere in de map van hun prefix (/ger/); links tussen hen blijven in de kopie. Beheer-siteaccessen worden nooit aangeboden.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisch publiceren van %target op %site is mislukt</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisch publiceren van %target op %site is gelukt</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Deze mail is verstuurd door %site omdat het doel voor statisch publiceren %target erom vraagt.</translation>
+    </message>
+</context>
 </TS>

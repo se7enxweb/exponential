@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Нэг сайтын хандалт, эсвэл URI угтвараараа нэг хост хуваалцдаг хэд хэдийг тэмдэглэнэ үү. Үндсэнд байгаа нь тэнд үйлчлэгдэнэ, бусад нь угтварынхаа хавтсанд (/ger/); тэдгээрийн хоорондох холбоосууд хуулбар дотор үлдэнэ. Удирдлагын хандалтыг хэзээ ч санал болгодоггүй.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site дээр %target-ийн статик нийтлэл амжилтгүй боллоо</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site дээр %target-ийн статик нийтлэл амжилттай боллоо</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Статик нийтлэлийн зорилт %target үүнийг хүссэн тул %site энэ захидлыг илгээв.</translation>
+    </message>
+</context>
 </TS>

@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>اک سائٹ رسائی چنو، یا کئی جیہڑیاں اپنے URI اگیتر نال اک ہوسٹ ونڈدیاں نیں۔ جڑ والی اوتھے ای دتی جاندی اے، باقی اپنے اگیتر دے فولڈر وچ (/ger/)؛ اوہناں وچکار لنک کاپی وچ ای رہندے نیں۔ انتظامیہ دیاں رسائیاں کدی نئیں وکھائیاں جاندیاں۔</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site اُتے %target دی سٹیٹک اشاعت ناکام رہی</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site اُتے %target دی سٹیٹک اشاعت کامیاب رہی</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ایہہ میل %site نے گھلی اے کیونجے سٹیٹک اشاعت دا ٹیچا %target ایہدی منگ کردا اے۔</translation>
+    </message>
+</context>
 </TS>

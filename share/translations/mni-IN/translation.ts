@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>সাইট একসেস অমা, নত্রগা মখোয়গী URI প্রিফিক্সনা হোস্ট অমা শেয়র তৌবা কয়া খনবীয়ু। রুটতা লৈবা অদু মফম অদুদা পীরি, অতোপ্পশিং মখোয়গী প্রিফিক্সকী ফোল্দরদা (/ger/); মখোয়গী মরক্তা লৈবা লিংকশিং কোপীদা লৈরি। প্রশাসনগী সাইট একসেসশিং কদাইদা পীদে।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site দা %target গী স্টেটিক থোরকপা মাইথিবা ফংখ্রে</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site দা %target গী স্টেটিক থোরকপা মাইপাকখ্রে</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>স্টেটিক থোরকপগী পান্দম %target না হায়জবা মরমদা %site না মেল অসি থাখি।</translation>
+    </message>
+</context>
 </TS>

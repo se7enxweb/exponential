@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ഒരു സൈറ്റ്ആക്സസ്, അല്ലെങ്കിൽ URI പ്രിഫിക്സ് വഴി ഒരു ഹോസ്റ്റ് പങ്കിടുന്ന പലതും തിരഞ്ഞെടുക്കുക. റൂട്ടിലുള്ളത് അവിടെ നൽകും, മറ്റുള്ളവ അവയുടെ പ്രിഫിക്സിന്റെ ഫോൾഡറിൽ (/ger/); അവയ്ക്കിടയിലെ ലിങ്കുകൾ പകർപ്പിൽ തന്നെ തുടരും. അഡ്മിനിസ്ട്രേഷൻ സൈറ്റ്ആക്സസുകൾ ഒരിക്കലും നൽകില്ല.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site-ൽ %target-ന്റെ സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site-ൽ %target-ന്റെ സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം വിജയിച്ചു</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണ ലക്ഷ്യം %target ആവശ്യപ്പെടുന്നതിനാൽ %site ഈ മെയിൽ അയച്ചു.</translation>
+    </message>
+</context>
 </TS>

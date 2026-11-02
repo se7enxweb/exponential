@@ -83429,4 +83429,19 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <translation>Merkit un haeziñ al lec'hienn, pe meur a hini a rann un herberc'hier dre o rakger URI. An hini er c'hrizienn a vez servijet eno, ar re all e teuliad o rakger (/ger/); al liammoù etrezo a chom er gopienn. Biken ne vez kinniget an haeziñ melestradurezh.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>C'hwitet eo bet an embann statek eus %target war %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Berzh en deus graet an embann statek eus %target war %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Kaset eo bet ar postel-mañ gant %site rak goulennet eo gant ar pal embann statek %target.</translation>
+    </message>
+</context>
 </TS>

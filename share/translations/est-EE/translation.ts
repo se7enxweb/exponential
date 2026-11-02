@@ -83459,4 +83459,19 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <translation>Märgi üks saidi juurdepääs või mitu, mis jagavad URI-eesliite kaudu üht hosti. Juurkausta oma pakutakse seal, teised oma eesliite kaustas (/ger/); lingid nende vahel jäävad koopiasse. Halduse juurdepääse ei pakuta kunagi.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Sihtkoha %target staatiline avaldamine saidil %site ebaõnnestus</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Sihtkoha %target staatiline avaldamine saidil %site õnnestus</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Selle kirja saatis %site, sest staatilise avaldamise sihtkoht %target seda soovib.</translation>
+    </message>
+</context>
 </TS>

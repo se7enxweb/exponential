@@ -26,6 +26,7 @@ Ein Schritt einer YAML-Migration mit `type: mail`. Die Klasse `expMigrationStepM
 | `from` | `string` |  | der Absender (Standard: site.ini [MailSettings] EmailSender, sonst AdminEmail) |
 | `reply_to` | `string` |  | die Adresse, an die Antworten gehen |
 | `transport` | `string` |  | ein Transport aus site.ini [MailSettings] TransportAlias (file, sendmail, smtp) nur für diese E-Mail |
+| `category` | `string` | `"admin"` | die E-Mail-Kategorie aus mailpreferences.ini; eine optionale erreicht nur die Empfänger, deren Einstellungen es erlauben |
 
 Daneben nimmt jeder Schritt die Schlüssel der Engine: `type`, `mode`, `if`, `references`, `environments`, `engines` und `comment` ([das Dateiformat](../../spezifikationen/6.0/migrationsdateiformat.md#ein-schritt)). Ein Schlüssel vom Typ `identifier` nennt einen Knoten, ein Objekt oder einen anderen Teil der Installation über ID, Remote-ID, Pfad oder Namen ([Bezeichner](../../spezifikationen/6.0/migrationsdateiformat.md#bezeichner-und-die-id-zuordnung)).
 

@@ -84687,4 +84687,19 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Kryss av én nettstedstilgang, eller flere som deler én vert via URI-prefikset sitt. Den i roten serveres der, de andre i mappen for prefikset sitt (/ger/); lenker mellom dem blir i kopien. Administrasjonstilganger tilbys aldri.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk publisering av %target mislyktes på %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk publisering av %target lyktes på %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Denne e-posten ble sendt av %site fordi målet for statisk publisering %target ber om det.</translation>
+    </message>
+</context>
 </TS>

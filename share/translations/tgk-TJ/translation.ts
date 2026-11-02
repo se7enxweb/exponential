@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Як дастрасии сомона ё якчандтоеро, ки тавассути пешвандҳои URI як хостро тақсим мекунанд, қайд кунед. Он ки дар реша аст, дар он ҷо пешкаш мешавад, дигарон дар ҷузвдони пешванди худ (/ger/); пайвандҳои байни онҳо дар нусха мемонанд. Дастрасиҳои маъмурӣ ҳеҷ гоҳ пешниҳод намешаванд.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Нашри статикии %target дар %site ноком шуд</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Нашри статикии %target дар %site бомуваффақият анҷом ёфт</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ин номаро %site фиристод, зеро ҳадафи нашри статикӣ %target онро талаб мекунад.</translation>
+    </message>
+</context>
 </TS>

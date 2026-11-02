@@ -84911,4 +84911,19 @@ Gracias por tu feedback</translation>
         <translation>Marca un acceso al sitio, o varios que comparten un host por su prefijo de URI. El de la raíz se sirve allí, los demás en la carpeta de su prefijo (/ger/); los enlaces entre ellos se quedan en la copia. Nunca se ofrecen los accesos de administración.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicación estática de %target ha fallado en %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicación estática de %target se ha completado en %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site ha enviado este correo porque el destino de publicación estática %target lo solicita.</translation>
+    </message>
+</context>
 </TS>

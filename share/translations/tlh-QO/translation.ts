@@ -83462,4 +83462,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>yoS lojmIt wa' yIwIv, pagh law' URI moHaq ghaj host wa' 'ejDo'. tIqDaq lojmIt pa' lo'lu', latlh moHaq ghom'a'Daq (/ger/); chaH rarmeyvetlh qa'Daq ratlh. loH lojmItmey not nob.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site Daq %target choHbe'bogh HochvaD 'angghach Qapbe'</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site Daq %target choHbe'bogh HochvaD 'angghach Qap</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>QIn'vam ngeH %site, choHbe'bogh HochvaD 'angghach DoS %target poQmo'.</translation>
+    </message>
+</context>
 </TS>

@@ -83429,4 +83429,19 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Đánh dấu một điểm truy cập trang, hoặc nhiều điểm dùng chung một máy chủ theo tiền tố URI. Điểm ở gốc được phục vụ ở đó, các điểm khác trong thư mục tiền tố của chúng (/ger/); liên kết giữa chúng nằm lại trong bản sao. Điểm truy cập quản trị không bao giờ được đưa ra.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Xuất bản tĩnh %target trên %site thất bại</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Xuất bản tĩnh %target trên %site thành công</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Thư này được %site gửi vì đích xuất bản tĩnh %target yêu cầu.</translation>
+    </message>
+</context>
 </TS>

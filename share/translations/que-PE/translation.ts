@@ -83429,4 +83429,19 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <translation>Huk web yaykunata akllay, utaq URI qallariyninwan huk host-ta rakinakuqkunata. Saphipi kaqqa chaypi qusqa kanqa, wakinkunataq qallariyninpa carpetanpi (/ger/); paykuna chawpi t'inkikunaqa copiapi qhipakun. Kamachiy yaykunakunaqa manam hayk'appas qusqachu.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target nisqap static willakuyninqa %site nisqapi mana atikurqanchu</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target nisqap static willakuyninqa %site nisqapi atikurqan</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Kay correota %site kacharqan, static willakuypa munaynin %target mañakusqanrayku.</translation>
+    </message>
+</context>
 </TS>

@@ -83438,4 +83438,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>רשום חד מעלנא דאתרא, או סגיאא דמשתותפין במארח חד באפתחא דURI דילהון. הו דבעקרא מתתיהב תמן, ואחרנא בתיקה דאפתחא דילהון (/ger/); אסורא דביניהון מקוין בנוסחתא. מעלנא דמדברנותא לא מתקרבין מן מתום.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܕ%target ܠܐ ܐܨܠܚ ܒ%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܕ%target ܐܨܠܚ ܒ%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ܐܓܪܬܐ ܗܕܐ ܫܕܪ %site ܡܛܠ ܕܢܝܫܐ ܕܦܪܣܐ ܩܒܝܥܐ %target ܫܐܠ ܠܗ.</translation>
+    </message>
+</context>
 </TS>

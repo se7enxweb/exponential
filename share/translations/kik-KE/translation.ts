@@ -83429,4 +83429,19 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Thuura njĩra ĩmwe ya saiti, kana nyingĩ iria igwatanagĩra mũgeni ũmwe na URI prefix ciao. Ĩrĩa ĩrĩ mũthiyũ-inĩ ĩheagwo kũu, iria ingĩ fonda-inĩ ya prefix yacio (/ger/); mĩthiĩre ĩrĩa ĩrĩ gatagatĩ kacio ĩtigagwo thĩinĩ wa kobĩ. Njĩra cia ũrũgamĩrĩri itiheanagwo o na rĩ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Gũcabithia static kwa %target nĩ kwaremwo harĩ %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Gũcabithia static kwa %target nĩ kwahingĩte harĩ %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Marũa maya matũmĩtwo nĩ %site tondũ kĩrĩa gĩa gũcabithia static %target nĩ kĩramiũria.</translation>
+    </message>
+</context>
 </TS>

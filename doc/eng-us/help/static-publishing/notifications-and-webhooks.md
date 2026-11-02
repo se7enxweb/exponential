@@ -27,8 +27,43 @@ In the wizard, step 8, **Notify**:
 - **When a publish succeeds**: only a publish that changed something is reported.
 
 The e-mail goes to `[StaticPublishSettings] NotifyEmail` in `staticcache.ini`, or to the site's administrator
-address (`site.ini [MailSettings] AdminEmail`) when it is empty. It names the target, the run, its state, the push,
-the tag, the public address and any errors, never a token or key.
+address (`site.ini [MailSettings] AdminEmail`) when it is empty. It is made like the other notices the system sends
+to administrators (a sign-in from a new device, a user account waiting for approval):
+
+- **Plain text**, from the template `design:staticpublish/notice_mail.tpl` in the layout
+  `design:mail/layout_text.tpl`. Override the template in your design to change the wording.
+- **Translated**: the subject and the texts are in the administration's language catalogues.
+- **Sender**: `site.ini [MailSettings] EmailSender`, else `AdminEmail`.
+- **Subject**: "Static publishing of *target* failed on *site*", or "... succeeded on ..." for a success. The site
+  is the name of the public site, never that of the administration.
+- **Mail category `admin`** (Setup > Mail preferences): an essential notice, so it is always sent and has no
+  unsubscribe footer. Turn it off with **Notify** in the target, not in the mail preferences.
+
+It names the target, the run's id, the result (failed, published, rolled back or nothing changed), the commit, the
+tag, the push, the public address and any errors, never a token or key. A run that failed reads "failed", also when
+it changed nothing (then "Changes: nothing changed" says so). The **Log** line links to the run's log in the
+administration (`/staticpublish/log/<run id>`), built from the administration's address
+(`site.ini [UserSettings] RegistrationAdminBaseURL`, else the SiteURL of the administration siteaccess); without one
+the line is left out.
+
+```text
+Static publishing of Public site (github-public) failed on Example
+
+Target: Public site (github-public)
+Id: 20261101-030000-1a2b3c
+Result: failed
+Changes: nothing changed
+Push: not pushed
+Public address: https://owner.github.io/my-site/
+
+Errors:
+- not pushed: the secret github_pages_token is not set
+
+Log: https://admin.example.com/staticpublish/log/20261101-030000-1a2b3c
+
+--
+This mail was sent by Example because the static publishing target github-public asks for it.
+```
 
 ## Webhook
 

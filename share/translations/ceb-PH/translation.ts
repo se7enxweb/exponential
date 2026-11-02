@@ -83429,4 +83429,19 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Markahi ang usa ka siteaccess, o daghan nga nag-ambit og usa ka host pinaagi sa ilang URI prefix. Ang anaa sa gamut gisilbi didto, ang uban sa folder sa ilang prefix (/ger/); ang mga link tali kanila magpabilin sa kopya. Ang mga siteaccess sa administrasyon dili gyud itanyag.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Napakyas ang static publishing sa %target sa %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Malampuson ang static publishing sa %target sa %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Gipadala kini nga mail sa %site tungod kay gipangayo kini sa static publishing target nga %target.</translation>
+    </message>
+</context>
 </TS>

@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>勾选一个站点访问，或多个通过 URI 前缀共享同一主机的站点访问。根目录的那个在根目录提供，其他的在其前缀的文件夹中 (/ger/)；它们之间的链接保留在副本中。从不提供管理站点访问。</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target 在 %site 上的静态发布失败</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target 在 %site 上的静态发布成功</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>此邮件由 %site 发送，因为静态发布目标 %target 要求发送。</translation>
+    </message>
+</context>
 </TS>

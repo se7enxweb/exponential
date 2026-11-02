@@ -83427,4 +83427,19 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <translation>Phawula ukufikelela kwisayithi okunye, okanye okuninzi okwabelana ngomamkeli omnye ngesimaphambili sabo se-URI. Okusengcanjini kunikezelwa apho, okunye kwifolda yesimaphambili sako (/ger/); amakhonkco aphakathi kwabo ahlala kwikopi. Ukufikelela kolawulo akuze kunikezelwe.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Upapasho olumileyo lwe-%target aluphumelelanga ku-%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Upapasho olumileyo lwe-%target luphumelele ku-%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Le imeyile ithunyelwe ngu-%site kuba injongo yopapasho olumileyo %target iyayicela.</translation>
+    </message>
+</context>
 </TS>

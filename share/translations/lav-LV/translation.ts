@@ -83459,4 +83459,19 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <translation>Atzīmējiet vienu vietnes piekļuvi vai vairākas, kas ar savu URI prefiksu dala vienu resursdatoru. Saknē esošā tiek pasniegta tur, pārējās sava prefiksa mapē (/ger/); saites starp tām paliek kopijā. Administrēšanas piekļuves nekad netiek piedāvātas.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Mērķa %target statiskā publicēšana vietnē %site neizdevās</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Mērķa %target statiskā publicēšana vietnē %site izdevās</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Šo vēstuli nosūtīja %site, jo statiskās publicēšanas mērķis %target to pieprasa.</translation>
+    </message>
+</context>
 </TS>

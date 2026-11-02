@@ -83429,4 +83429,19 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <translation>Mariho fidirana iray, na maromaro mizara mpampiantrano iray amin'ny alalan'ny tovona URI-ny. Ny ao amin'ny fototra dia atolotra ao, ny hafa ao amin'ny lahatahirin'ny tovony (/ger/); mijanona ao anaty dika ny rohy eo anelanelany. Tsy atolotra mihitsy ny fidirana fitantanana.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Tsy nahomby ny famoahana static an'i %target ao amin'ny %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Nahomby ny famoahana static an'i %target ao amin'ny %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site no nandefa ity mailaka ity satria mangataka izany ny tanjona famoahana static %target.</translation>
+    </message>
+</context>
 </TS>

@@ -84109,4 +84109,19 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Markér én siteaccess, eller flere der deler én vært via deres URI-præfiks. Den i roden serveres der, de andre i mappen for deres præfiks (/ger/); links mellem dem bliver i kopien. Administrations-siteaccesses tilbydes aldrig.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk publicering af %target mislykkedes på %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk publicering af %target lykkedes på %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Denne mail er sendt af %site, fordi målet for statisk publicering %target beder om den.</translation>
+    </message>
+</context>
 </TS>

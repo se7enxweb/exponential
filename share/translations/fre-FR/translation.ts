@@ -84869,4 +84869,19 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Cochez un siteaccess, ou plusieurs qui partagent un hôte par leur préfixe d'URI. Celui à la racine y est servi, les autres dans le dossier de leur préfixe (/ger/) ; les liens entre eux restent dans la copie. Les siteaccess d'administration ne sont jamais proposés.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publication statique de %target a échoué sur %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publication statique de %target a réussi sur %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ce courriel a été envoyé par %site parce que la cible de publication statique %target le demande.</translation>
+    </message>
+</context>
 </TS>

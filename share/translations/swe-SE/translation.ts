@@ -84732,4 +84732,19 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Markera en webbplatsingång, eller flera som delar en värd via sitt URI-prefix. Den i roten serveras där, de andra i mappen för sitt prefix (/ger/); länkar mellan dem stannar i kopian. Administrationsingångar erbjuds aldrig.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk publicering av %target misslyckades på %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk publicering av %target lyckades på %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Det här mejlet skickades av %site eftersom målet för statisk publicering %target ber om det.</translation>
+    </message>
+</context>
 </TS>

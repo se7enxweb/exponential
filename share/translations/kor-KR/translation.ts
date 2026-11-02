@@ -83459,4 +83459,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>사이트 액세스 하나 또는 URI 접두사로 한 호스트를 공유하는 여러 개를 선택하십시오. 루트에 있는 것은 그곳에서 제공되고, 나머지는 접두사 폴더(/ger/)에 있습니다. 서로 간의 링크는 사본 안에 남습니다. 관리 사이트 액세스는 표시되지 않습니다.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site에서 %target의 정적 게시에 실패했습니다</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site에서 %target의 정적 게시에 성공했습니다</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>정적 게시 대상 %target이(가) 요청하므로 %site에서 이 메일을 보냈습니다.</translation>
+    </message>
+</context>
 </TS>

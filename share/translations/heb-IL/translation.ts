@@ -83461,4 +83461,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>סמנו גישת אתר אחת, או כמה שחולקות מארח אחד לפי קידומת ה-URI שלהן. זו שבשורש מוגשת שם, האחרות בתיקיית הקידומת שלהן (/ger/); הקישורים ביניהן נשארים בעותק. גישות ניהול לעולם אינן מוצעות.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>הפרסום הסטטי של %target נכשל ב-%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>הפרסום הסטטי של %target הצליח ב-%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>הודעה זו נשלחה על ידי %site כי יעד הפרסום הסטטי %target מבקש אותה.</translation>
+    </message>
+</context>
 </TS>

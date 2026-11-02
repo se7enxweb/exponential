@@ -83429,4 +83429,19 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <translation>Paw wɛbsaet kwan baako, anaa pii a wɔkyɛ host baako denam wɔn URI ahyɛaseɛ so. Deɛ ɛwɔ ntini ho no wɔde ma wɔ hɔ, afoforɔ no wɔ wɔn ahyɛaseɛ foda mu (/ger/); link a ɛda wɔn ntam tena nsusuansoɔ no mu. Wɔmfa adwumayɛfoɔ wɛbsaet kwan mma da.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Static publishing a ɛfa %target ho no anni yie wɔ %site so</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Static publishing a ɛfa %target ho no di yie wɔ %site so</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site na ɛde krataa yi mae ɛfiri sɛ static publishing botaeɛ %target bisa ma no.</translation>
+    </message>
+</context>
 </TS>

@@ -84641,4 +84641,19 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Zaznacz jeden dostęp do witryny lub kilka, które dzielą jeden host według prefiksu URI. Ten w katalogu głównym jest tam serwowany, pozostałe w folderze swojego prefiksu (/ger/); odnośniki między nimi zostają w kopii. Dostępy administracyjne nigdy nie są proponowane.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statyczna publikacja %target w %site nie powiodła się</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statyczna publikacja %target w %site powiodła się</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tę wiadomość wysłał %site, ponieważ prosi o nią cel publikacji statycznej %target.</translation>
+    </message>
+</context>
 </TS>

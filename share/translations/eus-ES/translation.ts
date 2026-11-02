@@ -83429,4 +83429,19 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Markatu gune-sarbide bat, edo URI aurrizkiaren bidez ostalari bera partekatzen duten batzuk. Erroan dagoena han zerbitzatzen da, besteak beren aurrizkiaren karpetan (/ger/); haien arteko estekak kopian geratzen dira. Administrazioko gune-sarbideak ez dira inoiz eskaintzen.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target helburuaren argitalpen estatikoak huts egin du %site gunean</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target helburuaren argitalpen estatikoa ondo atera da %site gunean</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site guneak bidali du mezu hau, %target argitalpen estatikoaren helburuak eskatzen duelako.</translation>
+    </message>
+</context>
 </TS>

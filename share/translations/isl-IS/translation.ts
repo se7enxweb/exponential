@@ -83459,4 +83459,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Hakaðu við einn vefaðgang, eða fleiri sem deila einum hýsli með URI-forskeyti sínu. Sá í rótinni er birtur þar, hinir í möppu forskeytis síns (/ger/); tenglar milli þeirra haldast í afritinu. Stjórnunarvefaðgangar eru aldrei í boði.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kyrrstæð útgáfa %target mistókst á %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kyrrstæð útgáfa %target tókst á %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site sendi þennan póst vegna þess að markmið kyrrstæðrar útgáfu %target biður um hann.</translation>
+    </message>
+</context>
 </TS>

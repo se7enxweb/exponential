@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>አንድ የጣቢያ መዳረሻ ወይም በURI ቅድመ ቅጥያቸው አንድ አስተናጋጅ የሚጋሩ ብዙዎችን ምልክት ያድርጉ። በስሩ ያለው እዚያ ይቀርባል፣ ሌሎቹ በቅድመ ቅጥያቸው አቃፊ (/ger/) ውስጥ፤ በመካከላቸው ያሉ አገናኞች በቅጂው ውስጥ ይቆያሉ። የአስተዳደር የጣቢያ መዳረሻዎች በፍጹም አይቀርቡም።</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>የ%target ቋሚ ህትመት በ%site ላይ አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>የ%target ቋሚ ህትመት በ%site ላይ ተሳክቷል</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ይህ ኢሜይል በ%site የተላከው የቋሚ ህትመት ዒላማ %target ስለጠየቀው ነው።</translation>
+    </message>
+</context>
 </TS>

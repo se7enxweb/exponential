@@ -23,9 +23,12 @@
  *     reply_to: webmaster@example.com
  *     transport: file                 a transport of site.ini [MailSettings] TransportAlias for this mail only (file
  *                                     writes it below var/log/mail); default: the installation's
+ *     category: admin                 the mail category (mailpreferences.ini Categories[]); default admin
  *
  * The mail goes through the kernel's mail transport (eZMailTransport::send()), so the mail gate and the settings of
- * the installation apply as for any other mail. A dry run sends nothing. Each mail is recorded in the audit log
+ * the installation apply as for any other mail. Like the kernel's other notices it carries a mail category: admin
+ * (essential, sent as before) unless the step names another; an optional one (newsletter, system ...) reaches only
+ * the recipients whose preferences allow it, with the footer and unsubscribe link of the mail gate. A dry run sends nothing. Each mail is recorded in the audit log
  * (system.migration.mail: how many recipients and whether it was sent; never an address or the text). A mail cannot be
  * taken back: a migration with this step needs a down: or a rollback to its caption.
  *
@@ -34,6 +37,9 @@
  */
 class expMigrationStepMail extends expMigrationStepTypeBase
 {
+    /** The mail category without a category: key (mailpreferences.ini [Category_admin], essential) */
+    const DEFAULT_CATEGORY = 'admin';
+
     /** @return string */
     public function name()
     {
@@ -55,6 +61,8 @@ class expMigrationStepMail extends expMigrationStepTypeBase
                 'from' => array( 'type' => 'string', 'description' => 'the sender (default: site.ini [MailSettings] EmailSender, else AdminEmail)' ),
                 'reply_to' => array( 'type' => 'string', 'description' => 'the address answers go to' ),
                 'transport' => array( 'type' => 'string', 'description' => 'a transport of site.ini [MailSettings] TransportAlias (file, sendmail, smtp) for this mail only' ),
+                'category' => array( 'type' => 'string', 'default' => self::DEFAULT_CATEGORY,
+                                     'description' => 'the mail category of mailpreferences.ini; an optional one reaches only the recipients whose preferences allow it' ),
             ),
             'values' => array(
                 'recipients' => 'how many addresses it went to',
@@ -85,6 +93,8 @@ class expMigrationStepMail extends expMigrationStepTypeBase
             $errors[] = 'subject: one line';
         if ( isset( $step['transport'] ) && !preg_match( '/^[a-z0-9_]+$/', (string)$step['transport'] ) )
             $errors[] = 'transport: the name of a transport (file, sendmail, smtp ...)';
+        if ( isset( $step['category'] ) && !expMigrationReferences::contains( $step['category'] ) && !self::knownCategory( $step['category'] ) )
+            $errors[] = 'category: a mail category of mailpreferences.ini (admin, system, newsletter ...)';
         return $errors;
     }
 
@@ -136,6 +146,7 @@ class expMigrationStepMail extends expMigrationStepTypeBase
         $mail->setBody( (string)$step['body'] );
         if ( !empty( $step['html'] ) )
             $mail->setContentType( 'text/html' );
+        $mail->setCategory( isset( $step['category'] ) && trim( (string)$step['category'] ) !== '' ? trim( (string)$step['category'] ) : self::DEFAULT_CATEGORY );
         $sent = (bool)eZMailTransport::send( $mail, isset( $step['transport'] ) ? (string)$step['transport'] : null );
         if ( $context instanceof expMigrationContext )
             $context->audit( 'system.migration.mail', array( 'object' => array( 'type' => 'mail', 'id' => $context->runId() ), 'verb' => 'send',
@@ -144,5 +155,28 @@ class expMigrationStepMail extends expMigrationStepTypeBase
         if ( !$sent )
             throw new RuntimeException( 'the mail "' . $step['subject'] . '" could not be sent (the debug log of the mail transport says why)' );
         return self::result( array( 'sent the mail "' . $step['subject'] . "\" to $count " . ( $count === 1 ? 'address' : 'addresses' ) ), array( 'recipients' => $count ) );
+    }
+
+    /**
+     * Whether a mail category exists: a name of mailpreferences.ini Categories[] (expMailCategoryRegistry); without
+     * the registry, any identifier.
+     *
+     * @param mixed $category
+     * @return bool
+     */
+    protected static function knownCategory( $category )
+    {
+        if ( !is_string( $category ) || !preg_match( '/^[a-z0-9_]+$/', $category ) )
+            return false;
+        if ( !class_exists( 'expMailCategoryRegistry' ) )
+            return true;
+        try
+        {
+            return expMailCategoryRegistry::instance()->get( $category ) !== null;
+        }
+        catch ( Throwable $e )
+        {
+            return true;
+        }
     }
 }

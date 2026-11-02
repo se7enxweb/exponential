@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ایک سائٹ ایکسیس منتخب کریں، یا کئی جو اپنے URI سابقے سے ایک ہوسٹ بانٹتے ہیں۔ روٹ والا وہیں پیش کیا جاتا ہے، باقی اپنے سابقے کے فولڈر میں (/ger/)؛ ان کے درمیان لنک نقل ہی میں رہتے ہیں۔ انتظامیہ کے سائٹ ایکسیس کبھی پیش نہیں کیے جاتے۔</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site پر %target کی جامد اشاعت ناکام رہی</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site پر %target کی جامد اشاعت کامیاب رہی</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>یہ میل %site نے بھیجی ہے کیونکہ جامد اشاعت کا ہدف %target اس کا تقاضا کرتا ہے۔</translation>
+    </message>
+</context>
 </TS>

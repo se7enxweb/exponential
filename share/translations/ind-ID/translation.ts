@@ -83429,4 +83429,19 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Centang satu akses situs, atau beberapa yang berbagi satu host lewat prefiks URI-nya. Yang di akar disajikan di sana, yang lain di folder prefiksnya (/ger/); tautan di antaranya tetap di dalam salinan. Akses situs administrasi tidak pernah ditawarkan.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publikasi statis %target gagal di %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publikasi statis %target berhasil di %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Email ini dikirim oleh %site karena target publikasi statis %target memintanya.</translation>
+    </message>
+</context>
 </TS>

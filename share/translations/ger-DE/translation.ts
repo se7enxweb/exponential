@@ -90399,4 +90399,19 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Haken Sie einen Siteaccess an, oder mehrere, die sich über ihr URI-Präfix einen Host teilen. Der im Stamm wird dort ausgeliefert, die anderen im Ordner ihres Präfixes (/ger/); Links zwischen ihnen bleiben in der Kopie. Administrations-Siteaccesses werden nie angeboten.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisches Veröffentlichen von %target auf %site fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisches Veröffentlichen von %target auf %site erfolgreich</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Diese E-Mail wurde von %site gesendet, weil das Ziel des statischen Veröffentlichens %target darum bittet.</translation>
+    </message>
+</context>
 </TS>

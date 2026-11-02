@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>เลือกการเข้าถึงไซต์หนึ่งรายการ หรือหลายรายการที่ใช้โฮสต์เดียวกันผ่านคำนำหน้า URI รายการที่รากจะให้บริการที่นั่น รายการอื่นอยู่ในโฟลเดอร์ของคำนำหน้า (/ger/) ลิงก์ระหว่างกันจะอยู่ในสำเนา การเข้าถึงไซต์สำหรับผู้ดูแลระบบจะไม่ถูกเสนอเลย</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>การเผยแพร่แบบคงที่ของ %target บน %site ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>การเผยแพร่แบบคงที่ของ %target บน %site สำเร็จ</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>อีเมลนี้ส่งโดย %site เนื่องจากเป้าหมายการเผยแพร่แบบคงที่ %target ร้องขอ</translation>
+    </message>
+</context>
 </TS>

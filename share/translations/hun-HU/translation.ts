@@ -83459,4 +83459,19 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Jelöljön be egy webhely-hozzáférést, vagy többet, amelyek URI-előtagjuk révén egy kiszolgálón osztoznak. A gyökérben lévőt ott szolgálja ki, a többit előtagjuk mappájában (/ger/); a köztük lévő hivatkozások a másolatban maradnak. Adminisztrációs hozzáférések soha nem jelennek meg.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>A(z) %target statikus közzététele sikertelen volt itt: %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>A(z) %target statikus közzététele sikeres volt itt: %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ezt a levelet a(z) %site küldte, mert a(z) %target statikus közzétételi cél kéri.</translation>
+    </message>
+</context>
 </TS>

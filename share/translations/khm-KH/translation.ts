@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>គូសការចូលគេហទំព័រមួយ ឬច្រើនដែលចែករំលែកម៉ាស៊ីនមេមួយតាមបុព្វបទ URI របស់វា។ មួយនៅឫសត្រូវបានផ្តល់នៅទីនោះ ផ្សេងទៀតនៅក្នុងថតនៃបុព្វបទរបស់វា (/ger/); តំណរវាងពួកវានៅក្នុងច្បាប់ចម្លង។ ការចូលគ្រប់គ្រងមិនដែលត្រូវបានផ្តល់ទេ។</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>ការបោះពុម្ពផ្សាយឋិតិវន្តនៃ %target បានបរាជ័យនៅលើ %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>ការបោះពុម្ពផ្សាយឋិតិវន្តនៃ %target បានជោគជ័យនៅលើ %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>អ៊ីមែលនេះត្រូវបានផ្ញើដោយ %site ព្រោះគោលដៅបោះពុម្ពផ្សាយឋិតិវន្ត %target ស្នើសុំ។</translation>
+    </message>
+</context>
 </TS>

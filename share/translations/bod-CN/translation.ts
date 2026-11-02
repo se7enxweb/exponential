@@ -83429,4 +83429,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>དྲ་ཚིགས་འཛུལ་སྒོ་གཅིག་གམ། URI སྔོན་སྦྱོར་བརྒྱུད་ནས་ཞབས་ཞུ་བ་གཅིག་མཉམ་སྤྱོད་བྱེད་པ་མང་པོ་འདེམས། རྩ་བའི་དེ་དེར་སྤྲོད། གཞན་རྣམས་རང་གི་སྔོན་སྦྱོར་ཡིག་སྣོད་ནང་ (/ger/)། དེ་དག་བར་གྱི་སྦྲེལ་མཐུད་འདྲ་བཤུས་ནང་སྡོད། དོ་དམ་གྱི་དྲ་ཚིགས་འཛུལ་སྒོ་ནམ་ཡང་མི་སྟོན།</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site ཐོག་ %target ཡི་བརྟན་པོའི་པར་སྐྲུན་ཕམ་སོང་།</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site ཐོག་ %target ཡི་བརྟན་པོའི་པར་སྐྲུན་ལེགས་གྲུབ་བྱུང་།</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>བརྟན་པོའི་པར་སྐྲུན་དམིགས་ཡུལ་ %target ཡིས་རེ་ཞུ་བྱས་པས་ %site ཡིས་གློག་འཕྲིན་འདི་བཏང་།</translation>
+    </message>
+</context>
 </TS>

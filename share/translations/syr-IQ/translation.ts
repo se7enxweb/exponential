@@ -83437,4 +83437,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܪܫܘܡ ܚܕ ܡܥܠܢܐ ܕܐܬܪܐ، ܐܘ ܣܓܝܐܐ ܕܡܫܬܘܬܦܝܢ ܒܡܐܪܚ ܚܕ ܒܐܦܬܚܐ ܕURI ܕܝܠܗܘܢ. ܗܘ ܕܒܥܩܪܐ ܡܬܬܝܗܒ ܬܡܢ، ܘܐܚܪܢܐ ܒܬܝܩܐ ܕܐܦܬܚܐ ܕܝܠܗܘܢ (/ger/)؛ ܐܣܘܪܐ ܕܒܝܢܝܗܘܢ ܡܩܘܝܢ ܒܢܘܣܚܬܐ. ܡܥܠ̈ܢܐ ܕܡܕܒܪܢܘܬܐ ܠܐ ܡܬܩܪܒܝܢ ܡܢ ܡܬܘܡ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܕ%target ܠܐ ܐܨܠܚ ܒ%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܕ%target ܐܨܠܚ ܒ%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ܐܓܪܬܐ ܗܕܐ ܐܫܬܕܪܬ ܡܢ %site ܡܛܠ ܕܢܝܫܐ ܕܦܪܣܐ ܩܒܝܥܐ %target ܒܥܐ ܠܗ.</translation>
+    </message>
+</context>
 </TS>

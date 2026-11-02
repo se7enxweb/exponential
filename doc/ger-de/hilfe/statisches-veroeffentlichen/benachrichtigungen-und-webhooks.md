@@ -27,8 +27,45 @@ Im Assistenten, Schritt 8, **Benachrichtigen**:
 - **Wenn eine Veröffentlichung gelingt**: Nur eine Veröffentlichung, die etwas geändert hat, wird gemeldet.
 
 Die E-Mail geht an `[StaticPublishSettings] NotifyEmail` in `staticcache.ini`, oder, wenn das leer ist, an die
-Administratoradresse der Site (`site.ini [MailSettings] AdminEmail`). Sie nennt Ziel, Lauf, Zustand, Push, Tag,
-öffentliche Adresse und etwaige Fehler, nie ein Token oder einen Schlüssel.
+Administratoradresse der Site (`site.ini [MailSettings] AdminEmail`). Sie entsteht wie die anderen Hinweise, die das
+System an Administratoren sendet (eine Anmeldung von einem neuen Gerät, ein Benutzerkonto, das auf Freigabe wartet):
+
+- **Reiner Text**, aus dem Template `design:staticpublish/notice_mail.tpl` im Layout
+  `design:mail/layout_text.tpl`. Überschreiben Sie das Template in Ihrem Design, um den Wortlaut zu ändern.
+- **Übersetzt**: Betreff und Texte stehen in den Sprachkatalogen der Administration.
+- **Absender**: `site.ini [MailSettings] EmailSender`, sonst `AdminEmail`.
+- **Betreff**: „Statisches Veröffentlichen von *Ziel* auf *Site* fehlgeschlagen", bei Erfolg „... erfolgreich". Die
+  Site ist der Name der öffentlichen Site, nie der der Administration.
+- **E-Mail-Kategorie `admin`** (Setup > E-Mail-Einstellungen): ein notwendiger Hinweis, er wird also immer gesendet
+  und hat keine Abmeldefußzeile. Abschalten können Sie ihn mit **Benachrichtigen** im Ziel, nicht in den
+  E-Mail-Einstellungen.
+
+Sie nennt das Ziel, die Kennung des Laufs, das Ergebnis (fehlgeschlagen, veröffentlicht, zurückgenommen oder nichts
+geändert), den Commit, den Tag, den Push, die öffentliche Adresse und etwaige Fehler, nie ein Token oder einen
+Schlüssel. Ein fehlgeschlagener Lauf heißt „fehlgeschlagen", auch wenn er nichts geändert hat (das sagt dann
+„Änderungen: nichts geändert"). Die Zeile **Protokoll** verweist auf das Protokoll des Laufs in der Administration
+(`/staticpublish/log/<Lauf-Kennung>`), gebildet aus der Adresse der Administration
+(`site.ini [UserSettings] RegistrationAdminBaseURL`, sonst die SiteURL des Administrations-Siteaccess); ohne sie
+fehlt die Zeile.
+
+```text
+Statisches Veröffentlichen von Öffentliche Site (github-public) auf Beispiel fehlgeschlagen
+
+Ziel: Öffentliche Site (github-public)
+ID: 20261101-030000-1a2b3c
+Ergebnis: fehlgeschlagen
+Änderungen: nichts geändert
+Push: nicht gepusht
+Öffentliche Adresse: https://owner.github.io/my-site/
+
+Fehler:
+- not pushed: the secret github_pages_token is not set
+
+Protokoll: https://admin.example.com/staticpublish/log/20261101-030000-1a2b3c
+
+--
+Diese E-Mail wurde von Beispiel gesendet, weil das Ziel des statischen Veröffentlichens github-public darum bittet.
+```
 
 ## Webhook
 

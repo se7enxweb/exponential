@@ -83427,4 +83427,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಒಂದು ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಅಥವಾ ತಮ್ಮ URI ಪೂರ್ವಪ್ರತ್ಯಯದ ಮೂಲಕ ಒಂದೇ ಹೋಸ್ಟ್ ಹಂಚಿಕೊಳ್ಳುವ ಹಲವನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಮೂಲದಲ್ಲಿರುವುದು ಅಲ್ಲೇ ಒದಗಿಸಲ್ಪಡುತ್ತದೆ, ಉಳಿದವು ತಮ್ಮ ಪೂರ್ವಪ್ರತ್ಯಯದ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ (/ger/); ಅವುಗಳ ನಡುವಿನ ಲಿಂಕ್‌ಗಳು ಪ್ರತಿಯಲ್ಲೇ ಉಳಿಯುತ್ತವೆ. ಆಡಳಿತದ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ಗಳನ್ನು ಎಂದಿಗೂ ನೀಡಲಾಗುವುದಿಲ್ಲ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site ನಲ್ಲಿ %target ನ ಸ್ಥಿರ ಪ್ರಕಟಣೆ ವಿಫಲವಾಯಿತು</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site ನಲ್ಲಿ %target ನ ಸ್ಥಿರ ಪ್ರಕಟಣೆ ಯಶಸ್ವಿಯಾಯಿತು</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆಯ ಗುರಿ %target ಇದನ್ನು ಕೇಳುವುದರಿಂದ %site ಈ ಮೇಲ್ ಕಳುಹಿಸಿದೆ.</translation>
+    </message>
+</context>
 </TS>
