@@ -125,8 +125,7 @@ class Upgrade extends UpgradeBase
                               : array( 'ok' => false, 'checks' => array( 'run' => array( 'ok' => false, 'detail' => 'the verification did not run', 'items' => array() ) ) );
             if ( !$report['verify']['ok'] )
             {
-                $report['errors'][] = 'the verification after the upgrade failed: '
-                                    . implode( ', ', array_keys( array_filter( $report['verify']['checks'], function ( $c ) { return $c['ok'] === false; } ) ) );
+                $report['errors'][] = 'the verification after the upgrade failed: ' . \expUpgradeVerifyAfter::failureReason( $report['verify'] );
                 $report['exit'] = max( $report['exit'], \expUpgrade::EXIT_FAILED );
             }
         }

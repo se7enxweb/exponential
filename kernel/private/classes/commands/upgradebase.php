@@ -287,10 +287,26 @@ abstract class UpgradeBase extends \Exponential\Runnable\Command
         $s = $report['summary'];
         $cli->output( sprintf( 'Summary: %d pending, %d done, %d not needed, %d failed, %d unknown%s', $s['pending'], $s['done'], $s['not-needed'],
                                $s['failed'], $s['unknown'], $s['applied'] ? ", {$s['applied']} applied now" : '' ) );
-        if ( $report['exit'] === \expUpgrade::EXIT_OK )
-            $cli->output( 'PASS' );
-        else
-            $cli->output( 'FAIL (exit ' . $report['exit'] . ')' );
+        $cli->output( self::resultLine( $report ) );
+    }
+
+    /**
+     * The last line of the text report: PASS, or FAIL with the exit code and why. The reasons are printed further up
+     * as well, but above the verification and the list of captions, out of sight on a terminal; a run whose steps
+     * all applied ("0 failed") and still ends with FAIL has to say on the same line what failed. Pure.
+     *
+     * @param array $report
+     * @return string
+     */
+    public static function resultLine( array $report )
+    {
+        $exit = isset( $report['exit'] ) ? (int)$report['exit'] : \expUpgrade::EXIT_INTERNAL;
+        if ( $exit === \expUpgrade::EXIT_OK )
+            return 'PASS';
+        $errors = isset( $report['errors'] ) ? array_values( array_filter( (array)$report['errors'], 'strlen' ) ) : array();
+        if ( !$errors && !empty( $report['summary']['pending'] ) )
+            $errors[] = $report['summary']['pending'] . ' step(s) pending (--fail-on-pending)';
+        return 'FAIL (exit ' . $exit . ')' . ( $errors ? ': ' . implode( '; ', $errors ) : '' );
     }
 
     /**

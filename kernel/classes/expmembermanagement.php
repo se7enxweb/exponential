@@ -337,6 +337,10 @@ class expMemberManagement
             $limitations = array();
             foreach ( (array)$policy->limitationList( false ) as $limitation )
             {
+                // the review hold adds its limitation to every content/edit and content/publish policy: not part of
+                // the rule, so a limited policy still matches it
+                if ( (string)$limitation->attribute( 'identifier' ) === expReviewHold::LIMITATION )
+                    continue;
                 $values = array_map( 'strval', (array)$limitation->allValues() );
                 sort( $values );
                 $limitations[(string)$limitation->attribute( 'identifier' )] = $values;
@@ -521,7 +525,8 @@ class expMemberManagement
      * Applies a prepared rule without errors.
      *
      * @param array $rule prepare()'s result
-     * @return array changes() as applied, with role set
+     * @return array changes() as applied, with role set and review_hold (string[]: the policies the review hold
+     *               limitation was added to, expReviewHold::limitPolicies())
      */
     public static function apply( array $rule )
     {
@@ -539,6 +544,8 @@ class expMemberManagement
         foreach ( $changes['assign'] as $group )
             $role->assignToUser( $group['object_id'] );
         $db->commit();
+        // a new content/edit policy would edit objects held for review: keep the review hold whole
+        $changes['review_hold'] = $changes['add'] && class_exists( 'expReviewHold' ) ? expReviewHold::limitPolicies() : array();
         if ( $changes['add'] || $changes['assign'] || $changes['create_role'] )
         {
             eZRole::expireCache();

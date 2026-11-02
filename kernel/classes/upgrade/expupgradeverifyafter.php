@@ -47,12 +47,37 @@ class expUpgradeVerifyAfter
         return array( 'ok' => $ok, 'since' => date( 'c', $since ), 'checks' => $checks );
     }
 
+    /**
+     * Why a verification failed, in one line: each failed check with its detail and its first items, e.g.
+     * "steps: 1 step(s) drifted or failed (6.0.15-review-hold)". Empty when nothing failed. Pure.
+     *
+     * @param array $after the result of run()
+     * @return string
+     */
+    public static function failureReason( array $after )
+    {
+        $parts = array();
+        foreach ( isset( $after['checks'] ) ? (array)$after['checks'] : array() as $name => $check )
+        {
+            if ( !isset( $check['ok'] ) || $check['ok'] !== false )
+                continue;
+            $items = isset( $check['items'] ) ? array_values( (array)$check['items'] ) : array();
+            $line = $name . ( isset( $check['detail'] ) && $check['detail'] !== '' ? ': ' . $check['detail'] : '' );
+            if ( $items )
+                $line .= ' (' . implode( ', ', array_slice( $items, 0, 3 ) ) . ( count( $items ) > 3 ? ', ...' : '' ) . ')';
+            $parts[] = $line;
+        }
+        return implode( '; ', $parts );
+    }
+
     /** Step detection: drift and failed steps fail. */
     public static function steps( array $options )
     {
         $stages = isset( $options['stages'] ) ? $options['stages'] : array( 'database', 'scripts' );
         $report = expUpgrade::verify( $stages, array_intersect_key( $options, array( 'db' => 1, 'registry' => 1 ) ) );
-        $bad = $report['drift'];
+        $bad = array();
+        foreach ( $report['drift'] as $id )
+            $bad[] = "$id drifted (recorded as done, its effect is missing)";
         $pending = array();
         foreach ( $report['stages'] as $s )
             foreach ( $s['steps'] as $step )
@@ -95,17 +120,35 @@ class expUpgradeVerifyAfter
         return array( "$base/", "$base/user/login" );
     }
 
-    /** Each smoke address answers 200 to 399. */
-    public static function urls( array $given = array() )
+    /**
+     * Each smoke address answers 200 to 399. An address that gives no answer or a gateway error (502 to 504) is asked
+     * again after a pause, a few times: a server that is restarting at that moment (Velocity, by a deploy running at
+     * the same time) does not fail an upgrade that went through.
+     *
+     * @param string[] $given
+     * @param int $tries how often an address is asked at most
+     * @param int $pause seconds between two tries
+     * @param callable|null $status function( string $url ): int the HTTP status, 0 for no answer (tests)
+     * @return array
+     */
+    public static function urls( array $given = array(), $tries = 4, $pause = 10, $status = null )
     {
         $urls = self::smokeUrls( $given );
         if ( !$urls )
             return array( 'ok' => null, 'detail' => 'no address: set [UpgradeSettings] SmokeURL[] or SiteURL, or give --url', 'items' => array() );
+        $status = $status ?: array( 'expUpgradeStepFinishSmoke', 'status' );
         $items = array();
         $bad = 0;
         foreach ( $urls as $url )
         {
-            $code = expUpgradeStepFinishSmoke::status( $url );
+            for ( $try = 1; ; $try++ )
+            {
+                $code = (int)call_user_func( $status, $url );
+                if ( $try >= max( 1, (int)$tries ) || ( $code !== 0 && ( $code < 502 || $code > 504 ) ) )
+                    break;
+                if ( $pause > 0 )
+                    sleep( (int)$pause );
+            }
             $items[] = "$url: " . ( $code ?: 'no answer' );
             if ( $code < 200 || $code > 399 )
                 $bad++;
