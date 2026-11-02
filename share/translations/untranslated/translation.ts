@@ -68656,6 +68656,9 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>All functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Loaded when opened.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -68693,6 +68696,9 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%shown of %matching policies (%total in all)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>All roles (%count policies)</source>
         <translation type="unfinished"></translation>
     </message>

@@ -63033,6 +63033,8 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>All functions</source>
         <translation>All functions</translation>
+    </message>
+    <message>
         <source>Loaded when opened.</source>
         <translation>Loaded when opened.</translation>
     </message>
@@ -63071,6 +63073,8 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown of %matching policies (%total in all)</translation>
+    </message>
+    <message>
         <source>All roles (%count policies)</source>
         <translation>All roles (%count policies)</translation>
     </message>
