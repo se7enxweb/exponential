@@ -522,4 +522,93 @@ abstract class expMigrationPhp implements expMigration
     {
         throw new RuntimeException( $this->id() . ' cannot be undone by itself (no down()); restore the caption taken before it' );
     }
+
+    /**
+     * Where this migration got to in an earlier run that did not finish (expMigrationCheckpoint): values it keeps
+     * between batches of its own work. The runner removes it once the migration is applied.
+     *
+     * @param expMigrationContext $context
+     * @return expMigrationCheckpoint
+     */
+    final protected function checkpoint( $context )
+    {
+        return expMigrationCheckpoint::of( $this->id(), $context );
+    }
+
+    /**
+     * Works through many items a batch at a time, each batch committed on its own, and goes on where the last run
+     * stopped: the number of items handled is kept in the checkpoint after every batch, so a run that fails or is
+     * stopped half-way does not do the first batches again. Between batches it pauses [RunSettings] Throttle seconds
+     * (or the run's --throttle), so a long run does not hold the server.
+     *
+     *   public function transactional() { return false; }
+     *
+     *   public function up( $context )
+     *   {
+     *       $db = $context->db();
+     *       $count = $this->batches( $context,
+     *           function ( $offset, $limit ) use ( $db ) {
+     *               return $db->arrayQuery( 'SELECT id FROM ezcontentobject ORDER BY id', array( 'offset' => $offset, 'limit' => $limit ) );
+     *           },
+     *           function ( $row ) use ( $db ) { ... one item ... } );
+     *       return array( "updated $count objects" );
+     *   }
+     *
+     * $fetch gets the offset (the items handled in every run so far) and the batch size, and returns the next items in
+     * a stable order; fewer than the batch size (or none) ends the work. A handler that removes the items it handles
+     * would make an offset skip items: its $fetch ignores the offset and asks for what is still left instead.
+     *
+     * The migration must not be transactional(): a batch is a transaction of its own, and its checkpoint is written
+     * only after it is committed. A dry run handles nothing and returns 0.
+     *
+     * @param expMigrationContext $context
+     * @param callable $fetch function( int $offset, int $limit ): array
+     * @param callable $handle function( mixed $item ): void, for each item of a batch
+     * @param int $size items per batch (at least 1)
+     * @param string $key the name of the offset in the checkpoint (another name for a second piece of work)
+     * @return int the items handled in this run
+     * @throws LogicException when the migration is transactional()
+     */
+    final protected function batches( $context, $fetch, $handle, $size = 100, $key = 'offset' )
+    {
+        if ( $this->transactional() )
+            throw new LogicException( $this->id() . ': batches() commits every batch on its own; the migration\'s transactional() must return false' );
+        if ( !$context->isApply() )
+            return 0;
+        $size = max( 1, (int)$size );
+        $checkpoint = $this->checkpoint( $context );
+        $offset = max( 0, (int)$checkpoint->get( $key, 0 ) );
+        if ( $offset > 0 )
+            $context->log( 'info', $this->id() . ": goes on after $offset items handled in an earlier run" );
+        $pause = expMigrationRunner::throttleSeconds( $context->option( 'throttle' ) );
+        $sleep = $context->option( 'sleep' );
+        $handled = 0;
+        while ( true )
+        {
+            $items = array_values( (array)call_user_func( $fetch, $offset, $size ) );
+            if ( !$items )
+                break;
+            $context->begin();
+            try
+            {
+                foreach ( $items as $item )
+                    call_user_func( $handle, $item );
+                $context->commit();
+            }
+            catch ( Throwable $e )
+            {
+                $context->rollback();
+                throw $e;
+            }
+            $offset += count( $items );
+            $handled += count( $items );
+            if ( !$checkpoint->set( array( $key => $offset ) ) )
+                $context->log( 'warning', $this->id() . ': the checkpoint could not be written: ' . $checkpoint->file() );
+            if ( count( $items ) < $size )
+                break;
+            if ( $pause > 0 )
+                is_callable( $sleep ) ? call_user_func( $sleep, $pause ) : usleep( (int)round( $pause * 1000000 ) );
+        }
+        return $handled;
+    }
 }

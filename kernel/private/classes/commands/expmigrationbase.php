@@ -33,6 +33,9 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
     /** A run started by the administration in the background: its id given, its progress written to a file. */
     const PROGRESS_OPTIONS = '[run-id:][progress:]';
 
+    /** A long run in parts, paced: migrate and resume. */
+    const LONG_RUN_OPTIONS = '[max-migrations:][max-time:][throttle:][nice:]';
+
     /**
      * Every command with its option configuration (permanent: only additions).
      *
@@ -42,10 +45,10 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
     {
         return array(
             'exp:migration:status' => '[only:*][environment:][format:][fail-on-pending][runs:]',
-            'exp:migration:migrate' => '[apply][dry-run]' . self::SELECT_OPTIONS . self::FLOW_OPTIONS . self::FORCE_OPTIONS . self::PROGRESS_OPTIONS,
+            'exp:migration:migrate' => '[apply][dry-run]' . self::SELECT_OPTIONS . self::FLOW_OPTIONS . self::FORCE_OPTIONS . self::PROGRESS_OPTIONS . self::LONG_RUN_OPTIONS,
             'exp:migration:dry-run' => self::SELECT_OPTIONS . '[diff][simulate]',
             'exp:migration:rollback' => '[apply][dry-run][format:][source:][environment:][login:][expert][confirm:][parts:][backup-dir:][no-safety-caption][force-no-caption][no-verify][progress:]',
-            'exp:migration:resume' => '[apply][dry-run][environment:][format:][login:]' . self::FLOW_OPTIONS . self::FORCE_OPTIONS . self::PROGRESS_OPTIONS,
+            'exp:migration:resume' => '[apply][dry-run][environment:][format:][login:]' . self::FLOW_OPTIONS . self::FORCE_OPTIONS . self::PROGRESS_OPTIONS . self::LONG_RUN_OPTIONS,
             'exp:migration:caption' => '[apply][dry-run][format:][list][label:][backup-dir:]',
             'exp:migration:push' => '[apply][dry-run][format:][limit:]',
             'exp:migration:check' => '[path:*][environment:][format:]',
@@ -130,6 +133,10 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'plan' => 'The steps a migration of the recording would have (its events folded per thing changed) instead of every event',
             'run-id' => 'The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run',
             'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
+            'max-migrations' => 'Apply at most this many migrations; the rest stay pending for the next run (default [RunSettings] MaxMigrations, empty: all)',
+            'max-time' => 'Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime)',
+            'throttle' => 'Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle)',
+            'nice' => 'Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice)',
         );
     }
 
@@ -304,6 +311,34 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             if ( !is_dir( dirname( $file ) ) || ( file_exists( $file ) && !is_file( $file ) ) )
                 $this->usage( "--progress must name a file in a directory that exists, not $file" );
             $out['progress'] = \expMigrationProgress::writer( $file );
+        }
+        return $out;
+    }
+
+    /**
+     * The options --max-migrations, --max-time, --throttle and --nice, checked; a usage error ends with exit 2.
+     *
+     * @param array $options
+     * @return array max-migrations, max-time, throttle, nice (absent when not given: the settings count)
+     */
+    protected function longRun( array $options )
+    {
+        $out = array();
+        foreach ( array( 'max-migrations', 'max-time', 'nice' ) as $name )
+            if ( isset( $options[$name] ) && $options[$name] !== false && $options[$name] !== '' )
+            {
+                $value = trim( (string)$options[$name] );
+                $max = $name === 'nice' ? 19 : PHP_INT_MAX;
+                if ( !ctype_digit( $value ) || (int)$value < 1 || (int)$value > $max )
+                    $this->usage( "--$name must be a whole number from 1" . ( $name === 'nice' ? ' to 19' : '' ) . ", not $value" );
+                $out[$name] = (int)$value;
+            }
+        if ( isset( $options['throttle'] ) && $options['throttle'] !== false && $options['throttle'] !== '' )
+        {
+            $value = trim( (string)$options['throttle'] );
+            if ( !is_numeric( $value ) || (float)$value < 0 || (float)$value > 60 )
+                $this->usage( "--throttle must be seconds from 0 to 60 (0.5 is half a second), not $value" );
+            $out['throttle'] = (float)$value;
         }
         return $out;
     }

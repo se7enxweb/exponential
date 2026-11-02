@@ -2,14 +2,14 @@
 title: velocity.ini [DeploySettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [DeploySettings] in velocity.ini: PhpFpmService, PhpFpmReload, WarmUpURL"
-keywords: Einstellung, velocity.ini, DeploySettings, INI, setting, PhpFpmService, PhpFpmReload, WarmUpURL
+summary: "Die Einstellungen von [DeploySettings] in velocity.ini: PhpFpmService, PhpFpmReload, WarmUpURL, Migrate"
+keywords: Einstellung, velocity.ini, DeploySettings, INI, setting, PhpFpmService, PhpFpmReload, WarmUpURL, Migrate
 type: generated
 generated: exp:help:examples
 ---
 # velocity.ini [DeploySettings]
 
-Der Block `[DeploySettings]` von `settings/velocity.ini`, mit 3 Einstellung(en).
+Der Block `[DeploySettings]` von `settings/velocity.ini`, mit 4 Einstellung(en).
 
 Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -99,6 +99,24 @@ Standard: eine leere Liste.
 [DeploySettings]
 # ein leeres "WarmUpURL[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 WarmUpURL[]
+*/ ?>
+```
+
+## Migrate
+
+> Whether a deploy runs the pending migrations (./console exp:migration:migrate  
+> --apply, with its captions, record, commit and push), after the caches of  
+> settings and templates and before PHP-FPM and Velocity run the new code. A  
+> migration that fails stops the deploy there. enabled: every deploy;  
+> disabled: only deploy --migrate. deploy --no-migrate skips them either way.  
+
+Standard: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[DeploySettings]
+Migrate=disabled
 */ ?>
 ```
 

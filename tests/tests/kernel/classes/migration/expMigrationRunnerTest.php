@@ -545,7 +545,7 @@ class expMigrationRunnerTest extends PHPUnit\Framework\TestCase
         foreach ( explode( "\n", $m[1] ) as $line )
             if ( preg_match( '/^([A-Za-z]+)=(.*)$/', $line, $kv ) )
                 $settings[$kv[1]] = $kv[2];
-        $this->assertSame( array( 'RunAsUser' => 'admin', 'StopOnFailure' => 'enabled', 'Throttle' => '', 'ClearCaches' => 'enabled', 'Reindex' => 'queue' ), $settings );
+        $this->assertSame( array( 'RunAsUser' => 'admin', 'StopOnFailure' => 'enabled', 'Throttle' => '', 'MaxMigrations' => '', 'MaxTime' => '', 'Nice' => '', 'ClearCaches' => 'enabled', 'Reindex' => 'queue' ), $settings );
         $catalogue = expAuditTaxonomy::catalogue();
         $auditIni = file_get_contents( self::$root . '/settings/audit.ini' );
         foreach ( array( 'run', 'apply', 'fail', 'rollback', 'caption', 'push' ) as $event )

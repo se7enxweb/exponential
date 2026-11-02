@@ -141,7 +141,10 @@ modification time: a copy that keeps the old time (`cp -p`, `rsync -t`) is not
 seen, so deploy such a copy with `--all-caches`. `--caches=<list>` clears the caches it names (ids or
 tags of ezcache, `tag:<name>` for a tag) whatever changed: a migration run reports the caches its steps touched
 with exactly that deploy (`./console exp:velocity deploy --caches=content,template-block --apply`), since a run that
-changes only the database changes no file the deploy would see.
+changes only the database changes no file the deploy would see. `--migrate` runs the pending migrations
+(`exp:migration:migrate --apply`) after the caches of settings and templates and before the engine archive, PHP-FPM
+and Velocity; `[DeploySettings] Migrate=enabled` makes every deploy do it, `--no-migrate` skips it
+([Migrations: packages, deploys and long runs](../../guides/migrations-packages-deploy-and-long-runs.md#in-a-deploy)).
 
 **The first step that fails stops the run.** A kernel file that does not parse
 fails step 5, before PHP-FPM or Velocity has been touched; a restart that does

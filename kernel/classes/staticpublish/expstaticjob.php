@@ -48,6 +48,13 @@ class expStaticJob
     /** The folder of the jobs below the work directory. */
     const FOLDER = '.jobs';
 
+    /**
+     * The option of a publish job that builds these nodes first (node ids): the pages of the nodes are built into the
+     * last build and published with it (exp:static:publish --nodes). The website sidebar's "Publish this page" looks
+     * for this constant.
+     */
+    const NODES = 'nodes';
+
     /** The pattern of a job id (expStaticBuild::newRunId()). */
     const ID_PATTERN = '/^[0-9]{8}-[0-9]{6}-[0-9a-f]{6}$/';
 
@@ -89,14 +96,15 @@ class expStaticJob
      * @param string $kind build, publish or rollback
      * @param string $id the job's id
      * @param string $target the target id
-     * @param array $options to (rollback: the tag or its number), message (publish, rollback)
+     * @param array $options to (rollback: the tag or its number), message (publish, rollback), nodes (publish: node ids
+     *                       built first, NODES)
      * @param string $login the user the command runs as
      * @param string $siteaccess the siteaccess whose settings the command reads ('' for the default one)
      * @param string $progressFile
      * @param bool $allowRoot whether the server runs as root (Velocity does): the command then needs --allow-root-user
      * @return string[] the arguments, unescaped
      * @throws InvalidArgumentException for an unknown kind, an id that is no job id, a target that is no target id, an
-     *                                  empty login or a rollback without a tag
+     *                                  empty login, a rollback without a tag or nodes that are no node ids
      */
     public static function arguments( $kind, $id, $target, array $options, $login, $siteaccess, $progressFile, $allowRoot = false )
     {
@@ -119,6 +127,18 @@ class expStaticJob
         }
         if ( $kind === 'build' )
             $arguments[] = '--full';
+        if ( $kind === 'publish' && !empty( $options[self::NODES] ) )
+        {
+            $nodes = array();
+            foreach ( (array)$options[self::NODES] as $node )
+            {
+                if ( !preg_match( '/^[1-9][0-9]{0,9}$/', (string)$node ) )
+                    throw new InvalidArgumentException( 'not a node id: ' . $node );
+                $nodes[(int)$node] = (int)$node;
+            }
+            $arguments[] = '--build';
+            $arguments[] = '--nodes=' . implode( ',', $nodes );
+        }
         $arguments[] = '--format=json';
         if ( $allowRoot )
             $arguments[] = '--allow-root-user';

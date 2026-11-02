@@ -35,9 +35,10 @@ class Expmigrationmigrate extends ExpmigrationBase
                              "./console exp:migration:migrate\n" .
                              "./console exp:migration:migrate --apply\n" .
                              "./console exp:migration:migrate --only=20261031120000_add_news_class --apply\n" .
-                             "./console exp:migration:migrate --path=extension/expnews/migrations --environment=staging --apply --no-push",
+                             "./console exp:migration:migrate --path=extension/expnews/migrations --environment=staging --apply --no-push\n" .
+                             "./console exp:migration:migrate --apply --max-migrations=20 --max-time=600 --throttle=0.5 --nice=10",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[apply][dry-run][only:*][path:*][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:][run-id:][progress:]', '', array(
+        return (array)$this->startup( '[apply][dry-run][only:*][path:*][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:][run-id:][progress:][max-migrations:][max-time:][throttle:][nice:]', '', array(
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
             'only' => 'Only these migrations (migration ids, a comma list or repeated)',
@@ -55,6 +56,10 @@ class Expmigrationmigrate extends ExpmigrationBase
             'reason' => 'Why a changed migration is accepted (needed with --force; kept in the record and the audit log)',
             'run-id' => 'The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run',
             'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
+            'max-migrations' => 'Apply at most this many migrations; the rest stay pending for the next run (default [RunSettings] MaxMigrations, empty: all)',
+            'max-time' => 'Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime)',
+            'throttle' => 'Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle)',
+            'nice' => 'Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice)',
         ) );
     }
 
@@ -63,7 +68,7 @@ class Expmigrationmigrate extends ExpmigrationBase
         $options = $this->begin();
         $format = $this->format( $options );
         $apply = $this->apply( $options );
-        $run = $this->selection( $options ) + $this->flow( $options ) + $this->progress( $options ) + array( 'apply' => $apply );
+        $run = $this->selection( $options ) + $this->flow( $options ) + $this->progress( $options ) + $this->longRun( $options ) + array( 'apply' => $apply );
         $run['db'] = $this->database( $format );
         $this->finish( \expMigrationRunner::migrate( $run ), $format );
     }

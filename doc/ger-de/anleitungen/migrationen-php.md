@@ -145,6 +145,10 @@ den Prozess zu beenden. Eine Migration, die selbst committen muss, etwa ein Stap
 `transactional()` `false` zurück und muss selbst gefahrlos erneut laufen können. Was eine Transaktion nicht zurücknehmen
 kann, kann der Sicherungspunkt vor dem Lauf: Nach einem Fehler wird er standardmäßig wiederhergestellt.
 
+Für einen solchen Stapel committet `$this->batches( $context, $fetch, $handle, $size )` jeden Stapel für sich und hält
+im Checkpoint der Migration fest, wie weit sie gekommen ist, so dass der nächste Lauf dort weitermacht:
+[PHP-Migrationen in Stapeln](migrationen-pakete-deploy-und-lange-laeufe.md#php-migrationen-in-stapeln).
+
 Ordnen Sie Ihre eigenen Schritte so, dass ein Fehler auf halbem Weg den geringsten Schaden anrichtet: eine Tabelle
 anlegen, bevor in sie geschrieben wird; auf MySQL Daten schreiben vor der Schemaänderung, die von ihnen abhängt.
 Teilen Sie eine große Änderung auf mehrere Migrationen auf.
