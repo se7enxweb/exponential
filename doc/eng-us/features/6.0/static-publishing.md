@@ -6,8 +6,8 @@ turns a front siteaccess into a folder of HTML pages and files, with every link 
 own, at the root of a domain or below a path such as `/my-site/`. Editors keep working in Exponential; the public
 site is a copy.
 
-It is new in Exponential 6.0.15. This page describes the build engine, publishing to git and their commands. The
-screens under Setup > Static publishing and the GitHub setup are added to it as they arrive.
+It is new in Exponential 6.0.15. This page describes the build engine, publishing to git, their commands and the
+screens under Setup > Static publishing. The GitHub setup is added to it when it arrives.
 
 [Features of 6.0](README.md) · Related: [Static cache generator](static-cache-generator.md),
 [Host static sites on GitHub Pages with Exponential 6.0.15+](../../guides/host-static-sites-on-github-pages.md),
@@ -127,6 +127,21 @@ The generated reference lists every setting with its comment:
 addresses are http or https, `Remote` holds no password or token, `Credential` names a secret instead of holding one,
 the lists hold known values. Mistakes are errors; doubtful combinations (a `PublicURL` whose path is not `BasePath`,
 a sitemap without `PublicURL`) are warnings.
+
+## In the administration
+
+**Setup > Static publishing** (the module `staticpublish`) does what the commands do, with screens: a wizard that
+makes and changes targets (written through the INI editor into `settings/override/staticcache.ini.append.php`), a
+build started in the background with its progress followed live, a preview of the build (what changes with sizes,
+the build's report, the size against the host's limits, the copy served behind a signed link) with **Publish** and
+**Discard**, the history with the rollback, the page of every job and the deploy key. A dashboard block lists the
+targets with their stale pages and last publish, and Setup > Cache links to it. The policies `staticpublish/read`,
+`build`, `publish` and `setup` take a Target limitation; publishing, rolling back, saving a target and the deploy key
+ask "Verify it's you". The help manual: [Static publishing](../../help/static-publishing/README.md).
+
+The administration starts its jobs as console processes (`exp:static:build`, `exp:static:publish` and
+`exp:static:rollback` with `--login`, `--run-id` and `--progress`), so a long build never holds a web request; the
+job files are in `<WorkDir>/.jobs` and `[StaticPublishSettings] JobHistory` sets how many are kept.
 
 ## Commands
 

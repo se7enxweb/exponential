@@ -15097,6 +15097,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Përmbajtja më e re, çfarë mbahet për shqyrtim dhe veprime mbi një përzgjedhje.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikoni një kopje statike të një sajti në GitHub Pages ose në çdo host git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publikimi statik</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22096,6 +22104,18 @@ Shënim: paketat nuk do të çinstalohen.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Përgjigjet e pyetësorëve të ruajtur të GraphQL API dhe klasat e përmbajtjes të skemës së tij.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publikoni një kopje statike në GitHub Pages ose në çdo host git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publikimi statik</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Memoria e përkohshme statike shërben faqe nga ky server. Për të publikuar një kopje statike të një sajti diku tjetër, në GitHub Pages ose në çdo host git, përdorni publikimin statik.</translation>
     </message>
 </context>
 <context>
@@ -76153,6 +76173,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Ndryshime të instalimit të ruajtura si skedarë: gjendja e tyre, ekzekutimet, ekzekuto dhe kthe mbrapsht.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikoni një kopje statike të një sajti në GitHub Pages ose në çdo host git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publikimi statik</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80592,6 +80620,222 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The run could not be started.</source>
         <translation>Ekzekutimi nuk u nis dot.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Regjistrimi i ndryshimeve</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Ndërsa një regjistrim është në vazhdim, ajo që ndryshoni në administrim ose në shiritin anësor të sajtit ruhet si hapa të një migrimi: përmbajtje, klasa, role dhe politika, seksione, përdorues dhe grupe, pseudonime URL, cilësime. Ndalojeni kur të keni mbaruar, shikoni çfarë kapi dhe krijoni prej tij një migrim.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Regjistrimet nuk mund të lexoheshin: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabelat e regjistrimeve nuk ekzistojnë ende: ekzekutoni fillimisht përditësimin (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Regjistrimi është i çaktivizuar në migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ndryshimet e mia</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Regjistron vetëm atë që ndryshoni ju, kudo që ta ndryshoni, derisa ta ndaloni.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Regjistrim</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>që nga %time, deri tani %count ndryshim(e).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiketë (opsionale)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Shfaq çfarë kapi</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ndalo regjistrimin</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Fillo regjistrimin e ndryshimeve të mia</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Dritare për të gjithë sajtin</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Regjistron çdo ndryshim të çdo përdoruesi dhe të konsolës derisa të mbyllet. Kur e hapni, ju kërkohet të verifikoni se jeni ju.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>E hapur</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Mbyll dritaren</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Hap dritaren për të gjithë sajtin</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Regjistrimet</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Llogaria e një përdoruesi (emri i hyrjes, e-maili, fjalëkalimi) dhe fushat e llogarive të përdoruesve nuk regjistrohen kurrë.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ndryshime</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>I gjithë sajti</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ndryshimet e %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>I ndaluar</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ende asnjë regjistrim.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Regjistrimi %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Të gjitha regjistrimet</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrimi që do të dilte</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ndryshimet të bashkuara në një hap për çdo gjë të ndryshuar: çfarë do të bënte një migrim i krijuar nga ky regjistrim.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Prej tij mund të krijohet një migrim kur ky instalim të ketë llojet e hapave YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Lënë jashtë qëllimisht: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Asgjë nuk u regjistrua.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Çfarë kapi</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ndryshim(e), sipas radhës kur u bënë.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ndryshim</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Hap</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ka të bëjë me</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Edhe %count: ./console exp:migration:record:show i liston të gjitha.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Hidh poshtë</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Heq regjistrimin dhe atë që kapi. Ajo që u ndryshua mbetet e ndryshuar.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Po, hidhe poshtë këtë regjistrim</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Po regjistrohet…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ndryshimet tuaja regjistrohen për një migrim.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Çdo ndryshim në këtë sajt regjistrohet për një migrim (dritare për të gjithë sajtin).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Regjistrimi i të gjithë sajtit filloi: çdo ndryshim i çdo përdoruesi regjistrohet derisa ta ndaloni.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Regjistrimi filloi: ndryshimet tuaja regjistrohen derisa ta ndaloni.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Regjistrimi u ndal. Ajo që kapi mbetet derisa ta hidhni poshtë.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Regjistrimi dhe ngjarjet e tij u hoqën.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nuk ka regjistrim %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Shënoni fillimisht «Po, hidhe poshtë këtë regjistrim».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Vetëm përdoruesi që regjistroi mund të ndalojë një regjistrim sesioni.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Zgjidhni regjistrimin që do të ndalohet.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Një regjistrim i këtij lloji është tashmë në vazhdim.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Regjistrimi nuk mund të ndryshohej: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81255,6 +81499,1364 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Released.</source>
         <translation>U lirua.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Të gjitha destinacionet</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Publikimi i fundit</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publikoni një kopje statike falas të sajtit tuaj në GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Faqe të vjetruara</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publikimi statik</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Publikimi statik është i çaktivizuar.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Destinacioni</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Destinacionet nuk mund të lexoheshin: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>një punë është në vazhdim</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ndërtim për t&apos;u kontrolluar</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>fshihe këtë</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>krijoni një destinacion</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>kurrë</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>lexoni udhëzuesin</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added të shtuara, %changed të ndryshuara, %removed të hequra</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes nga %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count të tjera nuk renditen.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages faqe të shkruara</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ka madhësinë %size, më shumë se sa lejon hosti për një skedar.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % e kufirit</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag është publikimi që sajti ka tani.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: puna %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/depoja/ për një sajt projekti GitHub; bosh për një domen të personalizuar ose një sajt përdoruesi.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Sajti</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Hosti</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Hyrja në depo</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Depoja</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Lidhjet dhe shtegu bazë</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Domeni juaj</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Çfarë përmban ndërtimi</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kur publikohet</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Rishikimi dhe ruajtja</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Një sajt projekti GitHub ndodhet nën /&lt;repository&gt;/; lidhjet relative funksionojnë atje dhe kudo tjetër.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Një ndërtim merr çdo faqe të %site ashtu siç e sheh një vizitor që nuk ka hyrë, rishkruan lidhjet, kopjon skedarët dhe e shkruan rezultatin në dosjen e destinacionit. Asgjë nuk publikohet derisa ta kontrolloni ndërtimin dhe të shtypni Publiko.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Një shprehje cron, për shembull 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Çelësi i vendosjes ruhet si sekreti %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Një çelës vendosjeje i lejon këtij instalimi të dërgojë në një depo të vetme përmes SSH dhe askund tjetër. Gjysma e tij private mbetet te Konfigurimi &gt; Sekretet; shfaqet vetëm gjysma publike.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Një çelës vendosjeje i krijuar për këtë destinacion</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Një çelës vendosjeje hyn përmes SSH: ndryshoni adresën git në atë SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Një punë është në vazhdim, e nisur nga %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Një punë e këtij destinacioni është ende në vazhdim (%detail). Prisni që të përfundojë.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Një punë e këtij destinacioni është ende në vazhdim. Prisni që të përfundojë.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Një lidhje nga faqja /news/ te faqja /about-us/team do të shkruhet si</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>U krijua një çelës i ri vendosjeje. Shtojeni tani gjysmën e tij publike në depo.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Një faqe që pas pastrimit ende përmban dalje korrigjimi, një token formulari ose një identifikues sesioni nuk publikohet kurrë.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Kthimi mbrapsht është për ekspertë: shënoni „E di çfarë ndryshon kjo“ dhe shkruani sërish emrin e etiketës.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Një sajt mund të jetë deri në %site, një skedar deri në %file, me rreth 100 GB trafik në muaj. Në një plan falas depoja duhet të jetë publike. GitHub Pages nuk është menduar për dyqane apo transaksione të tjera tregtare.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Një destinacion është një sajt i publikuar në një depo git. Këtu nuk ndërtohet dhe nuk publikohet asgjë: Ruaj i shkruan cilësimet në settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Një destinacion është një sajt i publikuar në një vend, për shembull sajti juaj publik në GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Një token nga Konfigurimi &gt; Sekretet</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>E publikon një rrjedhë pune (workflow) e depos.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Shtojeni këtë çelës publik në depo me të drejtë shkrimi. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, shënoni Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Të shtuara</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Një host tjetër git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Një proces tjetër po punon me këtë destinacion: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Prapa</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Shtegu bazë</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Më parë</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Nën një shteg bazë</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Dega</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Lidhje të prishura</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Lidhje të prishura në ndërtim</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Ndërtimi</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Ndërtimi %id nga %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Ndërtimi %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Ndërto tani</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Ndërtim për t&apos;u kontrolluar</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Me dorë, këtu</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ndrysho</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Të ndryshuara</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ndryshimet</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Kontrollojeni fillimisht</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kontrolloni këto cilësime</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kontrolloni çfarë ndryshon ndërtimi, shikojeni, pastaj publikojeni ose hidheni poshtë.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Zgjidhni publikimin ku do të ktheheni.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Vjen me një version të mëvonshëm.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Regjistrimi</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Regjistrimet</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Regjistron ndërtimin, e etiketon dhe e dërgon në %remote. Dërgimi nuk detyrohet kurrë; mund të ktheheni më vonë te çdo publikim.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Krahasuar me dosjen më parë: %added të shtuara, %changed të ndryshuara, %removed të hequra, %unchanged të pandryshuara.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Krahasuar me publikimin e fundit.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredenciali</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domen i personalizuar</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Dalja e korrigjimit, token-at e formularëve, identifikuesit e sesioneve dhe nonce-t hiqen gjithmonë.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Çelësi i vendosjes</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Çelësi i vendosjes i %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Hidh poshtë</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Hidh poshtë ndërtimin</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domeni</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Bosh: adresa e sajtit. Përndryshe, një adresë e brendshme e të njëjtit sajt.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Përfundoi</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Çdo lidhje fillon me shtegun bazë.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Çdo publikim është një regjistrim me etiketën static/%id/&lt;n&gt;. Kthimi prapa krijon një regjistrim të ri me skedarët e një publikimi të mëparshëm: historiku mbetet, asnjë etiketë nuk lëviz dhe asgjë nuk detyrohet.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Shtesat</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Merr faqet nga</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Skedari</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Skedarët</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Mungojnë skedarë</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Skedarët e</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Skedarë që nuk mund të mblidheshin</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Gjurma</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Dosja</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Për një adresë SSH. Çelësi krijohet pas ruajtjes; ju shtoni gjysmën e tij publike në depo.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Për një adresë https://. GitHub: një token i hollësishëm (fine-grained) me Contents për lexim dhe shkrim në depo.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Për ekspertë. Sajti publik ndryshon sapo të përfundojë dërgimi.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formularët</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Pritje falas nga një depo GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Nga dega</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Adresa git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages lejon një sajt prej %site dhe një skedar prej %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Kufijtë e GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages i publikon skedarët ashtu siç janë (e nevojshme për skedarët që fillojnë me _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub e shërben degën ashtu siç dërgohet. Parazgjedhja.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, serveri juaj: çdo depo git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Kthehu te një publikim i mëparshëm</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ndihmë</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Ndihmë me magjistarin</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Fshihi</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historiku</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historiku i %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hosti</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Si e merr GitHub Pages ndërtimin</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>I kam kontrolluar ndryshimet</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>E di çfarë ndryshon kjo</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Është i çaktivizuar: asgjë nuk mund të ndërtohet derisa të aktivizohet.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ekzekutohet në sfond si %user; mund ta mbyllni këtë faqe.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Puna %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Ruhet si sekreti %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Lloji</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Publikimi i fundit</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Lëri jashtë këto faqe</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Lëri jashtë këto seksione</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Lidhjet</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Lidhje të rishkruara</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Sajti i drejtpërdrejtë</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Shiko ndërtimin</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Shkronja të vogla, shifra, _ dhe -, për shembull github-public. I jep emrin dosjes dhe etiketave (static/&lt;id&gt;/&lt;n&gt;) dhe nuk mund të ndryshohet më vonë.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Krijo një çelës të ri</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Krijo një destinacion</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Krijo çelësin</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Krijojeni fillimisht depon në host; një depo bosh është në rregull.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifesti</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mesazhi</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Shumica e faqeve</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Emri</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Emri i token-it te Konfigurimi &gt; Sekretet</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Destinacion i ri</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Tjetri</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Ende asnjë regjistrim.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Nuk u krijua asnjë çelës: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nuk u gjet asnjë skedar ekzekutues php për rreshtin e komandave. Vendosni migration.ini [AdminSettings] PhpCliPath në shtegun e tij të plotë.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Ende asnjë etiketë.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Ende asnjë destinacion.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Asnjë</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nuk është në ndërtim.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Ende nuk është publikuar asgjë.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Ende nuk është publikuar asgjë: çdo skedar është i ri.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Njoftimet</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Sipas një orari</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Në konsolë</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Në server: ./console exp:static:serve %id e shërben në të njëjtën mënyrë.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Një shteg për rresht, * përputhet me çdo pjesë: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Me destinacionin ruhet vetëm një emër; vetë token-i ose çelësi mbetet te Konfigurimi &gt; Sekretet dhe nuk shfaqet kurrë në ditar.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Vetëm çfarë përmendin faqet</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Vetëm me token. env:NAME lexon në vend të kësaj një ndryshore mjedisi të serverit.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Hap pamjen paraprake</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Hap ndërtimin ashtu siç do ta shërbejë hosti, nga dosja e destinacionit. Lidhja funksionon për ju për një orë.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opsionale. Bosh: çfarë u publikua.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opsionale. Me një domen, sajti shërbehet në rrënjën e tij.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Dalja</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Faqet</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Faqet e destinacionit</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Faqe të refuzuara</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Përpunimi pasues</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pamje paraprake</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Pamje paraprake dhe publikim</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Pamje paraprake dhe publikim: %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Shiko paraprakisht ndërtimin</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ecuria</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Adresa publike</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Çelësi publik</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publiko</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publikoni një kopje statike të një sajti në GitHub Pages ose në çdo host git: ndërtojeni, kontrolloni ndryshimet, publikojeni dhe kthehuni te një publikim i mëparshëm kur ju duhet.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publikimi ku do të ktheheni</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publikimet</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Dërgimi</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Lexoni udhëzuesin</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Regjistri</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>I refuzuar</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Lidhje relative</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ringarko</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Të hequra</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Zëvendëso çelësin: i vjetri pushon së funksionuari</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Raporti</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Raporti i ndërtimit</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depoja</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Rishikimi</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Rishikimi kontrollon çdo cilësim dhe tregon rreshtat që do të shkruhen. Ende nuk është ruajtur asgjë.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Tërhiq</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Kthim mbrapsht</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ruaj</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Orari</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Faqja e kërkimit</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ID-të e seksioneve, të ndara me presje.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Dërgoji te sajti i drejtpërdrejtë</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Cilësimi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Cilësimet</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Cilësimet e %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurimi</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Konfigurimi &gt; Sekretet</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Shfaqet në lista, për shembull „Sajti publik në GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Hyrja me një GitHub App vjen me integrimin e GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sajti</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Sajti për t&apos;u publikuar</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Madhësia</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Madhësia dhe kufijtë</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Madhësia e ndërtimit</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Faqe të vjetruara</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Filloi</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Nisur nga %user në %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publikimi statik</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Publikimi statik është i çaktivizuar</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Publikimi statik është i çaktivizuar.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Publikimi statik është i çaktivizuar. Aktivizojeni fillimisht te Konfigurimi &gt; Publikimi statik.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Publikimi statik është i aktivizuar.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Hapi %step nga %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Hapat</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Pastrimi</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Çaktivizo</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aktivizo</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Aktivizo publikimin statik</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etiketat</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Destinacioni</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Destinacionet mund të krijohen dhe ndryshohen, por asgjë nuk ndërtohet ose publikohet derisa të aktivizohet.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>U tregon motorëve të kërkimit çfarë të lexojnë.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Ndërtimi nuk mund të hidhej poshtë: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Ndërtimi është i njëjtë me publikimin e fundit: nuk ka asgjë për të publikuar.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Ndërtimi u hodh poshtë: dosja përmban sërish publikimin e fundit.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Vlerat e parazgjedhura u përshtaten shumicës së sajteve.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Dosja përmban një ndërtim që ende nuk është publikuar; një ndërtim i ri e zëvendëson.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Në dosjen e punëve nuk mund të shkruhet: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Puna nuk mund të përgatitej: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Puna nuk mund të nisej.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Puna përfundoi. Po ngarkohet raporti i saj.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Puna ka nevojë për një përdorues të identifikuar.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Puna u nis, por nuk raportoi identifikuesin e procesit të saj. Kontrolloni %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Çelësi</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Skedari më i madh: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Rreshtat që do të shkruhen</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Lista e faqeve për motorët e kërkimit; kërkon adresën publike.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Faqet merren ashtu siç i sheh një vizitor që nuk ka hyrë. Aksesi i administrimit dhe i redaktimit nuk ofrohen kurrë.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Ecuria nuk mund të ndiqej. Ringarkoni faqen për të parë si po ecën puna.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Gjysma publike e çelësit:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Rrënja e degës</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Depoja e sekreteve ende nuk është konfiguruar (./console exp:upgrade --apply krijon tabelën e saj), prandaj nuk mund të ruhet asnjë çelës.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serveri hyn vetë (me çelësin e vet SSH ose ndihmësin e kredencialeve), ose depoja ndodhet në këtë server.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Cilësimi nuk mund të shkruhej: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Cilësimet janë të vlefshme. Do të shkruhen këta rreshta:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Skedari i cilësimeve nuk mund të lexohet: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Sajti kthehet te skedarët e atij publikimi; një ndërtim ende i papublikuar duhet fillimisht të publikohet ose të hidhet poshtë.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Faqja e vetë sajtit për adresat që nuk ekzistojnë.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Destinacioni nuk mund të ruhej: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Destinacioni ende nuk hyn me këtë çelës: zgjidhni „Një çelës vendosjeje i krijuar për këtë destinacion“ te cilësimet e tij.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Destinacionet nuk mund të lexoheshin: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Ende nuk ka asnjë ndërtim për t&apos;u kontrolluar.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ky instalim nuk ka akses sajti publik. Aksesi i administrimit dhe i redaktimit nuk publikohen kurrë.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Kjo faqe e ndjek punën ndërsa ecën; ajo vazhdon në sfond kur faqja mbyllet.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ky destinacion ende nuk ka çelës vendosjeje.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Ky destinacion ende nuk është ndërtuar këtu.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ky destinacion ka një të tillë.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>E hedh poshtë këtë ndërtim: dosja përmban sërish publikimin e fundit. Sajti i drejtpërdrejtë nuk ndryshon.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Shënoni fillimisht „I kam kontrolluar ndryshimet“.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Koha</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Shkaktuesit</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Shkruani sërish emrin e etiketës</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Të pandryshuara</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Çfarë</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Çfarë ndryshon</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Çfarë është secili skedar; shkruhet gjithmonë.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Çfarë bëri puna dhe regjistri i saj. Një punë e nisur këtu vazhdon në sfond kur kjo faqe mbyllet.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Çfarë shtypi puna si gabime</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Çfarë përmendin faqet, dhe çdo imazh i përmbajtjes së publikuar</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Kur një publikim dështon</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Kur një publikim ka sukses</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kur publikohet përmbajtje</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Ku shkojnë lidhjet drejt asaj që kopja nuk përmban (kërkimi, hyrja).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Nga ku shërbehet kopja statike.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Cili sajt publikohet dhe si quhet destinacioni.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funksionon nën çdo shteg. Parazgjedhja.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Shkruhet sa herë që vendoset një domen i personalizuar.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Po</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Gjithmonë mund të ndërtoni dhe publikoni me dorë këtu dhe në konsolë.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>vetëm një emër; vlera mbetet te Konfigurimi &gt; Sekretet</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>nën %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>përfundoi pa raport</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>shtesë</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>dështoi</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>skedar</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ose main me dosjen docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>host git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (me token) ose git@github.com:owner/repo.git (me çelës vendosjeje); kurrë me fjalëkalim ose token brenda.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, për hartën e sajtit dhe lidhjet kanonike.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>imazh</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>kurrë</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>pa depo të largët</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>asnjë: regjistrimet mbeten në dosje</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>asnjë: asgjë nuk ndryshoi</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>i padërguar</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>asgjë nuk ndryshoi</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>faqe</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>kaloi</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open është i çaktivizuar, prandaj këtu nuk mund të niset një punë. Përdorni ./console exp:static:build në server.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publikim</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>i publikuar</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>dërgim në pritje</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>i dërguar</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>i refuzuar</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>lidhje relative</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>kthim mbrapsht</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>i kthyer mbrapsht</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>në ekzekutim</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>vetëm dosja</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: shkruhet në skedarin CNAME. Drejtojeni DNS-në e domenit te hosti siç e shpjegon ai; HTTPS mund të kërkojë pak kohë për t&apos;u nisur.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>po, ende i papublikuar</translation>
     </message>
 </context>
 </TS>

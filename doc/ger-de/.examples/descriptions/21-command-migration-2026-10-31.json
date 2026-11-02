@@ -12,8 +12,8 @@
         "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
     },
     "command:expmigrationcaption --label": {
-        "en": "The label of the caption (default: \"manual caption\" with the time)",
-        "de": "Die Bezeichnung des Sicherungspunkts (Standard: \"manual caption\" mit der Uhrzeit)"
+        "en": "The label of the caption or of the recording (a caption without one: \"manual caption\" with the time)",
+        "de": "Die Bezeichnung des Sicherungspunkts oder der Aufzeichnung (ein Sicherungspunkt ohne eine: \"manual caption\" mit der Uhrzeit)"
     },
     "command:expmigrationcaption --list": {
         "en": "List the captions instead of taking one",
@@ -68,8 +68,8 @@
         "de": "Die Migrationen in einer Transaktion ausführen, die zurückgerollt wird (PostgreSQL und SQLite; anderswo wird der Plan aufgelistet)"
     },
     "command:expmigrationgenerate": {
-        "en": "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; a dry run unless --apply",
-        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; ein Probelauf ohne --apply"
+        "en": "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; --from-recording turns a recording of changes into a YAML migration; a dry run unless --apply",
+        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; ein Probelauf ohne --apply"
     },
     "command:expmigrationgenerate --author": {
         "en": "The author in the header of the new migration",

@@ -15156,6 +15156,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>అత్యంత కొత్త కంటెంట్, సమీక్ష కోసం నిలిపి ఉంచినది, మరియు ఎంపికపై చర్యలు.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ఒక సైట్ యొక్క స్టాటిక్ కాపీని GitHub Pages లో లేదా ఏదైనా git హోస్ట్‌లో ప్రచురించండి.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>స్టాటిక్ ప్రచురణ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22155,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API యొక్క నిల్వ చేసిన క్వెరీల సమాధానాలు, మరియు దాని స్కీమా యొక్క కంటెంట్ క్లాస్‌లు.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>స్టాటిక్ కాపీని GitHub Pages లో లేదా ఏదైనా git హోస్ట్‌లో ప్రచురించండి</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>స్టాటిక్ ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>స్టాటిక్ కాష్ ఈ సర్వర్ నుండి పేజీలను అందిస్తుంది. ఒక సైట్ యొక్క స్టాటిక్ కాపీని వేరే చోట, GitHub Pages లో లేదా ఏదైనా git హోస్ట్‌లో ప్రచురించడానికి స్టాటిక్ ప్రచురణను ఉపయోగించండి.</translation>
     </message>
 </context>
 <context>
@@ -76212,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ఫైళ్లుగా ఉంచిన ఇన్‌స్టాలేషన్ మార్పులు: వాటి స్థితి, రన్‌లు, అమలు చేయడం మరియు వెనక్కి తీసుకోవడం.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ఒక సైట్ యొక్క స్టాటిక్ కాపీని GitHub Pages లో లేదా ఏదైనా git హోస్ట్‌లో ప్రచురించండి.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>స్టాటిక్ ప్రచురణ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80560,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>రన్‌ను ప్రారంభించడం సాధ్యం కాలేదు.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>మార్పుల రికార్డింగ్</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>రికార్డింగ్ నడుస్తున్నంత వరకు మీరు నిర్వహణలో లేదా సైట్ సైడ్‌బార్‌లో మార్చేది ఒక మైగ్రేషన్ దశలుగా ఉంచబడుతుంది: కంటెంట్, తరగతులు, పాత్రలు మరియు విధానాలు, విభాగాలు, వినియోగదారులు మరియు సమూహాలు, URL మారుపేర్లు, సెట్టింగ్‌లు. పూర్తయ్యాక దాన్ని ఆపండి, అది ఏమి పట్టుకుందో చూడండి, దాని నుండి మైగ్రేషన్‌ను సృష్టించండి.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>రికార్డింగ్‌లను చదవలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>రికార్డింగ్ పట్టికలు ఇంకా లేవు: ముందుగా అప్‌గ్రేడ్‌ను అమలు చేయండి (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini లో రికార్డింగ్ ఆఫ్ చేయబడింది ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>నా మార్పులు</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>మీరు ఆపే వరకు మీరు మార్చేదాన్ని మాత్రమే, ఎక్కడ మార్చినా, రికార్డ్ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>రికార్డింగ్</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time నుండి, ఇప్పటివరకు %count మార్పులు.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>లేబుల్ (ఐచ్ఛికం)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>అది ఏమి పట్టుకుందో చూపించు</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>రికార్డింగ్ ఆపు</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>నా మార్పుల రికార్డింగ్ ప్రారంభించు</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>మొత్తం సైట్ కిటికీ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>మూసే వరకు ప్రతి వినియోగదారు మరియు కన్సోల్ యొక్క ప్రతి మార్పును రికార్డ్ చేస్తుంది. తెరిచేటప్పుడు మీరేనని ధృవీకరించమని అడుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>తెరిచి ఉంది</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>కిటికీ మూసివేయి</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>మొత్తం సైట్ కిటికీ తెరువు</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>రికార్డింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>వినియోగదారు ఖాతా (లాగిన్, ఇ-మెయిల్, పాస్‌వర్డ్) మరియు వినియోగదారు ఖాతాల ఫీల్డ్‌లు ఎప్పుడూ రికార్డ్ చేయబడవు.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>మార్పులు</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>మొత్తం సైట్</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name యొక్క మార్పులు</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ఆపబడింది</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ఇంకా రికార్డింగ్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>రికార్డింగ్ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>అన్ని రికార్డింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>దీని నుండి వచ్చే మైగ్రేషన్</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>మార్చిన ప్రతి దానికి ఒక దశగా కలిపిన మార్పులు: ఈ రికార్డింగ్ నుండి సృష్టించిన మైగ్రేషన్ ఏమి చేస్తుందో.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్‌లో YAML దశ రకాలు %types ఉన్నప్పుడు దీని నుండి మైగ్రేషన్ సృష్టించవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ఉద్దేశపూర్వకంగా వదిలేశాం: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ఏమీ రికార్డ్ కాలేదు.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>అది ఏమి పట్టుకుంది</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count మార్పులు, చేసిన క్రమంలో.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>మార్పు</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>దశ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>సంబంధించినది</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>మరో %count: ./console exp:migration:record:show అన్నింటినీ జాబితా చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>రికార్డింగ్‌ను మరియు అది పట్టుకున్నదాన్ని తొలగిస్తుంది. మారినది మారినట్లే ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>అవును, ఈ రికార్డింగ్‌ను విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>రికార్డ్ అవుతోంది…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>మీ మార్పులు ఒక మైగ్రేషన్ కోసం రికార్డ్ అవుతున్నాయి.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ఈ సైట్‌లోని ప్రతి మార్పు ఒక మైగ్రేషన్ కోసం రికార్డ్ అవుతోంది (మొత్తం సైట్ కిటికీ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>మొత్తం సైట్ రికార్డింగ్ ప్రారంభమైంది: మీరు ఆపే వరకు ప్రతి వినియోగదారు యొక్క ప్రతి మార్పు రికార్డ్ అవుతుంది.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>రికార్డింగ్ ప్రారంభమైంది: మీరు ఆపే వరకు మీ మార్పులు రికార్డ్ అవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>రికార్డింగ్ ఆగింది. అది పట్టుకున్నది మీరు విస్మరించే వరకు ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>రికార్డింగ్ మరియు దాని సంఘటనలు తొలగించబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>రికార్డింగ్ %id లేదు.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ముందుగా "అవును, ఈ రికార్డింగ్‌ను విస్మరించు" ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>సెషన్ రికార్డింగ్‌ను రికార్డ్ చేసిన వినియోగదారు మాత్రమే ఆపగలరు.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ఆపాల్సిన రికార్డింగ్‌ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ఈ రకమైన రికార్డింగ్ ఇప్పటికే నడుస్తోంది.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>రికార్డింగ్‌ను మార్చలేకపోయాము: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81223,6 +81467,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>విడుదల చేయబడింది.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>అన్ని లక్ష్యాలు</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>చివరి ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>మీ సైట్ యొక్క ఉచిత స్టాటిక్ కాపీని GitHub Pages లో ప్రచురించండి:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>పాతబడిన పేజీలు</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>స్టాటిక్ ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>స్టాటిక్ ప్రచురణ ఆఫ్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>లక్ష్యం</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>లక్ష్యాలను చదవలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ఒక జాబ్ జరుగుతోంది</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>తనిఖీ చేయాల్సిన బిల్డ్</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>దీన్ని దాచు</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ఒక లక్ష్యాన్ని సృష్టించు</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ఎప్పుడూ కాదు</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ట్యుటోరియల్ చదవండి</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added జోడించబడ్డాయి, %changed మార్చబడ్డాయి, %removed తీసివేయబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit లో %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>ఇంకా %count జాబితాలో చూపబడలేదు.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages పేజీలు వ్రాయబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path పరిమాణం %size, హోస్ట్ ఒక ఫైల్‌కు అనుమతించే దానికంటే ఎక్కువ.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>పరిమితిలో %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds సె</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag అనేది సైట్‌లో ప్రస్తుతం ఉన్న ప్రచురణ.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: జాబ్ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/రిపోజిటరీ/ GitHub ప్రాజెక్ట్ సైట్ కోసం; కస్టమ్ డొమైన్ లేదా యూజర్ సైట్ కోసం ఖాళీగా ఉంచండి.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. సైట్</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. హోస్ట్</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. రిపోజిటరీలోకి సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. రిపోజిటరీ</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. లింక్‌లు మరియు బేస్ పాత్</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. మీ సొంత డొమైన్</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. బిల్డ్‌లో ఏముంటుంది</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ఎప్పుడు ప్రచురించబడుతుంది</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. సమీక్షించి సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub ప్రాజెక్ట్ సైట్ /&lt;repository&gt;/ కింద ఉంటుంది; సాపేక్ష లింక్‌లు అక్కడ మరియు ఇంకెక్కడైనా పనిచేస్తాయి.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ఒక బిల్డ్ %site లోని ప్రతి పేజీని సైన్ ఇన్ చేయని సందర్శకుడు చూసే విధంగా తెచ్చి, లింక్‌లను తిరిగి వ్రాసి, ఫైల్‌లను కాపీ చేసి, ఫలితాన్ని లక్ష్యం యొక్క ఫోల్డర్‌లో వ్రాస్తుంది. మీరు బిల్డ్‌ను తనిఖీ చేసి ప్రచురించండి నొక్కే వరకు ఏదీ ప్రచురించబడదు.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>ఒక cron వ్యక్తీకరణ, ఉదాహరణకు 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>డిప్లాయ్ కీ %secret అనే రహస్యంగా ఉంచబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>డిప్లాయ్ కీ ఈ ఇన్‌స్టాలేషన్‌ను SSH ద్వారా ఒకే ఒక రిపోజిటరీకి మాత్రమే పుష్ చేయడానికి అనుమతిస్తుంది, ఇంకెక్కడికీ కాదు. దాని ప్రైవేట్ భాగం సెటప్ &gt; రహస్యాలు లో ఉంటుంది; పబ్లిక్ భాగం మాత్రమే చూపబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ఈ లక్ష్యం కోసం సృష్టించిన డిప్లాయ్ కీ</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>డిప్లాయ్ కీ SSH ద్వారా సైన్ ఇన్ అవుతుంది: git చిరునామాను SSH చిరునామాకు మార్చండి (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>%user ప్రారంభించిన ఒక జాబ్ జరుగుతోంది</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ఈ లక్ష్యం యొక్క ఒక జాబ్ ఇంకా జరుగుతోంది (%detail). అది ముగిసే వరకు వేచి ఉండండి.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ఈ లక్ష్యం యొక్క ఒక జాబ్ ఇంకా జరుగుతోంది. అది ముగిసే వరకు వేచి ఉండండి.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ పేజీ నుండి /about-us/team పేజీకి లింక్ ఇలా వ్రాయబడుతుంది</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>కొత్త డిప్లాయ్ కీ సృష్టించబడింది. దాని పబ్లిక్ భాగాన్ని ఇప్పుడే రిపోజిటరీకి జోడించండి.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>తొలగింపు తర్వాత కూడా డీబగ్ అవుట్‌పుట్, ఫారమ్ టోకెన్ లేదా సెషన్ ఐడి ఉన్న పేజీ ఎప్పుడూ ప్రచురించబడదు.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>వెనక్కి తీసుకోవడం నిపుణుల కోసం: &quot;ఇది ఏమి మారుస్తుందో నాకు తెలుసు&quot; ను టిక్ చేసి ట్యాగ్ పేరును మళ్లీ టైప్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ఒక సైట్ %site వరకు, ఒక ఫైల్ %file వరకు ఉండవచ్చు, నెలకు సుమారు 100 GB ట్రాఫిక్‌తో. ఉచిత ప్లాన్‌లో రిపోజిటరీ పబ్లిక్‌గా ఉండాలి. GitHub Pages దుకాణాలు లేదా ఇతర వాణిజ్య లావాదేవీల కోసం ఉద్దేశించబడలేదు.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>లక్ష్యం అంటే ఒక git రిపోజిటరీకి ప్రచురించబడే ఒక సైట్. ఇక్కడ ఏదీ బిల్డ్ చేయబడదు లేదా ప్రచురించబడదు: సేవ్ సెట్టింగ్‌లను settings/override/staticcache.ini.append.php లో వ్రాస్తుంది.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>లక్ష్యం అంటే ఒకే చోటికి ప్రచురించబడే ఒక సైట్, ఉదాహరణకు GitHub Pages లో మీ పబ్లిక్ సైట్.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>సెటప్ &gt; రహస్యాలు నుండి ఒక టోకెన్</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>రిపోజిటరీ యొక్క ఒక వర్క్‌ఫ్లో దాన్ని ప్రచురిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ఈ పబ్లిక్ కీని వ్రాత అనుమతితో రిపోజిటరీకి జోడించండి. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access ను టిక్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>జోడించబడింది</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>మరొక git హోస్ట్</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>మరొక ప్రాసెస్ ఈ లక్ష్యంపై పనిచేస్తోంది: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>వెనుకకు</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>బేస్ పాత్</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ముందు</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ఒక బేస్ పాత్ కింద</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>బ్రాంచ్</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>విరిగిన లింక్‌లు</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>బిల్డ్‌లో విరిగిన లింక్‌లు</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>బిల్డ్</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user చేసిన బిల్డ్ %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ను బిల్డ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ఇప్పుడే బిల్డ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>తనిఖీ చేయాల్సిన బిల్డ్</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ఎవరు</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>చేతితో, ఇక్కడ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>మార్చండి</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>మార్చబడింది</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>మార్పులు</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ముందుగా దాన్ని తనిఖీ చేయండి</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ఈ సెట్టింగ్‌లను తనిఖీ చేయండి</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>బిల్డ్ ఏమి మారుస్తుందో తనిఖీ చేసి, దాన్ని చూసి, ఆపై ప్రచురించండి లేదా విస్మరించండి.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>వెనక్కి వెళ్లాల్సిన ప్రచురణను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>తదుపరి విడుదలలో వస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>కమిట్</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>కమిట్‌లు</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>బిల్డ్‌ను కమిట్ చేసి, ట్యాగ్ చేసి, %remote కి పుష్ చేస్తుంది. పుష్ ఎప్పుడూ బలవంతంగా చేయబడదు; తర్వాత ఏ ప్రచురణకైనా వెనక్కి వెళ్లవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ముందటి ఫోల్డర్‌తో పోలిస్తే: %added జోడించబడ్డాయి, %changed మార్చబడ్డాయి, %removed తీసివేయబడ్డాయి, %unchanged మారలేదు.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>చివరి ప్రచురణతో పోల్చబడింది.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ఆధారాలు</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>కస్టమ్ డొమైన్</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>డీబగ్ అవుట్‌పుట్, ఫారమ్ టోకెన్‌లు, సెషన్ ఐడిలు మరియు nonce లు ఎల్లప్పుడూ తీసివేయబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>డిప్లాయ్ కీ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name యొక్క డిప్లాయ్ కీ</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>బిల్డ్‌ను విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>డొమైన్</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ఖాళీ: సైట్ చిరునామా. లేకపోతే అదే సైట్ యొక్క అంతర్గత చిరునామా.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ముగిసింది</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ప్రతి లింక్ బేస్ పాత్‌తో ప్రారంభమవుతుంది.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ప్రతి ప్రచురణ static/%id/&lt;n&gt; ట్యాగ్‌తో కూడిన ఒక కమిట్. వెనక్కి వెళ్లడం ముందటి ప్రచురణ ఫైల్‌లతో కొత్త కమిట్‌ను చేస్తుంది: చరిత్ర అలాగే ఉంటుంది, ఏ ట్యాగ్ కదలదు మరియు ఏదీ బలవంతంగా చేయబడదు.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>అదనపు ఫైల్‌లు</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>పేజీలను ఇక్కడి నుండి తెచ్చు</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ఫైల్</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ఫైల్‌లు</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ఫైల్‌లు లేవు</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>వీటి ఫైల్‌లు</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>సేకరించలేని ఫైల్‌లు</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>వేలిముద్ర</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ఫోల్డర్</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH చిరునామా కోసం. సేవ్ చేసిన తర్వాత కీ సృష్టించబడుతుంది; దాని పబ్లిక్ భాగాన్ని మీరు రిపోజిటరీకి జోడిస్తారు.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// చిరునామా కోసం. GitHub: రిపోజిటరీపై Contents చదవడం మరియు వ్రాయడం అనుమతి ఉన్న fine-grained టోకెన్.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>నిపుణుల కోసం. పుష్ పూర్తయిన వెంటనే పబ్లిక్ సైట్ మారుతుంది.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ఫారమ్‌లు</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub రిపోజిటరీ నుండి ఉచిత హోస్టింగ్.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>బ్రాంచ్ నుండి</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git చిరునామా</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site సైట్‌ను మరియు %file ఫైల్‌ను అనుమతిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages పరిమితులు</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ఫైల్‌లను ఉన్నవి ఉన్నట్టుగా ప్రచురిస్తుంది (_ తో ప్రారంభమయ్యే ఫైల్‌లకు అవసరం).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub బ్రాంచ్‌ను పుష్ చేసిన విధంగానే అందిస్తుంది. డిఫాల్ట్.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, మీ సొంత సర్వర్: ఏదైనా git రిపోజిటరీ.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ముందటి ప్రచురణకు వెనక్కి వెళ్లండి</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>సహాయం</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>విజర్డ్‌తో సహాయం</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>వాటిని దాచు</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>చరిత్ర</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name చరిత్ర</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>హోస్ట్</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages బిల్డ్‌ను ఎలా స్వీకరిస్తుంది</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>నేను మార్పులను తనిఖీ చేశాను</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ఇది ఏమి మారుస్తుందో నాకు తెలుసు</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ఐడి</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ఇది ఆఫ్ చేయబడింది: ఆన్ చేసే వరకు ఏదీ బిల్డ్ చేయలేము.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ఇది %user గా నేపథ్యంలో నడుస్తుంది; మీరు ఈ పేజీని మూసివేయవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>జాబ్ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret అనే రహస్యంగా ఉంచబడింది.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>రకం</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>చివరి ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ఈ పేజీలను వదిలివేయండి</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ఈ విభాగాలను వదిలివేయండి</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>లింక్‌లు</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>తిరిగి వ్రాసిన లింక్‌లు</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>లైవ్ సైట్</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>బిల్డ్‌ను చూడండి</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>చిన్న అక్షరాలు, అంకెలు, _ మరియు -, ఉదాహరణకు github-public. ఇది ఫోల్డర్‌కు మరియు ట్యాగ్‌లకు (static/&lt;id&gt;/&lt;n&gt;) పేరు పెడుతుంది, తర్వాత మార్చలేము.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>కొత్త కీని సృష్టించు</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ఒక లక్ష్యాన్ని సృష్టించు</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>కీని సృష్టించు</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ముందుగా హోస్ట్‌లో రిపోజిటరీని సృష్టించండి; ఖాళీది అయినా పరవాలేదు.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ఫైల్ జాబితా</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>సందేశం</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>చాలా పేజీలు</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>పేరు</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>సెటప్ &gt; రహస్యాలు లో టోకెన్ పేరు</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>కొత్త లక్ష్యం</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>తదుపరి</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ఇంకా కమిట్ లేదు.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>కీ సృష్టించబడలేదు: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php కమాండ్ లైన్ ప్రోగ్రామ్ కనుగొనబడలేదు. migration.ini [AdminSettings] PhpCliPath లో దాని పూర్తి పాత్‌ను సెట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ఇంకా ట్యాగ్ లేదు.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ఇంకా లక్ష్యం లేదు.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ఏదీ లేదు</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>బిల్డ్‌లో లేదు.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ఇంకా ఏదీ ప్రచురించబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ఇంకా ఏదీ ప్రచురించబడలేదు: ప్రతి ఫైల్ కొత్తది.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>తెలియజేయి</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>షెడ్యూల్ ప్రకారం</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>కన్సోల్‌లో</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>సర్వర్‌లో: ./console exp:static:serve %id దాన్ని అదే విధంగా అందిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ప్రతి లైన్‌కు ఒక పాత్, * ఏ భాగానికైనా సరిపోతుంది: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>లక్ష్యంతో పాటు పేరు మాత్రమే నిల్వ చేయబడుతుంది; టోకెన్ లేదా కీ సెటప్ &gt; రహస్యాలు లోనే ఉంటుంది మరియు ఏ లాగ్‌లోనూ కనిపించదు.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>పేజీలు పేర్కొనేవి మాత్రమే</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>టోకెన్‌తో మాత్రమే. env:NAME బదులుగా సర్వర్ యొక్క ఎన్విరాన్‌మెంట్ వేరియబుల్‌ను చదువుతుంది.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ప్రివ్యూను తెరవండి</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>హోస్ట్ అందించే విధంగానే, లక్ష్యం యొక్క ఫోల్డర్ నుండి బిల్డ్‌ను తెరుస్తుంది. లింక్ మీ కోసం ఒక గంట పనిచేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ఐచ్ఛికం. ఖాళీ: ప్రచురించబడినది.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ఐచ్ఛికం. డొమైన్‌తో సైట్ దాని రూట్‌లో అందించబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>అవుట్‌పుట్</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>పేజీలు</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>లక్ష్యం యొక్క పేజీలు</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>తిరస్కరించిన పేజీలు</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>పోస్ట్-ప్రాసెసింగ్</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ప్రివ్యూ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ప్రివ్యూ చేసి ప్రచురించండి</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ను ప్రివ్యూ చేసి ప్రచురించండి</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>బిల్డ్‌ను ప్రివ్యూ చేయండి</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>పురోగతి</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>పబ్లిక్ చిరునామా</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>పబ్లిక్ కీ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ప్రచురించండి</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ఒక సైట్ యొక్క స్టాటిక్ కాపీని GitHub Pages లో లేదా ఏదైనా git హోస్ట్‌లో ప్రచురించండి: దాన్ని బిల్డ్ చేసి, మార్పులను తనిఖీ చేసి, ప్రచురించి, అవసరమైనప్పుడు ముందటి ప్రచురణకు వెనక్కి వెళ్లండి.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>వెనక్కి వెళ్లాల్సిన ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ప్రచురణలు</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>పుష్</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ట్యుటోరియల్ చదవండి</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>లాగ్</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>సాపేక్ష</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>మళ్లీ లోడ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>తీసివేయబడింది</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>కీని మార్చండి: పాతది పనిచేయడం ఆగిపోతుంది</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>నివేదిక</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>బిల్డ్ నివేదిక</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>రిపోజిటరీ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>సమీక్ష</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>సమీక్ష ప్రతి సెట్టింగ్‌ను తనిఖీ చేసి వ్రాయబోయే లైన్‌లను చూపుతుంది. ఇంకా ఏదీ సేవ్ చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>వెనక్కి తీసుకో</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>వెనక్కి తీసుకోవడం</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>షెడ్యూల్</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>శోధన పేజీ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>విభాగ ఐడిలు, కామాలతో వేరుచేయబడినవి.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>వాటిని లైవ్ సైట్‌కు పంపండి</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>సెట్టింగ్</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>సెట్టింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name సెట్టింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>సెటప్</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>సెటప్ &gt; రహస్యాలు</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>జాబితాలలో చూపబడుతుంది, ఉదాహరణకు &quot;GitHub Pages లో పబ్లిక్ సైట్&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App తో సైన్ ఇన్ GitHub ఇంటిగ్రేషన్‌తో వస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>సైట్</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ప్రచురించాల్సిన సైట్</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>పరిమాణం</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>పరిమాణం మరియు పరిమితులు</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>బిల్డ్ పరిమాణం</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>పాతబడిన పేజీలు</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ప్రారంభమైంది</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user %time కి ప్రారంభించారు.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>స్టాటిక్ ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>స్టాటిక్ ప్రచురణ ఆఫ్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>స్టాటిక్ ప్రచురణ ఆఫ్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>స్టాటిక్ ప్రచురణ ఆఫ్ చేయబడింది. ముందుగా సెటప్ &gt; స్టాటిక్ ప్రచురణ లో దాన్ని ఆన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>స్టాటిక్ ప్రచురణ ఆన్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>దశ %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>దశలు</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>తొలగింపు</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ఆఫ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ఆన్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>స్టాటిక్ ప్రచురణను ఆన్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ట్యాగ్</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ట్యాగ్‌లు</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>లక్ష్యం</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>లక్ష్యాలను సృష్టించవచ్చు మరియు మార్చవచ్చు, కానీ ఇది ఆన్ చేసే వరకు ఏదీ బిల్డ్ చేయబడదు లేదా ప్రచురించబడదు.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>సెర్చ్ ఇంజిన్‌లకు ఏమి చదవాలో చెబుతుంది.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>బిల్డ్‌ను విస్మరించలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>బిల్డ్ చివరి ప్రచురణ వలెనే ఉంది: ప్రచురించడానికి ఏమీ లేదు.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>బిల్డ్ విస్మరించబడింది: ఫోల్డర్‌లో మళ్లీ చివరి ప్రచురణ ఉంది.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>డిఫాల్ట్‌లు చాలా సైట్‌లకు సరిపోతాయి.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ఫోల్డర్‌లో ఇంకా ప్రచురించని బిల్డ్ ఉంది; కొత్త బిల్డ్ దాన్ని భర్తీ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>జాబ్‌ల ఫోల్డర్‌లో వ్రాయలేము: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>జాబ్‌ను సిద్ధం చేయలేకపోయాము: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>జాబ్‌ను ప్రారంభించలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>జాబ్ ముగిసింది. దాని నివేదిక లోడ్ అవుతోంది.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>జాబ్‌కు సైన్ ఇన్ చేసిన వినియోగదారు అవసరం.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>జాబ్ ప్రారంభమైంది కానీ దాని ప్రాసెస్ ఐడిని తెలియజేయలేదు. %detail ను తనిఖీ చేయండి.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>కీ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>అతిపెద్ద ఫైల్: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>వ్రాయబోయే లైన్‌లు</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>సెర్చ్ ఇంజిన్‌ల కోసం పేజీల జాబితా; పబ్లిక్ చిరునామా అవసరం.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>సైన్ ఇన్ చేయని సందర్శకుడు చూసే విధంగానే పేజీలు తేబడతాయి. నిర్వహణ మరియు ఎడిటింగ్ siteaccess లు ఎప్పుడూ అందించబడవు.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>పురోగతిని అనుసరించలేకపోయాము. జాబ్ ఎలా జరుగుతోందో చూడడానికి పేజీని మళ్లీ లోడ్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>కీ యొక్క పబ్లిక్ భాగం:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>బ్రాంచ్ యొక్క రూట్</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>రహస్యాల నిల్వ ఇంకా సెటప్ చేయబడలేదు (./console exp:upgrade --apply దాని పట్టికను సృష్టిస్తుంది), కాబట్టి ఏ కీనీ ఉంచలేము.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>సర్వర్ తనంతట తానే సైన్ ఇన్ అవుతుంది (దాని సొంత SSH కీ లేదా క్రెడెన్షియల్ హెల్పర్‌తో), లేదా రిపోజిటరీ ఈ సర్వర్‌లోనే ఉంది.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>సెట్టింగ్‌ను వ్రాయలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>సెట్టింగ్‌లు చెల్లుబాటు అయ్యేవి. ఈ లైన్‌లు వ్రాయబడతాయి:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>సెట్టింగ్‌ల ఫైల్‌ను చదవలేము: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>సైట్ ఆ ప్రచురణ ఫైల్‌లకు వెనక్కి వెళ్తుంది; ఇంకా ప్రచురించని బిల్డ్‌ను ముందుగా ప్రచురించాలి లేదా విస్మరించాలి.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>ఉనికిలో లేని చిరునామాల కోసం సైట్ యొక్క సొంత పేజీ.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>లక్ష్యాన్ని సేవ్ చేయలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>లక్ష్యం ఇంకా ఈ కీతో సైన్ ఇన్ అవ్వదు: దాని సెట్టింగ్‌లలో &quot;ఈ లక్ష్యం కోసం సృష్టించిన డిప్లాయ్ కీ&quot; ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>లక్ష్యాలను చదవలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>తనిఖీ చేయడానికి ఇంకా బిల్డ్ లేదు.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్‌లో ఫ్రంట్ siteaccess లేదు. నిర్వహణ మరియు ఎడిటింగ్ siteaccess లు ఎప్పుడూ ప్రచురించబడవు.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ఈ పేజీ జాబ్ జరుగుతున్నప్పుడు దాన్ని అనుసరిస్తుంది; పేజీ మూసివేసినప్పుడు అది నేపథ్యంలో కొనసాగుతుంది.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ఈ లక్ష్యానికి ఇంకా డిప్లాయ్ కీ లేదు.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ఈ లక్ష్యం ఇక్కడ ఇంకా బిల్డ్ చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ఈ లక్ష్యానికి ఒకటి ఉంది.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ఈ బిల్డ్‌ను విస్మరిస్తుంది: ఫోల్డర్‌లో మళ్లీ చివరి ప్రచురణ ఉంటుంది. లైవ్ సైట్ మారదు.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ముందుగా &quot;నేను మార్పులను తనిఖీ చేశాను&quot; ను టిక్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>సమయం</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ట్రిగ్గర్‌లు</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ట్యాగ్ పేరును మళ్లీ టైప్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>మారలేదు</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>వెబ్‌హుక్</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ఏమి</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ఏమి మారుతుంది</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ప్రతి ఫైల్ ఏమిటి; ఎల్లప్పుడూ వ్రాయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>జాబ్ ఏమి చేసింది మరియు దాని లాగ్. ఇక్కడ ప్రారంభించిన జాబ్ ఈ పేజీ మూసివేసినప్పుడు నేపథ్యంలో కొనసాగుతుంది.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>జాబ్ లోపాలుగా ముద్రించినవి</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>పేజీలు పేర్కొనేవి, మరియు ప్రచురించిన కంటెంట్ యొక్క ప్రతి చిత్రం</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ఎప్పుడు</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ప్రచురణ విఫలమైనప్పుడు</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ప్రచురణ విజయవంతమైనప్పుడు</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>కంటెంట్ ప్రచురించబడినప్పుడు</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>కాపీలో లేని వాటికి లింక్‌లు ఎక్కడికి వెళ్తాయి (శోధన, లాగిన్).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>స్టాటిక్ కాపీ ఎక్కడి నుండి అందించబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ఏ సైట్ ప్రచురించబడుతుంది, మరియు లక్ష్యం పేరు ఏమిటి.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ఏ పాత్ కిందైనా పనిచేస్తుంది. డిఫాల్ట్.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>కస్టమ్ డొమైన్ సెట్ చేసినప్పుడల్లా వ్రాయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>మీరు ఎల్లప్పుడూ ఇక్కడ మరియు కన్సోల్‌లో చేతితో బిల్డ్ చేసి ప్రచురించవచ్చు.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>పేరు మాత్రమే; విలువ సెటప్ &gt; రహస్యాలు లోనే ఉంటుంది</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path కింద</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>నివేదిక లేకుండా ముగిసింది</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>అదనపు</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ఫైల్</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, లేదా docs ఫోల్డర్‌తో main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git హోస్ట్</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (టోకెన్‌తో) లేదా git@github.com:owner/repo.git (డిప్లాయ్ కీతో); అందులో ఎప్పుడూ పాస్‌వర్డ్ లేదా టోకెన్ ఉండకూడదు.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, సైట్‌మ్యాప్ మరియు కానానికల్ లింక్‌ల కోసం.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>చిత్రం</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ఎప్పుడూ కాదు</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>రిమోట్ లేదు</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ఏదీ లేదు: కమిట్‌లు ఫోల్డర్‌లోనే ఉంటాయి</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ఏదీ లేదు: ఏమీ మారలేదు</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>పుష్ చేయలేదు</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ఏమీ మారలేదు</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>పేజీ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ఉత్తీర్ణం</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open నిలిపివేయబడింది, కాబట్టి ఇక్కడ జాబ్‌ను ప్రారంభించలేము. సర్వర్‌లో ./console exp:static:build ను ఉపయోగించండి.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ప్రచురించబడింది</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>పుష్ పెండింగ్‌లో ఉంది</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>పుష్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>సాపేక్ష</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>వెనక్కి తీసుకోవడం</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>వెనక్కి తీసుకోబడింది</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>నడుస్తోంది</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ఫోల్డర్ మాత్రమే</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME ఫైల్‌లో వ్రాయబడుతుంది. హోస్ట్ వివరించినట్లుగా డొమైన్ యొక్క DNS ను దాని వైపు సూచించండి; HTTPS ప్రారంభం కావడానికి కొంత సమయం పట్టవచ్చు.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>అవును, ఇంకా ప్రచురించబడలేదు</translation>
     </message>
 </context>
 </TS>

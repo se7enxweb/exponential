@@ -30,7 +30,7 @@ Never edit `settings/upgrade.ini` itself: an update replaces it. Put the setting
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Default: a list of 44: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables` ....
+Default: a list of 45: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,7 @@ StepList[]=expUpgradeStepLibrariesUpdate
 StepList[]=expUpgradeStepLibrariesInstall
 StepList[]=expUpgradeStepMigrationTables
 StepList[]=expUpgradeStepRecordTable
+StepList[]=expUpgradeStepMigrationRecordingTables
 StepList[]=expUpgradeStepSqliteCompositeKeys
 StepList[]=expUpgradeStepPasswordHashWidth
 StepList[]=expUpgradeStepTrashColumns
@@ -57,8 +58,7 @@ StepList[]=expUpgradeStepMailPreferenceTables
 StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
-StepList[]=expUpgradeStepUserSessionTable
-# ... 24 more in the shipped file
+# ... 25 more in the shipped file
 */ ?>
 ```
 

@@ -15158,6 +15158,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>نوێترین ناوەڕۆک، ئەوەی بۆ پێداچوونەوە ڕاگیراوە، و کردارەکان لەسەر هەڵبژاردنێک.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>کۆپییەکی چەسپاوی ماڵپەڕێک بۆ GitHub Pages یان هەر خانەخوێیەکی git بڵاو بکەنەوە.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>بڵاوکردنەوەی چەسپاو</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>وەڵامی پرسیارە پاشەکەوتکراوەکانی API ی GraphQL، و پۆلەکانی ناوەڕۆکی سکیماکەی.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>کۆپییەکی چەسپاو بۆ GitHub Pages یان هەر خانەخوێیەکی git بڵاو بکەنەوە</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>بڵاوکردنەوەی چەسپاو</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>کاشی چەسپاو پەڕەکان لەم ڕاژەکارەوە پێشکەش دەکات. بۆ بڵاوکردنەوەی کۆپییەکی چەسپاوی ماڵپەڕێک لە شوێنێکی تر، لەسەر GitHub Pages یان هەر خانەخوێیەکی git، بڵاوکردنەوەی چەسپاو بەکاربهێنن.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>گۆڕانکارییەکانی دامەزراندن کە وەک فایل پارێزراون: بارودۆخیان، جێبەجێکردنەکان، جێبەجێکردن و گەڕاندنەوە.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>کۆپییەکی چەسپاوی ماڵپەڕێک بۆ GitHub Pages یان هەر خانەخوێیەکی git بڵاو بکەنەوە.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>بڵاوکردنەوەی چەسپاو</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>جێبەجێکردنەکە دەستی پێنەکرا.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>تۆمارکردنی گۆڕانکارییەکان</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>تا تۆمارکردنێک کار دەکات، ئەوەی لە بەڕێوەبردن یان لە شریتی لاتەنیشتی ماڵپەڕ دەیگۆڕیت وەک هەنگاوەکانی گواستنەوەیەک دەپارێزرێت: ناوەڕۆک، پۆلەکان، ڕۆڵ و سیاسەتەکان، بەشەکان، بەکارهێنەران و گرووپەکان، ناوە خوازراوەکانی URL، ڕێکخستنەکان. کاتێک تەواو بوویت ڕایبگرە، سەیر بکە چی گرتووە و لێیەوە گواستنەوەیەک دروست بکە.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>تۆمارەکان نەخوێندرانەوە: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>خشتەکانی تۆمار هێشتا بوونیان نییە: سەرەتا بەرزکردنەوە ئەنجام بدە (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>تۆمارکردن لە migration.ini دا کوژاوەتەوە ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>گۆڕانکارییەکانی من</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>تەنها ئەوە تۆمار دەکات کە تۆ دەیگۆڕیت، لە هەر شوێنێک بێت، تا ڕایدەگریت.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>تۆمار</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>لە %time ەوە، تا ئێستا %count گۆڕانکاری.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ناونیشان (ئارەزوومەندانە)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>پیشاندانی ئەوەی گرتوویەتی</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ڕاگرتنی تۆمارکردن</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>دەستپێکردنی تۆمارکردنی گۆڕانکارییەکانم</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>پەنجەرەی هەموو ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>هەموو گۆڕانکارییەکی هەموو بەکارهێنەرێک و کۆنسۆڵ تۆمار دەکات تا دادەخرێت. لە کاتی کردنەوەدا داوات لێ دەکرێت پشتڕاستی بکەیتەوە کە خۆتیت.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>کراوە</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>داخستنی پەنجەرە</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>کردنەوەی پەنجەرەی هەموو ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>تۆمارەکان</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>هەژماری بەکارهێنەر (ناوی چوونەژوورەوە، ئیمەیڵ، وشەی نهێنی) و خانەکانی هەژماری بەکارهێنەران هەرگیز تۆمار ناکرێن.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>گۆڕانکارییەکان</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>هەموو ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>گۆڕانکارییەکانی %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ڕاگیراو</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>هێشتا هیچ تۆمارێک نییە.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>تۆمار %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>هەموو تۆمارەکان</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ئەو گواستنەوەیەی لێی دروست دەبێت</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>گۆڕانکارییەکان کۆکراونەتەوە بۆ یەک هەنگاو بۆ هەر شتێکی گۆڕاو: ئەوەی گواستنەوەیەکی دروستکراو لەم تۆمارە دەیکات.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>کاتێک ئەم دامەزراندنە جۆرەکانی هەنگاوی YAML %types ی هەبێت، دەتوانرێت گواستنەوەی لێ دروست بکرێت.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>بە ئەنقەست لابرا: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>هیچ شتێک تۆمار نەکرا.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ئەوەی گرتوویەتی</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count گۆڕانکاری، بەو ڕیزبەندییەی کراون.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>گۆڕانکاری</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>هەنگاو</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>پەیوەندیدار بە</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count ی تر: ./console exp:migration:record:show هەموویان لیست دەکات.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>فڕێدان</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>تۆمارەکە و ئەوەی گرتوویەتی لادەبات. ئەوەی گۆڕاوە گۆڕاو دەمێنێتەوە.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>بەڵێ، ئەم تۆمارە فڕێ بدە</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>تۆمار دەکرێت…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>گۆڕانکارییەکانت بۆ گواستنەوەیەک تۆمار دەکرێن.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>هەموو گۆڕانکارییەک لەم ماڵپەڕەدا بۆ گواستنەوەیەک تۆمار دەکرێت (پەنجەرەی هەموو ماڵپەڕ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>تۆمارکردنی هەموو ماڵپەڕ دەستی پێکرد: هەموو گۆڕانکارییەکی هەموو بەکارهێنەرێک تۆمار دەکرێت تا ڕایدەگریت.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>تۆمارکردن دەستی پێکرد: گۆڕانکارییەکانت تۆمار دەکرێن تا ڕایدەگریت.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>تۆمارکردن ڕاگیرا. ئەوەی گرتوویەتی دەمێنێتەوە تا فڕێی دەدەیت.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>تۆمارەکە و ڕووداوەکانی لابران.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>هیچ تۆمارێکی %id نییە.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>سەرەتا «بەڵێ، ئەم تۆمارە فڕێ بدە» نیشانە بکە.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>تەنها ئەو بەکارهێنەرەی تۆماری کردووە دەتوانێت تۆماری دانیشتن ڕابگرێت.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ئەو تۆمارە هەڵبژێرە کە ڕادەگیرێت.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>تۆمارێکی ئەم جۆرە پێشتر کار دەکات.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>تۆمارەکە نەگۆڕدرا: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>ئازاد کرا.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>هەموو ئامانجەکان</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>دوایین بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>کۆپییەکی چەسپاوی ماڵپەڕەکەتان بە خۆڕایی لەسەر GitHub Pages بڵاو بکەنەوە:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>پەڕە کۆنەکان</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>بڵاوکردنەوەی چەسپاو</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>بڵاوکردنەوەی چەسپاو کوژاوەتەوە.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ئامانج</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ئامانجەکان نەخوێندرانەوە: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ئەرکێک بەڕێوەدەچێت</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>بنیاتنانی چاوەڕێی پشکنین</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ئەمە بشارەوە</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ئامانجێک دروست بکەن</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هەرگیز</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>فێرکارییەکە بخوێننەوە</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added زیادکرا، %changed گۆڕدرا، %removed لابرا</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes لە %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count ی تر ڕیز نەکراون.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages پەڕە نووسران</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path قەبارەی %size ە، زیاتر لەوەی خانەخوێ بۆ فایلێک ڕێگەی پێدەدات.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ی سنوور</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds چرکە</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ئەو بڵاوکردنەوەیەیە کە ماڵپەڕەکە ئێستا هەیەتی.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ئەرکی %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/کۆگا/ بۆ ماڵپەڕی پرۆژەیەکی GitHub؛ بەتاڵ بۆ دۆمەینی تایبەت یان ماڵپەڕی بەکارهێنەر.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. ماڵپەڕەکە</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. خانەخوێ</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. چوونەژوورەوە بۆ کۆگاکە</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. کۆگاکە</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. بەستەرەکان و ڕێڕەوی بنەڕەت</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. دۆمەینی خۆتان</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. بنیاتنانەکە چی لەخۆ دەگرێت</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. کەی بڵاو دەکرێتەوە</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. پێداچوونەوە و پاشەکەوتکردن</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>ماڵپەڕی پرۆژەیەکی GitHub لە ژێر /&lt;repository&gt;/ دایە؛ بەستەرە ڕێژەییەکان لەوێ و لە هەر شوێنێکی تر کار دەکەن.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>بنیاتنانێک هەموو پەڕەیەکی %site دەهێنێت وەک ئەوەی سەردانکەرێکی نەچووەژوورەوە دەیبینێت، بەستەرەکان دووبارە دەنووسێتەوە، فایلەکان کۆپی دەکات و ئەنجامەکە دەنووسێت بۆ بوخچەی ئامانجەکە. هیچ شتێک بڵاو ناکرێتەوە تا بنیاتنانەکە نەپشکنن و بڵاوکردنەوە دانەگرن.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>دەربڕینێکی cron، بۆ نموونە 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>کلیلی دیپلۆی وەک نهێنیی %secret هەڵدەگیرێت.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>کلیلی دیپلۆی ڕێگە بەم دامەزراندنە دەدات تەنها بۆ یەک کۆگا لە ڕێگەی SSH پوش بکات و بۆ هیچ شوێنێکی تر نا. نیوە تایبەتەکەی لە دامەزراندن &gt; نهێنییەکان دەمێنێتەوە؛ تەنها نیوە گشتییەکە پیشان دەدرێت.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>کلیلی دیپلۆیی دروستکراو بۆ ئەم ئامانجە</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>کلیلی دیپلۆی لە ڕێگەی SSH دەچێتە ژوورەوە: ناونیشانی git بگۆڕن بۆ ناونیشانی SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ئەرکێک بەڕێوەدەچێت، لەلایەن %user دەستیپێکراوە</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ئەرکێکی ئەم ئامانجە هێشتا بەڕێوەدەچێت (%detail). چاوەڕێ بکەن تا کۆتایی دێت.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ئەرکێکی ئەم ئامانجە هێشتا بەڕێوەدەچێت. چاوەڕێ بکەن تا کۆتایی دێت.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>بەستەرێک لە پەڕەی /news/ بۆ پەڕەی /about-us/team بەم شێوەیە دەنووسرێت</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>کلیلی دیپلۆیی نوێ دروستکرا. ئێستا نیوە گشتییەکەی بخەنە سەر کۆگاکە.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>پەڕەیەک کە دوای پاککردنەوە هێشتا دەرهاوێشتەی هەڵەدۆزی، تۆکنی فۆرم یان ناسنامەی دانیشتن لەخۆ بگرێت هەرگیز بڵاو ناکرێتەوە.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>گەڕاندنەوە بۆ شارەزایانە: &quot;دەزانم ئەمە چی دەگۆڕێت&quot; دیاری بکەن و ناوی تاگەکە دووبارە بنووسنەوە.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ماڵپەڕێک دەتوانێت تا %site بێت، فایلێک تا %file، لەگەڵ نزیکەی 100 GB هاتوچۆ لە مانگێکدا. لەسەر پلانی خۆڕایی کۆگاکە دەبێت گشتی بێت. GitHub Pages بۆ فرۆشگا یان مامەڵەی بازرگانیی تر نییە.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ئامانج یەک ماڵپەڕە کە بۆ یەک کۆگای git بڵاو دەکرێتەوە. لێرە هیچ شتێک بنیات نانرێت یان بڵاو ناکرێتەوە: پاشەکەوتکردن ڕێکخستنەکان دەنووسێت بۆ settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ئامانج یەک ماڵپەڕە کە بۆ یەک شوێن بڵاو دەکرێتەوە، بۆ نموونە ماڵپەڕە گشتییەکەتان لەسەر GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>تۆکنێک لە دامەزراندن &gt; نهێنییەکان</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ڕێڕەوی کارێکی کۆگاکە بڵاوی دەکاتەوە.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ئەم کلیلە گشتییە بە دەسەڵاتی نووسینەوە بخەنە سەر کۆگاکە. GitHub: Settings &gt; Deploy keys &gt; Add deploy key، Allow write access دیاری بکەن.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>زیادکرا</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>خانەخوێیەکی تری git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>پرۆسەیەکی تر لەسەر ئەم ئامانجە کار دەکات: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>گەڕانەوە</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>ڕێڕەوی بنەڕەت</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پێشتر</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>لە ژێر ڕێڕەوێکی بنەڕەتدا</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>لق</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>بەستەرە شکاوەکان</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>بەستەرە شکاوەکانی ناو بنیاتنانەکە</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>بنیاتنان</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>بنیاتنانی %id لەلایەن %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>بنیاتنانی %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ئێستا بنیات بنێن</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>بنیاتنانی چاوەڕێی پشکنین</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>لەلایەن</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>بە دەست، لێرە</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>هەڵوەشاندنەوە</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>گۆڕین</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>گۆڕدرا</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>گۆڕانکارییەکان</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>سەرەتا بیپشکنن</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ئەم ڕێکخستنانە بپشکنن</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>بپشکنن بنیاتنانەکە چی دەگۆڕێت، سەیری بکەن، پاشان بڵاوی بکەنەوە یان فڕێی بدەن.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ئەو بڵاوکردنەوەیە هەڵبژێرن کە دەتانەوێت بگەڕێنەوە بۆی.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>لە وەشانێکی داهاتوودا دێت.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>کۆمیت</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>کۆمیتەکان</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>بنیاتنانەکە کۆمیت دەکات، تاگی دەکات و پوشی دەکات بۆ %remote. پوش هەرگیز بە زۆر ناکرێت؛ دواتر دەتوانن بگەڕێنەوە بۆ هەر بڵاوکردنەوەیەک.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>بەراورد بە بوخچەکەی پێشوو: %added زیادکرا، %changed گۆڕدرا، %removed لابرا، %unchanged نەگۆڕدرا.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>بەراورد بە دوایین بڵاوکردنەوە.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>زانیاریی چوونەژوورەوە</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>دۆمەینی تایبەت</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>دەرهاوێشتەی هەڵەدۆزی، تۆکنی فۆرم، ناسنامەی دانیشتن و nonce ەکان هەمیشە لادەبرێن.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>کلیلی دیپلۆی</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>کلیلی دیپلۆیی %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>فڕێدان</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>بنیاتنانەکە فڕێ بدەن</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>دۆمەین</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>بەتاڵ: ناونیشانی ماڵپەڕەکە. ئەگەر نا ناونیشانێکی ناوخۆیی هەمان ماڵپەڕ.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>کۆتایی هات</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>هەموو بەستەرێک بە ڕێڕەوی بنەڕەت دەست پێدەکات.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>هەموو بڵاوکردنەوەیەک کۆمیتێکە بە تاگی static/%id/&lt;n&gt;. گەڕانەوە کۆمیتێکی نوێ دروست دەکات بە فایلەکانی بڵاوکردنەوەیەکی پێشوو: مێژووەکە دەمێنێتەوە، هیچ تاگێک ناجووڵێت و هیچ شتێک بە زۆر ناکرێت.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>زیادەکان</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>پەڕەکان لێرەوە بهێنە</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>فایلەکان</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>فایلی ونبوو</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>فایلەکانی</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ئەو فایلانەی نەتوانران کۆبکرێنەوە</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>پەنجەمۆر</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>بوخچە</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>بۆ ناونیشانێکی SSH. کلیلەکە دوای پاشەکەوتکردن دروست دەکرێت؛ نیوە گشتییەکەی دەخەنە سەر کۆگاکە.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>بۆ ناونیشانێکی https://. GitHub: تۆکنێکی وردکراو بە دەسەڵاتی خوێندنەوە و نووسینی Contents لەسەر کۆگاکە.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>بۆ شارەزایان. ماڵپەڕە گشتییەکە هەر کە پوشەکە تەواو بوو دەگۆڕێت.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>فۆرمەکان</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>خانەخوێیی خۆڕایی لە کۆگایەکی GitHub ەوە.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>لە لقەکەوە</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>ناونیشانی Git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages ڕێگە بە ماڵپەڕێکی %site و فایلێکی %file دەدات.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>سنوورەکانی GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages فایلەکان وەک خۆیان بڵاو دەکاتەوە (پێویستە بۆ ئەو فایلانەی بە _ دەست پێدەکەن).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub لقەکە وەک ئەوەی پوش کراوە پێشکەش دەکات. بنەڕەت.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab، Gitea، ڕاژەکاری خۆتان: هەر کۆگایەکی git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>گەڕانەوە بۆ بڵاوکردنەوەیەکی پێشوو</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>یارمەتی</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>یارمەتی لەگەڵ ڕێبەرەکە</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>بیانشارەوە</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>مێژوو</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>مێژووی %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>خانەخوێ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages چۆن بنیاتنانەکە وەردەگرێت</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>گۆڕانکارییەکانم پشکنیوە</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>دەزانم ئەمە چی دەگۆڕێت</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ناسنامە</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>کوژاوەتەوە: هیچ شتێک بنیات نانرێت تا هەڵنەکرێت.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>لە پاشبنەمادا وەک %user کار دەکات؛ دەتوانن ئەم پەڕەیە دابخەن.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ئەرکی %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>وەک نهێنیی %secret هەڵگیراوە.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>جۆر</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>دوایین بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ئەم پەڕانە لاببەن</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ئەم بەشانە لاببەن</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>بەستەرەکان</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>بەستەرە دووبارە نووسراوەکان</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ماڵپەڕی ڕاستەوخۆ</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>سەیری بنیاتنانەکە بکەن</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>پیتی بچووک، ژمارە، _ و -، بۆ نموونە github-public. ناوی بوخچەکە و تاگەکان (static/&lt;id&gt;/&lt;n&gt;) دیاری دەکات و دواتر ناگۆڕدرێت.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>کلیلێکی نوێ دروست بکەن</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ئامانجێک دروست بکەن</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>کلیلەکە دروست بکەن</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>سەرەتا کۆگاکە لەسەر خانەخوێکە دروست بکەن؛ کۆگایەکی بەتاڵ گونجاوە.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>لیستی فایلەکان</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پەیام</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>زۆربەی پەڕەکان</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناو</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ناوی تۆکنەکە لە دامەزراندن &gt; نهێنییەکان</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ئامانجی نوێ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>دواتر</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نەخێر</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>هێشتا هیچ کۆمیتێک نییە.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>هیچ کلیلێک دروست نەکرا: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>هیچ بەرنامەیەکی هێڵی فەرمانی php نەدۆزرایەوە. migration.ini [AdminSettings] PhpCliPath بۆ ڕێڕەوە تەواوەکەی دابنێن.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>هێشتا هیچ تاگێک نییە.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>هێشتا هیچ ئامانجێک نییە.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>لە بنیاتنانەکەدا نییە.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>هێشتا هیچ شتێک بڵاو نەکراوەتەوە.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>هێشتا هیچ شتێک بڵاو نەکراوەتەوە: هەموو فایلێک نوێیە.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>ئاگادارکردنەوە</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>بەپێی خشتەی کات</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>لەسەر کۆنسۆڵ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>لەسەر ڕاژەکار: ./console exp:static:serve %id بە هەمان شێوە پێشکەشی دەکات.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>هەر هێڵێک یەک ڕێڕەو، * لەگەڵ هەر بەشێک دەگونجێت: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>تەنها ناوێک لەگەڵ ئامانجەکە هەڵدەگیرێت؛ خودی تۆکن یان کلیلەکە لە دامەزراندن &gt; نهێنییەکان دەمێنێتەوە و هەرگیز لە تۆماردا دەرناکەوێت.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>تەنها ئەوەی پەڕەکان ناوی دەهێنن</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>تەنها لەگەڵ تۆکن. env:NAME لە جیاتی ئەوە گۆڕاوێکی ژینگەی ڕاژەکار دەخوێنێتەوە.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>پێشبینینەکە بکەنەوە</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>بنیاتنانەکە دەکاتەوە وەک ئەوەی خانەخوێ پێشکەشی دەکات، لە بوخچەی ئامانجەکەوە. بەستەرەکە بۆ ماوەی کاتژمێرێک بۆ ئێوە کار دەکات.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ئارەزوومەندانە. بەتاڵ: ئەوەی بڵاوکرایەوە.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ئارەزوومەندانە. لەگەڵ دۆمەینێک ماڵپەڕەکە لە ڕەگەکەیدا پێشکەش دەکرێت.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>دەرهاوێشتە</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>پەڕەکان</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>پەڕەکانی ئامانجەکە</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>پەڕە ڕەتکراوەکان</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>دواپرۆسەکردن</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>پێشبینین</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>پێشبینین و بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>پێشبینین و بڵاوکردنەوەی %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>پێشبینینی بنیاتنانەکە</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پێشکەوتن</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>ناونیشانی گشتی</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>کلیلی گشتی</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>کۆپییەکی چەسپاوی ماڵپەڕێک بۆ GitHub Pages یان هەر خانەخوێیەکی git بڵاو بکەنەوە: بنیاتی بنێن، گۆڕانکارییەکان بپشکنن، بڵاوی بکەنەوە، و کاتێک پێویست بوو بگەڕێنەوە بۆ بڵاوکردنەوەیەکی پێشوو.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>بڵاوکردنەوە بۆ گەڕانەوە</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>بڵاوکردنەوەکان</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پوش</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>فێرکارییەکە بخوێننەوە</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>تۆمار</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ڕەتکرایەوە</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ڕێژەیی</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>دووبارە بارکردنەوە</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>لابرا</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>کلیلەکە بگۆڕن: کۆنەکە لە کار دەکەوێت</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ڕاپۆرت</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ڕاپۆرتی بنیاتنانەکە</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>کۆگا</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>پێداچوونەوە</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>پێداچوونەوە هەموو ڕێکخستنێک دەپشکنێت و ئەو هێڵانە پیشان دەدات کە دەنووسرێن. هێشتا هیچ شتێک پاشەکەوت نەکراوە.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>پاشەکەوتکردن</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>خشتەی کات</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>پەڕەی گەڕان</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ناسنامەی بەشەکان، بە کۆما جیاکراونەتەوە.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>بیاننێرن بۆ ماڵپەڕی ڕاستەوخۆ</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ڕێکخستن</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ڕێکخستنەکان</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>ڕێکخستنەکانی %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>دامەزراندن</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>دامەزراندن &gt; نهێنییەکان</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>لە لیستەکاندا پیشان دەدرێت، بۆ نموونە &quot;ماڵپەڕی گشتی لەسەر GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>چوونەژوورەوە بە GitHub App لەگەڵ یەکخستنی GitHub دێت.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ماڵپەڕ بۆ بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>قەبارە</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>قەبارە و سنوورەکان</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>قەبارەی بنیاتنانەکە</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>پەڕە کۆنەکان</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>دەستپێکرد</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>لەلایەن %user لە %time دەستپێکرا.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>دۆخ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>بڵاوکردنەوەی چەسپاو</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>بڵاوکردنەوەی چەسپاو کوژاوەتەوە</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>بڵاوکردنەوەی چەسپاو کوژاوەتەوە.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>بڵاوکردنەوەی چەسپاو کوژاوەتەوە. سەرەتا لە دامەزراندن &gt; بڵاوکردنەوەی چەسپاو هەڵیبکەن.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>بڵاوکردنەوەی چەسپاو هەڵکراوە.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>هەنگاوی %step لە %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>هەنگاوەکان</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>پاککردنەوە</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>کوژاندنەوە</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>هەڵکردن</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>بڵاوکردنەوەی چەسپاو هەڵبکەن</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>تاگ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>تاگەکان</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ئامانج</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ئامانجەکان دەتوانرێن دروست بکرێن و بگۆڕدرێن، بەڵام هیچ شتێک بنیات نانرێت یان بڵاو ناکرێتەوە تا هەڵنەکرێت.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>بە بزوێنەرەکانی گەڕان دەڵێت چی بخوێننەوە.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>بنیاتنانەکە فڕێ نەدرا: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>بنیاتنانەکە هەمان دوایین بڵاوکردنەوەیە: هیچ شتێک نییە بۆ بڵاوکردنەوە.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>بنیاتنانەکە فڕێدرا: بوخچەکە دووبارە دوایین بڵاوکردنەوە لەخۆ دەگرێت.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>بنەڕەتەکان بۆ زۆربەی ماڵپەڕەکان گونجاون.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>بوخچەکە بنیاتنانێکی تێدایە کە هێشتا بڵاو نەکراوەتەوە؛ بنیاتنانێکی نوێ جێگەی دەگرێتەوە.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>بوخچەی ئەرکەکان ناتوانرێت بنووسرێت: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ئەرکەکە ئامادە نەکرا: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ئەرکەکە دەست پێنەکرا.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ئەرکەکە کۆتایی هات. ڕاپۆرتەکەی باردەکرێت.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ئەرکەکە پێویستی بە بەکارهێنەرێکی چووەژوورەوە هەیە.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ئەرکەکە دەستیپێکرد بەڵام ناسنامەی پرۆسەکەی ڕانەگەیاند. %detail بپشکنن.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>کلیلەکە</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>گەورەترین فایل: %path، %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ئەو هێڵانەی دەنووسرێن</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>لیستی پەڕەکان بۆ بزوێنەرەکانی گەڕان؛ پێویستی بە ناونیشانی گشتی هەیە.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>پەڕەکان دەهێنرێن وەک ئەوەی سەردانکەرێکی نەچووەژوورەوە دەیانبینێت. دەستگەیشتنەکانی ماڵپەڕ بۆ بەڕێوەبردن و دەستکاریکردن هەرگیز پێشنیار ناکرێن.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>پێشکەوتنەکە نەتوانرا بەدواداچوونی بۆ بکرێت. پەڕەکە دووبارە باربکەنەوە بۆ بینینی دۆخی ئەرکەکە.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>نیوە گشتییەکەی کلیلەکە:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ڕەگی لقەکە</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>کۆگای نهێنییەکان هێشتا ڕێک نەخراوە (./console exp:upgrade --apply خشتەکەی دروست دەکات)، بۆیە هیچ کلیلێک ناتوانرێت هەڵبگیرێت.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>ڕاژەکار خۆی دەچێتە ژوورەوە (بە کلیلی SSH ی خۆی یان یاریدەدەری زانیاریی چوونەژوورەوە)، یان کۆگاکە لەسەر ئەم ڕاژەکارەیە.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ڕێکخستنەکە نەنووسرا: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ڕێکخستنەکان دروستن. ئەم هێڵانە دەنووسرێن:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>فایلی ڕێکخستنەکان ناخوێندرێتەوە: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>ماڵپەڕەکە دەگەڕێتەوە بۆ فایلەکانی ئەو بڵاوکردنەوەیە؛ بنیاتنانێک کە هێشتا بڵاو نەکراوەتەوە دەبێت سەرەتا بڵاو بکرێتەوە یان فڕێ بدرێت.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>پەڕەی تایبەتی ماڵپەڕەکە بۆ ئەو ناونیشانانەی بوونیان نییە.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ئامانجەکە پاشەکەوت نەکرا: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ئامانجەکە هێشتا بەم کلیلە ناچێتە ژوورەوە: لە ڕێکخستنەکانیدا &quot;کلیلی دیپلۆیی دروستکراو بۆ ئەم ئامانجە&quot; هەڵبژێرن.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ئامانجەکان نەخوێندرانەوە: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>هێشتا هیچ بنیاتنانێک بۆ پشکنین نییە.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ئەم دامەزراندنە هیچ دەستگەیشتنێکی پێشەوەی ماڵپەڕی نییە. دەستگەیشتنەکانی ماڵپەڕ بۆ بەڕێوەبردن و دەستکاریکردن هەرگیز بڵاو ناکرێنەوە.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ئەم پەڕەیە بەدوای ئەرکەکەدا دەچێت لە کاتی بەڕێوەچوونیدا؛ کاتێک پەڕەکە دادەخرێت لە پاشبنەمادا بەردەوام دەبێت.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ئەم ئامانجە هێشتا کلیلی دیپلۆیی نییە.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ئەم ئامانجە هێشتا لێرە بنیات نەنراوە.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ئەم ئامانجە یەکێکی هەیە.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ئەم بنیاتنانە فڕێ دەدات: بوخچەکە دووبارە دوایین بڵاوکردنەوە لەخۆ دەگرێت. ماڵپەڕی ڕاستەوخۆ ناگۆڕێت.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>سەرەتا &quot;گۆڕانکارییەکانم پشکنیوە&quot; دیاری بکەن.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>کات</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>دەستپێکەرەکان</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ناوی تاگەکە دووبارە بنووسنەوە</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>نەگۆڕدراو</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>وێبهووک</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>چی</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>چی دەگۆڕێت</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>هەر فایلێک چییە؛ هەمیشە دەنووسرێت.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ئەرکەکە چی کرد و تۆمارەکەی. ئەرکێک کە لێرە دەستی پێکرابێت کاتێک ئەم پەڕەیە دادەخرێت لە پاشبنەمادا بەردەوام دەبێت.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ئەوەی ئەرکەکە وەک هەڵە چاپی کرد</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ئەوەی پەڕەکان ناوی دەهێنن، و هەموو وێنەیەکی ناوەڕۆکی بڵاوکراوە</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>کەی</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>کاتێک بڵاوکردنەوەیەک سەرناکەوێت</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>کاتێک بڵاوکردنەوەیەک سەردەکەوێت</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>کاتێک ناوەڕۆک بڵاو دەکرێتەوە</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>بەستەرەکان بۆ ئەوەی کۆپییەکە لەخۆی ناگرێت (گەڕان، چوونەژوورەوە) بۆ کوێ دەچن.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>کۆپییە چەسپاوەکە لە کوێوە پێشکەش دەکرێت.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>کام ماڵپەڕ بڵاو دەکرێتەوە، و ناوی ئامانجەکە چییە.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>لە ژێر هەر ڕێڕەوێکدا کار دەکات. بنەڕەت.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>هەر کاتێک دۆمەینی تایبەت دانرابێت دەنووسرێت.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>بەڵێ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>هەمیشە دەتوانن لێرە و لەسەر کۆنسۆڵ بە دەست بنیات بنێن و بڵاو بکەنەوە.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>تەنها ناوێک؛ بەهاکە لە دامەزراندن &gt; نهێنییەکان دەمێنێتەوە</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>لە ژێر %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>بێ ڕاپۆرت کۆتایی هات</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>زیادە</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages، یان main لەگەڵ بوخچەی docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>خانەخوێی git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (لەگەڵ تۆکن) یان git@github.com:owner/repo.git (لەگەڵ کلیلی دیپلۆی)؛ هەرگیز وشەی نهێنی یان تۆکن تێیدا نەبێت.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/، بۆ نەخشەی ماڵپەڕ و بەستەرە فەرمییەکان.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>وێنە</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هەرگیز</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نەخێر</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>بێ ڕیمۆت</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>هیچ: کۆمیتەکان لە بوخچەکەدا دەمێننەوە</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>هیچ: هیچ شتێک نەگۆڕا</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>پوش نەکراوە</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>هیچ شتێک نەگۆڕا</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>پەڕە</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>سەرکەوت</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ناچالاک کراوە، بۆیە ئەرکێک لێرە دەست پێناکرێت. لەسەر ڕاژەکار ./console exp:static:build بەکاربهێنن.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>بڵاوکراوە</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>پوش چاوەڕوانە</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>پوش کرا</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ڕەتکرایەوە</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ڕێژەیی</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>گەڕاندنەوە</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>گەڕێندرایەوە</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>بەڕێوەدەچێت</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>تەنها بوخچەکە</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: لە فایلی CNAME دەنووسرێت. DNS ی دۆمەینەکە ئاراستەی خانەخوێکە بکەن وەک ئەو ڕوونی دەکاتەوە؛ دەستپێکردنی HTTPS لەوانەیە کاتێکی بوێت.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>بەڵێ، هێشتا بڵاو نەکراوەتەوە</translation>
     </message>
 </context>
 </TS>

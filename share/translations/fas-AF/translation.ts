@@ -15158,6 +15158,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>جدیدترین محتوا، آنچه برای بازبینی نگه داشته شده و اقدام‌ها روی یک انتخاب.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>انتشار یک نسخهٔ ایستا از سایت در GitHub Pages یا هر میزبان git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>انتشار ایستا</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>پاسخ‌های پرس‌وجوهای ذخیره‌شدهٔ API ‏GraphQL و کلاس‌های محتوای طرح‌وارهٔ آن.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>انتشار یک نسخهٔ ایستا در GitHub Pages یا هر میزبان git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>انتشار ایستا</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>حافظهٔ پنهان ایستا صفحه‌ها را از همین سرور ارائه می‌کند. برای انتشار نسخهٔ ایستای یک سایت در جای دیگر، در GitHub Pages یا هر میزبان git، از انتشار ایستا استفاده کنید.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>تغییرات نصب که به‌صورت فایل نگهداری می‌شوند: وضعیت آن‌ها، اجراها، اجرا و بازگردانی.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>انتشار یک نسخهٔ ایستا از سایت در GitHub Pages یا هر میزبان git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>انتشار ایستا</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>اجرا آغاز نشد.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ثبت تغییرات</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>تا وقتی ثبت جریان دارد، آنچه در اداره یا نوار کناری سایت تغییر می‌دهید به شکل گام‌های یک انتقال نگه داشته می‌شود: محتوا، کلاس‌ها، نقش‌ها و پالیسی‌ها، بخش‌ها، کاربران و گروپ‌ها، نام‌های مستعار URL، تنظیمات. وقتی کارتان تمام شد آن را متوقف کنید، ببینید چه چیزی گرفته و از آن یک انتقال بسازید.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ثبت‌ها خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>جدول‌های ثبت هنوز وجود ندارند: نخست ارتقا را اجرا کنید (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ثبت در migration.ini خاموش است ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>تغییرات من</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>تنها آنچه شما تغییر می‌دهید، هر جا که باشد، ثبت می‌کند تا متوقفش کنید.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ثبت</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>از %time، تا حال %count تغییر.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>برچسپ (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>نمایش آنچه گرفته</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>توقف ثبت</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>آغاز ثبت تغییرات من</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>کلکین برای تمام سایت</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>هر تغییر هر کاربر و کنسول را تا بسته شدن ثبت می‌کند. هنگام باز کردن از شما خواسته می‌شود تأیید کنید که خودتان هستید.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>باز</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>بستن کلکین</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>باز کردن کلکین برای تمام سایت</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ثبت‌ها</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>حساب یک کاربر (نام ورود، ایمیل، رمز) و فیلدهای حساب‌های کاربری هرگز ثبت نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>تغییرات</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>تمام سایت</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>تغییرات %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>متوقف</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>هنوز ثبتی نیست.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ثبت %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>همه ثبت‌ها</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>انتقالی که از آن ساخته می‌شود</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>تغییرات در یک گام برای هر چیز تغییرکرده جمع شده‌اند: آنچه انتقالِ ساخته‌شده از این ثبت انجام می‌دهد.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>وقتی این نصب انواع گام YAML %types را داشته باشد، می‌توان از آن انتقال ساخت.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>قصداً کنار گذاشته شد: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>چیزی ثبت نشد.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>آنچه گرفته</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count تغییر، به ترتیبی که انجام شدند.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغییر</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>گام</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>مربوط به</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count مورد دیگر: ./console exp:migration:record:show همه را فهرست می‌کند.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>دور انداختن</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ثبت و آنچه گرفته را حذف می‌کند. آنچه تغییر کرده تغییریافته می‌ماند.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>بلی، این ثبت را دور بینداز</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>در حال ثبت…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>تغییرات شما برای یک انتقال ثبت می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>هر تغییر در این سایت برای یک انتقال ثبت می‌شود (کلکین برای تمام سایت).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ثبت تمام سایت آغاز شد: هر تغییر هر کاربر تا متوقف کردنش ثبت می‌شود.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ثبت آغاز شد: تغییرات شما تا متوقف کردنش ثبت می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ثبت متوقف شد. آنچه گرفته تا وقتی دورش بیندازید می‌ماند.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ثبت و رویدادهایش حذف شدند.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ثبت %id وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>نخست «بلی، این ثبت را دور بینداز» را نشانی کنید.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>تنها کاربری که ثبت کرده می‌تواند ثبت نشست را متوقف کند.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ثبتی را که باید متوقف شود انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ثبتی از این نوع اکنون جریان دارد.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ثبت تغییر داده نشد: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>آزاد شد.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>همهٔ مقصدها</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخرین انتشار</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>یک نسخهٔ ایستای رایگان از سایت خود را در GitHub Pages منتشر کنید:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>صفحه‌های کهنه</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>انتشار ایستا</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>انتشار ایستا خاموش است.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>مقصد</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>مقصدها خوانده نشدند: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>یک کار در حال اجراست</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ساخت در انتظار بررسی</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>پنهان کردن این</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ایجاد مقصد</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هرگز</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>خواندن آموزش</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added افزوده، %changed تغییریافته، %removed حذف‌شده</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes از %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count مورد دیگر فهرست نشده‌اند.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages صفحه نوشته شد</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>حجم %path برابر %size است، بیش از آنچه میزبان برای یک فایل اجازه می‌دهد.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % از سقف</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ثانیه</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag انتشاری است که اکنون روی سایت است.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: کار %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/مخزن/ برای سایت پروژهٔ GitHub؛ خالی برای دامنهٔ اختصاصی یا سایت کاربری.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>۱. سایت</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>۲. میزبان</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>۳. ورود به مخزن</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>۴. مخزن</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>۵. پیوندها و مسیر پایه</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>۶. دامنهٔ اختصاصی شما</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>۷. محتوای ساخت</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>۸. زمان انتشار</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>۹. بازبینی و ذخیره</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>سایت پروژهٔ GitHub زیر /&lt;repository&gt;/ قرار دارد؛ پیوندهای نسبی آنجا و هر جای دیگر کار می‌کنند.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>یک ساخت هر صفحهٔ %site را همان‌گونه که بازدیدکنندهٔ واردنشده می‌بیند دریافت می‌کند، پیوندها را بازنویسی می‌کند، فایل‌ها را کپی می‌کند و نتیجه را در پوشهٔ مقصد می‌نویسد. تا وقتی ساخت را بررسی نکنید و «انتشار» را نزنید، چیزی منتشر نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>یک عبارت cron، برای نمونه 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>کلید استقرار به‌صورت مقدار محرمانهٔ %secret نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>کلید استقرار به این نصب اجازه می‌دهد فقط به یک مخزن و از طریق SSH پوش کند و نه جای دیگر. نیمهٔ خصوصی آن در راه‌اندازی &gt; مقادیر محرمانه می‌ماند؛ فقط نیمهٔ عمومی نمایش داده می‌شود.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>کلید استقراری که برای این مقصد ساخته شده</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>کلید استقرار از طریق SSH وارد می‌شود: نشانی git را به نشانی SSH تغییر دهید (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>یک کار در حال اجراست، آغازشده توسط %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>یک کار این مقصد هنوز در حال اجراست (%detail). تا پایان آن صبر کنید.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>یک کار این مقصد هنوز در حال اجراست. تا پایان آن صبر کنید.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>پیوندی از صفحهٔ /news/ به صفحهٔ /about-us/team این‌گونه نوشته می‌شود</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>یک کلید استقرار تازه ساخته شد. اکنون نیمهٔ عمومی آن را به مخزن بیفزایید.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>صفحه‌ای که پس از پاک‌سازی هنوز خروجی اشکال‌زدایی، توکن فرم یا شناسهٔ نشست دارد، هرگز منتشر نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>بازگردانی برای کاربران متخصص است: گزینهٔ «می‌دانم این چه چیزی را تغییر می‌دهد» را علامت بزنید و نام برچسب را دوباره وارد کنید.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>یک سایت می‌تواند تا %site و یک فایل تا %file باشد، با حدود ۱۰۰ گیگابایت ترافیک در ماه. در طرح رایگان مخزن باید عمومی باشد. GitHub Pages برای فروشگاه‌ها یا دیگر تراکنش‌های تجاری در نظر گرفته نشده است.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>یک مقصد یعنی یک سایت که در یک مخزن git منتشر می‌شود. اینجا چیزی ساخته یا منتشر نمی‌شود: «ذخیره» تنظیمات را در settings/override/staticcache.ini.append.php می‌نویسد.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>یک مقصد یعنی یک سایت که در یک جا منتشر می‌شود، برای نمونه سایت عمومی شما در GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>توکنی از راه‌اندازی &gt; مقادیر محرمانه</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>یک گردش‌کار مخزن آن را منتشر می‌کند.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>این کلید عمومی را با دسترسی نوشتن به مخزن بیفزایید. GitHub: Settings &gt; Deploy keys &gt; Add deploy key، و Allow write access را علامت بزنید.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>افزوده</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>میزبان git دیگر</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>فرایند دیگری روی این مقصد کار می‌کند: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>بازگشت</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>مسیر پایه</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>پیش از</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>زیر یک مسیر پایه</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>شاخه</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>پیوندهای شکسته</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>پیوندهای شکسته در ساخت</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ساخت</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>ساخت %id توسط %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>ساخت %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>اکنون بساز</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>ساخت در انتظار بررسی</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>توسط</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>دستی، همین‌جا</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغو</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغییر</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>تغییریافته</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>تغییرات</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>اول آن را بررسی کنید</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>این تنظیمات را بررسی کنید</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>بررسی کنید ساخت چه چیزی را تغییر می‌دهد، آن را ببینید، سپس منتشرش کنید یا کنارش بگذارید.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>انتشاری را که می‌خواهید به آن برگردید انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>در نسخه‌ای بعدی می‌آید.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>کامیت</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>کامیت‌ها</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ساخت را کامیت می‌کند، برچسب می‌زند و به %remote پوش می‌کند. پوش هرگز اجباری نیست؛ بعداً می‌توانید به هر انتشاری برگردید.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>در مقایسه با پوشهٔ قبلی: %added افزوده، %changed تغییریافته، %removed حذف‌شده، %unchanged بدون تغییر.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>در مقایسه با آخرین انتشار.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>اعتبارنامه</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>دامنهٔ اختصاصی</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>خروجی اشکال‌زدایی، توکن‌های فرم، شناسه‌های نشست و nonceها همیشه حذف می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>کلید استقرار</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>کلید استقرار %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>کنار گذاشتن</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>کنار گذاشتن ساخت</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>دامنه</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>خالی: نشانی سایت. در غیر این صورت نشانی داخلی همان سایت.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>پایان</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>هر پیوند با مسیر پایه آغاز می‌شود.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>هر انتشار یک کامیت با برچسب static/%id/&lt;n&gt; است. بازگشت یک کامیت تازه با فایل‌های یک انتشار پیشین می‌سازد: تاریخچه می‌ماند، هیچ برچسبی جابه‌جا نمی‌شود و هیچ چیز اجباری نیست.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>فایل‌های اضافی</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>دریافت صفحه‌ها از</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>فایل‌ها</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>فایل‌های گم‌شده</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>فایل‌های</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>فایل‌هایی که گردآوری نشدند</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>اثر انگشت</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>پوشه</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>برای نشانی SSH. کلید پس از ذخیره ساخته می‌شود؛ نیمهٔ عمومی آن را به مخزن می‌افزایید.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>برای نشانی https://. در GitHub: یک توکن دقیق (fine-grained) با دسترسی خواندن و نوشتن Contents روی مخزن.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>برای کاربران متخصص. سایت عمومی به محض پایان پوش تغییر می‌کند.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>فرم‌ها</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>میزبانی رایگان از یک مخزن GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>از شاخه</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>نشانی git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages سایتی تا %site و فایلی تا %file را می‌پذیرد.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>محدودیت‌های GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages فایل‌ها را همان‌گونه که هستند منتشر می‌کند (برای فایل‌هایی که با _ آغاز می‌شوند لازم است).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub شاخه را همان‌گونه که پوش شده ارائه می‌کند. پیش‌فرض.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab، Gitea، سرور خودتان: هر مخزن git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>بازگشت به یک انتشار پیشین</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>راهنما</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>راهنمای ویزارد</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>پنهان کردن آن‌ها</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تاریخچه</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>تاریخچهٔ %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>میزبان</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ساخت را چگونه دریافت می‌کند</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>تغییرات را بررسی کرده‌ام</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>می‌دانم این چه چیزی را تغییر می‌دهد</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>شناسه</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>خاموش است: تا روشن نشود چیزی ساخته نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>در پس‌زمینه با کاربر %user اجرا می‌شود؛ می‌توانید این صفحه را ببندید.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>کار %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>به‌صورت مقدار محرمانهٔ %secret نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخرین انتشار</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>کنار گذاشتن این صفحه‌ها</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>کنار گذاشتن این بخش‌ها</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>پیوندها</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>پیوندهای بازنویسی‌شده</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>سایت زنده</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>دیدن ساخت</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>حروف کوچک، ارقام، _ و -، برای نمونه github-public. نام پوشه و برچسب‌ها (static/&lt;id&gt;/&lt;n&gt;) از آن گرفته می‌شود و بعداً قابل تغییر نیست.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ساخت کلید تازه</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ایجاد مقصد</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ساخت کلید</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>اول مخزن را روی میزبان بسازید؛ مخزن خالی هم کافی است.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>فهرست فایل‌ها</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پیام</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>بیشتر صفحه‌ها</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نام</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>نام توکن در راه‌اندازی &gt; مقادیر محرمانه</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>مقصد تازه</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>بعدی</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>هنوز کامیتی نیست.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>کلیدی ساخته نشد: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>هیچ فایل اجرایی خط فرمان php پیدا نشد. مسیر کامل آن را در migration.ini [AdminSettings] PhpCliPath تنظیم کنید.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>هنوز برچسبی نیست.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>هنوز مقصدی نیست.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>هیچ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>در ساخت نیست.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>هنوز چیزی منتشر نشده است.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>هنوز چیزی منتشر نشده است: همهٔ فایل‌ها تازه‌اند.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>اطلاع‌رسانی</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>طبق زمان‌بندی</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>در خط فرمان</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>روی سرور: ./console exp:static:serve %id آن را به همین شکل ارائه می‌کند.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>در هر خط یک مسیر؛ * با هر بخشی جور می‌شود: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>فقط یک نام همراه مقصد ذخیره می‌شود؛ خود توکن یا کلید در راه‌اندازی &gt; مقادیر محرمانه می‌ماند و هرگز در گزارشی ظاهر نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>فقط آنچه صفحه‌ها نام می‌برند</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>فقط با توکن. env:NAME به‌جای آن یک متغیر محیطی سرور را می‌خواند.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>باز کردن پیش‌نمایش</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ساخت را همان‌گونه که میزبان ارائه خواهد کرد، از پوشهٔ مقصد باز می‌کند. پیوند برای شما یک ساعت کار می‌کند.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>اختیاری. خالی: آنچه منتشر شد.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>اختیاری. با دامنه، سایت در ریشهٔ آن ارائه می‌شود.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>خروجی</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>صفحه‌ها</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>صفحه‌های مقصد</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>صفحه‌های ردشده</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>پس‌پردازش</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>پیش‌نمایش</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>پیش‌نمایش و انتشار</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>پیش‌نمایش و انتشار %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>پیش‌نمایش ساخت</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پیشرفت</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>نشانی عمومی</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>کلید عمومی</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>انتشار</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>یک نسخهٔ ایستا از سایت را در GitHub Pages یا هر میزبان git منتشر کنید: آن را بسازید، تغییرات را بررسی کنید، منتشر کنید و هر وقت لازم شد به یک انتشار پیشین برگردید.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>انتشاری برای بازگشت</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>انتشارها</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پوش</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>خواندن آموزش</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>گزارش اجرا</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ردشده</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>نسبی</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>بارگذاری دوباره</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>حذف‌شده</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>جایگزینی کلید: کلید قدیمی دیگر کار نمی‌کند</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>گزارش</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>گزارش ساخت</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>مخزن</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>بازبینی</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>بازبینی همهٔ تنظیمات را بررسی می‌کند و خط‌هایی را که نوشته خواهند شد نشان می‌دهد. هنوز چیزی ذخیره نشده است.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>بازگرداندن</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>بازگردانی</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>زمان‌بندی</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>صفحهٔ جست‌وجو</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>شناسه‌های بخش، جداشده با ویرگول.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>فرستادن آن‌ها به سایت زنده</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>تنظیم</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>تنظیمات</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>تنظیمات %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>راه‌اندازی &gt; مقادیر محرمانه</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>در فهرست‌ها نمایش داده می‌شود، برای نمونه «سایت عمومی در GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>ورود با GitHub App همراه با یکپارچه‌سازی GitHub می‌آید.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>سایت</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>سایت برای انتشار</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>اندازه</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>اندازه و محدودیت‌ها</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>اندازهٔ ساخت</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>صفحه‌های کهنه</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>آغاز</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>آغازشده توسط %user در %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>انتشار ایستا</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>انتشار ایستا خاموش است</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>انتشار ایستا خاموش است.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>انتشار ایستا خاموش است. اول آن را در راه‌اندازی &gt; انتشار ایستا روشن کنید.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>انتشار ایستا روشن است.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>گام %step از %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>گام‌ها</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>پاک‌سازی</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>خاموش کردن</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>روشن کردن</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>روشن کردن انتشار ایستا</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>برچسب</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>برچسب‌ها</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>مقصد</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>مقصدها را می‌توان ساخت و تغییر داد، اما تا وقتی روشن نشود چیزی ساخته یا منتشر نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>به موتورهای جست‌وجو می‌گوید چه چیزی را بخوانند.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ساخت کنار گذاشته نشد: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ساخت با آخرین انتشار یکسان است: چیزی برای انتشار نیست.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ساخت کنار گذاشته شد: پوشه دوباره آخرین انتشار را در خود دارد.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>پیش‌فرض‌ها برای بیشتر سایت‌ها مناسب‌اند.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>پوشه ساختی دارد که هنوز منتشر نشده است؛ ساخت تازه جای آن را می‌گیرد.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>در پوشهٔ کارها نمی‌توان نوشت: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>کار آماده نشد: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>کار آغاز نشد.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>کار پایان یافت. در حال بارگذاری گزارش آن.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>کار به کاربری واردشده نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>کار آغاز شد اما شناسهٔ فرایند خود را گزارش نکرد. %detail را بررسی کنید.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>کلید</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>بزرگ‌ترین فایل: %path، %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>خط‌هایی که نوشته خواهند شد</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>فهرست صفحه‌ها برای موتورهای جست‌وجو؛ به نشانی عمومی نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>صفحه‌ها همان‌گونه دریافت می‌شوند که بازدیدکنندهٔ واردنشده می‌بیند. siteaccessهای مدیریت و ویرایش هرگز پیشنهاد نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>پیشرفت را نمی‌توان دنبال کرد. صفحه را دوباره بارگذاری کنید تا وضعیت کار را ببینید.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>نیمهٔ عمومی کلید:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ریشهٔ شاخه</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>انبار مقادیر محرمانه هنوز راه‌اندازی نشده است (./console exp:upgrade --apply جدول آن را می‌سازد)، پس هیچ کلیدی را نمی‌توان نگه داشت.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>سرور خودش وارد می‌شود (با کلید SSH یا ابزار کمکی اعتبارنامهٔ خودش)، یا مخزن روی همین سرور است.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>تنظیم نوشته نشد: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>تنظیمات معتبرند. این خط‌ها نوشته خواهند شد:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>فایل تنظیمات خوانده نمی‌شود: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>سایت به فایل‌های آن انتشار برمی‌گردد؛ ساختی که هنوز منتشر نشده باید اول منتشر یا کنار گذاشته شود.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>صفحهٔ خود سایت برای نشانی‌هایی که وجود ندارند.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>مقصد ذخیره نشد: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>مقصد هنوز با این کلید وارد نمی‌شود: در تنظیمات آن «کلید استقراری که برای این مقصد ساخته شده» را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>مقصدها خوانده نشدند: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>هنوز ساختی برای بررسی نیست.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>این نصب siteaccess عمومی ندارد. siteaccessهای مدیریت و ویرایش هرگز منتشر نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>این صفحه کار را در حین پیشرفت دنبال می‌کند؛ با بستن صفحه، کار در پس‌زمینه ادامه می‌یابد.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>این مقصد هنوز کلید استقرار ندارد.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>این مقصد هنوز اینجا ساخته نشده است.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>این مقصد یکی دارد.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>این ساخت را کنار می‌گذارد: پوشه دوباره آخرین انتشار را در خود دارد. سایت زنده تغییر نمی‌کند.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>اول گزینهٔ «تغییرات را بررسی کرده‌ام» را علامت بزنید.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>زمان</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>راه‌اندازها</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>نام برچسب را دوباره وارد کنید</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>بدون تغییر</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>وب‌هوک</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>چه</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>چه تغییر می‌کند</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>هر فایل چیست؛ همیشه نوشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>کاری که کار انجام داد و گزارش اجرای آن. کاری که اینجا آغاز شود، با بستن این صفحه در پس‌زمینه ادامه می‌یابد.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>آنچه کار به‌عنوان خطا چاپ کرد</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>آنچه صفحه‌ها نام می‌برند، و همهٔ تصویرهای محتوای منتشرشده</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>چه زمانی</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>وقتی انتشاری ناموفق است</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>وقتی انتشاری موفق است</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>وقتی محتوا منتشر می‌شود</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>پیوندها به چیزهایی که نسخه ندارد (جست‌وجو، ورود) به کجا بروند.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>نسخهٔ ایستا از کجا ارائه می‌شود.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>کدام سایت منتشر می‌شود و نام مقصد چیست.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>زیر هر مسیری کار می‌کند. پیش‌فرض.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>هر بار که دامنهٔ اختصاصی تنظیم شده باشد نوشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>همیشه می‌توانید اینجا و در خط فرمان به‌صورت دستی بسازید و منتشر کنید.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>فقط یک نام؛ مقدار در راه‌اندازی &gt; مقادیر محرمانه می‌ماند</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>زیر %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>بدون گزارش پایان یافت</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>اضافی</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>فایل</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages، یا main با پوشهٔ docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>میزبان git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (با توکن) یا git@github.com:owner/repo.git (با کلید استقرار)؛ هرگز گذرواژه یا توکن در آن نباشد.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/، برای نقشهٔ سایت و پیوندهای canonical.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>تصویر</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هرگز</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>بدون مخزن دور</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>هیچ: کامیت‌ها در پوشه می‌مانند</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>هیچ: چیزی تغییر نکرد</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>پوش نشده</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>چیزی تغییر نکرد</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>صفحه</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>موفق</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open غیرفعال است، پس اینجا نمی‌توان کاری را آغاز کرد. روی سرور از ./console exp:static:build استفاده کنید.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>انتشار</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>منتشرشده</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>در انتظار پوش</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>پوش‌شده</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ردشده</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>نسبی</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>بازگردانی</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>بازگردانده شد</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>در حال اجرا</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>فقط پوشه</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: در فایل CNAME نوشته می‌شود. DNS دامنه را طبق توضیح میزبان به آن اشاره دهید؛ راه‌اندازی HTTPS ممکن است کمی طول بکشد.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>بله، هنوز منتشر نشده</translation>
     </message>
 </context>
 </TS>

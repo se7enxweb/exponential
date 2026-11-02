@@ -15156,6 +15156,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>ନୂଆ ବିଷୟବସ୍ତୁ, ସମୀକ୍ଷା ପାଇଁ ଯାହା ଅଟକାଯାଇଛି, ଏବଂ ଏକ ଚୟନ ଉପରେ କାର୍ଯ୍ୟ।</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ଏକ ସାଇଟ୍‌ର ଷ୍ଟାଟିକ୍ କପି GitHub Pages କିମ୍ବା ଯେକୌଣସି git ହୋଷ୍ଟରେ ପ୍ରକାଶ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22155,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API ର ସଂରକ୍ଷିତ କ୍ୱେରୀଗୁଡ଼ିକର ଉତ୍ତର, ଏବଂ ଏହାର ସ୍କିମାର ବିଷୟବସ୍ତୁ ଶ୍ରେଣୀ।</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>GitHub Pages କିମ୍ବା ଯେକୌଣସି git ହୋଷ୍ଟରେ ଏକ ଷ୍ଟାଟିକ୍ କପି ପ୍ରକାଶ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ଷ୍ଟାଟିକ୍ କ୍ୟାଶ୍ ଏହି ସର୍ଭରରୁ ପୃଷ୍ଠା ପରିବେଷଣ କରେ। ଏକ ସାଇଟ୍‌ର ଷ୍ଟାଟିକ୍ କପି ଅନ୍ୟ କେଉଁଠି, GitHub Pages କିମ୍ବା ଯେକୌଣସି git ହୋଷ୍ଟରେ ପ୍ରକାଶ କରିବାକୁ ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ବ୍ୟବହାର କରନ୍ତୁ।</translation>
     </message>
 </context>
 <context>
@@ -76212,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ଫାଇଲ ଭାବେ ରଖାଯାଇଥିବା ଇନଷ୍ଟଲେସନ୍‌ର ପରିବର୍ତ୍ତନ: ସେଗୁଡ଼ିକର ସ୍ଥିତି, ରନ୍‌ଗୁଡ଼ିକ, ଚଲାଇବା ଓ ଫେରାଇବା।</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ଏକ ସାଇଟ୍‌ର ଷ୍ଟାଟିକ୍ କପି GitHub Pages କିମ୍ବା ଯେକୌଣସି git ହୋଷ୍ଟରେ ପ୍ରକାଶ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80560,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ରନ୍ ଆରମ୍ଭ ହୋଇପାରିଲା ନାହିଁ।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ପରିବର୍ତ୍ତନ ରେକର୍ଡିଂ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ରେକର୍ଡିଂ ଚାଲୁଥିବା ବେଳେ ଆପଣ ପ୍ରଶାସନରେ କିମ୍ବା ସାଇଟର ସାଇଡବାରରେ ଯାହା ବଦଳାନ୍ତି ତାହା ଏକ ସ୍ଥାନାନ୍ତରଣର ପଦକ୍ଷେପ ଭାବେ ରଖାଯାଏ: ବିଷୟବସ୍ତୁ, ଶ୍ରେଣୀ, ଭୂମିକା ଓ ନୀତି, ବିଭାଗ, ଉପଯୋଗକର୍ତ୍ତା ଓ ଗୋଷ୍ଠୀ, URL ଉପନାମ, ସେଟିଂସ। କାମ ସରିଲେ ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ, ଏହା କ'ଣ ଧରିଛି ଦେଖନ୍ତୁ ଏବଂ ଏଥିରୁ ଏକ ସ୍ଥାନାନ୍ତରଣ ତିଆରି କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ରେକର୍ଡିଂଗୁଡ଼ିକ ପଢ଼ାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ରେକର୍ଡିଂର ସାରଣୀଗୁଡ଼ିକ ଏପର୍ଯ୍ୟନ୍ତ ନାହିଁ: ପ୍ରଥମେ ଅପଗ୍ରେଡ ଚଲାନ୍ତୁ (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ରେ ରେକର୍ଡିଂ ବନ୍ଦ ଅଛି ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ମୋ ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ଆପଣ ବନ୍ଦ ନକରିବା ପର୍ଯ୍ୟନ୍ତ କେବଳ ଆପଣ ଯାହା ବଦଳାନ୍ତି, ଯେଉଁଠି ବି ହେଉ, ତାହା ରେକର୍ଡ କରେ।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ରେକର୍ଡିଂ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ଠାରୁ, ଏପର୍ଯ୍ୟନ୍ତ %count ପରିବର୍ତ୍ତନ।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ଲେବେଲ (ଇଚ୍ଛାଧୀନ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ଏହା କ'ଣ ଧରିଛି ଦେଖାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ରେକର୍ଡିଂ ବନ୍ଦ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ମୋ ପରିବର୍ତ୍ତନର ରେକର୍ଡିଂ ଆରମ୍ଭ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ସମଗ୍ର ସାଇଟର ୱିଣ୍ଡୋ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ବନ୍ଦ ହେବା ପର୍ଯ୍ୟନ୍ତ ପ୍ରତ୍ୟେକ ଉପଯୋଗକର୍ତ୍ତା ଓ କନସୋଲର ପ୍ରତ୍ୟେକ ପରିବର୍ତ୍ତନ ରେକର୍ଡ କରେ। ଖୋଲିବା ବେଳେ ଏହା ଆପଣ ବୋଲି ଯାଞ୍ଚ କରିବାକୁ କୁହାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ଖୋଲା</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ୱିଣ୍ଡୋ ବନ୍ଦ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ସମଗ୍ର ସାଇଟର ୱିଣ୍ଡୋ ଖୋଲନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ରେକର୍ଡିଂଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ଆକାଉଣ୍ଟ (ଲଗଇନ, ଇ-ମେଲ, ପାସୱାର୍ଡ) ଏବଂ ଉପଯୋଗକର୍ତ୍ତା ଆକାଉଣ୍ଟର ଫିଲ୍ଡ କେବେ ରେକର୍ଡ ହୁଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ପରିବର୍ତ୍ତନଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ସମଗ୍ର ସାଇଟ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ଙ୍କ ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ବନ୍ଦ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ରେକର୍ଡିଂ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ରେକର୍ଡିଂ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ସମସ୍ତ ରେକର୍ଡିଂ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ଏଥିରୁ ହେବାକୁ ଥିବା ସ୍ଥାନାନ୍ତରଣ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ପ୍ରତ୍ୟେକ ବଦଳିଥିବା ଜିନିଷ ପାଇଁ ଏକ ପଦକ୍ଷେପରେ ଏକାଠି କରାଯାଇଥିବା ପରିବର୍ତ୍ତନ: ଏହି ରେକର୍ଡିଂରୁ ତିଆରି ସ୍ଥାନାନ୍ତରଣ କ'ଣ କରିବ।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ଏହି ସଂସ୍ଥାପନରେ YAML ପଦକ୍ଷେପ ପ୍ରକାର %types ଆସିଲେ ଏଥିରୁ ସ୍ଥାନାନ୍ତରଣ ତିଆରି କରାଯାଇପାରିବ।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ଜାଣିଶୁଣି ବାଦ୍ ଦିଆଯାଇଛି: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>କିଛି ରେକର୍ଡ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ଏହା କ'ଣ ଧରିଛି</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ପରିବର୍ତ୍ତନ, ଯେଉଁ କ୍ରମରେ କରାଯାଇଥିଲା।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ପଦକ୍ଷେପ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ସମ୍ବନ୍ଧିତ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ଆଉ %count: ./console exp:migration:record:show ସବୁର ତାଲିକା ଦିଏ।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ପରିତ୍ୟାଗ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ରେକର୍ଡିଂ ଓ ଏହା ଯାହା ଧରିଛି ତାହା ହଟାଏ। ଯାହା ବଦଳିଛି ତାହା ବଦଳି ରହେ।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ହଁ, ଏହି ରେକର୍ଡିଂ ପରିତ୍ୟାଗ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ରେକର୍ଡ ହେଉଛି…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ଆପଣଙ୍କ ପରିବର୍ତ୍ତନ ଏକ ସ୍ଥାନାନ୍ତରଣ ପାଇଁ ରେକର୍ଡ ହେଉଛି।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ଏହି ସାଇଟର ପ୍ରତ୍ୟେକ ପରିବର୍ତ୍ତନ ଏକ ସ୍ଥାନାନ୍ତରଣ ପାଇଁ ରେକର୍ଡ ହେଉଛି (ସମଗ୍ର ସାଇଟର ୱିଣ୍ଡୋ)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ସମଗ୍ର ସାଇଟର ରେକର୍ଡିଂ ଆରମ୍ଭ ହେଲା: ଆପଣ ବନ୍ଦ ନକରିବା ପର୍ଯ୍ୟନ୍ତ ପ୍ରତ୍ୟେକ ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ପ୍ରତ୍ୟେକ ପରିବର୍ତ୍ତନ ରେକର୍ଡ ହେବ।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ରେକର୍ଡିଂ ଆରମ୍ଭ ହେଲା: ଆପଣ ବନ୍ଦ ନକରିବା ପର୍ଯ୍ୟନ୍ତ ଆପଣଙ୍କ ପରିବର୍ତ୍ତନ ରେକର୍ଡ ହେବ।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ରେକର୍ଡିଂ ବନ୍ଦ ହେଲା। ଏହା ଯାହା ଧରିଛି ଆପଣ ପରିତ୍ୟାଗ ନକରିବା ପର୍ଯ୍ୟନ୍ତ ରହିବ।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ରେକର୍ଡିଂ ଓ ଏହାର ଘଟଣା ହଟାଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>କୌଣସି ରେକର୍ଡିଂ %id ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ପ୍ରଥମେ "ହଁ, ଏହି ରେକର୍ଡିଂ ପରିତ୍ୟାଗ କରନ୍ତୁ" ଚିହ୍ନିତ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ସେସନ ରେକର୍ଡିଂ କେବଳ ରେକର୍ଡ କରିଥିବା ଉପଯୋଗକର୍ତ୍ତା ବନ୍ଦ କରିପାରିବେ।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ବନ୍ଦ କରିବାକୁ ରେକର୍ଡିଂ ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ଏହି ପ୍ରକାରର ରେକର୍ଡିଂ ପୂର୍ବରୁ ଚାଲୁଛି।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ରେକର୍ଡିଂ ବଦଳାଯାଇପାରିଲା ନାହିଁ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81223,6 +81467,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>ମୁକ୍ତ ହେଲା।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ସମସ୍ତ ଲକ୍ଷ୍ୟସ୍ଥଳ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ଶେଷ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>ଆପଣଙ୍କ ସାଇଟ୍‌ର ଏକ ମାଗଣା ଷ୍ଟାଟିକ୍ କପି GitHub Pages ରେ ପ୍ରକାଶ କରନ୍ତୁ:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ପୁରୁଣା ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ବନ୍ଦ ଅଛି।</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳଗୁଡ଼ିକ ପଢ଼ାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ଏକ କାର୍ଯ୍ୟ ଚାଲୁଛି</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ଯାଞ୍ଚ ପାଇଁ ବିଲ୍ଡ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ଏହାକୁ ଲୁଚାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ଏକ ଲକ୍ଷ୍ୟସ୍ଥଳ ତିଆରି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>କେବେ ନୁହେଁ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ଟ୍ୟୁଟୋରିଆଲ୍ ପଢ଼ନ୍ତୁ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ଯୋଡ଼ାଗଲା, %changed ବଦଳାଗଲା, %removed ହଟାଗଲା</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit ମଧ୍ୟରୁ %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>ଆଉ %count ତାଲିକାରେ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages ପୃଷ୍ଠା ଲେଖାଗଲା</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ର ଆକାର %size, ଯାହା ହୋଷ୍ଟ ଗୋଟିଏ ଫାଇଲ୍ ପାଇଁ ଅନୁମତି ଦେଉଥିବାଠାରୁ ଅଧିକ।</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>ସୀମାର %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ସେକେଣ୍ଡ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ହେଉଛି ସାଇଟ୍‌ରେ ବର୍ତ୍ତମାନ ଥିବା ପ୍ରକାଶନ।</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: କାର୍ଯ୍ୟ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub ପ୍ରୋଜେକ୍ଟ ସାଇଟ୍ ପାଇଁ /ରିପୋଜିଟୋରୀ/; ନିଜସ୍ୱ ଡୋମେନ୍ କିମ୍ବା ୟୁଜର୍ ସାଇଟ୍ ପାଇଁ ଖାଲି।</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. ସାଇଟ୍</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. ହୋଷ୍ଟ</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ରିପୋଜିଟୋରୀରେ ସାଇନ୍ ଇନ୍</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ରିପୋଜିଟୋରୀ</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. ଲିଙ୍କ ଓ ବେସ୍ ପାଥ୍</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. ଆପଣଙ୍କ ନିଜ ଡୋମେନ୍</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ବିଲ୍ଡରେ କ&apos;ଣ ଥାଏ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ଏହା କେବେ ପ୍ରକାଶିତ ହୁଏ</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. ସମୀକ୍ଷା କରି ସଞ୍ଚୟ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub ପ୍ରୋଜେକ୍ଟ ସାଇଟ୍ /&lt;repository&gt;/ ତଳେ ରହେ; ଆପେକ୍ଷିକ ଲିଙ୍କ ସେଠାରେ ଓ ଅନ୍ୟ ଯେକୌଣସି ସ୍ଥାନରେ କାମ କରେ।</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ଏକ ବିଲ୍ଡ %site ର ପ୍ରତ୍ୟେକ ପୃଷ୍ଠା ସାଇନ୍ ଇନ୍ କରିନଥିବା ଜଣେ ଦର୍ଶକ ଯେପରି ଦେଖେ ସେହିପରି ଆଣେ, ଲିଙ୍କଗୁଡ଼ିକ ପୁନର୍ବାର ଲେଖେ, ଫାଇଲ୍ କପି କରେ ଓ ଫଳାଫଳ ଲକ୍ଷ୍ୟସ୍ଥଳର ଫୋଲ୍ଡର୍‌ରେ ଲେଖେ। ଆପଣ ବିଲ୍ଡ ଯାଞ୍ଚ କରି ପ୍ରକାଶ କରନ୍ତୁ ଦବାଇବା ପର୍ଯ୍ୟନ୍ତ କିଛି ପ୍ରକାଶିତ ହୁଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>ଏକ cron ଅଭିବ୍ୟକ୍ତି, ଉଦାହରଣ ସ୍ୱରୂପ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>ଏକ ଡିପ୍ଲୟ କି ଗୋପନୀୟ ତଥ୍ୟ %secret ଭାବରେ ରଖାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>ଏକ ଡିପ୍ଲୟ କି ଏହି ଇନଷ୍ଟଲେସନ୍‌କୁ SSH ମାଧ୍ୟମରେ କେବଳ ଗୋଟିଏ ରିପୋଜିଟୋରୀକୁ ପୁସ୍ କରିବାକୁ ଦିଏ, ଅନ୍ୟ କେଉଁଠିକୁ ନୁହେଁ। ଏହାର ବ୍ୟକ୍ତିଗତ ଅଧା ସେଟଅପ୍ &gt; ଗୋପନୀୟ ତଥ୍ୟରେ ରହେ; କେବଳ ସାର୍ବଜନୀନ ଅଧା ଦେଖାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳ ପାଇଁ ତିଆରି ଏକ ଡିପ୍ଲୟ କି</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>ଏକ ଡିପ୍ଲୟ କି SSH ମାଧ୍ୟମରେ ସାଇନ୍ ଇନ୍ କରେ: git ଠିକଣାକୁ SSH ଠିକଣା (git@github.com:owner/repo.git) ରେ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ଏକ କାର୍ଯ୍ୟ ଚାଲୁଛି, %user ଦ୍ୱାରା ଆରମ୍ଭ</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳର ଏକ କାର୍ଯ୍ୟ ଏବେ ବି ଚାଲୁଛି (%detail)। ଏହା ଶେଷ ହେବା ପର୍ଯ୍ୟନ୍ତ ଅପେକ୍ଷା କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳର ଏକ କାର୍ଯ୍ୟ ଏବେ ବି ଚାଲୁଛି। ଏହା ଶେଷ ହେବା ପର୍ଯ୍ୟନ୍ତ ଅପେକ୍ଷା କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>ପୃଷ୍ଠା /news/ ରୁ ପୃଷ୍ଠା /about-us/team କୁ ଏକ ଲିଙ୍କ ଏପରି ଲେଖାଯିବ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>ଏକ ନୂଆ ଡିପ୍ଲୟ କି ତିଆରି ହେଲା। ଏବେ ଏହାର ସାର୍ବଜନୀନ ଅଧା ରିପୋଜିଟୋରୀରେ ଯୋଡ଼ନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>ସଫା କରିବା ପରେ ବି ଡିବଗ୍ ଆଉଟପୁଟ୍, ଫର୍ମ ଟୋକେନ୍ କିମ୍ବା ସେସନ୍ ID ଥିବା ପୃଷ୍ଠା କେବେ ପ୍ରକାଶିତ ହୁଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ପ୍ରତ୍ୟାବର୍ତ୍ତନ ବିଶେଷଜ୍ଞଙ୍କ ପାଇଁ: &quot;ଏହା କ&apos;ଣ ବଦଳାଏ ମୁଁ ଜାଣେ&quot; ରେ ଟିକ୍ ଦିଅନ୍ତୁ ଏବଂ ଟ୍ୟାଗ୍‌ର ନାମ ପୁଣି ଟାଇପ୍ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ଏକ ସାଇଟ୍ %site ପର୍ଯ୍ୟନ୍ତ, ଗୋଟିଏ ଫାଇଲ୍ %file ପର୍ଯ୍ୟନ୍ତ ହୋଇପାରେ, ମାସିକ ପ୍ରାୟ 100 GB ଟ୍ରାଫିକ୍ ସହିତ। ମାଗଣା ପ୍ଲାନ୍‌ରେ ରିପୋଜିଟୋରୀ ସାର୍ବଜନୀନ ହେବା ଆବଶ୍ୟକ। GitHub Pages ଦୋକାନ କିମ୍ବା ଅନ୍ୟ ବାଣିଜ୍ୟିକ କାରବାର ପାଇଁ ଉଦ୍ଦିଷ୍ଟ ନୁହେଁ।</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ଏକ ଲକ୍ଷ୍ୟସ୍ଥଳ ହେଉଛି ଗୋଟିଏ git ରିପୋଜିଟୋରୀରେ ପ୍ରକାଶିତ ଗୋଟିଏ ସାଇଟ୍। ଏଠାରେ କିଛି ବିଲ୍ଡ କିମ୍ବା ପ୍ରକାଶିତ ହୁଏ ନାହିଁ: ସଞ୍ଚୟ ସେଟିଂସ୍ settings/override/staticcache.ini.append.php ରେ ଲେଖେ।</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ଏକ ଲକ୍ଷ୍ୟସ୍ଥଳ ହେଉଛି ଗୋଟିଏ ସ୍ଥାନରେ ପ୍ରକାଶିତ ଗୋଟିଏ ସାଇଟ୍, ଉଦାହରଣ ସ୍ୱରୂପ GitHub Pages ରେ ଆପଣଙ୍କ ସାର୍ବଜନୀନ ସାଇଟ୍।</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ସେଟଅପ୍ &gt; ଗୋପନୀୟ ତଥ୍ୟରୁ ଏକ ଟୋକେନ୍</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ରିପୋଜିଟୋରୀର ଏକ ୱାର୍କଫ୍ଲୋ ଏହାକୁ ପ୍ରକାଶ କରେ।</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ଏହି ସାର୍ବଜନୀନ କି ଲେଖିବା ଅନୁମତି ସହ ରିପୋଜିଟୋରୀରେ ଯୋଡ଼ନ୍ତୁ। GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access ରେ ଟିକ୍ ଦିଅନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ଯୋଡ଼ାଗଲା</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>ଅନ୍ୟ ଏକ git ହୋଷ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ଅନ୍ୟ ଏକ ପ୍ରକ୍ରିୟା ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳରେ କାମ କରୁଛି: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ପଛକୁ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>ବେସ୍ ପାଥ୍</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ପୂର୍ବରୁ</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ଏକ ବେସ୍ ପାଥ୍ ତଳେ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ବ୍ରାଞ୍ଚ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ଭଙ୍ଗା ଲିଙ୍କ</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ବିଲ୍ଡରେ ଭଙ୍ଗା ଲିଙ୍କ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ବିଲ୍ଡ</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user ଙ୍କ ଦ୍ୱାରା ବିଲ୍ଡ %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ବିଲ୍ଡ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ଏବେ ବିଲ୍ଡ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>ଯାଞ୍ଚ ପାଇଁ ବିଲ୍ଡ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ଦ୍ୱାରା</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ହାତରେ, ଏଠାରେ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ବାତିଲ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ବଦଳାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ବଦଳାଗଲା</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ପରିବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ପ୍ରଥମେ ଏହାକୁ ଯାଞ୍ଚ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ଏହି ସେଟିଂସ୍ ଯାଞ୍ଚ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ବିଲ୍ଡ କ&apos;ଣ ବଦଳାଏ ଯାଞ୍ଚ କରନ୍ତୁ, ଏହାକୁ ଦେଖନ୍ତୁ, ତା&apos;ପରେ ପ୍ରକାଶ କରନ୍ତୁ କିମ୍ବା ଫିଙ୍ଗିଦିଅନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ଯେଉଁ ପ୍ରକାଶନକୁ ଫେରିବେ ତାହା ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>ପରବର୍ତ୍ତୀ ରିଲିଜ୍‌ରେ ଆସିବ।</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>କମିଟ୍</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>କମିଟ୍‌ଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ବିଲ୍ଡକୁ କମିଟ୍ କରେ, ଟ୍ୟାଗ୍ ଦିଏ ଏବଂ %remote କୁ ପୁସ୍ କରେ। ପୁସ୍ କେବେ ବାଧ୍ୟତାମୂଳକ ନୁହେଁ; ଆପଣ ପରେ ଯେକୌଣସି ପ୍ରକାଶନକୁ ଫେରିପାରିବେ।</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ପୂର୍ବ ଫୋଲ୍ଡର୍ ସହ ତୁଳନା: %added ଯୋଡ଼ାଗଲା, %changed ବଦଳାଗଲା, %removed ହଟାଗଲା, %unchanged ଅପରିବର୍ତ୍ତିତ।</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ଶେଷ ପ୍ରକାଶନ ସହ ତୁଳନା।</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ପରିଚୟପତ୍ର</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>ନିଜସ୍ୱ ଡୋମେନ୍</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>ଡିବଗ୍ ଆଉଟପୁଟ୍, ଫର୍ମ ଟୋକେନ୍, ସେସନ୍ ID ଓ nonce ସବୁବେଳେ ହଟାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>ଡିପ୍ଲୟ କି</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ର ଡିପ୍ଲୟ କି</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ପରିତ୍ୟାଗ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ବିଲ୍ଡ ପରିତ୍ୟାଗ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ଡୋମେନ୍</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ଖାଲି: ସାଇଟ୍‌ର ଠିକଣା। ନଚେତ୍ ସେହି ସାଇଟ୍‌ର ଏକ ଆଭ୍ୟନ୍ତରୀଣ ଠିକଣା।</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ଶେଷ ହେଲା</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ପ୍ରତ୍ୟେକ ଲିଙ୍କ ବେସ୍ ପାଥ୍‌ରୁ ଆରମ୍ଭ ହୁଏ।</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ପ୍ରତ୍ୟେକ ପ୍ରକାଶନ static/%id/&lt;n&gt; ଟ୍ୟାଗ୍ ସହ ଏକ କମିଟ୍। ଫେରିଗଲେ ପୂର୍ବ ପ୍ରକାଶନର ଫାଇଲ୍ ସହ ଏକ ନୂଆ କମିଟ୍ ତିଆରି ହୁଏ: ଇତିହାସ ରହେ, କୌଣସି ଟ୍ୟାଗ୍ ଘୁଞ୍ଚେ ନାହିଁ ଏବଂ କିଛି ବାଧ୍ୟ କରାଯାଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>ଅତିରିକ୍ତ ଫାଇଲ୍</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>ପୃଷ୍ଠାଗୁଡ଼ିକ ଏଠାରୁ ଆଣନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ଫାଇଲ୍</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ଫାଇଲ୍‌ଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ନଥିବା ଫାଇଲ୍</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ଏହାର ଫାଇଲ୍</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ସଂଗ୍ରହ କରାଯାଇପାରିନଥିବା ଫାଇଲ୍</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>ଫିଙ୍ଗରପ୍ରିଣ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ଫୋଲ୍ଡର୍</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>ଏକ SSH ଠିକଣା ପାଇଁ। ସଞ୍ଚୟ ପରେ କି ତିଆରି ହୁଏ; ଆପଣ ଏହାର ସାର୍ବଜନୀନ ଅଧା ରିପୋଜିଟୋରୀରେ ଯୋଡ଼ନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>ଏକ https:// ଠିକଣା ପାଇଁ। GitHub: ରିପୋଜିଟୋରୀରେ Contents ପଢ଼ିବା ଓ ଲେଖିବା ଅନୁମତି ଥିବା ଏକ fine-grained ଟୋକେନ୍।</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ବିଶେଷଜ୍ଞଙ୍କ ପାଇଁ। ପୁସ୍ ସମ୍ପୂର୍ଣ୍ଣ ହେବା ମାତ୍ରେ ସାର୍ବଜନୀନ ସାଇଟ୍ ବଦଳିଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ଫର୍ମ</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>ଏକ GitHub ରିପୋଜିଟୋରୀରୁ ମାଗଣା ହୋଷ୍ଟିଂ।</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ବ୍ରାଞ୍ଚରୁ</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git ଠିକଣା</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site ର ସାଇଟ୍ ଓ %file ର ଫାଇଲ୍ ଅନୁମତି ଦିଏ।</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ସୀମା</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ଫାଇଲ୍‌ଗୁଡ଼ିକୁ ଯେପରି ଅଛି ସେପରି ପ୍ରକାଶ କରେ (_ ରୁ ଆରମ୍ଭ ହେଉଥିବା ଫାଇଲ୍ ପାଇଁ ଆବଶ୍ୟକ)।</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ବ୍ରାଞ୍ଚକୁ ଯେପରି ପୁସ୍ ହୋଇଛି ସେପରି ପରିବେଷଣ କରେ। ଡିଫଲ୍ଟ।</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ଆପଣଙ୍କ ନିଜ ସର୍ଭର: ଯେକୌଣସି git ରିପୋଜିଟୋରୀ।</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ଏକ ପୂର୍ବ ପ୍ରକାଶନକୁ ଫେରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>ସାହାଯ୍ୟ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>ୱିଜାର୍ଡ ପାଇଁ ସାହାଯ୍ୟ</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ସେଗୁଡ଼ିକୁ ଲୁଚାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ଇତିହାସ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ର ଇତିହାସ</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ହୋଷ୍ଟ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages କିପରି ବିଲ୍ଡ ଗ୍ରହଣ କରେ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ମୁଁ ପରିବର୍ତ୍ତନଗୁଡ଼ିକ ଯାଞ୍ଚ କରିଛି</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ଏହା କ&apos;ଣ ବଦଳାଏ ମୁଁ ଜାଣେ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ଏହା ବନ୍ଦ ଅଛି: ଚାଲୁ ନହେବା ପର୍ଯ୍ୟନ୍ତ କିଛି ବିଲ୍ଡ ହୋଇପାରିବ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ଏହା ପୃଷ୍ଠଭୂମିରେ %user ଭାବରେ ଚାଲେ; ଆପଣ ଏହି ପୃଷ୍ଠା ବନ୍ଦ କରିପାରିବେ।</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>କାର୍ଯ୍ୟ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>ଗୋପନୀୟ ତଥ୍ୟ %secret ଭାବରେ ରଖାଯାଇଛି।</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ପ୍ରକାର</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ଶେଷ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ଏହି ପୃଷ୍ଠାଗୁଡ଼ିକ ବାଦ ଦିଅନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ଏହି ବିଭାଗଗୁଡ଼ିକ ବାଦ ଦିଅନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>ଲିଙ୍କ</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>ପୁନର୍ଲିଖିତ ଲିଙ୍କ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ଲାଇଭ୍ ସାଇଟ୍</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ବିଲ୍ଡ ଦେଖନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ଛୋଟ ଅକ୍ଷର, ଅଙ୍କ, _ ଓ -, ଉଦାହରଣ ସ୍ୱରୂପ github-public। ଏହା ଫୋଲ୍ଡର୍ ଓ ଟ୍ୟାଗ୍ (static/&lt;id&gt;/&lt;n&gt;) ର ନାମ ଦିଏ ଏବଂ ପରେ ବଦଳାଯାଇପାରିବ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ଏକ ନୂଆ କି ତିଆରି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ଏକ ଲକ୍ଷ୍ୟସ୍ଥଳ ତିଆରି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>କି ତିଆରି କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ପ୍ରଥମେ ହୋଷ୍ଟରେ ରିପୋଜିଟୋରୀ ତିଆରି କରନ୍ତୁ; ଖାଲି ରିପୋଜିଟୋରୀ ଠିକ୍ ଅଛି।</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ମାନିଫେଷ୍ଟ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ସନ୍ଦେଶ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>ଅଧିକାଂଶ ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ନାମ</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ସେଟଅପ୍ &gt; ଗୋପନୀୟ ତଥ୍ୟରେ ଟୋକେନ୍‌ର ନାମ</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ନୂଆ ଲକ୍ଷ୍ୟସ୍ଥଳ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ପରବର୍ତ୍ତୀ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ନା</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି କମିଟ୍ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>କୌଣସି କି ତିଆରି ହେଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>କୌଣସି php କମାଣ୍ଡ ଲାଇନ୍ ବାଇନାରୀ ମିଳିଲା ନାହିଁ। migration.ini [AdminSettings] PhpCliPath କୁ ଏହାର ସମ୍ପୂର୍ଣ୍ଣ ପାଥ୍‌ରେ ସେଟ୍ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଟ୍ୟାଗ୍ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଲକ୍ଷ୍ୟସ୍ଥଳ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>କିଛି ନାହିଁ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ବିଲ୍ଡରେ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କିଛି ପ୍ରକାଶିତ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ଏପର୍ଯ୍ୟନ୍ତ କିଛି ପ୍ରକାଶିତ ହୋଇନାହିଁ: ପ୍ରତ୍ୟେକ ଫାଇଲ୍ ନୂଆ।</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>ସୂଚିତ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>ଏକ ସମୟସୂଚୀ ଅନୁସାରେ</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>କନସୋଲ୍‌ରେ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>ସର୍ଭରରେ: ./console exp:static:serve %id ଏହାକୁ ସେହିପରି ପରିବେଷଣ କରେ।</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ପ୍ରତି ଧାଡ଼ିରେ ଗୋଟିଏ ପାଥ୍, * ଯେକୌଣସି ଅଂଶ ସହ ମେଳ ଖାଏ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ସହ କେବଳ ଏକ ନାମ ସଂରକ୍ଷିତ ହୁଏ; ଟୋକେନ୍ କିମ୍ବା କି ନିଜେ ସେଟଅପ୍ &gt; ଗୋପନୀୟ ତଥ୍ୟରେ ରହେ ଏବଂ କେବେ ଲଗ୍‌ରେ ଦେଖାଯାଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>କେବଳ ପୃଷ୍ଠାଗୁଡ଼ିକ ଯାହା ଉଲ୍ଲେଖ କରନ୍ତି</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>କେବଳ ଟୋକେନ୍ ସହ। env:NAME ଏହା ବଦଳରେ ସର୍ଭରର ଏକ ପରିବେଶ ଭେରିଏବଲ୍ ପଢ଼େ।</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ପୂର୍ବାବଲୋକନ ଖୋଲନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ବିଲ୍ଡକୁ ଲକ୍ଷ୍ୟସ୍ଥଳର ଫୋଲ୍ଡର୍‌ରୁ ହୋଷ୍ଟ ଯେପରି ପରିବେଷଣ କରିବ ସେପରି ଖୋଲେ। ଲିଙ୍କଟି ଆପଣଙ୍କ ପାଇଁ ଏକ ଘଣ୍ଟା କାମ କରେ।</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ଇଚ୍ଛାଧୀନ। ଖାଲି: ଯାହା ପ୍ରକାଶିତ ହୋଇଥିଲା।</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ଇଚ୍ଛାଧୀନ। ଡୋମେନ୍ ସହ ସାଇଟ୍ ଏହାର ମୂଳରେ ପରିବେଷିତ ହୁଏ।</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ଆଉଟପୁଟ୍</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>ପୃଷ୍ଠାଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳର ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ପ୍ରତ୍ୟାଖ୍ୟାତ ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>ପରବର୍ତ୍ତୀ ପ୍ରକ୍ରିୟାକରଣ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ପୂର୍ବାବଲୋକନ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ପୂର୍ବାବଲୋକନ ଓ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ର ପୂର୍ବାବଲୋକନ ଓ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ବିଲ୍ଡର ପୂର୍ବାବଲୋକନ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ପ୍ରଗତି</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>ସାର୍ବଜନୀନ ଠିକଣା</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>ସାର୍ବଜନୀନ କି</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ପ୍ରକାଶ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ଏକ ସାଇଟ୍‌ର ଷ୍ଟାଟିକ୍ କପି GitHub Pages କିମ୍ବା ଯେକୌଣସି git ହୋଷ୍ଟରେ ପ୍ରକାଶ କରନ୍ତୁ: ଏହାକୁ ବିଲ୍ଡ କରନ୍ତୁ, ପରିବର୍ତ୍ତନ ଯାଞ୍ଚ କରନ୍ତୁ, ପ୍ରକାଶ କରନ୍ତୁ, ଏବଂ ଆବଶ୍ୟକ ହେଲେ ଏକ ପୂର୍ବ ପ୍ରକାଶନକୁ ଫେରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ଫେରିବା ପାଇଁ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ପ୍ରକାଶନଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ପୁସ୍</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ଟ୍ୟୁଟୋରିଆଲ୍ ପଢ଼ନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ରେକର୍ଡ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ପ୍ରତ୍ୟାଖ୍ୟାତ</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ଆପେକ୍ଷିକ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ପୁଣି ଲୋଡ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ହଟାଗଲା</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>କି ବଦଳାନ୍ତୁ: ପୁରୁଣାଟି କାମ କରିବା ବନ୍ଦ କରେ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ରିପୋର୍ଟ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ବିଲ୍ଡର ରିପୋର୍ଟ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ରିପୋଜିଟୋରୀ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ସମୀକ୍ଷା</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>ସମୀକ୍ଷା ପ୍ରତ୍ୟେକ ସେଟିଂ ଯାଞ୍ଚ କରେ ଏବଂ ଲେଖାଯିବାକୁ ଥିବା ଧାଡ଼ିଗୁଡ଼ିକ ଦେଖାଏ। ଏପର୍ଯ୍ୟନ୍ତ କିଛି ସଞ୍ଚିତ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ଫେରାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ପ୍ରତ୍ୟାବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ସଞ୍ଚୟ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ସମୟସୂଚୀ</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ସନ୍ଧାନ ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ବିଭାଗ ID, କମା ଦ୍ୱାରା ଅଲଗା।</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ସେଗୁଡ଼ିକୁ ଲାଇଭ୍ ସାଇଟ୍‌କୁ ପଠାନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ସେଟିଂ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ସେଟିଂସ୍</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ର ସେଟିଂସ୍</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ସେଟଅପ୍</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>ସେଟଅପ୍ &gt; ଗୋପନୀୟ ତଥ୍ୟ</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ତାଲିକାରେ ଦେଖାଯାଏ, ଉଦାହରଣ ସ୍ୱରୂପ &quot;GitHub Pages ରେ ସାର୍ବଜନୀନ ସାଇଟ୍&quot;।</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App ସହ ସାଇନ୍ ଇନ୍ GitHub ସମନ୍ୱୟ ସହ ଆସିବ।</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>ସାଇଟ୍</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ପ୍ରକାଶ କରିବାକୁ ସାଇଟ୍</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ଆକାର</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ଆକାର ଓ ସୀମା</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ବିଲ୍ଡର ଆକାର</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ପୁରୁଣା ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ଆରମ୍ଭ ହେଲା</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ଙ୍କ ଦ୍ୱାରା %time ରେ ଆରମ୍ଭ।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ସ୍ଥିତି</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ବନ୍ଦ ଅଛି</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ବନ୍ଦ ଅଛି।</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ବନ୍ଦ ଅଛି। ପ୍ରଥମେ ସେଟଅପ୍ &gt; ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନରେ ଏହାକୁ ଚାଲୁ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ଚାଲୁ ଅଛି।</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total ମଧ୍ୟରୁ ପଦକ୍ଷେପ %step</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ପଦକ୍ଷେପ</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ସଫା କରିବା</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ବନ୍ଦ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ଚାଲୁ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ଷ୍ଟାଟିକ୍ ପ୍ରକାଶନ ଚାଲୁ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ଟ୍ୟାଗ୍</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ଟ୍ୟାଗ୍‌ଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ତିଆରି ଓ ବଦଳାଯାଇପାରିବ, କିନ୍ତୁ ଚାଲୁ ନହେବା ପର୍ଯ୍ୟନ୍ତ କିଛି ବିଲ୍ଡ କିମ୍ବା ପ୍ରକାଶିତ ହୁଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ସନ୍ଧାନ ଇଞ୍ଜିନ୍‌କୁ କ&apos;ଣ ପଢ଼ିବେ ତାହା କହେ।</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ବିଲ୍ଡ ପରିତ୍ୟାଗ କରାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ବିଲ୍ଡ ଶେଷ ପ୍ରକାଶନ ସହ ସମାନ: ପ୍ରକାଶ କରିବାକୁ କିଛି ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ବିଲ୍ଡ ପରିତ୍ୟାଗ କରାଗଲା: ଫୋଲ୍ଡର୍‌ରେ ପୁଣି ଶେଷ ପ୍ରକାଶନ ଅଛି।</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ଡିଫଲ୍ଟ ଅଧିକାଂଶ ସାଇଟ୍ ପାଇଁ ଉପଯୁକ୍ତ।</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ଫୋଲ୍ଡର୍‌ରେ ଏପର୍ଯ୍ୟନ୍ତ ପ୍ରକାଶିତ ହୋଇନଥିବା ଏକ ବିଲ୍ଡ ଅଛି; ଏକ ନୂଆ ବିଲ୍ଡ ଏହାକୁ ବଦଳାଏ।</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>କାର୍ଯ୍ୟଗୁଡ଼ିକର ଫୋଲ୍ଡର୍‌ରେ ଲେଖାଯାଇପାରିବ ନାହିଁ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>କାର୍ଯ୍ୟ ପ୍ରସ୍ତୁତ କରାଯାଇପାରିଲା ନାହିଁ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>କାର୍ଯ୍ୟ ଆରମ୍ଭ କରାଯାଇପାରିଲା ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>କାର୍ଯ୍ୟ ଶେଷ ହୋଇଛି। ଏହାର ରିପୋର୍ଟ ଲୋଡ୍ ହେଉଛି।</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>କାର୍ଯ୍ୟ ପାଇଁ ସାଇନ୍ ଇନ୍ କରିଥିବା ଜଣେ ୟୁଜର୍ ଆବଶ୍ୟକ।</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>କାର୍ଯ୍ୟ ଆରମ୍ଭ ହେଲା କିନ୍ତୁ ଏହାର ପ୍ରକ୍ରିୟା ID ଜଣାଇଲା ନାହିଁ। %detail ଯାଞ୍ଚ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>କି</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ସବୁଠାରୁ ବଡ଼ ଫାଇଲ୍: %path, %size।</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ଲେଖାଯିବାକୁ ଥିବା ଧାଡ଼ି</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ସନ୍ଧାନ ଇଞ୍ଜିନ୍ ପାଇଁ ପୃଷ୍ଠାଗୁଡ଼ିକର ତାଲିକା; ସାର୍ବଜନୀନ ଠିକଣା ଆବଶ୍ୟକ।</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>ପୃଷ୍ଠାଗୁଡ଼ିକ ସାଇନ୍ ଇନ୍ କରିନଥିବା ଜଣେ ଦର୍ଶକ ଯେପରି ଦେଖେ ସେପରି ଅଣାଯାଏ। ପ୍ରଶାସନ ଓ ସମ୍ପାଦନ siteaccess କେବେ ଦିଆଯାଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>ପ୍ରଗତି ଅନୁସରଣ କରାଯାଇପାରିଲା ନାହିଁ। କାର୍ଯ୍ୟ କିପରି ଚାଲିଛି ଦେଖିବାକୁ ପୃଷ୍ଠା ପୁଣି ଲୋଡ୍ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>କିର ସାର୍ବଜନୀନ ଅଧା:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ବ୍ରାଞ୍ଚର ମୂଳ</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>ଗୋପନୀୟ ତଥ୍ୟ ଭଣ୍ଡାର ଏପର୍ଯ୍ୟନ୍ତ ସେଟ୍ ହୋଇନାହିଁ (./console exp:upgrade --apply ଏହାର ଟେବୁଲ୍ ତିଆରି କରେ), ତେଣୁ କୌଣସି କି ରଖାଯାଇପାରିବ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>ସର୍ଭର ନିଜେ ସାଇନ୍ ଇନ୍ କରେ (ଏହାର ନିଜ SSH କି କିମ୍ବା କ୍ରେଡେନସିଆଲ୍ ହେଲ୍ପର୍), କିମ୍ବା ରିପୋଜିଟୋରୀ ଏହି ସର୍ଭରରେ ଅଛି।</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ସେଟିଂ ଲେଖାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ସେଟିଂସ୍ ବୈଧ। ଏହି ଧାଡ଼ିଗୁଡ଼ିକ ଲେଖାଯିବ:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>ସେଟିଂସ୍ ଫାଇଲ୍ ପଢ଼ାଯାଇପାରିବ ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>ସାଇଟ୍ ସେହି ପ୍ରକାଶନର ଫାଇଲ୍‌କୁ ଫେରେ; ଏପର୍ଯ୍ୟନ୍ତ ପ୍ରକାଶିତ ହୋଇନଥିବା ବିଲ୍ଡକୁ ପ୍ରଥମେ ପ୍ରକାଶ କିମ୍ବା ପରିତ୍ୟାଗ କରିବା ଆବଶ୍ୟକ।</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>ନଥିବା ଠିକଣା ପାଇଁ ସାଇଟ୍‌ର ନିଜ ପୃଷ୍ଠା।</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ସଞ୍ଚୟ କରାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳ ଏପର୍ଯ୍ୟନ୍ତ ଏହି କି ସହ ସାଇନ୍ ଇନ୍ କରେ ନାହିଁ: ଏହାର ସେଟିଂସ୍‌ରେ &quot;ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳ ପାଇଁ ତିଆରି ଏକ ଡିପ୍ଲୟ କି&quot; ବାଛନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ଲକ୍ଷ୍ୟସ୍ଥଳଗୁଡ଼ିକ ପଢ଼ାଯାଇପାରିଲା ନାହିଁ: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>ଯାଞ୍ଚ କରିବାକୁ ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ବିଲ୍ଡ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ଏହି ଇନଷ୍ଟଲେସନ୍‌ର କୌଣସି ଫ୍ରଣ୍ଟ siteaccess ନାହିଁ। ପ୍ରଶାସନ ଓ ସମ୍ପାଦନ siteaccess କେବେ ପ୍ରକାଶିତ ହୁଏ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ଏହି ପୃଷ୍ଠା କାର୍ଯ୍ୟ ଚାଲିବା ସମୟରେ ଏହାକୁ ଅନୁସରଣ କରେ; ପୃଷ୍ଠା ବନ୍ଦ ହେଲେ ଏହା ପୃଷ୍ଠଭୂମିରେ ଜାରି ରହେ।</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳର ଏପର୍ଯ୍ୟନ୍ତ କୌଣସି ଡିପ୍ଲୟ କି ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳ ଏପର୍ଯ୍ୟନ୍ତ ଏଠାରେ ବିଲ୍ଡ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ଏହି ଲକ୍ଷ୍ୟସ୍ଥଳର ଗୋଟିଏ ଅଛି।</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ଏହି ବିଲ୍ଡକୁ ପରିତ୍ୟାଗ କରେ: ଫୋଲ୍ଡର୍‌ରେ ପୁଣି ଶେଷ ପ୍ରକାଶନ ରହେ। ଲାଇଭ୍ ସାଇଟ୍ ବଦଳେ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ପ୍ରଥମେ &quot;ମୁଁ ପରିବର୍ତ୍ତନଗୁଡ଼ିକ ଯାଞ୍ଚ କରିଛି&quot; ରେ ଟିକ୍ ଦିଅନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ସମୟ</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ଟ୍ରିଗର୍</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ଟ୍ୟାଗ୍‌ର ନାମ ପୁଣି ଟାଇପ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ଅପରିବର୍ତ୍ତିତ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ୱେବହୁକ୍</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>କ&apos;ଣ</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>କ&apos;ଣ ବଦଳେ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ପ୍ରତ୍ୟେକ ଫାଇଲ୍ କ&apos;ଣ; ସବୁବେଳେ ଲେଖାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>କାର୍ଯ୍ୟ କ&apos;ଣ କଲା ଓ ଏହାର ରେକର୍ଡ। ଏଠାରେ ଆରମ୍ଭ ହୋଇଥିବା କାର୍ଯ୍ୟ ଏହି ପୃଷ୍ଠା ବନ୍ଦ ହେଲେ ପୃଷ୍ଠଭୂମିରେ ଜାରି ରହେ।</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>କାର୍ଯ୍ୟ ତ୍ରୁଟି ଭାବରେ କ&apos;ଣ ପ୍ରିଣ୍ଟ କଲା</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ପୃଷ୍ଠାଗୁଡ଼ିକ ଯାହା ଉଲ୍ଲେଖ କରନ୍ତି, ଏବଂ ପ୍ରକାଶିତ ବିଷୟବସ୍ତୁର ପ୍ରତ୍ୟେକ ଛବି</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>କେବେ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ଯେତେବେଳେ ପ୍ରକାଶନ ବିଫଳ ହୁଏ</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ଯେତେବେଳେ ପ୍ରକାଶନ ସଫଳ ହୁଏ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ଯେତେବେଳେ ବିଷୟବସ୍ତୁ ପ୍ରକାଶିତ ହୁଏ</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>କପିରେ ନଥିବା ଜିନିଷ (ସନ୍ଧାନ, ଲଗଇନ୍) ପାଇଁ ଲିଙ୍କ କେଉଁଠିକୁ ଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>ଷ୍ଟାଟିକ୍ କପି କେଉଁଠାରୁ ପରିବେଷିତ ହୁଏ।</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>କେଉଁ ସାଇଟ୍ ପ୍ରକାଶିତ ହୁଏ, ଏବଂ ଲକ୍ଷ୍ୟସ୍ଥଳର ନାମ କ&apos;ଣ।</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ଯେକୌଣସି ପାଥ୍ ତଳେ କାମ କରେ। ଡିଫଲ୍ଟ।</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>ଯେତେବେଳେ ନିଜସ୍ୱ ଡୋମେନ୍ ସେଟ୍ ହୁଏ ଲେଖାଯାଏ।</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ହଁ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ଆପଣ ସବୁବେଳେ ଏଠାରେ ଓ କନସୋଲ୍‌ରେ ହାତରେ ବିଲ୍ଡ ଓ ପ୍ରକାଶ କରିପାରିବେ।</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>କେବଳ ଏକ ନାମ; ମୂଲ୍ୟ ସେଟଅପ୍ &gt; ଗୋପନୀୟ ତଥ୍ୟରେ ରହେ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path ତଳେ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ରିପୋର୍ଟ ବିନା ଶେଷ ହେଲା</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ଅତିରିକ୍ତ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ବିଫଳ</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ଫାଇଲ୍</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, କିମ୍ବା ଫୋଲ୍ଡର୍ docs ସହ main।</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ହୋଷ୍ଟ</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ଟୋକେନ୍ ସହ) କିମ୍ବା git@github.com:owner/repo.git (ଡିପ୍ଲୟ କି ସହ); ଏଥିରେ କେବେ ପାସୱାର୍ଡ କିମ୍ବା ଟୋକେନ୍ ନୁହେଁ।</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, ସାଇଟମ୍ୟାପ୍ ଓ କାନୋନିକାଲ୍ ଲିଙ୍କ ପାଇଁ।</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ଛବି</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>କେବେ ନୁହେଁ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ନା</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>ରିମୋଟ୍ ନାହିଁ</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>କିଛି ନାହିଁ: କମିଟ୍ ଫୋଲ୍ଡର୍‌ରେ ରହେ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>କିଛି ନାହିଁ: କିଛି ବଦଳିନାହିଁ</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ପୁସ୍ ହୋଇନାହିଁ</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>କିଛି ବଦଳିନାହିଁ</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ପୃଷ୍ଠା</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ସଫଳ</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ଅକ୍ଷମ ଅଛି, ତେଣୁ ଏଠାରେ କାର୍ଯ୍ୟ ଆରମ୍ଭ ହୋଇପାରିବ ନାହିଁ। ସର୍ଭରରେ ./console exp:static:build ବ୍ୟବହାର କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ପ୍ରକାଶନ</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ପ୍ରକାଶିତ</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ପୁସ୍ ବାକି</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ପୁସ୍ ହୋଇଛି</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ପ୍ରତ୍ୟାଖ୍ୟାତ</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ଆପେକ୍ଷିକ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ପ୍ରତ୍ୟାବର୍ତ୍ତନ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ଫେରାଯାଇଛି</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ଚାଲୁଛି</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>କେବଳ ଫୋଲ୍ଡର୍</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ଫାଇଲ୍ CNAME ରେ ଲେଖାଯାଏ। ହୋଷ୍ଟ ଯେପରି ବୁଝାଏ ସେପରି ଡୋମେନ୍‌ର DNS କୁ ହୋଷ୍ଟ ଆଡ଼କୁ ସୂଚାନ୍ତୁ; HTTPS ଆରମ୍ଭ ହେବାକୁ କିଛି ସମୟ ଲାଗିପାରେ।</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ହଁ, ଏପର୍ଯ୍ୟନ୍ତ ପ୍ରକାଶିତ ନୁହେଁ</translation>
     </message>
 </context>
 </TS>

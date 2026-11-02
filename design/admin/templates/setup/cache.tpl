@@ -248,6 +248,13 @@
 <details class="a4-fold" id="exp-static-cache">
     <summary><h2 class="a4-h2">{'Static content cache'|i18n( 'design/admin/setup/cache' )}</h2><span class="a4-muted">{'pages stored as files, answered by the web server without the CMS'|i18n( 'design/admin/setup/cache' )}</span></summary>
     <div class="a4-fold-body a4-stack">
+    {if fetch( 'user', 'has_access_to', hash( 'module', 'staticpublish', 'function', 'read' ) )}
+    <div class="a4-notice is-info">
+        <p class="a4-notice-title">{'Static publishing'|i18n( 'design/admin/setup/cache' )}</p>
+        <p>{'The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.'|i18n( 'design/admin/setup/cache' )}
+           <a href={'staticpublish/dashboard'|ezurl}>{'Publish a static copy to GitHub Pages or any git host'|i18n( 'design/admin/setup/cache' )}</a></p>
+    </div>
+    {/if}
     {if $static_cache_siteaccess_list|count|eq(0)}
         <div class="a4-notice is-warn"><p><strong>{'No site can be cached.'|i18n( 'design/admin/setup/cache' )}</strong> {'Every siteaccess either requires a login or has no SiteSettings/SiteURL, so there is no page to fetch and store.'|i18n( 'design/admin/setup/cache' )}</p></div>
     {else}

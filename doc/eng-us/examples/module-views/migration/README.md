@@ -10,13 +10,14 @@ generated: exp:help:examples
 ---
 # The migration module
 
-Name `Migrations`, defined in `kernel/migration/module.php`. 7 views.
+Name `Migrations`, defined in `kernel/migration/module.php`. 8 views.
 
 | View | Address | Policy functions |
 |---|---|---|
 | [dryrun](dryrun.md) | `/migration/dryrun` | read |
 | [history](history.md) | `/migration/history` | read |
 | [log](log.md) | `/migration/log/<RunID>` | read |
+| [recording](recording.md) | `/migration/recording/<RecordingID>` | edit |
 | [rollback](rollback.md) | `/migration/rollback/<Target>` | rollback |
 | [run](run.md) | `/migration/run` | run |
 | [status](status.md) | `/migration/status` | read |

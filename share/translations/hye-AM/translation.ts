@@ -15158,6 +15158,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Նորագույն բովանդակությունը, այն, ինչ պահվում է ստուգման համար, և գործողություններ ընտրվածի հետ։</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Հրապարակել կայքի ստատիկ պատճենը GitHub Pages-ում կամ ցանկացած git հոսթինգում։</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ստատիկ հրապարակում</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API-ի պահպանված հարցումների պատասխանները և դրա սխեմայի բովանդակության դասերը։</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Հրապարակել ստատիկ պատճենը GitHub Pages-ում կամ ցանկացած git հոսթինգում</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ստատիկ հրապարակում</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Ստատիկ քեշը էջերը մատուցում է այս սերվերից։ Կայքի ստատիկ պատճենն այլ տեղ՝ GitHub Pages-ում կամ ցանկացած git հոսթինգում հրապարակելու համար օգտագործեք ստատիկ հրապարակումը։</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Տեղադրման փոփոխություններ՝ պահված որպես ֆայլեր. դրանց վիճակը, գործարկումները, գործարկել և հետ վերադարձնել։</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Հրապարակել կայքի ստատիկ պատճենը GitHub Pages-ում կամ ցանկացած git հոսթինգում։</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ստատիկ հրապարակում</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Չհաջողվեց սկսել գործարկումը։</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Փոփոխությունների ձայնագրում</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Քանի դեռ ձայնագրումն ընթանում է, այն, ինչ փոխում եք կառավարման մեջ կամ կայքի կողային վահանակում, պահվում է որպես միգրացիայի քայլեր՝ բովանդակություն, դասեր, դերեր և քաղաքականություններ, բաժիններ, օգտատերեր և խմբեր, URL կեղծանուններ, կարգավորումներ։ Ավարտելուց հետո կանգնեցրեք այն, նայեք՝ ինչ է այն ֆիքսել, և դրանից ստեղծեք միգրացիա։</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ձայնագրումները հնարավոր չեղավ կարդալ. %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ձայնագրումների աղյուսակները դեռ գոյություն չունեն. նախ գործարկեք թարմացումը (exp:upgrade --apply)։</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ձայնագրումն անջատված է migration.ini-ում ([RecordingSettings] Recording=disabled)։</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Իմ փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ձայնագրում է միայն այն, ինչ դուք եք փոխում, որտեղ էլ փոխեք, մինչև կանգնեցնեք այն։</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ձայնագրում</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time-ից ի վեր, մինչ այժմ %count փոփոխություն։</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Պիտակ (ըստ ցանկության)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ցույց տալ, ինչ է ֆիքսել</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Կանգնեցնել ձայնագրումը</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Սկսել իմ փոփոխությունների ձայնագրումը</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ամբողջ կայքի պատուհան</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ձայնագրում է յուրաքանչյուր օգտատիրոջ և վահանակի յուրաքանչյուր փոփոխություն, մինչև այն փակվի։ Բացելիս ձեզնից կպահանջվի հաստատել, որ դա դուք եք։</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Բաց</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Փակել պատուհանը</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Բացել ամբողջ կայքի պատուհանը</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ձայնագրումներ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Օգտատիրոջ հաշիվը (մուտքանուն, էլ. փոստ, գաղտնաբառ) և օգտատիրական հաշիվների դաշտերը երբեք չեն ձայնագրվում։</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Փոփոխություններ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ամբողջ կայքը</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name-ի փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Կանգնեցված</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Դեռ ձայնագրում չկա։</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ձայնագրում %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Բոլոր ձայնագրումները</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Միգրացիան, որը կստացվեր</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Փոփոխությունները՝ միավորված մեկ քայլի մեջ յուրաքանչյուր փոխված առարկայի համար. ինչ կաներ այս ձայնագրումից ստեղծված միգրացիան։</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Դրանից կարելի կլինի միգրացիա ստեղծել, երբ այս տեղադրումն ունենա YAML քայլերի %types տեսակները։</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Դիտմամբ բաց թողնված. %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ոչինչ չի ձայնագրվել։</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ինչ է ֆիքսել</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count փոփոխություն՝ կատարման հերթականությամբ։</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Փոփոխություն</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Քայլ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Վերաբերում է</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Եվս %count. ./console exp:migration:record:show-ը ցուցակում է բոլորը։</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Մերժել</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Հեռացնում է ձայնագրումը և այն, ինչ այն ֆիքսել է։ Փոխվածը մնում է փոխված։</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Այո, մերժել այս ձայնագրումը</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ձայնագրվում է…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ձեր փոփոխությունները ձայնագրվում են միգրացիայի համար։</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Այս կայքի յուրաքանչյուր փոփոխություն ձայնագրվում է միգրացիայի համար (ամբողջ կայքի պատուհան)։</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ամբողջ կայքի ձայնագրումը սկսվել է. յուրաքանչյուր օգտատիրոջ յուրաքանչյուր փոփոխություն կձայնագրվի, մինչև կանգնեցնեք այն։</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ձայնագրումը սկսվել է. ձեր փոփոխությունները կձայնագրվեն, մինչև կանգնեցնեք այն։</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ձայնագրումը կանգնեցվեց։ Ֆիքսվածը կմնա, մինչև մերժեք այն։</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ձայնագրումը և դրա իրադարձությունները հեռացվել են։</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id ձայնագրում չկա։</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Նախ նշեք «Այո, մերժել այս ձայնագրումը»։</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Սեսիայի ձայնագրումը կարող է կանգնեցնել միայն այն օգտատերը, ով ձայնագրել է։</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Ընտրեք կանգնեցվող ձայնագրումը։</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Այս տեսակի ձայնագրում արդեն ընթանում է։</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ձայնագրումը հնարավոր չեղավ փոխել. %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>Ազատված է։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Բոլոր թիրախները</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Վերջին հրապարակումը</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Հրապարակեք Ձեր կայքի անվճար ստատիկ պատճենը GitHub Pages-ում՝</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Հնացած էջեր</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ստատիկ հրապարակում</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Ստատիկ հրապարակումն անջատված է։</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Թիրախ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Չհաջողվեց կարդալ թիրախները՝ %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>առաջադրանք է կատարվում</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ստուգման սպասող կառուցում</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>թաքցնել սա</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ստեղծել թիրախ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>երբեք</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>կարդալ ուղեցույցը</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ավելացված, %changed փոփոխված, %removed հեռացված</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes՝ %limit-ից (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Եվս %count-ը ցուցակված չեն։</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages էջ գրված է</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path-ի չափը %size է, ավելին, քան հոսթինգը թույլ է տալիս մեկ ֆայլի համար։</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>սահմանի %percent %-ը</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds վ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag-ը կայքի ներկայիս հրապարակումն է։</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target՝ առաջադրանք %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/պահոց/՝ GitHub նախագծի կայքի համար. դատարկ՝ սեփական դոմենի կամ օգտատիրոջ կայքի համար։</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Կայքը</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Հոսթինգը</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Մուտք պահոց</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Պահոցը</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Հղումներ և հիմնական ուղի</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Ձեր սեփական դոմենը</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Ինչ է պարունակում կառուցումը</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Երբ է այն հրապարակվում</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Ստուգում և պահպանում</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub նախագծի կայքը գտնվում է /&lt;repository&gt;/-ի տակ. հարաբերական հղումներն աշխատում են այնտեղ և ցանկացած այլ տեղ։</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Կառուցումը բեռնում է %site-ի յուրաքանչյուր էջ այնպես, ինչպես այն տեսնում է մուտք չգործած այցելուն, վերագրում է հղումները, պատճենում է ֆայլերը և արդյունքը գրում է թիրախի պանակում։ Ոչինչ չի հրապարակվում, քանի դեռ չեք ստուգել կառուցումը և սեղմել Հրապարակել։</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron արտահայտություն, օրինակ՝ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Տեղակայման բանալին պահվում է որպես %secret գաղտնիք։</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Տեղակայման բանալին թույլ է տալիս այս տեղադրմանը SSH-ով push անել միայն մեկ պահոց և ոչ մի այլ տեղ։ Դրա փակ մասը մնում է Կարգաբերում &gt; Գաղտնիքներ բաժնում. ցուցադրվում է միայն բաց մասը։</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Այս թիրախի համար ստեղծված տեղակայման բանալի</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Տեղակայման բանալին մուտք է գործում SSH-ով. փոխեք git հասցեն SSH հասցեով (git@github.com:owner/repo.git)։</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Առաջադրանք է կատարվում, սկսել է %user-ը</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Այս թիրախի առաջադրանքը դեռ կատարվում է (%detail)։ Սպասեք, մինչև այն ավարտվի։</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Այս թիրախի առաջադրանքը դեռ կատարվում է։ Սպասեք, մինչև այն ավարտվի։</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ էջից /about-us/team էջ տանող հղումը կգրվի այսպես՝</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Ստեղծվեց նոր տեղակայման բանալի։ Հիմա ավելացրեք դրա բաց մասը պահոցին։</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Էջը, որը մաքրումից հետո դեռ պարունակում է վրիպազերծման ելք, ձևի թոքեն կամ սեսիայի id, երբեք չի հրապարակվում։</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Հետ վերադարձը փորձագետների համար է. նշեք «Ես գիտեմ, թե ինչ է սա փոխում» և կրկին մուտքագրեք պիտակի անունը։</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Կայքը կարող է լինել մինչև %site, մեկ ֆայլը՝ մինչև %file, ամսական մոտ 100 GB երթևեկությամբ։ Անվճար պլանում պահոցը պետք է հանրային լինի։ GitHub Pages-ը նախատեսված չէ խանութների կամ այլ առևտրային գործարքների համար։</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Թիրախը մեկ կայք է, որը հրապարակվում է մեկ git պահոցում։ Այստեղ ոչինչ չի կառուցվում կամ հրապարակվում. Պահպանելը կարգավորումները գրում է settings/override/staticcache.ini.append.php ֆայլում։</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Թիրախը մեկ կայք է, որը հրապարակվում է մեկ տեղում, օրինակ՝ Ձեր հանրային կայքը GitHub Pages-ում։</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Թոքեն Կարգաբերում &gt; Գաղտնիքներ բաժնից</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Պահոցի աշխատահոսքն է այն հրապարակում։</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Ավելացրեք այս բաց բանալին պահոցին՝ գրելու թույլտվությամբ։ GitHub՝ Settings &gt; Deploy keys &gt; Add deploy key, նշեք Allow write access։</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ավելացված</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Այլ git հոսթինգ</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Այս թիրախի վրա աշխատում է այլ գործընթաց՝ %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Հետ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Հիմնական ուղի</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Նախկինում</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Հիմնական ուղու տակ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Ճյուղ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Կոտրված հղումներ</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Կոտրված հղումներ կառուցման մեջ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Կառուցում</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Կառուցում %id, %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Կառուցել %name-ը</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Կառուցել հիմա</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Ստուգման սպասող կառուցում</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ում կողմից</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Ձեռքով, այստեղ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Չեղարկել</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Փոխել</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Փոփոխված</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Փոփոխություններ</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Նախ ստուգեք</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Ստուգեք այս կարգավորումները</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Ստուգեք, թե ինչ է փոխում կառուցումը, դիտեք այն, ապա հրապարակեք կամ դեն նետեք։</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Ընտրեք այն հրապարակումը, որին պետք է վերադառնալ։</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Հասանելի կլինի ավելի ուշ թողարկումում։</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Կոմիտ</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Կոմիտներ</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Կոմիտ է անում կառուցումը, պիտակավորում է այն և ուղարկում %remote։ Ուղարկումը երբեք պարտադրված չէ. հետագայում կարող եք վերադառնալ ցանկացած հրապարակման։</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Նախկին պանակի համեմատ՝ %added ավելացված, %changed փոփոխված, %removed հեռացված, %unchanged անփոփոխ։</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Վերջին հրապարակման համեմատ։</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Մուտքի տվյալներ</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Սեփական դոմեն</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Վրիպազերծման ելքը, ձևերի թոքենները, սեսիաների id-ները և nonce-երը միշտ հեռացվում են։</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Տեղակայման բանալի</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name-ի տեղակայման բանալին</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Դեն նետել</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Դեն նետել կառուցումը</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Դոմեն</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Դատարկ՝ կայքի հասցեն։ Հակառակ դեպքում՝ նույն կայքի ներքին հասցեն։</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ավարտված</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Յուրաքանչյուր հղում սկսվում է հիմնական ուղով։</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Յուրաքանչյուր հրապարակում կոմիտ է static/%id/&lt;n&gt; պիտակով։ Վերադարձը ստեղծում է նոր կոմիտ ավելի վաղ հրապարակման ֆայլերով. պատմությունը պահպանվում է, ոչ մի պիտակ չի տեղաշարժվում և ոչինչ չի պարտադրվում։</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Լրացուցիչ ֆայլեր</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Բեռնել էջերը հետևյալ հասցեից</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Ֆայլ</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Ֆայլեր</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Բացակայող ֆայլեր</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Ֆայլերը՝</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Ֆայլեր, որոնք չհաջողվեց հավաքել</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Մատնահետք</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Պանակ</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH հասցեի համար։ Բանալին ստեղծվում է պահպանելուց հետո. դրա բաց մասը Դուք եք ավելացնում պահոցին։</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// հասցեի համար։ GitHub՝ fine-grained թոքեն՝ պահոցի Contents-ի կարդալու և գրելու թույլտվությամբ։</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Փորձագետների համար։ Հանրային կայքը փոխվում է, հենց ուղարկումն ավարտվում է։</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Ձևեր</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Անվճար հոսթինգ GitHub պահոցից։</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Ճյուղից</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git հասցե</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages-ը թույլ է տալիս մինչև %site կայք և մինչև %file ֆայլ։</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages-ի սահմանափակումներ</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages-ը հրապարակում է ֆայլերն այնպես, ինչպես կան (անհրաժեշտ է _-ով սկսվող ֆայլերի համար)։</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub-ը մատուցում է ճյուղն այնպես, ինչպես այն ուղարկվել է։ Լռելյայն։</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, Ձեր սեփական սերվերը՝ ցանկացած git պահոց։</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Վերադառնալ ավելի վաղ հրապարակման</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Օգնություն</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Օգնություն վիզարդի համար</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Թաքցնել դրանք</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Պատմություն</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name-ի պատմությունը</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Հոսթինգ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Ինչպես է GitHub Pages-ը ստանում կառուցումը</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Ես ստուգել եմ փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ես գիտեմ, թե ինչ է սա փոխում</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Նույնացուցիչ</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Այն անջատված է. ոչինչ չի կարող կառուցվել, քանի դեռ այն միացված չէ։</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Այն աշխատում է հետին պլանում՝ որպես %user. կարող եք փակել այս էջը։</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Առաջադրանք %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Պահվում է որպես %secret գաղտնիք։</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Տեսակ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Վերջին հրապարակումը</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Բաց թողնել այս էջերը</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Բաց թողնել այս բաժինները</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Հղումներ</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Վերագրված հղումներ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Գործող կայք</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Դիտել կառուցումը</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Փոքրատառեր, թվանշաններ, _ և -, օրինակ՝ github-public։ Այն անվանում է պանակը և պիտակները (static/&lt;id&gt;/&lt;n&gt;) և հետագայում չի կարող փոխվել։</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Ստեղծել նոր բանալի</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Ստեղծել թիրախ</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Ստեղծել բանալին</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Նախ ստեղծեք պահոցը հոսթինգում. դատարկը նույնպես հարմար է։</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Մանիֆեստ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Հաղորդագրություն</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Էջերի մեծ մասը</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Անուն</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Թոքենի անունը Կարգաբերում &gt; Գաղտնիքներ բաժնում</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Նոր թիրախ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Հաջորդ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ոչ</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Կոմիտ դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Բանալի չստեղծվեց՝ %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php հրամանային տողի ծրագիր չգտնվեց։ Սահմանեք migration.ini [AdminSettings] PhpCliPath-ը դրա ամբողջական ուղով։</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Պիտակ դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Թիրախ դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Չկա</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Կառուցման մեջ չէ։</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Դեռ ոչինչ չի հրապարակվել։</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Դեռ ոչինչ չի հրապարակվել. յուրաքանչյուր ֆայլ նոր է։</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Ծանուցել</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Ժամանակացույցով</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Վահանակում</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Սերվերում՝ ./console exp:static:serve %id-ը մատուցում է այն նույն կերպ։</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Մեկ ուղի յուրաքանչյուր տողում, *-ը համապատասխանում է ցանկացած մասի՝ /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Թիրախի հետ պահվում է միայն անունը. թոքենը կամ բանալին ինքնին մնում է Կարգաբերում &gt; Գաղտնիքներ բաժնում և երբեք չի հայտնվում մատյանում։</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Միայն այն, ինչ նշում են էջերը</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Միայն թոքենով։ env:NAME-ը փոխարենը կարդում է սերվերի միջավայրի փոփոխականը։</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Բացել նախադիտումը</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Բացում է կառուցումը թիրախի պանակից այնպես, ինչպես այն կմատուցի հոսթինգը։ Հղումը Ձեզ համար աշխատում է մեկ ժամ։</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Ոչ պարտադիր։ Դատարկ՝ այն, ինչ հրապարակվել է։</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Ոչ պարտադիր։ Դոմենի դեպքում կայքը մատուցվում է դրա արմատից։</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Ելք</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Էջեր</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Թիրախի էջերը</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Մերժված էջեր</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Հետմշակում</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Նախադիտում</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Նախադիտում և հրապարակում</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name-ի նախադիտում և հրապարակում</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Նախադիտել կառուցումը</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ընթացք</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Հանրային հասցե</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Բաց բանալի</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Հրապարակել</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Հրապարակել կայքի ստատիկ պատճենը GitHub Pages-ում կամ ցանկացած git հոսթինգում. կառուցեք այն, ստուգեք փոփոխությունները, հրապարակեք և անհրաժեշտության դեպքում վերադարձեք ավելի վաղ հրապարակման։</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Վերադարձի հրապարակում</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Հրապարակումներ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ուղարկում</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Կարդալ ուղեցույցը</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Գրառում</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Մերժված</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Հարաբերական</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Վերաբեռնել</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Հեռացված</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Փոխարինել բանալին. հինն այլևս չի աշխատի</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Հաշվետվություն</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Կառուցման հաշվետվությունը</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Պահոց</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Ստուգում</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Ստուգումը ստուգում է յուրաքանչյուր կարգավորում և ցույց է տալիս այն տողերը, որոնք կգրվեն։ Դեռ ոչինչ պահպանված չէ։</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Հետ վերադարձնել</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Հետ վերադարձ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Պահպանել</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ժամանակացույց</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Որոնման էջ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Բաժինների id-ներ՝ ստորակետերով բաժանված։</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Ուղարկել դրանք գործող կայք</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Կարգավորում</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Կարգավորումներ</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name-ի կարգավորումները</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Կարգաբերում</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Կարգաբերում &gt; Գաղտնիքներ</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ցուցադրվում է ցուցակներում, օրինակ՝ «Հանրային կայք GitHub Pages-ում»։</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App-ով մուտքը հասանելի կլինի GitHub ինտեգրման հետ։</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Կայք</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Հրապարակվող կայք</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Չափ</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Չափ և սահմանափակումներ</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Կառուցման չափը</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Հնացած էջեր</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Սկսված</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Սկսել է %user-ը՝ %time-ին։</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Վիճակ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ստատիկ հրապարակում</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Ստատիկ հրապարակումն անջատված է</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Ստատիկ հրապարակումն անջատված է։</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Ստատիկ հրապարակումն անջատված է։ Նախ միացրեք այն Կարգաբերում &gt; Ստատիկ հրապարակում բաժնում։</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Ստատիկ հրապարակումը միացված է։</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Քայլ %step՝ %total-ից</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Քայլեր</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Մաքրում</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Անջատել</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Միացնել</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Միացնել ստատիկ հրապարակումը</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Պիտակ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Պիտակներ</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Թիրախ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Թիրախները կարելի է ստեղծել և փոխել, բայց ոչինչ չի կառուցվում կամ հրապարակվում, քանի դեռ այն միացված չէ։</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Որոնողական համակարգերին ասում է, թե ինչ կարդալ։</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Չհաջողվեց դեն նետել կառուցումը՝ %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Կառուցումը նույնն է, ինչ վերջին հրապարակումը. հրապարակելու բան չկա։</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Կառուցումը դեն է նետվել. պանակը կրկին պարունակում է վերջին հրապարակումը։</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Լռելյայն արժեքները հարմար են կայքերի մեծ մասի համար։</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Պանակը պարունակում է դեռ չհրապարակված կառուցում. նոր կառուցումը կփոխարինի այն։</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Հնարավոր չէ գրել առաջադրանքների պանակում՝ %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Չհաջողվեց նախապատրաստել առաջադրանքը՝ %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Չհաջողվեց սկսել առաջադրանքը։</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Առաջադրանքն ավարտվել է։ Բեռնվում է դրա հաշվետվությունը։</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Առաջադրանքին անհրաժեշտ է մուտք գործած օգտատեր։</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Առաջադրանքը սկսվեց, բայց չհայտնեց իր գործընթացի id-ն։ Ստուգեք %detail-ը։</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Բանալին</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Ամենամեծ ֆայլը՝ %path, %size։</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Տողերը, որոնք կգրվեն</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Էջերի ցուցակը որոնողական համակարգերի համար. անհրաժեշտ է հանրային հասցեն։</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Էջերը բեռնվում են այնպես, ինչպես դրանք տեսնում է մուտք չգործած այցելուն։ Ադմինիստրավորման և խմբագրման siteaccess-ները երբեք չեն առաջարկվում։</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Չհաջողվեց հետևել ընթացքին։ Վերաբեռնեք էջը՝ տեսնելու, թե ինչպես է ընթանում առաջադրանքը։</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Բանալու բաց մասը՝</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Ճյուղի արմատը</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Գաղտնիքների պահոցը դեռ կարգավորված չէ (./console exp:upgrade --apply-ը ստեղծում է դրա աղյուսակը), ուստի ոչ մի բանալի հնարավոր չէ պահել։</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Սերվերը մուտք է գործում ինքնուրույն (իր սեփական SSH բանալիով կամ մուտքի տվյալների օգնականով), կամ պահոցը գտնվում է այս սերվերում։</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Չհաջողվեց գրել կարգավորումը՝ %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Կարգավորումները վավեր են։ Կգրվեն հետևյալ տողերը՝</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Հնարավոր չէ կարդալ կարգավորումների ֆայլը՝ %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Կայքը վերադառնում է այդ հրապարակման ֆայլերին. դեռ չհրապարակված կառուցումը նախ պետք է հրապարակվի կամ դեն նետվի։</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Կայքի սեփական էջը գոյություն չունեցող հասցեների համար։</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Չհաջողվեց պահպանել թիրախը՝ %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Թիրախը դեռ մուտք չի գործում այս բանալիով. ընտրեք «Այս թիրախի համար ստեղծված տեղակայման բանալի» դրա կարգավորումներում։</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Չհաջողվեց կարդալ թիրախները՝ %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Ստուգման սպասող կառուցում դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Այս տեղադրումը չունի հանրային siteaccess։ Ադմինիստրավորման և խմբագրման siteaccess-ները երբեք չեն հրապարակվում։</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Այս էջը հետևում է առաջադրանքի ընթացքին. էջը փակելիս այն շարունակվում է հետին պլանում։</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Այս թիրախը դեռ չունի տեղակայման բանալի։</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Այս թիրախը դեռ այստեղ չի կառուցվել։</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Այս թիրախն ունի այն։</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Դեն է նետում այս կառուցումը. պանակը կրկին պարունակում է վերջին հրապարակումը։ Գործող կայքը չի փոխվում։</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Նախ նշեք «Ես ստուգել եմ փոփոխությունները»։</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Տևողություն</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Գործարկիչներ</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Կրկին մուտքագրեք պիտակի անունը</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Անփոփոխ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Վեբհուկ</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ինչ</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Ինչ է փոխվում</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Ինչ է յուրաքանչյուր ֆայլը. միշտ գրվում է։</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Ինչ արեց առաջադրանքը և դրա գրառումը։ Այստեղ սկսված առաջադրանքը շարունակվում է հետին պլանում, երբ այս էջը փակվում է։</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Ինչ է առաջադրանքը տպել որպես սխալներ</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Այն, ինչ նշում են էջերը, և հրապարակված բովանդակության յուրաքանչյուր պատկեր</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Երբ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Երբ հրապարակումը ձախողվում է</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Երբ հրապարակումը հաջողվում է</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Երբ բովանդակություն է հրապարակվում</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Ուր են տանում այն հղումները, որոնք պատճենում չկան (որոնում, մուտք)։</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Որտեղից է մատուցվում ստատիկ պատճենը։</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Որ կայքն է հրապարակվում, և ինչպես է կոչվում թիրախը։</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Աշխատում է ցանկացած ուղու տակ։ Լռելյայն։</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Գրվում է, երբ սեփական դոմեն է սահմանված։</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Այո</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Դուք միշտ կարող եք ձեռքով կառուցել և հրապարակել այստեղ և վահանակում։</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>միայն անուն. արժեքը մնում է Կարգաբերում &gt; Գաղտնիքներ բաժնում</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path-ի տակ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ավարտվել է առանց հաշվետվության</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>լրացուցիչ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ձախողված</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ֆայլ</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages կամ main՝ docs պանակով։</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git հոսթինգ</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (թոքենով) կամ git@github.com:owner/repo.git (տեղակայման բանալիով). դրանում երբեք գաղտնաբառ կամ թոքեն։</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/՝ կայքի քարտեզի և կանոնիկ հղումների համար։</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>պատկեր</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>երբեք</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ոչ</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>հեռակա պահոց չկա</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>չկա. կոմիտները մնում են պանակում</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>չկա. ոչինչ չի փոխվել</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ուղարկված չէ</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ոչինչ չի փոխվել</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>էջ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>հաջողված</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open-ն անջատված է, ուստի այստեղ առաջադրանք հնարավոր չէ սկսել։ Օգտագործեք ./console exp:static:build սերվերում։</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>հրապարակում</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>հրապարակված</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>սպասում է ուղարկման</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ուղարկված</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>մերժված</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>հարաբերական</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>հետ վերադարձ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>հետ շրջված</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ընթացքում</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>միայն պանակը</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com՝ գրվում է CNAME ֆայլում։ Ուղղեք դոմենի DNS-ը դեպի հոսթինգ՝ նրա բացատրության համաձայն. HTTPS-ի գործարկումը կարող է որոշ ժամանակ տևել։</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>այո, դեռ չհրապարակված</translation>
     </message>
 </context>
 </TS>

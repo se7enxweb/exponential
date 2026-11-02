@@ -34,7 +34,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [country.ini](country/README.md) | Kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | Kernel | 1 |
 | [cronjob.ini](cronjob/README.md) | Kernel | 27 |
-| [dashboard.ini](dashboard/README.md) | Kernel | 10 |
+| [dashboard.ini](dashboard/README.md) | Kernel | 11 |
 | [datatable.ini](datatable/README.md) | Kernel | 3 |
 | [datatype.ini](datatype/README.md) | Kernel | 5 |
 | [datetime.ini](datetime/README.md) | Kernel | 1 |
@@ -63,7 +63,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [mailpreferences.ini](mailpreferences/README.md) | Kernel | 19 |
 | [membermanagement.ini](membermanagement/README.md) | Kernel | 4 |
 | [menu.ini](menu/README.md) | Kernel | 28 |
-| [migration.ini](migration/README.md) | Kernel | 7 |
+| [migration.ini](migration/README.md) | Kernel | 8 |
 | [mime.ini](mime/README.md) | Kernel | 192 |
 | [module.ini](module/README.md) | Kernel | 2 |
 | [notification.ini](notification/README.md) | Kernel | 6 |

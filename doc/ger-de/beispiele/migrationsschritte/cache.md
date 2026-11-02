@@ -37,7 +37,7 @@ Daneben nimmt jeder Schritt die Schlüssel der Engine: `type`, `mode`, `if`, `re
 
 Jeder Schritt dieses Typs nimmt sich selbst zurück, wenn seine Migration ohne `down:` zurückgenommen wird.
 
-Die Caches, die er berührt, sind die, die ein Schritt nennt (nach dem Lauf geleert); die des Beispiels: `template-block`, `tag:ini`, `content`.
+Er berührt keinen Cache.
 
 ## Beispiel
 

@@ -48,6 +48,9 @@ content of var/<site>/static-publish/<target>/. Targets are staticcache.ini [Tar
 | `--crawl-url` | required | Fetch the pages from this address instead of the target's CrawlURL or the siteaccess's SiteURL (http://127.0.0.1:8080) |
 | `--max-pages` | required | Stop the crawl after this many pages (default the target's MaxPages) |
 | `--keep-staging` |  | Keep the staging folder of the build (its path is in the report) instead of removing it |
+| `--login` | required | Run as this user (the administration starts its jobs so); recorded as who ran it |
+| `--run-id` | required | The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id) |
+| `--progress` | required | Also append the progress, one JSON object per line, to this file (the administration follows it) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

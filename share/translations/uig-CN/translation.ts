@@ -15158,6 +15158,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>ئەڭ يېڭى مەزمۇن، تەكشۈرۈش ئۈچۈن توختىتىلغانلار ۋە تاللانغانلار ئۈستىدىكى مەشغۇلاتلار.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>تور بېكەتنىڭ ستاتىك نۇسخىسىنى GitHub Pages ياكى خالىغان git ساھىبخانىسىغا ئېلان قىلىڭ.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ستاتىك ئېلان قىلىش</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API نىڭ ساقلانغان سۈرۈشتۈرۈشلىرىنىڭ جاۋابلىرى ۋە ئۇنىڭ شېمىسىدىكى مەزمۇن تىپلىرى.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>GitHub Pages ياكى خالىغان git ساھىبخانىسىغا ستاتىك نۇسخا ئېلان قىلىڭ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ستاتىك ئېلان قىلىش</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ستاتىك غەملەك بەتلەرنى بۇ مۇلازىمېتىردىن تەمىنلەيدۇ. تور بېكەتنىڭ ستاتىك نۇسخىسىنى باشقا جايدا، GitHub Pages ياكى خالىغان git ساھىبخانىسىدا ئېلان قىلىش ئۈچۈن ستاتىك ئېلان قىلىشنى ئىشلىتىڭ.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ئورنىتىلمىغا ھۆججەت شەكلىدە ساقلانغان ئۆزگىرىشلەر: ئۇلارنىڭ ھالىتى، ئىجرالار، ئىجرا قىلىش ۋە قايتۇرۇش.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>تور بېكەتنىڭ ستاتىك نۇسخىسىنى GitHub Pages ياكى خالىغان git ساھىبخانىسىغا ئېلان قىلىڭ.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ستاتىك ئېلان قىلىش</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ئىجرانى باشلىغىلى بولمىدى.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ئۆزگىرىشلەرنى خاتىرىلەش</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>خاتىرىلەش داۋاملىشىۋاتقاندا، باشقۇرۇشتا ياكى تور بېكەتنىڭ يان بالدىقىدا ئۆزگەرتكەنلىرىڭىز يۆتكەشنىڭ قەدەملىرى سۈپىتىدە ساقلىنىدۇ: مەزمۇن، تۈرلەر، رول ۋە سىياسەتلەر، بۆلەكلەر، ئىشلەتكۈچىلەر ۋە گۇرۇپپىلار، URL تەخەللۇسلىرى، تەڭشەكلەر. تاماملىغاندا توختىتىڭ، نېمىنى تۇتقانلىقىنى كۆرۈڭ ۋە ئۇنىڭدىن يۆتكەش قۇرۇڭ.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>خاتىرىلەرنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>خاتىرىلەرنىڭ جەدۋەللىرى تېخى يوق: ئالدى بىلەن يېڭىلاشنى ئىجرا قىلىڭ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>خاتىرىلەش migration.ini دا تاقالغان ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>مېنىڭ ئۆزگىرىشلىرىم</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>سىز توختاتقۇچە پەقەت سىز ئۆزگەرتكەننى، قەيەردە ئۆزگەرتسىڭىزمۇ، خاتىرىلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>خاتىرە</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time دىن بۇيان، ھازىرغىچە %count ئۆزگىرىش.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>بەلگە (ئىختىيارى)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>نېمىنى تۇتقانلىقىنى كۆرسىتىش</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>خاتىرىلەشنى توختىتىش</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ئۆزگىرىشلىرىمنى خاتىرىلەشنى باشلاش</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>پۈتۈن تور بېكەت كۆزنىكى</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>تاقالغۇچە ھەر بىر ئىشلەتكۈچى ۋە كونسولنىڭ ھەر بىر ئۆزگىرىشىنى خاتىرىلەيدۇ. ئاچقاندا ئۆزىڭىز ئىكەنلىكىڭىزنى دەلىللەش تەلەپ قىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ئوچۇق</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>كۆزنەكنى تاقاش</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>پۈتۈن تور بېكەت كۆزنىكىنى ئېچىش</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>خاتىرىلەر</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ئىشلەتكۈچىنىڭ ھېساباتى (كىرىش ئاتى، ئېلخەت، پارول) ۋە ئىشلەتكۈچى ھېساباتلىرىنىڭ بۆلەكلىرى ھەرگىز خاتىرىلەنمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ئۆزگىرىشلەر</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>پۈتۈن تور بېكەت</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name نىڭ ئۆزگىرىشلىرى</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>توختىتىلغان</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>تېخى خاتىرە يوق.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>خاتىرە %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>بارلىق خاتىرىلەر</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ئۇنىڭدىن چىقىدىغان يۆتكەش</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ئۆزگەرتىلگەن ھەر بىر نەرسە ئۈچۈن بىر قەدەمگە يىغىلغان ئۆزگىرىشلەر: بۇ خاتىرىدىن قۇرۇلغان يۆتكەشنىڭ قىلىدىغىنى.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>بۇ ئورنىتىشتا YAML قەدەم تۈرلىرى %types بولغاندا ئۇنىڭدىن يۆتكەش قۇرغىلى بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>قەستەن چىقىرىۋېتىلدى: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ھېچنېمە خاتىرىلەنمىدى.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>نېمىنى تۇتقانلىقى</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ئۆزگىرىش، قىلىنغان تەرتىپ بويىچە.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ئۆزگىرىش</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>قەدەم</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>مۇناسىۋەتلىك</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>يەنە %count: ./console exp:migration:record:show ھەممىسىنى تىزىدۇ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>تاشلاش</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>خاتىرە ۋە ئۇ تۇتقاننى ئۆچۈرىدۇ. ئۆزگەرتىلگەن ئۆزگەرگەن پېتى قالىدۇ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ھەئە، بۇ خاتىرىنى تاشلاش</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>خاتىرىلىنىۋاتىدۇ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ئۆزگىرىشلىرىڭىز يۆتكەش ئۈچۈن خاتىرىلىنىۋاتىدۇ.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>بۇ تور بېكەتتىكى ھەر بىر ئۆزگىرىش يۆتكەش ئۈچۈن خاتىرىلىنىۋاتىدۇ (پۈتۈن تور بېكەت كۆزنىكى).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>پۈتۈن تور بېكەت خاتىرىلەش باشلاندى: سىز توختاتقۇچە ھەر بىر ئىشلەتكۈچىنىڭ ھەر بىر ئۆزگىرىشى خاتىرىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>خاتىرىلەش باشلاندى: سىز توختاتقۇچە ئۆزگىرىشلىرىڭىز خاتىرىلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>خاتىرىلەش توختىتىلدى. تۇتقانلىرى سىز تاشلىغۇچە قالىدۇ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>خاتىرە ۋە ئۇنىڭ ھادىسىلىرى ئۆچۈرۈلدى.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id خاتىرىسى يوق.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ئالدى بىلەن «ھەئە، بۇ خاتىرىنى تاشلاش» نى بەلگىلەڭ.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>سۆھبەت خاتىرىسىنى پەقەت خاتىرىلىگەن ئىشلەتكۈچىلا توختىتالايدۇ.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>توختىتىلىدىغان خاتىرىنى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>بۇ خىلدىكى خاتىرىلەش ئاللىبۇرۇن داۋاملىشىۋاتىدۇ.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>خاتىرىنى ئۆزگەرتكىلى بولمىدى: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Released.</source>
         <translation>قويۇپ بېرىلدى.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>بارلىق نىشانلار</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ئاخىرقى ئېلان</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>تور بېكىتىڭىزنىڭ ھەقسىز ستاتىك نۇسخىسىنى GitHub Pages دا ئېلان قىلىڭ:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>كونىراپ قالغان بەتلەر</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ستاتىك ئېلان قىلىش</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ستاتىك ئېلان قىلىش تاقالغان.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>نىشان</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>نىشانلارنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>بىر ۋەزىپە ئىجرا بولۇۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>تەكشۈرۈلىدىغان ياسالما</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>بۇنى يوشۇر</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>نىشان قۇر</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ھەرگىز</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>قوللانمىنى ئوقۇڭ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added قوشۇلدى، %changed ئۆزگەردى، %removed ئۆچۈرۈلدى</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>يەنە %count تىزىملىكتە كۆرسىتىلمىدى.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages بەت يېزىلدى</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path نىڭ چوڭلۇقى %size، ساھىبخانا بىر ھۆججەتكە يول قويىدىغاندىن چوڭ.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>چەكنىڭ %percent % ى</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds سېكۇنت</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag تور بېكەتنىڭ ھازىرقى ئېلانىدۇر.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ۋەزىپە %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub تۈر تور بېكىتى ئۈچۈن /ئامبار/؛ خاس دائىرە ياكى ئىشلەتكۈچى تور بېكىتى ئۈچۈن بوش.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. تور بېكەت</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. ساھىبخانا</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ئامبارغا كىرىش</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ئامبار</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. ئۇلانمىلار ۋە ئاساسىي يول</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. ئۆزىڭىزنىڭ دائىرىسى</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ياسالمىدا نېمە بار</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. قاچان ئېلان قىلىنىدۇ</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. تەكشۈرۈش ۋە ساقلاش</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub تۈر تور بېكىتى /&lt;repository&gt;/ ئاستىدا تۇرىدۇ؛ نىسبىي ئۇلانمىلار ئۇ يەردە ۋە باشقا ھەممە جايدا ئىشلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ياسالما %site نىڭ ھەر بىر بېتىنى كىرمىگەن زىيارەتچى كۆرگەندەك ئالىدۇ، ئۇلانمىلارنى قايتا يازىدۇ، ھۆججەتلەرنى كۆچۈرىدۇ ۋە نەتىجىنى نىشاننىڭ قىسقۇچىغا يازىدۇ. سىز ياسالمىنى تەكشۈرۈپ «ئېلان قىل» نى باسمىغۇچە ھېچنېمە ئېلان قىلىنمايدۇ.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron ئىپادىسى، مەسىلەن 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>ئورۇنلاشتۇرۇش ئاچقۇچى %secret مەخپىي قىممىتى سۈپىتىدە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>ئورۇنلاشتۇرۇش ئاچقۇچى بۇ ئورنىتىلمىنىڭ SSH ئارقىلىق پەقەت بىرلا ئامبارغا ئىتتىرىشىگە يول قويىدۇ، باشقا ھېچ يەرگە ئەمەس. ئۇنىڭ شەخسىي يېرىمى ئورنىتىش &gt; مەخپىي قىممەتلەر دە قالىدۇ؛ پەقەت ئاشكارا يېرىمىلا كۆرسىتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>بۇ نىشان ئۈچۈن ياسالغان ئورۇنلاشتۇرۇش ئاچقۇچى</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>ئورۇنلاشتۇرۇش ئاچقۇچى SSH ئارقىلىق كىرىدۇ: git ئادرېسىنى SSH ئادرېسىغا ئۆزگەرتىڭ (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>بىر ۋەزىپە ئىجرا بولۇۋاتىدۇ، باشلىغۇچى: %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>بۇ نىشاننىڭ بىر ۋەزىپىسى تېخى ئىجرا بولۇۋاتىدۇ (%detail). ئۇنىڭ ئاخىرلىشىشىنى كۈتۈڭ.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>بۇ نىشاننىڭ بىر ۋەزىپىسى تېخى ئىجرا بولۇۋاتىدۇ. ئۇنىڭ ئاخىرلىشىشىنى كۈتۈڭ.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ بېتىدىن /about-us/team بېتىگە بولغان ئۇلانما مۇنداق يېزىلىدۇ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>يېڭى ئورۇنلاشتۇرۇش ئاچقۇچى ياسالدى. ئۇنىڭ ئاشكارا يېرىمىنى ھازىرلا ئامبارغا قوشۇڭ.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>تازىلىغاندىن كېيىنمۇ سازلاش چىقىرىمى، جەدۋەل توكېنى ياكى ئەڭگىمە كىملىكى بار بەت ھەرگىز ئېلان قىلىنمايدۇ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>قايتۇرۇش مۇتەخەسسىسلەر ئۈچۈن: «بۇنىڭ نېمىنى ئۆزگەرتىدىغانلىقىنى بىلىمەن» نى بەلگىلەڭ ۋە بەلگىنىڭ نامىنى قايتا كىرگۈزۈڭ.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>تور بېكەت %site غىچە، بىر ھۆججەت %file غىچە بولالايدۇ، ئايدا تەخمىنەن 100 GB ئېقىم بىلەن. ھەقسىز پىلاندا ئامبار ئاممىۋى بولۇشى كېرەك. GitHub Pages دۇكانلار ياكى باشقا سودا ئالاقىلىرى ئۈچۈن لايىھەلەنمىگەن.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>نىشان دېگەن بىر git ئامبىرىغا ئېلان قىلىنىدىغان بىر تور بېكەت. بۇ يەردە ھېچنېمە ياسالمايدۇ ياكى ئېلان قىلىنمايدۇ: «ساقلا» تەڭشەكلەرنى settings/override/staticcache.ini.append.php غا يازىدۇ.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>نىشان دېگەن بىر جايغا ئېلان قىلىنىدىغان بىر تور بېكەت، مەسىلەن GitHub Pages دىكى ئاممىۋى تور بېكىتىڭىز.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ئورنىتىش &gt; مەخپىي قىممەتلەر دىكى بىر توكېن</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ئامبارنىڭ بىر خىزمەت ئېقىمى ئۇنى ئېلان قىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>بۇ ئاشكارا ئاچقۇچنى يېزىش ھوقۇقى بىلەن ئامبارغا قوشۇڭ. GitHub: Settings &gt; Deploy keys &gt; Add deploy key، Allow write access نى بەلگىلەڭ.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>قوشۇلدى</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>باشقا بىر git ساھىبخانىسى</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>بۇ نىشان ئۈستىدە باشقا بىر جەريان ئىشلەۋاتىدۇ: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>قايت</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>ئاساسىي يول</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ئىلگىرى</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ئاساسىي يول ئاستىدا</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>تارماق</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>بۇزۇق ئۇلانمىلار</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ياسالمىدىكى بۇزۇق ئۇلانمىلار</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ياسالما</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>ياسالما %id، ياسىغۇچى %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>ياسالما: %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ھازىر ياسا</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>تەكشۈرۈلىدىغان ياسالما</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>باشلىغۇچى</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>قولدا، بۇ يەردە</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ۋاز كەچ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ئۆزگەرت</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ئۆزگەردى</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ئۆزگىرىشلەر</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ئالدى بىلەن تەكشۈرۈڭ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>بۇ تەڭشەكلەرنى تەكشۈرۈڭ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ياسالمىنىڭ نېمىنى ئۆزگەرتىدىغانلىقىنى تەكشۈرۈڭ، ئۇنى كۆرۈڭ، ئاندىن ئېلان قىلىڭ ياكى تاشلاڭ.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>قايتىدىغان ئېلاننى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>كېيىنكى بىر نەشردە بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>تاپشۇرۇش</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>تاپشۇرۇشلار</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ياسالمىنى commit قىلىدۇ، بەلگە قويىدۇ ۋە %remote غا ئىتتىرىدۇ. ئىتتىرىش ھەرگىز مەجبۇرىي قىلىنمايدۇ؛ كېيىن خالىغان ئېلانغا قايتالايسىز.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ئىلگىرىكى قىسقۇچ بىلەن سېلىشتۇرغاندا: %added قوشۇلدى، %changed ئۆزگەردى، %removed ئۆچۈرۈلدى، %unchanged ئۆزگەرمىدى.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ئاخىرقى ئېلان بىلەن سېلىشتۇرغاندا.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>كىرىش ئۇچۇرى</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>خاس دائىرە</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>سازلاش چىقىرىمى، جەدۋەل توكېنلىرى، ئەڭگىمە كىملىكلىرى ۋە nonce لار ھەمىشە چىقىرىۋېتىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>ئورۇنلاشتۇرۇش ئاچقۇچى</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name نىڭ ئورۇنلاشتۇرۇش ئاچقۇچى</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>تاشلا</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ياسالمىنى تاشلا</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>دائىرە</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>بوش: تور بېكەتنىڭ ئادرېسى. بولمىسا شۇ تور بېكەتنىڭ ئىچكى ئادرېسى.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ئاخىرلاشتى</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ھەر بىر ئۇلانما ئاساسىي يول بىلەن باشلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ھەر بىر ئېلان static/%id/&lt;n&gt; بەلگىلىك بىر تاپشۇرۇشتۇر. قايتىش ئىلگىرىكى ئېلاننىڭ ھۆججەتلىرى بىلەن يېڭى تاپشۇرۇش ياسايدۇ: تارىخ ساقلىنىدۇ، ھېچقانداق بەلگە يۆتكەلمەيدۇ ۋە ھېچنېمە مەجبۇرىي قىلىنمايدۇ.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>قوشۇمچە ھۆججەتلەر</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>بەتلەرنى ئالىدىغان ئادرېس</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ھۆججەت</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ھۆججەتلەر</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>كەم ھۆججەتلەر</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>تۆۋەندىكى تور بېكەتنىڭ ھۆججەتلىرى</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>توپلىغىلى بولمىغان ھۆججەتلەر</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>بارماق ئىزى</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>قىسقۇچ</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH ئادرېسى ئۈچۈن. ئاچقۇچ ساقلىغاندىن كېيىن ياسىلىدۇ؛ ئۇنىڭ ئاشكارا يېرىمىنى ئامبارغا سىز قوشىسىز.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// ئادرېسى ئۈچۈن. GitHub: ئامباردا Contents ئوقۇش ۋە يېزىش ھوقۇقى بار ئىنچىكە (fine-grained) توكېن.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>مۇتەخەسسىسلەر ئۈچۈن. ئىتتىرىش تاماملانغان ھامان ئاممىۋى تور بېكەت ئۆزگىرىدۇ.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>جەدۋەللەر</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub ئامبىرىدىن ھەقسىز ساھىبخانا.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>تارماقتىن</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git ئادرېسى</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages چوڭلۇقى %site بولغان تور بېكەتكە ۋە %file بولغان ھۆججەتكە يول قويىدۇ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages چەكلىمىلىرى</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ھۆججەتلەرنى ئەينى ھالىتىدە ئېلان قىلىدۇ (_ بىلەن باشلانغان ھۆججەتلەر ئۈچۈن كېرەك).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub تارماقنى ئىتتىرىلگەن ھالىتىدە تەمىنلەيدۇ. كۆڭۈلدىكى.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab، Gitea، ئۆزىڭىزنىڭ مۇلازىمېتىرى: خالىغان git ئامبىرى.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ئىلگىرىكى بىر ئېلانغا قايت</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>ياردەم</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>يېتەكچى ھەققىدە ياردەم</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ئۇلارنى يوشۇر</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تارىخ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name نىڭ تارىخى</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ساھىبخانا</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ياسالمىنى قانداق قوبۇل قىلىدۇ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ئۆزگىرىشلەرنى تەكشۈردۈم</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>بۇنىڭ نېمىنى ئۆزگەرتىدىغانلىقىنى بىلىمەن</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>كىملىك</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ئۇ تاقالغان: ئېچىلمىغۇچە ھېچنېمە ياسىغىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ئۇ ئارقا سۇپىدا %user سۈپىتىدە ئىشلەيدۇ؛ بۇ بەتنى تاقىسىڭىز بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ۋەزىپە %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret مەخپىي قىممىتى سۈپىتىدە ساقلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>تۈرى</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ئاخىرقى ئېلان</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>بۇ بەتلەرنى چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>بۇ بۆلەكلەرنى چىقىرىۋەت</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>ئۇلانمىلار</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>قايتا يېزىلغان ئۇلانمىلار</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>جانلىق تور بېكەت</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ياسالمىنى كۆر</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>كىچىك ھەرپلەر، رەقەملەر، _ ۋە -، مەسىلەن github-public. ئۇ قىسقۇچ ۋە بەلگىلەرنىڭ (static/&lt;id&gt;/&lt;n&gt;) نامىنى بەلگىلەيدۇ، كېيىن ئۆزگەرتكىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>يېڭى ئاچقۇچ ياسا</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>نىشان قۇر</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ئاچقۇچنى ياسا</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ئالدى بىلەن ئامبارنى ساھىبخانىدا قۇرۇڭ؛ بوش ئامبارمۇ بولىدۇ.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ھۆججەت تىزىملىكى</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ئۇچۇر</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>كۆپ قىسىم بەتلەر</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نامى</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ئورنىتىش &gt; مەخپىي قىممەتلەر دىكى توكېننىڭ نامى</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>يېڭى نىشان</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>كېيىنكى</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ياق</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>تېخى تاپشۇرۇش يوق.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ئاچقۇچ ياسالمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php بۇيرۇق قۇرى پروگراممىسى تېپىلمىدى. migration.ini [AdminSettings] PhpCliPath غا ئۇنىڭ تولۇق يولىنى تەڭشەڭ.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>تېخى بەلگە يوق.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>تېخى نىشان يوق.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>يوق</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ياسالمىدا يوق.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>تېخى ھېچنېمە ئېلان قىلىنمىدى.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>تېخى ھېچنېمە ئېلان قىلىنمىدى: ھەر بىر ھۆججەت يېڭى.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>ئۇقتۇرۇش</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>ۋاقىت جەدۋىلى بويىچە</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>كونترول سۇپىسىدا</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>مۇلازىمېتىردا: ./console exp:static:serve %id ئۇنى ئوخشاش شەكىلدە تەمىنلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ھەر قۇردا بىر يول، * خالىغان بۆلەككە ماس كېلىدۇ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>نىشان بىلەن پەقەت بىر نام ساقلىنىدۇ؛ توكېن ياكى ئاچقۇچنىڭ ئۆزى ئورنىتىش &gt; مەخپىي قىممەتلەر دە قالىدۇ ۋە ھېچقانداق خاتىرىدە كۆرۈنمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>پەقەت بەتلەر تىلغا ئالغانلىرى</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>پەقەت توكېن بىلەن. env:NAME بۇنىڭ ئورنىغا مۇلازىمېتىرنىڭ بىر مۇھىت ئۆزگەرگۈچىسىنى ئوقۇيدۇ.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ئالدىن كۆرۈشنى ئاچ</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ياسالمىنى نىشاننىڭ قىسقۇچىدىن ساھىبخانا تەمىنلەيدىغاندەك ئاچىدۇ. ئۇلانما سىز ئۈچۈن بىر سائەت ئىشلەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ئىختىيارىي. بوش: ئېلان قىلىنغىنى.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ئىختىيارىي. دائىرە بولسا تور بېكەت ئۇنىڭ يىلتىزىدا تەمىنلىنىدۇ.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>چىقىرىم</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>بەتلەر</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>نىشاننىڭ بەتلىرى</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>رەت قىلىنغان بەتلەر</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>كېيىنكى بىر تەرەپ قىلىش</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ئالدىن كۆرۈش</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ئالدىن كۆرۈش ۋە ئېلان قىلىش</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>ئالدىن كۆرۈش ۋە ئېلان قىلىش: %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ياسالمىنى ئالدىن كۆر</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ئىلگىرىلەش</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>ئاممىۋى ئادرېس</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>ئاشكارا ئاچقۇچ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ئېلان قىل</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>تور بېكەتنىڭ ستاتىك نۇسخىسىنى GitHub Pages ياكى خالىغان git ساھىبخانىسىغا ئېلان قىلىڭ: ئۇنى ياساڭ، ئۆزگىرىشلەرنى تەكشۈرۈڭ، ئېلان قىلىڭ ۋە زۆرۈر بولغاندا ئىلگىرىكى ئېلانغا قايتىڭ.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>قايتىدىغان ئېلان</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ئېلانلار</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ئىتتىرىش</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>قوللانمىنى ئوقۇڭ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>خاتىرە</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رەت قىلىندى</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>نىسبىي</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>قايتا يۈكلە</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ئۆچۈرۈلدى</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ئاچقۇچنى ئالماشتۇر: كونىسى ئىشلىمەس بولىدۇ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>دوكلات</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ياسالمىنىڭ دوكلاتى</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ئامبار</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>تەكشۈرۈش</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>تەكشۈرۈش ھەر بىر تەڭشەكنى تەكشۈرىدۇ ۋە يېزىلىدىغان قۇرلارنى كۆرسىتىدۇ. تېخى ھېچنېمە ساقلانمىدى.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>قايتۇر</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>قايتۇرۇش</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ساقلا</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ۋاقىت جەدۋىلى</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ئىزدەش بېتى</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>بۆلەك كىملىكلىرى، پەش بىلەن ئايرىلغان.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ئۇلارنى جانلىق تور بېكەتكە يۆنەلدۈر</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>تەڭشەك</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>تەڭشەكلەر</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name نىڭ تەڭشەكلىرى</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ئورنىتىش</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>ئورنىتىش &gt; مەخپىي قىممەتلەر</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>تىزىملىكلەردە كۆرسىتىلىدۇ، مەسىلەن «GitHub Pages دىكى ئاممىۋى تور بېكەت».</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App بىلەن كىرىش GitHub بىرىكتۈرۈلمىسى بىلەن بىللە كېلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>تور بېكەت</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ئېلان قىلىنىدىغان تور بېكەت</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>چوڭلۇقى</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>چوڭلۇق ۋە چەكلىمىلەر</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ياسالمىنىڭ چوڭلۇقى</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>كونىراپ قالغان بەتلەر</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>باشلانغان</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user تەرىپىدىن %time دە باشلاندى.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ستاتىك ئېلان قىلىش</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ستاتىك ئېلان قىلىش تاقالغان</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ستاتىك ئېلان قىلىش تاقالغان.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ستاتىك ئېلان قىلىش تاقالغان. ئالدى بىلەن ئۇنى ئورنىتىش &gt; ستاتىك ئېلان قىلىش دا ئېچىڭ.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ستاتىك ئېلان قىلىش ئوچۇق.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total قەدەمنىڭ %step - قەدىمى</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>قەدەملەر</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>تازىلاش</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>تاقا</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ئاچ</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ستاتىك ئېلان قىلىشنى ئاچ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>بەلگە</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>بەلگىلەر</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>نىشان</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>نىشانلارنى قۇرغىلى ۋە ئۆزگەرتكىلى بولىدۇ، ئەمما ئۇ ئېچىلمىغۇچە ھېچنېمە ياسالمايدۇ ياكى ئېلان قىلىنمايدۇ.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ئىزدەش ماتورلىرىغا نېمىنى ئوقۇشنى ئېيتىدۇ.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ياسالمىنى تاشلىغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ياسالما ئاخىرقى ئېلان بىلەن ئوخشاش: ئېلان قىلىدىغان نەرسە يوق.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ياسالما تاشلاندى: قىسقۇچتا يەنە ئاخىرقى ئېلان بار.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>كۆڭۈلدىكى تەڭشەكلەر كۆپ قىسىم تور بېكەتلەرگە ماس كېلىدۇ.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>قىسقۇچتا تېخى ئېلان قىلىنمىغان ياسالما بار؛ يېڭى ياسالما ئۇنىڭ ئورنىنى ئالىدۇ.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ۋەزىپىلەرنىڭ قىسقۇچىغا يازغىلى بولمايدۇ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ۋەزىپىنى تەييارلىغىلى بولمىدى: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ۋەزىپىنى باشلىغىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ۋەزىپە ئاخىرلاشتى. ئۇنىڭ دوكلاتى يۈكلىنىۋاتىدۇ.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ۋەزىپە ئۈچۈن كىرگەن ئىشلەتكۈچى كېرەك.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ۋەزىپە باشلاندى، ئەمما جەريان كىملىكىنى مەلۇم قىلمىدى. %detail نى تەكشۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ئاچقۇچ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ئەڭ چوڭ ھۆججەت: %path، %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>يېزىلىدىغان قۇرلار</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ئىزدەش ماتورلىرى ئۈچۈن بەتلەر تىزىملىكى؛ ئاممىۋى ئادرېس كېرەك.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>بەتلەر كىرمىگەن زىيارەتچى كۆرگەندەك ئېلىنىدۇ. باشقۇرۇش ۋە تەھرىرلەش تور بېكەت زىيارەتلىرى ھەرگىز تەۋسىيە قىلىنمايدۇ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>ئىلگىرىلەشنى ئىز قوغلىغىلى بولمىدى. ۋەزىپىنىڭ ئەھۋالىنى كۆرۈش ئۈچۈن بەتنى قايتا يۈكلەڭ.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ئاچقۇچنىڭ ئاشكارا يېرىمى:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>تارماقنىڭ يىلتىزى</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>مەخپىي قىممەت ئامبىرى تېخى تەڭشەلمىگەن (./console exp:upgrade --apply ئۇنىڭ جەدۋىلىنى قۇرىدۇ)، شۇڭا ھېچقانداق ئاچقۇچنى ساقلىغىلى بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>مۇلازىمېتىر ئۆزى كىرىدۇ (ئۆزىنىڭ SSH ئاچقۇچى ياكى كىرىش ئۇچۇرى ياردەمچىسى بىلەن)، ياكى ئامبار بۇ مۇلازىمېتىردا.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>تەڭشەكنى يازغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>تەڭشەكلەر توغرا. بۇ قۇرلار يېزىلىدۇ:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>تەڭشەك ھۆججىتىنى ئوقۇغىلى بولمايدۇ: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>تور بېكەت شۇ ئېلاننىڭ ھۆججەتلىرىگە قايتىدۇ؛ تېخى ئېلان قىلىنمىغان ياسالما ئالدى بىلەن ئېلان قىلىنىشى ياكى تاشلىنىشى كېرەك.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>مەۋجۇت بولمىغان ئادرېسلار ئۈچۈن تور بېكەتنىڭ ئۆز بېتى.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>نىشاننى ساقلىغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>نىشان تېخى بۇ ئاچقۇچ بىلەن كىرمەيدۇ: ئۇنىڭ تەڭشەكلىرىدە «بۇ نىشان ئۈچۈن ياسالغان ئورۇنلاشتۇرۇش ئاچقۇچى» نى تاللاڭ.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>نىشانلارنى ئوقۇغىلى بولمىدى: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>تېخى تەكشۈرۈلىدىغان ياسالما يوق.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>بۇ ئورنىتىلمىدا ئالدى تەرەپ تور بېكەت زىيارىتى يوق. باشقۇرۇش ۋە تەھرىرلەش تور بېكەت زىيارەتلىرى ھەرگىز ئېلان قىلىنمايدۇ.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>بۇ بەت ۋەزىپىنى داۋاملىشىش جەريانىدا ئىز قوغلايدۇ؛ بەت تاقالغاندا ئۇ ئارقا سۇپىدا داۋاملىشىدۇ.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>بۇ نىشاننىڭ تېخى ئورۇنلاشتۇرۇش ئاچقۇچى يوق.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>بۇ نىشان بۇ يەردە تېخى ياسالمىغان.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>بۇ نىشاننىڭ ئاچقۇچى بار.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>بۇ ياسالمىنى تاشلايدۇ: قىسقۇچتا يەنە ئاخىرقى ئېلان بولىدۇ. جانلىق تور بېكەت ئۆزگەرمەيدۇ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ئالدى بىلەن «ئۆزگىرىشلەرنى تەكشۈردۈم» نى بەلگىلەڭ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ۋاقىت</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>قوزغاتقۇچلار</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>بەلگىنىڭ نامىنى قايتا كىرگۈزۈڭ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ئۆزگەرمىدى</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ۋېبخۇك</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>نېمە</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>نېمە ئۆزگىرىدۇ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ھەر بىر ھۆججەتنىڭ نېمە ئىكەنلىكى؛ ھەمىشە يېزىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ۋەزىپىنىڭ نېمە قىلغانلىقى ۋە ئۇنىڭ خاتىرىسى. بۇ يەردە باشلانغان ۋەزىپە بۇ بەت تاقالغاندا ئارقا سۇپىدا داۋاملىشىدۇ.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ۋەزىپە خاتالىق سۈپىتىدە چىقارغانلار</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>بەتلەر تىلغا ئالغانلار ۋە ئېلان قىلىنغان مەزمۇننىڭ ھەر بىر رەسىمى</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>قاچان</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ئېلان مەغلۇپ بولغاندا</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ئېلان مۇۋەپپەقىيەتلىك بولغاندا</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>مەزمۇن ئېلان قىلىنغاندا</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>نۇسخىدا يوق نەرسىلەرگە (ئىزدەش، كىرىش) بولغان ئۇلانمىلارنىڭ قەيەرگە بارىدىغانلىقى.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>ستاتىك نۇسخىنىڭ قەيەردىن تەمىنلىنىدىغانلىقى.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>قايسى تور بېكەتنىڭ ئېلان قىلىنىدىغانلىقى ۋە نىشاننىڭ نامى.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>خالىغان يول ئاستىدا ئىشلەيدۇ. كۆڭۈلدىكى.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>خاس دائىرە بەلگىلەنگەندە يېزىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ھەئە</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>بۇ يەردە ۋە كونترول سۇپىسىدا ھەمىشە قولدا ياساپ ئېلان قىلالايسىز.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>پەقەت نام؛ قىممىتى ئورنىتىش &gt; مەخپىي قىممەتلەر دە قالىدۇ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path ئاستىدا</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>دوكلاتسىز ئاخىرلاشتى</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>قوشۇمچە</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>مەغلۇپ بولدى</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ھۆججەت</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages ياكى docs قىسقۇچى بىلەن main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ساھىبخانىسى</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (توكېن بىلەن) ياكى git@github.com:owner/repo.git (ئورۇنلاشتۇرۇش ئاچقۇچى بىلەن)؛ ئۇنىڭدا ھەرگىز پارول ياكى توكېن بولماسلىقى كېرەك.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/، تور بېكەت خەرىتىسى ۋە ئۆلچەملىك ئۇلانمىلار ئۈچۈن.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>رەسىم</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ھەرگىز</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ياق</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>يىراقتىكى ئامبار يوق</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>يوق: تاپشۇرۇشلار قىسقۇچتا قالىدۇ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>يوق: ھېچنېمە ئۆزگەرمىدى</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ئىتتىرىلمىدى</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ھېچنېمە ئۆزگەرمىدى</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>بەت</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>مۇۋەپپەقىيەتلىك</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open چەكلەنگەن، شۇڭا بۇ يەردە ۋەزىپە باشلىغىلى بولمايدۇ. مۇلازىمېتىردا ./console exp:static:build نى ئىشلىتىڭ.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ئېلان</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ئېلان قىلىندى</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ئىتتىرىش كۈتۈۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ئىتتىرىلدى</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رەت قىلىندى</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>نىسبىي</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>قايتۇرۇش</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>قايتۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ئىجرا بولۇۋاتىدۇ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>پەقەت قىسقۇچ</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME ھۆججىتىگە يېزىلىدۇ. دائىرىنىڭ DNS ىنى ساھىبخانا چۈشەندۈرگەندەك ئۇنىڭغا قارىتىڭ؛ HTTPS نىڭ ئىشلەشكە باشلىشى بىر ئاز ۋاقىت ئالىدۇ.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ھەئە، تېخى ئېلان قىلىنمىدى</translation>
     </message>
 </context>
 </TS>

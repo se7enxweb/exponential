@@ -1,0 +1,143 @@
+<?php
+/**
+ * The staticpublish/target view (/staticpublish/target/new and /staticpublish/target/<id>): the wizard that makes or
+ * changes a target, one step at a time (page/staticpublish_wizard.js; without JavaScript all steps show at once):
+ *
+ *   1. the site: the target's id and name, the front siteaccess (administration siteaccesses are never offered)
+ *   2. the host: GitHub Pages or another git host
+ *   3. the credential: a token named in Setup > Secrets, a deploy key made for the target, or none
+ *   4. the repository: the git address, branch, folder and (GitHub) branch or Actions
+ *   5. links and base path, with a live example of a rewritten link
+ *   6. the custom domain
+ *   7. extras, post-processing, search, forms, exclusions, the crawl
+ *   8. triggers, schedule, notifications, webhook
+ *   9. review: Review checks the settings (expStaticTarget::validate()) and shows the lines that will be written to
+ *      settings/override/staticcache.ini.append.php; Save writes them through expIniEditor (backup, audit) and asks
+ *      "Verify it's you". A target with a deploy key then opens its keys page.
+ *
+ * Policy staticpublish/setup (for the target; a new target needs it without a Target limitation).
+ *
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
+ */
+
+namespace Exponential\View\Kernel\Staticpublish
+{
+
+class Target extends Page
+{
+    public function run( array $scope )
+    {
+        $Params = $scope['Params'];
+        $Module = $Params['Module'];
+        $param = isset( $Params['TargetID'] ) ? trim( rawurldecode( (string)$Params['TargetID'] ) ) : 'new';
+        $isNew = $param === '' || $param === 'new';
+        $context = \expStaticTarget::siteAccessContext();
+        $existing = \expStaticTarget::ids();
+
+        if ( $isNew )
+        {
+            if ( !\expStaticAdmin::canDoAll( 'setup' ) )
+                return $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' );
+            $target = null;
+            $id = '';
+            $settings = \expStaticAdmin::newSettings( $context );
+        }
+        else
+        {
+            $target = self::target( array( 'TargetID' => $param ), 'setup' );
+            if ( $target === null )
+                return $Module->handleError( \expStaticTarget::get( $param ) ? \eZError::KERNEL_ACCESS_DENIED : \eZError::KERNEL_NOT_FOUND, 'kernel' );
+            $id = $target->id();
+            $settings = $target->settings();
+        }
+
+        $errors = array();
+        $warnings = array();
+        $messages = array();
+        $review = false;
+        $diff = '';
+        $enable = !\expStaticTarget::enabled();
+        if ( self::isPost() && isset( $_POST['EditButton'] ) )
+        {
+            // back from the review to the form, with what was entered
+            if ( $isNew )
+                $id = isset( $_POST['TargetIdentifier'] ) ? strtolower( trim( (string)$_POST['TargetIdentifier'] ) ) : '';
+            $settings = \expStaticAdmin::settingsFromPost( $_POST, $id ) + $settings;
+            $enable = !empty( $_POST['EnableOnSave'] );
+        }
+        else if ( self::isPost() && ( isset( $_POST['ReviewButton'] ) || isset( $_POST['SaveButton'] ) ) )
+        {
+            if ( $isNew )
+                $id = isset( $_POST['TargetIdentifier'] ) ? strtolower( trim( (string)$_POST['TargetIdentifier'] ) ) : '';
+            $settings = \expStaticAdmin::settingsFromPost( $_POST, $id ) + $settings;
+            $enable = !empty( $_POST['EnableOnSave'] );
+            $check = \expStaticAdmin::check( $id, $settings, $context, $existing, $isNew );
+            $errors = $check['errors'];
+            $warnings = $check['warnings'];
+            if ( !$errors && isset( $_POST['SaveButton'] ) )
+            {
+                $problem = \expStaticAdmin::saveTarget( $id, $settings, $isNew, $enable );
+                if ( $problem === '' )
+                {
+                    $saved = \expStaticTarget::get( $id ) ?: new \expStaticTarget( $id, $settings );
+                    if ( strpos( (string)$settings['Credential'], 'sshkey:' ) === 0 && !\expStaticAdmin::deployKey( $saved )['exists'] )
+                        return $Module->redirectTo( '/staticpublish/keys/' . $id );
+                    return $Module->redirectTo( '/staticpublish/build/' . $id );
+                }
+                $messages[] = array( 'kind' => 'bad', 'text' => self::t( 'The target could not be saved: %problem', array( '%problem' => $problem ) ) );
+            }
+            else if ( !$errors )
+            {
+                $review = true;
+                try
+                {
+                    $diff = \expStaticAdmin::editor( $id, $settings, $enable )->diff();
+                }
+                catch ( \Throwable $e )
+                {
+                    $messages[] = array( 'kind' => 'bad', 'text' => self::t( 'The settings file cannot be read: %problem', array( '%problem' => $e->getMessage() ) ) );
+                    $review = false;
+                }
+            }
+        }
+
+        $front = array();
+        foreach ( $context['siteaccesses'] as $name )
+            if ( !in_array( $name, $context['admin'], true ) && !\expStaticTarget::adminName( $name ) )
+                $front[] = array( 'name' => $name, 'url' => isset( $context['urls'][$name] ) ? $context['urls'][$name] : '' );
+
+        $credential = \expStaticAdmin::credentialChoice( $settings['Credential'] );
+        return self::page( 'target.tpl', array(
+            'target' => $target ? \expStaticAdmin::overview( $target ) : null,
+            'view' => 'target',
+            'is_new' => $isNew,
+            'id' => $id,
+            'settings' => $settings,
+            'credential' => $credential,
+            'siteaccesses' => $front,
+            'secret_names' => \expStaticAdmin::secretNames(),
+            'key' => $target ? \expStaticAdmin::deployKey( $target ) : null,
+            'key_secret' => \expStaticCredentials::keySecretName( $id !== '' ? $id : '<id>' ),
+            'extras' => \expStaticTarget::EXTRAS,
+            'post_process' => \expStaticTarget::POST_PROCESS,
+            'triggers' => \expStaticTarget::TRIGGERS,
+            'notify' => \expStaticTarget::NOTIFY,
+            'link_relative' => \expStaticAdmin::linkExample( 'relative', '', '/news/', '/about-us/team' ),
+            'link_base' => \expStaticAdmin::linkExample( 'base-path', $settings['BasePath'], '/news/', '/about-us/team' ),
+            'errors' => $errors,
+            'warnings' => $warnings,
+            'messages' => $messages,
+            'review' => $review,
+            'diff' => $diff,
+            'enabled' => \expStaticTarget::enabled(),
+            'enable' => $enable,
+            'site_limit' => \expStaticAdmin::GITHUB_SITE_BYTES,
+            'file_limit' => \expStaticAdmin::GITHUB_FILE_BYTES,
+        ), self::path( $isNew ? self::t( 'New target' ) : self::t( 'Settings' ), $target ) );
+    }
+}
+
+}
+?>

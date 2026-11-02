@@ -64,8 +64,9 @@ ExtensionRepositories[]
 > Moderation: Setup > Recent content, the newest content with its hold and actions on a selection  
 > (doc/eng-us/features/6.0/moderation.md)  
 > The kernel's secret store (doc/eng-us/features/6.0/secret-store.md)  
+> Static publishing: Setup > Static publishing, targets, builds, preview, publish, history (doc/eng-us/help/static-publishing/README.md)  
 
-Standard: eine Liste mit 39: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
+Standard: eine Liste mit 40: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -93,7 +94,7 @@ ModuleList[]=migration
 ModuleList[]=moderation
 ModuleList[]=notification
 ModuleList[]=oauth
-# ... 19 weitere in der ausgelieferten Datei
+# ... 20 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

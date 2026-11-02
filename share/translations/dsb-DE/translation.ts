@@ -15097,6 +15097,14 @@ Pokazka: pakety se njewótinstalěruju.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Nejnowše wopśimjeśe, což jo za pśespytowanje zaźaržane, a akcije za wuběrk.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Statisku kopiju sedła na GitHub Pages abo na kuždy git-hosting wózjawiś.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiske wózjawjanje</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22096,6 +22104,18 @@ Pokazka: pakety se njewótinstalěruju.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Wótegrona skłaźonych napšašowanjow GraphQL API a klase wopśimjeśa jogo šemy.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Statisku kopiju na GitHub Pages abo na kuždy git-hosting wózjawiś</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiske wózjawjanje</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statiski pufrowak dodawa boki z toś togo serwera. Aby statisku kopiju sedła wózjawił na drugem městnje, na GitHub Pages abo na kuždem git-hostingu, wužywajśo statiske wózjawjanje.</translation>
     </message>
 </context>
 <context>
@@ -76153,6 +76173,14 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Změny na instalaciji ako dataje: jich staw, běgi, wuwjasć a slědk wześ.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Statisku kopiju sedła na GitHub Pages abo na kuždy git-hosting wózjawiś.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiske wózjawjanje</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80592,6 +80620,222 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The run could not be started.</source>
         <translation>Běg njejo se dał startowaś.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Změny nagrawaś</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mjaztym až nagrawanje běžy, se to, což w administraciji abo w bocnej lejsće sedła změnjaśo, ako kšace migracije zachowajo: wopśimjeśe, klase, role a pšawidła, wótrězki, wužywarje a kupki, URL-aliase, nastajenja. Zastajśo jo, gaž sćo gótowe, glědajśo, což jo zapópadnuło, a napórajśo z njogo migraciju.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nagrawki njejsu se dali cytaś: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabele nagrawkow hyšći njeeksistěruju: wuwjeźćo nejpjerwjej aktualizaciju (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Nagrawanje jo w migration.ini wótšaltowane ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Móje změny</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nagrawa jano to, což wy změnjaśo, źožkuli to změnjaśo, daniž jo njezastajiśo.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Nagrawanje</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>wót %time, dotychměst změnow: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiket (opcionalny)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Pokazaś, což jo zapópadnuło</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Nagrawanje zastajiś</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Nagrawanje mójich změnow zachopiś</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Wokno za ceło sedło</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Nagrawa kuždu změnu kuždego wužywarja a konsole, daniž se njezacynijo. Pśi wótcynjanju musyśo wobkšuśiś, až sćo to wy.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wótcynjone</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Wokno zacyniś</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Wokno za ceło sedło wótcyniś</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Nagrawki</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Konto wužywarja (pśizjawjeńske mě, e-mail, gronidło) a póla wužywarskich kontow se nigda njenagrawaju.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Změny</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ceło sedło</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Změny wužywarja %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Zastajone</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Hyšći žedna nagrawka.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Nagrawka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Wše nagrawki</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migracija, kótaraž by z njeje nastała</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Změny zjadnośone do jadnogo kšaca na kuždu změnjonu wěc: což by migracija napórana z toś teje nagrawki cyniła.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migracija dajo se z njeje napóraś, ako skóro ako toś ta instalacija YAML-družyny kšacow %types ma.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Wědobnje wuwóstajone: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nic njejo se nagrało.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Což jo zapópadnuło</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Změnow: %count, w pórěźe, w kótaremž su se pśewjadli.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změna</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Kšac</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Pótrjefijo</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Hyšći %count: ./console exp:migration:record:show wše nalicyjo.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Zachyśiś</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Wótpórajo nagrawku a to, což jo zapópadnuła. Což jo se změniło, wóstanjo změnjone.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jo, toś tu nagrawku zachyśiś</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nagrawa se…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Wašne změny se za migraciju nagrawaju.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kužda změna na toś tom sedle se za migraciju nagrawa (wokno za ceło sedło).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nagrawanje cełego sedła jo se zachopiło: kužda změna kuždego wužywarja se nagrawa, daniž jo njezastajiśo.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nagrawanje jo se zachopiło: wašne změny se nagrawaju, daniž jo njezastajiśo.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Nagrawanje zastajone. Což jo zapópadnuło, wóstanjo, daniž jo njezachyśiśo.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Nagrawka a jeje tšojenja su wótpórane.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nagrawka %id njeeksistěrujo.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Markěrujśo nejpjerwjej „Jo, toś tu nagrawku zachyśiś“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Jano wužywaŕ, kótaryž jo nagrawał, smějo nagrawanje pósejźenja zastajiś.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Wubjeŕśo nagrawanje, kótarež ma se zastajiś.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Nagrawanje toś teje družyny južo běžy.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nagrawka njedajo se změniś: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81255,6 +81499,1364 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Released.</source>
         <translation>Wuswobodnjone.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Wšykne cile</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Slědne wózjawjenje</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Wózjawśo dermotnu statisku kopiju swójogo sedła na GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Zestarjone boki</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiske wózjawjanje</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statiske wózjawjanje jo wušaltowane.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cil</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Cile njejsu se dali cytaś: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>nadawk běžy</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>twarjenje za kontrolu</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>to schowaś</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>cil napóraś</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nigdy</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>nawod cytaś</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added pśidane, %changed změnjone, %removed wótwónoźone</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes z %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Dalšne %count njejsu nalicone.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Napisane boki: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ma %size, wěcej ako hosting za jadnu dataju dowólujo.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % limita</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag jo wózjawjenje, kótarež sedło něnto ma.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: nadawk %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repozitorium/ za projektowe sedło GitHub; prozne za swójsku domenu abo wužywarske sedło.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Sedło</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Hosting</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Pśizjawjenje w repozitoriumje</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Repozitorium</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Wótkaze a zakładna sćažka</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Waša swójska domena</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Co twarjenje wopśimujo</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Gdy se wózjawijo</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Pśeglědowaś a składowaś</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Projektowe sedło GitHub lažy pód /&lt;repository&gt;/; relatiwne wótkaze tam a wšuźi howac funkcioněruju.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Twarjenje wótwołujo kuždy bok sedła %site, ako jen wóglědowaŕ bźez pśizjawjenja wiźi, pśepišo wótkaze, kopěrujo dataje a pišo wuslědk do zarědnika cila. Nic se njewózjawijo, až njejsćo twarjenje skontrolěrował a na Wózjawiś tłocył.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Wuraz cron, na pśikład 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Deploy-kluc se składujo ako pótajmstwo %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Deploy-kluc dowólujo toś tej instalaciji pushowaś pśez SSH do jadnogo repozitoriuma a nikaž howac. Jogo priwatna połojca wóstanjo w Zarědowanje &gt; Pótajmstwa; jano zjawna połojca se pokazujo.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Deploy-kluc napórany za toś ten cil</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Deploy-kluc se pśizjawja pśez SSH: změńśo git-adresu na adresu SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Nadawk běžy, startowany wót %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Nadawk toś togo cila hyšći běžy (%detail). Cakajśo, až se skóńcy.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Nadawk toś togo cila hyšći běžy. Cakajśo, až se skóńcy.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Wótkaz z boka /news/ na bok /about-us/team se napišo ako</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Nowy deploy-kluc jo se napórał. Pśidajśo něnto jogo zjawnu połojcu repozitoriumoju.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Bok, kótaryž pó wótstronjenju hyšći wudaśe za pytanje zmólkow, formularny token abo ID pósedźenja wopśimujo, se nigdy njewózjawijo.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Slědkwześe jo za ekspertow: markěrujśo „Wěm, co to změnijo“ a zapódajśo mě taga hyšći raz.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Sedło smějo měś až do %site, jadna dataja až do %file, z něźi 100 GB wobchada na mjasec. Pśi dermotnem tarifje musy repozitorium zjawne byś. GitHub Pages njejo myslony za wobchody abo druge wikowne transakcije.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Cil jo jadno sedło wózjawjone do jadnogo git-repozitoriuma. How se nic njetwari a njewózjawijo: Składowaś pišo nastajenja do settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Cil jo jadno sedło wózjawjone na jadnom městnje, na pśikład wašo zjawne sedło na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token ze Zarědowanje &gt; Pótajmstwa</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Źěłowy wótběg (workflow) repozitoriuma to wózjawijo.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Pśidajśo toś ten zjawny kluc repozitoriumoju z pšawom pisanja. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, markěrujśo Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Pśidane</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Drugi git-hosting</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Drugi proces źěła na toś tom cilu: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Slědk</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Zakładna sćažka</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pjerwjej</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Pód zakładneju sćažku</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Gałuz</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Wobškóźone wótkaze</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Wobškóźone wótkaze w twarjenju</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Twarjenje</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Twarjenje %id wót %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name twariś</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Něnto twariś</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Twarjenje za kontrolu</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Wót</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Manuelnje, how</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Pśetergnuś</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změniś</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Změnjone</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Změny</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Nejpjerwjej skontrolěrowaś</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kontrolěrujśo toś te nastajenja</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kontrolěrujśo, co twarjenje změnijo, woglědajśo se jo, a pótom jo wózjawśo abo zachyśćo.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Wubjeŕśo wózjawjenje, ku kótaremuž cośo se wrośiś.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Pśiźo z pózdźejšeju wersiju.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commitowanje</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commity</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Commitujo twarjenje, tagujo jo a pushujo jo do %remote. Pushowanje se nigdy njewunuźijo; pózdźej móžośo se ku kuždemu wózjawjenjeju wrośiś.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>W pśirownanju z pjerwjejšnym zarědnikom: %added pśidane, %changed změnjone, %removed wótwónoźone, %unchanged njezměnjone.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>W pśirownanju ze slědnym wózjawjenim.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Pśizjawjeńske daty</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Swójska domena</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Wudaśe za pytanje zmólkow, formularne tokeny, ID pósedźenjow a nonce se pśecej wótstronijo.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Deploy-kluc</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Deploy-kluc za %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Zachyśiś</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Twarjenje zachyśiś</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domena</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Prozne: adresa sedła. Howac interna adresa togo samogo sedła.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Skóńcone</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Kuždy wótkaz zachopijo ze zakładneju sćažku.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Kužde wózjawjenje jo commit z tagom static/%id/&lt;n&gt;. Slědkwrośenje napórajo nowy commit z datajami pjerwjejšnego wózjawjenja: historija wóstanjo, žeden tag se njepśesunjo a nic se njewunuźijo.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Pśidatki</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Boki wótwołaś z</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dataja</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dataje</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Felujuce dataje</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Dataje sedła</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Dataje, kótarež njejsu se dali zběraś</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Palcowy wótśišć</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Zarědnik</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Za adresu SSH. Kluc se napórajo pó składowanju; jogo zjawnu połojcu pśidajośo repozitoriumoju.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Za adresu https://. GitHub: drobnje wótstopnjowany token (fine-grained) z pšawom Contents za cytanje a pisanje w repozitoriumje.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Za ekspertow. Zjawne sedło se změnijo, ako skjeržej ako jo pushowanje dokóńcone.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formulary</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Dermotny hosting z repozitoriuma GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Z gałuzy</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-adresa</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages dowólujo sedło wót %site a dataju wót %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Limity GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages wózjawijo dataje tak, ako su (trěbne za dataje, kótarež zachopiju z _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub dodawa gałuz tak, ako jo se pushowała. Standard.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, waš swójski serwer: kužde git-repozitorium.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>K pjerwjejšnemu wózjawjenjeju se wrośiś</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Pomoc</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Pomoc z asistentom</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Je schowaś</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historija</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historija %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hosting</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Kak GitHub Pages twarjenje dostawa</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Změny su skontrolěrowane</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Wěm, co to změnijo</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Jo wušaltowane: nic njedajo se twariś, až njejo zašaltowane.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Běžy w slězynje ako %user; móžośo toś ten bok zacyniś.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Nadawk %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Składowane ako pótajmstwo %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Družyna</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Slědne wózjawjenje</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Toś te boki wuwześ</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Toś te wótrězki wuwześ</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Wótkaze</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Pśepisane wótkaze</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Žywe sedło</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Twarjenje se woglědaś</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Małe pismiki, cyfry, _ a -, na pśikład github-public. Pomjenijo zarědnik a tagi (static/&lt;id&gt;/&lt;n&gt;) a njedajo se pózdźej změniś.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Nowy kluc napóraś</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Cil napóraś</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Kluc napóraś</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Napórajśo nejpjerwjej repozitorium pla hostinga; prozne jo w pórěźe.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest datajow</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Powěsć</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Nejwěcej bokow</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Mě</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Mě tokena w Zarědowanje &gt; Pótajmstwa</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Nowy cil</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Dalej</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ně</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Hyšći žeden commit.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Žeden kluc njejo se napórał: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Žedna binarna dataja php za pśikazowu smužku njejo se namakała. Stajśo migration.ini [AdminSettings] PhpCliPath na jeje dopołnu sćažku.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Hyšći žeden tag.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Hyšći žeden cil.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Žedne</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Njejo w twarjenju.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Hyšći nic njejo se wózjawiło.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Hyšći nic njejo se wózjawiło: kužda dataja jo nowa.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Powěźeś</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Pó casowem planje</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Na konsoli</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Na serwerje: ./console exp:static:serve %id jo dodawa na samsny part.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Jadna sćažka na smužku, * wótpowědujo kuždemu źěloju: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Z cilom se jano mě składujo; samy token abo kluc wóstanjo w Zarědowanje &gt; Pótajmstwa a se nigdy w protokolu njepokažo.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Jano to, což boki pomjenjuju</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Jano z tokenom. env:NAME město togo cyta wariablu wobswěta serwera.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Pśeglěd wócyniś</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Wócynijo twarjenje tak, ako jo hosting buźo dodawaś, ze zarědnika cila. Wótkaz funkcioněrujo za was jadnu góźinu.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opcionalne. Prozne: to, což jo se wózjawiło.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opcionalne. Z domenu se sedło w jeje kórjenju dodawa.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Wudaśe</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Boki</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Boki cila</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Wótpokazane boki</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Dodatne wobźěłowanje</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pśeglěd</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Pśeglěd a wózjawjenje</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Pśeglěd a wózjawjenje %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Pśeglěd twarjenja</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Póstup</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Zjawna adresa</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Zjawny kluc</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Wózjawiś</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Wózjawśo statisku kopiju sedła na GitHub Pages abo na kuždy git-hosting: twarśo ju, kontrolěrujśo změny, wózjawśo a wrośćo se, gaž trjebaśo, k pjerwjejšnemu wózjawjenjeju.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Wózjawjenje za slědkwrośenje</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Wózjawjenja</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Pushowanje</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Nawod cytaś</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Zapisk</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wótpokazane</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatiwny</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Znowego zacytaś</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Wótwónoźone</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Kluc wuměniś: stary pśestanjo funkcioněrowaś</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rozpšawa</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Rozpšawa wó twarjenju</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitorium</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Pśeglědowanje</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Pśeglědowanje kontrolěrujo kužde nastajenje a pokazujo smužki, kótarež se napišu. Hyšći nic njejo składowane.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Slědk wześ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Slědkwześe</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Składowaś</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Casowy plan</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Pytański bok</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ID wótrězkow, wótźělone pśez komy.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Je k žywemu sedłu pósłaś</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Nastajenje</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastajenja</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Nastajenja %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Zarědowanje</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Zarědowanje &gt; Pótajmstwa</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Pokazujo se w lisćinach, na pśikład „Zjawne sedło na GitHub Pages“.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Pśizjawjenje z GitHub App pśiźo z integraciju GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sedło</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Sedło za wózjawjenje</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Wjelikosć</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Wjelikosć a limity</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Wjelikosć twarjenja</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Zestarjone boki</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startowane</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Startowane wót %user %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staw</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiske wózjawjanje</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statiske wózjawjanje jo wušaltowane</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statiske wózjawjanje jo wušaltowane.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statiske wózjawjanje jo wušaltowane. Zašaltujśo jo nejpjerwjej w Zarědowanje &gt; Statiske wózjawjanje.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statiske wózjawjanje jo zašaltowane.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Kšac %step z %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Kšace</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Wótstronjenje</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Wušaltowaś</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Zašaltowaś</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Statiske wózjawjanje zašaltowaś</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Git-tag</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Git-tagi</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cil</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Cile daju se napóraś a změniś, ale nic se njetwari a njewózjawijo, až njejo zašaltowane.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Groni pytnicam, co maju cytaś.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Twarjenje njejo se dało zachyśiś: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Twarjenje jo take same ako slědne wózjawjenje: njejo nic k wózjawjenju.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Twarjenje jo se zachyśiło: zarědnik zasej wopśimujo slědne wózjawjenje.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Standardne gódnoty se hóźe za nejwěcej sedłow.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Zarědnik wopśimujo twarjenje, kótarež hyšći njejo wózjawjone; nowe twarjenje jo wuměnijo.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Do zarědnika nadawkow njedajo se pisaś: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Nadawk njejo se dał pśigótowaś: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Nadawk njejo se dał startowaś.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Nadawk jo skóńcony. Jogo rozpšawa se zacytujo.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Nadawk trjeba pśizjawjonego wužywarja.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Nadawk jo se startował, ale njejo ID swójogo procesa wózjawił. Kontrolěrujśo %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Kluc</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Nejwětša dataja: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Smužki, kótarež se napišu</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Lisćina bokow za pytnice; trjeba zjawnu adresu.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Boki se wótwołuju tak, ako je wóglědowaŕ bźez pśizjawjenja wiźi. Pśistupy k sedłu za administraciju a wobźěłowanje se nigdy njepórucuju.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Póstup njejo se dał slědowaś. Zacytajśo bok znowego, aby wiźeł, kak daloko jo nadawk.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Zjawna połojca kluca:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Kórjeń gałuzy</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Składowarnja pótajmstwow hyšći njejo zarědowana (./console exp:upgrade --apply napórajo jeje tabelu), togodla njedajo se žeden kluc składowaś.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serwer se sam pśizjawja (ze swójim SSH-klucom abo pomocnikom za pśizjawjeńske daty), abo repozitorium jo na toś tom serwerje.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Nastajenje njejo se dało pisaś: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Nastajenja su płaśiwe. Toś te smužki se napišu:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Dataja nastajenjow njedajo se cytaś: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Sedło se k datajam togo wózjawjenja wrośijo; hyšći njewózjawjone twarjenje musy se nejpjerwjej wózjawiś abo zachyśiś.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Swójski bok sedła za adrese, kótarež njeeksistěruju.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Cil njejo se dał składowaś: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Cil se hyšći z toś tym klucom njepśizjawja: wubjeŕśo w jogo nastajenjach „Deploy-kluc napórany za toś ten cil“.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Cile njejsu se dali cytaś: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Hyšći njejo žedno twarjenje za kontrolu.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Toś ta instalacija njama žeden zjawny pśistup k sedłu. Pśistupy k sedłu za administraciju a wobźěłowanje se nigdy njewózjawiju.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Toś ten bok slědujo nadawk, mjaztym až běžy; gaž se bok zacynijo, běžy dalej w slězynje.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Toś ten cil hyšći njama deploy-kluc.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Toś ten cil hyšći njejo se how twarił.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Toś ten cil jaden ma.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Zachyśijo toś to twarjenje: zarědnik zasej wopśimujo slědne wózjawjenje. Žywe sedło se njezměnijo.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Markěrujśo nejpjerwjej „Změny su skontrolěrowane“.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Cas</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Zapušćaki</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Zapódajśo mě taga hyšći raz</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Njezměnjone</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Co</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Co se změnijo</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Co kužda dataja jo; se pśecej pišo.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Co jo nadawk cynił a jogo zapisk. How startowany nadawk dalej w slězynje běžy, gaž se toś ten bok zacynijo.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Což jo nadawk ako zmólki wudał</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>To, což boki pomjenjuju, a kuždy wobraz wózjawjonego wopśimjeśa</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Gdy</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Gaž se wózjawjenje njeraźijo</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Gaž se wózjawjenje raźijo</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Gaž se wopśimjeśe wózjawijo</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Źož wjedu wótkaze na to, což kopija njewopśimujo (pytanje, pśizjawjenje).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Wótkulž se statiska kopija dodawa.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Kótare sedło se wózjawijo a kak cil gromje.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funkcioněrujo pód kuždeju sćažku. Standard.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Pišo se, gaž jo swójska domena nastajona.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Móžośo pśecej manuelnje how a na konsoli twariś a wózjawiś.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>jano mě; gódnota wóstanjo w Zarědowanje &gt; Pótajmstwa</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>pód %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>skóńcone bźez rozpšawy</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>pśidatk</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>njeraźone</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>dataja</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, abo main ze zarědnikom docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-hosting</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (z tokenom) abo git@github.com:owner/repo.git (z deploy-klucom); nigdy gronidło abo token w njej.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, za mapu sedła a kanoniske wótkaze.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>wobraz</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nigdy</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ně</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>žedno zdalone repozitorium</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>žedne: commity wóstanu w zarědniku</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>žedne: nic njejo se změniło</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>njepushowane</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>nic njejo se změniło</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>bok</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>wuspěšne</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open jo znjemóžnjone, togodla njedajo se how nadawk startowaś. Wužywajśo ./console exp:static:build na serwerje.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>wózjawjenje</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>wózjawjone</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>pushowanje caka</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>pushowane</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wótpokazane</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatiwny</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>slědkwześe</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>slědk wzete</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>běžy</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>jano zarědnik</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: pišo se do dataje CNAME. Pokažćo DNS domeny na hosting, ako wón wujasnja; HTTPS móžo chylu trajaś, než startujo.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>jo, hyšći njewózjawjone</translation>
     </message>
 </context>
 </TS>

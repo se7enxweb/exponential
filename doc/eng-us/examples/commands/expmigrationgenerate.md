@@ -2,14 +2,14 @@
 title: exp:expmigrationgenerate
 audience: developer, admin
 category: examples
-summary: "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; a dry run unless --apply."
+summary: "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; --from-recording turns a recording of changes into a YAML migration; a dry run unless --apply."
 keywords: exp:expmigrationgenerate, expmigrationgenerate, console, command, CLI, expmigrationgenerate.php, exp:migration:generate
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationgenerate
 
-Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; a dry run unless --apply.
+Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; --from-recording turns a recording of changes into a YAML migration; a dry run unless --apply.
 
 Script `bin/php/expmigrationgenerate.php`, code in `kernel/private/classes/commands/expmigrationgenerate.php`. Run it from the installation root, as the user the web server runs as:
 
@@ -30,11 +30,16 @@ extension's. The class is named after the name and the time, in the namespace Si
 Extension\<Name>\Migrations. With --type=yml it writes YYYYMMDDHHMMSS_<name>.yml instead: the header
 and an empty list of steps. Without --apply it shows the file and writes nothing; an existing file is
 never replaced.
+--from-recording=<id> turns a recording of changes (exp:migration:record:start) into a YAML
+migration: its events folded into one step per thing changed. It needs the YAML step types the
+recording uses (content, location, class, role, user ...); until the installation has them it lists
+the steps and the step types missing, and writes nothing.
 
 ./console exp:migration:generate --skeleton add_news_class
 ./console exp:migration:generate --skeleton news_folder --type=yml --apply
 ./console exp:migration:generate --skeleton add_news_class --description="The news class" --apply
 ./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply
+./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section
 ```
 
 ## Options
@@ -49,6 +54,7 @@ never replaced.
 | `--apply` |  | Make the changes (the default is a dry run that lists them and changes nothing) |
 | `--dry-run` |  | The default, accepted for scripts that pass it: list what would change, change nothing |
 | `--format` | required | text (default) or json (the machine output exp-migration/1) |
+| `--from-recording` | required | Generate a YAML migration from a recording of changes (its id); it needs the YAML step types the recording uses |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

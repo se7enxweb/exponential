@@ -15158,6 +15158,14 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
         <source>The newest content, what is held for review, and actions on a selection.</source>
         <translation>Nyatakaka yeyetɔwo, nu siwo wolé ɖi hena dzodzro, kple dɔwɔwɔwo le esiwo wotia ŋu.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Ɖe nyatakakaɖoƒe aɖe ƒe kɔpi si metrɔna o ɖe dutoƒo le GitHub Pages alo git sɛva ɖesiaɖe dzi.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22157,6 +22165,18 @@ Nyabiala: Womaɖe agbawo ɖa le ɖoɖoɖi me o.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API ƒe biabia siwo wodzra ɖo ƒe ŋuɖoɖowo, kple eƒe skema ƒe emenyawo ƒe hatsotsowo.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Ɖe kɔpi si metrɔna o ɖe dutoƒo le GitHub Pages alo git sɛva ɖesiaɖe dzi</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Kase si metrɔna o naa axawo tso sɛva sia dzi. Be nàɖe nyatakakaɖoƒe aɖe ƒe kɔpi si metrɔna o ɖe dutoƒo le teƒe bubu, le GitHub Pages alo git sɛva ɖesiaɖe dzi la, zã ɖeɖe ɖe dutoƒo si metrɔna o.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Tɔtrɔ siwo wowɔ le ɖoɖoa ŋu eye wodzra wo ɖo abe faɛlwo ene: woƒe nɔnɔme, wɔwɔwo, wɔe kple gbugbɔe ɖe megbe.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Ɖe nyatakakaɖoƒe aɖe ƒe kɔpi si metrɔna o ɖe dutoƒo le GitHub Pages alo git sɛva ɖesiaɖe dzi.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80562,6 +80590,222 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>The run could not be started.</source>
         <translation>Womete ŋu dze wɔwɔa gɔme o.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Tɔtrɔwo ŋɔŋlɔ ɖi</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Esime ŋɔŋlɔɖi le edzi yim la, nusi nètrɔna le dɔdzikpɔla me alo le nyatakakadzraɖoƒea ƒe axadzi bar dzi la, wodzraa wo ɖo abe ʋuʋu ƒe afɔɖeɖewo ene: nyatakakawo, hatiwo, dɔwo kple ɖoɖowo, akpawo, zãlawo kple hawo, URL ŋkɔ bubuwo, ɖoɖowo. Tɔ̃e ne èwu enu, kpɔ nusi wòlé, eye nàwɔ ʋuʋu tso eme.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Womete ŋu xlẽ ŋɔŋlɔɖiwo o: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ŋɔŋlɔɖiwo ƒe kplɔ̃wo meli haɖe o: gbã la, wɔ yeyewɔwɔ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Wotsi ŋɔŋlɔɖi le migration.ini me ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Nye tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nusi nètrɔna ko wòŋlɔna ɖi, afi sia afi si nètrɔe le, va se ɖe esime nàtɔ̃e.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ŋɔŋlɔɖi</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>tso %time, tɔtrɔ %count va se ɖe fifia.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Dzesi (ne èlɔ̃)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Fia nusi wòlé</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Tɔ̃ ŋɔŋlɔɖi</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Dze nye tɔtrɔwo ŋɔŋlɔ ɖi gɔme</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fesre na nyatakakadzraɖoƒea katã</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Eŋlɔa zãla ɖesiaɖe kple console ƒe tɔtrɔ ɖesiaɖe ɖi va se ɖe esime woatui. Ne èʋui la, woabia wò be nàɖo kpe edzi be wòe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Eʋu</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tu fesre</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ʋu fesre na nyatakakadzraɖoƒea katã</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ŋɔŋlɔɖiwo</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Womeŋlɔa zãla ƒe akɔnta (ŋkɔ si wotsɔna gena ɖe eme, e-mail, nyaɣaɣla) kple zãlawo ƒe akɔntawo ƒe teƒewo ɖi gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Nyatakakadzraɖoƒea katã</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ƒe tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Etɔ̃</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ŋɔŋlɔɖi aɖeke meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ŋɔŋlɔɖi %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ŋɔŋlɔɖiwo katã</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ʋuʋu si ado tso eme</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Tɔtrɔ siwo woƒo ƒu wòzu afɔɖeɖe ɖeka na nu ɖesiaɖe si wotrɔ: nusi ʋuʋu si wowɔ tso ŋɔŋlɔɖi sia me awɔ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Woate ŋu awɔ ʋuʋu tso eme ne ɖoɖo sia kpɔ YAML afɔɖeɖe ƒomevi %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Wogblee ɖi ɖe tame me: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Naneke womeŋlɔ ɖi o.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Nusi wòlé</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Tɔtrɔ %count, le ɖoɖo si nu wowɔ wo le.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Tɔtrɔ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Afɔɖeɖe</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ku ɖe</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Bubu %count: ./console exp:migration:record:show ŋlɔa wo katã ɖe ŋgɔ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ƒu gbe</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Eɖea ŋɔŋlɔɖi la kple nusi wòlé ɖa. Nusi wotrɔ la gakpɔtɔ nye esi wotrɔ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ɛ̃, ƒu ŋɔŋlɔɖi sia gbe</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ele ŋɔŋlɔm ɖi…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Wole wò tɔtrɔwo ŋlɔm ɖi na ʋuʋu.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Wole tɔtrɔ ɖesiaɖe le nyatakakadzraɖoƒe sia ŋlɔm ɖi na ʋuʋu (fesre na nyatakakadzraɖoƒea katã).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nyatakakadzraɖoƒea katã ƒe ŋɔŋlɔɖi dze egɔme: woaŋlɔ zãla ɖesiaɖe ƒe tɔtrɔ ɖesiaɖe ɖi va se ɖe esime nàtɔ̃e.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ŋɔŋlɔɖi dze egɔme: woaŋlɔ wò tɔtrɔwo ɖi va se ɖe esime nàtɔ̃e.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Wotɔ̃ ŋɔŋlɔɖi. Nusi wòlé anɔ anyi va se ɖe esime nàƒu egbe.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Woɖe ŋɔŋlɔɖi la kple eƒe nudzɔdzɔwo ɖa.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ŋɔŋlɔɖi %id meli o.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Gbã la, tia "Ɛ̃, ƒu ŋɔŋlɔɖi sia gbe".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Zãla si ŋlɔe ɖi ko ate ŋu atɔ̃ kpekpe ƒe ŋɔŋlɔɖi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tia ŋɔŋlɔɖi si woatɔ̃.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ŋɔŋlɔɖi ƒomevi sia le edzi yim xoxo.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Womete ŋu trɔ ŋɔŋlɔɖi la o: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -81225,6 +81469,1364 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>Released.</source>
         <translation>Woɖe asi le eŋu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Taɖodzinuwo katã</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ɖeɖe ɖe dutoƒo mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Ɖe wò nyatakakaɖoƒe ƒe kɔpi si metrɔna o ɖe dutoƒo femaxee le GitHub Pages dzi:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Axa siwo xo</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Wotsi ɖeɖe ɖe dutoƒo si metrɔna o.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Taɖodzinu</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Womete ŋu xlẽ taɖodzinuawo o: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>dɔ aɖe le edzi yim</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>tutu si woakpɔ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ɣla esia</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>wɔ taɖodzinu</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>gbeɖe</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>xlẽ nufiafia la</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added wotsɔ kpe ɖe eŋu, %changed wotrɔ, %removed woɖe ɖa</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes le %limit me (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Bubu %count mele ŋkɔŋlɔa me o.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Woŋlɔ axa %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ƒe lolome nye %size, si wu esi sɛva la ɖe mɔ na faɛl ɖeka.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % le seɖoƒea me</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag enye ɖeɖe ɖe dutoƒo si le nyatakakaɖoƒea si fifia.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: dɔ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/dzraɖoƒe/ na GitHub dɔwɔna ƒe nyatakakaɖoƒe; ɖe eme ƒuƒlu na wò ŋutɔ wò dɔmen alo zãla ƒe nyatakakaɖoƒe.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Nyatakakaɖoƒea</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Sɛva la</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Gedede dzraɖoƒea me</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Dzraɖoƒea</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Kadodowo kple gɔmeɖoanyi mɔ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Wò ŋutɔ wò dɔmen</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Nu si le tutua me</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Ɣeyiɣi si woaɖee ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Gbugbɔ kpɔe eye nàdzrae ɖo</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub dɔwɔna ƒe nyatakakaɖoƒe nɔa /&lt;repository&gt;/ te; kadodo siwo do ƒome kple wo nɔewo wɔa dɔ le afi ma kple teƒe bubu ɖesiaɖe.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Tutu xɔa %site ƒe axa ɖesiaɖe abe ale si amedzro si mege ɖe eme o kpɔnɛ ene, egbugbɔa kadodowo ŋlɔna, eɖea faɛlwo ƒe kɔpi eye wòŋlɔa emetsonu ɖe taɖodzinua ƒe faɛldzraɖoƒe me. Womaɖe naneke ɖe dutoƒo o vaseɖe esime nàkpɔ tutua ɖa eye nàzi Ɖe ɖe dutoƒo dzi.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron ƒe nyagbɔgblɔ, abe 0 3 * * * ene</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Wodzra ɖoɖo ɖa ƒe safui ɖo abe nuvi %secret ene.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ɖoɖo ɖa ƒe safui ɖea mɔ na ɖoɖowɔƒe sia be wòaɖo nuwo ɖa ɖe dzraɖoƒe ɖeka ko me to SSH dzi, eye menye ɖe teƒe bubu o. Eƒe akpa si nye ame ŋutɔ tɔ la nɔa Ɖoɖowɔwɔ &gt; Nuviwo me; akpa si le dutoƒo ko wofiana.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ɖoɖo ɖa ƒe safui si wowɔ na taɖodzinu sia</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ɖoɖo ɖa ƒe safui gea eme to SSH dzi: trɔ git adrɛs la wòanye SSH tɔ (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Dɔ aɖe le edzi yim, %user ye dze egɔme</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Taɖodzinu sia ƒe dɔ aɖe gale edzi yim (%detail). Lala vaseɖe esime wòawu enu.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Taɖodzinu sia ƒe dɔ aɖe gale edzi yim. Lala vaseɖe esime wòawu enu.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Kadodo tso axa /news/ yi axa /about-us/team ŋu la, woaŋlɔe ale:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Wowɔ ɖoɖo ɖa ƒe safui yeye. Tsɔ eƒe akpa si le dutoƒo la kpe ɖe dzraɖoƒea ŋu fifia.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Axa si gale vodadadidi ƒe numetoto, nuŋɔŋlɔgbalẽ ƒe token alo gedede ƒe id me le klɔklɔ megbe la, womaɖee ɖe dutoƒo gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Gbugbɔgbɔ ɖe megbe nye na aɖaŋutɔwo: tia &quot;Menya nu si esia atrɔ&quot; eye nàgaŋlɔ dzesia ƒe ŋkɔ ake.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Nyatakakaɖoƒe ate ŋu alolo va ɖo %site, faɛl ɖeka va ɖo %file, kple zɔzɔ si ade 100 GB le ɣleti ɖeka me. Le ɖoɖo femaxee dzi la, ele be dzraɖoƒea nanɔ dutoƒo. Womewɔ GitHub Pages na fiasewo alo asitsatsa bubuwo o.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Taɖodzinu nye nyatakakaɖoƒe ɖeka si woɖe ɖe dutoƒo le git dzraɖoƒe ɖeka me. Womewɔa naneke alo ɖea naneke ɖe dutoƒo le afi sia o: Dzra ɖo ŋlɔa ɖoɖowo ɖe settings/override/staticcache.ini.append.php me.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Taɖodzinu nye nyatakakaɖoƒe ɖeka si woɖe ɖe dutoƒo le teƒe ɖeka, abe wò dutoƒo nyatakakaɖoƒe le GitHub Pages dzi ene.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token tso Ɖoɖowɔwɔ &gt; Nuviwo me</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Dzraɖoƒea ƒe dɔwɔwɔ ƒe ɖoɖo aɖe ɖenɛ ɖe dutoƒo.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Tsɔ dutoƒo safui sia kpe ɖe dzraɖoƒea ŋu kple ŋlɔŋlɔ ƒe mɔɖeɖe. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tia Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Wotsɔ kpe ɖe eŋu</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Git sɛva bubu</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Dɔwɔwɔ bubu le dɔ wɔm le taɖodzinu sia ŋu: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Trɔ yi megbe</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Gɔmeɖoanyi mɔ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Do ŋgɔ</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Le gɔmeɖoanyi mɔ aɖe te</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Alɔ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Kadodo siwo gbã</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Kadodo siwo gbã le tutua me</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Tutu</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Tutu %id, %user ye wɔe</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Tu %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Tui fifia</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Tutu si woakpɔ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ame si</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Kple asi, le afi sia</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ɖe asi le eŋu</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Trɔe</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Wotrɔe</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Kpɔe gbã</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kpɔ ɖoɖo siawo ɖa</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kpɔ nu si tutua trɔ, kpɔe ɖa, emegbe ɖee ɖe dutoƒo alo tsɔe ƒu gbe.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Tia ɖeɖe ɖe dutoƒo si gbɔ nàgbugbɔ ayi.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Ava le ɖeɖe si gbɔna me.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kpeɖodzi</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Kpeɖodziwo</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Ekpea ɖe tutua dzi, ede dzesii eye wòɖoe ɖa yi %remote. Womezia ɖoɖo ɖa dzi gbeɖe o; àte ŋu agbugbɔ ayi ɖeɖe ɖe dutoƒo ɖesiaɖe gbɔ emegbe.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Ne wotsɔe sɔ kple faɛldzraɖoƒe si nɔ anyi do ŋgɔ: %added wotsɔ kpe ɖe eŋu, %changed wotrɔ, %removed woɖe ɖa, %unchanged womedo asi le eŋu o.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Ne wotsɔe sɔ kple ɖeɖe ɖe dutoƒo mamlɛtɔ.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Gedeeme ƒe kpeɖodzinu</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Wò ŋutɔ wò dɔmen</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Woɖea vodadadidi ƒe numetoto, nuŋɔŋlɔgbalẽ ƒe tokenwo, gedede ƒe idwo kple noncewo ɖa ɣesiaɣi.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ɖoɖo ɖa ƒe safui</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ƒe ɖoɖo ɖa ƒe safui</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tsɔe ƒu gbe</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Tsɔ tutua ƒu gbe</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Dɔmen</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Ƒuƒlu: nyatakakaɖoƒea ƒe adrɛs. Ne menye nenema o la, nyatakakaɖoƒe ma ke ƒe adrɛs si le eme.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Wowu enu</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Kadodo ɖesiaɖe dzea egɔme kple gɔmeɖoanyi mɔa.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Ɖeɖe ɖe dutoƒo ɖesiaɖe nye kpeɖodzi si ŋu dzesi static/%id/&lt;n&gt; le. Gbugbɔgbɔ ɖe megbe wɔa kpeɖodzi yeye kple ɖeɖe ɖe dutoƒo si do ŋgɔ ƒe faɛlwo: ŋutinya la nɔa anyi, dzesi aɖeke meʋãna o eye womezia naneke dzi o.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Nu bubuwo</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Xɔ axawo tso</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Faɛl</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Faɛlwo</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Faɛl siwo bu</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Faɛlwo tso</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Faɛl siwo womete ŋu ƒo nu ƒu o</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Asibidɛ ƒe dzesi</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Faɛldzraɖoƒe</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Na SSH adrɛs. Wowɔa safui la le dzadzraɖo megbe; wòe atsɔ eƒe akpa si le dutoƒo akpe ɖe dzraɖoƒea ŋu.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Na https:// adrɛs. GitHub: token si me tsitotsito le eye Contents xexlẽ kple ŋlɔŋlɔ ƒe mɔɖeɖe le esi le dzraɖoƒea dzi.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Na aɖaŋutɔwo. Dutoƒo nyatakakaɖoƒea trɔna enumake ne ɖoɖo ɖa la wu enu.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Nuŋɔŋlɔgbalẽwo</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Teƒenɔnɔ femaxee tso GitHub dzraɖoƒe me.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Tso alɔa me</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git adrɛs</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages ɖea mɔ na nyatakakaɖoƒe si lolo %site kple faɛl si lolo %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ƒe seɖoƒewo</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ɖea faɛlwo ɖe dutoƒo abe ale si wole ene (ehiã na faɛl siwo dzea egɔme kple _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub naa alɔa abe ale si woɖoe ɖa ene. Gɔmeɖoanyitɔ.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, wò ŋutɔ wò sɛva: git dzraɖoƒe ɖesiaɖe.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Gbugbɔ yi ɖeɖe ɖe dutoƒo si do ŋgɔ gbɔ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Kpekpeɖeŋu</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Kpekpeɖeŋu le mɔfiala ŋu</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Ɣla wo</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Ŋutinya</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ƒe ŋutinya</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Sɛva</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Ale si GitHub Pages xɔa tutua</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Mekpɔ tɔtrɔawo ɖa</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Menya nu si esia atrɔ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Wotsii: womate ŋu atu naneke o vaseɖe esime woatɔe.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ele dɔ wɔm le megbe abe %user ene; àte ŋu atu axa sia.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Dɔ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Wodzrae ɖo abe nuvi %secret ene.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Ƒomevi</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ɖeɖe ɖe dutoƒo mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Gbe axa siawo</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Gbe akpa siawo</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Kadodowo</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Kadodo siwo wogbugbɔ ŋlɔ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Nyatakakaɖoƒe si le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Kpɔ tutua</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Lɛta suewo, xexlẽdzesiwo, _ kple -, abe github-public ene. Etsɔa ŋkɔ na faɛldzraɖoƒea kple dzesiwo (static/&lt;id&gt;/&lt;n&gt;) eye womate ŋu atrɔe emegbe o.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Wɔ safui yeye</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Wɔ taɖodzinu</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Wɔ safui la</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Wɔ dzraɖoƒea le sɛva la dzi gbã; esi ƒuƒlu hã nyo.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Faɛlwo ƒe xexlẽ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nyagbɔgblɔ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Axawo ƒe akpa gãtɔ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ŋkɔ</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Token la ƒe ŋkɔ le Ɖoɖowɔwɔ &gt; Nuviwo me</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Taɖodzinu yeye</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Esi kplɔe ɖo</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ao</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Kpeɖodzi aɖeke meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Womewɔ safui aɖeke o: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Womekpɔ php sedede ƒe dɔwɔnu aɖeke o. Ɖo migration.ini [AdminSettings] PhpCliPath ɖe eƒe mɔ blibo dzi.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Dzesi aɖeke meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Taɖodzinu aɖeke meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Naneke</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Mele tutua me o.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Womeɖe naneke ɖe dutoƒo haɖe o.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Womeɖe naneke ɖe dutoƒo haɖe o: faɛl ɖesiaɖe nye yeye.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Na nyanya</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Le ɣeyiɣi ƒe ɖoɖo nu</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Le console dzi</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Le sɛva dzi: ./console exp:static:serve %id naa wo nenema ke.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Mɔ ɖeka le fli ɖesiaɖe dzi, * sɔ kple akpa ɖesiaɖe: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Ŋkɔ ɖeka ko wodzrana ɖo kple taɖodzinua; token alo safui la ŋutɔ nɔa Ɖoɖowɔwɔ &gt; Nuviwo me eye meɖea eɖokui fiana le ŋkɔŋlɔ aɖeke me gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Nu si axawo yɔ ko</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Kple token ko. env:NAME xlẽa sɛva la ƒe nɔƒe ƒe tɔtrɔ aɖe ɖe eteƒe.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Ʋu ŋgɔkpɔkpɔa</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Eʋua tutua abe ale si sɛva la anae ene, tso taɖodzinua ƒe faɛldzraɖoƒe me. Kadodoa awɔ dɔ na wò gaƒoƒo ɖeka.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Mehiã o. Ƒuƒlu: nu si woɖe ɖe dutoƒo.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Mehiã o. Ne dɔmen le eŋu la, wonaa nyatakakaɖoƒea le eƒe ke dzi.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Numetoto</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Axawo</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Taɖodzinua ƒe axawo</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Axa siwo wogbe</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Emegbe dɔwɔwɔ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Ŋgɔkpɔkpɔ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Kpɔe do ŋgɔ eye nàɖee ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Kpɔ %name do ŋgɔ eye nàɖee ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Kpɔ tutua do ŋgɔ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ŋgɔyiyi</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Dutoƒo adrɛs</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Dutoƒo safui</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Ɖe ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Ɖe nyatakakaɖoƒe aɖe ƒe kɔpi si metrɔna o ɖe dutoƒo le GitHub Pages alo git sɛva ɖesiaɖe dzi: tui, kpɔ tɔtrɔawo ɖa, ɖee ɖe dutoƒo, eye nàgbugbɔ ayi ɖeɖe ɖe dutoƒo si do ŋgɔ gbɔ ne ehiã.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Ɖeɖe ɖe dutoƒo si gbɔ woagbugbɔ ayi</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Ɖeɖe ɖe dutoƒowo</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ɖoɖo ɖa</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Xlẽ nufiafia la</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Ŋkɔŋlɔ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wogbe</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Si do ƒome</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Gahee vɛ</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Woɖe ɖa</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Ɖɔli safui la: xoxotɔ madzɔ dɔ o</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Nyatakaka</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Tutua ƒe nyatakaka</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Dzraɖoƒe</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Gbugbɔkpɔ</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Gbugbɔkpɔ kpɔa ɖoɖo ɖesiaɖe ɖa eye wòfiaa fli siwo woaŋlɔ. Womedzra naneke ɖo haɖe o.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Gbugbɔe ɖe megbe</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Gbugbɔgbɔ ɖe megbe</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Dzra ɖo</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ɣeyiɣi ƒe ɖoɖo</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Didi ƒe axa</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Akpawo ƒe idwo, woma wo ɖe vovo kple komawo.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Ɖo wo ɖe nyatakakaɖoƒe si le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ɖoɖo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ɖoɖowo</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ƒe ɖoɖowo</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ɖoɖowɔwɔ</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Ɖoɖowɔwɔ &gt; Nuviwo</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Wofiaa le ŋkɔŋlɔwo me, abe &quot;Dutoƒo nyatakakaɖoƒe le GitHub Pages dzi&quot; ene.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Gedede eme kple GitHub App ava kple GitHub kpekpeɖeŋu.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Nyatakakaɖoƒe</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Nyatakakaɖoƒe si woaɖe ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Lolome</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Lolome kple seɖoƒewo</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Tutua ƒe lolome</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Axa siwo xo</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Wodze egɔme</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ye dze egɔme le %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Nɔnɔme</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Wotsi ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Wotsi ɖeɖe ɖe dutoƒo si metrɔna o.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Wotsi ɖeɖe ɖe dutoƒo si metrɔna o. Tɔe le Ɖoɖowɔwɔ &gt; Ɖeɖe ɖe dutoƒo si metrɔna o me gbã.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Wotɔ ɖeɖe ɖe dutoƒo si metrɔna o.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Afɔɖeɖe %step le %total me</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Afɔɖeɖewo</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Klɔklɔ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Tsii</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Tɔe</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Tɔ ɖeɖe ɖe dutoƒo si metrɔna o</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Dzesi</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Dzesiwo</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Taɖodzinu</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Woate ŋu awɔ taɖodzinuwo ahatrɔ wo, gake womatu naneke alo aɖe naneke ɖe dutoƒo o vaseɖe esime woatɔe.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Egblɔna na didi ƒe mɔ̃wo nu si woaxlẽ.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Womete ŋu tsɔ tutua ƒu gbe o: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Tutua le abe ɖeɖe ɖe dutoƒo mamlɛtɔ ene: naneke meli woaɖe ɖe dutoƒo o.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Wotsɔ tutua ƒu gbe: faɛldzraɖoƒea gale ɖeɖe ɖe dutoƒo mamlɛtɔ me ake.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Gɔmeɖoanyi ɖoɖowo sɔ na nyatakakaɖoƒe geɖe.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Tutu si womeɖe ɖe dutoƒo haɖe o le faɛldzraɖoƒea me; tutu yeye aɖe aɖɔlii.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Womate ŋu aŋlɔ nu ɖe dɔwo ƒe faɛldzraɖoƒea me o: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Womete ŋu dzra dɔa ɖo o: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Womete ŋu dze dɔa gɔme o.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Dɔa wu enu. Wole eƒe nyatakaka hem vɛ.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Dɔa hiã zãla si ge ɖe eme.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Wodze dɔa gɔme gake meɖe eƒe dɔwɔwɔ ƒe id fia o. Kpɔ %detail ɖa.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Safui la</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Faɛl gãtɔ: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Fli siwo woaŋlɔ</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Axawo ƒe ŋkɔŋlɔ na didi ƒe mɔ̃wo; ehiã dutoƒo adrɛs la.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Woxɔa axawo abe ale si amedzro si mege ɖe eme o kpɔa wo ene. Womenaa dziɖuɖu kple asitɔtrɔ ƒe siteaccesswo gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Womete ŋu kplɔ ŋgɔyiyia ɖo o. Gahe axa la vɛ be nàkpɔ ale si dɔa le yiyim.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Safui la ƒe akpa si le dutoƒo:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Alɔa ƒe ke</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Nuviwo ƒe dzraɖoƒe mele ɖoɖo me haɖe o (./console exp:upgrade --apply wɔa eƒe tabletɔ), eyata womate ŋu adzra safui aɖeke ɖo o.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Sɛva la gea eme le eɖokui si (eya ŋutɔ ƒe SSH safui alo gedeeme ƒe kpeɖeŋutɔ), alo dzraɖoƒea le sɛva sia dzi.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Womete ŋu ŋlɔ ɖoɖoa o: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Ɖoɖoawo le eteƒe. Woaŋlɔ fli siawo:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Womate ŋu axlẽ ɖoɖowo ƒe faɛl la o: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Nyatakakaɖoƒea gbugbɔna yia ɖeɖe ɖe dutoƒo ma ƒe faɛlwo gbɔ; ele be woaɖe tutu si womeɖe ɖe dutoƒo haɖe o ɖe dutoƒo alo atsɔe aƒu gbe gbã.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Nyatakakaɖoƒea ŋutɔ ƒe axa na adrɛs siwo meli o.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Womete ŋu dzra taɖodzinua ɖo o: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Taɖodzinua mege ɖe eme kple safui sia haɖe o: tia &quot;Ɖoɖo ɖa ƒe safui si wowɔ na taɖodzinu sia&quot; le eƒe ɖoɖowo me.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Womete ŋu xlẽ taɖodzinuawo o: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Tutu aɖeke meli si woakpɔ haɖe o.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Dutoƒo siteaccess aɖeke mele ɖoɖowɔƒe sia si o. Womeɖea dziɖuɖu kple asitɔtrɔ ƒe siteaccesswo ɖe dutoƒo gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Axa sia kplɔa dɔa ɖo le esime wòle edzi yim; eyina edzi le megbe ne wotu axa la.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ɖoɖo ɖa ƒe safui aɖeke mele taɖodzinu sia si haɖe o.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Womeyi taɖodzinu sia ƒe tutu le afi sia haɖe o.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ɖeka le taɖodzinu sia si.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Etsɔa tutu sia ƒua gbe: faɛldzraɖoƒea gale ɖeɖe ɖe dutoƒo mamlɛtɔ me ake. Nyatakakaɖoƒe si le dɔ wɔm la matrɔ o.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Tia &quot;Mekpɔ tɔtrɔawo ɖa&quot; gbã.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ɣeyiɣi</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Nu siwo dzea egɔme</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Gaŋlɔ dzesia ƒe ŋkɔ ake</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Womedo asi le eŋu o</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Nu ka</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Nu si trɔna</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Nu si faɛl ɖesiaɖe nye; woŋlɔnɛ ɣesiaɣi.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Nu si dɔa wɔ kple eƒe ŋkɔŋlɔ. Dɔ si wodze egɔme le afi sia yina edzi le megbe ne wotu axa sia.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Nu si dɔa ta abe vodadawo ene</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Nu si axawo yɔ, kple nɔnɔmetata ɖesiaɖe si le nu siwo woɖe ɖe dutoƒo me</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ɣekaɣi</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Ne ɖeɖe ɖe dutoƒo mede edzi o</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Ne ɖeɖe ɖe dutoƒo dze edzi</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Ne woɖe nu ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Afi si kadodo siwo yina nu siwo mele kɔpia me o la yina (didi, gedeeme).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Afi si wonaa kɔpi si metrɔna o tso.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Nyatakakaɖoƒe si woɖe ɖe dutoƒo, kple ŋkɔ si wona taɖodzinua.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Ewɔa dɔ le mɔ ɖesiaɖe te. Gɔmeɖoanyitɔ.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Woŋlɔnɛ ɣesiaɣi si woɖo wò ŋutɔ wò dɔmen.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ɛ̃</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Àte ŋu atu nu ahaɖe nu ɖe dutoƒo kple asi le afi sia kple le console dzi ɣesiaɣi.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ŋkɔ ko; asixɔxɔa nɔa Ɖoɖowɔwɔ &gt; Nuviwo me</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>le %path te</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>wu enu nyatakaka manɔmee</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>nu bubu</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mede edzi o</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>faɛl</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, alo main kple faɛldzraɖoƒe docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git sɛva</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (kple token) alo git@github.com:owner/repo.git (kple ɖoɖo ɖa ƒe safui); mɔxenya alo token aɖeke manɔ eme gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, na nyatakakaɖoƒea ƒe anyigbatata kple kadodo vavãwo.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>nɔnɔmetata</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>gbeɖe</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ao</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>dzraɖoƒe si le adzɔge meli o</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>naneke o: kpeɖodziwo nɔa faɛldzraɖoƒea me</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>naneke o: naneke metrɔ o</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>womeɖoe ɖa o</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>naneke metrɔ o</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>axa</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>dze edzi</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>Wotsi proc_open, eyata womate ŋu adze dɔ aɖeke gɔme le afi sia o. Zã ./console exp:static:build le sɛva dzi.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ɖeɖe ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>woɖee ɖe dutoƒo</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ɖoɖo ɖa le lalam</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>woɖoe ɖa</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wogbe</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>si do ƒome</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>gbugbɔgbɔ ɖe megbe</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>wogbugbɔe ɖe megbe</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>le edzi yim</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>faɛldzraɖoƒea ko</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: woŋlɔnɛ ɖe faɛl CNAME me. Ɖo dɔmen la ƒe DNS ɖe sɛva la gbɔ abe ale si wòɖe eme ene; HTTPS ate ŋu axɔ ɣeyiɣi aɖe hafi adze egɔme.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ɛ̃, womeɖee ɖe dutoƒo haɖe o</translation>
     </message>
 </context>
 </TS>
