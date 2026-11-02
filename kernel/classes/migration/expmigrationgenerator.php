@@ -22,7 +22,7 @@
 class expMigrationGenerator
 {
     /** The types a skeleton can be written for. */
-    const SKELETON_TYPES = array( 'php', 'yml' );
+    const SKELETON_TYPES = array( 'php', 'yml', 'sql', 'ini', 'graphql' );
 
     /**
      * A migration name as a file name takes it: lower case, words joined with "_". Pure.
@@ -84,6 +84,13 @@ class expMigrationGenerator
         $type = isset( $options['type'] ) && $options['type'] !== '' ? (string)$options['type'] : 'php';
         if ( !in_array( $type, self::SKELETON_TYPES, true ) )
             $result['errors'][] = "no skeleton of the type $type: the types are " . implode( ', ', self::SKELETON_TYPES );
+        $engine = isset( $options['engine'] ) && $options['engine'] !== '' ? strtolower( (string)$options['engine'] ) : '';
+        if ( isset( expMigrationDefinition::ENGINE_ALIASES[$engine] ) )
+            $engine = expMigrationDefinition::ENGINE_ALIASES[$engine];
+        if ( $engine !== '' && $type !== 'sql' )
+            $result['errors'][] = '--engine goes with --type=sql only';
+        else if ( $engine !== '' && !in_array( $engine, expMigrationDefinition::ENGINES, true ) )
+            $result['errors'][] = "the engine $engine is not one of " . implode( ', ', expMigrationDefinition::ENGINES );
         $slug = self::slug( $name );
         if ( $slug === '' )
             $result['errors'][] = 'a migration needs a name of letters and digits, e.g. add_news_class';
@@ -104,7 +111,7 @@ class expMigrationGenerator
             $directory = $root . '/' . $directory;
         $timestamp = date( 'YmdHis', isset( $options['time'] ) ? (int)$options['time'] : time() );
         $id = $timestamp . '_' . $slug;
-        $file = rtrim( $directory, '/' ) . '/' . $id . '.' . $type;
+        $file = rtrim( $directory, '/' ) . '/' . $id . '.' . self::extension( $type, $engine );
         $class = self::className( $slug, $timestamp );
         $namespace = self::namespaceOf( $source );
         $description = isset( $options['description'] ) && trim( (string)$options['description'] ) !== ''
@@ -118,6 +125,12 @@ class expMigrationGenerator
         {
             $result['content'] = self::yamlSkeleton( $description, $author );
         }
+        else if ( $type === 'graphql' )
+            $result['content'] = self::graphqlSkeleton( $description, $author );
+        else if ( $type === 'ini' )
+            $result['content'] = self::iniSkeleton( $description, $author );
+        else if ( $type === 'sql' )
+            $result['content'] = $engine === 'mongodb' ? self::mongodbSkeleton() : self::sqlSkeleton( $description, $author, $engine );
         else
         {
             $result['class'] = $class;
@@ -201,6 +214,126 @@ class expMigrationGenerator
             '',
         ) );
         return implode( "\n", $lines );
+    }
+
+    /**
+     * The file extension of a skeleton: php, yml (also for graphql), ini, sql or <engine>.sql, mongodb.json. Pure.
+     *
+     * @param string $type
+     * @param string $engine for sql: empty (the portable file) or an engine
+     * @return string
+     */
+    public static function extension( $type, $engine = '' )
+    {
+        if ( $type === 'graphql' )
+            return 'yml';
+        if ( $type === 'sql' && $engine === 'mongodb' )
+            return 'mongodb.json';
+        if ( $type === 'sql' && $engine !== '' )
+            return ( $engine === 'postgresql' ? 'pgsql' : $engine ) . '.sql';
+        return $type;
+    }
+
+    /**
+     * A YAML migration with an example of the step graphql in comments. Pure.
+     *
+     * @param string $description
+     * @param string $author
+     * @return string
+     */
+    public static function graphqlSkeleton( $description, $author = '' )
+    {
+        $lines = array( '# description: ' . $description );
+        if ( $author !== '' )
+            $lines[] = '# author: ' . $author;
+        $lines = array_merge( $lines, array(
+            '#',
+            '# The comment lines at the top of the file are the header the migration engine reads (see a YAML migration).',
+            '# The header key "events" says how the content events of the run reach webhooks: each (the default), summary or none.',
+            'steps: []',
+            '',
+            '# Replace [] with the steps. The step graphql runs a query or mutation of the GraphQL API as the run\'s user;',
+            '# query: holds its text, file: names a .graphql file next to this one, persisted: a persisted query.',
+            '#',
+            '# steps:',
+            '#     - type: graphql',
+            '#       query: |',
+            '#           mutation ($parent: Int!) {',
+            '#             createContent(parentId: $parent, classIdentifier: "folder", fields: [ { identifier: "name", value: "News" } ]) { contentId nodeId }',
+            '#           }',
+            '#       variables: { parent: 2 }',
+            '#       references: { news: result }',
+            '',
+        ) );
+        return implode( "\n", $lines );
+    }
+
+    /**
+     * An INI migration with examples in comments. Pure.
+     *
+     * @param string $description
+     * @param string $author
+     * @return string
+     */
+    public static function iniSkeleton( $description, $author = '' )
+    {
+        $lines = array( '#?ini charset="utf-8"?', '# description: ' . $description );
+        if ( $author !== '' )
+            $lines[] = '# author: ' . $author;
+        $lines = array_merge( $lines, array(
+            '#',
+            '# Each block names its file, and for a siteaccess the siteaccess; the settings go to settings/override or',
+            '# settings/siteaccess/<name>, never to settings/*.ini or an extension. Var=value sets, Var[] followed by',
+            '# Var[]=... makes the array exactly these values, Var[]=value adds one, -Var removes.',
+            '#',
+            '# [site.ini/SiteSettings]',
+            '# SiteName=News',
+            '#',
+            '# [siteaccess:admin site.ini/SiteSettings]',
+            '# DefaultPage=content/dashboard',
+            '',
+        ) );
+        return implode( "\n", $lines );
+    }
+
+    /**
+     * An SQL migration: the portable file or one engine's. Pure.
+     *
+     * @param string $description
+     * @param string $author
+     * @param string $engine empty: the portable file
+     * @return string
+     */
+    public static function sqlSkeleton( $description, $author = '', $engine = '' )
+    {
+        $lines = array( '-- description: ' . $description );
+        if ( $author !== '' )
+            $lines[] = '-- author: ' . $author;
+        $lines = array_merge( $lines, array(
+            '--',
+            $engine === '' ? '-- This file runs on every SQL engine without a file of its own (<id>.mysql.sql, <id>.pgsql.sql ...);'
+                           : "-- This file runs on $engine only, instead of the portable <id>.sql;",
+            '-- MongoDB needs <id>.mongodb.json. Statements end with ; at the end of a line. The part after "-- down"',
+            '-- undoes the migration. "-- transactional: no" in the header for DDL that cannot run in a transaction.',
+            '',
+            '-- CREATE INDEX exp_news_list ON ezcontentobject ( published );',
+            '',
+            '-- down',
+            '',
+            '-- DROP INDEX exp_news_list;',
+            '',
+        ) );
+        return implode( "\n", $lines );
+    }
+
+    /**
+     * The MongoDB file of an SQL migration: no commands yet. Pure.
+     *
+     * @return string
+     */
+    public static function mongodbSkeleton()
+    {
+        return "{\n    \"up\": [],\n    \"down\": []\n}\n";
     }
 
     /**

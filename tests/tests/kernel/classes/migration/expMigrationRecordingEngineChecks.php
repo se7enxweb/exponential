@@ -10,9 +10,13 @@
  *       object of it published below node 2, its children's sort changed, a role assigned to a user group, the
  *       location hidden; each is recorded with remote ids and identifiers, the step it stands for, and the values to
  *       repeat it. A change by another user is not in it; a site-wide window records it. Stop: nothing more is
- *       recorded. The plan has one step per thing changed; the generator reports the step types missing. Discard
+ *       recorded. The plan has one step per thing changed; the generator reports the step types missing, and with
+ *       the installation's step types writes a migration that passes the check (a dry run writes no file). Discard
  *       removes everything.
- *  RC-3 a user published as content: the account and the personal fields are left out of the recording
+ *  RC-3 a user published as content: the account and the personal fields are left out of the recording, and its
+ *       migration names the account by secrets
+ *  RC-4 a migration of what is there (a class, a role, a section, content to a depth) passes the check; unknown
+ *       things are named
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -153,6 +157,22 @@ trait expMigrationRecordingEngineChecks
         $this->assertSame( expUpgrade::EXIT_FAILED, $report['exit'] );
         $this->assertContains( 'content', $report['missing_step_types'] );
         $this->assertStringContainsString( 'needs the YAML step types', $report['errors'][0] );
+        // with the step types of the installation: the migration, checked as exp:migration:check checks a file
+        $report = expMigrationRecordingGenerator::fromRecording( $db, $rec['recording_id'], array( 'name' => 'recorded', 'time' => 1798761600 ) );
+        $this->assertSame( expUpgrade::EXIT_OK, $report['exit'], implode( '; ', $report['errors'] ) );
+        $this->assertSame( array( 'content_class', 'content', 'location', 'role', 'location' ),
+                           array_column( expMigrationRecordingSteps::fromPlan( $report['steps'] )['steps'], 'type' ) );
+        $this->assertStringContainsString( "identifier: $identifier", $report['generated']['content'] );
+        $this->assertStringContainsString( 'remote:' . $node->attribute( 'remote_id' ), $report['generated']['content'] );
+        $this->assertSame( date( 'YmdHis', 1798761600 ) . '_recorded', $report['generated']['id'] );
+        $this->assertFalse( $report['written'], 'a dry run writes nothing' );
+        if ( expMigrationYamlParser::available() )
+        {
+            $parseErrors = array();
+            $warnings = array();
+            $this->assertNotNull( expMigrationYaml::fromText( $report['generated']['content'], expMigrationStepRegistry::fromSettings(), $parseErrors, $warnings ),
+                                  implode( '; ', $parseErrors ) );
+        }
 
         // a site-wide window records another user's change too
         $site = expMigrationRecording::start( $db, expMigrationRecording::MODE_SITE, self::$admin, '', $errors );
@@ -212,7 +232,30 @@ trait expMigrationRecordingEngineChecks
         $this->assertContains( 'email', $userEvent['omitted'] );
         $this->assertContains( 'first_name', $userEvent['omitted'] );
         $this->assertSame( array( 'remote:' . $members->attribute( 'remote_id' ) ), $userEvent['step']['groups'] );
+        // the migration of it names the account by secrets
+        $report = expMigrationRecordingGenerator::fromRecording( $db, $rec['recording_id'], array( 'name' => 'user' ) );
+        $this->assertSame( expUpgrade::EXIT_OK, $report['exit'], implode( '; ', $report['errors'] ) );
+        $this->assertStringContainsString( "secrets:\n          login: user_rec", $report['generated']['content'] );
+        foreach ( array( 'Private', 'Person', "rec$suffix@example.org", 'secretpw' ) as $personal )
+            $this->assertStringNotContainsString( $personal, $report['generated']['content'], "$personal is not in the migration" );
         expMigrationRecording::discard( $db, $rec['recording_id'], $errors );
+    }
+
+    /** RC-4 */
+    protected function checkGenerateFromExisting( $db )
+    {
+        $report = expMigrationRecordingGenerator::fromExisting( array( 'classes' => array( 'folder' ), 'roles' => array( 'Anonymous' ), 'sections' => array( 'standard' ),
+                                                                       'content' => array( '2' ), 'depth' => 1, 'limit' => 5 ),
+                                                                array( 'name' => 'existing' ) );
+        $this->assertSame( expUpgrade::EXIT_OK, $report['exit'], implode( '; ', $report['errors'] ) );
+        $content = $report['generated']['content'];
+        foreach ( array( "type: content_class\n      mode: ensure\n      identifier: folder\n", "type: role\n      mode: ensure\n      name: Anonymous\n",
+                         "type: section\n      mode: ensure\n      identifier: standard\n", "type: content\n      mode: ensure\n" ) as $text )
+            $this->assertStringContainsString( $text, $content );
+        $this->assertFalse( $report['written'] );
+        $missing = expMigrationRecordingGenerator::fromExisting( array( 'classes' => array( 'no_such_class' ), 'content' => array( 'remote:no-such-node' ) ) );
+        $this->assertSame( expUpgrade::EXIT_USAGE, $missing['exit'] );
+        $this->assertSame( array( 'the class no_such_class: not found', 'the node remote:no-such-node: not found' ), $missing['errors'] );
     }
 
     /**
