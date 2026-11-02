@@ -24,7 +24,10 @@
  *  GH-12 Delivery=actions from a branch that is not the repository's default one: status and setup warn that the
  *        environment github-pages lets only the default branch deploy
  *  GH-11 the opt-in integration test against a real GitHub repository: only with EXP_STATIC_GITHUB_TEST_TOKEN and
- *        EXP_STATIC_GITHUB_TEST_REPO (owner/repo) set; skipped otherwise
+ *        EXP_STATIC_GITHUB_TEST_REPO (owner/repo) set (or EXP_STATIC_GITHUB_TEST_SECRET, the name of a secret of the
+ *        secret store, instead of the token); skipped otherwise
+ *  GH-13 the opt-in check of the real test repository's public Pages site: downloaded below /repo/, no broken link;
+ *        only with EXP_STATIC_GITHUB_TEST_REPO set
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -390,15 +393,17 @@ class expStaticGitHubTest extends PHPUnit\Framework\TestCase
 
     /**
      * GH-11: the opt-in integration test against a real GitHub repository (the owner approved one under se7enxweb).
-     * It reads the repository and its Pages site; it changes nothing. Set EXP_STATIC_GITHUB_TEST_TOKEN (a token
-     * that can read the repository) and EXP_STATIC_GITHUB_TEST_REPO (owner/repo); the token is never printed.
+     * It reads the repository and its Pages site; it changes nothing. Set EXP_STATIC_GITHUB_TEST_REPO (owner/repo)
+     * and the token: EXP_STATIC_GITHUB_TEST_TOKEN (a token that can read the repository), or, so the value never has
+     * to be put into the environment, EXP_STATIC_GITHUB_TEST_SECRET with the name of a secret of the secret store
+     * (run on an installation whose database holds it). The token is never printed.
      */
     public function testRealGitHubRepository()
     {
-        $token = (string)getenv( 'EXP_STATIC_GITHUB_TEST_TOKEN' );
+        $token = self::integrationToken();
         $repo = (string)getenv( 'EXP_STATIC_GITHUB_TEST_REPO' );
         if ( $token === '' || !preg_match( '#^([A-Za-z0-9-]+)/([A-Za-z0-9._-]+)$#', $repo, $m ) )
-            $this->markTestSkipped( 'the opt-in GitHub integration test needs EXP_STATIC_GITHUB_TEST_TOKEN and EXP_STATIC_GITHUB_TEST_REPO (owner/repo)' );
+            $this->markTestSkipped( 'the opt-in GitHub integration test needs EXP_STATIC_GITHUB_TEST_REPO (owner/repo) and EXP_STATIC_GITHUB_TEST_TOKEN or EXP_STATIC_GITHUB_TEST_SECRET' );
         if ( !expStaticGitHub::available() )
             $this->markTestSkipped( expStaticGitHub::unavailable() );
         $client = new expStaticGitHub( $token, array( 'api' => expStaticGitHub::API ) );
@@ -409,5 +414,103 @@ class expStaticGitHubTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( $token, json_encode( $status ) );
         if ( $status['pages']['enabled'] )
             $this->assertContains( $status['build']['status'], array( 'built', 'building', 'queued', 'errored', 'none' ) );
+    }
+
+    /**
+     * The token of the opt-in tests: EXP_STATIC_GITHUB_TEST_TOKEN, else the secret named by
+     * EXP_STATIC_GITHUB_TEST_SECRET, read from the secret store of the installation the tests run on.
+     *
+     * @return string '' when there is none
+     */
+    private static function integrationToken()
+    {
+        $token = trim( (string)getenv( 'EXP_STATIC_GITHUB_TEST_TOKEN' ) );
+        $secret = trim( (string)getenv( 'EXP_STATIC_GITHUB_TEST_SECRET' ) );
+        if ( $token !== '' || $secret === '' || !class_exists( 'expSecrets' ) )
+            return $token;
+        try
+        {
+            return trim( (string)expSecrets::get( $secret ) );
+        }
+        catch ( Throwable $e )
+        {
+            return '';
+        }
+    }
+
+    /**
+     * GH-13: the opt-in check of the published site of the real test repository: its GitHub Pages address is
+     * downloaded the way a visitor would read it (the start page and every page, style sheet and file it links to
+     * below the repository's base path, at most 200 files) and the link checker finds no broken link under /repo/.
+     * Needs EXP_STATIC_GITHUB_TEST_REPO only: the site is public, no token is used.
+     */
+    public function testRealGitHubPagesSiteHasNoBrokenLinks()
+    {
+        $repo = (string)getenv( 'EXP_STATIC_GITHUB_TEST_REPO' );
+        if ( !preg_match( '#^([A-Za-z0-9-]+)/([A-Za-z0-9._-]+)$#', $repo, $m ) )
+            $this->markTestSkipped( 'the opt-in GitHub Pages check needs EXP_STATIC_GITHUB_TEST_REPO (owner/repo)' );
+        if ( !function_exists( 'curl_init' ) )
+            $this->markTestSkipped( 'the PHP extension curl is missing' );
+        $base = rtrim( expStaticGitHub::pagesUrl( $m[1], $m[2] ), '/' ) . '/';
+        $mount = expStaticGitHub::pagesBasePath( $m[1], $m[2] );
+        $mount = $mount === '' ? '/' : $mount;
+        $origin = substr( $base, 0, strlen( $base ) - strlen( $mount ) );
+        $this->dir = dirname( __DIR__, 5 ) . '/var/tmp/static-github-site-test-' . getmypid() . '-' . bin2hex( random_bytes( 3 ) );
+        mkdir( $this->dir, 0775, true );
+        $queue = array( $mount );
+        $seen = array( $mount => true );
+        $fetched = 0;
+        while ( $queue && $fetched < 200 )
+        {
+            $path = array_shift( $queue );
+            list( $status, $body ) = self::fetchPublic( $origin . $path );
+            $this->assertSame( 200, $status, "the public address $origin$path" );
+            $fetched++;
+            $relative = rawurldecode( ltrim( substr( $path, strlen( rtrim( $mount, '/' ) ) ), '/' ) );
+            if ( $relative === '' || substr( $relative, -1 ) === '/' )
+                $relative .= 'index.html';
+            $file = $this->dir . '/' . $relative;
+            if ( !is_dir( dirname( $file ) ) )
+                mkdir( dirname( $file ), 0775, true );
+            file_put_contents( $file, $body );
+            $extension = strtolower( (string)pathinfo( $relative, PATHINFO_EXTENSION ) );
+            if ( $extension !== 'html' && $extension !== 'css' )
+                continue;
+            $folder = substr( $path, 0, strrpos( $path, '/' ) + 1 );
+            $refs = $extension === 'css' ? expStaticLinkChecker::cssReferences( $body ) : expStaticLinkChecker::htmlReferences( $body );
+            foreach ( $refs as $ref )
+            {
+                $resolved = expStaticLinkChecker::resolve( $ref, $folder );
+                if ( $resolved === null || isset( $seen[$resolved] ) || strpos( $resolved, $mount ) !== 0 )
+                    continue;
+                if ( substr( $resolved, -1 ) !== '/' && pathinfo( $resolved, PATHINFO_EXTENSION ) === '' )
+                    $resolved .= '/'; // a folder without its slash: GitHub Pages redirects to it
+                if ( isset( $seen[$resolved] ) )
+                    continue;
+                $seen[$resolved] = true;
+                $queue[] = $resolved;
+            }
+        }
+        list( $status ) = self::fetchPublic( $origin . $mount . '404.html' );
+        if ( $status === 200 )
+        {
+            list( , $body ) = self::fetchPublic( $origin . $mount . '404.html' );
+            file_put_contents( $this->dir . '/404.html', $body );
+        }
+        $result = expStaticLinkChecker::check( $this->dir, $mount );
+        $this->assertGreaterThan( 0, $result['files'] );
+        $this->assertSame( 0, $result['broken_count'], json_encode( $result['broken'] ) );
+    }
+
+    /** @return array status and body of a public https address (no token, no redirects followed) */
+    private static function fetchPublic( $url )
+    {
+        $ch = curl_init( $url );
+        curl_setopt_array( $ch, array( CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 30, CURLOPT_CONNECTTIMEOUT => 10,
+                                       CURLOPT_PROTOCOLS => CURLPROTO_HTTPS, CURLOPT_USERAGENT => 'Exponential static publishing test' ) );
+        $body = curl_exec( $ch );
+        $status = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+        if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
+        return array( $status, is_string( $body ) ? $body : '' );
     }
 }

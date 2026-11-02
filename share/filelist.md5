@@ -28646,7 +28646,7 @@ c043add0dcb7a14de3d5d610b5c45115  tests/tests/kernel/classes/staticpublish/expSt
 3979bc5a303fe7d2b1e227585e8944ec  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
 0ac14314c5e2bc01199792dd2b25ddef  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
 b674b9f3f52a668377100f22d8104e61  tests/tests/kernel/classes/staticpublish/expStaticFormEndpointTest.php
-197ad228066dc318abc3c6105189e835  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
+36261ce09d4f1424c69c939877e7391b  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
 f9f6e7d3550d867ef242158560604dfb  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
 2307703b878f57acb1f2ee99c343afde  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
 ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php
