@@ -29240,7 +29240,7 @@ ddcbdd9dcda4698c0bcd444f6913a048  tests/tests/lib/ezi18n/expI18nFallbackResolver
 ed77dbe7edb52426e027ae9a388e78e3  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 662586ec84b776735de62d77e15e9c4d  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
 bc39eb88cd1667a018c3555bc8132fb0  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-315aee382e972b3bb59897ac08cc93ef  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+402fa791d9eb315b38d30957f05619d2  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
@@ -29352,7 +29352,7 @@ cd9b15cbda2d7cf4ab918f89745c1f86  tests/tests/lib/ezutils/eZURITransformURINullT
 928c3575ddbe82124c032d98733c8fa5  tests/tests/lib/ezutils/expDebugBarReportMessageTextTest.php
 d9f91ce895a838c5d845e011fdaf82c7  tests/tests/lib/ezutils/expDebugBarReportPanelHeightTest.php
 38dd51e326a256aba5d8a3f7cbea1eab  tests/tests/lib/ezutils/expDebugBarReportRuntimeChipsTest.php
-cfaa7a42b393df575c088bbeb26e29f1  tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php
+e7567a0d6f534116016f9712c33add70  tests/tests/lib/ezutils/expDebugBarReportToolbarThemeTest.php
 837fe39430fd90c8f42800cfe3751a51  tests/tests/lib/ezutils/expDebugOffHeaderTest.php
 5c2924a59ad2748766f3ab2a5999fa7b  tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php
 e81fa7dbd78e2bb8974da3c6c02d5576  tests/tests/lib/ezutils/ezdebug_regression.php
