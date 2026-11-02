@@ -29,7 +29,7 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
     public static function contract()
     {
         return array(
-            'exp:static:targets' => '[format:]',
+            'exp:static:targets' => '[format:][export:]',
             'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging][login:][run-id:][progress:]',
             'exp:static:diff' => '[format:][verify][check-links][mount:*]',
             'exp:static:serve' => '[port:][host:][base-path:][format:]',

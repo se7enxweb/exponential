@@ -24943,7 +24943,7 @@ d23d7cff446dc7c1dc750eeb692332af  kernel/private/classes/commands/expmigrationre
 180ff4f1bb02469aa440dc45a57033af  kernel/private/classes/commands/expmigrationresume.php
 9c156aa9bf248209f4c361d0455eec7c  kernel/private/classes/commands/expmigrationrollback.php
 c22b8f05181328d28e0b44a498863941  kernel/private/classes/commands/expmigrationstatus.php
-efa4f9b946fa3f70ec37dfdd4d3d8019  kernel/private/classes/commands/expstaticbase.php
+d2309791fed8419ca4f561c051ae9838  kernel/private/classes/commands/expstaticbase.php
 c7004590b386f44cb53c2f632b82260e  kernel/private/classes/commands/expstaticbuild.php
 3575ea0c498f5d1b43b9bbe9f4e37c09  kernel/private/classes/commands/expstaticdiff.php
 7af493693e54a73bf598e5269f2ee1f8  kernel/private/classes/commands/expstaticdns.php
@@ -28635,7 +28635,7 @@ c84634e3e809c1f62ebf9d36a557f0a2  tests/tests/kernel/classes/staticpublish/expSt
 ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php
 87d9e9e8a8eba07e15f47b2d69a101f4  tests/tests/kernel/classes/staticpublish/expStaticNotifierTest.php
 adb80e7b78eabc0a7df0252fe4fa55ea  tests/tests/kernel/classes/staticpublish/expStaticPostProcessorTest.php
-e728c45e05e822dbc37bc066c3298bb3  tests/tests/kernel/classes/staticpublish/expStaticPublishSqliteTest.php
+e509294f8d2cc6e9e9595ee8ffd911a0  tests/tests/kernel/classes/staticpublish/expStaticPublishSqliteTest.php
 a41ad48d5208789ab796f8f4aaf17755  tests/tests/kernel/classes/staticpublish/expStaticRedirectsTest.php
 b34f4973d7f792b39f06887cb6785369  tests/tests/kernel/classes/staticpublish/expStaticScheduleTest.php
 428973ac81ebd8eddfeabbd1663f927c  tests/tests/kernel/classes/staticpublish/expStaticSearchIndexTest.php

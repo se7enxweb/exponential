@@ -280,7 +280,11 @@ class expStaticPublishSqliteTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $after, $this->tagObjects( $bare ), 'the remote has the same tags' );
         $this->assertSame( '4', (string)count( $after ) );
         $runs = expStaticStatus::runs( $this->db, 'test-site', 0 );
-        $this->assertSame( array( 'rollback', 'done', 'pushed' ), array( $runs[0]['kind'], $runs[0]['state'], $runs[0]['push_state'] ) );
+        // the newest run; a publish in the same second may be listed first (runs are ordered by the second they started)
+        $rollbackRun = array_values( array_filter( $runs, function ( $run ) use ( $rolled ) { return $run['run_id'] === $rolled['run_id']; } ) );
+        $this->assertCount( 1, $rollbackRun );
+        $this->assertSame( $runs[0]['started_at'], $rollbackRun[0]['started_at'], 'the rollback is the newest run' );
+        $this->assertSame( array( 'rollback', 'done', 'pushed' ), array( $rollbackRun[0]['kind'], $rollbackRun[0]['state'], $rollbackRun[0]['push_state'] ) );
         $this->assertSame( 'system.staticpublish.rollback', end( $this->audits )[0] );
         $this->assertSame( 'static/test-site/1', end( $this->audits )[1]['x']['from_tag'] );
         $this->assertArrayHasKey( 'news/item-1/index.html', expStaticStatus::pages( $this->db, 'test-site' ) );
