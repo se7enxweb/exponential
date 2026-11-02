@@ -12958,7 +12958,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-b796e3a63f1b98d090d573b3d8782e95  doc/eng-us/languages.md
+5bf52971b160f467784f232687176dcc  doc/eng-us/languages.md
 a01cfab17abd8fe9afb536c336665f82  doc/eng-us/reference/template-check-rules.md
 7fd547b3e5bba61137f6fd583ac6b6c1  doc/eng-us/reference/template-check-schema.json
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
@@ -13243,7 +13243,7 @@ bad2519096e06e1dde4533665f591654  doc/eng-us/standards/php-and-composer.md
 2267325f3fa45dde68c5c77fc42be96c  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-15d1c141344fe60394ad3c8001f59b2f  doc/eng-us/translation-waves.md
+e1264fe6295b4d944377b507423d6050  doc/eng-us/translation-waves.md
 3c8a3d79f60b6093c9dfec548dd48c84  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -22426,7 +22426,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 c26c10f120d2b58bf79e3ceefedb7568  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-ef947859727e519aad0512f068a9b54e  doc/ger-de/sprachen.md
+bab81f035494d5d05c6e1c7e05c50320  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 daa5c11d25c00c75f86baa632a188217  doc/ger-de/standards/apis-und-protokolle.md
 0b0f0ca714c2ab620eab9538302ed3dc  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -22629,7 +22629,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 385c4d12f5d3e25efd6406b7a9338d2a  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-4e64b1843809c214350c119d20ed2cbb  doc/ger-de/uebersetzungswellen.md
+ff78fb4f841e736f53bc8a83d0797732  doc/ger-de/uebersetzungswellen.md
 b6bb5b8684060dcf354d412da94f823e  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -27481,7 +27481,7 @@ c6dc433ce7a85dcb3ea89fb45bfa5441  share/translations/fre-FR/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-9c97828067bcce3c0cafdc6aa508ba46  share/translations/ger-DE/translation.ts
+bb3576fcc6229b915b542c54a5aa80e5  share/translations/ger-DE/translation.ts
 1663811be417a845709468b796268b8e  share/translations/gla-GB/GUIDE.md
 87b8298bb22b0497da661d368c40674d  share/translations/gla-GB/translation.ts
 c9c96be6fea59b4e6e70919f636e2de8  share/translations/gle-IE/GUIDE.md
@@ -28584,7 +28584,7 @@ e324cf43867bec217cdf174afd6e0afa  tests/tests/kernel/classes/migration/expMigrat
 d625de154dffa75520caf0576a95cd34  tests/tests/kernel/classes/migration/expMigrationGraphqlEngineChecks.php
 f2e97f0af2c5b35dcbd80445cd2a3d6f  tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php
 78fe88cb1c98a71b9b54c626f207cbc3  tests/tests/kernel/classes/migration/expMigrationGraphqlSqliteTest.php
-7ef3abd09335c51ad8230b18ccf5ca7f  tests/tests/kernel/classes/migration/expMigrationJobTest.php
+f7167adcbb16955891534f748d2dcf6b  tests/tests/kernel/classes/migration/expMigrationJobTest.php
 0c11bacfaa04f75d917037d427ea4b1a  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsDatabaseTest.php
 1f9614ea01738edf4264571d430cd6f8  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsEngineChecks.php
 dd536ce4dc5c21990af84ba12ad56c80  tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsSqliteTest.php

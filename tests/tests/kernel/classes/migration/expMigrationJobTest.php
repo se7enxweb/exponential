@@ -249,7 +249,7 @@ class expMigrationJobTest extends PHPUnit\Framework\TestCase
             $this->assertSame( 'ezsetupnavigationpart', $def['default_navigation_part'] );
         }
         $this->assertSame( array( 'status' => array( 'read' ), 'history' => array( 'read' ), 'log' => array( 'read' ), 'stream' => array( 'read' ),
-                                  'dryrun' => array( 'read' ), 'run' => array( 'run' ), 'rollback' => array( 'rollback' ), 'recording' => array( 'edit' ) ), $policies );
+                                  'dryrun' => array( 'read' ), 'run' => array( 'run' ), 'rollback' => array( 'rollback' ), 'recording' => array( 'edit' ), 'editor' => array( 'edit' ) ), $policies );
 
         $this->assertMatchesRegularExpression( '/^ModuleList\[\]=migration$/m', file_get_contents( self::$root . '/settings/module.ini' ) );
         $menu = self::section( 'settings/menu.ini', 'Leftmenu_setup' );

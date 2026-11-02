@@ -88098,7 +88098,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Migration %id</source>
-        <translation>Migration %id</translation>
+        <translation>Die Migration %id</translation>
     </message>
     <message>
         <source>New migration</source>
@@ -88134,7 +88134,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>YAML</source>
-        <translation>YAML</translation>
+        <translation>YAML-Text</translation>
     </message>
     <message>
         <source>Check</source>
