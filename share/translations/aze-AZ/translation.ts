@@ -83405,4 +83405,19 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <translation>Onların mətni qalır. Şəkillər, formalar və digər saytlara keçidlər heç vaxt silinmir.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site saytında %target üçün statik dərc uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site saytında %target üçün statik dərc uğurla başa çatdı</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Bu məktubu %site göndərdi, çünki statik dərc hədəfi %target bunu istəyir.</translation>
+    </message>
+</context>
 </TS>

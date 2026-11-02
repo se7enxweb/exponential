@@ -83435,4 +83435,19 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>Jich tekst wóstanjo. Wobraze, formulary a wótkazy na druge sedła se nigda njewótwónoźuju.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiske wózjawjenje %target na %site njejo se raźiło</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiske wózjawjenje %target na %site jo se raźiło</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Toś tu e-mailku jo %site pósłał, dokulaž zaměr statiskego wózjawjenja %target wó nju pšosy.</translation>
+    </message>
+</context>
 </TS>

@@ -83405,4 +83405,19 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Makomi na yango etikalaka. Bilili, mikanda ya kotondisa mpe ba lien ya ba site mosusu elongolamaka soki moke te.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kobimisa static ya %target elongi te na %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kobimisa static ya %target elongi na %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site etindi mail oyo mpo ete mokano ya kobimisa static %target esengi yango.</translation>
+    </message>
+</context>
 </TS>

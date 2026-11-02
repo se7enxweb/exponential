@@ -83438,4 +83438,19 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghItlhchaj ratlh. mIllogh, mu'tlhegh, latlh Daqmey rarwI' je not teqlu'.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site Daq %target choHbe'bogh HochvaD 'angghach Qapbe'</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site Daq %target choHbe'bogh HochvaD 'angghach Qap</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>QIn'vam ngeH %site, choHbe'bogh HochvaD 'angghach DoS %target poQmo'.</translation>
+    </message>
+</context>
 </TS>

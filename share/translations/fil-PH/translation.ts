@@ -83405,4 +83405,19 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <translation>Nananatili ang kanilang teksto. Hindi kailanman inaalis ang mga larawan, form at link sa ibang site.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Nabigo ang static publishing ng %target sa %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Matagumpay ang static publishing ng %target sa %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ipinadala ng %site ang mail na ito dahil hinihiling ito ng static publishing target na %target.</translation>
+    </message>
+</context>
 </TS>

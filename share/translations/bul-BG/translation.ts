@@ -83435,4 +83435,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Текстът им остава. Изображенията, формулярите и връзките към други сайтове никога не се премахват.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Статичното публикуване на %target в %site не успя</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Статичното публикуване на %target в %site е успешно</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Това писмо е изпратено от %site, защото целта за статично публикуване %target го изисква.</translation>
+    </message>
+</context>
 </TS>

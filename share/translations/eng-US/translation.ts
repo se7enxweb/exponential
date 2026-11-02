@@ -83407,4 +83407,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Their text stays. Images, forms and links to other sites are never removed.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Static publishing of %target failed on %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Static publishing of %target succeeded on %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>This mail was sent by %site because the static publishing target %target asks for it.</translation>
+    </message>
+</context>
 </TS>

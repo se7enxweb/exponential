@@ -83413,4 +83413,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ओकर पाठ रह जाला। फोटो, फॉर्म आ दोसर साइट के लिंक कबो ना हटावल जाला।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site पर %target के स्टैटिक प्रकाशन फेल हो गइल</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site पर %target के स्टैटिक प्रकाशन सफल हो गइल</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ई मेल %site भेजले बा काहे कि स्टैटिक प्रकाशन लक्ष्य %target एकरा के माँगेला।</translation>
+    </message>
+</context>
 </TS>

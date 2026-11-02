@@ -83438,4 +83438,19 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Textus eorum manet. Imagines, formulae et nexus ad alias sedes numquam removentur.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Editio statica %target in %site defecit</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Editio statica %target in %site successit</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Has litteras %site misit quia scopus editionis staticae %target eas postulat.</translation>
+    </message>
+</context>
 </TS>

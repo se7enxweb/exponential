@@ -84085,4 +84085,19 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Deres tekst bliver stående. Billeder, formularer og links til andre websteder fjernes aldrig.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk publicering af %target mislykkedes på %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk publicering af %target lykkedes på %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Denne mail er sendt af %site, fordi målet for statisk publicering %target beder om den.</translation>
+    </message>
+</context>
 </TS>

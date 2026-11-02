@@ -83405,4 +83405,19 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Ularning matni qoladi. Rasmlar, shakllar va boshqa saytlarga havolalar hech qachon olib tashlanmaydi.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site saytida %target statik nashri muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site saytida %target statik nashri muvaffaqiyatli tugadi</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Bu xatni %site yubordi, chunki statik nashr maqsadi %target buni so‘raydi.</translation>
+    </message>
+</context>
 </TS>

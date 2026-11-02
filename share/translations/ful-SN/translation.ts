@@ -83405,4 +83405,19 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <translation>Binndi maɓɓe ina heddoo. Nate, formulaaruuji e jokkorɗe yahooje e lowe goɗɗe momtataake abada.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Muurtinol static %target woni e %site rewaani</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Muurtinol static %target woni e %site laaɓi</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site neldi ndee bataake sabu ɓuuɗam muurtinol static %target ina ɗaɓɓi ɗum.</translation>
+    </message>
+</context>
 </TS>

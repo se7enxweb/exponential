@@ -83405,4 +83405,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Алардын тексти калат. Сүрөттөр, формалар жана башка сайттарга шилтемелер эч качан өчүрүлбөйт.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site сайтында %target статикалык жарыялоосу ишке ашкан жок</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site сайтында %target статикалык жарыялоосу ийгиликтүү болду</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Бул катты %site жөнөттү, анткени статикалык жарыялоо максаты %target муну талап кылат.</translation>
+    </message>
+</context>
 </TS>

@@ -83405,4 +83405,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ข้อความของลิงก์ยังอยู่ รูปภาพ แบบฟอร์ม และลิงก์ไปยังไซต์อื่นจะไม่ถูกลบ</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>การเผยแพร่แบบคงที่ของ %target บน %site ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>การเผยแพร่แบบคงที่ของ %target บน %site สำเร็จ</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>อีเมลนี้ส่งโดย %site เนื่องจากเป้าหมายการเผยแพร่แบบคงที่ %target ร้องขอ</translation>
+    </message>
+</context>
 </TS>

@@ -83405,4 +83405,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Hiren Text bleift stoen. Biller, Formulairen a Linken op aner Websäite ginn ni ewechgeholl.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statesch Verëffentlechung vun %target op %site ass feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statesch Verëffentlechung vun %target op %site huet geklappt</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Dës Mail gouf vun %site geschéckt, well d'Zil fir statesch Verëffentlechung %target dat freet.</translation>
+    </message>
+</context>
 </TS>

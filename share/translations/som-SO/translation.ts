@@ -83403,4 +83403,19 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Qoraalkoodu wuu harayaa. Sawirada, foomamka iyo xiriirada goobaha kale weligood lama saaro.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Daabacaadda joogtada ah ee %target way ku guuldareysatay %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Daabacaadda joogtada ah ee %target way ku guuleysatay %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Farriintan waxaa soo diray %site sababtoo ah bartilmaameedka daabacaadda joogtada ah %target ayaa codsanaya.</translation>
+    </message>
+</context>
 </TS>

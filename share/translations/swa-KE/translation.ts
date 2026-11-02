@@ -83403,4 +83403,19 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Maandishi yake yanabaki. Picha, fomu na viungo vya tovuti nyingine haviondolewi kamwe.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Uchapishaji tuli wa %target umeshindwa kwenye %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Uchapishaji tuli wa %target umefanikiwa kwenye %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Barua pepe hii imetumwa na %site kwa sababu lengo la uchapishaji tuli %target linaiomba.</translation>
+    </message>
+</context>
 </TS>

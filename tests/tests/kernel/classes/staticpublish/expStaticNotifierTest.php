@@ -5,7 +5,9 @@
  *  NT-01 the payload (exp-static-webhook/1): publish.done, publish.failed, rollback; no credential
  *  NT-02 the e-mail goes as Notify[] asks: failure, success (only a run that committed)
  *  NT-03 the webhook: https only (http to localhost), signed with the secret, its status checked
- *  NT-04 the mail text names the target, run, push and errors
+ *  NT-04 the mail text names the target, run, result, push and errors, and links to the run's log
+ *  NT-05 the notice is made like the kernel's other notices to administrators: plain text from its template,
+ *        sender EmailSender (else AdminEmail), category admin; a failed run never reads "unchanged"
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -21,8 +23,8 @@ class expStaticNotifierTest extends PHPUnit\Framework\TestCase
     {
         $self = $this;
         return new expStaticNotifier( $options + array(
-            'email' => 'ops@example.com', 'secret' => '', 'site' => 'Demo',
-            'mail' => function ( $to, $subject, $body ) use ( $self ) { $self->mails[] = array( $to, $subject, $body ); return true; },
+            'email' => 'ops@example.com', 'secret' => '', 'site' => 'Demo', 'admin_url' => 'https://admin.example.com/',
+            'mail' => function ( eZMail $mail ) use ( $self ) { $self->mails[] = $mail; return true; },
             'post' => function ( $url, $body, array $headers ) use ( $self ) { $self->posts[] = array( $url, $body, $headers ); return $self->status; },
         ) );
     }
@@ -57,16 +59,20 @@ class expStaticNotifierTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array(), $this->mails, 'Notify[]=failure is the default' );
         $result = $this->notifier()->notify( self::target(), self::report( 'failed', array( 'push refused' ) ) );
         $this->assertTrue( $result['mail'] );
-        $this->assertSame( 'ops@example.com', $this->mails[0][0] );
-        $this->assertSame( '[Demo] Static publishing pub: failed', $this->mails[0][1] );
+        $this->assertSame( 'ops@example.com', $this->mails[0]->receiverText() );
+        $this->assertSame( 'Static publishing of Public (pub) failed on Demo', $this->mails[0]->subject() );
         $this->mails = array();
         $success = self::target( array( 'Notify' => array( 'success' ) ) );
         $this->notifier()->notify( $success, self::report( 'unchanged' ) );
         $this->assertSame( array(), $this->mails, 'nothing committed, nothing to tell' );
         $this->notifier()->notify( $success, self::report( 'done' ) );
         $this->assertCount( 1, $this->mails );
+        $this->assertSame( 'Static publishing of Public (pub) succeeded on Demo', $this->mails[0]->subject() );
         $this->assertSame( array( 'no address for the notice: set [StaticPublishSettings] NotifyEmail' ),
                            $this->notifier( array( 'email' => '' ) )->notify( self::target(), self::report( 'failed' ) )['problems'] );
+        $result = $this->notifier( array( 'email' => 'not an address' ) )->notify( self::target(), self::report( 'failed' ) );
+        $this->assertFalse( $result['mail'] );
+        $this->assertSame( array( 'the address for the notice is not valid: [StaticPublishSettings] NotifyEmail' ), $result['problems'] );
     }
 
     /** NT-03 */
@@ -95,9 +101,40 @@ class expStaticNotifierTest extends PHPUnit\Framework\TestCase
     /** NT-04 */
     public function testMailText()
     {
-        list( $subject, $body ) = expStaticNotifier::mail( expStaticNotifier::payload( self::target(), self::report( 'failed', array( 'push refused' ) ) ), '' );
-        $this->assertSame( '[Exponential] Static publishing pub: failed', $subject );
-        foreach ( array( 'Target:  pub (Public)', 'Run:     r1', 'Push:    pushed', 'Address: https://o.github.io/r/', '- push refused' ) as $line )
+        $payload = expStaticNotifier::payload( self::target(), self::report( 'failed', array( 'push refused' ) ) );
+        list( $subject, $body ) = expStaticNotifier::mail( $payload, 'Demo', 'https://admin.example.com/staticpublish/log/r1' );
+        $this->assertSame( 'Static publishing of Public (pub) failed on Demo', $subject );
+        foreach ( array( 'Target: Public (pub)', 'Id: r1', 'Result: failed', 'Push: pushed', 'Public address: https://o.github.io/r/',
+                         "Errors:\n- push refused", 'Log: https://admin.example.com/staticpublish/log/r1',
+                         'This mail was sent by Demo because the static publishing target pub asks for it.' ) as $line )
             $this->assertStringContainsString( $line, $body );
+        $this->assertSame( 'https://admin.example.com/staticpublish/log/r%201', expStaticNotifier::logURL( 'r 1', 'https://admin.example.com/' ) );
+        $this->assertSame( '', expStaticNotifier::logURL( 'r1', '' ) );
+    }
+
+    /** NT-05 */
+    public function testNoticeFollowsTheKernelMailModel()
+    {
+        $this->notifier()->notify( self::target(), self::report( 'unchanged', array( 'not pushed: the secret github_pages_token is not set' ) ) );
+        $this->assertCount( 1, $this->mails );
+        $mail = $this->mails[0];
+        $this->assertSame( 'admin', $mail->category() );
+        $this->assertSame( 'Static publishing of Public (pub) failed on Demo', $mail->subject() );
+        $ini = eZINI::instance();
+        $sender = $ini->variable( 'MailSettings', 'EmailSender' ) ?: $ini->variable( 'MailSettings', 'AdminEmail' );
+        $this->assertSame( (string)$sender, $mail->senderText() );
+        $this->assertStringNotContainsStringIgnoringCase( 'html', (string)$mail->contentType() );
+        $body = (string)$mail->body();
+        $this->assertStringNotContainsString( '<', $body, 'plain text, no HTML' );
+        foreach ( array( 'Static publishing of Public (pub) failed on Demo', 'Target: Public (pub)', 'Id: r1', 'Result: failed',
+                         'Changes: nothing changed', 'Push: pushed', "Errors:\n- not pushed: the secret github_pages_token is not set",
+                         'Log: https://admin.example.com/staticpublish/log/r1',
+                         'This mail was sent by Demo because the static publishing target pub asks for it.' ) as $line )
+            $this->assertStringContainsString( $line, $body );
+        $this->assertStringNotContainsString( 'unchanged', $body, 'a failed run reads "failed", never "unchanged"' );
+        // the template is the source of the text, the built-in text only its fallback: both say the same
+        list( , $fallback ) = expStaticNotifier::mail( expStaticNotifier::payload( self::target(), self::report( 'unchanged', array( 'x' ) ) ), 'Demo', 'https://admin.example.com/staticpublish/log/r1' );
+        $this->assertStringContainsString( 'Result: failed', $fallback );
+        $this->assertStringContainsString( 'Changes: nothing changed', $fallback );
     }
 }

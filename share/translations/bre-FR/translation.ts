@@ -83405,4 +83405,19 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <translation>O zestenn a chom. Ar skeudennoù, ar furmskridoù hag al liammoù d'al lec'hiennoù all n'int biken lamet.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>C'hwitet eo bet an embann statek eus %target war %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Berzh en deus graet an embann statek eus %target war %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Kaset eo bet ar postel-mañ gant %site rak goulennet eo gant ar pal embann statek %target.</translation>
+    </message>
+</context>
 </TS>

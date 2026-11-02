@@ -83403,4 +83403,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ጽሑፋቸው ይቀራል። ምስሎች፣ ቅጾች እና ወደ ሌሎች ጣቢያዎች የሚወስዱ አገናኞች በፍጹም አይወገዱም።</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>የ%target ቋሚ ህትመት በ%site ላይ አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>የ%target ቋሚ ህትመት በ%site ላይ ተሳክቷል</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ይህ ኢሜይል በ%site የተላከው የቋሚ ህትመት ዒላማ %target ስለጠየቀው ነው።</translation>
+    </message>
+</context>
 </TS>

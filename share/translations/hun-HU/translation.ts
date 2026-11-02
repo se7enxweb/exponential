@@ -83435,4 +83435,19 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>A szövegük megmarad. A képek, űrlapok és más webhelyekre mutató hivatkozások soha nem kerülnek eltávolításra.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>A(z) %target statikus közzététele sikertelen volt itt: %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>A(z) %target statikus közzététele sikeres volt itt: %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ezt a levelet a(z) %site küldte, mert a(z) %target statikus közzétételi cél kéri.</translation>
+    </message>
+</context>
 </TS>

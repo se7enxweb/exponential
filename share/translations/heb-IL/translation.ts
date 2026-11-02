@@ -83437,4 +83437,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הטקסט שלהם נשאר. תמונות, טפסים וקישורים לאתרים אחרים לעולם אינם מוסרים.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>הפרסום הסטטי של %target נכשל ב-%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>הפרסום הסטטי של %target הצליח ב-%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>הודעה זו נשלחה על ידי %site כי יעד הפרסום הסטטי %target מבקש אותה.</translation>
+    </message>
+</context>
 </TS>
