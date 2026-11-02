@@ -68848,6 +68848,42 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ya %matching ma mawatho (%total mothe)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Nĩ ĩrehwo rĩrĩa ĩhingũrwo.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/wĩra, mũrimo, ũthibitĩri</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Caria mawatho</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Rehe maingĩ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/wĩra</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Mĩrimo yothe (mawatho %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Gũtirĩ watho ũhoyanaga.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown kuuma mawatho %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Gũtirĩ ũndũ ũgaruririo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ndeto ciacio itigaraga. Mbica, fomu na ngwatanio cia thaiti ingĩ itiheragwo.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Ũrutwo</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Gũcabithia static kwa %target nĩ kwaremwo harĩ %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Gũcabithia static kwa %target nĩ kwahingĩte harĩ %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Marũa maya matũmĩtwo nĩ %site tondũ kĩrĩa gĩa gũcabithia static %target nĩ kĩramiũria.</translation>
     </message>
 </context>
 </TS>

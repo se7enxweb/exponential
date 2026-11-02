@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>정책 %shown / %matching (전체 %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>열 때 불러옵니다.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, 역할, 제한</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>정책 검색</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>더 불러오기</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>모듈/기능</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>모든 역할 (정책 %count개)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>일치하는 정책이 없습니다.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>정책 %matched개 중 %shown개</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>응답 없음</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>링크의 텍스트는 남습니다. 이미지, 양식, 다른 사이트로 가는 링크는 제거되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>버전</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site에서 %target의 정적 게시에 실패했습니다</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site에서 %target의 정적 게시에 성공했습니다</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>정적 게시 대상 %target이(가) 요청하므로 %site에서 이 메일을 보냈습니다.</translation>
     </message>
 </context>
 </TS>

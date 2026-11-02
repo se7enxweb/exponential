@@ -68848,6 +68848,42 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown pa %matching mitemo (%total pamwe chete)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Inotakurwa kana yavhurwa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, basa, muganho</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Tsvaga mapolisi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Takura zvakawanda</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modhiyuru/fanikishoni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Mabasa ese (mapolisi %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Hapana mutemo unoenderana.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown pamapolisi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Hapana mhinduro</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Mavara azvo anosara. Mifananidzo, mafomu nezvinongedzo zvinoenda kune dzimwe saiti hazvimbobviswi.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Vhezheni</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kuburitsa kwakamira kwe%target kwakundikana pa%site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kuburitsa kwakamira kwe%target kwabudirira pa%site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tsamba iri rakatumirwa ne%site nekuti chinangwa chekuburitsa kwakamira %target chinorikumbira.</translation>
     </message>
 </context>
 </TS>

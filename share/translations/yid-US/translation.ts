@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown פֿון %matching פּאָליסיס (%total אין גאַנצן)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ווערט געלאָדן ווען מען עפֿנט.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>מאָדול/פֿונקציע, ראָלע, באַגרענעצונג</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>זוכן אין די פּאָליטיקן</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>לאָדן מער</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>מאָדול/פֿונקציע</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>אַלע ראָלעס (%count פּאָליטיקן)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>קיין פּאָליטיק שטימט נישט.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown פֿון %matched פּאָליטיקן</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>קיין ענטפֿער</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>זייער טעקסט בלײַבט. בילדער, פֿאָרמען און לינקען צו אַנדערע זײַטלעך ווערן קיינמאָל נישט אַוועקגענומען.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>ווערסיע</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>סטאַטישע פּובליקירונג פֿון %target אויף %site איז דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>סטאַטישע פּובליקירונג פֿון %target אויף %site איז געלונגען</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>דער בריוו איז געשיקט געוואָרן פֿון %site ווײַל דער ציל פֿון סטאַטישער פּובליקירונג %target בעט עס.</translation>
     </message>
 </context>
 </TS>

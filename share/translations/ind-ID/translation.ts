@@ -68848,6 +68848,42 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown dari %matching kebijakan (total %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Dimuat saat dibuka.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/fungsi, peran, batasan</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Cari kebijakan</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Muat lebih banyak</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/fungsi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Semua peran (%count kebijakan)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Tidak ada kebijakan yang cocok.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown dari %matched kebijakan</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Tidak ada jawaban</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksnya tetap ada. Gambar, formulir, dan tautan ke situs lain tidak pernah dihapus.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versi</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publikasi statis %target gagal di %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publikasi statis %target berhasil di %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Email ini dikirim oleh %site karena target publikasi statis %target memintanya.</translation>
     </message>
 </context>
 </TS>

@@ -68787,6 +68787,42 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching käytäntöä (yhteensä %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ladataan avattaessa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rooli, rajoitus</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hae käytäntöjä</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Lataa lisää</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduuli/toiminto</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Kaikki roolit (%count käytäntöä)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Mikään käytäntö ei täsmää.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown / %matched käytäntöä</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ei vastausta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,25 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Niiden teksti säilyy. Kuvia, lomakkeita ja linkkejä muille sivustoille ei koskaan poisteta.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kohteen %target staattinen julkaisu epäonnistui sivustolla %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kohteen %target staattinen julkaisu onnistui sivustolla %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tämän viestin lähetti %site, koska staattisen julkaisun kohde %target pyytää sitä.</translation>
     </message>
 </context>
 </TS>

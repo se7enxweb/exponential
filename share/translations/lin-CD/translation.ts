@@ -68848,6 +68848,42 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown na kati ya mibeko %matching (%total nyonso)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ekɛngami ntango efungami.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, mokumba, mokɔlɔ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Luka na bibongisi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Kɛnga mingi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/mosala</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Bikumba nyonso (bibongisi %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Libongisi moko te ekokani.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown na bibongisi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Eyano ezali te</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Makomi na yango etikalaka. Bilili, mikanda ya kotondisa mpe ba lien ya ba site mosusu elongolamaka soki moke te.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kobimisa static ya %target elongi te na %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kobimisa static ya %target elongi na %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site etindi mail oyo mpo ete mokano ya kobimisa static %target esengi yango.</translation>
     </message>
 </context>
 </TS>

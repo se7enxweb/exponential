@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown од %matching политики (вкупно %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Се вчитува при отворање.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, улога, ограничување</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Пребарај ги политиките</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Вчитај повеќе</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модул/функција</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Сите улоги (%count политики)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ниту една политика не се совпаѓа.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown од %matched политики</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Нема одговор</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Нивниот текст останува. Сликите, формуларите и врските до други сајтови никогаш не се отстрануваат.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Верзија</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Статичкото објавување на %target на %site не успеа</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Статичкото објавување на %target на %site успеа</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Оваа порака ја испрати %site бидејќи целта за статичко објавување %target го бара тоа.</translation>
     </message>
 </context>
 </TS>

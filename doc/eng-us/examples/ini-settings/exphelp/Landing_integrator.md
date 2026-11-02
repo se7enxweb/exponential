@@ -31,7 +31,7 @@ StartPage=help/integrators/integrators-start-here.md
 
 ## InfoPages
 
-Default: a list of 6: `help/integrators/migrations-in-client-projects.md`, `help/migrations/README.md`, `help/migrations/recipes/migrations-in-an-extension-or-package.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/coming-from-kaliop-ezmigrationbundle.md`, `help/migrations/faq.md`.
+Default: a list of 8: `help/integrators/migrations-in-client-projects.md`, `help/migrations/README.md`, `help/migrations/recipes/migrations-in-an-extension-or-package.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/coming-from-kaliop-ezmigrationbundle.md`, `help/migrations/faq.md`, `help/integrators/offer-static-hosting-to-your-clients.md`, `guides/host-static-sites-on-github-pages.md`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +45,8 @@ InfoPages[]=help/migrations/recipes/migrations-in-an-extension-or-package.md
 InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
 InfoPages[]=help/migrations/recipes/coming-from-kaliop-ezmigrationbundle.md
 InfoPages[]=help/migrations/faq.md
+InfoPages[]=help/integrators/offer-static-hosting-to-your-clients.md
+InfoPages[]=guides/host-static-sites-on-github-pages.md
 */ ?>
 ```
 

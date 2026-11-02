@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching নীতি (মুঠ %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>খোলাৰ সময়ত লোড হয়।</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ভূমিকা, সীমাবদ্ধতা</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>নীতিসমূহ সন্ধান কৰক</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>অধিক লোড কৰক</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>মডিউল/ফাংচন</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>সকলো ভূমিকা (%count টা নীতি)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>কোনো নীতি মিল নাখায়।</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched টা নীতিৰ ভিতৰত %shown টা</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>কোনো উত্তৰ নাই</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>সেইবোৰৰ পাঠ থাকি যায়। ছবি, ফৰ্ম আৰু অন্য ছাইটলৈ যোৱা লিংক কেতিয়াও আঁতৰোৱা নহয়।</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>সংস্কৰণ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site ত %target ৰ স্থিৰ প্ৰকাশন বিফল হ'ল</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site ত %target ৰ স্থিৰ প্ৰকাশন সফল হ'ল</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>স্থিৰ প্ৰকাশনৰ লক্ষ্য %target এ বিচৰাৰ বাবে %site এ এই মেইলটো পঠিয়াইছে।</translation>
     </message>
 </context>
 </TS>

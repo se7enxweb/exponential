@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching میں سے %shown پالیسیاں (کل %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>کھولنے پر لوڈ ہوتا ہے۔</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function، کردار، حد</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>پالیسیاں تلاش کریں</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>مزید لوڈ کریں</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ماڈیول/فنکشن</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>تمام کردار (%count پالیسیاں)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>کوئی پالیسی مطابقت نہیں رکھتی۔</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched پالیسیوں میں سے %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>کوئی جواب نہیں</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ان کا متن باقی رہتا ہے۔ تصاویر، فارم اور دوسری سائٹوں کے لنک کبھی نہیں ہٹائے جاتے۔</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>ورژن</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site پر %target کی جامد اشاعت ناکام رہی</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site پر %target کی جامد اشاعت کامیاب رہی</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>یہ میل %site نے بھیجی ہے کیونکہ جامد اشاعت کا ہدف %target اس کا تقاضا کرتا ہے۔</translation>
     </message>
 </context>
 </TS>

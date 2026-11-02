@@ -68848,6 +68848,42 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching ta siyosatdan %shown ta (jami %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ochilganda yuklanadi.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funksiya, rol, cheklov</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Siyosatlarni qidirish</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Yana yuklash</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funksiya</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Barcha rollar (%count siyosat)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Mos keladigan siyosat yo‘q.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched siyosatdan %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Javob yo‘q</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ularning matni qoladi. Rasmlar, shakllar va boshqa saytlarga havolalar hech qachon olib tashlanmaydi.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiya</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site saytida %target statik nashri muvaffaqiyatsiz tugadi</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site saytida %target statik nashri muvaffaqiyatli tugadi</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Bu xatni %site yubordi, chunki statik nashr maqsadi %target buni so‘raydi.</translation>
     </message>
 </context>
 </TS>

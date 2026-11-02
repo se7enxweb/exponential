@@ -71082,6 +71082,42 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown de %matching políticas (%total en total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Se carga al abrir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, limitación</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Buscar en las políticas</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Cargar más</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Módulo/función</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Todos los roles (%count políticas)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ninguna política coincide.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown de %matched políticas</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Sin respuesta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -87662,6 +87698,25 @@ Gracias por la retroalimentación</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Su texto se mantiene. Las imágenes, los formularios y los enlaces a otros sitios nunca se quitan.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicación estática de %target falló en %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicación estática de %target se completó en %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site envió este correo porque el destino de publicación estática %target lo solicita.</translation>
     </message>
 </context>
 </TS>

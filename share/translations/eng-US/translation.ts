@@ -63035,6 +63035,26 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>All functions</translation>
     </message>
     <message>
+        <source>Loaded when opened.</source>
+        <translation>Loaded when opened.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, role, limitation</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Search the policies</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Load more</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/function</translation>
+    </message>
+    <message>
         <source>Limitations</source>
         <translation>Limitations</translation>
     </message>
@@ -63053,6 +63073,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown of %matching policies (%total in all)</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>All roles (%count policies)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>No policy matches.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown of %matched policies</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>No answer</translation>
     </message>
 </context>
 <context>
@@ -83405,6 +83441,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Their text stays. Images, forms and links to other sites are never removed.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Static publishing of %target failed on %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Static publishing of %target succeeded on %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>This mail was sent by %site because the static publishing target %target asks for it.</translation>
     </message>
 </context>
 </TS>

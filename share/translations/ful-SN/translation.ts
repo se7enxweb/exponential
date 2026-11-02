@@ -68848,6 +68848,42 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown e %matching dawaale (%total fof)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>A ɗon loowee to ɗum maɓɓi.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, kuugal, ɓamtol</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Ɗaɓɓutu laawol ɗiɗi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Loowtu ko ɓuri</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/golle</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Kuuje fuu (laawol %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Walaa laawol jaajanoojo.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown e laawol %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Walaa jaabawol</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Binndi maɓɓe ina heddoo. Nate, formulaaruuji e jokkorɗe yahooje e lowe goɗɗe momtataake abada.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Yamre</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Muurtinol static %target woni e %site rewaani</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Muurtinol static %target woni e %site laaɓi</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site neldi ndee bataake sabu ɓuuɗam muurtinol static %target ina ɗaɓɓi ɗum.</translation>
     </message>
 </context>
 </TS>

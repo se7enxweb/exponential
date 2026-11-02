@@ -68856,6 +68856,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching में से %shown पॉलिसी (कुल %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>खोलला पर लोड होला।</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, भूमिका, सीमा</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>नीति सभ में खोजीं</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>अउर लोड करीं</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>मॉड्यूल/फ़ंक्शन</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>सब भूमिका (%count नीति)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>कवनो नीति मेल ना खात बा।</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched नीति में से %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>कवनो जवाब नइखे</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83411,6 +83447,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ओकर पाठ रह जाला। फोटो, फॉर्म आ दोसर साइट के लिंक कबो ना हटावल जाला।</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>संस्करण</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site पर %target के स्टैटिक प्रकाशन फेल हो गइल</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site पर %target के स्टैटिक प्रकाशन सफल हो गइल</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ई मेल %site भेजले बा काहे कि स्टैटिक प्रकाशन लक्ष्य %target एकरा के माँगेला।</translation>
     </message>
 </context>
 </TS>

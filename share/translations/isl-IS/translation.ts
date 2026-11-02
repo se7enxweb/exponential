@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown af %matching reglum (%total alls)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Hlaðið þegar opnað er.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, hlutverk, takmörkun</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Leita í reglum</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Hlaða meira</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Eining/aðgerð</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Öll hlutverk (%count reglur)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Engin regla passar.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown af %matched reglum</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ekkert svar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Texti þeirra stendur eftir. Myndir, eyðublöð og tenglar á aðra vefi eru aldrei fjarlægð.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Útgáfa</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Kyrrstæð útgáfa %target mistókst á %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Kyrrstæð útgáfa %target tókst á %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site sendi þennan póst vegna þess að markmið kyrrstæðrar útgáfu %target biður um hann.</translation>
     </message>
 </context>
 </TS>

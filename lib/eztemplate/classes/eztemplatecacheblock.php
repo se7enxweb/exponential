@@ -17,6 +17,48 @@
 
 class eZTemplateCacheBlock
 {
+    /**
+     * What a cache-block key adds to the siteaccess name for the request being answered: '@' and the access path
+     * when the siteaccess was reached through one (/site under URI matching: '@/site'), then '-' and the UI switch
+     * variant when a switch is applied. Empty for everybody else, so their keys stay as they were.
+     *
+     * One siteaccess can answer at the root of its host (host matching) and below /site (URI matching) at the same
+     * time. Its links differ ('/about' against '/site/about', ezurl adds the access path), so the two must never
+     * share a cache-block: the one rendered first would give its links to the other, and a page at the root would
+     * link below /site until the block expires (a static build of the root then found no page of the site behind
+     * those links). The content view cache already keys on the access path (eZSys::indexFile()).
+     *
+     * @return string
+     */
+    public static function accessSuffix()
+    {
+        $suffix = '';
+        if ( class_exists( 'eZSys' ) )
+        {
+            $withPath = (string)eZSys::indexFile( true );
+            $withoutPath = (string)eZSys::indexFile( false );
+            $path = strpos( $withPath, $withoutPath ) === 0 ? substr( $withPath, strlen( $withoutPath ) ) : $withPath;
+            if ( $path !== '' && $path !== '/' )
+                $suffix .= '@' . $path;
+        }
+        if ( !empty( $GLOBALS['expUISwitchVariantKey'] ) )
+            $suffix .= '-' . $GLOBALS['expUISwitchVariantKey'];
+        return $suffix;
+    }
+
+    /**
+     * The siteaccess part of a cache-block key: the name of the current siteaccess (false without one) with
+     * accessSuffix(), which is only added when it is not empty.
+     *
+     * @return string|false
+     */
+    public static function accessKey()
+    {
+        $accessName = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : false;
+        $suffix = self::accessSuffix();
+        return $suffix === '' ? $accessName : $accessName . $suffix;
+    }
+
     /*!
      Helper function for retrieving a cache-block entry which can be used by any custom code.
 

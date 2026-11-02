@@ -68787,6 +68787,42 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown iš %matching politikų (iš viso %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Įkeliama atidarius.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, vaidmuo, apribojimas</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Ieškoti politikų</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Įkelti daugiau</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulis/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Visi vaidmenys (%count politikų)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nė viena politika neatitinka.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown iš %matched politikų</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nėra atsakymo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,25 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jų tekstas lieka. Paveikslėliai, formos ir nuorodos į kitas svetaines niekada nešalinami.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versija</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statinis %target publikavimas svetainėje %site nepavyko</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statinis %target publikavimas svetainėje %site pavyko</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Šį laišką išsiuntė %site, nes to prašo statinio publikavimo tikslas %target.</translation>
     </message>
 </context>
 </TS>

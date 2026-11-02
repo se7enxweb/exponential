@@ -68848,6 +68848,42 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ci %matching politig (%total lépp)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Dafay yeb bu ñu ko ubbee.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, kër, tëralin</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Wër ci yoon yi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Yeb yeneen</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modil/fonksiyoŋ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Kër yépp (yoon %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Amul yoon wu jëkkoon.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ci yoon yi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Amul tontu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Seen mbind dina des. Nataal yi, formileer yi ak lëkkalekaay yi jëm ci yeneen dalu web duñu leen mukk far.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Wersiyoŋ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Siiwal bu dëgër bu %target antuwul ci %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Siiwal bu dëgër bu %target antu na ci %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site moo yónne bataaxal bii ndax jublu siiwal bu dëgër %target da koy laaj.</translation>
     </message>
 </context>
 </TS>

@@ -68846,6 +68846,42 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ka mid ah %matching siyaasadood (wadar ahaan %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>La soo rarayaa marka la furo.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>moodal/shaqo, door, xaddid</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Raadi siyaasadaha</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Soo rar dheeraad ah</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moodal/shaqo</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Dhammaan doorarka (%count siyaasad)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ma jirto siyaasad is waafaqda.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ka mid ah %matched siyaasad</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Jawaab ma jirto</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,25 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Qoraalkoodu wuu harayaa. Sawirada, foomamka iyo xiriirada goobaha kale weligood lama saaro.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Nooc</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Daabacaadda joogtada ah ee %target way ku guuldareysatay %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Daabacaadda joogtada ah ee %target way ku guuleysatay %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Farriintan waxaa soo diray %site sababtoo ah bartilmaameedka daabacaadda joogtada ah %target ayaa codsanaya.</translation>
     </message>
 </context>
 </TS>

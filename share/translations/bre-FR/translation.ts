@@ -68848,6 +68848,42 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown war %matching reolenn (%total en holl)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Karget e vez pa vez digoret.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, roll, strishadur</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Klask er politikoù</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Kargañ muioc'h</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mollad/arc'hwel</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>An holl rolloù (%count politikaenn)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Politikaenn ebet ne glot.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown war %matched politikaenn</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Respont ebet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O zestenn a chom. Ar skeudennoù, ar furmskridoù hag al liammoù d'al lec'hiennoù all n'int biken lamet.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Handelv</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>C'hwitet eo bet an embann statek eus %target war %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Berzh en deus graet an embann statek eus %target war %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Kaset eo bet ar postel-mañ gant %site rak goulennet eo gant ar pal embann statek %target.</translation>
     </message>
 </context>
 </TS>

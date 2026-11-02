@@ -251,7 +251,7 @@ eigene Rückfall der Leiste bauen die Zahlen beide mit `expDebugBarReport::query
 | `log[::<limit>]` | GET | setup/setup |
 | `summary` | GET | Debug-Ausgabe für die Anfrage (der Bericht selbst; ein Besucher erhält darin keinen Eintrag der IP-Liste) |
 | `panelheight` | POST `height` (Pixel, `0` für den Standard) | ein angemeldeter Benutzer (nie ein anonymer Besucher) mit Debug-Ausgabe für die Anfrage: speichert die Benutzereinstellung `expdebugbar_panel_height` (siehe [Die Höhe des Panels](#die-höhe-des-panels)) |
-| `policies[::<module>[::<function>[::<offset>]]]` | GET; der Filter im Pfad, `-` für alle (`expdebugbar::policies::content::read::0`) | setup/setup, oder ein anonymer Besucher mit Debug-Ausgabe für die Anfrage: eine Seite der Richtlinien der Rollen des Benutzers (siehe [Benutzer: Richtlinien](#richtlinien)) |
+| `policies[::<role>[::<offset>[::<search>]]]` | GET; alles im Pfad: eine Rollen-ID oder `-`, der Offset, die Suche als base64url ihres UTF-8-Textes oder `-` (`expdebugbar::policies::-::0::Y29udGVudC9yZWFk` sucht `content/read`) | setup/setup: die Richtlinien der Rollen des aktuellen Benutzers, eine Seite mit 200 Zeilen (siehe [Benutzer: Richtlinien](#richtlinien)) |
 
 Jeder POST muss das Formular-Token mitbringen (`ezxform_token` oder den Header `X-CSRF-Token`); die Antwort von
 `settings` enthält es. Wer nur den Debug-Bericht sieht, erhält die Einstellungen ohne die IP- und Benutzerlisten, das
@@ -307,7 +307,8 @@ php vendor/bin/phpunit tests/tests/kernel/classes/debugbar/
 | `expDebugBarSettingsTest` | die Registry und das Auffinden, die wirksamen Werte gegenüber `expIniLocator::where()`, Schreibvorgänge jedes Typs und jeder op mit Protokoll und Rückgängigmachen, Probeläufe, Ablehnungen, ein Siteaccess als Geltungsbereich, Voreinstellungen als Gruppe, die Prüfungen auf Aussperren und Öffnen, die IP-Prüfung von eZDebug und ihr Rückfall, die Übersicht, die Server-Funktionen (Registrierung, Antworten, POST, Token und Richtlinie, was ein Besucher ohne Richtlinie sieht) |
 | `RadSurveyDebugBarTest` | die zwei Registries, die Gesamtzahl, die Zahlen der Leiste, die neuen Problemarten |
 | `expDebugBarUserTest` | die Registerkarte Benutzer: die Teile des Schlüssels im Ansichts-Cache, die vom Benutzer abhängen, und jeder ignore-Tweak, der Schlüssel der Präferenzen gegenüber dem Code, den er ersetzt hat, die Präferenzen jedes Ansichtsmodus (ein Name mit zwei Standardwerten), der Fingerabdruck, das Profil aus dem Schlüssel einer Ansicht (Teile, die ein Listener weggelassen oder geändert hat, pr_user), anonyme Besucher, der Chip, die maskierte Registerkarte, der Text zum Kopieren. Ohne Datenbank |
-| `expDebugBarUserPoliciesTest` | die Richtlinien der Registerkarte Benutzer: wer sie sehen darf, eine Seite sortiert nach Rolle, Modul und Funktion, der Filter mit Richtlinien jedes Moduls oder jeder Funktion (*), 600 Richtlinien von 300 Rollen in Seiten, der geschlossene Abschnitt in der Registerkarte, die Argumente im Pfad, die Anfrage des Skripts und seine Wörter. Ohne Datenbank |
+| `expDebugBarPoliciesTest` | die Richtlinien der Registerkarte Benutzer (UP-01 bis UP-04, UP-06 bis UP-08): Zeilen und Einschränkungswerte als eine sortierte Liste, die Auswahl nach Rolle und nach Suche (Modul/Funktion, Rollenname, Klassenname, Einschränkung, gespeicherter Wert), eine Suche nach Modul und Funktion, die auch die gewährenden Platzhalter findet, eine Zeile mit lesbaren Werten, der Abschnitt nur für Berechtigte mit der Adresse für die Rollen-Links, die Wörter des Skripts, die Abfragen in Blöcken zu 500 IDs, 600 Richtlinien von 300 Rollen. Ohne Datenbank |
+| `expDebugBarUserPoliciesTest` | wer die Registerkarte Benutzer sieht und wie ihre Richtlinien angefragt werden (UP-05, UP-09, UP-10): die Argumente von `expdebugbar::policies` im Pfad und was abgelehnt wird, die Anfrage des Skripts ohne Query-String. Ohne Datenbank |
 
 `expDebugBarSettingsTest` startet den Kernel einmal im Siteaccess admin mit der eigenen Datenbank der Installation, wie
 es die Tests der Spalten der Unterelemente tun; es wird keine Testdatenbank angelegt. Seine Schreibvorgänge gehen in
@@ -500,7 +501,7 @@ die eigenen Standardwerte des Berichts.
 | Eingebundene Dateien | die eingebundenen PHP-Dateien (`DisplayIncludedFiles`), oder ihre Zahl und wie man sie auflistet |
 | Speicher | die klassische Tabelle „Main resources“, Speicher jetzt, Höchstwert, Limit und Anteil und die fünf Schritte, die am meisten brauchten |
 | Rendering | wie die Seite gerendert wurde: der Controller, der Ansichts-Cache von Inhalten und sein Schlüssel, die kompilierten Templates (siehe [unten](#rendering-controller-ansichts-cache-von-inhalten-und-kompilierte-templates)); nur für `setup/setup` |
-| Benutzer | der Benutzer, sein Cache-Profil (die Teile des Schlüssels im Ansichts-Cache von Inhalten, die von ihm abhängen), seine Präferenzen, Rollenzuweisungen und auf Anfrage die Richtlinien dieser Rollen (siehe [unten](#benutzer-rollen-und-cache-profil)); für `setup/setup` und für einen anonymen Besucher, der die Debug-Ausgabe erhält |
+| Benutzer | der Benutzer, sein Cache-Profil (die Teile des Schlüssels im Ansichts-Cache von Inhalten, die von ihm abhängen), seine Präferenzen, Rollenzuweisungen und auf Anfrage und nur für `setup/setup` die Richtlinien dieser Rollen (siehe [unten](#benutzer-rollen-und-cache-profil)); für `setup/setup` und für einen anonymen Besucher, der die Debug-Ausgabe erhält |
 | (Erweiterungen) | eine Registerkarte pro Panel, das eine Erweiterung registriert, nach Speicher (siehe [Panels von Erweiterungen](#panels-von-erweiterungen)) |
 | Server | wo die Anfrage einging und welcher Prozess den Bericht gerendert hat (Exponential Velocity, PHP-FPM, mod_php, die Kommandozeile ...), in einem Satz (siehe [unten](#server-wo-die-anfrage-einging-und-was-sie-gerendert-hat)), die Fakten dahinter, der Status von OPcache und der Antwort-Cache von Velocity; bis zum 16. Oktober 2026 hieß sie Velocity, ihre Abschnitts-ID ist weiterhin `exp-debug-panel-velocity` |
 | Sonstiges | Berichte, die Erweiterungen mit `eZDebug::appendBottomReport()` anhängen und die zu keiner Registerkarte gehören (nur wenn es welche gibt) |
@@ -657,22 +658,30 @@ und die Präferenzen mit `eZPreferences::values()`, nur wenn die Leiste für ein
 
 #### Richtlinien
 
-Unter den Rollenzuweisungen führt der geschlossene Abschnitt **Richtlinien** die Richtlinien dieser Rollen auf: Rolle,
-Modul, Funktion und die Einschränkungen der Richtlinie mit ihren Werten (`Subtree: /1/2/42/; Class: 1, 16`). Er kostet
-nichts, bis er geöffnet wird: Erst dann fragt das Skript `expdebugbar::policies` (siehe
-[Server-Funktionen](#server-funktionen)), jeweils eine Seite mit 100 Richtlinien, sortiert nach Rolle, Modul und
-Funktion; **Mehr anzeigen** holt die nächste Seite. Zwei Auswahllisten filtern nach Modul und nach Funktion; eine
-Richtlinie für jedes Modul oder jede Funktion (`*`) bleibt in jedem Filter, da sie auch das gewährt. Filter und Seite
-stehen im Pfad (`expdebugbar::policies::content::read::100`, `-` für alle), nicht in der Query. Das Filterfeld der
-Leiste findet Zeilen in der geladenen Liste wie in jeder anderen Tabelle.
+Für `setup/setup` endet die Registerkarte mit dem zugeklappten Abschnitt **Richtlinien**: die Richtlinien der Rollen des
+Benutzers, erst geladen, wenn er geöffnet wird (`expdebugbar::policies`, siehe [Server-Funktionen](#server-funktionen)),
+sodass ein Benutzer mit Hunderten von Rollen die Seite nichts kostet. Die erste Antwort führt die Rollen mit der Zahl
+ihrer Richtlinien auf (die Zuweisungen als Tooltip jeder Rolle) und die erste Seite; eine Rolle, eine Suche und **Weitere
+laden** fragen erneut, jeweils 200 Zeilen. Eine Zeile ist Modul und Funktion (`*` hervorgehoben), die Einschränkungen
+mit lesbaren Werten (Klassen, Sektionen, Siteaccesses und Knoten mit Namen und ID) und die Rolle. Die Suche durchsucht
+Modul/Funktion (`content/read`), Rollennamen, Einschränkungsarten, die gespeicherten Werte und die Namen von Klassen,
+Sektionen und Siteaccesses; andere Einschränkungen (`Owner`, `Group`, `StateGroup_*` ...) zeigen ihre gespeicherten
+Werte. Eine Suche, die ein Modul und eine Funktion nennt, findet auch die Richtlinien, die das mit einem Platzhalter
+gewähren: `content/read` findet auch `content/*` und `*/*`, `content/*` jede Funktion von `content`. Die Rollen-IDs hier
+und in der Tabelle der Rollen verweisen auf `role/view/<id>` im aktuellen Siteaccess (in einem Administrations-Siteaccess
+die Seite der Rolle; sonst nur, wo das Modul `role` erreichbar ist).
 
-Der Server liest die Richtlinien der Rollen aus den Zuweisungen über die persistenten Objekte von `ezpolicy`,
-`ezpolicy_limitation` und `ezpolicy_limitation_value`, drei Abfragen pro 500 IDs, sodass ein Benutzer mit Hunderten von
-Rollen auf jeder Datenbank funktioniert. Fragen dürfen dieselben, die die Registerkarte Benutzer sehen
-(`expDebugBarUser::mayView()`): ein Benutzer mit `setup/setup` oder ein anonymer Besucher, der die Debug-Ausgabe für die
-Anfrage erhält; jeder andere erhält einen Fehler, auch ein angemeldeter Benutzer ohne `setup/setup` mit `DebugByUser`.
+Rolle, Seite und Suche stehen im Pfad (`expdebugbar::policies::<role>::<offset>::<search>`, die Suche als base64url, da
+sie ein `/` enthalten kann), nie im Query-String; alles andere wird abgelehnt. Die veröffentlichten Richtlinien, ihre
+Einschränkungen und Werte aller Rollen liest der Server über die persistenten Objekte von `ezpolicy`,
+`ezpolicy_limitation` und `ezpolicy_limitation_value`, drei Abfragen pro 500 IDs, sodass Hunderte von Rollen auf jeder
+Datenbank funktionieren (MySQL, PostgreSQL, SQLite, Oracle, MongoDB); die Namen von Klassen, Sektionen und Siteaccesses
+einmal, die Namen der Knoten einer Seite jeweils 500 auf einmal (`expDebugBarPolicies`,
+`kernel/classes/debugbar/expdebugbarpolicies.php`). Nur die neueste Antwort füllt die Tabelle, wenn sich die Suche
+ändert, während eine unterwegs ist. Ein anonymer Besucher mit Debug-Ausgabe sieht die Registerkarte, aber nicht die
+Richtlinien.
 
-Tests: `expDebugBarUserTest` und `expDebugBarUserPoliciesTest` (ohne Datenbank).
+Tests: `expDebugBarUserTest`, `expDebugBarPoliciesTest` und `expDebugBarUserPoliciesTest` (ohne Datenbank).
 
 ### Panels von Erweiterungen
 

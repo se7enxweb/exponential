@@ -67793,6 +67793,42 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown af %matching politikker (%total i alt)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Indlæses, når den åbnes.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rolle, begrænsning</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Søg i politikkerne</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Indlæs flere</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funktion</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle roller (%count politikker)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ingen politik matcher.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown af %matched politikker</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Intet svar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -84083,6 +84119,25 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Deres tekst bliver stående. Billeder, formularer og links til andre websteder fjernes aldrig.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk publicering af %target mislykkedes på %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk publicering af %target lykkedes på %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Denne mail er sendt af %site, fordi målet for statisk publicering %target beder om den.</translation>
     </message>
 </context>
 </TS>

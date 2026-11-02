@@ -12,12 +12,12 @@
  *   expdebugbar::iptest                     address[, list]
  *   expdebugbar::log[::<limit>]             the newest log entries
  *   expdebugbar::summary                    the summary of this request
- *   expdebugbar::policies[::<module>[::<function>[::<offset>]]]
- *                                           a page of the policies of the user's roles (User tab), "-" for any
+ *   expdebugbar::policies[::<role>[::<offset>[::<search>]]]
+ *                                           a page of the policies of the user's roles (User tab); "-" for no role
+ *                                           or search, the search as base64url
  *   expdebugbar::panelheight                POST height: the open panel's height, kept in the user preference
  *                                           expdebugbar_panel_height
  *
- * policies goes to whoever sees the User tab: setup/setup, or an anonymous visitor with debug output for the request.
  * Only summary needs debug output for this request (the people who see the report). settings, log and iptest need
  * setup/setup, the cache list and clearing caches need setup/managecache, and nothing about the configuration (values,
  * file paths, IP and user lists, the change log) goes to anybody else. Every write is a POST with the form token.
@@ -435,55 +435,59 @@ class expDebugBarServerFunctions extends ezjscServerFunctions
     }
 
     /**
+     * expdebugbar::policies[::<role>[::<offset>[::<search>]]]: the policies of the current user's roles for the User
+     * tab, a page at a time (expDebugBarPolicies::PAGE rows), with the roles and their number of policies. Everything
+     * is in the path, nothing in the query string (policyArgs()): role, one of the user's role ids or "-" for all; the
+     * offset of the page; the search as base64url of its UTF-8 text (it may hold "/" and "::"), "-" for none.
+     * setup/setup only, as the section.
+     *
+     * @return array expDebugBarPolicies::forUser()
+     */
+    public static function policies( $args )
+    {
+        self::requireSetup();
+        list( $role, $offset, $query ) = self::policyArgs( $args );
+        return expDebugBarPolicies::forUser( eZUser::currentUser(), $role, $query, $offset );
+    }
+
+    /**
+     * The arguments of expdebugbar::policies from the path, checked: "-" or nothing for no role and no search.
+     *
+     * @param array $args the path arguments after the function name
+     * @return array role id or null, offset, search ('' for none; at most 100 characters)
+     * @throws InvalidArgumentException for a role or offset that is not a number, or a search that is not base64url
+     *         of UTF-8 text
+     */
+    public static function policyArgs( $args )
+    {
+        $args = array_values( (array)$args );
+        $role = isset( $args[0] ) && $args[0] !== '' ? (string)$args[0] : '-';
+        $offset = isset( $args[1] ) && $args[1] !== '' ? (string)$args[1] : '0';
+        $search = isset( $args[2] ) && $args[2] !== '' ? (string)$args[2] : '-';
+        if ( !preg_match( '/^(-|[0-9]{1,10})$/', $role ) )
+            throw new InvalidArgumentException( 'The role is a role id, or - for all' );
+        if ( !preg_match( '/^[0-9]{1,9}$/', $offset ) )
+            throw new InvalidArgumentException( 'The offset is a number' );
+        $query = '';
+        if ( $search !== '-' )
+        {
+            $raw = preg_match( '/^[A-Za-z0-9_-]{2,800}$/', $search )
+                 ? base64_decode( strtr( $search, '-_', '+/' ) . str_repeat( '=', ( 4 - strlen( $search ) % 4 ) % 4 ), true )
+                 : false;
+            if ( $raw === false || !preg_match( '//u', $raw ) )
+                throw new InvalidArgumentException( 'The search is base64url of UTF-8 text, or - for none' );
+            $query = function_exists( 'mb_substr' ) ? mb_substr( $raw, 0, 100, 'UTF-8' ) : substr( $raw, 0, 100 );
+        }
+        return array( $role === '-' ? null : (int)$role, (int)$offset, $query );
+    }
+
+    /**
      * expdebugbar::summary
      */
     public static function summary( $args )
     {
         self::requireRead();
         return expDebugBarSummary::collect();
-    }
-
-    /**
-     * expdebugbar::policies[::<module>[::<function>[::<offset>]]]: a page of the policies of the current user's roles
-     * (expDebugBarUser::policies()), for the User tab, which asks only when its Policies section is opened. The filter
-     * is in the path, as view parameters: "-" (or nothing) for every module or function. For whoever sees the User tab
-     * (expDebugBarUser::mayView()): a user with setup/setup, or an anonymous visitor who gets the debug output.
-     *
-     * @return array see expDebugBarUser::policyPage()
-     */
-    public static function policies( $args )
-    {
-        self::requireUserTab();
-        $args = array_values( (array)$args );
-        $module = self::policyFilterArg( $args, 0 );
-        $function = self::policyFilterArg( $args, 1 );
-        $offset = isset( $args[2] ) && ctype_digit( (string)$args[2] ) ? (int)$args[2] : 0;
-        return expDebugBarUser::policies( eZUser::currentUser(), $module, $function, $offset );
-    }
-
-    /** @throws InvalidArgumentException unless the current request may see the User tab (expDebugBarUser::mayView()) */
-    public static function requireUserTab()
-    {
-        $user = eZUser::currentUser();
-        $loggedIn = $user instanceof eZUser && $user->isRegistered();
-        if ( expDebugBarUser::mayView( self::canWrite(), $loggedIn, eZDebug::isDebugEnabled() ) )
-            return;
-        throw new InvalidArgumentException( 'The role policies need the policy setup/setup, or debug output for an anonymous visitor' );
-    }
-
-    /**
-     * A module or function name of the policy filter from the path: null for every one ("-" or nothing).
-     *
-     * @throws InvalidArgumentException for anything but letters, digits, _ and *
-     */
-    protected static function policyFilterArg( array $args, $index )
-    {
-        $value = isset( $args[$index] ) ? trim( (string)$args[$index] ) : '';
-        if ( $value === '' || $value === '-' )
-            return null;
-        if ( !preg_match( '/^[A-Za-z0-9_*]{1,64}$/', $value ) )
-            throw new InvalidArgumentException( 'A module or function name has letters, digits, _ or * only' );
-        return $value;
     }
 
     /**

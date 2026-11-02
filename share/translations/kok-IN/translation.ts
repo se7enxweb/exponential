@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching पैकीं %shown धोरणां (एकूण %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>उगडटकच लोड जाता.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, भुमिका, मर्यादा</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>धोरणां सोद</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>आनीक लोड करात</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>मॉड्यूल/फंक्शन</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>सगळ्यो भुमिका (%count धोरणां)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>खंयचेंय धोरण जुळना.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched धोरणांतल्यान %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>जाप ना</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>तांचो मजकूर उरता. चित्रां, फॉर्म आनी हेर सायटींचे दुवे केन्नाच काडनात.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>आवृत्ती</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site चेर %target चें स्टॅटिक प्रकाशन अपेसी जालें</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site चेर %target चें स्टॅटिक प्रकाशन येसस्वी जालें</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>स्टॅटिक प्रकाशनाचें लक्ष्य %target हें मागता म्हूण %site हाणें हो मेल धाडला.</translation>
     </message>
 </context>
 </TS>

@@ -67337,6 +67337,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown з %matching політик (усього %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Завантажується під час відкриття.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, роль, обмеження</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Пошук за політиками</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Завантажити ще</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модуль/функція</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Усі ролі (політик: %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Відповідних політик немає.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown із %matched політик</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Немає відповіді</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Їхній текст залишається. Зображення, форми та посилання на інші сайти ніколи не видаляються.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Версія</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Статична публікація %target на %site не вдалася</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Статична публікація %target на %site пройшла успішно</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Цей лист надіслав %site, бо його запитує ціль статичної публікації %target.</translation>
     </message>
 </context>
 </TS>

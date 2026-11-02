@@ -395,7 +395,9 @@ rückgängig macht) oder eine Rücknahme auf ihren Sicherungspunkt.
 Geheimnisse werden genannt, nie in die Migration oder ihr Protokoll geschrieben; eine URL mit Benutzer oder Passwort wird
 abgelehnt, keiner Weiterleitung wird gefolgt, und Protokoll und Prüfprotokoll zeigen die URL ohne ihre Abfrage. Eine
 E-Mail geht über den Mailtransport der Installation (`transport: file` schreibt sie stattdessen unter `var/log/mail`),
-also gelten das Mail-Gate und die Mail-Einstellungen. `command` führt nur die `exp:*`-Befehle aus
+also gelten das Mail-Gate und die Mail-Einstellungen; sie trägt die E-Mail-Kategorie `admin` (notwendig, wird wie
+bisher gesendet), außer `category:` nennt eine andere, und eine optionale Kategorie erreicht nur die Empfänger, deren
+E-Mail-Einstellungen es erlauben. `command` führt nur die `exp:*`-Befehle aus
 `migration.ini [StepSettings] CommandAllowList[]` aus (ein Name, oder ein Name mit `*` am Ende für eine Gruppe), nie
 `exp:migration:*` oder `exp:upgrade*`, und übergibt Befehl und Argumente PHP als Liste: Es gibt keine Shell, also ist ein
 `;` oder ein `$` in einem Argument ein Zeichen.

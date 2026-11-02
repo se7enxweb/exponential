@@ -68848,6 +68848,42 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown de %matching politicas (%total en tot)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Cargat a l'dobertura.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/foncion, ròtle, limitacion</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Cercar dins las politicas</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Cargar mai</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/foncion</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Totes los ròtles (%count politicas)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Cap de politica correspond pas.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown sus %matched politicas</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Cap de responsa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Lor tèxte demòra. Los imatges, los formularis e los ligams cap a d'autres sites son pas jamai levats.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicacion estatica de %target a fracassat sus %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicacion estatica de %target a capitat sus %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Aqueste corrièl es estat mandat per %site perque la cibla de publicacion estatica %target lo demanda.</translation>
     </message>
 </context>
 </TS>

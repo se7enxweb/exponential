@@ -26,6 +26,7 @@ A step of a YAML migration with `type: mail`. The class `expMigrationStepMail` (
 | `from` | `string` |  | the sender (default: site.ini [MailSettings] EmailSender, else AdminEmail) |
 | `reply_to` | `string` |  | the address answers go to |
 | `transport` | `string` |  | a transport of site.ini [MailSettings] TransportAlias (file, sendmail, smtp) for this mail only |
+| `category` | `string` | `"admin"` | the mail category of mailpreferences.ini; an optional one reaches only the recipients whose preferences allow it |
 
 Besides these, every step takes the keys of the engine: `type`, `mode`, `if`, `references`, `environments`, `engines` and `comment` ([the file format](../../specifications/6.0/migration-file-format.md#a-step)). A key of type `identifier` names a node, an object or another part of the installation by id, remote id, path or name ([identifiers](../../specifications/6.0/migration-file-format.md#identifiers-and-the-id-map)).
 

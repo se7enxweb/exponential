@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching саясаттын %shown (бардыгы %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ачканда жүктөлөт.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, роль, чектөө</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Саясаттардан издөө</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Дагы жүктөө</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модуль/функция</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Бардык ролдор (%count саясат)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Туура келген саясат жок.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched саясаттын %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Жооп жок</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Алардын тексти калат. Сүрөттөр, формалар жана башка сайттарга шилтемелер эч качан өчүрүлбөйт.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Версия</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site сайтында %target статикалык жарыялоосу ишке ашкан жок</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site сайтында %target статикалык жарыялоосу ийгиликтүү болду</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Бул катты %site жөнөттү, анткени статикалык жарыялоо максаты %target муну талап кылат.</translation>
     </message>
 </context>
 </TS>

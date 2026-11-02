@@ -68848,6 +68848,42 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown sa %matching na policy (%total lahat)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Nilo-load kapag binuksan.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, tungkulin, limitasyon</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hanapin sa mga patakaran</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Mag-load pa</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/punsiyon</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Lahat ng tungkulin (%count patakaran)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Walang tumutugmang patakaran.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown sa %matched na patakaran</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Walang sagot</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Nananatili ang kanilang teksto. Hindi kailanman inaalis ang mga larawan, form at link sa ibang site.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Bersyon</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Nabigo ang static publishing ng %target sa %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Matagumpay ang static publishing ng %target sa %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ipinadala ng %site ang mail na ito dahil hinihiling ito ng static publishing target na %target.</translation>
     </message>
 </context>
 </TS>

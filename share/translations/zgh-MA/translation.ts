@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ⵣⴳ %matching ⵏ ⵜⵙⵔⵜⵉⵜⵉⵏ (%total ⴰⴽⴽⵯ)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ⵉⵜⵜⵓⵙⵎⴰⵍⴰ ⴷ ⵓⵔⵉⴳⵎ.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ⴰⵣⵔⵓⴼ, ⴰⴼⵓⵔⵙ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ⵔⵣⵓ ⴳ ⵜⵉⵙⵓⵜⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ⵙⵎⵍⵓⵍ ⵓⴳⴰⵔ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ⴰⵎⵓⴷⵉⵍ/ⵜⴰⵡⵓⵔⵉ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ⴰⵎⴰⵍ ⵉⵣⵔⵓⴼⵏ (%count ⵜⵉⵙⵓⵜⵉⵏ)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ⵓⵔ ⵜⵍⵍⵉ ⵜⵉⵙⵓⵜⵉ ⵜⵙⵎⵔⵔⴰ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ⴳ %matched ⵜⵉⵙⵓⵜⵉⵏ</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ⵓⵔ ⵜⵍⵍⵉ ⵜⵔⵔⴰ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ⴰⴹⵕⵉⵚ ⵏⵏⵙⵏ ⴰⴷ ⵉⵇⵇⵉⵎ. ⵜⵉⵡⵍⴰⴼⵉⵏ, ⵜⵉⵍⵖⵉⵡⵉⵏ ⴷ ⵉⵙⵖⵡⴰⵏ ⵖⵔ ⵉⵙⵉⵜⵏ ⵢⴰⴹⵏⵉⵏ ⵓⵔ ⵜⵜⵓⴽⴽⴰⵙⵏ ⴰⴱⴷⴰ.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>ⵜⵓⵏⵖⵉⵍⵜ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>ⵜⵥⴹⴰⵕ ⵜⵙⵓⵖⵍⵜ ⵜⵓⵔⵙⵉⴷⵜ ⵏ %target ⵖⵔ %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>ⵜⵎⵎⵓⵔⵙ ⵜⵙⵓⵖⵍⵜ ⵜⵓⵔⵙⵉⴷⵜ ⵏ %target ⵖⵔ %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ⵜⴻⵜⵜⵓⵣⵏ ⵜⵉⴱⵔⴰⵜ ⴰ ⵙⴳ %site ⴰⵛⴽⵓ ⵜⵜ ⵉⵙⵓⵜⵔ ⵓⵏⵛⴰⵡ ⵏ ⵜⵙⵓⵖⵍⵜ ⵜⵓⵔⵙⵉⴷⵜ %target.</translation>
     </message>
 </context>
 </TS>

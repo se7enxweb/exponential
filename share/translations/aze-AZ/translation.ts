@@ -68848,6 +68848,42 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching siyasət (cəmi %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Açılanda yüklənir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, məhdudiyyət</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Siyasətlərdə axtar</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Daha çox yüklə</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funksiya</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Bütün rollar (%count siyasət)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Heç bir siyasət uyğun gəlmir.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched siyasətdən %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Cavab yoxdur</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Onların mətni qalır. Şəkillər, formalar və digər saytlara keçidlər heç vaxt silinmir.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiya</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site saytında %target üçün statik dərc uğursuz oldu</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site saytında %target üçün statik dərc uğurla başa çatdı</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Bu məktubu %site göndərdi, çünki statik dərc hədəfi %target bunu istəyir.</translation>
     </message>
 </context>
 </TS>

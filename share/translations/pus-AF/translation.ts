@@ -67396,6 +67396,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>له %matching پالیسیو څخه %shown (ټول %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>د پرانیستلو پر مهال بارېږي.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function، رول، محدودیت</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>په پالیسیو کې لټون</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>نور بار کړئ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ماډیول/فنکشن</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ټول رولونه (%count پالیسۍ)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>هیڅ پالیسي نه برابرېږي.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>له %matched پالیسیو څخه %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>هیڅ ځواب نشته</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>د هغوی متن پاتې کېږي. انځورونه، فورمې او نورو سایټونو ته لینکونه هېڅکله نه لرې کېږي.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>نسخه</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>په %site کې د %target ثابته خپرونه ناکامه شوه</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>په %site کې د %target ثابته خپرونه بریالۍ شوه</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>دا برېښلیک %site لېږلی دی ځکه چې د ثابتې خپرونې موخه %target یې غوښتنه کوي.</translation>
     </message>
 </context>
 </TS>

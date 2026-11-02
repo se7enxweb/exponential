@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching 条匹配策略（共 %total 条）</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>打开时加载。</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>模块/功能，角色，限制</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>搜索策略</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>加载更多</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>模块/功能</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>所有角色（%count 条策略）</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>没有匹配的策略。</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched 条策略中的 %shown 条</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>没有应答</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>链接文字保留。图片、表单和指向其他网站的链接从不删除。</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>版本</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target 在 %site 上的静态发布失败</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target 在 %site 上的静态发布成功</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>此邮件由 %site 发送，因为静态发布目标 %target 要求发送。</translation>
     </message>
 </context>
 </TS>

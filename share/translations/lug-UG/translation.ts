@@ -68848,6 +68848,42 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ku %matching enkola (%total zonna awamu)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Kitikkibwa nga kiggule.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, omulimu, ekkomo</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Noonya amateeka</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Teekawo ebirala</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduli/fankisoni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Emirimu gyonna (amateeka %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Tewali tteeka eriraga.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ku mateeka %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Tewali kuddamu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ebiwandiiko byazo bisigalawo. Ebifaananyi, foomu n'enkolagana ezigenda ku mikutu emirala tebiggyibwawo n'akatono.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Enkyusa</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Okufulumya okw'enkalakkalira okwa %target kulemereddwa ku %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Okufulumya okw'enkalakkalira okwa %target kuwangudde ku %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ebbaluwa eno eweerezeddwa %site kubanga ekigendererwa ky'okufulumya okw'enkalakkalira %target kikisaba.</translation>
     </message>
 </context>
 </TS>

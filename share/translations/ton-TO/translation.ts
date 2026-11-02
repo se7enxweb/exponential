@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ʻo e %matching tuʻutuʻuni (%total kotoa)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>'Oku fakaheka 'i he 'ohake.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ngaahi fatongia, tapuni</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Kumi 'i he ngaahi politikale</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Fakaheka 'a e lahi ange</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mōtiule/fanisoni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ngaahi fatongia kotoa (politikale %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Heʻikai ke fehoanaki ha politikale.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown mei he politikale %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ko ha tali 'oku 'ikai</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ʻOku nofo pē honau tohi. ʻOku ʻikai teitei toʻo ʻa e ngaahi ʻata, foomu mo e fehokotaki ki he ngaahi uepisaiti kehe.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Vēsiona</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Naʻe ʻikai lavameʻa ʻa e pulusi tuʻu maʻu ʻo %target ʻi %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Naʻe lavameʻa ʻa e pulusi tuʻu maʻu ʻo %target ʻi %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Naʻe fekau ʻa e meili ko ʻeni ʻe %site koeʻuhi ʻoku kole ia ʻe he taumuʻa pulusi tuʻu maʻu %target.</translation>
     </message>
 </context>
 </TS>

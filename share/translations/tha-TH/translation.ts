@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown จาก %matching นโยบาย (ทั้งหมด %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>โหลดเมื่อเปิด</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, บทบาท, ข้อจำกัด</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ค้นหานโยบาย</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>โหลดเพิ่ม</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>โมดูล/ฟังก์ชัน</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ทุกบทบาท (%count นโยบาย)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ไม่พบนโยบายที่ตรงกัน</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown จาก %matched นโยบาย</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ไม่มีการตอบกลับ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ข้อความของลิงก์ยังอยู่ รูปภาพ แบบฟอร์ม และลิงก์ไปยังไซต์อื่นจะไม่ถูกลบ</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>เวอร์ชัน</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>การเผยแพร่แบบคงที่ของ %target บน %site ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>การเผยแพร่แบบคงที่ของ %target บน %site สำเร็จ</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>อีเมลนี้ส่งโดย %site เนื่องจากเป้าหมายการเผยแพร่แบบคงที่ %target ร้องขอ</translation>
     </message>
 </context>
 </TS>

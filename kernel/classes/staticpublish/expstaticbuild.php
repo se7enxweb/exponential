@@ -14,8 +14,11 @@
  *
  *  1. The site is crawled as the anonymous user by expStaticCacheRunner in export mode (the crawl of the static
  *     cache generator, expPreloadRunner): no cookie is sent, so every page is what a visitor who is not signed in
- *     sees. Each page is stripped of debug output, form tokens, session ids and nonces (expStaticPostProcessor); a
- *     page that still carries one of them, or whose response set a session cookie, is refused and the build fails.
+ *     sees. Every request carries the signed X-Exp-Static-Build header (expStaticBuildSignature), so this server
+ *     sends no debug output although its own addresses are in DebugIPList[]; a page that still comes with debug
+ *     output is refused and the build fails. Each page is stripped of form tokens, session ids and nonces
+ *     (expStaticPostProcessor); a page that still carries one of them, or whose response set a session cookie, is
+ *     refused and the build fails.
  *  2. The links of every page are read (expStaticLinkRewriter), and the files they name are collected
  *     (expStaticAssetCollector), with all images of var/<site>/storage the anonymous user may see when the target
  *     says Assets=referenced-and-storage.
@@ -44,6 +47,9 @@ class expStaticBuild
     private $runId;
     private $context = array();
 
+    /** the pages that came with debug output from the server (refused, not stripped) */
+    private $debugPages = array();
+
     /** old file => new file of the style sheets and scripts PostProcess[]=fingerprint renamed */
     private $fingerprints = array();
 
@@ -57,7 +63,9 @@ class expStaticBuild
      *        crawl, instead of the one site.ini gives), context (expStaticTarget::siteAccessContext()), run_id,
      *        keep_staging, max_site_bytes, max_file_bytes, session_names, redirect_rows (expStaticRedirects::rows()
      *        instead of the database's), form_endpoint (bool: the live site takes forms; default [StaticPublishSettings]
-     *        FormEndpoint), audit (callable( $name, $data ) instead of expAudit; false for none)
+     *        FormEndpoint), audit (callable( $name, $data ) instead of expAudit; false for none), sign_requests (bool:
+     *        every request carries the signed X-Exp-Static-Build header, expStaticBuildSignature; default: when no
+     *        fetcher is given)
      */
     public function __construct( expStaticTarget $target, array $options = array() )
     {
@@ -67,8 +75,10 @@ class expStaticBuild
             'max_pages' => 0, 'root' => (string)getcwd(), 'var_dir' => null, 'work_dir' => null, 'db' => null, 'can_read' => null,
             'node_lookup' => null, 'fetcher' => null, 'base_path' => null, 'context' => null, 'run_id' => '',
             'keep_staging' => false, 'max_site_bytes' => null, 'max_file_bytes' => null, 'session_names' => array(),
-            'redirect_rows' => null, 'form_endpoint' => null, 'audit' => null,
+            'redirect_rows' => null, 'form_endpoint' => null, 'audit' => null, 'sign_requests' => null,
         );
+        if ( $this->options['sign_requests'] === null )
+            $this->options['sign_requests'] = $this->options['fetcher'] === null;
         $this->emit = $this->options['emit'];
         $this->runId = $this->options['run_id'] !== '' ? (string)$this->options['run_id'] : self::newRunId();
     }
@@ -145,6 +155,7 @@ class expStaticBuild
     {
         $started = microtime( true );
         $partial = (bool)$this->options['paths'] || (bool)$this->options['nodes'];
+        $this->debugPages = array();
         $this->report = array(
             'schema' => self::REPORT,
             'mode' => $this->options['dry_run'] ? 'dry-run' : 'build',
@@ -245,15 +256,39 @@ class expStaticBuild
             $options['base_path'] = (string)$this->options['base_path'];
         if ( $this->options['fetcher'] !== null )
             $options['fetcher'] = $this->options['fetcher'];
+        $options['headers'] = array( $this, 'requestHeaders' );
         return $options;
+    }
+
+    /**
+     * The request headers of one request: the signed X-Exp-Static-Build header (expStaticBuildSignature), signed
+     * afresh for each request, so this server renders the page without debug output although its own addresses are
+     * in DebugIPList[]. Public for the crawl.
+     *
+     * @return string[]
+     */
+    public function requestHeaders()
+    {
+        if ( !$this->options['sign_requests'] )
+            return array();
+        try
+        {
+            return array( expStaticBuildSignature::headerLine() );
+        }
+        catch ( Exception $e )
+        {
+            // no secret can be read or made: the requests go unsigned, and a page with debug output fails the build
+            return array();
+        }
     }
 
     /** One request for a file or the 404 page, as the anonymous user. */
     public function request( $url )
     {
+        $headers = $this->requestHeaders();
         if ( $this->options['fetcher'] !== null )
-            return (array)call_user_func( $this->options['fetcher'], $url, false ) + array( 'status' => 0, 'type' => '', 'body' => '', 'cookies' => array() );
-        return expPreloadRunner::request( $url, false, 60, 'Exponential static publishing' );
+            return (array)call_user_func( $this->options['fetcher'], $url, false, $headers ) + array( 'status' => 0, 'type' => '', 'body' => '', 'cookies' => array(), 'headers' => array() );
+        return expPreloadRunner::request( $url, false, 60, 'Exponential static publishing', $headers );
     }
 
     /** The work: crawl, collect, rewrite, extras, manifest, check, apply. */
@@ -354,6 +389,11 @@ class expStaticBuild
             if ( $problems )
                 $this->warning( sprintf( 'The site itself has %d broken link(s) (Setup > Preload lists them with the pages that hold them).', count( $problems ) ) );
         }
+        if ( !empty( $this->debugPages ) )
+            $this->error( sprintf( '%d page(s) came with debug output (first: %s): the server did not take the build\'s signed %s header. '
+                                   . 'The build must fetch from this installation\'s own server (CrawlURL on this machine), and its web server '
+                                   . '(PHP-FPM, Velocity) must run the same code and settings/override secret; nothing is published.',
+                                   count( $this->debugPages ), $this->debugPages[0], expStaticBuildSignature::HEADER ) );
         if ( $this->report['refused'] )
             $this->error( sprintf( '%d page(s) refused: they carry what a public copy must not (see "refused"); nothing is published.', count( $this->report['refused'] ) ) );
         if ( !$pages )
@@ -591,6 +631,18 @@ class expStaticBuild
             $this->report['counts']['pages_excluded']++;
             return false;
         }
+        // debug output as the server sent it: refused, not stripped. A signed request gets none from this server
+        // (expStaticBuildSignature); one that still does shows the signature was not taken, and the page cannot be
+        // trusted to be what a visitor sees.
+        $debug = expStaticPostProcessor::debugOutput( $body, isset( $info['headers'] ) ? (array)$info['headers'] : array() );
+        if ( $debug )
+        {
+            $this->report['counts']['pages_refused']++;
+            $this->report['refused'][] = array( 'path' => $relative, 'url' => $url, 'reasons' => array( 'debug output from the server (' . implode( ', ', $debug ) . ')' ) );
+            $this->debugPages[] = $relative;
+            $this->say( 'error', sprintf( '%-52s refused: the server sent debug output (%s)', $relative, implode( ', ', $debug ) ) );
+            return false;
+        }
         $stripped = expStaticPostProcessor::strip( $body, $sessionNames );
         $reasons = expStaticPostProcessor::refusals( $stripped['html'], isset( $info['cookies'] ) ? (array)$info['cookies'] : array(), $sessionNames );
         if ( $reasons )
@@ -619,6 +671,13 @@ class expStaticBuild
         $path = (string)parse_url( $url, PHP_URL_PATH );
         if ( (int)$response['status'] === 404 && stripos( (string)$response['type'], 'text/html' ) === 0 && $response['body'] !== '' )
         {
+            $debug = expStaticPostProcessor::debugOutput( (string)$response['body'], isset( $response['headers'] ) ? (array)$response['headers'] : array() );
+            if ( $debug )
+            {
+                $this->error( sprintf( 'The site\'s 404 page came with debug output (%s): the server did not take the build\'s signed %s header; nothing is published.',
+                                       implode( ', ', $debug ), expStaticBuildSignature::HEADER ) );
+                return null;
+            }
             $stripped = expStaticPostProcessor::strip( (string)$response['body'], $sessionNames );
             if ( !expStaticPostProcessor::refusals( $stripped['html'], (array)$response['cookies'], $sessionNames ) )
                 return array( 'html' => $stripped['html'], 'path' => $path, 'own' => true );

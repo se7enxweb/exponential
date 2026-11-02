@@ -68848,6 +68848,42 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown amin'ny %matching politika (%total raha atambatra)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Mipoitra rehefa vohana.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, andraikitra, fameperana</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Hikaroka ao amin'ny politika</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Haka bebe kokoa</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Môdily/asa</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ny andraikitra rehetra (politika %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Tsy misy politika mifanaraka.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown amin'ny politika %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Tsy misy valiny</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Mijanona ny lahatsorany. Tsy esorina mihitsy ny sary, ny taratasy fenoina ary ny rohy mankany amin'ny tranonkala hafa.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Dikan-teny</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Tsy nahomby ny famoahana static an'i %target ao amin'ny %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Nahomby ny famoahana static an'i %target ao amin'ny %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site no nandefa ity mailaka ity satria mangataka izany ny tanjona famoahana static %target.</translation>
     </message>
 </context>
 </TS>

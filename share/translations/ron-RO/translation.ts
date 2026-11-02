@@ -68787,6 +68787,42 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown din %matching politici (%total în total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Se încarcă la deschidere.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funcție, rol, limitare</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Caută în politici</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Încarcă mai multe</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funcție</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Toate rolurile (%count politici)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nicio politică nu corespunde.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown din %matched politici</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Niciun răspuns</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,25 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Textul lor rămâne. Imaginile, formularele și legăturile către alte site-uri nu sunt eliminate niciodată.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versiune</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publicarea statică a %target a eșuat pe %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publicarea statică a %target a reușit pe %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Acest e-mail a fost trimis de %site deoarece ținta de publicare statică %target îl solicită.</translation>
     </message>
 </context>
 </TS>

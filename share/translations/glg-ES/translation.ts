@@ -68848,6 +68848,42 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown de %matching políticas (%total en total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Cárgase ao abrir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, limitación</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Buscar nas políticas</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Cargar máis</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Módulo/función</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Todos os roles (%count políticas)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ningunha política coincide.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown de %matched políticas</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Sen resposta</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O seu texto mantense. As imaxes, os formularios e as ligazóns a outros sitios nunca se quitan.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>A publicación estática de %target fallou en %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>A publicación estática de %target completouse en %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site enviou este correo porque o destino de publicación estática %target o solicita.</translation>
     </message>
 </context>
 </TS>

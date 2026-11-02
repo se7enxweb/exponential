@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching ರಲ್ಲಿ %shown ನೀತಿಗಳು (ಒಟ್ಟು %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ತೆರೆದಾಗ ಲೋಡ್ ಆಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ಪಾತ್ರ, ಮಿತಿ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ನೀತಿಗಳನ್ನು ಹುಡುಕಿ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ಇನ್ನಷ್ಟು ಲೋಡ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ಮಾಡ್ಯೂಲ್/ಫಂಕ್ಷನ್</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ಎಲ್ಲಾ ಪಾತ್ರಗಳು (%count ನೀತಿಗಳು)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ಯಾವುದೇ ನೀತಿ ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched ನೀತಿಗಳಲ್ಲಿ %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ಉತ್ತರವಿಲ್ಲ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ಅವುಗಳ ಪಠ್ಯ ಉಳಿಯುತ್ತದೆ. ಚಿತ್ರಗಳು, ಫಾರ್ಮ್‌ಗಳು ಮತ್ತು ಇತರ ಸೈಟ್‌ಗಳ ಲಿಂಕ್‌ಗಳನ್ನು ಎಂದಿಗೂ ತೆಗೆದುಹಾಕಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>ಆವೃತ್ತಿ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site ನಲ್ಲಿ %target ನ ಸ್ಥಿರ ಪ್ರಕಟಣೆ ವಿಫಲವಾಯಿತು</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site ನಲ್ಲಿ %target ನ ಸ್ಥಿರ ಪ್ರಕಟಣೆ ಯಶಸ್ವಿಯಾಯಿತು</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆಯ ಗುರಿ %target ಇದನ್ನು ಕೇಳುವುದರಿಂದ %site ಈ ಮೇಲ್ ಕಳುಹಿಸಿದೆ.</translation>
     </message>
 </context>
 </TS>

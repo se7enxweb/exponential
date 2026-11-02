@@ -68848,6 +68848,42 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown %matching sariyaw la (%total bɛɛ lajɛlen)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>A bɛ ta ni a dayɛlɛra.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/baara, yɔrɔ, dancɛ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Sariyaw ɲini</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Caman ta</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/baara</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Yɔrɔw bɛɛ (sariya %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Sariya si ma kɛ kelen ye.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown ka bɔ sariya %matched la</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Jaabi t'a la</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>U ka sɛbɛn bɛ to yen. Jaw, fɔrimiw ani jɛɲɔgɔnya minnu bɛ taa siti wɛrɛw la, olu tɛ bɔ abada.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Wɛrisiyɔn</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target ka bɔli sabali ma se ka kɛ %site kan</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target ka bɔli sabali sera ka kɛ %site kan</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site de ye nin bataki ci bawo bɔli sabali kuntilenna %target b'a ɲini.</translation>
     </message>
 </context>
 </TS>

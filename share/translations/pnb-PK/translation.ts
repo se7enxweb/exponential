@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching وچوں %shown پالیسیاں (کُل %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>کھلن ویلے لوڈ ہوندا اے۔</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function، کردار، پابندی</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>پالیسیاں لبھو</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ہور لوڈ کرو</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ماڈیول/فنکشن</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>سارے کردار (%count پالیسیاں)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>کوئی پالیسی نہیں ملدی۔</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched پالیسیاں وچوں %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>کوئی جواب نہیں</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>اوہناں دی لکھت رہندی اے۔ تصویراں، فارم تے دوجیاں سائٹاں دے لنک کدی نئیں ہٹائے جاندے۔</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>ورژن</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site اُتے %target دی سٹیٹک اشاعت ناکام رہی</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site اُتے %target دی سٹیٹک اشاعت کامیاب رہی</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ایہہ میل %site نے گھلی اے کیونجے سٹیٹک اشاعت دا ٹیچا %target ایہدی منگ کردا اے۔</translation>
     </message>
 </context>
 </TS>

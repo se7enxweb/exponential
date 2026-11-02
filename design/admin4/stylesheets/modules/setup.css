@@ -1475,3 +1475,14 @@ label.a4-package-option-label {
 .a4-setup-publish .a4-meta,
 .a4-setup-publish .a4-code,
 .a4-setup-publish .a4-facts dd { overflow-wrap: anywhere; }
+/* The publishes on staticpublish/history: below 760px each run is a block of labeled lines instead of eight columns */
+.a4-setup-publish-runs td:nth-child(5) .a4-code { white-space: nowrap; }
+@media (max-width: 760px) {
+  .a4-setup-publish-runs thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .a4-setup-publish-runs, .a4-setup-publish-runs tbody, .a4-setup-publish-runs tr { display: block; width: 100%; }
+  .a4-setup-publish-runs tr { padding: var(--a4-space-2) var(--a4-space-3); border-bottom: 1px solid var(--a4-line); }
+  .a4-setup-publish-runs tr:last-child { border-bottom: 0; }
+  .a4-setup-publish-runs td { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--a4-space-1) var(--a4-space-2); padding: var(--a4-space-1) 0; border: 0; }
+  .a4-setup-publish-runs td.a4-num { text-align: start; }
+  .a4-setup-publish-runs td[data-label]::before { content: attr(data-label); flex: 0 0 7.5em; color: var(--a4-muted); font-size: var(--a4-text-xs); font-weight: var(--a4-weight-heading); }
+}

@@ -37,11 +37,24 @@ every publish with its push state.
 |---|---|
 | `No page was exported` | The server cannot fetch the site at `SiteURL`; set `CrawlURL` to an address it reaches |
 | `refused: the response set the session cookie` | The page starts a session for anonymous visitors (a form, a basket, a registration); exclude it with `ExcludePaths[]` or change it |
-| `refused: debug output` | Debug output is on for the build's address; switch it off for that address |
+| `came with debug output`, `refused: debug output from the server` | The server that answered did not take the build's signed `X-Exp-Static-Build` header (see below): fetch from this installation's own server, and reload PHP-FPM and restart Velocity after an update |
 | Pages `skipped` | They only exist with a query string, or their path cannot be a file name on every system |
 | Files `could not be collected` | The site does not hand them to an anonymous visitor; their links go to the live site (`files_failed` in `--format=json`) |
 | `another process works on the target` | A build, publish, rollback or push of that target is running; wait for it |
 | A build is very large | `Assets=referenced` copies only what pages name; exclude sections that need not be public |
+
+**Debug output and the build.** A build fetches the site over HTTP from the server it runs on, and that server's own
+addresses (`127.0.0.1`, `::1`, its public address) are often in `site.ini [DebugSettings] DebugIPList[]`. So every
+request of a build carries a signed `X-Exp-Static-Build` header: an HMAC with a key derived from the installation's
+secret (the one the form tokens of static copies are signed with), over a fresh nonce, good for two minutes and for
+at most four requests (the request and its redirects). A request with a valid signature that comes from the server
+itself (its `REMOTE_ADDR` is a loopback address or one of the server's own addresses, never a forwarded header) gets
+no debug output: no debug report, no debug bar, no template debug comments, no DebugByUser. The page is exactly what a
+visitor outside the list sees, on Apache with PHP-FPM and on Velocity alike, and nobody's `site.ini` changes. The
+header can only switch debug output off, never on; from any other address, expired, forged or used up it changes
+nothing. A page that still comes with debug output (or with a response header named after debugging) is not cleaned
+but refused, and the build fails with `came with debug output`: the server did not take the signature, because the
+build fetched from another machine (`CrawlURL`), or the web server still runs older code or another secret.
 
 ## The publish
 

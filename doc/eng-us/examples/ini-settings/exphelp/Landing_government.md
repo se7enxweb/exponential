@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_government]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_government] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_government, INI, setting, StartPage, Related
+summary: "The settings of [Landing_government] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_government, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_government]
 
-The block `[Landing_government]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_government]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,21 @@ Default: `help/government/government-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_government]
 StartPage=help/government/government-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 2: `help/government/accessible-static-sites-for-public-information.md`, `help/static-publishing/keep-private-content-private.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_government]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/government/accessible-static-sites-for-public-information.md
+InfoPages[]=help/static-publishing/keep-private-content-private.md
 */ ?>
 ```
 

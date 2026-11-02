@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown από %matching πολιτικές (%total συνολικά)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Φορτώνεται όταν ανοίξει.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>ενότητα/λειτουργία, ρόλος, περιορισμός</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Αναζήτηση στις πολιτικές</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Φόρτωση περισσότερων</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Ενότητα/λειτουργία</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Όλοι οι ρόλοι (%count πολιτικές)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Καμία πολιτική δεν ταιριάζει.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown από %matched πολιτικές</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Καμία απάντηση</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Το κείμενό τους παραμένει. Εικόνες, φόρμες και σύνδεσμοι προς άλλους ιστότοπους δεν αφαιρούνται ποτέ.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Έκδοση</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Η στατική δημοσίευση του %target απέτυχε στο %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Η στατική δημοσίευση του %target ολοκληρώθηκε με επιτυχία στο %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Αυτό το μήνυμα στάλθηκε από το %site επειδή το ζητά ο στόχος στατικής δημοσίευσης %target.</translation>
     </message>
 </context>
 </TS>

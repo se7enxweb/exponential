@@ -2229,9 +2229,8 @@
       "tests/tests/kernel/classes/debugbar/expDebugBarUserTest.php",
       "tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php"
     ],
-    "kernel/classes/debugbar/expdebugbarserverfunctions.php": [
-      "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
-      "tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php"
+    "kernel/classes/debugbar/expdebugbarpolicies.php": [
+      "tests/tests/kernel/classes/debugbar/expDebugBarPoliciesTest.php"
     ],
     "lib/twig/classes/exptwigrenderer.php": [
       "tests/tests/lib/twig/expTwigTemplateRenderTest.php",
@@ -3051,7 +3050,8 @@
     ],
     "design/standard/javascript/expdebugbar.js": [
       "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
-      "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php"
+      "tests/tests/lib/ezutils/expDebugBarReportCopyMessagesTest.php",
+      "tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php"
     ],
     "design/standard/stylesheets/core.css": [
       "tests/tests/kernel/classes/expVelocityEnginesTest.php"
@@ -3168,7 +3168,8 @@
       "tests/tests/kernel/classes/debugbar/expDebugBarIPListTest.php"
     ],
     "kernel/classes/debugbar/expdebugbarserverfunctions.php": [
-      "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php"
+      "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
+      "tests/tests/kernel/classes/debugbar/expDebugBarUserPoliciesTest.php"
     ],
     "kernel/classes/expbenchmark.php": [
       "tests/tests/kernel/classes/benchmark/ExpBenchmarkHttpTest.php",

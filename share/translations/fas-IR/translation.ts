@@ -67396,6 +67396,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown از %matching سیاست (%total در کل)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>هنگام باز شدن بارگذاری می‌شود.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function، نقش، محدودیت</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>جستجوی سیاست‌ها</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>بارگذاری بیشتر</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ماژول/تابع</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>همه نقش‌ها (%count سیاست)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>هیچ سیاستی مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown از %matched سیاست</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>پاسخی دریافت نشد</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>متن آن‌ها باقی می‌ماند. تصویرها، فرم‌ها و پیوندها به سایت‌های دیگر هرگز حذف نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>نسخه</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>انتشار ایستای %target در %site ناموفق بود</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>انتشار ایستای %target در %site موفق بود</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>این ایمیل را %site فرستاده است، چون مقصد انتشار ایستای %target آن را درخواست می‌کند.</translation>
     </message>
 </context>
 </TS>

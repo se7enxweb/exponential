@@ -1,5 +1,6 @@
 {* The staticpublish/history view: the publishes and rollbacks, the tags and commits, and the rollback. Variables:
-   target (expStaticAdmin::overview()), messages, runs (exp_static_run rows), tags (name, number, commit, time,
+   target (expStaticAdmin::overview()), messages, runs (exp_static_run rows through expStaticAdmin::runView(), newest
+   first, with version and commit_short), tags (name, number, commit, time,
    subject; newest first), commits (commit, time, author, subject), commit_url (the host's address of a commit, '' when
    unknown), chosen (the tag chosen in a refused rollback), running, view, github (expStaticAdmin::github() with the
    state of GitHub Pages). *}
@@ -23,24 +24,28 @@
     <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="sp-runs">{'Publishes'|i18n( 'design/admin/staticpublish' )}</h2></div>
     {if $runs|count}
     <div class="a4-table-wrap" role="region" aria-labelledby="sp-runs" tabindex="0">
-    <table class="a4-table">
+    <table class="a4-table a4-setup-publish-runs">
         <thead><tr>
             <th scope="col">{'When'|i18n( 'design/admin/staticpublish' )}</th>
             <th scope="col">{'What'|i18n( 'design/admin/staticpublish' )}</th>
             <th scope="col">{'State'|i18n( 'design/admin/staticpublish' )}</th>
-            <th scope="col">{'Tag'|i18n( 'design/admin/staticpublish' )}</th>
+            <th scope="col" class="a4-num">{'Version'|i18n( 'design/admin/staticpublish' )}</th>
+            <th scope="col">{'Commit'|i18n( 'design/admin/staticpublish' )}</th>
+            <th scope="col">{'Push'|i18n( 'design/admin/staticpublish' )}</th>
             <th scope="col">{'By'|i18n( 'design/admin/staticpublish' )}</th>
             <th scope="col" class="a4-num">{'Changes'|i18n( 'design/admin/staticpublish' )}</th>
         </tr></thead>
         <tbody>
         {foreach $runs as $run}
         <tr>
-            <td><a href={concat( 'staticpublish/log/', $run.run_id )|ezurl}>{$run.started_at|l10n( 'shortdatetime' )}</a></td>
-            <td>{if eq( $run.kind, 'rollback' )}{'rollback'|i18n( 'design/admin/staticpublish' )}{else}{'publish'|i18n( 'design/admin/staticpublish' )}{/if}</td>
-            <td>{include uri='design:staticpublish/parts/run_state.tpl' run=$run}</td>
-            <td>{if $run.tag_name}<code class="a4-code">{$run.tag_name|wash}</code>{else}-{/if}</td>
-            <td>{$run.run_by|wash}</td>
-            <td class="a4-num">{'+%added ~%changed -%removed'|i18n( 'design/admin/staticpublish',, hash( '%added', $run.added, '%changed', $run.changed, '%removed', $run.removed ) )|wash}</td>
+            <td data-label="{'When'|i18n( 'design/admin/staticpublish' )|wash}"><a href={concat( 'staticpublish/log/', $run.run_id )|ezurl}>{$run.started_at|l10n( 'shortdatetime' )}</a></td>
+            <td data-label="{'What'|i18n( 'design/admin/staticpublish' )|wash}">{if eq( $run.kind, 'rollback' )}{'rollback'|i18n( 'design/admin/staticpublish' )}{else}{'publish'|i18n( 'design/admin/staticpublish' )}{/if}</td>
+            <td data-label="{'State'|i18n( 'design/admin/staticpublish' )|wash}">{include uri='design:staticpublish/parts/run_state.tpl' run=$run state_only=true()}</td>
+            <td class="a4-num" data-label="{'Version'|i18n( 'design/admin/staticpublish' )|wash}">{if $run.version}<span title="{$run.tag_name|wash}">{$run.version|wash}</span>{else}&mdash;{/if}</td>
+            <td data-label="{'Commit'|i18n( 'design/admin/staticpublish' )|wash}">{if $run.commit_short}{if $commit_url}<a href="{concat( $commit_url, $run.commit_id )|wash}" rel="noopener noreferrer"><code class="a4-code">{$run.commit_short|wash}</code></a>{else}<code class="a4-code" title="{$run.commit_id|wash}">{$run.commit_short|wash}</code>{/if}{else}&mdash;{/if}</td>
+            <td data-label="{'Push'|i18n( 'design/admin/staticpublish' )|wash}">{include uri='design:staticpublish/parts/push_state.tpl' run=$run dash=true()}</td>
+            <td data-label="{'By'|i18n( 'design/admin/staticpublish' )|wash}">{$run.run_by|wash}</td>
+            <td class="a4-num" data-label="{'Changes'|i18n( 'design/admin/staticpublish' )|wash}">{'+%added ~%changed -%removed'|i18n( 'design/admin/staticpublish',, hash( '%added', $run.added, '%changed', $run.changed, '%removed', $run.removed ) )|wash}</td>
         </tr>
         {/foreach}
         </tbody>
