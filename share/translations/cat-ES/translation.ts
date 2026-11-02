@@ -83510,6 +83510,10 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>El seu text es manté. Les imatges, els formularis i els enllaços a altres llocs no es treuen mai.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versió</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

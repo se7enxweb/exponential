@@ -84766,6 +84766,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jejich text zůstane. Obrázky, formuláře a odkazy na jiné weby se nikdy neodstraňují.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Verze</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

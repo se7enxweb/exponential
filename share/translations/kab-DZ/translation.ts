@@ -83480,6 +83480,10 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Aḍris-nsen ad yeqqim. Tugniwin, tiferkiwin d yiseɣwan ɣer yismal nniḍen ur ttwakksen ara akk.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Lqem</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

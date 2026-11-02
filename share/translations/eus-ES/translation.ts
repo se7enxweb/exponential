@@ -83480,6 +83480,10 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Haien testua geratzen da. Irudiak, inprimakiak eta beste guneetarako estekak ez dira inoiz kentzen.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Bertsioa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

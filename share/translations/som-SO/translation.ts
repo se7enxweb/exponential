@@ -83478,6 +83478,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Qoraalkoodu wuu harayaa. Sawirada, foomamka iyo xiriirada goobaha kale weligood lama saaro.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Nooc</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

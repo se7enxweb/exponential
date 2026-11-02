@@ -83480,6 +83480,10 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Harren tekst bliuwt stean. Ofbyldings, formulieren en keppelings nei oare siden wurde nea fuortsmiten.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Ferzje</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

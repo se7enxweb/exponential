@@ -83513,6 +83513,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Textus eorum manet. Imagines, formulae et nexus ad alias sedes numquam removentur.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

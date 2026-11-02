@@ -83480,6 +83480,10 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jich tekst wostanje. Wobrazy, formulary a wotkazy na druhe sydła so ženje njewotstronjeja.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Wersija</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

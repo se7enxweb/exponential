@@ -83480,6 +83480,10 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>El so testu queda. Les imáxenes, los formularios y los enllaces a otros sitios enxamás se quiten.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

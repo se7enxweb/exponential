@@ -83480,6 +83480,10 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Nananatili ang kanilang teksto. Hindi kailanman inaalis ang mga larawan, form at link sa ibang site.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Bersyon</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

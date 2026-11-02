@@ -83510,6 +83510,10 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ich text zostane. Obrázky, formuláre a odkazy na iné weby sa nikdy neodstraňujú.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Verzia</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -21,8 +21,10 @@ The public site showing an earlier publish again, with the rollback in the histo
 
 Open **History** on the target. It lists:
 
-- **Publishes**: every publish and rollback with when, state, push state, tag, who and how many files changed. The
-  date opens the page of the run.
+- **Publishes**: every publish and rollback, newest first, with when, state, version (the number of its tag, a dash
+  when it made none), short commit id (a link to the commit on GitHub when the repository is there), push state, who
+  and how many files changed. The date opens the page of the run. On a narrow screen each run is a block of labeled
+  lines.
 - **Tags**: newest first, each with its commit (a link to the commit on GitHub when the repository is there).
 - **Commits**: the last commits of the branch.
 

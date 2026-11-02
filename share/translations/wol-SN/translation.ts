@@ -83480,6 +83480,10 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Seen mbind dina des. Nataal yi, formileer yi ak lëkkalekaay yi jëm ci yeneen dalu web duñu leen mukk far.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Wersiyoŋ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

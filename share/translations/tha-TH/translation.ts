@@ -83480,6 +83480,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ข้อความของลิงก์ยังอยู่ รูปภาพ แบบฟอร์ม และลิงก์ไปยังไซต์อื่นจะไม่ถูกลบ</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>เวอร์ชัน</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

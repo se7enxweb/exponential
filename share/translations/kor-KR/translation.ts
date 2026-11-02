@@ -83510,6 +83510,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>링크의 텍스트는 남습니다. 이미지, 양식, 다른 사이트로 가는 링크는 제거되지 않습니다.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>버전</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

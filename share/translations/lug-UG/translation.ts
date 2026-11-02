@@ -83480,6 +83480,10 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ebiwandiiko byazo bisigalawo. Ebifaananyi, foomu n'enkolagana ezigenda ku mikutu emirala tebiggyibwawo n'akatono.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Enkyusa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

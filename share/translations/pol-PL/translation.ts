@@ -84692,6 +84692,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ich tekst pozostaje. Obrazy, formularze i linki do innych witryn nigdy nie są usuwane.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Wersja</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

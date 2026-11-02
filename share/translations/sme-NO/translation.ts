@@ -83480,6 +83480,10 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Sin teaksta báhcá. Govat, skovit ja liŋkkat eará neahttabáikkiide eai goassige sihkkojuvvo.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Veršuvdna</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

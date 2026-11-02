@@ -83480,6 +83480,10 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Wɔn nsɛm no bɛtena hɔ. Wɔnnyi mfoni, krataa a wɔhyɛ ma ne link a ɛkɔ beaeɛ foforɔ da.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Nsakraeɛ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

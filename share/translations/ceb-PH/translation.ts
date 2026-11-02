@@ -83480,6 +83480,10 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Magpabilin ang ilang teksto. Ang mga hulagway, porma ug link sa ubang site dili gyud kuhaon.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Bersyon</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

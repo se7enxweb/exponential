@@ -83510,6 +83510,10 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>To teksts paliek. Attēli, veidlapas un saites uz citām vietnēm nekad netiek noņemtas.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versija</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

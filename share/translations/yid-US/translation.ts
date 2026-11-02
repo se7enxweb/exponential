@@ -83480,6 +83480,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>זייער טעקסט בלײַבט. בילדער, פֿאָרמען און לינקען צו אַנדערע זײַטלעך ווערן קיינמאָל נישט אַוועקגענומען.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>ווערסיע</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

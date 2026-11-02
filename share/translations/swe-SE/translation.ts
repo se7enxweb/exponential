@@ -84783,6 +84783,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Deras text står kvar. Bilder, formulär och länkar till andra webbplatser tas aldrig bort.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

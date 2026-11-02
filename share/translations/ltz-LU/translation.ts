@@ -83480,6 +83480,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Hiren Text bleift stoen. Biller, Formulairen a Linken op aner Websäite ginn ni ewechgeholl.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versioun</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

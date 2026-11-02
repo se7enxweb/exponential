@@ -83488,6 +83488,10 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Dia text go remain. Picture, form and link wey dey go oda site, we no dey ever comot dem.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

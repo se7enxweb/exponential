@@ -83478,6 +83478,10 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Umbhalo wazo uyahlala. Izithombe, amafomu nezixhumanisi eziya kwamanye amasayithi azisuswa neze.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Inguqulo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

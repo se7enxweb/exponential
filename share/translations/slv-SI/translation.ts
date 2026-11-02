@@ -83510,6 +83510,10 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Njihovo besedilo ostane. Slike, obrazci in povezave na druga spletišča se nikoli ne odstranijo.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Različica</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

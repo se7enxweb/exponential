@@ -83480,6 +83480,10 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksnya tetap ada. Gambar, formulir, dan tautan ke situs lain tidak pernah dihapus.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

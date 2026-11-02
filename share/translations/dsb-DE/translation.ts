@@ -83510,6 +83510,10 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jich tekst wóstanjo. Wobraze, formulary a wótkazy na druge sedła se nigda njewótwónoźuju.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Wersija</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

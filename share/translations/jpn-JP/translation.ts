@@ -83510,6 +83510,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>リンクのテキストは残ります。画像、フォーム、他のサイトへのリンクは削除されません。</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>バージョン</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>
