@@ -327,6 +327,8 @@ class Velocity extends \Exponential\Runnable\Command
             "             --rebuild-phar  --packer (packed scripts + styles, with template-block)\n" .
             "             --clear-content (the caches of rendered output anyway)  --all-caches (every cache)\n" .
             "             --caches=content,template-block (these caches too: the list of a migration run)\n" .
+            "             --migrate (run the pending migrations after the caches of settings and templates,\n" .
+            "              before PHP-FPM and Velocity: [DeploySettings] Migrate)  --no-migrate\n" .
             "             --dry-run (print the steps, do nothing)  --json\n" .
             "  kill       stop without asking, for a wedged worker\n" .
             "  command    print the command line it would run, and exit\n" .
@@ -431,7 +433,7 @@ class Velocity extends \Exponential\Runnable\Command
                    'allow-root-user', 'debug', 'force', 'check', 'trust-github-digest', 'all',
                    'rebuild-phar', 'kernel', 'apply', 'dry-run', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload', 'packer' ) );
 
-        $options = $this->options( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][apply][dry-run][no-fpm][fpm-reload][no-velocity][no-autoload][packer][clear-content][all-caches][caches:]', '[command]',
+        $options = $this->options( '[json][keep-global:][engine:][from:][force][check][trust-github-digest][all][https][no-https][rebuild-phar][kernel][apply][dry-run][no-fpm][fpm-reload][no-velocity][no-autoload][packer][clear-content][all-caches][caches:][migrate][no-migrate]', '[command]',
             array( 'json' => 'Report as JSON, for a caller that is not a person',
                    'keep-global' => 'More globals to keep between requests (comma-separated), appended to the '
                                   . 'built-in defaults and velocity.ini KeepGlobals[]; for start, restart and command',
@@ -456,7 +458,9 @@ class Velocity extends \Exponential\Runnable\Command
                    'packer' => 'deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block)',
                    'clear-content' => 'deploy: clear the content, exphttpcache, template-block and response caches even when no template, design file, setting or translation changed',
                    'all-caches' => 'deploy: clear every cache, whatever changed since the last deploy',
-                   'caches' => 'deploy: clear these caches too, whatever changed (ids or tags of ezcache, comma-separated: the list a migration run reports)' ),
+                   'caches' => 'deploy: clear these caches too, whatever changed (ids or tags of ezcache, comma-separated: the list a migration run reports)',
+                   'migrate' => 'deploy: run the pending migrations (exp:migration:migrate --apply) before PHP-FPM and Velocity run the new code, whatever [DeploySettings] Migrate says',
+                   'no-migrate' => 'deploy: do not run the pending migrations, whatever [DeploySettings] Migrate says' ),
             $velocityArgs );
         // After "--": plain arguments, never read as options here.
         $options['arguments'] = array_merge( $options['arguments'], $velocityTail );
@@ -553,7 +557,7 @@ class Velocity extends \Exponential\Runnable\Command
             $cli->error( 'velocity: --dry-run goes with deploy and the commands that write (' . implode( ', ', $writers ) . ')' );
             $script->shutdown( 1 );
         }
-        foreach ( array( 'kernel', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload', 'clear-content', 'all-caches', 'caches' ) as $deployOnly )
+        foreach ( array( 'kernel', 'no-fpm', 'fpm-reload', 'no-velocity', 'no-autoload', 'clear-content', 'all-caches', 'caches', 'migrate', 'no-migrate' ) as $deployOnly )
         {
             if ( !empty( $options[$deployOnly] ) && $verb !== 'deploy' )
             {
@@ -1079,6 +1083,7 @@ class Velocity extends \Exponential\Runnable\Command
                     'clear-content' => !empty( $options['clear-content'] ),
                     'all-caches'   => !empty( $options['all-caches'] ),
                     'caches'       => isset( $options['caches'] ) ? (string)$options['caches'] : '',
+                    'migrate'      => !empty( $options['migrate'] ) ? true : ( !empty( $options['no-migrate'] ) ? false : null ),
                     'engine'       => count( $engineList ) === 1 ? $engineList[0] : '',
                 ), $printer );
                 if ( !$asJson )

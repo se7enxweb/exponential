@@ -80,12 +80,18 @@ class expMigrationRunner
      *                       'stop-on-failure' => bool (default true),
      *                       'flow' => expMigrationRunFlow|null (captions, restore on failure, commit, tag, push),
      *                       'plan' => bool (default true; false: a dry run lists no plan(), as the status does),
-     *                       'progress' => callable|null (see the class)
+     *                       'progress' => callable|null (see the class),
+     *                       'max-migrations' => int (apply at most this many migrations, 0: all; the rest are postponed),
+     *                       'max-time' => int (seconds: start no further migration after this, 0: no limit),
+     *                       'throttle' => float (seconds of pause between two migrations),
+     *                       'sleep' => callable|null (function( float $seconds ), a test's), 'clock' => callable|null
+     *                       (function(): float, a test's)
      */
     public function __construct( expMigrationContext $context, array $options = array() )
     {
         $this->context = $context;
-        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true, 'flow' => null, 'plan' => true, 'progress' => null );
+        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true, 'flow' => null, 'plan' => true, 'progress' => null,
+                                            'max-migrations' => 0, 'max-time' => 0, 'throttle' => 0.0, 'sleep' => null, 'clock' => null );
     }
 
     /** @return expMigrationRunFlow|null */
@@ -106,7 +112,57 @@ class expMigrationRunner
         $ini = $ini ?: eZINI::instance( 'migration.ini' );
         if ( !array_key_exists( 'stop-on-failure', $options ) )
             $options['stop-on-failure'] = !$ini->hasVariable( 'RunSettings', 'StopOnFailure' ) || $ini->variable( 'RunSettings', 'StopOnFailure' ) !== 'disabled';
+        $setting = function ( $name ) use ( $ini ) {
+            return $ini->hasVariable( 'RunSettings', $name ) ? trim( (string)$ini->variable( 'RunSettings', $name ) ) : '';
+        };
+        foreach ( array( 'max-migrations' => 'MaxMigrations', 'max-time' => 'MaxTime' ) as $option => $name )
+            $options[$option] = max( 0, (int)( isset( $options[$option] ) && $options[$option] !== '' && $options[$option] !== null ? $options[$option] : $setting( $name ) ) );
+        $options['throttle'] = self::throttleSeconds( isset( $options['throttle'] ) && $options['throttle'] !== '' && $options['throttle'] !== null
+                                                      ? $options['throttle'] : $setting( 'Throttle' ) );
+        $options['nice'] = self::niceLevel( isset( $options['nice'] ) && $options['nice'] !== '' && $options['nice'] !== null ? $options['nice'] : $setting( 'Nice' ) );
         return $options;
+    }
+
+    /**
+     * A pause in seconds from a setting or an option: a number (0.5, 2), at most 60; anything else is 0. Pure.
+     *
+     * @param mixed $value
+     * @return float
+     */
+    public static function throttleSeconds( $value )
+    {
+        if ( !is_numeric( $value ) )
+            return 0.0;
+        return min( 60.0, max( 0.0, (float)$value ) );
+    }
+
+    /**
+     * The nice level of a run from a setting or an option: 0 to 19; anything else is 0 (unchanged). Pure.
+     *
+     * @param mixed $value
+     * @return int
+     */
+    public static function niceLevel( $value )
+    {
+        if ( !is_numeric( $value ) || (string)(int)$value !== trim( (string)$value ) )
+            return 0;
+        return min( 19, max( 0, (int)$value ) );
+    }
+
+    /**
+     * Lowers the priority of this process for a run that applies, on the command line only (a web request's
+     * worker is shared and stays as it is): proc_nice() by the level, once per process.
+     *
+     * @param int $level niceLevel()
+     * @return bool whether the priority was lowered now
+     */
+    public static function applyNice( $level )
+    {
+        static $done = false;
+        if ( $done || (int)$level < 1 || PHP_SAPI !== 'cli' || !function_exists( 'proc_nice' ) )
+            return false;
+        $done = true;
+        return @proc_nice( (int)$level );
     }
 
     /**
@@ -125,6 +181,9 @@ class expMigrationRunner
     {
         if ( !isset( $options['repository'] ) )
             $options['repository'] = expMigrationRepository::fromSettings( $options )->directory();
+        // batches() of PHP migrations pause as long as the run does between migrations
+        $options['throttle'] = self::throttleSeconds( isset( $options['throttle'] ) && $options['throttle'] !== '' && $options['throttle'] !== null
+                                                      ? $options['throttle'] : self::settingsOptions( array( 'stop-on-failure' => true ) )['throttle'] );
         $context = new expMigrationContext( isset( $options['db'] ) ? $options['db'] : null, !empty( $options['apply'] ), $options );
         $errors = array();
         $warnings = array();
@@ -150,8 +209,11 @@ class expMigrationRunner
                         $errors[] = "$id requires " . $dep->id() . ", which is $state and not selected: add it to --only or --path";
                 }
         }
-        $runnerOptions = self::settingsOptions( array_intersect_key( $options, array_flip( array( 'force', 'reason', 'stop-on-failure', 'progress' ) ) ) );
+        $runnerOptions = self::settingsOptions( array_intersect_key( $options, array_flip( array( 'force', 'reason', 'stop-on-failure', 'progress', 'max-migrations',
+                                                                                                 'max-time', 'throttle', 'nice', 'sleep', 'clock' ) ) ) );
         $runnerOptions['flow'] = expMigrationRunFlow::fromSettings( $context, $options );
+        if ( !empty( $options['apply'] ) && empty( $options['migrations'] ) )
+            self::applyNice( $runnerOptions['nice'] );
         $runner = new self( $context, $runnerOptions );
         if ( $errors )
         {
@@ -541,11 +603,33 @@ class expMigrationRunner
                 $stop = false;
                 $total = count( $pending );
                 $index = 0;
+                $applied = 0;
+                $postponed = '';
+                $limit = max( 0, (int)$this->options['max-migrations'] );
+                $maxTime = max( 0, (int)$this->options['max-time'] );
+                $runStart = $this->now();
                 foreach ( $pending as $i )
                 {
                     $entry =& $report['migrations'][$i];
                     $migration = $byId[$entry['id']];
                     $index++;
+                    // a long run in parts: the batch is full or its time is up; the rest stay pending for the next run
+                    if ( !$stop && $postponed === '' && $applied > 0 )
+                    {
+                        if ( $limit > 0 && $applied >= $limit )
+                            $postponed = "the limit of $limit migrations per run";
+                        else if ( $maxTime > 0 && $this->now() - $runStart >= $maxTime )
+                            $postponed = "the time limit of $maxTime seconds";
+                    }
+                    if ( $postponed !== '' )
+                    {
+                        $entry['action'] = 'postponed';
+                        $entry['messages'][] = 'postponed: ' . $postponed;
+                        $outcome[$entry['id']] = 'postponed';
+                        $this->stepDone( $entry, $index, $total );
+                        unset( $entry );
+                        continue;
+                    }
                     if ( $stop )
                     {
                         $entry['action'] = 'not-run';
@@ -567,13 +651,25 @@ class expMigrationRunner
                         unset( $entry );
                         continue;
                     }
+                    if ( $applied > 0 && $this->options['throttle'] > 0 )
+                        $this->pause( (float)$this->options['throttle'] );
                     $this->progress( 'step', array( 'id' => $entry['id'], 'index' => $index, 'total' => $total ) );
                     $this->apply( $entry, $migration );
+                    $applied++;
                     $this->stepDone( $entry, $index, $total );
                     $outcome[$entry['id']] = $entry['state'];
                     if ( $entry['state'] === expMigration::FAILED && !empty( $this->options['stop-on-failure'] ) )
                         $stop = true;
                     unset( $entry );
+                }
+                if ( $postponed !== '' )
+                {
+                    $left = 0;
+                    foreach ( $report['migrations'] as $entry )
+                        if ( $entry['action'] === 'postponed' )
+                            $left++;
+                    $report['warnings'][] = "$left migrations postponed by $postponed: the next run (./console exp:migration:migrate --apply) goes on with them";
+                    $context->log( 'info', "$left migrations postponed by $postponed" );
                 }
             }
             finally
@@ -824,6 +920,14 @@ class expMigrationRunner
             self::endEvents( true );
             $entry['state'] = expMigration::DONE;
             $entry['action'] = 'applied';
+            // done: where a long migration got to is no longer needed
+            try
+            {
+                expMigrationCheckpoint::of( $id, $context )->clear();
+            }
+            catch ( InvalidArgumentException $e )
+            {
+            }
         }
         catch ( Throwable $e )
         {
@@ -964,6 +1068,29 @@ class expMigrationRunner
         catch ( Throwable $e )
         {
         }
+    }
+
+    /**
+     * Now, in seconds (option clock, a test's, or microtime()).
+     *
+     * @return float
+     */
+    protected function now()
+    {
+        return is_callable( $this->options['clock'] ) ? (float)call_user_func( $this->options['clock'] ) : microtime( true );
+    }
+
+    /**
+     * Pauses between two migrations (option throttle), through option sleep when a test gives one.
+     *
+     * @param float $seconds
+     */
+    protected function pause( $seconds )
+    {
+        if ( is_callable( $this->options['sleep'] ) )
+            call_user_func( $this->options['sleep'], (float)$seconds );
+        else
+            usleep( (int)round( (float)$seconds * 1000000 ) );
     }
 
     /**
@@ -1154,7 +1281,7 @@ class expMigrationRunner
         // states (done, pending, not-needed, failed, unknown) and actions (applied ...); "failed" is the state
         $states = array( expMigration::DONE, expMigration::PENDING, expMigration::NOT_NEEDED, expMigration::FAILED, expMigration::UNKNOWN );
         $actions = array( 'applied', 'would-apply', 'not-run', 'blocked', 'refused', 'accepted', 'would-accept', 'undone', 'would-undo', 'restored', 'simulated',
-                          'deferred' );
+                          'deferred', 'postponed' );
         $summary = array( 'total' => count( $report['migrations'] ) ) + array_fill_keys( array_merge( $states, $actions ), 0 );
         foreach ( $report['migrations'] as $entry )
         {

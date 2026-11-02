@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # migration.ini
 
-Die ausgelieferten Einstellungen von `settings/migration.ini`: 8 Blöcke, 35 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/migration.ini`: 9 Blöcke, 44 Einstellungen.
 
 > Migrationen: Änderungen an einer Installation (Inhalte, Klassen, Rollen, Einstellungen, Schema), einmal in  
 > Dateien unter Versionskontrolle geschrieben und auf jede Installation der Site in derselben Reihenfolge angewendet.  
@@ -22,10 +22,11 @@ Die ausgelieferten Einstellungen von `settings/migration.ini`: 8 Blöcke, 35 Ein
 | [MigrationSettings](MigrationSettings.md) | 3 |
 | [YamlSettings](YamlSettings.md) | 1 |
 | [StepSettings](StepSettings.md) | 3 |
-| [RunSettings](RunSettings.md) | 5 |
+| [RunSettings](RunSettings.md) | 8 |
 | [CaptionSettings](CaptionSettings.md) | 8 |
 | [RepositorySettings](RepositorySettings.md) | 8 |
-| [AdminSettings](AdminSettings.md) | 3 |
+| [AdminSettings](AdminSettings.md) | 5 |
+| [InstallSettings](InstallSettings.md) | 4 |
 | [RecordingSettings](RecordingSettings.md) | 4 |
 
 - [Alle Beispiele](../../README.md)

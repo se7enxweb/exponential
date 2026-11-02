@@ -2336,6 +2336,12 @@ class eZPackage
                 }
             }
         }
+        // The package's own migrations (a directory migrations/ in it), once its items are in: one that fails leaves
+        // the package not installed, so installing it again runs what is still pending (migration.ini [InstallSettings])
+        if ( $installResult && !$asDrafts && class_exists( 'expMigrationInstall' ) )
+        {
+            $installResult = expMigrationInstall::afterPackageInstall( $this->path(), (string)$pkgName, $installParameters );
+        }
         // drafts are not an installation: the package can be installed (or installed as drafts) again
         if ( $installResult && !$asDrafts )
         {

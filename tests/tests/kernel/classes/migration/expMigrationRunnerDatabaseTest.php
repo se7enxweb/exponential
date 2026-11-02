@@ -7,6 +7,7 @@
  *  RD-1 RE-1 a PHP migration that creates a table and one that publishes a folder as the run's user
  *  RD-2 RE-2 transactions: PostgreSQL undoes everything a failed migration did, MySQL keeps the table it created
  *  RD-3 RE-3 rollback with down()
+ *  RD-4 RE-4 batches() with a checkpoint: a failed run goes on from the last committed batch
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -47,5 +48,11 @@ class expMigrationRunnerDatabaseTest extends ezpDatabaseTestCase
     public function testTransactions()
     {
         $this->checkTransactions( eZDB::instance() );
+    }
+
+    /** RD-4 */
+    public function testBatches()
+    {
+        $this->checkBatches( eZDB::instance() );
     }
 }

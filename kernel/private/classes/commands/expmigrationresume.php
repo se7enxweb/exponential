@@ -34,7 +34,7 @@ class Expmigrationresume extends ExpmigrationBase
                              "./console exp:migration:resume\n" .
                              "./console exp:migration:resume 20261031-120000-a1b2c3 --apply",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[apply][dry-run][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:][run-id:][progress:]', '[run]', array(
+        return (array)$this->startup( '[apply][dry-run][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:][run-id:][progress:][max-migrations:][max-time:][throttle:][nice:]', '[run]', array(
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
             'environment' => 'The environment (default the installation\'s: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count',
@@ -50,6 +50,10 @@ class Expmigrationresume extends ExpmigrationBase
             'reason' => 'Why a changed migration is accepted (needed with --force; kept in the record and the audit log)',
             'run-id' => 'The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run',
             'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
+            'max-migrations' => 'Apply at most this many migrations; the rest stay pending for the next run (default [RunSettings] MaxMigrations, empty: all)',
+            'max-time' => 'Start no further migration after this many seconds; the rest stay pending for the next run (default [RunSettings] MaxTime)',
+            'throttle' => 'Pause this many seconds between two migrations and between the batches of a long migration (default [RunSettings] Throttle)',
+            'nice' => 'Run at this lower priority, 1 to 19 as nice(1) (default [RunSettings] Nice)',
         ) );
     }
 
@@ -58,7 +62,7 @@ class Expmigrationresume extends ExpmigrationBase
         $options = $this->begin();
         $format = $this->format( $options );
         $apply = $this->apply( $options );
-        $run = $this->selection( $options ) + $this->flow( $options ) + $this->progress( $options ) + array( 'apply' => $apply );
+        $run = $this->selection( $options ) + $this->flow( $options ) + $this->progress( $options ) + $this->longRun( $options ) + array( 'apply' => $apply );
         $run['db'] = $this->database( $format );
         $runId = $this->argument( $options );
         $this->finish( \expMigrationResume::run( $runId !== '' ? $runId : null, $run ), $format );

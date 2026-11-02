@@ -314,6 +314,86 @@ trait expMigrationRunnerEngineChecks
         }
         $this->assertNull( expMigrationRecord::get( $db, 'site', '20261031130000_wp3_note_table' ) );
     }
+    /**
+     * RE-4: batches() commits every batch on its own and keeps its checkpoint; a failed run goes on from the last
+     * committed batch, and the checkpoint is gone once the migration is applied.
+     *
+     * @param eZDBInterface $db
+     */
+    protected function checkBatches( $db )
+    {
+        $engine = expKernelTableSchema::type( $db );
+        $this->dropRunnerTable( $db, 'exp_test_wp16_batch' );
+        $schema = array( 'exp_test_wp16_batch' => array(
+            'name' => 'exp_test_wp16_batch',
+            'fields' => array( 'id' => array( 'length' => 11, 'type' => 'int', 'not_null' => '1', 'default' => 0 ),
+                               'done' => array( 'length' => 11, 'type' => 'int', 'not_null' => '1', 'default' => 0 ) ),
+            'indexes' => array( 'PRIMARY' => array( 'type' => 'primary', 'fields' => array( 'id' ) ) ),
+        ) );
+        $messages = array();
+        $this->assertTrue( expKernelTableSchema::install( array( 'exp_test_wp16_batch' ), $db, $schema, $messages ), implode( '; ', $messages ) );
+        for ( $id = 1; $id <= 5; $id++ )
+            $db->query( "INSERT INTO exp_test_wp16_batch ( id, done ) VALUES ( $id, 0 )" );
+        $checkpoints = $this->runnerDir() . '/checkpoints';
+        $options = array( 'lock-file' => $this->runnerDir() . '/upgrade.lock', 'repository' => $this->runnerDir() . '/migrations',
+                          'environment' => 'testing', 'root' => self::runnerRoot(), 'user' => eZUser::fetchByName( 'admin' ),
+                          'checkpoint-directory' => $checkpoints, 'throttle' => 0 );
+        $migration = new expMigrationRunnerBatchMigration();
+        $migration->setDefinition( new expMigrationDefinition( '20261101140000_wp16_batch', 'site', 'php' ) );
+
+        $migration->failAt = 4;
+        $report = ( new expMigrationRunner( new expMigrationContext( $db, true, $options ) ) )->run( array( $migration ) );
+        $this->assertSame( 'failed', $report['migrations'][0]['action'] );
+        $this->assertSame( 2, ( new expMigrationCheckpoint( '20261101140000_wp16_batch', $checkpoints ) )->get( 'offset' ), "$engine: 1 and 2 committed" );
+        $this->assertSame( 0, $db->transactionCounter(), 'no transaction left open' );
+        $done = self::runnerCount( $db, 'exp_test_wp16_batch', 'done = 1' );
+        if ( expMigrationContext::transactionModeOf( $engine ) === expMigrationContext::TRANSACTION_NONE )
+            $this->assertSame( 4, $done, "$engine: no transaction, 3 and 4 stay changed" );
+        else
+            $this->assertSame( 2, $done, "$engine: the batch 3, 4 was rolled back" );
+
+        $migration->failAt = null;
+        $report = ( new expMigrationRunner( new expMigrationContext( $db, true, $options ) ) )->run( array( $migration ) );
+        $this->assertSame( 'applied', $report['migrations'][0]['action'], implode( '; ', $report['migrations'][0]['messages'] ) );
+        $this->assertSame( array( 3, 4, 5 ), $migration->handled, "$engine: the second run goes on with 3" );
+        $this->assertSame( 5, self::runnerCount( $db, 'exp_test_wp16_batch', 'done = 1' ) );
+        $this->assertFileDoesNotExist( $checkpoints . '/20261101140000_wp16_batch.json' );
+        $this->assertSame( 'done', expMigrationRecord::get( $db, 'site', '20261101140000_wp16_batch' )['state'] );
+
+        $this->dropRunnerTable( $db, 'exp_test_wp16_batch' );
+        $db->query( 'DELETE FROM ' . expMigrationRecord::TABLE . " WHERE migration_id = '20261101140000_wp16_batch'" );
+    }
+}
+
+/** A migration that marks the rows of exp_test_wp16_batch done two at a time and can fail at one (RE-4). */
+class expMigrationRunnerBatchMigration extends expMigrationPhp
+{
+    public $failAt = null;
+    public $handled = array();
+
+    public function transactional()
+    {
+        return false;
+    }
+
+    public function up( $context )
+    {
+        $db = $context->db();
+        $this->handled = array();
+        $self = $this;
+        $count = $this->batches( $context,
+            function ( $offset, $limit ) use ( $db ) {
+                $rows = $db->arrayQuery( 'SELECT id FROM exp_test_wp16_batch ORDER BY id', array( 'offset' => $offset, 'limit' => $limit ) );
+                return array_map( 'intval', array_column( is_array( $rows ) ? $rows : array(), 'id' ) );
+            },
+            function ( $id ) use ( $db, $self ) {
+                $db->query( "UPDATE exp_test_wp16_batch SET done = 1 WHERE id = $id" );
+                if ( $self->failAt === $id )
+                    throw new RuntimeException( "failed on purpose at $id" );
+                $self->handled[] = $id;
+            }, 2 );
+        return array( "$count rows" );
+    }
 }
 
 /** A migration that creates a table, writes a row and fails (RE-2). */

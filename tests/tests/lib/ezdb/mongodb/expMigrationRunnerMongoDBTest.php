@@ -8,6 +8,7 @@
  *  RG-1 RE-1 a PHP migration that creates a collection and one that publishes a folder as the run's user
  *  RG-2 RE-2 transactions: none on MongoDB; what a failed migration wrote stays, the record says failed
  *  RG-3 RE-3 rollback with down()
+ *  RG-4 RE-4 batches() with a checkpoint: no transaction, what a failed batch wrote stays; the next run goes on
  *
  * One database for the class, not one per test: MongoDB 8.0.34 crashed (signal 11 in createIndexes) when a database
  * was dropped and the next one built at once in the same process.
@@ -113,5 +114,11 @@ class expMigrationRunnerMongoDBTest extends PHPUnit\Framework\TestCase
     public function testTransactions()
     {
         $this->checkTransactions( $this->db );
+    }
+
+    /** RG-4 */
+    public function testBatches()
+    {
+        $this->checkBatches( $this->db );
     }
 }

@@ -86,6 +86,9 @@ Eine Migration, die die Änderung eines Schritts braucht, nennt den Schritt in `
 | `extension:<name>` | `extension/<name>/migrations/` jeder **aktiven** Erweiterung | `ExtensionDirectory` |
 | `package:<name>` | `migrations/` jedes installierten Pakets unter `var/<storage>/packages/` | `ExtensionDirectory` |
 
+Die Migrationen eines Pakets laufen auch bei seiner Installation, und der Kickstarter führt jede ausstehende Migration
+aus, nachdem er die Websites angelegt hat: [Pakete, Deploys und lange Läufe](migrationen-pakete-deploy-und-lange-laeufe.md).
+
 Nur die Dateien direkt in einem Ordner sind Migrationen; Unterordner (die Statusdateien und Laufprotokolle) werden
 nicht durchsucht. Eine Datei, deren Name nicht mit `YYYYMMDDHHMMSS_` beginnt (eine README, eine `.gitkeep`), wird
 übersprungen. `[MigrationSettings] Enabled=disabled` findet gar keine. Jede Einstellung steht in
@@ -231,6 +234,10 @@ Halter. Ein Probelauf nimmt keine Sperre. Ein Lauf läuft als der angemeldete Be
 | den Commit taggen | `--no-tag` | `Tag=disabled` |
 | Commit und Tag pushen | `--no-push` | `Push=disabled` |
 | beim ersten Fehler anhalten | | `[RunSettings] StopOnFailure=disabled` |
+| jede ausstehende Migration in einem Lauf | `--max-migrations=<n>`, `--max-time=<sekunden>` (der Rest verschoben) | `MaxMigrations`, `MaxTime` |
+| keine Pause, die normale Priorität | `--throttle=<sekunden>`, `--nice=<n>` | `Throttle`, `Nice` |
+| die Migrationen eines Pakets laufen bei seiner Installation | | `[InstallSettings] RunOnPackageInstall=disabled` |
+| ein Deploy führt keine Migration aus | `exp:velocity deploy --migrate` | `velocity.ini [DeploySettings] Migrate=enabled` |
 
 ## Jeder Befehl
 
@@ -286,14 +293,15 @@ Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/in-der-admi
 ## Noch nicht in 6.0.15
 
 Der Editor und die Generatoren in der Administration
-(Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil
-dieses Releases.
+(Generatoren außer dem Gerüst), parallele Worker, die Schritte, die Code- und Designdateien ändern, und ein
+websiteweites Aufzeichnungsfenster sind geplant und nicht Teil dieses Releases.
 
 ## Verwandte Seiten
 
 - [Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Alle Rezepte](../hilfe/migrationen/rezepte/README.md),
   [Häufige Fragen](../hilfe/migrationen/faq.md)
 - [Das Tutorial](migrationen-tutorial.md), [PHP-Migrationen](migrationen-php.md),
+  [Pakete, Deploys und lange Läufe](migrationen-pakete-deploy-und-lange-laeufe.md),
   [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
   [Das Migrations-Repository](migrationen-repositories.md)
 - [In der Administration](../hilfe/migrationen/in-der-administration.md), [Befehle](../hilfe/migrationen/befehle.md),
