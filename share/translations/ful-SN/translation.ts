@@ -83032,5 +83032,145 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>unknown</source>
         <translation>anndaaka</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count e %pages hello:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (e .br) bolle he fayl binndol kala, ngam hoɗooɓe ɓe poondata.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Hello pamaral ngam diiwal e innde goɗɗo ngal hello kala, ngam jokkondiral ɓooyɗum wondu.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Winndetee kala nde GitHub Actions rokkata lowre.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id bana CC-BY-4.0, malla binndol ngol ko ngol.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Sawru</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Noddooji e sarworde</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Haalooji</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formilaarji ɗi mooɓtata habaruuji</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Ɗuɗal sewre e ko woɗɗitaa e hello ɗe.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisans ko woni nder</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Naatugo</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Pamarin</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formilaarji goɗɗi</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Nanndin adii</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Hello ɗe ɓoggol</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Hello ɗe ɓoggol: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ɗaɓɓutugo</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Ɗaɓɓutugo index: %pages hello e %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Sitayl e skiriptiiji innaaɗi e hash ko woni nder ɗi, ngam browsers ngaaɗa.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Hello ɗe mbeɗɗi, minti seɗɗa caggal sanjo sakitiingo (taayre cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lisans ko woni nder, immorde e fiilde les.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Lowre fuu, e saa'i ɗi jadirgal (taayre cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Taaje hello ɗe ɗe ngomnata sarworde; kala ɗum hebi ko haɓɓitoo. Raarita ɗe adii ma yaltina.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ko walaa e sanjo hakkunde</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ko repository woni, ngam kala mo hollata ɗum e hoɗooɓe.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>acciti</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>binndol haɓɓitoo</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>hoore formilaar lowre jooni</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>lowre ndee jooni</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>hello ɗaɓɓutugo kopi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formilaar nulaaki.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>A jaaraama: formilaar nuli.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formilaar jaɓaaka: raarita ko winndaa ɗon, nelaa fahin.</translation>
+    </message>
 </context>
 </TS>

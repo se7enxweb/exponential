@@ -83032,5 +83032,145 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>unknown</source>
         <translation>nekonata</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count en %pages paĝo(j):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Dosiero .gz (kaj .br) apud ĉiu teksta dosiero, por gastigantoj kiuj servas ilin.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Malgranda paĝo por ĉiu malnova adreso kaj alinomo de paĝo, por ke malnovaj ligiloj daŭre funkciu.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Ĉiam skribita kiam GitHub Actions liveras la retejon.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX-identigilo kiel CC-BY-4.0, aŭ la teksto mem.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Korbo</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Vokoj al la servilo</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentoj</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formularoj kiuj kolektas informojn</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Laborfluo de GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Malpli da blanka spaco kaj neniuj komentoj en la paĝoj.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Permesilo de la enhavo</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Ensaluti</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimumigi</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Aliaj formularoj</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Antaŭkunpremi</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Alidirektaj paĝoj</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Alidirektaj paĝoj: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Serĉi</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Serĉindekso: %pages paĝo(j) en %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stilfolioj kaj skriptoj nomitaj laŭ la haketo de ilia enhavo, por ke foliumiloj povu konservi ilin.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>La ŝanĝitaj paĝoj, kelkajn minutojn post la lasta ŝanĝo (la cronjob-parto staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>La permesilo de la enhavo, el la kampo sube.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>La tuta retejo, je la tempoj de la horaro (la cronjob-parto staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ĉi tiuj partoj de la paĝoj bezonas servilon; ĉiu ricevis rezervon. Kontrolu ilin antaŭ ol publikigi.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Kio ne funkcias statike</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Kio estas la deponejo, por kiu malfermas ĝin ĉe la gastiganto.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>preterlasita</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>la rezerva teksto</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>la formulara finpunkto de la viva retejo</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>la viva retejo</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>la serĉpaĝo de la kopio</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>La formularo ne povis esti sendita.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Dankon: la formularo estis sendita.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>La formularo ne estis akceptita: kontrolu kion vi enigis kaj resendu ĝin.</translation>
+    </message>
 </context>
 </TS>

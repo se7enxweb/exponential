@@ -8,6 +8,9 @@
  *  PP-04 Content Security Policy nonces and a CSP <meta> that names one
  *  PP-05 refusals: a session cookie, debug output or a token left, a session id left; a clean page has none
  *  PP-06 cookie names from header lines
+ *  PP-07 minify: white space and comments go; pre, textarea, script, style and conditional comments stay
+ *  PP-08 precompress: a .gz of a text file of 1 KB or more when it is smaller; nothing for images or small files
+ *  PP-09 fingerprint: the content hash in the name of a style sheet or script; references renamed only where they resolve to it
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -97,5 +100,42 @@ class expStaticPostProcessorTest extends PHPUnit\Framework\TestCase
     {
         $this->assertSame( array( 'eZSESSID', 'lang' ), expStaticPostProcessor::cookieNames( array( 'HTTP/1.1 200 OK', 'Set-Cookie: eZSESSID=abc; path=/', 'set-cookie:lang=de',
                                                                                                   'Set-Cookie: eZSESSID=def', 'Content-Type: text/html' ) ) );
+    }
+
+    /** PP-07 */
+    public function testMinify()
+    {
+        $html = "<html>\n  <head>  <!-- a comment -->\n<!--[if IE]><p>  old  </p><![endif]-->\n</head>\n<body>  <p>One   two</p>\n\n"
+              . "<pre>  keep\n   this </pre><textarea>  a\n\n b</textarea><script>var  a = '<!-- x -->';</script><style>a  { }</style></body></html>";
+        $this->assertSame( "<html>\n<head>\n<!--[if IE]><p>  old  </p><![endif]-->\n</head>\n<body> <p>One two</p>\n"
+                         . "<pre>  keep\n   this </pre><textarea>  a\n\n b</textarea><script>var  a = '<!-- x -->';</script><style>a  { }</style></body></html>",
+                           expStaticPostProcessor::minify( $html ) );
+    }
+
+    /** PP-08 */
+    public function testPrecompress()
+    {
+        $css = str_repeat( "body { color: red; }\n", 100 );
+        $out = expStaticPostProcessor::precompress( 'css/site.css', $css );
+        $this->assertArrayHasKey( 'css/site.css.gz', $out );
+        $this->assertSame( $css, gzdecode( $out['css/site.css.gz'] ) );
+        $this->assertSame( function_exists( 'brotli_compress' ), isset( $out['css/site.css.br'] ) );
+        $this->assertSame( array(), expStaticPostProcessor::precompress( 'a.css', 'small' ) );
+        $this->assertSame( array(), expStaticPostProcessor::precompress( 'a.png', $css ) );
+    }
+
+    /** PP-09 */
+    public function testFingerprint()
+    {
+        $this->assertSame( 'css/site.' . substr( hash( 'sha256', 'x' ), 0, 8 ) . '.css', expStaticPostProcessor::fingerprintName( 'css/site.css', 'x' ) );
+        $this->assertNull( expStaticPostProcessor::fingerprintName( 'img/a.png', 'x' ) );
+        $map = array( 'design/s/site.css' => 'design/s/site.1234abcd.css', 'js/app.js' => 'js/app.feedbeef.js' );
+        $html = '<link href="../design/s/site.css" rel="stylesheet"><script src="../js/app.js?x=1"></script><a href="../other/site.css">o</a>'
+              . '<link href="/repo/design/s/site.css"><link href="https://o.github.io/repo/js/app.js"><link href="https://cdn.example.com/js/app.js">';
+        $this->assertSame( '<link href="../design/s/site.1234abcd.css" rel="stylesheet"><script src="../js/app.feedbeef.js?x=1"></script><a href="../other/site.css">o</a>'
+                         . '<link href="/repo/design/s/site.1234abcd.css"><link href="https://o.github.io/repo/js/app.feedbeef.js"><link href="https://cdn.example.com/js/app.js">',
+                           expStaticPostProcessor::renameReferences( $html, 'news/index.html', $map, '/repo/', 'https://o.github.io/repo/' ) );
+        $this->assertSame( "@import url(site.1234abcd.css);@import 'site.1234abcd.css';",
+                           expStaticPostProcessor::renameReferences( "@import url(site.css);@import 'site.css';", 'design/s/print.css', $map ) );
     }
 }

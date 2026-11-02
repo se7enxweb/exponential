@@ -83032,5 +83032,145 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>unknown</source>
         <translation>tekimanyiddwa</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ku mpapula %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Fayiro ya .gz (ne .br) okumpi na buli fayiro ya mpandiika, eri abakyaza abagiwa.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Olupapula olutonotono olwa buli kifo ekikadde n'erinnya ery'enjawulo ery'olupapula, ennyingo enkadde zeeyongere okukola.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Kiwandiikibwa bulijjo GitHub Actions bw'etuusa omukutu.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id nga CC-BY-4.0, oba ebigambo byennyini.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Ekibbo</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Okuyita seva</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Ebirowoozo</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Foomu ezikuŋŋaanya ebikwata ku muntu</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Enkola y'emirimu eya GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Ebifo ebitaliimu bitono era tewali bitangaaza mu mpapula.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Layisensi y'ebirimu</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Okuyingira</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Okukendeeza</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Foomu endala</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Okunyigiriza nga bukyali</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Empapula z'okuyisa</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Empapula z'okuyisa: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Noonya</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Ennyiriri y'okunoonya: empapula %pages mu %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Empapula z'engeri n'ebiwandiiko ebituumiddwa erinnya ly'ebirimu byabyo, enkola z'okulaba ziyinza okubikuuma.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Empapula ezikyusiddwa, edakiika ntono oluvannyuma lw'enkyukakyuka esembayo (ekitundu kya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Layisensi y'ebirimu, okuva mu kifo wansi.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Omukutu gwonna, mu biseera by'enteekateeka (ekitundu kya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ebitundu bino eby'empapula byetaaga seva; buli kimu kirina eky'okukozesa mu kifo. Bikebere nga tonnafulumya.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ebitakola mu ngeri etakyuka</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ekifo ky'okutereka kye ki, eri oyo agyigguliza ku kyaza.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>kivuddeko</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ebigambo eby'okukozesa mu kifo</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>enkomerero ya foomu ey'omukutu ogukola</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>omukutu ogukola</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>olupapula lw'okunoonya olw'ekkopi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Foomu teyasobola kusindikibwa.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Weebale: foomu esindikiddwa.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Foomu teyakkirizibwa: kebera ky'owandiise onoonyeeyo osindike nate.</translation>
+    </message>
 </context>
 </TS>

@@ -83032,5 +83032,145 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>unknown</source>
         <translation>xamuñu ko</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ci %pages xët:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Benn .gz (ak .br) ci wetu fiise bu nekk bu mbind, ngir host yi koy jox.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Benn xët bu ndaw ngir adrees bu mag bu nekk ak tur bu wuute bu xët, ngir lëkkalekaay yu yàgg yi di dem.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Dañu koy bindal saa su nekk bu GitHub Actions di yónnee sit bi.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Benn id SPDX niki CC-BY-4.0, walla mbind mi boppam.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Pañe</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Woote ci serwëer bi</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Tontu yi</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulaar yi di dajale xibaar</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Barab bu neen bu tuuti te amul tontu ci xët yi.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisaas bu ëmbit bi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Dugg</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Yeneen formulaar</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Xët yu jëme</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Xët yu jëme: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Seet</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Index bu seet: %pages xët ci %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Xët yu melo ak script yi tur bi dafa jóge ci hash ëmbit bi, ngir browser yi mën leen fay denc.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Xët yi soppeeku, ay simili ginaaw soppi gu mujj (pàrtu cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lisaas bu ëmbit bi, ci wàll bi ci suuf.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Sit bi yépp, ci waxtu yu pexe mi (pàrtu cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Xët yi am nañu ay pàrt yu soxla serwëer; ku nekk am na ku koy wuutu. Seetlul leen balaa ngeen siiwal.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Li du dox ci anam bu taxaw</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Li repozitoor bi di, ngir ku ko ubbi ci host bi.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>bayyi nañu ko</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>mbind mu wuutu</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>adreesu formulaar yu sit bu dund bi</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>sit bu dund bi</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>xëtu seet bu kopi bi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulaar bi mënul a yónnee.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Jërëjëf: formulaar bi yónnee nañu ko.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulaar bi nangu nañu ko: seetal li nga dugal te yónnee ko beneen yoon.</translation>
+    </message>
 </context>
 </TS>

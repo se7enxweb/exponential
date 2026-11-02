@@ -83032,5 +83032,145 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>unknown</source>
         <translation>a tɛ dɔn</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ɲɛw %pages kɔnɔ:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Dɔ .gz (ani .br) fayili bɛɛ sɛbɛnni fayili kɛrɛ fɛ, ɲɛmɔgɔw ye minnu b'u di.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ɲɛ fitinin adirɛsi kɔrɔ ni ɲɛ tɔgɔ wɛrɛ bɛɛ ye, walasa jɛɲɔgɔnya kɔrɔw ka taa a fɛ baara la.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>A bɛ sɛbɛn tuma bɛɛ ni GitHub Actions ye sitɛ lase.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id i n'a fɔ CC-BY-4.0, wala sɛbɛnni yɛrɛ.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kabaki</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Weleli serivɛri ma</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Hakilinaw</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulɛriw minnu bɛ kunnafoni lajɛ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions baarakɛcogo</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Yɔrɔ gansan dɔgɔya ani hakilinaw tɛ ɲɛw kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Kɔnɔnafili sariyaw</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Don</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Fitinya</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formulɛri wɛrɛw</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Ka fatin sani</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Ɲɛ ɲɔgɔnyew</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Ɲɛ ɲɔgɔnyew: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ɲinini</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Ɲinini kɔdɔnnisɛbɛn: ɲɛ %pages %languages kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Cogoyasɛbɛnw ni sɛbɛnw minnu tɔgɔ bɛ u kɔnɔnafili hash la, walasa baarakɛminɛnw ka se u mara.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ɲɛ ncininen minnu, miniti damadɔ kɔfɛ ɲɛsinni laban kɔ (cronjob yɔrɔ staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Kɔnɔnafili sariya, ka bɔ yɔrɔ duguma in na.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Sitɛ bɛɛ, waati sigilen na (cronjob yɔrɔ staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ɲɛ yɔrɔ òn bɛ serivɛri wajibiya; dɔ o dɔ ye dɛmɛbaara sɔrɔ. A lajɛ sani i ka bila kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Min tɛ baara kɛ statiki cogo la</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Mara ye mun ye, mɔgɔ min bɛ a da hɔsti kan.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>bɔra a la</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>dɛmɛ sɛbɛn</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>sitɛ kɛnɛ formulɛri laban</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>sitɛ kɛnɛ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kopi ɲinini ɲɛ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulɛri ma se ka ci.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>I ni ce: formulɛri cira.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulɛri ma sɔn: i ka min sɛbɛn, a lajɛ ka a ci tuun.</translation>
+    </message>
 </context>
 </TS>

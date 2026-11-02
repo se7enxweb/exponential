@@ -83062,5 +83062,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>άγνωστο</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count σε %pages σελίδα/ες:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Ένα αρχείο .gz (και .br) δίπλα σε κάθε αρχείο κειμένου, για διακομιστές που τα σερβίρουν.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Μια μικρή σελίδα για κάθε παλιά διεύθυνση και ψευδώνυμο μιας σελίδας, ώστε οι παλιοί σύνδεσμοι να συνεχίζουν να λειτουργούν.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Γράφεται πάντα όταν το GitHub Actions παραδίδει τον ιστότοπο.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Ένα αναγνωριστικό SPDX όπως CC-BY-4.0, ή το ίδιο το κείμενο.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Καλάθι</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Κλήσεις προς τον διακομιστή</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Σχόλια</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Φόρμες που συλλέγουν πληροφορίες</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Ροή εργασίας GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Λιγότερα κενά και χωρίς σχόλια στις σελίδες.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Άδεια του περιεχομένου</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Σύνδεση</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Ελαχιστοποίηση</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Άλλες φόρμες</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Προσυμπίεση</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Σελίδες ανακατεύθυνσης</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Σελίδες ανακατεύθυνσης: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Αναζήτηση</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Ευρετήριο αναζήτησης: %pages σελίδα/ες σε %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Φύλλα στυλ και σενάρια με όνομα από το hash του περιεχομένου τους, ώστε οι φυλλομετρητές να μπορούν να τα κρατούν.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Οι αλλαγμένες σελίδες, λίγα λεπτά μετά την τελευταία αλλαγή (το τμήμα cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Η άδεια του περιεχομένου, από το πεδίο παρακάτω.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Ολόκληρος ο ιστότοπος, στις ώρες του χρονοδιαγράμματος (το τμήμα cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Αυτά τα τμήματα των σελίδων χρειάζονται διακομιστή· το καθένα έχει εναλλακτική λύση. Ελέγξτε τα πριν δημοσιεύσετε.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Τι δεν λειτουργεί στατικά</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Τι είναι το αποθετήριο, για όποιον το ανοίγει στον διακομιστή.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>παραλείπεται</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>το εναλλακτικό κείμενο</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>το τελικό σημείο φορμών του ζωντανού ιστότοπου</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ο ζωντανός ιστότοπος</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>η σελίδα αναζήτησης του αντιγράφου</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Η φόρμα δεν μπόρεσε να σταλεί.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Ευχαριστούμε: η φόρμα στάλθηκε.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Η φόρμα δεν έγινε δεκτή: ελέγξτε όσα καταχωρίσατε και στείλτε την ξανά.</translation>
+    </message>
 </context>
 </TS>

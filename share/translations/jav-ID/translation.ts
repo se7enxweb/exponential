@@ -83040,5 +83040,145 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>unknown</source>
         <translation>ora dingerteni</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count saka %pages kaca:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Berkas .gz (lan .br) ing jejere saben berkas teks, kanggo host sing nyuguhake.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Kaca cilik kanggo saben alamat lawas lan alias kaca, supaya pranala lawas tetep mlaku.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Mesthi ditulis nalika GitHub Actions ngirim situs.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ID SPDX kayata CC-BY-4.0, utawa teks kuwi dhewe.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kranjang</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Panyuwunan menyang server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentar</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulir sing nglumpukake informasi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Spasi kosong luwih sithik lan tanpa komentar ing kaca.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisensi isi</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Mlebu</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Cilikake</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formulir liyane</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Prakompresi</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Kaca pangalihan</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Kaca pangalihan: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Golek</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indeks panelusuran: %pages kaca ing %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Lembar gaya lan skrip sing dijenengi miturut hash isine, supaya panjelajah bisa nyimpen.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Kaca sing owah, sawetara menit sawise owah-owahan pungkasan (bagean cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lisensi isi, saka kolom ing ngisor.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Kabeh situs, ing wektu jadwal (bagean cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Bagean kaca iki mbutuhake server; saben-saben entuk cadhangan. Priksa sadurunge nerbitake.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Sing ora bisa mlaku kanthi statis</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Apa repositori kuwi, kanggo sing mbukak ing host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>dilewati</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>teks cadhangan</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>titik pungkasan formulir situs langsung</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>situs langsung</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kaca panelusuran salinan</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulir ora bisa dikirim.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Matur nuwun: formulir wis dikirim.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulir ora ditampa: priksa isiane lan kirimen manèh.</translation>
+    </message>
 </context>
 </TS>

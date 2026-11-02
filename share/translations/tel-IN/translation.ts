@@ -83030,5 +83030,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>తెలియదు</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages పేజీలలో %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ప్రతి టెక్స్ట్ ఫైల్ పక్కన ఒక .gz (మరియు .br), వాటిని అందించే హోస్ట్‌ల కోసం.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>పేజీ యొక్క ప్రతి పాత చిరునామా మరియు మారుపేరుకు ఒక చిన్న పేజీ, పాత లింక్‌లు పని చేస్తూ ఉండటానికి.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions సైట్‌ను అందించినప్పుడు ఎల్లప్పుడూ వ్రాయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 వంటి SPDX ఐడి, లేదా టెక్స్ట్ స్వయంగా.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>బుట్ట</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>సర్వర్‌కు కాల్‌లు</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>వ్యాఖ్యలు</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>సమాచారం సేకరించే ఫారమ్‌లు</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions వర్క్‌ఫ్లో</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>పేజీలలో తక్కువ ఖాళీ స్థలం మరియు వ్యాఖ్యలు లేకుండా.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>కంటెంట్ లైసెన్స్</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>లాగిన్</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ఇతర ఫారమ్‌లు</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>దారి మళ్లింపు పేజీలు</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>దారి మళ్లింపు పేజీలు: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>శోధన</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>శోధన సూచిక: %languages భాషలలో %pages పేజీలు.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>కంటెంట్ హాష్ పేరుతో స్టైల్ షీట్‌లు మరియు స్క్రిప్ట్‌లు, బ్రౌజర్‌లు వాటిని ఉంచుకోవడానికి.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>మార్చిన పేజీలు, చివరి మార్పు తర్వాత కొన్ని నిమిషాలకు (cronjob భాగం staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>కంటెంట్ లైసెన్స్, దిగువ ఫీల్డ్ నుండి.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>మొత్తం సైట్, షెడ్యూల్ సమయాల్లో (cronjob భాగం staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>పేజీల ఈ భాగాలకు సర్వర్ అవసరం; ప్రతిదానికి ప్రత్యామ్నాయం ఇవ్వబడింది. ప్రచురించే ముందు వాటిని తనిఖీ చేయండి.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>స్థిరంగా పని చేయనివి</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>హోస్ట్‌లో తెరిచేవారికి, రిపాజిటరీ అంటే ఏమిటి.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>వదిలేసినవి</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ప్రత్యామ్నాయ టెక్స్ట్</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>లైవ్ సైట్ ఫారమ్ ఎండ్‌పాయింట్</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>లైవ్ సైట్</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>కాపీ యొక్క శోధన పేజీ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ఫారమ్‌ను పంపలేకపోయాము.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ధన్యవాదాలు: ఫారమ్ పంపబడింది.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ఫారమ్ అంగీకరించబడలేదు: మీరు నమోదు చేసినది తనిఖీ చేసి మళ్లీ పంపండి.</translation>
+    </message>
 </context>
 </TS>

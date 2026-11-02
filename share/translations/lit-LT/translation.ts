@@ -83062,5 +83062,145 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>unknown</source>
         <translation>nežinoma</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count iš %pages puslapių:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Šalia kiekvieno tekstinio failo – .gz (ir .br) failas, skirtas jas teikiantiems serveriams.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Mažas puslapis kiekvienam senam puslapio adresui ir slapyvardžiui, kad senos nuorodos veiktų.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Rašoma visada, kai svetainę pateikia GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX ID, pvz., CC-BY-4.0, arba pats tekstas.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Krepšelis</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Kreipiniai į serverį</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentarai</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formos, renkančios informaciją</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions darbo eiga</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mažiau tarpų ir jokių komentarų puslapiuose.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Turinio licencija</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Prisijungimas</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Sumažinti</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Kitos formos</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Iš anksto suglaudinti</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Peradresavimo puslapiai</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Peradresavimo puslapiai: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Paieška</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Paieškos indeksas: %pages puslapių (%languages).</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stilių lentelės ir scenarijai, pavadinti pagal savo turinio maišą, kad naršyklės galėtų juos išsaugoti.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Pakeisti puslapiai, po kelių minučių nuo paskutinio pakeitimo (cronjob dalis staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Turinio licencija iš žemiau esančio lauko.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Visa svetainė pagal tvarkaraščio laikus (cronjob dalis staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Šioms puslapių dalims reikia serverio; kiekviena gavo atsarginį sprendimą. Patikrinkite jas prieš publikuodami.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Kas statiškai neveikia</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Kas yra saugykla, tiems, kas ją atveria serveryje.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>praleista</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>atsarginis tekstas</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>veikiančios svetainės formų galinis taškas</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>veikianti svetainė</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kopijos paieškos puslapis</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formos nepavyko išsiųsti.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Ačiū: forma išsiųsta.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Forma nepriimta: patikrinkite įvestus duomenis ir siųskite dar kartą.</translation>
+    </message>
 </context>
 </TS>

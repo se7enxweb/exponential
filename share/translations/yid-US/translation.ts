@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>אומבאַקאַנט</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count אויף %pages בלעטער:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>אַ .gz (און .br) לעבן יעדער טעקסט־טעקע, פֿאַר האָסטס וואָס באַדינען זיי.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>אַ קליין בלאַט פֿאַר יעדע אַלטע אַדרעס און צונעמען פֿון אַ בלאַט, כּדי אַלטע לינקס זאָלן ווײַטער אַרבעטן.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ווערט תּמיד געשריבן ווען GitHub Actions ליפֿערט די וועבזײַטל.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>אַ SPDX־ID ווי CC-BY-4.0, אָדער דער טעקסט אַליין.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>קאָרב</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>רופֿן צום סערווער</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>הערות</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>פֿאָרמעס וואָס זאַמלען אינפֿאָרמאַציע</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions אַרבעטס־לויף</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ווייניקער ליידיקע ערטער און קיין הערות אין די בלעטער.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>לייסענס פֿון דעם אינהאַלט</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>אַרײַנלאָגירן</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>אַנדערע פֿאָרמעס</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ווײַטערפֿירן־בלעטער</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ווײַטערפֿירן־בלעטער: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>זוך</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>זוך־אינדעקס: %pages בלעטער אין %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>סטיל־בלעטער און סקריפּטן מיט נעמען לויט דער האַש פֿון זייער אינהאַלט, כּדי בראַוזערס זאָלן זיי האַלטן.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>די געביטענע בלעטער, עטלעכע מינוטן נאָך דער לעצטער ענדערונג (דער cronjob טייל staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>דער לייסענס פֿון דעם אינהאַלט, פֿון דעם פֿעלד אונטן.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>די גאַנצע וועבזײַטל, אין די צײַטן פֿון דעם פּלאַן (דער cronjob טייל staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>די טיילן פֿון די בלעטער דאַרפֿן אַ סערווער; יעדער האָט באַקומען אַן אַלטערנאַטיוו. קאָנטראָלירט זיי איידער איר פֿאַרעפֿנטלעכט.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>וואָס אַרבעט נישט סטאַטיש</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>וואָס דער רעפּאָזיטאָריע איז, פֿאַר ווער עס עפֿנט עס אויפֿן האָסט.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>אַרויסגעלאָזט</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>דער רעזערוו־טעקסט</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>דער פֿאָרם־ענדפּוינט פֿון דער לעבעדיקער וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>די לעבעדיקע וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>די זוך־בלאַט פֿון דער קאָפּיע</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>די פֿאָרם האָט נישט געקענט ווערן געשיקט.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>דאַנק: די פֿאָרם איז געשיקט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>די פֿאָרם איז נישט אָנגענומען געוואָרן: קאָנטראָלירט וואָס איר האָט אַרײַנגעשריבן און שיקט נאָך אַ מאָל.</translation>
+    </message>
 </context>
 </TS>

@@ -33,7 +33,7 @@ class expStaticAdmin
     /** The settings the wizard writes, in the order of its steps */
     const WIZARD_SETTINGS = array( 'Name', 'SiteAccess', 'Kind', 'Credential', 'Remote', 'Branch', 'Folder', 'Delivery', 'Links', 'BasePath',
                                    'PublicURL', 'CustomDomain', 'Assets', 'Extras', 'PostProcess', 'Search', 'Forms', 'ExcludePaths',
-                                   'ExcludeSections', 'CrawlURL', 'LiveURL', 'MaxPages', 'Triggers', 'Schedule', 'Notify', 'Webhook' );
+                                   'ExcludeSections', 'CrawlURL', 'LiveURL', 'MaxPages', 'Triggers', 'Schedule', 'Notify', 'Webhook', 'License' );
 
     /** The longest a preview link lives, in seconds */
     const PREVIEW_TTL = 3600;
@@ -145,7 +145,7 @@ class expStaticAdmin
         catch ( Throwable $e )
         {
         }
-        return new expStaticPublisher( $target, $options + array( 'root' => rtrim( (string)eZSys::rootDir(), '/' ), 'db' => $db ) );
+        return new expStaticPublisher( $target, $options + array( 'root' => rtrim( (string)eZSys::rootDir(), '/' ), 'db' => $db, 'notify' => true ) );
     }
 
     /**

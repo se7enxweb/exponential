@@ -83032,5 +83032,145 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>unknown</source>
         <translation>eyebani te</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count na ba-page %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Fisyé .gz (mpe .br) pembeni ya fisyé nyonso ya makomi, mpo na ba-hôte oyo epesaka yango.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Lokasa moke mpo na adrɛsi nyonso ya kala mpe nkombo ya mosusu ya lokasa, mpo ba lien ya kala esalaka naino.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Ekomamaka ntango nyonso ntango GitHub Actions ezali kopesa site.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id lokola CC-BY-4.0, to makomi yango moko.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Libenga</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Ba-appel epai ya serveur</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Ba-commentaire</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Ba-formulaire oyo ezali kozwa ba-informasyo</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow ya GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Esika mpamba moke mpe commentaire te na ba-page.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licence ya contenu</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Kokota</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Kokitisa</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Ba-formulaire mosusu</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Kokanga liboso</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Ba-page ya redirection</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Ba-page ya redirection: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Koluka</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Index ya boluki: ba-page %pages na %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Ba-style sheet mpe ba-script oyo bapesi nkombo na hash ya contenu na yango, mpo ba-navigateur ebomba yango.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ba-page oyo ebongwani, miniti mwa mingi nsima yabobongoli ya suka (eteni ya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Licence ya contenu, uta na champ oyo ezali awa nsima.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Site mobimba, na ngonga ya planning (eteni ya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Biteni oyo ya ba-page esengi serveur; moko na moko azwi solution ya mosusu. Tala yango liboso ya kobimisa.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Oyo esalaka te na statique</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Repository nini, mpo na moto oyo azali kofungola yango na hôte.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>elongolami</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>makomi ya mosusu</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>endpoint ya formulaire ya site ya bomoi</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>site ya bomoi</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>lokasa ya boluki ya copie</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulaire etindami te.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Matondi: formulaire etindami.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulaire endimami te: tala oyo okomaki mpe tindá yango lisusu.</translation>
+    </message>
 </context>
 </TS>

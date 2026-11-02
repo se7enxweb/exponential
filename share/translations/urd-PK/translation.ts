@@ -83030,5 +83030,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>نامعلوم</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages صفحات پر %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ہر ٹیکسٹ فائل کے ساتھ ایک .gz (اور .br)، ان میزبانوں کے لیے جو انہیں پیش کرتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>صفحے کے ہر پرانے پتے اور عرف کے لیے ایک چھوٹا صفحہ، تاکہ پرانے لنک چلتے رہیں۔</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>جب GitHub Actions سائٹ پہنچاتا ہے تو ہمیشہ لکھا جاتا ہے۔</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX شناخت جیسے CC-BY-4.0، یا خود متن۔</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ٹوکری</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>سرور کو کالیں</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>تبصرے</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>معلومات جمع کرنے والے فارم</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ورک فلو</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>صفحات میں کم خالی جگہ اور کوئی تبصرہ نہیں۔</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>مواد کا لائسنس</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>لاگ ان</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>دیگر فارم</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ری ڈائریکٹ صفحات</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ری ڈائریکٹ صفحات: %count۔</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>تلاش</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>تلاش کا اشاریہ: %languages میں %pages صفحات۔</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>اسٹائل شیٹس اور اسکرپٹس جن کے نام ان کے مواد کے ہیش پر ہیں، تاکہ براؤزر انہیں رکھ سکیں۔</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>تبدیل شدہ صفحات، آخری تبدیلی کے چند منٹ بعد (cronjob حصہ staticpublish)۔</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>مواد کا لائسنس، نیچے والے خانے سے۔</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>پوری سائٹ، شیڈول کے اوقات پر (cronjob حصہ staticpublish)۔</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>صفحات کے ان حصوں کو سرور چاہیے؛ ہر ایک کو متبادل دیا گیا ہے۔ شائع کرنے سے پہلے انہیں جانچ لیں۔</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>جو جامد طور پر کام نہیں کرتا</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ریپوزٹری کیا ہے، اس کے لیے جو اسے میزبان پر کھولے۔</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>چھوڑا گیا</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>متبادل متن</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>لائیو سائٹ کا فارم اینڈ پوائنٹ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>لائیو سائٹ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>نقل کا تلاش صفحہ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>فارم بھیجا نہیں جا سکا۔</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>شکریہ: فارم بھیج دیا گیا۔</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>فارم قبول نہیں ہوا: جو درج کیا اسے جانچیں اور دوبارہ بھیجیں۔</translation>
+    </message>
 </context>
 </TS>

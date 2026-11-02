@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>نامعلوم</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count در %pages صفحه:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>یک فایل .gz (و .br) کنار هر فایل متنی، برای میزبان‌هایی که آن‌ها را ارائه می‌کنند.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>یک صفحهٔ کوچک برای هر نشانی و نام مستعار قدیمی یک صفحه، تا پیوندهای قدیمی کار کنند.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>همیشه هنگامی نوشته می‌شود که GitHub Actions سایت را تحویل می‌دهد.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>یک شناسهٔ SPDX مانند CC-BY-4.0، یا خود متن.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>سبد</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>فراخوانی‌های سرور</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>نظرها</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>فرم‌هایی که اطلاعات جمع‌آوری می‌کنند</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>گردش‌کار GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>فاصلهٔ خالی کمتر و بدون توضیحات در صفحه‌ها.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>مجوز محتوا</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ورود</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>کوچک‌سازی</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>فرم‌های دیگر</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>پیش‌فشرده‌سازی</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>صفحه‌های تغییر مسیر</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>صفحه‌های تغییر مسیر: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>جست‌وجو</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>نمایهٔ جست‌وجو: %pages صفحه در %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>شیوه‌نامه‌ها و اسکریپت‌هایی که با هش محتوایشان نام‌گذاری شده‌اند، تا مرورگرها بتوانند آن‌ها را نگه دارند.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>صفحه‌های تغییرکرده، چند دقیقه پس از آخرین تغییر (بخش cronjob به نام staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>مجوز محتوا، از فیلد زیر.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>کل سایت، در زمان‌های زمان‌بندی (بخش cronjob به نام staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>این بخش‌های صفحه‌ها به سرور نیاز دارند؛ برای هرکدام یک جایگزین گذاشته شد. پیش از انتشار بررسی‌شان کنید.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>آنچه به‌صورت ایستا کار نمی‌کند</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>مخزن چیست، برای کسی که آن را روی میزبان باز می‌کند.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>حذف‌شده</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>متن جایگزین</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>نقطهٔ پایانی فرم سایت زنده</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>سایت زنده</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>صفحهٔ جست‌وجوی نسخه</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>فرم ارسال نشد.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>سپاس: فرم ارسال شد.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>فرم پذیرفته نشد: ورودی‌های خود را بررسی کنید و دوباره ارسال کنید.</translation>
+    </message>
 </context>
 </TS>

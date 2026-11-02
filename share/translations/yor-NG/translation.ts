@@ -83030,5 +83030,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>a kò mọ̀</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count lórí àwọn ojú ìwé %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Fáìlì .gz (àti .br) lẹ́gbẹ̀ẹ́ fáìlì ọ̀rọ̀ kọ̀ọ̀kan, fún àwọn olùgbàlejò tó ń pèsè wọn.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ojú ìwé kékeré fún gbogbo àdírẹ́sì àtijọ́ àti orúkọ mìíràn ti ojú ìwé, kí àwọn ìsopọ̀ àtijọ́ lè máa ṣiṣẹ́.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>A máa ń kọ ọ́ nígbà gbogbo nígbà tí GitHub Actions bá fi sáìtì náà ránṣẹ́.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ID SPDX bíi CC-BY-4.0, tàbí ọ̀rọ̀ náà fúnra rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Apẹ̀rẹ̀</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Àwọn ìpè sí olùpèsè</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Àwọn àtẹ̀ranṣẹ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Àwọn fọ́ọ̀mù tó ń kó ìròyìn jọ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Ìṣàn iṣẹ́ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Àlàfo díẹ̀ àti kò sí àtẹ̀ranṣẹ nínú àwọn ojú ìwé.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ìwé-àṣẹ àkóónú</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Wọlé</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Àwọn fọ́ọ̀mù mìíràn</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Àwọn ojú ìwé àtúnjúwe</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Àwọn ojú ìwé àtúnjúwe: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wá</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Atọ́ka ìwákiri: ojú ìwé %pages nínú %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Àwọn ojú ìwé ìfọwọ́sí àti àwọn àkọsílẹ̀ tí a sọ orúkọ wọn nípa hash àkóónú wọn, kí àwọn aṣàwákiri lè pa wọ́n mọ́.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Àwọn ojú ìwé tó yípadà, ìṣẹ́jú díẹ̀ lẹ́yìn ìyípadà tó gbẹ̀yìn (apá cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ìwé-àṣẹ àkóónú, láti inú pápá tó wà nísàlẹ̀.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Gbogbo sáìtì náà, ní àwọn àkókò ètò (apá cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Àwọn apá ojú ìwé wọ̀nyí nílò olùpèsè; ọ̀kọ̀ọ̀kan ti gba àfidípò. Ṣàyẹ̀wò wọn kí o tó tẹ̀jáde.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ohun tí kò ṣiṣẹ́ ní àìyípadà</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ohun tí ibi ìpamọ́ jẹ́, fún ẹni tó bá ṣí i lórí olùgbàlejò.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>fi sílẹ̀</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ọ̀rọ̀ àfidípò</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ibi ìgbàfọ́ọ̀mù ti sáìtì tó ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>sáìtì tó ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ojú ìwé ìwákiri ti ẹ̀dà</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>A kò lè fi fọ́ọ̀mù náà ránṣẹ́.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>O ṣeun: a ti fi fọ́ọ̀mù náà ránṣẹ́.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>A kò gba fọ́ọ̀mù náà: ṣàyẹ̀wò ohun tí o fi sínú rẹ̀ kí o tún fi ránṣẹ́.</translation>
+    </message>
 </context>
 </TS>

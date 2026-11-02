@@ -83065,5 +83065,145 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>unknown</source>
         <translation>Sovlu'be'</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count %pages nav:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ghItlh teywI' Hoch Dung .gz (je .br), ghItlh pagh vegh.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>nav mach Hoch rurbogh Daq je pong nav, 'ej rap rap ghom chaq.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions vIlo' mIw.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id rur CC-BY-4.0, pagh mu'mey.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>tu'lu'</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>qawHaq QonoS</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>QIjmey</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ghItlh chu'wI' mIwmey</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>pagh ghItlh je QIjmey nav.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>De' wIj chaw'</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>yIlogh</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>chu'wI' mIwmey law'</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>nav lan</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>nav lan: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>nej Hotlh: %pages nav %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Style sheets je scripts pongta' hash De' 'ej browsers vaj pol.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>nav choHta', puS minut choH Qav (cronjob Del staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>De' wIj chaw', chu'wI' mIw bIng.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Hoch Dujmey, poH Hoch (cronjob Del staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>qawHaq ghaj nav Del; Hoch chap ghaj. yIleghmoH publish.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Daq static ghajbe'</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>repository; Daq host poSmoH.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>tlhoS</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>chap mu'mey</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>yInbogh yoS chu'wI' lIw</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>yInbogh yoS</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ngaS nej nav</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>chu'wI' mIw ngeH Dachu'laHbe'.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Qapla': chu'wI' mIw ngeH.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>chu'wI' mIw Dachu'be': yIlaD 'ej yIngeH.</translation>
+    </message>
 </context>
 </TS>

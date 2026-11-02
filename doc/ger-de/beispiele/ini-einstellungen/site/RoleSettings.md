@@ -167,26 +167,29 @@ PermissionSQLOptimization=enabled
 
 ## PolicyOmitList
 
-> A list of modules to omit policy checking on,  
-> You should add 'role' to the list if you loose  
-> access to the role module  
-> You can also specify views by adding a / and the viewname  
-> This is a fake omission: we need a manual policy check, therefore implemented directly in oauth/authorize.php  
-> Order receipts decide for themselves: the customer who placed the order, or  
-> shop/administrate (eZShopReceipt::canView); everyone else gets the login form.  
-> E-mail preferences: settings and export check the login themselves, manage,  
-> unsubscribe and confirm work with a signed link, request sends one.  
-> API access: apikey/list checks for itself (signed in to see and revoke one's own keys,  
-> apikey/create to make one).  
-> admin4's mega menu: user/megamenu checks for itself (a signed-in user who may log in to the  
-> siteaccess, user/login with its SiteAccess limitation, and the tab open to that user), so every  
-> refusal is a bare 403 for its script instead of a page.  
-> The reports of the Content Security Policy come from browsers, signed in or not; csp/report protects itself  
-> (content types, size, rate limits, masked log lines).  
-> The preview of a draft through a share link: the signed, expiring token is the permission  
-> (expContentPreviewLink); without a valid one the page says the link does not work.  
+> Eine Liste der Module, bei denen die Richtlinienprüfung ausgelassen wird;  
+> fügen Sie 'role' der Liste hinzu, wenn Sie den  
+> Zugriff auf das Modul role verlieren  
+> Sie können auch Ansichten angeben, indem Sie ein / und den Namen der Ansicht anhängen  
+> Dies ist eine scheinbare Auslassung: Wir brauchen eine manuelle Richtlinienprüfung, daher direkt in oauth/authorize.php umgesetzt  
+> Bestellbelege entscheiden selbst: der Kunde, der die Bestellung aufgegeben hat, oder  
+> shop/administrate (eZShopReceipt::canView); alle anderen erhalten das Anmeldeformular.  
+> E-Mail-Einstellungen: settings und export prüfen die Anmeldung selbst, manage,  
+> unsubscribe und confirm arbeiten mit einem signierten Link, request sendet einen.  
+> API-Zugang: apikey/list prüft selbst (angemeldet, um eigene Schlüssel zu sehen und zu widerrufen,  
+> apikey/create, um einen zu erstellen).  
+> Das Mega-Menü von admin4: user/megamenu prüft selbst (ein angemeldeter Benutzer, der sich am  
+> Siteaccess anmelden darf, user/login mit seiner Einschränkung SiteAccess, und der für diesen Benutzer offene Reiter), sodass jede  
+> Ablehnung für sein Skript ein bloßes 403 statt einer Seite ist.  
+> Die Berichte der Content Security Policy kommen von Browsern, angemeldet oder nicht; csp/report schützt sich selbst  
+> (Inhaltstypen, Größe, Ratenbegrenzung, maskierte Logzeilen).  
+> Die Vorschau eines Entwurfs über einen Freigabelink: Das signierte, ablaufende Token ist die Berechtigung  
+> (expContentPreviewLink); ohne gültiges sagt die Seite, dass der Link nicht funktioniert.  
+> Der Formular-Endpunkt des statischen Veröffentlichens: Die Besucher einer statischen Kopie senden ihre Formulare  
+> hierher, angemeldet oder nicht; staticpublish/form prüft Ursprung, das beim Build signierte Token und die Rate selbst  
+> (expStaticFormEndpoint).  
 
-Standard: eine Liste mit 24: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
+Standard: eine Liste mit 25: `user/login`, `user/logout`, `user/register`, `user/activate`, `user/success`, `user/forgotpassword`, `layout`, `manual`, `ezinfo`, `paypal/notify_url`, `switchlanguage`, `oauth/authorize` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -214,7 +217,7 @@ PolicyOmitList[]=mailpreferences/unsubscribe
 PolicyOmitList[]=mailpreferences/confirm
 PolicyOmitList[]=mailpreferences/request
 PolicyOmitList[]=mailpreferences/export
-# ... 4 weitere in der ausgelieferten Datei
+# ... 5 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

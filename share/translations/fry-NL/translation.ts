@@ -83032,5 +83032,145 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>unknown</source>
         <translation>ûnbekend</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count op %pages side(n):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>In .gz (en .br) njonken elk tekstbestân, foar hosts dy't se tsjinje.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>In lyts siid foar elk âld adres en alias fan in siid, sadat âlde keppelings bliuwe wurkje.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Altyd skreaun as GitHub Actions de side leveret.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>In SPDX-id lykas CC-BY-4.0, of de tekst sels.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Mânsje</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Oanroppen nei de server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Opmerkingen</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulieren dy't ynformaasje sammelje</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Minder wite romte en gjin kommentaar yn de siden.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisinsje fan de ynhâld</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Oanmelde</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minifisearje</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Oare formulieren</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Foarkomprimearje</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Trochferwiissiden</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Trochferwiissiden: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sykje</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Syksindeks: %pages side(n) yn %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stylsheets en skripts neamd nei de hash fan har ynhâld, sadat browsers se bewarje meie.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>De feroare siden, in pear minuten nei de lêste wiziging (it cronjob-diel staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>De lisinsje fan de ynhâld, út it fjild hjirûnder.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>De hiele side, op de tiden fan it skema (it cronjob-diel staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Dizze dielen fan de siden hawwe in server nedich; elk krige in weromfal. Kontrolearje se foar it publisearjen.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Wat net statysk wurket</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Wat it repository is, foar wa't it op de host iepenet.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>weilitten</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>de weromfaltekst</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>it formulierendpunt fan de live website</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>de live website</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>de syksyd fan de kopy</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>It formulier koe net ferstjoerd wurde.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Tank: it formulier is ferstjoerd.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>It formulier is net akseptearre: kontrolearje wat ynfierd is en ferstjoer it opnij.</translation>
+    </message>
 </context>
 </TS>

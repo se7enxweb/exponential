@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ບໍ່ຮູ້ຈັກ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ໃນ %pages ໜ້າ:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ໄຟລ໌ .gz (ແລະ .br) ຢູ່ຂ້າງໄຟລ໌ຂໍ້ຄວາມທຸກໄຟລ໌, ສຳລັບໂຮສທີ່ໃຫ້ບໍລິການມັນ.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ໜ້ານ້ອຍໆ ສຳລັບທຸກທີ່ຢູ່ເກົ່າ ແລະ ຊື່ແທນຂອງໜ້າ, ເພື່ອໃຫ້ລິ້ງເກົ່າໃຊ້ໄດ້ຕໍ່.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ຂຽນສະເໝີເມື່ອ GitHub Actions ສົ່ງມອບເວັບໄຊ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id ເຊັ່ນ CC-BY-4.0, ຫຼື ຕົວຂໍ້ຄວາມເອງ.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ກະຕ່າ</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ການເອີ້ນໄປຫາເຊີບເວີ</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ຄວາມຄິດເຫັນ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ຟອມທີ່ເກັບຂໍ້ມູນ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>ເວີກໂຟລວ໌ GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ຊ່ອງວ່າງໜ້ອຍລົງ ແລະ ບໍ່ມີຄຳອະທິບາຍໃນໜ້າ.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ໃບອະນຸຍາດຂອງເນື້ອຫາ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ເຂົ້າສູ່ລະບົບ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>ຫຍໍ້ໂຄດ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ຟອມອື່ນໆ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>ບີບອັດລ່ວງໜ້າ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ໜ້າປ່ຽນເສັ້ນທາງ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ໜ້າປ່ຽນເສັ້ນທາງ: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ຄົ້ນຫາ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ດັດຊະນີຄົ້ນຫາ: %pages ໜ້າໃນ %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ສະໄຕລ໌ ແລະ ສະຄຣິບທີ່ຕັ້ງຊື່ດ້ວຍແຮຊຂອງເນື້ອຫາ, ເພື່ອໃຫ້ບຣາວເຊີເກັບໄວ້ໄດ້.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ໜ້າທີ່ປ່ຽນແປງ, ບໍ່ເທົ່າໃດນາທີຫຼັງການປ່ຽນແປງຄັ້ງສຸດທ້າຍ (ສ່ວນ cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ໃບອະນຸຍາດຂອງເນື້ອຫາ, ຈາກຊ່ອງຂ້າງລຸ່ມ.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ທັງເວັບໄຊ, ຕາມເວລາຂອງຕາຕະລາງ (ສ່ວນ cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ສ່ວນເຫຼົ່ານີ້ຂອງໜ້າຕ້ອງການເຊີບເວີ; ແຕ່ລະສ່ວນມີທາງສຳຮອງ. ກວດສອບກ່ອນເຜີຍແຜ່.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ສິ່ງທີ່ບໍ່ເຮັດວຽກແບບສະຖິດ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ຄັງເກັບແມ່ນຫຍັງ, ສຳລັບຜູ້ທີ່ເປີດມັນຢູ່ໂຮສ.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ຍົກເວັ້ນ</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ຂໍ້ຄວາມສຳຮອງ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ປາຍທາງຟອມຂອງເວັບໄຊຈິງ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ເວັບໄຊຈິງ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ໜ້າຄົ້ນຫາຂອງສຳເນົາ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ບໍ່ສາມາດສົ່ງຟອມໄດ້.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ຂອບໃຈ: ສົ່ງຟອມແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ຟອມບໍ່ຖືກຍອມຮັບ: ກວດສອບສິ່ງທີ່ທ່ານປ້ອນ ແລ້ວສົ່ງອີກຄັ້ງ.</translation>
+    </message>
 </context>
 </TS>

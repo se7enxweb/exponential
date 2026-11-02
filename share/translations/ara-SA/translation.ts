@@ -83062,5 +83062,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>غير معروف</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count في %pages صفحة:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ملف .gz (و .br) بجانب كل ملف نصي، للمضيفات التي تقدّمها.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>صفحة صغيرة لكل عنوان قديم ولكل اسم مستعار لصفحة، لتبقى الروابط القديمة تعمل.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>تُكتب دائمًا عندما تسلّم GitHub Actions الموقع.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>معرّف SPDX مثل CC-BY-4.0، أو النص نفسه.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>السلة</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>الاستدعاءات إلى الخادم</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>التعليقات</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>النماذج التي تجمع معلومات</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>سير عمل GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>مسافات بيضاء أقل ولا تعليقات في الصفحات.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ترخيص المحتوى</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>تصغير</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>نماذج أخرى</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>ضغط مسبق</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>صفحات إعادة التوجيه</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>صفحات إعادة التوجيه: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>بحث</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>فهرس البحث: %pages صفحة في %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>أوراق أنماط ونصوص برمجية مسمّاة بتجزئة محتواها، ليتمكن المتصفحون من الاحتفاظ بها.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>الصفحات المتغيّرة، بعد دقائق قليلة من آخر تغيير (جزء cronjob المسمى staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ترخيص المحتوى، من الحقل أدناه.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>الموقع كاملًا، في أوقات الجدول (جزء cronjob المسمى staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>هذه الأجزاء من الصفحات تحتاج إلى خادم؛ وقد أُعطي كل منها بديلًا. تحقّق منها قبل النشر.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ما لا يعمل بشكل ثابت</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ما هو المستودع، لمن يفتحه على المضيف.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>محذوف</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>النص البديل</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>نقطة نهاية النموذج في الموقع الحي</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>الموقع الحي</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>صفحة البحث في النسخة</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>تعذّر إرسال النموذج.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>شكرًا: تم إرسال النموذج.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>لم يُقبل النموذج: تحقّق مما أدخلته وأرسله مرة أخرى.</translation>
+    </message>
 </context>
 </TS>

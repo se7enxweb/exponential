@@ -83032,5 +83032,145 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>unknown</source>
         <translation>ntibizwi</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count kuri paji %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (na .br) iruhande rwa buri dosiye y'inyandiko, ku bakira (hosts) babitanga.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Paji nto kuri buri aderesi ya kera n'izina ry'irindi rya paji, kugira ngo amahuza ya kera akomeze gukora.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Buri gihe yandikwa iyo GitHub Actions itanze urubuga.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id nka CC-BY-4.0, cyangwa inyandiko ubwayo.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Agaseke</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Guhamagara seriveri</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Ibitekerezo</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Amafomu akusanya amakuru</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Umwanya ugabanutse kandi nta bitekerezo ku mapaji.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Uruhushya rw'ibikubiyemo</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Kwinjira</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Kugabanya</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Andi mafomu</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Gukanda mbere</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Amapaji yohereza ahandi</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Amapaji yohereza ahandi: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Gushakisha</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Urutonde rwo gushakisha: amapaji %pages muri %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Impapuro z'imiterere n'inyandiko za porogaramu zitwa hashi y'ibikubiyemo, kugira ngo mushakisha zibibike.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Amapaji yahindutse, iminota mike nyuma y'impinduka ya nyuma (igice cya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Uruhushya rw'ibikubiyemo, rwo mu gice cyo hasi.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Urubuga rwose, mu masaha y'ingengabihe (igice cya cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ibi bice by'amapaji bikeneye seriveri; buri kimwe cyahawe igisimbura. Mubisuzume mbere yo gutangaza.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ibidakora mu buryo budahinduka</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Icyo ububiko ari cyo, ku muntu ububukurura ku mwakiriye.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>byasibwe</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>inyandiko isimbura</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>aho fomu yoherezwa ku rubuga nyirizina</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>urubuga nyirizina</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>paji yo gushakisha y'kopi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Fomu ntiyashoboye koherezwa.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Murakoze: fomu yoherejwe.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Fomu ntiyemewe: suzuma ibyo wanditse maze wongere uyohereze.</translation>
+    </message>
 </context>
 </TS>

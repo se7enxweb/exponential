@@ -83032,5 +83032,145 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>unknown</source>
         <translation>näbelli</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages sahypada %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Her tekst faýlynyň ýanynda .gz (we .br), olary berýän hostlar üçin.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Sahypanyň her köne salgysy we lakamy üçin kiçijik sahypa, köne baglanyşyklar işlemegini dowam etdirmegi üçin.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions sahypany eltende hemişe ýazylýar.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ýaly SPDX kody ýa-da tekstiň özi.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Sebet</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Serwere çagyryşlar</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Bellikler</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Maglumat ýygnaýan formalar</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions iş akymy</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Sahypalarda az boş ýer we bellik ýok.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Mazmunyň ygtyýarnamasy</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Girmek</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimizasiýa</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Beýleki formalar</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Öňünden gysmak</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Gönükdirme sahypalary</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Gönükdirme sahypalary: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Gözleg</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Gözleg indeksi: %languages dillerinde %pages sahypa.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Brauzerler saklap bilsin diýip, mazmunynyň hashy bilen atlandyrylan stil sahypalary we skriptler.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Üýtgän sahypalar, soňky üýtgetmeden birnäçe minut soň (cronjob bölegi staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Mazmunyň ygtyýarnamasy, aşakdaky meýdandan.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Ähli sahypa, tertip wagtynda (cronjob bölegi staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Sahypalaryň bu bölekleri serwer talap edýär; hersine ätiýaçlyk berildi. Neşir etmezden öň barlaň.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Statiki işlemeýän zatlar</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Repozitoriýanyň näme ekenligi, ony hostda açýan adam üçin.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>taşlanan</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ätiýaçlyk teksti</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>işleýän saýtyň forma kabul ediji nokady</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>işleýän saýt</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>nusganyň gözleg sahypasy</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Forma iberip bolmady.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Sag boluň: forma iberildi.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Forma kabul edilmedi: giren zadyňyzy barlaň we ýene iberiň.</translation>
+    </message>
 </context>
 </TS>

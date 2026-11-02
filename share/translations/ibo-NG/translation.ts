@@ -83030,5 +83030,145 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>unknown</source>
         <translation>amaghị</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count na peeji %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (na .br) n'akụkụ faịlụ ederede ọ bụla, maka ndị nnabata na-eje ha ozi.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Obere peeji maka adreesị ochie na aha ọzọ ọ bụla nke peeji, ka njikọ ochie nọgide na-arụ ọrụ.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>A na-ede ya mgbe niile mgbe GitHub Actions na-ebugara saịtị ahụ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id dị ka CC-BY-4.0, ma ọ bụ ederede n'onwe ya.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Nkata</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Oku gaa n'sava</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Nkọwa</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Fọm ndị na-anakọta ozi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Obere oghere efu na enweghị nkọwa n'ime peeji.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ikike nke ọdịnaya</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Banye</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Mee ka ọ pere mpe</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Fọm ndị ọzọ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Mkpakọ tupu oge</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Peeji nduga</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Peeji nduga: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Chọọ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Ndepụta ọchụchọ: peeji %pages na %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Mpempe akwụkwọ ụdị na ihe odide akpọrọ aha site na hash nke ọdịnaya ha, ka ndị nchọgharị nwee ike ichekwa ha.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Peeji ndị gbanwere, nkeji ole na ole mgbe mgbanwe ikpeazụ gasịrị (akụkụ cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ikike nke ọdịnaya, site n'ubi dị n'okpuru.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Saịtị niile, n'oge usoro oge (akụkụ cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Akụkụ peeji ndị a chọrọ sava; nke ọ bụla nwetara nhọrọ ọzọ. Lelee ha tupu ị bipụta.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ihe na-adịghị arụ ọrụ n'ụzọ kwụ ọtọ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ihe ebe nchekwa bụ, maka onye na-emepe ya n'ihe nnabata.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>hapụrụ</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ederede nhọrọ ọzọ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>njedebe fọm nke saịtị dị ndụ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>saịtị dị ndụ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>peeji ọchụchọ nke mkpụrụ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Enweghị ike izipu fọm ahụ.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Daalụ: ezipụla fọm ahụ.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Anabataghị fọm ahụ: lelee ihe i tinyere ma zipu ya ọzọ.</translation>
+    </message>
 </context>
 </TS>

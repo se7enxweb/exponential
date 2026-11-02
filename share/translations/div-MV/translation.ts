@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ނޭނގޭ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages ސަފްޙާގައި %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ކޮންމެ ޓެކްސްޓް ފައިލެއްގެ ކައިރީގައި .gz (އަދި .br) ފައިލެއް، އެ ދޭ ހޯސްޓްތަކަށް.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ސަފްޙާއެއްގެ ކޮންމެ ކުރީގެ އެޑްރެހަކަށާއި އެލިއަސްއަކަށް ކުޑަ ސަފްޙާއެއް، ކުރީގެ ލިންކްތައް ކަންތައް ކުރަމުން ދިއުމަށް.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions އިން ސައިޓް ފޯރުކޮށްދެއްވާ ހިނދު ހަމަޖެހިގެން ލިޔެވެއެވެ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ފަދަ SPDX އައިޑީއެއް، ނޫނީ ޓެކްސްޓް އަމިއްލައަށް.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ބާސްކެޓް</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ސާރވަރަށް ކޯލްތައް</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ކޮމެންޓްތައް</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>މައުލޫމާތު ގިންތިކުރާ ފޯމްތައް</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ވާރކްފްލޯ</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ސަފްޙާތަކުގައި ހުސްތަން މަދުކޮށް ކޮމެންޓެއް ނެތިއެވެ.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ކޮންޓެންޓްގެ ލައިސަންސް</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ލޮގިން</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>މިނިފައި</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>އެހެން ފޯމްތައް</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>ކުރިން ކޮމްޕްރެސް</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ރީޑައިރެކްޓް ސަފްޙާތައް</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ރީޑައިރެކްޓް ސަފްޙާތައް: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ސާޗް</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ސާޗް އިންޑެކްސް: %languages ގައި %pages ސަފްޙާ.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ބްރައުޒަރުތަކަށް ބަހައްޓާލެވޭނެ ގޮތަށް ކޮންޓެންޓްގެ ހޭޝްގެ ނަމުން ނަންދީފައިވާ ސްޓައިލް ޝީޓްތަކާއި ސްކްރިޕްޓްތައް.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ބަދަލުވި ސަފްޙާތައް، ފަހުގެ ބަދަލުން މިނިޓެއް ފަހުން (cronjob ބައި staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ކޮންޓެންޓްގެ ލައިސަންސް، ތިރީގައިވާ ފީލްޑުން.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ސައިޓް ހުރިހާ، ޝެޑިއުލްގެ ވަގުތުތަކުގައި (cronjob ބައި staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ސަފްޙާތަކުގެ މި ބައިތަކަށް ސާރވަރެއް ބޭނުންވޭ؛ ކޮންމެ އެއްކަމަކަށް ބަދަލެއް ލިބިފައި. ޝާއިޢު ކުރުމުގެ ކުރިން ބަލާލައްވާ.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ސްޓެޓިކްކޮށް މަސައްކަތް ނުކުރާ ކަންތައްތައް</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ރިޕޮސިޓަރީއަކީ ކޮބައިތޯ، ހޯސްޓްގައި ހުޅުވާ މީހާއަށް.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ދޫކުރެވިފައި</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ބަދަލު ޓެކްސްޓް</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ލައިވް ސައިޓްގެ ފޯމް އެންޑްޕޮއިންޓް</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ލައިވް ސައިޓް</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ކޮޕީގެ ސާޗް ސަފްޙާ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ފޯމް ފޮނުވޭނެ ނުވެ.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ޝުކުރިއްޔާ: ފޯމް ފޮނުވިއްޖެ.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ފޯމް ބަލައިނުގަނެވުނު: ލިޔުއްވާފައިވާ އެއްޗެއް ބަލާ އަލުން ފޮނުވާ.</translation>
+    </message>
 </context>
 </TS>

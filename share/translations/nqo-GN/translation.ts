@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ߟߐ߲ߓߊߟߌ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>ߝߐߞߣߍ߲ %count ߞߐߜߍ %pages ߞߊ߲ ߘߐ߫:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ߞߐߜߍ ߘߐ߫ ߝߙߊ߬ߣߍ߲ ߞߎ߲߬ߘߏ ߞߘߐ .gz (ߊ߬ߣߌ߫ .br) ߝߙߊ߬ߣߍ߲ ߦߙߐ ߞߍߣߍ ߠߊ߫ ߞߎ߲ ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ߞߐߜߍ ߞߍߣߍ߲ ߖߏ߬ߦߊ߬ ߘߐ߫ ߞߘߐ ߞߊ߬ ߛߌ߲ߞߊ߲ߞߍߣߍ ߞߍߣߍ߲ ߡߊ߬ߞߏ ߞߘߐ߫ ߞߊ߲߫ ߟߊ߫ ߡߊ߬ߞߏ ߞߘߐ ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ߏ߬ ߞߍߣߍ߲ ߞߊ ߘߊߞߎ߲ GitHub Actions ߞߐߜߍ ߛߌߕߌ ߞߍ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX ߞߎ߲ߘߊ ߞߍߣߍ CC-BY-4.0 ߞߊ߬ߣߌ߫ ߞߐ߫ ߞߍߣߍ.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ߞߐ߲ߞߍ</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ߛߌߘߎ߲߫ ߞߍߣߍ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ߞߊ߲ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ߝߐߙߡߎ ߟߎ߬ ߝߊ߲߫</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ߛߓߍ</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ߞߐߜߍ ߘߐ߫ ߞߊ߲ߞߍߣߍ ߞߍߣߍ.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ߞߊߞߍߣߍ ߞߍߣߍ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ߞߊ߲ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ߝߐߙߡߎ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>ߞߍߣߍ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ߞߐߜߍ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ߞߐߜߍ ߞߍߣߍ: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ߢߌߣߌ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ߢߌߣߌ ߞߍߣߍ: %pages ߞߐߜߍ %languages ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ߞߍߣߍ ߞߍߣߍ ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ߞߐߜߍ ߞߍߣߍ (cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ߞߊߞߍߣߍ ߞߍߣߍ ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ߛߌߕߌ ߞߍߣߍ (cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ߞߐߜߍ ߞߍߣߍ ߞߍߣߍ ߞߊ߲.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ߞߍߣߍ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ߞߍߣߍ ߞߍߣߍ.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ߞߍߣߍ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ߛߌߕߌ ߞߍߣߍ ߝߐߙߡߎ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ߛߌߕߌ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ߞߐߜߍ ߢߌߣߌ ߞߍߣߍ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ߝߐߙߡߎ ߞߍߣߍ.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ߞߍߣߍ: ߝߐߙߡߎ ߞߍߣߍ.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ߝߐߙߡߎ ߞߍߣߍ: ߞߍߣߍ.</translation>
+    </message>
 </context>
 </TS>

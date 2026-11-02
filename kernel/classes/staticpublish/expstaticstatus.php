@@ -178,6 +178,11 @@ class expStaticStatus
             return false;
         $meta = $manifest->meta();
         $builtAt = isset( $meta['built_at'] ) ? (int)strtotime( (string)$meta['built_at'] ) : time();
+        // a content change after the build began stays queued (expStaticPublishQueue): its mark is kept
+        $late = array();
+        foreach ( self::pages( $db, $target ) as $path => $row )
+            if ( $row['stale'] > 0 && $row['stale'] >= ( $builtAt ?: time() ) )
+                $late[$path] = $row;
         $db->begin();
         $db->query( 'DELETE FROM ' . self::PAGE_TABLE . " WHERE target = '" . $db->escapeString( (string)$target ) . "'" );
         foreach ( $manifest->entries() as $path => $entry )
@@ -187,8 +192,12 @@ class expStaticStatus
             $db->query( self::insertSql( $db, self::PAGE_TABLE, self::normalize( array(
                 'target' => (string)$target, 'path' => $path, 'node_id' => isset( $entry['node'] ) ? (int)$entry['node'] : 0,
                 'hash' => isset( $entry['sha256'] ) ? (string)$entry['sha256'] : '', 'page_bytes' => isset( $entry['size'] ) ? (int)$entry['size'] : 0,
-                'built_at' => $builtAt ?: time(), 'stale' => 0 ), self::PAGE_COLUMNS ) ) );
+                'built_at' => $builtAt ?: time(), 'stale' => isset( $late[$path] ) ? $late[$path]['stale'] : 0 ), self::PAGE_COLUMNS ) ) );
+            unset( $late[$path] );
         }
+        foreach ( $late as $row )
+            if ( strpos( (string)$row['path'], expStaticPublishQueue::QUEUE_PREFIX ) === 0 )
+                $db->query( self::insertSql( $db, self::PAGE_TABLE, $row ) );
         $db->commit();
         return true;
     }

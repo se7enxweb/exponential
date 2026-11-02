@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ʻikai ʻiloa</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ʻi he peesi %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ʻEne .gz (mo e .br) ʻi he tafaʻaki ʻo e faile tekisi kotoa pē, ma'a e ngaahi host ʻoku nau foaki ia.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Peesi iiki ma'a e tuʻasi ʻaho ʻo e tuʻasi mo e hingoa kehe kotoa ʻo e peesi, ke fai ʻo ngāue ʻa e ngaahi fakahoko motuʻa.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>ʻOku tohi maʻu pē ʻi he taimi ʻoku ʻave ai ʻe he GitHub Actions ʻa e uepisaiti.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ʻAitī SPDX ʻo hangē ko e CC-BY-4.0, pe ko e tekisi ʻo ia pē.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Kato</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Ngaahi ui ki he sēvā</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Ngaahi fakamatala</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Ngaahi foomu ʻoku tānaki ʻa e fakamatala</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Ngāue-tafe GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Veʻe-ʻātea siʻi mo ʻikai ha ngaahi fakamatala ʻi he ngaahi peesi.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Laiseni ʻo e ngaahi me'a</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Hū</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Ngaahi foomu kehe</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Ngaahi peesi fakahoko</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Ngaahi peesi fakahoko: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Kumi</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Tuhinga kumi: peesi %pages ʻi he %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Ngaahi fakatātā mo e ngaahi script ʻoku hingoa ʻaki ʻa e hash ʻo e ngaahi me'a, ke malava ʻe he ngaahi bālausa ʻo tauhi.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ngaahi peesi kuo liliu, miniti siʻi hili e liliu fakamuimui (konga cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Laiseni ʻo e ngaahi me'a, mei he fanga ʻi lalo.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Uepisaiti kotoa, ʻi he ngaahi taimi ʻo e palani (konga cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ʻOku fiemaʻu ʻe he ngaahi konga ni ʻo e ngaahi peesi ha sēvā; kuo foaki ha fetongi ki he taha kotoa. Sivi ia ʻi he taimi ʻoku ʻikai ke ke pulusi.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Ko e me'a ʻoku ʻikai ngāue fakamoʻoni</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Ko e hā e repository, ma'a ha taha ʻoku ne fakaava ia ʻi he host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>tukuange</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>tekisi fetongi</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>taumuʻa foomu ʻo e uepisaiti moʻuí</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>uepisaiti moʻuí</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>peesi kumi ʻo e tatau</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Naʻe ʻikai malava ke fakahū ʻa e foomu.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Malo: kuo fakahū ʻa e foomu.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Naʻe ʻikai tali ʻa e foomu: sivi ʻa e me'a naʻá ke hū ki ai pea toe fakahū.</translation>
+    </message>
 </context>
 </TS>

@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>билгесез</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages биттә %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Һәр текст файлы янында .gz (һәм .br), аларны бирүче хостлар өчен.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Битнең һәр иске адресы һәм псевдонимы өчен кечкенә бит, иске сылтамалар эшләвен дәвам итсен өчен.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Сайтны GitHub Actions китергәндә һәрвакыт языла.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 кебек SPDX идентификаторы, яки текстның үзе.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Себет</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Серверга мөрәҗәгатьләр</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Искәрмәләр</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Мәгълүмат җыючы формалар</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions эш процессы</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Битләрдә аз буш урын һәм искәрмәләрсез.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Эчтәлек лицензиясе</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Керү</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Миниатюралау</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Башка формалар</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Алдан кысу</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Юнәлтү битләре</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Юнәлтү битләре: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Эзләү</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Эзләү индексы: %languages телләрендә %pages бит.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Эчтәлек хеше буенча аталган стильләр һәм скриптлар, браузерлар аларны саклый алсын өчен.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Үзгәргән битләр, соңгы үзгәрештән берничә минут үткәч (cronjob өлеше staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Эчтәлек лицензиясе, түбәндәге кырдан.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Бөтен сайт, расписание вакытларында (cronjob өлеше staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Битләрнең бу өлешләренә сервер кирәк; һәрберсенә запас вариант бирелде. Бастыру алдыннан аларны тикшерегез.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Статик рәвештә эшләмәгәннәр</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Репозиторий нәрсә икәне, аны хостта ачучы өчен.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>төшерелгән</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>запас текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>эшләүче сайтның форма кабул итү адресы</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>эшләүче сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>күчермәнең эзләү бите</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Форманы җибәреп булмады.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Рәхмәт: форма җибәрелде.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Форма кабул ителмәде: кертелгәнне тикшерегез һәм аны кабат җибәрегез.</translation>
+    </message>
 </context>
 </TS>

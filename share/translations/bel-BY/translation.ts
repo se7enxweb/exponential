@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>невядома</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count на %pages старонцы(ах):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Побач з кожным тэкставым файлам файл .gz (і .br), для хостаў, якія іх аддаюць.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Невялікая старонка для кожнага старога адраса і псеўданіма старонкі, каб старыя спасылкі працягвалі працаваць.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Запісваецца заўсёды, калі GitHub Actions дастаўляе сайт.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Ідэнтыфікатар SPDX, напрыклад CC-BY-4.0, або сам тэкст.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Кошык</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Выклікі сервера</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Каментарыі</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Формы, якія збіраюць звесткі</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Працоўны працэс GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Менш прабелаў і ніякіх каментарыяў на старонках.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ліцэнзія змесціва</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Уваход</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Мінімізаваць</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Іншыя формы</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Папярэдняе сцісканне</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Старонкі перанакіравання</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Старонкі перанакіравання: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Пошук</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Індэкс пошуку: %pages старонак на %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Табліцы стыляў і скрыпты з імёнамі па хэшы іх змесціва, каб браўзеры маглі іх захоўваць.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Змененыя старонкі, праз некалькі хвілін пасля апошняй змены (частка cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ліцэнзія змесціва з поля ніжэй.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Увесь сайт у час, вызначаны раскладам (частка cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Гэтыя часткі старонак патрабуюць сервера; для кожнай ёсць запасны варыянт. Праверце іх перад публікацыяй.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Што не працуе статычна</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Што гэта за рэпазіторый, для таго, хто адкрые яго на хосце.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>прапушчана</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>запасны тэкст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>канцавая кропка формаў рабочага сайта</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>рабочы сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>старонка пошуку копіі</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Не ўдалося адправіць форму.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Дзякуй: форма адпраўлена.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Форма не прынята: праверце ўведзенае і адпраўце яшчэ раз.</translation>
+    </message>
 </context>
 </TS>

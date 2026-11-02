@@ -83030,5 +83030,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>अज्ञात</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages पृष्ठांपैकी %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>प्रत्येक मजकूर फाइलच्या शेजारी .gz (आणि .br), त्या पुरवणाऱ्या होस्टसाठी.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>पृष्ठाच्या प्रत्येक जुन्या पत्त्यासाठी आणि उपनामासाठी एक लहान पृष्ठ, जेणेकरून जुने दुवे चालू राहतील.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions साइट पोहोचवते तेव्हा नेहमी लिहिले जाते.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 सारखा SPDX आयडी, किंवा मजकूरच.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>टोपली</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>सर्व्हरला कॉल</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>टिप्पण्या</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>माहिती गोळा करणारे फॉर्म</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions वर्कफ्लो</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>पृष्ठांमध्ये कमी रिकामी जागा आणि टिप्पण्या नाहीत.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>मजकुराचा परवाना</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>लॉगिन</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>मिनिफाय</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>इतर फॉर्म</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>आधीच संकुचित करा</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>रीडायरेक्ट पृष्ठे</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>रीडायरेक्ट पृष्ठे: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>शोध</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>शोध निर्देशांक: %languages मध्ये %pages पृष्ठे.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>मजकुराच्या हॅशने नाव दिलेल्या स्टाइल शीट आणि स्क्रिप्ट, जेणेकरून ब्राउझर त्या ठेवू शकतील.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>बदललेली पृष्ठे, शेवटच्या बदलानंतर काही मिनिटांनी (क्रोनजॉब भाग staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>मजकुराचा परवाना, खालील फील्डमधून.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>संपूर्ण साइट, वेळापत्रकाच्या वेळी (क्रोनजॉब भाग staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>पृष्ठांच्या या भागांना सर्व्हर लागतो; प्रत्येकाला पर्याय दिला आहे. प्रकाशित करण्यापूर्वी ते तपासा.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>स्थिर स्वरूपात काय चालत नाही</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>रिपॉझिटरी म्हणजे काय, होस्टवर ती उघडणाऱ्यासाठी.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>वगळले</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>पर्यायी मजकूर</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>लाइव्ह साइटचा फॉर्म एंडपॉइंट</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>लाइव्ह साइट</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>प्रतीचे शोध पृष्ठ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>फॉर्म पाठवता आला नाही.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>धन्यवाद: फॉर्म पाठवला.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>फॉर्म स्वीकारला गेला नाही: तुम्ही भरलेले तपासा आणि पुन्हा पाठवा.</translation>
+    </message>
 </context>
 </TS>

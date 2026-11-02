@@ -83030,5 +83030,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>未知</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count，共 %pages 页：</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>每个文本文件旁边的 .gz（和 .br）文件，供提供这些文件的主机使用。</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>为页面的每个旧地址和别名生成一个小页面，使旧链接继续有效。</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions 交付站点时始终写入。</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX 标识符，如 CC-BY-4.0，或文本本身。</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>购物篮</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>对服务器的调用</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>评论</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>收集信息的表单</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions 工作流</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>页面中更少的空白，且没有注释。</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>内容许可证</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>登录</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>压缩精简</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>其他表单</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>预压缩</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>重定向页面</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>重定向页面：%count。</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜索</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>搜索索引：%languages 中的 %pages 页。</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>按内容哈希命名的样式表和脚本，以便浏览器可以长期缓存。</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>已更改的页面，在最后一次更改几分钟后（cronjob 部分 staticpublish）。</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>内容许可证，来自下方字段。</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>整个站点，按计划的时间（cronjob 部分 staticpublish）。</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>页面的这些部分需要服务器；每个都有后备方案。发布前请检查。</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>静态方式下无法工作的内容</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>仓库是什么，供在主机上打开它的人阅读。</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>省略</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>后备文本</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>线上网站的表单端点</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>线上网站</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>副本的搜索页面</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>无法发送表单。</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>谢谢：表单已发送。</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>表单未被接受：请检查您输入的内容并重新发送。</translation>
+    </message>
 </context>
 </TS>

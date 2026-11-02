@@ -30,5 +30,6 @@ class expStaticStatusDatabaseTest extends ezpDatabaseTestCase
             $this->markTestSkipped( "not a MySQL or PostgreSQL database: $engine" );
         $this->checkStatusTables( $db );
         $this->checkStatusWriteAndRead( $db );
+        $this->checkStatusQueue( $db );
     }
 }

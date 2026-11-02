@@ -83037,5 +83037,145 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>unknown</source>
         <translation>bilinmiyor</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages sayfada %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Her metin dosyasının yanında bir .gz (ve .br), bunları sunan barındırıcılar için.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Bir sayfanın her eski adresi ve takma adı için küçük bir sayfa, eski bağlantılar çalışmaya devam etsin diye.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions siteyi teslim ettiğinde her zaman yazılır.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 gibi bir SPDX kimliği ya da metnin kendisi.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Sepet</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Sunucuya çağrılar</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Yorumlar</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Bilgi toplayan formlar</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions iş akışı</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Sayfalarda daha az boşluk ve yorum yok.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>İçerik lisansı</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Giriş</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Küçült</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Diğer formlar</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Önceden sıkıştır</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Yönlendirme sayfaları</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Yönlendirme sayfaları: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ara</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Arama dizini: %languages dillerinde %pages sayfa.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Tarayıcılar saklayabilsin diye içeriklerinin karmasıyla adlandırılan stil sayfaları ve betikler.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Değişen sayfalar, son değişiklikten birkaç dakika sonra (cronjob bölümü staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>İçerik lisansı, aşağıdaki alandan.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Tüm site, zamanlamanın saatlerinde (cronjob bölümü staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Sayfaların bu bölümleri sunucu gerektirir; her birine bir yedek verildi. Yayımlamadan önce bunları kontrol edin.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Statik olarak çalışmayanlar</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Deponun ne olduğu, onu barındırıcıda açan kişi için.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>dışarıda bırakıldı</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>yedek metin</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>canlı sitenin form uç noktası</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>canlı site</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>kopyanın arama sayfası</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Form gönderilemedi.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Teşekkürler: form gönderildi.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Form kabul edilmedi: girdiğinizi kontrol edin ve yeniden gönderin.</translation>
+    </message>
 </context>
 </TS>

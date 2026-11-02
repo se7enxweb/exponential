@@ -83032,5 +83032,145 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>unknown</source>
         <translation>tsy fantatra</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count amin'ny pejy %pages:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Rakitra .gz (sy .br) eo ankoatry ny rakitra soratra tsirairay, ho an'ny mpampiantrano manome azy ireo.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Pejy kely ho an'ny adiresy taloha sy solon-anarana rehetra amin'ny pejy iray, mba hitohizan'ny rohy taloha miasa.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Soratana foana rehefa mamoaka ny tranonkala ny GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX id toa ny CC-BY-4.0, na ny lahatsoratra mihitsy.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Harona</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Antso any amin'ny mpizara</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Hevitra</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Taratasy fenoina manangona fampahalalana</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Toerana malalaka kely kokoa ary tsy misy hevitra ao amin'ny pejy.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Alalana amin'ny votoaty</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Fidirana</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Hamehezina</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Taratasy fenoina hafa</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Hodidiana mialoha</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Pejy fihodinana</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Pejy fihodinana: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Karoka</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Tondro fikarohana: pejy %pages amin'ny %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Takelaka fomba sy script nomena anarana araka ny hash ny votoatiny, mba hitahiziny ny mpizaha tany.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Ny pejy novaina, minitra vitsy aorian'ny fanovana farany (ny ampahany cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ny alalana amin'ny votoaty, avy amin'ny saha eto ambany.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Ny tranonkala manontolo, amin'ny ora voalahatra (ny ampahany cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ireto ampahany amin'ny pejy ireto dia mila mpizara; samy nahazo vahaolana mpisolo. Hamarino alohan'ny hamoahana.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Izay tsy mandeha amin'ny fomba static</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Inona no repository, ho an'izay mamoha azy ao amin'ny mpampiantrano.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>nesorina</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>ny lahatsoratra mpisolo</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ny endpoint taratasy fenoina an'ny tranonkala velona</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ny tranonkala velona</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>ny pejy fikarohana an'ny kopia</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Tsy afaka naveraina ny taratasy fenoina.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Misaotra: nalefa ny taratasy fenoina.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Tsy nekena ny taratasy fenoina: hamarino ny nampidirinao ary alefaso indray.</translation>
+    </message>
 </context>
 </TS>

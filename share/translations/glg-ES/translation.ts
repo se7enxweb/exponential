@@ -83032,5 +83032,145 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>unknown</source>
         <translation>descoñecido</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count en %pages páxina(s):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Un .gz (e .br) xunto a cada ficheiro de texto, para os hosts que os serven.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Unha páxina pequena para cada enderezo e alias antigo dunha páxina, para que as ligazóns antigas sigan funcionando.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Escríbese sempre cando GitHub Actions entrega o sitio.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Un id SPDX como CC-BY-4.0, ou o propio texto.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Cesta</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Chamadas ao servidor</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Comentarios</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formularios que recollen información</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow de GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Menos espazo en branco e sen comentarios nas páxinas.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licenza do contido</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Acceso</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimizar</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Outros formularios</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precomprimir</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Páxinas de redirección</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Páxinas de redirección: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Buscar</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Índice de busca: %pages páxina(s) en %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Follas de estilo e scripts nomeados polo hash do seu contido, para que os navegadores poidan conservalos.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>As páxinas cambiadas, uns minutos despois do último cambio (a parte cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>A licenza do contido, do campo de abaixo.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>O sitio completo, nas horas da programación (a parte cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Estas partes das páxinas necesitan un servidor; cada unha recibiu unha alternativa. Revísaas antes de publicar.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>O que non funciona de forma estática</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Que é o repositorio, para quen o abre no host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>omitido</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>o texto alternativo</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>o punto final do formulario do sitio en liña</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>o sitio en liña</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>a páxina de busca da copia</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Non se puido enviar o formulario.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Grazas: o formulario enviouse.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>O formulario non foi aceptado: revisa o que escribiches e envíao de novo.</translation>
+    </message>
 </context>
 </TS>

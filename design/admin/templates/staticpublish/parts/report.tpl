@@ -31,6 +31,29 @@
 <h3 class="a4-h3">{'Files that could not be collected'|i18n( 'design/admin/staticpublish' )}</h3>
 <ul class="a4-plain">{foreach $report.files_failed as $f max 20}<li><code class="a4-code">{$f.url|wash}</code> <span class="a4-meta">{$f.error|wash}</span></li>{/foreach}</ul>
 {/if}
+{if and( is_set( $report.degraded ), $report.degraded|count )}
+<h3 class="a4-h3">{'What does not work statically'|i18n( 'design/admin/staticpublish' )}</h3>
+<p class="a4-help">{'These parts of the pages need a server; each got a fallback. Check them before you publish.'|i18n( 'design/admin/staticpublish' )}</p>
+<ul class="a4-plain">{foreach $report.degraded as $feature => $d}<li><strong>{switch match=$feature}
+    {case match='search'}{'Search'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='collect'}{'Forms that collect information'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='comments'}{'Comments'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='shop'}{'Basket'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='login'}{'Login'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='ajax'}{'Calls to the server'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case}{'Other forms'|i18n( 'design/admin/staticpublish' )}{/case}
+    {/switch}</strong> <span class="a4-meta">{'%count on %pages page(s):'|i18n( 'design/admin/staticpublish',, hash( '%count', $d.count, '%pages', $d.pages ) )|wash}
+    {foreach $d.handled as $how => $n}{switch match=$how}
+    {case match='search-page'}{'the search page of the copy'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='endpoint'}{'the form endpoint of the live site'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='fallback'}{'the fallback text'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case match='removed'}{'left out'|i18n( 'design/admin/staticpublish' )}{/case}
+    {case}{'the live site'|i18n( 'design/admin/staticpublish' )}{/case}
+    {/switch} ({$n|wash}){delimiter}, {/delimiter}{/foreach}</span>
+    <br /><span class="a4-meta">{foreach $d.examples as $page max 5}<code class="a4-code">{$page|wash}</code>{delimiter} {/delimiter}{/foreach}</span></li>{/foreach}</ul>
+{/if}
+{if and( is_set( $report.search ), $report.search )}<p>{'Search index: %pages page(s) in %languages.'|i18n( 'design/admin/staticpublish',, hash( '%pages', $report.search.pages, '%languages', $report.search.languages|implode( ', ' ) ) )|wash}</p>{/if}
+{if and( is_set( $report.counts.redirects ), $report.counts.redirects )}<p>{'Redirect pages: %count.'|i18n( 'design/admin/staticpublish',, hash( '%count', $report.counts.redirects ) )|wash}</p>{/if}
 {if and( $report.link_check, $report.link_check.broken|count )}
 <h3 class="a4-h3">{'Broken links in the build'|i18n( 'design/admin/staticpublish' )}</h3>
 <ul class="a4-plain">{foreach $report.link_check.broken as $b max 20}<li><code class="a4-code">{$b.file|wash}</code> &rarr; <code class="a4-code">{$b.link|wash}</code></li>{/foreach}</ul>

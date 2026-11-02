@@ -83062,5 +83062,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>알 수 없음</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages페이지 중 %count개:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>각 텍스트 파일 옆에 .gz(및 .br) 파일을 두며, 이를 제공하는 호스트용입니다.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>페이지의 모든 예전 주소와 별칭마다 작은 페이지를 만들어 예전 링크가 계속 동작하게 합니다.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions가 사이트를 배포할 때 항상 작성됩니다.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 같은 SPDX ID 또는 본문 자체입니다.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>장바구니</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>서버 호출</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>댓글</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>정보를 수집하는 양식</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions 워크플로</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>페이지의 공백을 줄이고 주석을 제거합니다.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>콘텐츠 라이선스</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>로그인</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>최소화</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>기타 양식</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>사전 압축</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>리디렉션 페이지</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>리디렉션 페이지: %count개.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>검색</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>검색 색인: %languages의 %pages페이지.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>내용의 해시로 이름 붙인 스타일 시트와 스크립트로, 브라우저가 보관할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>변경된 페이지, 마지막 변경 몇 분 후(크론잡 부분 staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>콘텐츠 라이선스이며, 아래 필드에서 가져옵니다.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>전체 사이트, 일정에 정해진 시각(크론잡 부분 staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>페이지의 이 부분은 서버가 필요하며 각각 대체 수단이 있습니다. 게시하기 전에 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>정적으로 동작하지 않는 것</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>저장소가 무엇인지, 호스트에서 여는 사람을 위한 설명입니다.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>제외됨</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>대체 텍스트</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>라이브 사이트의 양식 엔드포인트</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>라이브 사이트</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>사본의 검색 페이지</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>양식을 보내지 못했습니다.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>감사합니다. 양식을 보냈습니다.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>양식이 승인되지 않았습니다. 입력한 내용을 확인하고 다시 보내 주세요.</translation>
+    </message>
 </context>
 </TS>

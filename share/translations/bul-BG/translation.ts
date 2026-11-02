@@ -83062,5 +83062,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>неизвестно</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count на %pages страница/и:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Файл .gz (и .br) до всеки текстов файл, за хостове, които ги сервират.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Малка страница за всеки стар адрес и псевдоним на страница, за да продължат да работят старите връзки.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Записва се винаги, когато GitHub Actions доставя сайта.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>SPDX идентификатор като CC-BY-4.0 или самият текст.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Кошница</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Извиквания към сървъра</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Коментари</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Формуляри, които събират информация</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Работен процес на GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>По-малко празно място и без коментари в страниците.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Лиценз на съдържанието</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Вход</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Минимизирай</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Други формуляри</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Предварително компресиране</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Пренасочващи страници</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Пренасочващи страници: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Търсене</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Индекс за търсене: %pages страница/и на %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Стилови листове и скриптове, наименувани по хеша на съдържанието им, за да могат браузърите да ги запазват.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Променените страници, няколко минути след последната промяна (частта cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Лицензът на съдържанието, от полето по-долу.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Целият сайт, по часовете на графика (частта cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Тези части от страниците се нуждаят от сървър; всяка има резервен вариант. Проверете ги, преди да публикувате.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Какво не работи статично</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Какво представлява хранилището, за този, който го отваря на хоста.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>пропуснато</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>резервният текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>крайната точка за формуляри на работещия сайт</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>работещия сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>страницата за търсене на копието</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Формулярът не можа да бъде изпратен.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Благодарим: формулярът е изпратен.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Формулярът не беше приет: проверете въведеното и го изпратете отново.</translation>
+    </message>
 </context>
 </TS>

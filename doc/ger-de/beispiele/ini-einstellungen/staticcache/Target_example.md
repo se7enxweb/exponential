@@ -3,13 +3,13 @@ title: staticcache.ini [Target_example]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [Target_example] in staticcache.ini: Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links ..."
-keywords: Einstellung, staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook
+keywords: Einstellung, staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [Target_example]
 
-Der Block `[Target_example]` von `settings/staticcache.ini`, mit 27 Einstellung(en).
+Der Block `[Target_example]` von `settings/staticcache.ini`, mit 28 Einstellung(en).
 
 Bearbeiten Sie `settings/staticcache.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -282,11 +282,14 @@ Assets=referenced-and-storage
 
 ## Extras
 
-> Die Dateien, die neben den Seiten geschrieben werden: nojekyll (.nojekyll, damit GitHub  
-> Pages die Dateien so veröffentlicht, wie sie sind), 404 (404.html aus der eigenen  
-> 404-Seite der Website), robots (robots.txt), sitemap (sitemap.xml, braucht PublicURL),  
-> manifest (.static-publish/manifest.json; immer geschrieben). CNAME wird geschrieben,  
-> sobald CustomDomain gesetzt ist.  
+> Die Dateien, die neben den Seiten geschrieben werden: nojekyll (.nojekyll,  
+> damit GitHub Pages die Dateien unverändert veröffentlicht), 404 (404.html aus  
+> der eigenen 404-Seite der Site), robots (robots.txt), sitemap (sitemap.xml,  
+> braucht PublicURL), manifest (.static-publish/manifest.json; immer  
+> geschrieben), redirects (eine kleine Seite für jede alte Adresse und jeden  
+> eigenen Alias einer Seite und für URL-Platzhalter ohne \*), readme  
+> (README.md), license (LICENSE, aus License unten), workflow (der Workflow von  
+> GitHub Actions). CNAME wird immer geschrieben, wenn CustomDomain gesetzt ist.  
 
 Standard: eine Liste mit 5: `nojekyll`, `404`, `robots`, `sitemap`, `manifest`.
 
@@ -306,8 +309,12 @@ Extras[]=manifest
 
 ## PostProcess
 
-> Was mit jeder Seite geschieht: strip (immer) entfernt Debug-Ausgabe, Formular-Token,  
-> Sitzungskennungen und Nonces der Content Security Policy.  
+> Was mit jeder Seite geschieht: strip (immer) entfernt Debug-Ausgaben,  
+> Formular-Tokens, Sitzungs-IDs und Nonces der Content Security Policy.  
+> Wahlweise: minify (weniger Leerraum, keine Kommentare), precompress (.gz, und  
+> .br mit der Brotli-Erweiterung von PHP, neben jeder Textdatei), fingerprint  
+> (Stylesheets und Skripte nach dem Hash ihres Inhalts benannt,  
+> site.3f2a9c1b.css).  
 
 Standard: eine Liste mit 1: `strip`.
 
@@ -323,7 +330,9 @@ PostProcess[]=strip
 
 ## Search
 
-> Eine Suchseite für die statische Kopie: enabled oder disabled.  
+> Eine Suchseite für die statische Kopie (search.html, ein Index je Sprache  
+> und ein kleines Skript; die Suchformulare der Site gehen dorthin): enabled  
+> oder disabled.  
 
 Standard: `disabled`.
 
@@ -337,7 +346,10 @@ Search=disabled
 
 ## Forms
 
-> Was mit Formularen geschieht: hide, oder endpoint (sie senden an die Live-Website).  
+> Was mit Informationssammlern (Formularen) geschieht: hide (der Ersatztext,  
+> FormFallbackText) oder endpoint (sie senden an den Formular-Endpunkt der  
+> Live-Site; braucht PublicURL oder CustomDomain). Kommentar-, Warenkorb- und  
+> Anmeldeformulare werden von einer statischen Kopie nie gesendet.  
 
 Standard: `hide`.
 
@@ -382,7 +394,10 @@ ExcludeSections[]
 
 ## Triggers
 
-> Was einen Build starten darf: manual, publish, schedule, cli.  
+> Was einen Build auslösen darf: manual, publish (der Cronjob-Teil  
+> staticpublish veröffentlicht die geänderten Seiten nach einer  
+> Veröffentlichung von Inhalten), schedule (derselbe Cronjob-Teil  
+> veröffentlicht vollständig zu den Zeiten von Schedule), cli.  
 
 Standard: eine Liste mit 2: `manual`, `cli`.
 
@@ -399,7 +414,8 @@ Triggers[]=cli
 
 ## Schedule
 
-> Wann ein geplanter Build läuft (ein Cron-Ausdruck), für Triggers\[\]=schedule.  
+> Wann ein geplanter Build läuft (ein Cron-Ausdruck, in der Zeitzone des  
+> Servers: 0 3 \* \* \*, oder @daily), für Triggers\[\]=schedule.  
 
 Standard: leer.
 
@@ -413,7 +429,8 @@ Schedule=
 
 ## Notify
 
-> Wann eine Nachricht gesendet wird: failure, success.  
+> Wann eine Benachrichtigung per E-Mail gesendet wird (\[StaticPublishSettings\]  
+> NotifyEmail): failure, success.  
 
 Standard: eine Liste mit 1: `failure`.
 
@@ -429,7 +446,8 @@ Notify[]=failure
 
 ## Webhook
 
-> Eine Adresse, an die eine Nachricht zu jedem Build gesendet wird (POST, JSON).  
+> Eine https-Adresse, an die nach jeder Veröffentlichung und Rücknahme eine  
+> Benachrichtigung geht (POST, JSON, Schema exp-static-webhook/1).  
 
 Standard: leer.
 
@@ -438,6 +456,21 @@ Standard: leer.
 # settings/override/staticcache.ini.append.php
 [Target_example]
 Webhook=
+*/ ?>
+```
+
+## License
+
+> Die Lizenz der Inhalte für Extras\[\]=license: eine SPDX-Kennung (CC-BY-4.0)  
+> oder der Text selbst.  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+License=
 */ ?>
 ```
 

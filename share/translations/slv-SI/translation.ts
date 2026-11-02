@@ -83062,5 +83062,145 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>unknown</source>
         <translation>neznano</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count na %pages straneh:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Datoteka .gz (in .br) ob vsaki besedilni datoteki, za gostitelje, ki jih strežejo.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Majhna stran za vsak star naslov in vzdevek strani, da stare povezave še delujejo.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Vedno zapisano, ko spletno mesto dostavi GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Oznaka SPDX, na primer CC-BY-4.0, ali samo besedilo.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Košarica</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Klici strežniku</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentarji</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Obrazci, ki zbirajo podatke</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Potek dela GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Manj presledkov in brez komentarjev na straneh.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licenca vsebine</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Prijava</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Drugi obrazci</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Predhodno stiskanje</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Strani s preusmeritvijo</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Strani s preusmeritvijo: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Iskanje</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Iskalni indeks: %pages strani v jezikih: %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Slogovne datoteke in skripti, poimenovani po zgoščeni vrednosti vsebine, da jih brskalniki lahko hranijo.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Spremenjene strani, nekaj minut po zadnji spremembi (del cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Licenca vsebine iz spodnjega polja.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Celotno spletno mesto ob urah razporeda (del cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Ti deli strani potrebujejo strežnik; vsak je dobil nadomestno rešitev. Preverite jih pred objavo.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Kaj ne deluje statično</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Kaj je repozitorij, za tistega, ki ga odpre na gostitelju.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>izpuščeno</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>nadomestno besedilo</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>končna točka obrazcev živega spletnega mesta</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>živo spletno mesto</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>iskalna stran kopije</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Obrazca ni bilo mogoče poslati.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Hvala: obrazec je bil poslan.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Obrazec ni bil sprejet: preverite vnos in ga pošljite znova.</translation>
+    </message>
 </context>
 </TS>

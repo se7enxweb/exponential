@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>نەزانراو</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count لە %pages پەڕە:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>فایلێکی .gz (و .br) لە تەنیشت هەر فایلێکی دەق، بۆ ئەو هۆستانەی خزمەتیان دەکەن.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>پەڕەیەکی بچووک بۆ هەر ناونیشانێکی کۆن و ناوی خوازراوی پەڕەیەک، بۆ ئەوەی بەستەرە کۆنەکان کار بکەن.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>هەمیشە دەنووسرێت کاتێک GitHub Actions ماڵپەڕەکە دەگەیەنێت.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ناسێنەرێکی SPDX وەک CC-BY-4.0، یان خودی دەقەکە.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>سەبەتە</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>بانگەکان بۆ ڕاژەکار</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>تێبینییەکان</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>فۆڕمەکانی کۆکردنەوەی زانیاری</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>کارجووڵەی GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>بۆشایی کەمتر و بێ تێبینی لە پەڕەکاندا.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>مۆڵەتی ناوەڕۆک</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>چوونە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>بچووککردنەوە</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>فۆڕمەکانی تر</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>پێشوەختە پەستاندن</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>پەڕەکانی ئاڕاستەکردنەوە</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>پەڕەکانی ئاڕاستەکردنەوە: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>گەڕان</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>پێڕستی گەڕان: %pages پەڕە لە %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>پەڕەی ستایل و سکریپتەکان بە هاشی ناوەڕۆکیان ناونراون، بۆ ئەوەی گەڕۆکەکان بیانهێڵنەوە.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>پەڕە گۆڕاوەکان، چەند خولەکێک دوای دوایین گۆڕانکاری (بەشی cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>مۆڵەتی ناوەڕۆک، لە خانەی خوارەوە.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>هەموو ماڵپەڕەکە، لە کاتەکانی خشتەی کات (بەشی cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ئەم بەشانەی پەڕەکان ڕاژەکاریان پێویستە؛ هەریەکە جێگرەوەی هەیە. پێش بڵاوکردنەوە بیانپشکنە.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ئەوەی بە شێوەی جێگیر کار ناکات</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>کۆگاکە چییە، بۆ ئەو کەسەی لەسەر هۆست دەیکاتەوە.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>فەوتاوە</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>دەقی جێگرەوە</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>کۆتا خاڵی فۆڕمی ماڵپەڕی ڕاستەوخۆ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ماڵپەڕی ڕاستەوخۆ</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>پەڕەی گەڕانی لەبەرگیراوە</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>فۆڕمەکە نەنێردرا.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>سوپاس: فۆڕمەکە نێردرا.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>فۆڕمەکە قبوڵ نەکرا: ئەوەی نووسیوتە بپشکنە و دووبارە بینێرە.</translation>
+    </message>
 </context>
 </TS>

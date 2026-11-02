@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>မသိ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>စာမျက်နှာ %pages ခုတွင် %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>စာသားဖိုင်တိုင်း၏ဘေးတွင် .gz (နှင့် .br) ဖိုင်၊ ၎င်းတို့ကိုပေးသော ဟိုစ့်များအတွက်။</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>စာမျက်နှာတစ်ခု၏ လိပ်စာအဟောင်းနှင့် အမည်တူတိုင်းအတွက် စာမျက်နှာငယ်တစ်ခု၊ လင့်ခ်အဟောင်းများ ဆက်လက်အလုပ်လုပ်စေရန်။</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions က ဆိုက်ကိုပို့ဆောင်သည့်အခါ အမြဲရေးသားသည်။</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ကဲ့သို့ SPDX id တစ်ခု သို့မဟုတ် စာသားကိုယ်တိုင်။</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ခြင်းတောင်း</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ဆာဗာသို့ ခေါ်ဆိုမှုများ</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>မှတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>အချက်အလက်စုဆောင်းသော ဖောင်များ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions လုပ်ငန်းစဉ်</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>စာမျက်နှာများတွင် နေရာလွတ်လျော့ပြီး မှတ်ချက်မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>အကြောင်းအရာ လိုင်စင်</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>လော့ဂ်အင်</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>အသေးချုံ့ရန်</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>အခြားဖောင်များ</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>ကြိုတင်ချုံ့ရန်</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>ပြန်လည်ညွှန်းသော စာမျက်နှာများ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>ပြန်လည်ညွှန်းသော စာမျက်နှာများ- %count။</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ရှာဖွေရန်</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ရှာဖွေရေးအညွှန်း- %languages တွင် စာမျက်နှာ %pages ခု။</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>အကြောင်းအရာ၏ hash ဖြင့်အမည်ပေးထားသော စတိုင်ရှီးများနှင့် စခရစ်များ၊ ဘရောက်ဇာများ သိမ်းထားနိုင်ရန်။</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ပြောင်းလဲထားသော စာမျက်နှာများ၊ နောက်ဆုံးပြောင်းလဲပြီး မိနစ်အနည်းငယ်အကြာ (cronjob အပိုင်း staticpublish)။</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>အကြောင်းအရာ လိုင်စင်၊ အောက်ပါအကွက်မှ။</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>ဆိုက်တစ်ခုလုံး၊ အချိန်ဇယားအချိန်များတွင် (cronjob အပိုင်း staticpublish)။</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>စာမျက်နှာ၏ ဤအပိုင်းများသည် ဆာဗာလိုအပ်သည်၊ တစ်ခုစီတွင် အစားထိုးနည်းရှိသည်။ ထုတ်ဝေမီ စစ်ဆေးပါ။</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>static အဖြစ် အလုပ်မလုပ်သည်များ</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>repository ဆိုသည်မှာ ဘာလဲ၊ ဟိုစ့်တွင် ဖွင့်သူအတွက်။</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ချန်ထားသည်</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>အစားထိုးစာသား</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>တိုက်ရိုက်ဆိုက်၏ ဖောင် endpoint</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>တိုက်ရိုက်ဆိုက်</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>မိတ္တူ၏ ရှာဖွေရေး စာမျက်နှာ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ဖောင်ကို မပို့နိုင်ပါ။</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ကျေးဇူးတင်ပါသည်- ဖောင်ကို ပို့ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ဖောင်ကို လက်မခံပါ- ထည့်သွင်းထားသည်များကို စစ်ဆေးပြီး ထပ်ပို့ပါ။</translation>
+    </message>
 </context>
 </TS>

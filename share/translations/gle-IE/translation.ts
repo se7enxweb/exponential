@@ -83062,5 +83062,145 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>unknown</source>
         <translation>anaithnid</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ar %pages leathanach:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>.gz (agus .br) in aice le gach comhad téacs, do óstaigh a sheirbheáil iad.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Leathanach beag do gach seanseoladh agus ailias de leathanach, ionas go leanfaidh seanchuir ag obair.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Scríobhtar i gcónaí é nuair a sheachadann GitHub Actions an suíomh.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Id SPDX ar nós CC-BY-4.0, nó an téacs féin.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Ciseán</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Glaonna chuig an bhfreastalaí</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Tuairimí</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Foirmeacha a bhailíonn eolas</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Níos lú spáis bháin agus gan tuairimí sna leathanaigh.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ceadúnas an ábhair</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Logáil isteach</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Íoslaghdaigh</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Foirmeacha eile</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Réamhbhrúigh</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Leathanaigh atreoraithe</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Leathanaigh atreoraithe: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cuardaigh</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Innéacs cuardaigh: %pages leathanach in %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Bileoga stíle agus scripteanna ainmnithe de réir hais a n-ábhair, ionas gur féidir le brabhsálaithe iad a choinneáil.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Na leathanaigh athraithe, cúpla nóiméad tar éis an athraithe dheireanaigh (an chuid cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ceadúnas an ábhair, ón réimse thíos.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>An suíomh iomlán, ag amanna an sceidil (an chuid cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Teastaíonn freastalaí ó na codanna seo de na leathanaigh; fuair gach ceann acu cúltaca. Seiceáil iad sula bhfoilseoidh tú.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Cad nach n-oibríonn go statach</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Cad é an stór, don duine a osclaíonn ar an óstach é.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>fágtha ar lár</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>an téacs cúltaca</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>críochphointe foirme an tsuímh bheo</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>an suíomh beo</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>leathanach cuardaigh an chóip</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Níorbh fhéidir an fhoirm a sheoladh.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Go raibh maith agat: seoladh an fhoirm.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Níor glacadh leis an bhfoirm: seiceáil an méid a chuir tú isteach agus seol arís í.</translation>
+    </message>
 </context>
 </TS>

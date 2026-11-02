@@ -83032,5 +83032,145 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>unknown</source>
         <translation>tidak diketahui</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count dari %pages halaman:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Berkas .gz (dan .br) di samping setiap berkas teks, untuk host yang menyajikannya.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Halaman kecil untuk setiap alamat lama dan alias sebuah halaman, agar tautan lama tetap berfungsi.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Selalu ditulis saat GitHub Actions mengirimkan situs.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ID SPDX seperti CC-BY-4.0, atau teksnya sendiri.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Keranjang</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Panggilan ke server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komentar</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulir yang mengumpulkan informasi</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Workflow GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Lebih sedikit spasi kosong dan tanpa komentar di halaman.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisensi konten</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Masuk</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Perkecil</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Formulir lain</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Prakompresi</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Halaman pengalihan</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Halaman pengalihan: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cari</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indeks pencarian: %pages halaman dalam %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Lembar gaya dan skrip yang dinamai dengan hash isinya, sehingga peramban boleh menyimpannya.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Halaman yang berubah, beberapa menit setelah perubahan terakhir (bagian cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lisensi konten, dari kolom di bawah.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Seluruh situs, pada waktu jadwal (bagian cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Bagian halaman ini membutuhkan server; masing-masing mendapat cadangan. Periksa sebelum Anda menerbitkan.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Yang tidak berfungsi secara statis</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Apa itu repositori, bagi yang membukanya di host.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>dilewati</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>teks cadangan</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>titik akhir formulir situs langsung</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>situs langsung</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>halaman pencarian salinan</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Formulir tidak dapat dikirim.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Terima kasih: formulir telah dikirim.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Formulir tidak diterima: periksa isian Anda dan kirim lagi.</translation>
+    </message>
 </context>
 </TS>

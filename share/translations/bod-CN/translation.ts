@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>མི་ཤེས།</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages ཤོག་ངོས་ནང་ %count།</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ཡིག་ཆ་རེ་རེའི་འགྲམ་དུ་ .gz (དང་ .br) ཡིག་ཆ་ཞིག ཁོང་ཚོས་སྤྲོད་པའི་ཧོསིཊ་ལ།</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ཤོག་ངོས་ཀྱི་ཁ་བྱང་རྙིང་པ་དང་མིང་གཞན་རེ་རེར་ཤོག་ངོས་ཆུང་ཆུང་ཞིག རྙིང་པའི་སྦྲེལ་ཐག་ཚོས་ལས་ཀ་མུ་མཐུད་ཐུབ་པའི་ཕྱིར།</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions གྱིས་དྲ་ཚིགས་སྤྲོད་དུས་རྟག་ཏུ་འབྲི་བ་ཡིན།</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 ལྟ་བུའི་ SPDX id ཡང་ན་ཡིག་ཚགས་རང་ཉིད།</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ཐགས་རྫོང་།</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ཞབས་ཞུའི་འཕྲུལ་ཆས་ལ་འབོད་པ།</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>མཆན་འགྲེལ།</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ཆ་འཕྲིན་སྤྱི་འདུ་བྱེད་པའི་རེའུ་མིག</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions ལས་ཆོག་རྒྱུན།</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>ཤོག་ངོས་ནང་ལ་སྟོང་ཆ་ཉུང་བ་དང་མཆན་འགྲེལ་མེད།</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>ནང་དོན་གྱི་ཆོག་འཐུས།</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ནང་འཛུལ།</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>ཆུང་དུ་ཐོན།</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>རེའུ་མིག་གཞན།</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>སྔོན་ཚུད་ནས་བསྡུས།</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>བསྐྱར་ཁྲིད་ཤོག་ངོས།</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>བསྐྱར་ཁྲིད་ཤོག་ངོས། %count།</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>འཚོལ།</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>འཚོལ་ཤོག་ཐོ་གཞུང་། %languages ནང་ཤོག་ངོས་ %pages།</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>ནང་དོན་གྱི་ hash ལ་གཞིགས་ནས་མིང་བཏགས་པའི་རྣམ་པ་ཤོག་ལྷེ་དང་ཡིག་རྒྱུན། བརྡ་འཚོལ་ཆས་ཀྱིས་ཉར་ཆག་བྱེད་ཐུབ་པའི་ཕྱིར།</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>བསྒྱུར་བཅོས་བྱུང་བའི་ཤོག་ངོས། བསྒྱུར་བཅོས་མཇུག་མཐའི་སྐར་མ་འགའ་འགོར་རྗེས། (cronjob ཆ་ཤས་ staticpublish)།</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>ནང་དོན་གྱི་ཆོག་འཐུས། འོག་གི་ཁོངས་ནས།</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>དྲ་ཚིགས་ཧྲིལ་པོ། དུས་རིམ་གྱི་དུས་ཚོད་ལ། (cronjob ཆ་ཤས་ staticpublish)།</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>ཤོག་ངོས་ཀྱི་ཆ་ཤས་འདི་དག་ལ་ཞབས་ཞུའི་འཕྲུལ་ཆས་དགོས། རེ་རེར་གཞན་གྱུར་ཡོད། འགྲེམས་སྤེལ་མ་བྱས་གོང་ལ་ཞིབ་བཤེར་གྱིས།</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ངར་འཇགས་ཀྱིས་ལས་ཀ་མི་བྱེད་པ།</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>མཛོད་ཁང་དེ་གང་ཡིན་ཡང་ཧོསིཊ་ཐོག་ནས་ཁ་ཕྱེ་མཁན་ལ།</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>བྲོས་ཡོད།</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>གཞན་གྱུར་ཡིག་ཚགས།</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>ཐད་གཏོང་དྲ་ཚིགས་ཀྱི་རེའུ་མིག་ལེན་ས།</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>ཐད་གཏོང་དྲ་ཚིགས།</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>འདྲ་བཤུས་ཀྱི་འཚོལ་བཤེར་ཤོག་ངོས།</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>རེའུ་མིག་དེ་བསྐུར་མི་ཐུབ།</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>ཐུགས་རྗེ་ཆེ། རེའུ་མིག་བསྐུར་ཡོད།</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>རེའུ་མིག་དེ་ཁས་མ་བླངས། ཁྱེད་ཀྱིས་བྲིས་པ་ཞིབ་བཤེར་བྱས་ནས་བསྐྱར་དུ་བསྐུར།</translation>
+    </message>
 </context>
 </TS>

@@ -83032,5 +83032,145 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>unknown</source>
         <translation>anhysbys</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count ar %pages tudalen:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Ffeil .gz (a .br) wrth ymyl pob ffeil testun, ar gyfer gwesteion sy'n eu gweini.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Tudalen fach ar gyfer pob hen gyfeiriad ac enw arall tudalen, fel bod hen ddolenni'n dal i weithio.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Wedi'i hysgrifennu bob amser pan fydd GitHub Actions yn cyflwyno'r wefan.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ID SPDX fel CC-BY-4.0, neu'r testun ei hun.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Basged</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Galwadau i'r gweinydd</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Sylwadau</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Ffurflenni sy'n casglu gwybodaeth</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Llif gwaith GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Llai o fylchau gwyn a dim sylwadau yn y tudalennau.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Trwydded y cynnwys</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Mewngofnodi</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Lleihau</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Ffurflenni eraill</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Rhaggywasgu</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Tudalennau ailgyfeirio</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Tudalennau ailgyfeirio: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Chwilio</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Mynegai chwilio: %pages tudalen yn %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Taflenni arddull a sgriptiau wedi'u henwi yn ôl stwnsh eu cynnwys, fel y gall porwyr eu cadw.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Y tudalennau a newidiodd, ychydig funudau ar ôl y newid olaf (y rhan cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Trwydded y cynnwys, o'r maes isod.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Y wefan gyfan, ar adegau'r amserlen (y rhan cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Mae angen gweinydd ar y rhannau hyn o'r tudalennau; mae gan bob un ddewis amgen. Gwiriwch nhw cyn i chi gyhoeddi.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Yr hyn nad yw'n gweithio'n statig</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Beth yw'r storfa, i bwy bynnag sy'n ei hagor ar y gwesteiwr.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>wedi'i hepgor</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>y testun wrth gefn</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>pwynt terfyn ffurflenni'r wefan fyw</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>y wefan fyw</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>tudalen chwilio'r copi</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Doedd dim modd anfon y ffurflen.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Diolch: anfonwyd y ffurflen.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Ni dderbyniwyd y ffurflen: gwiriwch yr hyn a nodwyd gennych a'i hanfon eto.</translation>
+    </message>
 </context>
 </TS>

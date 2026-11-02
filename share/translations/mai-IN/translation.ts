@@ -83040,5 +83040,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>अज्ञात</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages पृष्ठ मे सँ %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>प्रत्येक पाठ फाइलक बगल मे .gz (आ .br), ओहि होस्टक लेल जे एकरा परोसैत अछि।</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>पृष्ठक प्रत्येक पुरान पता आ उपनामक लेल एक छोट पृष्ठ, जाहि सँ पुरान लिंक काज करैत रहय।</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>जखन GitHub Actions साइट पहुँचबैत अछि तखन सदिखन लिखल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 सन SPDX आइडी, वा पाठ स्वयं।</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>टोकरी</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>सर्वर पर कॉल</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>टिप्पणी</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>जानकारी जमा करयवला फॉर्म</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions वर्कफ्लो</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>पृष्ठ मे कम खाली जगह आ कोनो टिप्पणी नहि।</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>सामग्रीक लाइसेंस</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>लॉगिन</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>मिनिफाइ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>आन फॉर्म</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>पहिनहि संकुचित करू</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>रीडायरेक्ट पृष्ठ</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>रीडायरेक्ट पृष्ठ: %count।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>खोज</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>खोज सूची: %languages मे %pages पृष्ठ।</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>स्टाइल शीट आ स्क्रिप्ट जकर नाम ओकर सामग्रीक हैश सँ राखल गेल अछि, जाहि सँ ब्राउजर ओकरा राखि सकय।</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>बदलल पृष्ठ, अंतिम बदलाव सँ किछु मिनट बाद (क्रोनजॉब भाग staticpublish)।</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>सामग्रीक लाइसेंस, नीचाँक फील्ड सँ।</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>पूरा साइट, समय-सारणीक समय पर (क्रोनजॉब भाग staticpublish)।</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>पृष्ठक एहि भाग सभ केँ सर्वर चाही; प्रत्येक केँ एक विकल्प भेटल अछि। प्रकाशित करबा सँ पहिने एकरा जाँचू।</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>की स्थिर रूप सँ काज नहि करैत अछि</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>रिपॉजिटरी की अछि, ओकरा जे होस्ट पर खोलैत अछि तकरा लेल।</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>छोड़ल गेल</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>वैकल्पिक पाठ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>लाइव साइटक फॉर्म एंडपॉइंट</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>लाइव साइट</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>प्रतिलिपिक खोज पृष्ठ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>फॉर्म पठाओल नहि जा सकल।</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>धन्यवाद: फॉर्म पठाओल गेल।</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>फॉर्म स्वीकार नहि भेल: अहाँ जे दर्ज कयलहुँ से जाँचू आ फेर पठाउ।</translation>
+    </message>
 </context>
 </TS>

@@ -83062,5 +83062,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>невідомо</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count на %pages стор.:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Файл .gz (і .br) поруч із кожним текстовим файлом, для хостів, які їх віддають.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Невелика сторінка для кожної старої адреси та псевдоніма сторінки, щоб старі посилання продовжували працювати.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Записується завжди, коли сайт доставляє GitHub Actions.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Ідентифікатор SPDX, наприклад CC-BY-4.0, або сам текст.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Кошик</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Звернення до сервера</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Коментарі</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Форми, що збирають інформацію</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Робочий процес GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Менше пробілів і жодних коментарів на сторінках.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Ліцензія на вміст</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Вхід</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Мінімізація</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Інші форми</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Попереднє стиснення</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Сторінки перенаправлення</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Сторінки перенаправлення: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Пошук</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Пошуковий індекс: %pages стор. мовами: %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Таблиці стилів і скрипти, названі за хешем їхнього вмісту, щоб браузери могли їх зберігати.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Змінені сторінки, через кілька хвилин після останньої зміни (частина cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Ліцензія на вміст, з поля нижче.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Весь сайт, у часи розкладу (частина cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Цим частинам сторінок потрібен сервер; для кожної задано запасний варіант. Перевірте їх перед публікацією.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Що не працює статично</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Чим є репозиторій, для того, хто відкриває його на хості.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>пропущено</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>запасний текст</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>кінцева точка форм робочого сайту</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>робочий сайт</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>сторінка пошуку копії</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Не вдалося надіслати форму.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Дякуємо: форму надіслано.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Форму не прийнято: перевірте введене та надішліть її знову.</translation>
+    </message>
 </context>
 </TS>

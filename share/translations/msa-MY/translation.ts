@@ -83032,5 +83032,145 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>unknown</source>
         <translation>tidak diketahui</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count pada %pages halaman:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Fail .gz (dan .br) di sebelah setiap fail teks, untuk hos yang menyajikannya.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Halaman kecil untuk setiap alamat lama dan alias sesebuah halaman, supaya pautan lama terus berfungsi.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Sentiasa ditulis apabila GitHub Actions menghantar laman.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>ID SPDX seperti CC-BY-4.0, atau teks itu sendiri.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Bakul</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Panggilan ke pelayan</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Komen</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Borang yang mengumpul maklumat</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>Aliran kerja GitHub Actions</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Kurang ruang kosong dan tiada komen dalam halaman.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lesen kandungan</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Log masuk</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Kecilkan</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Borang lain</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Mampat awal</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Halaman ubah hala</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Halaman ubah hala: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cari</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Indeks carian: %pages halaman dalam %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Helaian gaya dan skrip yang dinamakan mengikut cincang kandungannya, supaya pelayar boleh menyimpannya.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Halaman yang berubah, beberapa minit selepas perubahan terakhir (bahagian cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lesen kandungan, daripada medan di bawah.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Seluruh laman, pada waktu jadual (bahagian cronjob staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Bahagian halaman ini memerlukan pelayan; setiap satu mendapat sandaran. Semak sebelum anda menerbitkan.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Apa yang tidak berfungsi secara statik</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Apa itu repositori, untuk sesiapa yang membukanya pada hos.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ditinggalkan</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>teks sandaran</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>titik akhir borang laman langsung</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>laman langsung</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>halaman carian salinan</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Borang tidak dapat dihantar.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Terima kasih: borang telah dihantar.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Borang tidak diterima: semak apa yang anda masukkan dan hantar semula.</translation>
+    </message>
 </context>
 </TS>

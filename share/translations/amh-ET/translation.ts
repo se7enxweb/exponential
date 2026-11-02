@@ -83030,5 +83030,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>ያልታወቀ</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count በ%pages ገጽ(ገጾች)፦</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ጽሑፍ ፋይል ሁሉ አጠገብ .gz (እና .br) ፋይል፣ ለሚያቀርቡ አስተናጋጆች።</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>ለእያንዳንዱ የድሮ አድራሻና የገጽ ተለዋጭ ስም ትንሽ ገጽ፣ የድሮ አገናኞች እንዲሠሩ።</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions ጣቢያውን ሲያቀርብ ሁልጊዜ ይጻፋል።</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>እንደ CC-BY-4.0 ያለ SPDX መለያ፣ ወይም ጽሑፉ ራሱ።</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>ቅርጫት</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>ወደ አገልጋዩ የሚደረጉ ጥሪዎች</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>አስተያየቶች</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>መረጃ የሚሰበስቡ ቅጾች</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>የGitHub Actions የሥራ ፍሰት</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>በገጾቹ ውስጥ ያነሰ ባዶ ቦታ እና አስተያየት የለም።</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>የይዘቱ ፈቃድ</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>ግባ</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>አሳንስ</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>ሌሎች ቅጾች</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>አስቀድመህ ጭመቅ</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>የማዘዋወሪያ ገጾች</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>የማዘዋወሪያ ገጾች፦ %count።</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ፈልግ</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>የፍለጋ ማውጫ፦ %pages ገጽ(ገጾች) በ%languages።</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>በይዘታቸው ሃሽ የተሰየሙ የቅጥ ሉሆችና ስክሪፕቶች፣ አሳሾች እንዲያስቀምጧቸው።</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>የተቀየሩት ገጾች፣ ከመጨረሻው ለውጥ ከጥቂት ደቂቃዎች በኋላ (የcronjob ክፍል staticpublish)።</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>የይዘቱ ፈቃድ፣ ከታች ካለው መስክ።</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>መላው ጣቢያ፣ በጊዜ ሰሌዳው ጊዜያት (የcronjob ክፍል staticpublish)።</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>እነዚህ የገጾቹ ክፍሎች አገልጋይ ይፈልጋሉ፤ እያንዳንዳቸው መተኪያ አላቸው። ከማተምህ በፊት ፈትሻቸው።</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>በስታቲክ የማይሠራው</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ማከማቻው ምን እንደሆነ፣ በአስተናጋጁ ላይ ለሚከፍተው።</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>ተትቷል</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>የመተኪያ ጽሑፍ</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>የቀጥታ ጣቢያው የቅጽ መቀበያ</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>የቀጥታ ጣቢያው</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>የቅጂው የፍለጋ ገጽ</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>ቅጹን መላክ አልተቻለም።</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>አመሰግናለሁ፦ ቅጹ ተልኳል።</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>ቅጹ አልተቀበለም፦ ያስገባኸውን ፈትሸህ እንደገና ላክ።</translation>
+    </message>
 </context>
 </TS>

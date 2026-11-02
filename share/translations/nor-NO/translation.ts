@@ -84290,5 +84290,145 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>unknown</source>
         <translation>ukjent</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count på %pages side(r):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>En .gz (og .br) ved siden av hver tekstfil, for verter som serverer dem.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>En liten side for hver gamle adresse og alias til en side, slik at gamle lenker fortsetter å virke.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Skrives alltid når GitHub Actions leverer nettstedet.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>En SPDX-id som CC-BY-4.0, eller selve teksten.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Handlekurv</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Kall til serveren</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Kommentarer</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Skjemaer som samler inn informasjon</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions-arbeidsflyt</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Mindre blanktegn og ingen kommentarer i sidene.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Lisens for innholdet</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Innlogging</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minimer</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Andre skjemaer</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Forhåndskomprimer</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Omdirigeringssider</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Omdirigeringssider: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Søk</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Søkeindeks: %pages side(r) på %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stilark og skript navngitt etter hashen av innholdet, slik at nettlesere kan beholde dem.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>De endrede sidene, noen minutter etter siste endring (cronjob-delen staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Lisensen for innholdet, fra feltet nedenfor.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Hele nettstedet, til tidspunktene i tidsplanen (cronjob-delen staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Disse delene av sidene trenger en server; hver fikk en reserveløsning. Kontroller dem før du publiserer.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Hva som ikke virker statisk</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Hva depotet er, for den som åpner det på verten.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>utelatt</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>reserveteksten</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>skjemaendepunktet til nettstedet i drift</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>nettstedet i drift</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>søkesiden til kopien</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Skjemaet kunne ikke sendes.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Takk: skjemaet ble sendt.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Skjemaet ble ikke godtatt: kontroller det du skrev inn og send det på nytt.</translation>
+    </message>
 </context>
 </TS>

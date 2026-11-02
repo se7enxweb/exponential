@@ -84257,5 +84257,145 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>unknown</source>
         <translation>onbekend</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count op %pages pagina('s):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Een .gz- (en .br-) bestand naast elk tekstbestand, voor hosts die ze aanbieden.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Een kleine pagina voor elk oud adres en elke alias van een pagina, zodat oude links blijven werken.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Wordt altijd geschreven wanneer GitHub Actions de site aflevert.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Een SPDX-id zoals CC-BY-4.0, of de tekst zelf.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Winkelmand</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Aanroepen naar de server</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Reacties</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Formulieren die gegevens verzamelen</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions-workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Minder witruimte en geen opmerkingen in de pagina's.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Licentie van de inhoud</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Inloggen</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Andere formulieren</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Vooraf comprimeren</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Doorverwijspagina's</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Doorverwijspagina's: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Zoeken</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Zoekindex: %pages pagina('s) in %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stijlbladen en scripts, genoemd naar de hash van hun inhoud, zodat browsers ze mogen bewaren.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>De gewijzigde pagina's, enkele minuten na de laatste wijziging (het cronjob-deel staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>De licentie van de inhoud, uit het veld hieronder.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>De hele site, op de tijden van het schema (het cronjob-deel staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Deze delen van de pagina's hebben een server nodig; elk kreeg een terugvaloptie. Controleer ze voordat u publiceert.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Wat statisch niet werkt</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Wat de repository is, voor wie hem op de host opent.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>weggelaten</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>de terugvaltekst</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>het formulier-eindpunt van de live-site</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>de live-site</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>de zoekpagina van de kopie</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Het formulier kon niet worden verzonden.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Bedankt: het formulier is verzonden.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Het formulier is niet geaccepteerd: controleer wat u hebt ingevoerd en verzend het opnieuw.</translation>
+    </message>
 </context>
 </TS>

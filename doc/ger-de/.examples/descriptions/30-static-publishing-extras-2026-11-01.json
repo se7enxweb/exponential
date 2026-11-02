@@ -1,0 +1,42 @@
+{
+    "command:expstatictargets --export": {
+        "de": "diese Ziele (IDs durch Kommas getrennt, oder all) als INI-Migration ausgeben und nichts ändern",
+        "en": "print these targets (ids separated by commas, or all) as an INI migration and change nothing"
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] FormEndpoint": {
+        "de": "Der Formular-Endpunkt (staticpublish/form): Die Informationssammler der\nZiele mit Forms=endpoint senden an diese Installation, die sie an die\nnormale Informationssammlung übergibt. Angenommen werden nur Posts von der\nPublicURL oder CustomDomain eines Ziels mit einem von einem Build signierten\nToken. enabled oder disabled (die Kopien zeigen dann den Ersatztext).",
+        "en": "The form endpoint (staticpublish/form): the information collectors of the\ntargets with Forms=endpoint post to this installation, which hands them to\nthe normal information collection. Only posts from a target's PublicURL or\nCustomDomain with a token signed by a build are taken. enabled or disabled\n(the copies show the fallback text instead)."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] FormFallbackText": {
+        "de": "Der Text, der ein Formular ersetzt, das eine statische Kopie nicht senden\nkann (Kommentare, der Warenkorb, ein Sammler mit Forms=hide), und der Text\nseines Links zur selben Seite auf der Live-Site.",
+        "en": "The text that replaces a form a static copy cannot send (comments, the\nbasket, a collector with Forms=hide), and the text of its link to the same\npage on the live site."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] FormRateLimit": {
+        "de": "Wie viele Posts eine Adresse in FormRateWindow Sekunden an ein Ziel senden\ndarf, bevor sie warten soll (429).",
+        "en": "How many posts one address may send to one target in FormRateWindow\nseconds before it is asked to wait (429)."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] FormTokenDays": {
+        "de": "Wie lange das Token, das ein Build in ein Formular schreibt, gültig bleibt,\nin Tagen. Eine neue Veröffentlichung schreibt neue Tokens.",
+        "en": "How long the token a build writes into a form stays valid, in days. A new\npublish writes new tokens."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] NotifyEmail": {
+        "de": "Wohin die Benachrichtigungen aus Notify[] der Ziele gehen; leer: site.ini\n[MailSettings] AdminEmail.",
+        "en": "Where the notices of the targets' Notify[] go; empty: site.ini\n[MailSettings] AdminEmail."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] PublishDebounce": {
+        "de": "Veröffentlichen beim Veröffentlichen von Inhalten (Triggers[]=publish): Der\nCronjob-Teil staticpublish baut die geänderten Seiten eines Ziels so viele\nSekunden nach der letzten Änderung, sodass eine Reihe von Änderungen eine\nVeröffentlichung ergibt.",
+        "en": "Publishing on content publish (Triggers[]=publish): the cronjob part\nstaticpublish builds the changed pages of a target this many seconds after\nthe last change, so a series of edits makes one publish."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] SearchMaxBytes": {
+        "de": "Die meisten Bytes des Suchindex einer Sprache (Search=enabled): darüber\nbehält der Index weniger Wörter je Seite, dann keine Anrisstexte, dann\nweniger Seiten.",
+        "en": "The most bytes of one language's search index (Search=enabled): over it,\nthe index keeps fewer words per page, then no teasers, then fewer pages."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] WebhookSecret": {
+        "de": "Der Name eines Secrets (Setup > Secrets), dessen Wert jeden Webhook signiert\n(Header X-Exp-Static-Signature: sha256=<HMAC des Inhalts>). Leer: nicht\nsigniert. Hier steht nur der Name, nie der Wert.",
+        "en": "The name of a secret (Setup > Secrets) whose value signs every webhook\n(header X-Exp-Static-Signature: sha256=<HMAC of the body>). Empty: not\nsigned. Only the name is here; never the value."
+    },
+    "ini:settings/staticcache.ini [Target_example] License": {
+        "de": "Die Lizenz der Inhalte für Extras[]=license: eine SPDX-Kennung (CC-BY-4.0)\noder der Text selbst.",
+        "en": "The license of the content for Extras[]=license: an SPDX id (CC-BY-4.0)\nor the text itself."
+    }
+}

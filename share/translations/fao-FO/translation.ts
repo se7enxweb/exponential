@@ -83032,5 +83032,145 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>unknown</source>
         <translation>ókent</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%count á %pages síðu(m):</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>Ein .gz (og .br) við hvønn tekstfílu, til vertar sum bjóða tey.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>Ein lítil síða fyri hvørja gamla adressu og alias á eini síðu, so gamlar leinkjur halda fram at virka.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>Altíð skrivað tá GitHub Actions leverar heimasíðuna.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>Ein SPDX-id sum CC-BY-4.0, ella tekstin sjálvur.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>Korg</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>Rop til ambætaran</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>Viðmerkingar</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>Oyðubløð sum savna upplýsingar</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions workflow</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>Minni hvítt rúm og eingi viðmerkingar á síðunum.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>Loyvi fyri innihaldið</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>Rita inn</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minka</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>Onnur oyðubløð</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Forðapakka</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>Víðaribeining-síður</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>Víðaribeining-síður: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Leita</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>Leitiskrá: %pages síður á %languages.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>Stílsnið og skriftir nevnd eftir hash av innihaldinum, so kagarar kunnu goyma tey.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>Broyttu síðurnar, nøkrar minuttir eftir seinastu broyting (cronjob-parturin staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>Loyvið fyri innihaldið, úr teigunum niðanfyri.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>Allur heimasíðan, á tíðunum í tíðarætlanini (cronjob-parturin staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>Hesir partar av síðunum tørva ein ambætara; hvør fekk eina reserva. Kanna tey áðrenn tú útgevur.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>Hvat riggar ikki støðugt</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>Hvat goymslan er, fyri tann sum letur hana upp á vertinum.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>slept</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>reservutekstin</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>oyðublaðsendapunktið á livandi heimasíðuni</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>livandi heimasíðuna</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>leitisíðuna á avritinum</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>Oyðublaðið kundi ikki sendast.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>Takk: oyðublaðið varð sent.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>Oyðublaðið varð ikki góðkent: kanna tað, tú skrivaði, og send aftur.</translation>
+    </message>
 </context>
 </TS>

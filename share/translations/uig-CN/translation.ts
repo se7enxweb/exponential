@@ -83032,5 +83032,145 @@ You will need to change the class of the node by using the swap functionality.</
         <source>unknown</source>
         <translation>نامەلۇم</translation>
     </message>
+    <message>
+        <source>%count on %pages page(s):</source>
+        <translation>%pages بەتتە %count:</translation>
+    </message>
+    <message>
+        <source>A .gz (and .br) next to each text file, for hosts that serve them.</source>
+        <translation>ھەر بىر تېكىست ھۆججىتىنىڭ يېنىدا .gz (ۋە .br) بار، ئۇلارنى تەمىنلەيدىغان ساھىبجامالار ئۈچۈن.</translation>
+    </message>
+    <message>
+        <source>A small page for every old address and alias of a page, so old links keep working.</source>
+        <translation>بەتنىڭ ھەر بىر كونا ئادرېسى ۋە بۇرۇنقى نامى ئۈچۈن كىچىك بەت، كونا ئۇلانمىلار ئىشلەۋەرسۇن دەپ.</translation>
+    </message>
+    <message>
+        <source>Always written when GitHub Actions delivers the site.</source>
+        <translation>GitHub Actions تور بېكەتنى يەتكۈزگەندە ھەمىشە يېزىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>An SPDX id such as CC-BY-4.0, or the text itself.</source>
+        <translation>CC-BY-4.0 غا ئوخشاش SPDX كودى ياكى تېكىستنىڭ ئۆزى.</translation>
+    </message>
+    <message>
+        <source>Basket</source>
+        <translation>سېۋەت</translation>
+    </message>
+    <message>
+        <source>Calls to the server</source>
+        <translation>مۇلازىمېتىرغا چاقىرىش</translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation>ئىزاھاتلار</translation>
+    </message>
+    <message>
+        <source>Forms that collect information</source>
+        <translation>ئۇچۇر توپلايدىغان جەدۋەللەر</translation>
+    </message>
+    <message>
+        <source>GitHub Actions workflow</source>
+        <translation>GitHub Actions خىزمەت ئېقىمى</translation>
+    </message>
+    <message>
+        <source>Less white space and no comments in the pages.</source>
+        <translation>بەتلەردە بوشلۇق ئاز ۋە ئىزاھات يوق.</translation>
+    </message>
+    <message>
+        <source>License of the content</source>
+        <translation>مەزمۇننىڭ ئىجازەتنامىسى</translation>
+    </message>
+    <message>
+        <source>Login</source>
+        <translation>كىرىش</translation>
+    </message>
+    <message>
+        <source>Minify</source>
+        <translation>Minify</translation>
+    </message>
+    <message>
+        <source>Other forms</source>
+        <translation>باشقا جەدۋەللەر</translation>
+    </message>
+    <message>
+        <source>Precompress</source>
+        <translation>Precompress</translation>
+    </message>
+    <message>
+        <source>Redirect pages</source>
+        <translation>يۆنەلدۈرۈش بەتلىرى</translation>
+    </message>
+    <message>
+        <source>Redirect pages: %count.</source>
+        <translation>يۆنەلدۈرۈش بەتلىرى: %count.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ئىزدە</translation>
+    </message>
+    <message>
+        <source>Search index: %pages page(s) in %languages.</source>
+        <translation>ئىزدەش ئىندېكسى: %languages تىلىدا %pages بەت.</translation>
+    </message>
+    <message>
+        <source>Style sheets and scripts named by the hash of their content, so browsers may keep them.</source>
+        <translation>بروۋزېر ساقلىسۇن دەپ، مەزمۇنىنىڭ ھاشىدا ئاتالغان ئۇسلۇب جەدۋىلى ۋە قوليازمىلار.</translation>
+    </message>
+    <message>
+        <source>The changed pages, a few minutes after the last change (the cronjob part staticpublish).</source>
+        <translation>ئۆزگەرگەن بەتلەر، ئاخىرقى ئۆزگەرتىشتىن بىر قانچە مىنۇت كېيىن (cronjob قىسمى staticpublish).</translation>
+    </message>
+    <message>
+        <source>The license of the content, from the field below.</source>
+        <translation>مەزمۇننىڭ ئىجازەتنامىسى، تۆۋەندىكى مەيداندىن.</translation>
+    </message>
+    <message>
+        <source>The whole site, at the times of the schedule (the cronjob part staticpublish).</source>
+        <translation>پۈتۈن تور بېكەت، ۋاقىت جەدۋىلىدىكى ۋاقىتلاردا (cronjob قىسمى staticpublish).</translation>
+    </message>
+    <message>
+        <source>These parts of the pages need a server; each got a fallback. Check them before you publish.</source>
+        <translation>بەتنىڭ بۇ قىسىملىرىغا مۇلازىمېتىر كېرەك؛ ھەر بىرىگە زاپاس بېرىلدى. ئېلان قىلىشتىن ئىلگىرى تەكشۈرۈڭ.</translation>
+    </message>
+    <message>
+        <source>What does not work statically</source>
+        <translation>ستاتىك ئىشلىمەيدىغانلار</translation>
+    </message>
+    <message>
+        <source>What the repository is, for whoever opens it on the host.</source>
+        <translation>ئامبار نېمە، ئۇنى ساھىبجامالدا ئاچقۇچى ئۈچۈن.</translation>
+    </message>
+    <message>
+        <source>left out</source>
+        <translation>قالدۇرۇلدى</translation>
+    </message>
+    <message>
+        <source>the fallback text</source>
+        <translation>زاپاس تېكىست</translation>
+    </message>
+    <message>
+        <source>the form endpoint of the live site</source>
+        <translation>جانلىق تور بېكەتنىڭ جەدۋەل ئۇلاش نۇقتىسى</translation>
+    </message>
+    <message>
+        <source>the live site</source>
+        <translation>جانلىق تور بېكەت</translation>
+    </message>
+    <message>
+        <source>the search page of the copy</source>
+        <translation>كۆچۈرمىنىڭ ئىزدەش بېتى</translation>
+    </message>
+    <message>
+        <source>The form could not be sent.</source>
+        <translation>جەدۋەلنى ئەۋەتكىلى بولمىدى.</translation>
+    </message>
+    <message>
+        <source>Thank you: the form was sent.</source>
+        <translation>رەھمەت: جەدۋەل ئەۋەتىلدى.</translation>
+    </message>
+    <message>
+        <source>The form was not accepted: check what you entered and send it again.</source>
+        <translation>جەدۋەل قوبۇل قىلىنمىدى: كىرگۈزگىنىڭىزنى تەكشۈرۈپ قايتا ئەۋەتىڭ.</translation>
+    </message>
 </context>
 </TS>
