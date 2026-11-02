@@ -79,7 +79,7 @@ class expMigrationRemote
      * [RemoteSettings] with the defaults of a missing setting.
      *
      * @param eZINI|null $ini
-     * @return array parallel, timeout, retries, store (bool: keep the reports)
+     * @return array parallel, timeout, retries, store (bool: keep the reports), stage_order (environments)
      */
     public static function settings( $ini = null )
     {
@@ -87,11 +87,16 @@ class expMigrationRemote
         $get = function ( $name, $default ) use ( $ini ) {
             return $ini->hasVariable( 'RemoteSettings', $name ) && $ini->variable( 'RemoteSettings', $name ) !== '' ? $ini->variable( 'RemoteSettings', $name ) : $default;
         };
+        $order = array();
+        foreach ( (array)$get( 'StageOrder', array() ) as $environment )
+            if ( ( $environment = trim( (string)$environment ) ) !== '' )
+                $order[] = $environment;
         return array(
             'parallel' => max( 1, (int)$get( 'Parallel', 4 ) ),
             'timeout' => max( 10, (int)$get( 'Timeout', 900 ) ),
             'retries' => max( 0, min( 10, (int)$get( 'Retries', 2 ) ) ),
             'store' => $get( 'StoreReports', 'enabled' ) === 'enabled',
+            'stage_order' => $order ?: expMigrationRemoteDeploy::STAGE_ORDER,
         );
     }
 

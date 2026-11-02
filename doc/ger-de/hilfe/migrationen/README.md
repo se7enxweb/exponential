@@ -132,6 +132,7 @@ Website-Seitenleiste ein Panel, das nur liest.
 - [Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md)
 - [Migrationen in der Website-Seitenleiste](expwt-panel.md)
 - [Änderungen aufzeichnen](aufzeichnung.md): die eigenen Änderungen oder in einem websiteweiten Fenster jede Änderung als Schritte einer Migration aufzeichnen
+- [Gegenstellen und Deploys](gegenstellen-und-deploys.md): die anderen Installationen, an die diese ihre Migrationen ausliefert, Deploys gleichzeitig oder Stufe für Stufe mit einem Tor, live je Gegenstelle, Verlauf und Rücknahme
 
 ## Referenz
 

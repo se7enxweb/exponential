@@ -834,3 +834,35 @@ CREATE TABLE IF NOT EXISTS exp_migration_recording_event (
   subject varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY ( recording_id, event_id )
 );
+
+-- exp_migration_deploy and exp_migration_deploy_host: the record of the deploys of migrations to remotes (one row
+-- per deploy, one per remote of it; exp:migration:deploy and Setup > Migrations > Deploys). The upgrade step
+-- 6.0.15-migration-deploy-tables makes them the same way.
+CREATE TABLE IF NOT EXISTS exp_migration_deploy (
+  deploy_id varchar(64) NOT NULL DEFAULT '' PRIMARY KEY,
+  finished_at integer NOT NULL DEFAULT '0',
+  in_sync integer NOT NULL DEFAULT '0',
+  message varchar(1000) NOT NULL DEFAULT '',
+  mode varchar(20) NOT NULL DEFAULT '',
+  next_stage integer NOT NULL DEFAULT '0',
+  run_by varchar(150) NOT NULL DEFAULT '',
+  stages integer NOT NULL DEFAULT '0',
+  started_at integer NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS exp_migration_deploy_started ON exp_migration_deploy ( started_at );
+
+CREATE TABLE IF NOT EXISTS exp_migration_deploy_host (
+  address varchar(255) NOT NULL DEFAULT '',
+  applied integer NOT NULL DEFAULT '0',
+  caption varchar(150) NOT NULL DEFAULT '',
+  deploy_id varchar(64) NOT NULL DEFAULT '',
+  environment varchar(50) NOT NULL DEFAULT '',
+  message varchar(1000) NOT NULL DEFAULT '',
+  remote_id varchar(64) NOT NULL DEFAULT '',
+  stage integer NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT '',
+  transport varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY ( deploy_id, remote_id )
+);
+CREATE INDEX IF NOT EXISTS exp_migration_deploy_host_remote ON exp_migration_deploy_host ( remote_id );

@@ -132,6 +132,7 @@ panel.
 - [Run, dry run and rollback](run-dry-run-and-rollback.md)
 - [Migrations in the website sidebar](expwt-panel.md)
 - [Recording changes](recording.md): record your own changes, or every change in a site-wide window, as the steps of a migration
+- [Remotes and deploys](remotes-and-deploys.md): the other installations this one deploys its migrations to, deploys all at once or stage by stage with a gate, live per remote, history and rollback
 
 ## Reference
 

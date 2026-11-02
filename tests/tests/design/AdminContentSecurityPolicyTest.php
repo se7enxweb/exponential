@@ -98,6 +98,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         'page/package_view_full.js' => array( 'design/admin/templates/package/view/full.tpl' ),
         'page/user_register.js' => array( 'design/admin/templates/user/register.tpl' ),
         'page/migration_log.js' => array( 'design/admin/templates/migration/log.tpl' ),
+        'page/migration_deploy.js' => array( 'design/admin/templates/migration/deployment.tpl' ),
         'page/moderation_recent.js' => array( 'design/admin/templates/moderation/recent.tpl' ),
     );
 

@@ -10,14 +10,18 @@ generated: exp:help:examples
 ---
 # Das Modul migration
 
-Name `Migrations`, definiert in `kernel/migration/module.php`. 8 Ansichten.
+Name `Migrations`, definiert in `kernel/migration/module.php`. 12 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
+| [deploy](deploy.md) | `/migration/deploy` | read |
+| [deployment](deployment.md) | `/migration/deployment/<DeployID>` | read |
 | [dryrun](dryrun.md) | `/migration/dryrun` | read |
 | [history](history.md) | `/migration/history` | read |
 | [log](log.md) | `/migration/log/<RunID>` | read |
 | [recording](recording.md) | `/migration/recording/<RecordingID>` | edit |
+| [remote](remote.md) | `/migration/remote/<RemoteID>` | remotes |
+| [remotes](remotes.md) | `/migration/remotes` | read |
 | [rollback](rollback.md) | `/migration/rollback/<Target>` | rollback |
 | [run](run.md) | `/migration/run` | run |
 | [status](status.md) | `/migration/status` | read |

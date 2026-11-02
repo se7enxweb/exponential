@@ -235,6 +235,7 @@ class expAuditTaxonomy
         // remotes that applied taken back after another failed (never an address detail or a credential)
         'system.migration.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migrations deployed to remotes' ),
         'system.migration.deploy.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration deploy taken back on remotes' ),
+        'system.migration.remote' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration remote added, changed or removed' ),
         // static publishing (doc/eng-us/guides/static-publishing-targets-and-credentials.md): a publish or a push
         // retried, a rollback, a deploy key made or replaced (never a credential's value), a target saved in the
         // administration or the feature switched on or off

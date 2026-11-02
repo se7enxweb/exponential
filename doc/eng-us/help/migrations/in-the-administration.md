@@ -31,6 +31,8 @@ module `migration`), and shows their state in a dashboard block and in the websi
 | Dry run | `/migration/dryrun` | what a run would change; **Simulate** runs it in a transaction that is rolled back | [Dry run](run-dry-run-and-rollback.md#dry-run) |
 | Run | `/migration/run` | run the pending migrations, chosen one by one | [Run](run-dry-run-and-rollback.md#run) |
 | Rollback | `/migration/rollback/<target>` | take a run, one migration or an earlier caption back | [Roll back](run-dry-run-and-rollback.md#roll-back) |
+| Remotes | `/migration/remotes`, `/migration/remote/<id>` | the installations this one deploys its migrations to: the wizard, Test connection | [Remotes and deploys](remotes-and-deploys.md#remotes) |
+| Deploys | `/migration/deploy`, `/migration/deployment/<deploy-id>` | deploy to remotes all at once or stage by stage, follow every remote live, the history, a gate, a rollback | [Remotes and deploys](remotes-and-deploys.md#deploys) |
 | Dashboard block | the dashboard | pending, failed, orphans, the run going on and the last run | [The dashboard block](status-and-history.md#the-dashboard-block) |
 | Website sidebar | the site's own pages | the same state, read-only | [Migrations in the website sidebar](expwt-panel.md) |
 
@@ -46,6 +48,8 @@ pending ones of the stages `database` and `scripts` before the site's migrations
 | `migration/run` | run, resume, and simulate in the dry run |
 | `migration/rollback` | take a run, one migration or an earlier caption back |
 | `migration/edit` | reserved for writing and generating migrations in the administration; no page uses it in 6.0.15 |
+| `migration/remotes` | add, change and remove the remotes deploys go to, and test their connection |
+| `migration/deploy` | deploy to remotes, approve the gate of a staged deploy, roll a deploy back |
 
 Only the Administrator role has them in a new installation. Run, resume, simulate and rollback ask
 ["Verify it's you"](../../guides/verify-its-you.md) first. The policies in detail:

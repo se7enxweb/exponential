@@ -1634,6 +1634,44 @@ CREATE TABLE exp_migration_recording_event (
 
 
 
+CREATE TABLE exp_migration_deploy (
+  deploy_id varchar(64) NOT NULL default '',
+  finished_at int(11) NOT NULL default '0',
+  in_sync int(11) NOT NULL default '0',
+  message varchar(1000) NOT NULL default '',
+  mode varchar(20) NOT NULL default '',
+  next_stage int(11) NOT NULL default '0',
+  run_by varchar(150) NOT NULL default '',
+  stages int(11) NOT NULL default '0',
+  started_at int(11) NOT NULL default '0',
+  state varchar(20) NOT NULL default '',
+  PRIMARY KEY  (deploy_id),
+  KEY exp_migration_deploy_started (started_at)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_migration_deploy_host (
+  address varchar(255) NOT NULL default '',
+  applied int(11) NOT NULL default '0',
+  caption varchar(150) NOT NULL default '',
+  deploy_id varchar(64) NOT NULL default '',
+  environment varchar(50) NOT NULL default '',
+  message varchar(1000) NOT NULL default '',
+  remote_id varchar(64) NOT NULL default '',
+  stage int(11) NOT NULL default '0',
+  state varchar(20) NOT NULL default '',
+  transport varchar(20) NOT NULL default '',
+  PRIMARY KEY  (deploy_id,remote_id),
+  KEY exp_migration_deploy_host_remote (remote_id)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE exphelp_help_id (
   help_id varchar(80) NOT NULL default '',
   object_id int(11) NOT NULL default '0',

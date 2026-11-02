@@ -6,7 +6,8 @@
  * code); a run or rollback started here runs as the signed-in user in a console process of its own (expMigrationJob).
  *
  * Policies: migration/read (see), migration/run (run, resume, simulate), migration/rollback (take back),
- * migration/edit (recordings of changes; later the editor and the generators). Only Administrator has them in a new installation. Runs and
+ * migration/edit (recordings of changes; later the editor and the generators), migration/remotes (the remotes deploys go to)
+ * and migration/deploy (deploys to remotes, their gates and rollbacks). Only Administrator has them in a new installation. Runs and
  * rollbacks ask "Verify it's you" (site.ini [ReauthGroup_system]).
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -79,6 +80,44 @@ $ViewList['recording'] = array(
     'params' => array( 'RecordingID' ),
     'unordered_params' => array() );
 
+// Remotes: the other installations this one deploys its migrations to (migration.ini [Remote_<id>]); Test connection
+// reads one remote's status
+$ViewList['remotes'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'remotes.php',
+    'functions' => array( 'read' ),
+    'single_post_actions' => array( 'TestButton' => 'Test' ),
+    'params' => array(),
+    'unordered_params' => array() );
+
+// The wizard of one remote (new or <id>): saved through expIniEditor to settings/override/migration.ini.append.php
+$ViewList['remote'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'remote.php',
+    'functions' => array( 'remotes' ),
+    'single_post_actions' => array( 'ReviewButton' => 'Review', 'SaveButton' => 'Save', 'EditButton' => 'Edit', 'TestButton' => 'Test', 'RemoveButton' => 'Remove' ),
+    'params' => array( 'RemoteID' ),
+    'unordered_params' => array() );
+
+// Deploys: start one (a preflight, a deploy, staged or not, transfer only) and the history from the reports
+$ViewList['deploy'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'deploy.php',
+    'functions' => array( 'read' ),
+    'single_post_actions' => array( 'PreflightButton' => 'Preflight', 'DeployButton' => 'Deploy' ),
+    'params' => array(),
+    'unordered_params' => array() );
+
+// One deploy: live per-remote progress (migration/stream of its job), its report, the gate of a staged deploy,
+// the rollback
+$ViewList['deployment'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'deployment.php',
+    'functions' => array( 'read' ),
+    'single_post_actions' => array( 'ApproveButton' => 'Approve', 'RollbackButton' => 'Rollback' ),
+    'params' => array( 'DeployID' ),
+    'unordered_params' => array() );
+
 $FunctionList = array();
 // See the migrations, their state, the runs and their logs, and the dry run
 $FunctionList['read'] = array();
@@ -89,5 +128,9 @@ $FunctionList['rollback'] = array();
 // Record changes as migrations (recordings of changes; the site-wide window asks "Verify it's you"), and later write
 // and generate migrations in the administration (the editor and the generators)
 $FunctionList['edit'] = array();
+// Add, change and remove the remotes migrations are deployed to, and test their connection
+$FunctionList['remotes'] = array();
+// Deploy migrations to remotes, approve the next stage of a staged deploy, and roll a deploy back
+$FunctionList['deploy'] = array();
 
 ?>

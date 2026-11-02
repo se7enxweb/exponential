@@ -1182,3 +1182,36 @@ CREATE TABLE IF NOT EXISTS exp_migration_recording_event (
     subject character varying(255) DEFAULT ''::character varying NOT NULL,
     CONSTRAINT exp_migration_recording_event_pkey PRIMARY KEY ( recording_id, event_id )
 );
+
+-- exp_migration_deploy and exp_migration_deploy_host: the record of the deploys of migrations to remotes (one row
+-- per deploy, one per remote of it; exp:migration:deploy and Setup > Migrations > Deploys). The upgrade step
+-- 6.0.15-migration-deploy-tables makes them the same way.
+CREATE TABLE IF NOT EXISTS exp_migration_deploy (
+    deploy_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    in_sync integer DEFAULT 0 NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    mode character varying(20) DEFAULT ''::character varying NOT NULL,
+    next_stage integer DEFAULT 0 NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    stages integer DEFAULT 0 NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exp_migration_deploy_pkey PRIMARY KEY ( deploy_id )
+);
+CREATE INDEX IF NOT EXISTS exp_migration_deploy_started ON exp_migration_deploy USING btree ( started_at );
+
+CREATE TABLE IF NOT EXISTS exp_migration_deploy_host (
+    address character varying(255) DEFAULT ''::character varying NOT NULL,
+    applied integer DEFAULT 0 NOT NULL,
+    caption character varying(150) DEFAULT ''::character varying NOT NULL,
+    deploy_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    remote_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    stage integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    transport character varying(20) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exp_migration_deploy_host_pkey PRIMARY KEY ( deploy_id, remote_id )
+);
+CREATE INDEX IF NOT EXISTS exp_migration_deploy_host_remote ON exp_migration_deploy_host USING btree ( remote_id );

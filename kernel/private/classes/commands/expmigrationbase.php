@@ -59,7 +59,7 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'exp:migration:record:list' => '[format:][count:]',
             'exp:migration:record:show' => '[format:][plan]',
             'exp:migration:record:discard' => '[apply][dry-run][format:]',
-            'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:]',
+            'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:][staged][continue:][rollback:][login:][run-id:][progress:]',
             'exp:migration:remote:list' => '[remotes:*][format:]',
             'exp:migration:remote:status' => '[remotes:*][format:][parallel:][timeout:][history:]',
         );
@@ -146,6 +146,9 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'timeout' => 'Seconds each remote may take for one phase (default [RemoteSettings] Timeout)',
             'retries' => 'How often a connection failure is tried again (default [RemoteSettings] Retries)',
             'history' => 'How many of the latest deploys to list (default 10, 0 for none)',
+            'staged' => 'Deploy stage by stage ([RemoteSettings] StageOrder[] by environment): the first stage now, a gate before each next one (with --apply)',
+            'continue' => 'Approve the gate of a staged deploy and deploy its next stage (the deploy id; with --apply)',
+            'rollback' => 'Take back every remote that applied this deploy (the deploy id; with --apply)',
         );
     }
 

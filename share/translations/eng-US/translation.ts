@@ -81088,6 +81088,726 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No migration was written: %reason</source>
         <translation>No migration was written: %reason</translation>
     </message>
+    <message>
+        <source>Remotes</source>
+        <translation>Remotes</translation>
+    </message>
+    <message>
+        <source>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</source>
+        <translation>The other installations this one deploys its migrations to: a deploy sends the migrations to the remotes chosen and runs them there, all at once and in sync. A remote never holds a secret: its credential names one in Setup &gt; Secrets.</translation>
+    </message>
+    <message>
+        <source>New remote</source>
+        <translation>New remote</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Help</translation>
+    </message>
+    <message>
+        <source>Test connection of %id</source>
+        <translation>Test connection of %id</translation>
+    </message>
+    <message>
+        <source>The remotes</source>
+        <translation>The remotes</translation>
+    </message>
+    <message>
+        <source>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</source>
+        <translation>Up to %parallel remotes are worked on at the same time; one phase may take %timeout seconds on each.</translation>
+    </message>
+    <message>
+        <source>Remote</source>
+        <translation>Remote</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Credential</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Groups</translation>
+    </message>
+    <message>
+        <source>settings to fix</source>
+        <translation>settings to fix</translation>
+    </message>
+    <message>
+        <source>files only (FTP)</source>
+        <translation>files only (FTP)</translation>
+    </message>
+    <message>
+        <source>SSH key</source>
+        <translation>SSH key</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>none (the host's SSH agent and keys)</source>
+        <translation>none (the host's SSH agent and keys)</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Test connection</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>A deploy to a group goes to every remote of it.</source>
+        <translation>A deploy to a group goes to every remote of it.</translation>
+    </message>
+    <message>
+        <source>Deploy to remotes</source>
+        <translation>Deploy to remotes</translation>
+    </message>
+    <message>
+        <source>No remote is set up yet.</source>
+        <translation>No remote is set up yet.</translation>
+    </message>
+    <message>
+        <source>Remote %id</source>
+        <translation>Remote %id</translation>
+    </message>
+    <message>
+        <source>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</source>
+        <translation>Nothing is sent or run here: Save writes the settings to settings/override/migration.ini.append.php. The credential is a name; its value stays in Setup &gt; Secrets or in the environment.</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Check these settings</translation>
+    </message>
+    <message>
+        <source>The settings as entered, not saved yet.</source>
+        <translation>The settings as entered, not saved yet.</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Review</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>The settings are valid. These lines will be written:</translation>
+    </message>
+    <message>
+        <source>Transport</source>
+        <translation>Transport</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>a name only; the value stays in Setup &gt; Secrets</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>The lines that will be written</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Steps</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Connection</translation>
+    </message>
+    <message>
+        <source>Host key</source>
+        <translation>Host key</translation>
+    </message>
+    <message>
+        <source>1. The remote</source>
+        <translation>1. The remote</translation>
+    </message>
+    <message>
+        <source>What the remote is called and which environment it is.</source>
+        <translation>What the remote is called and which environment it is.</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</source>
+        <translation>Letters, digits, - and _, for example production1. It names the remote in reports and on the console (--remotes=production1) and cannot be changed later.</translation>
+    </message>
+    <message>
+        <source>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</source>
+        <translation>alpha, dev, stage, beta, production ... A staged deploy goes through the environments in this order.</translation>
+    </message>
+    <message>
+        <source>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</source>
+        <translation>Optional, separated by commas, for example production. A deploy to a group goes to every remote of it.</translation>
+    </message>
+    <message>
+        <source>2. The connection</source>
+        <translation>2. The connection</translation>
+    </message>
+    <message>
+        <source>How the files get there, and where the installation is.</source>
+        <translation>How the files get there, and where the installation is.</translation>
+    </message>
+    <message>
+        <source>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</source>
+        <translation>Over SSH, only what changed, a broken transfer resumed. The best choice where rsync is installed.</translation>
+    </message>
+    <message>
+        <source>SSH with scp for the files.</source>
+        <translation>SSH with scp for the files.</translation>
+    </message>
+    <message>
+        <source>SSH with sftp for the files.</source>
+        <translation>SSH with sftp for the files.</translation>
+    </message>
+    <message>
+        <source>Files only: the migrations are sent and read back, but cannot be run there.</source>
+        <translation>Files only: the migrations are sent and read back, but cannot be run there.</translation>
+    </message>
+    <message>
+        <source>FTP over TLS; files only.</source>
+        <translation>FTP over TLS; files only.</translation>
+    </message>
+    <message>
+        <source>Another installation on this server, in a folder.</source>
+        <translation>Another installation on this server, in a folder.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>A host name or address, for example node1.example.com. Not for local.</source>
+        <translation>A host name or address, for example node1.example.com. Not for local.</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Empty: 22 for SSH, 21 for FTP.</source>
+        <translation>Empty: 22 for SSH, 21 for FTP.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>User</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation>Path</translation>
+    </message>
+    <message>
+        <source>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</source>
+        <translation>The installation's root there, for example /var/www/site (for FTP: the path the FTP account sees).</translation>
+    </message>
+    <message>
+        <source>PHP command line</source>
+        <translation>PHP command line</translation>
+    </message>
+    <message>
+        <source>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</source>
+        <translation>The PHP CLI there: php, or a full path such as /opt/plesk/php/8.4/bin/php.</translation>
+    </message>
+    <message>
+        <source>The console scripts run as root there</source>
+        <translation>The console scripts run as root there</translation>
+    </message>
+    <message>
+        <source>Only when the remote's user is root (they are then run with --allow-root-user).</source>
+        <translation>Only when the remote's user is root (they are then run with --allow-root-user).</translation>
+    </message>
+    <message>
+        <source>3. The credential</source>
+        <translation>3. The credential</translation>
+    </message>
+    <message>
+        <source>How this installation signs in there. Only a name is saved.</source>
+        <translation>How this installation signs in there. Only a name is saved.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>None</translation>
+    </message>
+    <message>
+        <source>The SSH agent and keys of the user this installation runs as (and always for local).</source>
+        <translation>The SSH agent and keys of the user this installation runs as (and always for local).</translation>
+    </message>
+    <message>
+        <source>A private key kept as a secret.</source>
+        <translation>A private key kept as a secret.</translation>
+    </message>
+    <message>
+        <source>A password kept as a secret (FTP signs in with one).</source>
+        <translation>A password kept as a secret (FTP signs in with one).</translation>
+    </message>
+    <message>
+        <source>Secret name</source>
+        <translation>Secret name</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, for example deploy_production1.</source>
+        <translation>A secret of Setup &gt; Secrets, for example deploy_production1.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Setup &gt; Secrets</translation>
+    </message>
+    <message>
+        <source>Or an environment variable</source>
+        <translation>Or an environment variable</translation>
+    </message>
+    <message>
+        <source>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</source>
+        <translation>The variable of the server process that holds it, for example DEPLOY_KEY (saved as env:DEPLOY_KEY). It takes the place of the secret name.</translation>
+    </message>
+    <message>
+        <source>4. The host key</source>
+        <translation>4. The host key</translation>
+    </message>
+    <message>
+        <source>Optional, for SSH, sftp and rsync.</source>
+        <translation>Optional, for SSH, sftp and rsync.</translation>
+    </message>
+    <message>
+        <source>Host key fingerprint</source>
+        <translation>Host key fingerprint</translation>
+    </message>
+    <message>
+        <source>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</source>
+        <translation>SHA256:... as ssh-keygen -l prints it. With it, the host must show this key; without it, the key is learnt on first contact.</translation>
+    </message>
+    <message>
+        <source>5. Review</source>
+        <translation>5. Review</translation>
+    </message>
+    <message>
+        <source>Test the connection with the settings above, then review the lines that will be written.</source>
+        <translation>Test the connection with the settings above, then review the lines that will be written.</translation>
+    </message>
+    <message>
+        <source>Remove this remote</source>
+        <translation>Remove this remote</translation>
+    </message>
+    <message>
+        <source>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</source>
+        <translation>Its settings are taken out of settings/override/migration.ini.append.php. Nothing changes on the remote, and its deploys stay in the history.</translation>
+    </message>
+    <message>
+        <source>Yes, remove this remote</source>
+        <translation>Yes, remove this remote</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>Deploys</source>
+        <translation>Deploys</translation>
+    </message>
+    <message>
+        <source>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</source>
+        <translation>A deploy sends this installation's migrations to the remotes chosen and runs them there as %user, all at once and in sync: every remote is checked first, and when one fails, every remote that applied is taken back. It goes on in the background, and its page shows every remote as it goes.</translation>
+    </message>
+    <message>
+        <source>1. The remotes</source>
+        <translation>1. The remotes</translation>
+    </message>
+    <message>
+        <source>Tick remotes, a group, or both.</source>
+        <translation>Tick remotes, a group, or both.</translation>
+    </message>
+    <message>
+        <source>Deploy to it</source>
+        <translation>Deploy to it</translation>
+    </message>
+    <message>
+        <source>2. How</source>
+        <translation>2. How</translation>
+    </message>
+    <message>
+        <source>Deploy</source>
+        <translation>Deploy</translation>
+    </message>
+    <message>
+        <source>Send and run</source>
+        <translation>Send and run</translation>
+    </message>
+    <message>
+        <source>The migrations are sent, verified and run on every remote with one shared run id.</source>
+        <translation>The migrations are sent, verified and run on every remote with one shared run id.</translation>
+    </message>
+    <message>
+        <source>Transfer only</source>
+        <translation>Transfer only</translation>
+    </message>
+    <message>
+        <source>The files are sent and verified, nothing is run (the only way for an FTP remote).</source>
+        <translation>The files are sent and verified, nothing is run (the only way for an FTP remote).</translation>
+    </message>
+    <message>
+        <source>Staged</source>
+        <translation>Staged</translation>
+    </message>
+    <message>
+        <source>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</source>
+        <translation>Stage by stage in the order of the environments (dev, stage, beta, production ...): the first stage is deployed, then a gate waits until someone approves the next one. All or nothing within each stage.</translation>
+    </message>
+    <message>
+        <source>Only these migrations</source>
+        <translation>Only these migrations</translation>
+    </message>
+    <message>
+        <source>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</source>
+        <translation>Optional: migration ids, separated by commas. Empty: every migration of the site and its extensions.</translation>
+    </message>
+    <message>
+        <source>Preflight only</source>
+        <translation>Preflight only</translation>
+    </message>
+    <message>
+        <source>Yes, deploy now</source>
+        <translation>Yes, deploy now</translation>
+    </message>
+    <message>
+        <source>The deploys that sent or ran something, the newest first (a preflight keeps no report).</source>
+        <translation>The deploys that sent or ran something, the newest first (a preflight keeps no report).</translation>
+    </message>
+    <message>
+        <source>transfer only</source>
+        <translation>transfer only</translation>
+    </message>
+    <message>
+        <source>staged, %stages stages</source>
+        <translation>staged, %stages stages</translation>
+    </message>
+    <message>
+        <source>out of sync</source>
+        <translation>out of sync</translation>
+    </message>
+    <message>
+        <source>No deploy yet.</source>
+        <translation>No deploy yet.</translation>
+    </message>
+    <message>
+        <source>Deploy %deploy</source>
+        <translation>Deploy %deploy</translation>
+    </message>
+    <message>
+        <source>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Every remote of the deploy with its state. A deploy started here goes on in the background when this page is closed; open the page again to follow it.</translation>
+    </message>
+    <message>
+        <source>All deploys</source>
+        <translation>All deploys</translation>
+    </message>
+    <message>
+        <source>Preflight</source>
+        <translation>Preflight</translation>
+    </message>
+    <message>
+        <source>Next stage</source>
+        <translation>Next stage</translation>
+    </message>
+    <message>
+        <source>Checking the settings and the credentials</source>
+        <translation>Checking the settings and the credentials</translation>
+    </message>
+    <message>
+        <source>Preflight: reading the state of every remote</source>
+        <translation>Preflight: reading the state of every remote</translation>
+    </message>
+    <message>
+        <source>Sending the migration files</source>
+        <translation>Sending the migration files</translation>
+    </message>
+    <message>
+        <source>Verifying what arrived</source>
+        <translation>Verifying what arrived</translation>
+    </message>
+    <message>
+        <source>Running the migrations on every remote</source>
+        <translation>Running the migrations on every remote</translation>
+    </message>
+    <message>
+        <source>Taking the remotes back</source>
+        <translation>Taking the remotes back</translation>
+    </message>
+    <message>
+        <source>The deploy has ended. Loading its report.</source>
+        <translation>The deploy has ended. Loading its report.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the deploy is doing.</source>
+        <translation>The progress could not be followed. Reload the page to see how the deploy is doing.</translation>
+    </message>
+    <message>
+        <source>Phase</source>
+        <translation>Phase</translation>
+    </message>
+    <message>
+        <source>This page follows the deploy as it goes.</source>
+        <translation>This page follows the deploy as it goes.</translation>
+    </message>
+    <message>
+        <source>In sync</source>
+        <translation>In sync</translation>
+    </message>
+    <message>
+        <source>Stages</source>
+        <translation>Stages</translation>
+    </message>
+    <message>
+        <source>stage %stage waits at its gate</source>
+        <translation>stage %stage waits at its gate</translation>
+    </message>
+    <message>
+        <source>Gate %stage</source>
+        <translation>Gate %stage</translation>
+    </message>
+    <message>
+        <source>approved by %user at %time</source>
+        <translation>approved by %user at %time</translation>
+    </message>
+    <message>
+        <source>Stage</source>
+        <translation>Stage</translation>
+    </message>
+    <message>
+        <source>Files sent</source>
+        <translation>Files sent</translation>
+    </message>
+    <message>
+        <source>Kernel version</source>
+        <translation>Kernel version</translation>
+    </message>
+    <message>
+        <source>applied: %list</source>
+        <translation>applied: %list</translation>
+    </message>
+    <message>
+        <source>to apply: %list</source>
+        <translation>to apply: %list</translation>
+    </message>
+    <message>
+        <source>Phases</source>
+        <translation>Phases</translation>
+    </message>
+    <message>
+        <source>Gate: stage %stage of %stages</source>
+        <translation>Gate: stage %stage of %stages</translation>
+    </message>
+    <message>
+        <source>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</source>
+        <translation>The stages before it are deployed. Check them, then approve the next stage: its remotes are checked again and deployed, all or nothing.</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Next</translation>
+    </message>
+    <message>
+        <source>Yes, deploy the next stage now</source>
+        <translation>Yes, deploy the next stage now</translation>
+    </message>
+    <message>
+        <source>Approve</source>
+        <translation>Approve</translation>
+    </message>
+    <message>
+        <source>Roll this deploy back</source>
+        <translation>Roll this deploy back</translation>
+    </message>
+    <message>
+        <source>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</source>
+        <translation>Every remote that applied it (%list) goes back to the caption taken before its run, all at once.</translation>
+    </message>
+    <message>
+        <source>Yes, roll this deploy back now</source>
+        <translation>Yes, roll this deploy back now</translation>
+    </message>
+    <message>
+        <source>planned</source>
+        <translation>planned</translation>
+    </message>
+    <message>
+        <source>transferred</source>
+        <translation>transferred</translation>
+    </message>
+    <message>
+        <source>deployed</source>
+        <translation>deployed</translation>
+    </message>
+    <message>
+        <source>waits at a gate</source>
+        <translation>waits at a gate</translation>
+    </message>
+    <message>
+        <source>selected</source>
+        <translation>selected</translation>
+    </message>
+    <message>
+        <source>prepared</source>
+        <translation>prepared</translation>
+    </message>
+    <message>
+        <source>ready</source>
+        <translation>ready</translation>
+    </message>
+    <message>
+        <source>waits for its stage</source>
+        <translation>waits for its stage</translation>
+    </message>
+    <message>
+        <source>files sent</source>
+        <translation>files sent</translation>
+    </message>
+    <message>
+        <source>verified</source>
+        <translation>verified</translation>
+    </message>
+    <message>
+        <source>failed, restored itself</source>
+        <translation>failed, restored itself</translation>
+    </message>
+    <message>
+        <source>unchanged</source>
+        <translation>unchanged</translation>
+    </message>
+    <message>
+        <source>not deployed</source>
+        <translation>not deployed</translation>
+    </message>
+    <message>
+        <source>not reachable</source>
+        <translation>not reachable</translation>
+    </message>
+    <message>
+        <source>The remote answered.</source>
+        <translation>The remote answered.</translation>
+    </message>
+    <message>
+        <source>The remote cannot be used now.</source>
+        <translation>The remote cannot be used now.</translation>
+    </message>
+    <message>
+        <source>%done done, %pending pending, %failed failed</source>
+        <translation>%done done, %pending pending, %failed failed</translation>
+    </message>
+    <message>
+        <source>Lock</source>
+        <translation>Lock</translation>
+    </message>
+    <message>
+        <source>a run holds the lock there</source>
+        <translation>a run holds the lock there</translation>
+    </message>
+    <message>
+        <source>free</source>
+        <translation>free</translation>
+    </message>
+    <message>
+        <source>%stage of %stages</source>
+        <translation>%stage of %stages</translation>
+    </message>
+    <message>
+        <source>Choose the remote to test.</source>
+        <translation>Choose the remote to test.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, remove this remote" first.</source>
+        <translation>Tick "Yes, remove this remote" first.</translation>
+    </message>
+    <message>
+        <source>The remote could not be removed: %problem</source>
+        <translation>The remote could not be removed: %problem</translation>
+    </message>
+    <message>
+        <source>The remote could not be saved: %problem</source>
+        <translation>The remote could not be saved: %problem</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>The settings file cannot be read: %problem</translation>
+    </message>
+    <message>
+        <source>Choose at least one remote or group.</source>
+        <translation>Choose at least one remote or group.</translation>
+    </message>
+    <message>
+        <source>A chosen remote is no longer in the settings. Reload the page.</source>
+        <translation>A chosen remote is no longer in the settings. Reload the page.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, deploy now" first.</source>
+        <translation>Tick "Yes, deploy now" first.</translation>
+    </message>
+    <message>
+        <source>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</source>
+        <translation>An FTP remote cannot run migrations: choose "Transfer only", or leave it out.</translation>
+    </message>
+    <message>
+        <source>The migrations to deploy are migration ids, separated by commas.</source>
+        <translation>The migrations to deploy are migration ids, separated by commas.</translation>
+    </message>
+    <message>
+        <source>The deploy is still going on. Wait for it to end.</source>
+        <translation>The deploy is still going on. Wait for it to end.</translation>
+    </message>
+    <message>
+        <source>This deploy does not wait at a gate.</source>
+        <translation>This deploy does not wait at a gate.</translation>
+    </message>
+    <message>
+        <source>No remote applied this deploy: there is nothing to roll back.</source>
+        <translation>No remote applied this deploy: there is nothing to roll back.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, deploy the next stage now" first.</source>
+        <translation>Tick "Yes, deploy the next stage now" first.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, roll this deploy back now" first.</source>
+        <translation>Tick "Yes, roll this deploy back now" first.</translation>
+    </message>
+    <message>
+        <source>A remote with the id %id exists already.</source>
+        <translation>A remote with the id %id exists already.</translation>
+    </message>
+    <message>
+        <source>The port is a number from 1 to 65535.</source>
+        <translation>The port is a number from 1 to 65535.</translation>
+    </message>
+    <message>
+        <source>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</source>
+        <translation>The environment is a word of letters, digits, - and _ (alpha, dev, stage, beta, production ...).</translation>
+    </message>
+    <message>
+        <source>A group is a word of letters, digits, - and _ (not all): %group</source>
+        <translation>A group is a word of letters, digits, - and _ (not all): %group</translation>
+    </message>
+    <message>
+        <source>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</source>
+        <translation>The credential cannot be read now: %problem. Save it in Setup &gt; Secrets (or set the variable) before the first deploy.</translation>
+    </message>
+    <message>
+        <source>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</source>
+        <translation>An FTP remote only receives files: a deploy to it is "Transfer only", and its migrations are run there by hand.</translation>
+    </message>
+    <message>
+        <source>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</source>
+        <translation>The remote %id is not in settings/override/migration.ini.append.php; remove it where it is set.</translation>
+    </message>
+    <message>
+        <source>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</source>
+        <translation>Signed in over FTP and read index.php. The migration status of an FTP remote cannot be read.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>
@@ -83460,6 +84180,25 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
         <translation>This mail was sent by %site because the static publishing target %target asks for it.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/migration/mail</name>
+    <message>
+        <source>The deploy %deploy failed on %site</source>
+        <translation>The deploy %deploy failed on %site</translation>
+    </message>
+    <message>
+        <source>The deploy %deploy waits at a gate on %site</source>
+        <translation>The deploy %deploy waits at a gate on %site</translation>
+    </message>
+    <message>
+        <source>The deploy %deploy succeeded on %site</source>
+        <translation>The deploy %deploy succeeded on %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</source>
+        <translation>This mail was sent by %site because migration.ini [RemoteSettings] Notify[] asks for it.</translation>
     </message>
 </context>
 </TS>

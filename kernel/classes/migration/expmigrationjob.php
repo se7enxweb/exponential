@@ -28,6 +28,12 @@
  * the run in exp_migration_run and its log (migrations/runs/<id>.log) have the job's id. A rollback names no run of
  * its own; its job id only names its files.
  *
+ * A deploy job (kind deploy: exp:migration:deploy, Setup > Migrations > Deploys) runs a deploy to remotes, a dry
+ * run of one (the preflight), the next stage of a staged one (--continue) or its rollback (--rollback); its <id>.json
+ * names the deploy as target and what it does as action (dry-run, apply, transfer-only, continue, rollback). A new
+ * deploy has the job's id as its deploy id. It does not wait for the installation lock (the remotes change, not this
+ * installation); the deploy takes a lock of its own.
+ *
  * One job at a time: start() refuses while a job is running or the installation lock is held (exp:upgrade, a console
  * run). The run itself takes the lock, so two pages pressing Run at once still run once.
  *
@@ -50,6 +56,7 @@ class expMigrationJob
         'migrate' => 'bin/php/expmigrationmigrate.php',
         'resume' => 'bin/php/expmigrationresume.php',
         'rollback' => 'bin/php/expmigrationrollback.php',
+        'deploy' => 'bin/php/expmigrationdeploy.php',
     );
 
     /** The flags the administration may pass on, per kind. */
@@ -57,6 +64,7 @@ class expMigrationJob
         'migrate' => array( 'no-caption', 'no-restore', 'include-uncommitted', 'no-commit', 'no-push', 'no-tag', 'force' ),
         'resume' => array( 'no-caption', 'no-restore', 'include-uncommitted', 'no-commit', 'no-push', 'no-tag', 'force' ),
         'rollback' => array( 'expert', 'no-safety-caption', 'force-no-caption', 'no-verify' ),
+        'deploy' => array( 'apply', 'transfer-only', 'staged' ),
     );
 
     /** The options with a value the administration may pass on, per kind. */
@@ -64,6 +72,7 @@ class expMigrationJob
         'migrate' => array( 'only', 'reason', 'environment', 'max-migrations', 'max-time', 'throttle' ),
         'resume' => array( 'reason', 'environment', 'max-migrations', 'max-time', 'throttle' ),
         'rollback' => array( 'confirm', 'parts', 'source', 'environment' ),
+        'deploy' => array( 'remotes', 'only', 'continue', 'rollback' ),
     );
 
     /** Why start() refused (the view translates these). */
@@ -128,6 +137,8 @@ class expMigrationJob
             throw new InvalidArgumentException( 'a rollback needs what it takes back' );
         if ( $target !== '' && !preg_match( '/^[A-Za-z0-9][A-Za-z0-9_.:-]{0,149}$/', $target ) )
             throw new InvalidArgumentException( 'not a run, migration or caption id: ' . $target );
+        if ( $kind === 'deploy' )
+            return self::deployArguments( $id, $options, $login, $siteaccess, $progressFile, $allowRoot );
         if ( $target !== '' && $kind !== 'migrate' )
             $arguments[] = $target;
         $arguments[] = '--apply';
@@ -151,6 +162,76 @@ class expMigrationJob
             if ( $value !== '' )
                 $arguments[] = '--' . $name . '=' . $value;
         }
+        return $arguments;
+    }
+
+    /**
+     * The command line of a deploy job (exp:migration:deploy): a new deploy has the job's id as its deploy id; the
+     * next stage of a staged deploy (option continue) and the rollback of a deploy (option rollback) name the deploy
+     * and keep their job's id only for their files. Without the flag apply a new deploy is a dry run (the preflight).
+     * Pure.
+     *
+     * @param string $id
+     * @param array $options apply, transfer-only, staged (flags); remotes, only (ids or lists), continue or rollback
+     *                       (a deploy id)
+     * @param string $login
+     * @param string $siteaccess
+     * @param string $progressFile
+     * @param bool $allowRoot
+     * @return string[]
+     * @throws InvalidArgumentException for a new deploy without remotes, a remote, group or migration id with other
+     *                                  characters, or a continue or rollback that is no deploy id
+     */
+    protected static function deployArguments( $id, array $options, $login, $siteaccess, $progressFile, $allowRoot )
+    {
+        $arguments = array( self::KINDS['deploy'] );
+        $list = function ( $name ) use ( $options ) {
+            $values = array();
+            foreach ( isset( $options[$name] ) ? (array)$options[$name] : array() as $value )
+                foreach ( explode( ',', (string)$value ) as $part )
+                    if ( ( $part = trim( $part ) ) !== '' )
+                    {
+                        if ( !preg_match( '/^[A-Za-z0-9][A-Za-z0-9_.-]{0,149}$/', $part ) )
+                            throw new InvalidArgumentException( "not a $name id: $part" );
+                        $values[] = $part;
+                    }
+            return array_values( array_unique( $values ) );
+        };
+        $remotes = $list( 'remotes' );
+        $only = $list( 'only' );
+        $continue = isset( $options['continue'] ) ? trim( (string)$options['continue'] ) : '';
+        $rollback = isset( $options['rollback'] ) ? trim( (string)$options['rollback'] ) : '';
+        foreach ( array( $continue, $rollback ) as $deployId )
+            if ( $deployId !== '' && !expMigrationRecord::validRunId( $deployId ) )
+                throw new InvalidArgumentException( 'not a deploy id: ' . $deployId );
+        if ( $continue !== '' && $rollback !== '' )
+            throw new InvalidArgumentException( 'a job either continues a deploy or takes it back' );
+        if ( $continue === '' && $rollback === '' && !$remotes )
+            throw new InvalidArgumentException( 'a deploy needs the remotes it goes to' );
+        if ( $continue !== '' )
+            $arguments[] = '--continue=' . $continue;
+        else if ( $rollback !== '' )
+            $arguments[] = '--rollback=' . $rollback;
+        else
+        {
+            $arguments[] = '--remotes=' . implode( ',', $remotes );
+            if ( $only )
+                $arguments[] = '--only=' . implode( ',', $only );
+            if ( !empty( $options['transfer-only'] ) )
+                $arguments[] = '--transfer-only';
+            else if ( !empty( $options['staged'] ) )
+                $arguments[] = '--staged';
+            $arguments[] = '--run-id=' . $id;
+        }
+        if ( $continue !== '' || $rollback !== '' || !empty( $options['apply'] ) || !empty( $options['transfer-only'] ) )
+            $arguments[] = '--apply';
+        $arguments[] = '--format=json';
+        if ( $allowRoot )
+            $arguments[] = '--allow-root-user';
+        $arguments[] = '--login=' . $login;
+        if ( (string)$siteaccess !== '' )
+            $arguments[] = '--siteaccess=' . $siteaccess;
+        $arguments[] = '--progress=' . $progressFile;
         return $arguments;
     }
 
@@ -201,7 +282,8 @@ class expMigrationJob
         if ( $running )
             return $refuse( self::REFUSED_BUSY, $running['id'] );
         $lock = isset( $settings['lock'] ) ? $settings['lock'] : expMigrationLock::installation();
-        if ( $lock->isLocked() && !$lock->isHeld() )
+        // a deploy changes the remotes, not this installation: its own lock (expMigrationRemoteDeploy) is enough
+        if ( $kind !== 'deploy' && $lock->isLocked() && !$lock->isHeld() )
             return $refuse( self::REFUSED_LOCKED, expMigrationLock::describe( $lock->holder() ) );
 
         $php = isset( $settings['php'] ) ? (string)$settings['php'] : self::phpBinary();
@@ -230,6 +312,14 @@ class expMigrationJob
         $job = array( 'id' => $id, 'kind' => $kind, 'target' => isset( $options['target'] ) ? trim( (string)$options['target'] ) : '',
                       'user' => (string)$login, 'siteaccess' => $siteaccess, 'pid' => 0, 'started' => time(), 'progress' => $base . '.progress',
                       'arguments' => $arguments );
+        // a deploy job names its deploy: the one it continues or takes back, or (a new deploy) its own id
+        if ( $kind === 'deploy' )
+        {
+            $job['target'] = !empty( $options['continue'] ) ? trim( (string)$options['continue'] )
+                           : ( !empty( $options['rollback'] ) ? trim( (string)$options['rollback'] ) : $id );
+            $job['action'] = !empty( $options['continue'] ) ? 'continue' : ( !empty( $options['rollback'] ) ? 'rollback'
+                           : ( !empty( $options['transfer-only'] ) ? 'transfer-only' : ( !empty( $options['apply'] ) ? 'apply' : 'dry-run' ) ) );
+        }
         if ( @file_put_contents( $base . '.json', json_encode( $job, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) ) === false )
             return $refuse( self::REFUSED_DIRECTORY, $directory );
         @touch( $base . '.progress' );
@@ -292,7 +382,7 @@ class expMigrationJob
         $job = is_file( $base . '.json' ) ? json_decode( (string)@file_get_contents( $base . '.json' ), true ) : null;
         if ( !is_array( $job ) || !isset( $job['id'] ) || $job['id'] !== $id )
             return null;
-        $job += array( 'kind' => '', 'target' => '', 'user' => '', 'siteaccess' => '', 'pid' => 0, 'started' => 0, 'progress' => $base . '.progress' );
+        $job += array( 'kind' => '', 'action' => '', 'target' => '', 'user' => '', 'siteaccess' => '', 'pid' => 0, 'started' => 0, 'progress' => $base . '.progress' );
         $job['running'] = self::alive( (int)$job['pid'] );
         // handed to expqueue and not started by its worker yet: waiting counts as running
         $job['queued'] = false;
@@ -354,6 +444,22 @@ class expMigrationJob
     {
         foreach ( self::all( 10, $directory ) as $job )
             if ( $job['running'] )
+                return $job;
+        return null;
+    }
+
+    /**
+     * The newest deploy job of a deploy: the one that made it, the next stage or its rollback.
+     *
+     * @param string $deployId
+     * @param string|null $directory
+     * @param int $limit how many of the newest jobs are looked at
+     * @return array|null
+     */
+    public static function forDeploy( $deployId, $directory = null, $limit = 50 )
+    {
+        foreach ( self::all( $limit, $directory ) as $job )
+            if ( $job['kind'] === 'deploy' && ( $job['target'] === (string)$deployId || $job['id'] === (string)$deployId ) )
                 return $job;
         return null;
     }

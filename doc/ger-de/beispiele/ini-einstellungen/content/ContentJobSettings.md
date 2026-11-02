@@ -56,7 +56,8 @@ NowLimit=1000
 
 ## BatchSize
 
-> Knoten pro Stapel (jeder eine Transaktion).  
+> Nodes per batch (one transaction each). On SQLite (one writer at a time) the worker halves the next batch  
+> while one holds the write lock over 2 s, and grows it back to BatchSize when they are quick again.  
 
 Standard: `50`.
 

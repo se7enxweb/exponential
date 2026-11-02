@@ -13,8 +13,9 @@
  * :rollback), the administration reads it while the run goes on (read()) and folds the events into what the page shows
  * (fold(): how many of how many, the migration running now, the phase, the end).
  *
- * A line: {"time": <unix time>, "event": "<run|phase|step|step-done|end>", ...the data of the event}
- * (expMigrationRunner names the events and their data). Lines are appended whole under an exclusive lock, so a reader
+ * A line: {"time": <unix time>, "event": "<run|phase|step|step-done|host|end>", ...the data of the event}
+ * (expMigrationRunner names the events and their data; a deploy, expMigrationRemoteDeploy, adds host: the state of one
+ * remote). Lines are appended whole under an exclusive lock, so a reader
  * never takes half a line for an event: read() stops before a line without its newline and leaves it for the next read.
  * No secrets and no personal data are written: ids of migrations, states, counts and times only.
  *
@@ -24,7 +25,7 @@
 class expMigrationProgress
 {
     /** The events a progress file holds. */
-    const EVENTS = array( 'run', 'phase', 'step', 'step-done', 'end' );
+    const EVENTS = array( 'run', 'phase', 'step', 'step-done', 'host', 'end' );
 
     /** The longest line read() accepts (a line beyond it is skipped). */
     const MAX_LINE = 65536;
@@ -120,12 +121,15 @@ class expMigrationProgress
      * @param array $events in their order
      * @param array|null $state the state of earlier events, to go on from
      * @return array mode, total, done (finished steps), current (the migration running now, '' between them), phase,
-     *               failed (ids), percent (0 to 100), ended (bool), exit (null until the end)
+     *               failed (ids), percent (0 to 100), ended (bool), exit (null until the end), hosts (a deploy: remote id =>
+     *               state, phase, problems)
      */
     public static function fold( array $events, $state = null )
     {
         $state = is_array( $state ) ? $state : array( 'mode' => '', 'total' => 0, 'done' => 0, 'current' => '', 'phase' => '', 'failed' => array(),
-                                                         'percent' => 0, 'ended' => false, 'exit' => null );
+                                                         'percent' => 0, 'ended' => false, 'exit' => null, 'hosts' => array() );
+        if ( !isset( $state['hosts'] ) )
+            $state['hosts'] = array();
         foreach ( $events as $event )
         {
             switch ( isset( $event['event'] ) ? $event['event'] : '' )
@@ -149,6 +153,12 @@ class expMigrationProgress
                     $state['current'] = '';
                     if ( isset( $event['action'] ) && $event['action'] === 'failed' && isset( $event['id'] ) )
                         $state['failed'][] = (string)$event['id'];
+                    break;
+                case 'host':
+                    if ( isset( $event['remote'] ) && preg_match( '/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/', (string)$event['remote'] ) )
+                        $state['hosts'][(string)$event['remote']] = array( 'state' => isset( $event['state'] ) ? (string)$event['state'] : '',
+                                                                          'phase' => isset( $event['phase'] ) ? (string)$event['phase'] : '',
+                                                                          'problems' => isset( $event['problems'] ) ? max( 0, (int)$event['problems'] ) : 0 );
                     break;
                 case 'end':
                     $state['ended'] = true;

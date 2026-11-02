@@ -33,7 +33,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [infocollector](infocollector/README.md) | 4 | `kernel/infocollector/module.php` |
 | [layout](layout/README.md) | 1 | `kernel/layout/module.php` |
 | [mailpreferences](mailpreferences/README.md) | 7 | `kernel/mailpreferences/module.php` |
-| [migration](migration/README.md) | 8 | `kernel/migration/module.php` |
+| [migration](migration/README.md) | 12 | `kernel/migration/module.php` |
 | [moderation](moderation/README.md) | 3 | `kernel/moderation/module.php` |
 | [notification](notification/README.md) | 5 | `kernel/notification/module.php` |
 | [oauth](oauth/README.md) | 1 | `kernel/private/modules/oauth/module.php` |

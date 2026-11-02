@@ -8423,6 +8423,199 @@ $schema = array (
       ),
     ),
   ),
+  'exp_migration_deploy' =>
+  array (
+    'name' => 'exp_migration_deploy',
+    'fields' =>
+    array (
+      'deploy_id' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'finished_at' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'in_sync' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'message' =>
+      array (
+        'length' => 1000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'mode' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'next_stage' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'run_by' =>
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'stages' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'started_at' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'state' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'deploy_id',
+        ),
+      ),
+      'exp_migration_deploy_started' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'started_at',
+        ),
+      ),
+    ),
+  ),
+  'exp_migration_deploy_host' =>
+  array (
+    'name' => 'exp_migration_deploy_host',
+    'fields' =>
+    array (
+      'address' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'applied' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'caption' =>
+      array (
+        'length' => 150,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'deploy_id' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'environment' =>
+      array (
+        'length' => 50,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'message' =>
+      array (
+        'length' => 1000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'remote_id' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'stage' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'state' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'transport' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'deploy_id',
+          1 => 'remote_id',
+        ),
+      ),
+      'exp_migration_deploy_host_remote' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'remote_id',
+        ),
+      ),
+    ),
+  ),
   'exp_migration_run' =>
   array (
     'name' => 'exp_migration_run',

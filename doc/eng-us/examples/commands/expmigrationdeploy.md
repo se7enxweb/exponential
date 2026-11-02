@@ -35,6 +35,14 @@ a dry run: the preflight and the plan, nothing is sent or changed.
 ./console exp:migration:deploy --remotes=production --apply
 ./console exp:migration:deploy --remotes=all --transfer-only --apply
 ./console exp:migration:deploy --remotes=beta --only=20261102090000_add_news_class --apply --format=json
+
+Staged: --staged puts the remotes in stages by their environment ([RemoteSettings] StageOrder[]); the
+first stage is switched, then the deploy waits at a gate until --continue=<deploy id> switches the
+next one. --rollback=<deploy id> takes back every remote that applied a deploy.
+
+./console exp:migration:deploy --remotes=all --staged --apply
+./console exp:migration:deploy --continue=20261102-120000-a1b2c3 --apply
+./console exp:migration:deploy --rollback=20261102-120000-a1b2c3 --apply
 ```
 
 ## Options
@@ -50,6 +58,12 @@ a dry run: the preflight and the plan, nothing is sent or changed.
 | `--parallel` | required | How many remotes are worked on at the same time (default [RemoteSettings] Parallel) |
 | `--timeout` | required | Seconds each remote may take for one phase (default [RemoteSettings] Timeout) |
 | `--retries` | required | How often a connection failure is tried again (default [RemoteSettings] Retries) |
+| `--staged` |  | Deploy stage by stage ([RemoteSettings] StageOrder[] by environment): the first stage now, a gate before each next one (with --apply) |
+| `--continue` | required | Approve the gate of a staged deploy and deploy its next stage (the deploy id; with --apply) |
+| `--rollback` | required | Take back every remote that applied this deploy (the deploy id; with --apply) |
+| `--login` | required | Run as this user (default: [RunSettings] RunAsUser of migration.ini) |
+| `--run-id` | required | The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run |
+| `--progress` | required | Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
