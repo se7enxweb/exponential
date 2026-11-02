@@ -84494,4 +84494,19 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Njihov tekst ostaje. Slike, obrasci i poveznice na druge stranice nikad se ne uklanjaju.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statičko objavljivanje za %target nije uspjelo na %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statičko objavljivanje za %target uspjelo je na %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ovu poruku poslao je %site jer to traži cilj statičkog objavljivanja %target.</translation>
+    </message>
+</context>
 </TS>

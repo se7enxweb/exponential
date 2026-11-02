@@ -1471,6 +1471,12 @@ class eZDebug
         // collecting without output is decided per request, after the user is known (expRenderStats::checkCollectByPolicy())
         $GLOBALS['eZDebugCollect'] = false;
 
+        // A page a static publishing build fetches from this server, with its signed header (expStaticBuildSignature):
+        // no debug output, as a visitor outside DebugIPList[] sees it. It only ever turns debug output off.
+        // class_exists: a Velocity worker started before the class was added keeps the debug settings as they are.
+        if ( class_exists( 'expStaticBuildSignature' ) && expStaticBuildSignature::noDebugRequested() )
+            expStaticBuildSignature::applyNoDebug();
+
         eZDebug::setHandleType( $oldHandleType );
     }
 

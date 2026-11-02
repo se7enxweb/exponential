@@ -83441,4 +83441,19 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Teksnya kekal. Imej, borang dan pautan ke laman lain tidak sekali-kali dibuang.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Penerbitan statik %target gagal di %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Penerbitan statik %target berjaya di %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>E-mel ini dihantar oleh %site kerana sasaran penerbitan statik %target memintanya.</translation>
+    </message>
+</context>
 </TS>

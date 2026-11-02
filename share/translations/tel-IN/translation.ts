@@ -83439,4 +83439,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>వాటి పాఠ్యం అలాగే ఉంటుంది. చిత్రాలు, ఫారమ్‌లు మరియు ఇతర సైట్‌లకు లింకులు ఎప్పుడూ తీసివేయబడవు.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site లో %target యొక్క స్టాటిక్ ప్రచురణ విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site లో %target యొక్క స్టాటిక్ ప్రచురణ విజయవంతమైంది</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>స్టాటిక్ ప్రచురణ లక్ష్యం %target దీనిని కోరినందున %site ఈ మెయిల్‌ను పంపింది.</translation>
+    </message>
+</context>
 </TS>

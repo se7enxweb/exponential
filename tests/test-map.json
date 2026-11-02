@@ -2855,6 +2855,22 @@
       "tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php",
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php"
     ],
+    "kernel/classes/migration/expmigrationremote*.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployIntegrationTest.php"
+    ],
+    "kernel/private/classes/commands/expmigrationdeploy.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php"
+    ],
+    "kernel/private/classes/commands/expmigrationremote*.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/fixtures/remotedeploy/*": [
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRemoteDeployIntegrationTest.php"
+    ],
     "kernel/private/classes/commands/expmigrationgenerate.php": [
       "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
       "tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php"

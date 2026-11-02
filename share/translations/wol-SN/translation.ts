@@ -83441,4 +83441,19 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Seen mbind dina des. Nataal yi, formileer yi ak lëkkalekaay yi jëm ci yeneen dalu web duñu leen mukk far.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Siiwal bu dëgër bu %target antuwul ci %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Siiwal bu dëgër bu %target antu na ci %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site moo yónne bataaxal bii ndax jublu siiwal bu dëgër %target da koy laaj.</translation>
+    </message>
+</context>
 </TS>

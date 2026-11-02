@@ -83471,4 +83471,19 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Hul teks bly. Beelde, vorms en skakels na ander werwe word nooit verwyder nie.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiese publisering van %target het op %site misluk</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiese publisering van %target het op %site geslaag</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Hierdie e-pos is deur %site gestuur omdat die statiese publiseringsteiken %target daarvoor vra.</translation>
+    </message>
+</context>
 </TS>

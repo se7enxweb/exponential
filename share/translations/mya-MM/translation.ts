@@ -83441,4 +83441,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>၎င်းတို့၏ စာသား ကျန်ရှိသည်။ ပုံများ၊ ဖောင်များနှင့် အခြားဆိုက်များသို့ လင့်ခ်များကို ဘယ်တော့မှ မဖယ်ရှားပါ။</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site တွင် %target ၏ static ထုတ်ဝေမှု မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site တွင် %target ၏ static ထုတ်ဝေမှု အောင်မြင်ပါသည်</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>static ထုတ်ဝေမှု ပစ်မှတ် %target က တောင်းဆိုသောကြောင့် %site မှ ဤမေးလ်ကို ပို့ပါသည်။</translation>
+    </message>
+</context>
 </TS>

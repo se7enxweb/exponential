@@ -83441,4 +83441,19 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <translation>Lur text resta. Maletgs, formulars e colliaziuns ad autras websites na vegnan mai allontanads.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicaziun statica da %target n'è betg reussida sin %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicaziun statica da %target è reussida sin %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Quest e-mail è vegnì tramess da %site perquai che la destinaziun da publicaziun statica %target al dumonda.</translation>
+    </message>
+</context>
 </TS>

@@ -83439,4 +83439,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>তাদের লেখা থেকে যায়। ছবি, ফর্ম এবং অন্য সাইটের লিংক কখনো সরানো হয় না।</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site-এ %target-এর স্ট্যাটিক প্রকাশনা ব্যর্থ হয়েছে</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site-এ %target-এর স্ট্যাটিক প্রকাশনা সফল হয়েছে</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>স্ট্যাটিক প্রকাশনার লক্ষ্য %target এটি চায় বলে %site এই মেইলটি পাঠিয়েছে।</translation>
+    </message>
+</context>
 </TS>

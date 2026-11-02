@@ -83441,4 +83441,19 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Teirra tekstur verður verandi. Myndir, formar og leinkjur til aðrar heimasíður verða ongantíð strikaðar.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk útgáva av %target miseydnaðist á %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk útgáva av %target eydnaðist á %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Hesin teldupostur varð sendur av %site, tí at málið fyri statiska útgávu %target biður um hann.</translation>
+    </message>
+</context>
 </TS>

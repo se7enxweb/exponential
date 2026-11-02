@@ -83441,4 +83441,19 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>Mae eu testun yn aros. Ni chaiff delweddau, ffurflenni na dolenni i wefannau eraill byth eu tynnu.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Methodd cyhoeddi statig %target ar %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Llwyddodd cyhoeddi statig %target ar %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Anfonwyd y neges hon gan %site oherwydd bod y targed cyhoeddi statig %target yn gofyn amdani.</translation>
+    </message>
+</context>
 </TS>

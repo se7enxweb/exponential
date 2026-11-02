@@ -83471,4 +83471,19 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>El seu text es manté. Les imatges, els formularis i els enllaços a altres llocs no es treuen mai.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publicació estàtica de %target ha fallat a %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publicació estàtica de %target ha anat bé a %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site ha enviat aquest correu perquè el destí de publicació estàtica %target ho demana.</translation>
+    </message>
+</context>
 </TS>

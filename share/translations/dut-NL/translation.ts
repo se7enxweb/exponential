@@ -84666,4 +84666,19 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Hun tekst blijft staan. Afbeeldingen, formulieren en links naar andere sites worden nooit verwijderd.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisch publiceren van %target op %site is mislukt</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisch publiceren van %target op %site is gelukt</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Deze mail is verstuurd door %site omdat het doel voor statisch publiceren %target erom vraagt.</translation>
+    </message>
+</context>
 </TS>

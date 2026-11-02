@@ -83439,4 +83439,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>அவற்றின் உரை நிலைக்கும். படங்கள், படிவங்கள் மற்றும் பிற தளங்களுக்கான இணைப்புகள் ஒருபோதும் நீக்கப்படாது.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site இல் %target இன் நிலையான வெளியீடு தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site இல் %target இன் நிலையான வெளியீடு வெற்றியடைந்தது</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>நிலையான வெளியீட்டு இலக்கு %target இதைக் கேட்பதால் %site இந்த அஞ்சலை அனுப்பியது.</translation>
+    </message>
+</context>
 </TS>

@@ -84881,4 +84881,19 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Leur texte est conservé. Les images, les formulaires et les liens vers d'autres sites ne sont jamais retirés.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La publication statique de %target a échoué sur %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La publication statique de %target a réussi sur %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ce courriel a été envoyé par %site parce que la cible de publication statique %target le demande.</translation>
+    </message>
+</context>
 </TS>

@@ -36,10 +36,12 @@ screens under Setup > Static publishing. The GitHub setup is added to it when it
    site's front page, follows only the links the site itself writes, and leaves out module views such as the search,
    the login and the editing screens. A target can fetch from an internal address (`CrawlURL`) instead of the site's
    public `SiteURL`.
-2. **Take out what must not be public.** Every page loses its debug output, form tokens (`ezxform_token` fields and
-   the `csrf-token` tags), session ids in addresses and Content Security Policy nonces.
-3. **Refuse what cannot be cleaned.** A page whose response set a session cookie, or that still carries debug output
-   or a form token, is refused. The build then fails and the target's folder is not changed. Pages that only exist
+2. **Take out what must not be public.** Every request carries a signed `X-Exp-Static-Build` header, so this server
+   renders the page without debug output even when its own address is in `DebugIPList[]` (see "Debug output and the
+   build" in the troubleshooting guide). Every page loses its form tokens (`ezxform_token` fields and the
+   `csrf-token` tags), session ids in addresses and Content Security Policy nonces.
+3. **Refuse what cannot be cleaned.** A page whose response set a session cookie, that still comes with debug output
+   (it is not stripped: the server did not take the signature), or that still carries a form token, is refused. The build then fails and the target's folder is not changed. Pages that only exist
    with a query string (`/blog?page=2`) and paths that cannot be a file name on every system are skipped and
    reported.
 4. **Collect the files.** Every file the pages and their style sheets name is copied: the designs' style sheets,
@@ -71,8 +73,8 @@ found no broken link or file among 18,534, at the root and below `/<repository>/
 | A file (`/var/site/storage/images/...`, `/design/...`, `/extension/x/design/...`) | its path in the copy, relative or below the base path; the query of a file (`?x=1`) is kept |
 | A fragment (`#top`), `mailto:`, `tel:`, `data:`, another host | unchanged |
 | A page or file the copy does not hold (the search, the login, a form's action, a page with a query, a download the site refused) | the live site: `LiveURL`, by default `https://` and the host of the siteaccess's `SiteURL` (not when that host is `localhost` or a loopback address such as `127.0.0.1`, as on a build server or in CI: then the link stays as it is and the build warns) |
-| A link (`<a href>`) to a page of the site's host the copy does not hold, with `OutsideLinks=unlink` | its text; a `class` the link had stays on a `<span>` around it. A navigation `<link>` (`alternate`, `search`, `next` ...) there is dropped. Images, style sheets, scripts and forms are never taken out (forms follow `Forms`) |
-| A link into an administration siteaccess (`/admin/...`), with `AdminLinks=unlink` | its text, as above; on the site's own host or `LiveURL`. The administration siteaccesses are the ones the target check knows: a login is required, an administration design, or a name such as `admin` or `editor`; their path is `/<name>`, and the path of their `SiteURL` on one of the site's hosts |
+| A link (`<a href>`) to a page of the site's host the copy does not hold, with `OutsideLinks=unlink` | a placeholder link: the same `<a>` with its classes and content but without `href`, marked `aria-disabled="true"` and the class `exp-static-unavailable`, greyed out by the build's `exp-static.css` (linked only by the pages that need it; opacity only, so the theme's menu, footer, breadcrumb and button styles still apply). A navigation `<link>` (`alternate`, `search`, `next` ...) there is dropped. Images, style sheets, scripts and forms are never taken out (forms follow `Forms`) |
+| A link into an administration siteaccess (`/admin/...`), with `AdminLinks=unlink` | a placeholder link, as above; on the site's own host or `LiveURL`. The administration siteaccesses are the ones the target check knows: a login is required, an administration design, or a name such as `admin` or `editor`; their path is `/<name>`, and the path of their `SiteURL` on one of the site's hosts |
 | Canonical, `hreflang` alternates, `og:url`, `og:image`, `twitter:image`, the addresses in structured data (`application/ld+json`) | absolute, below `PublicURL`, when it is set |
 
 Relative links work wherever the folder is served, at `/` and below any path. `Links=base-path` writes every link
@@ -113,7 +115,7 @@ All settings are in `staticcache.ini`, next to the static cache's `[CacheSetting
 | `CustomDomain` | empty | Written to `CNAME`; with it the site is served at the root of the domain |
 | `CrawlURL` | empty | Fetch the pages from this address instead of `SiteURL` |
 | `LiveURL` | empty | Where links to what the copy does not hold go; empty: `https://` and the host of `SiteURL`, unless that host is `localhost` or a loopback address (then they stay as they are) |
-| `OutsideLinks` | `keep` | `keep` (links to pages the copy does not hold go to the live site) or `unlink` (they become their text) |
+| `OutsideLinks` | `keep` | `keep` (links to pages the copy does not hold go to the live site) or `unlink` (they stay in place as greyed-out placeholder links without an address) |
 | `AdminLinks` | `keep` | `keep` or `unlink`, for links into an administration siteaccess |
 | `MaxPages` | `10000` | The most pages one build crawls (1 to 20000) |
 | `MaxDepth` | empty | How many links away from the front page the crawl goes; empty: `[CacheSettings] MaxCacheDepth` |
@@ -256,8 +258,9 @@ A target can publish itself: `Triggers[]=publish` (pages marked stale on content
 
 - Builds run as the anonymous user: the crawl sends no cookie, and the database checks (which storage images may be
   copied) are made for the anonymous user.
-- Pages with debug output, form tokens or session ids are cleaned; a page that cannot be cleaned, or whose response
-  set a session cookie, stops the build before anything is written to the target's folder.
+- The build's requests are signed so the server sends no debug output; a page that still comes with debug output
+  stops the build. Form tokens and session ids are cleaned; a page that cannot be cleaned, or whose response set a
+  session cookie, stops the build before anything is written to the target's folder.
 - Storage images are copied only for the published version of content the anonymous user may read. Images of drafts
   (`storage/images-versioned`) and files in `storage/original` are never copied from the storage; a download goes into
   the copy only when a page links it and the site hands it to an anonymous visitor.

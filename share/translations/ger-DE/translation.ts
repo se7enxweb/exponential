@@ -90411,4 +90411,19 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Ihr Text bleibt stehen. Bilder, Formulare und Links auf andere Websites werden nie entfernt.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisches Veröffentlichen von %target auf %site fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisches Veröffentlichen von %target auf %site erfolgreich</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Diese E-Mail wurde von %site gesendet, weil das Ziel des statischen Veröffentlichens %target darum bittet.</translation>
+    </message>
+</context>
 </TS>

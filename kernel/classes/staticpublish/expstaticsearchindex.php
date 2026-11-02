@@ -89,8 +89,8 @@ class expStaticSearchIndex
             $teaser = self::text( $m[3] );
         // the main content when the page marks it, else the body
         $body = preg_match( '#<main\b[^>]*>(.*?)</main\s*>#is', $html, $m ) ? $m[1] : ( preg_match( '#<body\b[^>]*>(.*)</body\s*>#is', $html, $m ) ? $m[1] : $html );
-        $body = preg_replace( '#<(script|style|noscript|template|svg|nav|form)\b[^>]*>.*?</\1\s*>#is', ' ', $body );
-        $text = self::text( preg_replace( '#<[^>]+>#', ' ', (string)$body ) );
+        $body = expStaticPostProcessor::checked( preg_replace( '#<(script|style|noscript|template|svg|nav|form)\b[^>]*>.*?</\1\s*>#is', ' ', $body ), 'search index' );
+        $text = self::text( expStaticPostProcessor::checked( preg_replace( '#<[^>]+>#', ' ', (string)$body ), 'search index' ) );
         if ( $title === '' && $text === '' )
             return null;
         if ( $teaser === '' )
@@ -102,7 +102,7 @@ class expStaticSearchIndex
     public static function text( $html )
     {
         $text = html_entity_decode( strip_tags( (string)$html ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
-        return trim( (string)preg_replace( '/\s+/u', ' ', $text ) );
+        return trim( expStaticPostProcessor::checked( preg_replace( '/\s+/u', ' ', $text ), 'search index' ) );
     }
 
     /** @return string at most $length characters, cut at a word */

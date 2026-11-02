@@ -83441,4 +83441,19 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Haien testua geratzen da. Irudiak, inprimakiak eta beste guneetarako estekak ez dira inoiz kentzen.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target helburuaren argitalpen estatikoak huts egin du %site gunean</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target helburuaren argitalpen estatikoa ondo atera da %site gunean</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site guneak bidali du mezu hau, %target argitalpen estatikoaren helburuak eskatzen duelako.</translation>
+    </message>
+</context>
 </TS>

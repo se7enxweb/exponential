@@ -27,9 +27,12 @@
  *
  * Links a visitor of the copy cannot use can be taken out instead (outside_links and admin_links set to unlink, the
  * target settings OutsideLinks and AdminLinks): a link (<a href>) to a page of the site's own host that the export
- * does not hold, or into an administration siteaccess (admin_paths), becomes its text; a class the link had stays on
- * a <span> around the text, so the styling holds. A <link> of navigation (alternate, search, home, next ...) to such
- * a page is dropped. Images, style sheets, scripts, forms (the degrader's work, the target setting Forms) and links
+ * does not hold, or into an administration siteaccess (admin_paths), becomes a placeholder link: the same <a> with
+ * its attributes and content, without href (and target, rel, download, ping, hreflang, referrerpolicy and event
+ * handlers), with aria-disabled="true" and the class exp-static-unavailable. Every rule of the theme on a, nav a,
+ * .menu a still applies, so the menu, footer and breadcrumbs keep their look; the style sheet unavailable_css (written
+ * by the build, unavailableStyleSheet()) is linked in the <head> of a page that has one and only dims it. A <link> of
+ * navigation (alternate, search, home, next ...) to such a page is dropped. Images, style sheets, scripts, forms (the degrader's work, the target setting Forms) and links
  * to other hosts are never taken out.
  *
  * The specification: doc/eng-us/specifications/6.0/static-publishing-build-format.md.
@@ -63,6 +66,15 @@ class expStaticLinkRewriter
     /** <link rel> values that only point somewhere: such a <link> can be dropped without changing the page */
     const NAVIGATION_RELS = '#^\s*(?:(?:alternate|search|home|index|start|help|author|license|next|prev|previous|first|last|up|shortlink|edit|edituri|bookmark|archives|contents|sitemap)\s*)+$#i';
 
+    /** The class of a placeholder link (a link taken out) */
+    const UNAVAILABLE_CLASS = 'exp-static-unavailable';
+
+    /** The style sheet of placeholder links, at the root of the build */
+    const UNAVAILABLE_CSS = 'exp-static.css';
+
+    /** Attributes a placeholder link loses: they only mean something on a link that goes somewhere */
+    const PLACEHOLDER_DROPPED = '#^(?:href|target|rel|download|ping|hreflang|referrerpolicy|aria-disabled|on[a-z]+)$#i';
+
     private $origins = array();
 
     /** origin key => the site path on that origin, when it is not site_path (a site at the root of its SiteURL host) */
@@ -71,8 +83,11 @@ class expStaticLinkRewriter
     private $adminLinks = 'keep';
     private $adminPaths = array();
 
-    /** The open <a> of the markup being rewritten: '' none or kept, 'span' taken out with a <span>, 'drop' taken out */
-    private $anchor = '';
+    /** The style sheet of placeholder links (relative to the build's root), '' none */
+    private $unavailableCss = '';
+
+    /** Placeholder links in the document being rewritten */
+    private $documentUnavailable = 0;
 
     /** Set by rewriteAttributes() when the tag it rewrote is taken out */
     private $unlinked = false;
@@ -91,7 +106,7 @@ class expStaticLinkRewriter
     /** output path => source path, of the files found since reset() */
     private $foundFiles = array();
 
-    private $counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0 );
+    private $counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0, 'unavailable' => 0 );
 
     /**
      * @param array $options origins (array of scheme://host[:port]), site_path ('' or /site), mode (relative or
@@ -104,7 +119,9 @@ class expStaticLinkRewriter
      *        does not hold), admin_links (keep or unlink: a link into an administration siteaccess), admin_paths
      *        (array of host paths of the administration siteaccesses: /admin), origin_site_paths (origin => the site
      *        path on that origin when it differs from site_path: the site served at the root of its SiteURL host while
-     *        the build fetches it below /site; an address there is the site's below either path)
+     *        the build fetches it below /site; an address there is the site's below either path), unavailable_css (the
+     *        style sheet of placeholder links relative to the export's root, linked in the <head> of a page that has one:
+     *        UNAVAILABLE_CSS; empty: none)
      */
     public function __construct( array $options = array() )
     {
@@ -130,6 +147,7 @@ class expStaticLinkRewriter
         $this->fileExtensions = array_flip( explode( ',', self::FILE_EXTENSIONS ) );
         $this->outsideLinks = isset( $options['outside_links'] ) && $options['outside_links'] === 'unlink' ? 'unlink' : 'keep';
         $this->adminLinks = isset( $options['admin_links'] ) && $options['admin_links'] === 'unlink' ? 'unlink' : 'keep';
+        $this->unavailableCss = isset( $options['unavailable_css'] ) ? ltrim( (string)$options['unavailable_css'], '/' ) : '';
         foreach ( isset( $options['admin_paths'] ) ? (array)$options['admin_paths'] : array() as $path )
         {
             $path = self::trimSlash( (string)$path );
@@ -195,7 +213,7 @@ class expStaticLinkRewriter
     {
         $this->foundPages = array();
         $this->foundFiles = array();
-        $this->counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0 );
+        $this->counts = array( 'rewritten' => 0, 'live' => 0, 'external' => 0, 'removed_outside' => 0, 'removed_admin' => 0, 'unavailable' => 0 );
     }
 
     /** @return array page path => true, of the internal page links found since reset() */
@@ -212,11 +230,26 @@ class expStaticLinkRewriter
 
     /**
      * @return array rewritten, live (sent to the live site), external (left alone), removed_outside (links to pages
-     *         the export does not hold, taken out), removed_admin (links into the administration, taken out)
+     *         the export does not hold, taken out), removed_admin (links into the administration, taken out),
+     *         unavailable (the <a> of those that became placeholder links)
      */
     public function counts()
     {
         return $this->counts;
+    }
+
+    /**
+     * The style sheet of placeholder links: dimmed and inert, everything else (color, font, spacing, borders) from the
+     * theme. No color of its own; a hover or focus rule of the theme does not light it up.
+     *
+     * @return string
+     */
+    public static function unavailableStyleSheet()
+    {
+        $c = '.' . self::UNAVAILABLE_CLASS;
+        return "/* Static publishing: links this copy cannot follow (OutsideLinks, AdminLinks = unlink) */\n"
+             . "$c{opacity:.5;cursor:not-allowed;text-decoration:none;pointer-events:none}\n"
+             . "$c:hover,$c:focus,$c:active,$c:visited,:hover>$c,:focus-within>$c{opacity:.5!important;text-decoration:none!important}\n";
     }
 
     /**
@@ -532,7 +565,7 @@ class expStaticLinkRewriter
         $rewriter = $this;
         $publicUrl = $this->publicUrl;
         $liveUrl = $this->liveUrl;
-        return (string)preg_replace_callback( '#([?&;][^=&;\#]*=)(https?(?:%3A|:)(?:%2F|/){2}[^&;\#]*)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile, $publicUrl, $liveUrl )
+        return expStaticPostProcessor::checked( preg_replace_callback( '#([?&;][^=&;\#]*=)(https?(?:%3A|:)(?:%2F|/){2}[^&;\#]*)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile, $publicUrl, $liveUrl )
         {
             $inner = urldecode( $m[2] );
             $c = $rewriter->classify( $inner, $documentPath );
@@ -543,7 +576,7 @@ class expStaticLinkRewriter
             if ( !preg_match( '#^https?://#i', $new ) || $new === $inner )
                 return $m[0];
             return $m[1] . rawurlencode( $new );
-        }, $url );
+        }, $url ), 'rewriteEmbedded' );
     }
 
     /** The address on the live site, or the address unchanged when no live site is known. */
@@ -631,19 +664,19 @@ class expStaticLinkRewriter
     public function rewriteCss( $css, $documentPath, $fromFile )
     {
         $rewriter = $this;
-        $css = preg_replace_callback( '#url\(\s*(["\']?)([^"\')]*)\1\s*\)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        $css = expStaticPostProcessor::checked( preg_replace_callback( '#url\(\s*(["\']?)([^"\')]*)\1\s*\)#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             $value = trim( $m[2] );
             if ( $value === '' || stripos( $value, 'data:' ) === 0 )
                 return $m[0];
             $new = $rewriter->rewriteUrl( $value, $documentPath, $fromFile );
             return $new === $value ? $m[0] : 'url(' . $m[1] . $new . $m[1] . ')';
-        }, (string)$css );
-        return (string)preg_replace_callback( '#(@import\s+)(["\'])([^"\']+)\2#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        }, (string)$css ), 'rewriteCss' );
+        return expStaticPostProcessor::checked( preg_replace_callback( '#(@import\s+)(["\'])([^"\']+)\2#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             $new = $rewriter->rewriteUrl( $m[3], $documentPath, $fromFile );
             return $m[1] . $m[2] . $new . $m[2];
-        }, (string)$css );
+        }, (string)$css ), 'rewriteCss' );
     }
 
     /**
@@ -659,7 +692,7 @@ class expStaticLinkRewriter
     public function rewriteHtml( $html, $documentPath, $fromFile )
     {
         $html = (string)$html;
-        $this->anchor = '';
+        $this->documentUnavailable = 0;
         $parts = preg_split( '#(<!--.*?-->|<script\b[^>]*>.*?</script\s*>|<style\b[^>]*>.*?</style\s*>)#is', $html, -1, PREG_SPLIT_DELIM_CAPTURE );
         if ( $parts === false )
             return $html;
@@ -690,7 +723,20 @@ class expStaticLinkRewriter
             else
                 $out .= $this->rewriteTags( $open, $documentPath, $fromFile ) . $rest;
         }
+        if ( $this->documentUnavailable > 0 && $this->unavailableCss !== '' )
+            $out = $this->linkUnavailableStyleSheet( $out, $fromFile );
         return $out;
+    }
+
+    /** The style sheet of placeholder links linked at the end of the <head> (after the theme's), once. */
+    private function linkUnavailableStyleSheet( $html, $fromFile )
+    {
+        $href = htmlspecialchars( $this->link( self::encodePath( $this->unavailableCss ), $fromFile ), ENT_QUOTES, 'UTF-8' );
+        $tag = '<link rel="stylesheet" href="' . $href . '" />';
+        if ( strpos( $html, $tag ) !== false )
+            return $html;
+        $new = preg_replace( '#</head\s*>#i', $tag . "\n" . '$0', $html, 1 );
+        return is_string( $new ) ? $new : $html;
     }
 
     /**
@@ -706,7 +752,7 @@ class expStaticLinkRewriter
     private function rewriteJsonLd( $json, $documentPath, $fromFile )
     {
         $rewriter = $this;
-        return (string)preg_replace_callback( '#"(https?:(?:\\\\?/){2}[^"\s<>]+)"#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        return expStaticPostProcessor::checked( preg_replace_callback( '#"(https?:(?:\\\\?/){2}[^"\s<>]+)"#i', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             $escaped = strpos( $m[1], '\\/' ) !== false;
             $url = str_replace( '\\/', '/', $m[1] );
@@ -714,17 +760,17 @@ class expStaticLinkRewriter
             if ( $new === $url )
                 return $m[0];
             return '"' . ( $escaped ? str_replace( '/', '\\/', $new ) : $new ) . '"';
-        }, (string)$json );
+        }, (string)$json ), 'rewriteJsonLd' );
     }
 
     /** The tags of a piece of markup with no script, style or comment in it. */
     private function rewriteTags( $markup, $documentPath, $fromFile )
     {
         $rewriter = $this;
-        return (string)preg_replace_callback( '#<(/?)([a-zA-Z][a-zA-Z0-9:-]*)(\s[^>]*?)?(/?)>#s', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
+        return expStaticPostProcessor::checked( preg_replace_callback( '#<(/?)([a-zA-Z][a-zA-Z0-9:-]*)(\s[^>]*?)?(/?)>#s', function ( $m ) use ( $rewriter, $documentPath, $fromFile )
         {
             return $rewriter->rewriteTag( $m, $documentPath, $fromFile );
-        }, $markup );
+        }, $markup ), 'rewriteTags' );
     }
 
     /**
@@ -739,20 +785,8 @@ class expStaticLinkRewriter
     public function rewriteTag( array $m, $documentPath, $fromFile )
     {
         $tag = strtolower( $m[2] );
-        if ( $m[1] === '/' )
-        {
-            if ( $tag !== 'a' )
-                return $m[0];
-            $anchor = $this->anchor;
-            $this->anchor = '';
-            return $anchor === 'span' ? '</span>' : ( $anchor === 'drop' ? '' : $m[0] );
-        }
-        // an <a> ends the one before it, as a browser reads it
-        $before = $tag === 'a' && $this->anchor === 'span' ? '</span>' : '';
-        if ( $tag === 'a' )
-            $this->anchor = '';
-        if ( !isset( $m[3] ) || $m[3] === '' )
-            return $before . $m[0];
+        if ( $m[1] === '/' || !isset( $m[3] ) || $m[3] === '' )
+            return $m[0];
         $this->unlinked = false;
         $attributes = $this->rewriteAttributes( $tag, $m[3], $documentPath, $fromFile );
         if ( $this->unlinked )
@@ -760,15 +794,47 @@ class expStaticLinkRewriter
             $this->unlinked = false;
             if ( $tag === 'link' )
                 return '';
-            if ( preg_match( '#\sclass\s*=\s*("[^"]*"|\'[^\']*\'|[^\s"\'>]+)#i', $m[3], $class ) )
-            {
-                $this->anchor = 'span';
-                return $before . '<span class=' . ( $class[1][0] === '"' || $class[1][0] === "'" ? $class[1] : '"' . $class[1] . '"' ) . '>';
-            }
-            $this->anchor = 'drop';
-            return $before;
+            $this->counts['unavailable']++;
+            $this->documentUnavailable++;
+            return '<' . $m[2] . self::placeholderAttributes( $attributes ) . '>';
         }
-        return $before . ( $attributes === $m[3] ? $m[0] : '<' . $m[2] . $attributes . $m[4] . '>' );
+        return $attributes === $m[3] ? $m[0] : '<' . $m[2] . $attributes . $m[4] . '>';
+    }
+
+    /**
+     * The attributes of a placeholder link: those of the link without the ones that only mean something on a link
+     * that goes somewhere (PLACEHOLDER_DROPPED), the class UNAVAILABLE_CLASS added to its classes, aria-disabled.
+     *
+     * @param string $attributes the attribute text, with its leading white space (href already gone)
+     * @return string
+     */
+    public static function placeholderAttributes( $attributes )
+    {
+        preg_match_all( '#(\s+)([a-zA-Z_:][-a-zA-Z0-9_:.]*)(?:(\s*=\s*)(?:"([^"]*)"|\'([^\']*)\'|([^\s"\'>]+)))?#', (string)$attributes, $all, PREG_SET_ORDER );
+        $out = '';
+        $classed = false;
+        foreach ( $all as $a )
+        {
+            if ( preg_match( self::PLACEHOLDER_DROPPED, $a[2] ) )
+                continue;
+            if ( strtolower( $a[2] ) !== 'class' || $classed )
+            {
+                $out .= $a[0];
+                continue;
+            }
+            $value = '';
+            foreach ( array( 4, 5, 6 ) as $i )
+                if ( isset( $a[$i] ) && $a[$i] !== '' )
+                    $value = $a[$i];
+            $classes = preg_split( '#\s+#', trim( html_entity_decode( $value, ENT_QUOTES | ENT_HTML5, 'UTF-8' ) ), -1, PREG_SPLIT_NO_EMPTY );
+            if ( !in_array( self::UNAVAILABLE_CLASS, $classes, true ) )
+                $classes[] = self::UNAVAILABLE_CLASS;
+            $out .= $a[1] . $a[2] . '="' . htmlspecialchars( implode( ' ', $classes ), ENT_QUOTES, 'UTF-8' ) . '"';
+            $classed = true;
+        }
+        if ( !$classed )
+            $out .= ' class="' . self::UNAVAILABLE_CLASS . '"';
+        return $out . ' aria-disabled="true"';
     }
 
     /**
@@ -817,8 +883,11 @@ class expStaticLinkRewriter
                 $new = $this->rewriteUrl( $value, $documentPath, $fromFile, $absolute, true );
                 if ( $new === null )
                 {
+                    // taken out: the href goes, the other attributes are rewritten as usual (placeholderAttributes())
                     $this->unlinked = true;
-                    return $attributes;
+                    $out .= substr( $attributes, $position, $a[0][1] - $position );
+                    $position = $a[0][1] + strlen( $a[0][0] );
+                    continue;
                 }
             }
             else if ( in_array( $name, self::URL_ATTRIBUTES, true ) )
@@ -838,7 +907,7 @@ class expStaticLinkRewriter
                   . htmlspecialchars( $new, ENT_QUOTES, 'UTF-8' ) . $quote;
             $position = $end;
         }
-        return $out === '' ? $attributes : $out . substr( $attributes, $position );
+        return $position === 0 ? $attributes : $out . substr( $attributes, $position );
     }
 
     /** @return string the raw value of a matched attribute, whichever quoting it had */

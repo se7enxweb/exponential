@@ -83441,4 +83441,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>تِہندِ متن روزان. تصویرہٕ، فارم تہٕ بیین سایٹن ہٕندۍ لِنک چھِنہٕ زانٛہہ ہٹاونہٕ یِوان.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site پؠٹھ %target ہُند سٹیٹک شایع کرُن گوو ناکام</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site پؠٹھ %target ہُند سٹیٹک شایع کرُن گوو کامیاب</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>یہ میل سوز %site، کیازِ سٹیٹک شایع کرنُک ہدف %target چھُ امہِ ہِنٛز مانگ کران۔</translation>
+    </message>
+</context>
 </TS>

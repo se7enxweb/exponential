@@ -84848,4 +84848,19 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Il loro testo resta. Immagini, moduli e link ad altri siti non vengono mai rimossi.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>La pubblicazione statica di %target non è riuscita su %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>La pubblicazione statica di %target è riuscita su %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Questa e-mail è stata inviata da %site perché la destinazione di pubblicazione statica %target la richiede.</translation>
+    </message>
+</context>
 </TS>

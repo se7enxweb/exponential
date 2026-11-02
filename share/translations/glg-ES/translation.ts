@@ -83441,4 +83441,19 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <translation>O seu texto mantense. As imaxes, os formularios e as ligazóns a outros sitios nunca se quitan.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>A publicación estática de %target fallou en %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>A publicación estática de %target completouse en %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site enviou este correo porque o destino de publicación estática %target o solicita.</translation>
+    </message>
+</context>
 </TS>

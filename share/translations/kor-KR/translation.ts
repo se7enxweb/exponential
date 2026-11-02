@@ -83471,4 +83471,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>링크의 텍스트는 남습니다. 이미지, 양식, 다른 사이트로 가는 링크는 제거되지 않습니다.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site에서 %target의 정적 게시에 실패했습니다</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site에서 %target의 정적 게시에 성공했습니다</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>정적 게시 대상 %target이(가) 요청하므로 %site에서 이 메일을 보냈습니다.</translation>
+    </message>
+</context>
 </TS>

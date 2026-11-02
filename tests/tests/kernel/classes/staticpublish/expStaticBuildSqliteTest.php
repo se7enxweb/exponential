@@ -5,7 +5,8 @@
  * function instead of a web server, and an installation folder with design files and storage images. No server,
  * no network, no installation's database.
  *
- *  SB-01 a full build: the pages, debug output and tokens taken out, links rewritten, the files named by the pages
+ *  SB-01 a full build, its requests signed (no debug output from the fake server): the pages, tokens taken out, links
+ *        rewritten, the files named by the pages
  *        (local, through the cluster file handler, and requested), style sheets rewritten, the storage images of
  *        content the anonymous user may read (and not the others), the extras and the manifest with node data
  *  SB-02 the link check over the build finds no broken link or file at the root and below /repo/
@@ -19,6 +20,8 @@
  *        check finds nothing broken; the build is an audit event
  *  SB-09 a SiteURL that only answers on the build computer (localhost, 127.0.0.1) is not the live site: links to
  *        what the copy does not hold stay as they are, with a warning; never https://127.0.0.1
+ *  SB-10 a page that comes with debug output (the server did not take the build's signed X-Exp-Static-Build header,
+ *        or sent a debug header) is refused, not stripped: the build fails and the folder is not changed
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -53,6 +56,7 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
                                             'is_internal_charset' => false, 'builtin_encoding' => false, 'connect_retries' => 1,
                                             'use_persistent_connection' => false, 'show_errors' => false ) );
         $this->runnerBegin( $this->db );
+        expStaticBuildSignature::setForTest( self::SIGNATURE_KEY );
         foreach ( array( 'schema.sql', 'cleandata.sql' ) as $sql )
             $this->assertNotFalse( $this->db->insertFile( self::runnerRoot() . '/kernel/sql/sqlite', $sql, false ), "kernel/sql/sqlite/$sql loads" );
         // the installation's files are in a folder of the test, not the current directory, so they are read as files
@@ -65,6 +69,7 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         if ( $this->db )
             $this->db->close();
         $this->runnerEnd();
+        expStaticBuildSignature::setForTest();
     }
 
     /** The installation's files and the storage images of two objects: the root folder (Standard) and Users (Users). */
@@ -108,9 +113,15 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
                                        . "<nav><a href=\"/\">Home</a> <a href=\"/about-us\">About</a> <a href=\"/news\">News</a> <a href=\"/content/search\">Search</a>"
                                        . " <a href=\"/user/login\">Log in</a></nav>\n<main>$body</main>"
                                        . "<form method=\"post\" action=\"/content/action\"><input type=\"hidden\" name=\"ezxform_token\" value=\"t0k\" /></form>\n"
-                                       . "<div id=\"debug\"><h2><a href=\"#debug-end\">Exp Debug</a></h2><div id=\"debug-details\"><a href=\"/visual/templateview/x\">t</a></div></div>"
-                                       . "<a id=\"debug-end\"></a><script>document.body.classList.add('exp-debug-bar');</script></body></html>" );
+                                       . self::DEBUG_REPORT . "</body></html>" );
     }
+
+    /** The debug report the fake server adds to a page for a request without a valid static build signature */
+    const DEBUG_REPORT = "<div id=\"debug\"><h2><a href=\"#debug-end\">Exp Debug</a></h2><div id=\"debug-details\"><a href=\"/visual/templateview/x\">t</a></div></div>"
+                       . "<a id=\"debug-end\"></a><script>document.body.classList.add('exp-debug-bar');</script>";
+
+    /** The key the fake server and the build sign with */
+    const SIGNATURE_KEY = 'static-build-test-key';
 
     private function site()
     {
@@ -132,21 +143,31 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
     private function fetcher()
     {
         $test = $this;
-        return function ( $url, $headOnly = false ) use ( $test )
+        return function ( $url, $headOnly = false, array $headers = array() ) use ( $test )
         {
-            return $test->answer( $url );
+            return $test->answer( $url, $headers );
         };
     }
 
-    /** Public for the closure. */
-    public function answer( $url )
+    /**
+     * Public for the closure. The fake server is one whose own address is in DebugIPList[]: every page comes with
+     * the debug report, unless the request carries a valid X-Exp-Static-Build signature.
+     */
+    public function answer( $url, array $headers = array() )
     {
         $path = (string)parse_url( $url, PHP_URL_PATH );
         $this->requested[] = $path;
         if ( parse_url( $url, PHP_URL_QUERY ) === null && isset( $this->site[$path] ) )
-            return $this->site[$path] + array( 'cookies' => array() );
-        $notFound = self::page( 'Not found', '<h1>Not found</h1><a href="/">Go home</a>' );
-        return array( 'status' => 404 ) + $notFound;
+            $response = $this->site[$path] + array( 'cookies' => array() );
+        else
+            $response = array( 'status' => 404 ) + self::page( 'Not found', '<h1>Not found</h1><a href="/">Go home</a>' );
+        $signed = false;
+        foreach ( $headers as $line )
+            if ( preg_match( '/^' . preg_quote( expStaticBuildSignature::HEADER, '/' ) . ':\s*(\S+)$/i', $line, $m ) )
+                $signed = expStaticBuildSignature::problem( $m[1], null, self::SIGNATURE_KEY ) === '';
+        if ( $signed )
+            $response['body'] = str_replace( self::DEBUG_REPORT, '', $response['body'] );
+        return $response;
     }
 
     private function build( array $settings = array(), array $options = array() )
@@ -156,7 +177,7 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $build = new expStaticBuild( $target, $options + array(
             'root' => $this->runnerDir() . '/root', 'var_dir' => 'var/test', 'work_dir' => $this->runnerDir() . '/out', 'db' => $this->db,
             'fetcher' => $this->fetcher(), 'base_path' => '', 'context' => self::CONTEXT, 'run_id' => '20261101-120000-abcdef',
-            'max_site_bytes' => 1000000, 'max_file_bytes' => 100000, 'audit' => false,
+            'max_site_bytes' => 1000000, 'max_file_bytes' => 100000, 'audit' => false, 'sign_requests' => true,
         ) );
         return array( $build->run(), $build->targetDirectory() );
     }
@@ -227,7 +248,7 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'file', $manifest->get( 'var/test/storage/images/websites/1-6-eng-GB/websites_small.png' )['kind'], 'named by a page' );
         $this->assertSame( hash_file( 'sha256', "$dir/news/index.html" ), $manifest->get( 'news/index.html' )['sha256'] );
         $this->assertSame( 'extra', $manifest->get( '404.html' )['kind'] );
-        $this->assertGreaterThan( 0, $report['counts']['stripped']['debug'] );
+        $this->assertArrayNotHasKey( 'debug', $report['counts']['stripped'], 'the signed requests came without debug output: nothing to strip' );
         $this->assertGreaterThan( 0, $report['counts']['stripped']['tokens'] );
         $this->assertNotContains( '/content/search', $this->requested, 'module views are not crawled' );
         $this->assertNotContains( '/design/s/stylesheets/site.css', $this->requested, 'files of the installation are copied, not requested' );
@@ -280,6 +301,30 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'the response set the session cookie eZSESSID' ), $report['refused'][0]['reasons'] );
         $this->assertSame( $before, file_get_contents( "$dir/.static-publish/manifest.json" ), 'the folder is not changed' );
         $this->assertDirectoryDoesNotExist( dirname( $dir ) . '/.staging/test-site-20261101-140000-abcdef', 'the staging folder is removed' );
+    }
+
+    /** SB-10 */
+    public function testDebugOutputFailsTheBuild()
+    {
+        $this->site();
+        list( $first, $dir ) = $this->build();
+        $this->assertSame( 0, $first['exit'], json_encode( $first['errors'] ) );
+        $before = file_get_contents( "$dir/.static-publish/manifest.json" );
+        // a server that does not take the signature (unsigned requests here): the debug report is not stripped
+        list( $report, $dir ) = $this->build( array(), array( 'run_id' => '20261101-160000-abcdef', 'sign_requests' => false ) );
+        $this->assertSame( 1, $report['exit'] );
+        $this->assertFalse( $report['applied'] );
+        $this->assertStringContainsString( 'came with debug output', $report['errors'][0] );
+        $this->assertStringContainsString( 'X-Exp-Static-Build', $report['errors'][0] );
+        $this->assertStringStartsWith( 'debug output from the server (<div id="debug"', $report['refused'][0]['reasons'][0] );
+        $this->assertSame( $before, file_get_contents( "$dir/.static-publish/manifest.json" ), 'the folder is not changed' );
+
+        // a debug header alone is debug output too
+        $this->site['/news'] += array( 'headers' => array( 'content-type', 'x-debug-token' ) );
+        list( $report, $dir ) = $this->build( array(), array( 'run_id' => '20261101-170000-abcdef' ) );
+        $this->assertSame( 1, $report['exit'] );
+        $this->assertSame( '/news', $report['refused'][0]['path'] );
+        $this->assertSame( array( 'debug output from the server (the header x-debug-token)' ), $report['refused'][0]['reasons'] );
     }
 
     /** SB-05 */

@@ -1,0 +1,74 @@
+{
+    "command:expmigrationdeploy": {
+        "en": "Deploy this installation's migrations to one or many remotes at once, in sync: preflight and verify on all, then switch all, or take all back",
+        "de": "Überträgt die Migrationen dieser Installation auf eine oder viele Gegenstellen gleichzeitig und im Gleichstand: Preflight und Prüfung auf allen, dann alle umschalten oder alle zurücksetzen"
+    },
+    "command:expmigrationdeploy --remotes": {
+        "en": "The remotes: ids or group names of [RemoteSettings] RemoteList[] in migration.ini, or all (a comma list or repeated)",
+        "de": "Die Gegenstellen: IDs oder Gruppennamen aus [RemoteSettings] RemoteList[] in migration.ini, oder all (durch Kommas getrennt oder wiederholt)"
+    },
+    "command:expmigrationdeploy --transfer-only": {
+        "en": "Send and verify the migration files, but do not run them (with --apply; the only mode for FTP remotes)",
+        "de": "Die Migrationsdateien senden und prüfen, aber nicht ausführen (mit --apply; der einzige Modus für FTP-Gegenstellen)"
+    },
+    "command:expmigrationdeploy --parallel": {
+        "en": "How many remotes are worked on at the same time (default [RemoteSettings] Parallel)",
+        "de": "An wie vielen Gegenstellen gleichzeitig gearbeitet wird (Vorgabe [RemoteSettings] Parallel)"
+    },
+    "command:expmigrationdeploy --timeout": {
+        "en": "Seconds each remote may take for one phase (default [RemoteSettings] Timeout)",
+        "de": "Sekunden, die jede Gegenstelle für eine Phase brauchen darf (Vorgabe [RemoteSettings] Timeout)"
+    },
+    "command:expmigrationdeploy --retries": {
+        "en": "How often a connection failure is tried again (default [RemoteSettings] Retries)",
+        "de": "Wie oft ein Verbindungsfehler erneut versucht wird (Vorgabe [RemoteSettings] Retries)"
+    },
+    "command:expmigrationremotelist": {
+        "en": "The remotes migrations can be deployed to (migration.ini [RemoteSettings]), with their groups and any problem of their settings; connects to none",
+        "de": "Die Gegenstellen, auf die Migrationen übertragen werden können (migration.ini [RemoteSettings]), mit ihren Gruppen und jedem Problem ihrer Einstellungen; verbindet sich mit keiner"
+    },
+    "command:expmigrationremotelist --remotes": {
+        "en": "The remotes: ids or group names of [RemoteSettings] RemoteList[] in migration.ini, or all (a comma list or repeated)",
+        "de": "Die Gegenstellen: IDs oder Gruppennamen aus [RemoteSettings] RemoteList[] in migration.ini, oder all (durch Kommas getrennt oder wiederholt)"
+    },
+    "command:expmigrationremotestatus": {
+        "en": "The migration state of remotes, read in parallel (reachable, version, lock, done, pending, failed), whether they are in sync, and the latest deploys",
+        "de": "Der Migrationsstand der Gegenstellen, parallel gelesen (erreichbar, Version, Sperre, ausgeführt, ausstehend, gescheitert), ob sie im Gleichstand sind, und die letzten Deploys"
+    },
+    "command:expmigrationremotestatus --remotes": {
+        "en": "The remotes: ids or group names of [RemoteSettings] RemoteList[] in migration.ini, or all (a comma list or repeated)",
+        "de": "Die Gegenstellen: IDs oder Gruppennamen aus [RemoteSettings] RemoteList[] in migration.ini, oder all (durch Kommas getrennt oder wiederholt)"
+    },
+    "command:expmigrationremotestatus --parallel": {
+        "en": "How many remotes are worked on at the same time (default [RemoteSettings] Parallel)",
+        "de": "An wie vielen Gegenstellen gleichzeitig gearbeitet wird (Vorgabe [RemoteSettings] Parallel)"
+    },
+    "command:expmigrationremotestatus --timeout": {
+        "en": "Seconds each remote may take for one phase (default [RemoteSettings] Timeout)",
+        "de": "Sekunden, die jede Gegenstelle für eine Phase brauchen darf (Vorgabe [RemoteSettings] Timeout)"
+    },
+    "command:expmigrationremotestatus --history": {
+        "en": "How many of the latest deploys to list (default 10, 0 for none)",
+        "de": "Wie viele der letzten Deploys aufgelistet werden (Vorgabe 10, 0 für keine)"
+    },
+    "ini:settings/migration.ini [RemoteSettings] RemoteList": {
+        "en": "Remotes: other installations this one deploys its migrations to (./console exp:migration:deploy --remotes=...),\nall at once and in sync. One [Remote_<id>] section for each id of RemoteList[]; set them in settings/override.\nA remote section never holds a secret: Credential names one of the secret store (Setup > Secrets) or an\nenvironment variable (env:VARIABLE). Guide: doc/eng-us/guides/migrations-remote-deploy.md\n\n[Remote_production1]\nEnvironment=production           alpha, dev, stage, beta, production, post, arch ... (the label reports show)\nTransport=rsync                  ssh (scp), sftp, rsync (over ssh), ftp, ftps (files only), local (this host)\nHost=node1.example.com\nPort=22\nUser=deploy\nPath=/var/www/site               the installation's root on the remote\nPhp=php                          the PHP CLI there\nCredential=sshkey:deploy_production1\nGroups[]=production              --remotes=production selects every remote of the group\nHostKeyFingerprint=SHA256:...    optional: the host key must have it (else it is learnt on first contact)",
+        "de": "Gegenstellen: andere Installationen, auf die diese ihre Migrationen überträgt (./console exp:migration:deploy --remotes=...),\nalle gleichzeitig und im Gleichstand. Ein Abschnitt [Remote_<id>] je ID von RemoteList[]; setzen Sie sie in settings/override.\nEin Gegenstellen-Abschnitt enthält nie ein Geheimnis: Credential nennt eines des Geheimnisspeichers (Setup > Secrets) oder eine\nUmgebungsvariable (env:VARIABLE). Anleitung: doc/ger-de/anleitungen/migrationen-remote-deploy.md\n\n[Remote_production1]\nEnvironment=production           alpha, dev, stage, beta, production, post, arch ... (die Bezeichnung in den Berichten)\nTransport=rsync                  ssh (scp), sftp, rsync (über ssh), ftp, ftps (nur Dateien), local (dieser Host)\nHost=node1.example.com\nPort=22\nUser=deploy\nPath=/var/www/site               das Wurzelverzeichnis der Installation auf der Gegenstelle\nPhp=php                          das PHP-CLI dort\nCredential=sshkey:deploy_production1\nGroups[]=production              --remotes=production wählt jede Gegenstelle der Gruppe\nHostKeyFingerprint=SHA256:...    optional: der Host-Schlüssel muss ihn haben (sonst wird er beim ersten Kontakt gelernt)"
+    },
+    "ini:settings/migration.ini [RemoteSettings] Parallel": {
+        "en": "How many remotes are worked on at the same time. The switch (every remote applies) always runs on all at once.",
+        "de": "An wie vielen Gegenstellen gleichzeitig gearbeitet wird. Das Umschalten (jede Gegenstelle führt aus) läuft immer auf allen gleichzeitig."
+    },
+    "ini:settings/migration.ini [RemoteSettings] Timeout": {
+        "en": "Seconds one remote may take for one phase (preflight, transfer, verify, switch, rollback).",
+        "de": "Sekunden, die eine Gegenstelle für eine Phase brauchen darf (Preflight, Übertragung, Prüfung, Umschalten, Rollback)."
+    },
+    "ini:settings/migration.ini [RemoteSettings] Retries": {
+        "en": "How often a connection failure (ssh exit 255, a timeout, a dropped FTP transfer) is tried again in the preflight,\nthe transfer and the verification. A run on a remote is never started twice.",
+        "de": "Wie oft ein Verbindungsfehler (ssh-Exit 255, eine Zeitüberschreitung, eine abgebrochene FTP-Übertragung) im Preflight,\nbei der Übertragung und der Prüfung erneut versucht wird. Ein Lauf auf einer Gegenstelle wird nie zweimal gestartet."
+    },
+    "ini:settings/migration.ini [RemoteSettings] StoreReports": {
+        "en": "enabled: every deploy that sends or runs something keeps its report in var/<site>/migration/deploy/reports/.",
+        "de": "enabled: Jeder Deploy, der etwas sendet oder ausführt, behält seinen Bericht in var/<site>/migration/deploy/reports/."
+    }
+}

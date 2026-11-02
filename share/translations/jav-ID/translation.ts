@@ -83449,4 +83449,19 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <translation>Teksé tetep ana. Gambar, formulir lan pranala menyang situs liya ora tau dibusak.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publikasi statis %target gagal ing %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publikasi statis %target kasil ing %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Email iki dikirim dening %site amarga target publikasi statis %target njaluk.</translation>
+    </message>
+</context>
 </TS>

@@ -83471,4 +83471,19 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>It-test tagħhom jibqa'. Stampi, formoli u links għal siti oħra qatt ma jitneħħew.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Il-pubblikazzjoni statika ta' %target falliet fuq %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Il-pubblikazzjoni statika ta' %target irnexxiet fuq %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Din l-email intbagħtet minn %site għax il-mira tal-pubblikazzjoni statika %target titlobha.</translation>
+    </message>
+</context>
 </TS>

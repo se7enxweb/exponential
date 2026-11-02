@@ -83441,4 +83441,19 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <translation>Magpabilin ang ilang teksto. Ang mga hulagway, porma ug link sa ubang site dili gyud kuhaon.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Napakyas ang static publishing sa %target sa %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Malampuson ang static publishing sa %target sa %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Gipadala kini nga mail sa %site tungod kay gipangayo kini sa static publishing target nga %target.</translation>
+    </message>
+</context>
 </TS>

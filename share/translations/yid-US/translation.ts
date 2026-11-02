@@ -83441,4 +83441,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>זייער טעקסט בלײַבט. בילדער, פֿאָרמען און לינקען צו אַנדערע זײַטלעך ווערן קיינמאָל נישט אַוועקגענומען.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>סטאַטישע פּובליקירונג פֿון %target אויף %site איז דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>סטאַטישע פּובליקירונג פֿון %target אויף %site איז געלונגען</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>דער בריוו איז געשיקט געוואָרן פֿון %site ווײַל דער ציל פֿון סטאַטישער פּובליקירונג %target בעט עס.</translation>
+    </message>
+</context>
 </TS>

@@ -83439,4 +83439,19 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Nivîsa wan dimîne. Wêne, form û girêdanên ber bi malperên din tu carî nayên rakirin.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Weşandina statîk a %target li %site bi ser neket</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Weşandina statîk a %target li %site bi ser ket</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ev e-name ji aliyê %site ve hate şandin ji ber ku armanca weşandina statîk %target wê dixwaze.</translation>
+    </message>
+</context>
 </TS>

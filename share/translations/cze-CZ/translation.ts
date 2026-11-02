@@ -84727,4 +84727,19 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <translation>Jejich text zůstane. Obrázky, formuláře a odkazy na jiné weby se nikdy neodstraňují.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statické publikování cíle %target na %site selhalo</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statické publikování cíle %target na %site proběhlo úspěšně</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tento e-mail odeslal web %site, protože o něj žádá cíl statického publikování %target.</translation>
+    </message>
+</context>
 </TS>

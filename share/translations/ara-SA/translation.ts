@@ -83471,4 +83471,19 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>يبقى نصها. لا تُزال الصور والنماذج والروابط إلى المواقع الأخرى أبدًا.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>فشل النشر الثابت لـ %target على %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>نجح النشر الثابت لـ %target على %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>أرسل %site هذه الرسالة لأن هدف النشر الثابت %target يطلبها.</translation>
+    </message>
+</context>
 </TS>

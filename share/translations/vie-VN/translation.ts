@@ -83441,4 +83441,19 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Văn bản của chúng vẫn giữ nguyên. Hình ảnh, biểu mẫu và liên kết đến trang khác không bao giờ bị gỡ.</translation>
     </message>
 </context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Xuất bản tĩnh %target trên %site thất bại</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Xuất bản tĩnh %target trên %site thành công</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Thư này được %site gửi vì đích xuất bản tĩnh %target yêu cầu.</translation>
+    </message>
+</context>
 </TS>
