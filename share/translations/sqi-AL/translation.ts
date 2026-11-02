@@ -68787,6 +68787,42 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown nga %matching politika (%total gjithsej)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ngarkohet kur hapet.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, roli, kufizim</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Kërko te politikat</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Ngarko më shumë</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduli/funksioni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Të gjitha rolet (%count politika)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Asnjë politikë nuk përputhet.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown nga %matched politika</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nuk ka përgjigje</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksti i tyre mbetet. Figurat, formularët dhe lidhjet drejt sajteve të tjera nuk hiqen kurrë.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publikimi statik i %target dështoi në %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publikimi statik i %target pati sukses në %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ky email u dërgua nga %site sepse e kërkon objektivi i publikimit statik %target.</translation>
     </message>
 </context>
 </TS>

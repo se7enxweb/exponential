@@ -68787,6 +68787,42 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown minn %matching politika (%total b'kollox)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Jitgħabba meta jinfetaħ.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rwol, limitazzjoni</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Fittex il-politiki</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Agħmel aktar</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulu/funzjoni</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ir-rwoli kollha (%count politiki)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>L-ebda politika ma taqbel.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown minn %matched politiki</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ebda tweġiba</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>It-test tagħhom jibqa'. Stampi, formoli u links għal siti oħra qatt ma jitneħħew.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Il-pubblikazzjoni statika ta' %target falliet fuq %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Il-pubblikazzjoni statika ta' %target irnexxiet fuq %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Din l-email intbagħtet minn %site għax il-mira tal-pubblikazzjoni statika %target titlobha.</translation>
     </message>
 </context>
 </TS>

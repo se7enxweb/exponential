@@ -68603,6 +68603,42 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown z %matching polityk (łącznie %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ładowane po otwarciu.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rola, ograniczenie</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Przeszukaj polityki</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Załaduj więcej</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduł/funkcja</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Wszystkie role (%count polityk)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Żadna polityka nie pasuje.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown z %matched polityk</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Brak odpowiedzi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -84615,6 +84651,21 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ich tekst pozostaje. Obrazy, formularze i linki do innych witryn nigdy nie są usuwane.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statyczna publikacja %target w %site nie powiodła się</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statyczna publikacja %target w %site powiodła się</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tę wiadomość wysłał %site, ponieważ prosi o nią cel publikacji statycznej %target.</translation>
     </message>
 </context>
 </TS>

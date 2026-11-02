@@ -71742,6 +71742,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Alle Funktionen</translation>
     </message>
     <message>
+        <source>Loaded when opened.</source>
+        <translation>Wird beim Aufklappen geladen.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>Modul/Funktion, Rolle, Einschränkung</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Richtlinien durchsuchen</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Weitere laden</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/Funktion</translation>
+    </message>
+    <message>
         <source>Limitations</source>
         <translation>Einschränkungen</translation>
     </message>
@@ -71760,6 +71780,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown von %matching Richtlinien (%total insgesamt)</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle Rollen (%count Richtlinien)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Keine Richtlinie passt.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown von %matched Richtlinien</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Keine Antwort</translation>
     </message>
 </context>
 <context>
@@ -90373,6 +90409,21 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ihr Text bleibt stehen. Bilder, Formulare und Links auf andere Websites werden nie entfernt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisches Veröffentlichen von %target auf %site fehlgeschlagen</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisches Veröffentlichen von %target auf %site erfolgreich</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Diese E-Mail wurde von %site gesendet, weil das Ziel des statischen Veröffentlichens %target darum bittet.</translation>
     </message>
 </context>
 </TS>

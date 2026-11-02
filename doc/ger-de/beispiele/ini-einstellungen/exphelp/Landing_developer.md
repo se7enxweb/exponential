@@ -31,7 +31,7 @@ StartPage=help/develop-with-git.md
 
 ## InfoPages
 
-Standard: eine Liste mit 6: `help/migrations/README.md`, `guides/migrations-tutorial.md`, `help/migrations/recipes/add-a-database-table.md`, `help/migrations/recipes/testing-migrations.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/team-workflow-with-git.md`.
+Standard: eine Liste mit 8: `help/migrations/README.md`, `guides/migrations-tutorial.md`, `help/migrations/recipes/add-a-database-table.md`, `help/migrations/recipes/testing-migrations.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/team-workflow-with-git.md`, `guides/static-publishing-ci-and-github-actions.md`, `guides/host-static-sites-on-github-pages.md`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -45,6 +45,8 @@ InfoPages[]=help/migrations/recipes/add-a-database-table.md
 InfoPages[]=help/migrations/recipes/testing-migrations.md
 InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
 InfoPages[]=help/migrations/recipes/team-workflow-with-git.md
+InfoPages[]=guides/static-publishing-ci-and-github-actions.md
+InfoPages[]=guides/host-static-sites-on-github-pages.md
 */ ?>
 ```
 

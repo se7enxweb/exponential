@@ -68848,6 +68848,42 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown %matching kamachiykunamanta (llapanpi %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Kkichakuptinqa chaskin.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rurana, kamachiy</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Kamachikunata maskay</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Astawan chaskiy</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mudulu/ruray</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Llapa rurana (%count kamachi)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Mana kamachichu tupan.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched kamachikunamanta %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Mana kutichiychu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Qillqankuna qhepakun. Siq'ikuna, formulariokuna, hukkunaq sitionkunaman t'inkikunapas manapuni qhichusqachu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target nisqap static willakuyninqa %site nisqapi mana atikurqanchu</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target nisqap static willakuyninqa %site nisqapi atikurqan</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Kay correota %site kacharqan, static willakuypa munaynin %target mañakusqanrayku.</translation>
     </message>
 </context>
 </TS>

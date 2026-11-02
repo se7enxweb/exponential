@@ -68846,6 +68846,42 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown n'ime %matching iwu (%total na ngụkọta)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>A na-ebudata ya mgbe e meghere ya.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ọrụ, mmachi</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Chọọ amụma ndị ahụ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Bubata ọzọ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/ọrụ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ọrụ niile (amụma %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Enweghị amụma kwekọrọ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown n'ime amụma %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Enweghị azịza</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,21 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ederede ha na-anọgide. A naghị ewepụ foto, fọm na njikọ na saịtị ndị ọzọ ma ọlị.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Mbipụta static nke %target emeghị nke ọma na %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Mbipụta static nke %target gara nke ọma na %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site zitere ozi a n'ihi na ebumnuche mbipụta static %target na-arịọ ya.</translation>
     </message>
 </context>
 </TS>

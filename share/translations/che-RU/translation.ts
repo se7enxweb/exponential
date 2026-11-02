@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown %matching политикех (дерриге %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Схьайелча чу чуйоьллу.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, роль, чекхдаккхар</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Политикаш лаха</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Кхин а чуяккха</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модуль/функци</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ерриге роли (%count политика)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Политика цакаре хилла.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched политикех %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Жоп дац</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Церан текст йисина йуьсу. Суьрташ, формаш а кхечу сайташка хьажорагаш а цкъа а дӀа ца йоху.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site тӀехь %target статикин публикаци ца хилла</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site тӀехь %target статикин публикаци кхиамца чекхъяьлла</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ХӀара кехат %site-с хьажийна, статикин публикацин Ӏалашо %target цуьнах хьоьхуш дела.</translation>
     </message>
 </context>
 </TS>

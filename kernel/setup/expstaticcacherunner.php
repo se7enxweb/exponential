@@ -81,7 +81,7 @@ class expStaticCacheRunner
 
     /**
      * Options handed to the crawler as they are: base_url (fetch from this
-     * address instead of SiteURL), base_path, site_origins, timeout, fetcher.
+     * address instead of SiteURL), base_path, site_origins, timeout, fetcher, headers.
      *
      * @var array
      */
@@ -104,14 +104,14 @@ class expStaticCacheRunner
     /**
      * @param callable $emit Progress sink.
      * @param array $options siteaccess (string or array), max_pages, max_depth, purge, paths; for export mode
-     *                       export (the callable), base_url, base_path, site_origins, timeout, fetcher.
+     *                       export (the callable), base_url, base_path, site_origins, timeout, fetcher, headers.
      */
     public function __construct( $emit, array $options = array() )
     {
         $this->emit = $emit;
         if ( isset( $options['export'] ) && is_callable( $options['export'] ) )
             $this->export = $options['export'];
-        foreach ( array( 'base_url', 'base_path', 'site_origins', 'timeout', 'fetcher' ) as $name )
+        foreach ( array( 'base_url', 'base_path', 'site_origins', 'timeout', 'fetcher', 'headers' ) as $name )
             if ( isset( $options[$name] ) )
                 $this->crawlOptions[$name] = $options[$name];
 

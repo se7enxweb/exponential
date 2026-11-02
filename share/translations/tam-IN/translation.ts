@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching கொள்கைகளில் %shown (மொத்தம் %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>திறக்கும்போது ஏற்றப்படும்.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, பங்கு, வரம்பு</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>கொள்கைகளைத் தேடு</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>மேலும் ஏற்று</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>தொகுதிக்கூறு/செயல்கூறு</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>அனைத்துப் பங்குகளும் (%count கொள்கைகள்)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>பொருந்தும் கொள்கை எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched கொள்கைகளில் %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>பதில் இல்லை</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>அவற்றின் உரை நிலைக்கும். படங்கள், படிவங்கள் மற்றும் பிற தளங்களுக்கான இணைப்புகள் ஒருபோதும் நீக்கப்படாது.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site இல் %target இன் நிலையான வெளியீடு தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site இல் %target இன் நிலையான வெளியீடு வெற்றியடைந்தது</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>நிலையான வெளியீட்டு இலக்கு %target இதைக் கேட்பதால் %site இந்த அஞ்சலை அனுப்பியது.</translation>
     </message>
 </context>
 </TS>

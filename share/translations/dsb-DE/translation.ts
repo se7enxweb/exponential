@@ -68787,6 +68787,42 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown z %matching pšawidłow (dogromady %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Zacytujo se pśi wócynjenju.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rola, wobgranicowanje</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Pšawidła pytaś</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Wěcej zacytaś</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Wšykne role (%count pšawidłow)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Žedne pšawidło njewotpowědujo.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown z %matched pšawidłow</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Žedna wótegrono</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jich tekst wóstanjo. Wobraze, formulary a wótkazy na druge sedła se nigda njewótwónoźuju.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiske wózjawjenje %target na %site njejo se raźiło</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiske wózjawjenje %target na %site jo se raźiło</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Toś tu e-mailku jo %site pósłał, dokulaž zaměr statiskego wózjawjenja %target wó nju pšosy.</translation>
     </message>
 </context>
 </TS>

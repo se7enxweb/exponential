@@ -67,32 +67,55 @@ class expStaticPostProcessor
             $html = substr( $html, 0, $start ) . substr( $html, $end );
             $removed['debug']++;
         }
-        $html = preg_replace( '#<!--\s*(START|STOP): including template:.*?-->\n?#s', '', $html, -1, $count );
+        $html = self::checked( preg_replace( '#<!--\s*(START|STOP): including template:.*?-->\n?#s', '', $html, -1, $count ), 'strip' );
         $removed['template_comments'] += $count;
 
         $field = preg_quote( self::TOKEN_FIELD, '#' );
-        $html = preg_replace( '#\s*<input\b(?=[^>]*\bname=(["\'])' . $field . '\1)[^>]*>#i', '', $html, -1, $count );
+        $html = self::checked( preg_replace( '#\s*<input\b(?=[^>]*\bname=(["\'])' . $field . '\1)[^>]*>#i', '', $html, -1, $count ), 'strip' );
         $removed['tokens'] += $count;
-        $html = preg_replace( '#\s*<meta\b(?=[^>]*\bname=(["\'])csrf-(param|token|token-x)\1)[^>]*>#i', '', $html, -1, $count );
+        $html = self::checked( preg_replace( '#\s*<meta\b(?=[^>]*\bname=(["\'])csrf-(param|token|token-x)\1)[^>]*>#i', '', $html, -1, $count ), 'strip' );
         $removed['tokens'] += $count;
-        $html = preg_replace( '#\s*<span\b(?=[^>]*\bid=(["\'])' . $field . '[a-z_]*_js\1)[^>]*>\s*</span>#i', '', $html, -1, $count );
+        $html = self::checked( preg_replace( '#\s*<span\b(?=[^>]*\bid=(["\'])' . $field . '[a-z_]*_js\1)[^>]*>\s*</span>#i', '', $html, -1, $count ), 'strip' );
         $removed['tokens'] += $count;
 
         foreach ( $sessionNames as $name )
         {
             $name = preg_quote( (string)$name, '#' );
-            $html = preg_replace( '#([?&]|&amp;)' . $name . '[A-Za-z0-9_]*=[A-Za-z0-9,-]+(&amp;|&)?#', '$1', $html, -1, $count );
+            $html = self::checked( preg_replace( '#([?&]|&amp;)' . $name . '[A-Za-z0-9_]*=[A-Za-z0-9,-]+(&amp;|&)?#', '$1', $html, -1, $count ), 'strip' );
             $removed['session_ids'] += $count;
         }
         // an address left with a bare ? or & at its end
-        $html = preg_replace( '#(href|src|action)=(["\'])([^"\']*?)(\?|&amp;|&)\2#i', '$1=$2$3$2', $html );
+        $html = self::checked( preg_replace( '#(href|src|action)=(["\'])([^"\']*?)(\?|&amp;|&)\2#i', '$1=$2$3$2', $html ), 'strip' );
 
-        $html = preg_replace( '#\s*<meta\b(?=[^>]*http-equiv=(["\'])Content-Security-Policy\1)(?=[^>]*nonce-)[^>]*>#i', '', $html, -1, $count );
+        $html = self::checked( preg_replace( '#\s*<meta\b(?=[^>]*http-equiv=(["\'])Content-Security-Policy\1)(?=[^>]*nonce-)[^>]*>#i', '', $html, -1, $count ), 'strip' );
         $removed['csp'] += $count;
-        $html = preg_replace( '#\s+nonce=(["\'])[^"\']*\1#i', '', $html, -1, $count );
+        $html = self::checked( preg_replace( '#\s+nonce=(["\'])[^"\']*\1#i', '', $html, -1, $count ), 'strip' );
         $removed['nonces'] += $count;
 
         return array( 'html' => (string)$html, 'removed' => $removed );
+    }
+
+    /** The marks of debug output in a page: the debug report, the debug bar, the template debug comments */
+    const DEBUG_PATTERN = '#<div\s+id=(["\'])debug\1|id=(["\'])debug-end\2|<!--\s*START: including template|id=(["\'])exp-debug-summary\3|<!--/?exp-debug-bar-->|data-exp-debug-bar=#i';
+
+    /**
+     * The debug output a page came with, before strip(): what of it is in the html, and the response headers whose
+     * name speaks of debugging (X-Debug-Token, X-Exp-Debug-...). A build that signed its requests
+     * (expStaticBuildSignature) gets none from this server; when it still does, the page is refused, not stripped.
+     *
+     * @param string $html the page as the server sent it
+     * @param string[] $headerNames the names of the response headers
+     * @return string[] empty when there is none
+     */
+    public static function debugOutput( $html, array $headerNames = array() )
+    {
+        $found = array();
+        if ( preg_match( self::DEBUG_PATTERN, (string)$html, $m ) )
+            $found[] = trim( $m[0] );
+        foreach ( $headerNames as $name )
+            if ( stripos( (string)$name, 'debug' ) !== false )
+                $found[] = 'the header ' . $name;
+        return $found;
     }
 
     /**
@@ -114,7 +137,7 @@ class expStaticPostProcessor
                     $reasons[] = 'the response set the session cookie ' . $cookie;
                     break;
                 }
-        if ( preg_match( '#<div\s+id=(["\'])debug\1|id=(["\'])debug-end\2|<!--\s*START: including template|id=(["\'])exp-debug-summary\3|<!--/?exp-debug-bar-->|data-exp-debug-bar=#i', $html ) )
+        if ( preg_match( self::DEBUG_PATTERN, $html ) )
             $reasons[] = 'debug output';
         $field = preg_quote( self::TOKEN_FIELD, '#' );
         if ( preg_match( '#<input\b[^>]*\bname=(["\'])' . $field . '\1|<meta\b[^>]*\bname=(["\'])csrf-token|\bid=(["\'])' . $field . '[a-z_]*_js\3[^>]*\btitle=#i', $html ) )
@@ -149,16 +172,32 @@ class expStaticPostProcessor
     {
         $html = str_replace( "\x00", '', (string)$html );
         $kept = array();
-        $text = preg_replace_callback( '#<(pre|textarea|script|style)\b[^>]*>.*?</\1\s*>|<!--\[if.*?<!\[endif\]-->#is', function ( $m ) use ( &$kept )
+        $text = self::checked( preg_replace_callback( '#<(pre|textarea|script|style)\b[^>]*>.*?</\1\s*>|<!--\[if.*?<!\[endif\]-->#is', function ( $m ) use ( &$kept )
         {
             $kept[] = $m[0];
             return "\x00" . ( count( $kept ) - 1 ) . "\x00";
-        }, $html );
-        if ( $text === null )
-            return $html;
-        $text = (string)preg_replace( '#<!--.*?-->#s', '', $text );
-        $text = (string)preg_replace_callback( '#\s{2,}#', function ( $m ) { return strpos( $m[0], "\n" ) !== false ? "\n" : ' '; }, $text );
-        return (string)preg_replace_callback( "#\x00(\d+)\x00#", function ( $m ) use ( $kept ) { return $kept[(int)$m[1]]; }, $text );
+        }, $html ), 'minify' );
+        $text = self::checked( preg_replace( '#<!--.*?-->#s', '', $text ), 'minify' );
+        $text = self::checked( preg_replace_callback( '#\s{2,}#', function ( $m ) { return strpos( $m[0], "\n" ) !== false ? "\n" : ' '; }, $text ), 'minify' );
+        // the placeholder's NUL is written as a PCRE escape: a NUL byte inside a pattern is an error before PHP 8.2
+        return self::checked( preg_replace_callback( '#\x00(\d+)\x00#', function ( $m ) use ( $kept ) { return $kept[(int)$m[1]]; }, $text ), 'minify' );
+    }
+
+    /**
+     * The result of a preg_replace*() call, or an exception when PCRE failed (null: a pattern the PCRE of this PHP
+     * rejects, the backtrack or recursion limit, malformed UTF-8). A failure must stop the build, never turn a page
+     * into an empty file.
+     *
+     * @param string|null $result
+     * @param string $what the step, for the message
+     * @return string
+     * @throws RuntimeException
+     */
+    public static function checked( $result, $what )
+    {
+        if ( $result === null )
+            throw new RuntimeException( 'Static publishing: the step ' . $what . ' failed in PCRE: ' . preg_last_error_msg() );
+        return (string)$result;
     }
 
     /**
@@ -227,7 +266,7 @@ class expStaticPostProcessor
         $basePath = '/' . trim( (string)$basePath, '/' ) . '/';
         $basePath = $basePath === '//' ? '/' : $basePath;
         $publicUrl = rtrim( (string)$publicUrl, '/' ) . '/';
-        return (string)preg_replace_callback( '#(["\'(=,\s])([^"\'()\s<>,]*?)([^"\'()\s<>,/]+\.(?:css|js))(?=[?\#"\')\s>,])#i',
+        return self::checked( preg_replace_callback( '#(["\'(=,\s])([^"\'()\s<>,]*?)([^"\'()\s<>,/]+\.(?:css|js))(?=[?\#"\')\s>,])#i',
             function ( $m ) use ( $basenames, $map, $fromDir, $basePath, $publicUrl )
             {
                 if ( !isset( $basenames[$m[3]] ) )
@@ -249,7 +288,7 @@ class expStaticPostProcessor
                 if ( !isset( $map[$path] ) )
                     return $m[0];
                 return $m[1] . $m[2] . basename( (string)$map[$path] );
-            }, (string)$text );
+            }, (string)$text ), 'renameReferences' );
     }
 
     /**

@@ -68787,6 +68787,42 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown od %matching pravilnikov (skupaj %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Naloži se ob odprtju.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funkcija, vloga, omejitev</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Išči po politikah</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Naloži več</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Vse vloge (%count politik)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nobena politika se ne ujema.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown od %matched politik</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ni odgovora</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Njihovo besedilo ostane. Slike, obrazci in povezave na druga spletišča se nikoli ne odstranijo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statična objava cilja %target na %site ni uspela</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statična objava cilja %target na %site je uspela</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>To sporočilo je poslal %site, ker ga zahteva cilj statične objave %target.</translation>
     </message>
 </context>
 </TS>

@@ -68846,6 +68846,42 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown kati ya sera %matching (%total kwa jumla)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Hupakiwa inapofunguliwa.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>moduli/kitendakazi, jukumu, kikomo</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Tafuta sera</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Pakia zaidi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moduli/kitendakazi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Majukumu yote (sera %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Hakuna sera inayolingana.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>Sera %shown kati ya %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Hakuna jibu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,21 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Maandishi yake yanabaki. Picha, fomu na viungo vya tovuti nyingine haviondolewi kamwe.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Uchapishaji tuli wa %target umeshindwa kwenye %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Uchapishaji tuli wa %target umefanikiwa kwenye %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Barua pepe hii imetumwa na %site kwa sababu lengo la uchapishaji tuli %target linaiomba.</translation>
     </message>
 </context>
 </TS>

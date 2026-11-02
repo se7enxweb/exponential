@@ -68848,6 +68848,42 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown kuri %matching y'amategeko (%total yose hamwe)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Biraremerwa igihe bifunguwe.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, uruhara, ikibujijwe</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Rondera amategeko</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Rema ibindi</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modile/igikorwa</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Uruhara rwose (amategeko %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nta tegeko rihuye.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown muri %matched y'amategeko</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nta gisubizo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Inyandiko yayo irasigara. Amashusho, amafishi n'amahuza aja ku zindi mbuga ntibikurwaho na rimwe.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Gusohora guhamye kwa %target kwanse kuri %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Gusohora guhamye kwa %target kwagenze neza kuri %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Iyi mesaje yarungitswe na %site kubera ko intumbero yo gusohora guhamye %target iyisaba.</translation>
     </message>
 </context>
 </TS>

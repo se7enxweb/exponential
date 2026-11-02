@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching में से %shown नीतियाँ (कुल %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>खोलने पर लोड होता है।</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, भूमिका, सीमा</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>नीतियाँ खोजें</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>और लोड करें</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>मॉड्यूल/फ़ंक्शन</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>सभी भूमिकाएँ (%count नीतियाँ)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>कोई नीति मेल नहीं खाती।</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched नीतियों में से %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>कोई उत्तर नहीं</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>उनका पाठ बना रहता है। चित्र, फ़ॉर्म और दूसरी साइटों के लिंक कभी नहीं हटाए जाते।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site पर %target का स्टैटिक प्रकाशन विफल रहा</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site पर %target का स्टैटिक प्रकाशन सफल रहा</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>यह मेल %site ने भेजा है क्योंकि स्टैटिक प्रकाशन लक्ष्य %target इसे माँगता है।</translation>
     </message>
 </context>
 </TS>

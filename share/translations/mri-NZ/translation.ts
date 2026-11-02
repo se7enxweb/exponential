@@ -68848,6 +68848,42 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown o ngā kaupapahere %matching (%total katoa)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ka utaina ina tuwhera.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, tūranga, here</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Rapua ngā kaupapahere</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Uta atu anō</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Kōwae/taumahi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ngā tūranga katoa (%count kaupapahere)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Kāore he kaupapahere e hāngai ana.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown o ngā kaupapahere %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Kāore he whakautu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ka noho tonu tō rātou kuputuhi. Kāore rawa e tangohia ngā whakaahua, ngā puka me ngā hononga ki ētahi atu pae.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>I rahua te whakaputa pateko o %target i %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>I angitu te whakaputa pateko o %target i %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>I tukuna tēnei īmēra e %site nā te mea e tono ana te whāinga whakaputa pateko %target.</translation>
     </message>
 </context>
 </TS>

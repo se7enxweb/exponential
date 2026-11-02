@@ -112,7 +112,7 @@ class expStaticLinkChecker
     /** @return string[] the addresses of a page */
     public static function htmlReferences( $html )
     {
-        $html = (string)preg_replace( array( '#<!--.*?-->#s', '#(<script\b[^>]*>).*?(</script\s*>)#is' ), array( '', '$1$2' ), (string)$html );
+        $html = expStaticPostProcessor::checked( preg_replace( array( '#<!--.*?-->#s', '#(<script\b[^>]*>).*?(</script\s*>)#is' ), array( '', '$1$2' ), (string)$html ), 'linkchecker' );
         $refs = array();
         if ( preg_match_all( '#<([a-zA-Z][a-zA-Z0-9-]*)(\s[^>]*)>#s', $html, $tags, PREG_SET_ORDER ) )
             foreach ( $tags as $tag )

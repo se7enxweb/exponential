@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching ᱯᱚᱞᱤᱥᱤ ᱠᱷᱚᱱ %shown (ᱡᱚᱛᱚ %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ᱠᱷᱩᱞᱟ ᱚᱠᱛᱮ ᱞᱚᱰ ᱠᱟᱱᱟ ᱾</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>ᱢᱚᱰᱭᱩᱞ/ᱠᱟᱢᱤ, ᱵᱷᱩᱢᱤᱠᱟ, ᱵᱚᱸᱫᱷᱚᱱ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ ᱠᱚ ᱯᱟᱱᱛᱮ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱞᱚᱰ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ᱢᱚᱰᱭᱩᱞ/ᱠᱟᱢᱤ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ᱡᱚᱛᱚ ᱵᱷᱩᱢᱤᱠᱟ (ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ᱢᱤᱫ ᱦᱚᱸ ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ ᱵᱟᱝ ᱢᱤᱞᱟᱣ ᱾</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched ᱱᱤᱥᱟᱱ ᱱᱤᱭᱚᱢ ᱠᱷᱚᱱ %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ᱡᱟᱣᱟᱵ ᱵᱟᱝ ᱢᱮᱱᱟᱜ ᱾</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ᱚᱱᱟ ᱠᱚᱨᱟᱜ ᱚᱞ ᱛᱟᱦᱮᱸᱱᱟ ᱾ ᱪᱤᱛᱟᱹᱨ, ᱯᱷᱚᱨᱚᱢ ᱟᱨ ᱮᱴᱟᱜ ᱥᱟᱭᱤᱴ ᱠᱚᱨᱟᱜ ᱞᱤᱝᱠ ᱫᱚ ᱡᱟᱦᱟᱸ ᱦᱚᱸ ᱵᱟᱝ ᱚᱪᱚᱜᱚᱜᱼᱟ ᱾</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site ᱨᱮ %target ᱨᱮᱭᱟᱜ ᱥᱴᱮᱴᱤᱠ ᱪᱷᱟᱯᱟ ᱵᱟᱝ ᱦᱩᱭ ᱫᱟᱲᱮᱭᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site ᱨᱮ %target ᱨᱮᱭᱟᱜ ᱥᱴᱮᱴᱤᱠ ᱪᱷᱟᱯᱟ ᱯᱩᱨᱟᱹᱣ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>ᱱᱚᱶᱟ ᱢᱮᱞ %site ᱠᱩᱞ ᱠᱮᱫᱟᱭ ᱪᱮᱫᱟᱜ ᱥᱮ ᱥᱴᱮᱴᱤᱠ ᱪᱷᱟᱯᱟ ᱡᱚᱠᱷᱟ %target ᱱᱚᱶᱟ ᱠᱩᱞᱤ ᱮᱫᱟᱭ ᱾</translation>
     </message>
 </context>
 </TS>

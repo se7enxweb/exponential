@@ -139,6 +139,7 @@ class expDebugBarUserTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "data-exp-debug-copy=\"user_id=14\nsiteaccess=site\n", $html, 'the text to copy, line breaks kept' );
         $this->assertStringContainsString( '<td>Subtree /1/2/42/</td><td>the user</td>', $html );
         $this->assertStringContainsString( 'group Members (object 12)', $html );
+        $this->assertMatchesRegularExpression( '#<td><a href="[^"]*role/view/7">7</a></td><td>Editor</td>#', $html, 'the role id links to role/view' );
         $html = expDebugBarReport::userHtml( $this->profile( array( 'keys' => array(), 'assignments' => array(), 'tweak' => 'ignore_userroles;ignore_userlimitedlist;ignore_discountlist' ) ) );
         $this->assertStringContainsString( 'No part depends on the user', $html );
         $this->assertStringContainsString( 'No role assignments could be read.', $html );

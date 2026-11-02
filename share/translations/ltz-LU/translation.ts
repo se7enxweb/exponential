@@ -68848,6 +68848,42 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown vun %matching Richtlinnen (%total am Ganzen)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Gëtt beim Opmaache gelueden.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funktioun, roll, limitatioun</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Politiken duerchsichen</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Méi lueden</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/Funktioun</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>All Rollen (%count Politiken)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Keng Politik passt.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown vun %matched Politiken</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Keng Äntwert</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Hiren Text bleift stoen. Biller, Formulairen a Linken op aner Websäite ginn ni ewechgeholl.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statesch Verëffentlechung vun %target op %site ass feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statesch Verëffentlechung vun %target op %site huet geklappt</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Dës Mail gouf vun %site geschéckt, well d'Zil fir statesch Verëffentlechung %target dat freet.</translation>
     </message>
 </context>
 </TS>

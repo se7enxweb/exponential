@@ -68846,6 +68846,42 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown cikin %matching manufofi (%total gaba ɗaya)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ana loda shi idan an buɗe.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, matsayi, iyaka</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Nemi manufofi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Loda ƙari</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Tsarin sashe/aiki</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Dukkan matsayi (manufofi %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Babu manufar da ta dace.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown daga cikin manufofi %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Babu amsa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,21 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Rubutunsu yana nan. Ba a taɓa cire hotuna, fom da mahaɗa zuwa wasu shafuka ba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Wallafa static na %target ya kasa a %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Wallafa static na %target ya yi nasara a %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site ne ya aiko da wannan saƙo saboda makasudin wallafa static %target yana buƙatarsa.</translation>
     </message>
 </context>
 </TS>

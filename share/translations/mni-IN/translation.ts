@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching পোলিসিগী মনুংদা %shown (পুম্নমক %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ইক্পা মতমদা লোড তৌই।</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>মডিউল/ফাংকসন, ভূমিকা, চাঙ্গোয়বা</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>পলিসিশিং সার্চ তৌবা</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>মরক্না লোড তৌরো</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>মডিউল/ফাংকসন</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ভূমিকা পুম্নমক (পলিসি %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ইকাউবা পলিসি অমত্তা লৈদে।</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>পলিসি %matched গী মনুংদগী %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>হায়বা অমত্তা লৈদে।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>মখোয়গী তেক্সত লৈরি। মফম, ফোর্ম অমসুং অতোপ্পা সাইতকী লিংকশিং কদাইদসু লৌথোকদে।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site দা %target গী স্টেটিক থোরকপা মাইথিবা ফংখ্রে</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site দা %target গী স্টেটিক থোরকপা মাইপাকখ্রে</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>স্টেটিক থোরকপগী পান্দম %target না হায়জবা মরমদা %site না মেল অসি থাখি।</translation>
     </message>
 </context>
 </TS>

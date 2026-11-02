@@ -68848,6 +68848,42 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown o %matching kulekele (%total a pau)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Hoʻouka ʻia ke wehe ʻia.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/hana, kuleana, palena</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Huli i nā kulekele</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Hoʻouka hou aku</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/hana</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Nā kuleana āpau (%count kulekele)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ʻAʻohe kulekele kūpono.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown o %matched kulekele</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>ʻAʻohe pane</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Noho mau ko lākou kikokikona. ʻAʻole loa e wehe ʻia nā kiʻi, nā palapala a me nā loulou i nā pūnaewele ʻē aʻe.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Ua hāʻule ka hoʻopuka paʻa o %target ma %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Ua kūleʻa ka hoʻopuka paʻa o %target ma %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ua hoʻouna ʻia kēia leka e %site no ka mea ua noi ka pahuhopu hoʻopuka paʻa %target iā ia.</translation>
     </message>
 </context>
 </TS>

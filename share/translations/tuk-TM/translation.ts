@@ -68848,6 +68848,42 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching syýasat (jemi %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Açylanda ýüklenýär.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rol, çäklendirme</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Syýasatlary gözle</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Has köp ýükle</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funksiýa</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ähli rollar (%count syýasat)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Hiç bir syýasat gabat gelmeýär.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched syýasatdan %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Jogap ýok</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Olaryň teksti galýar. Suratlar, formalar we beýleki saýtlara salgylar hiç haçan aýrylmaýar.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site saýtynda %target üçin statik neşir başa barmady</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site saýtynda %target üçin statik neşir üstünlikli boldy</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Bu haty %site iberdi, sebäbi statik neşir maksady %target muny soraýar.</translation>
     </message>
 </context>
 </TS>

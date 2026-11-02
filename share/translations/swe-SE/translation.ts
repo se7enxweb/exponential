@@ -68694,6 +68694,42 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown av %matching policyer (%total totalt)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Läses in när den öppnas.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, roll, begränsning</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Sök i policyerna</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Läs in fler</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funktion</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alla roller (%count policyer)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ingen policy matchar.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown av %matched policyer</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Inget svar</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -84706,6 +84742,21 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Deras text står kvar. Bilder, formulär och länkar till andra webbplatser tas aldrig bort.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statisk publicering av %target misslyckades på %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statisk publicering av %target lyckades på %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Det här mejlet skickades av %site eftersom målet för statisk publicering %target ber om det.</translation>
     </message>
 </context>
 </TS>

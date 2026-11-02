@@ -68848,6 +68848,42 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown el %matching politikoj (%total entute)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ŝargiĝas dum malfermo.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, rolo, limigo</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Serĉi la politikojn</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Ŝargi pli</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulo/funkcio</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Ĉiuj roloj (%count politikoj)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Neniu politiko kongruas.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown el %matched politikoj</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Neniu respondo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ilia teksto restas. Bildoj, formularoj kaj ligiloj al aliaj retejoj neniam estas forigataj.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statika publikigo de %target malsukcesis ĉe %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statika publikigo de %target sukcesis ĉe %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ĉi tiun retleteron sendis %site, ĉar la celo de statika publikigo %target petas ĝin.</translation>
     </message>
 </context>
 </TS>

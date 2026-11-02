@@ -68856,6 +68856,42 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ti %matching kawijakan (%total sadayana)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Dimuat nalika dibuka.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, peran, wates</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Panggihan kawijakan</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Muat deui</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/fungsi</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Sadaya peran (%count kawijakan)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Teu aya kawijakan nu cocog.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown tina %matched kawijakan</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Teu aya waleran</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83411,6 +83447,21 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Téksna tetep aya. Gambar, formulir jeung tutumbu ka situs séjén henteu pernah dihapus.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Publikasi statis %target gagal di %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Publikasi statis %target hasil di %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Surélék ieu dikirim ku %site sabab udagan publikasi statis %target mentana.</translation>
     </message>
 </context>
 </TS>

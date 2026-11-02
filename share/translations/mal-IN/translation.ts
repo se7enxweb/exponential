@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching പോളിസികളിൽ %shown (ആകെ %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>തുറക്കുമ്പോൾ ലോഡ് ചെയ്യും.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, റോൾ, പരിമിതി</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>പോളിസികൾ തിരയുക</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>കൂടുതൽ ലോഡ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>മോഡ്യൂൾ/ഫംഗ്ഷൻ</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>എല്ലാ റോളുകളും (%count പോളിസികൾ)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>പൊരുത്തപ്പെടുന്ന പോളിസിയില്ല.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched പോളിസികളിൽ %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>മറുപടിയില്ല</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>അവയുടെ വാചകം നിലനിൽക്കും. ചിത്രങ്ങൾ, ഫോമുകൾ, മറ്റ് സൈറ്റുകളിലേക്കുള്ള ലിങ്കുകൾ ഒരിക്കലും നീക്കില്ല.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site-ൽ %target-ന്റെ സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site-ൽ %target-ന്റെ സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണം വിജയിച്ചു</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>സ്റ്റാറ്റിക് പ്രസിദ്ധീകരണ ലക്ഷ്യം %target ആവശ്യപ്പെടുന്നതിനാൽ %site ഈ മെയിൽ അയച്ചു.</translation>
     </message>
 </context>
 </TS>

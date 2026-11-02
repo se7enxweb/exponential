@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown з %matching палітык (%total усяго)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Загружаецца пры адкрыцці.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, роля, абмежаванне</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Пошук па палітыках</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Загрузіць яшчэ</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модуль/функцыя</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Усе ролі (палітык: %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Няма адпаведных палітык.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown з %matched палітык</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Няма адказу</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Іх тэкст застаецца. Выявы, формы і спасылкі на іншыя сайты ніколі не выдаляюцца.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Статычная публікацыя %target на %site не ўдалася</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Статычная публікацыя %target на %site прайшла паспяхова</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Гэты ліст даслаў %site, бо мэта статычнай публікацыі %target просіць пра гэта.</translation>
     </message>
 </context>
 </TS>

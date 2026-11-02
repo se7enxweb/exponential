@@ -11,6 +11,10 @@
  *  PP-07 minify: white space and comments go; pre, textarea, script, style and conditional comments stay
  *  PP-08 precompress: a .gz of a text file of 1 KB or more when it is smaller; nothing for images or small files
  *  PP-09 fingerprint: the content hash in the name of a style sheet or script; references renamed only where they resolve to it
+ *  PP-10 a PCRE failure stops the step with an exception (checked()), never as an empty page; minify keeps its
+ *        placeholders on every PHP version (PHP 8.0 and 8.1 refuse a NUL byte inside a pattern)
+ *  PP-11 no preg_* pattern written as a double-quoted literal in kernel/ or lib/ holds a NUL byte (a PCRE escape
+ *        such as '#\\x00#' in single quotes works on every PHP version)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -137,5 +141,64 @@ class expStaticPostProcessorTest extends PHPUnit\Framework\TestCase
                            expStaticPostProcessor::renameReferences( $html, 'news/index.html', $map, '/repo/', 'https://o.github.io/repo/' ) );
         $this->assertSame( "@import url(site.1234abcd.css);@import 'site.1234abcd.css';",
                            expStaticPostProcessor::renameReferences( "@import url(site.css);@import 'site.css';", 'design/s/print.css', $map ) );
+    }
+
+    /** PP-10 */
+    public function testPcreFailureIsAnError()
+    {
+        $this->assertSame( 'a', expStaticPostProcessor::checked( 'a', 'step' ) );
+        $this->assertSame( '', expStaticPostProcessor::checked( '', 'step' ) );
+        try
+        {
+            expStaticPostProcessor::checked( null, 'minify' );
+            $this->fail( 'null from preg_replace() must throw' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertStringContainsString( 'minify', $e->getMessage() );
+        }
+        $this->assertSame( "<p>a</p>\n<pre>  x  </pre>", expStaticPostProcessor::minify( "<p>a</p>\n\n<pre>  x  </pre>" ) );
+    }
+
+    /** PP-11 */
+    public function testNoPatternHoldsANulByte()
+    {
+        $root = dirname( __DIR__, 5 );
+        $found = array();
+        foreach ( array( 'kernel', 'lib' ) as $dir )
+        {
+            $files = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $root . '/' . $dir, FilesystemIterator::SKIP_DOTS ) );
+            foreach ( $files as $file )
+            {
+                if ( substr( $file->getFilename(), -4 ) !== '.php' )
+                    continue;
+                $code = (string)file_get_contents( $file->getPathname() );
+                if ( strpos( $code, 'preg_' ) === false || ( strpos( $code, '\\x00' ) === false && strpos( $code, '\\0' ) === false && strpos( $code, "\0" ) === false ) )
+                    continue;
+                $tokens = token_get_all( $code );
+                $n = count( $tokens );
+                for ( $i = 0; $i < $n; $i++ )
+                {
+                    if ( !is_array( $tokens[$i] ) || $tokens[$i][0] !== T_STRING || strpos( strtolower( $tokens[$i][1] ), 'preg_' ) !== 0 )
+                        continue;
+                    $j = $i + 1;
+                    while ( $j < $n && is_array( $tokens[$j] ) && $tokens[$j][0] === T_WHITESPACE )
+                        $j++;
+                    if ( $j >= $n || $tokens[$j] !== '(' )
+                        continue;
+                    $j++;
+                    while ( $j < $n && is_array( $tokens[$j] ) && $tokens[$j][0] === T_WHITESPACE )
+                        $j++;
+                    if ( $j < $n && is_array( $tokens[$j] ) && $tokens[$j][0] === T_CONSTANT_ENCAPSED_STRING && $tokens[$j][1][0] === '"' )
+                    {
+                        // the literal as PHP reads it: a double-quoted string without variables
+                        $value = stripcslashes( substr( $tokens[$j][1], 1, -1 ) );
+                        if ( strpos( $value, "\0" ) !== false )
+                            $found[] = substr( $file->getPathname(), strlen( $root ) + 1 ) . ':' . $tokens[$j][2];
+                    }
+                }
+            }
+        }
+        $this->assertSame( array(), $found, 'a NUL byte in a pattern: PHP 8.0 and 8.1 return null (write the escape in single quotes)' );
     }
 }

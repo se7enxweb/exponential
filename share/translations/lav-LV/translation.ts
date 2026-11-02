@@ -68787,6 +68787,42 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown no %matching politikām (kopā %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Tiek ielādēts, atverot.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, loma, ierobežojums</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Meklēt politikās</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Ielādēt vairāk</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modulis/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Visas lomas (%count politikas)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Neviena politika neatbilst.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown no %matched politikām</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nav atbildes</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>To teksts paliek. Attēli, veidlapas un saites uz citām vietnēm nekad netiek noņemtas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Mērķa %target statiskā publicēšana vietnē %site neizdevās</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Mērķa %target statiskā publicēšana vietnē %site izdevās</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Šo vēstuli nosūtīja %site, jo statiskās publicēšanas mērķis %target to pieprasa.</translation>
     </message>
 </context>
 </TS>

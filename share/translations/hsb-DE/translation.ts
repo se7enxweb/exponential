@@ -68848,6 +68848,42 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown z %matching prawidłow (dohromady %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Při wočinjenju so začita.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, róla, wobmjezowanje</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Prawidła pytać</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Wjace začitać</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkcija</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Wšě róle (%count prawidłow)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Žane prawidło njewotpowěduje.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown z %matched prawidłow</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Žana wotmołwa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Jich tekst wostanje. Wobrazy, formulary a wotkazy na druhe sydła so ženje njewotstronjeja.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiske wozjewjenje %target na %site njeje so poradźiło</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiske wozjewjenje %target na %site je so poradźiło</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Tutu e-mejlku je %site pósłał, dokelž cil statiskeho wozjewjenja %target wo nju prosy.</translation>
     </message>
 </context>
 </TS>

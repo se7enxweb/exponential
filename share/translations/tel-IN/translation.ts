@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching లో %shown విధానాలు (మొత్తం %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>తెరిచినప్పుడు లోడ్ అవుతుంది.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, పాత్ర, పరిమితి</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>విధానాలను శోధించండి</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>మరిన్ని లోడ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>మాడ్యూల్/ఫంక్షన్</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>అన్ని పాత్రలు (%count విధానాలు)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ఏ విధానమూ సరిపోలలేదు.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched విధానాలలో %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>సమాధానం లేదు</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>వాటి పాఠ్యం అలాగే ఉంటుంది. చిత్రాలు, ఫారమ్‌లు మరియు ఇతర సైట్‌లకు లింకులు ఎప్పుడూ తీసివేయబడవు.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site లో %target యొక్క స్టాటిక్ ప్రచురణ విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site లో %target యొక్క స్టాటిక్ ప్రచురణ విజయవంతమైంది</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>స్టాటిక్ ప్రచురణ లక్ష్యం %target దీనిని కోరినందున %site ఈ మెయిల్‌ను పంపింది.</translation>
     </message>
 </context>
 </TS>

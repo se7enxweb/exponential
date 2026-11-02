@@ -68787,6 +68787,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching 件のポリシー（全 %total 件）</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>開くと読み込まれます。</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>モジュール/ファンクション、ロール、制限</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ポリシーを検索</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>さらに読み込む</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>モジュール/ファンクション</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>すべてのロール（%count 件のポリシー）</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>一致するポリシーはありません。</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched 件中 %shown 件のポリシー</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>応答がありません</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>リンクのテキストは残ります。画像、フォーム、他のサイトへのリンクは削除されません。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site で %target の静的公開に失敗しました</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site で %target の静的公開に成功しました</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>このメールは、静的公開の公開先 %target が求めているため、%site から送信されました。</translation>
     </message>
 </context>
 </TS>

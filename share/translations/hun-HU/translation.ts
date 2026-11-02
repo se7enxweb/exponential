@@ -68787,6 +68787,42 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching házirend (összesen %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Megnyitáskor töltődik be.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modul/funkció, szerepkör, korlátozás</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Keresés a szabályzatokban</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Továbbiak betöltése</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modul/funkció</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Minden szerepkör (%count szabályzat)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Nincs egyező szabályzat.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown / %matched szabályzat</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Nincs válasz</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>A szövegük megmarad. A képek, űrlapok és más webhelyekre mutató hivatkozások soha nem kerülnek eltávolításra.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>A(z) %target statikus közzététele sikertelen volt itt: %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>A(z) %target statikus közzététele sikeres volt itt: %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ezt a levelet a(z) %site küldte, mert a(z) %target statikus közzétételi cél kéri.</translation>
     </message>
 </context>
 </TS>

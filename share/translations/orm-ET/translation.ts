@@ -68848,6 +68848,42 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown kan %matching imaammataa (walumaa galatti %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Yeroo banamu ni fe'ama.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, gahee, daangaa</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Imaammatoota barbaadi</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Dabalataan fe'i</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Moojulii/hojii</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Gahee hunda (imaammata %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Imaammanni walsimu hin jiru.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown imaammata %matched keessaa</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Deebiin hin jiru</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Barreeffamni isaanii ni hafa. Suuraaleen, unkaaleen fi hidhoonni marsariitii biraatti geessan gonkumaa hin haqaman.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Maxxansi dhaabbataa %target %site irratti hin milkoofne</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Maxxansi dhaabbataa %target %site irratti milkaa'eera</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Ergaan kun %site irraa ergame sababni isaas galmi maxxansa dhaabbataa %target waan gaafatuuf.</translation>
     </message>
 </context>
 </TS>

@@ -68856,6 +68856,42 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown out of %matching policies (%total for all)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>E go load as dem open am.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, role, limitation</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Search di policies</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Load more tins</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/di function</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>All di roles (%count policies)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>No policy match.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown for %matched policies</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>No answer dey</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83411,6 +83447,21 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Dia text go remain. Picture, form and link wey dey go oda site, we no dey ever comot dem.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Static publishing of %target no work for %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Static publishing of %target work well for %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site send dis mail because di static publishing target %target ask for am.</translation>
     </message>
 </context>
 </TS>

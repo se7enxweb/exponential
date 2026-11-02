@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%matching саясаттың %shown көрсетілді (барлығы %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Ашқанда жүктеледі.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, рөл, шектеу</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Саясаттардан іздеу</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Тағы жүктеу</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Модуль/функция</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Барлық рөлдер (%count саясат)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Сәйкес саясат жоқ.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched саясаттың %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Жауап жоқ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Олардың мәтіні қалады. Суреттер, формалар және басқа сайттарға сілтемелер ешқашан жойылмайды.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%site сайтында %target статикалық жариялауы сәтсіз аяқталды</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%site сайтында %target статикалық жариялауы сәтті аяқталды</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Бұл хатты %site жіберді, себебі статикалық жариялау мақсаты %target соны сұрайды.</translation>
     </message>
 </context>
 </TS>

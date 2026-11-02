@@ -67396,6 +67396,42 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown / %matching ilke (toplam %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Açıldığında yüklenir.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>modül/işlev, rol, sınırlama</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>İlkelerde ara</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Daha fazla yükle</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Modül/işlev</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Tüm roller (%count ilke)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Eşleşen ilke yok.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%matched ilkeden %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Yanıt yok</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83408,6 +83444,21 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Metinleri kalır. Görseller, formlar ve diğer sitelere giden bağlantılar asla kaldırılmaz.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>%target için statik yayınlama %site üzerinde başarısız oldu</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>%target için statik yayınlama %site üzerinde başarılı oldu</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Bu e-posta %site tarafından gönderildi, çünkü statik yayınlama hedefi %target bunu istiyor.</translation>
     </message>
 </context>
 </TS>

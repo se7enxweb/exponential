@@ -68787,6 +68787,42 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown van %matching beleide (%total in totaal)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Gelaai wanneer geopen.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/funksie, rol, beperking</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Soek in die beleide</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Laai meer</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Module/funksie</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Alle rolle (%count beleide)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Geen beleid stem ooreen nie.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown van %matched beleide</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Geen antwoord</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83433,6 +83469,21 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Hul teks bly. Beelde, vorms en skakels na ander werwe word nooit verwyder nie.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Statiese publisering van %target het op %site misluk</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Statiese publisering van %target het op %site geslaag</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Hierdie e-pos is deur %site gestuur omdat die statiese publiseringsteiken %target daarvoor vra.</translation>
     </message>
 </context>
 </TS>

@@ -68848,6 +68848,42 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown seg %matching tisertiyin (%total s umata)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>Yettuɣal-d mi ara yettwaldi.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, tamlilt, talast</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Nadi deg tsertiyin</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Sali-d ugar</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Amudil/tawuri</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Akk timlilin (%count n tsertiyin)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Ulac tasertit i yemṣadan.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown seg %matched n tsertiyin</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Ulac tiririt</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Aḍris-nsen ad yeqqim. Tugniwin, tiferkiwin d yiseɣwan ɣer yismal nniḍen ur ttwakksen ara akk.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Asuffeɣ udmis n %target ur yeddi ara deg %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Asuffeɣ udmis n %target yeddi deg %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>Izen-a yettwazen sɣur %site acku iswi n usuffeɣ udmis %target yessuter-it.</translation>
     </message>
 </context>
 </TS>

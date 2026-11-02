@@ -68848,6 +68848,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown ካብ %matching ፖሊሲታት (ብድምር %total)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>ክፉት ምስ ኾነ ይጽዕን።</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>ሞጁል/ተግባር, ተራ, ገደብ</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>ፖሊሲታት ደልይ</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>ተወሳኺ ጽዓን</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>ሞጁል/ተግባር</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>ኩሎም ተራታት (%count ፖሊሲታት)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>ዝሰማማዕ ፖሊሲ የለን።</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>ካብ %matched ፖሊሲታት %shown</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>መልሲ የለን</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83403,6 +83439,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>ጽሑፎም ይተርፍ። ስእልታት፣ ቅጥዕታትን ናብ ካልኦት መርበባት ዝወስዱ መላግቦታትን ፈጺሞም ኣይእለዩን።</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>ቀዋሚ ሕትመት %target ኣብ %site ኣይተዓወተን</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>ቀዋሚ ሕትመት %target ኣብ %site ተዓዊቱ</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>እዚ ኢመይል ብ%site ተላኢኹ ምኽንያቱ ዕላማ ቀዋሚ ሕትመት %target ስለ ዝሓተቶ እዩ።</translation>
     </message>
 </context>
 </TS>

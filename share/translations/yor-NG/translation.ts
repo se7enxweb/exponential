@@ -68846,6 +68846,42 @@ You will need to change the class of the node by using the swap functionality.</
         <source>%shown of %matching policies (%total in all)</source>
         <translation>%shown nínú %matching ìlànà (%total lápapọ̀)</translation>
     </message>
+    <message>
+        <source>Loaded when opened.</source>
+        <translation>A máa gbé e wá nígbà tí a bá ṣí i.</translation>
+    </message>
+    <message>
+        <source>module/function, role, limitation</source>
+        <translation>module/function, ipa, ìdínà</translation>
+    </message>
+    <message>
+        <source>Search the policies</source>
+        <translation>Wá àwọn ìlànà</translation>
+    </message>
+    <message>
+        <source>Load more</source>
+        <translation>Gbé díẹ̀ sí i wá</translation>
+    </message>
+    <message>
+        <source>Module/function</source>
+        <translation>Mọ́dùùlù/iṣẹ́</translation>
+    </message>
+    <message>
+        <source>All roles (%count policies)</source>
+        <translation>Gbogbo ipa (ìlànà %count)</translation>
+    </message>
+    <message>
+        <source>No policy matches.</source>
+        <translation>Kò sí ìlànà tó bá a mu.</translation>
+    </message>
+    <message>
+        <source>%shown of %matched policies</source>
+        <translation>%shown nínú ìlànà %matched</translation>
+    </message>
+    <message>
+        <source>No answer</source>
+        <translation>Kò sí èsì</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/sitedata</name>
@@ -83401,6 +83437,21 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Ọ̀rọ̀ wọn yóò dúró. A kì í yọ àwọn àwòrán, fọ́ọ̀mù àti ìjápọ̀ sí àwọn ojúlé míràn kúrò láéláé.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/staticpublish/mail</name>
+    <message>
+        <source>Static publishing of %target failed on %site</source>
+        <translation>Ìtẹ̀jáde aláìyípadà ti %target kùnà lórí %site</translation>
+    </message>
+    <message>
+        <source>Static publishing of %target succeeded on %site</source>
+        <translation>Ìtẹ̀jáde aláìyípadà ti %target yọrí sí rere lórí %site</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because the static publishing target %target asks for it.</source>
+        <translation>%site ló fi lẹ́tà yìí ránṣẹ́ nítorí pé àfojúsùn ìtẹ̀jáde aláìyípadà %target béèrè fún un.</translation>
     </message>
 </context>
 </TS>
