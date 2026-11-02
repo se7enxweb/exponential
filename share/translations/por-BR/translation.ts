@@ -85480,6 +85480,30 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Version</source>
         <translation>Versão</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Acessos ao site a publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acesso ao site</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na raiz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nenhum acesso na raiz: cada um fica em sua pasta, e a raiz leva a eles</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Acessos ao site</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marque um acesso ao site, ou vários que compartilham um host pelo prefixo de URI. O da raiz é servido ali, os outros na pasta do seu prefixo (/ger/); os links entre eles ficam na cópia. Os acessos de administração nunca são oferecidos.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

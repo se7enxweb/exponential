@@ -8,7 +8,9 @@
  */
 
 /**
- * One target of static publishing: a siteaccess published as static files to one place, as staticcache.ini
+ * One target of static publishing: a siteaccess (or several that share one host by their URI prefix, SiteAccessList[]
+ * with DefaultSiteAccess at the root of the copy and the others in the folders of their prefix) published as static
+ * files to one place, as staticcache.ini
  * [StaticPublishSettings] TargetList[] names it and its block [Target_<id>] describes it. Reads and validates; the
  * settings missing from a block take the defaults of DEFAULTS. Validation (validate()) is pure: the siteaccesses it
  * checks against are passed in (siteAccessContext() reads them from the installation).
@@ -33,6 +35,8 @@ class expStaticTarget
     const DEFAULTS = array(
         'Name' => '',
         'SiteAccess' => '',
+        'SiteAccessList' => array(),
+        'DefaultSiteAccess' => '',
         'Kind' => 'github-pages',
         'Remote' => '',
         'Branch' => 'gh-pages',
@@ -64,7 +68,7 @@ class expStaticTarget
     );
 
     /** The settings that hold a list */
-    const LIST_SETTINGS = array( 'Extras', 'PostProcess', 'ExcludePaths', 'ExcludeSections', 'Triggers', 'Notify' );
+    const LIST_SETTINGS = array( 'SiteAccessList', 'Extras', 'PostProcess', 'ExcludePaths', 'ExcludeSections', 'Triggers', 'Notify' );
 
     /** The pattern of a target id: also a folder name and part of a tag name */
     const ID_PATTERN = '#^[a-z0-9][a-z0-9_-]{0,49}$#';
@@ -208,10 +212,134 @@ class expStaticTarget
         return $this->settings['Name'] !== '' ? $this->settings['Name'] : $this->id;
     }
 
-    /** @return string */
+    /**
+     * The siteaccess the target is named by in one word: the default siteaccess of the copy (the one at its root),
+     * else the first of its siteaccesses; '' when none is set.
+     *
+     * @return string
+     */
     public function siteAccess()
     {
-        return $this->settings['SiteAccess'];
+        $list = $this->siteAccesses();
+        $default = $this->defaultSiteAccess();
+        return $default !== '' ? $default : ( $list ? $list[0] : '' );
+    }
+
+    /**
+     * The siteaccesses the target publishes, in their order: SiteAccessList[] when it names any, else SiteAccess (the
+     * form of one).
+     *
+     * @return string[]
+     */
+    public function siteAccesses()
+    {
+        return self::siteAccessesOf( $this->settings );
+    }
+
+    /**
+     * The siteaccesses of a target's settings (SiteAccessList[], else SiteAccess), once each. Pure.
+     *
+     * @param array $settings
+     * @return string[]
+     */
+    public static function siteAccessesOf( array $settings )
+    {
+        $list = array();
+        foreach ( isset( $settings['SiteAccessList'] ) ? (array)$settings['SiteAccessList'] : array() as $name )
+        {
+            $name = trim( (string)$name );
+            if ( $name !== '' && !in_array( $name, $list, true ) )
+                $list[] = $name;
+        }
+        if ( !$list && isset( $settings['SiteAccess'] ) && trim( (string)$settings['SiteAccess'] ) !== '' )
+            $list[] = trim( (string)$settings['SiteAccess'] );
+        return $list;
+    }
+
+    /** @return bool whether the target publishes more than one siteaccess */
+    public function isMultiSite()
+    {
+        return count( $this->siteAccesses() ) > 1;
+    }
+
+    /**
+     * The siteaccess served at the root of the copy: DefaultSiteAccess; the one siteaccess of a target that publishes
+     * one; '' for several without a DefaultSiteAccess (each is below its prefix, the root lists them).
+     *
+     * @return string
+     */
+    public function defaultSiteAccess()
+    {
+        $list = $this->siteAccesses();
+        $default = (string)$this->settings['DefaultSiteAccess'];
+        if ( $default !== '' )
+            return $default;
+        return count( $list ) === 1 ? $list[0] : '';
+    }
+
+    /**
+     * Where each siteaccess of the target is in the copy: the default one at its root, the others in the folder of
+     * their URI prefix (/ger/...), the default one first. Pure.
+     *
+     * @param array $context siteAccessContext() (prefixes: name => the URI prefix that selects it, without slashes;
+     *                       a name not in it is taken to be selected by its own name)
+     * @return array[] siteaccess, prefix ('' at the root, else the folder: ger), default (bool)
+     */
+    public function members( array $context = array() )
+    {
+        $default = $this->defaultSiteAccess();
+        $out = array();
+        foreach ( $this->siteAccesses() as $name )
+        {
+            $prefix = $name === $default ? '' : self::prefixOf( $context, $name );
+            $member = array( 'siteaccess' => $name, 'prefix' => (string)$prefix, 'default' => $name === $default );
+            if ( $name === $default )
+                array_unshift( $out, $member );
+            else
+                $out[] = $member;
+        }
+        return $out;
+    }
+
+    /**
+     * The URI prefix that selects a siteaccess on its host (bold, ger), from a siteAccessContext(); its name when the
+     * context does not say; null when it is not selected by a part of the address. Pure.
+     *
+     * @param array $context
+     * @param string $name
+     * @return string|null
+     */
+    public static function prefixOf( array $context, $name )
+    {
+        if ( isset( $context['prefixes'] ) && is_array( $context['prefixes'] ) )
+            return array_key_exists( $name, $context['prefixes'] ) && $context['prefixes'][$name] !== null && $context['prefixes'][$name] !== ''
+                 ? trim( (string)$context['prefixes'][$name], '/' ) : null;
+        return (string)$name;
+    }
+
+    /**
+     * The siteaccess of a page path in the copy (/ger/about-us: ger, /about-us: the default one) and its path in that
+     * siteaccess. Pure.
+     *
+     * @param string $copyPath
+     * @param array $members members()
+     * @return array|null siteaccess, prefix, path (/about-us); null when no siteaccess of the copy holds the path
+     */
+    public static function memberOf( $copyPath, array $members )
+    {
+        $copyPath = '/' . trim( (string)$copyPath, '/' );
+        $best = null;
+        foreach ( $members as $member )
+        {
+            $prefix = $member['prefix'] === '' ? '' : '/' . $member['prefix'];
+            if ( $prefix === '' || $copyPath === $prefix || strpos( $copyPath, $prefix . '/' ) === 0 )
+                if ( $best === null || strlen( $prefix ) > strlen( $best[1] ) )
+                    $best = array( $member, $prefix );
+        }
+        if ( $best === null )
+            return null;
+        $path = (string)substr( $copyPath, strlen( $best[1] ) );
+        return array( 'siteaccess' => $best[0]['siteaccess'], 'prefix' => $best[0]['prefix'], 'path' => $path === '' ? '/' : $path );
     }
 
     /** @return string relative or base-path */
@@ -325,7 +453,66 @@ class expStaticTarget
                  || strpos( $design, 'admin' ) === 0 || self::adminName( $name ) )
                 $admin[] = $name;
         }
-        return array( 'siteaccesses' => $names, 'admin' => $admin, 'urls' => $urls );
+        $get = function ( $name, $default ) use ( $ini )
+        {
+            return $ini->hasVariable( 'SiteAccessSettings', $name ) ? $ini->variable( 'SiteAccessSettings', $name ) : $default;
+        };
+        $prefixes = self::uriPrefixes( array( 'match_order' => $get( 'MatchOrder', 'uri' ), 'uri_match_type' => $get( 'URIMatchType', 'element' ),
+                                              'uri_match_element' => $get( 'URIMatchElement', 1 ), 'uri_match_map' => $get( 'URIMatchMapItems', array() ),
+                                              'host_uri_match_map' => $get( 'HostUriMatchMapItems', array() ) ), $names );
+        return array( 'siteaccesses' => $names, 'admin' => $admin, 'urls' => $urls, 'prefixes' => $prefixes,
+                      'default_access' => $ini->hasVariable( 'SiteSettings', 'DefaultAccess' ) ? (string)$ini->variable( 'SiteSettings', 'DefaultAccess' ) : '' );
+    }
+
+    /**
+     * The URI prefix that selects each siteaccess on a host shared by several (site.ini [SiteAccessSettings]): its
+     * name with MatchOrder uri and URIMatchType=element on the first element, its URIMatchMapItems key with
+     * URIMatchType=map, else the URI of a HostUriMatchMapItems entry of it with MatchOrder host_uri. Pure.
+     *
+     * @param array $match match_order (list or a;b), uri_match_type, uri_match_element, uri_match_map (uri;siteaccess),
+     *                     host_uri_match_map (host;uri;siteaccess[;method])
+     * @param string[] $names
+     * @return array name => prefix without slashes, or null when the siteaccess is not selected by a part of the path
+     */
+    public static function uriPrefixes( array $match, array $names )
+    {
+        $order = isset( $match['match_order'] ) ? $match['match_order'] : 'uri';
+        $order = array_values( array_filter( array_map( 'trim', is_array( $order ) ? $order : explode( ';', (string)$order ) ) ) );
+        $type = isset( $match['uri_match_type'] ) ? (string)$match['uri_match_type'] : 'element';
+        $element = isset( $match['uri_match_element'] ) ? (int)$match['uri_match_element'] : 1;
+        $out = array();
+        foreach ( $names as $name )
+        {
+            $name = (string)$name;
+            $prefix = null;
+            if ( in_array( 'uri', $order, true ) )
+            {
+                if ( $type === 'element' && $element === 1 )
+                    $prefix = $name;
+                else if ( $type === 'map' )
+                    foreach ( isset( $match['uri_match_map'] ) ? (array)$match['uri_match_map'] : array() as $item )
+                    {
+                        $parts = explode( ';', (string)$item );
+                        if ( count( $parts ) >= 2 && trim( $parts[1] ) === $name && trim( $parts[0], " /" ) !== '' )
+                        {
+                            $prefix = trim( $parts[0], " /" );
+                            break;
+                        }
+                    }
+            }
+            if ( $prefix === null && in_array( 'host_uri', $order, true ) )
+                foreach ( isset( $match['host_uri_match_map'] ) ? (array)$match['host_uri_match_map'] : array() as $item )
+                {
+                    $parts = explode( ';', (string)$item );
+                    if ( count( $parts ) >= 3 && trim( $parts[2] ) === $name && trim( $parts[1], " /" ) !== '' )
+                    {
+                        $prefix = trim( $parts[1], " /" );
+                        break;
+                    }
+                }
+            $out[$name] = $prefix;
+        }
+        return $out;
     }
 
     /** @return bool a name that is an administration or editing siteaccess by its name alone */
@@ -354,14 +541,54 @@ class expStaticTarget
         $siteaccesses = isset( $context['siteaccesses'] ) ? (array)$context['siteaccesses'] : array();
         $admin = isset( $context['admin'] ) ? (array)$context['admin'] : array();
         $urls = isset( $context['urls'] ) ? (array)$context['urls'] : array();
-        if ( $s['SiteAccess'] === '' )
-            $errors[] = 'SiteAccess is not set: name the front siteaccess to publish.';
-        else if ( !in_array( $s['SiteAccess'], $siteaccesses, true ) )
-            $errors[] = "SiteAccess={$s['SiteAccess']} is not a siteaccess of this installation.";
-        else if ( in_array( $s['SiteAccess'], $admin, true ) || self::adminName( $s['SiteAccess'] ) )
-            $errors[] = "SiteAccess={$s['SiteAccess']} is an administration or editing siteaccess; only front siteaccesses are published.";
-        else if ( ( !isset( $urls[$s['SiteAccess']] ) || $urls[$s['SiteAccess']] === '' ) && $s['CrawlURL'] === '' )
-            $errors[] = "The siteaccess {$s['SiteAccess']} has no SiteURL and the target no CrawlURL: there is no address to build from.";
+        $list = $this->siteAccesses();
+        // the name of the setting a siteaccess came from, for the messages
+        $named = $s['SiteAccessList'] ? 'SiteAccessList[]' : 'SiteAccess';
+        if ( !$list )
+            $errors[] = 'SiteAccess is not set: name the front siteaccess to publish (or several in SiteAccessList[]).';
+        foreach ( $list as $name )
+        {
+            if ( !in_array( $name, $siteaccesses, true ) )
+                $errors[] = "$named=$name is not a siteaccess of this installation.";
+            else if ( in_array( $name, $admin, true ) || self::adminName( $name ) )
+                $errors[] = "$named=$name is an administration or editing siteaccess; only front siteaccesses are published.";
+            else if ( ( !isset( $urls[$name] ) || $urls[$name] === '' ) && $s['CrawlURL'] === '' )
+                $errors[] = "The siteaccess $name has no SiteURL and the target no CrawlURL: there is no address to build from.";
+        }
+        if ( $s['SiteAccessList'] && $s['SiteAccess'] !== '' && !in_array( $s['SiteAccess'], $list, true ) )
+            $warnings[] = "SiteAccess={$s['SiteAccess']} is not in SiteAccessList[] and is not published: SiteAccessList[] names the siteaccesses when it is set.";
+        if ( $s['DefaultSiteAccess'] !== '' && !in_array( $s['DefaultSiteAccess'], $list, true ) )
+            $errors[] = "DefaultSiteAccess={$s['DefaultSiteAccess']} is not one of the siteaccesses the target publishes (" . implode( ', ', $list ) . ').';
+        else if ( count( $list ) > 1 )
+        {
+            // several siteaccesses in one copy on one host: each one but the default is in the folder of the URI prefix
+            // that selects it on the live site, so that folder must exist and be its own
+            $default = $this->defaultSiteAccess();
+            $folders = array();
+            foreach ( $list as $name )
+            {
+                if ( $name === $default )
+                    continue;
+                $prefix = self::prefixOf( $context, $name );
+                if ( $prefix === null )
+                    $errors[] = "The siteaccess $name is not selected by a part of the address (site.ini [SiteAccessSettings] MatchOrder with uri, "
+                              . "or host_uri with a URI), so it has no folder in a copy shared with other siteaccesses on one host. Publish it as a target of its own, "
+                              . 'or make it the DefaultSiteAccess at the root of the copy.';
+                else if ( !preg_match( '#^[A-Za-z0-9._~-]+(/[A-Za-z0-9._~-]+)*$#', $prefix ) )
+                    $errors[] = "The URI prefix $prefix of the siteaccess $name cannot be a folder of the copy.";
+                else if ( isset( $folders[strtolower( $prefix )] ) )
+                    $errors[] = "The siteaccesses {$folders[strtolower( $prefix )]} and $name are selected by the same URI prefix /$prefix/: one copy cannot hold both.";
+                else
+                    $folders[strtolower( $prefix )] = $name;
+            }
+            foreach ( $folders as $folder => $name )
+                foreach ( $folders as $other => $otherName )
+                    if ( $folder !== $other && strpos( $folder . '/', $other . '/' ) === 0 )
+                        $errors[] = "The folder /$folder/ of the siteaccess $name lies in the folder /$other/ of the siteaccess $otherName.";
+            foreach ( array( 'static-search', '.static-publish', '.well-known', '.github' ) as $reserved )
+                if ( isset( $folders[$reserved] ) )
+                    $errors[] = "The URI prefix /$reserved/ of the siteaccess {$folders[$reserved]} is a folder the build writes itself.";
+        }
 
         foreach ( array( 'Kind' => self::KINDS, 'Delivery' => self::DELIVERIES, 'Links' => self::LINKS, 'Assets' => self::ASSETS, 'Forms' => self::FORMS,
                          'OutsideLinks' => expStaticLinkRewriter::LINK_ACTIONS, 'AdminLinks' => expStaticLinkRewriter::LINK_ACTIONS ) as $name => $allowed )

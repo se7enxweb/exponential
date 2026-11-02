@@ -83514,6 +83514,30 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Version</source>
         <translation>Versija</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Skelbiamos svetainės prieigos</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prieiga prie svetainės (siteaccess)</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Šaknyje</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Šaknyje nėra prieigos: kiekviena savo aplanke, o šaknis į jas nukreipia</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Svetainės prieigos</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Pažymėkite vieną svetainės prieigą arba kelias, kurios pagal URI priešdėlį dalijasi vienu serveriu. Esanti šaknyje pateikiama ten, kitos – savo priešdėlio aplanke (/ger/); nuorodos tarp jų lieka kopijoje. Administravimo prieigos niekada nesiūlomos.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

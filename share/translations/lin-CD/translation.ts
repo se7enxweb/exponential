@@ -83484,6 +83484,30 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ba-siteaccess oyo ekobimisama</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na mosisa</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Siteaccess moko te na mosisa: moko na moko ezali na dosie na yango, mpe mosisa ezali kokangisa yango</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ba-siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Pona siteaccess moko, to mingi oyo ekabolaka host moko na nzela ya prefix na bango ya URI. Oyo ezali na mosisa epesamaka kuna, mosusu na dosie ya prefix na yango (/ger/); bikangisi kati na bango etikalaka na kopi. Ba-siteaccess ya boyangeli epesamaka ata mokolo moko te.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

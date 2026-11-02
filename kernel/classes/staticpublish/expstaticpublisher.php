@@ -340,7 +340,7 @@ class expStaticPublisher
     {
         $meta = $manifest !== null ? $manifest->meta() : array();
         $subject = 'Publish ' . $target->id() . ( $manifest !== null ? sprintf( ': %d pages, %d files', $manifest->count( 'page' ), count( $manifest->entries() ) ) : '' );
-        return $subject . "\n\nSite access: " . $target->siteAccess() . "\nRun: " . $runId
+        return $subject . "\n\nSite access: " . implode( ", ", $target->siteAccesses() ) . "\nRun: " . $runId
              . ( isset( $meta['built_at'] ) ? "\nBuilt: " . $meta['built_at'] : '' ) . "\nPublished by Exponential static publishing.\n";
     }
 

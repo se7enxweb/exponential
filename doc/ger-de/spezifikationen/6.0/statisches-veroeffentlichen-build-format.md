@@ -33,6 +33,16 @@ Website-Pfads (das Siteaccess-Präfix und der Ordner der Installation, die nicht
 Seitenpfad ist der Pfad der Adresse ohne den Website-Pfad, ohne `/index.php` und ohne abschließenden Schrägstrich; die
 Startseite ist `/`.
 
+Ein Ziel mehrerer Siteaccesses (`SiteAccessList[]`) durchläuft jeden unter seinem eigenen Website-Pfad in einen Ordner.
+Der Seitenpfad eines anderen Siteaccess als des `DefaultSiteAccess` beginnt mit seinem Ordner, dem URI-Präfix, das ihn
+wählt: `/bold_ger/team` ist die Seite `/team` von `bold_ger` (`bold_ger/team/index.html`). Eine Adresse gehört dem
+Siteaccess, dessen Website-Pfad der längste ist, der sie enthält; so ist ein Link von einem Siteaccess der Kopie zu einem
+anderen eine Seite der Kopie, eine Adresse unter dem Präfix eines Siteaccess, den das Ziel nicht veröffentlicht, eine
+Seite, die die Kopie nicht enthält. Ohne `DefaultSiteAccess` liegt jeder Siteaccess in seinem Ordner, und `index.html`
+ist ein Extra, das auf jeden verlinkt. Jeder Siteaccess wird unter seinem URI-Präfix durchlaufen, auch der im Stamm
+(`/site`); ist site.ini `DefaultAccess` der im Stamm, ist eine Adresse im Stamm des Hosts ohne Präfix (`/about-us`)
+ebenfalls seine Seite.
+
 | Seitenpfad | Datei |
 |---|---|
 | `/` | `index.html` |
@@ -46,6 +56,29 @@ hat oder wenn ein Segment ihres Pfads nicht auf jedem System ein Dateiname sein 
 Gerätename (`CON`, `PRN`, `AUX`, `NUL`, `COM1` bis `COM9`, `LPT1` bis `LPT9`). Eine Seite wird **ausgelassen** durch
 `ExcludePaths[]` (Shell-Muster auf den Seitenpfad, `*` passt auf jeden Teil, ein Muster, das auf `/*` endet, passt auch
 auf die Seite selbst) oder `ExcludeSections[]` (die Sektion des Knotens der Seite).
+
+## Adressen, die weiterleiten
+
+Das Durchlaufen folgt einer Weiterleitung (Status 3xx) nicht selbst. Eine Adresse, die mit einer antwortet, wird nie
+als Kopie der Seite geschrieben, zu der sie führt; sie wird zu einem **Weiterleitungs-Stub** an ihrer eigenen Datei:
+dieselbe kleine Seite wie die Stubs von `Extras[]=redirects` (ein Meta-Refresh, ein Canonical-Link, `robots`
+`noindex`, `<html lang="en">`, ein einfacher Link), im Manifest als `extra` geführt. Der Stub führt zu:
+
+| Wo die Weiterleitung endet | Wohin der Stub zeigt |
+|---|---|
+| Eine Seite, die die Kopie enthält | Diese Seite in der Kopie (ein relativer oder Basispfad-Link, wie `Links` sagt); Canonical: ihre Adresse unter `PublicURL` |
+| Eine Seite der Website, die die Kopie nicht enthält, oder eine Seite der Administration | Die Adresse auf der Live-Website (`LiveURL`, wie andere Links auf das, was die Kopie nicht enthält) |
+| Dasselbe mit `OutsideLinks=unlink` (oder `AdminLinks=unlink` für eine Seite der Administration) | Die Startseite der Kopie: ein Stub ohne Ziel wäre eine Sackgasse |
+| Ein anderer Host | Diese Adresse, wie sie ist; sie wird nie abgerufen |
+
+Die Adresse, zu der eine Weiterleitung führt, wird einmal durchlaufen, unter ihrer eigenen Adresse und in der Tiefe der
+weiterleitenden, wenn sie auf dem Host des Durchlaufens liegt (oder einer anderen Adresse der Website, `SiteURL` oder
+`LiveURL`) und eine Seite der Website ist. Einer Kette (`/a` zu `/b` zu `/`) wird bis zu ihrem Ende gefolgt, höchstens
+5 Weiterleitungen hintereinander. Kein Stub wird geschrieben, und die Adresse wird mit ihrem Grund unter `skipped`
+gemeldet, bei einer Schleife, einer längeren Kette, einer Weiterleitung ohne `Location`, einer Weiterleitung auf ihre
+eigene Datei (`/a` zu `/a/`), einer Adresse mit Query-String oder einer, die kein Dateiname sein kann, und in einer
+Kopie ohne Startseite, wenn der Link nach außen herausgenommen wird. Ein Link einer Seite auf eine weiterleitende
+Adresse führt zu ihrem Stub. `counts.redirects_followed` zählt die geschriebenen Stubs, `redirects_followed` listet sie.
 
 ## Was herausgenommen wird
 
@@ -201,6 +234,12 @@ auf jedem System dieselben Bytes.
 | `url` | der Host-Pfad, von dem sie stammt (leer bei Zusatzdateien) |
 | `node` | der Knoten einer Seite, wenn bekannt, sonst `null` |
 | `modified` | die Änderungszeit des Inhaltsobjekts einer Seite (Unix-Zeit), wenn bekannt, sonst `null` |
+| `siteaccess` | nur im Build mehrerer Siteaccesses: der Siteaccess einer Seite |
+
+Die `meta` eines Builds mehrerer Siteaccesses enthält auch `siteaccesses`: je `name` und `folder` (`/` für den im
+Stamm, `/bold_ger/`), der im Stamm zuerst; `siteaccess` ist der im Stamm (sonst der erste). Der Suchindex eines solchen
+Builds versieht jeden Eintrag mit `s`, seinem Siteaccess, und die Suchseite bietet an, einen davon
+(`search.html?site=<siteaccess>`) oder alle zu durchsuchen.
 
 ## Die Maschinenausgabe: `exp-static/1`
 
@@ -212,13 +251,14 @@ dasselbe Objekt in eine Datei.
 |---|---|
 | `mode` | `build` oder `dry-run` |
 | `scope` | `full` oder `partial` |
-| `target`, `siteaccess`, `run_id`, `started_at`, `duration_ms`, `directory` | der Build |
+| `target`, `siteaccess`, `siteaccesses`, `run_id`, `started_at`, `duration_ms`, `directory` | der Build (`siteaccess`: der im Stamm, sonst der erste; `siteaccesses`: alle des Ziels) |
 | `links` | `mode`, `base_path`, `public_url` |
-| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `links_unavailable`, `site_broken_links`, `bytes`, `stripped` (nach dem, was herausgenommen wurde) |
+| `counts` | `pages`, `pages_refused`, `pages_skipped`, `pages_excluded`, `files`, `storage`, `files_failed`, `extras`, `links_rewritten`, `links_live`, `links_external`, `links_removed_outside`, `links_removed_admin`, `links_unavailable`, `site_broken_links`, `bytes`, `stripped` (nach dem, was herausgenommen wurde), `redirects` (Stubs von `Extras[]=redirects`), `redirects_followed` (Stubs von Adressen, die weiterleiten) |
 | `diff` | `added`, `changed`, `removed`, `unchanged` (Anzahlen), `bytes_added`, `bytes_removed`, `files` (die Pfade, höchstens 500 von jedem) |
 | `pages` | jede Seite: `path`, `file`, `bytes`, `node`, `stripped` |
 | `refused` | jede abgelehnte Seite: `path`, `url`, `reasons` |
 | `skipped` | jede übersprungene Seite: `path`, `reason` |
+| `redirects_followed` | jeder Stub einer Adresse, die weiterleitet: `path`, `status`, `to` (wo die Weiterleitung endet), `kind` (`page`, `live`, `front`), `file` |
 | `files_failed` | jede nicht gesammelte Datei: `file`, `url`, `error` |
 | `link_check` | `mount`, `files`, `links`, `broken` (höchstens 200: `file`, `link`, `resolved`), `broken_count`, `skipped` |
 | `limits` | `bytes`, `max_site_bytes`, `max_file_bytes`, `too_large` |

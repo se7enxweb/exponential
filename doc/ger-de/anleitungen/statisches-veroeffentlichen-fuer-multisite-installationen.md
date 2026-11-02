@@ -9,12 +9,65 @@ Plan veröffentlicht werden.
 
 ## Was Sie am Ende haben
 
-Ein Ziel je öffentlichem Siteaccess, jedes mit eigenem Repository oder Branch, eigener öffentlicher Adresse und eigenen
-Richtlinien, alle aus einer Installation aufgelistet und gebaut.
+Entweder ein Ziel je öffentlichem Siteaccess, jedes mit eigenem Repository oder Branch, eigener öffentlicher Adresse
+und eigenen Richtlinien, oder ein Ziel, das mehrere Siteaccesses, die sich über ihr URI-Präfix einen Host teilen (`/`,
+`/bold/`, `/bold_ger/`), in eine Kopie veröffentlicht, alle aus einer Installation aufgelistet und gebaut.
+
+## Mehrere Siteaccesses in einer Kopie
+
+Leben mehrere Sites oder Sprachen auf einem Host und werden über den ersten Teil der Adresse unterschieden (site.ini
+`[SiteAccessSettings] MatchOrder` mit `uri`, `URIMatchType=element` oder `map`, oder `host_uri` mit einer URI), kann ein
+Ziel sie gemeinsam veröffentlichen; die Kopie behält dieselben Adressen wie der Live-Host:
+
+```ini
+[Target_sites]
+Name=Alle Sites auf www.example.com
+SiteAccessList[]
+SiteAccessList[]=site
+SiteAccessList[]=bold
+SiteAccessList[]=bold_ger
+DefaultSiteAccess=site
+Remote=https://github.com/example/sites.git
+PublicURL=https://www.example.com/
+CustomDomain=www.example.com
+```
+
+- Der `DefaultSiteAccess` wird im Stamm der Kopie ausgeliefert (`/`, `/about-us/`); jeder andere Siteaccess liegt im
+  Ordner seines URI-Präfixes (`/bold/`, `/bold_ger/team/`), genau dort, wo der Live-Host ihn ausliefert.
+- Ohne `DefaultSiteAccess` liegt jeder Siteaccess in seinem Ordner (auch `/site/`), und der Stamm der Kopie ist eine
+  kleine Seite, die auf jeden verlinkt. Ein Ziel mit einem Siteaccess hat ihn immer im Stamm.
+- `SiteAccess=` gilt weiter als Form für einen; nennt `SiteAccessList[]` welche, wird `SiteAccess` nicht gelesen.
+- Die Prüfungen: nur Front-Siteaccesses (nie ein Administrations- oder Redaktions-Siteaccess); jeder Siteaccess außer
+  dem Standard muss über ein URI-Präfix gewählt werden, sonst hat er in einer mit anderen geteilten Kopie keinen Ordner
+  (ein nur über den Host gewählter Siteaccess kann der `DefaultSiteAccess` sein oder ein eigenes Ziel bekommen); zwei
+  Siteaccesses können sich keinen Ordner teilen.
+- Links zwischen den Siteaccesses der Kopie bleiben in der Kopie (relativ oder unter dem Basispfad): der
+  Sprachumschalter von `/about-us/` nach `/bold_ger/` funktioniert auch offline. Ein Link zu einem Siteaccess, den das
+  Ziel nicht veröffentlicht (`/classic/...`), führt aus der Kopie hinaus, und `OutsideLinks` entscheidet: zur
+  Live-Site oder herausgenommen.
+- Der Sprachumschalter (`/bold/switchlanguage/to/bold_ger/careers`) führt zur selben Seite im anderen Siteaccess der
+  Kopie (`/bold_ger/karriere/`), oder zu dessen Startseite, wenn die Kopie dort keine Seite dieses Knotens enthält.
+- `hreflang`-Alternativen zwischen ihnen werden als absolute Adressen unter `PublicURL` geschrieben.
+- Eine `sitemap.xml` listet die Seiten aller, eine `robots.txt` verweist darauf, und `404.html` ist die 404-Seite des
+  Standard-Siteaccess (ohne Standard die des ersten). Umleitungsseiten werden je Siteaccess in seinem Ordner
+  geschrieben.
+- Der Suchindex bleibt je Sprache; jeder Eintrag nennt seinen Siteaccess, und die Suchseite bietet "Alle Sites" oder
+  einen davon an (`search.html?site=bold_ger`).
+- `MaxPages` zählt je Siteaccess. Das Manifest nennt die Siteaccesses mit ihren Ordnern und bei jeder Seite ihren
+  Siteaccess; veraltete Seiten, Verlauf und das Panel "Diese Seite veröffentlichen" arbeiten mit den Seitenpfaden
+  jedes Siteaccess.
+- Eine Inhaltsveröffentlichung markiert die Seiten des Knotens in jedem Siteaccess der Kopie als veraltet; `--nodes`
+  baut die Seite eines Knotens in jedem von ihnen.
+- Nur einen davon bauen: `./console exp:static:build sites --siteaccess=bold_ger`, ein Teil-Build; die Seiten der
+  anderen bleiben, wie der letzte Build sie hinterließ. `--paths` nimmt Pfade der Kopie (`/bold_ger/team`).
+
+Im Assistenten listet Schritt 1 die Front-Siteaccesses mit ihrem Ordner: haken Sie die zu veröffentlichenden an und
+wählen Sie den im Stamm (oder keinen). Ein einzelner angehakter Siteaccess wird wie bisher als `SiteAccess=`
+gespeichert.
 
 ## Ein Ziel je Siteaccess
 
-Ein Ziel veröffentlicht genau einen Front-Siteaccess. Seine Seiten, Sprachen, sein Design und sein Adressschema sind
+Ein Ziel kann auch genau einen Front-Siteaccess veröffentlichen. Seine Seiten, Sprachen, sein Design und sein Adressschema sind
 die dieses Siteaccess. Eine Installation mit den Sites `site`, `shop_eng` und `blog` und einem deutschen `site_ger` hat
 ein Ziel für jede, die eine öffentliche Kopie haben soll:
 

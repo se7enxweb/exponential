@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>ورژن</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>چھاپن لئی سائٹ رسائیاں</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سائٹ رسائی</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>جڑ تے</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>جڑ تے کوئی سائٹ رسائی نئیں: ہر اک اپنے فولڈر وچ اے، تے جڑ اوہناں دے لنک دیندی اے</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>سائٹ رسائیاں</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>اک سائٹ رسائی چنو، یا کئی جیہڑیاں اپنے URI اگیتر نال اک ہوسٹ ونڈدیاں نیں۔ جڑ والی اوتھے ای دتی جاندی اے، باقی اپنے اگیتر دے فولڈر وچ (/ger/)؛ اوہناں وچکار لنک کاپی وچ ای رہندے نیں۔ انتظامیہ دیاں رسائیاں کدی نئیں وکھائیاں جاندیاں۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

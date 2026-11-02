@@ -83482,6 +83482,30 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>Version</source>
         <translation>Inguqulo</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Ukufinyelela kwesayithi okuzoshicilelwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ukufinyelela isayithi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Empandeni</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Akukho ukufinyelela empandeni: ngakunye kusefolda yakho, impande ixhumanisa nakho</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ukufinyelela kwesayithi</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Maka ukufinyelela kwesayithi okukodwa, noma okuningi okwabelana ngomsingathi oyedwa ngesiqalo sakho se-URI. Okusempandeni kunikezwa lapho, okunye kufolda yesiqalo sakho (/ger/); izixhumanisi phakathi kwakho zihlala ekhophini. Ukufinyelela kokuphatha akukaze kunikezwe.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

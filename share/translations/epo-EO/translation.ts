@@ -83484,6 +83484,30 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Version</source>
         <translation>Versio</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Retejaliroj publikigotaj</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Retejaliro</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ĉe la radiko</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Neniu retejaliro ĉe la radiko: ĉiu estas en sia dosierujo, kaj la radiko ligas al ili</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Retejaliroj</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marku unu retejaliron, aŭ plurajn, kiuj dividas unu gastiganton per sia URI-prefikso. Tiu ĉe la radiko estas servata tie, la aliaj en la dosierujo de sia prefikso (/ger/); ligiloj inter ili restas en la kopio. Administraj retejaliroj neniam estas proponataj.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

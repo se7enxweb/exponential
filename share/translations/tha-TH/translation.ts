@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>เวอร์ชัน</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>การเข้าถึงไซต์ที่จะเผยแพร่</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ที่ราก</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ไม่มีการเข้าถึงไซต์ที่ราก: แต่ละอันอยู่ในโฟลเดอร์ของตน และรากลิงก์ไปยังพวกมัน</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>เลือกการเข้าถึงไซต์หนึ่งรายการ หรือหลายรายการที่ใช้โฮสต์เดียวกันผ่านคำนำหน้า URI รายการที่รากจะให้บริการที่นั่น รายการอื่นอยู่ในโฟลเดอร์ของคำนำหน้า (/ger/) ลิงก์ระหว่างกันจะอยู่ในสำเนา การเข้าถึงไซต์สำหรับผู้ดูแลระบบจะไม่ถูกเสนอเลย</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>Version</source>
         <translation>Verisiyo</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Uburyo bwo gushika ku rubuga buzosohorwa</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Uburyo bwo gushika ku rubuga</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Mu mizi</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nta buryo bwo gushika ku rubuga buri mu mizi: kimwe cose kiri mu bubiko bwaco, imizi irabihuza</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Uburyo bwo gushika ku rubuga</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Hitamwo uburyo bumwe bwo gushika ku rubuga, canke bwinshi busangiye umushitsi umwe biciye ku ntango ya URI. Uburi mu mizi butangirwa ngaho, ubundi mu bubiko bw'intango yabwo (/ger/); amahuza hagati yabwo aguma mu kopi. Uburyo bw'ubuyobozi ntibutangwa na rimwe.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

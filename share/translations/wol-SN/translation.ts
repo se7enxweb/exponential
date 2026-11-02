@@ -83484,6 +83484,30 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>Version</source>
         <translation>Wersiyoŋ</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Buntu sit yi ñuy siiwal</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Buntu sit</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ci reen bi</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Amul buntu sit ci reen bi: bu nekk mu ngi ci kàrtaabam, reen bi di leen jokkoo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Buntu sit yi</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Tànnal benn buntu sit, walla yu bare yu bokk benn yakkukaay ci seen tàmbalit URI. Bi nekk ci reen bi dañu koy jox foofa, yeneen yi ci kàrtaabu seen tàmbalit (/ger/); lëkkalekaay yi ci seen diggante dinañu des ci duppi bi. Buntu yorkat yi duñu leen mukk joxe.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

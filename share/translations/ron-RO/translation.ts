@@ -83514,6 +83514,30 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Version</source>
         <translation>Versiune</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accese la site de publicat</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acces la site</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>La rădăcină</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Niciun acces la rădăcină: fiecare e în dosarul său, iar rădăcina trimite la ele</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesuri la site</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Bifați un acces la site sau mai multe care împart o gazdă prin prefixul URI. Cel de la rădăcină e servit acolo, celelalte în dosarul prefixului lor (/ger/); legăturile dintre ele rămân în copie. Accesele de administrare nu sunt oferite niciodată.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

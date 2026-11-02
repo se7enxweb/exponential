@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>අනුවාදය</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ප්‍රකාශ කළ යුතු අඩවි ප්‍රවේශ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>අඩවි ප්‍රවේශය</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>මූලයේ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>මූලයේ අඩවි ප්‍රවේශයක් නැත: සෑම එකක්ම තම ෆෝල්ඩරයේ ඇති අතර මූලය ඒවාට සබැඳේ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>අඩවි ප්‍රවේශ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>එක් අඩවි ප්‍රවේශයක්, හෝ තම URI උපසර්ගයෙන් එක් ධාරකයක් බෙදාගන්නා කිහිපයක් තෝරන්න. මූලයේ ඇති එක එහිම සපයනු ලැබේ, අනෙක්වා තම උපසර්ගයේ ෆෝල්ඩරයේ (/ger/); ඒවා අතර සබැඳි පිටපතේම රැඳේ. පරිපාලන අඩවි ප්‍රවේශ කිසිවිටෙක පිරිනමනු නොලැබේ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

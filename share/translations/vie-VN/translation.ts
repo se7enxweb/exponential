@@ -83484,6 +83484,30 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Version</source>
         <translation>Phiên bản</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Điểm truy cập trang cần xuất bản</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ở gốc</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Không có điểm truy cập ở gốc: mỗi cái nằm trong thư mục riêng, và gốc liên kết đến chúng</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Đánh dấu một điểm truy cập trang, hoặc nhiều điểm dùng chung một máy chủ theo tiền tố URI. Điểm ở gốc được phục vụ ở đó, các điểm khác trong thư mục tiền tố của chúng (/ger/); liên kết giữa chúng nằm lại trong bản sao. Điểm truy cập quản trị không bao giờ được đưa ra.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

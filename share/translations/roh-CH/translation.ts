@@ -83484,6 +83484,30 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>Version</source>
         <translation>Versiun</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Access a la website da publitgar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>En la ragisch</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nagin access en la ragisch: mintgin è en ses ordinatur, e la ragisch colliescha cun els</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marcai in access a la website, u plirs che parteglian in host tras lur prefix URI. Quel en la ragisch vegn servì là, ils auters en l'ordinatur da lur prefix (/ger/); colliaziuns tranter els restan en la copia. Access d'administraziun na vegnan mai purschids.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

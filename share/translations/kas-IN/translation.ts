@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>ؤرژَن</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>شایع کرنہٕ خٲطرٕ سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>روٗٹس پیٚٹھ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>روٗٹس پیٚٹھ چھُنہٕ کانٛہہ سایِٹ ایکسیس: پرٛتھ اَکھ چھُ پننِس فولڈرس منٛز، تہٕ روٗٹ چھُ تِمن لِنک دِوان</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>اَکھ سایِٹ ایکسیس ژارِو، یا واریاہ یِم پننہِ URI اگرٕ لفظٕ ذریعہٕ اَکھ ہوسٹ بٲگراوان چھِ۔ روٗٹس پیٚٹھ یُس چھُ سُہ چھُ تتی پیش کرنہٕ یِوان، باقی پننہِ اگرٕ لفظُک فولڈرس منٛز (/ger/)؛ تِہندِ درمیان لِنک چھِ کاپی منٛزٕے روزان۔ انتظامیہ ہٕنٛد سایِٹ ایکسیس چھِ نہٕ زانٛہہ پیش کرنہٕ یِوان۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

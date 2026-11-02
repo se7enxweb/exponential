@@ -52,7 +52,7 @@
         {if $t.job}<p><span class="a4-status is-running"><span class="a4-dot" aria-hidden="true"></span><a href={concat( 'staticpublish/log/', $t.job.id )|ezurl}>{'A job is going on, started by %user'|i18n( 'design/admin/staticpublish',, hash( '%user', $t.job.user ) )|wash}</a></span></p>{/if}
         {foreach $t.errors as $error}<p class="a4-bad-text">{$error|wash}</p>{/foreach}
         <dl class="a4-facts">
-            <div><dt>{'Site'|i18n( 'design/admin/staticpublish' )}</dt><dd>{$t.siteaccess|wash}</dd></div>
+            <div><dt>{'Siteaccesses'|i18n( 'design/admin/staticpublish' )}</dt><dd>{include uri='design:staticpublish/parts/siteaccesses.tpl' members=$t.siteaccesses}</dd></div>
             <div><dt>{'Version'|i18n( 'design/admin/staticpublish' )}</dt>
                 <dd>{if $t.version}<strong>{$t.version|wash}</strong> <code class="a4-code">{$t.last_tag|wash}</code>{else}<span class="a4-muted">{'none yet'|i18n( 'design/admin/staticpublish' )}</span>{/if}</dd></div>
             <div><dt>{'Commit'|i18n( 'design/admin/staticpublish' )}</dt>

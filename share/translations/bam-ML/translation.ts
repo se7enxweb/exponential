@@ -83484,6 +83484,30 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Version</source>
         <translation>Wɛrisiyɔn</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siti dondaw minnu bɛ bɔ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siti donda</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ju la</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Siti donda si tɛ ju la: kelen-kelen bɛɛ bɛ a ka kɛsu kɔnɔ, ju bɛ u lajɛ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siti dondaw</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Siti donda kelen sugandi, walima caman minnu bɛ jatigi kelen tila u ka URI daminɛ fɛ. Min bɛ ju la, o bɛ di yen, tɔw bɛ u ka daminɛ kɛsu kɔnɔ (/ger/); u cɛ siriw bɛ to kopi kɔnɔ. Ɲɛmɔgɔya siti dondaw tɛ jira abada.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

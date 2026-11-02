@@ -83484,6 +83484,30 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Version</source>
         <translation>Bersyon</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Mga siteaccess nga imantala</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access sa site</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Sa gamut</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Walay siteaccess sa gamut: ang matag usa anaa sa iyang folder, ug ang gamut nag-link kanila</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mga siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Markahi ang usa ka siteaccess, o daghan nga nag-ambit og usa ka host pinaagi sa ilang URI prefix. Ang anaa sa gamut gisilbi didto, ang uban sa folder sa ilang prefix (/ger/); ang mga link tali kanila magpabilin sa kopya. Ang mga siteaccess sa administrasyon dili gyud itanyag.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

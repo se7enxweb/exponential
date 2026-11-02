@@ -83514,6 +83514,30 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>Version</source>
         <translation>Verzia</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Prístupy k lokalite na publikovanie</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>V koreni</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Žiadny prístup v koreni: každý je vo svojom priečinku a koreň na ne odkazuje</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Prístupy k lokalite</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Označte jeden prístup k lokalite alebo viacero, ktoré zdieľajú jedného hostiteľa podľa prefixu URI. Ten v koreni sa obsluhuje tam, ostatné v priečinku svojho prefixu (/ger/); odkazy medzi nimi zostávajú v kópii. Administračné prístupy sa nikdy neponúkajú.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

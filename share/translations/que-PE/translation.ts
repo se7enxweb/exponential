@@ -83484,6 +83484,30 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>Version</source>
         <translation>Versiyun</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Web yaykunakuna willakunapaq</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Web yaykuna</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Saphipi</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Mana web yaykuna saphipiqa kanchu: sapakama carpetanpi kachkan, saphitaq paykunaman t'inkin</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Web yaykunakuna</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Huk web yaykunata akllay, utaq URI qallariyninwan huk host-ta rakinakuqkunata. Saphipi kaqqa chaypi qusqa kanqa, wakinkunataq qallariyninpa carpetanpi (/ger/); paykuna chawpi t'inkikunaqa copiapi qhipakun. Kamachiy yaykunakunaqa manam hayk'appas qusqachu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

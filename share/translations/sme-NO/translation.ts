@@ -83484,6 +83484,30 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>Version</source>
         <translation>Veršuvdna</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Almmuhuvvon neahttabáikebeassamat</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ruohttasis</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ii mihkkege neahttabáikebeassama ruohttasis: juohke okta lea iežas máhpas, ja ruohtas liŋke daidda</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Neahttabáikebeassamat</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Merke ovtta neahttabáikebeassama, dahje máŋga mat juogadit ovtta guossoheaddji iežaset URI-ovdalaččain. Dat mii lea ruohttasis bálvaluvvo doppe, earát iežaset ovdalačča máhpas (/ger/); liŋkkat gaskkaneaset bissot máŋggus. Hálddahuslaš beassamat eai goassege fállojuvvo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>판</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>공개할 싸이트접근</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>뿌리에</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>뿌리에 싸이트접근 없음: 각각 제 등록부에 있고 뿌리가 그것들에 련결합니다</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>싸이트접근 하나 또는 URI 앞붙이로 한 주콤퓨터를 공유하는 여러개를 선택하십시오. 뿌리에 있는것은 거기서 봉사되고 나머지는 앞붙이 등록부 (/ger/)에 있습니다. 그것들사이의 련결은 사본안에 남습니다. 관리 싸이트접근은 절대로 제공되지 않습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

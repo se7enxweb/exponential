@@ -98,6 +98,15 @@ class expPreloadRunner
     /** Everything that did not come back as a page, in the order found. */
     private $problems = array();
 
+    /**
+     * The most redirects followed one after the other from one address (A to B to C ...); what a longer chain
+     * reaches is not fetched.
+     */
+    const MAX_REDIRECTS = 5;
+
+    /** url that answered with a redirect => array( status, location ) (option record_redirects). */
+    private $redirects = array();
+
     private $counts = array(
         'fetched' => 0, 'skipped' => 0, 'broken' => 0, 'denied' => 0, 'bytes' => 0,
         'images' => 0, 'images_broken' => 0 );
@@ -146,6 +155,11 @@ class expPreloadRunner
             // and is fetched from the base url, not dropped as another host's. Static publishing passes the
             // siteaccess's SiteURL and the target's LiveURL.
             'site_origins' => array(),
+            // Redirects are not followed by the request but recorded (redirects()): the address that answered with
+            // one is not handed to the store callback, and the address it sends to is crawled under its own address,
+            // when it is on the crawl's host (MAX_REDIRECTS in a row at most; another host is never fetched).
+            // Static publishing sets it, so a redirecting address does not become a copy of the page it sends to.
+            'record_redirects' => false,
         );
     }
 
@@ -273,8 +287,8 @@ class expPreloadRunner
         $headers = is_callable( $headers ) ? (array)call_user_func( $headers, $url ) : (array)$headers;
         if ( $this->options['fetcher'] !== null )
             return (array)call_user_func( $this->options['fetcher'], $url, $headOnly, $headers )
-                 + array( 'status' => 0, 'ms' => 0, 'bytes' => 0, 'type' => '', 'body' => '', 'error' => '', 'cookies' => array(), 'headers' => array() );
-        return self::request( $url, $headOnly, (int)$this->options['timeout'], 'Exponential preloader', $headers );
+                 + array( 'status' => 0, 'ms' => 0, 'bytes' => 0, 'type' => '', 'body' => '', 'error' => '', 'cookies' => array(), 'headers' => array(), 'location' => '' );
+        return self::request( $url, $headOnly, (int)$this->options['timeout'], 'Exponential preloader', $headers, !$this->options['record_redirects'] );
     }
 
     /**
@@ -286,10 +300,12 @@ class expPreloadRunner
      * @param int $timeout seconds
      * @param string $userAgent
      * @param string[] $headers request header lines ("Name: value") sent as well
+     * @param bool $followRedirects false: a redirect is answered as it is (status 3xx and its location)
      * @return array status, ms, bytes, type, body, error, cookies (the names of the cookies the response set),
-     *               headers (the names of the response headers, lower case)
+     *               headers (the names of the response headers, lower case), location (the absolute address a
+     *               redirect not followed sends to, else '')
      */
-    public static function request( $url, $headOnly = false, $timeout = 20, $userAgent = 'Exponential preloader', array $headers = array() )
+    public static function request( $url, $headOnly = false, $timeout = 20, $userAgent = 'Exponential preloader', array $headers = array(), $followRedirects = true )
     {
         $started = microtime( true );
         $cookies = array();
@@ -300,7 +316,7 @@ class expPreloadRunner
         curl_setopt_array( $ch, array(
             CURLOPT_URL            => $url,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_FOLLOWLOCATION => (bool)$followRedirects,
             CURLOPT_MAXREDIRS      => 3,
             CURLOPT_TIMEOUT        => (int)$timeout,
             CURLOPT_SSL_VERIFYPEER => false,
@@ -322,6 +338,7 @@ class expPreloadRunner
         $status = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
         $type = (string)curl_getinfo( $ch, CURLINFO_CONTENT_TYPE );
         $error = curl_error( $ch );
+        $location = $followRedirects ? '' : (string)curl_getinfo( $ch, CURLINFO_REDIRECT_URL );
         if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
 
         return array(
@@ -333,6 +350,7 @@ class expPreloadRunner
             'error'   => $error,
             'cookies' => array_values( array_unique( $cookies ) ),
             'headers' => array_values( array_unique( $names ) ),
+            'location' => $location,
         );
     }
 
@@ -673,7 +691,7 @@ class expPreloadRunner
                 break;
             }
             $next = array_shift( $this->queue );
-            $this->visit( $next['url'], $base, $next['depth'], false );
+            $this->visit( $next['url'], $base, $next['depth'], false, isset( $next['hops'] ) ? (int)$next['hops'] : 0 );
         }
 
         if ( $this->options['images'] )
@@ -776,7 +794,7 @@ class expPreloadRunner
         }
     }
 
-    private function visit( $url, $base, $depth, $isSection )
+    private function visit( $url, $base, $depth, $isSection, $hops = 0 )
     {
         if ( isset( $this->seen[$url] ) )
             return;
@@ -803,6 +821,12 @@ class expPreloadRunner
             ++$this->counts['denied'];
             $this->say( 'warn', sprintf( '%s  %d access denied%s', $path, $result['status'],
                                          $this->referrerNote( $url ) ) );
+            return;
+        }
+
+        if ( $this->options['record_redirects'] && $result['status'] >= 300 && $result['status'] < 400 )
+        {
+            $this->recordRedirect( $url, $path, $result, $base, $depth, $hops );
             return;
         }
 
@@ -863,6 +887,76 @@ class expPreloadRunner
                 continue;
             $this->queue[] = array( 'url' => $link, 'depth' => $depth + 1 );
         }
+    }
+
+    /**
+     * A redirect met with record_redirects: the address and where it sends to are remembered, and that address is
+     * crawled under its own address next (at the depth of the redirecting one) when it is on the crawl's host and a
+     * page of the site. A redirect to another host is never fetched; a chain longer than MAX_REDIRECTS is cut off.
+     */
+    private function recordRedirect( $url, $path, array $result, $base, $depth, $hops )
+    {
+        $location = self::resolveLocation( isset( $result['location'] ) ? (string)$result['location'] : '', $url );
+        $this->redirects[$url] = array( 'status' => (int)$result['status'], 'location' => $location );
+        if ( $location === '' )
+        {
+            $this->say( 'warn', sprintf( '%s  %d without a Location header%s', $path, $result['status'], $this->referrerNote( $url ) ) );
+            return;
+        }
+        $this->say( 'ok', sprintf( '%-52s %3d  -> %s', $this->shorten( $path, 52 ), $result['status'], $this->shorten( $location, 60 ) ),
+                    array( 'url' => $url, 'status' => (int)$result['status'], 'location' => $location ) );
+
+        $target = $this->onCrawlHost( $location, $base );
+        if ( $target === false )
+            return; // another host: not this site's page, and not fetched
+        $target = $this->normalise( (string)$target );
+        $this->redirects[$url]['location'] = $target;
+        if ( $hops + 1 >= self::MAX_REDIRECTS )
+        {
+            $this->say( 'warn', sprintf( '%s  more than %d redirects in a row; %s is not fetched', $path, self::MAX_REDIRECTS, $target ) );
+            return;
+        }
+        $targetPath = (string)parse_url( $target, PHP_URL_PATH );
+        if ( isset( $this->seen[$target] ) || ( $targetPath !== '' && ( !$this->belongsToSite( $targetPath ) || $this->isModulePath( $targetPath ) ) ) )
+            return;
+        // next in line: the page a visitor of the redirecting address lands on
+        array_unshift( $this->queue, array( 'url' => $target, 'depth' => $depth, 'hops' => $hops + 1 ) );
+    }
+
+    /**
+     * The absolute address of a Location header value (absolute, scheme relative, root relative or relative). Pure.
+     *
+     * @param string $location
+     * @param string $url the address that answered with it
+     * @return string '' for none
+     */
+    public static function resolveLocation( $location, $url )
+    {
+        $location = trim( (string)$location );
+        if ( $location === '' )
+            return '';
+        if ( preg_match( '#^[a-z][a-z0-9+.-]*://#i', $location ) )
+            return $location;
+        $scheme = (string)parse_url( $url, PHP_URL_SCHEME );
+        if ( strpos( $location, '//' ) === 0 )
+            return ( $scheme !== '' ? $scheme : 'https' ) . ':' . $location;
+        $origin = $scheme . '://' . parse_url( $url, PHP_URL_HOST ) . ( parse_url( $url, PHP_URL_PORT ) ? ':' . parse_url( $url, PHP_URL_PORT ) : '' );
+        if ( $location[0] === '/' )
+            return $origin . $location;
+        $path = (string)parse_url( $url, PHP_URL_PATH );
+        $dir = substr( $path, 0, (int)strrpos( $path, '/' ) + 1 );
+        return $origin . ( $dir === '' ? '/' : $dir ) . $location;
+    }
+
+    /**
+     * The redirects the crawl met (option record_redirects).
+     *
+     * @return array url => array( status, location: the absolute address it sends to, moved onto the crawl's host
+     *               when it is another address of the same site; '' when the answer had none )
+     */
+    public function redirects()
+    {
+        return $this->redirects;
     }
 
     /** Remember that $from links to $target. */

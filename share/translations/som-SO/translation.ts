@@ -83482,6 +83482,30 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Version</source>
         <translation>Nooc</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Gelitaannada goobta ee la daabacayo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gelitaanka goobta</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Xididka</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Xididka ma jiro gelitaan goob: mid kastaa wuxuu ku jiraa galkiisa, xididkuna wuu ku xidhaa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gelitaannada goobta</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Calaamadee hal gelitaan goob, ama dhowr wadaaga hal martigeliye iyagoo adeegsanaya horgalaha URI. Ka xididka ku jira halkaas ayaa laga bixiyaa, kuwa kale galka horgalahooda (/ger/); xiriirrada u dhexeeya waxay ku hadhaan nuqulka. Gelitaannada maamulka weligood lama soo bandhigo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

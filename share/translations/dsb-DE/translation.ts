@@ -83514,6 +83514,30 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Version</source>
         <translation>Wersija</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Pśistupy k sedłu za wózjawjenje</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pśistup k sedłu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>W kórjenju</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Žeden pśistup w kórjenju: kuždy jo w swójom zarědniku, a kórjeń wótkazujo na nje</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Pśistupy k sedłu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Wóznamjeńśo jaden pśistup k sedłu abo někotare, kótarež źěle jaden host pśez swój URI-prefiks. Ten w kórjenju se tam słužy, druge w zarědniku jich prefiksa (/ger/); wótkaze mjazy nimi wóstanu w kopiji. Administraciske pśistupy se nigda njepórucuju.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

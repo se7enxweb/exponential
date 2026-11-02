@@ -84164,6 +84164,30 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccesses der skal udgives</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>I roden</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ingen siteaccess i roden: hver ligger i sin mappe, og roden linker til dem</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Markér én siteaccess, eller flere der deler én vært via deres URI-præfiks. Den i roden serveres der, de andre i mappen for deres præfiks (/ger/); links mellem dem bliver i kopien. Administrations-siteaccesses tilbydes aldrig.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

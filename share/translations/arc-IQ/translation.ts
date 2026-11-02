@@ -83493,6 +83493,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>מפקתא</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>מעלנא דאתרא למפרסם</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>בעקרא</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>לית מעלנא דאתרא בעקרא: כל חד בתיקה דילה, ועקרא מאסר להון</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>רשום חד מעלנא דאתרא, או סגיאא דמשתותפין במארח חד באפתחא דURI דילהון. הו דבעקרא מתתיהב תמן, ואחרנא בתיקה דאפתחא דילהון (/ger/); אסורא דביניהון מקוין בנוסחתא. מעלנא דמדברנותא לא מתקרבין מן מתום.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

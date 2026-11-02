@@ -22,6 +22,10 @@
  *        what the copy does not hold stay as they are, with a warning; never https://127.0.0.1
  *  SB-10 a page that comes with debug output (the server did not take the build's signed X-Exp-Static-Build header,
  *        or sent a debug header) is refused, not stripped: the build fails and the folder is not changed
+ *  SB-11 an address that answers with a redirect becomes a stub page that sends on to the copy's page (a chain to where
+ *        it ends), to the live site or another host (never fetched), or with OutsideLinks=unlink to the front page;
+ *        never a copy of the page it sends to; the page sent to is fetched once, under its own address; loops are
+ *        skipped; redirects_followed counts the stubs
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -490,5 +494,73 @@ class expStaticBuildSqliteTest extends PHPUnit\Framework\TestCase
         $home = file_get_contents( "$dir/index.html" );
         $this->assertStringNotContainsString( 'https://127.0.0.1', $home );
         $this->assertStringContainsString( '<a href="/news?page=2">Older</a>', $home, 'not held, no live site: left as it is' );
+    }
+
+    /** The site with addresses that answer with a redirect, linked from the front page. */
+    private function redirectingSite()
+    {
+        $this->site();
+        $this->site['/']['body'] = str_replace( '</main>', '<a href="/authors">Authors</a> <a href="/authors/jane-smith">Jane</a> <a href="/loop-a">Loop</a>'
+                                                . ' <a href="/elsewhere">Elsewhere</a> <a href="/moved">Moved</a> <a href="/to-login">Sign in</a></main>', $this->site['/']['body'] );
+        $redirect = function ( $status, $location )
+        {
+            return array( 'status' => $status, 'location' => $location, 'type' => 'text/html; charset=utf-8', 'cookies' => array(), 'body' => '<p>Moved</p>' );
+        };
+        $this->site += array(
+            '/authors' => $redirect( 302, 'http://site.test/' ),
+            '/authors/jane-smith' => $redirect( 301, '/authors' ),
+            '/loop-a' => $redirect( 302, '/loop-b' ),
+            '/loop-b' => $redirect( 302, '/loop-a' ),
+            '/elsewhere' => $redirect( 302, 'https://other.example.org/far-away' ),
+            '/moved' => $redirect( 301, 'news' ),
+            '/to-login' => $redirect( 302, '/user/login' ),
+        );
+    }
+
+    /** SB-11 */
+    public function testRedirectsBecomeStubs()
+    {
+        $this->redirectingSite();
+        list( $report, $dir ) = $this->build( array( 'Assets' => 'referenced' ) );
+        $this->assertSame( 0, $report['exit'], json_encode( $report['errors'] ) );
+        $this->assertSame( 4, $report['counts']['pages'], 'a redirecting address is no page of the copy' );
+        $this->assertSame( 5, $report['counts']['redirects_followed'], json_encode( $report['redirects_followed'] ) );
+
+        $authors = file_get_contents( "$dir/authors/index.html" );
+        $this->assertStringNotContainsString( '<h1>Home</h1>', $authors, 'not a copy of the page it sends to' );
+        $this->assertSame( expStaticRedirects::stub( '../', 'https://owner.github.io/repo/' ), $authors );
+        $this->assertSame( expStaticRedirects::stub( '../../', 'https://owner.github.io/repo/' ), file_get_contents( "$dir/authors/jane-smith/index.html" ), 'a chain: to where it ends' );
+        $this->assertSame( expStaticRedirects::stub( '../news/', 'https://owner.github.io/repo/news/' ), file_get_contents( "$dir/moved/index.html" ) );
+        $this->assertSame( expStaticRedirects::stub( 'https://other.example.org/far-away', 'https://other.example.org/far-away' ), file_get_contents( "$dir/elsewhere/index.html" ) );
+        $this->assertSame( expStaticRedirects::stub( 'https://www.example.com/user/login', 'https://www.example.com/user/login' ), file_get_contents( "$dir/to-login/index.html" ), 'outside the copy: the live site' );
+        $this->assertFileDoesNotExist( "$dir/loop-a/index.html" );
+        $this->assertFileDoesNotExist( "$dir/loop-b/index.html" );
+        $reasons = array();
+        foreach ( $report['skipped'] as $skipped )
+            $reasons[$skipped['path']] = $skipped['reason'];
+        $this->assertSame( 'a redirect loop', $reasons['/loop-a'] );
+        $this->assertSame( 'a redirect loop', $reasons['/loop-b'] );
+
+        $kinds = array();
+        foreach ( $report['redirects_followed'] as $entry )
+            $kinds[$entry['path']] = $entry['kind'] . ' ' . $entry['status'];
+        $this->assertSame( array( '/authors' => 'page 302', '/authors/jane-smith' => 'page 301', '/elsewhere' => 'live 302', '/moved' => 'page 301', '/to-login' => 'live 302' ), $kinds );
+
+        $requested = array_count_values( $this->requested );
+        $this->assertSame( 1, $requested['/'], 'the page sent to is fetched once, under its own address' );
+        $this->assertArrayNotHasKey( '/far-away', $requested, 'another host is never fetched' );
+        $this->assertArrayNotHasKey( '/user/login', $requested );
+
+        $home = file_get_contents( "$dir/index.html" );
+        $this->assertStringContainsString( '<a href="authors/">Authors</a>', $home, 'a link to a redirecting address goes to its stub' );
+        $manifest = json_decode( file_get_contents( "$dir/.static-publish/manifest.json" ), true );
+        $this->assertNotEmpty( $manifest );
+        $this->assertSame( 0, $report['link_check']['broken_count'], json_encode( $report['link_check']['broken'] ) );
+
+        // OutsideLinks=unlink: a redirect out of the copy goes to its front page; another host stays as it is
+        list( $report, $dir ) = $this->build( array( 'Assets' => 'referenced', 'OutsideLinks' => 'unlink' ) );
+        $this->assertSame( 0, $report['exit'], json_encode( $report['errors'] ) );
+        $this->assertSame( expStaticRedirects::stub( '../', 'https://owner.github.io/repo/' ), file_get_contents( "$dir/to-login/index.html" ) );
+        $this->assertSame( expStaticRedirects::stub( 'https://other.example.org/far-away', 'https://other.example.org/far-away' ), file_get_contents( "$dir/elsewhere/index.html" ) );
     }
 }

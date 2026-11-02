@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>संस्करणम्</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>प्रकाशनीयाः जालस्थलप्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>मूले</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>मूले कोऽपि जालस्थलप्रवेशः नास्ति: प्रत्येकं स्वसञ्चिकायाम् अस्ति, मूलं च तान् सम्बध्नाति</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>जालस्थलप्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>एकं जालस्थलप्रवेशं, अथवा स्वस्य URI-उपसर्गेण एकं आतिथेयं विभजमानान् अनेकान् चिनुत। मूले स्थितः तत्रैव परिवेष्यते, अन्ये स्वोपसर्गस्य सञ्चिकायाम् (/ger/); तेषां मध्ये सम्बन्धाः प्रतिलिप्याम् एव तिष्ठन्ति। प्रशासनस्य प्रवेशाः कदापि न प्रदर्श्यन्ते।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

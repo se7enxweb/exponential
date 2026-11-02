@@ -83484,6 +83484,30 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Version</source>
         <translation>Enkyusa</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Emiryango gy'omukutu egy'okufulumya</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Omulyango gw'omukutu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ku kikolo</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Tewali mulyango ku kikolo: buli gumu guli mu fayiro yaagwo, ekikolo ne kigiyunga</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Emiryango gy'omukutu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Londa omulyango gumu, oba egisinga egigabana omukyaza omu okuyita mu URI prefix yaagyo. Ogwo oguli ku kikolo guweebwa eyo, egirala mu fayiro ya prefix yaagyo (/ger/); enkolagana wakati waagyo esigala mu kkopi. Emiryango gy'obukulembeze tegiweebwa n'akatono.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83514,6 +83514,30 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>Version</source>
         <translation>Verzija</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Pristupi sajtu za objavljivanje</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pristup sajtu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>U korenu</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nijedan pristup u korenu: svaki je u svojoj fascikli, a koren vodi do njih</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Pristupi sajtu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Označite jedan pristup sajtu ili više njih koji dele jedan host po svom URI prefiksu. Onaj u korenu se tamo služi, ostali u fascikli svog prefiksa (/ger/); veze među njima ostaju u kopiji. Administratorski pristupi se nikad ne nude.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

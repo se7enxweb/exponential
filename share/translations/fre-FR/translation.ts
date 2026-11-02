@@ -84924,6 +84924,30 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccess à publier</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>À la racine</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Aucun siteaccess à la racine : chacun est dans son dossier, et la racine renvoie vers eux</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Cochez un siteaccess, ou plusieurs qui partagent un hôte par leur préfixe d'URI. Celui à la racine y est servi, les autres dans le dossier de leur préfixe (/ger/) ; les liens entre eux restent dans la copie. Les siteaccess d'administration ne sont jamais proposés.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

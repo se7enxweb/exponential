@@ -27,6 +27,10 @@
  *  LR-16 keep (the default) changes nothing: the output is byte for byte the one without the settings
  *  LR-17 a site served at the root of its SiteURL host (origin_site_paths): its pages there are the site's below either
  *        path, so a canonical link names the public address and links to held pages are never taken out
+ *  LR-18 several siteaccesses in one export (sites): each siteaccess's host path maps to its folder, the longest
+ *        first; links between them stay in the export (relative and base path), hreflang alternates are absolute, a
+ *        siteaccess not in the export is outside (unlink), on a SiteURL origin of its own too; the language switcher
+ *        (switchlanguage/to/<siteaccess>) goes to the same page in the other siteaccess, else its front page
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -465,5 +469,54 @@ class expStaticLinkRewriterTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( ' aria-disabled="true">crawl</a> ', $out, 'on the crawl origin the site path stays /site' );
         $this->assertStringContainsString( '<a href="https://www.example.com:8080/about">port</a>', $out, 'another port is another host' );
         $this->assertSame( array( 2, 1 ), array( $r->counts()['removed_outside'], $r->counts()['removed_admin'] ) );
+    }
+
+    /** LR-18 */
+    public function testSeveralSiteAccesses()
+    {
+        $held = array( '/', '/about', '/bold', '/bold/team', '/bold_ger', '/bold_ger/team' );
+        $options = array(
+            'sites' => array( array( 'path' => '', 'prefix' => '' ), array( 'path' => '/bold', 'prefix' => '/bold' ), array( 'path' => '/bold_ger', 'prefix' => '/bold_ger' ),
+                              array( 'path' => '/de', 'prefix' => '/bold_ger', 'origin' => 'www.example.de' ) ),
+            'origins' => array( 'http://127.0.0.1:18308', 'www.example.com', 'www.example.de' ),
+            'outside_links' => 'unlink', 'admin_links' => 'unlink', 'admin_paths' => array( '/admin' ),
+            'public_url' => 'https://owner.github.io/repo/',
+            'pages' => function ( $page, $query ) use ( $held ) { return $query === '' && in_array( $page, $held, true ); },
+        );
+        $r = self::rewriter( $options );
+        $this->assertSame( '/bold_ger/team', $r->classify( '/bold_ger/team', '/' )['page'], 'the longest path first: not /bold' );
+        $this->assertSame( '/bold/team', $r->classify( 'team', '/bold/' )['page'] );
+        $this->assertSame( '/classic/x', $r->classify( '/classic/x', '/' )['page'], 'below the siteaccess at the root' );
+        $this->assertSame( '/bold_ger/team', $r->classify( 'https://www.example.de/de/team', '/' )['page'], 'its own SiteURL host' );
+
+        $html = '<link rel="alternate" hreflang="de" href="/bold_ger/team">'
+              . '<a href="/">en</a> <a href="/bold_ger/team">de</a> <a href="http://127.0.0.1:18308/bold">bold</a> <a href="https://www.example.de/de/team">de host</a>'
+              . ' <a href="/classic/x">classic</a> <a href="/admin/x">admin</a>';
+        $out = $r->rewriteHtml( $html, '/bold/team', 'bold/team/index.html' );
+        $this->assertStringContainsString( '<link rel="alternate" hreflang="de" href="https://owner.github.io/repo/bold_ger/team/">', $out );
+        $this->assertStringContainsString( '<a href="../../">en</a> <a href="../../bold_ger/team/">de</a> <a href="../">bold</a> <a href="../../bold_ger/team/">de host</a>', $out );
+        $this->assertStringContainsString( '<a class="exp-static-unavailable" aria-disabled="true">classic</a> <a class="exp-static-unavailable" aria-disabled="true">admin</a>', $out,
+                                           'a siteaccess not in the export is outside it' );
+        $this->assertSame( array( 1, 1 ), array( $r->counts()['removed_outside'], $r->counts()['removed_admin'] ) );
+
+        $base = self::rewriter( array( 'mode' => 'base-path', 'public_url' => '' ) + $options );
+        $this->assertStringContainsString( '<a href="/repo/bold_ger/team/">de</a>', $base->rewriteHtml( '<a href="/bold_ger/team">de</a>', '/bold/team', 'bold/team/index.html' ) );
+
+        // the language switcher: the same page in the other siteaccess (expStaticBuild::switchedPage())
+        $pages = array( '/bold/team' => array( 'siteaccess' => 'bold', 'node' => 7 ), '/bold_ger/team' => array( 'siteaccess' => 'bold_ger', 'node' => 7 ),
+                        '/about' => array( 'siteaccess' => 'site', 'node' => 9 ) );
+        $members = array( array( 'siteaccess' => 'site', 'folder' => '' ), array( 'siteaccess' => 'bold', 'folder' => '/bold' ),
+                          array( 'siteaccess' => 'bold_ger', 'folder' => '/bold_ger' ) );
+        $switch = self::rewriter( array( 'switch_language' => function ( $sa, $from ) use ( $pages, $members ) { return expStaticBuild::switchedPage( $sa, $from, $pages, $members ); } )
+                                  + $options );
+        $out = $switch->rewriteHtml( '<a href="/bold/switchlanguage/to/bold_ger/team">de</a> <a href="/switchlanguage/to/bold/about">bold</a>'
+                                     . ' <a href="/bold/switchlanguage/to/classic/team">classic</a>', '/bold/team', 'bold/team/index.html' );
+        $this->assertStringContainsString( '<a href="../../bold_ger/team/">de</a> <a href="../">bold</a>', $out, 'the same node there, else its front page' );
+        $this->assertStringContainsString( 'aria-disabled="true">classic</a>', $out, 'a siteaccess not in the export: outside' );
+
+        // all below their folders, none at the root (no DefaultSiteAccess): the root of the host is the siteaccess site's
+        $none = self::rewriter( array( 'sites' => array( array( 'path' => '', 'prefix' => '/site' ), array( 'path' => '/bold', 'prefix' => '/bold' ) ) ) + $options );
+        $this->assertSame( '/site/about', $none->classify( '/about', '/' )['page'] );
+        $this->assertSame( '/bold', $none->classify( '/bold', '/' )['page'] );
     }
 }

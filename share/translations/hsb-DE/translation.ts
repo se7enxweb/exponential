@@ -83484,6 +83484,30 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>Version</source>
         <translation>Wersija</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Přistupy k sydłu za wozjewjenje</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Přistup k sydłu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>W korjenju</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Žadyn přistup w korjenju: kóždy je w swojim rjadowaku, a korjeń na nje wotkazuje</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Přistupy k sydłu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Woznamjeńće jedyn přistup k sydłu abo wjacore, kotrež dźěla sej jedyn host přez swój URI-prefiks. Tón w korjenju so tam słuži, druhe w rjadowaku jich prefiksa (/ger/); wotkazy mjez nimi wostanu w kopiji. Administraciske přistupy so ženje njeskića.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

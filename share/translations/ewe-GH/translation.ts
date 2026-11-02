@@ -83484,6 +83484,30 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>Version</source>
         <translation>ʋɛsiɔn</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu siwo woata</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Le ke la me</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu aɖeke mele ke la me o: ɖesiaɖe le eƒe agbalẽdzraɖoƒe me, eye ke la ku ɖe wo ŋu</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnuwo</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Tia nyatakakaɖoƒe ƒe mɔnu ɖeka, alo geɖe siwo mama host ɖeka to woƒe URI ŋgɔdonya dzi. Esi le ke la me la wona le afima, bubuawo le woƒe ŋgɔdonya ƒe agbalẽdzraɖoƒe me (/ger/); kadodo siwo le wo dome la tsia kɔpi la me. Womenaa dziɖuɖu ƒe mɔnuwo gbeɖe o.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83514,6 +83514,30 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Version</source>
         <translation>Versija</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Publicējamās vietnes piekļuves</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Saknē</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Saknē nav vietnes piekļuves: katra ir savā mapē, un sakne uz tām norāda</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Vietnes piekļuves</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Atzīmējiet vienu vietnes piekļuvi vai vairākas, kas ar savu URI prefiksu dala vienu resursdatoru. Saknē esošā tiek pasniegta tur, pārējās sava prefiksa mapē (/ger/); saites starp tām paliek kopijā. Administrēšanas piekļuves nekad netiek piedāvātas.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

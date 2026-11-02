@@ -83514,6 +83514,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>Версия</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Доступы к сайту для публикации</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ к сайту</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>В корне</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Нет доступа в корне: каждый в своей папке, а корень ссылается на них</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Доступы к сайту</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Отметьте один доступ к сайту или несколько, которые делят один хост по своему URI-префиксу. Тот, что в корне, отдаётся там, остальные — в папке своего префикса (/ger/); ссылки между ними остаются в копии. Административные доступы никогда не предлагаются.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

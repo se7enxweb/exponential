@@ -13,10 +13,11 @@
  * doc/eng-us/specifications/6.0/static-publishing-build-format.md).
  *
  *  1. The site is crawled as the anonymous user by expStaticCacheRunner in export mode (the crawl of the static
- *     cache generator, expPreloadRunner): no cookie is sent, so every page is what a visitor who is not signed in
- *     sees. Every request carries the signed X-Exp-Static-Build header (expStaticBuildSignature), so this server
- *     sends no debug output although its own addresses are in DebugIPList[]; a page that still comes with debug
- *     output is refused and the build fails. Each page is stripped of form tokens, session ids and nonces
+ *     cache generator, expPreloadRunner), each siteaccess of a target of several below its URI prefix into its folder
+ *     of the copy (the default one at the root); no cookie is sent, so every page is what a visitor who is not
+ *     signed in sees. Every request carries the signed X-Exp-Static-Build header (expStaticBuildSignature), so this
+ *     server sends no debug output although its own addresses are in DebugIPList[]; a page that still comes with
+ *     debug output is refused and the build fails. Each page is stripped of form tokens, session ids and nonces
  *     (expStaticPostProcessor); a page that still carries one of them, or whose response set a session cookie, is
  *     refused and the build fails.
  *  2. The links of every page are read (expStaticLinkRewriter), and the files they name are collected
@@ -47,6 +48,12 @@ class expStaticBuild
     private $runId;
     private $context = array();
 
+    /** The siteaccess being crawled (its page paths, nodes and PathPrefix), null: the target's first */
+    private $crawlSiteAccess = null;
+
+    /** The siteaccesses of the build (expStaticTarget::members() with their crawl) */
+    private $members = array();
+
     /** the pages that came with debug output from the server (refused, not stripped) */
     private $debugPages = array();
 
@@ -63,9 +70,10 @@ class expStaticBuild
      *        crawl, instead of the one site.ini gives), context (expStaticTarget::siteAccessContext()), run_id,
      *        keep_staging, max_site_bytes, max_file_bytes, session_names, redirect_rows (expStaticRedirects::rows()
      *        instead of the database's), form_endpoint (bool: the live site takes forms; default [StaticPublishSettings]
-     *        FormEndpoint), audit (callable( $name, $data ) instead of expAudit; false for none), sign_requests (bool:
-     *        every request carries the signed X-Exp-Static-Build header, expStaticBuildSignature; default: when no
-     *        fetcher is given)
+     *        FormEndpoint), audit (callable( $name, $data ) instead of expAudit; false for none), base_paths (siteaccess =>
+     *        its prefix of the crawl, for a target of several), siteaccess (build this one of the target's siteaccesses
+     *        only: a partial build that keeps the others' files), sign_requests (bool: every request carries the signed
+     *        X-Exp-Static-Build header, expStaticBuildSignature; default: when no fetcher is given)
      */
     public function __construct( expStaticTarget $target, array $options = array() )
     {
@@ -75,7 +83,8 @@ class expStaticBuild
             'max_pages' => 0, 'root' => (string)getcwd(), 'var_dir' => null, 'work_dir' => null, 'db' => null, 'can_read' => null,
             'node_lookup' => null, 'fetcher' => null, 'base_path' => null, 'context' => null, 'run_id' => '',
             'keep_staging' => false, 'max_site_bytes' => null, 'max_file_bytes' => null, 'session_names' => array(),
-            'redirect_rows' => null, 'form_endpoint' => null, 'audit' => null, 'sign_requests' => null,
+            'redirect_rows' => null, 'form_endpoint' => null, 'audit' => null, 'base_paths' => null, 'siteaccess' => '',
+            'sign_requests' => null,
         );
         if ( $this->options['sign_requests'] === null )
             $this->options['sign_requests'] = $this->options['fetcher'] === null;
@@ -148,13 +157,14 @@ class expStaticBuild
     /**
      * Builds.
      *
-     * @return array the report (schema exp-static/1): mode, target, siteaccess, run_id, directory, counts, diff,
-     *         pages, refused, files_failed, link_check, limits, applied, errors, warnings, exit
+     * @return array the report (schema exp-static/1): mode, target, siteaccess (the one at the root, or the first),
+     *         siteaccesses, run_id, directory, counts, diff, pages, refused, skipped, redirects_followed, files_failed, link_check, limits, applied,
+     *         errors, warnings, exit
      */
     public function run()
     {
         $started = microtime( true );
-        $partial = (bool)$this->options['paths'] || (bool)$this->options['nodes'];
+        $partial = (bool)$this->options['paths'] || (bool)$this->options['nodes'] || (string)$this->options['siteaccess'] !== '';
         $this->debugPages = array();
         $this->report = array(
             'schema' => self::REPORT,
@@ -162,6 +172,7 @@ class expStaticBuild
             'scope' => $partial ? 'partial' : 'full',
             'target' => $this->target->id(),
             'siteaccess' => $this->target->siteAccess(),
+            'siteaccesses' => $this->target->siteAccesses(),
             'run_id' => $this->runId,
             'started_at' => gmdate( 'c' ),
             'duration_ms' => 0,
@@ -169,7 +180,7 @@ class expStaticBuild
             'links' => array( 'mode' => $this->target->linkMode(), 'base_path' => $this->target->basePath(), 'public_url' => $this->target->publicUrl() ),
             'counts' => array( 'pages' => 0, 'pages_refused' => 0, 'pages_skipped' => 0, 'pages_excluded' => 0, 'files' => 0,
                                'storage' => 0, 'storage_missing' => 0, 'files_failed' => 0, 'extras' => 0, 'links_rewritten' => 0, 'links_live' => 0,
-                               'links_external' => 0, 'links_removed_outside' => 0, 'links_removed_admin' => 0, 'links_unavailable' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0,
+                               'links_external' => 0, 'links_removed_outside' => 0, 'links_removed_admin' => 0, 'links_unavailable' => 0, 'site_broken_links' => 0, 'bytes' => 0, 'stripped' => array(), 'redirects' => 0, 'redirects_followed' => 0,
                                'fingerprinted' => 0, 'precompressed' => 0 ),
             'degraded' => array(),
             'search' => null,
@@ -177,6 +188,7 @@ class expStaticBuild
             'pages' => array(),
             'refused' => array(),
             'skipped' => array(),
+            'redirects_followed' => array(),
             'files_failed' => array(),
             'link_check' => null,
             'limits' => array(),
@@ -246,17 +258,22 @@ class expStaticBuild
     }
 
     /** The crawl options shared by the probe and the crawl. */
-    private function crawlOptions()
+    private function crawlOptions( $siteAccess = null )
     {
-        $options = array( 'siteaccess' => $this->target->siteAccess(), 'timeout' => 30 );
+        $siteAccess = $siteAccess === null ? $this->target->siteAccess() : (string)$siteAccess;
+        $options = array( 'siteaccess' => $siteAccess, 'timeout' => 30 );
         $crawlUrl = $this->options['crawl_url'] !== '' ? (string)$this->options['crawl_url'] : (string)$this->target->setting( 'CrawlURL' );
         if ( $crawlUrl !== '' )
             $options['base_url'] = $crawlUrl;
-        if ( $this->options['base_path'] !== null )
+        if ( is_array( $this->options['base_paths'] ) && array_key_exists( $siteAccess, $this->options['base_paths'] ) )
+            $options['base_path'] = (string)$this->options['base_paths'][$siteAccess];
+        else if ( $this->options['base_path'] !== null && !$this->target->isMultiSite() )
             $options['base_path'] = (string)$this->options['base_path'];
         if ( $this->options['fetcher'] !== null )
             $options['fetcher'] = $this->options['fetcher'];
         $options['headers'] = array( $this, 'requestHeaders' );
+        // a redirect becomes a stub page of its own (writeCrawlRedirects()), never a copy of the page it sends to
+        $options['record_redirects'] = true;
         return $options;
     }
 
@@ -295,28 +312,70 @@ class expStaticBuild
     private function build( $staging, $targetDir, $partial )
     {
         $target = $this->target;
-        $crawlOptions = $this->crawlOptions();
-        $probe = new expPreloadRunner( function () {}, $crawlOptions );
-        $base = $probe->baseUrl();
-        if ( $base === false )
+        // the siteaccesses of the build, each with its crawl: the one at the root of the copy first, the others in the
+        // folder of their URI prefix (a target of one siteaccess has one, at the root)
+        $members = array();
+        $only = (string)$this->options['siteaccess'];
+        if ( $only !== '' && !in_array( $only, $target->siteAccesses(), true ) )
         {
-            $this->error( 'There is no address to build from: the siteaccess has no SiteURL and the target no CrawlURL.' );
+            $this->error( "The target does not publish the siteaccess $only (it publishes " . implode( ', ', $target->siteAccesses() ) . ').' );
             return;
         }
-        $sitePath = $probe->sitePath();
-        $originUrl = parse_url( $base, PHP_URL_SCHEME ) . '://' . parse_url( $base, PHP_URL_HOST ) . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
-        $siteUrl = isset( $this->context['urls'][$target->siteAccess()] ) ? (string)$this->context['urls'][$target->siteAccess()] : '';
-        $origins = array( $originUrl );
-        $originSitePaths = array();
-        if ( $siteUrl !== '' )
+        $origins = array();
+        $sites = array();
+        foreach ( $target->members( $this->context ) as $member )
         {
-            $origins[] = $siteUrl;
+            $crawlOptions = $this->crawlOptions( $member['siteaccess'] );
+            $uriPrefix = expStaticTarget::prefixOf( $this->context, $member['siteaccess'] );
+            // each siteaccess of a copy of several is crawled below its own URI prefix, the one at the root too (/site):
+            // its pages link to themselves there, and the root of the host may answer as another siteaccess
+            if ( $target->isMultiSite() && $uriPrefix !== null && !isset( $crawlOptions['base_path'] ) )
+                $crawlOptions['base_path'] = '/' . $uriPrefix;
+            $probe = new expPreloadRunner( function () {}, $crawlOptions );
+            $base = $probe->baseUrl();
+            if ( $base === false )
+            {
+                $this->error( "There is no address to build from: the siteaccess {$member['siteaccess']} has no SiteURL and the target no CrawlURL." );
+                return;
+            }
+            $member['crawl'] = $crawlOptions;
+            $member['site_path'] = $probe->sitePath();
+            $member['folder'] = $member['prefix'] === '' ? '' : '/' . $member['prefix'];
+            $member['origin'] = parse_url( $base, PHP_URL_SCHEME ) . '://' . parse_url( $base, PHP_URL_HOST ) . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
+            $member['site_url'] = isset( $this->context['urls'][$member['siteaccess']] ) ? (string)$this->context['urls'][$member['siteaccess']] : '';
+            $origins[] = $member['origin'];
+            $sites[] = array( 'path' => $member['site_path'], 'prefix' => $member['folder'] );
+            // the root of the host is the installation's DefaultAccess: when that is the siteaccess at the root of the
+            // copy, an address there without its prefix (/about-us for /site/about-us) is its page too
+            $hostRoot = rtrim( (string)parse_url( $base, PHP_URL_PATH ), '/' );
+            if ( $member['default'] && $member['site_path'] !== $hostRoot && isset( $this->context['default_access'] )
+                 && $this->context['default_access'] === $member['siteaccess'] )
+                $sites[] = array( 'path' => $hostRoot, 'prefix' => '' );
+            $members[] = $member;
+        }
+        $this->members = $members;
+        $first = $members[0];
+        $sitePath = $first['site_path'];
+        $originUrl = $first['origin'];
+        $siteUrl = $first['site_url'];
+        $originSitePaths = array();
+        foreach ( $members as $member )
+        {
+            if ( $member['site_url'] === '' )
+                continue;
+            $origins[] = $member['site_url'];
             // the site's own pages on its SiteURL host (canonical links, links written in full in the content) are
             // below the path of SiteURL there, which need not be the path the build fetches from (/site)
-            $siteOrigin = preg_replace( '#^([a-z]+://)?([^/]+).*$#i', '$2', $siteUrl );
-            if ( strtolower( (string)$siteOrigin ) !== strtolower( (string)preg_replace( '#^[a-z]+://#i', '', $originUrl ) ) )
-                $originSitePaths[$siteOrigin] = rtrim( (string)parse_url( 'http://' . preg_replace( '#^[a-z]+://#i', '', $siteUrl ), PHP_URL_PATH ), '/' );
+            $siteOrigin = preg_replace( '#^([a-z]+://)?([^/]+).*$#i', '$2', $member['site_url'] );
+            if ( strtolower( (string)$siteOrigin ) !== strtolower( (string)preg_replace( '#^[a-z]+://#i', '', $member['origin'] ) ) )
+            {
+                $path = rtrim( (string)parse_url( 'http://' . preg_replace( '#^[a-z]+://#i', '', $member['site_url'] ), PHP_URL_PATH ), '/' );
+                if ( $member === $first )
+                    $originSitePaths[$siteOrigin] = $path;
+                $sites[] = array( 'path' => $path, 'prefix' => $member['folder'], 'origin' => $siteOrigin );
+            }
         }
+        $origins = array_values( array_unique( $origins ) );
         $liveUrl = (string)$target->setting( 'LiveURL' );
         if ( $liveUrl === '' && $siteUrl !== '' )
         {
@@ -332,25 +391,51 @@ class expStaticBuild
             $origins[] = $liveUrl;
             $liveUrl = preg_replace( '#^([a-z]+://[^/]+).*$#i', '$1', $liveUrl );
         }
-        $this->say( 'phase', 'Static publishing: ' . $target->id() . ' (' . $target->siteAccess() . ')' );
-        $this->say( 'phase-item', 'From:   ' . $originUrl . ( $sitePath === '' ? '/' : $sitePath . '/' ) );
+        $this->say( 'phase', 'Static publishing: ' . $target->id() . ' (' . implode( ', ', $target->siteAccesses() ) . ')' );
+        foreach ( $members as $member )
+            $this->say( 'phase-item', 'From:   ' . $member['origin'] . ( $member['site_path'] === '' ? '/' : $member['site_path'] . '/' )
+                        . ( count( $members ) > 1 ? ' (' . $member['siteaccess'] . ', in the copy at ' . $member['folder'] . '/)' : '' ) );
         $this->say( 'phase-item', 'To:     ' . $targetDir . ( $this->options['dry_run'] ? ' (dry run: not changed)' : '' ) );
         $this->say( 'phase-item', 'Links:  ' . $target->linkMode() . ( $target->linkMode() === 'base-path' ? ' ' . $target->basePath() : '' )
                     . ( $liveUrl !== '' ? ', what is not exported goes to ' . $liveUrl : '' )
                     . ( $target->setting( 'OutsideLinks' ) === 'unlink' ? ', links to pages not exported are taken out' : '' )
                     . ( $target->setting( 'AdminLinks' ) === 'unlink' ? ', links into the administration are taken out' : '' ) );
 
-        // 1. the crawl
-        $paths = array_values( array_map( 'strval', (array)$this->options['paths'] ) );
+        // 1. the crawl: the pages asked for (paths of the copy, /ger/about-us for a siteaccess in a folder) go to the
+        // siteaccess that holds them; a node is built in every siteaccess of the build
+        $crawled = array();
+        $memberPaths = array();
+        foreach ( $members as $member )
+            if ( $only === '' || $member['siteaccess'] === $only )
+            {
+                $crawled[] = $member;
+                $memberPaths[$member['siteaccess']] = array();
+            }
+        foreach ( array_map( 'strval', (array)$this->options['paths'] ) as $path )
+        {
+            $of = expStaticTarget::memberOf( $path, $members );
+            if ( $of === null || !isset( $memberPaths[$of['siteaccess']] ) )
+                $this->warning( "The page $path is in none of the siteaccesses of this build; it is not built." );
+            else
+                $memberPaths[$of['siteaccess']][] = $of['path'];
+        }
         foreach ( (array)$this->options['nodes'] as $nodeId )
         {
-            $path = $this->nodePath( (int)$nodeId );
-            if ( $path === null )
+            $found = false;
+            foreach ( $crawled as $member )
+            {
+                $path = $this->nodePath( (int)$nodeId, $member['siteaccess'] );
+                if ( $path !== null )
+                {
+                    $memberPaths[$member['siteaccess']][] = $path;
+                    $found = true;
+                }
+            }
+            if ( !$found )
                 $this->warning( "The node $nodeId has no address the anonymous user can open; it is not built." );
-            else
-                $paths[] = $path;
         }
-        if ( $partial && !$paths )
+        $asked = (bool)$this->options['paths'] || (bool)$this->options['nodes'];
+        if ( $asked && !array_filter( $memberPaths ) )
         {
             $this->error( 'None of the pages asked for has an address.' );
             return;
@@ -366,29 +451,45 @@ class expStaticBuild
             $ini = eZINI::instance( 'staticcache.ini' );
             $maxDepth = $ini->hasVariable( 'CacheSettings', 'MaxCacheDepth' ) ? (int)$ini->variable( 'CacheSettings', 'MaxCacheDepth' ) : 12;
         }
-        $export = function ( $url, $path, $relative, $body, array $info ) use ( $self, $rawDir, $sessionNames, &$pages )
-        {
-            return $self->exportPage( $url, $path, $relative, $body, $info, $rawDir, $sessionNames, $pages );
-        };
         $emit = $this->emit;
-        $runner = new expStaticCacheRunner( function ( $type, $message, array $data = array() ) use ( $emit )
+        $brokenOnSite = 0;
+        $crawlRedirects = array();
+        $redirectStubs = array();
+        foreach ( $crawled as $member )
         {
-            if ( $emit !== null && $type !== 'done' )
-                call_user_func( $emit, $type === 'phase' ? 'phase-item' : $type, $message, $data );
-        }, array( 'siteaccess' => $target->siteAccess(),
-                  'max_pages' => $this->options['max_pages'] ? (int)$this->options['max_pages'] : (int)$target->setting( 'MaxPages' ),
-                  'max_depth' => (int)$maxDepth, 'paths' => $paths, 'export' => $export,
-                  // a page fetched from the CrawlURL may link to its SiteURL (or the LiveURL) in full: the same site
-                  'site_origins' => array_slice( $origins, 1 ) ) + $crawlOptions );
-        $runner->run();
-        $crawler = $runner->lastCrawler();
-        if ( $crawler !== null )
-        {
-            $problems = $crawler->problems();
-            $this->report['counts']['site_broken_links'] = count( $problems );
-            if ( $problems )
-                $this->warning( sprintf( 'The site itself has %d broken link(s) (Setup > Preload lists them with the pages that hold them).', count( $problems ) ) );
+            if ( $asked && !$memberPaths[$member['siteaccess']] )
+                continue;
+            $folder = $member['folder'];
+            $siteAccess = $member['siteaccess'];
+            $this->crawlSiteAccess = $siteAccess;
+            $export = function ( $url, $path, $relative, $body, array $info ) use ( $self, $rawDir, $sessionNames, &$pages, $folder, $siteAccess )
+            {
+                return $self->exportPage( $url, $path, $relative, $body, $info, $rawDir, $sessionNames, $pages, $folder, $siteAccess );
+            };
+            if ( count( $members ) > 1 )
+                $this->say( 'phase-item', sprintf( 'Site:   %s (%s/)', $siteAccess, $folder ) );
+            $runner = new expStaticCacheRunner( function ( $type, $message, array $data = array() ) use ( $emit )
+            {
+                if ( $emit !== null && $type !== 'done' )
+                    call_user_func( $emit, $type === 'phase' ? 'phase-item' : $type, $message, $data );
+            }, array( 'siteaccess' => $siteAccess,
+                      'max_pages' => $this->options['max_pages'] ? (int)$this->options['max_pages'] : (int)$target->setting( 'MaxPages' ),
+                      'max_depth' => (int)$maxDepth, 'paths' => $memberPaths[$siteAccess], 'export' => $export,
+                      // a page fetched from the CrawlURL may link to its SiteURL (or the LiveURL) in full: the same site
+                      'site_origins' => array_values( array_diff( $origins, array( $member['origin'] ) ) ) ) + $member['crawl'] );
+            $runner->run();
+            $crawler = $runner->lastCrawler();
+            if ( $crawler !== null )
+            {
+                $brokenOnSite += count( $crawler->problems() );
+                // every siteaccess crawled: its redirects are full addresses, the rewriter knows its folder
+                $crawlRedirects += $crawler->redirects();
+            }
         }
+        $this->crawlSiteAccess = null;
+        $this->report['counts']['site_broken_links'] = $brokenOnSite;
+        if ( $brokenOnSite )
+            $this->warning( sprintf( 'The site itself has %d broken link(s) (Setup > Preload lists them with the pages that hold them).', $brokenOnSite ) );
         if ( !empty( $this->debugPages ) )
             $this->error( sprintf( '%d page(s) came with debug output (first: %s): the server did not take the build\'s signed %s header. '
                                    . 'The build must fetch from this installation\'s own server (CrawlURL on this machine), and its web server '
@@ -410,11 +511,11 @@ class expStaticBuild
         // 2. the links and the files
         $old = expStaticManifest::load( $targetDir );
         $collector = null;
-        $held = function ( $page, $query ) use ( &$pages, $partial, $old )
+        $held = function ( $page, $query ) use ( &$pages, &$redirectStubs, $partial, $old )
         {
             if ( $query !== '' )
                 return false;
-            if ( isset( $pages[$page] ) )
+            if ( isset( $pages[$page] ) || isset( $redirectStubs[$page] ) )
                 return true;
             $file = expStaticLinkRewriter::pageFile( $page );
             return $partial && $old !== null && $file !== null && $old->has( $file ) && $old->get( $file )['kind'] === 'page';
@@ -430,7 +531,18 @@ class expStaticBuild
                                   'outside_links' => $target->setting( 'OutsideLinks' ), 'admin_links' => $target->setting( 'AdminLinks' ),
                                   'admin_paths' => self::adminPaths( $this->context, $origins, $sitePath ), 'origin_site_paths' => $originSitePaths,
                                   'unavailable_css' => expStaticLinkRewriter::UNAVAILABLE_CSS );
+        // several siteaccesses: the pages of each are its folder of the copy, so a link from one to another stays in the copy
+        if ( count( $members ) > 1 )
+        {
+            $rewriterOptions['sites'] = $sites;
+            $rewriterOptions['switch_language'] = function ( $siteAccess, $fromPage ) use ( &$pages, $members )
+            {
+                return expStaticBuild::switchedPage( $siteAccess, $fromPage, $pages, $members );
+            };
+        }
         $rewriter = new expStaticLinkRewriter( $rewriterOptions );
+        // before any page is rewritten: a link to a redirecting address goes to its stub in the copy
+        $redirectStubs = $this->planCrawlRedirects( $crawlRedirects, $rewriter, $held, $pages );
         $collector = new expStaticAssetCollector( array( 'root' => $this->options['root'], 'output' => $staging, 'origin' => $originUrl,
                                                          'fetch' => array( $this, 'request' ), 'rewriter' => $rewriter, 'emit' => $this->emit,
                                                          'max_file_bytes' => $this->limit( 'max_file_bytes', 'MaxFileBytes', 100000000 ) ) );
@@ -472,7 +584,7 @@ class expStaticBuild
 
         // 3. the pages, the extras, the manifest
         $manifest = new expStaticManifest( array(
-            'target' => $target->id(), 'siteaccess' => $target->siteAccess(), 'run_id' => $this->runId, 'built_at' => gmdate( 'c' ),
+            'target' => $target->id(), 'siteaccess' => $target->siteAccess(), 'siteaccesses' => $this->manifestMembers( $members ), 'run_id' => $this->runId, 'built_at' => gmdate( 'c' ),
             'links' => $target->linkMode(), 'base_path' => $target->basePath(), 'public_url' => $target->publicUrl(), 'scope' => $partial ? 'partial' : 'full',
         ) );
         $rewriter->reset();
@@ -488,16 +600,17 @@ class expStaticBuild
             if ( $minify )
                 $html = expStaticPostProcessor::minify( $html );
             if ( $search !== null )
-                $search->add( $html, expStaticLinkRewriter::pageUrl( $page['file'] ) );
-            if ( $page['node'] !== null && !isset( $nodePages[(int)$page['node']] ) )
-                $nodePages[(int)$page['node']] = $relative;
+                $search->add( $html, expStaticLinkRewriter::pageUrl( $page['file'] ), count( $members ) > 1 ? $page['siteaccess'] : '' );
+            if ( $page['node'] !== null && !isset( $nodePages[$page['siteaccess']][(int)$page['node']] ) )
+                $nodePages[$page['siteaccess']][(int)$page['node']] = $page['site_path'];
             if ( !$this->write( $staging . '/' . $page['file'], $html ) )
             {
                 $this->error( 'Cannot write ' . $page['file'] );
                 continue;
             }
             $manifest->add( $page['file'], 'page', hash( 'sha256', $html ), strlen( $html ),
-                            array( 'url' => $page['path'], 'node' => $page['node'], 'modified' => $page['modified'] ) );
+                            array( 'url' => $page['path'], 'node' => $page['node'], 'modified' => $page['modified'] )
+                            + ( count( $members ) > 1 ? array( 'siteaccess' => $page['siteaccess'] ) : array() ) );
             $sitemap[expStaticLinkRewriter::pageUrl( $page['file'] )] = $page['modified'];
             $this->report['pages'][] = array( 'path' => $relative, 'file' => $page['file'], 'bytes' => strlen( $html ), 'node' => $page['node'],
                                               'stripped' => array_sum( $page['removed'] ) );
@@ -539,15 +652,19 @@ class expStaticBuild
             else
                 $this->fingerprint( $staging, $manifest );
         }
+        // several siteaccesses and none at the root: the root is a page that links to each
+        if ( count( $members ) > 1 && $first['prefix'] !== '' )
+            $this->writeRootIndex( $staging, $manifest, $members, $pages );
+        $this->writeCrawlRedirects( $staging, $manifest, $redirectStubs );
         $this->writeExtras( $staging, $manifest, $notFound, $rewriterOptions, $sitemap );
         if ( $search !== null )
-            $this->writeSearch( $staging, $manifest, $search, $partial ? $targetDir : null );
+            $this->writeSearch( $staging, $manifest, $search, $partial ? $targetDir : null, count( $members ) > 1 ? $members : array() );
         if ( $target->hasExtra( 'redirects' ) )
         {
             if ( $partial )
                 $this->say( 'phase-item', 'Redirects: kept from the last full build' );
             else
-                $this->writeRedirects( $staging, $manifest, $rewriter, $nodePages, $pages );
+                $this->writeRedirects( $staging, $manifest, $rewriter, $nodePages, $pages, $members );
         }
         if ( $partial && $old !== null )
             $manifest->keepFrom( $old );
@@ -603,17 +720,34 @@ class expStaticBuild
     /**
      * The export callback of the crawl: one page checked, stripped and kept for rewriting. Public for the closure.
      *
+     * @param string $folder the folder of the page's siteaccess in the copy ('' at the root, /ger)
+     * @param string|null $siteAccess the page's siteaccess
      * @return bool whether the page was kept
      */
-    public function exportPage( $url, $path, $relative, $body, array $info, $rawDir, array $sessionNames, array &$pages )
+    public function exportPage( $url, $path, $relative, $body, array $info, $rawDir, array $sessionNames, array &$pages, $folder = '', $siteAccess = null )
     {
+        $siteRelative = (string)$relative;
+        // the page's path in the copy: its siteaccess's folder and its path in that siteaccess
+        $relative = $folder === '' ? $siteRelative : $folder . ( $siteRelative === '/' ? '' : $siteRelative );
+        // a page in the folder of another siteaccess of the build is that one's (its own crawl exports it); one below the
+        // URI prefix of another siteaccess of the installation is that one's, not a page of the siteaccess at the root
+        if ( $folder === '' && count( $this->members ) > 1 )
+        {
+            $of = expStaticTarget::memberOf( $relative, $this->members );
+            if ( $of !== null && $siteAccess !== null && $of['siteaccess'] !== $siteAccess )
+                return false;
+            if ( preg_match( '#^/([^/]+)#', $siteRelative, $m ) && isset( $this->context['prefixes'] ) && is_array( $this->context['prefixes'] ) )
+                foreach ( $this->context['prefixes'] as $name => $prefix )
+                    if ( $name !== $siteAccess && $prefix !== null && strcasecmp( (string)$prefix, $m[1] ) === 0 )
+                        return false;
+        }
         if ( parse_url( $url, PHP_URL_QUERY ) !== null )
         {
             $this->report['counts']['pages_skipped']++;
             $this->report['skipped'][] = array( 'path' => $relative, 'reason' => 'an address with a query string' );
             return false;
         }
-        if ( $this->target->excludesPath( $relative ) )
+        if ( $this->target->excludesPath( $relative ) || ( $folder !== '' && $this->target->excludesPath( $siteRelative ) ) )
         {
             $this->report['counts']['pages_excluded']++;
             return false;
@@ -625,7 +759,7 @@ class expStaticBuild
             $this->report['skipped'][] = array( 'path' => $relative, 'reason' => 'a path that cannot be a file name on every system' );
             return false;
         }
-        $node = $this->nodeData( $relative );
+        $node = $this->nodeData( $siteRelative, $siteAccess );
         if ( $node !== null && $node['section'] !== null && in_array( (string)$node['section'], (array)$this->target->setting( 'ExcludeSections' ), true ) )
         {
             $this->report['counts']['pages_excluded']++;
@@ -659,7 +793,9 @@ class expStaticBuild
         if ( file_put_contents( $raw, $stripped['html'] ) === false )
             return false;
         $pages[$relative] = array( 'path' => $path, 'file' => $file, 'raw' => $raw, 'removed' => $stripped['removed'],
-                                   'node' => $node !== null ? $node['node'] : null, 'modified' => $node !== null ? $node['modified'] : null );
+                                   'node' => $node !== null ? $node['node'] : null, 'modified' => $node !== null ? $node['modified'] : null,
+                                   'siteaccess' => $siteAccess !== null ? (string)$siteAccess : $this->target->siteAccess(), 'folder' => (string)$folder,
+                                   'site_path' => $siteRelative );
         $this->say( 'ok', sprintf( '%-52s %s', $relative, self::bytes( strlen( $stripped['html'] ) ) ) );
         return true;
     }
@@ -773,7 +909,7 @@ class expStaticBuild
     }
 
     /** The search page, its script and style sheet, and an index per language (a partial build keeps the other pages' entries). */
-    private function writeSearch( $staging, expStaticManifest $manifest, expStaticSearchIndex $search, $keepFrom )
+    private function writeSearch( $staging, expStaticManifest $manifest, expStaticSearchIndex $search, $keepFrom, array $members = array() )
     {
         if ( $keepFrom !== null )
             foreach ( glob( $keepFrom . '/' . expStaticSearchIndex::DIRECTORY . '/index-*.json' ) ?: array() as $file )
@@ -785,7 +921,10 @@ class expStaticBuild
             $files[$file] = $index['content'];
             $dropped += $index['dropped'];
         }
-        $files[expStaticSearchIndex::PAGE] = expStaticSearchIndex::page( $search->languages(), array( 'lang' => '' ) );
+        $sites = array();
+        foreach ( $members as $member )
+            $sites[$member['siteaccess']] = $member['folder'] . '/';
+        $files[expStaticSearchIndex::PAGE] = expStaticSearchIndex::page( $search->languages(), array( 'lang' => '' ), $sites );
         $files[expStaticSearchIndex::SCRIPT] = expStaticSearchIndex::script();
         $files[expStaticSearchIndex::DIRECTORY . '/search.css'] = expStaticSearchIndex::styleSheet();
         foreach ( $files as $file => $content )
@@ -801,8 +940,215 @@ class expStaticBuild
         $this->say( 'phase-item', sprintf( 'Search:  %d page(s), %s', $search->count() - $dropped, implode( ', ', $search->languages() ) ?: '-' ) );
     }
 
-    /** The redirect stubs of the old and extra addresses of the pages built. */
-    private function writeRedirects( $staging, expStaticManifest $manifest, expStaticLinkRewriter $rewriter, array $nodePages, array $pages )
+    /**
+     * Where the language switcher of a copy of several siteaccesses goes (switchlanguage/to/<siteaccess>/<path>): the
+     * page of the same node in that siteaccess, else its front page; null for a siteaccess not in the copy. Pure.
+     *
+     * @param string $siteAccess the siteaccess switched to
+     * @param string $fromPage the page switched from, by its path in the copy (/bold/careers)
+     * @param array $pages the pages of the build (copy path => siteaccess, node ...)
+     * @param array $members the siteaccesses of the build (siteaccess, folder)
+     * @return string|null a page path of the copy
+     */
+    public static function switchedPage( $siteAccess, $fromPage, array $pages, array $members )
+    {
+        $folder = null;
+        foreach ( $members as $member )
+            if ( $member['siteaccess'] === (string)$siteAccess )
+                $folder = $member['folder'];
+        if ( $folder === null )
+            return null;
+        $node = isset( $pages[$fromPage]['node'] ) ? $pages[$fromPage]['node'] : null;
+        if ( $node !== null )
+            foreach ( $pages as $path => $page )
+                if ( $page['siteaccess'] === (string)$siteAccess && $page['node'] === $node )
+                    return (string)$path;
+        return $folder === '' ? '/' : $folder;
+    }
+
+    /** @return array[] the siteaccesses of the build as the manifest names them: name, folder (/ for the root, /ger/) */
+    private function manifestMembers( array $members )
+    {
+        $out = array();
+        foreach ( $members as $member )
+            $out[] = array( 'name' => $member['siteaccess'], 'folder' => $member['folder'] . '/' );
+        return $out;
+    }
+
+    /** index.html of a copy of several siteaccesses with none at its root: a link to the front page of each. */
+    private function writeRootIndex( $staging, expStaticManifest $manifest, array $members, array $pages )
+    {
+        $sites = array();
+        foreach ( $members as $member )
+        {
+            $name = $member['siteaccess'];
+            $lang = '';
+            try
+            {
+                $siteIni = eZSiteAccess::getIni( $member['siteaccess'], 'site.ini' );
+                if ( $siteIni->hasVariable( 'SiteSettings', 'SiteName' ) && trim( (string)$siteIni->variable( 'SiteSettings', 'SiteName' ) ) !== '' )
+                    $name = trim( (string)$siteIni->variable( 'SiteSettings', 'SiteName' ) ) . ' (' . $member['siteaccess'] . ')';
+                if ( $siteIni->hasVariable( 'RegionalSettings', 'Locale' ) && class_exists( 'eZLocale' ) )
+                {
+                    $locale = eZLocale::instance( (string)$siteIni->variable( 'RegionalSettings', 'Locale' ) );
+                    $lang = $locale ? (string)$locale->httpLocaleCode() : '';
+                }
+            }
+            catch ( Throwable $e )
+            {
+            }
+            $sites[] = array( 'name' => $name, 'link' => ltrim( $member['folder'], '/' ) . '/', 'lang' => $lang );
+        }
+        $html = expStaticExtras::rootIndex( $sites );
+        if ( isset( $pages['/'] ) )
+            return;
+        if ( $this->write( $staging . '/index.html', $html ) )
+            $manifest->add( 'index.html', 'extra', hash( 'sha256', $html ), strlen( $html ) );
+    }
+
+    /**
+     * What becomes of each address that answered the crawl with a redirect: a stub page of its own that sends the
+     * visitor on (expStaticRedirects::stub()), never a copy of the page it sends to. The stub points at
+     *
+     *   page   the copy's page, when the copy holds the address the redirect (or the chain of them) ends on
+     *   live   the address itself on the live site (LiveURL) when it is a page the copy does not hold, or as it is
+     *          when it is on another host
+     *   front  the copy's front page, when OutsideLinks=unlink (or AdminLinks=unlink for an administration page)
+     *          takes the link to an address outside the copy out: a stub with nowhere to go would be a dead end
+     *
+     * No stub is written for a loop, a chain longer than expPreloadRunner::MAX_REDIRECTS, an answer without a
+     * Location, an address that is no file name, or a redirect to the address's own file (/a to /a/); those are in
+     * "skipped".
+     *
+     * @param array $redirects expPreloadRunner::redirects()
+     * @param expStaticLinkRewriter $rewriter
+     * @param callable $held callable( $page, $query ) => bool: the copy holds the page
+     * @param array $pages the pages exported (page path => page)
+     * @return array page path of the stub => array( file, link, canonical, status, to, kind )
+     */
+    private function planCrawlRedirects( array $redirects, expStaticLinkRewriter $rewriter, callable $held, array $pages )
+    {
+        $plan = array();
+        foreach ( $redirects as $from => $redirect )
+        {
+            $fromC = $rewriter->classify( $from, '/' );
+            $page = $fromC['kind'] === 'page' ? $fromC['page'] : null;
+            $file = $page !== null && $fromC['query'] === '' ? expStaticLinkRewriter::pageFile( $page ) : null;
+            $chain = expStaticRedirects::resolveChain( $redirects, $from, expPreloadRunner::MAX_REDIRECTS );
+            $reason = null;
+            $to = $link = $canonical = $kind = '';
+            if ( $file === null || isset( $pages[$page] ) )
+                $reason = 'a redirect from an address that cannot be a page of the copy';
+            else if ( $chain['error'] !== '' )
+                $reason = 'a redirect ' . $chain['error'];
+            if ( $reason === null )
+            {
+                $to = $chain['to'];
+                $c = $rewriter->classify( $to, $fromC['path'] );
+                $targetFile = $c['kind'] === 'page' && $c['query'] === '' ? expStaticLinkRewriter::pageFile( $c['page'] ) : null;
+                $kind = $targetFile !== null && call_user_func( $held, $c['page'], '' ) ? 'page' : 'live';
+                if ( $kind === 'page' && $targetFile === $file )
+                    $reason = 'a redirect to its own address';
+                else if ( $kind === 'page' )
+                {
+                    $link = $rewriter->link( expStaticLinkRewriter::pageUrl( $targetFile ), $file );
+                    $canonical = $rewriter->link( expStaticLinkRewriter::pageUrl( $targetFile ), $file, true );
+                }
+                else
+                {
+                    $link = $c['kind'] === 'external' ? $to : $rewriter->rewriteUrl( $to, $fromC['path'], $file, false, true );
+                    $canonical = $link;
+                    if ( $link === null )
+                    {
+                        // the link out is taken out: to the front page of the copy, or no stub when it has none
+                        $kind = 'front';
+                        if ( !isset( $pages['/'] ) || $file === 'index.html' )
+                            $reason = 'a redirect out of the copy (OutsideLinks or AdminLinks=unlink) in a copy without a front page';
+                        else
+                        {
+                            $link = $rewriter->link( '', $file );
+                            $canonical = $rewriter->link( '', $file, true );
+                        }
+                    }
+                }
+            }
+            if ( $reason !== null )
+            {
+                $this->report['counts']['pages_skipped']++;
+                $this->report['skipped'][] = array( 'path' => $page !== null ? $page : $from, 'reason' => $reason );
+                continue;
+            }
+            $plan[$page] = array( 'file' => $file, 'link' => (string)$link, 'canonical' => preg_match( '#^https?://#i', (string)$canonical ) ? (string)$canonical : '',
+                                  'status' => (int)$redirect['status'], 'to' => $to, 'kind' => $kind );
+        }
+        ksort( $plan, SORT_STRING );
+        return $plan;
+    }
+
+    /** The stub pages of the addresses that answered the crawl with a redirect (planCrawlRedirects()). */
+    private function writeCrawlRedirects( $staging, expStaticManifest $manifest, array $plan )
+    {
+        $written = 0;
+        foreach ( $plan as $from => $stub )
+        {
+            if ( $manifest->has( $stub['file'] ) )
+            {
+                $this->report['counts']['pages_skipped']++;
+                $this->report['skipped'][] = array( 'path' => $from, 'reason' => 'a redirect where the copy has a file of its own' );
+                continue;
+            }
+            $html = expStaticRedirects::stub( $stub['link'], $stub['canonical'] );
+            if ( !$this->write( $staging . '/' . $stub['file'], $html ) )
+            {
+                $this->error( 'Cannot write ' . $stub['file'] );
+                continue;
+            }
+            $manifest->add( $stub['file'], 'extra', hash( 'sha256', $html ), strlen( $html ), array( 'url' => $from ) );
+            $this->report['redirects_followed'][] = array( 'path' => $from, 'status' => $stub['status'], 'to' => $stub['to'], 'kind' => $stub['kind'], 'file' => $stub['file'] );
+            $written++;
+        }
+        $this->report['counts']['redirects_followed'] = $written;
+        if ( $plan )
+            $this->say( 'phase-item', sprintf( 'Redirects: %d stub(s) for addresses that answered with a redirect', $written ) );
+    }
+
+    /**
+     * The redirect stubs of the old and extra addresses of the pages built: per siteaccess, in its folder of the copy.
+     *
+     * @param array $nodePages siteaccess => node id => the page's path in that siteaccess
+     * @param array $pages the pages of the build (copy path => page)
+     * @param array $members the siteaccesses of the build (siteaccess, folder)
+     */
+    private function writeRedirects( $staging, expStaticManifest $manifest, expStaticLinkRewriter $rewriter, array $nodePages, array $pages, array $members )
+    {
+        $written = 0;
+        foreach ( $members as $member )
+        {
+            $memberPages = array();
+            foreach ( $pages as $page )
+                if ( $page['siteaccess'] === $member['siteaccess'] )
+                    $memberPages[$page['site_path']] = $page;
+            if ( !$memberPages )
+                continue;
+            $count = $this->writeSiteRedirects( $staging, $manifest, $rewriter, isset( $nodePages[$member['siteaccess']] ) ? $nodePages[$member['siteaccess']] : array(),
+                                                $memberPages, $member['folder'] );
+            if ( $count === null )
+                return;
+            $written += $count;
+        }
+        $this->report['counts']['redirects'] = $written;
+        $this->say( 'phase-item', sprintf( 'Redirects: %d stub(s) for old and extra addresses', $written ) );
+    }
+
+    /**
+     * The redirect stubs of one siteaccess.
+     *
+     * @param array $nodePages node id => the page's path in the siteaccess
+     * @param array $pages the siteaccess's pages by their path in it
+     * @param string $folder its folder in the copy ('' at the root, /ger)
+     * @return int|null the stubs written; null without URL aliases to read
+     */
+    private function writeSiteRedirects( $staging, expStaticManifest $manifest, expStaticLinkRewriter $rewriter, array $nodePages, array $pages, $folder )
     {
         $rows = $this->options['redirect_rows'];
         if ( $rows === null )
@@ -810,14 +1156,15 @@ class expStaticBuild
             if ( $this->options['db'] === null )
             {
                 $this->warning( 'Extras[]=redirects: without a database there are no URL aliases to read; no stub is written.' );
-                return;
+                return null;
             }
-            $rows = expStaticRedirects::rows( $this->options['db'] );
+            $rows = $this->options['redirect_rows'] = expStaticRedirects::rows( $this->options['db'] );
         }
         $pagePaths = array();
         foreach ( array_keys( $pages ) as $relative )
             $pagePaths[(string)$relative] = true;
-        $stubs = expStaticRedirects::stubs( (array)$rows, $nodePages, function ( $file ) use ( $manifest ) { return $manifest->has( $file ); }, $pagePaths );
+        $inFolder = $folder === '' ? '' : ltrim( $folder, '/' ) . '/';
+        $stubs = expStaticRedirects::stubs( (array)$rows, $nodePages, function ( $file ) use ( $manifest, $inFolder ) { return $manifest->has( $inFolder . $file ); }, $pagePaths );
         $publicUrl = $this->target->publicUrl();
         $written = 0;
         foreach ( $stubs as $from => $stub )
@@ -825,15 +1172,15 @@ class expStaticBuild
             $to = isset( $pages[$stub['to']] ) ? expStaticLinkRewriter::pageUrl( $pages[$stub['to']]['file'] ) : null;
             if ( $to === null )
                 continue;
-            $html = expStaticRedirects::stub( $rewriter->link( $to, $stub['file'] ), $publicUrl !== '' ? rtrim( $publicUrl, '/' ) . '/' . $to : '' );
-            if ( $this->write( $staging . '/' . $stub['file'], $html ) )
+            $file = $inFolder . $stub['file'];
+            $html = expStaticRedirects::stub( $rewriter->link( $to, $file ), $publicUrl !== '' ? rtrim( $publicUrl, '/' ) . '/' . $to : '' );
+            if ( $this->write( $staging . '/' . $file, $html ) )
             {
-                $manifest->add( $stub['file'], 'extra', hash( 'sha256', $html ), strlen( $html ), array( 'url' => $from ) );
+                $manifest->add( $file, 'extra', hash( 'sha256', $html ), strlen( $html ), array( 'url' => $folder . $from ) );
                 $written++;
             }
         }
-        $this->report['counts']['redirects'] = $written;
-        $this->say( 'phase-item', sprintf( 'Redirects: %d stub(s) for old and extra addresses', $written ) );
+        return $written;
     }
 
     /** README.md and LICENSE, as the target asks. */
@@ -1024,18 +1371,18 @@ class expStaticBuild
      * @param string $relative
      * @return array|null node, modified, section
      */
-    private function nodeData( $relative )
+    private function nodeData( $relative, $siteAccess = null )
     {
         if ( is_callable( $this->options['node_lookup'] ) )
         {
-            $data = call_user_func( $this->options['node_lookup'], $relative );
+            $data = call_user_func( $this->options['node_lookup'], $relative, $siteAccess );
             return is_array( $data ) ? $data + array( 'node' => null, 'modified' => null, 'section' => null ) : null;
         }
         if ( $this->options['db'] === null || !class_exists( 'eZURLAliasML' ) )
             return null;
         try
         {
-            $nodeId = $this->nodeIdOf( $relative );
+            $nodeId = $this->nodeIdOf( $relative, $siteAccess );
             if ( !$nodeId )
                 return null;
             $node = eZContentObjectTreeNode::fetch( $nodeId );
@@ -1053,12 +1400,12 @@ class expStaticBuild
     }
 
     /** The node id of a page path: content/view/<mode>/<id>, the front page, or the URL alias. */
-    private function nodeIdOf( $relative )
+    private function nodeIdOf( $relative, $siteAccess = null )
     {
         $path = trim( preg_replace( '#/\([^)/]*\)/[^/]*#', '', (string)$relative ), '/' );
         if ( preg_match( '#^content/view/[a-z]+/([0-9]+)#', $path, $m ) )
             return (int)$m[1];
-        $siteIni = eZSiteAccess::getIni( $this->target->siteAccess(), 'site.ini' );
+        $siteIni = eZSiteAccess::getIni( $siteAccess !== null ? (string)$siteAccess : $this->target->siteAccess(), 'site.ini' );
         if ( $path === '' )
         {
             $index = $siteIni->hasVariable( 'SiteSettings', 'IndexPage' ) ? (string)$siteIni->variable( 'SiteSettings', 'IndexPage' ) : '';
@@ -1067,22 +1414,38 @@ class expStaticBuild
             return $siteIni->hasVariable( 'NodeSettings', 'RootNode' ) ? (int)$siteIni->variable( 'NodeSettings', 'RootNode' ) : 2;
         }
         $prefix = $siteIni->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) ? trim( (string)$siteIni->variable( 'SiteAccessSettings', 'PathPrefix' ), '/' ) : '';
+        // the address in the languages of that siteaccess (bold_ger: karriere is the German alias)
+        $languages = $siteIni->hasVariable( 'RegionalSettings', 'SiteLanguageList' ) ? (array)$siteIni->variable( 'RegionalSettings', 'SiteLanguageList' ) : array();
+        $prioritized = $siteAccess !== null && $languages && class_exists( 'eZContentLanguage' );
+        if ( $prioritized )
+            eZContentLanguage::setPrioritizedLanguages( $languages );
         $nodeId = $prefix !== '' ? eZURLAliasML::fetchNodeIDByPath( $prefix . '/' . $path ) : false;
         if ( !$nodeId )
             $nodeId = eZURLAliasML::fetchNodeIDByPath( $path );
+        if ( $prioritized )
+            eZContentLanguage::clearPrioritizedLanguages();
         return $nodeId ? (int)$nodeId : 0;
     }
 
     /** The page path of a node, for --nodes; null when there is none. */
-    private function nodePath( $nodeId )
+    private function nodePath( $nodeId, $siteAccess = null )
     {
         if ( $this->options['db'] === null || !class_exists( 'eZContentObjectTreeNode' ) )
             return null;
         $node = eZContentObjectTreeNode::fetch( $nodeId );
         if ( !$node instanceof eZContentObjectTreeNode || !$node->canRead() )
             return null;
-        $alias = (string)$node->urlAlias();
-        $siteIni = eZSiteAccess::getIni( $this->target->siteAccess(), 'site.ini' );
+        $siteIni = eZSiteAccess::getIni( $siteAccess !== null ? (string)$siteAccess : $this->target->siteAccess(), 'site.ini' );
+        // the address in the languages of that siteaccess (bold_ger: the German one first)
+        $languages = $siteIni->hasVariable( 'RegionalSettings', 'SiteLanguageList' ) ? (array)$siteIni->variable( 'RegionalSettings', 'SiteLanguageList' ) : array();
+        if ( $siteAccess !== null && $languages && class_exists( 'eZContentLanguage' ) )
+        {
+            eZContentLanguage::setPrioritizedLanguages( $languages );
+            $alias = (string)$node->urlAlias();
+            eZContentLanguage::clearPrioritizedLanguages();
+        }
+        else
+            $alias = (string)$node->urlAlias();
         $prefix = $siteIni->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) ? trim( (string)$siteIni->variable( 'SiteAccessSettings', 'PathPrefix' ), '/' ) : '';
         if ( $prefix !== '' && stripos( $alias, $prefix . '/' ) === 0 )
             $alias = substr( $alias, strlen( $prefix ) + 1 );

@@ -92,6 +92,17 @@ class expStaticLinkRewriter
     /** Set by rewriteAttributes() when the tag it rewrote is taken out */
     private $unlinked = false;
     private $sitePath = '';
+
+    /**
+     * Where the pages of the export are on the host: array( host path, page prefix ) for every origin, the longest
+     * path first (several siteaccesses in one export: /bold => /bold, '' => ''); and origin key => such a list for
+     * one origin only (a site at another path on its SiteURL host)
+     */
+    private $sites = array();
+    private $originSites = array();
+
+    /** callable( $siteAccess, $fromPage ) => the page of the export a language switcher link goes to, or null */
+    private $switchLanguage = null;
     private $mode = self::MODE_RELATIVE;
     private $basePath = '/';
     private $publicUrl = '';
@@ -119,7 +130,14 @@ class expStaticLinkRewriter
      *        does not hold), admin_links (keep or unlink: a link into an administration siteaccess), admin_paths
      *        (array of host paths of the administration siteaccesses: /admin), origin_site_paths (origin => the site
      *        path on that origin when it differs from site_path: the site served at the root of its SiteURL host while
-     *        the build fetches it below /site; an address there is the site's below either path), unavailable_css (the
+     *        the build fetches it below /site; an address there is the site's below either path), sites (instead of
+     *        site_path and origin_site_paths, for several siteaccesses in one export: a list of hashes path (the host
+     *        path of one: /bold, '' for the root), prefix (its folder in the export: /bold, '' for the root) and origin
+     *        ('' or none: at that path on every origin; else the one origin it is there on); a page path is the prefix
+     *        and the rest of the address below the longest path that holds it, so a link from one siteaccess to
+     *        another stays in the export), switch_language (callable( $siteAccess, $fromPage ) => a page path or
+     *        null: the language switcher's link <folder>/switchlanguage/to/<siteaccess>/<path> goes to the page it
+     *        answers, the same page in that siteaccess of the export), unavailable_css (the
      *        style sheet of placeholder links relative to the export's root, linked in the <head> of a page that has one:
      *        UNAVAILABLE_CSS; empty: none)
      */
@@ -138,6 +156,32 @@ class expStaticLinkRewriter
                 $this->originSitePaths[$key] = self::trimSlash( (string)$path );
         }
         $this->sitePath = isset( $options['site_path'] ) ? self::trimSlash( (string)$options['site_path'] ) : '';
+        if ( isset( $options['sites'] ) && is_array( $options['sites'] ) && $options['sites'] )
+        {
+            foreach ( $options['sites'] as $site )
+            {
+                $entry = array( self::trimSlash( isset( $site['path'] ) ? (string)$site['path'] : '' ), self::trimSlash( isset( $site['prefix'] ) ? (string)$site['prefix'] : '' ) );
+                $key = isset( $site['origin'] ) && (string)$site['origin'] !== '' ? self::originKey( (string)$site['origin'] ) : '';
+                if ( $key === '' )
+                    $this->sites[] = $entry;
+                else if ( isset( $this->origins[$key] ) )
+                    $this->originSites[$key][] = $entry;
+            }
+        }
+        else
+        {
+            $this->sites[] = array( $this->sitePath, '' );
+            foreach ( $this->originSitePaths as $key => $path )
+                if ( $path !== $this->sitePath )
+                    $this->originSites[$key][] = array( $path, '' );
+        }
+        $longestFirst = function ( $a, $b ) { return strlen( $b[0] ) - strlen( $a[0] ); };
+        usort( $this->sites, $longestFirst );
+        foreach ( $this->originSites as $key => $list )
+        {
+            usort( $list, $longestFirst );
+            $this->originSites[$key] = $list;
+        }
         $this->mode = isset( $options['mode'] ) && $options['mode'] === self::MODE_BASE_PATH ? self::MODE_BASE_PATH : self::MODE_RELATIVE;
         $this->basePath = self::normaliseBasePath( isset( $options['base_path'] ) ? (string)$options['base_path'] : '/' );
         $this->publicUrl = isset( $options['public_url'] ) && $options['public_url'] !== '' ? rtrim( (string)$options['public_url'], '/' ) . '/' : '';
@@ -148,6 +192,7 @@ class expStaticLinkRewriter
         $this->outsideLinks = isset( $options['outside_links'] ) && $options['outside_links'] === 'unlink' ? 'unlink' : 'keep';
         $this->adminLinks = isset( $options['admin_links'] ) && $options['admin_links'] === 'unlink' ? 'unlink' : 'keep';
         $this->unavailableCss = isset( $options['unavailable_css'] ) ? ltrim( (string)$options['unavailable_css'], '/' ) : '';
+        $this->switchLanguage = isset( $options['switch_language'] ) && is_callable( $options['switch_language'] ) ? $options['switch_language'] : null;
         foreach ( isset( $options['admin_paths'] ) ? (array)$options['admin_paths'] : array() as $path )
         {
             $path = self::trimSlash( (string)$path );
@@ -361,7 +406,7 @@ class expStaticLinkRewriter
             $url = substr( $url, 0, $mark );
         }
 
-        $sitePaths = array( $this->sitePath );
+        $sites = $this->sites;
         if ( strpos( $url, '//' ) === 0 || preg_match( '#^https?://#i', $url ) )
         {
             $absolute = strpos( $url, '//' ) === 0 ? 'http:' . $url : $url;
@@ -369,8 +414,11 @@ class expStaticLinkRewriter
             if ( !isset( $this->origins[$origin] ) )
                 return array( 'kind' => 'external' ) + $none;
             // the site may live at another path on this origin (served at the root of its SiteURL host)
-            if ( isset( $this->originSitePaths[$origin] ) && $this->originSitePaths[$origin] !== $this->sitePath )
-                $sitePaths[] = $this->originSitePaths[$origin];
+            if ( isset( $this->originSites[$origin] ) )
+            {
+                $sites = array_merge( $this->originSites[$origin], $sites );
+                usort( $sites, function ( $a, $b ) { return strlen( $b[0] ) - strlen( $a[0] ); } );
+            }
             $path = (string)parse_url( $absolute, PHP_URL_PATH );
             if ( $path === '' )
                 $path = '/';
@@ -395,16 +443,17 @@ class expStaticLinkRewriter
             return array( 'kind' => 'file', 'output' => rawurldecode( ltrim( $path, '/' ) ) ) + $out;
 
         $page = null;
-        foreach ( $sitePaths as $sitePath )
+        foreach ( $sites as $site )
         {
+            list( $sitePath, $prefix ) = $site;
             if ( $sitePath === '' )
             {
-                $page = $path;
+                $page = $prefix . $path;
                 break;
             }
             if ( $path === $sitePath || strpos( $path, $sitePath . '/' ) === 0 )
             {
-                $page = (string)substr( $path, strlen( $sitePath ) );
+                $page = $prefix . (string)substr( $path, strlen( $sitePath ) );
                 break;
             }
         }
@@ -510,6 +559,14 @@ class expStaticLinkRewriter
                 return $this->live( $url, $c );
             $this->counts['rewritten']++;
             return $this->link( self::encodePath( $c['output'] ), $fromFile, $absolute ) . $c['query'] . $c['fragment'];
+        }
+        if ( $c['kind'] === 'page' && $this->switchLanguage !== null && $c['query'] === ''
+             && preg_match( '#^(.*?)/switchlanguage/to/([^/]+)(/.*)?$#', $c['page'], $m ) )
+        {
+            // the language switcher between siteaccesses of the export: the same page in the other siteaccess
+            $to = call_user_func( $this->switchLanguage, $m[2], ( $m[1] === '' && !isset( $m[3] ) ? '/' : $m[1] . ( isset( $m[3] ) ? $m[3] : '' ) ) );
+            if ( is_string( $to ) && $to !== '' )
+                $c['page'] = $to;
         }
         if ( $c['kind'] === 'page' )
         {

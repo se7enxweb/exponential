@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>ווערסיע</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>וועבזייַטל־צוטריטן צו פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>בײַם וואָרצל</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>קיין צוטריט בײַם וואָרצל: יעדער איז אין זײַן טעקע, און דער וואָרצל פֿאַרבינדט צו זיי</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>וועבזייַטל־צוטריטן</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>צייכנט אָן איין וועבזייַטל־צוטריט, אָדער עטלעכע וואָס טיילן איין באַלעבאָס דורך זייער URI־פּרעפֿיקס. דער בײַם וואָרצל ווערט דאָרט סערווירט, די אַנדערע אין דער טעקע פֿון זייער פּרעפֿיקס (/ger/); לינקען צווישן זיי בלײַבן אין דער קאָפּיע. אַדמיניסטראַציע־צוטריטן ווערן קיינמאָל נישט פֿאָרגעלייגט.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

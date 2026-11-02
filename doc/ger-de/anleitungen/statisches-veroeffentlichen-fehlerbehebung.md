@@ -41,6 +41,7 @@ listet jede Veröffentlichung mit ihrem Push-Status.
 | `refused: the response set the session cookie` | Die Seite startet eine Session für anonyme Besucher (ein Formular, ein Warenkorb, eine Registrierung); mit `ExcludePaths[]` auslassen oder ändern |
 | `came with debug output`, `refused: debug output from the server` | Der antwortende Server hat den signierten Header `X-Exp-Static-Build` des Builds nicht angenommen (siehe unten): vom eigenen Server dieser Installation abrufen, nach einem Update PHP-FPM neu laden und Velocity neu starten |
 | Seiten `skipped` | Sie existieren nur mit einer Query, oder ihr Pfad kann nicht auf jedem System ein Dateiname sein |
+| Eine Adresse zeigt die Seite, zu der sie weiterleitet, oder eine Seite „ist umgezogen“ | Eine Adresse, die weiterleitet (`/authors` zu `/`), wird zu einem kleinen Stub, der weiterführt, nie zu einer Kopie des Ziels (`redirects_followed` in `--format=json`); eine Schleife oder eine Kette von mehr als 5 Weiterleitungen bekommt keinen Stub und steht unter `skipped`. Die Weiterleitung auf der Website beheben oder die Adresse mit `ExcludePaths[]` auslassen |
 | Dateien `could not be collected` | Die Site gibt sie anonymen Besuchern nicht heraus; ihre Links führen zur Live-Site (`files_failed` in `--format=json`) |
 | `another process works on the target` | Ein Build, eine Veröffentlichung, ein Zurücknehmen oder ein Push dieses Ziels läuft; warten |
 | Ein Build ist sehr groß | `Assets=referenced` kopiert nur, was Seiten nennen; Sektionen auslassen, die nicht öffentlich sein müssen |

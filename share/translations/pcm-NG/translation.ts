@@ -83492,6 +83492,30 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccesses wey we go publish</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>For di root</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>No siteaccess dey for di root: each one dey for im folder, and di root dey link go dem</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Tick one siteaccess, or plenty wey dey share one host by dia URI prefix. Di one for di root na dia dem dey serve am, di oda ones dey for di folder of dia prefix (/ger/); links between dem go stay for di copy. Dem no dey ever show admin siteaccesses.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>Version</source>
         <translation>Mana</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nā siteaccess e hoʻopuka ʻia</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ma ke kumu</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ʻAʻohe siteaccess ma ke kumu: aia kēlā me kēia i loko o kona waihona, a pili ke kumu iā lākou</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nā siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kaha i hoʻokahi siteaccess, a i ʻole kekahi mau mea e kaʻana like ana i hoʻokahi mea hoʻokipa ma o ko lākou URI prefix. Lawelawe ʻia ka mea ma ke kumu ma laila, nā mea ʻē aʻe ma ka waihona o ko lākou prefix (/ger/); noho nā loulou ma waena o lākou i loko o ke kope. ʻAʻole loa e hāʻawi ʻia nā siteaccess hoʻokele.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -84787,6 +84787,30 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Webbplatsingångar att publicera</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webbplatsingång</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>I roten</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ingen webbplatsingång i roten: var och en ligger i sin mapp, och roten länkar till dem</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Webbplatsingångar</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Markera en webbplatsingång, eller flera som delar en värd via sitt URI-prefix. Den i roten serveras där, de andra i mappen för sitt prefix (/ger/); länkar mellan dem stannar i kopian. Administrationsingångar erbjuds aldrig.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

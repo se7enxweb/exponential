@@ -83514,6 +83514,30 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Version</source>
         <translation>Versio</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Julkaistavat sivustoyhteydet</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sivustoyhteys</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Juuressa</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ei sivustoyhteyttä juuressa: kukin on omassa kansiossaan, ja juuri linkittää niihin</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Sivustoyhteydet</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Valitse yksi sivustoyhteys tai useampi, jotka jakavat saman palvelimen URI-etuliitteensä avulla. Juuressa oleva tarjoillaan siellä, muut etuliitteensä kansiossa (/ger/); linkit niiden välillä pysyvät kopiossa. Hallinnan sivustoyhteyksiä ei koskaan tarjota.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

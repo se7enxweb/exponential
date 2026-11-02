@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>نەشر</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ئېلان قىلىدىغان تور بېكەت زىيارەتلىرى</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>تور بېكەت زىيارىتى</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>يىلتىزدا</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>يىلتىزدا تور بېكەت زىيارىتى يوق: ھەر بىرى ئۆز قىسقۇچىدا، يىلتىز ئۇلارغا ئۇلىنىدۇ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>تور بېكەت زىيارەتلىرى</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>بىر تور بېكەت زىيارىتىنى، ياكى URI ئالدى قوشۇلغۇچىسى ئارقىلىق بىر مۇلازىمېتىرنى ئورتاق ئىشلىتىدىغان بىرقانچىسىنى بەلگىلەڭ. يىلتىزدىكىسى شۇ يەردە تەمىنلىنىدۇ، باشقىلىرى ئۆز ئالدى قوشۇلغۇچىسىنىڭ قىسقۇچىدا (/ger/)؛ ئۇلار ئارىسىدىكى ئۇلانمىلار كۆچۈرمىدە قالىدۇ. باشقۇرۇش زىيارەتلىرى ھەرگىز كۆرسىتىلمەيدۇ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

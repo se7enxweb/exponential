@@ -83514,6 +83514,30 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Version</source>
         <translation>Verżjoni</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Aċċessi għas-sit li jiġu ppubblikati</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Fl-għerq</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>L-ebda aċċess fl-għerq: kull wieħed jinsab fil-folder tiegħu, u l-għerq jorbot magħhom</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Aċċessi għas-sit</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Immarka aċċess wieħed għas-sit, jew diversi li jaqsmu host wieħed bil-prefiss URI tagħhom. Dak fl-għerq jiġi servut hemm, l-oħrajn fil-folder tal-prefiss tagħhom (/ger/); il-links bejniethom jibqgħu fil-kopja. L-aċċessi tal-amministrazzjoni qatt ma jiġu offruti.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83482,6 +83482,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>Ẹ̀dà</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Àwọn ìwọlé sáìtì láti tẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ní gbòǹgbò</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kò sí ìwọlé sáìtì ní gbòǹgbò: ọ̀kọ̀ọ̀kan wà nínú fódà rẹ̀, gbòǹgbò sì so mọ́ wọn</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Àwọn ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Sàmì sí ìwọlé sáìtì kan, tàbí ọ̀pọ̀ tí ó pín agbàlejò kan nípasẹ̀ ìṣáájú URI wọn. Èyí tí ó wà ní gbòǹgbò ni a ń pèsè níbẹ̀, àwọn yòókù nínú fódà ìṣáájú wọn (/ger/); àwọn ìjápọ̀ láàrin wọn wà nínú ẹ̀dà náà. A kì í fi ìwọlé ìṣàkóso hàn rárá.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

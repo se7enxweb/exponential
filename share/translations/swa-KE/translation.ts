@@ -83482,6 +83482,30 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Version</source>
         <translation>Toleo</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Siteaccess za kuchapisha</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Kwenye mzizi</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Hakuna siteaccess kwenye mzizi: kila moja iko kwenye folda yake, na mzizi unaziunganisha</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Weka alama kwenye siteaccess moja, au kadhaa zinazoshiriki seva moja kwa kiambishi chao cha URI. Iliyo kwenye mzizi hutolewa hapo, zingine kwenye folda ya kiambishi chao (/ger/); viungo kati yao hubaki kwenye nakala. Siteaccess za usimamizi hazitolewi kamwe.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

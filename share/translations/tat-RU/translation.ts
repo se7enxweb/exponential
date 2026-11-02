@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>Версия</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Бастырыла торган сайтка керү нокталары</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Тамырда</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Тамырда сайтка керү ноктасы юк: һәрберсе үз папкасында, ә тамыр аларга сылтама бирә</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтка керү нокталары</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Бер керү ноктасын яки URI-префикслары аша бер хостны бүлешкән берничәсен билгеләгез. Тамырдагысы шунда бирелә, калганнары үз префиксы папкасында (/ger/); алар арасындагы сылтамалар күчермәдә кала. Идарә керү нокталары беркайчан да тәкъдим ителми.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

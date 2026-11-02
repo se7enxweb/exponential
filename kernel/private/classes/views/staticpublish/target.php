@@ -3,7 +3,8 @@
  * The staticpublish/target view (/staticpublish/target/new and /staticpublish/target/<id>): the wizard that makes or
  * changes a target, one step at a time (page/staticpublish_wizard.js; without JavaScript all steps show at once):
  *
- *   1. the site: the target's id and name, the front siteaccess (administration siteaccesses are never offered)
+ *   1. the site: the target's id and name, the front siteaccesses (one or several, with the one at the root of the
+ *      copy; administration siteaccesses are never offered)
  *   2. the host: GitHub Pages or another git host, and whether the GitHub integration can be used
  *   3. the credential: a token named in Setup > Secrets, a deploy key made for the target, a GitHub App, or none
  *   4. the repository: the git address, branch, folder and (GitHub) branch or Actions; for a saved GitHub target
@@ -139,7 +140,15 @@ class Target extends Page
         $front = array();
         foreach ( $context['siteaccesses'] as $name )
             if ( !in_array( $name, $context['admin'], true ) && !\expStaticTarget::adminName( $name ) )
-                $front[] = array( 'name' => $name, 'url' => isset( $context['urls'][$name] ) ? $context['urls'][$name] : '' );
+            {
+                $prefix = \expStaticTarget::prefixOf( $context, $name );
+                $front[] = array( 'name' => $name, 'url' => isset( $context['urls'][$name] ) ? $context['urls'][$name] : '',
+                                  'folder' => $prefix !== null ? '/' . $prefix . '/' : '' );
+            }
+        $chosen = \expStaticTarget::siteAccessesOf( $settings );
+        $chosenDefault = (string)$settings['DefaultSiteAccess'];
+        if ( count( $chosen ) === 1 )
+            $chosenDefault = $chosen[0];
 
         $credential = \expStaticAdmin::credentialChoice( $settings['Credential'] );
         return self::page( 'target.tpl', array(
@@ -150,6 +159,9 @@ class Target extends Page
             'settings' => $settings,
             'credential' => $credential,
             'siteaccesses' => $front,
+            'chosen' => $chosen,
+            'chosen_default' => $chosenDefault,
+            'members' => \expStaticAdmin::memberList( new \expStaticTarget( $id, $settings ), $context ),
             'secret_names' => \expStaticAdmin::secretNames(),
             'key' => $target ? \expStaticAdmin::deployKey( $target ) : null,
             'key_secret' => \expStaticCredentials::keySecretName( $id !== '' ? $id : '<id>' ),

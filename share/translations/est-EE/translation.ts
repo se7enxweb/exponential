@@ -83514,6 +83514,30 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Version</source>
         <translation>Versioon</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Avaldatavad saidi juurdepääsud</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Juurkaustas</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Juurkaustas pole saidi juurdepääsu: igaüks on oma kaustas ja juurkaust viitab neile</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Saidi juurdepääsud</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Märgi üks saidi juurdepääs või mitu, mis jagavad URI-eesliite kaudu üht hosti. Juurkausta oma pakutakse seal, teised oma eesliite kaustas (/ger/); lingid nende vahel jäävad koopiasse. Halduse juurdepääse ei pakuta kunagi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>Version</source>
         <translation>Útgáva</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Atgongdir til vevstað at útgeva</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Atgongd til vevstað</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Í rótini</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Eingin atgongd í rótini: hvør er í síni mappu, og rótin leinkjar til tær</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Atgongdir til vevstað</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Merk eina atgongd til vevstað, ella fleiri, ið deila ein vert við sínum URI-forskoyti. Tann í rótini verður veitt har, hinar í mappuni hjá forskoytinum (/ger/); leinki millum tær verða verandi í avritinum. Umsitingaratgongdir verða ongantíð bodnar fram.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

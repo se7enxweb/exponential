@@ -83484,6 +83484,30 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Version</source>
         <translation>Fooyya'iinsa</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Seensawwan marsariitii maxxanfaman</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Seensa marsariitii</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Hidda irratti</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Hidda irratti seensi marsariitii hin jiru: tokkoon tokkoon isaanii kuusaa isaa keessa jira, hiddi immoo isaanitti hidhata</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Seensawwan marsariitii</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Seensa marsariitii tokko, ykn kanneen maxxantuu URI isaaniitiin keessummeessaa tokko qooddatan hedduu mallattoo godhi. Kan hidda irra jiru achitti dhiyaata, kanneen biroo kuusaa maxxantuu isaanii keessatti (/ger/); hidhaminsi gidduu isaanii garagalcha keessatti hafa. Seensawwan bulchiinsaa gonkumaa hin dhiyaatan.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

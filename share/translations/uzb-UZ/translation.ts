@@ -83484,6 +83484,30 @@ Tugunning sinfini almashtirish funksiyasi yordamida o ªzgartirishingiz kerak bo 
         <source>Version</source>
         <translation>Versiya</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Nashr qilinadigan sayt kirish nuqtalari</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Ildizda</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ildizda sayt kirish nuqtasi yo'q: har biri o'z jildida, ildiz esa ularga havola beradi</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Sayt kirish nuqtalari</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Bitta kirish nuqtasini yoki URI prefiksi orqali bitta xostni bo'lishadigan bir nechtasini belgilang. Ildizdagisi o'sha yerda beriladi, qolganlari o'z prefiksi jildida (/ger/); ular orasidagi havolalar nusxada qoladi. Boshqaruv kirish nuqtalari hech qachon taklif qilinmaydi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

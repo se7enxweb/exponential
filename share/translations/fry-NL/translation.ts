@@ -83484,6 +83484,30 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>Version</source>
         <translation>Ferzje</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Websidetagongen om te publisearjen</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Websidetagong</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Yn de woartel</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Gjin websidetagong yn de woartel: elk stiet yn syn map, en de woartel keppelet nei harren</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Websidetagongen</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Fink ien websidetagong oan, of meardere dy't ien host diele fia harren URI-foarheaksel. Dy yn de woartel wurdt dêr tsjinne, de oaren yn de map fan harren foarheaksel (/ger/); keppelings tusken harren bliuwe yn de kopy. Behear-websidetagongen wurde nea oanbean.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

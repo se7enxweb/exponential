@@ -87743,6 +87743,30 @@ Gracias por la retroalimentación</translation>
         <source>Version</source>
         <translation>Versión</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accesos al sitio que publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acceso al sitio</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>En la raíz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Ningún acceso en la raíz: cada uno está en su carpeta, y la raíz enlaza con ellos</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesos al sitio</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marca un acceso al sitio, o varios que comparten un host por su prefijo de URI. El de la raíz se sirve ahí, los demás en la carpeta de su prefijo (/ger/); los enlaces entre ellos se quedan en la copia. Nunca se ofrecen los accesos de administración.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

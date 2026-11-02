@@ -83482,6 +83482,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>பதிப்பு</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>வெளியிட வேண்டிய தள அணுகல்கள்</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>தள அணுகல்</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>மூலத்தில்</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>மூலத்தில் தள அணுகல் இல்லை: ஒவ்வொன்றும் தன் கோப்புறையில் உள்ளது, மூலம் அவற்றுக்கு இணைப்பு தருகிறது</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>தள அணுகல்கள்</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ஒரு தள அணுகலை, அல்லது தங்கள் URI முன்னொட்டால் ஒரே ஹோஸ்டைப் பகிரும் பலவற்றைத் தேர்ந்தெடுக்கவும். மூலத்திலுள்ளது அங்கேயே வழங்கப்படும், மற்றவை தங்கள் முன்னொட்டின் கோப்புறையில் (/ger/); அவற்றுக்கிடையேயான இணைப்புகள் நகலிலேயே இருக்கும். நிர்வாக தள அணுகல்கள் ஒருபோதும் வழங்கப்படாது.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

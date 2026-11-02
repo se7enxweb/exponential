@@ -83484,6 +83484,30 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Version</source>
         <translation>Fersiwn</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Mynediadau i'r wefan i'w cyhoeddi</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Mynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Wrth y gwraidd</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Dim mynediad wrth y gwraidd: mae pob un yn ei ffolder, ac mae'r gwraidd yn cysylltu â nhw</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mynediadau i'r wefan</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Ticiwch un mynediad i'r wefan, neu sawl un sy'n rhannu un gwesteiwr drwy eu rhagddodiad URI. Mae'r un wrth y gwraidd yn cael ei weini yno, y lleill yn ffolder eu rhagddodiad (/ger/); mae'r dolenni rhyngddynt yn aros yn y copi. Ni chynigir mynediadau gweinyddu byth.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

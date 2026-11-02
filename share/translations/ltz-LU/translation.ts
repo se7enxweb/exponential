@@ -83484,6 +83484,30 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>Version</source>
         <translation>Versioun</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Site-Zougäng fir ze publizéieren</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site-Zougang</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>An der Wuerzel</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kee Site-Zougang an der Wuerzel: all eenzelen ass a sengem Dossier, an d'Wuerzel verlinkt op si</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Site-Zougäng</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Kräizt ee Site-Zougang un, oder e puer, déi sech iwwer hire URI-Präfix ee Host deelen. Deen an der Wuerzel gëtt do geliwwert, déi aner am Dossier vun hirem Präfix (/ger/); Linken tëscht hinne bleiwen an der Kopie. Administratiouns-Zougäng ginn ni ugebueden.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>Version</source>
         <translation>Ũrutwo</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Njĩra cia saiti cia gũcabwo</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Njĩra ya saiti</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Mũthiyũ-inĩ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Gũtirĩ njĩra ya saiti mũthiyũ-inĩ: o ĩmwe ĩrĩ fonda-inĩ yayo, na mũthiyũ ũkũmathukania</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Njĩra cia saiti</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Thuura njĩra ĩmwe ya saiti, kana nyingĩ iria igwatanagĩra mũgeni ũmwe na URI prefix ciao. Ĩrĩa ĩrĩ mũthiyũ-inĩ ĩheagwo kũu, iria ingĩ fonda-inĩ ya prefix yacio (/ger/); mĩthiĩre ĩrĩa ĩrĩ gatagatĩ kacio ĩtigagwo thĩinĩ wa kobĩ. Njĩra cia ũrũgamĩrĩri itiheanagwo o na rĩ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

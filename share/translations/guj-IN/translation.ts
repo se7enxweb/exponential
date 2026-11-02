@@ -83482,6 +83482,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>આવૃત્તિ</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>પ્રકાશિત કરવાના સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>રૂટ પર</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>રૂટ પર કોઈ સાઇટઍક્સેસ નથી: દરેક પોતાના ફોલ્ડરમાં છે, અને રૂટ તેમની લિંક આપે છે</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>એક સાઇટઍક્સેસ, અથવા તેમના URI ઉપસર્ગ દ્વારા એક હોસ્ટ વહેંચતા ઘણા પસંદ કરો. રૂટ પરનો ત્યાં જ પીરસાય છે, બાકીના તેમના ઉપસર્ગના ફોલ્ડરમાં (/ger/); તેમની વચ્ચેની લિંક નકલમાં જ રહે છે. વહીવટના સાઇટઍક્સેસ ક્યારેય ઓફર થતા નથી.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>པར་གཞི།</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>པར་སྐྲུན་བྱ་རྒྱུའི་དྲ་ཚིགས་འཛུལ་སྒོ།</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོ།</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>རྩ་བར།</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>རྩ་བར་དྲ་ཚིགས་འཛུལ་སྒོ་མེད། རེ་རེ་རང་གི་ཡིག་སྣོད་ནང་ཡོད་ལ། རྩ་བས་དེ་དག་ལ་སྦྲེལ་མཐུད་བྱེད།</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོ།</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>དྲ་ཚིགས་འཛུལ་སྒོ་གཅིག་གམ། URI སྔོན་སྦྱོར་བརྒྱུད་ནས་ཞབས་ཞུ་བ་གཅིག་མཉམ་སྤྱོད་བྱེད་པ་མང་པོ་འདེམས། རྩ་བའི་དེ་དེར་སྤྲོད། གཞན་རྣམས་རང་གི་སྔོན་སྦྱོར་ཡིག་སྣོད་ནང་ (/ger/)། དེ་དག་བར་གྱི་སྦྲེལ་མཐུད་འདྲ་བཤུས་ནང་སྡོད། དོ་དམ་གྱི་དྲ་ཚིགས་འཛུལ་སྒོ་ནམ་ཡང་མི་སྟོན།</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

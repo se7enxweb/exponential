@@ -83514,6 +83514,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>バージョン</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>公開するサイトアクセス</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ルートに</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ルートにサイトアクセスなし: それぞれ自分のフォルダーにあり、ルートからそれぞれにリンクします</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>サイトアクセスを1つ、または URI プレフィックスで1つのホストを共有する複数を選びます。ルートのものはルートで配信され、ほかはそのプレフィックスのフォルダー (/ger/) に置かれます。相互のリンクはコピー内にとどまります。管理用のサイトアクセスは表示されません。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Version</source>
         <translation>Versión</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accesos al sitiu a espublizar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accesu al sitiu</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Na raíz</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Nengún accesu al sitiu na raíz: caún ta na so carpeta, y la raíz enllaza con ellos</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesos al sitiu</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marca un accesu al sitiu, o dellos que comparten un agospiador pol so prefixu d'URI. El de la raíz sírvese ehí, los otros na carpeta del so prefixu (/ger/); los enllaces ente ellos queden na copia. Enxamás s'ufren los accesos d'alministración.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83484,6 +83484,30 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>Version</source>
         <translation>Version</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accèsses al site de publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accès al site</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>A la raiç</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Cap d'accès a la raiç: cadun es dins son dorsièr, e la raiç i liga</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accèsses al site</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marcatz un accès al site, o mantun que partejan un òste per lor prefixe d'URI. Lo de la raiç i es servit, los autres dins lo dorsièr de lor prefixe (/ger/) ; los ligams entre eles demòran dins la còpia. Los accèsses d'administracion son pas jamai prepausats.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

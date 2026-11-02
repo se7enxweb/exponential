@@ -83484,6 +83484,30 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>Version</source>
         <translation>Versiya</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Dərc ediləcək sayt girişləri</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sayt girişi</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Kökdə</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Kökdə sayt girişi yoxdur: hər biri öz qovluğundadır, kök isə onlara keçid verir</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Sayt girişləri</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Bir sayt girişini və ya URI prefiksi ilə bir hostu paylaşan bir neçəsini seçin. Kökdəki orada təqdim olunur, digərləri prefikslərinin qovluğunda (/ger/); aralarındakı keçidlər surətdə qalır. İdarəetmə sayt girişləri heç vaxt təklif olunmur.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -2,14 +2,14 @@
 title: staticcache.ini [Target_example]
 audience: developer, admin
 category: examples
-summary: "The settings of [Target_example] in staticcache.ini: Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links ..."
-keywords: staticcache.ini, Target_example, INI, setting, Name, SiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, OutsideLinks, AdminLinks, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify, Webhook, License
+summary: "The settings of [Target_example] in staticcache.ini: Name, SiteAccess, SiteAccessList, DefaultSiteAccess, Kind, Remote, Branch, Folder ..."
+keywords: staticcache.ini, Target_example, INI, setting, Name, SiteAccess, SiteAccessList, DefaultSiteAccess, Kind, Remote, Branch, Folder, Delivery, Links, BasePath, PublicURL, CustomDomain, Credential, CrawlURL, LiveURL, OutsideLinks, AdminLinks, MaxPages, MaxDepth, Assets, Extras, PostProcess, Search, Forms, ExcludePaths, ExcludeSections, Triggers, Schedule, Notify
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [Target_example]
 
-The block `[Target_example]` of `settings/staticcache.ini`, with 30 setting(s).
+The block `[Target_example]` of `settings/staticcache.ini`, with 32 setting(s).
 
 Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -48,6 +48,43 @@ Default: empty.
 # settings/override/staticcache.ini.append.php
 [Target_example]
 SiteAccess=
+*/ ?>
+```
+
+## SiteAccessList
+
+> Several front siteaccesses in one copy, instead of SiteAccess: sites that  
+> share one host by their URI prefix (site.ini \[SiteAccessSettings\] MatchOrder  
+> with uri, or host\_uri with a URI), such as site, bold and bold\_ger. Each  
+> one but the default is written to the folder of its prefix (/bold\_ger/...);  
+> the links between them stay in the copy, and links to a siteaccess not  
+> listed are links outside the copy (OutsideLinks). When it names any,  
+> SiteAccess is not read.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+# an empty "SiteAccessList[]" first replaces the shipped list; without it the items are added
+SiteAccessList[]
+*/ ?>
+```
+
+## DefaultSiteAccess
+
+> The siteaccess of SiteAccessList\[\] served at the root of the copy. Empty:  
+> every siteaccess is in its folder, and the root is a page that links to  
+> each. A target of one siteaccess always has it at the root.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[Target_example]
+DefaultSiteAccess=
 */ ?>
 ```
 

@@ -79,6 +79,9 @@ class Indexcontent extends \Exponential\Runnable\CronjobPart
                     $action = $entry['action'];
 
                     $cli->output( "\tIndexing object ID #$objectID" );
+                    // One short transaction per object, and per chunk of a moved subtree. The whole subtree was
+                    // indexed inside the object's transaction, and on SQLite (one writer at a time) every other
+                    // write, a page's save among them, waited for all of it.
                     $db->begin();
                     $object = \eZContentObject::fetch( $objectID );
                     $removeFromPendingActions = true;
@@ -90,66 +93,71 @@ class Indexcontent extends \Exponential\Runnable\CronjobPart
                         }
 
                         $removeFromPendingActions = $searchEngine->addObject( $object, false );
+                    }
 
-                        // When moving content (and only, because of performances), reindex the subtree
-                        if ( $action == 'index_moved_node' )
+                    // When moving content (and only, because of performances), reindex the subtree
+                    if ( $object && $action == 'index_moved_node' )
+                    {
+                        $db->commit();
+                        $nodeId = $object->attribute( 'main_node_id' );
+                        $node = \eZContentObjectTreeNode::fetch( $nodeId );
+
+                        if ( !( $node instanceof \eZContentObjectTreeNode ) )
                         {
-                            $nodeId = $object->attribute( 'main_node_id' );
-                            $node = \eZContentObjectTreeNode::fetch( $nodeId );
+                            $cli->error( "An error occured while trying fetching node $nodeId" );
+                            $db->begin();
+                            if ( $db->databaseName() === 'mongo' )
+                                $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
+                            else
+                                $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
+                            $db->commit();
+                            continue;
+                        }
 
-                            if ( !( $node instanceof \eZContentObjectTreeNode ) )
+                        $subtreeOffset = 0;
+                        $subtreeLimit = 50;
+
+                        $params = array( 'Limitation' => array(), 'MainNodeOnly' => true );
+
+                        $subtreeCount = $node->subTreeCount( $params );
+
+                        while ( $subtreeOffset < $subtreeCount )
+                        {
+                            $subTree = $node->subTree(
+                                array_merge(
+                                    $params,
+                                    array( 'Offset' => $subtreeOffset, 'Limit' => $subtreeLimit, 'SortBy' => array() )
+                                )
+                            );
+
+                            if ( !empty( $subTree ) )
                             {
-                                $cli->error( "An error occured while trying fetching node $nodeId" );
-                                if ( $db->databaseName() === 'mongo' )
-                                    $db->deleteWhere( 'ezpending_actions', [ 'action' => $action, 'param' => (string)$objectID ] );
-                                else
-                                    $db->query( "DELETE FROM ezpending_actions WHERE action = '$action' AND param = '$objectID'" );
-                                $db->commit();
-                                continue;
+                                foreach ( $subTree as $innerNode )
+                                {
+                                    /** @var $innerNode eZContentObjectTreeNode */
+                                    $childObject = $innerNode->attribute( 'object' );
+                                    if ( !$childObject )
+                                    {
+                                        continue;
+                                    }
+
+                                    $db->begin();
+                                    $searchEngine->addObject( $childObject, false );
+                                    $db->commit();
+
+                                    // clear object cache to conserve memory
+                                    \eZContentObject::clearCache();
+                                }
                             }
 
-                            $subtreeOffset = 0;
-                            $subtreeLimit = 50;
+                            $subtreeOffset += $subtreeLimit;
 
-                            $params = array( 'Limitation' => array(), 'MainNodeOnly' => true );
-
-                            $subtreeCount = $node->subTreeCount( $params );
-
-                            while ( $subtreeOffset < $subtreeCount )
+                            if ( $subtreeOffset >= $subtreeCount )
                             {
-                                $subTree = $node->subTree(
-                                    array_merge(
-                                        $params,
-                                        array( 'Offset' => $subtreeOffset, 'Limit' => $subtreeLimit, 'SortBy' => array() )
-                                    )
-                                );
-
-                                if ( !empty( $subTree ) )
-                                {
-                                    foreach ( $subTree as $innerNode )
-                                    {
-                                        /** @var $innerNode eZContentObjectTreeNode */
-                                        $childObject = $innerNode->attribute( 'object' );
-                                        if ( !$childObject )
-                                        {
-                                            continue;
-                                        }
-
-                                        $searchEngine->addObject( $childObject, false );
-
-                                        // clear object cache to conserve memory
-                                        \eZContentObject::clearCache();
-                                    }
-                                }
-
-                                $subtreeOffset += $subtreeLimit;
-
-                                if ( $subtreeOffset >= $subtreeCount )
-                                {
-                                    break;
-                                }
+                                break;
                             }
                         }
+                        $db->begin();
                     }
 
                     if ( $removeFromPendingActions )

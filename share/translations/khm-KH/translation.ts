@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>កំណែ</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ការចូលគេហទំព័រដែលត្រូវបោះពុម្ព</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>នៅឫស</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>គ្មានការចូលគេហទំព័រនៅឫសទេ៖ នីមួយៗនៅក្នុងថតរបស់វា ហើយឫសភ្ជាប់ទៅពួកវា</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>គូសការចូលគេហទំព័រមួយ ឬច្រើនដែលចែករំលែកម៉ាស៊ីនមេមួយតាមបុព្វបទ URI របស់វា។ មួយនៅឫសត្រូវបានផ្តល់នៅទីនោះ ផ្សេងទៀតនៅក្នុងថតនៃបុព្វបទរបស់វា (/ger/); តំណរវាងពួកវានៅក្នុងច្បាប់ចម្លង។ ការចូលគ្រប់គ្រងមិនដែលត្រូវបានផ្តល់ទេ។</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

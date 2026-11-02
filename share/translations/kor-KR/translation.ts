@@ -83514,6 +83514,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>버전</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>게시할 사이트 액세스</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>사이트 액세스</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>루트에</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>루트에 사이트 액세스 없음: 각각 자기 폴더에 있고 루트가 그곳으로 링크합니다</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>사이트 액세스</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>사이트 액세스 하나 또는 URI 접두사로 한 호스트를 공유하는 여러 개를 선택하십시오. 루트에 있는 것은 그곳에서 제공되고, 나머지는 접두사 폴더(/ger/)에 있습니다. 서로 간의 링크는 사본 안에 남습니다. 관리 사이트 액세스는 표시되지 않습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -83482,6 +83482,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>সংস্করণ</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>প্রকাশ করার সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>রুটে</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>রুটে কোনো সাইটঅ্যাক্সেস নেই: প্রতিটি তার ফোল্ডারে, আর রুট সেগুলোর লিংক দেয়</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>একটি সাইটঅ্যাক্সেস, বা URI প্রিফিক্স দিয়ে একটি হোস্ট ভাগ করে এমন কয়েকটি বেছে নিন। রুটেরটি সেখানে পরিবেশিত হয়, অন্যগুলো তাদের প্রিফিক্সের ফোল্ডারে (/ger/); তাদের মধ্যের লিংক কপিতেই থাকে। প্রশাসনের সাইটঅ্যাক্সেস কখনো দেখানো হয় না।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

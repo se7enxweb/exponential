@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>وەشان</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>دەستگەیشتنەکانی ماڵپەڕ بۆ بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دەستگەیشتنی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>لە ڕەگ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>هیچ دەستگەیشتنێک لە ڕەگ نییە: هەریەکە لە بوخچەی خۆیدایە، و ڕەگ بەستەری بۆیان هەیە</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>دەستگەیشتنەکانی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>یەک دەستگەیشتنی ماڵپەڕ نیشان بکە، یان چەند دانەیەک کە بە پێشگری URI یەک خانەخوێ هاوبەشن. ئەوەی لە ڕەگە لەوێ پێشکەش دەکرێت، ئەوانی تر لە بوخچەی پێشگرەکەیان (/ger/)؛ بەستەرەکانی نێوانیان لە کۆپییەکەدا دەمێننەوە. دەستگەیشتنەکانی بەڕێوەبردن هەرگیز پێشکەش ناکرێن.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

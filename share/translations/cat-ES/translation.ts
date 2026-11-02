@@ -83514,6 +83514,30 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Version</source>
         <translation>Versió</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Accessos al lloc per publicar</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accés al lloc</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>A l'arrel</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Cap accés a l'arrel: cadascun és a la seva carpeta, i l'arrel hi enllaça</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accessos al lloc</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Marqueu un accés al lloc, o diversos que comparteixen un amfitrió pel prefix d'URI. El de l'arrel se serveix allà, els altres a la carpeta del seu prefix (/ger/); els enllaços entre ells es queden a la còpia. Mai no s'ofereixen els accessos d'administració.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

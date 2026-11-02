@@ -83484,6 +83484,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>ဗားရှင်း</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ထုတ်ဝေမည့် ဆိုက်ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>အမြစ်တွင်</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>အမြစ်တွင် ဆိုက်ဝင်ရောက်မှု မရှိ- တစ်ခုစီသည် ၎င်း၏ဖိုင်တွဲထဲတွင်ရှိပြီး အမြစ်က ၎င်းတို့ထံ လင့်ခ်ပေးသည်</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ဆိုက်ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ဆိုက်ဝင်ရောက်မှုတစ်ခု သို့မဟုတ် URI ရှေ့ဆက်ဖြင့် ဟို့စ်တစ်ခုကို မျှဝေသုံးသော အများကို အမှန်ခြစ်ပါ။ အမြစ်ရှိ တစ်ခုကို ထိုနေရာတွင် ပေးပြီး အခြားများကို ၎င်းတို့၏ရှေ့ဆက်ဖိုင်တွဲ (/ger/) တွင် ထားသည်။ ၎င်းတို့ကြားရှိ လင့်ခ်များသည် မိတ္တူထဲတွင် ကျန်ရှိသည်။ စီမံခန့်ခွဲမှု ဆိုက်ဝင်ရောက်မှုများကို ဘယ်တော့မှ မပြပါ။</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -84696,6 +84696,30 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Version</source>
         <translation>Wersja</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Dostępy do witryny do opublikowania</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Dostęp do witryny</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>W katalogu głównym</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Brak dostępu w katalogu głównym: każdy jest w swoim folderze, a katalog główny do nich prowadzi</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Dostępy do witryny</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Zaznacz jeden dostęp do witryny lub kilka, które dzielą jeden host według prefiksu URI. Ten w katalogu głównym jest tam serwowany, pozostałe w folderze swojego prefiksu (/ger/); odnośniki między nimi zostają w kopii. Dostępy administracyjne nigdy nie są proponowane.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

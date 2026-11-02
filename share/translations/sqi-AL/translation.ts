@@ -83514,6 +83514,30 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Version</source>
         <translation>Versioni</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>Qasjet në sajt për botim</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Qasja në sajt</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>Në rrënjë</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>Asnjë qasje në rrënjë: secila është në dosjen e vet, dhe rrënja lidhet me to</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Qasjet në sajt</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>Shënoni një qasje në sajt, ose disa që ndajnë një host përmes prefiksit të tyre URI. Ajo në rrënjë shërbehet atje, të tjerat në dosjen e prefiksit të tyre (/ger/); lidhjet mes tyre mbeten në kopje. Qasjet e administrimit nuk ofrohen kurrë.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

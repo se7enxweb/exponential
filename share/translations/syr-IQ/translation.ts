@@ -83492,6 +83492,30 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Version</source>
         <translation>ܡܦܩܬܐ</translation>
     </message>
+    <message>
+        <source>Siteaccesses to publish</source>
+        <translation>ܡܥܠ̈ܢܐ ܕܐܬܪܐ ܠܡܦܪܣܡܘ</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ܡܥܠܢܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>At the root</source>
+        <translation>ܒܥܩܪܐ</translation>
+    </message>
+    <message>
+        <source>No siteaccess at the root: each is in its folder, and the root links to them</source>
+        <translation>ܠܝܬ ܡܥܠܢܐ ܒܥܩܪܐ: ܟܠ ܚܕ ܒܬܝܩܗ ܕܝܠܗ، ܘܥܩܪܐ ܡܐܣܪ ܠܗܘܢ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ܡܥܠ̈ܢܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Tick one siteaccess, or several that share one host by their URI prefix. The one at the root is served there, the others in the folder of their prefix (/ger/); links between them stay in the copy. Administration siteaccesses are never offered.</source>
+        <translation>ܪܫܘܡ ܚܕ ܡܥܠܢܐ ܕܐܬܪܐ، ܐܘ ܣܓܝܐܐ ܕܡܫܬܘܬܦܝܢ ܒܡܐܪܚ ܚܕ ܒܐܦܬܚܐ ܕURI ܕܝܠܗܘܢ. ܗܘ ܕܒܥܩܪܐ ܡܬܬܝܗܒ ܬܡܢ، ܘܐܚܪܢܐ ܒܬܝܩܐ ܕܐܦܬܚܐ ܕܝܠܗܘܢ (/ger/)؛ ܐܣܘܪܐ ܕܒܝܢܝܗܘܢ ܡܩܘܝܢ ܒܢܘܣܚܬܐ. ܡܥܠ̈ܢܐ ܕܡܕܒܪܢܘܬܐ ܠܐ ܡܬܩܪܒܝܢ ܡܢ ܡܬܘܡ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>
