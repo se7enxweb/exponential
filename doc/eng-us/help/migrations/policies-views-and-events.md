@@ -28,7 +28,7 @@ the module `migration`, its views, the dashboard block, the events a run sends a
 | `migration/read` | the status, the history, the page of a run, the dry run, the dashboard block, the sidebar panel | the views `status`, `history`, `log`, `stream`, `dryrun` |
 | `migration/run` | run, resume, and **Simulate** in the dry run | the view `run`, and `dryrun` for the simulation |
 | `migration/rollback` | take back a run, one migration or an earlier caption | the view `rollback` |
-| `migration/edit` | record changes (Setup > Migrations > Recording, see [Recording changes](recording.md)); later also writing and generating migrations in the administration | the view `recording` |
+| `migration/edit` | record changes (Setup > Migrations > Recording, see [Recording changes](recording.md)), generate migrations from them, and write and change YAML migrations in the editor (Setup > Migrations > Editor) | the views `recording` and `editor` |
 | `migration/remotes` | add, change and remove remotes, Test connection ([Remotes and deploys](remotes-and-deploys.md)) | the view `remote`, and `remotes` for Test connection |
 | `migration/deploy` | a preflight, a deploy, approving a gate, rolling a deploy back | the views `deploy` and `deployment` for their buttons |
 

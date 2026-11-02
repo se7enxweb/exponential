@@ -39,15 +39,20 @@ besteht aus einfachen Dateien, die GitHub Pages ausliefert.
 
 Öffnen Sie **Setup > Statisches Veröffentlichen** und wählen Sie **Neues Ziel**.
 
-![Der Assistent bei Schritt 1: die Id, der Name und die zu veröffentlichende Website](../bilder/statisches-veroeffentlichen/wizard-light.webp)
+![Der Assistent bei Schritt 1: die Id, der Name und die zu veröffentlichenden Siteaccesses, jeder mit seinem Ordner und Im Stamm](../bilder/statisches-veroeffentlichen/wizard-light.webp)
 
-1. **Die Website**: eine Id wie `github`, ein Name und die zu veröffentlichende Website.
+Jeder Schritt hat **Weiter** (und **Zurück**); **Abbrechen** daneben verlässt den Assistenten, ohne etwas zu speichern.
+
+1. **Die Website**: eine Id wie `github`, ein Name, und unter **Zu veröffentlichende Siteaccesses** den Siteaccess
+   Ihrer Website anhaken (er ist dann **Im Stamm**).
 2. **Der Host**: GitHub Pages.
 3. **Anmeldung**: **Ein Token aus Setup > Geheimnisse**, dann der Name `github_my_site`.
 4. **Das Repository**: `https://github.com/<ihr-konto>/my-site.git`, Branch `gh-pages`, Ordner: Wurzel.
 5. **Links**: **Relative** lassen. Öffentliche Adresse: `https://<ihr-konto>.github.io/my-site/`.
-6. Die eigene Domain vorerst überspringen. Schritte 7 und 8 so lassen.
-7. **Prüfung**, dann **Speichern**. Exponential fragt **Bestätigen Sie, dass Sie es sind**.
+6. Die eigene Domain vorerst überspringen.
+7. **Was der Build enthält**: so lassen.
+8. **Wann veröffentlicht wird**: so lassen.
+9. **Prüfung**, dann **Speichern**. Exponential fragt **Bestätigen Sie, dass Sie es sind**.
 
 ![Die Prüfung: die Einstellungen und die Zeilen, die geschrieben werden](../bilder/statisches-veroeffentlichen/review-light.webp)
 
@@ -58,7 +63,7 @@ ein. Bei einem ganz neuen Repository wählen Sie es nach der ersten Veröffentli
 
 Die Seite **Bauen** des Ziels öffnet sich. Wählen Sie **Bauen** und sehen Sie zu, wie die Seiten ankommen.
 
-![Ein laufender Build: der Balken, die geschriebenen Seiten und der Fortschritt](../bilder/statisches-veroeffentlichen/build-light.webp)
+![Die Seite Build: Jetzt bauen, der letzte Build mit seinem Protokoll und sein Bericht mit dem, was statisch nicht funktioniert](../bilder/statisches-veroeffentlichen/build-light.webp)
 
 ## Schritt 4: Prüfen (2 Minuten)
 
@@ -70,9 +75,11 @@ Wählen Sie **Vorschau öffnen** und klicken Sie sich durch einige Seiten: Genau
 ## Schritt 5: Veröffentlichen (2 Minuten)
 
 Haken Sie **Ich habe die Änderungen geprüft** an und wählen Sie **Veröffentlichen**. Ein, zwei Minuten später ist die
-Website unter `https://<ihr-konto>.github.io/my-site/` erreichbar.
+Website unter `https://<ihr-konto>.github.io/my-site/` erreichbar. **Setup > Statisches Veröffentlichen** zeigt das Ziel
+dann mit **Version** 1, seinem **Commit** (ein Link auf den Commit bei GitHub) und dem Badge der letzten
+Veröffentlichung.
 
-![Der Verlauf: die Veröffentlichungen, das Formular zum Zurücknehmen, die Tags und die Commits](../bilder/statisches-veroeffentlichen/history-light.webp)
+![Der Verlauf: die Veröffentlichungen mit Version und Commit, das Formular zum Zurücknehmen, die Tags und die Commits](../bilder/statisches-veroeffentlichen/history-light.webp)
 
 ## Wenn etwas nicht klappt
 

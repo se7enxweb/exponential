@@ -40,6 +40,8 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:][staged][continue:][rollback:][login:][run-id:][progress:]',
         'exp:migration:remote:list' => '[remotes:*][format:]',
         'exp:migration:remote:status' => '[remotes:*][format:][parallel:][timeout:][history:]',
+        'exp:migration:convert' => '[apply][dry-run][format:][source:][author:]',
+        'exp:migration:repo:split' => '[apply][dry-run][format:][directory:][branch:][to:][remote:]',
     );
 
     /** The arguments. Add, never change or remove. */
@@ -50,6 +52,7 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:record:stop' => '[recording]',
         'exp:migration:record:show' => '[recording]',
         'exp:migration:record:discard' => '[recording]',
+        'exp:migration:convert' => '[file]',
     );
 
     /** command => entry point in bin/php */
@@ -72,6 +75,8 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:deploy' => 'expmigrationdeploy',
         'exp:migration:remote:list' => 'expmigrationremotelist',
         'exp:migration:remote:status' => 'expmigrationremotestatus',
+        'exp:migration:convert' => 'expmigrationconvert',
+        'exp:migration:repo:split' => 'expmigrationreposplit',
     );
 
     public static function setUpBeforeClass(): void

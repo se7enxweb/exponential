@@ -108,7 +108,7 @@
             {if $siteaccesses|count}
             <input type="hidden" name="Target[SiteAccessList][]" value="" />
             <div class="a4-table-wrap" role="region" aria-label="{'Siteaccesses to publish'|i18n( 'design/admin/staticpublish' )|wash}" tabindex="0">
-            <table class="a4-table">
+            <table class="a4-table a4-setup-sa-table">
                 <thead><tr>
                     <th scope="col">{'Publish'|i18n( 'design/admin/staticpublish' )}</th>
                     <th scope="col">{'Siteaccess'|i18n( 'design/admin/staticpublish' )}</th>

@@ -170,6 +170,45 @@ git tag -l 'migrations/production/*' --sort=version:refname | tail -5
 git show origin/main:migrations/status/production.json | head -20
 ```
 
+## Moving the migrations into a repository of their own
+
+`exp:migration:repo:split` splits the migrations folder of the installation's checkout into a repository of its own,
+with its history: every commit that changed the folder becomes a commit of the folder alone, with the same author,
+committer, dates and message. It needs only git (no `git subtree`), and it changes neither the settings nor the
+site's files.
+
+```text
+$ ./console exp:migration:repo:split
+Exponential migrations: split the migrations repository, dry run (--apply makes it)
+Folder migrations of /srv/site: 2 commit(s) changed it
+Would make the branch migrations-split
+Then: Make the new repository from the branch: git init --initial-branch=main <the new repository> && git -C <the new repository> pull /srv/site migrations-split
+Then: Add its remote and push it: git -C <the new repository> remote add origin <url> && git -C <the new repository> push -u origin main
+Then: Point the installation at it in settings/override/migration.ini.append.php: [RepositorySettings] Mode=separate, Path=<the new repository> (and [MigrationSettings] DirectoryList[]=<the new repository> if the migrations move there too)
+Then: Take the folder out of the site's checkout when the installation reads the new one: git rm -r --cached migrations and add it to .gitignore
+PASS
+
+$ ./console exp:migration:repo:split --to=/srv/site-migrations --remote=git@github.com:example/site-migrations.git --apply
+Exponential migrations: split the migrations repository
+Folder migrations of /srv/site: 2 commit(s) changed it
+Branch migrations-split at 3140e7bc1ec4, new repository /srv/site-migrations
+Then: Push it when it looks right: git -C /srv/site-migrations push -u origin main
+...
+PASS
+
+$ git -C /srv/site-migrations log --format='%h %ad %s' --date=short
+3140e7b 2026-10-04 Added: the news class migration
+afa0a06 2026-10-02 Added: the news section migration
+```
+
+- `--directory` names the folder (default the first `[MigrationSettings] DirectoryList` entry).
+- The history goes to the branch `--branch` of the checkout (default `migrations-split`); a branch that exists is never
+  moved. Split again later with another branch name: the same history gives the same commits.
+- `--to` makes the new repository in a new or empty folder, with the history as its branch `main`; `--remote` adds the
+  remote `origin`. Nothing is pushed: the first push is yours.
+- Then switch the installation to the separate mode ([The two modes](#the-two-modes)) and take the folder out of the
+  site's checkout.
+
 ## Related pages
 
 - [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
@@ -184,3 +223,4 @@ git show origin/main:migrations/status/production.json | head -20
   [Troubleshooting messages](migrations-troubleshooting.md)
 - [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md)
 - [`exp:migration:push`](../examples/commands/expmigrationpush.md), [migration.ini \[RepositorySettings\]](../examples/ini-settings/migration/RepositorySettings.md)
+- [`exp:migration:repo:split`](../examples/commands/expmigrationreposplit.md)

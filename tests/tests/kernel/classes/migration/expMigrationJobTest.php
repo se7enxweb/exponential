@@ -250,7 +250,8 @@ class expMigrationJobTest extends PHPUnit\Framework\TestCase
         }
         $this->assertSame( array( 'status' => array( 'read' ), 'history' => array( 'read' ), 'log' => array( 'read' ), 'stream' => array( 'read' ),
                                   'dryrun' => array( 'read' ), 'run' => array( 'run' ), 'rollback' => array( 'rollback' ), 'recording' => array( 'edit' ),
-                                  'remotes' => array( 'read' ), 'remote' => array( 'remotes' ), 'deploy' => array( 'read' ), 'deployment' => array( 'read' ) ), $policies );
+                                  'remotes' => array( 'read' ), 'remote' => array( 'remotes' ), 'deploy' => array( 'read' ), 'deployment' => array( 'read' ),
+                                  'editor' => array( 'edit' ) ), $policies );
 
         $this->assertMatchesRegularExpression( '/^ModuleList\[\]=migration$/m', file_get_contents( self::$root . '/settings/module.ini' ) );
         $menu = self::section( 'settings/menu.ini', 'Leftmenu_setup' );

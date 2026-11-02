@@ -15,7 +15,7 @@ GitHub Pages kostenlos hostet oder die jeder andere Git-Host und jeder einfache 
 Redaktion arbeitet weiter in Exponential; die öffentliche Website braucht kein PHP, keine Datenbank und keinen Server
 von Ihnen.
 
-![Setup > Statisches Veröffentlichen: ein Ziel mit seiner letzten Veröffentlichung, seinen veralteten Seiten und den Schaltflächen Bauen, Vorschau, Verlauf und Einstellungen](bilder/statisches-veroeffentlichen/dashboard-light.webp)
+![Setup > Statisches Veröffentlichen: zwei Ziele mit ihren Siteaccesses, Version, Commit, letzter Veröffentlichung, veralteten Seiten und den Schaltflächen Build, Vorschau, Verlauf und Einstellungen](bilder/statisches-veroeffentlichen/dashboard-light.webp)
 
 ## Was Sie am Ende haben
 

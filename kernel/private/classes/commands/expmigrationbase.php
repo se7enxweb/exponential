@@ -62,6 +62,8 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'exp:migration:deploy' => '[remotes:*][apply][dry-run][transfer-only][only:*][format:][parallel:][timeout:][retries:][staged][continue:][rollback:][login:][run-id:][progress:]',
             'exp:migration:remote:list' => '[remotes:*][format:]',
             'exp:migration:remote:status' => '[remotes:*][format:][parallel:][timeout:][history:]',
+            'exp:migration:convert' => '[apply][dry-run][format:][source:][author:]',
+            'exp:migration:repo:split' => '[apply][dry-run][format:][directory:][branch:][to:][remote:]',
         );
     }
 
@@ -79,6 +81,7 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'exp:migration:record:stop' => '[recording]',
             'exp:migration:record:show' => '[recording]',
             'exp:migration:record:discard' => '[recording]',
+            'exp:migration:convert' => '[file]',
         );
     }
 
@@ -151,6 +154,10 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'staged' => 'Deploy stage by stage ([RemoteSettings] StageOrder[] by environment): the first stage now, a gate before each next one (with --apply)',
             'continue' => 'Approve the gate of a staged deploy and deploy its next stage (the deploy id; with --apply)',
             'rollback' => 'Take back every remote that applied this deploy (the deploy id; with --apply)',
+            'directory' => 'The migrations folder to split (default the first [MigrationSettings] DirectoryList entry)',
+            'branch' => 'The branch of the checkout the split history goes to (default migrations-split; never an existing one)',
+            'to' => 'A new or empty folder for the new repository (its branch main); without it only the branch is made',
+            'remote' => 'The remote origin of the new repository (a URL or path; it is not pushed)',
         );
     }
 

@@ -24,10 +24,11 @@ A target with its settings in `settings/override/staticcache.ini.append.php`, re
 - For a token: the token stored in **Setup > Secrets** under a name of your choice (for GitHub a fine-grained token
   with **Contents: Read and write** on that repository). For a deploy key you need nothing yet.
 
-![The wizard at step 1: the id, the name and the site to publish](../images/static-publishing/wizard-light.webp)
+![The wizard at step 1: the id, the name and the siteaccesses to publish, each with its folder and At the root](../images/static-publishing/wizard-light.webp)
 
 The step list at the top shows where you are; **Back** and **Next** move between steps, and a step can be opened
-from the list. Without JavaScript all steps show on one page.
+from the list. **Cancel**, next to **Next** on every step, goes back to **Setup > Static publishing** without saving
+anything. Without JavaScript all steps show on one page.
 
 ## 1. The site
 
@@ -42,6 +43,8 @@ from the list. Without JavaScript all steps show on one page.
   `DefaultSiteAccess`. Administration and editing siteaccesses are never offered: a static copy is always what a
   visitor who is not signed in sees. The review, the dashboard and every page of a target list its siteaccesses with
   their folders ([Static publishing for multisite installations](../../guides/static-publishing-for-multisite-installations.md)).
+
+![Step 1 of a target with three siteaccesses: site at the root, bold and bold_ger in their folders](../images/static-publishing/wizard-sites-light.webp)
 
 ## 2. The host
 
@@ -111,6 +114,9 @@ the records to set at the provider of the domain. Details: [Use your own domain]
   carries one is refused, and nothing is published.
 - **Search page** and **forms**, **most pages**, pages and sections to **leave out**, and where the pages are
   **fetched from** and where links to the **live site** go.
+- **Remove links to pages the copy does not hold** and **Remove links into the administration** (`OutsideLinks`,
+  `AdminLinks`, both **No** by default): with **Yes** such a link stays in place with its text, grayed out and without
+  an address, instead of leading to the live site ([Links and base path](links-and-base-path.md)).
 
 ## 8. When it is published
 
@@ -119,7 +125,7 @@ cronjob part `staticpublish`, with notifications and a webhook afterwards ([Publ
 
 ## 9. Review and save
 
-**Review** checks every setting and shows the lines that will be written. Fix what it lists and press Review again.
+**Review** (next to **Cancel**) checks every setting and shows the lines that will be written. Fix what it lists and press Review again.
 When static publishing is still switched off, **Switch static publishing on** is ticked for you. **Save** writes the
 settings (with a backup of the file and an entry in the audit log) and asks **Verify it's you**. Then the target's
 **Build** page opens.

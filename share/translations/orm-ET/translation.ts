@@ -81127,6 +81127,214 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <translation>Daqiiqaan lakkoofsa guutuu 1 hanga 44640 (guyyaa 31) dha, yookaan duwwaa.</translation>
     </message>
     <message>
+        <source>Migration %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New migration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The file cannot be written by the web server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name of the migration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where it goes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>YAML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Gulaali</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Olkaa'i</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Tarkaanfiiwwan</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Furtuuwwan</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Gulaali</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Gara oliitti sochoosi</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Gara gadiitti sochoosi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Baasi</translation>
+    </message>
+    <message>
+        <source>No steps yet: add one with the form, or write them in the text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change step %number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add a step</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Step type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show its form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In</source>
+        <translation>Keessa</translation>
+    </message>
+    <message>
+        <source>only in %modes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Conditions, references and comment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name=value pairs separated by commas. The values of this step: %values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Fakkeenya</translation>
+    </message>
+    <message>
+        <source>Change step</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add step</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The migration passes the check.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Dursee ilaali</translation>
+    </message>
+    <message>
+        <source>The YAML as it will be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the YAML</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>YAML migrations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>has run</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no YAML migrations yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Gulaalaa</translation>
+    </message>
+    <message>
+        <source>There is no YAML migration %id in the migration folders.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a step type.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The step is added. Check the migration before you save it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The step is changed. Check the migration before you save it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a step.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose where the migration goes: the site or an active extension.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saved %file. Run a dry run before the migration runs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not saved: %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -81195,10 +81403,6 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <translation>Walitti hidhiinsa qori</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Gulaali</translation>
-    </message>
-    <message>
         <source>A deploy to a group goes to every remote of it.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -81245,14 +81449,6 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>The lines that will be written</source>
         <translation>Sararoota barreeffaman</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Olkaa'i</translation>
-    </message>
-    <message>
-        <source>Steps</source>
-        <translation>Tarkaanfiiwwan</translation>
     </message>
     <message>
         <source>Connection</source>
@@ -81441,10 +81637,6 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Yes, remove this remote</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Baasi</translation>
     </message>
     <message>
         <source>Deploys</source>

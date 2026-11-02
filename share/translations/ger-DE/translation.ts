@@ -88097,6 +88097,214 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Die Minuten sind eine ganze Zahl von 1 bis 44640 (31 Tage) oder leer.</translation>
     </message>
     <message>
+        <source>Migration %id</source>
+        <translation>Die Migration %id</translation>
+    </message>
+    <message>
+        <source>New migration</source>
+        <translation>Neue Migration</translation>
+    </message>
+    <message>
+        <source>A YAML migration: write it as text or build its steps in the form, check it, then save it into a migrations folder.</source>
+        <translation>Eine YAML-Migration: als Text schreiben oder ihre Schritte im Formular zusammenstellen, prüfen und dann in einem Migrationsordner speichern.</translation>
+    </message>
+    <message>
+        <source>This migration has run already, so it is not saved again: a changed file would be refused by the checksum guard. Make the change in a new migration.</source>
+        <translation>Diese Migration ist bereits gelaufen und wird daher nicht erneut gespeichert: Eine geänderte Datei würde von der Prüfsummenprüfung abgelehnt. Nehmen Sie die Änderung in einer neuen Migration vor.</translation>
+    </message>
+    <message>
+        <source>The file cannot be written by the web server.</source>
+        <translation>Der Webserver kann die Datei nicht schreiben.</translation>
+    </message>
+    <message>
+        <source>The comment lines at the top are the header (description, author, requires, environments, engines). When a step is added or changed in the form, the migration is written again: comments between the steps are not kept.</source>
+        <translation>Die Kommentarzeilen am Anfang sind der Kopf (description, author, requires, environments, engines). Wird ein Schritt im Formular hinzugefügt oder geändert, wird die Migration neu geschrieben: Kommentare zwischen den Schritten bleiben nicht erhalten.</translation>
+    </message>
+    <message>
+        <source>Name of the migration</source>
+        <translation>Name der Migration</translation>
+    </message>
+    <message>
+        <source>Where it goes</source>
+        <translation>Wohin sie kommt</translation>
+    </message>
+    <message>
+        <source>The site</source>
+        <translation>Die Website</translation>
+    </message>
+    <message>
+        <source>YAML</source>
+        <translation>YAML-Text</translation>
+    </message>
+    <message>
+        <source>Check</source>
+        <translation>Prüfen</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Schritte</translation>
+    </message>
+    <message>
+        <source>Keys</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Nach oben</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Nach unten</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>No steps yet: add one with the form, or write them in the text.</source>
+        <translation>Noch keine Schritte: Fügen Sie einen mit dem Formular hinzu oder schreiben Sie sie in den Text.</translation>
+    </message>
+    <message>
+        <source>Change step %number</source>
+        <translation>Schritt %number ändern</translation>
+    </message>
+    <message>
+        <source>Add a step</source>
+        <translation>Einen Schritt hinzufügen</translation>
+    </message>
+    <message>
+        <source>The form of a step is made from its step type: its keys, what each takes and the modes it belongs to.</source>
+        <translation>Das Formular eines Schritts entsteht aus seinem Schritttyp: seine Schlüssel, was jeder annimmt und zu welchen Modi er gehört.</translation>
+    </message>
+    <message>
+        <source>Step type</source>
+        <translation>Schritttyp</translation>
+    </message>
+    <message>
+        <source>Show its form</source>
+        <translation>Formular anzeigen</translation>
+    </message>
+    <message>
+        <source>The step has keys its type does not know; they are left out when the step is changed: %keys</source>
+        <translation>Der Schritt hat Schlüssel, die sein Typ nicht kennt; sie entfallen, wenn der Schritt geändert wird: %keys</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>Modus</translation>
+    </message>
+    <message>
+        <source>In</source>
+        <translation>In</translation>
+    </message>
+    <message>
+        <source>only in %modes</source>
+        <translation>nur in %modes</translation>
+    </message>
+    <message>
+        <source>Default: %value</source>
+        <translation>Vorgabe: %value</translation>
+    </message>
+    <message>
+        <source>Conditions, references and comment</source>
+        <translation>Bedingungen, Referenzen und Kommentar</translation>
+    </message>
+    <message>
+        <source>Name=value pairs separated by commas. The values of this step: %values</source>
+        <translation>Paare Name=Wert, durch Kommas getrennt. Die Werte dieses Schritts: %values</translation>
+    </message>
+    <message>
+        <source>Example</source>
+        <translation>Beispiel</translation>
+    </message>
+    <message>
+        <source>Change step</source>
+        <translation>Schritt ändern</translation>
+    </message>
+    <message>
+        <source>Add step</source>
+        <translation>Schritt hinzufügen</translation>
+    </message>
+    <message>
+        <source>What exp:migration:check says: the header, the document and every step checked by its step type.</source>
+        <translation>Was exp:migration:check sagt: der Kopf, das Dokument und jeder Schritt, von seinem Schritttyp geprüft.</translation>
+    </message>
+    <message>
+        <source>The migration passes the check.</source>
+        <translation>Die Migration besteht die Prüfung.</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vorschau</translation>
+    </message>
+    <message>
+        <source>The YAML as it will be saved.</source>
+        <translation>Das YAML, wie es gespeichert wird.</translation>
+    </message>
+    <message>
+        <source>Show the YAML</source>
+        <translation>YAML anzeigen</translation>
+    </message>
+    <message>
+        <source>YAML migrations</source>
+        <translation>YAML-Migrationen</translation>
+    </message>
+    <message>
+        <source>has run</source>
+        <translation>ist gelaufen</translation>
+    </message>
+    <message>
+        <source>There are no YAML migrations yet.</source>
+        <translation>Es gibt noch keine YAML-Migrationen.</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Redaktion</translation>
+    </message>
+    <message>
+        <source>There is no YAML migration %id in the migration folders.</source>
+        <translation>In den Migrationsordnern gibt es keine YAML-Migration %id.</translation>
+    </message>
+    <message>
+        <source>Choose a step type.</source>
+        <translation>Wählen Sie einen Schritttyp.</translation>
+    </message>
+    <message>
+        <source>The step is added. Check the migration before you save it.</source>
+        <translation>Der Schritt ist hinzugefügt. Prüfen Sie die Migration, bevor Sie sie speichern.</translation>
+    </message>
+    <message>
+        <source>The step is changed. Check the migration before you save it.</source>
+        <translation>Der Schritt ist geändert. Prüfen Sie die Migration, bevor Sie sie speichern.</translation>
+    </message>
+    <message>
+        <source>Choose a step.</source>
+        <translation>Wählen Sie einen Schritt.</translation>
+    </message>
+    <message>
+        <source>This step has no form (a loop, or a step type this installation does not have): change it in the text.</source>
+        <translation>Dieser Schritt hat kein Formular (eine Schleife oder ein Schritttyp, den diese Installation nicht hat): Ändern Sie ihn im Text.</translation>
+    </message>
+    <message>
+        <source>Choose where the migration goes: the site or an active extension.</source>
+        <translation>Wählen Sie, wohin die Migration kommt: die Website oder eine aktive Erweiterung.</translation>
+    </message>
+    <message>
+        <source>Saved %file. Run a dry run before the migration runs.</source>
+        <translation>%file gespeichert. Führen Sie einen Probelauf aus, bevor die Migration läuft.</translation>
+    </message>
+    <message>
+        <source>Not saved: %reason</source>
+        <translation>Nicht gespeichert: %reason</translation>
+    </message>
+    <message>
         <source>Remotes</source>
         <translation>Gegenstellen</translation>
     </message>
@@ -88165,10 +88373,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Verbindung testen</translation>
     </message>
     <message>
-        <source>Edit</source>
-        <translation>Bearbeiten</translation>
-    </message>
-    <message>
         <source>A deploy to a group goes to every remote of it.</source>
         <translation>Ein Deploy an eine Gruppe geht an jede ihrer Gegenstellen.</translation>
     </message>
@@ -88215,14 +88419,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The lines that will be written</source>
         <translation>Die Zeilen, die geschrieben werden</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
-        <source>Steps</source>
-        <translation>Schritte</translation>
     </message>
     <message>
         <source>Connection</source>
@@ -88411,10 +88607,6 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Yes, remove this remote</source>
         <translation>Ja, diese Gegenstelle entfernen</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Entfernen</translation>
     </message>
     <message>
         <source>Deploys</source>

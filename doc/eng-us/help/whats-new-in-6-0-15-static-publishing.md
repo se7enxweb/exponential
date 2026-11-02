@@ -14,7 +14,7 @@ Exponential 6.0.15 can publish your site as a **static copy**: plain HTML pages 
 free, or that any other git host or plain web server can serve. Your editors keep working in Exponential; the public
 site needs no PHP, no database and no server of yours.
 
-![Setup > Static publishing: a target with its last publish, its stale pages and the buttons Build, Preview, History and Settings](images/static-publishing/dashboard-light.webp)
+![Setup > Static publishing: two targets with their siteaccesses, version, commit, last publish, stale pages and the buttons Build, Preview, History and Settings](images/static-publishing/dashboard-light.webp)
 
 ## What you'll have at the end
 

@@ -1,0 +1,26 @@
+{
+    "command:expmigrationconvert": {
+        "en": "Convert YAML migrations of the migration bundle of the Symfony based platform into YAML migrations of Exponential: a file or every .yml file of a folder, step by step, what does not convert listed at the top of the new file; a dry run unless --apply",
+        "de": "Wandelt YAML-Migrationen des Migrations-Bundles der Symfony-basierten Plattform in YAML-Migrationen von Exponential um: eine Datei oder jede .yml-Datei eines Ordners, Schritt für Schritt; was sich nicht umwandeln lässt, steht oben in der neuen Datei; ohne --apply ein Probelauf"
+    },
+    "command:expmigrationreposplit": {
+        "en": "Split the migrations folder of the installation's git checkout into a repository of its own with its history (every commit that changed it, same authors, dates and messages); a dry run unless --apply",
+        "de": "Trennt den Migrationsordner des Git-Checkouts der Installation mit seiner Historie in ein eigenes Repository ab (jeder Commit, der ihn geändert hat, mit denselben Autoren, Daten und Nachrichten); ohne --apply ein Probelauf"
+    },
+    "command:expmigrationreposplit --branch": {
+        "en": "The branch of the checkout the split history goes to (default migrations-split; never an existing one)",
+        "de": "Der Branch des Checkouts, in den die abgetrennte Historie kommt (Vorgabe migrations-split; nie ein vorhandener)"
+    },
+    "command:expmigrationreposplit --directory": {
+        "en": "The migrations folder to split (default the first [MigrationSettings] DirectoryList entry)",
+        "de": "Der abzutrennende Migrationsordner (Vorgabe der erste Eintrag von [MigrationSettings] DirectoryList)"
+    },
+    "command:expmigrationreposplit --remote": {
+        "en": "The remote origin of the new repository (a URL or path; it is not pushed)",
+        "de": "Das Remote origin des neuen Repositorys (eine URL oder ein Pfad; es wird nicht gepusht)"
+    },
+    "command:expmigrationreposplit --to": {
+        "en": "A new or empty folder for the new repository (its branch main); without it only the branch is made",
+        "de": "Ein neuer oder leerer Ordner für das neue Repository (sein Branch main); ohne ihn wird nur der Branch angelegt"
+    }
+}

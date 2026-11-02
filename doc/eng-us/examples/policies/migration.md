@@ -31,7 +31,7 @@ $role->appendPolicy( 'migration', 'deploy' );
 
 ## edit
 
-Checked by the views: [recording](../module-views/migration/recording.md).
+Checked by the views: [editor](../module-views/migration/editor.md), [recording](../module-views/migration/recording.md).
 
 No limitations: the policy is all or nothing.
 

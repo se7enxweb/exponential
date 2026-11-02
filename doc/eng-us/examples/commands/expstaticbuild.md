@@ -32,7 +32,7 @@ content of var/<site>/static-publish/<target>/. Targets are staticcache.ini [Tar
 ./console exp:static:build github-public
 ./console exp:static:build github-public --dry-run          report what would change
 ./console exp:static:build github-public --paths=/about-us  only this page
-./console exp:static:build github-public --siteaccess=ger    only the siteaccess ger of a target of several
+./console exp:static:build github-public --only-siteaccess=ger    only the siteaccess ger of a target of several
 ./console exp:static:build github-public --format=json --report=var/log/static.json
 ```
 
@@ -52,7 +52,7 @@ content of var/<site>/static-publish/<target>/. Targets are staticcache.ini [Tar
 | `--login` | required | Run as this user (the administration starts its jobs so); recorded as who ran it |
 | `--run-id` | required | The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id) |
 | `--progress` | required | Also append the progress, one JSON object per line, to this file (the administration follows it) |
-| `--siteaccess` | required | Build only this one of the target's siteaccesses (a target of several, SiteAccessList[]); the others' pages of the last build stay |
+| `--only-siteaccess` | required | Build only this one of the target's siteaccesses (a target of several, SiteAccessList[]); the others' pages of the last build stay |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

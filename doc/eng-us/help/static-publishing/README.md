@@ -23,7 +23,7 @@ short **commit** id of that version (a link to the commit on GitHub when the rep
 publish** with the state of the push: pushed, push pending, failed, nothing changed or not pushed; the time opens the
 page of the run. The state of the GitHub Pages build is on the **History** page, which asks GitHub for it.
 
-![Setup > Static publishing: a target with its last publish, its stale pages and the buttons Build, Preview, History and Settings](../images/static-publishing/dashboard-light.webp)
+![Setup > Static publishing: two targets with their siteaccesses, version, commit, last publish, stale pages and the buttons Build, Preview, History and Settings](../images/static-publishing/dashboard-light.webp)
 
 ## Contents
 

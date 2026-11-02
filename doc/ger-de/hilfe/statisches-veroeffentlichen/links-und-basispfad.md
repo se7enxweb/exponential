@@ -55,6 +55,14 @@ Website in Exponential). Ist die eigene Adresse der Website eine lokale, etwa `l
 bleiben solche Links, wie sie sind, und der Build warnt. Links auf andere Websites, `mailto:` und `#anker` werden nie
 geändert.
 
+Schritt 7 des Assistenten kann solche Links stattdessen herausnehmen: **Links auf Seiten entfernen, die die Kopie nicht
+enthält** (`OutsideLinks=unlink`) und **Links in die Administration entfernen** (`AdminLinks=unlink`). Mit **Ja** bleibt
+der Link mit seinem Text und seinen Stilen an seinem Platz, ausgegraut und ohne Adresse: Ein Menü behält seine Form,
+aber kein Besucher landet auf der Live-Website oder bei der Anmeldung der Administration. Bilder, Stylesheets,
+Formulare und Links auf andere Websites werden nie entfernt. Beide stehen standardmäßig auf **Nein**.
+
+![Schritt 7 des Assistenten: Links auf Seiten entfernen, die die Kopie nicht enthält, und Links in die Administration entfernen, beide auf Ja](../bilder/statisches-veroeffentlichen/outside-links-light.webp)
+
 ## Wenn es schiefgeht
 
 | Anzeichen | Lösung |
