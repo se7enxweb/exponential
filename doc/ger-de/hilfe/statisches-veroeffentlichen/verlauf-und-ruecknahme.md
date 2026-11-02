@@ -29,7 +29,13 @@ Die öffentliche Site, die wieder eine frühere Veröffentlichung zeigt, mit der
   liegt).
 - **Commits**: die letzten Commits des Branches.
 
-![Der Verlauf: die Veröffentlichungen, das Formular für die Rücknahme, die Tags und die Commits](../bilder/statisches-veroeffentlichen/history-light.webp)
+![Der Verlauf: der Kasten Auf GitHub, die Veröffentlichungen mit Version und Commit, das Formular für die Rücknahme, die Tags und die Commits](../bilder/statisches-veroeffentlichen/history-light.webp)
+
+Die Karte des Ziels in **Setup > Statisches Veröffentlichen** zeigt dasselbe in Kurzform: die veröffentlichte
+**Version** mit ihrem Tag, den **Commit** (ein Link auf den Commit bei GitHub, wenn das Repository dort liegt) und das
+Badge unter **Letzte Veröffentlichung**.
+
+![Ein Ziel in Setup > Statisches Veröffentlichen: seine Siteaccesses, Version 4 mit dem Tag static/demo/4, der Commit, die letzte Veröffentlichung und die veralteten Seiten](../bilder/statisches-veroeffentlichen/dashboard-version-light.webp)
 
 ## Zurücknehmen
 

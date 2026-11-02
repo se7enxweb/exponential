@@ -19,7 +19,7 @@ A page you just changed published to its static copy, from the page itself.
 **Who sees the panel:** users who may use the sidebar (`expwt/use`) and have `staticpublish/read` for at least one
 target. Without that policy, or on a kernel without static publishing, there is no tab.
 
-![The Static publishing panel of the website sidebar: the target, its last publish, the page stale there, its public address and Publish](../images/static-publishing/sidebar-panel-light.webp)
+![The Static publishing panel of the website sidebar: each target with its last publish, whether the page is stale there, its public address and Publish](../images/static-publishing/sidebar-panel-light.webp)
 
 ## What the panel shows
 

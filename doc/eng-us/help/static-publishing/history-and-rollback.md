@@ -28,7 +28,13 @@ Open **History** on the target. It lists:
 - **Tags**: newest first, each with its commit (a link to the commit on GitHub when the repository is there).
 - **Commits**: the last commits of the branch.
 
-![The history: the publishes, the rollback form, the tags and the commits](../images/static-publishing/history-light.webp)
+![The history: the box On GitHub, the publishes with their version and commit, the rollback form, the tags and the commits](../images/static-publishing/history-light.webp)
+
+The card of the target in **Setup > Static publishing** shows the same in short: the published **Version** with its
+tag, the **Commit** (a link to the commit on GitHub when the repository is there) and the badge of the **Last
+publish**.
+
+![A target in Setup > Static publishing: its siteaccesses, Version 4 with the tag static/demo/4, the commit, the last publish and the stale pages](../images/static-publishing/dashboard-version-light.webp)
 
 ## Roll back
 

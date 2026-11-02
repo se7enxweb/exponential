@@ -128,6 +128,8 @@
             <file>tests/tests/lib/ezdb/mongodb/expMigrationCacheSearchAutoloadStepsMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationSqlSettingsStepsMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationGraphqlMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationPerformanceMongoDBTest.php</file>
         </testsuite>
 
         <!--

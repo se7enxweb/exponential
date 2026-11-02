@@ -52,6 +52,14 @@ the copy. Links to them go to your live site (`LiveURL`, by default the address 
 site's own address is a local one, such as `localhost` on a build server, such links stay as they are and the build
 warns. Links to other sites, `mailto:` and `#anchors` are never changed.
 
+Step 7 of the wizard can take such links out instead: **Remove links to pages the copy does not hold**
+(`OutsideLinks=unlink`) and **Remove links into the administration** (`AdminLinks=unlink`). With **Yes** the link
+stays in place with its text and its styles, grayed out and without an address, so a menu keeps its shape but no
+visitor ends up on the live site or at the login of the administration. Images, style sheets, forms and links to other
+sites are never removed. Both are **No** by default.
+
+![Step 7 of the wizard: Remove links to pages the copy does not hold and Remove links into the administration, both Yes](../images/static-publishing/outside-links-light.webp)
+
 ## When it goes wrong
 
 | Symptom | Fix |

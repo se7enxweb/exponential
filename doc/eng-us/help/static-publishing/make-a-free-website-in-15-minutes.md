@@ -39,15 +39,20 @@ that GitHub Pages serves.
 
 Open **Setup > Static publishing** and press **New target**.
 
-![The wizard at step 1: the id, the name and the site to publish](../images/static-publishing/wizard-light.webp)
+![The wizard at step 1: the id, the name and the siteaccesses to publish, each with its folder and At the root](../images/static-publishing/wizard-light.webp)
 
-1. **The site**: an id such as `github`, a name, and the site to publish.
+Each step has **Next** (and **Back**); **Cancel** next to them leaves the wizard without saving anything.
+
+1. **The site**: an id such as `github`, a name, and under **Siteaccesses to publish** tick your site's siteaccess
+   (it is then **At the root**).
 2. **The host**: GitHub Pages.
 3. **Signing in**: **A token from Setup > Secrets**, then the name `github_my_site`.
 4. **The repository**: `https://github.com/<your-account>/my-site.git`, branch `gh-pages`, folder: root.
 5. **Links**: keep **Relative**. Public address: `https://<your-account>.github.io/my-site/`.
-6. Skip your own domain for now. Leave steps 7 and 8 as they are.
-7. **Review**, then **Save**. Exponential asks **Verify it's you**.
+6. Skip your own domain for now.
+7. **What the build holds**: leave it as it is.
+8. **When it is published**: leave it as it is.
+9. **Review**, then **Save**. Exponential asks **Verify it's you**.
 
 ![The review: the settings and the lines that will be written](../images/static-publishing/review-light.webp)
 
@@ -58,7 +63,7 @@ new repository press it once more after the first publish.
 
 The target's **Build** page opens. Press **Build** and watch the pages arrive.
 
-![A build going on: the bar, the pages written and the progress](../images/static-publishing/build-light.webp)
+![The Build page: Build now, the last build with its log, and its report with what does not work statically](../images/static-publishing/build-light.webp)
 
 ## Step 4: Check (2 minutes)
 
@@ -70,9 +75,10 @@ The target's **Build** page opens. Press **Build** and watch the pages arrive.
 ## Step 5: Publish (2 minutes)
 
 Tick **I have checked the changes** and press **Publish**. A minute or two later the site is live at
-`https://<your-account>.github.io/my-site/`.
+`https://<your-account>.github.io/my-site/`. **Setup > Static publishing** then shows the target at **Version** 1,
+with its **Commit** (a link to the commit on GitHub) and the badge of the last publish.
 
-![The history: the publishes, the rollback form, the tags and the commits](../images/static-publishing/history-light.webp)
+![The history: the publishes with their version and commit, the rollback form, the tags and the commits](../images/static-publishing/history-light.webp)
 
 ## When something does not work
 

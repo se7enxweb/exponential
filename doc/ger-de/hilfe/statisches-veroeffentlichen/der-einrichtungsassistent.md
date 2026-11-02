@@ -27,10 +27,11 @@ Ein Ziel mit seinen Einstellungen in `settings/override/staticcache.ini.append.p
   fine-grained Token mit **Contents: Read and write** auf diesem Repository). Für einen Deploy-Key brauchen Sie noch
   nichts.
 
-![Der Assistent bei Schritt 1: die Id, der Name und die zu veröffentlichende Site](../bilder/statisches-veroeffentlichen/wizard-light.webp)
+![Der Assistent bei Schritt 1: die Id, der Name und die zu veröffentlichenden Siteaccesses, jeder mit seinem Ordner und Im Stamm](../bilder/statisches-veroeffentlichen/wizard-light.webp)
 
 Die Schrittliste oben zeigt, wo Sie sind; **Zurück** und **Weiter** wechseln zwischen den Schritten, und ein Schritt
-lässt sich aus der Liste öffnen. Ohne JavaScript stehen alle Schritte auf einer Seite.
+lässt sich aus der Liste öffnen. **Abbrechen**, neben **Weiter** auf jedem Schritt, führt ohne zu speichern zurück zu
+**Setup > Statisches Veröffentlichen**. Ohne JavaScript stehen alle Schritte auf einer Seite.
 
 ## 1. Die Website
 
@@ -46,6 +47,8 @@ lässt sich aus der Liste öffnen. Ohne JavaScript stehen alle Schritte auf eine
   Administrations- und Bearbeitungs-Siteaccesses werden nie angeboten: Eine statische Kopie ist immer das, was ein
   nicht angemeldeter Besucher sieht. Die Prüfung, das Dashboard und jede Seite eines Ziels listen seine Siteaccesses
   mit ihren Ordnern ([Statisches Veröffentlichen für Multisite-Installationen](../../anleitungen/statisches-veroeffentlichen-fuer-multisite-installationen.md)).
+
+![Schritt 1 eines Ziels mit drei Siteaccesses: site im Stamm, bold und bold_ger in ihren Ordnern](../bilder/statisches-veroeffentlichen/wizard-sites-light.webp)
 
 ## 2. Der Host
 
@@ -125,6 +128,9 @@ etwas falsch, listet es die Einträge auf, die beim Anbieter der Domain zu setze
   die noch eines davon enthält, wird abgelehnt, und nichts wird veröffentlicht.
 - **Suchseite** und **Formulare**, **die meisten Seiten**, **auszulassende** Seiten und Sektionen, und von wo die Seiten
   **abgerufen** werden und wohin Links zur **Live-Website** gehen.
+- **Links auf Seiten entfernen, die die Kopie nicht enthält** und **Links in die Administration entfernen**
+  (`OutsideLinks`, `AdminLinks`, beide standardmäßig **Nein**): Mit **Ja** bleibt ein solcher Link mit seinem Text an
+  seinem Platz, ausgegraut und ohne Adresse, statt zur Live-Website zu führen ([Links und Basispfad](links-und-basispfad.md)).
 
 ## 8. Wann veröffentlicht wird
 
@@ -133,7 +139,7 @@ Cronjob-Teil `staticpublish`, danach mit Benachrichtigungen und Webhook ([Automa
 
 ## 9. Prüfen und speichern
 
-**Prüfung** kontrolliert jede Einstellung und zeigt die Zeilen, die geschrieben werden. Beheben Sie, was es auflistet,
+**Prüfung** (neben **Abbrechen**) kontrolliert jede Einstellung und zeigt die Zeilen, die geschrieben werden. Beheben Sie, was es auflistet,
 und drücken Sie erneut auf **Prüfung**. Ist das statische Veröffentlichen noch ausgeschaltet, ist **Statisches
 Veröffentlichen einschalten** für Sie angehakt. **Speichern** schreibt die Einstellungen (mit einer Sicherung der Datei
 und einem Eintrag im Auditprotokoll) und fragt **Bestätigen Sie, dass Sie es sind**. Danach öffnet sich die Seite
