@@ -5,9 +5,9 @@
  * admin_moderation_limit) and, with moderation/act, the selection and the actions (posted to moderation/action). The
  * address and the browser of a submission are read from the audit index for users with moderation/personaldata only.
  *
- * The filter form is sent with GET (Filter=1 and the fields) and the page shows its filters; the pager and the sort links
- * carry the filters as view parameters, so every further page of a filter has one address. Policy
- * moderation/read.
+ * The filter form is posted to the view (FilterButton and the fields), which redirects to the same filters as view
+ * parameters; no filter is read from the query string. Every page of a filter has one address (bookmarks, the pager,
+ * the sort links). Policy moderation/read.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -28,26 +28,25 @@ class Recent extends \Exponential\Runnable\ModuleView
         $Module = $Params['Module'];
         $settings = \expModerationList::settings();
 
-        // the filter form (GET): its fields are the filters of this page, which starts again at the first page. Not
-        // answered with a redirect: a module redirect carries the request's query over (Filter=1 included), so the
-        // redirected address asked for the same redirect again, endlessly. The pager and the sort links of the page
-        // are built from the filters as view parameters, so they still have one address per filter.
-        if ( isset( $_GET['Filter'] ) )
+        // the filter form (POST): answered with a redirect to the same filters as view parameters, the first page.
+        // A post has no query string, so the redirect cannot carry one over
+        $http = \eZHTTPTool::instance();
+        if ( $http->hasPostVariable( 'FilterButton' ) )
         {
             $in = array();
             foreach ( array( 'from', 'to', 'date', 'class', 'status', 'hidden', 'held', 'section', 'siteaccess', 'sort', 'order' ) as $key )
-                $in[$key] = isset( $_GET[$key] ) && is_string( $_GET[$key] ) ? $_GET[$key] : '';
-            $in['creator'] = isset( $_GET['creator'] ) && is_string( $_GET['creator'] ) ? (string)\expModerationAdmin::creatorID( $_GET['creator'] ) : '';
-            $in['offset'] = '';
+                $in[$key] = $http->hasPostVariable( $key ) && is_string( $http->postVariable( $key ) ) ? $http->postVariable( $key ) : '';
+            $creator = $http->hasPostVariable( 'creator' ) ? $http->postVariable( 'creator' ) : '';
+            $in['creator'] = is_string( $creator ) && $creator !== '' ? (string)\expModerationAdmin::creatorID( $creator ) : '';
+            $f = \expModerationList::filters( $in, $settings['sizes'], $settings['default'] );
+            return $Module->redirectTo( '/moderation/recent' . \expModerationList::viewParameters( $f ) );
         }
-        else
-        {
-            $in = array();
-            foreach ( array( 'from' => 'From', 'to' => 'To', 'date' => 'Date', 'class' => 'Class', 'status' => 'Status', 'hidden' => 'Hidden',
-                             'held' => 'Held', 'section' => 'Section', 'siteaccess' => 'Siteaccess', 'creator' => 'Creator', 'sort' => 'Sort',
-                             'order' => 'Order', 'offset' => 'Offset' ) as $key => $param )
-                $in[$key] = isset( $Params[$param] ) && is_scalar( $Params[$param] ) ? rawurldecode( (string)$Params[$param] ) : '';
-        }
+
+        $in = array();
+        foreach ( array( 'from' => 'From', 'to' => 'To', 'date' => 'Date', 'class' => 'Class', 'status' => 'Status', 'hidden' => 'Hidden',
+                         'held' => 'Held', 'section' => 'Section', 'siteaccess' => 'Siteaccess', 'creator' => 'Creator', 'sort' => 'Sort',
+                         'order' => 'Order', 'offset' => 'Offset' ) as $key => $param )
+            $in[$key] = isset( $Params[$param] ) && is_scalar( $Params[$param] ) ? rawurldecode( (string)$Params[$param] ) : '';
         $sizeChoice = (int)\eZPreferences::value( \expModerationList::PREFERENCE );
         $in['limit'] = (string)\expModerationList::chosenSize( $settings['sizes'], $sizeChoice );
         $f = \expModerationList::filters( $in, $settings['sizes'], $settings['default'] );

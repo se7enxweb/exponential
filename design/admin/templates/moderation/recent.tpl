@@ -1,5 +1,5 @@
 {* The moderation/recent view (Dashboard > Recent content): the most recently created or modified objects, a page at a time,
-   with the filters (a GET form the view turns into view parameters), sortable column heads, the page sizes (the
+   with the filters (a form posted to the view, which redirects to them as view parameters), sortable column heads, the page sizes (the
    preference admin_moderation_limit) and, with moderation/act, a checkbox per row and the actions on the selection
    (posted to moderation/action). The address and the browser come from the audit and are shown with
    moderation/personaldata only.
@@ -30,8 +30,7 @@
 {if $problem}<div class="a4-notice is-bad" role="alert"><p>{'The list could not be read: %problem'|i18n( 'design/admin/moderation',, hash( '%problem', $problem ) )|wash}</p></div>{/if}
 {if $hold_ready|not}<div class="a4-notice is-warn" role="status"><p>{'The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply'|i18n( 'design/admin/moderation' )}</p></div>{/if}
 
-<form class="a4-filterbar" method="get" action={$base|ezurl} role="search" aria-label="{'Filter the list'|i18n( 'design/admin/moderation' )}">
-    <input type="hidden" name="Filter" value="1" />
+<form class="a4-filterbar" method="post" action={$base|ezurl} role="search" aria-label="{'Filter the list'|i18n( 'design/admin/moderation' )}">
     <div class="a4-field">
         <label for="moderation-from">{'From'|i18n( 'design/admin/moderation' )}</label>
         <input class="a4-input" type="date" id="moderation-from" name="from" value="{$filters.from|wash}" />
@@ -104,7 +103,7 @@
     <input type="hidden" name="order" value="{$filters.order|wash}" />
     <div class="a4-field">
         <div class="a4-actions">
-            <button type="submit" class="a4-btn a4-btn-primary">{'Filter'|i18n( 'design/admin/moderation' )}</button>
+            <button type="submit" class="a4-btn a4-btn-primary" name="FilterButton" value="1">{'Filter'|i18n( 'design/admin/moderation' )}</button>
             {if ne( $filter_suffix, '' )}<a class="a4-btn" href={$base|ezurl}>{'Clear filters'|i18n( 'design/admin/moderation' )}</a>{/if}
         </div>
     </div>
