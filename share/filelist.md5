@@ -3451,7 +3451,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-cec4a7ca5ca0a25ca9d25cfc4ad1fdb4  doc/changelogs/6.0/6.0.15.md
+5725ef45f98cca782f1fbb02280d1732  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -28537,6 +28537,8 @@ ddc36a1d2b6a8564e354c233db2dfddf  tests/tests/kernel/classes/migration/expMigrat
 84bcd0ca15fcb735ff754cdde0525cd3  tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php
 081ac6800e88df89dc2fce1d8752013e  tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php
 193be194e88bf16fddcad31b94bd52b3  tests/tests/kernel/classes/migration/expMigrationGeneratorTest.php
+6c982551c3013b0735bddea46bd44d24  tests/tests/kernel/classes/migration/expMigrationGraphqlDatabaseTest.php
+d625de154dffa75520caf0576a95cd34  tests/tests/kernel/classes/migration/expMigrationGraphqlEngineChecks.php
 f2e97f0af2c5b35dcbd80445cd2a3d6f  tests/tests/kernel/classes/migration/expMigrationGraphqlIntegrationTest.php
 78fe88cb1c98a71b9b54c626f207cbc3  tests/tests/kernel/classes/migration/expMigrationGraphqlSqliteTest.php
 7ef3abd09335c51ad8230b18ccf5ca7f  tests/tests/kernel/classes/migration/expMigrationJobTest.php
@@ -28547,6 +28549,9 @@ dd536ce4dc5c21990af84ba12ad56c80  tests/tests/kernel/classes/migration/expMigrat
 0791c122c7d6e8a0e7868ea65c473783  tests/tests/kernel/classes/migration/expMigrationLegacyRecordFixture.php
 d9328c2422dc9b95f59ec537cc219eb9  tests/tests/kernel/classes/migration/expMigrationLocatorTest.php
 6c230ac298bd8cc1ca97a3fdd3f88755  tests/tests/kernel/classes/migration/expMigrationLongRunTest.php
+a8af333d8af31068b9d7307d9adf58b5  tests/tests/kernel/classes/migration/expMigrationPerformanceDatabaseTest.php
+17b7eefefe40d142b01a4862f8f57b49  tests/tests/kernel/classes/migration/expMigrationPerformanceEngineChecks.php
+79ca8f437cc52cc300321d993b989b89  tests/tests/kernel/classes/migration/expMigrationPerformanceSqliteTest.php
 a16b86dcbf656fe3d3a97f49773ca77b  tests/tests/kernel/classes/migration/expMigrationProgressTest.php
 66f678d82024659561bd7d0683300eff  tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php
 96200222ecd578cb0a0e5908780aef02  tests/tests/kernel/classes/migration/expMigrationRecordEngineChecks.php
@@ -29307,7 +29312,9 @@ c817175aad18a0e8f74e914c5f4c129f  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
 b420e648e58a85dd6a5f9b4c864ff4c9  tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php
 a253766ecdacb35f10a837742a5abbb5  tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php
 1aed1a08a3d57def468149158d202c3d  tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php
+00756bb5459a1df788b0431f8522bb03  tests/tests/lib/ezdb/mongodb/expMigrationGraphqlMongoDBTest.php
 c1f5e05ea4538dd4afd8dcf4a5d139b3  tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php
+bf12ae274419737797c1ac64e4db9d1e  tests/tests/lib/ezdb/mongodb/expMigrationPerformanceMongoDBTest.php
 f2b4b95a59663a1246277b19df163ccd  tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php
 112ab63ff43e2e2923b5bde150b5f505  tests/tests/lib/ezdb/mongodb/expMigrationRecordingMongoDBTest.php
 533a1a3b62a27450bf80b1b580af97cb  tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php

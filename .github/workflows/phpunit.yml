@@ -158,6 +158,11 @@ jobs:
           - php: '8.3'
             db: postgresql
             dsn: 'postgresql://postgres@127.0.0.1/testdb'
+          # The migration engine's checks of every step family on MongoDB (the expMigration* classes of the
+          # testsuite mongodb-live)
+          - php: '8.3'
+            db: mongodb
+            dsn: 'mongodb://127.0.0.1:27017'
 
     services:
       mysql:
@@ -182,6 +187,15 @@ jobs:
           - 5432:5432
         options: >-
           --health-cmd="pg_isready -h 127.0.0.1 -U postgres -d postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd="mongosh --quiet --eval 'db.runCommand({ ping: 1 })'"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=10
@@ -262,6 +276,9 @@ jobs:
               psql -v ON_ERROR_STOP=1 -h 127.0.0.1 -U postgres -d postgres -c "CREATE DATABASE ${TEST_DB_NAME};"
               psql -v ON_ERROR_STOP=1 -h 127.0.0.1 -U postgres -d "${TEST_DB_NAME}" -c "CREATE EXTENSION IF NOT EXISTS pgcrypto;"
               ;;
+            mongodb)
+              # nothing: each test class makes and drops a MongoDB database of its own
+              ;;
           esac
 
       - name: Run database tests
@@ -271,7 +288,12 @@ jobs:
           echo "$TEST_TIMEZONE"
           # Every suite of phpunit.xml, with its excludes (a directory named here would run the files
           # phpunit.xml leaves out). runtests.php exits with PHPUnit's code, so a failure fails the job.
-          php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test
+          if [ "${{ matrix.db }}" = mongodb ]; then
+            EXP_TEST_MONGO_URI="${{ matrix.dsn }}" php -d date.timezone="$TEST_TIMEZONE" vendor/bin/phpunit --colors=always \
+              --testsuite mongodb-live --group mongodb-live --filter '^expMigration'
+          else
+            php -d date.timezone="$TEST_TIMEZONE" tests/runtests.php --dsn "${{ matrix.dsn }}" --db-per-test
+          fi
 
       - name: Clean CI Composer overlay
         if: always()
