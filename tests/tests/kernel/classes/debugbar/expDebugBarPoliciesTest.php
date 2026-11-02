@@ -7,6 +7,11 @@
  *   - UP-03 a row as the tab shows it: readable values with the id, the rest as they are
  *   - UP-04 the tab offers the section only with policies allowed, with the address of role/view for the links, and its
  *           words are in the script's strings
+ *   - UP-06 a search "module/function" also finds the policies that grant it with a wildcard, in any case
+ *   - UP-07 the queries: published policies, limitations and values of hundreds of roles in chunks of QUERY_CHUNK ids,
+ *           none without roles
+ *   - UP-08 hundreds of roles: the selection and its pages
+ *   (UP-05, UP-09 and UP-10 are in expDebugBarUserPoliciesTest: who sees the tab, the path arguments, the script.)
  *
  * No database: the rows come as the queries return them, the names from a stand-in resolver.
  *
@@ -71,7 +76,7 @@ class expDebugBarPoliciesTest extends PHPUnit\Framework\TestCase
         $this->assertCount( 5, expDebugBarPolicies::select( $p, $this->roleNames, null, '', $r ) );
         $this->assertCount( 2, expDebugBarPolicies::select( $p, $this->roleNames, 7, '', $r ), 'one role' );
         $this->assertCount( 0, expDebugBarPolicies::select( $p, $this->roleNames, 99, '', $r ), 'not a role of the user' );
-        $this->assertCount( 2, expDebugBarPolicies::select( $p, $this->roleNames, null, 'content/read', $r ), 'module/function' );
+        $this->assertCount( 3, expDebugBarPolicies::select( $p, $this->roleNames, null, 'content/read', $r ), 'module/function, and the policy of every module (UP-06)' );
         $this->assertCount( 2, expDebugBarPolicies::select( $p, $this->roleNames, null, 'EDITOR', $r ), 'role name, any case' );
         $this->assertCount( 1, expDebugBarPolicies::select( $p, $this->roleNames, null, 'article', $r ), 'a class by its name' );
         $this->assertCount( 1, expDebugBarPolicies::select( $p, $this->roleNames, null, 'siteaccess', $r ), 'a limitation by its identifier' );
@@ -105,5 +110,84 @@ class expDebugBarPoliciesTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '#<details class="exp-debug-user-policies-section" data-exp-debug-policies data-role-url="[^"]*role/view/"><summary>Policies</summary>#', $html );
         foreach ( array( 'Load more', 'Module/function', 'All roles (%count policies)', '%shown of %matched policies', 'No policy matches.' ) as $word )
             $this->assertContains( $word, expDebugBarReport::scriptStrings() );
+    }
+
+    /** UP-06 */
+    public function testASearchForAModuleAndFunctionFindsTheWildcards()
+    {
+        $p = expDebugBarPolicies::combine( array(
+            array( 'id' => 1, 'role_id' => 1, 'module_name' => 'content', 'function_name' => 'read' ),
+            array( 'id' => 2, 'role_id' => 1, 'module_name' => 'content', 'function_name' => '*' ),
+            array( 'id' => 3, 'role_id' => 1, 'module_name' => '*', 'function_name' => '*' ),
+            array( 'id' => 4, 'role_id' => 1, 'module_name' => 'content', 'function_name' => 'edit' ),
+            array( 'id' => 5, 'role_id' => 1, 'module_name' => 'user', 'function_name' => 'login' ),
+        ), array() );
+        $r = $this->resolver();
+        $ids = function ( $query ) use ( $p, $r ) {
+            $ids = array_column( expDebugBarPolicies::select( $p, array( 1 => 'Editor' ), null, $query, $r ), 'id' );
+            sort( $ids );
+            return $ids;
+        };
+        $this->assertSame( array( 1, 2, 3 ), $ids( 'content/read' ), 'its own, every function of content, every module' );
+        $this->assertSame( array( 1, 2, 3 ), $ids( 'Content/Read' ), 'any case' );
+        $this->assertSame( array( 1, 2, 3, 4 ), $ids( 'content/*' ), 'every function of content' );
+        $this->assertSame( array( 3, 5 ), $ids( 'user/login' ) );
+        $this->assertSame( array( 1, 2, 3 ), $ids( '*/read' ), 'a function in any module, and what grants every function' );
+        $this->assertSame( array( 1, 2, 4 ), $ids( 'content' ), 'a word: as found in the text' );
+    }
+
+    /** UP-07 */
+    public function testTheQueriesInChunks()
+    {
+        $asked = array();
+        $fetch = function ( $definition, array $conditions ) use ( &$asked ) {
+            $table = $definition['name'];
+            $column = key( $conditions );
+            $ids = $conditions[$column][0];
+            $asked[] = array( $table, count( $ids ), isset( $conditions['original_id'] ) ? $conditions['original_id'] : null );
+            $rows = array();
+            foreach ( $ids as $id )
+            {
+                if ( $table === 'ezpolicy' )
+                    $rows[] = array( 'id' => $id * 10, 'role_id' => $id, 'module_name' => 'content', 'function_name' => 'read' );
+                else if ( $table === 'ezpolicy_limitation' )
+                    $rows[] = array( 'id' => $id + 1, 'policy_id' => $id, 'identifier' => 'Section' );
+                else
+                    $rows[] = array( 'id' => $id, 'limitation_id' => $id, 'value' => '1' );
+            }
+            return $rows;
+        };
+        $p = expDebugBarPolicies::fetchPoliciesWith( range( 1, 1200 ), $fetch );
+        $this->assertCount( 1200, $p );
+        $this->assertSame( array( 'Section' => array( '1' ) ), $p[0]['limitations'], 'the values reach their policy' );
+        $this->assertSame( array( array( 'ezpolicy', 500, 0 ), array( 'ezpolicy', 500, 0 ), array( 'ezpolicy', 200, 0 ) ),
+                           array_slice( $asked, 0, 3 ), 'published policies, QUERY_CHUNK role ids a query' );
+        $this->assertCount( 9, $asked, 'three tables, three chunks each' );
+
+        $asked = array();
+        $this->assertSame( array(), expDebugBarPolicies::fetchPoliciesWith( array(), $fetch ) );
+        $this->assertSame( array(), $asked, 'no roles: no query' );
+    }
+
+    /** UP-08 */
+    public function testHundredsOfRoles()
+    {
+        $rows = array();
+        $names = array();
+        for ( $role = 1; $role <= 300; $role++ )
+        {
+            $names[$role] = 'Role ' . $role;
+            $rows[] = array( 'id' => $role * 10 + 1, 'role_id' => $role, 'module_name' => 'content', 'function_name' => 'read' );
+            $rows[] = array( 'id' => $role * 10 + 2, 'role_id' => $role, 'module_name' => 'content', 'function_name' => 'edit' );
+        }
+        $p = expDebugBarPolicies::combine( $rows, array() );
+        $r = $this->resolver();
+        $all = expDebugBarPolicies::select( $p, $names, null, '', $r );
+        $this->assertCount( 600, $all );
+        $this->assertCount( expDebugBarPolicies::PAGE, array_slice( $all, 0, expDebugBarPolicies::PAGE ), 'a page' );
+        $this->assertCount( 200, array_slice( $all, 400, expDebugBarPolicies::PAGE ), 'the last page' );
+        $this->assertCount( 2, expDebugBarPolicies::select( $p, $names, 250, '', $r ), 'one role of 300' );
+        $this->assertCount( 300, expDebugBarPolicies::select( $p, $names, null, 'content/read', $r ) );
+        $this->assertCount( 2, expDebugBarPolicies::select( $p, $names, null, 'role 300', $r ), 'a role by its name' );
     }
 }

@@ -321,7 +321,10 @@
     let state = { role: '', q: '', offset: 0 };
     let roles = [];
     let timer = null;
-    const search = el('input', { type: 'search', class: 'exp-debug-policies-search', placeholder: t('module/function, role, limitation'), 'aria-label': t('Search the policies') });
+    // UTF-8 text as base64url: a search may hold "/" or "::", which a path argument cannot
+    const b64url = (s) => btoa(Array.from(new TextEncoder().encode(s), (b) => String.fromCharCode(b)).join(''))
+      .replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+    const search = el('input', { type: 'search', class: 'exp-debug-policies-search', maxlength: '100', placeholder: t('module/function, role, limitation'), 'aria-label': t('Search the policies') });
     const roleSelect = el('select', { class: 'exp-debug-policies-role', 'aria-label': t('Role') });
     const status = el('div', { class: 'exp-debug-hint', role: 'status', 'aria-live': 'polite', tabindex: '-1' });
     const table = el('table', { class: 'exp-debug-facts exp-debug-user-policies' });
@@ -340,7 +343,8 @@
       const mine = ++seq;
       status.textContent = t('Loading...');
       if (!append) more.hidden = true;
-      call('policies', { role: state.role || null, q: state.q || null, offset: append ? state.offset : null }, false).then((answer) => {
+      // everything in the path (expdebugbar::policies::<role>::<offset>::<search>), the search as base64url
+      call('policies::' + (state.role || '-') + '::' + (append ? state.offset : 0) + '::' + (state.q ? b64url(state.q) : '-'), {}).then((answer) => {
         if (mine !== seq) return;
         if (!answer || !Array.isArray(answer.rows)) throw new Error(t('No answer'));
         if (answer.roles && !roles.length) {
