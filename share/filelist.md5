@@ -3757,7 +3757,7 @@ d16d8a2f908a6c14f85ec2b2679bc842  doc/eng-us/examples/commands/expstaticdiff.md
 433015da4258b3e8ab0310efb6270f92  doc/eng-us/examples/commands/expstaticdns.md
 e6fe1fb5a564c7afe4dee94b2e24c0b5  doc/eng-us/examples/commands/expstaticgithub.md
 c6b4292726f1abf11a30c88b5b72cbcc  doc/eng-us/examples/commands/expstatickeys.md
-1c4afff87386e911d0c428c008e20ad7  doc/eng-us/examples/commands/expstaticpublish.md
+8ee3f9e83250b4a663ef29e6fed446ff  doc/eng-us/examples/commands/expstaticpublish.md
 7d89909d53fe920434afe7e8fa665006  doc/eng-us/examples/commands/expstaticpush.md
 a40dbe16af2516850802a1314519a273  doc/eng-us/examples/commands/expstaticrollback.md
 1dbd8bcdb391e030b1d3ef96d5ba0b96  doc/eng-us/examples/commands/expstaticserve.md
@@ -13542,7 +13542,7 @@ d3610361e8f5f816ca6d51ca0d3d08c8  doc/ger-de/beispiele/befehle/expstaticdiff.md
 1de63fecf7d3ddb43106761a4719df48  doc/ger-de/beispiele/befehle/expstaticdns.md
 f69595f8597568a3dbd3c9f9f46d7b4f  doc/ger-de/beispiele/befehle/expstaticgithub.md
 03859ffcf71fc91c9debdcbcd0ad91c3  doc/ger-de/beispiele/befehle/expstatickeys.md
-8796b6024d7d40a3babfe89bcbc35942  doc/ger-de/beispiele/befehle/expstaticpublish.md
+c7ea24633723effa56e8070afb62be87  doc/ger-de/beispiele/befehle/expstaticpublish.md
 77113325b63f48b609b920f071a3247e  doc/ger-de/beispiele/befehle/expstaticpush.md
 830cf7686e41679dfc87637ae8b5fb22  doc/ger-de/beispiele/befehle/expstaticrollback.md
 a0548d51b39154b0e276f7c1b1e99d8d  doc/ger-de/beispiele/befehle/expstaticserve.md
@@ -24970,13 +24970,13 @@ d23d7cff446dc7c1dc750eeb692332af  kernel/private/classes/commands/expmigrationre
 2279feb83c974bb395e833e347fc72ba  kernel/private/classes/commands/expmigrationresume.php
 9c156aa9bf248209f4c361d0455eec7c  kernel/private/classes/commands/expmigrationrollback.php
 c22b8f05181328d28e0b44a498863941  kernel/private/classes/commands/expmigrationstatus.php
-ef5e1928972e7f0b9a277df54099a0d5  kernel/private/classes/commands/expstaticbase.php
+4322a3b03ad9c4b343700ea827d7691b  kernel/private/classes/commands/expstaticbase.php
 c7004590b386f44cb53c2f632b82260e  kernel/private/classes/commands/expstaticbuild.php
 3575ea0c498f5d1b43b9bbe9f4e37c09  kernel/private/classes/commands/expstaticdiff.php
 7af493693e54a73bf598e5269f2ee1f8  kernel/private/classes/commands/expstaticdns.php
 a73fa01f0fe7d9632eeebcdb532f6816  kernel/private/classes/commands/expstaticgithub.php
 9050c471774f26f38413231b3dafd3a5  kernel/private/classes/commands/expstatickeys.php
-312de71a19d3ef9f18919e2e3093a7e3  kernel/private/classes/commands/expstaticpublish.php
+9a3450bd58a332da75b6e00a396b4fcb  kernel/private/classes/commands/expstaticpublish.php
 e9e177f5f74fd093a7d29c09a8e79be0  kernel/private/classes/commands/expstaticpush.php
 0f3d0d369aa67e8c69e9ccf9f18209fa  kernel/private/classes/commands/expstaticrollback.php
 9e5cc1b845eeaadc7528791962171a01  kernel/private/classes/commands/expstaticserve.php
@@ -28653,7 +28653,7 @@ c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopRe
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 74a4912024d32aaf4b9a78fd2b48bf24  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
 303af967ab566ab8e00b50bfcab086e3  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
-441420e6a206d0cd4421c32e77ccf793  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
+e02245c806ec11dee72b57b7e4d1ece0  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 4e13e1ff07af6f32c6f45064b5640365  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 3979bc5a303fe7d2b1e227585e8944ec  tests/tests/kernel/classes/staticpublish/expStaticDegraderTest.php
 0ac14314c5e2bc01199792dd2b25ddef  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
