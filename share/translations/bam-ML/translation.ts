@@ -83440,6 +83440,10 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>U ka sɛbɛn bɛ to yen. Jaw, fɔrimiw ani jɛɲɔgɔnya minnu bɛ taa siti wɛrɛw la, olu tɛ bɔ abada.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Wɛrisiyɔn</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

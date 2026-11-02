@@ -83440,6 +83440,10 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Barreeffamni isaanii ni hafa. Suuraaleen, unkaaleen fi hidhoonni marsariitii biraatti geessan gonkumaa hin haqaman.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Fooyya'iinsa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

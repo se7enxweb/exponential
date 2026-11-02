@@ -83470,6 +83470,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Njihov tekst ostaje. Slike, obrasci i linkovi na druge stranice nikad se ne uklanjaju.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Verzija</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

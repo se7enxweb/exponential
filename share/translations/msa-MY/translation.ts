@@ -83440,6 +83440,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Teksnya kekal. Imej, borang dan pautan ke laman lain tidak sekali-kali dibuang.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

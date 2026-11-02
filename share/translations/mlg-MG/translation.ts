@@ -83440,6 +83440,10 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Mijanona ny lahatsorany. Tsy esorina mihitsy ny sary, ny taratasy fenoina ary ny rohy mankany amin'ny tranonkala hafa.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Dikan-teny</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

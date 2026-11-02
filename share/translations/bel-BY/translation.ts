@@ -83440,6 +83440,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Іх тэкст застаецца. Выявы, формы і спасылкі на іншыя сайты ніколі не выдаляюцца.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Версія</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

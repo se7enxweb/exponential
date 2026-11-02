@@ -83470,6 +83470,10 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Nende tekst jääb alles. Pilte, vorme ja linke teistele saitidele ei eemaldata kunagi.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versioon</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

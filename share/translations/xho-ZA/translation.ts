@@ -83438,6 +83438,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Isicatshulwa sawo siyahlala. Imifanekiso, iifomu namakhonkco aya kwezinye iisayithi akaze asuswe.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Inguqulo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

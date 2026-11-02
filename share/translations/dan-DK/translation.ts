@@ -84120,6 +84120,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Deres tekst bliver stående. Billeder, formularer og links til andre websteder fjernes aldrig.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

@@ -85436,6 +85436,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O texto deles permanece. Imagens, formulários e links para outros sites nunca são removidos.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versão</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

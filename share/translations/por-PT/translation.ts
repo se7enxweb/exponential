@@ -83470,6 +83470,10 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O texto mantém-se. Imagens, formulários e ligações para outros sites nunca são removidos.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versão</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

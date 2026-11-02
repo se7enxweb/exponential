@@ -83440,6 +83440,10 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>O seu texto mantense. As imaxes, os formularios e as ligazóns a outros sitios nunca se quitan.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Versión</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

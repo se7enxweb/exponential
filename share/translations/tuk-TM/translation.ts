@@ -83440,6 +83440,10 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Olaryň teksti galýar. Suratlar, formalar we beýleki saýtlara salgylar hiç haçan aýrylmaýar.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Wersiýa</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

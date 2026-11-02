@@ -677,6 +677,14 @@ class eZSQLite3DB extends eZDBInterface
      (#199): 192 publishes from 64 processes at once all completed whole,
      where the generic start lost 6; 48 transactions of 300 ms at once were
      done in 14.7 s, the 14.4 s they take one after another.
+
+     A waiting writer says so with a shared lock on <database>.writer-queue,
+     and a writer that finds the gate free while others wait leaves it to
+     them for HANDOFF_MS first. A loop that commits and begins at once took
+     the gate back within 0.2 ms of every commit and kept it for minutes: on
+     the demo (2026-11-02) the indexcontent cronjob part held it that way for
+     over seven minutes while a help manuals content job queued objects for
+     it, and a user's save failed after its 25 s with "database is busy".
     */
     function beginQuery()
     {
@@ -685,23 +693,49 @@ class eZSQLite3DB extends eZDBInterface
         $gate = $this->writerGate();
         if ( $gate )
         {
-            while ( !flock( $gate, LOCK_EX | LOCK_NB ) )
+            // Writers already waiting go first: a loop that commits and begins again at once (indexcontent,
+            // a content job's batches) took the lock back within 0.2 ms of its commit, long before a waiter's
+            // next try, and held it for minutes in one-object transactions while a page's save failed after
+            // its 25 s. A writer that finds others waiting gives them HANDOFF_MS before its first try.
+            $queue = $this->writerQueue();
+            $handoffUntil = 0;
+            if ( flock( $gate, LOCK_EX | LOCK_NB ) )
             {
-                $waited = microtime( true ) - $start;
-                if ( microtime( true ) >= $deadline )
+                // Free: take it, unless other writers have been waiting for it (held: wait like them, below)
+                if ( $queue && $this->writersWaiting( $queue ) )
                 {
-                    $this->ErrorNumber = 5;
-                    $this->ErrorMessage = 'database is locked';
-                    $this->BeginFailed = true;
-                    return false;
+                    flock( $gate, LOCK_UN );
+                    $handoffUntil = microtime( true ) + self::HANDOFF_MS / 1000;
                 }
-                // Every wake-up costs CPU (about 50 us here, whatever is done awake), so the tries thin out
-                // as the wait grows, and a writer waiting longer than a second tries more often again than
-                // those that came after it, which keeps the queue about in arrival order.
-                usleep( $waited < 0.02 ? mt_rand( 1000, 2000 ) : ( $waited < 0.2 ? mt_rand( 3000, 6000 )
-                        : ( $waited < 1 ? mt_rand( 8000, 15000 ) : mt_rand( 5000, 10000 ) ) ) );
+                else
+                    $this->HoldsWriterGate = true;
             }
-            $this->HoldsWriterGate = true;
+            if ( !$this->HoldsWriterGate )
+            {
+                if ( $queue )
+                    flock( $queue, LOCK_SH );   // "a writer is waiting", for the writer that commits next
+                while ( microtime( true ) < $handoffUntil || !flock( $gate, LOCK_EX | LOCK_NB ) )
+                {
+                    $waited = microtime( true ) - $start;
+                    if ( microtime( true ) >= $deadline )
+                    {
+                        if ( $queue )
+                            flock( $queue, LOCK_UN );
+                        $this->ErrorNumber = 5;
+                        $this->ErrorMessage = 'database is locked';
+                        $this->BeginFailed = true;
+                        return false;
+                    }
+                    // Every wake-up costs CPU (about 50 us here, whatever is done awake), so the tries thin out
+                    // as the wait grows, and a writer waiting longer than a second tries more often again than
+                    // those that came after it, which keeps the queue about in arrival order.
+                    usleep( $waited < 0.02 ? mt_rand( 1000, 2000 ) : ( $waited < 0.2 ? mt_rand( 3000, 6000 )
+                            : ( $waited < 1 ? mt_rand( 8000, 15000 ) : mt_rand( 3000, 6000 ) ) ) );
+                }
+                if ( $queue )
+                    flock( $queue, LOCK_UN );
+                $this->HoldsWriterGate = true;
+            }
         }
         $left = (int)max( 1, ( $deadline - microtime( true ) ) * 1000 );
         $this->DBConnection->busyTimeout( $left );
@@ -743,6 +777,41 @@ class eZSQLite3DB extends eZDBInterface
         if ( $fh )
             $this->WriterGate = $fh;
         return $this->WriterGate;
+    }
+
+    /**
+     * The open file that tells a writer whether others are waiting for the
+     * write lock (<database>.writer-queue), or false: every writer that waits
+     * holds a shared lock on it, so an exclusive try that fails means someone
+     * is waiting. Opened once per connection and process, as writerGate().
+     */
+    protected function writerQueue()
+    {
+        if ( $this->WriterQueue !== null && $this->WriterQueuePid === getmypid() )
+            return $this->WriterQueue;
+        $this->WriterQueue = false;
+        $this->WriterQueuePid = getmypid();
+        $path = self::filePath( $this->DB );
+        if ( $path === ':memory:' || $path === '' )
+            return false;
+        $file = $path . '.writer-queue';
+        $fh = @fopen( $file, 'c' );
+        if ( !$fh )
+            $fh = @fopen( $file, 'r' );
+        if ( $fh )
+            $this->WriterQueue = $fh;
+        return $this->WriterQueue;
+    }
+
+    /// Whether another writer is waiting for the write lock (holds its shared lock on the queue file)
+    protected function writersWaiting( $queue )
+    {
+        if ( flock( $queue, LOCK_EX | LOCK_NB ) )
+        {
+            flock( $queue, LOCK_UN );
+            return false;
+        }
+        return true;
     }
 
     /// Gives the queue's lock back (after COMMIT or ROLLBACK, or a failed start)
@@ -1041,6 +1110,9 @@ class eZSQLite3DB extends eZDBInterface
         if ( $this->WriterGate )
             fclose( $this->WriterGate );
         $this->WriterGate = null;
+        if ( $this->WriterQueue )
+            fclose( $this->WriterQueue );
+        $this->WriterQueue = null;
     }
 
     function __destruct()
@@ -1288,6 +1360,16 @@ class eZSQLite3DB extends eZDBInterface
     protected $WriterGate = null;
     protected $HoldsWriterGate = false;
     protected $WriterGatePid = 0;
+    /// The open <database>.writer-queue file (null: not opened yet, false: none), see writerQueue()
+    protected $WriterQueue = null;
+    protected $WriterQueuePid = 0;
+
+    /**
+     * How long a writer that finds the write lock free, but others waiting for
+     * it, leaves it to them before its own first try, in ms: above the longest
+     * pause between a waiter's tries (15 ms), so one of them is in first.
+     */
+    const HANDOFF_MS = 30;
 }
 
 ?>

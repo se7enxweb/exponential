@@ -84,7 +84,7 @@ class expLastSeenWhileDatabaseBusyTest extends PHPUnit\Framework\TestCase
         else
             unset( $GLOBALS['eZDBGlobalInstance'] );
         expUserSessionTracker::reset();
-        foreach ( array( '', '-wal', '-shm', '.writer-lock' ) as $suffix )
+        foreach ( array( '', '-wal', '-shm', '.writer-lock', '.writer-queue' ) as $suffix )
         {
             if ( $this->file && file_exists( $this->file . $suffix ) )
                 unlink( $this->file . $suffix );

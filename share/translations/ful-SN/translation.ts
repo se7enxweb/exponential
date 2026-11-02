@@ -83440,6 +83440,10 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Their text stays. Images, forms and links to other sites are never removed.</source>
         <translation>Binndi maɓɓe ina heddoo. Nate, formulaaruuji e jokkorɗe yahooje e lowe goɗɗe momtataake abada.</translation>
     </message>
+    <message>
+        <source>Version</source>
+        <translation>Yamre</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/staticpublish/mail</name>

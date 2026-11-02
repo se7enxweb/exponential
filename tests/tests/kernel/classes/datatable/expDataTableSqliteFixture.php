@@ -102,7 +102,7 @@ trait expDataTableSqliteFixture
             $GLOBALS['eZDBGlobalInstance'] = $this->fixtureSavedGlobal[0];
         // the SQLite driver's writer gate leaves <file>.writer-lock beside the database
         expDataConnections::closeAll();
-        foreach ( array( '', '-wal', '-shm', '-journal', '.writer-lock' ) as $suffix )
+        foreach ( array( '', '-wal', '-shm', '-journal', '.writer-lock', '.writer-queue' ) as $suffix )
             if ( $this->fixtureFile && is_file( $this->fixtureFile . $suffix ) )
                 unlink( $this->fixtureFile . $suffix );
     }
